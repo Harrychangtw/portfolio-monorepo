@@ -63,7 +63,7 @@ export default function GalleryPageClient() {
     return (
       <div className="page-transition-enter">
         <div className="container py-16 md:py-24">
-          <h1 className="font-space-grotesk text-4xl font-bold mb-12">{t('gallery.title')}</h1>
+          <h1 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('gallery.title')}</h1>
           <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]">
             {[...Array(3)].map((_, colIndex) => (
               <div key={colIndex} className="flex-1 space-y-[var(--column-spacing)]">
@@ -86,7 +86,7 @@ export default function GalleryPageClient() {
   return (
     <div className="page-transition-enter">
       <div className="container py-16 md:py-24">
-        <h1 className="font-space-grotesk text-4xl font-bold mb-12">{t('gallery.title')}</h1>
+        <h1 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('gallery.title')}</h1>
         {galleryItems.length === 0 ? (
           <p className="font-ibm-plex text-muted-foreground">{t('gallery.noGalleryFound')}</p>
         ) : (

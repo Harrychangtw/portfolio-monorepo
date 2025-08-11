@@ -39,15 +39,18 @@ export default function ProjectsSection() {
       <div className="container">
         <h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('projects.title')}</h2>
         
-        {/* Reserve space to prevent layout shift */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--column-spacing)]" style={{ minHeight: isLoading ? '600px' : 'auto' }}>
+        {/* Reserve space to prevent layout shift with responsive min-height */}
+        <div 
+          className={`grid grid-cols-1 md:grid-cols-3 gap-[var(--column-spacing)] ${isLoading ? 'min-h-[2400px] md:min-h-[800px]' : ''}`}
+          style={{ transition: 'min-height 0.3s ease-out' }}
+        >
           {isLoading ? (
             // Placeholder cards while loading - match exact project card structure
             [...Array(6)].map((_, i) => (
               <div key={i} className="group relative flex flex-col">
                 <div className="relative overflow-hidden bg-muted">
                   {/* Strict 3:2 aspect ratio container - matches ProjectCard */}
-                  <div className="relative w-full" style={{ paddingBottom: "66.67%" }}>
+                  <div className="relative w-full aspect-[3/2]">
                     <div className="absolute inset-0">
                       <div className="absolute inset-0 bg-muted animate-pulse">
                         <div className="animate-shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-muted via-muted/50 to-muted" />
