@@ -5,14 +5,12 @@ import ProjectCard from "./project-card"
 import { ProjectMetadata } from "@/lib/markdown"
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 import { useLanguage } from "@/contexts/LanguageContext"
-import { useSectionLoading } from "@/components/lazy-section-loader"
 
 export default function ProjectsSection() {
   const { language, t } = useLanguage()
   const [projects, setProjects] = useState<ProjectMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const sectionRef = useRef<HTMLElement>(null)
-  const { setLoadingState } = useSectionLoading()
   const isVisible = useIntersectionObserver({
     elementRef: sectionRef as React.RefObject<Element>,
     rootMargin: '100px'
@@ -21,7 +19,6 @@ export default function ProjectsSection() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        setLoadingState('projects', true)
         const response = await fetch(`/api/projects?locale=${language}`)
         const data = await response.json()
         setProjects(data)
@@ -29,14 +26,13 @@ export default function ProjectsSection() {
         console.error('Failed to fetch projects:', error)
       } finally {
         setIsLoading(false)
-        setLoadingState('projects', false)
       }
     }
 
     if (isVisible) {
       fetchProjects()
     }
-  }, [isVisible, language, setLoadingState])
+  }, [isVisible, language])
 
   return (
     <section ref={sectionRef} id="projects" className="py-12 md:py-16 border-b border-border">

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { useLanguage } from "@/contexts/LanguageContext"
-import { useSectionLoading } from "@/components/lazy-section-loader"
 import LanguageSwitcher from "@/components/language-switcher"
 
 // Define smooth scroll duration (adjust as needed, keep consistent with timeout)
@@ -22,19 +21,11 @@ export default function Header() {
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
   const { t } = useLanguage()
-  // Try to use the context, but provide a fallback if it's not available
-  let waitForSection: (section: any) => Promise<void> = () => Promise.resolve()
-  try {
-    const sectionLoading = useSectionLoading()
-    waitForSection = sectionLoading.waitForSection
-  } catch (e) {
-    // Context not available, use fallback
-  }
 
   // Function to determine if a path corresponds to the current page or section
   const isActive = (sectionId: string) => activeSection === sectionId;
 
-  const scrollToSection = async (id: string, event?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const scrollToSection = (id: string, event?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // Clear any existing scroll timeout to prevent premature resetting of isScrolling
     if (scrollTimeoutRef.current) {
       clearTimeout(scrollTimeoutRef.current);
@@ -43,12 +34,6 @@ export default function Header() {
     // If we are already on the home page, prevent navigation and scroll
     if (isHomePage) {
       event?.preventDefault(); // Prevent default link behavior only if already home
-      
-      // Wait for the section to load if it's projects or gallery
-      if (id === 'projects' || id === 'gallery') {
-        await waitForSection(id as 'projects' | 'gallery')
-      }
-      
       const element = document.getElementById(id)
       if (element) {
         // 1. Set scrolling flag immediately
@@ -57,7 +42,7 @@ export default function Header() {
         setActiveSection(id)
 
         // 3. Start scroll
-        const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+const headerOffset = document.querySelector('header')?.offsetHeight || 0;
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
         const offsetPosition = elementPosition - headerOffset;
         window.scrollTo({
@@ -81,34 +66,27 @@ export default function Header() {
   useEffect(() => {
     if (isHomePage && window.location.hash) {
       const id = window.location.hash.substring(1)
-      
-      // Async function to handle waiting for section loading
-      const scrollToHash = async () => {
-        // Wait for the section to load if it's projects or gallery
-        if (id === 'projects' || id === 'gallery') {
-          await waitForSection(id as 'projects' | 'gallery')
-        }
-        
-        const element = document.getElementById(id)
-        if (element) {
-          // Don't set isScrolling here, it's an initial load scroll
-          const headerOffset = document.querySelector('header')?.offsetHeight || 0;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerOffset;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-          setActiveSection(id)
-        } else {
-          setActiveSection('about');
-        }
+      const element = document.getElementById(id)
+      if (element) {
+        setTimeout(() => {
+           if(document.getElementById(id)) { // Check if element still exists
+             // Don't set isScrolling here, it's an initial load scroll
+             const element = document.getElementById(id);
+             if (element) {
+               const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+               const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+               const offsetPosition = elementPosition - headerOffset;
+               window.scrollTo({
+                 top: offsetPosition,
+                 behavior: "smooth",
+               });
+             }
+             setActiveSection(id)
+           }
+        }, 150)
+      } else {
+        setActiveSection('about');
       }
-      
-      // Use a small timeout to ensure DOM is ready, then scroll
-      setTimeout(() => {
-        scrollToHash()
-      }, 150)
     } else if (isHomePage && window.scrollY < 50) {
          setActiveSection('about');
     }
@@ -118,7 +96,7 @@ export default function Header() {
             clearTimeout(scrollTimeoutRef.current);
         }
     };
-  }, [isHomePage, waitForSection])
+  }, [isHomePage])
 
   // Effect for updating active section based on scroll position (only on homepage)
   useEffect(() => {

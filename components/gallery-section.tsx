@@ -6,14 +6,12 @@ import { GalleryItemMetadata } from "@/lib/markdown"
 import { createBalancedLayout } from "@/lib/utils"
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer"
 import { useLanguage } from "@/contexts/LanguageContext"
-import { useSectionLoading } from "@/components/lazy-section-loader"
 
 export default function GallerySection() {
   const { language, t } = useLanguage()
   const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const sectionRef = useRef<HTMLElement>(null)
-  const { setLoadingState } = useSectionLoading()
   const isVisible = useIntersectionObserver({
     elementRef: sectionRef as React.RefObject<Element>,
     rootMargin: '100px'
@@ -22,7 +20,6 @@ export default function GallerySection() {
   useEffect(() => {
     async function fetchGalleryItems() {
       try {
-        setLoadingState('gallery', true)
         const response = await fetch(`/api/gallery?locale=${language}`)
         const data = await response.json()
         setGalleryItems(data)
@@ -30,14 +27,13 @@ export default function GallerySection() {
         console.error('Failed to fetch gallery items:', error)
       } finally {
         setIsLoading(false)
-        setLoadingState('gallery', false)
       }
     }
 
     if (isVisible) {
       fetchGalleryItems()
     }
-  }, [isVisible, language, setLoadingState])
+  }, [isVisible, language])
 
   // Handle pinned items (maintain their positions in the layout)
   const getPinnedItemsMap = (items: GalleryItemMetadata[]) => {
