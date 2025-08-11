@@ -30,13 +30,8 @@ export function GalleryImageContainer({
     elementRef: containerRef as React.RefObject<Element>,
     rootMargin: '50px'
   })
-  // Use provided aspect ratio for initial dimensions to prevent CLS
-  const initialDimensions = providedAspectRatio 
-    ? { width: 1200, height: Math.round(1200 / providedAspectRatio) }
-    : { width: 1200, height: 800 } // Default 3:2 if no ratio provided
-  
-  const [dimensions, setDimensions] = useState(initialDimensions)
-  const [loading, setLoading] = useState(!providedAspectRatio) // Don't show loading if we have aspectRatio
+  const [dimensions, setDimensions] = useState({ width: 1200, height: 800 })
+  const [loading, setLoading] = useState(true)
   const [imageError, setImageError] = useState(false)
   const [blurComplete, setBlurComplete] = useState(false)
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
@@ -57,12 +52,9 @@ export function GalleryImageContainer({
   // Reset loading states when source changes
   useEffect(() => {
     setBlurComplete(false)
-    // Only set loading if we don't have a provided aspect ratio
-    if (!providedAspectRatio) {
-      setLoading(true)
-    }
+    setLoading(true)
     setImageError(false)
-  }, [src, providedAspectRatio])
+  }, [src])
 
   useEffect(() => {
     if (!isVisible && !priority && !hasLoadedOnce) return
