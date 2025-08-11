@@ -66,23 +66,50 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
   useEffect(() => {
     if (isHomePage && window.location.hash) {
       const id = window.location.hash.substring(1)
+      let hasScrolled = false; // Track if we've already performed the scroll
+      let mutationObserver: MutationObserver | null = null;
+      let checkInterval: NodeJS.Timeout | null = null;
       
-      // Function to check if section content is loaded
+      // Function to check if section content is loaded and images are rendered
       // For projects and gallery sections, check if they have actual content (not placeholders)
       const isSectionLoaded = (sectionId: string): boolean => {
         const element = document.getElementById(sectionId);
         if (!element) return false;
         
-        // For projects section, check if placeholder cards are gone
+        // For projects section, check if placeholder cards are gone and images are loaded
         if (sectionId === 'projects') {
           const placeholders = element.querySelectorAll('.animate-pulse');
-          return placeholders.length === 0;
+          if (placeholders.length > 0) return false;
+          
+          // Also check if actual images are loaded (not just removed placeholders)
+          const images = element.querySelectorAll('img');
+          if (images.length === 0) return false; // No images yet
+          
+          // Check if at least some images have natural height (are loaded)
+          let loadedCount = 0;
+          images.forEach(img => {
+            if (img.naturalHeight > 0) loadedCount++;
+          });
+          // Consider loaded if at least 50% of images are loaded
+          return loadedCount >= Math.max(1, Math.floor(images.length * 0.5));
         }
         
-        // For gallery section, check if shimmer placeholders are gone
+        // For gallery section, check if shimmer placeholders are gone and images are loaded
         if (sectionId === 'gallery') {
           const placeholders = element.querySelectorAll('.animate-shimmer');
-          return placeholders.length === 0;
+          if (placeholders.length > 0) return false;
+          
+          // Also check if actual images are loaded
+          const images = element.querySelectorAll('img');
+          if (images.length === 0) return false; // No images yet
+          
+          // Check if at least some images have natural height (are loaded)
+          let loadedCount = 0;
+          images.forEach(img => {
+            if (img.naturalHeight > 0) loadedCount++;
+          });
+          // Consider loaded if at least 50% of images are loaded
+          return loadedCount >= Math.max(1, Math.floor(images.length * 0.5));
         }
         
         // For other sections (about, updates), they're always ready
@@ -91,46 +118,110 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
       
       // Function to scroll to section with proper alignment
       const scrollToHashSection = () => {
+        if (hasScrolled) return false; // Prevent multiple scrolls
+        
         const element = document.getElementById(id);
         if (element && isSectionLoaded(id)) {
-          // Use the same scrolling logic as the navigation bar
-          const headerOffset = document.querySelector('header')?.offsetHeight || 0;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - headerOffset;
+          hasScrolled = true; // Mark as scrolled
           
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
+          // Clean up observers once we're ready to scroll
+          if (mutationObserver) {
+            mutationObserver.disconnect();
+            mutationObserver = null;
+          }
+          if (checkInterval) {
+            clearInterval(checkInterval);
+            checkInterval = null;
+          }
           
-          setActiveSection(id);
-          return true; // Successfully scrolled
+          // Small delay to ensure layout is stable after lazy loading
+          setTimeout(() => {
+            // Use the same scrolling logic as the navigation bar
+            const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerOffset;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+            
+            setActiveSection(id);
+          }, 500); // Small delay for layout stabilization
+          
+          return true; // Successfully initiated scroll
         }
         return false; // Not ready yet
       };
+      
+      // Set up MutationObserver to watch for content changes
+      const targetElement = document.getElementById(id);
+      if (targetElement && (id === 'projects' || id === 'gallery')) {
+        mutationObserver = new MutationObserver(() => {
+          // Check if section is now loaded whenever DOM changes
+          scrollToHashSection();
+        });
+        
+        mutationObserver.observe(targetElement, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ['class'] // Watch for class changes (animate-pulse/shimmer removal)
+        });
+      }
       
       // Try to scroll immediately if section is ready
       if (!scrollToHashSection()) {
         // If not ready, set up polling to check when content is loaded
         let attempts = 0;
-        const maxAttempts = 50; // Max 5 seconds (50 * 100ms)
+        const maxAttempts = 60; // Max 6 seconds (60 * 100ms)
         
-        const checkInterval = setInterval(() => {
+        checkInterval = setInterval(() => {
           attempts++;
           
           if (scrollToHashSection() || attempts >= maxAttempts) {
-            clearInterval(checkInterval);
+            if (checkInterval) {
+              clearInterval(checkInterval);
+              checkInterval = null;
+            }
             
-            // If we hit max attempts and still couldn't scroll, at least set the active section
-            if (attempts >= maxAttempts) {
-              setActiveSection(id);
+            // If we hit max attempts and still couldn't scroll, at least try one final scroll
+            if (!hasScrolled && attempts >= maxAttempts) {
+              const element = document.getElementById(id);
+              if (element) {
+                hasScrolled = true;
+                // Force a final scroll attempt even if images aren't fully loaded
+                setTimeout(() => {
+                  const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                  const offsetPosition = elementPosition - headerOffset;
+                  
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  });
+                  
+                  setActiveSection(id);
+                }, 300);
+              } else {
+                setActiveSection(id);
+              }
+            }
+            
+            // Clean up observer
+            if (mutationObserver) {
+              mutationObserver.disconnect();
+              mutationObserver = null;
             }
           }
         }, 500); // Check every 100ms
-        
-        // Cleanup interval on unmount
-        return () => clearInterval(checkInterval);
       }
+      
+      // Cleanup function
+      return () => {
+        if (checkInterval) clearInterval(checkInterval);
+        if (mutationObserver) mutationObserver.disconnect();
+      };
     } else if (isHomePage && window.scrollY < 50) {
       setActiveSection('about');
     }
