@@ -34,8 +34,9 @@ export default function GalleryCard({
     rootMargin: '50px'
   })
   const [imageLoaded, setImageLoaded] = useState(false)
-  const [aspectRatio, setAspectRatio] = useState("80%")
-  const [originalAspect, setOriginalAspect] = useState<number>(1.25)
+  // Start with a reasonable default aspect ratio to prevent CLS
+  const [aspectRatio, setAspectRatio] = useState("100%") // 1:1 default, will adjust when image loads
+  const [originalAspect, setOriginalAspect] = useState<number>(1)
   const [isPortrait, setIsPortrait] = useState(false)
   const [blurComplete, setBlurComplete] = useState(false)
 

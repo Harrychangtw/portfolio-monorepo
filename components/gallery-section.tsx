@@ -84,44 +84,52 @@ export default function GallerySection() {
     <section ref={sectionRef} id="gallery" className="py-12 md:py-16">
       <div className="container">
         <h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('gallery.title')}</h2>
-        {isLoading ? (
-          <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]" >
+        <div 
+          className="w-full" 
+          style={{ 
+            minHeight: isLoading ? '800px' : 'auto',
+            transition: 'min-height 0.3s ease-out'
+          }}
+        >
+          {isLoading ? (
+            <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]" >
             <div className="flex-1 space-y-[var(--column-spacing)]">
-              {renderPlaceholderCard("80%", 1)}
-              {renderPlaceholderCard("125%", 2)}
+              {renderPlaceholderCard("100%", 1)}
+              {renderPlaceholderCard("100%", 2)}
             </div>
             
             <div className="flex-1 space-y-[var(--column-spacing)]">
-              {renderPlaceholderCard("125%", 3)}
-              {renderPlaceholderCard("80%", 4)}
+              {renderPlaceholderCard("100%", 3)}
+              {renderPlaceholderCard("100%", 4)}
             </div>
             
             <div className="flex-1 space-y-[var(--column-spacing)]">
-              {renderPlaceholderCard("80%", 5)}
-              {renderPlaceholderCard("125%", 6)}
+              {renderPlaceholderCard("100%", 5)}
+              {renderPlaceholderCard("100%", 6)}
             </div>
-          </div>
-        ) : (
-          <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]">
-            {layoutResult && layoutResult.columns.map((column, colIndex) => (
-              <div key={colIndex} className="flex-1 space-y-[var(--column-spacing)]">
-                {column.map((layoutItem) => (
-                  <GalleryCard
-                    key={layoutItem.item.slug}
-                    title={layoutItem.item.title}
-                    quote={layoutItem.item.quote}
-                    slug={layoutItem.item.slug}
-                    imageUrl={layoutItem.item.imageUrl}
-                    pinned={layoutItem.item.pinned}
-                    locked={layoutItem.item.locked}
-                    priority={layoutItem.itemIndex < 3}
-                    index={layoutItem.itemIndex}
-                  />
-                ))}
-              </div>
-            ))}
-          </div>
-        )}
+            </div>
+          ) : (
+            <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]">
+              {layoutResult && layoutResult.columns.map((column, colIndex) => (
+                <div key={colIndex} className="flex-1 space-y-[var(--column-spacing)]">
+                  {column.map((layoutItem) => (
+                    <GalleryCard
+                      key={layoutItem.item.slug}
+                      title={layoutItem.item.title}
+                      quote={layoutItem.item.quote}
+                      slug={layoutItem.item.slug}
+                      imageUrl={layoutItem.item.imageUrl}
+                      pinned={layoutItem.item.pinned}
+                      locked={layoutItem.item.locked}
+                      priority={layoutItem.itemIndex < 3}
+                      index={layoutItem.itemIndex}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   )

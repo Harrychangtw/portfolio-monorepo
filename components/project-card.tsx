@@ -83,8 +83,8 @@ export default function ProjectCard({
   const CardContent = (
     <>
       <div className="relative overflow-hidden bg-muted">
-        {/* Strict 3:2 aspect ratio container with proper dimensions */}
-        <div className="relative w-full aspect-[3/2]" style={{ paddingBottom: "66.67%" }}>
+        {/* Strict 3:2 aspect ratio container - use aspect-[3/2] only, remove redundant paddingBottom */}
+        <div className="relative w-full aspect-[3/2]">
           <div className="absolute inset-0">
             {shouldLoad ? (
               <>
