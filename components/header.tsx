@@ -66,35 +66,80 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
   useEffect(() => {
     if (isHomePage && window.location.hash) {
       const id = window.location.hash.substring(1)
-      const element = document.getElementById(id)
-      if (element) {
-        setTimeout(() => {
-           if(document.getElementById(id)) { // Check if element still exists
-             // Don't set isScrolling here, it's an initial load scroll
-             const element = document.getElementById(id);
-             if (element) {
-               const headerOffset = document.querySelector('header')?.offsetHeight || 0;
-               const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-               const offsetPosition = elementPosition - headerOffset;
-               window.scrollTo({
-                 top: offsetPosition,
-                 behavior: "smooth",
-               });
-             }
-             setActiveSection(id)
-           }
-        }, 150)
-      } else {
-        setActiveSection('about');
+      
+      // Function to check if section content is loaded
+      // For projects and gallery sections, check if they have actual content (not placeholders)
+      const isSectionLoaded = (sectionId: string): boolean => {
+        const element = document.getElementById(sectionId);
+        if (!element) return false;
+        
+        // For projects section, check if placeholder cards are gone
+        if (sectionId === 'projects') {
+          const placeholders = element.querySelectorAll('.animate-pulse');
+          return placeholders.length === 0;
+        }
+        
+        // For gallery section, check if shimmer placeholders are gone
+        if (sectionId === 'gallery') {
+          const placeholders = element.querySelectorAll('.animate-shimmer');
+          return placeholders.length === 0;
+        }
+        
+        // For other sections (about, updates), they're always ready
+        return true;
+      };
+      
+      // Function to scroll to section with proper alignment
+      const scrollToHashSection = () => {
+        const element = document.getElementById(id);
+        if (element && isSectionLoaded(id)) {
+          // Use the same scrolling logic as the navigation bar
+          const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+          
+          setActiveSection(id);
+          return true; // Successfully scrolled
+        }
+        return false; // Not ready yet
+      };
+      
+      // Try to scroll immediately if section is ready
+      if (!scrollToHashSection()) {
+        // If not ready, set up polling to check when content is loaded
+        let attempts = 0;
+        const maxAttempts = 50; // Max 5 seconds (50 * 100ms)
+        
+        const checkInterval = setInterval(() => {
+          attempts++;
+          
+          if (scrollToHashSection() || attempts >= maxAttempts) {
+            clearInterval(checkInterval);
+            
+            // If we hit max attempts and still couldn't scroll, at least set the active section
+            if (attempts >= maxAttempts) {
+              setActiveSection(id);
+            }
+          }
+        }, 500); // Check every 100ms
+        
+        // Cleanup interval on unmount
+        return () => clearInterval(checkInterval);
       }
     } else if (isHomePage && window.scrollY < 50) {
-         setActiveSection('about');
+      setActiveSection('about');
     }
+    
     // Cleanup timeout on component unmount or if isHomePage changes
     return () => {
-        if (scrollTimeoutRef.current) {
-            clearTimeout(scrollTimeoutRef.current);
-        }
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
     };
   }, [isHomePage])
 
