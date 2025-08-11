@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react"
 import ClickSpark from "@/components/ui/click-spark"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { LanguageProvider } from "@/contexts/LanguageContext"
+import { SectionLoadingProvider } from "@/components/lazy-section-loader"
 import VideoInitializer from "@/components/video-initializer"
 
 export default function ClientLayout({
@@ -17,23 +18,25 @@ export default function ClientLayout({
   
   return (
     <LanguageProvider>
-      <Header />
-      {isMobile ? (
-        children
-      ) : (
-        <ClickSpark
-          sparkColor="#ffffff"
-          sparkSize={8}
-          sparkRadius={15}
-          sparkCount={4}
-          duration={500}
-          extraScale={1.2}
-        >
-          {children}
-        </ClickSpark>
-      )}
-      <VideoInitializer />
-      <Analytics />
+      <SectionLoadingProvider>
+        <Header />
+        {isMobile ? (
+          children
+        ) : (
+          <ClickSpark
+            sparkColor="#ffffff"
+            sparkSize={8}
+            sparkRadius={15}
+            sparkCount={4}
+            duration={500}
+            extraScale={1.2}
+          >
+            {children}
+          </ClickSpark>
+        )}
+        <VideoInitializer />
+        <Analytics />
+      </SectionLoadingProvider>
     </LanguageProvider>
   )
 }
