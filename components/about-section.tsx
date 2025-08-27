@@ -38,7 +38,7 @@ export default function AboutSection() {
                   <p className="font-ibm-plex text-secondary">{t('roles.llmResearcher.period', 'about')}</p>
                 </div>
                 <div className="col-span-7">
-                  <p className="font-ibm-plex text-primary">{t('roles.llmResearcher.description', 'about')}</p>
+                  <p className="font-ibm-plex text-primary">{tHtml('roles.llmResearcher.description', 'about')}</p>
                 </div>
               </div>
 
