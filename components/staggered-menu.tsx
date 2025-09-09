@@ -1,7 +1,8 @@
 "use client"
 
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
+import { motion } from 'framer-motion';
 import { useLanguage } from "@/contexts/LanguageContext"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -56,6 +57,18 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const { t } = useLanguage()
   const pathname = usePathname()
 
+  // Ensure menu is closed on mount
+  useEffect(() => {
+    setOpen(false);
+    openRef.current = false;
+    
+    // Ensure panel is off-screen initially
+    if (panelRef.current) {
+      const offscreen = position === 'left' ? -100 : 100;
+      gsap.set(panelRef.current, { xPercent: offscreen });
+    }
+  }, []); // Run only on mount
+
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
   const preLayerElsRef = useRef<HTMLElement[]>([]);
@@ -98,7 +111,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       preLayerElsRef.current = preLayers;
 
       const offscreen = position === 'left' ? -100 : 100;
-      gsap.set([panel, ...preLayers], { xPercent: offscreen });
+      gsap.set([panel, ...preLayers], { xPercent: offscreen, immediateRender: true });
 
       // Ensure menu items are initially hidden
       const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[];
@@ -431,17 +444,19 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               {items && items.length ? (
                 items.map((it, idx) => (
                   <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
-                    <Link
-                      className="sm-panel-item relative text-foreground font-space-grotesk font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
-                      href={it.link}
-                      aria-label={it.ariaLabel}
-                      data-index={idx + 1}
-                      onClick={(e) => handleItemClick(it, e)}
-                    >
-                      <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
-                        {it.label}
-                      </span>
-                    </Link>
+                    <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                      <Link
+                        className="sm-panel-item relative text-foreground font-space-grotesk font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
+                        href={it.link}
+                        aria-label={it.ariaLabel}
+                        data-index={idx + 1}
+                        onClick={(e) => handleItemClick(it, e)}
+                      >
+                        <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
+                          {it.label}
+                        </span>
+                      </Link>
+                    </motion.div>
                   </li>
                 ))
               ) : (
