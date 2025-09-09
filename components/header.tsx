@@ -148,7 +148,7 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
             });
             
             setActiveSection(id);
-          }, 500); // Small delay for layout stabilization
+          }, 700); // Small delay for layout stabilization
           
           return true; // Successfully initiated scroll
         }
@@ -175,7 +175,7 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
       if (!scrollToHashSection()) {
         // If not ready, set up polling to check when content is loaded
         let attempts = 0;
-        const maxAttempts = 60; // Max 6 seconds (60 * 100ms)
+        const maxAttempts = 50; // Max 6 seconds (60 * 100ms)
         
         checkInterval = setInterval(() => {
           attempts++;
@@ -215,7 +215,7 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
               mutationObserver = null;
             }
           }
-        }, 500); // Check every 100ms
+        }, 800); // Check every 800ms 
       }
       
       // Cleanup function
