@@ -297,10 +297,13 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     openRef.current = target;
     setOpen(target);
 
+    // Control body scroll
     if (target) {
+      document.body.style.overflow = 'hidden';
       onMenuOpen?.();
       playOpen();
     } else {
+      document.body.style.overflow = '';
       onMenuClose?.();
       playClose();
     }
@@ -361,9 +364,17 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             transition={{ duration: 0.2 }}
           >
             {open && (
-              <span className="mr-2 whitespace-nowrap" aria-hidden="true" style={{ writingMode: 'horizontal-tb', textOrientation: 'mixed' }}>
-                {t('common.close') || 'Close'}
-              </span>
+              <motion.span 
+              className="mr-2 whitespace-nowrap" 
+              aria-hidden="true" 
+              style={{ writingMode: 'horizontal-tb', textOrientation: 'mixed' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+              {t('common.close') || 'Close'}
+              </motion.span>
             )}
 
             <span
