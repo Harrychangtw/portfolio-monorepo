@@ -7,6 +7,30 @@ import { XMLParser } from "fast-xml-parser";
 
 const ARXIV_API_URL = "http://export.arxiv.org/api/query?id_list=";
 
+export function getArxivPaperIds(): string[] {
+  const arxivPapersFile = path.join(process.cwd(), "content/arxiv-papers.md");
+  if (!fs.existsSync(arxivPapersFile)) {
+    return [];
+  }
+  
+  const fileContents = fs.readFileSync(arxivPapersFile, "utf8");
+  const { content } = matter(fileContents);
+  
+  // Extract paper IDs from the markdown content
+  const lines = content.split('\n');
+  const paperIds: string[] = [];
+  
+  for (const line of lines) {
+    const trimmedLine = line.trim();
+    // Check if line matches arxiv ID pattern (4 digits.5 digits)
+    if (/^\d{4}\.\d{5}$/.test(trimmedLine)) {
+      paperIds.push(trimmedLine);
+    }
+  }
+  
+  return paperIds;
+}
+
 export async function fetchArxivPapers(ids: string[]): Promise<Paper[]> {
   if (ids.length === 0) {
     return [];
