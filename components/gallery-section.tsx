@@ -12,6 +12,10 @@ export default function GallerySection() {
   const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const sectionRef = useRef<HTMLElement>(null)
+  
+  // Check if we should load immediately (when there's a hash in URL)
+  const shouldLoadImmediately = typeof window !== 'undefined' && window.location.hash === '#gallery'
+  
   const isVisible = useIntersectionObserver({
     elementRef: sectionRef as React.RefObject<Element>,
     rootMargin: '100px'
@@ -30,10 +34,11 @@ export default function GallerySection() {
       }
     }
 
-    if (isVisible) {
+    // Load immediately if hash is #gallery, otherwise wait for visibility
+    if (shouldLoadImmediately || isVisible) {
       fetchGalleryItems()
     }
-  }, [isVisible, language])
+  }, [isVisible, language, shouldLoadImmediately])
 
   // Handle pinned items (maintain their positions in the layout)
   const getPinnedItemsMap = (items: GalleryItemMetadata[]) => {

@@ -11,6 +11,11 @@ export default function ProjectsSection() {
   const [projects, setProjects] = useState<ProjectMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const sectionRef = useRef<HTMLElement>(null)
+  
+  // Load immediately if hash points to gallery or projects
+  const shouldLoadImmediately = typeof window !== 'undefined' && 
+    (window.location.hash === '#projects' || window.location.hash === '#gallery')
+  
   const isVisible = useIntersectionObserver({
     elementRef: sectionRef as React.RefObject<Element>,
     rootMargin: '100px'
@@ -29,10 +34,10 @@ export default function ProjectsSection() {
       }
     }
 
-    if (isVisible) {
+    if (shouldLoadImmediately || isVisible) {
       fetchProjects()
     }
-  }, [isVisible, language])
+  }, [isVisible, language, shouldLoadImmediately])
 
   return (
     <section ref={sectionRef} id="projects" className="py-12 md:py-16 border-b border-border">
