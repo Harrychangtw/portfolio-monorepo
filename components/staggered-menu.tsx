@@ -432,7 +432,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           id="staggered-menu-panel"
           ref={panelRef}
           className="staggered-menu-panel fixed top-0 right-0 h-screen bg-background flex flex-col p-[6em_2rem_2rem_2rem] overflow-y-auto z-10 backdrop-blur-[12px] border-l border-border"
-          style={{ WebkitBackdropFilter: 'blur(12px)' }}
+          style={{ 
+            WebkitBackdropFilter: 'blur(12px)',
+            visibility: open ? 'visible' : 'hidden'
+          }}
           aria-hidden={!open}
         >
           <div className="sm-panel-inner flex-1 flex flex-col gap-5">
