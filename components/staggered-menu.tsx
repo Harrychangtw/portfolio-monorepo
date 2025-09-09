@@ -77,14 +77,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const plusVRef = useRef<HTMLSpanElement | null>(null);
   const iconRef = useRef<HTMLSpanElement | null>(null);
 
-  const textInnerRef = useRef<HTMLSpanElement | null>(null);
-  const textWrapRef = useRef<HTMLSpanElement | null>(null);
-  const [textLines, setTextLines] = useState<string[]>(['Menu', t('common.close') || 'Close']);
-
   const openTlRef = useRef<gsap.core.Timeline | null>(null);
   const closeTweenRef = useRef<gsap.core.Tween | null>(null);
   const spinTweenRef = useRef<gsap.core.Timeline | null>(null);
-  const textCycleAnimRef = useRef<gsap.core.Tween | null>(null);
   const colorTweenRef = useRef<gsap.core.Tween | null>(null);
 
   const toggleBtnRef = useRef<HTMLButtonElement | null>(null);
@@ -100,9 +95,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       const plusH = plusHRef.current;
       const plusV = plusVRef.current;
       const icon = iconRef.current;
-      const textInner = textInnerRef.current;
 
-      if (!panel || !plusH || !plusV || !icon || !textInner) return;
+      if (!panel || !plusH || !plusV || !icon) return;
 
       let preLayers: HTMLElement[] = [];
       if (preContainer) {
@@ -129,8 +123,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
       gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
       gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
-
-      gsap.set(textInner, { yPercent: 0 });
 
       if (toggleBtnRef.current) gsap.set(toggleBtnRef.current, { color: menuButtonColor });
     });
@@ -297,35 +289,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   }, [changeMenuColorOnOpen, menuButtonColor, openMenuButtonColor]);
 
   const animateText = useCallback((opening: boolean) => {
-    const inner = textInnerRef.current;
-    if (!inner) return;
-
-    textCycleAnimRef.current?.kill();
-
-    const currentLabel = opening ? 'Menu' : t('common.close') || 'Close';
-    const targetLabel = opening ? t('common.close') || 'Close' : 'Menu';
-    const cycles = 3;
-
-    const seq: string[] = [currentLabel];
-    let last = currentLabel;
-    for (let i = 0; i < cycles; i++) {
-      last = last === 'Menu' ? (t('common.close') || 'Close') : 'Menu';
-      seq.push(last);
-    }
-    if (last !== targetLabel) seq.push(targetLabel);
-    seq.push(targetLabel);
-
-    setTextLines(seq);
-    gsap.set(inner, { yPercent: 0 });
-
-    const lineCount = seq.length;
-    const finalShift = ((lineCount - 1) / lineCount) * 100;
-
-    textCycleAnimRef.current = gsap.to(inner, {
-      yPercent: -finalShift,
-      duration: 0.5 + lineCount * 0.07,
-      ease: 'power4.out'
-    });
+    // This function can be removed or left empty
   }, [t]);
 
   const toggleMenu = useCallback(() => {
@@ -343,8 +307,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     animateIcon(target);
     animateColor(target);
-    animateText(target);
-  }, [playOpen, playClose, animateIcon, animateColor, animateText, onMenuOpen, onMenuClose]);
+  }, [playOpen, playClose, animateIcon, animateColor, onMenuOpen, onMenuClose]);
 
   const handleItemClick = (item: StaggeredMenuItem, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // Close the menu
@@ -398,18 +361,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             transition={{ duration: 0.2 }}
           >
             {open && (
-              <span
-                ref={textWrapRef}
-                className="sm-toggle-textWrap relative inline-block h-[1em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)] mr-2"
-                aria-hidden="true"
-              >
-                <span ref={textInnerRef} className="sm-toggle-textInner flex flex-col leading-none">
-                  {textLines.map((l, i) => (
-                    <span className="sm-toggle-line block h-[1em] leading-none" key={i}>
-                      {l}
-                    </span>
-                  ))}
-                </span>
+              <span className="mr-2 whitespace-nowrap" aria-hidden="true" style={{ writingMode: 'horizontal-tb', textOrientation: 'mixed' }}>
+                {t('common.close') || 'Close'}
               </span>
             )}
 
@@ -442,7 +395,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         >
           <div className="sm-panel-inner flex-1 flex flex-col gap-5">
             <ul
-              className="sm-panel-list list-none m-0 p-0 flex flex-col gap-2"
+              className="sm-panel-list list-none m-0 p-0 flex flex-col gap-4"
               role="list"
               data-numbering={displayItemNumbering || undefined}
             >
@@ -496,7 +449,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         .sm-scope .sm-panel-inner { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }
         .sm-scope .sm-panel-item:hover { color: var(--sm-accent, #D8F600); }
         .sm-scope .sm-panel-list[data-numbering] { counter-reset: smItem; }
-        .sm-scope .sm-panel-list[data-numbering] .sm-panel-item::after { counter-increment: smItem; content: counter(smItem, decimal-leading-zero); position: absolute; top: 0.1em; right: 3.2em; font-size: 18px; font-weight: 400; color: var(--sm-accent, #D8F600); letter-spacing: 0; pointer-events: none; user-select: none; opacity: var(--sm-num-opacity, 0); }
+        .sm-scope .sm-panel-list[data-numbering] .sm-panel-item::after { counter-increment: smItem; content: counter(smItem, decimal-leading-zero); display: inline-block; vertical-align: super; margin-left: 0.1em; font-size: 18px; font-weight: 700; color: var(--sm-accent, #D8F600); white-space: nowrap; pointer-events: none; user-select: none; opacity: var(--sm-num-opacity, 0); }
         @media (max-width: 1024px) { 
           .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } 
           .sm-scope .sm-prelayers { width: 100%; left: 0; right: 0; }

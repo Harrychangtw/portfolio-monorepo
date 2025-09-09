@@ -521,7 +521,7 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
       
       {/* Staggered Menu - Only show when original nav is hidden */}
       {showStaggeredMenu && (
-        <div className="fixed top-0 left-0 right-4 z-50 pointer-events-none">
+        <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
           <div className="container relative h-[64px] pointer-events-none">
             <div className="absolute top-4 right-4 pointer-events-auto">
               <StaggeredMenu
