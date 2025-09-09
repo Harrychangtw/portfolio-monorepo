@@ -346,7 +346,7 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
   };
 
   // Determine when to show the staggered menu
-  const showStaggeredMenu = isMobile || isPaperReadingPage || isManifestoPage;
+  const showStaggeredMenu = isMobile && !isPaperReadingPage && !isManifestoPage;
   
   // Menu items for the staggered menu
   const menuItems = [

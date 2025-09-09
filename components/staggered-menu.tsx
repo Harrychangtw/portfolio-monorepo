@@ -386,7 +386,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <div className="staggered-menu-toggle-container absolute top-0 right-0 z-20 pointer-events-auto">
-          <button
+          <motion.button
             ref={toggleBtnRef}
             className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-white font-space-grotesk font-medium leading-none overflow-visible p-2 hover:scale-105 transition-transform duration-200"
             aria-label={open ? t('common.closeMenu') || 'Close menu' : t('common.openMenu') || 'Open menu'}
@@ -394,6 +394,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             aria-controls="staggered-menu-panel"
             onClick={toggleMenu}
             type="button"
+            whileHover={{ y: -2 }}
+            transition={{ duration: 0.2 }}
           >
             {open && (
               <span
@@ -425,7 +427,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
               />
             </span>
-          </button>
+          </motion.button>
         </div>
 
         <aside
