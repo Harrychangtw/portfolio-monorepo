@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { useLanguage } from "@/contexts/LanguageContext"
 import LanguageSwitcher from "@/components/language-switcher"
+import StaggeredMenu from "@/components/staggered-menu"
 
 // Define smooth scroll duration (adjust as needed, keep consistent with timeout)
 const SCROLL_ANIMATION_DURATION = 800; // ms
@@ -344,6 +345,57 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
     return { className: baseClasses, href, onClick, scroll };
   };
 
+  // Determine when to show the staggered menu
+  const showStaggeredMenu = isMobile || isPaperReadingPage || isManifestoPage;
+  
+  // Menu items for the staggered menu
+  const menuItems = [
+    {
+      label: t('header.about'),
+      ariaLabel: t('header.about'),
+      link: '/#about',
+      sectionId: 'about'
+    },
+    {
+      label: t('header.updates'),
+      ariaLabel: t('header.updates'), 
+      link: '/#updates',
+      sectionId: 'updates'
+    },
+    {
+      label: t('header.projects'),
+      ariaLabel: t('header.projects'),
+      link: '/#projects',
+      sectionId: 'projects'
+    },
+    {
+      label: t('header.gallery'),
+      ariaLabel: t('header.gallery'),
+      link: '/#gallery', 
+      sectionId: 'gallery'
+    }
+  ];
+
+  // Social items for the staggered menu
+  const socialItems = [
+    {
+      label: t('social.gmail'),
+      link: 'mailto:haoyuchang@gmail.com'
+    },
+    {
+      label: t('social.github'),
+      link: 'https://github.com/Harrychangtw'
+    },
+    {
+      label: t('social.instagram'),
+      link: 'https://instagram.com/harrychangtw'
+    },
+    {
+      label: t('social.discord'),
+      link: 'https://discord.gg/harrychangtw'
+    }
+  ];
+
   return (
     <header 
       className="fixed top-0 left-0 right-0 border-b border-border py-4 z-50 bg-background"
@@ -433,7 +485,7 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
 
-          {/* Navigation - Only on desktop */}
+          {/* Navigation - Only on desktop and when not on special pages */}
           {!isMobile && !isPaperReadingPage && !isManifestoPage && (
             <>
               <nav className="flex space-x-8">
@@ -466,6 +518,30 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
           )}
         </motion.div>
       </div>
+      
+      {/* Staggered Menu - Only show when original nav is hidden */}
+      {showStaggeredMenu && (
+        <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+          <div className="container relative h-[64px] pointer-events-none">
+            <div className="absolute top-4 right-0 pointer-events-auto">
+              <StaggeredMenu
+                items={menuItems}
+                socialItems={socialItems}
+                accentColor="#D8F600"
+                menuButtonColor="#ffffff"
+                openMenuButtonColor="#ffffff"
+                displaySocials={true}
+                displayItemNumbering={false}
+                onSectionClick={(sectionId, event) => {
+                  if (isHomePage) {
+                    scrollToSection(sectionId, event);
+                  }
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   )
 }

@@ -82,5 +82,10 @@
     "line2": "But the wonder in a child's eyes.",
     "line3": "To burn twice as bright, though half as long,",
     "line4": "And answer the call: \"What worlds can this create?\""
+  },
+  "common": {
+    "close": "Close",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   }
 }
