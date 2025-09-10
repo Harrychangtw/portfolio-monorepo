@@ -34,11 +34,12 @@ export interface StaggeredMenuProps {
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
   onSectionClick?: (sectionId: string, event?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  onHeaderBackgroundToggle?: (isMenuOpen: boolean) => void;
 }
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = 'right',
-  colors = ['#D8F600', '#0A0A0A', '#1A1A1A'],
+  colors = ['#D8F600', '#0A0A0A'],
   items = [],
   socialItems = [],
   displaySocials = false,
@@ -50,7 +51,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   accentColor = '#D8F600',
   onMenuOpen,
   onMenuClose,
-  onSectionClick
+  onSectionClick,
+  onHeaderBackgroundToggle
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
@@ -156,7 +158,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     layerStates.forEach((ls, i) => {
       // First layer (accent) starts immediately, others are staggered
-      const delay = i === 0 ? 0 : i * 0.12;
+      const delay = i === 0 ? 0 : i * 0.15;
       tl.fromTo(ls.el, { xPercent: ls.start }, { 
         xPercent: 0, 
         duration: i === 0 ? 0.6 : 0.5, // Longer duration for accent to be more visible
@@ -165,9 +167,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     });
 
     // Calculate the correct last time based on actual delays used
-    const lastTime = layerStates.length ? (layerStates.length - 1) * 0.12 : 0;
-    const panelInsertTime = lastTime + 0.3; // Longer delay so accent is fully visible before panel
-    const panelDuration = 0.65;
+    const lastTime = layerStates.length ? (layerStates.length - 1) * 0.05 : 0;
+    const panelInsertTime = lastTime + 0.1; // Longer delay so accent is fully visible before panel
+    const panelDuration = 0.5;
 
     tl.fromTo(
       panel,
@@ -241,6 +243,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         ) as HTMLElement[];
         if (numberEls.length) gsap.set(numberEls, { ['--sm-num-opacity' as any]: 0 });
 
+        // Hide the panel only after the slide-out animation finishes
+        setOpen(false);
         busyRef.current = false;
       }
     });
@@ -302,22 +306,25 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const toggleMenu = useCallback(() => {
     const target = !openRef.current;
     openRef.current = target;
-    setOpen(target);
 
     // Control body scroll
     if (target) {
       document.body.style.overflow = 'hidden';
       onMenuOpen?.();
+      onHeaderBackgroundToggle?.(true);
+      // Make panel visible before playing the open animation
+      setOpen(true);
       playOpen();
     } else {
       document.body.style.overflow = '';
       onMenuClose?.();
+      onHeaderBackgroundToggle?.(false);
       playClose();
     }
 
     animateIcon(target);
     animateColor(target);
-  }, [playOpen, playClose, animateIcon, animateColor, onMenuOpen, onMenuClose]);
+  }, [playOpen, playClose, animateIcon, animateColor, onMenuOpen, onMenuClose, onHeaderBackgroundToggle]);
 
   const handleItemClick = (item: StaggeredMenuItem, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // Close the menu
@@ -338,12 +345,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       >
         <div
           ref={preLayersRef}
-          className="sm-prelayers absolute top-0 right-0 bottom-0 pointer-events-none z-[5]"
+          className="sm-prelayers fixed top-0 right-0 bottom-0 pointer-events-none z-[5]"
           aria-hidden="true"
         >
           {(() => {
             // Include mustard green as the first layer for accent effect
-            const raw = colors && colors.length ? colors : ['#D8F600', '#0A0A0A', '#1A1A1A'];
+            const raw = colors && colors.length ? colors : ['#D8F600', '#0A0A0A'];
             
             // Render layers with proper z-index so accent shows on top
             return raw.map((c, i) => (
@@ -353,7 +360,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 style={{ 
                   background: c,
                   // Reverse z-index so first layer (accent) is on top
-                  zIndex: raw.length - i,
+                  zIndex: 20 + (raw.length - i),
                   // Add a subtle opacity for the accent layer
                   opacity: i === 0 ? 0.95 : 1
                 }}
@@ -494,7 +501,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 2px; background: currentColor; border-radius: 2px; transform: translate(-50%, -50%); will-change: transform; }
         .sm-scope .staggered-menu-panel { width: clamp(280px, 40vw, 440px); }
         .sm-scope [data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
-        .sm-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(280px, 40vw, 440px); pointer-events: none; z-index: 5; }
+        .sm-scope .sm-prelayers { position: fixed; top: 0; right: 0; bottom: 0; width: clamp(280px, 40vw, 440px); pointer-events: none;}
         .sm-scope [data-position='left'] .sm-prelayers { right: auto; left: 0; }
         .sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; transform: translateX(0); }
         .sm-scope .sm-panel-inner { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }

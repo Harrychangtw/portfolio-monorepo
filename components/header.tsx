@@ -16,6 +16,7 @@ export default function Header() {
   const pathname = usePathname()
   const [activeSection, setActiveSection] = useState<string>("about")
   const [isScrolling, setIsScrolling] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const isHomePage = pathname === "/"
   const isPaperReadingPage = pathname?.startsWith('/paper-reading');
   const isManifestoPage = pathname?.startsWith('/manifesto');
@@ -398,7 +399,9 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
 
   return (
     <header 
-      className="fixed top-0 left-0 right-0 border-b border-border py-4 z-50 bg-background"
+      className={`fixed top-0 left-0 right-0 border-b border-border py-4 z-50 ${
+        isMenuOpen ? '' : 'bg-background'
+      }`}
     >
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
@@ -532,6 +535,8 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
                 openMenuButtonColor="#ffffff"
                 displaySocials={true}
                 displayItemNumbering={false}
+                onMenuOpen={() => setIsMenuOpen(true)}
+                onMenuClose={() => setIsMenuOpen(false)}
                 onSectionClick={(sectionId, event) => {
                   if (isHomePage) {
                     scrollToSection(sectionId, event);
