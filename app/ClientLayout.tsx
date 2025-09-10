@@ -7,6 +7,7 @@ import ClickSpark from "@/components/ui/click-spark"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { LanguageProvider } from "@/contexts/LanguageContext"
 import VideoInitializer from "@/components/video-initializer"
+import { useStableAnchor } from "@/hooks/use-stable-anchor"
 
 export default function ClientLayout({
   children,
@@ -14,7 +15,9 @@ export default function ClientLayout({
   children: React.ReactNode
 }>) {
   const isMobile = useIsMobile()
-  
+
+  useStableAnchor(["projects", "gallery"], "header")
+
   return (
     <LanguageProvider>
       <Header />
@@ -25,7 +28,7 @@ export default function ClientLayout({
           sparkColor="#ffffff"
           sparkSize={8}
           sparkRadius={15}
-          sparkCount={4}
+        sparkCount={4}
           duration={500}
           extraScale={1.2}
         >

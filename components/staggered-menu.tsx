@@ -307,8 +307,13 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const target = !openRef.current;
     openRef.current = target;
 
-    // Control body scroll
+    // Control body scroll - Lock/unlock scrolling
     if (target) {
+      // Store current scroll position to prevent jump on unlock
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
       onMenuOpen?.();
       onHeaderBackgroundToggle?.(true);
@@ -316,7 +321,15 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       setOpen(true);
       playOpen();
     } else {
+      // Restore scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
       onMenuClose?.();
       onHeaderBackgroundToggle?.(false);
       playClose();
@@ -343,31 +356,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         data-position={position}
         data-open={open || undefined}
       >
-        <div
-          ref={preLayersRef}
-          className="sm-prelayers fixed top-0 right-0 bottom-0 pointer-events-none z-[5]"
-          aria-hidden="true"
-        >
-          {(() => {
-            // Include mustard green as the first layer for accent effect
-            const raw = colors && colors.length ? colors : ['#D8F600', '#0A0A0A'];
-            
-            // Render layers with proper z-index so accent shows on top
-            return raw.map((c, i) => (
-              <div
-                key={i}
-                className="sm-prelayer absolute top-0 right-0 h-full w-full translate-x-0"
-                style={{ 
-                  background: c,
-                  // Reverse z-index so first layer (accent) is on top
-                  zIndex: 20 + (raw.length - i),
-                  // Add a subtle opacity for the accent layer
-                  opacity: i === 0 ? 0.95 : 1
-                }}
-              />
-            ));
-          })()}
-        </div>
+
 
         <div className="staggered-menu-toggle-container absolute top-0 right-0 z-20 pointer-events-auto">
           <motion.button
@@ -421,7 +410,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel fixed top-0 right-0 h-screen bg-background flex flex-col p-[6em_2rem_2rem_2rem] overflow-y-auto z-10 backdrop-blur-[12px] border-l border-border"
+          className="staggered-menu-panel fixed top-0 right-0 h-screen bg-background flex flex-col p-[6em_2rem_4rem_2rem] overflow-y-auto z-10 backdrop-blur-[12px]"
           style={{ 
             WebkitBackdropFilter: 'blur(12px)',
             visibility: open ? 'visible' : 'hidden'
@@ -468,7 +457,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             
             {/* Social Links Section */}
             {displaySocials && socialItems && socialItems.length > 0 && (
-              <div className="sm-panel-socials mt-auto pt-8 border-t border-border/20">
+              <div className="sm-panel-socials mt-auto pt-8 pb-8">
                 <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
                   {t('footer.socialContact') || 'Social & Contact'}
                 </h3>

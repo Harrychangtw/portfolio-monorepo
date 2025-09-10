@@ -8,6 +8,7 @@ import { useIsMobile } from "@/hooks/use-mobile"
 import { useLanguage } from "@/contexts/LanguageContext"
 import LanguageSwitcher from "@/components/language-switcher"
 import StaggeredMenu from "@/components/staggered-menu"
+import { useStableHashScroll } from "@/hooks/use-stable-hash-scroll"
 
 // Define smooth scroll duration (adjust as needed, keep consistent with timeout)
 const SCROLL_ANIMATION_DURATION = 800; // ms
@@ -23,6 +24,9 @@ export default function Header() {
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
   const { t } = useLanguage()
+  
+  // Use stable hash scroll hook for perfect alignment
+  useStableHashScroll("header")
 
   // Function to determine if a path corresponds to the current page or section
   const isActive = (sectionId: string) => activeSection === sectionId;
@@ -64,166 +68,11 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
     // If not on the home page, the Link's default href="/#id" will handle navigation.
   }
 
-  // Effect for handling initial load scroll based on hash
+  // Effect for handling initial load - simplified since useStableHashScroll handles hash navigation
   useEffect(() => {
     if (isHomePage && window.location.hash) {
       const id = window.location.hash.substring(1)
-      let hasScrolled = false; // Track if we've already performed the scroll
-      let mutationObserver: MutationObserver | null = null;
-      let checkInterval: NodeJS.Timeout | null = null;
-      
-      // Function to check if section content is loaded and images are rendered
-      // For projects and gallery sections, check if they have actual content (not placeholders)
-      const isSectionLoaded = (sectionId: string): boolean => {
-        const element = document.getElementById(sectionId);
-        if (!element) return false;
-        
-        // For projects section, check if placeholder cards are gone and images are loaded
-        if (sectionId === 'projects') {
-          const placeholders = element.querySelectorAll('.animate-pulse');
-          if (placeholders.length > 0) return false;
-          
-          // Also check if actual images are loaded (not just removed placeholders)
-          const images = element.querySelectorAll('img');
-          if (images.length === 0) return false; // No images yet
-          
-          // Check if at least some images have natural height (are loaded)
-          let loadedCount = 0;
-          images.forEach(img => {
-            if (img.naturalHeight > 0) loadedCount++;
-          });
-          // Consider loaded if at least 50% of images are loaded
-          return loadedCount >= Math.max(1, Math.floor(images.length * 0.5));
-        }
-        
-        // For gallery section, check if shimmer placeholders are gone and images are loaded
-        if (sectionId === 'gallery') {
-          const placeholders = element.querySelectorAll('.animate-shimmer');
-          if (placeholders.length > 0) return false;
-          
-          // Also check if actual images are loaded
-          const images = element.querySelectorAll('img');
-          if (images.length === 0) return false; // No images yet
-          
-          // Check if at least some images have natural height (are loaded)
-          let loadedCount = 0;
-          images.forEach(img => {
-            if (img.naturalHeight > 0) loadedCount++;
-          });
-          // Consider loaded if at least 50% of images are loaded
-          return loadedCount >= Math.max(1, Math.floor(images.length * 0.5));
-        }
-        
-        // For other sections (about, updates), they're always ready
-        return true;
-      };
-      
-      // Function to scroll to section with proper alignment
-      const scrollToHashSection = () => {
-        if (hasScrolled) return false; // Prevent multiple scrolls
-        
-        const element = document.getElementById(id);
-        if (element && isSectionLoaded(id)) {
-          hasScrolled = true; // Mark as scrolled
-          
-          // Clean up observers once we're ready to scroll
-          if (mutationObserver) {
-            mutationObserver.disconnect();
-            mutationObserver = null;
-          }
-          if (checkInterval) {
-            clearInterval(checkInterval);
-            checkInterval = null;
-          }
-          
-          // Small delay to ensure layout is stable after lazy loading
-          setTimeout(() => {
-            // Use the same scrolling logic as the navigation bar
-            const headerOffset = document.querySelector('header')?.offsetHeight || 0;
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - headerOffset;
-            
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth",
-            });
-            
-            setActiveSection(id);
-          }, 700); // Small delay for layout stabilization
-          
-          return true; // Successfully initiated scroll
-        }
-        return false; // Not ready yet
-      };
-      
-      // Set up MutationObserver to watch for content changes
-      const targetElement = document.getElementById(id);
-      if (targetElement && (id === 'projects' || id === 'gallery')) {
-        mutationObserver = new MutationObserver(() => {
-          // Check if section is now loaded whenever DOM changes
-          scrollToHashSection();
-        });
-        
-        mutationObserver.observe(targetElement, {
-          childList: true,
-          subtree: true,
-          attributes: true,
-          attributeFilter: ['class'] // Watch for class changes (animate-pulse/shimmer removal)
-        });
-      }
-      
-      // Try to scroll immediately if section is ready
-      if (!scrollToHashSection()) {
-        // If not ready, set up polling to check when content is loaded
-        let attempts = 0;
-        const maxAttempts = 50; // Max 6 seconds (60 * 100ms)
-        
-        checkInterval = setInterval(() => {
-          attempts++;
-          
-          if (scrollToHashSection() || attempts >= maxAttempts) {
-            if (checkInterval) {
-              clearInterval(checkInterval);
-              checkInterval = null;
-            }
-            
-            // If we hit max attempts and still couldn't scroll, at least try one final scroll
-            if (!hasScrolled && attempts >= maxAttempts) {
-              const element = document.getElementById(id);
-              if (element) {
-                hasScrolled = true;
-                // Force a final scroll attempt even if images aren't fully loaded
-                setTimeout(() => {
-                  const headerOffset = document.querySelector('header')?.offsetHeight || 0;
-                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-                  const offsetPosition = elementPosition - headerOffset;
-                  
-                  window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth",
-                  });
-                  
-                  setActiveSection(id);
-                }, 300);
-              } else {
-                setActiveSection(id);
-              }
-            }
-            
-            // Clean up observer
-            if (mutationObserver) {
-              mutationObserver.disconnect();
-              mutationObserver = null;
-            }
-          }
-        }, 800); // Check every 800ms 
-      }
-      
-      // Cleanup function
-      return () => {
-        if (checkInterval) clearInterval(checkInterval);
-        if (mutationObserver) mutationObserver.disconnect();
-      };
+      setActiveSection(id);
     } else if (isHomePage && window.scrollY < 50) {
       setActiveSection('about');
     }
@@ -244,6 +93,11 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
       // --- CRITICAL: Check isScrolling flag FIRST ---
       if (isScrolling) {
         // console.log("Skipping scroll update because isScrolling is true"); // Debugging
+        return;
+      }
+      
+      // --- CRITICAL: Skip scroll handling if menu is open ---
+      if (isMenuOpen) {
         return;
       }
       // --- END CRITICAL CHECK ---
