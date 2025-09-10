@@ -11,6 +11,7 @@ export default function GallerySection() {
   const { language, t } = useLanguage()
   const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [forceLoad, setForceLoad] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
   
   // Check if we should load immediately (when there's a hash in URL)
@@ -20,6 +21,15 @@ export default function GallerySection() {
     elementRef: sectionRef as React.RefObject<Element>,
     rootMargin: '100px'
   })
+
+  useEffect(() => {
+    const onForce = (e: Event) => {
+      const ce = e as CustomEvent<string>
+      if (ce.detail === "gallery") setForceLoad(true)
+    }
+    window.addEventListener("force-load-section", onForce as EventListener)
+    return () => window.removeEventListener("force-load-section", onForce as EventListener)
+  }, [])
 
   useEffect(() => {
     async function fetchGalleryItems() {
@@ -35,10 +45,10 @@ export default function GallerySection() {
     }
 
     // Load immediately if hash is #gallery, otherwise wait for visibility
-    if (shouldLoadImmediately || isVisible) {
+    if (shouldLoadImmediately || isVisible || forceLoad) {
       fetchGalleryItems()
     }
-  }, [isVisible, language, shouldLoadImmediately])
+  }, [isVisible, language, shouldLoadImmediately, forceLoad])
 
   // Handle pinned items (maintain their positions in the layout)
   const getPinnedItemsMap = (items: GalleryItemMetadata[]) => {

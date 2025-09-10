@@ -10,6 +10,7 @@ export default function ProjectsSection() {
   const { language, t } = useLanguage()
   const [projects, setProjects] = useState<ProjectMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [forceLoad, setForceLoad] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
   
   // Load immediately if hash points to gallery or projects
@@ -20,6 +21,15 @@ export default function ProjectsSection() {
     elementRef: sectionRef as React.RefObject<Element>,
     rootMargin: '100px'
   })
+
+  useEffect(() => {
+    const onForce = (e: Event) => {
+      const ce = e as CustomEvent<string>
+      if (ce.detail === "projects") setForceLoad(true)
+    }
+    window.addEventListener("force-load-section", onForce as EventListener)
+    return () => window.removeEventListener("force-load-section", onForce as EventListener)
+  }, [])
 
   useEffect(() => {
     async function fetchProjects() {
@@ -34,10 +44,10 @@ export default function ProjectsSection() {
       }
     }
 
-    if (shouldLoadImmediately || isVisible) {
+    if (shouldLoadImmediately || isVisible || forceLoad) {
       fetchProjects()
     }
-  }, [isVisible, language, shouldLoadImmediately])
+  }, [isVisible, language, shouldLoadImmediately, forceLoad])
 
   return (
     <section ref={sectionRef} id="projects" className="py-12 md:py-16 border-b border-border">
