@@ -399,9 +399,7 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 border-b border-border py-4 z-50 ${
-        isMenuOpen ? '' : 'bg-background'
-      }`}
+      className="fixed top-0 left-0 right-0 border-b border-border py-4 z-50 bg-background"
     >
       <div className="container flex justify-between items-center">
         <div className="flex items-center">

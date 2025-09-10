@@ -16,6 +16,8 @@ interface GalleryCardProps {
   locked?: boolean
   priority?: boolean
   index?: number
+  width?: number
+  height?: number
 }
 
 export default function GalleryCard({ 
@@ -26,7 +28,9 @@ export default function GalleryCard({
   pinned, 
   locked,
   priority = false,
-  index = 0
+  index = 0,
+  width,
+  height
 }: GalleryCardProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isVisible = useIntersectionObserver({
@@ -34,11 +38,25 @@ export default function GalleryCard({
     rootMargin: '50px'
   })
   const [imageLoaded, setImageLoaded] = useState(false)
-  // Use 100% (1:1) as default to match placeholders and prevent CLS
+  const [blurComplete, setBlurComplete] = useState(false)
+
+  // If we have width/height, calculate aspect ratio immediately to prevent CLS
+  const haveDims = !!width && !!height
+  const constrained = (() => {
+    if (!haveDims) return { w: 1, h: 1, isPortrait: false }
+    const raw = width! / height!
+    const maxLandscapeRatio = 1.25 // 5:4
+    const minPortraitRatio = 0.8   // 4:5
+    let ratio = raw
+    if (raw < minPortraitRatio) ratio = minPortraitRatio
+    else if (raw > maxLandscapeRatio) ratio = maxLandscapeRatio
+    return { w: ratio, h: 1, isPortrait: ratio < 1 }
+  })()
+
+  // Fallback dynamic measurement for cases without metadata dimensions
   const [aspectRatio, setAspectRatio] = useState("100%")
   const [originalAspect, setOriginalAspect] = useState<number>(1)
   const [isPortrait, setIsPortrait] = useState(false)
-  const [blurComplete, setBlurComplete] = useState(false)
 
   // Get the full resolution image URL and thumbnail
   const fullImageUrl = imageUrl?.replace('-thumb.webp', '.webp')
@@ -52,9 +70,9 @@ export default function GalleryCard({
     }
   }
 
-  // Detect original image dimensions when possible
+  // Detect original image dimensions when possible (only as fallback if no metadata)
   useEffect(() => {
-    if (!isVisible && !priority) return
+    if (haveDims || (!isVisible && !priority)) return
 
     if (typeof window !== 'undefined') {
       const imgElement = new window.Image()
@@ -88,7 +106,7 @@ export default function GalleryCard({
       
       imgElement.src = imageUrl || "/placeholder.svg"
     }
-  }, [imageUrl, isVisible, priority])
+  }, [imageUrl, isVisible, priority, haveDims])
 
   const shouldLoad = isVisible || priority || index < 6 // Load first 6 images immediately
 
@@ -117,7 +135,7 @@ export default function GalleryCard({
             {/* Border overlay */}
             <div 
               className={`absolute inset-0 z-10 pointer-events-none ${
-                isPortrait 
+                (haveDims ? constrained.isPortrait : isPortrait)
                   ? "border-t-4 border-b-4 border-white" 
                   : "border-l-4 border-r-4 border-white"
               }`}
@@ -126,7 +144,13 @@ export default function GalleryCard({
             {/* Image container */}
             <div 
               className="relative w-full overflow-hidden" 
-              style={{ paddingBottom: aspectRatio }}
+              style={
+                haveDims
+                  // Use aspect-ratio to prevent CLS immediately
+                  ? { aspectRatio: `${constrained.w} / ${constrained.h}` }
+                  // Fallback if dims not available (rare)
+                  : { paddingBottom: aspectRatio }
+              }
             >
               <div className="absolute inset-0 w-full h-full">
                 {shouldLoad && (
@@ -137,7 +161,10 @@ export default function GalleryCard({
                         alt={title}
                         fill
                         className={`transition-all duration-700 ease-in-out group-hover:brightness-95 ${
-                          (isPortrait && originalAspect < 0.8) || (!isPortrait && originalAspect > 1.25)
+                          (haveDims ? constrained.isPortrait : isPortrait) && 
+                          (haveDims ? (width! / height!) < 0.8 : originalAspect < 0.8) ||
+                          (!haveDims ? !isPortrait : !constrained.isPortrait) && 
+                          (haveDims ? (width! / height!) > 1.25 : originalAspect > 1.25)
                             ? "object-contain" : "object-cover"
                         } object-center ${blurComplete ? 'opacity-0' : 'opacity-100'}`}
                         sizes={thumbnailSizes}
@@ -150,7 +177,10 @@ export default function GalleryCard({
                       alt={title}
                       fill
                       className={`transition-all duration-700 ease-in-out group-hover:brightness-95 ${
-                        (isPortrait && originalAspect < 0.8) || (!isPortrait && originalAspect > 1.25)
+                        (haveDims ? constrained.isPortrait : isPortrait) && 
+                        (haveDims ? (width! / height!) < 0.8 : originalAspect < 0.8) ||
+                        (!haveDims ? !isPortrait : !constrained.isPortrait) && 
+                        (haveDims ? (width! / height!) > 1.25 : originalAspect > 1.25)
                           ? "object-contain" : "object-cover"
                       } object-center ${blurComplete ? 'opacity-100' : 'opacity-0'}`}
                       sizes={fullImageSizes}
