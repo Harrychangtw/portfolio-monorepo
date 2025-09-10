@@ -85,7 +85,7 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
         window.dispatchEvent(new CustomEvent("force-load-section", { detail: id }))
 
         // Tiny retry to correct any CLS while content starts streaming in
-        ensurePreciseAlign(id, 400)
+        ensurePreciseAlign(id, 500)
 
         // 4. Set timeout to reset scrolling flag *after* scroll likely finishes
         scrollTimeoutRef.current = setTimeout(() => {
