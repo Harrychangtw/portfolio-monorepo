@@ -2,9 +2,9 @@
   "header": {
     "name": "Harry Chang",
     "about": "關於我",
-    "updates": "快訊",
-    "projects": "專案",
-    "gallery": "攝影畫廊",
+    "updates": "最新動態",
+    "projects": "精選專案",
+    "gallery": "攝影作品",
     "paperReading": "論文閱讀清單",
     "manifesto": "理念"
   },
@@ -13,7 +13,7 @@
     "personalResources": "個人資源",
     "copyright": "Harry Chang 2025 © Under CC BY 4.0",
     "portraitDisclaimer": "尊重肖像權。如需移除請聯繫",
-    "version": "V2.2.0 | 最後更新：2025年8月",
+    "version": "V2.2.1 | 最後更新：2025 年 9 月",
     "languageSwitch": "語言"
   },
   "about": {
@@ -22,10 +22,10 @@
     "description": "描述"
   },
   "updates": {
-    "title": "快訊"
+    "title": "最新動態"
   },
   "projects": {
-    "title": "專案",
+    "title": "精選專案",
     "backToProjects": "回到專案",
     "noProjectsFound": "未找到專案。",
     "year": "年份",
@@ -35,9 +35,9 @@
     "website": "網站"
   },
   "gallery": {
-    "title": "攝影畫廊",
-    "backToGallery": "回到畫廊",
-    "noGalleryFound": "未找到畫廊項目。",
+    "title": "攝影作品",
+    "backToGallery": "回到攝影作品",
+    "noGalleryFound": "未找到攝影作品項目。",
     "camera": "相機",
     "lens": "鏡頭",
     "location": "位置",
