@@ -41,7 +41,7 @@
   /* For 3-column layout: gap should be proportional to column width */
   /* At 1440px viewport: ~24px gap (1.67% of viewport) */
   /* At smaller sizes: scales proportionally */
-  --column-spacing: max(1rem, 0.33vw);
+  --column-spacing: max(0.5rem, 0.2vw);
 }
 
 @layer base {
