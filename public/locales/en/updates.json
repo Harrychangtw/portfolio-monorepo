@@ -1,6 +1,10 @@
 {
   "entries": [
     {
+      "date": "2025-09-10",
+      "text": "[Update] Introduced a dedicated mobile staggered menu with additional QoL improvements related to scrolling behaviours."
+    },
+    {
       "date": "2025-08-08",
       "text": "[Update] Wrote photography annotations for every gallery post, check them out!"
     },

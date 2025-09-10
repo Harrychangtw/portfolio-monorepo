@@ -38,7 +38,7 @@ export interface StaggeredMenuProps {
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = 'right',
-  colors = ['#0A0A0A', '#0A0A0A'],
+  colors = ['#D8F600', '#0A0A0A', '#1A1A1A'],
   items = [],
   socialItems = [],
   displaySocials = false,
@@ -155,11 +155,18 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     const tl = gsap.timeline({ paused: true });
 
     layerStates.forEach((ls, i) => {
-      tl.fromTo(ls.el, { xPercent: ls.start }, { xPercent: 0, duration: 0.5, ease: 'power4.out' }, i * 0.07);
+      // First layer (accent) starts immediately, others are staggered
+      const delay = i === 0 ? 0 : i * 0.12;
+      tl.fromTo(ls.el, { xPercent: ls.start }, { 
+        xPercent: 0, 
+        duration: i === 0 ? 0.6 : 0.5, // Longer duration for accent to be more visible
+        ease: 'power4.out' 
+      }, delay);
     });
 
-    const lastTime = layerStates.length ? (layerStates.length - 1) * 0.07 : 0;
-    const panelInsertTime = lastTime + (layerStates.length ? 0.08 : 0);
+    // Calculate the correct last time based on actual delays used
+    const lastTime = layerStates.length ? (layerStates.length - 1) * 0.12 : 0;
+    const panelInsertTime = lastTime + 0.3; // Longer delay so accent is fully visible before panel
     const panelDuration = 0.65;
 
     tl.fromTo(
@@ -335,17 +342,21 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           aria-hidden="true"
         >
           {(() => {
-            const raw = colors && colors.length ? colors.slice(0, 4) : ['#0A0A0A', '#1A1A1A'];
-            let arr = [...raw];
-            if (arr.length >= 3) {
-              const mid = Math.floor(arr.length / 2);
-              arr.splice(mid, 1);
-            }
-            return arr.map((c, i) => (
+            // Include mustard green as the first layer for accent effect
+            const raw = colors && colors.length ? colors : ['#D8F600', '#0A0A0A', '#1A1A1A'];
+            
+            // Render layers with proper z-index so accent shows on top
+            return raw.map((c, i) => (
               <div
                 key={i}
                 className="sm-prelayer absolute top-0 right-0 h-full w-full translate-x-0"
-                style={{ background: c }}
+                style={{ 
+                  background: c,
+                  // Reverse z-index so first layer (accent) is on top
+                  zIndex: raw.length - i,
+                  // Add a subtle opacity for the accent layer
+                  opacity: i === 0 ? 0.95 : 1
+                }}
               />
             ));
           })()}
@@ -441,6 +452,32 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 </li>
               )}
             </ul>
+            
+            {/* Social Links Section */}
+            {displaySocials && socialItems && socialItems.length > 0 && (
+              <div className="sm-panel-socials mt-auto pt-8 border-t border-border/20">
+                <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+                  {t('footer.socialContact') || 'Social & Contact'}
+                </h3>
+                <ul className="list-none m-0 p-0 flex flex-wrap gap-6" role="list">
+                  {socialItems.map((social, idx) => (
+                    <li key={social.label + idx}>
+                      <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                        <a
+                          href={social.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-ibm-plex text-primary text-base transition-colors duration-200 ease-linear hover:text-[var(--sm-accent)]"
+                          aria-label={social.label}
+                        >
+                          {social.label}
+                        </a>
+                      </motion.div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </aside>
       </div>
