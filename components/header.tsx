@@ -9,7 +9,6 @@ import { useLanguage } from "@/contexts/LanguageContext"
 import LanguageSwitcher from "@/components/language-switcher"
 import StaggeredMenu from "@/components/staggered-menu"
 import { useStableHashScroll } from "@/hooks/use-stable-hash-scroll"
-import { stableScrollToId } from "@/utils/stable-scroll"
 
 // Define smooth scroll duration (adjust as needed, keep consistent with timeout)
 const SCROLL_ANIMATION_DURATION = 800; // ms
@@ -33,16 +32,40 @@ export default function Header() {
   const isActive = (sectionId: string) => activeSection === sectionId;
 
   const scrollToSection = (id: string, event?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    if (!isHomePage) return // let Link handle navigation for other pages
+    // Clear any existing scroll timeout to prevent premature resetting of isScrolling
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
 
-    event?.preventDefault()
+    // If we are already on the home page, prevent navigation and scroll
+    if (isHomePage) {
+      event?.preventDefault(); // Prevent default link behavior only if already home
+      const element = document.getElementById(id)
+      if (element) {
+        // 1. Set scrolling flag immediately
+        setIsScrolling(true)
+        // 2. Set active section immediately for instant underline feedback
+        setActiveSection(id)
 
-    setIsScrolling(true)
-    setActiveSection(id)
+        // 3. Start scroll
+const headerOffset = document.querySelector('header')?.offsetHeight || 0;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
 
-    // Persistent, precise alignment while layout settles; also updates the URL hash
-    stableScrollToId(id, { headerSelector: "header", setHash: true })
-        .finally(() => setIsScrolling(false))
+        // 4. Set timeout to reset scrolling flag *after* scroll likely finishes
+        scrollTimeoutRef.current = setTimeout(() => {
+          setIsScrolling(false)
+          scrollTimeoutRef.current = null; // Clear the ref
+          // Optional: Re-verify position after scroll in case it overshot slightly
+          // handleScroll(); // Be cautious if enabling this, could cause loops if not careful
+        }, SCROLL_ANIMATION_DURATION + 100) // Add a small buffer
+      }
+    }
+    // If not on the home page, the Link's default href="/#id" will handle navigation.
   }
 
   // Effect for handling initial load - simplified since useStableHashScroll handles hash navigation
