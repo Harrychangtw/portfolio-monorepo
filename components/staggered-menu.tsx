@@ -2,7 +2,7 @@
 
 import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from "@/contexts/LanguageContext"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -381,19 +381,25 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             whileHover={{ y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            {open && (
-              <motion.span 
-              className="mr-2 whitespace-nowrap" 
-              aria-hidden="true" 
-              style={{ writingMode: 'horizontal-tb', textOrientation: 'mixed' }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-              {t('common.close') || 'Close'}
-              </motion.span>
-            )}
+            <AnimatePresence mode="wait">
+              {open && (
+                <motion.span 
+                key="close-text"
+                className="mr-2 whitespace-nowrap" 
+                aria-hidden="true" 
+                style={{ writingMode: 'horizontal-tb', textOrientation: 'mixed' }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ 
+                  duration: 0.3, 
+                  ease: "easeOut"
+                }}
+                >
+                {t('common.close') || 'Close'}
+                </motion.span>
+              )}
+            </AnimatePresence>
 
             <span
               ref={iconRef}
