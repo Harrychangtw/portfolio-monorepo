@@ -87,3 +87,14 @@ export async function getManualPapers(): Promise<Paper[]> {
     };
   });
 }
+
+export function getPrebuiltPapers(): Paper[] {
+  const file = path.join(process.cwd(), "content/generated/papers.json");
+  if (!fs.existsSync(file)) return [];
+  try {
+    const raw = fs.readFileSync(file, "utf8");
+    return JSON.parse(raw) as Paper[];
+  } catch {
+    return [];
+  }
+}

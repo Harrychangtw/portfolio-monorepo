@@ -1,18 +1,26 @@
-import { fetchArxivPapers, getManualPapers, getArxivPaperIds } from "@/lib/arxiv";
+import { fetchArxivPapers, getManualPapers, getArxivPaperIds, getPrebuiltPapers } from "@/lib/arxiv";
 import { Paper } from "@/types/paper";
 import PaperReadingPageClient from "@/components/paper-reading-page-client";
+
 export default async function PaperReadingPage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const arxivPaperIds = getArxivPaperIds();
-  const arxivPapers = await fetchArxivPapers(arxivPaperIds);
-  const manualPapers = await getManualPapers();
+  // Try prebuilt cache first (build-time fetch)
+  let allPapers: Paper[] = getPrebuiltPapers();
 
-  const allPapers: Paper[] = [...arxivPapers, ...manualPapers].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  // Fallback for local dev if cache missing
+  if (!allPapers.length) {
+    const arxivPaperIds = getArxivPaperIds();
+    const [arxivPapers, manualPapers] = await Promise.all([
+      fetchArxivPapers(arxivPaperIds),
+      getManualPapers()
+    ]);
+    allPapers = [...arxivPapers, ...manualPapers].sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+  }
 
   const pageParam = await searchParams;
   const page = pageParam["page"] ?? "1";

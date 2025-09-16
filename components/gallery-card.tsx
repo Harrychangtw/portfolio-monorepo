@@ -123,8 +123,8 @@ export default function GalleryCard({
       ref={containerRef}
       className="group relative"
       whileHover={{ 
-        scale: 0.99,
-        transition: { duration: 0.3, ease: "easeInOut" }
+        scale: 0.98,
+        transition: { duration: 0.2, ease: "easeInOut" }
       }}
       onHoverStart={prefetchFullImage}
     >

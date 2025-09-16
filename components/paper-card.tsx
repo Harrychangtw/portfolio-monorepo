@@ -17,9 +17,9 @@ export default function PaperCard({ paper }: PaperCardProps) {
   return (
     <motion.div 
       className="border-b border-border py-4"
-      whileHover={{ 
-        scale: 1.01,
-        transition: { duration: 0.1 }
+      whileHover={{
+        scale: 0.98,
+        transition: { duration: 0.2, ease: "easeInOut"}
       }}
     >
       <h3 className="text-lg font-semibold">

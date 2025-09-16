@@ -151,8 +151,8 @@ export default function ProjectCard({
       ref={containerRef}
       className="group relative flex flex-col"
       whileHover={!locked ? {
-        scale: 0.99,
-        transition: { duration: 0.3, ease: "easeInOut" }
+        scale: 0.98,
+        transition: { duration: 0.2, ease: "easeInOut" }
       } : {}}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}

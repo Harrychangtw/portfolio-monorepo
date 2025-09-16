@@ -1,9 +1,10 @@
 {
   "name": "harry-chang-portfolio",
-  "version": "0.1.0",
+  "version": "2.2.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/build-papers.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
