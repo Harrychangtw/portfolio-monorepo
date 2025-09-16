@@ -436,6 +436,45 @@
     "source": "arxiv"
   },
   {
+    "title": "Llama Guard 3-1B-INT4: Compact and Efficient Safeguard for Human-AI\n  Conversations",
+    "authors": [
+      "Igor Fedorov",
+      "Kate Plawiak",
+      "Lemeng Wu",
+      "Tarek Elgamal",
+      "Naveen Suda",
+      "Eric Smith",
+      "Hongyuan Zhan",
+      "Jianfeng Chi",
+      "Yuriy Hulovatyy",
+      "Kimish Patel",
+      "Zechun Liu",
+      "Changsheng Zhao",
+      "Yangyang Shi",
+      "Tijmen Blankevoort",
+      "Mahesh Pasupuleti",
+      "Bilge Soran",
+      "Zacharie Delpierre Coudert",
+      "Rachad Alao",
+      "Raghuraman Krishnamoorthi",
+      "Vikas Chandra"
+    ],
+    "date": "2024-11-18T21:42:17Z",
+    "url": "http://arxiv.org/abs/2411.17713v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "When are 1.58 bits enough? A Bottom-up Exploration of BitNet\n  Quantization",
+    "authors": [
+      "Jacob Nielsen",
+      "Lukas Galke",
+      "Peter Schneider-Kamp"
+    ],
+    "date": "2024-11-08T07:24:49Z",
+    "url": "http://arxiv.org/abs/2411.05882v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Embedding-based classifiers can detect prompt injection attacks",
     "authors": [
       "Md. Ahsan Ayub",
@@ -991,6 +1030,21 @@
     ],
     "date": "2023-10-31T22:22:10Z",
     "url": "http://arxiv.org/abs/2311.00172v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Improving Few-shot Generalization of Safety Classifiers via Data\n  Augmented Parameter-Efficient Fine-Tuning",
+    "authors": [
+      "Ananth Balashankar",
+      "Xiao Ma",
+      "Aradhana Sinha",
+      "Ahmad Beirami",
+      "Yao Qin",
+      "Jilin Chen",
+      "Alex Beutel"
+    ],
+    "date": "2023-10-25T19:57:07Z",
+    "url": "http://arxiv.org/abs/2310.16959v1",
     "source": "arxiv"
   },
   {

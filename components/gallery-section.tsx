@@ -137,6 +137,8 @@ export default function GallerySection() {
                       locked={layoutItem.item.locked}
                       priority={layoutItem.itemIndex < 3}
                       index={layoutItem.itemIndex}
+                      width={layoutItem.item.width}       
+                      height={layoutItem.item.height}     
                     />
                   ))}
                 </div>

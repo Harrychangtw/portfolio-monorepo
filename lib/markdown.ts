@@ -5,6 +5,7 @@ import { remark } from "remark"
 import html from "remark-html"
 import { visit } from "unist-util-visit"
 import type { Image as MdastImage, Root, HTML } from "mdast"
+import { imageSize } from "image-size"
 
 // Define the directories
 const projectsDirectory = path.join(process.cwd(), "content/projects")
@@ -48,6 +49,22 @@ function getFullResolutionPath(imagePath: string): string {
   
   // Remove thumbnail suffix if present
   return imagePath.replace('-thumb.webp', '.webp');
+}
+
+// Helper to map web path -> file on disk, then read dimensions
+function getDimsFromWebPath(webPath: string): { width: number; height: number } | null {
+  try {
+    if (!webPath || webPath.startsWith('http')) return null
+    const fullRes = getFullResolutionPath(webPath) // ensures optimized + removes -thumb
+    const absPath = path.join(process.cwd(), 'public', fullRes.replace(/^\//, ''))
+    if (!fs.existsSync(absPath)) return null
+    const buffer = fs.readFileSync(absPath)
+    const res = imageSize(buffer)
+    if (!res?.width || !res?.height) return null
+    return { width: res.width, height: res.height }
+  } catch {
+    return null
+  }
 }
 
 export interface ProjectMetadata {
@@ -95,6 +112,8 @@ export interface GalleryItemMetadata {
   locked?: boolean
   aspectType?: string // 'v' for vertical (4:5) or 'h' for horizontal (5:4)
   aspectRatio?: number
+  width?: number          // Added for build-time dimension detection
+  height?: number         // Added for build-time dimension detection
 }
 
 // Ensure content directories exist
@@ -277,6 +296,14 @@ let fileNames = fs.readdirSync(galleryDirectory)
         const data = matterResult.data as Omit<GalleryItemMetadata, "slug">;
         if (data.imageUrl) {
           data.imageUrl = getThumbnailPath(data.imageUrl);
+          const dims = getDimsFromWebPath(data.imageUrl)  // ADD: compute once here
+          if (dims) {
+            data.width = dims.width
+            data.height = dims.height
+            const ratio = dims.width / dims.height
+            data.aspectRatio = Number(ratio.toFixed(4))
+            data.aspectType = ratio < 1 ? 'v' : 'h'
+          }
         }
 
         // Combine the data with the slug
@@ -376,6 +403,18 @@ export async function getGalleryItemData(slug: string) {
     // Ensure the main imageUrl has a leading slash for absolute path
     if (data.imageUrl && !data.imageUrl.startsWith('/') && !data.imageUrl.startsWith('http')) {
       data.imageUrl = '/' + data.imageUrl;
+    }
+    
+    // Add dimension detection for main image
+    if (data.imageUrl) {
+      const dims = getDimsFromWebPath(data.imageUrl)
+      if (dims) {
+        data.width = dims.width
+        data.height = dims.height
+        const ratio = dims.width / dims.height
+        data.aspectRatio = Number(ratio.toFixed(4))
+        data.aspectType = ratio < 1 ? 'v' : 'h'
+      }
     }
     
     // Process gallery images to include thumbnailUrl and ensure consistent URL format
