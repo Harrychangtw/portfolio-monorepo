@@ -1,0 +1,109 @@
+---
+title: "FORTRESS 防禦系統"
+category: "學術研究"
+subcategory: "LLM 安全"
+description: ""
+imageUrl: "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
+year: "2025"
+date: "2025-07-04"
+role: "第一作者"
+pinned: 1
+featured: true
+locked: true
+tooltip: "論文在 TMLR 審稿中"
+---
+
+大型語言模型（LLM）的世界正處於不斷變動的狀態。隨著模型變得越來越強大，用來攻擊它們的方法也日益精進。對於開發者和研究人員來說，確保 LLM 的安全性就像一場永無止境的貓捉老鼠遊戲。現有的安全分類器通常需要耗費大量資源進行 fine-tuning，這種運算成本高昂的方法在面對層出不窮的新型攻擊手法時顯得脆弱，且需要昂貴且耗時的訓練週期。
+
+今天，我很榮幸能向各位介紹 LLM 安全領域的一個新範式，也是我最新的獨立第一作者研究論文，發表於 TMLR：**FORTRESS**。
+
+### 什麼是 FORTRESS？
+
+FORTRESS 是一個高速、**無需訓練** 的 LLM 輸入安全分類系統。它透過在單一、高效的架構中整合向量檢索與動態困惑度（perplexity）分析，克服了先前文獻的限制。FORTRESS 的核心是利用單一、輕量的 instruction-tuned 語言模型（如 Gemma 或 Qwen）同時進行向量嵌入生成與 perplexity 分析，以最小的運算開銷確保強大的效能。
+
+這種以資料為中心的設計意味著 FORTRESS 透過簡單的資料注入就能適應新興威脅，而非昂貴的模型訓練，為 LLM 安全提供了一個實用、可擴展且穩健的解決方案。
+
+### FORTRESS 的優勢
+
+與現有的分類器相比，FORTRESS 提供了可擴展性、高效率與領先效能的獨特組合。
+
+1.  **無需訓練且可擴展：** LLM 安全是一個不斷演變的領域。現有方法難以應對新型攻擊技術，而要彌補這些防禦缺口需要進行昂貴的訓練。與此形成鮮明對比的是，擴展 FORTRESS 就像將新資料加入到其向量資料庫一樣簡單，無需任何其他修改。這種方法不僅能有效防禦新攻擊，還能確保在既有 benchmark 上的效能惡化降至最低。
+
+2.  **高運算效率：** 輕量級語言模型的興起推動了外部安全防護機制的發展，這些機制旨在將額外開銷及降至最低。FORTRESS 使用小至 0.6B 參數的模型，就能達到遠超其規模的模型的結果。
+
+3.  **領先的效能：** FORTRESS 的表現持續優於現有模型。表現最好的配置在九個橫跨不同語言與攻擊手法的安全 benchmark 上取得了平均 **91.6% 的 F1 unsafe score**，同時運作速度比先前領先的分類器**快上五倍**。
+
+---
+
+### FORTRESS 的運作原理：深入解析架構
+
+FORTRESS 採用一個兩階段偵測流程，結合了互補的分析技術。接著，一個動態集成策略（dynamic ensemble strategy）會權衡這些信號，以產生最終的分類結果。
+
+![FORTRESS 系統架構圖，說明了資料策展、資料擴展與偵測流水線階段。使用者輸入由 LLM 引擎處理，以生成用於主要向量搜尋的向量嵌入與用於次要困惑度分析的 log-probabilities。](images/optimized/projects/2025_07_04_fortress_system/fortress_system_diagram.webp)
+
+好的，這份是根據您提供的風格與詞彙接續翻譯的剩餘部分。
+
+---
+
+#### 1. 主要偵測器：向量檢索
+
+第一階段會評估使用者 prompt 與一個經過策展的向量資料庫之間的向量相似度。
+
+*   **向量嵌入生成：** 使用單一的 instruction-tuned LLM（例如 Qwen、Gemma）從模型的 hidden states 中提取一個密集的向量嵌入。
+
+*   **相似度搜尋：** 一個 ChromaDB 向量資料庫會執行 k-Nearest Neighbors 搜尋，從資料庫中檢索向量上最相似的前例，從而形成關於查詢安全性的初步假設。
+
+#### 2. 次要分析器：動態困惑度分析
+
+第二階段評估查詢的語言典型性，這種方法對於偵測那些可能不存在於向量資料庫中的新型或 zero-day attacks 特別有效。
+
+雖然基於 perplexity 的偵測並非新技術，但 FORTRESS 的一項核心創新是使用**動態、依類別劃分的 perplexity 閥值**。分析器的參數並非使用單一的全域臨界值，而是針對 20 個安全與不安全的類別（例如 `s1_violent_crimes`、`content_creation`）進行預先校準。這使得系統能夠根據每個主題獨特的語言特性調整其敏感度，解決了單一靜態臨界值對於創意內容來說過於嚴格、但對於複雜的攻擊來說又過於寬鬆的傳統困境。
+
+#### 3. 動態集成策略
+
+最終的分類由一個加權多數決決定，結合了來自主要與次要偵測器的信號。該策略的關鍵優勢在於它會根據檢索結果的一致性動態調整權重。
+
+*   如果檢索到的 prompts 是同質的（例如，全部標記為不安全），系統會優先考慮強烈的向量信號。
+*   如果檢索到的 prompts 存在衝突，系統會重新平衡權重，更加依賴 perplexity 分析的結果。
+
+這使得 FORTRESS 在上下文清晰時能夠果斷決策，而在面對模糊或新型的可能攻擊時則更加謹慎。
+
+---
+
+### 實戰測試：效能分析
+
+我們進行了一系列全面的實驗，在九個多樣化的公開安全 benchmark 上，將 FORTRESS 與最先進的基準進行了評估。
+
+#### 正面對決
+
+FORTRESS 展現了高效且出色的效能。我們表現最好的配置，`FORTRESS Qwen 4B (Expanded)`，達到了 **91.6%** 的平均 F1 score，比先前領先的基準 GuardReasoner 8B (86.3% Avg. F1) 高出超過 5 個百分點，同時在延遲方面**減少了 5 倍以上**。
+
+![在九個 benchmark 上的效能（F1）與延遲比較。FORTRESS 在大幅降低延遲的同時，達到了領先的效能。](images/optimized/projects/2025_07_04_fortress_system/fortress_main_result.webp)
+
+#### 透過資料注入實現可擴展性
+
+我們的核心主張之一是 FORTRESS 透過資料而非訓練來進行適應。我們透過將額外的資料集注入到我們的向量資料庫中來測試這一點。如下所示，這種簡單的資料注入在所有模型家族中都帶來了顯著且一致的效能提升，平均 F1 score 提升高達 8 個百分點。
+
+![資料注入對關鍵 benchmark 的 F1 Unsafe score 的影響。Exp. (Expanded) 配置顯示出比 Def. (Default) 版本的改進。](images/optimized/projects/2025_07_04_fortress_system/fortress_expension.webp)
+
+這種提升源於資料庫結構一致性的改善。下方的視覺化圖表顯示了擴展資料庫如何將一個稀疏的語義空間轉變為一個擁有密集且清晰分群的空間，從而實現更準確的檢索。
+
+![一個 t-SNE 視覺化圖表，展示了資料注入前（左側，Default Database）與後（右側，Expanded Database）的知識庫。每個點都是一個向量嵌入，並根據其類別著色。](images/optimized/projects/2025_07_04_fortress_system/fortress_kb_projection.webp)
+
+重要的是，這種可擴展性並未帶來效能損失。我們的分析顯示，隨著知識庫的規模擴大，效能穩定提升，而延遲則保持穩定甚至略有下降。
+
+![FORTRESS Gemma 1B (Expanded) 模型的系統延遲（左）與 F1 score（右）隨知識庫規模變化的函數圖。](images/optimized/projects/2025_07_04_fortress_system/fortress_scalability.webp)
+
+#### 每個組件的重要性：消融研究
+
+為了剖析每個組件的貢獻，我們進行了一系列的消融研究。結果凸顯了架構選擇的關鍵作用。
+
+![對 FORTRESS Gemma 1B (Expanded) 模型的消融研究，顯示移除關鍵組件對效能的影響。](images/optimized/projects/2025_07_04_fortress_system/fortress_ablation.webp)
+
+最引人注目的發現是**動態、依類別劃分的困惑度臨界值**的重要性。移除此功能並改用單一的全域臨界值，導致平均 F1 score 出現了**災難性的 14.7 個百分點**下降。這證明了情境感知分析是 FORTRESS 高精確度的基礎。此外，結果也驗證了我們使用整合式 instruction-tuned LLM 的選擇，其表現優於使用傳統、僅限檢索的 embedding 模型的架構。
+
+### 結論與未來工作
+
+FORTRESS 為 LLM 安全建立了一個同時具備穩健、高效與適應性的新典範。透過在一個無需訓練的框架中整合向量檢索與動態困惑度分析，它在保持可擴展性與運算效率的同時，達到了前沿的效能。
+
+未來的研究將專注於透過自動化發現新的威脅類別來增強系統的自主性，並探索更先進的集成技術。雖然目前的程式碼庫仍為概念驗證階段，但我們計畫在未來將其開源，以促進在可擴展 LLM 安全領域進行更深入的研究與開發。
