@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { Suspense } from "react"
 import Header from "@/components/header"
 import { Analytics } from "@vercel/analytics/react"
 import ClickSpark from "@/components/ui/click-spark"
@@ -37,7 +38,9 @@ export default function ClientLayout({
         </ClickSpark>
       )}
       <VideoInitializer />
-      <NotificationProvider />
+      <Suspense fallback={null}>
+        <NotificationProvider />
+      </Suspense>
       <Analytics />
     </LanguageProvider>
   )
