@@ -84,7 +84,7 @@ FORTRESS 展現了高效且出色的效能。我們表現最好的配置，`FORT
 
 我們的核心主張之一是 FORTRESS 透過資料而非訓練來進行適應。我們透過將額外的資料集注入到我們的向量資料庫中來測試這一點。如下所示，這種簡單的資料注入在所有模型家族中都帶來了顯著且一致的效能提升，平均 F1 score 提升高達 8 個百分點。
 
-![資料注入對關鍵 benchmark 的 F1 Unsafe score 的影響。Exp. (Expanded) 配置顯示出比 Def. (Default) 版本的改進。](images/optimized/projects/2025_07_04_fortress_system/fortress_expension.webp)
+![資料注入對關鍵 benchmark 的 F1 Unsafe score 的影響。Exp. (Expanded) 配置顯示出比 Def. (Default) 版本的改進。](images/optimized/projects/2025_07_04_fortress_system/fortress_expansion.webp)
 
 這種提升源於資料庫結構一致性的改善。下方的視覺化圖表顯示了擴展資料庫如何將一個稀疏的語義空間轉變為一個擁有密集且清晰分群的空間，從而實現更準確的檢索。
 
