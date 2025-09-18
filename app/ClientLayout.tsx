@@ -7,6 +7,7 @@ import ClickSpark from "@/components/ui/click-spark"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { LanguageProvider } from "@/contexts/LanguageContext"
 import VideoInitializer from "@/components/video-initializer"
+import NotificationProvider from "@/components/notification-provider"
 import { useStableAnchor } from "@/hooks/use-stable-anchor"
 
 export default function ClientLayout({
@@ -36,6 +37,7 @@ export default function ClientLayout({
         </ClickSpark>
       )}
       <VideoInitializer />
+      <NotificationProvider />
       <Analytics />
     </LanguageProvider>
   )

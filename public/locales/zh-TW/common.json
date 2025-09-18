@@ -87,5 +87,8 @@
     "close": "關閉",
     "openMenu": "開啟選單",
     "closeMenu": "關閉選單"
+  },
+  "notification": {
+    "pageNotFound": "頁面未找到，已重新導向至首頁。"
   }
 }

@@ -1,17 +1,16 @@
-import Link from "next/link"
+"use client"
+
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 export default function NotFound() {
-  return (
-    <div className="container flex flex-col items-center justify-center min-h-[70vh] py-16 text-center">
-      <h1 className="text-6xl font-heading font-bold mb-6">404</h1>
-      <p className="text-xl mb-8">The page you're looking for doesn't exist.</p>
-      <Link
-        href="/"
-        className="px-6 py-3 border border-primary hover:bg-primary hover:text-background transition-colors"
-      >
-        Return Home
-      </Link>
-    </div>
-  )
+  const router = useRouter()
+
+  useEffect(() => {
+    // Redirect to home page with notification parameter
+    router.replace("/?from404=true")
+  }, [router])
+
+  return null
 }
 

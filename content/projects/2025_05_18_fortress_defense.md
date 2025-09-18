@@ -9,8 +9,8 @@ date: "2025-07-04"
 role: "First Author"
 pinned: 1
 featured: true
-locked: false
-tooltip: ""
+locked: true
+tooltip: "Paper under review at TMLR"
 ---
 
 The world of Large Language Models (LLMs) is in a constant state of flux. As models become more powerful, so do the methods used to attack them. For developers and researchers, ensuring LLM safety is a perpetual cat-and-mouse game. Existing safety classifiers often require resource-intensive fine-tuning, a computationally expensive approach that proves brittle against the constant stream of new attack methods and demands costly, time-consuming retraining cycles.

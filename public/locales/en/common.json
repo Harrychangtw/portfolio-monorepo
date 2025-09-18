@@ -87,5 +87,8 @@
     "close": "Close",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
+  },
+  "notification": {
+    "pageNotFound": "Page not found. Redirected to home."
   }
 }
