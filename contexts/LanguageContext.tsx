@@ -68,10 +68,20 @@ const parseHtmlToReact = (htmlString: string): React.ReactNode => {
   return parts.length > 0 ? <>{parts}</> : htmlString
 }
 
+// Determine initial language synchronously (prevents a mismatched first render)
+const getInitialLang = (): Language => {
+  if (typeof window === 'undefined') return 'en'
+  const saved = localStorage.getItem('language') as Language | null
+  if (saved === 'en' || saved === 'zh-TW') return saved
+  return navigator.language?.toLowerCase().startsWith('zh') ? 'zh-TW' : 'en'
+}
+
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('en')
+  const [language, setLanguageState] = useState<Language>(getInitialLang)
   const [translations, setTranslations] = useState<Translations>({})
   const [isLoading, setIsLoading] = useState(true)
+  // Track if we've completed the first load
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
 
   // Load translations for a specific language
   const loadTranslations = async (lang: Language) => {
@@ -95,6 +105,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       })
 
       setTranslations(newTranslations)
+      setHasLoadedOnce(true) // First load finished
     } catch (error) {
       console.error('Failed to load translations:', error)
     } finally {
@@ -102,8 +113,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }
 
+  // Load once on mount and whenever language changes
+  useEffect(() => {
+    loadTranslations(language)
+  }, [language])
+
   // Translation function for plain text
   const t = (key: string, namespace: string = 'common'): string => {
+    // Never show raw keys before first load completes
+    if (!hasLoadedOnce) return ''
+
     const keys = key.split('.')
     let value: any = translations[namespace]
 
@@ -111,11 +130,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       if (value && typeof value === 'object') {
         value = value[k]
       } else {
-        return key // Return key if translation not found
+        // Return empty string instead of key to avoid flashing keys
+        return ''
       }
     }
 
-    return typeof value === 'string' ? value : key
+    return typeof value === 'string' ? value : ''
   }
 
   // Translation function that returns React nodes for HTML content
@@ -126,6 +146,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   // Function to get translation data (including arrays and objects)
   const getTranslationData = (key: string, namespace: string = 'common'): any => {
+    if (!hasLoadedOnce) return null
+
     let value: any = translations[namespace]
     
     // If key is empty, return the entire namespace
@@ -145,33 +167,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     return value
   }
 
-  // Set language and load translations
+  // Set language and update localStorage; fetch happens via useEffect
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
     localStorage.setItem('language', lang)
-    loadTranslations(lang)
   }
 
-  // Initialize language from URL, localStorage, or browser preference
-  useEffect(() => {
-    let initialLang: Language = 'en'
-    
-    // Check localStorage first
-    const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang) {
-      initialLang = savedLang;
-    } else {
-      // Check browser preference
-      const browserLang = navigator.language;
-      if (browserLang.startsWith('zh')) {
-        initialLang = 'zh-TW';
-      }
-    }
-
-    setLanguage(initialLang);
-    loadTranslations(initialLang);
-  }, [])
-
+  // Gate visibility until first load completes (prevents FOUC without layout shift)
   return (
     <LanguageContext.Provider
       value={{
@@ -183,7 +185,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         isLoading,
       }}
     >
-      {children}
+      <div style={{ visibility: hasLoadedOnce ? 'visible' : 'hidden' }}>
+        {children}
+      </div>
     </LanguageContext.Provider>
   )
 }
