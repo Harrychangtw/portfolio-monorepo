@@ -10,7 +10,7 @@ import LanguageSwitcher from "@/components/language-switcher"
 // --- Link Data ---
 // Centralized data for easy management of links and their tooltips.
 const socialLinks = [
-  { id: 'gmail', name: 'Gmail', href: 'mailto:pomelo.cw@gmail.com', tooltip: 'Always happy for a chat!' },
+  { id: 'gmail', name: 'Gmail', href: 'mailto:chiwei@harrychang.me', tooltip: 'Always happy for a chat!' },
   { id: 'discord', name: 'Discord', href: 'https://discord.com/users/836567989209661481', tooltip: 'Ping me, maybe I\'ll ping back' },
   { id: 'github', name: 'GitHub', href: 'https://github.com/Harrychangtw', tooltip: 'Check out my GitHub—where repos go to hide' },
   { id: 'instagram', name: 'Instagram', href: 'https://www.instagram.com/pomelo_chang_08/', tooltip: 'Please stalk responsibly' },
