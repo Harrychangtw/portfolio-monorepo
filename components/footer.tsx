@@ -3,12 +3,16 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { useIsMobile } from "@/hooks/use-mobile" // Assuming this hook exists from your old code
+import dynamic from "next/dynamic"
+import { useIsMobile } from "@/hooks/use-mobile" 
 import { useLanguage } from "@/contexts/LanguageContext"
-import LanguageSwitcher from "@/components/language-switcher"
+
+const LanguageSwitcher = dynamic(
+  () => import("@/components/language-switcher"),
+  { ssr: false }
+)
 
 // --- Link Data ---
-// Centralized data for easy management of links and their tooltips.
 const socialLinks = [
   { id: 'gmail', name: 'Gmail', href: 'mailto:chiwei@harrychang.me', tooltip: 'Always happy for a chat!' },
   { id: 'discord', name: 'Discord', href: 'https://discord.com/users/836567989209661481', tooltip: 'Ping me, maybe I\'ll ping back' },
@@ -18,7 +22,7 @@ const socialLinks = [
 ];
 
 const resourceLinks = [
-  { id: 'resume', name: 'Resume', href: 'https://drive.google.com/file/d/1l7vCgSFtglvc1gT7LiVRBzxUIv535PYP/view?usp=sharing', tooltip: 'Proof I know how to adult' },
+  { id: 'resume', name: 'Resume', href: 'https://drive.google.com/file/d/1xINWH85b8W8XIEB90Mw3NlAdKl0-9j6i/view?usp=drive_link', tooltip: 'Proof I know how to adult' },
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
   { id: 'wallpapers', name: 'Wallpapers', href: 'https://photos.google.com/u/1/share/AF1QipN_xATdICaaIO4RzR5CzdIj6AFeoueQmu5100b-a9_QIAzGLhz4HD95OurMi8pqBQ?key=MnV1OGlrQUdRTUg3Y0FHSkdnYVZrOXNMOU1PWFpn', tooltip: 'Spent way too much time on these...' },
   { id: 'music', name: 'Music Playlists', href: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3', tooltip: 'Make me go :D' },
@@ -33,7 +37,7 @@ export default function Footer() {
   const { t } = useLanguage();
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const [showManifesto, setShowManifesto] = useState(true); // Default to true to prevent layout shift
+  const [showManifesto, setShowManifesto] = useState(true); 
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
