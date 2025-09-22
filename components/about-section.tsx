@@ -12,11 +12,11 @@ export default function AboutSection() {
           <div className="col-span-12 md:col-span-6 pr-0 md:pr-12">
             <h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('about.title')}</h2>
             <p className="font-ibm-plex text-primary lcp-bio" style={{contain: "paint"}}>
-              {t('bio1', 'about')}
+              {tHtml('bio1', 'about')}
               <br /><br />
-              {t('bio2', 'about')}
+              {tHtml('bio2', 'about')}
               <br /><br />
-              {t('bio3', 'about')}
+              {tHtml('bio3', 'about')}
             </p>
           </div>
 

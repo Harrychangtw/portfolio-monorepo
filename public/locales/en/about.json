@@ -1,7 +1,7 @@
 {
-  "bio1": "Hi, I'm Harry Chang 👋🏻 — a curious traveler exploring uncharted territories through code, stories, and imagination. Whether journeying through books, films, or foreign cities, I seek to boldly go where no one has gone before.",
-  "bio2": "My interests span AI research, filmmaking, and debating. Currently in 12th grade at Chingshin Academy in Taipei, Taiwan, I balance academics with pursuing unconventional projects that fascinate me. But beyond the code and cameras, I believe the best creations are those that solve problems and open doors for others.",
-  "bio3": "I collect experiences like stamps in a passport, sharing discoveries with everyone I meet along the way. From LEGO mechanisms at age 4 to LLM safety research today, I remain that wide-eyed wanderer, forever asking: \"What lies beyond the next frontier?\"",
+  "bio1": "I'm Harry Chang, and I explore the intersection of technology and storytelling. My work spans AI systems, photography, and content creation, driven by a passion for building tools and narratives that inspires.",
+  "bio2": "As a 12th-grade student at Chingshin Academy, I'm motivated to boldly go where no one has gone before. I believe the most meaningful creations are those that solve real-world problems and open new doors for others, whether through code or a well-spoken story.",
+  "bio3": "My journey is fueled by a constant curiosity, from early days with LEGO to current research regarding LLMs. If you have a complex problem or an interesting idea to share, please <a href=\"mailto:chiwei@harrychang.me\">get in touch</a>.",
   "roles": {
     "llmResearcher": {
       "title": "LLM Researcher",
