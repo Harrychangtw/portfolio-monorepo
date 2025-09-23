@@ -6,6 +6,10 @@ import html from "remark-html"
 import { visit } from "unist-util-visit"
 import type { Image as MdastImage, Root, HTML } from "mdast"
 import { imageSize } from "image-size"
+import { Paper } from "@/types/paper"
+
+// Re-export Paper type for convenience
+export type { Paper } from "@/types/paper"
 
 // Define the directories
 const projectsDirectory = path.join(process.cwd(), "content/projects")
@@ -114,6 +118,26 @@ export interface GalleryItemMetadata {
   aspectRatio?: number
   width?: number          // Added for build-time dimension detection
   height?: number         // Added for build-time dimension detection
+}
+
+// Helper function to parse paper metadata from frontmatter
+export function getPaperMetadata(data: any): Paper | null {
+  try {
+    if (!data.title || !data.authors || !data.date || !data.url) {
+      return null;
+    }
+
+    return {
+      title: data.title,
+      authors: Array.isArray(data.authors) ? data.authors : [data.authors],
+      date: data.date,
+      url: data.url,
+      source: "manual" as const
+    };
+  } catch (error) {
+    console.error('Error parsing paper metadata:', error);
+    return null;
+  }
 }
 
 // Ensure content directories exist
