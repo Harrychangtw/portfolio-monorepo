@@ -10,6 +10,6 @@ role: "第一作者"
 pinned: 2
 featured: true
 locked: true
-tooltip: "論文在 ACL ARR July 審稿中"
+tooltip: "論文在 ACL ARR October 審稿中"
 ---
 

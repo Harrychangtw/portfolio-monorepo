@@ -10,6 +10,6 @@ role: "First Author"
 pinned: 2
 featured: true
 locked: true
-tooltip: "Paper under review at ACL ARR July cycle"
+tooltip: "Paper under review at ACL ARR October cycle"
 ---
 
