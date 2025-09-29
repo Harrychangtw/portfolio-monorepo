@@ -1,5 +1,14 @@
 [
   {
+    "title": "Qwen3Guard Technical Report",
+    "authors": [
+      "Qwen Team"
+    ],
+    "date": "2025-09-23",
+    "url": "https://github.com/QwenLM/Qwen3/blob/main/Qwen3_Technical_Report.pdf",
+    "source": "manual"
+  },
+  {
     "title": "Defeating Nondeterminism in LLM Inference",
     "authors": [
       "Horace He",
@@ -699,6 +708,47 @@
     ],
     "date": "2024-04-30T13:14:51Z",
     "url": "http://arxiv.org/abs/2404.19543v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "RTP-LX: Can LLMs Evaluate Toxicity in Multilingual Scenarios?",
+    "authors": [
+      "Adrian de Wynter",
+      "Ishaan Watts",
+      "Tua Wongsangaroonsri",
+      "Minghui Zhang",
+      "Noura Farra",
+      "Nektar Ege Altıntoprak",
+      "Lena Baur",
+      "Samantha Claudet",
+      "Pavel Gajdusek",
+      "Can Gören",
+      "Qilong Gu",
+      "Anna Kaminska",
+      "Tomasz Kaminski",
+      "Ruby Kuo",
+      "Akiko Kyuba",
+      "Jongho Lee",
+      "Kartik Mathur",
+      "Petter Merok",
+      "Ivana Milovanović",
+      "Nani Paananen",
+      "Vesa-Matti Paananen",
+      "Anna Pavlenko",
+      "Bruno Pereira Vidal",
+      "Luciano Strika",
+      "Yueh Tsao",
+      "Davide Turcato",
+      "Oleksandr Vakhno",
+      "Judit Velcsov",
+      "Anna Vickers",
+      "Stéphanie Visser",
+      "Herdyan Widarmanto",
+      "Andrey Zaikin",
+      "Si-Qing Chen"
+    ],
+    "date": "2024-04-22T17:56:26Z",
+    "url": "http://arxiv.org/abs/2404.14397v2",
     "source": "arxiv"
   },
   {

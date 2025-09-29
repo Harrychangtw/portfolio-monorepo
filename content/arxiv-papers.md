@@ -61,6 +61,7 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2403.14720
 2404.05993
 2404.07242
+2404.14397
 2404.19543
 2405.16833
 2405.19795
@@ -92,3 +93,8 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2503.21464
 2503.22115
 2504.01081
+2502.15334v1
+2402.05162v4
+2410.16327v1
+2411.00348v2
+2502.01042v5
