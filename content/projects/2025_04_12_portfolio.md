@@ -47,3 +47,5 @@ The portfolio is designed to showcase a variety of work and thought.
 - **Gallery Section:** A collection of images, each with a dedicated page for detailed viewing, with some having additional images to complete a narrative. The gallery features a custom framing system that enhances the visual presentation of each piece.
 - **Manifesto Page:** A dedicated space to express the core principles and philosophies that drive my work, presented on a standalone page for focused reading.
 - **Paper Reading Section:** A dynamic list of academic papers I have studied.
+
+This site is open-sourced and available on [GitHub](https://github.com/Harrychangtw/portfolio_site) under the CC BY-NC 4.0 license.
