@@ -87,7 +87,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const loadTranslations = async (lang: Language) => {
     setIsLoading(true)
     try {
-      const namespaces = ['common', 'about', 'updates']
+      const namespaces = ['common', 'about', 'updates', 'uses']
       const translationPromises = namespaces.map(async (namespace) => {
         const response = await fetch(`/locales/${lang}/${namespace}.json`)
         if (response.ok) {

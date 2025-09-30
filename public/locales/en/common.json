@@ -55,7 +55,8 @@
     "manifesto": "Manifesto",
     "wallpapers": "Wallpapers",
     "music": "Spotify Playlists",
-    "reading": "Paper Reading List"
+    "reading": "Paper Reading List",
+    "uses": "Uses"
   },
   "readingList": {
     "title": "Paper Reading List",
@@ -75,7 +76,8 @@
     "manifesto": "A bridge back to naiveté",
     "wallpapers": "Spent way too much time on these...",
     "music": "Make me go :D",
-    "reading": "Caffeine-fueled knowledge"
+    "reading": "Caffeine-fueled knowledge",
+    "uses": "My tools & setup"
   },
   "letterGlitch": {
     "line1": "I seek not the echo of applause,",

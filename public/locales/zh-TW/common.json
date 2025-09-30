@@ -55,7 +55,8 @@
     "manifesto": "理念",
     "wallpapers": "電腦桌布",
     "music": "音樂播放清單",
-    "reading": "論文閱讀清單"
+    "reading": "論文閱讀清單",
+    "uses": "工具與設定"
   },
   "readingList": {
     "title": "論文閱讀清單",
@@ -75,7 +76,8 @@
     "manifesto": "莫忘初衷",
     "wallpapers": "花太多時間在這些上...",
     "music": "Make me go :D",
-    "reading": "咖啡因激發的知識"
+    "reading": "咖啡因激發的知識",
+    "uses": "硬體、軟體跟最愛的工具"
   },
   "letterGlitch": {
     "line1": "我 所 追 尋 ， 非 掌 聲 迴 響 ，",
