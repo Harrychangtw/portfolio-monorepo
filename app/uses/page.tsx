@@ -20,7 +20,7 @@ export default function UsesPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
               {(hardware?.coreWorkstation?.items || []).map((item: any, index: number) => (
-                <div key={index} className="flex">
+                <div key={index} className="flex pr-6">
                   <span className="font-ibm-plex text-secondary min-w-[160px]">
                     {item.name}:
                   </span>
@@ -39,7 +39,7 @@ export default function UsesPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
               {(hardware?.office?.items || []).map((item: any, index: number) => (
-                <div key={index} className="flex">
+                <div key={index} className="flex pr-6">
                   <span className="font-ibm-plex text-secondary min-w-[160px]">
                     {item.name}:
                   </span>
@@ -58,7 +58,7 @@ export default function UsesPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
               {(hardware?.homeServer?.items || []).map((item: any, index: number) => (
-                <div key={index} className="flex">
+                <div key={index} className="flex pr-6">
                   <span className="font-ibm-plex text-secondary min-w-[160px]">
                     {item.name}:
                   </span>
@@ -78,7 +78,7 @@ export default function UsesPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
               {/* Left Column - Cameras and Accessories */}
-              <div className="space-y-3">
+              <div className="space-y-3 pr-6">
                 {/* Cameras */}
                 {hardware?.photography?.items?.find((item: any) => item.key === 'cameras')?.list?.map((camera: string, i: number) => (
                   <div key={`camera-${i}`} className="flex">
@@ -107,7 +107,7 @@ export default function UsesPage() {
               </div>
               
               {/* Right Column - Lenses */}
-              <div className="space-y-3">
+              <div className="space-y-3 pr-6">
                 {hardware?.photography?.items?.find((item: any) => item.key === 'lenses')?.list?.map((lens: string, i: number) => (
                   <div key={`lens-${i}`} className="flex">
                     <span className="font-ibm-plex text-secondary min-w-[160px]">
@@ -130,7 +130,7 @@ export default function UsesPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
               {(software?.development?.items || []).map((item: any, index: number) => (
-                <div key={index} className="flex">
+                <div key={index} className="flex pr-6">
                   <span className="font-ibm-plex text-secondary min-w-[160px]">
                     {item.name}:
                   </span>
@@ -149,7 +149,7 @@ export default function UsesPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
               {(software?.design?.items || []).map((item: any, index: number) => (
-                <div key={index} className="flex">
+                <div key={index} className="flex pr-6">
                   <span className="font-ibm-plex text-secondary min-w-[160px]">
                     {item.name}:
                   </span>
@@ -168,7 +168,7 @@ export default function UsesPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
               {(software?.productivity?.items || []).map((item: any, index: number) => (
-                <div key={index} className="flex">
+                <div key={index} className="flex pr-6">
                   <span className="font-ibm-plex text-secondary min-w-[160px]">
                     {item.name}:
                   </span>
