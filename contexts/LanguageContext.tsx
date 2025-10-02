@@ -68,20 +68,23 @@ const parseHtmlToReact = (htmlString: string): React.ReactNode => {
   return parts.length > 0 ? <>{parts}</> : htmlString
 }
 
-// Determine initial language synchronously (prevents a mismatched first render)
-const getInitialLang = (): Language => {
-  if (typeof window === 'undefined') return 'en'
-  const saved = localStorage.getItem('language') as Language | null
-  if (saved === 'en' || saved === 'zh-TW') return saved
-  return navigator.language?.toLowerCase().startsWith('zh') ? 'zh-TW' : 'en'
-}
-
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>(getInitialLang)
+  const [language, setLanguageState] = useState<Language>('en')
   const [translations, setTranslations] = useState<Translations>({})
   const [isLoading, setIsLoading] = useState(true)
   // Track if we've completed the first load
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
+
+  // On mount, check for saved language preference on the client side
+  useEffect(() => {
+    const saved = localStorage.getItem('language') as Language | null
+    if (saved === 'en' || saved === 'zh-TW') {
+      setLanguageState(saved)
+    } else {
+      const browserLang = navigator.language?.toLowerCase().startsWith('zh') ? 'zh-TW' : 'en'
+      setLanguageState(browserLang)
+    }
+  }, [])
 
   // Load translations for a specific language
   const loadTranslations = async (lang: Language) => {
