@@ -6,6 +6,8 @@ import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useIsMobile } from "@/hooks/use-mobile" 
 import { useLanguage } from "@/contexts/LanguageContext"
+import { usePathname } from "next/navigation"
+import { scrollToSection } from "@/utils/scrolling"
 
 const LanguageSwitcher = dynamic(
   () => import("@/components/language-switcher"),
@@ -43,6 +45,7 @@ const allLinks = [...socialLinks, ...resourceLinks];
 export default function Footer() {
   const isMobile = useIsMobile();
   const { t } = useLanguage();
+  const pathname = usePathname();
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [showManifesto, setShowManifesto] = useState(true); 
@@ -83,6 +86,18 @@ export default function Footer() {
   // Helper function to determine if a link is internal
   const isInternalLink = (href: string) => {
     return href.startsWith('/');
+  };
+
+  // NEW: Click handler for navigation links
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Check if it's a hash link and we're on the home page
+    if (href.includes('#') && pathname === '/') {
+      const id = href.split('#')[1];
+      if (id) {
+        scrollToSection(id, e);
+      }
+    }
+    // For other links, let Next.js handle the navigation
   };
 
   return (
@@ -199,7 +214,8 @@ export default function Footer() {
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                         <a
                           href={link.href}
-                            className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
+                          className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
+                          onClick={(e) => handleNavClick(e, link.href)}
                           >
                             {/* Reuses keys from the header localization */}
                             {t(`header.${link.id}`)}

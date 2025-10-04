@@ -9,6 +9,7 @@ import { useLanguage } from "@/contexts/LanguageContext"
 import LanguageSwitcher from "@/components/language-switcher"
 import StaggeredMenu from "@/components/staggered-menu"
 import { useStableHashScroll } from "@/hooks/use-stable-hash-scroll"
+import { scrollToSection as utilScrollToSection, ensurePreciseAlign } from "@/utils/scrolling"
 
 // Define smooth scroll duration (adjust as needed, keep consistent with timeout)
 const SCROLL_ANIMATION_DURATION = 800; // ms
@@ -73,17 +74,8 @@ export default function Header() {
         // 2. Set active section immediately for instant underline feedback
         setActiveSection(id)
 
-        // 3. Start scroll
-const headerOffset = document.querySelector('header')?.offsetHeight || 0;
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-
-        // Kick off loading of the target section immediately
-        window.dispatchEvent(new CustomEvent("force-load-section", { detail: id }))
+        // 3. Use the utility function for scrolling
+        utilScrollToSection(id);
 
         // Tiny retry to correct any CLS while content starts streaming in
         ensurePreciseAlign(id, 500)
@@ -92,8 +84,6 @@ const headerOffset = document.querySelector('header')?.offsetHeight || 0;
         scrollTimeoutRef.current = setTimeout(() => {
           setIsScrolling(false)
           scrollTimeoutRef.current = null; // Clear the ref
-          // Optional: Re-verify position after scroll in case it overshot slightly
-          // handleScroll(); // Be cautious if enabling this, could cause loops if not careful
         }, SCROLL_ANIMATION_DURATION + 100) // Add a small buffer
       }
     }
