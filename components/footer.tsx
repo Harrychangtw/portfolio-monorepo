@@ -13,8 +13,15 @@ const LanguageSwitcher = dynamic(
 )
 
 // --- Link Data ---
+const navigationLinks = [
+  { id: 'about', name: 'About', href: '/#about' },
+  { id: 'updates', name: 'Updates', href: '/#updates' },
+  { id: 'projects', name: 'Projects', href: '/#projects' },
+  { id: 'gallery', name: 'Gallery', href: '/#gallery' },
+];
+
 const socialLinks = [
-  { id: 'gmail', name: 'Gmail', href: 'mailto:chiwei@harrychang.me', tooltip: 'Always happy for a chat!' },
+  { id: 'gmail', name: 'Email', href: 'mailto:chiwei@harrychang.me', tooltip: 'Always happy for a chat!' },
   { id: 'discord', name: 'Discord', href: 'https://discord.com/users/836567989209661481', tooltip: 'Ping me, maybe I\'ll ping back' },
   { id: 'github', name: 'GitHub', href: 'https://github.com/Harrychangtw', tooltip: 'Check out my GitHub—where repos go to hide' },
   { id: 'instagram', name: 'Instagram', href: 'https://www.instagram.com/pomelo_chang_08/', tooltip: 'Please stalk responsibly' },
@@ -114,13 +121,13 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Columns 2 & 3 Wrapper - Aligns with the "Roles & Description" columns */}
+            {/* Columns 2, 3, & 4 Wrapper - Aligns with the "Roles & Description" columns */}
             <div className="col-span-12 md:col-span-6">
               <div className="grid grid-cols-12 gap-y-10 sm:gap-x-4">
                 
                 {/* Column 2: Social & Contact - Aligns with "Roles" */}
-                <div className="col-span-12 sm:col-span-5">
-                  <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.socialContact')}
                   </h3>
                   <ul className="space-y-3">
@@ -133,7 +140,7 @@ export default function Footer() {
                               target: "_blank",
                               rel: "noopener noreferrer"
                             })}
-                            className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors"
+                            className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
                             onMouseEnter={(e) => handleMouseEnter(e, link.id)}
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
@@ -147,8 +154,8 @@ export default function Footer() {
                 </div>
 
                 {/* Column 3: Personal & Resources - Aligns with "Description" */}
-                <div className="col-span-12 sm:col-span-7">
-                  <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.personalResources')}
                   </h3>
                   <ul className="space-y-3">
@@ -167,7 +174,7 @@ export default function Footer() {
                                 target: "_blank",
                                 rel: "noopener noreferrer"
                               })}
-                              className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors"
+                              className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
                               onMouseEnter={(e) => handleMouseEnter(e, link.id)}
                               onMouseMove={handleMouseMove}
                               onMouseLeave={handleMouseLeave}
@@ -178,6 +185,28 @@ export default function Footer() {
                         </li>
                       );
                     })}
+                  </ul>
+                </div>
+
+                {/* Column 4: Site Navigation */}
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
+                    {t('footer.siteNavigation')}
+                  </h3>
+                  <ul className="space-y-3">
+                    {navigationLinks.map(link => (
+                      <li key={link.id}>
+                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                        <a
+                          href={link.href}
+                            className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
+                          >
+                            {/* Reuses keys from the header localization */}
+                            {t(`header.${link.id}`)}
+                          </a>
+                        </motion.div>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
