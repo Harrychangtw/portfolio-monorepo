@@ -38,7 +38,7 @@ const resourceLinks = [
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
   // { id: 'wallpapers', name: 'Wallpapers', href: 'https://photos.google.com/u/1/share/AF1QipN_xATdICaaIO4RzR5CzdIj6AFeoueQmu5100b-a9_QIAzGLhz4HD95OurMi8pqBQ?key=MnV1OGlrQUdRTUg3Y0FHSkdnYVZrOXNMOU1PWFpn', tooltip: 'Spent way too much time on these...' },
   { id: 'uses', name: 'Uses', href: '/uses', tooltip: 'My tools & setup' },
-  { id: 'music', name: 'Music Playlists', href: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3', tooltip: 'Make me go :D' },
+  { id: 'music', name: 'Music Playlists', href: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3' },
   { id: 'reading', name: 'Paper Reading List', href: '/paper-reading', tooltip: 'Caffeine-fueled knowledge' },
 ];
 
@@ -250,19 +250,28 @@ export default function Footer() {
       </footer>
 
       {/* --- Custom Tooltip Component --- */}
-      {activeTooltipId && tooltipContent && (
+      {activeTooltipId && tooltipContent && !isMobile && (
         <motion.div
           initial={{ opacity: 0, y: 10, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 10, scale: 0.95 }}
           transition={{ duration: 0.15, ease: "easeOut" }}
           className="fixed z-50"
-          style={{
-            top: tooltipPosition.y - 40,
-            left: tooltipPosition.x,
-            pointerEvents: 'none',
-            transform: 'translateX(-50%)'
-          }}
+          style={
+            (activeTooltipId === 'music' && nowPlaying?.isPlaying)
+              ? { // Style for the Now Playing Card (bottom-left anchor)
+                  top: tooltipPosition.y - 120,
+                  left: tooltipPosition.x,
+                  transform: 'translate(15px, calc(-100% - 15px))',
+                  pointerEvents: 'none',
+                }
+              : { // Default style for text tooltips (centered)
+                  top: tooltipPosition.y - 40,
+                  left: tooltipPosition.x,
+                  transform: 'translateX(-50%)',
+                  pointerEvents: 'none',
+                }
+          }
         >
           {typeof tooltipContent === 'string' ? (
             <div className="bg-[#D8F600] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-space-grotesk">
