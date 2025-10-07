@@ -6,6 +6,9 @@ import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useIsMobile } from "@/hooks/use-mobile" 
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useNowPlaying } from "@/hooks/use-now-playing"
+import NowPlayingIndicator from "@/components/now-playing-indicator"
+import NowPlayingCard from "@/components/now-playing-card"
 import { usePathname } from "next/navigation"
 import { scrollToSection } from "@/utils/scrolling"
 
@@ -50,6 +53,8 @@ export default function Footer() {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [showManifesto, setShowManifesto] = useState(true); 
   const [isClient, setIsClient] = useState(false);
+  const { data: nowPlaying } = useNowPlaying(20000);
+  const [tooltipContent, setTooltipContent] = useState<React.ReactNode | string>('');
 
   useEffect(() => {
     setIsClient(true);
@@ -65,6 +70,11 @@ export default function Footer() {
     if (!isMobile) {
       setTooltipPosition({ x: e.clientX, y: e.clientY });
       setActiveTooltipId(id);
+      if (id === 'music' && nowPlaying?.isPlaying) {
+        setTooltipContent(<NowPlayingCard data={nowPlaying} />);
+      } else {
+        setTooltipContent(t(`tooltips.${id}`));
+      }
     }
   };
 
@@ -77,10 +87,10 @@ export default function Footer() {
   const handleMouseLeave = () => {
     if (!isMobile) {
       setActiveTooltipId(null);
+      setTooltipContent('');
     }
   };
   
-  const currentTooltipText = activeTooltipId ? t(`tooltips.${activeTooltipId}`) : '';
   const filteredResourceLinks = resourceLinks.filter(link => link.id !== 'manifesto' || showManifesto);
 
   // Helper function to determine if a link is internal
@@ -194,7 +204,14 @@ export default function Footer() {
                               onMouseMove={handleMouseMove}
                               onMouseLeave={handleMouseLeave}
                             >
-                              {t(`resources.${link.id}`)}
+                              {link.id === 'music' ? (
+                                <span className="inline-flex items-center gap-2">
+                                  {t(`resources.${link.id}`)}
+                                  <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
+                                </span>
+                              ) : (
+                                t(`resources.${link.id}`)
+                              )}
                             </a>
                           </motion.div>
                         </li>
@@ -233,13 +250,13 @@ export default function Footer() {
       </footer>
 
       {/* --- Custom Tooltip Component --- */}
-      {currentTooltipText && (
+      {activeTooltipId && tooltipContent && (
         <motion.div
           initial={{ opacity: 0, y: 10, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 10, scale: 0.95 }}
           transition={{ duration: 0.15, ease: "easeOut" }}
-          className="fixed bg-[#D8F600] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-space-grotesk z-50"
+          className="fixed z-50"
           style={{
             top: tooltipPosition.y - 40,
             left: tooltipPosition.x,
@@ -247,7 +264,13 @@ export default function Footer() {
             transform: 'translateX(-50%)'
           }}
         >
-          {currentTooltipText}
+          {typeof tooltipContent === 'string' ? (
+            <div className="bg-[#D8F600] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-space-grotesk">
+              {tooltipContent}
+            </div>
+          ) : (
+            tooltipContent
+          )}
         </motion.div>
       )}
     </>
