@@ -1,3 +1,4 @@
+import { m } from "framer-motion"
 import type { Config } from "tailwindcss"
 import { fontFamily } from "tailwindcss/defaultTheme"
 
@@ -66,18 +67,20 @@ const config: Config = {
               textDecorationColor: "#1A1A1A",
               textUnderlineOffset: "0.2em",
               transition: "text-decoration-color 0.2s ease-in-out",
+              whiteSpace: "nowrap",
               "&:hover": {
                 color: "hsl(var(--primary))",
                 textDecorationColor: "#D8F600",
               },
               "&::after": {
                 content: '"*"',
-                display: "inline-block",
+                display: "inline",
+                marginLeft: "0.1em",  
                 verticalAlign: "super",
-                marginLeft: "0.1em",
                 color: "#D8F600",
                 fontSize: "0.85em",
                 whiteSpace: "nowrap",
+                fontWeight: "700",
               },
             },
             h1: {

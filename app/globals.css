@@ -175,6 +175,7 @@
     font-weight: 500;
     transition: text-decoration-color 0.2s ease-in-out;
     position: relative;
+    white-space: nowrap;
   }
   
   .link-external:hover {
@@ -184,12 +185,11 @@
   
   .link-external::after {
     content: '*';
-    display: inline-block;
-    vertical-align: super; /* This is the key - positions it at the top */
+    display: inline;
+    vertical-align: super;
     margin-left: 0.1em;
     color: #D8F600;
     font-size: 0.85em;
-    white-space: nowrap;
-    font-weight: 700;
+    font-weight: 900;
   }
 }
