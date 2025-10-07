@@ -20,7 +20,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
+        hostname: 'i.scdn.co',
       },
     ],
   },
