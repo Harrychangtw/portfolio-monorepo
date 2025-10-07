@@ -53,8 +53,13 @@ export default function Footer() {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [showManifesto, setShowManifesto] = useState(true); 
   const [isClient, setIsClient] = useState(false);
-  const { data: nowPlaying } = useNowPlaying(20000);
-  const [tooltipContent, setTooltipContent] = useState<React.ReactNode | string>('');
+  
+  const hoveringMusic = activeTooltipId === 'music';
+  const { data: nowPlaying } = useNowPlaying(hoveringMusic ? 5000 : 60000, {
+    fresh: hoveringMusic,
+  });
+  
+  const isMusicTooltip = hoveringMusic && nowPlaying?.isPlaying;
 
   useEffect(() => {
     setIsClient(true);
@@ -70,11 +75,6 @@ export default function Footer() {
     if (!isMobile) {
       setTooltipPosition({ x: e.clientX, y: e.clientY });
       setActiveTooltipId(id);
-      if (id === 'music' && nowPlaying?.isPlaying) {
-        setTooltipContent(<NowPlayingCard data={nowPlaying} />);
-      } else {
-        setTooltipContent(t(`tooltips.${id}`));
-      }
     }
   };
 
@@ -87,7 +87,6 @@ export default function Footer() {
   const handleMouseLeave = () => {
     if (!isMobile) {
       setActiveTooltipId(null);
-      setTooltipContent('');
     }
   };
   
@@ -205,7 +204,7 @@ export default function Footer() {
                               onMouseLeave={handleMouseLeave}
                             >
                               {link.id === 'music' ? (
-                                <span className="inline-flex items-center gap-2">
+                                <span className="inline-flex items-center">
                                   {t(`resources.${link.id}`)}
                                   <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
                                 </span>
@@ -250,7 +249,7 @@ export default function Footer() {
       </footer>
 
       {/* --- Custom Tooltip Component --- */}
-      {activeTooltipId && tooltipContent && !isMobile && (
+      {activeTooltipId && !isMobile && (
         <motion.div
           initial={{ opacity: 0, y: 10, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -258,14 +257,14 @@ export default function Footer() {
           transition={{ duration: 0.15, ease: "easeOut" }}
           className="fixed z-50"
           style={
-            (activeTooltipId === 'music' && nowPlaying?.isPlaying)
-              ? { // Style for the Now Playing Card (bottom-left anchor)
+            isMusicTooltip
+              ? {
                   top: tooltipPosition.y - 120,
                   left: tooltipPosition.x,
                   transform: 'translate(15px, calc(-100% - 15px))',
                   pointerEvents: 'none',
                 }
-              : { // Default style for text tooltips (centered)
+              : {
                   top: tooltipPosition.y - 40,
                   left: tooltipPosition.x,
                   transform: 'translateX(-50%)',
@@ -273,12 +272,15 @@ export default function Footer() {
                 }
           }
         >
-          {typeof tooltipContent === 'string' ? (
-            <div className="bg-[#D8F600] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-space-grotesk">
-              {tooltipContent}
-            </div>
+          {isMusicTooltip ? (
+            <NowPlayingCard
+              key={nowPlaying?.songUrl ?? nowPlaying?.title ?? 'np'}
+              data={nowPlaying}
+            />
           ) : (
-            tooltipContent
+            <div className="bg-[#D8F600] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-space-grotesk">
+              {t(`tooltips.${activeTooltipId}`)}
+            </div>
           )}
         </motion.div>
       )}
