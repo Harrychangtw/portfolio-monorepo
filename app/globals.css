@@ -184,12 +184,13 @@
   }
   
   .link-external::after {
-    content: '*';
+    content: '↗';
     display: inline;
     vertical-align: super;
     margin-left: 0.1em;
     color: #D8F600;
+    font-family: var(--font-ibm-plex-sans);
     font-size: 0.85em;
-    font-weight: 900;
+    font-weight: 500;
   }
 }

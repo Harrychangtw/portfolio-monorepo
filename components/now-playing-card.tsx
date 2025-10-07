@@ -72,7 +72,7 @@ export default function NowPlayingCard({ data }: { data: NowPlaying }) {
                             className="h-1 bg-[#D8F600] rounded-full"
                             style={{ 
                                 width: `${progressPercentage}%`,
-                                transition: 'width 1s linear'
+                                transition: 'width 1s ease-in-out'
                             }}
                         />
                     </div>

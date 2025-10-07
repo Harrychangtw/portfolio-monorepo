@@ -73,11 +73,12 @@ const config: Config = {
                 textDecorationColor: "#D8F600",
               },
               "&::after": {
-                content: '"*"',
+                content: '"↗"',
                 display: "inline",
                 marginLeft: "0.1em",  
                 verticalAlign: "super",
                 color: "#D8F600",
+                fontFamily: "var(--font-ibm-plex-sans)",
                 fontSize: "0.85em",
                 whiteSpace: "nowrap",
                 fontWeight: "700",
