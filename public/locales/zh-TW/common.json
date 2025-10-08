@@ -55,7 +55,7 @@
   "resources": {
     "resume": "履歷",
     "manifesto": "理念",
-    "wallpapers": "電腦桌布",
+    "calendar": "預約會議",
     "music": "音樂播放清單",
     "reading": "論文閱讀清單",
     "uses": "工具與設定"
@@ -71,6 +71,7 @@
   "tooltips": {
     "gmail": "隨時歡迎交流！",
     "discord": "隨時歡迎交流！",
+    "calendar": "預約時間來聊聊吧！",
     "github": "Repo 藏身之處",
     "instagram": "隨時歡迎交流！",
     "letterboxd": "時間都花在哪了",

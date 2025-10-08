@@ -47,7 +47,7 @@
   },
   "social": {
     "gmail": "Email",
-    "discord": "Discord", 
+    "discord": "Discord",
     "github": "GitHub",
     "instagram": "Instagram",
     "letterboxd": "Letterboxd"
@@ -55,6 +55,7 @@
   "resources": {
     "resume": "Résumé",
     "manifesto": "Manifesto",
+    "calendar": "Schedules",
     "wallpapers": "Wallpapers",
     "music": "Spotify Playlists",
     "reading": "Paper Reading List",
@@ -71,6 +72,7 @@
   "tooltips": {
     "gmail": "Always happy for a chat!",
     "discord": "Ping me, maybe I'll ping back",
+    "calendar": "Book a time, let's chat!",
     "github": "Check out my GitHub—where repos go to hide",
     "instagram": "Please stalk responsibly",
     "letterboxd": "Judge my movie tastes harshly.",
