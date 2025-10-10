@@ -34,7 +34,7 @@ const socialLinks = [
 ];
 
 const resourceLinks = [
-  { id: 'resume', name: 'Resume', href: 'https://drive.google.com/file/d/1xINWH85b8W8XIEB90Mw3NlAdKl0-9j6i/view?usp=drive_link', tooltip: 'Proof I know how to adult' },
+  { id: 'resume', name: 'Resume', href: 'https://drive.google.com/file/d/16ExSDKuP11pWGbuASE2vaiosskUDOZR_/view?usp=sharing', tooltip: 'Proof I know how to adult' },
   { id: 'calendar', name: 'Schedule a Meeting', href: 'https://calendar.notion.so/meet/harry-chang/ybit2gkx', tooltip: 'Book a time to chat with me' },
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
   // { id: 'wallpapers', name: 'Wallpapers', href: 'https://photos.google.com/u/1/share/AF1QipN_xATdICaaIO4RzR5CzdIj6AFeoueQmu5100b-a9_QIAzGLhz4HD95OurMi8pqBQ?key=MnV1OGlrQUdRTUg3Y0FHSkdnYVZrOXNMOU1PWFpn', tooltip: 'Spent way too much time on these...' },
