@@ -192,5 +192,6 @@
     font-family: var(--font-ibm-plex-sans);
     font-size: 0.85em;
     font-weight: 500;
+    font-variant-emoji: text;
   }
 }

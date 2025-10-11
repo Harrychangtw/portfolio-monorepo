@@ -82,6 +82,7 @@ const config: Config = {
                 fontSize: "0.85em",
                 whiteSpace: "nowrap",
                 fontWeight: "700",
+                fontVariantEmoji: "text",
               },
             },
             h1: {
