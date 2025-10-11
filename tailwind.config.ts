@@ -73,7 +73,7 @@ const config: Config = {
                 textDecorationColor: "#D8F600",
               },
               "&::after": {
-                content: '"↗"',
+                content: '"*"',
                 display: "inline",
                 marginLeft: "0.1em",  
                 verticalAlign: "super",

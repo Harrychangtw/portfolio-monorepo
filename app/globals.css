@@ -184,7 +184,7 @@
   }
   
   .link-external::after {
-    content: '↗';
+    content: '*';
     display: inline;
     vertical-align: super;
     margin-left: 0.1em;
@@ -192,6 +192,5 @@
     font-family: var(--font-ibm-plex-sans);
     font-size: 0.85em;
     font-weight: 500;
-    font-variant-emoji: text;
   }
 }
