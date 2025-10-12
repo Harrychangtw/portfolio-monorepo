@@ -22,7 +22,7 @@ technologies: [PyTorch, ChromaDB, HF Transformers]
 
 ### 什麼是 FORTRESS？
 
-FORTRESS 是一個高速、**無需訓練** 的 LLM 輸入安全分類系統。它透過在單一、高效的架構中整合向量檢索與動態困惑度（perplexity）分析，克服了先前文獻的限制。FORTRESS 的核心是利用單一、輕量的 instruction-tuned 語言模型（如 Gemma 或 Qwen）同時進行向量嵌入生成與 perplexity 分析，以最小的運算開銷確保強大的效能。
+FORTRESS 是一個高速、無需訓練 的 LLM 輸入安全分類系統。它透過在單一、高效的架構中整合向量檢索與動態困惑度（perplexity）分析，克服了先前文獻的限制。FORTRESS 的核心是利用單一、輕量的 instruction-tuned 語言模型（如 Gemma 或 Qwen）同時進行向量嵌入生成與 perplexity 分析，以最小的運算開銷確保強大的效能。
 
 這種以資料為中心的設計意味著 FORTRESS 透過簡單的資料注入就能適應新興威脅，而非昂貴的模型訓練，為 LLM 安全提供了一個實用、可擴展且穩健的解決方案。
 
