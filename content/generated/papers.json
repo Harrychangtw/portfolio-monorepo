@@ -19,6 +19,18 @@
     "source": "manual"
   },
   {
+    "title": "On the Theoretical Limitations of Embedding-Based Retrieval",
+    "authors": [
+      "Orion Weller",
+      "Michael Boratko",
+      "Iftekhar Naim",
+      "Jinhyuk Lee"
+    ],
+    "date": "2025-08-28T17:43:53Z",
+    "url": "http://arxiv.org/abs/2508.21038v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Context Rot: How Increasing Input Tokens Impacts LLM Performance",
     "authors": [
       "Kelly Hong",
