@@ -3,10 +3,11 @@
   "bio2": "As a 12th-grade student at Chingshin Academy, I'm motivated to boldly go where no one has gone before. I believe the most meaningful creations are those that solve real-world problems and open new doors for others, whether through code or a well-spoken story.",
   "bio3": "My journey is fueled by a constant curiosity, from early days with LEGO to current research regarding LLMs. If you have a complex problem or an interesting idea to share, please <a href=\"mailto:chiwei@harrychang.me\">get in touch</a>.",
   "roles": {
+    
     "llmResearcher": {
       "title": "LLM Researcher",
       "period": "2024 - Present",
-      "description": "Researching language model safety while interning at <a href=\"https://cycraft.com\">CyCraft</a>, with two prior papers under review."
+      "description": "Researching LLM safety and lightweight defense mechanisms, with one paper published at <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> and another under review at EACL, while interning at <a href=\"https://cycraft.com\">CyCraft</a>."
     },
     "speaker": {
       "title": "Speaker – AI WAVE SHOW, SITCON",
