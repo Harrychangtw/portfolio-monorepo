@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -15,10 +15,21 @@ interface ProjectPageClientProps {
 export default function ProjectPageClient({ initialProject }: ProjectPageClientProps) {
   const { language, t } = useLanguage()
   const [project, setProject] = useState(initialProject)
-  const [loading, setLoading] = useState(false) // remains false unless fetching new language
+  const [loading, setLoading] = useState(false)
   
   // Preload the hero image with high priority for better LCP
   useImagePreloader({ src: project.imageUrl, priority: true })
+
+  // Calculate hero image dimensions for CLS prevention
+  const heroImageDims = useMemo(() => {
+    return {
+      width: project.imageWidth || 2000,
+      height: project.imageHeight || 1200,
+      aspectRatio: project.imageWidth && project.imageHeight 
+        ? project.imageWidth / project.imageHeight 
+        : 1.5
+    }
+  }, [project.imageWidth, project.imageHeight])
 
   useEffect(() => {
     async function fetchLocalizedProject() {
@@ -99,7 +110,9 @@ export default function ProjectPageClient({ initialProject }: ProjectPageClientP
               priority={true}
               quality={95}
               noInsetPadding={true}
-              aspectRatio={1.5} // Default 3:2 aspect ratio to prevent layout shift
+              width={heroImageDims.width}
+              height={heroImageDims.height}
+              aspectRatio={heroImageDims.aspectRatio}
             />
           </div>
         </div>

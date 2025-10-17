@@ -78,6 +78,8 @@ export interface ProjectMetadata {
   subcategory?: string
   description: string
   imageUrl: string
+  imageWidth?: number  // Added for CLS prevention
+  imageHeight?: number // Added for CLS prevention
   year: string
   date: string
   role?: string
@@ -392,6 +394,13 @@ export async function getProjectData(slug: string) {
     // Process imageUrl to use full resolution in detail view
     if (data.imageUrl) {
       data.imageUrl = getFullResolutionPath(data.imageUrl);
+      
+      // Add dimensions for hero image to prevent CLS
+      const dims = getDimsFromWebPath(data.imageUrl);
+      if (dims) {
+        (data as any).imageWidth = dims.width;
+        (data as any).imageHeight = dims.height;
+      }
     }
 
     // Combine the data with the slug and contentHtml
@@ -580,22 +589,39 @@ function transformMedia() {
         // It's a regular image with optimized loading and dimensions to prevent CLS
         const imageUrl = getFullResolutionPath(url)
         
+        // Get actual dimensions to prevent CLS
+        const dims = getDimsFromWebPath(imageUrl)
+        let dimensionAttrs = ''
+        let aspectRatioPadding = ''
+        
+        if (dims) {
+          const aspectRatio = dims.height / dims.width * 100
+          dimensionAttrs = `width="${dims.width}" height="${dims.height}"`
+          aspectRatioPadding = `padding-bottom: ${aspectRatio}%;`
+        }
+        
         const imageNode: HTML = {
           type: 'html',
           value: `
             <figure class="my-6">
-              <img 
-                src="${imageUrl}" 
-                alt="${alt}" 
-                loading="lazy" 
-                decoding="async"
-                style="
-                  width: 100%;
-                  height: auto;
-                  display: block;
-                  object-fit: contain;
-                " 
-              />
+              <div style="position: relative; ${aspectRatioPadding}">
+                <img 
+                  src="${imageUrl}" 
+                  alt="${alt}" 
+                  ${dimensionAttrs}
+                  loading="lazy" 
+                  decoding="async"
+                  style="
+                    position: ${dims ? 'absolute' : 'static'};
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: ${dims ? '100%' : 'auto'};
+                    display: block;
+                    object-fit: contain;
+                  " 
+                />
+              </div>
               ${alt ? `<figcaption class="mt-2 text-sm text-muted-foreground text-left">${alt}</figcaption>` : ''}
             </figure>
           `
