@@ -16,6 +16,7 @@ interface GalleryCardProps {
   locked?: boolean
   priority?: boolean
   index?: number
+  aspectRatio?: number
   width?: number
   height?: number
 }
@@ -29,6 +30,7 @@ export default function GalleryCard({
   locked,
   priority = false,
   index = 0,
+  aspectRatio,
   width,
   height
 }: GalleryCardProps) {
@@ -54,7 +56,6 @@ export default function GalleryCard({
   })()
 
   // Fallback dynamic measurement for cases without metadata dimensions
-  const [aspectRatio, setAspectRatio] = useState("100%")
   const [originalAspect, setOriginalAspect] = useState<number>(1)
   const [isPortrait, setIsPortrait] = useState(false)
 

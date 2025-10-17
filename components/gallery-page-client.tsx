@@ -104,6 +104,9 @@ export default function GalleryPageClient() {
                     locked={layoutItem.item.locked}
                     priority={layoutItem.itemIndex < 3}
                     index={layoutItem.itemIndex}
+                    aspectRatio={layoutItem.item.aspectRatio}  
+                    width={layoutItem.item.width}              
+                    height={layoutItem.item.height}            
                   />
                 ))}
               </div>
