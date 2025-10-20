@@ -42,6 +42,21 @@
     "source": "manual"
   },
   {
+    "title": "Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering\n  Target Atoms",
+    "authors": [
+      "Mengru Wang",
+      "Ziwen Xu",
+      "Shengyu Mao",
+      "Shumin Deng",
+      "Zhaopeng Tu",
+      "Huajun Chen",
+      "Ningyu Zhang"
+    ],
+    "date": "2025-05-23T17:59:18Z",
+    "url": "http://arxiv.org/abs/2505.20322v2",
+    "source": "arxiv"
+  },
+  {
     "title": "ShieldGemma 2: Robust and Tractable Image Content Moderation",
     "authors": [
       "Wenjun Zeng",
