@@ -592,37 +592,30 @@ function transformMedia() {
         // Get actual dimensions to prevent CLS
         const dims = getDimsFromWebPath(imageUrl)
         let dimensionAttrs = ''
-        let aspectRatioPadding = ''
         
         if (dims) {
-          const aspectRatio = dims.height / dims.width * 100
           dimensionAttrs = `width="${dims.width}" height="${dims.height}"`
-          aspectRatioPadding = `padding-bottom: ${aspectRatio}%;`
         }
         
         const imageNode: HTML = {
           type: 'html',
           value: `
             <figure class="my-6">
-              <div style="position: relative; ${aspectRatioPadding}">
-                <img 
-                  src="${imageUrl}" 
-                  alt="${alt}" 
-                  ${dimensionAttrs}
-                  loading="lazy" 
-                  decoding="async"
-                  style="
-                    position: ${dims ? 'absolute' : 'static'};
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: ${dims ? '100%' : 'auto'};
-                    display: block;
-                    object-fit: contain;
-                  " 
-                />
-              </div>
-              ${alt ? `<figcaption class="mt-2 text-sm text-muted-foreground text-left">${alt}</figcaption>` : ''}
+              <img 
+                src="${imageUrl}" 
+                alt="${alt}" 
+                ${dimensionAttrs}
+                loading="lazy" 
+                decoding="async"
+                style="
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                  object-fit: contain;
+                " 
+              />
+              ${alt ? `<figcaption class="mt-2 text-sm text-left" style="color: #4F4F4F;">${alt}</figcaption>` : ''}
+
             </figure>
           `
         }

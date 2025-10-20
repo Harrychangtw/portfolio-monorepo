@@ -109,6 +109,14 @@ const config: Config = {
               color: "hsl(var(--foreground))",
               fontFamily: "var(--font-ibm-plex-sans)",
             },
+            "ul > li::marker": 
+            {
+              color: "#4F4F4F",
+            },
+            "ol > li::marker": 
+            {
+              color: "#4F4F4F",
+            },
             hr: {
               borderColor: "#1A1A1A",
               borderTopWidth: "2px",
