@@ -493,7 +493,7 @@ const LetterGlitch = ({
 
   const containerStyle: React.CSSProperties = {
     position: "relative", width: "100%", height: "100vh",
-    backgroundColor: "#000000", overflow: "hidden",
+    backgroundColor: "#0A0A0A", overflow: "hidden",
   };
   const canvasStyle: React.CSSProperties = {
     display: "block", width: "100%", height: "100%",

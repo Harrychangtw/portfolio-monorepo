@@ -256,7 +256,7 @@ export default function ManifestoPage() {
     }, [introComplete, language]);
 
     return (
-        <div className="min-h-screen font-mono bg-black text-gray-300">
+        <div className="min-h-screen font-mono bg-[#0A0A0A] text-gray-300">
             {/* Header section with glitch effect */}
             <div className="h-screen relative">
                 <LetterGlitch 
@@ -268,7 +268,7 @@ export default function ManifestoPage() {
             <div className={`transition-opacity duration-1000 ${introComplete ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="container min-h-screen py-24">
                     <div className="max-w-4xl mx-auto">
-                        <article className="space-y-24 bg-black/50 backdrop-blur-sm p-8 md:p-12 rounded-lg">
+                        <article className="space-y-24 bg-[#0A0A0A]/50 backdrop-blur-sm p-8 md:p-12 rounded-lg">
                             {manifestoChunks.map((chunk, chunkIndex) => (
                                 <div
                                     key={chunkIndex}
