@@ -48,7 +48,7 @@ const allLinks = [...socialLinks, ...resourceLinks];
 
 export default function Footer() {
   const isMobile = useIsMobile();
-  const { t } = useLanguage();
+  const { t, tHtml } = useLanguage()
   const pathname = usePathname();
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
@@ -116,33 +116,26 @@ export default function Footer() {
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
 
-            {/* Column 1: Logo & Info - Aligns with the "About" column */}
-            <div className="col-span-12 md:col-span-6 md:pr-12 flex flex-col justify-between">
-              <div className="space-y-4">
-                {/* --- Logo with fixed dimensions to prevent layout shift --- */}
-                <div className="flex items-start">
-                  <div className="relative h-12 pt-2">
-                    <Image
-                      src="/chinese_name_icon.png"
-                      alt="Harry Chang/Chi-Wei Chang 張祺煒 Logo"
-                      width={357} // Calculated from 1784/600 * 120 (h-12 = 48px, but accounting for pt-2)
-                      height={120}
-                      className="object-contain"
-                      priority
-                      style={{ width: 'auto', height: '40px' }} // h-12 minus pt-2
-                    />
-                  </div>
-                  <span className="sr-only">Harry Chang/Chi-Wei Chang 張祺煒</span>
-                </div>
-                <div className="font-ibm-plex text-sm text-secondary space-y-2">
-                  <p>{t('footer.copyright')}</p>
-                  <p>{t('footer.portraitDisclaimer')}</p>
-                </div>
+            {/* Column 1: Logo & Motto */}
+            <div className="col-span-12 md:col-span-6 md:pr-24 md:mt-2 max-w-xl">
+              {/* --- Logo with increased dimensions --- */}
+              <div className="relative h-12 mb-6">
+                <Image
+                  src="/chinese_name_icon.png"
+                  alt="Harry Chang/Chi-Wei Chang 張祺煒 Logo"
+                  width={357}
+                  height={120}
+                  className="object-contain"
+                  priority
+                  style={{ width: 'auto', height: '48px' }}
+                />
+                <span className="sr-only">Harry Chang/Chi-Wei Chang 張祺煒</span>
               </div>
-              
-              {/* Language Switcher - Bottom Left, aligned with column bottom on desktop */}
-              <div className="mt-8 md:mt-0 flex justify-start">
-                <LanguageSwitcher />
+              <div className="font-ibm-plex text-base text-primary space-y-3">
+                <p>{t('footer.motto1')}</p>
+                <p>
+                  {tHtml('footer.motto2')}
+                </p>
               </div>
             </div>
 
@@ -243,6 +236,35 @@ export default function Footer() {
                   </ul>
                 </div>
 
+              </div>
+            </div>
+          </div>
+
+          {/* --- Divider --- */}
+          <hr className="border-secondary mt-16 mb-10 md:mt-16 md:mb-4" />
+
+          {/* --- Bottom Row: Lang Switcher, Version, Disclaimers --- */}
+          <div className="grid grid-cols-12 gap-y-8 md:gap-x-2 text-sm text-secondary">
+            {/* Aligns with Logo Column */}
+            <div className="col-span-12 md:col-span-6">
+              <LanguageSwitcher />
+            </div>
+
+            {/* Aligns with Link Columns */}
+            <div className="col-span-12 md:col-span-6">
+              <div className="grid grid-cols-12 gap-y-8 sm:gap-x-4">
+                {/* Aligns with Socials */}
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">v2.2.6 October 2025</p>
+                </div>
+                {/* Aligns with Resources */}
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">{t('footer.portraitDisclaimer')}</p>
+                </div>
+                {/* Aligns with Site Map */}
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">{t('footer.copyright')}</p>
+                </div>
               </div>
             </div>
           </div>

@@ -13,10 +13,12 @@
     "socialContact": "Socials",
     "personalResources": "Resources",
     "siteNavigation": "Site Map",
-    "copyright": "Harry Chang 2025 © Under CC BY NC 4.0",
-    "portraitDisclaimer": "Portrait rights respected. Contact for removal.",
-    "version": "V2.2.6 | Last Updated: Sep. 2025",
-    "languageSwitch": "Language"
+    "copyright": "Harry Chang © CC BY NC 4.0",
+    "portraitDisclaimer": "Contact for removal.",
+    "version": "V2.2.6 October 2025",
+    "languageSwitch": "Language",
+    "motto1":"They said pick a lane. I built a highway, deployed it when no one asked, and photographed the whole thing at f/0.95. ",
+    "motto2":"Let's make it happen. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
   },
   "about": {
     "title": "About",
