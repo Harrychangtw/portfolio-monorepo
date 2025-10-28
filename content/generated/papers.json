@@ -1,5 +1,16 @@
 [
   {
+    "title": "DeepSeek-OCR: Contexts Optical Compression",
+    "authors": [
+      "Haoran Wei",
+      "Yaofeng Sun",
+      "Yukun Li"
+    ],
+    "date": "2025-10-21T02:41:44Z",
+    "url": "http://arxiv.org/abs/2510.18234v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Qwen3Guard Technical Report",
     "authors": [
       "Qwen Team"
@@ -350,6 +361,20 @@
     "source": "arxiv"
   },
   {
+    "title": "Enhancing Semantic Consistency of Large Language Models through Model\n  Editing: An Interpretability-Oriented Approach",
+    "authors": [
+      "Jingyuan Yang",
+      "Dapeng Chen",
+      "Yajing Sun",
+      "Rongjun Li",
+      "Zhiyong Feng",
+      "Wei Peng"
+    ],
+    "date": "2025-01-19T13:26:15Z",
+    "url": "http://arxiv.org/abs/2501.11041v1",
+    "source": "arxiv"
+  },
+  {
     "title": "LLMs Lost in Translation: M-ALERT uncovers Cross-Linguistic Safety\n  Inconsistencies",
     "authors": [
       "Felix Friedrich",
@@ -667,6 +692,16 @@
     ],
     "date": "2024-06-14T06:47:40Z",
     "url": "http://arxiv.org/abs/2406.10311v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Improving Language Models for Emotion Analysis: Insights from Cognitive\n  Science",
+    "authors": [
+      "Constant Bonard",
+      "Gustave Cortal"
+    ],
+    "date": "2024-06-11T07:42:13Z",
+    "url": "http://arxiv.org/abs/2406.10265v2",
     "source": "arxiv"
   },
   {
@@ -1325,6 +1360,19 @@
     "source": "arxiv"
   },
   {
+    "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language\n  Model",
+    "authors": [
+      "Kenneth Li",
+      "Oam Patel",
+      "Fernanda Viégas",
+      "Hanspeter Pfister",
+      "Martin Wattenberg"
+    ],
+    "date": "2023-06-06T01:26:53Z",
+    "url": "http://arxiv.org/abs/2306.03341v6",
+    "source": "arxiv"
+  },
+  {
     "title": "Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation\n  in Natural Language Generation",
     "authors": [
       "Lorenz Kuhn",
@@ -1542,6 +1590,20 @@
     "source": "arxiv"
   },
   {
+    "title": "Deep Double Descent: Where Bigger Models and More Data Hurt",
+    "authors": [
+      "Preetum Nakkiran",
+      "Gal Kaplun",
+      "Yamini Bansal",
+      "Tristan Yang",
+      "Boaz Barak",
+      "Ilya Sutskever"
+    ],
+    "date": "2019-12-04T22:47:31Z",
+    "url": "http://arxiv.org/abs/1912.02292v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Attention Is All You Need",
     "authors": [
       "Ashish Vaswani",
@@ -1555,6 +1617,19 @@
     ],
     "date": "2017-06-12T17:57:34Z",
     "url": "http://arxiv.org/abs/1706.03762v7",
+    "source": "arxiv"
+  },
+  {
+    "title": "Understanding deep learning requires rethinking generalization",
+    "authors": [
+      "Chiyuan Zhang",
+      "Samy Bengio",
+      "Moritz Hardt",
+      "Benjamin Recht",
+      "Oriol Vinyals"
+    ],
+    "date": "2016-11-10T22:02:36Z",
+    "url": "http://arxiv.org/abs/1611.03530v2",
     "source": "arxiv"
   },
   {

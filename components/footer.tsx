@@ -255,7 +255,7 @@ export default function Footer() {
               <div className="grid grid-cols-12 gap-y-8 sm:gap-x-4">
                 {/* Aligns with Socials */}
                 <div className="col-span-12 sm:col-span-4 pr-8">
-                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">v2.2.6 October 2025</p>
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">v2.3.0 October 2025</p>
                 </div>
                 {/* Aligns with Resources */}
                 <div className="col-span-12 sm:col-span-4 pr-8">
