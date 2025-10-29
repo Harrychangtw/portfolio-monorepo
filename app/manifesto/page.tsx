@@ -6,14 +6,14 @@ import LanguageSwitcher from '@/components/language-switcher';
 
 const manifestoChunksEn = [
     [
-        "I am the child who saw cathedrals in LEGO bricks,",
+        "I am the child who saw marvels in LEGO bricks,",
         "Not for their colors, but for the sacred geometry within—",
         "Each joint a prayer to possibility,",
         "Each mechanism a meditation on what could be."
     ],
     [
-        "I choose no gods but the ones I build with my own hands,",
-        "No scripture but the code I write at dawn,",
+        "I seek no gods beyond the wonders I craft with my bare hands",
+        "No blueprint but the code I write at dawn,",
         "No heaven but the moment when an idea takes flight,",
         "No hell but the silence of unexpressed potential."
     ],
@@ -86,23 +86,22 @@ const manifestoChunksEn = [
         "Forever beginning,",
         "Forever that child in the factory yard,",
         "Looking up at the infinite.",
-        "Hands dirty with creation, heart clean with wonder.",
+        "Hands dirty with creation, heart clean with marvels.",
     ],
 ];
 
-// Traditional Chinese version - placeholder for now, you can replace with your translation
 const manifestoChunksZhTw = [
     [
-        "我是那個孩子，在樂高積木裡，看見了教堂",
-        "不為斑斕色彩，只為其中神聖的幾何",
-        "每一處接榫，都是對可能性的禱文",
-        "每一具齒輪，都是對未來世界的冥想"
+        "我是那個孩子，在樂高積木裡，看見了奇蹟",
+        "不為斑斕色彩，只為其中精妙的設計",
+        "每一處接榫，皆是涓滴成河之始",
+        "每一具齒輪，盡是鑑往知來之思"
     ],
     [
-        "我不信奉神，除非那是我親手塑造",
-        "我不誦讀經文，除非那是我黎明寫下的程式碼",
-        "天堂，是思想展翅高飛的瞬間",
-        "地獄，是潛能被壓抑的無聲死寂"
+        "我不追尋神祇，只求親手打造的驚奇",
+        "我不追索藍圖，除非那是我黎明寫下的程式碼",
+        "巔峰，是思想展翅高飛的瞬間",
+        "深淵，是潛能身陷囹圄的死寂"
     ],
     [
         "我活著，不為掌聲或喝采",
@@ -113,7 +112,7 @@ const manifestoChunksZhTw = [
         "而我，選擇光芒"
     ],
     [
-        "我遙想那個孩子，卻非出於自戀",
+        "我遙想那個孩子，卻非出於自私",
         "我深深感謝，那個開明的家庭",
         "在被拆解的鎖裡，他們看到的不是破壞，而是探索",
         "他們明白，成長需要自由，也需要根基"
@@ -127,19 +126,19 @@ const manifestoChunksZhTw = [
     [
         "我拒絕讓專業變成傲慢",
         "拒絕讓成就築起高牆，隔絕了曾用好奇心搭建的橋樑",
-        "那個拆解門鎖，只為理解其中奧秘的男孩",
+        "那個拆解門鎖，只為理解其中奧義的男孩",
         "依然活在今日，這個解開科技之謎的青年心中"
     ],
     [
         "當呼吸在病床上變得艱難",
-        "當肺葉如壞損的程式碼般崩潰",
+        "當肺泡如壞損的程式碼般崩塌",
         "我學會了：存在先於本質",
-        "定義我們的，不是我們的極限",
+        "定義我們的，從非我們的極限",
         "而是我們如何回應極限"
     ],
     [
         "我是自己的觀眾，自己的評審，自己的繆思",
-        "這並非自戀，而是源於自由",
+        "這並非自負，而是源於自由",
         "一種得以華麗失敗的自由",
         "一種無須許可便能探索的自由",
         "一種不求回報就能分享的自由"
@@ -161,10 +160,10 @@ const manifestoChunksZhTw = [
     ],
     [
         "因為我建造的，不是履歷或名聲",
-        "我建造的，是一座橋，回到最初的驚奇",
+        "我建造的，是一座橋，回到最初的童貞",
         "一座讓他人也能走過的橋",
         "去尋找他們自己心中那個五歲的靈魂",
-        "在夢想的機械中，耐心等候"
+        "在夢想的機械回眸中，耐心等候"
     ],
     [
         "在這我選擇創造的實存中",
@@ -176,7 +175,6 @@ const manifestoChunksZhTw = [
         "雙手滿是創造的塵土",
         "指尖輕觸無垠，內心澄澈如初。"
 
-        
     ]
 ];
 
@@ -193,7 +191,6 @@ export default function ManifestoPage() {
     const chunkRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     const handleAnimationComplete = () => {
-        // Add a small delay for a smoother transition between animation and content
         setTimeout(() => setIntroComplete(true), 500);
     };
 
@@ -209,14 +206,12 @@ export default function ManifestoPage() {
         } else {
             document.body.style.overflow = 'auto';
         }
-
-        // Cleanup on component unmount
         return () => {
             document.body.style.overflow = 'auto';
         };
     }, [introComplete]);
 
-    // Reset visible chunks when language changes
+    s
     useEffect(() => {
         setVisibleChunks(new Array(manifestoChunks.length).fill(false));
     }, [language, manifestoChunks.length]);
