@@ -4,7 +4,7 @@ category: "全端開發"
 subcategory: "校園專案"
 description: "一個基於 RAG 的客製化聊天機器人，使用 Svelte、PyTorch 與 FastAPI 打造，且未使用 LangChain 等一體式框架。"
 imageUrl: "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
-year: "2024"
+year: "2023-2024"
 date: "2024-09-23"
 role: "設計師與開發者"
 technologies: ["Svelte", "PyTorch", "FastAPI"]
@@ -16,7 +16,7 @@ featured: true
 Chingshin RAGi 源於我們對校務系統在資源分配上低效的觀察。靜心高中作為私立學校，知名度有限，學生與家長對學校政策時常有疑問，而網站導覽的複雜更讓資訊取得變得不易。我們將此視為訓練開發經驗的良機，透過結合 RAG 技術打造客製化聊天機器人，全程未使用 LangChain 等一體式框架。
 
 專案初期由 Ak 指導，而我主要負責後端 SQLite 資料庫建置、向量檢索開發，以及後期的介面優化。最終，本專案於**國家科學及技術委員會**主辦的 [**GenAI Star 競賽**](https://genaistars.org.tw/news/35)中榮獲**特優**，並代表靜心在研華文教基金會 ACT 論壇以全英文發表。
-
+  
 ---
 
 ## 實作細節

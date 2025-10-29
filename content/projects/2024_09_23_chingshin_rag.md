@@ -4,7 +4,7 @@ category: "Full-Stack Development"
 subcategory: "School Project"
 description: "A custom chatbot based on RAG, built with Svelte, PyTorch, and FastAPI, without using monolithic frameworks like LangChain."
 imageUrl: "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
-year: "2024"
+year: "2023-2024"
 date: "2024-09-23"
 role: "Designer & Developer"
 technologies: ["Svelte", "PyTorch", "FastAPI"]

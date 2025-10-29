@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
 
 export default function CalendarRedirect() {
-  redirect('https://github.com/Harrychangtw/')
+  redirect('https://boxd.it/fSKuF')
 }
