@@ -211,7 +211,7 @@ export default function ManifestoPage() {
         };
     }, [introComplete]);
 
-    s
+    
     useEffect(() => {
         setVisibleChunks(new Array(manifestoChunks.length).fill(false));
     }, [language, manifestoChunks.length]);
