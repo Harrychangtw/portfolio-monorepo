@@ -66,3 +66,5 @@ locked: false
 
 ## 致謝
 感謝 Ak 將這個競賽資訊分享給我，以及他在影片劇本轉寫初期提供的建議，讓我能更清晰地表達核心概念。
+
+封面 mockup 由 [Micro Volume](https://microvolume.gumroad.com/l/macbook1) 的素材製作而成。

@@ -66,3 +66,4 @@ Chingshin RAGi 源於我們對校務系統在資源分配上低效的觀察。�
 ## 致謝
 感謝出色的團隊夥伴，特別謝謝 PM Chaney 在各項協調與雜務上的辛勞，以及 Raymond 對 FastAPI 模組的貢獻；感謝 Ak 的指導與支持，也謝謝林逸萍主任對本專案的信任與鼓勵。這個專案不但深化了我們的技術能力，也讓我們在實務中切實體驗 RAG 技術的價值與潛力。
 
+封面 mockup 由 [Mockup Free](https://unsplash.com/photos/a-cell-phone-with-the-number-fifteen-on-it-NcmG1X1DWrI) 的素材製作而成。

@@ -65,3 +65,5 @@ I hope to apply the experience gained from this project to more creations in the
 
 ## Acknowledgements
 Special thanks to Ak for forwarding information about this competition with me and for his advice during the initial script-writing phase, which helped me articulate the core concepts more clearly.
+
+Cover mockup image created with assets from [Micro Volume](https://microvolume.gumroad.com/l/macbook1).

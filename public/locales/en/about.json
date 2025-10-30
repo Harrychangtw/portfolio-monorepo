@@ -1,12 +1,12 @@
 {
-  "bio1": "I'm Harry Chang, and I explore the intersection of technology and storytelling. My work spans AI systems, photography, and content creation, driven by a passion for building tools and narratives that inspires.",
-  "bio2": "As a 12th-grade student at Chingshin Academy, I'm motivated to boldly go where no one has gone before. I believe the most meaningful creations are those that solve real-world problems and open new doors for others, whether through code or a well-spoken story.",
-  "bio3": "My journey is fueled by a constant curiosity, from early days with LEGO to current research regarding LLMs. If you have a complex problem or an interesting idea to share, please <a href=\"mailto:chiwei@harrychang.me\">get in touch</a>.",
+  "bio1": "I'm Harry Chang. While others debate what's possible, I build it. My work lives at the intersection where AI meets art, where code becomes story, where curiosity refuses to apologize.",
+  "bio2": "Currently a 12th-grader at Chingshin Academy, I craft with equal passion through <a href=\"projects/2025_10_12_fortress/\">research</a>, <a href=\"#gallery\">photography</a>, <a href=\"projects/2025_08_04_debate\">debate</a>, and <a href=\"projects/2025_01_05_aaai_video\">video editing</a>. Each medium is just another language for the same mission: making tomorrow more interesting than today.",
+  "bio3": "From LEGO bricks to language models, I've never outgrown the urge to take things apart and rebuild them better. Got something impossible? <a href=\"mailto:chiwei@harrychang.me\">Let's talk</a>.",
   "roles": {
     
     "llmResearcher": {
       "title": "LLM Researcher",
-      "period": "2024 - Present",
+      "period": "2023 - Present",
       "description": "Researching LLM safety and lightweight defense mechanisms, with one paper published at <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> and another under review at EACL, while interning at <a href=\"https://cycraft.com\">CyCraft</a>."
     },
     "speaker": {

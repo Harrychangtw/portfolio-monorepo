@@ -85,3 +85,4 @@ featured: true
 
 我想對我的隊友表達最深的感謝，感謝他們堅定不移的支持與合作，特別是 Morris 和 Sean 在每一場辯論中都扮演了關鍵的角色。我也要誠摯地感謝 Jeff 和 Yohan 在這段旅程中一路的指導，幫助我成長為一個更好的辯手和演講者。
 
+封面圖片來自 Unsplash，由 [Planet Volumes](https://unsplash.com/photos/a-row-of-microphones-sitting-on-top-of-a-wooden-table-SGgvAWDoF3U) 拍攝。

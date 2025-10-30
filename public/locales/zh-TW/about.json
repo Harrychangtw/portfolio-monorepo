@@ -1,11 +1,11 @@
 {
-  "bio1": "我是張祺煒，一個熱衷於探索科技與故事敘說交會點的創造者。我的作品橫跨 AI 系統、攝影與內容創作，並專注於打造啟發他人的工具和故事。",
-  "bio2": "目前就讀靜心高中十二年級，我期許自己能勇敢踏上前人未至之境。我相信，最有意義的創作是那些能解決現實問題、並為他人開啟新機會的作品，無論是透過程式碼、設計，亦或動人的故事。",
-  "bio3": "我的旅程由永不間斷的好奇心所驅動，從童年的樂高到今日的語言模型研究，童心未泯。如果任何有趣的想法想要分享，<a href=\"mailto:chiwei@harrychang.me\">歡迎交流！</a>。",
+  "bio1": "我是張祺煒。當他人在辯論何謂可能，我選擇動手打造。我的作品誕生於 AI 與藝術的交會、程式碼與故事的融合，以及一顆永不妥協的好奇心。",
+  "bio2": "目前就讀靜心高中十二年級，透過<a href=\"projects/2025_10_12_fortress/\">學術研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate\">辯論</a>，與<a href=\"projects/2025_01_05_aaai_video\">影片創作</a>探索各種可能。每一個媒介都是達成同一個使命的不同語言：讓明天比今天更有趣。",
+  "bio3": "從樂高積木到語言模型，我從未拋棄那份將事物拆解、再以更臻完美的方式重組的渴望。如果任何有趣的想法想要分享，<a href=\"mailto:chiwei@harrychang.me\">歡迎交流！</a>。",
   "roles": {
     "llmResearcher": {
       "title": "LLM 研究員",
-      "period": "2024 - Present",
+      "period": "2023 - Present",
       "description": "研究 LLM 安全與高效防護方法，一篇論文發表於 <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a>，另一篇於 EACL 審稿，並於 <a href=\"https://cycraft.com\">CyCraft</a> 擔任研究實習生。"
     },
     "speaker": {

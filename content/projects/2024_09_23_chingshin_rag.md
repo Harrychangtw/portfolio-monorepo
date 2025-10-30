@@ -65,3 +65,5 @@ To participate in the GenAI Stars Competition, I produced a short introductory v
 
 ## Acknowledgements
 I want to thank my outstanding team members, especially our PM Chaney for the hard work on coordination and various tasks, and Raymond for his contributions to the FastAPI module. Thank you to Ak for the initial guidance and support, and also to Director Lin Yi-Ping for her trust and encouragement in this project. This project not only deepened our technical skills but also allowed us to truly experience the value and potential of RAG technology in a practical setting.
+
+Cover mockup image created with assets from [Mockup Free](https://unsplash.com/photos/a-cell-phone-with-the-number-fifteen-on-it-NcmG1X1DWrI).
