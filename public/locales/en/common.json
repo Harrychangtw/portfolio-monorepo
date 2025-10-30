@@ -71,18 +71,23 @@
     "publishedOn": "Published on"
   },
   "tooltips": {
+    "about":"The obligatory \"who am I\" nobody reads",
+    "updates":"Humble brags disguised as a changelog",
+    "projects":"Things I did instead of touching grass",
+    "gallery":"Expensive glass pointed at mundane things",
     "gmail": "Always happy for a chat!",
-    "discord": "Ping me, maybe I'll ping back",
+    "discord": "Online 24/7, mentally present 3/7",
     "calendar": "Book a time, let's chat!",
-    "github": "Check out my GitHub—where repos go to hide",
-    "instagram": "Please stalk responsibly",
-    "letterboxd": "Judge my movie tastes harshly.",
-    "resume": "Proof I know how to adult",
-    "manifesto": "A bridge back to naiveté",
-    "wallpapers": "Spent way too much time on these...",
-    "music": "Make me go :D",
-    "reading": "Caffeine-fueled knowledge",
-    "uses": "My tools & setup"
+    "github": "Where good code goes to get overengineered",
+    "instagram": "POV: You're watching a teenager pretend to be Fan Ho",
+    "letterboxd": "4.5 stars for everything because I have no taste",
+    "resume": "Yes it's literally just a Google Drive link.",
+    "manifesto": "My philosophy on work, creation, and curiosity",
+    "wallpapers": "Each pixel hand-placed by a perfectionist with too much RAM",
+    "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
+    "reading": "No TL;DR. Figure it out yourself.",
+    "uses": "Need these for \"school work\""
+
   },
   "letterGlitch": {
     "line1": "I seek not the echo of applause,",

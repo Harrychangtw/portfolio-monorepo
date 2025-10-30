@@ -86,7 +86,7 @@ const manifestoChunksEn = [
         "Forever beginning,",
         "Forever that child in the factory yard,",
         "Looking up at the infinite.",
-        "Hands dirty with creation, heart clean with marvels.",
+        "Hands dirty with creation, heart crystal with marvels.",
     ],
 ];
 

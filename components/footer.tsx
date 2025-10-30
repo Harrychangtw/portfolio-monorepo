@@ -19,10 +19,10 @@ const LanguageSwitcher = dynamic(
 
 // --- Link Data ---
 const navigationLinks = [
-  { id: 'about', name: 'About', href: '/#about' },
-  { id: 'updates', name: 'Updates', href: '/#updates' },
-  { id: 'projects', name: 'Projects', href: '/#projects' },
-  { id: 'gallery', name: 'Gallery', href: '/#gallery' },
+  { id: 'about', name: 'About', href: '/#about', tooltip: 'Learn about me' },
+  { id: 'updates', name: 'Updates', href: '/#updates', tooltip: 'Latest happenings' },
+  { id: 'projects', name: 'Projects', href: '/#projects', tooltip: 'Things I\'ve built' },
+  { id: 'gallery', name: 'Gallery', href: '/#gallery', tooltip: 'Visual showcase' },
 ];
 
 const socialLinks = [
@@ -226,6 +226,9 @@ export default function Footer() {
                           href={link.href}
                           className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
                           onClick={(e) => handleNavClick(e, link.href)}
+                          onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+                          onMouseMove={handleMouseMove}
+                          onMouseLeave={handleMouseLeave}
                           >
                             {/* Reuses keys from the header localization */}
                             {t(`header.${link.id}`)}

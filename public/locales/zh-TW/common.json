@@ -27,7 +27,7 @@
   "updates": {
     "title": "最新動態"
   },
-  "projects": {
+"projects": {
     "title": "精選專案",
     "backToProjects": "回到專案",
     "noProjectsFound": "未找到專案。",
@@ -70,18 +70,22 @@
     "publishedOn": "發表於"
   },
   "tooltips": {
+    "about":"沒人會看的自我介紹",
+    "updates":"偽裝成更新日誌的裝逼紀錄",
+    "projects":"證明我不出門的專案們",
+    "gallery":"昂貴玻璃對準平凡事物",
     "gmail": "隨時歡迎交流！",
-    "discord": "隨時歡迎交流！",
+    "discord": "全年無休上線，清醒僅三成",
     "calendar": "預約時間來聊聊吧！",
-    "github": "Repo 藏身之處",
-    "instagram": "隨時歡迎交流！",
-    "letterboxd": "時間都花在哪了",
-    "resume": "證明我具備成人技能",
-    "manifesto": "莫忘初衷",
-    "wallpapers": "花太多時間在這些上...",
-    "music": "Make me go :D",
-    "reading": "咖啡因激發的知識",
-    "uses": "硬體、軟體跟最愛的工具"
+    "github": "好好的程式碼被我 overengineer 的墳墓",
+    "instagram": "高中生裝自己是何藩",
+    "letterboxd": "全部 4.5 顆星因為我沒有品味",
+    "resume": "對，就是一個 Google Drive 連結",
+    "manifesto": "我對創作、工作與好奇心的理念",
+    "wallpapers": "每個像素都由 RAM 太多的完美主義者手工調整",
+    "music": "爵士到嘻哈到蕭邦只需三首歌",
+    "reading": "沒 TL;DR，請自己想辦法",
+    "uses": "「學校功課」絕對會用到"
   },
   "letterGlitch": {
     "line1": "我 所 追 尋 ， 非 掌 聲 迴 響 ，",
