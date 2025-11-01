@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 
 // Helper function to parse HTML strings and convert to React elements
@@ -59,6 +60,10 @@ export default function UpdatesSection() {
 	const contentRef = useRef<HTMLDivElement>(null)
 	const entriesPerPage = 5
 	
+	// Add mobile detection and hold state
+	const isMobile = useIsMobile()
+	const [isHolding, setIsHolding] = useState(false)
+	
 	// Get localized updates data
 	const updatesNamespaceData = getTranslationData('', 'updates') // Get entire updates namespace
 	const updates = updatesNamespaceData?.entries || []
@@ -100,10 +105,37 @@ export default function UpdatesSection() {
 
 	const startIndex = currentPage * entriesPerPage
 	const endIndex = startIndex + entriesPerPage
-	const currentEntries = updates.slice(startIndex, endIndex)
+	
+	// Pre-process entries to remove [tag] prefix
+	const currentEntries = updates.slice(startIndex, endIndex).map(entry => ({
+		...entry,
+		text: entry.text?.replace(/^\[.*?\]\s*/, '') || ''
+	}))
+
+	// Handlers for hold interaction
+	const handleHoldStart = () => {
+		if (isMobile) {
+			setIsHolding(true)
+		}
+	}
+	
+	const handleHoldEnd = () => {
+		if (isMobile) {
+			setIsHolding(false)
+		}
+	}
 
 	return (
-		<section id="updates" className="py-12 md:py-16 border-b border-border">
+		<section 
+			id="updates" 
+			className="py-12 md:py-16 border-b border-border"
+			onMouseDown={handleHoldStart}
+			onMouseUp={handleHoldEnd}
+			onMouseLeave={handleHoldEnd}
+			onTouchStart={handleHoldStart}
+			onTouchEnd={handleHoldEnd}
+			onTouchCancel={handleHoldEnd}
+		>
 			<div className="container">
 				<div className="flex justify-between items-center mb-4">
 					<h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary">
@@ -148,13 +180,33 @@ export default function UpdatesSection() {
 						}`}
 					>
 						{currentEntries.map((entry, index) => (
-							<div key={index} className="flex justify-between items-start gap-4">
+							<div key={index} className="relative flex justify-between items-start gap-4">
 								<p className="font-ibm-plex text-primary flex-1">
 									{parseHtmlToReact(entry.text || '')}
 								</p>
-								<p className="font-ibm-plex text-secondary text-right">
-									{entry.date || ''}
-								</p>
+								
+								{/* Conditional date rendering */}
+								{!isMobile ? (
+									<p className="font-ibm-plex text-secondary text-right">
+										{entry.date || ''}
+									</p>
+								) : (
+									<AnimatePresence>
+										{isHolding && (
+											<motion.div
+												initial={{ opacity: 0, x: 10 }}
+												animate={{ opacity: 1, x: 0 }}
+												exit={{ opacity: 0, x: 10 }}
+												transition={{ duration: 0.2, ease: 'easeOut' }}
+												className="absolute right-0 top-0"
+											>
+												<span className="font-ibm-plex text-secondary tracking-wider text-sm bg-background px-2 py-1 rounded">
+													{entry.date || ''}
+												</span>
+											</motion.div>
+										)}
+									</AnimatePresence>
+								)}
 							</div>
 						))}
 					</div>
