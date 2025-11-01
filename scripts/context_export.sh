@@ -3,12 +3,10 @@ OUTPUT="combined.md"
 > "$OUTPUT"
 
 FILES=(
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/utils/scrolling.ts"
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/app/projects/[slug]/page.tsx"
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/app/layout.tsx"
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/styles/lcp-optimize.css"
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/components/footer.tsx"
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/components/header.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/lib/markdown.ts"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/components/gallery-card.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/components/gallery-section.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/lib/utils.ts"
 )
 
 for FILE in "${FILES[@]}"
