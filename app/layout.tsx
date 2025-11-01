@@ -140,9 +140,9 @@ export default function RootLayout({
       </head>
       <body className={`bg-background text-primary antialiased min-h-screen flex flex-col`}>
         <ClientLayout>
-          <div className="flex-1 pt-16">
+          <main id="site-content" className="site-content flex-1 pt-16 relative z-[2] bg-background">
             {children}
-          </div>
+          </main>
           <Footer />
           <SpeedInsights />
         </ClientLayout>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import dynamic from "next/dynamic"
@@ -54,6 +54,7 @@ export default function Footer() {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [showManifesto, setShowManifesto] = useState(true); 
   const [isClient, setIsClient] = useState(false);
+  const footerRef = useRef<HTMLElement | null>(null)
   
   const hoveringMusic = activeTooltipId === 'music';
   const { data: nowPlaying } = useNowPlaying(hoveringMusic ? 5000 : 60000, {
@@ -71,6 +72,27 @@ export default function Footer() {
     window.addEventListener('resize', checkWidth);
     return () => window.removeEventListener('resize', checkWidth);
   }, []);
+
+  // Dynamically set --footer-h to the actual footer height
+  useEffect(() => {
+    if (!footerRef.current) return
+    const el = footerRef.current
+
+    const setH = () => {
+      const h = Math.round(el.getBoundingClientRect().height)
+      // set on <html> so it applies globally
+      document.documentElement.style.setProperty('--footer-h', `${h}px`)
+    }
+
+    setH()
+    const ro = new ResizeObserver(setH)
+    ro.observe(el)
+    window.addEventListener('resize', setH)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', setH)
+    }
+  }, [])
 
   const handleMouseEnter = (e: React.MouseEvent, id: string) => {
     if (!isMobile) {
@@ -112,7 +134,10 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-[#1a1a1a] text-primary py-12 md:py-16 border-t border-border">
+      <footer
+        ref={footerRef}
+        className="reveal-footer bg-[#1a1a1a] text-primary py-12 md:py-16 border-t border-border sticky bottom-0 z-[1]"
+      >
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
 
@@ -258,7 +283,7 @@ export default function Footer() {
               <div className="grid grid-cols-12 gap-y-8 sm:gap-x-4">
                 {/* Aligns with Socials */}
                 <div className="col-span-12 sm:col-span-4 pr-8">
-                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">v2.3.0 October 2025</p>
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">v2.4.1 October 2025</p>
                 </div>
                 {/* Aligns with Resources */}
                 <div className="col-span-12 sm:col-span-4 pr-8">

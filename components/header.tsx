@@ -19,6 +19,7 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState<string>("about")
   const [isScrolling, setIsScrolling] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [hideForFooter, setHideForFooter] = useState(false)
   const isHomePage = pathname === "/"
   const isPaperReadingPage = pathname?.startsWith('/paper-reading');
   const isManifestoPage = pathname?.startsWith('/manifesto');
@@ -273,9 +274,25 @@ export default function Header() {
     }
   ];
 
+  // Detect when user reaches the bottom (footer fully revealed)
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement
+      const atBottom = doc.scrollHeight - (window.scrollY + window.innerHeight) <= 1
+      setHideForFooter(atBottom)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [])
+
   return (
     <header 
-      className="fixed top-0 left-0 right-0 border-b border-border py-4 z-50 bg-background"
+      className={`fixed top-0 left-0 right-0 border-b border-border py-4 z-50 bg-background transition-transform duration-300 ease-out will-change-transform ${hideForFooter ? '-translate-y-full' : 'translate-y-0'}`}
     >
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
