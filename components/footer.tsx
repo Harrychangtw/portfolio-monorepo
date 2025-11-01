@@ -166,10 +166,10 @@ export default function Footer() {
 
             {/* Columns 2, 3, & 4 Wrapper - Aligns with the "Roles & Description" columns */}
             <div className="col-span-12 md:col-span-6">
-              <div className="grid grid-cols-12 gap-y-10 sm:gap-x-4">
+              <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-10">
                 
                 {/* Column 2: Social & Contact - Aligns with "Roles" */}
-                <div className="col-span-12 sm:col-span-4 pr-8">
+                <div className="col-span-1 md:col-span-4 md:pr-8">
                   <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.socialContact')}
                   </h3>
@@ -197,7 +197,7 @@ export default function Footer() {
                 </div>
 
                 {/* Column 3: Personal & Resources - Aligns with "Description" */}
-                <div className="col-span-12 sm:col-span-4 pr-8">
+                <div className="col-span-1 md:col-span-4 md:pr-8">
                   <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.personalResources')}
                   </h3>
@@ -239,7 +239,7 @@ export default function Footer() {
                 </div>
 
                 {/* Column 4: Site Navigation */}
-                <div className="col-span-12 sm:col-span-4 pr-8">
+                <div className="col-span-1 md:col-span-4 md:pr-8 hidden md:block">
                   <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.siteNavigation')}
                   </h3>
@@ -271,30 +271,12 @@ export default function Footer() {
           {/* --- Divider --- */}
           <hr className="border-secondary mt-16 mb-10 md:mt-16 md:mb-4" />
 
-          {/* --- Bottom Row: Lang Switcher, Version, Disclaimers --- */}
-          <div className="grid grid-cols-12 gap-y-8 md:gap-x-2 text-sm text-secondary">
-            {/* Aligns with Logo Column */}
-            <div className="col-span-12 md:col-span-6">
-              <LanguageSwitcher />
-            </div>
-
-            {/* Aligns with Link Columns */}
-            <div className="col-span-12 md:col-span-6">
-              <div className="grid grid-cols-12 gap-y-8 sm:gap-x-4">
-                {/* Aligns with Socials */}
-                <div className="col-span-12 sm:col-span-4 pr-8">
-                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">v2.4.1 October 2025</p>
-                </div>
-                {/* Aligns with Resources */}
-                <div className="col-span-12 sm:col-span-4 pr-8">
-                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">{t('footer.portraitDisclaimer')}</p>
-                </div>
-                {/* Aligns with Site Map */}
-                <div className="col-span-12 sm:col-span-4 pr-8">
-                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">{t('footer.copyright')}</p>
-                </div>
-              </div>
-            </div>
+          {/* --- Bottom Row: Lang Switcher & Copyright --- */}
+          <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-4 text-sm text-secondary">
+            <LanguageSwitcher />
+            <p className="whitespace-nowrap overflow-hidden text-ellipsis">
+              {t('footer.copyright')}
+            </p>
           </div>
         </div>
       </footer>

@@ -258,28 +258,34 @@ export default function Header() {
   const socialItems = [
     {
       label: t('social.gmail'),
-      link: 'mailto:haoyuchang@gmail.com'
+      link: '/email'
     },
     {
       label: t('social.github'),
-      link: 'https://github.com/Harrychangtw'
+      link: '/github'
     },
     {
       label: t('social.instagram'),
-      link: 'https://instagram.com/harrychangtw'
+      link: '/instagram'
     },
     {
       label: t('social.discord'),
-      link: 'https://discord.gg/harrychangtw'
+      link: '/discord'
     }
   ];
 
   // Detect when user reaches the bottom (footer fully revealed)
   useEffect(() => {
     const onScroll = () => {
-      const doc = document.documentElement
-      const atBottom = doc.scrollHeight - (window.scrollY + window.innerHeight) <= 1
-      setHideForFooter(atBottom)
+      // Don't hide header on mobile or when menu is open
+      if (isMobile || isMenuOpen) {
+        setHideForFooter(false);
+        return;
+      }
+      const doc = document.documentElement;
+      // Check if scroll is within 1px of the bottom
+      const atBottom = doc.scrollHeight - (window.scrollY + window.innerHeight) <= 1;
+      setHideForFooter(atBottom);
     }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -288,9 +294,10 @@ export default function Header() {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
     }
-  }, [])
+  }, [isMobile, isMenuOpen])
 
   return (
+    
     <header 
       className={`fixed top-0 left-0 right-0 border-b border-border py-4 z-50 bg-background transition-transform duration-300 ease-out will-change-transform ${hideForFooter ? '-translate-y-full' : 'translate-y-0'}`}
     >

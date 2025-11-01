@@ -457,7 +457,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             
             {/* Social Links Section */}
             {displaySocials && socialItems && socialItems.length > 0 && (
-              <div className="sm-panel-socials mt-auto pt-8 pb-8">
+              <div className="sm-panel-socials mt-auto pt-4 pb-16">
                 <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
                   {t('footer.socialContact') || 'Social & Contact'}
                 </h3>
@@ -512,7 +512,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } 
           .sm-scope .sm-prelayers { width: 100%; left: 0; right: 0; }
         }
-        @media (max-height: 720px) {
+        @media (max-height: 600px) {
           .sm-scope .sm-panel-socials {
             display: none;
           }
