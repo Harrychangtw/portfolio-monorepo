@@ -30,7 +30,7 @@ const socialLinks = [
   { id: 'discord', name: 'Discord', href: '/discord', tooltip: 'Ping me, maybe I\'ll ping back' },
   { id: 'github', name: 'GitHub', href: '/github', tooltip: 'Check out my GitHub—where repos go to hide' },
   { id: 'instagram', name: 'Instagram', href: '/instagram', tooltip: 'Please stalk responsibly' },
-  { id: 'letterboxd', name: 'Letterboxd', href: 'https://boxd.it/fSKuF', tooltip: 'Judge my movie tastes harshly.' }, // Placeholder href
+  { id: 'letterboxd', name: 'Letterboxd', href: '/letterboxd', tooltip: 'Judge my movie tastes harshly.' }, // Placeholder href
 ];
 
 const resourceLinks = [
