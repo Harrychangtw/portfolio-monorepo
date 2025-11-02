@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
-import GalleryItemClient from '@/app/gallery/[slug]/GalleryItemClient'
+import GalleryItemClient from '@/app/(main)/gallery/[slug]/GalleryItemClient'
 import type { GalleryItemMetadata } from '@/lib/markdown'
 
 interface GalleryItemPageClientProps {

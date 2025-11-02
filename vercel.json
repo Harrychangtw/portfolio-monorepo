@@ -1,0 +1,25 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "studio.harrychang.me"
+        }
+      ],
+      "destination": "/studio/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/studio/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
+}
