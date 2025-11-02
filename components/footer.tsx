@@ -10,7 +10,7 @@ import { useNowPlaying } from "@/hooks/use-now-playing"
 import NowPlayingIndicator from "@/components/now-playing-indicator"
 import NowPlayingCard from "@/components/now-playing-card"
 import { usePathname } from "next/navigation"
-import { scrollToSection } from "@/utils/scrolling"
+import { scrollToSection } from "@/lib/scrolling"
 
 const LanguageSwitcher = dynamic(
   () => import("@/components/language-switcher"),

@@ -9,7 +9,7 @@ import { useLanguage } from "@/contexts/LanguageContext"
 import LanguageSwitcher from "@/components/language-switcher"
 import StaggeredMenu from "@/components/staggered-menu"
 import { useStableHashScroll } from "@/hooks/use-stable-hash-scroll"
-import { scrollToSection as utilScrollToSection, ensurePreciseAlign } from "@/utils/scrolling"
+import { scrollToSection as utilScrollToSection, ensurePreciseAlign } from "@/lib/scrolling"
 
 // Define smooth scroll duration (adjust as needed, keep consistent with timeout)
 const SCROLL_ANIMATION_DURATION = 800; // ms
