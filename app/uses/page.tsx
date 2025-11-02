@@ -1,17 +1,67 @@
 "use client"
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import { GalleryImageContainer } from '@/components/gallery-image-container'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 export default function UsesPage() {
   const { t, getTranslationData } = useLanguage()
+  const isMobile = useIsMobile()
 
   const hardware = getTranslationData('hardware', 'uses')
   const software = getTranslationData('software', 'uses')
+  
+  // The GalleryImageContainer adds horizontal padding to portrait images on desktop 
+  // to fit a 1.5 target aspect ratio. This creates unwanted space.
+  // This style object calculates the necessary width and negative margin 
+  // to counteract the internal padding, making the image fill its column.
+  const desktopImageWrapperStyle = {
+    width: '187.5%',
+    marginLeft: '-43.75%',
+  };
+  
+  const images = [
+    { src: "/images/optimized/projects/uses/vertical_left.webp", alt: "Workspace left view" },
+    { src: "/images/optimized/projects/uses/vertical_center.webp", alt: "Workspace center view" },
+    { src: "/images/optimized/projects/uses/vertical_right.webp", alt: "Workspace right view" },
+  ];
 
   return (
     <div className="min-h-screen py-12 md:py-16">
       <div className="container">
         <div className="space-y-12">
+          
+          {/* Hero Images Section */}
+          <div className="w-full -mt-4 mb-8">
+            {isMobile ? (
+              // Mobile: Show only the center image, full width
+              <GalleryImageContainer
+                src={images[1].src}
+                alt={images[1].alt}
+                aspectRatio={0.8}
+                noInsetPadding={true}
+                priority
+              />
+            ) : (
+              // Desktop: Show all three images in a grid
+              <div className="grid grid-cols-3 gap-[var(--column-spacing)]">
+                {images.map((image) => (
+                  // This outer div clips the oversized child to prevent layout disruption
+                  <div key={image.src} className="overflow-hidden">
+                    <div style={desktopImageWrapperStyle}>
+                      <GalleryImageContainer
+                        src={image.src}
+                        alt={image.alt}
+                        aspectRatio={0.8}
+                        noInsetPadding={true}
+                        priority
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
           
           {/* Core Workstation */}
           <div>
@@ -70,7 +120,6 @@ export default function UsesPage() {
             </div>
           </div>
 
-
           {/* Photography Gear */}
           <div>
             <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
@@ -121,7 +170,6 @@ export default function UsesPage() {
               </div>
             </div>
           </div>
-
 
           {/* Development & Coding */}
           <div>
