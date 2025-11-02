@@ -1,5 +1,5 @@
-import fs from "fs"
-import path from "path"
+import fs from "node:fs"
+import path from "node:path"
 import matter from "gray-matter"
 import { remark } from "remark"
 import html from "remark-html"
@@ -19,19 +19,22 @@ const galleryDirectory = path.join(process.cwd(), "content/gallery")
 function getThumbnailPath(imagePath: string): string {
   if (!imagePath) return imagePath;
   
-  // Ensure path starts with /
+  // Ensure leading slash for non-HTTP paths
   if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
     imagePath = '/' + imagePath;
   }
   
-  // Handle optimization directory structure
+  // Ensure optimized directory
   if (imagePath.includes('/images/') && !imagePath.includes('/optimized/')) {
     imagePath = imagePath.replace('/images/', '/images/optimized/');
   }
   
-  // Add thumbnail suffix if not already present
-  if (!imagePath.includes('-thumb.webp')) {
-    imagePath = imagePath.replace('.webp', '-thumb.webp');
+  // Normalize extension to .webp
+  imagePath = imagePath.replace(/\.(jpe?g|png|webp)$/i, '.webp');
+  
+  // Ensure thumbnail suffix
+  if (!/-thumb\.webp$/i.test(imagePath)) {
+    imagePath = imagePath.replace(/\.webp$/i, '-thumb.webp');
   }
   
   return imagePath;
@@ -41,18 +44,23 @@ function getThumbnailPath(imagePath: string): string {
 function getFullResolutionPath(imagePath: string): string {
   if (!imagePath) return imagePath;
   
-  // Ensure path starts with /
+  // Ensure leading slash for non-HTTP paths
   if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
     imagePath = '/' + imagePath;
   }
   
-  // Handle optimization directory structure
+  // Ensure optimized directory
   if (imagePath.includes('/images/') && !imagePath.includes('/optimized/')) {
     imagePath = imagePath.replace('/images/', '/images/optimized/');
   }
   
-  // Remove thumbnail suffix if present
-  return imagePath.replace('-thumb.webp', '.webp');
+  // Remove -thumb suffix if present
+  imagePath = imagePath.replace(/-thumb\.webp$/i, '.webp');
+  
+  // Normalize extension to .webp
+  imagePath = imagePath.replace(/\.(jpe?g|png|webp)$/i, '.webp');
+  
+  return imagePath;
 }
 
 // Helper to map web path -> file on disk, then read dimensions
