@@ -252,7 +252,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-4 text-sm text-secondary">
             <LanguageSwitcher />
             <p className="whitespace-nowrap overflow-hidden text-ellipsis">
-              {t('footer.copyright')}
+              Chi-Wei Chang 張祺煒 © CC BY-NC 4.0
             </p>
           </div>
         </div>
