@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL") // For migrations
+}
+
+model WaitlistEntry {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  firstName     String?
+  lastName      String?
+  interests     String[] // ['ai-safety', 'portfolio', 'speaking', etc]
+  referralSource String? // 'twitter', 'linkedin', 'word-of-mouth'
+  locale        String   @default("en")
+  tier          String?  // 'foundation', 'cohort', 'premium'
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Marketing fields
+  utmSource     String?
+  utmMedium     String?
+  utmCampaign   String?
+  
+  // Engagement tracking
+  emailVerified Boolean  @default(false)
+  verificationToken String? @unique
+  
+  @@index([email])
+  @@index([createdAt])
+}
+
+model EmailCampaign {
+  id        String   @id @default(cuid())
+  subject   String
+  sentAt    DateTime @default(now())
+  sentTo    String[] // Array of email IDs
+  openRate  Float?
+  clickRate Float?
+}
