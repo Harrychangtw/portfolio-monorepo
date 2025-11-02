@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import dynamic from "next/dynamic"
@@ -26,16 +26,16 @@ const navigationLinks = [
 ];
 
 const socialLinks = [
-  { id: 'gmail', name: 'Email', href: '/email', tooltip: 'Always happy for a chat!' },
-  { id: 'discord', name: 'Discord', href: '/discord', tooltip: 'Ping me, maybe I\'ll ping back' },
-  { id: 'github', name: 'GitHub', href: '/github', tooltip: 'Check out my GitHub—where repos go to hide' },
-  { id: 'instagram', name: 'Instagram', href: '/instagram', tooltip: 'Please stalk responsibly' },
+  { id: 'gmail', name: 'Email', href: 'mailto:chiwei@harrychang.me', tooltip: 'Always happy for a chat!' },
+  { id: 'discord', name: 'Discord', href: 'https://discord.com/users/836567989209661481', tooltip: 'Ping me, maybe I\'ll ping back' },
+  { id: 'github', name: 'GitHub', href: 'https://github.com/Harrychangtw', tooltip: 'Check out my GitHub—where repos go to hide' },
+  { id: 'instagram', name: 'Instagram', href: 'https://www.instagram.com/pomelo_chang_08/', tooltip: 'Please stalk responsibly' },
   { id: 'letterboxd', name: 'Letterboxd', href: 'https://boxd.it/fSKuF', tooltip: 'Judge my movie tastes harshly.' }, // Placeholder href
 ];
 
 const resourceLinks = [
-  { id: 'resume', name: 'Resume', href: '/cv', tooltip: 'Proof I know how to adult' },
-  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal', tooltip: 'Book a time to chat with me' },
+  { id: 'resume', name: 'Resume', href: 'https://drive.google.com/file/d/16ExSDKuP11pWGbuASE2vaiosskUDOZR_/view?usp=sharing', tooltip: 'Proof I know how to adult' },
+  { id: 'calendar', name: 'Schedule a Meeting', href: 'https://calendar.notion.so/meet/harry-chang/ybit2gkx', tooltip: 'Book a time to chat with me' },
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
   // { id: 'wallpapers', name: 'Wallpapers', href: 'https://photos.google.com/u/1/share/AF1QipN_xATdICaaIO4RzR5CzdIj6AFeoueQmu5100b-a9_QIAzGLhz4HD95OurMi8pqBQ?key=MnV1OGlrQUdRTUg3Y0FHSkdnYVZrOXNMOU1PWFpn', tooltip: 'Spent way too much time on these...' },
   { id: 'uses', name: 'Uses', href: '/uses', tooltip: 'My tools & setup' },
@@ -54,7 +54,6 @@ export default function Footer() {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [showManifesto, setShowManifesto] = useState(true); 
   const [isClient, setIsClient] = useState(false);
-  const footerRef = useRef<HTMLElement | null>(null)
   
   const hoveringMusic = activeTooltipId === 'music';
   const { data: nowPlaying } = useNowPlaying(hoveringMusic ? 5000 : 60000, {
@@ -72,27 +71,6 @@ export default function Footer() {
     window.addEventListener('resize', checkWidth);
     return () => window.removeEventListener('resize', checkWidth);
   }, []);
-
-  // Dynamically set --footer-h to the actual footer height
-  useEffect(() => {
-    if (!footerRef.current) return
-    const el = footerRef.current
-
-    const setH = () => {
-      const h = Math.round(el.getBoundingClientRect().height)
-      // set on <html> so it applies globally
-      document.documentElement.style.setProperty('--footer-h', `${h}px`)
-    }
-
-    setH()
-    const ro = new ResizeObserver(setH)
-    ro.observe(el)
-    window.addEventListener('resize', setH)
-    return () => {
-      ro.disconnect()
-      window.removeEventListener('resize', setH)
-    }
-  }, [])
 
   const handleMouseEnter = (e: React.MouseEvent, id: string) => {
     if (!isMobile) {
@@ -134,10 +112,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer
-        ref={footerRef}
-        className="reveal-footer bg-[#1a1a1a] text-primary py-12 md:py-16 border-t border-border sticky bottom-0 z-[1]"
-      >
+      <footer className="bg-[#1a1a1a] text-primary py-12 md:py-16 border-t border-border">
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
 
@@ -166,10 +141,10 @@ export default function Footer() {
 
             {/* Columns 2, 3, & 4 Wrapper - Aligns with the "Roles & Description" columns */}
             <div className="col-span-12 md:col-span-6">
-              <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-10">
+              <div className="grid grid-cols-12 gap-y-10 sm:gap-x-4">
                 
                 {/* Column 2: Social & Contact - Aligns with "Roles" */}
-                <div className="col-span-1 md:col-span-4 md:pr-8">
+                <div className="col-span-12 sm:col-span-4 pr-8">
                   <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.socialContact')}
                   </h3>
@@ -197,7 +172,7 @@ export default function Footer() {
                 </div>
 
                 {/* Column 3: Personal & Resources - Aligns with "Description" */}
-                <div className="col-span-1 md:col-span-4 md:pr-8">
+                <div className="col-span-12 sm:col-span-4 pr-8">
                   <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.personalResources')}
                   </h3>
@@ -239,7 +214,7 @@ export default function Footer() {
                 </div>
 
                 {/* Column 4: Site Navigation */}
-                <div className="col-span-1 md:col-span-4 md:pr-8 hidden md:block">
+                <div className="col-span-12 sm:col-span-4 pr-8">
                   <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.siteNavigation')}
                   </h3>
@@ -271,12 +246,30 @@ export default function Footer() {
           {/* --- Divider --- */}
           <hr className="border-secondary mt-16 mb-10 md:mt-16 md:mb-4" />
 
-          {/* --- Bottom Row: Lang Switcher & Copyright --- */}
-          <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-4 text-sm text-secondary">
-            <LanguageSwitcher />
-            <p className="whitespace-nowrap overflow-hidden text-ellipsis">
-              {t('footer.copyright')}
-            </p>
+          {/* --- Bottom Row: Lang Switcher, Version, Disclaimers --- */}
+          <div className="grid grid-cols-12 gap-y-8 md:gap-x-2 text-sm text-secondary">
+            {/* Aligns with Logo Column */}
+            <div className="col-span-12 md:col-span-6">
+              <LanguageSwitcher />
+            </div>
+
+            {/* Aligns with Link Columns */}
+            <div className="col-span-12 md:col-span-6">
+              <div className="grid grid-cols-12 gap-y-8 sm:gap-x-4">
+                {/* Aligns with Socials */}
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">v2.3.0 October 2025</p>
+                </div>
+                {/* Aligns with Resources */}
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">{t('footer.portraitDisclaimer')}</p>
+                </div>
+                {/* Aligns with Site Map */}
+                <div className="col-span-12 sm:col-span-4 pr-8">
+                  <p className="whitespace-nowrap overflow-hidden text-ellipsis">{t('footer.copyright')}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </footer>

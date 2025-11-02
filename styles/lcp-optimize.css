@@ -72,27 +72,6 @@ footer.bg-\[\#1a1a1a\] {
   contain: layout paint;
 }
 
-/* Reveal footer: dynamic height + overlay content */
-:root {
-  --footer-h: 0px;
-}
-
-.site-content {
-  position: relative;
-  z-index: 2;
-  /* Pull main content over the footer, but preserve scrollable space */
-  margin-bottom: 0;
-}
-
-/* Sticky footer that reveals as content slides up */
-footer.reveal-footer {
-  position: sticky;
-  bottom: 0;
-  z-index: 1; /* Content has higher z-index to cover it */
-  contain: layout paint;
-  will-change: transform;
-}
-
 @keyframes loading {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
