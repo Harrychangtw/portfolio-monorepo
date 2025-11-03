@@ -5,7 +5,17 @@
       "has": [
         {
           "type": "host",
-          "value": "studio.harrychang.me"
+          "value": "studio\\.harrychang\\.me"
+        }
+      ],
+      "destination": "/studio/:path*"
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.studio\\.harrychang\\.me"
         }
       ],
       "destination": "/studio/:path*"
@@ -21,5 +31,7 @@
         }
       ]
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }

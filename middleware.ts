@@ -5,15 +5,20 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl
   const hostname = request.headers.get('host') || ''
   
-  // Only enable studio subdomain routing for production and local dev
-  // For Vercel preview URLs, disable subdomain-based routing to avoid SSL errors
+  // Check if this is a Vercel preview deployment
   const isVercelPreview = hostname.includes('.vercel.app')
   
-  // Handle studio subdomain (only for production/localhost, not preview deployments)
-  const isStudio = !isVercelPreview && (
+  // For Vercel preview deployments, allow direct access to /studio routes
+  // This enables testing studio functionality on preview URLs like:
+  // https://your-project-git-branch-username.vercel.app/studio
+  if (isVercelPreview) {
+    return NextResponse.next()
+  }
+  
+  // Handle studio subdomain (only for production/localhost)
+  const isStudio = 
     hostname.includes('studio.harrychang.me') || 
     hostname.includes('studio.localhost')
-  )
   
   // Paths that should NOT be rewritten (shared resources)
   const sharedPaths = [
@@ -33,8 +38,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url)
   }
   
-  // Prevent accessing studio routes from main domain (only if not preview)
-  if (!isStudio && !isVercelPreview && url.pathname.startsWith('/studio')) {
+  // Prevent accessing studio routes from main domain in production
+  if (!isStudio && url.pathname.startsWith('/studio')) {
     url.pathname = '/'
     return NextResponse.redirect(url)
   }
