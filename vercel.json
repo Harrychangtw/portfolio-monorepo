@@ -5,7 +5,7 @@
       "has": [
         {
           "type": "host",
-          "value": "studio.harrychang.me"
+          "value": "(studio\\..*)|(.*studio-.*)"
         }
       ],
       "destination": "/studio/:path*"

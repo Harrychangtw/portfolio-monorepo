@@ -5,9 +5,11 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl
   const hostname = request.headers.get('host') || ''
   
-  // Handle studio subdomain
+  // Handle studio subdomain (including Vercel preview URLs)
   const isStudio = hostname.includes('studio.harrychang.me') || 
-                   hostname.includes('studio.localhost')
+                   hostname.includes('studio.localhost') ||
+                   hostname.startsWith('studio.') ||  // Catches studio.* preview URLs
+                   hostname.includes('studio-')
   
   // Paths that should NOT be rewritten (shared resources)
   const sharedPaths = [
