@@ -15,12 +15,7 @@ const ibmPlexSans = IBM_Plex_Sans({
   display: 'swap',
 })
 
-const pressStart2P = Press_Start_2P({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-press-start-2p',
-})
+
 
 export default function RootLayout({
   children,
@@ -28,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark ${pressStart2P.variable} ${spaceGrotesk.variable} ${ibmPlexSans.variable}`}>
+    <html lang="en" className={`dark ${spaceGrotesk.variable} ${ibmPlexSans.variable}`}>
       <body className={`bg-background text-primary antialiased min-h-screen flex flex-col`}>
         {children}
       </body>

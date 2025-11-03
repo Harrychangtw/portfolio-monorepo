@@ -9,8 +9,20 @@ export function middleware(request: NextRequest) {
   const isStudio = hostname.includes('studio.harrychang.me') || 
                    hostname.includes('studio.localhost')
   
-  if (isStudio && !url.pathname.startsWith('/studio')) {
-    // Rewrite to studio routes
+  // Paths that should NOT be rewritten (shared resources)
+  const sharedPaths = [
+    '/api/',           // API routes are shared
+    '/locales/',       // Translation files are shared
+    '/images/',        // Images are shared
+    '/_next/',         // Next.js internals
+    '/favicon.ico',
+    '/googleb0d95f7ad2ffc31f.html'
+  ]
+  
+  const isSharedPath = sharedPaths.some(path => url.pathname.startsWith(path))
+  
+  if (isStudio && !url.pathname.startsWith('/studio') && !isSharedPath) {
+    // Rewrite to studio routes (only for page routes)
     url.pathname = `/studio${url.pathname}`
     return NextResponse.rewrite(url)
   }

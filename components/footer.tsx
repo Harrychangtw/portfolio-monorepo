@@ -54,6 +54,7 @@ export default function Footer() {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [showManifesto, setShowManifesto] = useState(true); 
   const [isClient, setIsClient] = useState(false);
+  const [isStudio, setIsStudio] = useState(false);
   const footerRef = useRef<HTMLElement | null>(null)
   
   const hoveringMusic = activeTooltipId === 'music';
@@ -65,6 +66,11 @@ export default function Footer() {
 
   useEffect(() => {
     setIsClient(true);
+    
+    // Detect if we're on studio subdomain
+    const hostname = window.location.hostname;
+    setIsStudio(hostname.includes('studio.'));
+    
     const checkWidth = () => {
       setShowManifesto(window.innerWidth >= 800);
     };
@@ -100,8 +106,26 @@ export default function Footer() {
     return href.startsWith('/');
   };
 
+  // Helper to get the correct href based on studio vs main domain
+  const getHref = (href: string) => {
+    // If we're on studio subdomain and link is internal to main domain
+    if (isStudio && isInternalLink(href)) {
+      // Convert to absolute URL pointing to main domain
+      const mainDomain = window.location.hostname.replace('studio.', '');
+      const protocol = window.location.protocol;
+      const port = window.location.port ? `:${window.location.port}` : '';
+      return `${protocol}//${mainDomain}${port}${href}`;
+    }
+    return href;
+  };
+
   // NEW: Click handler for navigation links
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If on studio, let browser handle the cross-domain navigation
+    if (isStudio) {
+      return;
+    }
+    
     // Check if it's a hash link and we're on the home page
     if (href.includes('#') && pathname === '/') {
       const id = href.split('#')[1];
@@ -155,7 +179,7 @@ export default function Footer() {
                       <li key={link.id}>
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                           <a
-                            href={link.href}
+                            href={getHref(link.href)}
                             {...(!isInternalLink(link.href) && {
                               target: "_blank",
                               rel: "noopener noreferrer"
@@ -189,7 +213,7 @@ export default function Footer() {
                         <li key={link.id}>
                           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                             <a
-                              href={link.href}
+                              href={getHref(link.href)}
                               {...(!isInternalLink(link.href) && {
                                 target: "_blank",
                                 rel: "noopener noreferrer"
@@ -225,7 +249,7 @@ export default function Footer() {
                       <li key={link.id}>
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                         <a
-                          href={link.href}
+                          href={getHref(link.href)}
                           className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
                           onClick={(e) => handleNavClick(e, link.href)}
                           onMouseEnter={(e) => handleMouseEnter(e, link.id)}

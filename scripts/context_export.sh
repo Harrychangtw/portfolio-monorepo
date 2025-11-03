@@ -3,10 +3,14 @@ OUTPUT="combined.md"
 > "$OUTPUT"
 
 FILES=(
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/lib/markdown.ts"
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/components/gallery-card.tsx"
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/components/gallery-section.tsx"
-  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/lib/utils.ts"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/app/(studio)/studio/page.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/components/letter-glitch.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/app/(main)/manifesto/page.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/hooks/use-mobile.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/prisma/schema.prisma"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/components/studio/ClientLayout.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/app/(main)/layout.tsx"
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio_site/app/layout.tsx"
 )
 
 for FILE in "${FILES[@]}"

@@ -1,27 +1,29 @@
-import type React from 'react'
-import type { Metadata } from 'next'
+import '@/styles/lcp-optimize.css';
+import '@/styles/video-embed.css';
+import type React from 'react';
+import type { Metadata } from 'next';
+import StudioClientLayout from '@/components/studio/ClientLayout';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://studio.harrychang.me'),
   title: {
-    template: '%s | Harry Chang Studio',
-    default: 'Harry Chang Studio',
+    template: '%s | Studio Harry Chang',
+    default: 'Studio — Harry Chang',
   },
-  description: 'Harry Chang Studio - Coming Soon',
+  description: 'Exclusive courses and consulting on AI, development, and creative technology.',
   robots: {
-    index: false,
+    index: false, // Hide from search engines until launch
     follow: false,
   },
-}
+};
 
 export default function StudioLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <div className="studio-wrapper">
+    <StudioClientLayout>
       {children}
-    </div>
-  )
+    </StudioClientLayout>
+  );
 }
