@@ -7,7 +7,8 @@
     "gallery": "攝影作品",
     "paperReading": "論文閱讀清單",
     "manifesto": "理念",
-    "uses": "工具與設定"
+    "uses": "工具與設定",
+    "studio": "工作室"
   },
   "footer": {
     "socialContact": "社交和聯繫",
@@ -97,5 +98,40 @@
   },
   "notification": {
     "pageNotFound": "頁面未找到，已重新導向至首頁。"
+  },
+  "studio": {
+    "capsule": "2026 Q1 · 限量開放",
+    "heroLine1": "不只是課程",
+    "heroLine2": "是轉變",
+    "tagline": "從實踐者身上學習，而非理論家。",
+    "applyNow": "申請加入",
+    "formTitle": "加入等候名單",
+    "formSubtitle": "2026年2月正式推出。搶先獲得早鳥優惠。",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "emailRequired": "電子郵件 *",
+    "whatInterests": "您感興趣的領域",
+    "preferredTier": "偏好的服務等級",
+    "processing": "處理中...",
+    "joinWaitlist": "加入等候名單",
+    "privacyNote": "我們尊重您的隱私，絕不會分享您的資訊。",
+    "successTitle": "成功加入！",
+    "successMessage": "您是第 {position} 位加入等候名單的人。請查看您的信箱以驗證電子郵件。",
+    "errorGeneric": "發生錯誤",
+    "errorNetwork": "網路錯誤。請再試一次。",
+    "close": "關閉",
+    "interests": {
+      "aiSafety": "AI 安全研究",
+      "portfolio": "作品集開發",
+      "speaking": "演講技巧",
+      "debate": "辯論訓練",
+      "coding": "程式開發",
+      "content": "內容創作"
+    },
+    "tiers": {
+      "foundation": "基礎課程",
+      "cohort": "小班精英",
+      "premium": "一對一顧問"
+    }
   }
 }

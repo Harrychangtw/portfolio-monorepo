@@ -20,6 +20,7 @@ export default function Header() {
   const [isScrolling, setIsScrolling] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hideForFooter, setHideForFooter] = useState(false)
+  const [isStudio, setIsStudio] = useState(false)
   const isHomePage = pathname === "/"
   const isPaperReadingPage = pathname?.startsWith('/paper-reading');
   const isManifestoPage = pathname?.startsWith('/manifesto');
@@ -27,6 +28,14 @@ export default function Header() {
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
   const { t } = useLanguage()
+  
+  // Detect if we're on the studio subdomain
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname
+      setIsStudio(hostname.includes('studio.localhost') || hostname.includes('studio.harrychang.me'))
+    }
+  }, [])
   
   // Use stable hash scroll hook for perfect alignment
   useStableHashScroll("header")
@@ -224,7 +233,7 @@ export default function Header() {
   };
 
   // Determine when to show the staggered menu
-  const showStaggeredMenu = isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage;
+  const showStaggeredMenu = isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isStudio;
   
   // Menu items for the staggered menu
   const menuItems = [
@@ -296,21 +305,42 @@ export default function Header() {
     }
   }, [isMobile, isMenuOpen])
 
+  // Get the home URL - use absolute URL if on studio subdomain
+  const getHomeUrl = () => {
+    if (isStudio) {
+      // On studio subdomain, link to main domain
+      const protocol = typeof window !== 'undefined' && window.location.protocol || 'http:'
+      const hostnameWithPort = typeof window !== 'undefined' && window.location.host || 'localhost:3000'
+      const mainDomain = hostnameWithPort.replace('studio.', '')
+      return `${protocol}//${mainDomain}`
+    }
+    return '/'
+  }
+
   return (
     
     <header 
-      className={`fixed top-0 left-0 right-0 border-b border-border py-4 z-50 bg-background transition-transform duration-300 ease-out will-change-transform ${hideForFooter ? '-translate-y-full' : 'translate-y-0'}`}
+      className={`fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background transition-transform duration-300 ease-out will-change-transform ${hideForFooter ? '-translate-y-full' : 'translate-y-0'}`}
     >
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            <Link
-              href="/"
-              className="font-space-grotesk text-xl font-bold transition-colors hover:text-[#D8F600] outline-none"
-              onClick={(e) => { if(isHomePage) scrollToSection('about', e); }}
-            >
-              Harry Chang
-            </Link>
+            {isStudio ? (
+              <a
+                href={getHomeUrl()}
+                className="font-space-grotesk text-xl font-bold transition-colors hover:text-[#D8F600] outline-none"
+              >
+                Harry Chang
+              </a>
+            ) : (
+              <Link
+                href="/"
+                className="font-space-grotesk text-xl font-bold transition-colors hover:text-[#D8F600] outline-none"
+                onClick={(e) => { if(isHomePage) scrollToSection('about', e); }}
+              >
+                Harry Chang
+              </Link>
+            )}
           </motion.div>
           <AnimatePresence mode="wait">
             {showSectionTitle && !isPaperReadingPage && !isManifestoPage && !isUsesPage && (
@@ -397,6 +427,27 @@ export default function Header() {
                 </motion.span>
               </motion.div>
             )}
+            {isStudio && (
+               <motion.div 
+                className="flex items-center"
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+              >
+                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
+                <motion.span 
+                  className="font-space-grotesk text-xl text-secondary"
+                  key="studio"
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.15, ease: "easeOut" }}
+                >
+                  {t('header.studio')}
+                </motion.span>
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
 
@@ -408,7 +459,7 @@ export default function Header() {
         >
 
           {/* Navigation - Only on desktop and when not on special pages */}
-          {!isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && (
+          {!isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isStudio && (
             <>
               <nav className="flex space-x-8">
                 <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
@@ -443,7 +494,7 @@ export default function Header() {
       
       {/* Staggered Menu - Only show when original nav is hidden */}
       {showStaggeredMenu && (
-        <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+        <div className="fixed top-0 left-0 right-0 z-[60] pointer-events-none">
           <div className="container relative h-[64px] pointer-events-none">
             <div className="absolute top-4 right-4 pointer-events-auto">
               <StaggeredMenu

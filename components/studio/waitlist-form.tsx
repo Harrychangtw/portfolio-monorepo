@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
@@ -11,9 +11,10 @@ interface WaitlistFormProps {
 }
 
 export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProps) {
-  const { language } = useLanguage();
+  const { t, language } = useLanguage();
   const searchParams = useSearchParams();
-  
+  const emailInputRef = useRef<HTMLInputElement>(null);
+
   const [formData, setFormData] = useState({
     email: '',
     firstName: '',
@@ -26,19 +27,26 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
   const [position, setPosition] = useState<number | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      emailInputRef.current?.focus();
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   const interestOptions = [
-    { id: 'ai-safety', label: language === 'zh-TW' ? 'AI 安全研究' : 'AI Safety Research' },
-    { id: 'portfolio', label: language === 'zh-TW' ? '作品集開發' : 'Portfolio Development' },
-    { id: 'speaking', label: language === 'zh-TW' ? '演講技巧' : 'Public Speaking' },
-    { id: 'debate', label: language === 'zh-TW' ? '辯論訓練' : 'Debate Training' },
-    { id: 'coding', label: language === 'zh-TW' ? '程式開發' : 'Software Development' },
-    { id: 'content', label: language === 'zh-TW' ? '內容創作' : 'Content Creation' },
+    { id: 'ai-safety', label: t('studio.interests.aiSafety', 'common') },
+    { id: 'portfolio', label: t('studio.interests.portfolio', 'common') },
+    { id: 'speaking', label: t('studio.interests.speaking', 'common') },
+    { id: 'debate', label: t('studio.interests.debate', 'common') },
+    { id: 'coding', label: t('studio.interests.coding', 'common') },
+    { id: 'content', label: t('studio.interests.content', 'common') },
   ];
 
   const tierOptions = [
-    { id: 'foundation', label: language === 'zh-TW' ? '基礎課程' : 'Foundation Courses' },
-    { id: 'cohort', label: language === 'zh-TW' ? '小班精英' : 'Cohort Programs' },
-    { id: 'premium', label: language === 'zh-TW' ? '一對一顧問' : 'Premium Consulting' },
+    { id: 'foundation', label: t('studio.tiers.foundation', 'common') },
+    { id: 'cohort', label: t('studio.tiers.cohort', 'common') },
+    { id: 'premium', label: t('studio.tiers.premium', 'common') },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -69,11 +77,11 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         setPosition(data.position);
       } else {
         setStatus('error');
-        setErrorMessage(data.error || 'Something went wrong');
+        setErrorMessage(data.error || t('studio.errorGeneric', 'common'));
       }
     } catch (error) {
       setStatus('error');
-      setErrorMessage('Network error. Please try again.');
+      setErrorMessage(t('studio.errorNetwork', 'common'));
     }
   };
 
@@ -88,90 +96,79 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
 
   if (status === 'success') {
     return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="bg-background/95 backdrop-blur-md rounded-2xl p-8 max-w-md w-full mx-4 border border-primary/20 text-center"
+      <div
+        className="bg-[#111] rounded-2xl p-8 max-w-md w-full mx-2 border border-primary/20 text-center"
       >
         <div className="mb-4 text-4xl">🎉</div>
         <h2 className="text-2xl font-space-grotesk font-bold mb-4">
-          {language === 'zh-TW' ? '成功加入！' : "You're on the list!"}
+          {t('studio.successTitle', 'common')}
         </h2>
         <p className="text-muted-foreground mb-4">
-          {language === 'zh-TW'
-            ? `您是第 ${position} 位加入等候名單的人。請查看您的信箱以驗證電子郵件。`
-            : `You're #${position} on the waitlist. Check your email to verify your spot.`}
+          {t('studio.successMessage', 'common').replace('{position}', String(position))}
         </p>
         <button
           onClick={onClose}
           className="px-6 py-2 bg-primary text-background rounded-full font-medium hover:bg-primary/90 transition-colors"
         >
-          {language === 'zh-TW' ? '關閉' : 'Close'}
+          {t('studio.close', 'common')}
         </button>
-      </motion.div>
+      </div>
     );
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      className="bg-background/95 backdrop-blur-md rounded-2xl p-6 md:p-8 max-w-lg w-full mx-4 border border-primary/20 max-h-[90vh] overflow-y-auto"
+    <div
+      className="bg-[#111] rounded-2xl p-6 md:p-8 max-w-lg w-full mx-2 border border-white/20 max-h-[90vh] overflow-y-auto relative"
     >
-      {/* Close Button */}
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 p-2 rounded-full hover:bg-primary/10 transition-colors"
+        className="absolute top-4 right-4 p-2 rounded-full text-white/50 hover:bg-white/10 hover:text-white transition-colors"
         aria-label="Close"
       >
         <X className="w-5 h-5" />
       </button>
 
-      <h2 className="text-2xl font-space-grotesk font-bold mb-2">
-        {language === 'zh-TW' ? '加入等候名單' : 'Join the Waitlist'}
+      <h2 className="text-2xl font-space-grotesk font-bold mb-2 text-white">
+        {t('studio.formTitle', 'common')}
       </h2>
       
       <p className="text-sm text-muted-foreground mb-6">
-        {language === 'zh-TW'
-          ? '2026年2月正式推出。搶先獲得早鳥優惠。'
-          : 'Launching February 2026. Get early access and exclusive pricing.'}
+        {t('studio.formSubtitle', 'common')}
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
-        {/* Name Fields */}
         <div className="grid grid-cols-2 gap-3">
           <input
             type="text"
-            placeholder={language === 'zh-TW' ? '名字' : 'First Name'}
+            placeholder={t('studio.firstName', 'common')}
             value={formData.firstName}
             onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-            className="px-4 py-2 bg-background border border-primary/20 rounded-lg focus:outline-none focus:border-primary transition-colors"
+            className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
           />
           <input
             type="text"
-            placeholder={language === 'zh-TW' ? '姓氏' : 'Last Name'}
+            placeholder={t('studio.lastName', 'common')}
             value={formData.lastName}
             onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-            className="px-4 py-2 bg-background border border-primary/20 rounded-lg focus:outline-none focus:border-primary transition-colors"
+            className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
           />
         </div>
 
-        {/* Email Field */}
         <input
+          ref={emailInputRef}
           type="email"
           required
-          placeholder={language === 'zh-TW' ? '電子郵件 *' : 'Email *'}
+          placeholder={t('studio.emailRequired', 'common')}
           value={formData.email}
           onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-          className="w-full px-4 py-2 bg-background border border-primary/20 rounded-lg focus:outline-none focus:border-primary transition-colors"
+          className="w-full px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
         />
 
-        {/* Interests */}
         <div>
-          <label className="block text-sm font-medium mb-2">
-            {language === 'zh-TW' ? '您感興趣的領域' : 'What interests you?'}
+          <label className="block text-sm font-medium mb-2 text-white/80">
+            {t('studio.whatInterests', 'common')}
           </label>
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {interestOptions.map(option => (
               <button
                 key={option.id}
@@ -180,7 +177,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
                 className={`px-3 py-2 text-sm rounded-lg border transition-all ${
                   formData.interests.includes(option.id)
                     ? 'bg-primary text-background border-primary'
-                    : 'bg-background border-primary/20 hover:border-primary/40'
+                    : 'bg-transparent border-white/20 hover:border-white/40 text-white/80'
                 }`}
               >
                 {option.label}
@@ -189,49 +186,43 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
           </div>
         </div>
 
-        {/* Tier Selection */}
         <div>
-          <label className="block text-sm font-medium mb-2">
-            {language === 'zh-TW' ? '偏好的服務等級' : 'Preferred tier'}
+          <label className="block text-sm font-medium mb-2 text-white/80">
+            {t('studio.preferredTier', 'common')}
           </label>
           <select
             value={formData.tier}
             onChange={(e) => setFormData(prev => ({ ...prev, tier: e.target.value }))}
-            className="w-full px-4 py-2 bg-background border border-primary/20 rounded-lg focus:outline-none focus:border-primary transition-colors"
+            className="w-full px-4 py-2 bg-[#111] border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
           >
             {tierOptions.map(option => (
-              <option key={option.id} value={option.id}>
+              <option key={option.id} value={option.id} className="bg-[#111] text-white">
                 {option.label}
               </option>
             ))}
           </select>
         </div>
 
-        {/* Error Message */}
         {status === 'error' && (
-          <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-lg text-sm text-destructive">
+          <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-400">
             {errorMessage}
           </div>
         )}
 
-        {/* Submit Button */}
         <button
           type="submit"
           disabled={status === 'loading'}
           className="w-full py-3 bg-primary text-background rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === 'loading' 
-            ? (language === 'zh-TW' ? '處理中...' : 'Processing...') 
-            : (language === 'zh-TW' ? '加入等候名單' : 'Join Waitlist')}
+            ? t('studio.processing', 'common')
+            : t('studio.joinWaitlist', 'common')}
         </button>
 
-        {/* Privacy Note */}
         <p className="text-xs text-muted-foreground text-center">
-          {language === 'zh-TW'
-            ? '我們尊重您的隱私，絕不會分享您的資訊。'
-            : 'We respect your privacy and will never share your information.'}
+          {t('studio.privacyNote', 'common')}
         </p>
       </form>
-    </motion.div>
+    </div>
   );
 }

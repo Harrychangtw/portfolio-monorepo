@@ -7,7 +7,8 @@
     "gallery": "Gallery",
     "paperReading": "Paper Reading",
     "manifesto": "Manifesto",
-    "uses": "Uses"
+    "uses": "Uses",
+    "studio": "Studio"
   },
   "footer": {
     "socialContact": "Socials",
@@ -49,13 +50,14 @@
     "discord": "Discord",
     "github": "GitHub",
     "instagram": "Instagram",
-    "letterboxd": "Letterboxd"
+    "letterboxd": "Letterboxd",
+    "linkedin": "LinkedIn",
+    "spotify": "Spotify"
   },
   "resources": {
     "resume": "Résumé",
     "manifesto": "Manifesto",
     "calendar": "Schedules",
-    "wallpapers": "Wallpapers",
     "music": "Spotify Playlists",
     "reading": "Paper Reading List",
     "uses": "Uses"
@@ -101,25 +103,38 @@
     "pageNotFound": "Page not found. Redirected to home."
   },
   "studio": {
-    "limitedAvailability": "Limited Availability",
-    "applicationRequired": "Application Required",
-    "heroTitle1": "Where Technical Mastery",
-    "heroTitle2": "Meets Creative Excellence",
-    "heroTagline": "Learn from someone who's actually doing it, not just teaching it.",
-    "joinWaitlist": "Join the Waitlist",
-    "alreadyJoined": "{{count}} already joined",
-    "spotsFilling": "Spots filling fast",
+    "capsule": "2026 Q1 · Limited Release",
+    "heroLine1": "",
+    "heroLine2": "",
+    "tagline": "Learn from a practitioner, not a theorist.",
+    "applyNow": "Get Notified",
     "formTitle": "Join the Waitlist",
     "formSubtitle": "Launching February 2026. Get early access and exclusive pricing.",
     "firstName": "First Name",
     "lastName": "Last Name",
-    "email": "Email",
+    "emailRequired": "Email *",
     "whatInterests": "What interests you?",
     "preferredTier": "Preferred tier",
     "processing": "Processing...",
+    "joinWaitlist": "Join Waitlist",
     "privacyNote": "We respect your privacy and will never share your information.",
     "successTitle": "You're on the list!",
-    "successMessage": "You're #{{position}} on the waitlist. Check your email to verify your spot.",
-    "close": "Close"
+    "successMessage": "You're #{position} on the waitlist. Check your email to verify your spot.",
+    "errorGeneric": "Something went wrong",
+    "errorNetwork": "Network error. Please try again.",
+    "close": "Close",
+    "interests": {
+      "aiSafety": "AI Safety Research",
+      "portfolio": "Portfolio Development",
+      "speaking": "Public Speaking",
+      "debate": "Debate Training",
+      "coding": "Software Development",
+      "content": "Content Creation"
+    },
+    "tiers": {
+      "foundation": "Foundation Courses",
+      "cohort": "Cohort Programs",
+      "premium": "Premium Consulting"
+    }
   }
 }
