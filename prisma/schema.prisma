@@ -2,11 +2,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
+
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL") // For migrations
+  provider          = "postgresql"
+  url               = env("DATABASE_POSTGRES_URL") // For query & runtime
+  directUrl         = env("DATABASE_PRISMA_DATABASE_URL") // For migrations
 }
+
 
 model WaitlistEntry {
   id            String   @id @default(cuid())
