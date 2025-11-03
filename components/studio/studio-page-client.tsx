@@ -58,13 +58,13 @@ export default function StudioPageClient() {
             >
               {/* Top Capsule */}
               <motion.div
-                initial={{ opacity: 0, y: -10 }}
+                initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 0, duration: 0.5, ease: "easeOut" }}
                 className="inline-block mb-12"
               >
                 <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm">
-                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+                  <span className="text-sm font-mono uppercase tracking-[0.2em] text-white/40">
                     {t('studio.capsule', 'common')}
                   </span>
                 </div>
@@ -74,9 +74,9 @@ export default function StudioPageClient() {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                className="text-5xl md:text-6xl lg:text-6xl font-space-grotesk font-bold mb-6 leading-[0.9] tracking-tighter"
-                style={{ textShadow: '0 0 25px rgba(0, 0, 0, 0.9)' }}
+                transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
+                className="text-5xl md:text-6xl lg:text-6xl font-space-grotesk font-bold mb-6 leading-[1.1] tracking-tighter"
+                
               >
                 <span className="text-white">
                   {t('studio.heroLine1', 'common')}
@@ -89,9 +89,9 @@ export default function StudioPageClient() {
 
               {/* Single Description Line */}
               <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
                 className="text-base md:text-lg text-white/40 mb-12 font-ibm-plex-sans font-light tracking-wide max-w-2xl mx-auto"
               >
                 {t('studio.tagline', 'common')}
@@ -101,7 +101,7 @@ export default function StudioPageClient() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
+                transition={{ delay: 1.1, duration: 0.8, ease: "easeOut" }}
                 className="w-full max-w-md mx-auto"
               >
                 {/* Desktop: Inline button */}

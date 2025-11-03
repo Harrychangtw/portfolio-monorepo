@@ -82,6 +82,7 @@
     "recharts": "2.15.0",
     "remark": "latest",
     "remark-html": "latest",
+    "resend": "^6.4.0",
     "sonner": "^1.7.1",
     "svelte": "latest",
     "tailwind-merge": "^2.5.5",

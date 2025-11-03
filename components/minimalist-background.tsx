@@ -58,6 +58,25 @@ export default function MinimalistBackground() {
             }}
           />
         </motion.div>
+        <motion.div
+          className="absolute bottom-[-80vh] inset-x-[-50vw] md:inset-x-[-25vw] w-[200vw] md:w-[150vw] h-[100vh] mx-auto"
+          initial={{ opacity: 0, x: "-50%" }}
+          animate={{ opacity: [0, 1, 1, 0], x: "0%" }}
+          transition={{
+            duration: 1.2,
+            ease: "easeInOut",
+            delay: 0.5,
+            times: [0, 0.2, 0.8, 1]
+          }}
+        >
+          <div
+            className="absolute inset-0 rounded-[100%]"
+            style={{
+              background: 'radial-gradient(circle at 25% 50%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 20%)',
+
+            }}
+          />
+        </motion.div>
         {/* Top gradient fade - animated */}
         <motion.div 
           className="absolute top-0 left-0 right-0 h-[40vh]"

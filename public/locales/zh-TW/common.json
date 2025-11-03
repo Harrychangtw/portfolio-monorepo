@@ -50,7 +50,9 @@
     "discord": "Discord", 
     "github": "GitHub",
     "instagram": "Instagram",
-    "letterboxd": "Letterboxd"
+    "letterboxd": "Letterboxd",
+    "linkedin": "LinkedIn",
+    "music": "Spotify"
   },
   "resources": {
     "resume": "履歷",
@@ -100,38 +102,36 @@
     "pageNotFound": "頁面未找到，已重新導向至首頁。"
   },
   "studio": {
-    "capsule": "2026 Q1 · 限量開放",
-    "heroLine1": "不只是課程",
-    "heroLine2": "是轉變",
-    "tagline": "從實踐者身上學習，而非理論家。",
-    "applyNow": "申請加入",
+    "capsule": "2026 Q2 · 限量開放",
+    "heroLine1": "十七歲的實戰心法",
+    "heroLine2": "獻給不甘相同的你",
+    "tagline": "從學術研究、創意實踐到中英發表",
+    "heroEmailPlaceholder": "your@email.com",
+    "applyNow": "我感興趣",
     "formTitle": "加入等候名單",
-    "formSubtitle": "2026年2月正式推出。搶先獲得早鳥優惠。",
+    "formSubtitle": "搶先獲得早鳥優惠。",
     "firstName": "名字",
     "lastName": "姓氏",
     "emailRequired": "電子郵件 *",
     "whatInterests": "您感興趣的領域",
-    "preferredTier": "偏好的服務等級",
-    "processing": "處理中...",
+    "preferredTier": "期望方案",
+    "processing": "提交中...",
     "joinWaitlist": "加入等候名單",
-    "privacyNote": "我們尊重您的隱私，絕不會分享您的資訊。",
-    "successTitle": "成功加入！",
-    "successMessage": "您是第 {position} 位加入等候名單的人。請查看您的信箱以驗證電子郵件。",
+    "privacyNote": "絕不濫用您的資料，隱私至上。",
+    "successTitle": "預約成功",
+    "successMessage": "您是第 {position} 位加入等候名單的人。請查看您的信箱確認。",
     "errorGeneric": "發生錯誤",
     "errorNetwork": "網路錯誤。請再試一次。",
     "close": "關閉",
     "interests": {
-      "aiSafety": "AI 安全研究",
-      "portfolio": "作品集開發",
-      "speaking": "演講技巧",
-      "debate": "辯論訓練",
-      "coding": "程式開發",
-      "content": "內容創作"
+      "frameworks": "研究與思維框架",
+      "speaking": "中英口說與辯論",
+      "narrative": "內容敘事與設計"
     },
     "tiers": {
-      "foundation": "基礎課程",
-      "cohort": "小班精英",
-      "premium": "一對一顧問"
+      "async": "非同步課程",
+      "cohort": "線上同步課程",
+      "consulting": "一對一指導"
     }
   }
 }

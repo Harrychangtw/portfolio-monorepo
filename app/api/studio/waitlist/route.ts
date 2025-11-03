@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { z } from 'zod';
 import crypto from 'crypto';
+import { sendWaitlistConfirmationEmail } from '@/lib/email';
 
 const WaitlistSchema = z.object({
   email: z.string().email(),
@@ -79,9 +80,19 @@ export async function POST(request: Request) {
     // Get position in waitlist
     const position = await prisma.waitlistEntry.count();
     
-    // TODO: Send verification email using your preferred email service
-    // For now, we'll skip the actual email sending
-    console.log(`Verification link: https://studio.harrychang.me/verify?token=${verificationToken}`);
+    // Send confirmation email
+    const emailResult = await sendWaitlistConfirmationEmail({
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      position,
+      locale: data.locale
+    });
+    
+    if (!emailResult.success) {
+      console.error('Email sending failed, but user was added to waitlist:', emailResult.error);
+      // Don't fail the request if email fails - user is already in the waitlist
+    }
     
     return NextResponse.json({ 
       success: true, 

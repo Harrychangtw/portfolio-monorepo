@@ -35,18 +35,15 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
   }, []);
 
   const interestOptions = [
-    { id: 'ai-safety', label: t('studio.interests.aiSafety', 'common') },
-    { id: 'portfolio', label: t('studio.interests.portfolio', 'common') },
+    { id: 'frameworks', label: t('studio.interests.frameworks', 'common') },
     { id: 'speaking', label: t('studio.interests.speaking', 'common') },
-    { id: 'debate', label: t('studio.interests.debate', 'common') },
-    { id: 'coding', label: t('studio.interests.coding', 'common') },
-    { id: 'content', label: t('studio.interests.content', 'common') },
+    { id: 'narrative', label: t('studio.interests.narrative', 'common') },
   ];
 
   const tierOptions = [
-    { id: 'foundation', label: t('studio.tiers.foundation', 'common') },
+    { id: 'async', label: t('studio.tiers.async', 'common') },
     { id: 'cohort', label: t('studio.tiers.cohort', 'common') },
-    { id: 'premium', label: t('studio.tiers.premium', 'common') },
+    { id: 'consulting', label: t('studio.tiers.consulting', 'common') },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -143,14 +140,14 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
             placeholder={t('studio.firstName', 'common')}
             value={formData.firstName}
             onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-            className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
+            className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
           />
           <input
             type="text"
             placeholder={t('studio.lastName', 'common')}
             value={formData.lastName}
             onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-            className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
+            className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
           />
         </div>
 
@@ -161,7 +158,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
           placeholder={t('studio.emailRequired', 'common')}
           value={formData.email}
           onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-          className="w-full px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
+          className="w-full px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
         />
 
         <div>

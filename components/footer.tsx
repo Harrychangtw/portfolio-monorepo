@@ -30,7 +30,7 @@ const socialLinks = [
   { id: 'discord', name: 'Discord', href: '/discord', tooltip: 'Ping me, maybe I\'ll ping back' },
   { id: 'github', name: 'GitHub', href: '/github', tooltip: 'Check out my GitHub—where repos go to hide' },
   { id: 'instagram', name: 'Instagram', href: '/instagram', tooltip: 'Please stalk responsibly' },
-  { id: 'linkedin', name: 'LinkedIn', href: '/linkedin', tooltip: 'Connect with me on LinkedIn' },
+  { id: 'music', name: 'Music Playlists', href: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3' },
 ];
 
 const resourceLinks = [
@@ -39,7 +39,6 @@ const resourceLinks = [
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
   // { id: 'wallpapers', name: 'Wallpapers', href: 'https://photos.google.com/u/1/share/AF1QipN_xATdICaaIO4RzR5CzdIj6AFeoueQmu5100b-a9_QIAzGLhz4HD95OurMi8pqBQ?key=MnV1OGlrQUdRTUg3Y0FHSkdnYVZrOXNMOU1PWFpn', tooltip: 'Spent way too much time on these...' },
   { id: 'uses', name: 'Uses', href: '/uses', tooltip: 'My tools & setup' },
-  { id: 'music', name: 'Music Playlists', href: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3' },
   { id: 'reading', name: 'Paper Reading List', href: '/paper-reading', tooltip: 'Caffeine-fueled knowledge' },
 ];
 
@@ -189,7 +188,14 @@ export default function Footer() {
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                           >
-                            {t(`social.${link.id}`)}
+                            {link.id === 'music' ? (
+                              <span className="inline-flex items-center">
+                                {t(`social.${link.id}`)}
+                                <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
+                              </span>
+                            ) : (
+                              t(`social.${link.id}`)
+                            )}
                           </a>
                         </motion.div>
                       </li>
@@ -223,14 +229,7 @@ export default function Footer() {
                               onMouseMove={handleMouseMove}
                               onMouseLeave={handleMouseLeave}
                             >
-                              {link.id === 'music' ? (
-                                <span className="inline-flex items-center">
-                                  {t(`resources.${link.id}`)}
-                                  <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
-                                </span>
-                              ) : (
-                                t(`resources.${link.id}`)
-                              )}
+                              {t(`resources.${link.id}`)}
                             </a>
                           </motion.div>
                         </li>

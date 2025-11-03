@@ -52,7 +52,7 @@
     "instagram": "Instagram",
     "letterboxd": "Letterboxd",
     "linkedin": "LinkedIn",
-    "spotify": "Spotify"
+    "music": "Spotify"
   },
   "resources": {
     "resume": "Résumé",
@@ -80,12 +80,14 @@
     "calendar": "Book a time, let's chat!",
     "github": "Where good code goes to get overengineered",
     "instagram": "POV: You're watching a teenager pretend to be Fan Ho",
+    "linkedin": "For the professional inquiries I ",
     "letterboxd": "4.5 stars for everything because I have no taste",
     "resume": "Yes it's literally just a Google Drive link.",
     "manifesto": "My philosophy on work, creation, and curiosity",
     "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
     "reading": "No TL;DR. Figure it out yourself.",
     "uses": "Need these for \"school work\""
+    
 
   },
   "letterGlitch": {
@@ -103,38 +105,36 @@
     "pageNotFound": "Page not found. Redirected to home."
   },
   "studio": {
-    "capsule": "2026 Q1 · Limited Release",
-    "heroLine1": "",
-    "heroLine2": "",
-    "tagline": "Learn from a practitioner, not a theorist.",
-    "applyNow": "Get Notified",
-    "formTitle": "Join the Waitlist",
-    "formSubtitle": "Launching February 2026. Get early access and exclusive pricing.",
+    "capsule": "2026 Q2 · Limited Release",
+    "heroLine1": "The Edge You Can't Google.",
+    "heroLine2": "The Path You Can't Fake.",
+    "tagline": "Where research meets the stage. By the 17-year-old walking the path.",
+    "heroEmailPlaceholder": "your@email.com",
+    "applyNow": "Join Waitlist",
+    "formTitle": "Reserve Your Spot",
+    "formSubtitle": "Launching Q2 2026. Get early bird access.",
     "firstName": "First Name",
     "lastName": "Last Name",
     "emailRequired": "Email *",
-    "whatInterests": "What interests you?",
-    "preferredTier": "Preferred tier",
-    "processing": "Processing...",
+    "whatInterests": "What interests you most?",
+    "preferredTier": "Preferred format",
+    "processing": "Submitting...",
     "joinWaitlist": "Join Waitlist",
-    "privacyNote": "We respect your privacy and will never share your information.",
-    "successTitle": "You're on the list!",
-    "successMessage": "You're #{position} on the waitlist. Check your email to verify your spot.",
+    "privacyNote": "Your info stays private. No spam, ever.",
+    "successTitle": "You're in!",
+    "successMessage": "You're #{position} on the waitlist. Check your email for confirmation.",
     "errorGeneric": "Something went wrong",
-    "errorNetwork": "Network error. Please try again.",
+    "errorNetwork": "Connection failed. Try again?",
     "close": "Close",
     "interests": {
-      "aiSafety": "AI Safety Research",
-      "portfolio": "Portfolio Development",
-      "speaking": "Public Speaking",
-      "debate": "Debate Training",
-      "coding": "Software Development",
-      "content": "Content Creation"
+      "frameworks": "Research & Frameworks",
+      "speaking": "Public Speaking & Debate",
+      "narrative": "Content & Narrative Design"
     },
     "tiers": {
-      "foundation": "Foundation Courses",
-      "cohort": "Cohort Programs",
-      "premium": "Premium Consulting"
+      "async": "Self-Paced Courses",
+      "cohort": "Live Cohorts",
+      "consulting": "1-on-1 Sessions"
     }
   }
 }
