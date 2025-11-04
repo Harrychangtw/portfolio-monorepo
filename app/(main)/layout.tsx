@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | Harry Chang',
     default: 'Harry Chang 張祺煒 | Portfolio',
   },
-  description: 'Harry Chang (張祺煒) portfolio showcasing photography, software development and design work',
+  description: 'Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Explore his portfolio of software development, photography, and design.',
   keywords: ['Harry Chang', '張祺煒', 'portfolio', 'photography', 'software development', 'design', 'research', 'AI', 'machine learning'],
   authors: [{ name: 'Harry Chang', url: 'https://harrychang.me' }],
   creator: 'Harry Chang',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: 'https://harrychang.me',
     siteName: 'Harry Chang Portfolio',
     title: 'Harry Chang 張祺煒 | Portfolio',
-    description: 'Harry Chang (張祺煒) portfolio showcasing photography, software development and design work',
+    description: 'Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Explore his portfolio of software development, photography, and design.',
     images: [
       {
         url: '/images/og-image.png',
