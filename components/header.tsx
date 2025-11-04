@@ -287,7 +287,7 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => {
       // Don't hide header on mobile or when menu is open
-      if (isMobile || isMenuOpen) {
+      if (isMobile || isMenuOpen || isLab) { // Add isLab here
         setHideForFooter(false);
         return;
       }
@@ -303,7 +303,8 @@ export default function Header() {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
     }
-  }, [isMobile, isMenuOpen])
+  }, [isMobile, isMenuOpen, isLab]) // Add isLab to the dependency array
+
 
   // Get the home URL - use absolute URL if on lab subdomain
   const getHomeUrl = () => {

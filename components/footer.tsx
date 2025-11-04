@@ -161,7 +161,7 @@ export default function Footer() {
           color: transparent;
           background-clip: text;
           -webkit-background-clip: text;
-          background-image: linear-gradient(45deg, #D8F600, #34d288, #61b3dc, #34d288, #D8F600);
+          background-image: linear-gradient(60deg, #eaff4b, #3affa3, #4aa4d1, #3affa3, #eaff4b);
           background-size: 200% 100%;
           animation: gradient-loop 1s linear infinite;
         }

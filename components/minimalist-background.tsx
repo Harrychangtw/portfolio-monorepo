@@ -19,7 +19,7 @@ export default function MinimalistBackground() {
 
         {/* Arc edge - Layer 3 (sharp edge) */}
         <motion.div 
-          className="absolute bottom-[-80vh] inset-x-[-50vw] md:inset-x-[-25vw] w-[200vw] md:w-[150vw] h-[100vh] mx-auto"
+          className="absolute bottom-[-75vh] inset-x-[-50vw] md:inset-x-[-25vw] w-[200vw] md:w-[150vw] h-[100vh] mx-auto"
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ 
@@ -40,7 +40,7 @@ export default function MinimalistBackground() {
         
          {/* Arc glow effect - Layer 2 (middle layer) */}
         <motion.div 
-          className="absolute bottom-[-80vh] inset-x-[-50vw] md:inset-x-[-25vw] w-[200vw] md:w-[150vw] h-[100vh] mx-auto"
+          className="absolute bottom-[-75vh] inset-x-[-55vw] md:inset-x-[-25vw] w-[200vw] md:w-[150vw] h-[100vh] mx-auto"
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ 
@@ -59,7 +59,7 @@ export default function MinimalistBackground() {
           />
         </motion.div>
         <motion.div
-          className="absolute bottom-[-80vh] inset-x-[-50vw] md:inset-x-[-25vw] w-[200vw] md:w-[150vw] h-[100vh] mx-auto"
+          className="absolute bottom-[-75vh] inset-x-[-50vw] md:inset-x-[-25vw] w-[200vw] md:w-[150vw] h-[100vh] mx-auto"
           initial={{ opacity: 0, x: "-50%" }}
           animate={{ opacity: [0, 1, 1, 0], x: "0%" }}
           transition={{
