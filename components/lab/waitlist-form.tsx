@@ -94,6 +94,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
   if (status === 'success') {
     return (
       <div
+        onClick={(e) => e.stopPropagation()}
         className="bg-[#111] rounded-2xl p-8 max-w-md w-full mx-2 border border-primary/20 text-center"
       >
         <div className="mb-4 text-4xl">🎉</div>
@@ -115,6 +116,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
 
   return (
     <div
+      onClick={(e) => e.stopPropagation()}
       className="bg-[#111] rounded-2xl p-6 md:p-8 max-w-lg w-full mx-2 border border-white/20 max-h-[90vh] overflow-y-auto relative"
     >
       <button

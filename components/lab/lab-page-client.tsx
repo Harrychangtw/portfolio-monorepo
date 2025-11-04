@@ -149,6 +149,7 @@ export default function LabPageClient() {
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="relative z-50 w-full flex items-center justify-center"
+              onClick={() => setShowForm(false)}
             >
               <WaitlistForm 
                 onClose={() => setShowForm(false)}
