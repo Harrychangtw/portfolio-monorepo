@@ -5,25 +5,25 @@
       "has": [
         {
           "type": "host",
-          "value": "studio\\.harrychang\\.me"
+          "value": "lab\\.harrychang\\.me"
         }
       ],
-      "destination": "/studio/:path*"
+      "destination": "/lab/:path*"
     },
     {
       "source": "/:path*",
       "has": [
         {
           "type": "host",
-          "value": "www\\.studio\\.harrychang\\.me"
+          "value": "www\\.lab\\.harrychang\\.me"
         }
       ],
-      "destination": "/studio/:path*"
+      "destination": "/lab/:path*"
     }
   ],
   "headers": [
     {
-      "source": "/studio/:path*",
+      "source": "/lab/:path*",
       "headers": [
         {
           "key": "X-Robots-Tag",

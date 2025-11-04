@@ -1,19 +1,19 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import WaitlistForm from '@/components/studio/waitlist-form';
+import WaitlistForm from '@/components/lab/waitlist-form';
 import MinimalistBackground from '@/components/minimalist-background';
 import { motion, AnimatePresence } from 'framer-motion';
-import AnimatedIcarusIcon from '@/components/studio/animated-icon';
+import AnimatedIcarusIcon from '@/components/lab/animated-icon';
 
-export default function StudioPageClient() {
+export default function LabPageClient() {
   const { t, language, isLoading } = useLanguage();
   const [showForm, setShowForm] = useState(false);
   const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
 
   // Fetch waitlist count on mount
   useEffect(() => {
-    fetch('/api/studio/waitlist')
+    fetch('/api/lab/waitlist')
       .then(res => res.json())
       .then(data => setWaitlistCount(data.total))
       .catch(() => setWaitlistCount(null));
@@ -71,7 +71,7 @@ export default function StudioPageClient() {
               >
                 <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm">
                   <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/40">
-                    {t('studio.capsule', 'common')}
+                    {t('lab.capsule', 'common')}
                   </span>
                 </div>
               </motion.div>
@@ -85,11 +85,11 @@ export default function StudioPageClient() {
                 
               >
                 <span className="text-white">
-                  {t('studio.heroLine1', 'common')}
+                  {t('lab.heroLine1', 'common')}
                 </span>
                 <br />
                 <span className="text-white/30">
-                  {t('studio.heroLine2', 'common')}
+                  {t('lab.heroLine2', 'common')}
                 </span>
               </motion.h1>
 
@@ -100,7 +100,7 @@ export default function StudioPageClient() {
                 transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
                 className="text-base md:text-lg text-white/40 mb-12 font-ibm-plex-sans font-light tracking-wide max-w-2xl mx-auto"
               >
-                {t('studio.tagline', 'common')}
+                {t('lab.tagline', 'common')}
               </motion.p>
               
               {/* Minimal CTA */}
@@ -115,13 +115,13 @@ export default function StudioPageClient() {
                     <input
                         type="email"
                         readOnly
-                        placeholder={t('studio.heroEmailPlaceholder', 'common') || "Your Email Address"}
+                        placeholder={t('lab.heroEmailPlaceholder', 'common') || "Your Email Address"}
                         className="w-full h-full bg-[#0F0F0F] border border-white/20 rounded-lg pl-6 pr-36 text-white placeholder-white/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
                     />
                     <button
                         className="absolute right-2 top-2 bottom-2 bg-white text-black rounded-md px-6 font-medium hover:bg-gray-200 transition-colors"
                     >
-                        {t('studio.applyNow', 'common')}
+                        {t('lab.applyNow', 'common')}
                     </button>
                 </div>
                 
@@ -130,13 +130,13 @@ export default function StudioPageClient() {
                     <input
                         type="email"
                         readOnly
-                        placeholder={t('studio.heroEmailPlaceholder', 'common') || "Your Email Address"}
+                        placeholder={t('lab.heroEmailPlaceholder', 'common') || "Your Email Address"}
                         className="w-full h-12 bg-[#0F0F0F] border border-white/20 rounded-lg px-4 text-white placeholder-white/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
                     />
                     <button
                         className="w-full h-12 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition-colors"
                     >
-                        {t('studio.applyNow', 'common')}
+                        {t('lab.applyNow', 'common')}
                     </button>
                 </div>
               </motion.div>

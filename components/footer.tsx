@@ -31,14 +31,14 @@ const socialLinks = [
   { id: 'github', name: 'GitHub', href: '/github', tooltip: 'Check out my GitHub—where repos go to hide' },
   { id: 'instagram', name: 'Instagram', href: '/instagram', tooltip: 'Please stalk responsibly' },
   { id: 'music', name: 'Music Playlists', href: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3' },
-
+  { id: 'letterboxd', name: 'Letterboxd', href: '/letterboxd', tooltip: 'Movie reviews from a non-critic' },
 ];
 
 const resourceLinks = [
-  { id: 'resume', name: 'Resume', href: '/cv', tooltip: 'Proof I know how to adult' },
-  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal', tooltip: 'Book a time to chat with me' },
-  { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
   { id: 'icarus', name: 'Icarus Lab', href: '/icarus', tooltip: 'Home to future courses & 1-on-1 sessions' },
+  { id: 'resume', name: 'Resume', href: '/cv', tooltip: 'Proof I know how to adult' },
+  { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
+  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal', tooltip: 'Book a time to chat with me' },
   { id: 'uses', name: 'Uses', href: '/uses', tooltip: 'My tools & setup' },
   { id: 'reading', name: 'Paper Reading List', href: '/paper-reading', tooltip: 'Caffeine-fueled knowledge' },
 ];
@@ -54,7 +54,7 @@ export default function Footer() {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [showManifesto, setShowManifesto] = useState(true); 
   const [isClient, setIsClient] = useState(false);
-  const [isStudio, setIsStudio] = useState(false);
+  const [isLab, setIsLab] = useState(false);
   const footerRef = useRef<HTMLElement | null>(null)
   
   const hoveringMusic = activeTooltipId === 'music';
@@ -67,9 +67,9 @@ export default function Footer() {
   useEffect(() => {
     setIsClient(true);
     
-    // Detect if we're on studio subdomain
+    // Detect if we're on lab subdomain
     const hostname = window.location.hostname;
-    setIsStudio(hostname.includes('studio.'));
+    setIsLab(hostname.startsWith('lab.'));
     
     const checkWidth = () => {
       setShowManifesto(window.innerWidth >= 800);
@@ -106,23 +106,41 @@ export default function Footer() {
     return href.startsWith('/');
   };
 
-  // Helper to get the correct href based on studio vs main domain
-  const getHref = (href: string) => {
-    // If we're on studio subdomain and link is internal to main domain
-    if (isStudio && isInternalLink(href)) {
-      // Convert to absolute URL pointing to main domain
-      const mainDomain = window.location.hostname.replace('studio.', '');
-      const protocol = window.location.protocol;
-      const port = window.location.port ? `:${window.location.port}` : '';
+  // Helper to get the correct href based on lab vs main domain
+  const getHref = (href: string, id: string) => {
+    if (!isClient) {
+      return href; // Return original href during SSR
+    }
+
+    const protocol = window.location.protocol;
+    const hostname = window.location.hostname;
+    const port = window.location.port ? `:${window.location.port}` : '';
+
+    const isIcarusLink = id === 'icarus';
+
+    if (isIcarusLink) {
+      if (hostname.includes('localhost')) {
+        // Handle localhost, redirect to lab.localhost:3000
+        return `${protocol}//lab.localhost${port}`;
+      }
+      // Handle production domain
+      const mainDomain = hostname.replace('lab.', '');
+      return `${protocol}//lab.${mainDomain}`;
+    }
+
+    // If we're on the lab subdomain, and it's an internal link to the main site
+    if (isLab && isInternalLink(href)) {
+      const mainDomain = hostname.replace('lab.', '');
       return `${protocol}//${mainDomain}${port}${href}`;
     }
+
     return href;
   };
 
   // NEW: Click handler for navigation links
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // If on studio, let browser handle the cross-domain navigation
-    if (isStudio) {
+    // If on lab, let browser handle the cross-domain navigation
+    if (isLab) {
       return;
     }
     
@@ -199,7 +217,7 @@ export default function Footer() {
                       <li key={link.id}>
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                           <a
-                            href={getHref(link.href)}
+                            href={getHref(link.href, link.id)}
                             {...(!isInternalLink(link.href) && {
                               target: "_blank",
                               rel: "noopener noreferrer"
@@ -230,58 +248,29 @@ export default function Footer() {
                     {t('footer.personalResources')}
                   </h3>
                   <ul className="space-y-3">
-                    {resourceLinks.map(link => {
-                      // Don't render manifesto link when showManifesto is false
-                      if (link.id === 'manifesto' && !showManifesto) {
-                        return null;
-                      }
-
-                      // Special rendering for Icarus Lab link with gradient animation
-                      if (link.id === 'icarus-lab') {
-                        return (
-                          <li key={link.id}>
-                            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                              <a
-                                href={getHref(link.href)}
-                                className="animated-gradient-text font-ibm-plex"
-                                onMouseEnter={(e) => handleMouseEnter(e, link.id)}
-                                onMouseMove={handleMouseMove}
-                                onMouseLeave={handleMouseLeave}
-                              >
-                                <span className="gradient-overlay" />
-                                <span className="text-content whitespace-nowrap">
-                                  {t(`resources.${link.id}`)}
-                                </span>
-                              </a>
-                            </motion.div>
-                          </li>
-                        );
-                      }
-                      
-                      return (
-                        <li key={link.id}>
-                          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                            <a
-                              href={getHref(link.href)}
-                              {...(!isInternalLink(link.href) && {
-                                target: "_blank",
-                                rel: "noopener noreferrer"
-                              })}
-                              className={`font-ibm-plex text-primary transition-colors whitespace-nowrap ${
-                                link.id === 'icarus'
-                                  ? 'icarus-link'
-                                  : 'hover:text-[#D8F600]'
-                              }`}
-                              onMouseEnter={(e) => handleMouseEnter(e, link.id)}
-                              onMouseMove={handleMouseMove}
-                              onMouseLeave={handleMouseLeave}
-                            >
-                              {t(`resources.${link.id}`)}
-                            </a>
-                          </motion.div>
-                        </li>
-                      );
-                    })}
+                    {filteredResourceLinks.map(link => (
+                      <li key={link.id}>
+                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                          <a
+                            href={getHref(link.href, link.id)}
+                            {...(!isInternalLink(link.href) && {
+                              target: "_blank",
+                              rel: "noopener noreferrer"
+                            })}
+                            className={`font-ibm-plex text-primary transition-colors whitespace-nowrap ${
+                              link.id === 'icarus'
+                                ? 'icarus-link'
+                                : 'hover:text-[#D8F600]'
+                            }`}
+                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                          >
+                            {t(`resources.${link.id}`)}
+                          </a>
+                        </motion.div>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
@@ -295,7 +284,7 @@ export default function Footer() {
                       <li key={link.id}>
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                         <a
-                          href={getHref(link.href)}
+                          href={getHref(link.href, link.id)}
                           className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
                           onClick={(e) => handleNavClick(e, link.href)}
                           onMouseEnter={(e) => handleMouseEnter(e, link.id)}

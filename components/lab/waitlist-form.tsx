@@ -35,15 +35,15 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
   }, []);
 
   const interestOptions = [
-    { id: 'frameworks', label: t('studio.interests.frameworks', 'common') },
-    { id: 'speaking', label: t('studio.interests.speaking', 'common') },
-    { id: 'narrative', label: t('studio.interests.narrative', 'common') },
+    { id: 'frameworks', label: t('lab.interests.frameworks', 'common') },
+    { id: 'speaking', label: t('lab.interests.speaking', 'common') },
+    { id: 'narrative', label: t('lab.interests.narrative', 'common') },
   ];
 
   const tierOptions = [
-    { id: 'async', label: t('studio.tiers.async', 'common') },
-    { id: 'cohort', label: t('studio.tiers.cohort', 'common') },
-    { id: 'consulting', label: t('studio.tiers.consulting', 'common') },
+    { id: 'async', label: t('lab.tiers.async', 'common') },
+    { id: 'cohort', label: t('lab.tiers.cohort', 'common') },
+    { id: 'consulting', label: t('lab.tiers.consulting', 'common') },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -61,7 +61,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
     };
     
     try {
-      const response = await fetch('/api/studio/waitlist', {
+      const response = await fetch('/api/lab/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -74,11 +74,11 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         setPosition(data.position);
       } else {
         setStatus('error');
-        setErrorMessage(data.error || t('studio.errorGeneric', 'common'));
+        setErrorMessage(data.error || t('lab.errorGeneric', 'common'));
       }
     } catch (error) {
       setStatus('error');
-      setErrorMessage(t('studio.errorNetwork', 'common'));
+      setErrorMessage(t('lab.errorNetwork', 'common'));
     }
   };
 
@@ -98,16 +98,16 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
       >
         <div className="mb-4 text-4xl">🎉</div>
         <h2 className="text-2xl font-space-grotesk font-bold mb-4">
-          {t('studio.successTitle', 'common')}
+          {t('lab.successTitle', 'common')}
         </h2>
         <p className="text-muted-foreground mb-4">
-          {t('studio.successMessage', 'common').replace('{position}', String(position))}
+          {t('lab.successMessage', 'common').replace('{position}', String(position))}
         </p>
         <button
           onClick={onClose}
           className="px-6 py-2 bg-primary text-background rounded-full font-medium hover:bg-primary/90 transition-colors"
         >
-          {t('studio.close', 'common')}
+          {t('lab.close', 'common')}
         </button>
       </div>
     );
@@ -126,25 +126,25 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
       </button>
 
       <h2 className="text-2xl font-space-grotesk font-bold mb-2 text-white">
-        {t('studio.formTitle', 'common')}
+        {t('lab.formTitle', 'common')}
       </h2>
       
       <p className="text-sm text-muted-foreground mb-6">
-        {t('studio.formSubtitle', 'common')}
+        {t('lab.formSubtitle', 'common')}
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-2 gap-3">
           <input
             type="text"
-            placeholder={t('studio.firstName', 'common')}
+            placeholder={t('lab.firstName', 'common')}
             value={formData.firstName}
             onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
             className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
           />
           <input
             type="text"
-            placeholder={t('studio.lastName', 'common')}
+            placeholder={t('lab.lastName', 'common')}
             value={formData.lastName}
             onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
             className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
@@ -155,7 +155,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
           ref={emailInputRef}
           type="email"
           required
-          placeholder={t('studio.emailRequired', 'common')}
+          placeholder={t('lab.emailRequired', 'common')}
           value={formData.email}
           onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
           className="w-full px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
@@ -163,7 +163,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
 
         <div>
           <label className="block text-sm font-medium mb-2 text-white/80">
-            {t('studio.whatInterests', 'common')}
+            {t('lab.whatInterests', 'common')}
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {interestOptions.map(option => (
@@ -185,7 +185,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
 
         <div>
           <label className="block text-sm font-medium mb-2 text-white/80">
-            {t('studio.preferredTier', 'common')}
+            {t('lab.preferredTier', 'common')}
           </label>
           <select
             value={formData.tier}
@@ -212,12 +212,12 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
           className="w-full py-3 bg-primary text-background rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === 'loading' 
-            ? t('studio.processing', 'common')
-            : t('studio.joinWaitlist', 'common')}
+            ? t('lab.processing', 'common')
+            : t('lab.joinWaitlist', 'common')}
         </button>
 
         <p className="text-xs text-muted-foreground text-center">
-          {t('studio.privacyNote', 'common')}
+          {t('lab.privacyNote', 'common')}
         </p>
       </form>
     </div>

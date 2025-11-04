@@ -1,19 +1,19 @@
 import { Suspense } from 'react';
-import StudioPageClient from '@/components/studio/studio-page-client';
+import LabPageClient from '@/components/lab/lab-page-client';
 
 export const metadata = {
-  title: 'Studio — Harry Chang',
+  title: 'Lab — Harry Chang',
   description: 'Exclusive courses and consulting on AI, development, and creative technology. Join the waitlist.',
 };
 
 /**
- * Main server component for the Studio landing page.
+ * Main server component for the Lab landing page.
  * It uses Suspense to handle the client-side nature of the page content.
  */
-export default function StudioPage() {
+export default function LabPage() {
   return (
     <Suspense>
-      <StudioPageClient />
+      <LabPageClient />
     </Suspense>
   );
 }

@@ -20,7 +20,7 @@ export default function Header() {
   const [isScrolling, setIsScrolling] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [hideForFooter, setHideForFooter] = useState(false)
-  const [isStudio, setIsStudio] = useState(false)
+  const [isLab, setIsLab] = useState(false)
   const isHomePage = pathname === "/"
   const isPaperReadingPage = pathname?.startsWith('/paper-reading');
   const isManifestoPage = pathname?.startsWith('/manifesto');
@@ -29,11 +29,11 @@ export default function Header() {
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
   const { t } = useLanguage()
   
-  // Detect if we're on the studio subdomain
+  // Detect if we're on the lab subdomain
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hostname = window.location.hostname
-      setIsStudio(hostname.includes('studio.localhost') || hostname.includes('studio.harrychang.me'))
+      setIsLab(hostname.includes('lab.localhost') || hostname.includes('lab.harrychang.me'))
     }
   }, [])
   
@@ -233,7 +233,7 @@ export default function Header() {
   };
 
   // Determine when to show the staggered menu
-  const showStaggeredMenu = isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isStudio;
+  const showStaggeredMenu = isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLab;
   
   // Menu items for the staggered menu
   const menuItems = [
@@ -305,13 +305,13 @@ export default function Header() {
     }
   }, [isMobile, isMenuOpen])
 
-  // Get the home URL - use absolute URL if on studio subdomain
+  // Get the home URL - use absolute URL if on lab subdomain
   const getHomeUrl = () => {
-    if (isStudio) {
-      // On studio subdomain, link to main domain
+    if (isLab) {
+      // On lab subdomain, link to main domain
       const protocol = typeof window !== 'undefined' && window.location.protocol || 'http:'
       const hostnameWithPort = typeof window !== 'undefined' && window.location.host || 'localhost:3000'
-      const mainDomain = hostnameWithPort.replace('studio.', '')
+      const mainDomain = hostnameWithPort.replace('lab.', '')
       return `${protocol}//${mainDomain}`
     }
     return '/'
@@ -325,7 +325,7 @@ export default function Header() {
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            {isStudio ? (
+            {isLab ? (
               <a
                 href={getHomeUrl()}
                 className="font-space-grotesk text-xl font-bold transition-colors hover:text-[#D8F600] outline-none"
@@ -427,7 +427,7 @@ export default function Header() {
                 </motion.span>
               </motion.div>
             )}
-            {isStudio && (
+            {isLab && (
                <motion.div 
                 className="flex items-center"
                 initial={{ opacity: 0, y: -5 }}
@@ -438,13 +438,13 @@ export default function Header() {
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
                   className="font-space-grotesk text-xl text-secondary"
-                  key="studio"
+                  key="lab"
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
                   transition={{ duration: 0.15, ease: "easeOut" }}
                 >
-                  {t('header.studio')}
+                  {t('header.lab')}
                 </motion.span>
               </motion.div>
             )}
@@ -459,7 +459,7 @@ export default function Header() {
         >
 
           {/* Navigation - Only on desktop and when not on special pages */}
-          {!isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isStudio && (
+          {!isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLab && (
             <>
               <nav className="flex space-x-8">
                 <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>

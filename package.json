@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:studio": "NEXT_PUBLIC_IS_STUDIO=true next dev -p 3001",
+    "dev:lab": "NEXT_PUBLIC_IS_STUDIO=true next dev -p 3001",
     "postinstall": "prisma generate",
     "prebuild": "prisma migrate deploy && node scripts/build-papers.mjs",
     "build": "next build",

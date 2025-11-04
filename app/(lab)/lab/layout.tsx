@@ -2,12 +2,12 @@ import '@/styles/lcp-optimize.css';
 import '@/styles/video-embed.css';
 import type React from 'react';
 import type { Metadata } from 'next';
-import StudioClientLayout from '@/components/studio/ClientLayout';
+import LabClientLayout from '@/components/lab/ClientLayout';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Studio Harry Chang',
-    default: 'Studio — Harry Chang',
+    template: '%s | Lab Harry Chang',
+    default: 'Lab — Harry Chang',
   },
   description: 'Exclusive courses and consulting on AI, development, and creative technology.',
   robots: {
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function StudioLayout({
+export default function LabLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <StudioClientLayout>
+    <LabClientLayout>
       {children}
-    </StudioClientLayout>
+    </LabClientLayout>
   );
 }

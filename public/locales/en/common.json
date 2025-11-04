@@ -8,7 +8,7 @@
     "paperReading": "Paper Reading",
     "manifesto": "Manifesto",
     "uses": "Uses",
-    "studio": "Studio"
+    "lab": "Icarus Lab"
   },
   "footer": {
     "socialContact": "Socials",
@@ -55,12 +55,12 @@
     "music": "Spotify"
   },
   "resources": {
+    "calendar": "Schedules",
     "resume": "Résumé",
     "manifesto": "Manifesto",
-    "calendar": "Schedules",
     "icarus": "Icarus Lab",
     "music": "Spotify Playlists",
-    "reading": "Paper Reading List",
+    "reading": "Reading List",
     "uses": "Uses"
   },
   "readingList": {
@@ -85,7 +85,7 @@
     "letterboxd": "4.5 stars for everything because I have no taste",
     "resume": "Yes it's literally just a Google Drive link.",
     "manifesto": "My philosophy on work, creation, and curiosity",
-    "icarus": "Home to future courses & 1-on-1 sessions",
+    "icarus": "For those who build their own wings.",
     "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
     "reading": "No TL;DR. Figure it out yourself.",
     "uses": "Need these for \"school work\""
@@ -106,7 +106,7 @@
   "notification": {
     "pageNotFound": "Page not found. Redirected to home."
   },
-  "studio": {
+  "lab": {
     "capsule": "2026 Q2 · Limited Release",
     "heroLine1": "The Edge You Can't Google.",
     "heroLine2": "The Path You Can't Fake.",

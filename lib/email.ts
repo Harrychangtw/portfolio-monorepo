@@ -35,7 +35,7 @@ export async function sendWaitlistConfirmationEmail({
 
   try {
     const data = await resend.emails.send({
-      from: 'Harry Chang Studio <studio@harrychang.me>',
+      from: 'Harry Chang Lab <lab@harrychang.me>',
       to: [email],
       subject,
       html: htmlContent,

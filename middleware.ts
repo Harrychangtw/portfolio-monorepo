@@ -8,17 +8,17 @@ export function middleware(request: NextRequest) {
   // Check if this is a Vercel preview deployment
   const isVercelPreview = hostname.includes('.vercel.app')
   
-  // For Vercel preview deployments, allow direct access to /studio routes
-  // This enables testing studio functionality on preview URLs like:
-  // https://your-project-git-branch-username.vercel.app/studio
+  // For Vercel preview deployments, allow direct access to /lab routes
+  // This enables testing lab functionality on preview URLs like:
+  // https://your-project-git-branch-username.vercel.app/lab
   if (isVercelPreview) {
     return NextResponse.next()
   }
   
-  // Handle studio subdomain (only for production/localhost)
-  const isStudio = 
-    hostname.includes('studio.harrychang.me') || 
-    hostname.includes('studio.localhost')
+  // Handle lab subdomain (only for production/localhost)
+  const isLab = 
+    hostname.includes('lab.harrychang.me') || 
+    hostname.includes('lab.localhost')
   
   // Paths that should NOT be rewritten (shared resources)
   const sharedPaths = [
@@ -32,14 +32,14 @@ export function middleware(request: NextRequest) {
   
   const isSharedPath = sharedPaths.some(path => url.pathname.startsWith(path))
   
-  if (isStudio && !url.pathname.startsWith('/studio') && !isSharedPath) {
-    // Rewrite to studio routes (only for page routes)
-    url.pathname = `/studio${url.pathname}`
+  if (isLab && !url.pathname.startsWith('/lab') && !isSharedPath) {
+    // Rewrite to lab routes (only for page routes)
+    url.pathname = `/lab${url.pathname}`
     return NextResponse.rewrite(url)
   }
   
-  // Prevent accessing studio routes from main domain in production
-  if (!isStudio && url.pathname.startsWith('/studio')) {
+  // Prevent accessing lab routes from main domain in production
+  if (!isLab && url.pathname.startsWith('/lab')) {
     url.pathname = '/'
     return NextResponse.redirect(url)
   }

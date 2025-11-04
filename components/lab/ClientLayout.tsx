@@ -6,10 +6,10 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 
 /**
- * Client layout wrapper for the Studio subdomain.
+ * Client layout wrapper for the Lab subdomain.
  * Includes header and footer from main site.
  */
-export default function StudioClientLayout({
+export default function LabClientLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
