@@ -27,7 +27,13 @@ export function middleware(request: NextRequest) {
     '/images/',        // Images are shared
     '/_next/',         // Next.js internals
     '/favicon.ico',
-    '/googleb0d95f7ad2ffc31f.html'
+    '/googleb0d95f7ad2ffc31f.html',
+    '/language.svg',   
+    '/chinese_name_icon.png', 
+    '/placeholder-logo.png',
+    '/images/og-image.png',
+    '/apple-icon.png',
+    '/safari-pinned-tab.svg'
   ]
   
   const isSharedPath = sharedPaths.some(path => url.pathname.startsWith(path))

@@ -2,8 +2,8 @@ import { Suspense } from 'react';
 import LabPageClient from '@/components/lab/lab-page-client';
 
 export const metadata = {
-  title: 'Lab — Harry Chang',
-  description: 'Exclusive courses and consulting on AI, development, and creative technology. Join the waitlist.',
+  title: 'Icuras Lab by Harry Chang',
+  description: 'For those who’d rather fly too close to the sun than ask permission to leave the ground.',
 };
 
 /**

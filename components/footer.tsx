@@ -123,14 +123,19 @@ export default function Footer() {
         // Handle localhost, redirect to lab.localhost:3000
         return `${protocol}//lab.localhost${port}`;
       }
-      // Handle production domain
-      const mainDomain = hostname.replace('lab.', '');
-      return `${protocol}//lab.${mainDomain}`;
+      // Handle production domain - properly handle www prefix
+      let baseDomain = hostname.replace(/^lab\./, ''); // Remove lab. if present
+      baseDomain = baseDomain.replace(/^www\./, '');   // Remove www. if present
+      return `${protocol}//lab.${baseDomain}`;
     }
 
     // If we're on the lab subdomain, and it's an internal link to the main site
     if (isLab && isInternalLink(href)) {
-      const mainDomain = hostname.replace('lab.', '');
+      let mainDomain = hostname.replace(/^lab\./, ''); // Remove lab. prefix
+      // Add www. back if needed (for production)
+      if (!mainDomain.includes('localhost') && !mainDomain.startsWith('www.')) {
+        mainDomain = `www.${mainDomain}`;
+      }
       return `${protocol}//${mainDomain}${port}${href}`;
     }
 

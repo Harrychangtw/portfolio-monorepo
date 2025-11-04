@@ -6,10 +6,10 @@ import LabClientLayout from '@/components/lab/ClientLayout';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Lab Harry Chang',
-    default: 'Lab — Harry Chang',
+    template: '%s | Icuras Lab by Harry Chang',
+    default: 'Icuras Lab by Harry Chang',
   },
-  description: 'Exclusive courses and consulting on AI, development, and creative technology.',
+  description: 'For those who’d rather fly too close to the sun than ask permission to leave the ground.',
   robots: {
     index: false, // Hide from search engines until launch
     follow: false,
