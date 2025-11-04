@@ -1,217 +1,263 @@
-# Portfolio Site - AI Agent Instructions
+# GitHub Copilot Instructions for Portfolio Site
 
 ## Project Overview
 
-A Next.js 15+ portfolio featuring file-based content management, bilingual support (English/繁體中文), and a separate studio subdomain. Content is markdown files with frontmatter metadata—no database needed.
+This is a Next.js 15 portfolio site featuring a **dual-domain architecture** (`harrychang.me` + `lab.harrychang.me`), file-based CMS using markdown, custom i18n implementation, and advanced image optimization. It uses TypeScript, App Router, Radix UI, Tailwind CSS, Framer Motion, and Prisma.
 
-**Architecture**: Next.js App Router + TypeScript + Tailwind + Radix UI + Framer Motion
+## Critical Architecture Patterns
 
-## Key Architectural Patterns
+### 1. Dual-Domain Routing via Middleware
 
-### 1. Dual-Domain Architecture
-- **Main domain** (`harrychang.me`): Public portfolio via `app/(main)/*`
-- **Studio subdomain** (`studio.harrychang.me`): Admin/private content via `app/(studio)/studio/*`
-- Routing handled by `middleware.ts` and `vercel.json` rewrites
-- Studio routes are noindex and subdomain-only (see `vercel.json` headers)
+The site serves **two distinct apps** from a single codebase:
+- **Main domain** (`harrychang.me`): Content in `app/(main)/`
+- **Lab subdomain** (`lab.harrychang.me`): Experimental features in `app/(lab)/lab/`
 
-### 2. Markdown Content System
-Content lives in `content/{projects,gallery,papers}/*.md` with YAML frontmatter:
+**Middleware logic** (`middleware.ts`):
+- Detects subdomain via hostname inspection
+- Rewrites `/` → `/lab` for lab subdomain (excluding shared assets like `/api/`, `/images/`, `/locales/`)
+- Redirects `/lab` → `/` on main domain in production
+- Allows direct `/lab` access on Vercel preview deployments for testing
 
-```markdown
----
-title: "Project Name"
-pinned: 1        # Numeric pinning: -1 = unpinned, 0+ = pin order (lower is higher priority)
-locked: false    # Hides from non-admin views
-date: "2024-01-01"
----
-```
+**When adding routes:**
+- Main site routes go in `app/(main)/[route]/`
+- Lab routes go in `app/(lab)/lab/[route]/`
+- API routes in `app/api/` are shared across both domains
 
-**Localization**: Files with `_zh-tw.md` suffix serve Chinese content. Logic in `lib/markdown.ts` filters by locale (see `getAllProjectsMetadata(locale)`).
+### 2. Custom Client-Side i18n System
 
-**Image paths**: Always use `/images/optimized/{projects,gallery}/...` structure. Thumbnails end in `-thumb.webp`.
+**No next-i18next at runtime** - this project uses a custom React Context pattern:
 
-### 3. Build-Time Content Processing
+**Implementation** (`contexts/LanguageContext.tsx`):
+- Detects language from `localStorage` or browser on mount
+- Fetches JSON translation files from `/public/locales/{lang}/{namespace}.json`
+- Provides `t(key, namespace)`, `tHtml(key)`, and `getTranslationData(key)` functions
+- Uses visibility gating to prevent FOUC (flash of untranslated content)
+- Namespaces: `common`, `about`, `updates`, `uses`
 
-**Critical**: Run `npm run prebuild` before deployment to:
-1. Fetch arXiv papers from `content/arxiv-papers.md` IDs
-2. Merge with manual papers from `content/papers/*.md`
-3. Output to `content/generated/papers.json` (consumed by API routes)
-
-Image optimization (`npm run optimize-images`) generates WebP variants + thumbnails using Sharp (see `scripts/optimize-images.js`).
-
-### 4. Client-Side Internationalization
-- **Never SSR translations**: All i18n is client-side via `contexts/LanguageContext.tsx`
-- Translations load from `/public/locales/{en,zh-TW}/{common,about,updates,uses}.json`
-- Components use `useLanguage()` hook: `const { t, language } = useLanguage()`
-- Always check `isLoading` before rendering to prevent FOUC with raw keys
-
-Example:
-```tsx
-const { t, language, isLoading } = useLanguage()
-if (isLoading) return <LoadingSkeleton />
-return <h1>{t('title', 'common')}</h1>
-```
-
-### 5. Image Handling & CLS Prevention
-- All images include `width` and `height` attributes computed at build time
-- Main image function: `getDimsFromWebPath()` in `lib/markdown.ts` reads dimensions via `image-size`
-- Gallery items compute `aspectRatio` and `aspectType` ('v'/'h') on load
-- Use `getThumbnailPath()` for card views, `getFullResolutionPath()` for detail pages
-
-### 6. API Routes Pattern
-All content APIs follow this pattern:
-```typescript
-// app/api/{content-type}/route.ts
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const locale = searchParams.get('locale') || 'en'
-  const items = getAllXMetadata(locale)
-  return NextResponse.json(items)
+**Translation file structure:**
+```json
+{
+  "key": "value",
+  "nested": {
+    "key": "value"
+  }
 }
 ```
 
-No POST/PUT/DELETE—content is managed via filesystem only.
+**Usage in components:**
+```tsx
+const { t, tHtml, language, setLanguage } = useLanguage()
+const text = t('projects.title', 'common') // namespace defaults to 'common'
+const htmlContent = tHtml('about.bio') // Parses HTML and returns React nodes
+```
 
-### 7. Animation Standards
-- **Framer Motion** for all transitions (not GSAP despite dependency)
-- Page transitions via `<AnimatePresence mode="wait">`
-- Hover effects: `<motion.div whileHover={{ y: -2 }}>`
-- Client components only—wrap SSR layouts with client boundary
+**For new translations:**
+1. Add keys to both `/public/locales/en/[namespace].json` and `/public/locales/zh-TW/[namespace].json`
+2. Use `t()` for plain text, `tHtml()` for content with links
+3. Never show raw translation keys - return empty string if loading
+
+### 3. Markdown-Based Content System
+
+**Content architecture:**
+- Projects: `content/projects/[slug].md` or `[slug]_zh-tw.md`
+- Gallery: `content/gallery/[slug].md` or `[slug]_zh-tw.md`
+- Papers: Auto-fetched from arXiv via `scripts/build-papers.mjs` (runs in `prebuild`)
+
+**Metadata handling** (`lib/markdown.ts`):
+- `getAllProjectsMetadata(locale)` / `getAllGalleryMetadata(locale)` - Lists all items, filtered by locale
+- `getProjectData(slug)` / `getGalleryItemData(slug)` - Fetches single item with HTML content
+- Sorting: Pinned items first (numeric `pinned` field, lower = higher priority), then by `date` DESC
+- Image URL processing: Converts to `/images/optimized/` paths and adds `-thumb.webp` suffix for cards
+
+**Frontmatter schema:**
+```yaml
+---
+title: "Project Title"
+category: "Design"
+description: "Brief description"
+imageUrl: "/images/projects/slug/image.jpg"  # Auto-converted to optimized WebP
+date: "2024-01-15"
+year: "2024"
+pinned: 1  # 1 = highest priority, -1 = not pinned
+locked: false  # Hide from public
+featured: true
+---
+```
+
+**Locale handling:**
+- English: Files without suffix (e.g., `project.md`)
+- Chinese: Files with `_zh-tw.md` suffix (e.g., `project_zh-tw.md`)
+- If Chinese version exists, it's shown for `zh-TW` locale; otherwise fallback to English
+
+### 4. Image Optimization Pipeline
+
+**Two-stage approach:**
+
+**Build-time optimization** (`scripts/optimize-images.js`):
+- Converts JPG/PNG → WebP
+- Generates responsive sizes (2000-3840px depending on type)
+- Creates 20px blur thumbnails for progressive loading
+- Outputs to `/public/images/optimized/[projects|gallery]/`
+- Naming: `image.webp` (full) + `image-thumb.webp` (thumbnail)
+
+**Runtime URL transformation** (`lib/markdown.ts`):
+- `getThumbnailPath()`: Converts to optimized + adds `-thumb.webp` suffix (for cards)
+- `getFullResolutionPath()`: Converts to optimized + removes `-thumb` (for detail views)
+- `getDimsFromWebPath()`: Reads actual dimensions from disk to prevent CLS (Cumulative Layout Shift)
+
+**Image quality tiers:**
+- Title images/first in collection: 3200-3840px, 98% quality
+- Hero images: 2560px, 95% quality
+- Standard landscape: 2000-2560px, 90% quality
+- Thumbnails: 20px, 60% quality, with blur
+
+**When adding images:**
+1. Place originals in `/public/images/[projects|gallery]/[slug]/`
+2. Run `npm run optimize-images`
+3. Reference in markdown: `/images/projects/slug/image.jpg` (auto-converted to optimized WebP)
+
+### 5. API Route Patterns
+
+**All API routes follow this structure:**
+```typescript
+// app/api/projects/route.ts
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
+  const locale = searchParams.get('locale') || 'en'
+  const projects = getAllProjectsMetadata(locale)
+  return NextResponse.json(projects)
+}
+```
+
+**Locale-aware routes:**
+- Accept `?locale=en` or `?locale=zh-TW` query param
+- Call markdown functions with locale parameter
+- Return filtered/localized data
+
+### 6. Styling & UI Conventions
+
+**Design system:**
+- Dark mode only (`dark` class on `<html>`)
+- Primary font: IBM Plex Sans (body), Space Grotesk (headings)
+- Custom CSS variables in `app/globals.css` (HSL-based color system)
+- Radix UI for complex components (dialogs, dropdowns, etc.)
+- Tailwind utilities for layout/spacing
+- Custom Tailwind typography plugin config in `tailwind.config.ts`
+
+**Component patterns:**
+- Server components by default (no `"use client"` unless needed)
+- Client components only for: hooks, context, browser APIs, interactivity
+- Framer Motion for animations (requires `"use client"`)
+- Custom hooks in `/hooks/` (e.g., `use-mobile.tsx`, `use-intersection-observer.ts`)
+
+**Link handling:**
+- External links in markdown get `*` suffix via Tailwind typography config
+- Custom video embed transformation for YouTube/Google Drive links in markdown
+
+### 7. Database & Environment
+
+**Prisma setup** (`prisma/schema.prisma`):
+- PostgreSQL via Vercel Postgres
+- `WaitlistEntry` model for lab subdomain waitlist
+- `EmailCampaign` model for marketing (future use)
+
+**Environment variables required:**
+```bash
+DATABASE_POSTGRES_URL        # Vercel Postgres connection string (runtime)
+DATABASE_PRISMA_DATABASE_URL # Direct connection for migrations
+SPOTIFY_CLIENT_ID            # For now-playing widget
+SPOTIFY_CLIENT_SECRET
+SPOTIFY_REFRESH_TOKEN
+```
+
+**Database workflow:**
+1. `prisma generate` runs in `postinstall`
+2. `prisma migrate deploy` runs in `prebuild` (production)
+3. Local development: `npx prisma migrate dev`
 
 ## Development Workflows
 
 ### Starting Development
 ```bash
-npm run dev              # Main site on :3000
-npm run dev:studio       # Studio site on :3001 with NEXT_PUBLIC_IS_STUDIO=true
+npm install           # Installs deps + runs prisma generate
+npm run dev           # Starts main site on :3000
+npm run dev:lab       # Starts lab site on :3001 with NEXT_PUBLIC_IS_STUDIO=true
 ```
 
-### Adding Content
-
-**New Project:**
-1. Copy `content/templates/project-template.md` → `content/projects/project-slug.md`
-2. Add images to `public/images/projects/project-slug/`
-3. Run `npm run optimize-images`
-4. Set `imageUrl: "/images/optimized/projects/project-slug/cover.webp"`
-
-**New Gallery Item:**
-1. Use `content/templates/gallery-template.md`
-2. Gallery frontmatter includes `gallery: [{url, caption}]` array
-3. First image in folder = title image (receives highest quality export)
-
-### Build Process
+### Content Management
 ```bash
-npm run prebuild  # Fetch arXiv papers, required before build
-npm run build     # Next.js build
-npm start         # Production server
+# 1. Add markdown file to content/projects/ or content/gallery/
+# 2. Add images to public/images/[projects|gallery]/[slug]/
+npm run optimize-images  # Generates optimized WebP variants
+# 3. Commit changes - build will regenerate static props
 ```
 
-### Image Optimization Rules
-- Projects: Hero images → 2560px, portraits → 1200x1800, landscapes → 2000x1200
-- Gallery: Full-screen → 3200px, title images → 3840px (4K), thumbnails → 20px blurred
-- Title/titlecard images always get highest quality (98% WebP)
-- Script auto-detects orientation and applies correct preset
+### Testing
+```bash
+npm run test          # Vitest (single run)
+npm run test:watch    # Watch mode
+npm run test:ui       # Vitest UI
+npm run test:coverage # Coverage report
+```
 
-## Critical Conventions
+**Test setup** (`vitest.config.ts`):
+- Uses `happy-dom` environment
+- Setup file: `test/setup.tsx`
+- Includes React Testing Library
+- Tests in `**/*.{test,spec}.{ts,tsx}` files
 
-### Pinning System
-Numeric pinning controls sort order:
-- `-1` = not pinned (sorts by date descending)
-- `0+` = pinned (lower number = higher priority)
-- Example: `pinned: 1` appears before `pinned: 10`
+### Building & Deployment
+```bash
+npm run build         # Runs prebuild (prisma migrate + build-papers) → next build
+npm run start         # Production server
+npm run build:analyze # Bundle analysis with ANALYZE=true
+```
 
-### Component File Naming
-- Page client components: `{feature}-page-client.tsx` (e.g., `gallery-page-client.tsx`)
-- UI components: Lower kebab-case in `components/ui/`
-- Layout boundaries: `ClientLayout.tsx` wraps SSR layouts for client-only features
-
-### Typography & Styling
-- Headings use Space Grotesk (`font-space-grotesk`)
-- Body text uses IBM Plex Sans (`font-ibm-plex-sans`)
-- Prose content via `@tailwindcss/typography` with custom link styling (dashed underline + `*` suffix)
-- External links: `className="link-external"` for consistent styling
-
-### Video Embeds
-Markdown images with YouTube/Google Drive URLs auto-transform to lazy-loaded embeds via `transformMedia()` in `lib/markdown.ts`. Uses placeholder with play button until user interaction.
-
-## Common Pitfalls
-
-❌ **Don't** use SSR for translations—client-side only via `LanguageContext`  
-❌ **Don't** skip `npm run prebuild`—papers won't exist  
-❌ **Don't** reference images without `/images/optimized/` prefix  
-❌ **Don't** use `pinned: true/false`—use numeric values (`-1` for unpinned)  
-❌ **Don't** forget width/height on images—causes CLS  
-
-✅ **Do** use `getDimsFromWebPath()` when adding new image fields  
-✅ **Do** check `isLoading` before rendering i18n content  
-✅ **Do** run image optimization after adding new photos  
-✅ **Do** test both locales when changing content APIs  
+**Build order (package.json):**
+1. `postinstall`: `prisma generate`
+2. `prebuild`: `prisma migrate deploy` + `node scripts/build-papers.mjs`
+3. `build`: `next build`
 
 ## Key Files Reference
 
-- `lib/markdown.ts` - All content loading logic, image path transforms, dimension computation
-- `middleware.ts` + `vercel.json` - Subdomain routing configuration
-- `contexts/LanguageContext.tsx` - Client-side i18n system
-- `scripts/build-papers.mjs` - arXiv fetcher (prebuild step)
-- `scripts/optimize-images.js` - Image processing pipeline
-- `content/templates/` - Starter templates for new content
+- `middleware.ts` - Dual-domain routing logic
+- `lib/markdown.ts` - Content fetching, image processing, markdown parsing (700+ lines)
+- `contexts/LanguageContext.tsx` - Custom i18n system
+- `scripts/optimize-images.js` - Image optimization pipeline
+- `scripts/build-papers.mjs` - ArXiv paper fetching for `/papers` page
+- `app/(main)/layout.tsx` - Main site layout with SEO
+- `app/(lab)/lab/layout.tsx` - Lab site layout (separate from main)
+- `components/main/ClientLayout.tsx` - Client-side wrapper with LanguageProvider
 
-## Testing Checklist
+## Common Pitfalls
 
-When modifying content systems:
-- [ ] Test both English and Chinese locales
-- [ ] Verify images load with correct dimensions (no layout shift)
-- [ ] Check pinned items appear in correct order
-- [ ] Confirm locked items hidden on main domain
-- [ ] Test studio subdomain routing (if applicable)
+1. **Don't use server-side i18n** - Translation loading is client-side only via LanguageContext
+2. **Image paths must go through optimization** - Never reference `/public/images/projects/` directly in markdown; the system auto-converts to `/images/optimized/`
+3. **Locale suffixes are exact** - Must be `_zh-tw.md`, not `_zh-TW.md` or `_zh.md`
+4. **Middleware affects all routes** - Shared resources (API, images, locales) must be in `sharedPaths` array
+5. **Pinned sorting is numeric** - Use `pinned: 1` (highest) to `pinned: 10`, not `pinned: true`
+6. **Server/Client component boundaries** - LanguageProvider must wrap client components, not server components
+7. **Video embeds require specific format** - YouTube/Google Drive links in markdown images are transformed to custom embed containers
 
-## Testing
+## Adding New Features
 
-### Running Tests
-```bash
-npm test              # Run all tests once
-npm run test:watch    # Run tests in watch mode
-npm run test:ui       # Open Vitest UI for interactive testing
-npm run test:coverage # Generate coverage report
-```
+**New API route:**
+1. Create `app/api/[route]/route.ts`
+2. Export `GET`, `POST`, etc. as async functions
+3. Parse `locale` from `searchParams` if needed
+4. Return `NextResponse.json(data)`
 
-### Test Structure
-- **Unit tests**: Test individual functions and utilities
-  - `lib/markdown.test.ts` - Content loading, image transforms, locale filtering
-  - Located alongside source files with `.test.ts` suffix
-- **Component tests**: Test React components with user interactions
-  - `contexts/LanguageContext.test.tsx` - i18n functionality
-  - Use `render()` from `@testing-library/react` with LanguageProvider wrapper
-- **Integration tests**: Test API routes end-to-end
-  - `app/api/api.test.ts` - API endpoint responses
-  
-### Writing Tests
-Example component test pattern:
-```tsx
-import { render } from '@testing-library/react'
-import { LanguageProvider } from '@/contexts/LanguageContext'
+**New page (main site):**
+1. Create `app/(main)/[route]/page.tsx`
+2. Use server components for data fetching
+3. Wrap client interactivity in separate client component
 
-const { getByTestId } = render(
-  <LanguageProvider>
-    <YourComponent />
-  </LanguageProvider>
-)
+**New lab feature:**
+1. Create `app/(lab)/lab/[route]/page.tsx`
+2. Test locally with `npm run dev:lab`
+3. Deploy to preview branch and test subdomain routing
 
-await vi.waitFor(() => {
-  expect(getByTestId('element')).toHaveTextContent('Expected text')
-})
-```
-
-### Mocking Guidelines
-- File system operations are mocked in `lib/markdown.test.ts`
-- Next.js router/image components mocked in `test/setup.tsx`
-- Framer Motion mocked to render static divs (no animations in tests)
-- Translation files mocked with `global.fetch` in component tests
-- Mock data available in `test/mockData.ts`
-
-### Key Test Patterns
-1. **Locale filtering**: Verify `_zh-tw.md` files load for Chinese locale
-2. **Pinning logic**: Ensure numeric pinning (`-1`, `0+`) sorts correctly
-3. **Image paths**: Check thumbnail/full-resolution transforms
-4. **CLS prevention**: Validate width/height attributes on images
-5. **i18n loading**: Test `isLoading` state before rendering translations
+**New translation namespace:**
+1. Create `/public/locales/en/[namespace].json` and `/public/locales/zh-TW/[namespace].json`
+2. Add to `namespaces` array in `contexts/LanguageContext.tsx` `loadTranslations()` function
+3. Use `t('key', 'namespace')` in components

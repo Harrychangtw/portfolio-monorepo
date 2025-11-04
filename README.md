@@ -1,94 +1,183 @@
-## Overview
+# Harry Chang Portfolio Site
 
-This project showcases a Next.js application featuring:
-
-- **Content Management**: Filesystem-based CMS using Markdown files
-- **Internationalization**: Multi-language support (English, Traditional Chinese)
-- **Image Pipeline**: Automated optimization with WebP conversion and responsive variants
-- **Modern Stack**: TypeScript, Next.js App Router, Tailwind CSS, Radix UI
+A modern, performant portfolio website built with Next.js 15, featuring a dual-domain architecture, custom i18n implementation, file-based CMS, and advanced image optimization.
 
 ## Key Features
 
-### Backend Architecture
-- RESTful API routes for dynamic content serving
-- Server-side markdown parsing with gray-matter
-- Locale-aware content loading
-- Automated image optimization pipeline
+### Dual-Domain Architecture
+- **Main site** (`harrychang.me`): Portfolio, projects, gallery
+- **Lab subdomain** (`lab.harrychang.me`): Future hub for courses and engaging educational content
+- Single codebase with middleware-based routing
+- Shared resources (API, images, translations) across both domains
 
-### Content Types
-- Projects with metadata and categorization
-- Gallery items with photography EXIF data
-- Academic papers with summaries
-- Template system for new content creation
+### Content Management
+- **Markdown-based CMS** with YAML frontmatter
+- Bilingual support (English/Traditional Chinese) via file suffixes
+- Dynamic content serving through API routes
+- Automated arXiv paper fetching and aggregation
+- Template system for quick content creation
 
-### Image Optimization
-Automated script that:
-- Converts images to WebP format
-- Generates multiple resolution variants
-- Creates blur-up thumbnails for progressive loading
-- Outputs optimized files to `/public/images/optimized/`
+### Advanced Image Optimization
+- Automated WebP conversion with multiple quality tiers
+- Progressive loading with blur-up thumbnails (20px)
+- Dimension detection to prevent Cumulative Layout Shift (CLS)
+- Responsive sizes optimized for different content types:
+  - Title/Hero images: 3200-3840px @ 95-98% quality
+  - Standard images: 2000-2560px @ 90% quality
+  - Thumbnails: 20px @ 60% quality with blur
 
-## Getting Started
+### Custom Internationalization
+- Client-side i18n with React Context (no next-i18next runtime)
+- Dynamic JSON translation loading from `/public/locales/`
+- FOUC prevention with visibility gating
+- HTML parsing for rich text content with links
+- Browser language detection with localStorage persistence
+
+### Tech Stack
+- **Framework**: Next.js 15 (App Router, React 19, TypeScript)
+- **Styling**: Tailwind CSS with custom design system, Radix UI components
+- **Animation**: Framer Motion
+- **Database**: PostgreSQL (Vercel Postgres) with Prisma ORM
+- **Testing**: Vitest with React Testing Library
+- **Image Processing**: Sharp
+- **Markdown**: gray-matter, remark, remark-html
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ and npm
+- PostgreSQL database (or Vercel Postgres) if intending to setup the lab site
+
+### Installation
 
 ```bash
-# Install dependencies
+# Clone the repository
+git clone https://github.com/Harrychangtw/portfolio_site.git
+cd portfolio_site
+
+# Install dependencies (runs prisma generate automatically)
 npm install
 
-# Start development server
-npm run dev
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your database credentials and API keys
 
-# Optimize images before deployment
+# Run database migrations
+npx prisma migrate dev
+
+# Start development server
+npm run dev                 # Main site on http://localhost:3000
+npm run dev:lab            # Lab site on http://localhost:3001
+```
+
+### Environment Variables
+
+Create `.env.local` with the following:
+
+```bash
+# Database (Vercel Postgres or local PostgreSQL) This is not needed for the main portfolio site to run
+DATABASE_POSTGRES_URL=postgres://user:pass@host/db
+DATABASE_PRISMA_DATABASE_URL=postgres://user:pass@host/db?pgbouncer=true&connect_timeout=15
+
+# Spotify API (for now-playing widget)
+SPOTIFY_CLIENT_ID=your_client_id
+SPOTIFY_CLIENT_SECRET=your_client_secret
+SPOTIFY_REFRESH_TOKEN=your_refresh_token
+```
+
+## 📝 Content Management
+
+### Adding a New Project
+
+1. Create markdown file: `content/projects/my-project.md`
+2. Add frontmatter:
+```markdown
+---
+title: "My Project"
+category: "Design"
+description: "A brief description"
+imageUrl: "/images/projects/my-project/cover.jpg"
+date: "2024-11-04"
+year: "2024"
+pinned: -1        # -1 = not pinned, 1-10 = pin priority (1 = highest)
+featured: true
+technologies: ["Next.js", "TypeScript"]
+---
+```
+3. Write content in markdown below frontmatter
+4. Add images to `public/images/projects/my-project/`
+5. Run `npm run optimize-images` to generate WebP variants
+6. Commit and deploy
+
+### Adding a Chinese Translation
+
+Create a localized version with `_zh-tw.md` suffix:
+- English: `content/projects/my-project.md`
+- Chinese: `content/projects/my-project_zh-tw.md`
+
+The system automatically shows the appropriate version based on user language preference.
+
+### Image Optimization Workflow
+
+```bash
+# 1. Add original images (JPG/PNG) to public/images/[projects|gallery]/[slug]/
+# 2. Run optimization script
 npm run optimize-images
 
-# Build for production
-npm run build
-npm run start
+# Output: Generates WebP files in public/images/optimized/
+# - image.webp (full resolution)
+# - image-thumb.webp (20px blur thumbnail)
 ```
 
-## Project Structure
+The markdown system automatically converts image paths to optimized versions.
 
-```
-├── app/                    # Next.js app directory
-│   ├── api/               # API routes
-│   └── [locale]/          # Internationalized pages
-├── components/            # React components
-│   └── ui/               # Reusable UI components
-├── content/              # Markdown content files
-│   ├── projects/
-│   ├── gallery/
-│   └── papers/
-├── lib/                  # Utility functions
-├── public/               # Static assets
-│   ├── images/          # Source images
-│   └── locales/         # Translation files
-└── scripts/             # Build and optimization scripts
+## 🧪 Development
+
+### Available Scripts
+
+```bash
+npm run dev              # Start main site (:3000)
+npm run build            # Production build (runs prebuild hooks)
+npm run start            # Start production server
+npm run optimize-images  # Optimize all images in public/images/
 ```
 
-## Content Management
+### Build Hooks
 
-Content is managed through markdown files with YAML frontmatter. See `/content/templates/` for starter templates.
+The build process runs in this order (see `package.json`):
+1. `postinstall`: `prisma generate` (generates Prisma Client)
+2. `prebuild`: `prisma migrate deploy` + `node scripts/build-papers.mjs` (fetches arXiv papers)
+3. `build`: `npm run build`
 
-Content files support localization via filename suffixes (e.g., `project_zh-tw.md`).
 
-## License
+
+
+## 📚 Documentation
+
+For AI coding agents and detailed architecture documentation, see:
+- **[`.github/copilot-instructions.md`](.github/copilot-instructions.md)** - Comprehensive guide to codebase patterns and conventions
+- **[`content/README.md`](content/README.md)** - Content management guide with templates
+- **[`scripts/WARP.md`](scripts/WARP.md)** - Guide for using Warp.dev with this project, outdated
+
+## 📄 License
 
 This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
-You are free to:
-- **Share** — copy and redistribute the material
-- **Adapt** — remix, transform, and build upon the material
+**You are free to:**
+- Share — copy and redistribute the material
+- Adapt — remix, transform, and build upon the material
 
-Under the following terms:
+**Under the following terms:**
 - **Attribution** — You must give appropriate credit
 - **NonCommercial** — You may not use the material for commercial purposes
 
-## Reference Purpose
+## 🙏 Acknowledgments
 
-This site is primarily intended as a **reference implementation** demonstrating:
-- File-based CMS patterns
-- API route architecture
-- Content localization strategies
-- Image optimization workflows
-- TypeScript + Next.js best practices
-
-Feel free to reference the code for educational and non-commercial projects.
+Built with:
+- [Next.js](https://nextjs.org/) - React framework
+- [Radix UI](https://www.radix-ui.com/) - Accessible component primitives
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [Prisma](https://www.prisma.io/) - Database ORM
+- [Vitest](https://vitest.dev/) - Testing framework
+- [v0](https://v0.app/) - Accelerated project prototyping
