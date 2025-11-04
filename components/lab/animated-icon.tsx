@@ -12,7 +12,7 @@ export default function AnimatedIcarusIcon() {
   ];
 
   return (
-    <div className="relative w-8 h-8">
+    <div className="relative w-8 h-8 mb-8 mt-4">
       {iconParts.map((part, index) => (
         <motion.img
           key={index}

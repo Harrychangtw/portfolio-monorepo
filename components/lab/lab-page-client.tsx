@@ -46,7 +46,7 @@ export default function LabPageClient() {
       </AnimatePresence>
 
       {/* Main Content */}
-      <div className="relative z-15 flex items-center justify-center px-4 md:px-6 py-20">
+      <div className="relative z-15 min-h-screen flex items-center justify-center px-4 md:px-6=">
         <AnimatePresence mode="wait">
           {!showForm ? (
             <motion.div
@@ -67,7 +67,7 @@ export default function LabPageClient() {
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0, duration: 0.5, ease: "easeOut" }}
-                className="inline-block mb-12 mt-8"
+                className="inline-block mb-12"
               >
                 <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm">
                   <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/40">
@@ -98,7 +98,7 @@ export default function LabPageClient() {
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
-                className="text-base md:text-lg text-white/40 mb-12 font-ibm-plex-sans font-light tracking-wide max-w-2xl mx-auto"
+                className="text-base md:text-lg text-white/40 mb-16 font-ibm-plex-sans font-light tracking-wide max-w-2xl mx-auto"
               >
                 {t('lab.tagline', 'common')}
               </motion.p>
@@ -108,7 +108,7 @@ export default function LabPageClient() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.1, duration: 0.8, ease: "easeOut" }}
-                className="w-full max-w-md mx-auto"
+                className="w-full max-w-md mx-auto mb-16"
               >
                 {/* Desktop: Inline button */}
                 <div className="hidden sm:block relative h-14 group" onClick={() => setShowForm(true)}>
