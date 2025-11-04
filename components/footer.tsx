@@ -31,13 +31,14 @@ const socialLinks = [
   { id: 'github', name: 'GitHub', href: '/github', tooltip: 'Check out my GitHub—where repos go to hide' },
   { id: 'instagram', name: 'Instagram', href: '/instagram', tooltip: 'Please stalk responsibly' },
   { id: 'music', name: 'Music Playlists', href: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3' },
+
 ];
 
 const resourceLinks = [
   { id: 'resume', name: 'Resume', href: '/cv', tooltip: 'Proof I know how to adult' },
   { id: 'calendar', name: 'Schedule a Meeting', href: '/cal', tooltip: 'Book a time to chat with me' },
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
-  // { id: 'wallpapers', name: 'Wallpapers', href: 'https://photos.google.com/u/1/share/AF1QipN_xATdICaaIO4RzR5CzdIj6AFeoueQmu5100b-a9_QIAzGLhz4HD95OurMi8pqBQ?key=MnV1OGlrQUdRTUg3Y0FHSkdnYVZrOXNMOU1PWFpn', tooltip: 'Spent way too much time on these...' },
+  { id: 'icarus', name: 'Icarus Lab', href: '/icarus', tooltip: 'Home to future courses & 1-on-1 sessions' },
   { id: 'uses', name: 'Uses', href: '/uses', tooltip: 'My tools & setup' },
   { id: 'reading', name: 'Paper Reading List', href: '/paper-reading', tooltip: 'Caffeine-fueled knowledge' },
 ];
@@ -137,6 +138,26 @@ export default function Footer() {
 
   return (
     <>
+      <style jsx global>{`
+        .icarus-link:hover {
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+          background-image: linear-gradient(45deg, #D8F600, #34d288, #61b3dc, #34d288, #D8F600);
+          background-size: 200% 100%;
+          animation: gradient-loop 1s linear infinite;
+        }
+
+        @keyframes gradient-loop {
+          0% {
+            background-position: 0% 50%;
+          }
+          100% {
+            background-position: 200% 50%;
+          }
+        }
+
+      `}</style>
       <footer className="bg-[#1a1a1a] text-primary py-12 md:py-16 border-t border-border">
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
@@ -214,6 +235,28 @@ export default function Footer() {
                       if (link.id === 'manifesto' && !showManifesto) {
                         return null;
                       }
+
+                      // Special rendering for Icarus Lab link with gradient animation
+                      if (link.id === 'icarus-lab') {
+                        return (
+                          <li key={link.id}>
+                            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                              <a
+                                href={getHref(link.href)}
+                                className="animated-gradient-text font-ibm-plex"
+                                onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+                                onMouseMove={handleMouseMove}
+                                onMouseLeave={handleMouseLeave}
+                              >
+                                <span className="gradient-overlay" />
+                                <span className="text-content whitespace-nowrap">
+                                  {t(`resources.${link.id}`)}
+                                </span>
+                              </a>
+                            </motion.div>
+                          </li>
+                        );
+                      }
                       
                       return (
                         <li key={link.id}>
@@ -224,7 +267,11 @@ export default function Footer() {
                                 target: "_blank",
                                 rel: "noopener noreferrer"
                               })}
-                              className="font-ibm-plex text-primary hover:text-[#D8F600] transition-colors whitespace-nowrap"
+                              className={`font-ibm-plex text-primary transition-colors whitespace-nowrap ${
+                                link.id === 'icarus'
+                                  ? 'icarus-link'
+                                  : 'hover:text-[#D8F600]'
+                              }`}
                               onMouseEnter={(e) => handleMouseEnter(e, link.id)}
                               onMouseMove={handleMouseMove}
                               onMouseLeave={handleMouseLeave}

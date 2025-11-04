@@ -4,6 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import WaitlistForm from '@/components/studio/waitlist-form';
 import MinimalistBackground from '@/components/minimalist-background';
 import { motion, AnimatePresence } from 'framer-motion';
+import AnimatedIcarusIcon from '@/components/studio/animated-icon';
 
 export default function StudioPageClient() {
   const { t, language, isLoading } = useLanguage();
@@ -56,6 +57,11 @@ export default function StudioPageClient() {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="text-center max-w-4xl mx-auto w-full"
             >
+              {/* Animated Icon */}
+              <div className="flex justify-center">
+                <AnimatedIcarusIcon />
+              </div>
+              
               {/* Top Capsule */}
               <motion.div
                 initial={{ opacity: 0, y: 4 }}
@@ -64,7 +70,7 @@ export default function StudioPageClient() {
                 className="inline-block mb-12"
               >
                 <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm">
-                  <span className="text-sm font-mono uppercase tracking-[0.2em] text-white/40">
+                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/40">
                     {t('studio.capsule', 'common')}
                   </span>
                 </div>
