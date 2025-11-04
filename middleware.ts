@@ -32,8 +32,12 @@ export function middleware(request: NextRequest) {
     '/chinese_name_icon.png', 
     '/placeholder-logo.png',
     '/images/og-image.png',
+    '/images/og-image-lab.png',
     '/apple-icon.png',
-    '/safari-pinned-tab.svg'
+    '/safari-pinned-tab.svg',
+    '/favicon-lab.ico',
+    '/apple-icon-lab.png',
+    '/safari-pinned-tab-lab.svg'
   ]
   
   const isSharedPath = sharedPaths.some(path => url.pathname.startsWith(path))
