@@ -28,7 +28,7 @@ export default function LabPageClient() {
   }
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0a] overflow-hidden">
+    <div className="relative min-h-[100svh] bg-[#0a0a0a] overflow-hidden">
       <MinimalistBackground />
 
       <AnimatePresence>
@@ -46,7 +46,7 @@ export default function LabPageClient() {
       </AnimatePresence>
 
       {/* Main Content */}
-      <div className="relative z-15 min-h-screen flex items-center justify-center px-4 md:px-6 py-20">
+      <div className="relative z-15 flex items-center justify-center px-4 md:px-6 py-20">
         <AnimatePresence mode="wait">
           {!showForm ? (
             <motion.div
