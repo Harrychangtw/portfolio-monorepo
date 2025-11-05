@@ -21,11 +21,6 @@
       "destination": "/lab/:path*"
     }
   ],
-  "headers": [
-    {
-      "source": "/lab/:path*",
-    }
-  ],
   "cleanUrls": true,
   "trailingSlash": false
 }

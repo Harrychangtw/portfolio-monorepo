@@ -11,8 +11,15 @@ export const metadata: Metadata = {
   },
   description: 'What if they only warned us about the sun because they were afraid to fly? Icarus Lab is for those who\'d rather fly too close to the sun than ask permission to leave the ground.',
   robots: {
-    index: false, // Hide from search engines until launch
-    follow: false,
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   openGraph: {
     title: 'Icuras Lab by Harry Chang',
