@@ -7,34 +7,34 @@ import ClientLayout from '@/components/main/ClientLayout'
 import Footer from '@/components/footer'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://harrychang.me'),
+  metadataBase: new URL('https://www.harrychang.me'),
   title: {
     template: '%s | Harry Chang',
     default: 'Harry Chang 張祺煒 | Portfolio',
   },
   description: 'Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Explore his portfolio of software development, photography, and design.',
   keywords: ['Harry Chang', '張祺煒', 'portfolio', 'photography', 'software development', 'design', 'research', 'AI', 'machine learning'],
-  authors: [{ name: 'Harry Chang', url: 'https://harrychang.me' }],
+  authors: [{ name: 'Harry Chang', url: 'https://www.harrychang.me' }],
   creator: 'Harry Chang',
   publisher: 'Harry Chang',
   alternates: {
-    canonical: '/',
+    canonical: 'https://www.harrychang.me/',
     languages: {
-      'en': '/',
-      'zh-TW': '/?lang=zh-TW',
+      'en': 'https://www.harrychang.me/',
+      'zh-TW': 'https://www.harrychang.me/?lang=zh-TW',
     },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['zh_TW'],
-    url: 'https://harrychang.me',
+    url: 'https://www.harrychang.me',
     siteName: 'Harry Chang Portfolio',
     title: 'Harry Chang 張祺煒 | Portfolio',
     description: 'Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Explore his portfolio of software development, photography, and design.',
     images: [
       {
-        url: '/images/og-image.png',
+        url: 'https://www.harrychang.me/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Harry Chang Portfolio',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: 'Harry Chang 張祺煒 | Portfolio',
     description: 'Harry Chang (張祺煒) portfolio showcasing photography development and design work',
     creator: '@harrychangtw',
-    images: ['/images/og-image.png'],
+    images: ['https://www.harrychang.me/images/og-image.png'],
   },
   robots: {
     index: true,
@@ -79,10 +79,7 @@ export const metadata: Metadata = {
     ]
   },
   verification: {
-    // Add your verification codes here when you get them (optional)
-    // google: 'your-google-verification-code',
-    // yandex: 'your-yandex-verification-code',
-    // bing: 'your-bing-verification-code',
+    google: 'googleb0d95f7ad2ffc31f'   
   },
 }
 
@@ -97,15 +94,16 @@ export default function MainLayout({
     '@type': 'Person',
     name: 'Harry Chang',
     alternateName: '張祺煒',
-    url: 'https://harrychang.me',
+    url: 'https://www.harrychang.me',
+    image: 'https://www.harrychang.me/images/og-image.png',
     sameAs: [
-      // Add your social media profiles here
       'https://github.com/Harrychangtw',
       // 'https://twitter.com/harrychangtw',
       // 'https://linkedin.com/in/harrychangtw',
     ],
     jobTitle: 'Developer & Researcher',
-    description: 'Portfolio showcasing photography, development, and design work',
+    description: 'Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling',
+    knowsAbout: ['Software Development', 'Photography', 'Design', 'Artificial Intelligence', 'Machine Learning', 'Research'],
   }
 
   return (

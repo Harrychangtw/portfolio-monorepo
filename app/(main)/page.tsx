@@ -8,9 +8,12 @@ export const metadata: Metadata = {
   title: "Harry Chang 張祺煒 | Portfolio",
   description: "Harry Chang (張祺煒) portfolio showcasing design and development work",
   keywords: ["Harry Chang", "張祺煒", "portfolio", "design", "development", "photography", "Chingshin Academy"],
-  other: {
-    "priority": "high"
-  }
+  alternates: {
+    canonical: 'https://www.harrychang.me/',
+  },
+  openGraph: {
+    url: 'https://www.harrychang.me/',
+  },
 }
 
 export default function Home() {
@@ -23,4 +26,5 @@ export default function Home() {
     </>
   )
 }
+
 

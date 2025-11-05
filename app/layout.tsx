@@ -17,7 +17,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://harrychang.me'),
+  metadataBase: new URL('https://www.harrychang.me'),
   title: {
     default: 'Harry Chang',
     template: '%s | Harry Chang',
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Harry Chang',
     description: 'Portfolio of Harry Chang',
-    url: 'https://harrychang.me',
+    url: 'https://www.harrychang.me',
     siteName: 'Harry Chang',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://www.harrychang.me/images/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Harry Chang',
     description: 'Portfolio of Harry Chang',
-    images: ['/og-image.png'],
+    images: ['https://www.harrychang.me/images/og-image.png'],
   },
 }
 

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllProjectSlugs, getProjectData, getAllGallerySlugs, getGalleryItemData } from '@/lib/markdown'
 
-const baseUrl = 'https://harrychang.me'
+const baseUrl = 'https://www.harrychang.me'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const sitemap: MetadataRoute.Sitemap = []
