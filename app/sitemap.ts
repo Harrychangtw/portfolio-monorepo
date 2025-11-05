@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { getAllProjectSlugs, getProjectData } from '@/lib/markdown'
+import { getAllProjectSlugs, getProjectData, getAllGallerySlugs, getGalleryItemData } from '@/lib/markdown'
 
 const baseUrl = 'https://harrychang.me'
 
@@ -16,6 +16,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/manifesto',
     '/uses',
     '/cal',
+    '/letterboxd',
+    '/instagram',
+    '/github',
+    '/email',
+    '/discord',
   ]
 
   staticPages.forEach((page) => {
@@ -63,6 +68,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           en: `${baseUrl}/projects/${slug}`,
           ...(hasChineseVersion && {
             'zh-TW': `${baseUrl}/projects/${slug}?lang=zh-TW`,
+          }),
+        },
+      },
+    })
+  }
+
+  // Get all gallery slugs
+  const gallerySlugs = getAllGallerySlugs()
+
+  // Add gallery pages with both language versions
+  for (const { params } of gallerySlugs) {
+    const slug = params.slug
+
+    // Skip language-specific files (we'll handle them via the base slug)
+    if (slug.includes('_zh-tw') || slug.includes('_zh-TW')) {
+      continue
+    }
+
+    // Try to get the gallery item data to get the date
+    const galleryData = await getGalleryItemData(slug)
+    
+    // Check if there's a Chinese version
+    const hasChineseVersion = gallerySlugs.some(
+      ({ params }) => params.slug === `${slug}_zh-tw` || params.slug === `${slug}_zh-TW`
+    )
+
+    sitemap.push({
+      url: `${baseUrl}/gallery/${slug}`,
+      lastModified: galleryData?.date ? new Date(galleryData.date) : new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/gallery/${slug}`,
+          ...(hasChineseVersion && {
+            'zh-TW': `${baseUrl}/gallery/${slug}?lang=zh-TW`,
           }),
         },
       },

@@ -5,11 +5,15 @@ import type { Metadata } from 'next';
 import LabClientLayout from '@/components/lab/ClientLayout';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lab.harrychang.me'),
   title: {
     template: '%s | Icuras Lab by Harry Chang',
     default: 'Icuras Lab by Harry Chang',
   },
   description: 'What if they only warned us about the sun because they were afraid to fly? Icarus Lab is for those who\'d rather fly too close to the sun than ask permission to leave the ground.',
+  alternates: {
+    canonical: '/',
+  },
   robots: {
     index: true,
     follow: true,
