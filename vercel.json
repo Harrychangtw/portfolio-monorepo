@@ -24,12 +24,6 @@
   "headers": [
     {
       "source": "/lab/:path*",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex"
-        }
-      ]
     }
   ],
   "cleanUrls": true,
