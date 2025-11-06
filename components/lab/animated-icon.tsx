@@ -3,12 +3,12 @@ import { easeIn, easeInOut, easeOut, motion } from 'framer-motion';
 
 export default function AnimatedIcarusIcon() {
   const iconParts = [
-    { src: '/images/icarus_icon/left_180.png', initial: { rotate: 90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, transition: { delay: 0.2, duration: 1.5 }, ease: easeOut },
-    { src: '/images/icarus_icon/left_135.png', initial: { rotate: 45, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, transition: { delay: 0.5, duration: 0.7 }, ease: easeOut },
-    { src: '/images/icarus_icon/right_45.png', initial: { rotate: -45, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, transition: { delay: 0.5, duration: 0.7 }, ease: easeOut },
-    { src: '/images/icarus_icon/right_0.png', initial: { rotate: -90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, transition: { delay: 0.2, duration: 1.5 }, ease: easeOut },
-    { src: '/images/icarus_icon/middle_90.png', initial: { opacity: 0.3 }, animate: { opacity: 1 }, transition: { delay: 0, duration: 0.5 } },
-    { src: '/images/icarus_icon/arrow.png', initial: { y: 10, opacity: 0 }, animate: { y: 0, opacity: 1 }, transition: { delay: 1, duration: 1.5 }, ease: easeOut },
+    { src: '/images/icarus_lab/left_180.png', initial: { rotate: 90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, transition: { delay: 0.2, duration: 1.5 }, ease: easeOut },
+    { src: '/images/icarus_lab/left_135.png', initial: { rotate: 45, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, transition: { delay: 0.5, duration: 0.7 }, ease: easeOut },
+    { src: '/images/icarus_lab/right_45.png', initial: { rotate: -45, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, transition: { delay: 0.5, duration: 0.7 }, ease: easeOut },
+    { src: '/images/icarus_lab/right_0.png', initial: { rotate: -90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, transition: { delay: 0.2, duration: 1.5 }, ease: easeOut },
+    { src: '/images/icarus_lab/middle_90.png', initial: { opacity: 0.3 }, animate: { opacity: 1 }, transition: { delay: 0, duration: 0.5 } },
+    { src: '/images/icarus_lab/arrow.png', initial: { y: 10, opacity: 0 }, animate: { y: 0, opacity: 1 }, transition: { delay: 1, duration: 1.5 }, ease: easeOut },
   ];
 
   return (
