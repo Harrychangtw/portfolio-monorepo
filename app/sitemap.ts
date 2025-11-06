@@ -1,9 +1,34 @@
 import { MetadataRoute } from 'next'
+import { headers } from 'next/headers'
 import { getAllProjectSlugs, getProjectData, getAllGallerySlugs, getGalleryItemData } from '@/lib/markdown'
 
-const baseUrl = 'https://www.harrychang.me'
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const headersList = await headers()
+  const host = headersList.get('host') || 'www.harrychang.me'
+  
+  // Determine if this is the lab subdomain
+  const isLab = host.includes('lab.harrychang.me')
+  const baseUrl = isLab ? 'https://lab.harrychang.me' : 'https://www.harrychang.me'
+  
+  // If this is the lab subdomain, return lab-specific sitemap
+  if (isLab) {
+    return [
+      {
+        url: `${baseUrl}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 1.0,
+      },
+      {
+        url: `${baseUrl}/waitlist`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+      },
+    ]
+  }
+  
+  // Main domain sitemap
   const sitemap: MetadataRoute.Sitemap = []
 
   // Add static pages

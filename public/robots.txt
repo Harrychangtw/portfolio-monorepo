@@ -1,8 +1,0 @@
-# robots.txt for www.harrychang.me
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /cal/
-
-# Sitemap
-Sitemap: https://www.harrychang.me/sitemap.xml
