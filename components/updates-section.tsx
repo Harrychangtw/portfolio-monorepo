@@ -1,5 +1,5 @@
 "use client"
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useLayoutEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { useIsMobile } from "@/hooks/use-mobile"
@@ -57,6 +57,7 @@ export default function UpdatesSection() {
 	const [currentPage, setCurrentPage] = useState(0)
 	const [isTransitioning, setIsTransitioning] = useState(false)
 	const [contentHeight, setContentHeight] = useState<number | 'auto'>('auto')
+	const [enableTransition, setEnableTransition] = useState(false)
 	const contentRef = useRef<HTMLDivElement>(null)
 	const entriesPerPage = 5
 	
@@ -70,12 +71,16 @@ export default function UpdatesSection() {
 	const totalPages = Math.ceil(updates.length / entriesPerPage)
 
 	// Measure content height for smooth transitions
-	useEffect(() => {
-		if (contentRef.current && !isTransitioning) {
-			const height = contentRef.current.scrollHeight
-			setContentHeight(height)
+	useLayoutEffect(() => {
+		if (!contentRef.current || isTransitioning) return
+		const height = contentRef.current.scrollHeight
+		setContentHeight(height)
+
+		// Enable transitions after first render
+		if (!enableTransition) {
+			setTimeout(() => setEnableTransition(true), 50)
 		}
-	}, [currentPage, isTransitioning, updates])
+	}, [currentPage, isTransitioning, updates, enableTransition])
 
 	const handlePrevPage = () => {
 		if (contentRef.current) {
@@ -107,7 +112,7 @@ export default function UpdatesSection() {
 	const endIndex = startIndex + entriesPerPage
 	
 	// Pre-process entries to remove [tag] prefix
-	const currentEntries = updates.slice(startIndex, endIndex).map(entry => ({
+	const currentEntries = updates.slice(startIndex, endIndex).map((entry: any) => ({
 		...entry,
 		text: entry.text?.replace(/^\[.*?\]\s*/, '') || ''
 	}))
@@ -168,10 +173,12 @@ export default function UpdatesSection() {
 						</motion.div>
 					</div>
 				</div>
-				<motion.div
-					animate={{ height: contentHeight }}
-					transition={{ duration: 0.4, ease: "easeInOut" }}
-					className="overflow-hidden"
+				<div
+					style={{ 
+						height: contentHeight,
+						overflow: 'hidden',
+						transition: enableTransition ? 'height 0.4s ease-in-out' : 'none'
+					}}
 				>
 					<div
 						ref={contentRef}
@@ -179,7 +186,7 @@ export default function UpdatesSection() {
 							isTransitioning ? "opacity-0" : "opacity-100"
 						}`}
 					>
-						{currentEntries.map((entry, index) => (
+						{currentEntries.map((entry: any, index: number) => (
 							<div key={index} className="relative flex justify-between items-start gap-4">
 								<p className="font-ibm-plex text-primary flex-1">
 									{parseHtmlToReact(entry.text || '')}
@@ -210,7 +217,7 @@ export default function UpdatesSection() {
 							</div>
 						))}
 					</div>
-				</motion.div>
+				</div>
 			</div>
 		</section>
 	)
