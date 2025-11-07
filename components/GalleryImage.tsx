@@ -1,10 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
-const GalleryImage = ({ src, caption, priority = false }) => {
+interface GalleryImageProps {
+  src: string;
+  caption?: string;
+  priority?: boolean;
+}
+
+const GalleryImage = ({ src, caption, priority = false }: GalleryImageProps) => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [loading, setLoading] = useState(true);
-  const imgRef = useRef(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   // White frame border thickness in pixels
   const frameBorderThickness = 3;
@@ -16,7 +22,6 @@ const GalleryImage = ({ src, caption, priority = false }) => {
     const img = new window.Image();
     
     img.onload = () => {
-      console.log(`GalleryImage loaded: ${src} with dimensions ${img.width}x${img.height}`);
       setDimensions({ width: img.width, height: img.height });
       setLoading(false);
     };

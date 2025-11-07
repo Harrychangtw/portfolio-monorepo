@@ -8,7 +8,6 @@ export async function GET(request: Request) {
     const galleryItems = getAllGalleryMetadata(locale)
     return NextResponse.json(galleryItems)
   } catch (error) {
-    console.error("Error fetching gallery items:", error)
     return NextResponse.json({ error: "Failed to fetch gallery items" }, { status: 500 })
   }
 }

@@ -110,8 +110,6 @@ export default function ProjectPageClient({ initialProject }: ProjectPageClientP
               priority={true}
               quality={95}
               noInsetPadding={true}
-              width={heroImageDims.width}
-              height={heroImageDims.height}
               aspectRatio={heroImageDims.aspectRatio}
             />
           </div>

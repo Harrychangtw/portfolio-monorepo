@@ -43,7 +43,7 @@ export async function sendWaitlistConfirmationEmail({
       html: htmlContent,
     });
 
-    console.log('Email sent successfully:', data);
+    
     return { success: true, data };
   } catch (error) {
     console.error('Failed to send email:', error);

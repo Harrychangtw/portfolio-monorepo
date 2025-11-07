@@ -58,6 +58,7 @@ export default function GalleryCard({
   // Fallback dynamic measurement for cases without metadata dimensions
   const [originalAspect, setOriginalAspect] = useState<number>(1)
   const [isPortrait, setIsPortrait] = useState(false)
+  const [aspectRatioPadding, setAspectRatioPadding] = useState<string>('100%')
 
   // Get the full resolution image URL and thumbnail
   const fullImageUrl = imageUrl?.replace('-thumb.webp', '.webp')
@@ -96,7 +97,7 @@ export default function GalleryCard({
             constrainedRatio = maxLandscapeRatio
           }
           
-          setAspectRatio(`${(1 / constrainedRatio) * 100}%`)
+          setAspectRatioPadding(`${(1 / constrainedRatio) * 100}%`)
         }
         setImageLoaded(true)
       }
@@ -150,7 +151,7 @@ export default function GalleryCard({
                   // Use aspect-ratio to prevent CLS immediately
                   ? { aspectRatio: `${constrained.w} / ${constrained.h}` }
                   // Fallback if dims not available (rare)
-                  : { paddingBottom: aspectRatio }
+                  : { paddingBottom: aspectRatioPadding }
               }
             >
               <div className="absolute inset-0 w-full h-full">

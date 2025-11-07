@@ -7,9 +7,8 @@ import ProjectPageClient from "@/components/project-page-client"
 
 const baseUrl = 'https://www.harrychang.me'
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const resolvedParams = await params
-  const slug = resolvedParams?.slug
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
   if (!slug) return { title: "Project Not Found" }
   
   const project = await getProjectData(slug)
@@ -98,9 +97,8 @@ export async function generateStaticParams() {
   return paths
 }
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
-  const resolvedParams = await params
-  const slug = resolvedParams?.slug
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
   if (!slug) notFound()
   
   const project = await getProjectData(slug)

@@ -5,7 +5,7 @@ import PaperReadingPageClient from "@/components/paper-reading-page-client";
 export default async function PaperReadingPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   // Try prebuilt cache first (build-time fetch)
   let allPapers: Paper[] = getPrebuiltPapers();

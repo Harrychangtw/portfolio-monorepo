@@ -49,10 +49,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    console.log('Received waitlist submission:', JSON.stringify(body, null, 2));
-    
     const data = WaitlistSchema.parse(body);
-    console.log('Validated data:', data);
     
     // Check if email already exists
     const existing = await prisma.waitlistEntry.findUnique({
@@ -89,10 +86,6 @@ export async function POST(request: Request) {
       locale: data.locale
     });
     
-    if (!emailResult.success) {
-      console.error('Email sending failed, but user was added to waitlist:', emailResult.error);
-      // Don't fail the request if email fails - user is already in the waitlist
-    }
     
     return NextResponse.json({ 
       success: true, 
@@ -101,7 +94,7 @@ export async function POST(request: Request) {
     
   } catch (error) {
     if (error instanceof z.ZodError) {
-      console.error('Validation error:', error.errors);
+      // console.error('Validation error:', error.errors);
       return NextResponse.json(
         { 
           error: 'Invalid form data. Please check your inputs.',
@@ -111,7 +104,7 @@ export async function POST(request: Request) {
       );
     }
     
-    console.error('Waitlist error:', error);
+    // console.error('Waitlist error:', error);
     return NextResponse.json(
       { error: 'Something went wrong. Please try again.' },
       { status: 500 }
@@ -140,7 +133,7 @@ export async function GET() {
       limitReached: total >= 500
     });
   } catch (error) {
-    console.error('Waitlist stats error:', error);
+    // console.error('Waitlist stats error:', error);
     return NextResponse.json({ 
       total: 0, 
       recentSignups: 0,
