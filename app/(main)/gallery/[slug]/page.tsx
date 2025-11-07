@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import { getGalleryItemData, getAllGallerySlugs } from "@/lib/markdown"
 import GalleryItemPageClient from "@/components/gallery-item-page-client"
 
-const baseUrl = 'https://harrychang.me'
+const baseUrl = 'https://www.harrychang.me'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params

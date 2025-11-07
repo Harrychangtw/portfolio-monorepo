@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Projects | Harry Chang 張祺煒",
     description: "Browse design and development projects by Harry Chang (張祺煒)",
-    url: 'https://harrychang.me/projects',
+    url: 'https://www.harrychang.me/projects',
     siteName: 'Harry Chang Portfolio',
     type: 'website',
     locale: 'en_US',

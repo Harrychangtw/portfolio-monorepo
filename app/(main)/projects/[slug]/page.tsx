@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react"
 import { getProjectData, getAllProjectSlugs } from "@/lib/markdown"
 import ProjectPageClient from "@/components/project-page-client"
 
-const baseUrl = 'https://harrychang.me'
+const baseUrl = 'https://www.harrychang.me'
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const resolvedParams = await params

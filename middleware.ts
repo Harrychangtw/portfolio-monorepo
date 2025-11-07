@@ -15,6 +15,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
   
+  // Handle non-www to www redirect for main domain
+  // This ensures search engines see consistent metadata and canonical URLs
+  if (hostname === 'harrychang.me') {
+    const newUrl = new URL(request.url)
+    newUrl.host = 'www.harrychang.me'
+    return NextResponse.redirect(newUrl, 301) // Permanent redirect
+  }
+  
   // Handle lab subdomain (only for production/localhost)
   const isLab = 
     hostname.includes('lab.harrychang.me') || 
