@@ -11,6 +11,16 @@
     "source": "arxiv"
   },
   {
+    "title": "Do Internal Layers of LLMs Reveal Patterns for Jailbreak Detection?",
+    "authors": [
+      "Sri Durga Sai Sowmya Kadali",
+      "Evangelos E. Papalexakis"
+    ],
+    "date": "2025-10-08T02:55:31Z",
+    "url": "http://arxiv.org/abs/2510.06594v2",
+    "source": "arxiv"
+  },
+  {
     "title": "Qwen3Guard Technical Report",
     "authors": [
       "Qwen Team"
@@ -42,6 +52,35 @@
     "source": "arxiv"
   },
   {
+    "title": "Safety Alignment Should Be Made More Than Just A Few Attention Heads",
+    "authors": [
+      "Chao Huang",
+      "Zefeng Zhang",
+      "Juewei Yue",
+      "Quangang Li",
+      "Chuang Zhang",
+      "Tingwen Liu"
+    ],
+    "date": "2025-08-27T09:06:28Z",
+    "url": "http://arxiv.org/abs/2508.19697v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Does More Inference-Time Compute Really Help Robustness?",
+    "authors": [
+      "Tong Wu",
+      "Chong Xiang",
+      "Jiachen T. Wang",
+      "Weichen Yu",
+      "Chawin Sitawarin",
+      "Vikash Sehwag",
+      "Prateek Mittal"
+    ],
+    "date": "2025-07-21T18:08:38Z",
+    "url": "http://arxiv.org/abs/2507.15974v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Context Rot: How Increasing Input Tokens Impacts LLM Performance",
     "authors": [
       "Kelly Hong",
@@ -51,6 +90,31 @@
     "date": "2025-07-14",
     "url": "https://research.trychroma.com/context-rot",
     "source": "manual"
+  },
+  {
+    "title": "Adversarial Manipulation of Reasoning Models using Internal\n  Representations",
+    "authors": [
+      "Kureha Yamaguchi",
+      "Benjamin Etheridge",
+      "Andy Arditi"
+    ],
+    "date": "2025-07-03T20:51:32Z",
+    "url": "http://arxiv.org/abs/2507.03167v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Towards Building Private LLMs: Exploring Multi-Node Expert Parallelism\n  on Apple Silicon for Mixture-of-Experts Large Language Model",
+    "authors": [
+      "Mu-Chi Chen",
+      "Po-Hsuan Huang",
+      "Xiangrui Ke",
+      "Chia-Heng Tu",
+      "Chun Jason Xue",
+      "Shih-Hao Hung"
+    ],
+    "date": "2025-06-30T09:04:25Z",
+    "url": "http://arxiv.org/abs/2506.23635v1",
+    "source": "arxiv"
   },
   {
     "title": "Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering\n  Target Atoms",
@@ -65,6 +129,24 @@
     ],
     "date": "2025-05-23T17:59:18Z",
     "url": "http://arxiv.org/abs/2505.20322v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Context Reasoner: Incentivizing Reasoning Capability for Contextualized\n  Privacy and Safety Compliance via Reinforcement Learning",
+    "authors": [
+      "Wenbin Hu",
+      "Haoran Li",
+      "Huihao Jing",
+      "Qi Hu",
+      "Ziqian Zeng",
+      "Sirui Han",
+      "Heli Xu",
+      "Tianshu Chu",
+      "Peizhao Hu",
+      "Yangqiu Song"
+    ],
+    "date": "2025-05-20T16:40:09Z",
+    "url": "http://arxiv.org/abs/2505.14585v2",
     "source": "arxiv"
   },
   {
@@ -225,6 +307,20 @@
     "source": "arxiv"
   },
   {
+    "title": "Attention Eclipse: Manipulating Attention to Bypass LLM Safety-Alignment",
+    "authors": [
+      "Pedram Zaree",
+      "Md Abdullah Al Mamun",
+      "Quazi Mishkatul Alam",
+      "Yue Dong",
+      "Ihsen Alouani",
+      "Nael Abu-Ghazaleh"
+    ],
+    "date": "2025-02-21T09:38:00Z",
+    "url": "http://arxiv.org/abs/2502.15334v1",
+    "source": "arxiv"
+  },
+  {
     "title": "AILuminate: Introducing v1.0 of the AI Risk and Reliability Benchmark\n  from MLCommons",
     "authors": [
       "Shaona Ghosh",
@@ -348,6 +444,34 @@
     "source": "arxiv"
   },
   {
+    "title": "SafeSwitch: Steering Unsafe LLM Behavior via Internal Activation Signals",
+    "authors": [
+      "Peixuan Han",
+      "Cheng Qian",
+      "Xiusi Chen",
+      "Yuji Zhang",
+      "Heng Ji",
+      "Denghui Zhang"
+    ],
+    "date": "2025-02-03T04:23:33Z",
+    "url": "http://arxiv.org/abs/2502.01042v5",
+    "source": "arxiv"
+  },
+  {
+    "title": "SafeSwitch: Steering Unsafe LLM Behavior via Internal Activation Signals",
+    "authors": [
+      "Peixuan Han",
+      "Cheng Qian",
+      "Xiusi Chen",
+      "Yuji Zhang",
+      "Heng Ji",
+      "Denghui Zhang"
+    ],
+    "date": "2025-02-03T04:23:33Z",
+    "url": "http://arxiv.org/abs/2502.01042v5",
+    "source": "arxiv"
+  },
+  {
     "title": "PromptShield: Deployable Detection for Prompt Injection Attacks",
     "authors": [
       "Dennis Jacob",
@@ -372,6 +496,42 @@
     ],
     "date": "2025-01-19T13:26:15Z",
     "url": "http://arxiv.org/abs/2501.11041v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Spot Risks Before Speaking! Unraveling Safety Attention Heads in Large\n  Vision-Language Models",
+    "authors": [
+      "Ziwei Zheng",
+      "Junyao Zhao",
+      "Le Yang",
+      "Lijun He",
+      "Fan Li"
+    ],
+    "date": "2025-01-03T07:01:15Z",
+    "url": "http://arxiv.org/abs/2501.02029v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Deliberative Alignment: Reasoning Enables Safer Language Models",
+    "authors": [
+      "Melody Y. Guan",
+      "Manas Joglekar",
+      "Eric Wallace",
+      "Saachi Jain",
+      "Boaz Barak",
+      "Alec Helyar",
+      "Rachel Dias",
+      "Andrea Vallone",
+      "Hongyu Ren",
+      "Jason Wei",
+      "Hyung Won Chung",
+      "Sam Toyer",
+      "Johannes Heidecke",
+      "Alex Beutel",
+      "Amelia Glaese"
+    ],
+    "date": "2024-12-20T21:00:11Z",
+    "url": "http://arxiv.org/abs/2412.16339v2",
     "source": "arxiv"
   },
   {
@@ -536,6 +696,34 @@
     "source": "arxiv"
   },
   {
+    "title": "Attention Tracker: Detecting Prompt Injection Attacks in LLMs",
+    "authors": [
+      "Kuo-Han Hung",
+      "Ching-Yun Ko",
+      "Ambrish Rawat",
+      "I-Hsin Chung",
+      "Winston H. Hsu",
+      "Pin-Yu Chen"
+    ],
+    "date": "2024-11-01T04:05:59Z",
+    "url": "http://arxiv.org/abs/2411.00348v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Attention Tracker: Detecting Prompt Injection Attacks in LLMs",
+    "authors": [
+      "Kuo-Han Hung",
+      "Ching-Yun Ko",
+      "Ambrish Rawat",
+      "I-Hsin Chung",
+      "Winston H. Hsu",
+      "Pin-Yu Chen"
+    ],
+    "date": "2024-11-01T04:05:59Z",
+    "url": "http://arxiv.org/abs/2411.00348v2",
+    "source": "arxiv"
+  },
+  {
     "title": "Embedding-based classifiers can detect prompt injection attacks",
     "authors": [
       "Md. Ahsan Ayub",
@@ -543,6 +731,18 @@
     ],
     "date": "2024-10-29T17:36:59Z",
     "url": "http://arxiv.org/abs/2410.22284v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "AmpleGCG-Plus: A Strong Generative Model of Adversarial Suffixes to\n  Jailbreak LLMs with Higher Success Rates in Fewer Attempts",
+    "authors": [
+      "Vishal Kumar",
+      "Zeyi Liao",
+      "Jaylen Jones",
+      "Huan Sun"
+    ],
+    "date": "2024-10-29T15:40:07Z",
+    "url": "http://arxiv.org/abs/2410.22143v1",
     "source": "arxiv"
   },
   {
@@ -559,6 +759,22 @@
     "source": "arxiv"
   },
   {
+    "title": "Iterative Self-Tuning LLMs for Enhanced Jailbreaking Capabilities",
+    "authors": [
+      "Chung-En Sun",
+      "Xiaodong Liu",
+      "Weiwei Yang",
+      "Tsui-Wei Weng",
+      "Hao Cheng",
+      "Aidan San",
+      "Michel Galley",
+      "Jianfeng Gao"
+    ],
+    "date": "2024-10-24T06:36:12Z",
+    "url": "http://arxiv.org/abs/2410.18469v5",
+    "source": "arxiv"
+  },
+  {
     "title": "An Interpretable N-gram Perplexity Threat Model for Large Language Model\n  Jailbreaks",
     "authors": [
       "Valentyn Boreiko",
@@ -572,6 +788,89 @@
     "source": "arxiv"
   },
   {
+    "title": "Boosting Jailbreak Transferability for Large Language Models",
+    "authors": [
+      "Hanqing Liu",
+      "Lifeng Zhou",
+      "Huanqian Yan"
+    ],
+    "date": "2024-10-21T05:11:19Z",
+    "url": "http://arxiv.org/abs/2410.15645v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Feint and Attack: Attention-Based Strategies for Jailbreaking and\n  Protecting LLMs",
+    "authors": [
+      "Rui Pu",
+      "Chaozhuo Li",
+      "Rui Ha",
+      "Zejian Chen",
+      "Litian Zhang",
+      "Zheng Liu",
+      "Lirong Qiu",
+      "Zaisheng Ye"
+    ],
+    "date": "2024-10-18T17:02:13Z",
+    "url": "http://arxiv.org/abs/2410.16327v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "On the Role of Attention Heads in Large Language Model Safety",
+    "authors": [
+      "Zhenhong Zhou",
+      "Haiyang Yu",
+      "Xinghua Zhang",
+      "Rongwu Xu",
+      "Fei Huang",
+      "Kun Wang",
+      "Yang Liu",
+      "Junfeng Fang",
+      "Yongbin Li"
+    ],
+    "date": "2024-10-17T16:08:06Z",
+    "url": "http://arxiv.org/abs/2410.13708v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Locking Down the Finetuned LLMs Safety",
+    "authors": [
+      "Minjun Zhu",
+      "Linyi Yang",
+      "Yifan Wei",
+      "Ningyu Zhang",
+      "Yue Zhang"
+    ],
+    "date": "2024-10-14T09:58:29Z",
+    "url": "http://arxiv.org/abs/2410.10343v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Jailbreak Instruction-Tuned LLMs via end-of-sentence MLP Re-weighting",
+    "authors": [
+      "Yifan Luo",
+      "Zhennan Zhou",
+      "Meitan Wang",
+      "Bin Dong"
+    ],
+    "date": "2024-10-14T04:32:22Z",
+    "url": "http://arxiv.org/abs/2410.10150v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "AttnGCG: Enhancing Jailbreaking Attacks on LLMs with Attention\n  Manipulation",
+    "authors": [
+      "Zijun Wang",
+      "Haoqin Tu",
+      "Jieru Mei",
+      "Bingchen Zhao",
+      "Yisen Wang",
+      "Cihang Xie"
+    ],
+    "date": "2024-10-11T17:55:09Z",
+    "url": "http://arxiv.org/abs/2410.09040v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Applying Pre-trained Multilingual BERT in Embeddings for Improved\n  Malicious Prompt Injection Attacks Detection",
     "authors": [
       "Md Abdur Rahman",
@@ -581,6 +880,22 @@
     ],
     "date": "2024-09-20T08:48:51Z",
     "url": "http://arxiv.org/abs/2409.13331v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Attention Heads of Large Language Models: A Survey",
+    "authors": [
+      "Zifan Zheng",
+      "Yezhaohui Wang",
+      "Yuxin Huang",
+      "Shichao Song",
+      "Mingchuan Yang",
+      "Bo Tang",
+      "Feiyu Xiong",
+      "Zhiyu Li"
+    ],
+    "date": "2024-09-05T17:59:12Z",
+    "url": "http://arxiv.org/abs/2409.03752v3",
     "source": "arxiv"
   },
   {
@@ -622,6 +937,17 @@
     "source": "arxiv"
   },
   {
+    "title": "Detecting and Understanding Vulnerabilities in Language Models via\n  Mechanistic Interpretability",
+    "authors": [
+      "Jorge García-Carrasco",
+      "Alejandro Maté",
+      "Juan Trujillo"
+    ],
+    "date": "2024-07-29T09:55:34Z",
+    "url": "http://arxiv.org/abs/2407.19842v1",
+    "source": "arxiv"
+  },
+  {
     "title": "What Makes and Breaks Safety Fine-tuning? A Mechanistic Study",
     "authors": [
       "Samyak Jain",
@@ -660,6 +986,34 @@
     "source": "arxiv"
   },
   {
+    "title": "Jailbreak Attacks and Defenses Against Large Language Models: A Survey",
+    "authors": [
+      "Sibo Yi",
+      "Yule Liu",
+      "Zhen Sun",
+      "Tianshuo Cong",
+      "Xinlei He",
+      "Jiaxing Song",
+      "Ke Xu",
+      "Qi Li"
+    ],
+    "date": "2024-07-05T06:57:30Z",
+    "url": "http://arxiv.org/abs/2407.04295v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "SOS! Soft Prompt Attack Against Open-Source Large Language Models",
+    "authors": [
+      "Ziqing Yang",
+      "Michael Backes",
+      "Yang Zhang",
+      "Ahmed Salem"
+    ],
+    "date": "2024-07-03T14:35:16Z",
+    "url": "http://arxiv.org/abs/2407.03160v1",
+    "source": "arxiv"
+  },
+  {
     "title": "WildTeaming at Scale: From In-the-Wild Jailbreaks to (Adversarially)\n  Safer Language Models",
     "authors": [
       "Liwei Jiang",
@@ -676,6 +1030,18 @@
     ],
     "date": "2024-06-26T17:31:22Z",
     "url": "http://arxiv.org/abs/2406.18510v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "On the Hardness of Faithful Chain-of-Thought Reasoning in Large Language\n  Models",
+    "authors": [
+      "Sree Harsha Tanneru",
+      "Dan Ley",
+      "Chirag Agarwal",
+      "Himabindu Lakkaraju"
+    ],
+    "date": "2024-06-15T13:16:44Z",
+    "url": "http://arxiv.org/abs/2406.10625v2",
     "source": "arxiv"
   },
   {
@@ -721,6 +1087,36 @@
     "source": "arxiv"
   },
   {
+    "title": "Improved Few-Shot Jailbreaking Can Circumvent Aligned Language Models\n  and Their Defenses",
+    "authors": [
+      "Xiaosen Zheng",
+      "Tianyu Pang",
+      "Chao Du",
+      "Qian Liu",
+      "Jing Jiang",
+      "Min Lin"
+    ],
+    "date": "2024-06-03T12:59:17Z",
+    "url": "http://arxiv.org/abs/2406.01288v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Improved Techniques for Optimization-Based Jailbreaking on Large\n  Language Models",
+    "authors": [
+      "Xiaojun Jia",
+      "Tianyu Pang",
+      "Chao Du",
+      "Yihao Huang",
+      "Jindong Gu",
+      "Yang Liu",
+      "Xiaochun Cao",
+      "Min Lin"
+    ],
+    "date": "2024-05-31T17:07:15Z",
+    "url": "http://arxiv.org/abs/2405.21018v2",
+    "source": "arxiv"
+  },
+  {
     "title": "SLM as Guardian: Pioneering AI Safety with Small Language Models",
     "authors": [
       "Ohjoon Kwon",
@@ -760,6 +1156,50 @@
     ],
     "date": "2024-05-24T07:23:56Z",
     "url": "http://arxiv.org/abs/2405.20770v4",
+    "source": "arxiv"
+  },
+  {
+    "title": "Efficient Universal Goal Hijacking with Semantics-guided Prompt\n  Organization",
+    "authors": [
+      "Yihao Huang",
+      "Chong Wang",
+      "Xiaojun Jia",
+      "Qing Guo",
+      "Felix Juefei-Xu",
+      "Jian Zhang",
+      "Geguang Pu",
+      "Yang Liu"
+    ],
+    "date": "2024-05-23T05:31:41Z",
+    "url": "http://arxiv.org/abs/2405.14189v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Efficient LLM Jailbreak via Adaptive Dense-to-sparse Constrained\n  Optimization",
+    "authors": [
+      "Kai Hu",
+      "Weichen Yu",
+      "Yining Li",
+      "Kai Chen",
+      "Tianjun Yao",
+      "Xiang Li",
+      "Wenhe Liu",
+      "Lijun Yu",
+      "Zhiqiang Shen",
+      "Matt Fredrikson"
+    ],
+    "date": "2024-05-15T06:11:24Z",
+    "url": "http://arxiv.org/abs/2405.09113v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Boosting Jailbreak Attack with Momentum",
+    "authors": [
+      "Yihao Zhang",
+      "Zeming Wei"
+    ],
+    "date": "2024-05-02T12:18:14Z",
+    "url": "http://arxiv.org/abs/2405.01229v2",
     "source": "arxiv"
   },
   {
@@ -814,6 +1254,29 @@
     "source": "arxiv"
   },
   {
+    "title": "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs",
+    "authors": [
+      "Anselm Paulus",
+      "Arman Zharmagambetov",
+      "Chuan Guo",
+      "Brandon Amos",
+      "Yuandong Tian"
+    ],
+    "date": "2024-04-21T22:18:13Z",
+    "url": "http://arxiv.org/abs/2404.16873v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "AmpleGCG: Learning a Universal and Transferable Generative Model of\n  Adversarial Suffixes for Jailbreaking Both Open and Closed LLMs",
+    "authors": [
+      "Zeyi Liao",
+      "Huan Sun"
+    ],
+    "date": "2024-04-11T17:05:50Z",
+    "url": "http://arxiv.org/abs/2404.07921v3",
+    "source": "arxiv"
+  },
+  {
     "title": "Sandwich attack: Multi-language Mixture Adaptive Attack on LLMs",
     "authors": [
       "Bibek Upadhayay",
@@ -833,6 +1296,21 @@
     ],
     "date": "2024-04-09T03:54:28Z",
     "url": "http://arxiv.org/abs/2404.05993v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Non-Linear Inference Time Intervention: Improving LLM Truthfulness",
+    "authors": [
+      "Jakub Hoscilowicz",
+      "Adam Wiacek",
+      "Jan Chojnacki",
+      "Adam Cieslak",
+      "Leszek Michon",
+      "Vitalii Urbanevych",
+      "Artur Janicki"
+    ],
+    "date": "2024-03-27T15:22:16Z",
+    "url": "http://arxiv.org/abs/2403.18680v2",
     "source": "arxiv"
   },
   {
@@ -865,6 +1343,18 @@
     "source": "arxiv"
   },
   {
+    "title": "Distract Large Language Models for Automatic Jailbreak Attack",
+    "authors": [
+      "Zeguan Xiao",
+      "Yan Yang",
+      "Guanhua Chen",
+      "Yun Chen"
+    ],
+    "date": "2024-03-13T11:16:43Z",
+    "url": "http://arxiv.org/abs/2403.08424v2",
+    "source": "arxiv"
+  },
+  {
     "title": "From One to Many: Expanding the Scope of Toxicity Mitigation in Language\n  Models",
     "authors": [
       "Luiza Pozzobon",
@@ -874,6 +1364,21 @@
     ],
     "date": "2024-03-06T17:51:43Z",
     "url": "http://arxiv.org/abs/2403.03893v3",
+    "source": "arxiv"
+  },
+  {
+    "title": "Breaking Down the Defenses: A Comparative Survey of Attacks on Large\n  Language Models",
+    "authors": [
+      "Arijit Ghosh Chowdhury",
+      "Md Mofijul Islam",
+      "Vaibhav Kumar",
+      "Faysal Hossain Shezan",
+      "Vaibhav Kumar",
+      "Vinija Jain",
+      "Aman Chadha"
+    ],
+    "date": "2024-03-03T04:46:21Z",
+    "url": "http://arxiv.org/abs/2403.04786v2",
     "source": "arxiv"
   },
   {
@@ -905,6 +1410,20 @@
     "source": "arxiv"
   },
   {
+    "title": "Making Them Ask and Answer: Jailbreaking Large Language Models in Few\n  Queries via Disguise and Reconstruction",
+    "authors": [
+      "Tong Liu",
+      "Yingjie Zhang",
+      "Zhe Zhao",
+      "Yinpeng Dong",
+      "Guozhu Meng",
+      "Kai Chen"
+    ],
+    "date": "2024-02-28T06:50:14Z",
+    "url": "http://arxiv.org/abs/2402.18104v2",
+    "source": "arxiv"
+  },
+  {
     "title": "Rainbow Teaming: Open-Ended Generation of Diverse Adversarial Prompts",
     "authors": [
       "Mikayel Samvelyan",
@@ -925,6 +1444,23 @@
     "source": "arxiv"
   },
   {
+    "title": "CodeChameleon: Personalized Encryption Framework for Jailbreaking Large\n  Language Models",
+    "authors": [
+      "Huijie Lv",
+      "Xiao Wang",
+      "Yuansen Zhang",
+      "Caishuang Huang",
+      "Shihan Dou",
+      "Junjie Ye",
+      "Tao Gui",
+      "Qi Zhang",
+      "Xuanjing Huang"
+    ],
+    "date": "2024-02-26T16:35:59Z",
+    "url": "http://arxiv.org/abs/2402.16717v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Defending Large Language Models against Jailbreak Attacks via Semantic\n  Smoothing",
     "authors": [
       "Jiabao Ji",
@@ -941,6 +1477,60 @@
     "source": "arxiv"
   },
   {
+    "title": "DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM\n  Jailbreakers",
+    "authors": [
+      "Xirui Li",
+      "Ruochen Wang",
+      "Minhao Cheng",
+      "Tianyi Zhou",
+      "Cho-Jui Hsieh"
+    ],
+    "date": "2024-02-25T17:43:29Z",
+    "url": "http://arxiv.org/abs/2402.16914v3",
+    "source": "arxiv"
+  },
+  {
+    "title": "Semantic Mirror Jailbreak: Genetic Algorithm Based Jailbreak Prompts\n  Against Open-source LLMs",
+    "authors": [
+      "Xiaoxia Li",
+      "Siyuan Liang",
+      "Jiyi Zhang",
+      "Han Fang",
+      "Aishan Liu",
+      "Ee-Chien Chang"
+    ],
+    "date": "2024-02-21T15:13:50Z",
+    "url": "http://arxiv.org/abs/2402.14872v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "When \"Competency\" in Reasoning Opens the Door to Vulnerability:\n  Jailbreaking LLMs via Novel Complex Ciphers",
+    "authors": [
+      "Divij Handa",
+      "Zehua Zhang",
+      "Amir Saeidi",
+      "Shrinidhi Kumbhar",
+      "Md Nayem Uddin",
+      "Aswin RRV",
+      "Chitta Baral"
+    ],
+    "date": "2024-02-16T11:37:05Z",
+    "url": "http://arxiv.org/abs/2402.10601v5",
+    "source": "arxiv"
+  },
+  {
+    "title": "Leveraging the Context through Multi-Round Interactions for Jailbreaking\n  Attacks",
+    "authors": [
+      "Yixin Cheng",
+      "Markos Georgopoulos",
+      "Volkan Cevher",
+      "Grigorios G. Chrysos"
+    ],
+    "date": "2024-02-14T13:45:19Z",
+    "url": "http://arxiv.org/abs/2402.09177v2",
+    "source": "arxiv"
+  },
+  {
     "title": "JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against\n  LLMs",
     "authors": [
       "Junjie Chu",
@@ -952,6 +1542,23 @@
     ],
     "date": "2024-02-08T13:42:50Z",
     "url": "http://arxiv.org/abs/2402.05668v3",
+    "source": "arxiv"
+  },
+  {
+    "title": "Assessing the Brittleness of Safety Alignment via Pruning and Low-Rank\n  Modifications",
+    "authors": [
+      "Boyi Wei",
+      "Kaixuan Huang",
+      "Yangsibo Huang",
+      "Tinghao Xie",
+      "Xiangyu Qi",
+      "Mengzhou Xia",
+      "Prateek Mittal",
+      "Mengdi Wang",
+      "Peter Henderson"
+    ],
+    "date": "2024-02-07T18:34:38Z",
+    "url": "http://arxiv.org/abs/2402.05162v4",
     "source": "arxiv"
   },
   {
@@ -1056,6 +1663,37 @@
     "source": "arxiv"
   },
   {
+    "title": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to\n  Challenge AI Safety by Humanizing LLMs",
+    "authors": [
+      "Yi Zeng",
+      "Hongpeng Lin",
+      "Jingwen Zhang",
+      "Diyi Yang",
+      "Ruoxi Jia",
+      "Weiyan Shi"
+    ],
+    "date": "2024-01-12T16:13:24Z",
+    "url": "http://arxiv.org/abs/2401.06373v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Revisiting Jailbreaking for Large Language Models: A Representation\n  Engineering Perspective",
+    "authors": [
+      "Tianlong Li",
+      "Zhenghua Wang",
+      "Wenhao Liu",
+      "Muling Wu",
+      "Shihan Dou",
+      "Changze Lv",
+      "Xiaohua Wang",
+      "Xiaoqing Zheng",
+      "Xuanjing Huang"
+    ],
+    "date": "2024-01-12T00:50:04Z",
+    "url": "http://arxiv.org/abs/2401.06824v5",
+    "source": "arxiv"
+  },
+  {
     "title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
     "authors": [
       "Yunfan Gao",
@@ -1093,6 +1731,21 @@
     "source": "arxiv"
   },
   {
+    "title": "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
+    "authors": [
+      "Anay Mehrotra",
+      "Manolis Zampetakis",
+      "Paul Kassianik",
+      "Blaine Nelson",
+      "Hyrum Anderson",
+      "Yaron Singer",
+      "Amin Karbasi"
+    ],
+    "date": "2023-12-04T18:49:23Z",
+    "url": "http://arxiv.org/abs/2312.02119v3",
+    "source": "arxiv"
+  },
+  {
     "title": "Taiwan LLM: Bridging the Linguistic Divide with a Culturally Aligned\n  Language Model",
     "authors": [
       "Yen-Ting Lin",
@@ -1118,6 +1771,32 @@
     "source": "arxiv"
   },
   {
+    "title": "Cognitive Overload: Jailbreaking Large Language Models with Overloaded\n  Logical Thinking",
+    "authors": [
+      "Nan Xu",
+      "Fei Wang",
+      "Ben Zhou",
+      "Bang Zheng Li",
+      "Chaowei Xiao",
+      "Muhao Chen"
+    ],
+    "date": "2023-11-16T11:52:22Z",
+    "url": "http://arxiv.org/abs/2311.09827v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Can Knowledge Graphs Reduce Hallucinations in LLMs? : A Survey",
+    "authors": [
+      "Garima Agrawal",
+      "Tharindu Kumarage",
+      "Zeyad Alghamdi",
+      "Huan Liu"
+    ],
+    "date": "2023-11-14T05:21:57Z",
+    "url": "http://arxiv.org/abs/2311.07914v2",
+    "source": "arxiv"
+  },
+  {
     "title": "MART: Improving LLM Safety with Multi-round Automatic Red-Teaming",
     "authors": [
       "Suyu Ge",
@@ -1131,6 +1810,39 @@
     ],
     "date": "2023-11-13T19:13:29Z",
     "url": "http://arxiv.org/abs/2311.07689v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "A Survey on Hallucination in Large Language Models: Principles,\n  Taxonomy, Challenges, and Open Questions",
+    "authors": [
+      "Lei Huang",
+      "Weijiang Yu",
+      "Weitao Ma",
+      "Weihong Zhong",
+      "Zhangyin Feng",
+      "Haotian Wang",
+      "Qianglong Chen",
+      "Weihua Peng",
+      "Xiaocheng Feng",
+      "Bing Qin",
+      "Ting Liu"
+    ],
+    "date": "2023-11-09T09:25:37Z",
+    "url": "http://arxiv.org/abs/2311.05232v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Scalable and Transferable Black-Box Jailbreaks for Language Models via\n  Persona Modulation",
+    "authors": [
+      "Rusheb Shah",
+      "Quentin Feuillade--Montixi",
+      "Soroush Pour",
+      "Arush Tagade",
+      "Stephen Casper",
+      "Javier Rando"
+    ],
+    "date": "2023-11-06T18:55:18Z",
+    "url": "http://arxiv.org/abs/2311.03348v2",
     "source": "arxiv"
   },
   {
@@ -1160,6 +1872,23 @@
     "source": "arxiv"
   },
   {
+    "title": "AutoDAN: Interpretable Gradient-Based Adversarial Attacks on Large\n  Language Models",
+    "authors": [
+      "Sicheng Zhu",
+      "Ruiyi Zhang",
+      "Bang An",
+      "Gang Wu",
+      "Joe Barrow",
+      "Zichao Wang",
+      "Furong Huang",
+      "Ani Nenkova",
+      "Tong Sun"
+    ],
+    "date": "2023-10-23T17:46:07Z",
+    "url": "http://arxiv.org/abs/2310.15140v2",
+    "source": "arxiv"
+  },
+  {
     "title": "Jailbreaking Black Box Large Language Models in Twenty Queries",
     "authors": [
       "Patrick Chao",
@@ -1174,6 +1903,19 @@
     "source": "arxiv"
   },
   {
+    "title": "Catastrophic Jailbreak of Open-source LLMs via Exploiting Generation",
+    "authors": [
+      "Yangsibo Huang",
+      "Samyak Gupta",
+      "Mengzhou Xia",
+      "Kai Li",
+      "Danqi Chen"
+    ],
+    "date": "2023-10-10T20:15:54Z",
+    "url": "http://arxiv.org/abs/2310.06987v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Multilingual Jailbreak Challenges in Large Language Models",
     "authors": [
       "Yue Deng",
@@ -1183,6 +1925,19 @@
     ],
     "date": "2023-10-10T09:44:06Z",
     "url": "http://arxiv.org/abs/2310.06474v3",
+    "source": "arxiv"
+  },
+  {
+    "title": "Jailbreak and Guard Aligned Language Models with Only Few In-Context\n  Demonstrations",
+    "authors": [
+      "Zeming Wei",
+      "Yifei Wang",
+      "Ang Li",
+      "Yichuan Mo",
+      "Yisen Wang"
+    ],
+    "date": "2023-10-10T07:50:29Z",
+    "url": "http://arxiv.org/abs/2310.06387v3",
     "source": "arxiv"
   },
   {
@@ -1236,6 +1991,34 @@
     "source": "arxiv"
   },
   {
+    "title": "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language\n  Models",
+    "authors": [
+      "Xiaogeng Liu",
+      "Nan Xu",
+      "Muhao Chen",
+      "Chaowei Xiao"
+    ],
+    "date": "2023-10-03T19:44:37Z",
+    "url": "http://arxiv.org/abs/2310.04451v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "On the Safety of Open-Sourced Large Language Models: Does Alignment\n  Really Prevent Them From Being Misused?",
+    "authors": [
+      "Hangfan Zhang",
+      "Zhimeng Guo",
+      "Huaisheng Zhu",
+      "Bochuan Cao",
+      "Lu Lin",
+      "Jinyuan Jia",
+      "Jinghui Chen",
+      "Dinghao Wu"
+    ],
+    "date": "2023-10-02T19:22:01Z",
+    "url": "http://arxiv.org/abs/2310.01581v1",
+    "source": "arxiv"
+  },
+  {
     "title": "All Languages Matter: On the Multilingual Safety of Large Language\n  Models",
     "authors": [
       "Wenxuan Wang",
@@ -1248,6 +2031,18 @@
     ],
     "date": "2023-10-02T05:23:34Z",
     "url": "http://arxiv.org/abs/2310.00905v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "GPTFUZZER: Red Teaming Large Language Models with Auto-Generated\n  Jailbreak Prompts",
+    "authors": [
+      "Jiahao Yu",
+      "Xingwei Lin",
+      "Zheng Yu",
+      "Xinyu Xing"
+    ],
+    "date": "2023-09-19T02:19:48Z",
+    "url": "http://arxiv.org/abs/2309.10253v4",
     "source": "arxiv"
   },
   {
@@ -1306,6 +2101,21 @@
     "source": "arxiv"
   },
   {
+    "title": "GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher",
+    "authors": [
+      "Youliang Yuan",
+      "Wenxiang Jiao",
+      "Wenxuan Wang",
+      "Jen-tse Huang",
+      "Pinjia He",
+      "Shuming Shi",
+      "Zhaopeng Tu"
+    ],
+    "date": "2023-08-12T04:05:57Z",
+    "url": "http://arxiv.org/abs/2308.06463v2",
+    "source": "arxiv"
+  },
+  {
     "title": "\"Do Anything Now\": Characterizing and Evaluating In-The-Wild Jailbreak\n  Prompts on Large Language Models",
     "authors": [
       "Xinyue Shen",
@@ -1316,6 +2126,20 @@
     ],
     "date": "2023-08-07T16:55:20Z",
     "url": "http://arxiv.org/abs/2308.03825v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Universal and Transferable Adversarial Attacks on Aligned Language\n  Models",
+    "authors": [
+      "Andy Zou",
+      "Zifan Wang",
+      "Nicholas Carlini",
+      "Milad Nasr",
+      "J. Zico Kolter",
+      "Matt Fredrikson"
+    ],
+    "date": "2023-07-27T17:49:12Z",
+    "url": "http://arxiv.org/abs/2307.15043v2",
     "source": "arxiv"
   },
   {
@@ -1338,6 +2162,53 @@
     ],
     "date": "2023-07-19T01:22:40Z",
     "url": "http://arxiv.org/abs/2307.09705v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "MasterKey: Automated Jailbreak Across Multiple Large Language Model\n  Chatbots",
+    "authors": [
+      "Gelei Deng",
+      "Yi Liu",
+      "Yuekang Li",
+      "Kailong Wang",
+      "Ying Zhang",
+      "Zefeng Li",
+      "Haoyu Wang",
+      "Tianwei Zhang",
+      "Yang Liu"
+    ],
+    "date": "2023-07-16T01:07:15Z",
+    "url": "http://arxiv.org/abs/2307.08715v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Jailbroken: How Does LLM Safety Training Fail?",
+    "authors": [
+      "Alexander Wei",
+      "Nika Haghtalab",
+      "Jacob Steinhardt"
+    ],
+    "date": "2023-07-05T17:58:10Z",
+    "url": "http://arxiv.org/abs/2307.02483v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Are aligned neural networks adversarially aligned?",
+    "authors": [
+      "Nicholas Carlini",
+      "Milad Nasr",
+      "Christopher A. Choquette-Choo",
+      "Matthew Jagielski",
+      "Irena Gao",
+      "Anas Awadalla",
+      "Pang Wei Koh",
+      "Daphne Ippolito",
+      "Katherine Lee",
+      "Florian Tramer",
+      "Ludwig Schmidt"
+    ],
+    "date": "2023-06-26T17:18:44Z",
+    "url": "http://arxiv.org/abs/2306.15447v2",
     "source": "arxiv"
   },
   {
@@ -1373,6 +2244,64 @@
     "source": "arxiv"
   },
   {
+    "title": "Jailbreaking ChatGPT via Prompt Engineering: An Empirical Study",
+    "authors": [
+      "Yi Liu",
+      "Gelei Deng",
+      "Zhengzi Xu",
+      "Yuekang Li",
+      "Yaowen Zheng",
+      "Ying Zhang",
+      "Lida Zhao",
+      "Tianwei Zhang",
+      "Kailong Wang",
+      "Yang Liu"
+    ],
+    "date": "2023-05-23T09:33:38Z",
+    "url": "http://arxiv.org/abs/2305.13860v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Toxicity in ChatGPT: Analyzing Persona-assigned Language Models",
+    "authors": [
+      "Ameet Deshpande",
+      "Vishvak Murahari",
+      "Tanmay Rajpurohit",
+      "Ashwin Kalyan",
+      "Karthik Narasimhan"
+    ],
+    "date": "2023-04-11T16:53:54Z",
+    "url": "http://arxiv.org/abs/2304.05335v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Multi-step Jailbreaking Privacy Attacks on ChatGPT",
+    "authors": [
+      "Haoran Li",
+      "Dadi Guo",
+      "Wei Fan",
+      "Mingshi Xu",
+      "Jie Huang",
+      "Fanpu Meng",
+      "Yangqiu Song"
+    ],
+    "date": "2023-04-11T13:05:04Z",
+    "url": "http://arxiv.org/abs/2304.05197v3",
+    "source": "arxiv"
+  },
+  {
+    "title": "Automatically Auditing Large Language Models via Discrete Optimization",
+    "authors": [
+      "Erik Jones",
+      "Anca Dragan",
+      "Aditi Raghunathan",
+      "Jacob Steinhardt"
+    ],
+    "date": "2023-03-08T05:09:59Z",
+    "url": "http://arxiv.org/abs/2303.04381v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation\n  in Natural Language Generation",
     "authors": [
       "Lorenz Kuhn",
@@ -1381,6 +2310,20 @@
     ],
     "date": "2023-02-19T20:10:07Z",
     "url": "http://arxiv.org/abs/2302.09664v3",
+    "source": "arxiv"
+  },
+  {
+    "title": "Exploiting Programmatic Behavior of LLMs: Dual-Use Through Standard\n  Security Attacks",
+    "authors": [
+      "Daniel Kang",
+      "Xuechen Li",
+      "Ion Stoica",
+      "Carlos Guestrin",
+      "Matei Zaharia",
+      "Tatsunori Hashimoto"
+    ],
+    "date": "2023-02-11T15:57:44Z",
+    "url": "http://arxiv.org/abs/2302.05733v1",
     "source": "arxiv"
   },
   {
@@ -1443,6 +2386,16 @@
     "source": "arxiv"
   },
   {
+    "title": "Ignore Previous Prompt: Attack Techniques For Language Models",
+    "authors": [
+      "Fábio Perez",
+      "Ian Ribeiro"
+    ],
+    "date": "2022-11-17T13:43:20Z",
+    "url": "http://arxiv.org/abs/2211.09527v1",
+    "source": "arxiv"
+  },
+  {
     "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
     "authors": [
       "Shunyu Yao",
@@ -1498,6 +2451,45 @@
     "source": "arxiv"
   },
   {
+    "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning\n  from Human Feedback",
+    "authors": [
+      "Yuntao Bai",
+      "Andy Jones",
+      "Kamal Ndousse",
+      "Amanda Askell",
+      "Anna Chen",
+      "Nova DasSarma",
+      "Dawn Drain",
+      "Stanislav Fort",
+      "Deep Ganguli",
+      "Tom Henighan",
+      "Nicholas Joseph",
+      "Saurav Kadavath",
+      "Jackson Kernion",
+      "Tom Conerly",
+      "Sheer El-Showk",
+      "Nelson Elhage",
+      "Zac Hatfield-Dodds",
+      "Danny Hernandez",
+      "Tristan Hume",
+      "Scott Johnston",
+      "Shauna Kravec",
+      "Liane Lovitt",
+      "Neel Nanda",
+      "Catherine Olsson",
+      "Dario Amodei",
+      "Tom Brown",
+      "Jack Clark",
+      "Sam McCandlish",
+      "Chris Olah",
+      "Ben Mann",
+      "Jared Kaplan"
+    ],
+    "date": "2022-04-12T15:02:38Z",
+    "url": "http://arxiv.org/abs/2204.05862v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Self-Consistency Improves Chain of Thought Reasoning in Language Models",
     "authors": [
       "Xuezhi Wang",
@@ -1511,6 +2503,35 @@
     ],
     "date": "2022-03-21T17:48:52Z",
     "url": "http://arxiv.org/abs/2203.11171v4",
+    "source": "arxiv"
+  },
+  {
+    "title": "ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and\n  Implicit Hate Speech Detection",
+    "authors": [
+      "Thomas Hartvigsen",
+      "Saadia Gabriel",
+      "Hamid Palangi",
+      "Maarten Sap",
+      "Dipankar Ray",
+      "Ece Kamar"
+    ],
+    "date": "2022-03-17T17:57:56Z",
+    "url": "http://arxiv.org/abs/2203.09509v4",
+    "source": "arxiv"
+  },
+  {
+    "title": "A New Generation of Perspective API: Efficient Multilingual\n  Character-level Transformers",
+    "authors": [
+      "Alyssa Lees",
+      "Vinh Q. Tran",
+      "Yi Tay",
+      "Jeffrey Sorensen",
+      "Jai Gupta",
+      "Donald Metzler",
+      "Lucy Vasserman"
+    ],
+    "date": "2022-02-22T20:55:31Z",
+    "url": "http://arxiv.org/abs/2202.11176v1",
     "source": "arxiv"
   },
   {
@@ -1528,6 +2549,44 @@
     ],
     "date": "2022-01-28T02:33:07Z",
     "url": "http://arxiv.org/abs/2201.11903v6",
+    "source": "arxiv"
+  },
+  {
+    "title": "TruthfulQA: Measuring How Models Mimic Human Falsehoods",
+    "authors": [
+      "Stephanie Lin",
+      "Jacob Hilton",
+      "Owain Evans"
+    ],
+    "date": "2021-09-08T17:15:27Z",
+    "url": "http://arxiv.org/abs/2109.07958v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Recipes for Safety in Open-domain Chatbots",
+    "authors": [
+      "Jing Xu",
+      "Da Ju",
+      "Margaret Li",
+      "Y-Lan Boureau",
+      "Jason Weston",
+      "Emily Dinan"
+    ],
+    "date": "2020-10-14T13:26:39Z",
+    "url": "http://arxiv.org/abs/2010.07079v3",
+    "source": "arxiv"
+  },
+  {
+    "title": "RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language\n  Models",
+    "authors": [
+      "Samuel Gehman",
+      "Suchin Gururangan",
+      "Maarten Sap",
+      "Yejin Choi",
+      "Noah A. Smith"
+    ],
+    "date": "2020-09-24T03:17:19Z",
+    "url": "http://arxiv.org/abs/2009.11462v2",
     "source": "arxiv"
   },
   {

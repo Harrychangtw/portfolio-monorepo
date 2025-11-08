@@ -15,12 +15,8 @@ export default function PaperCard({ paper }: PaperCardProps) {
   };
   
   return (
-    <motion.div 
+    <div 
       className="border-b border-border py-4"
-      whileHover={{
-        scale: 0.98,
-        transition: { duration: 0.2, ease: "easeInOut"}
-      }}
     >
       <h3 className="text-lg font-semibold">
         <Link href={paper.url} target="_blank" rel="noopener noreferrer" className="link-external hover:text-primary transition-colors duration-200">
@@ -29,6 +25,6 @@ export default function PaperCard({ paper }: PaperCardProps) {
       </h3>
       <p className="text-sm" style={{ color: '#4F4F4F' }}>{paper.authors.join(", ")}</p>
       <p className="text-sm" style={{ color: '#4F4F4F' }}>{formatDate(paper.date)}</p>
-    </motion.div>
+    </div>
   );
 }
