@@ -28,6 +28,7 @@ export default function Header() {
   const isLinksPage = pathname?.startsWith('/linktree');
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
+  const alignCleanupRef = useRef<(() => void) | null>(null); // Ref to manage precise align cleanup
   const { t } = useLanguage()
   
   // Detect if we're on the lab subdomain
@@ -40,31 +41,6 @@ export default function Header() {
   
   // Use stable hash scroll hook for perfect alignment
   useStableHashScroll("header")
-
-  // Tiny retry to correct alignment for ~1.2s after click
-  function ensurePreciseAlign(id: string, duration = 1200) {
-      const el = document.getElementById(id)
-      if (!el) return
-
-      const getHeaderH = () =>
-          (document.querySelector("header") as HTMLElement | null)?.getBoundingClientRect().height || 0
-
-      const start = performance.now()
-      let raf = 0
-
-      const step = () => {
-          const delta = el.getBoundingClientRect().top - getHeaderH()
-          if (Math.abs(delta) > 0.5) {
-              window.scrollBy({ top: delta, behavior: "auto" })
-          }
-          if (performance.now() - start < duration) {
-              raf = requestAnimationFrame(step)
-          }
-      }
-
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(step)
-  }
 
   // Function to determine if a path corresponds to the current page or section
   const isActive = (sectionId: string) => activeSection === sectionId;
@@ -89,7 +65,10 @@ export default function Header() {
         utilScrollToSection(id);
 
         // Tiny retry to correct any CLS while content starts streaming in
-        ensurePreciseAlign(id, 500)
+        if (alignCleanupRef.current) {
+          alignCleanupRef.current();
+        }
+        alignCleanupRef.current = ensurePreciseAlign(id, 500)
 
         // 4. Set timeout to reset scrolling flag *after* scroll likely finishes
         scrollTimeoutRef.current = setTimeout(() => {
@@ -114,6 +93,9 @@ export default function Header() {
     return () => {
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
+      }
+      if (alignCleanupRef.current) {
+        alignCleanupRef.current();
       }
     };
   }, [isHomePage])
