@@ -152,24 +152,36 @@ The build process runs in this order (see `package.json`):
 
 
 
-## 📚 Documentation
-
-For AI coding agents and detailed architecture documentation, see:
-- **[`.github/copilot-instructions.md`](.github/copilot-instructions.md)** - Comprehensive guide to codebase patterns and conventions
-- **[`content/README.md`](content/README.md)** - Content management guide with templates
-- **[`scripts/WARP.md`](scripts/WARP.md)** - Guide for using Warp.dev with this project, outdated
 
 ## 📄 License
 
-This project is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+This project uses a dual-licensing model. The source code is licensed under CC BY-NC 4.0, while the creative content (text, images, and other media) is under a standard copyright.
 
-**You are free to:**
-- Share — copy and redistribute the material
-- Adapt — remix, transform, and build upon the material
+### Code License
 
-**Under the following terms:**
-- **Attribution** — You must give appropriate credit
-- **NonCommercial** — You may not use the material for commercial purposes
+The source code used to build and display this website is licensed under the **[Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)**.
+
+This includes all files within this repository **except** for the contents of the `/content/` and `/public/` directories.
+
+You are free to:
+- **Share** — copy and redistribute the code in any medium or format.
+- **Adapt** — remix, transform, and build upon the code for non-commercial purposes.
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit.
+- **NonCommercial** — You may not use the material for commercial purposes.
+
+### Content License
+
+All original creative content, including but not limited to text, articles, project descriptions, and images, is the exclusive property of Chi-Wei Chang (張祺煒) and is protected by international copyright law.
+
+This applies specifically to all content within the following directories:
+- `/content/`
+- `/public/`
+
+**All Rights Reserved.**
+
+No part of this content may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the owner.
 
 ## 🙏 Acknowledgments
 

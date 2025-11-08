@@ -316,7 +316,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-4 text-sm text-secondary">
             <LanguageSwitcher />
             <p className="whitespace-nowrap overflow-hidden text-ellipsis">
-              Chi-Wei Chang 張祺煒 © CC BY-NC 4.0
+              © Chi-Wei Chang 張祺煒. All Rights Reserved.
             </p>
           </div>
         </div>
