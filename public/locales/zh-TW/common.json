@@ -59,9 +59,14 @@
     "manifesto": "理念",
     "calendar": "預約會議",
     "icarus": "Icarus Lab",
-    "music": "音樂播放清單",
+    "music": "Spotify",
     "reading": "論文閱讀清單",
-    "uses": "工具與設定"
+    "uses": "工具與設定",
+    "site": "作品集網站"
+  },
+  "links": {
+    "hero": "Code, camera, curiosity."
+
   },
   "readingList": {
     "title": "論文閱讀清單",

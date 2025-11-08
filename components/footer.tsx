@@ -19,28 +19,28 @@ const LanguageSwitcher = dynamic(
 
 // --- Link Data ---
 const navigationLinks = [
-  { id: 'about', name: 'About', href: '/#about', tooltip: 'Learn about me' },
-  { id: 'updates', name: 'Updates', href: '/#updates', tooltip: 'Latest happenings' },
-  { id: 'projects', name: 'Projects', href: '/#projects', tooltip: 'Things I\'ve built' },
-  { id: 'gallery', name: 'Gallery', href: '/#gallery', tooltip: 'Visual showcase' },
+  { id: 'about', name: 'About', href: '/#about' },
+  { id: 'updates', name: 'Updates', href: '/#updates' },
+  { id: 'projects', name: 'Projects', href: '/#projects' },
+  { id: 'gallery', name: 'Gallery', href: '/#gallery' },
 ];
 
 const socialLinks = [
-  { id: 'gmail', name: 'Email', href: '/email', tooltip: 'Always happy for a chat!' },
-  { id: 'discord', name: 'Discord', href: '/discord', tooltip: 'Ping me, maybe I\'ll ping back' },
-  { id: 'github', name: 'GitHub', href: '/github', tooltip: 'Check out my GitHub—where repos go to hide' },
-  { id: 'instagram', name: 'Instagram', href: '/instagram', tooltip: 'Please stalk responsibly' },
-  { id: 'music', name: 'Music Playlists', href: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3' },
-  { id: 'letterboxd', name: 'Letterboxd', href: '/letterboxd', tooltip: 'Movie reviews from a non-critic' },
+  { id: 'gmail', name: 'Email', href: '/email' },
+  { id: 'discord', name: 'Discord', href: '/discord' },
+  { id: 'github', name: 'GitHub', href: '/github' },
+  { id: 'instagram', name: 'Instagram', href: '/instagram' },
+  { id: 'music', name: 'Music Playlists', href: '/spotify' },
+  { id: 'letterboxd', name: 'Letterboxd', href: '/letterboxd' },
 ];
 
 const resourceLinks = [
-  { id: 'icarus', name: 'Icarus Lab', href: '/icarus', tooltip: 'Home to future courses & 1-on-1 sessions' },
-  { id: 'resume', name: 'Resume', href: '/cv', tooltip: 'Proof I know how to adult' },
-  { id: 'manifesto', name: 'Manifesto', href: '/manifesto', tooltip: 'A bridge back to naiveté' },
-  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal', tooltip: 'Book a time to chat with me' },
-  { id: 'uses', name: 'Uses', href: '/uses', tooltip: 'My tools & setup' },
-  { id: 'reading', name: 'Paper Reading List', href: '/paper-reading', tooltip: 'Caffeine-fueled knowledge' },
+  { id: 'icarus', name: 'Icarus Lab', href: '/icarus' },
+  { id: 'resume', name: 'Resume', href: '/cv' },
+  { id: 'manifesto', name: 'Manifesto', href: '/manifesto' },
+  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal' },
+  { id: 'uses', name: 'Uses', href: '/uses' },
+  { id: 'reading', name: 'Paper Reading List', href: '/paper-reading' },
 ];
 
 const allLinks = [...socialLinks, ...resourceLinks];

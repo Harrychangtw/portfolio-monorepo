@@ -59,9 +59,14 @@
     "resume": "Résumé",
     "manifesto": "Manifesto",
     "icarus": "Icarus Lab",
-    "music": "Spotify Playlists",
+    "music": "Spotify",
     "reading": "Reading List",
-    "uses": "Uses"
+    "uses": "Uses",
+    "site": "Portfolio Site"
+  },
+  "links": {
+    "hero": "Code, camera, curiosity.",
+    "bio": "Highschooler researching at CyCraft Technology"
   },
   "readingList": {
     "title": "Paper Reading List",
@@ -81,7 +86,7 @@
     "calendar": "Book a time, let's chat!",
     "github": "Where good code goes to get overengineered",
     "instagram": "POV: You're watching a teenager pretend to be Fan Ho",
-    "linkedin": "For the professional inquiries I ",
+    "linkedin": "For the professional inquiries.",
     "letterboxd": "4.5 stars for everything because I have no taste",
     "resume": "Yes it's literally just a Google Drive link.",
     "manifesto": "My philosophy on work, creation, and curiosity",
@@ -89,9 +94,8 @@
     "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
     "reading": "No TL;DR. Figure it out yourself.",
     "uses": "Need these for \"school work\""
-    
-
   },
+  
   "letterGlitch": {
     "line1": "I was never taught to create—",
     "line2": "I was born remembering how.",
