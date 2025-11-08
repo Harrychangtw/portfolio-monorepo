@@ -90,7 +90,7 @@
         },
         {
           "name": "電源供應器",
-          "value": "Corsair SF750"
+          "value": "Corsair SF750 2024"
         },
         {
           "name": "機殼風扇",
@@ -154,7 +154,7 @@
       "items": [
         {
           "name": "IDE",
-          "value": "Visual Lab Code"
+          "value": "Visual Studio Code"
         },
         {
           "name": "終端機",

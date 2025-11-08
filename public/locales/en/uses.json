@@ -90,7 +90,7 @@
         },
         {
           "name": "PSU",
-          "value": "Corsair SF750"
+          "value": "Corsair SF750 2024"
         },
         {
           "name": "Case Fans",
@@ -154,7 +154,7 @@
       "items": [
         {
           "name": "IDE",
-          "value": "Visual Lab Code"
+          "value": "Visual Studio Code"
         },
         {
           "name": "Terminal",
