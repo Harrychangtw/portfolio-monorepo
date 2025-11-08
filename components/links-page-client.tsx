@@ -130,7 +130,7 @@ export default function LinksPageClient() {
   ]
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center py-8 px-4 sm:px-6">
+    <div className="min-h-screen bg-background flex items-center justify-center py-8   px-4 sm:px-6">
       <div className="w-full max-w-2xl">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -180,7 +180,7 @@ export default function LinksPageClient() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base sm:text-lg text-muted-foreground mb-3"
+            className="text-base sm:text-lg text-muted-foreground mb-2"
           >
             {t("links.hero")}
           </motion.p>
@@ -234,7 +234,7 @@ export default function LinksPageClient() {
 
 function LinkCard({ link }: { link: LinkItem }) {
   return (
-    <div className="relative overflow-hidden rounded-xl bg-card border border-border p-2.5 sm:p-3 transition-all duration-300 hover:border-primary/50 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/5 active:scale-[0.98]">
+    <div className="relative overflow-hidden rounded-xl bg-card border border-border p-2 sm:p-2 transition-all duration-300 hover:border-primary/50 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/5 active:scale-[0.98]">
       {/* Hover Effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
       
