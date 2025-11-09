@@ -18,8 +18,13 @@ export default function PaperCard({ paper }: PaperCardProps) {
     <div 
       className="border-b border-border py-4"
     >
-      <h3 className="text-lg font-semibold">
-        <Link href={paper.url} target="_blank" rel="noopener noreferrer" className="link-external hover:text-primary transition-colors duration-200">
+      <h3 className="text-lg font-semibold break-words leading-tight">
+        <Link 
+          href={paper.url} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="link-external !whitespace-normal hover:text-primary transition-colors duration-200"
+        >
           {paper.title}
         </Link>
       </h3>
