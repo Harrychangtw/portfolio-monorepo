@@ -36,16 +36,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/projects',
     '/gallery',
-    '/cv',
     '/paper-reading',
     '/manifesto',
     '/uses',
-    '/cal',
-    '/letterboxd',
-    '/instagram',
-    '/github',
-    '/email',
-    '/discord',
   ]
 
   staticPages.forEach((page) => {
