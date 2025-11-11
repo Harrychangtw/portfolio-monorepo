@@ -9,8 +9,7 @@
         }
       ],
       "destination": "https://www.harrychang.me/:path*",
-      "permanent": true,
-      "statusCode": 308
+      "permanent": true
     }
   ],
   "rewrites": [
