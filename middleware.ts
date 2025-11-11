@@ -17,10 +17,11 @@ export function middleware(request: NextRequest) {
   
   // Handle non-www to www redirect for main domain
   // This ensures search engines see consistent metadata and canonical URLs
+  // Using 308 (Permanent Redirect) instead of 301 to preserve request method
   if (hostname === 'harrychang.me') {
     const newUrl = new URL(request.url)
     newUrl.host = 'www.harrychang.me'
-    return NextResponse.redirect(newUrl, 301) // Permanent redirect
+    return NextResponse.redirect(newUrl, 308)
   }
   
   // Handle lab subdomain (only for production/localhost)

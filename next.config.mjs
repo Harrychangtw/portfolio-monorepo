@@ -33,6 +33,16 @@ const nextConfig = {
         ],
       },
       {
+        // Ensure lab subdomain pages are properly indexed
+        source: '/lab/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+          },
+        ],
+      },
+      {
         // Ensure robots.txt and sitemap.xml are properly served
         source: '/robots.txt',
         headers: [

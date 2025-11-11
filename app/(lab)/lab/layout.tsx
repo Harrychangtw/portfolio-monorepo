@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   description: 'What if they only warned us about the sun because they were afraid to fly? Icarus Lab is for those who\'d rather fly too close to the sun than ask permission to leave the ground.',
   alternates: {
-    canonical: '/',
+    canonical: 'https://lab.harrychang.me',
   },
   robots: {
     index: true,

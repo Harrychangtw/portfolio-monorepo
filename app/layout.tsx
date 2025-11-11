@@ -23,6 +23,10 @@ export const metadata: Metadata = {
     template: '%s | Harry Chang',
   },
   description: 'Portfolio of Harry Chang',
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: 'Harry Chang',
     description: 'Portfolio of Harry Chang',

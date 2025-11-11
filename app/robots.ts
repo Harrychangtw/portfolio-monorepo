@@ -8,6 +8,9 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
   // Determine if this is the lab subdomain
   const isLab = host.includes('lab.harrychang.me')
   
+  // Handle non-www domain redirect signal
+  const isNonWww = host === 'harrychang.me'
+  
   if (isLab) {
     // Lab subdomain robots.txt
     return {
@@ -22,7 +25,8 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     }
   }
   
-  // Main domain robots.txt
+  // Main domain robots.txt (both www and non-www)
+  // Non-www will redirect to www via middleware, but allow crawling
   return {
     rules: [
       {
@@ -32,5 +36,9 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       },
     ],
     sitemap: 'https://www.harrychang.me/sitemap.xml',
+    ...(isNonWww && {
+      // Signal that non-www redirects to www
+      host: 'https://www.harrychang.me',
+    }),
   }
 }
