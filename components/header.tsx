@@ -28,7 +28,6 @@ export default function Header() {
   const isLinksPage = pathname?.startsWith('/linktree');
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
-  const alignCleanupRef = useRef<(() => void) | null>(null); // Ref to manage precise align cleanup
   const { t } = useLanguage()
   
   // Detect if we're on the lab subdomain
@@ -61,14 +60,8 @@ export default function Header() {
         // 2. Set active section immediately for instant underline feedback
         setActiveSection(id)
 
-        // 3. Use the utility function for scrolling
+        // 3. Use the utility function for scrolling (now fully smooth and interruptible)
         utilScrollToSection(id);
-
-        // Tiny retry to correct any CLS while content starts streaming in
-        if (alignCleanupRef.current) {
-          alignCleanupRef.current();
-        }
-        alignCleanupRef.current = ensurePreciseAlign(id, 500)
 
         // 4. Set timeout to reset scrolling flag *after* scroll likely finishes
         scrollTimeoutRef.current = setTimeout(() => {
@@ -93,9 +86,6 @@ export default function Header() {
     return () => {
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
-      }
-      if (alignCleanupRef.current) {
-        alignCleanupRef.current();
       }
     };
   }, [isHomePage])

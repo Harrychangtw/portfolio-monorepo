@@ -1,28 +1,8 @@
 // Define smooth scroll duration (keep consistent with header)
 const SCROLL_ANIMATION_DURATION = 800; // ms
 
-// Add user scroll detection
-let userScrolling = false;
-let scrollEndTimer: NodeJS.Timeout | null = null;
-
-// Detect user scroll
-if (typeof window !== 'undefined') {
-  window.addEventListener('wheel', () => {
-    userScrolling = true;
-    if (scrollEndTimer) clearTimeout(scrollEndTimer);
-    scrollEndTimer = setTimeout(() => {
-      userScrolling = false;
-    }, 150);
-  }, { passive: true });
-  
-  window.addEventListener('touchmove', () => {
-    userScrolling = true;
-    if (scrollEndTimer) clearTimeout(scrollEndTimer);
-    scrollEndTimer = setTimeout(() => {
-      userScrolling = false;
-    }, 150);
-  }, { passive: true });
-}
+// Easing function for smooth scroll animation
+const easeInOutQuad = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
 export const scrollToSection = (id: string, event?: React.MouseEvent) => {
   if (event) {
@@ -30,56 +10,73 @@ export const scrollToSection = (id: string, event?: React.MouseEvent) => {
   }
 
   const element = document.getElementById(id);
-  if (element) {
-    const headerOffset = document.querySelector('header')?.offsetHeight || 0;
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerOffset;
+  if (!element) return;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth',
-    });
+  const headerOffset = document.querySelector("header")?.offsetHeight || 0;
+  const startPosition = window.pageYOffset;
+  const targetPosition = element.getBoundingClientRect().top + startPosition - headerOffset;
+  const distance = targetPosition - startPosition;
+  let startTime: number | null = null;
+  let rafId: number;
 
-    // Dispatch event for loading the target section
-    window.dispatchEvent(new CustomEvent("force-load-section", { detail: id }));
-  }
-};
+  const cleanup = () => {
+    cancelAnimationFrame(rafId);
+    window.removeEventListener("wheel", cleanup);
+    window.removeEventListener("touchstart", cleanup);
+  };
 
-// Helper function for precise alignment (from header)
-export const ensurePreciseAlign = (id: string, duration = 1200): (() => void) => {
-  const el = document.getElementById(id);
-  if (!el) return () => {};
+  window.addEventListener("wheel", cleanup, { once: true, passive: true });
+  window.addEventListener("touchstart", cleanup, { once: true, passive: true });
 
-  const getHeaderH = () =>
-    (document.querySelector("header") as HTMLElement | null)?.getBoundingClientRect().height || 0;
+  const animationStep = (currentTime: number) => {
+    if (startTime === null) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / SCROLL_ANIMATION_DURATION, 1);
 
-  const start = performance.now();
-  let raf = 0;
-  let lastDelta = Infinity;
+    window.scrollTo(0, startPosition + distance * easeInOutQuad(progress));
 
-  const step = () => {
-    // Stop if user is scrolling
-    if (userScrolling) {
-      cancelAnimationFrame(raf);
-      return;
-    }
-
-    const delta = el.getBoundingClientRect().top - getHeaderH();
-    
-    // Only adjust if delta is significant and not oscillating
-    if (Math.abs(delta) > 0.5 && Math.abs(delta) < Math.abs(lastDelta)) {
-      window.scrollBy({ top: delta, behavior: "auto" });
-      lastDelta = delta;
-    }
-    
-    if (performance.now() - start < duration && !userScrolling) {
-      raf = requestAnimationFrame(step);
+    if (timeElapsed < SCROLL_ANIMATION_DURATION) {
+      rafId = requestAnimationFrame(animationStep);
+    } else {
+      cleanup();
     }
   };
 
-  cancelAnimationFrame(raf);
-  raf = requestAnimationFrame(step);
-  
-  // Return cleanup function
-  return () => cancelAnimationFrame(raf);
+  window.dispatchEvent(new CustomEvent("force-load-section", { detail: id }));
+  rafId = requestAnimationFrame(animationStep);
+};
+
+// Helper function for precise alignment (from header)
+export const ensurePreciseAlign = (id: string, duration = 1200) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  let rafId: number;
+  const getHeaderH = () =>
+    (document.querySelector("header") as HTMLElement | null)?.getBoundingClientRect().height || 0;
+
+  const cleanup = () => {
+    cancelAnimationFrame(rafId);
+    window.removeEventListener("wheel", cleanup);
+    window.removeEventListener("touchstart", cleanup);
+  };
+
+  window.addEventListener("wheel", cleanup, { once: true, passive: true });
+  window.addEventListener("touchstart", cleanup, { once: true, passive: true });
+
+  const start = performance.now();
+
+  const step = () => {
+    const delta = el.getBoundingClientRect().top - getHeaderH();
+
+    if (performance.now() - start > duration || Math.abs(delta) < 0.5) {
+      cleanup();
+      return;
+    }
+
+    window.scrollBy({ top: delta, behavior: "auto" });
+    rafId = requestAnimationFrame(step);
+  };
+
+  rafId = requestAnimationFrame(step);
 };
