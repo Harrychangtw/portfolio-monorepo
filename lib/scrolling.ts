@@ -1,5 +1,5 @@
 // Define smooth scroll duration (keep consistent with header)
-const SCROLL_ANIMATION_DURATION = 800; // ms
+const SCROLL_ANIMATION_DURATION = 400; // ms
 
 // Easing function for smooth scroll animation
 const easeInOutQuad = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;

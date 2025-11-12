@@ -11,6 +11,18 @@
     "source": "arxiv"
   },
   {
+    "title": "Are LLMs Reliable Rankers? Rank Manipulation via Two-Stage Token Optimization",
+    "authors": [
+      "Tiancheng Xing",
+      "Jerry Li",
+      "Yixuan Du",
+      "Xiyang Hu"
+    ],
+    "date": "2025-10-08T07:40:40Z",
+    "url": "http://arxiv.org/abs/2510.06732v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Do Internal Layers of LLMs Reveal Patterns for Jailbreak Detection?",
     "authors": [
       "Sri Durga Sai Sowmya Kadali",
@@ -66,6 +78,19 @@
     "source": "arxiv"
   },
   {
+    "title": "Retrieval-Augmented Defense: Adaptive and Controllable Jailbreak Prevention for Large Language Models",
+    "authors": [
+      "Guangyu Yang",
+      "Jinghong Chen",
+      "Jingbiao Mei",
+      "Weizhe Lin",
+      "Bill Byrne"
+    ],
+    "date": "2025-08-22T14:13:16Z",
+    "url": "http://arxiv.org/abs/2508.16406v2",
+    "source": "arxiv"
+  },
+  {
     "title": "Does More Inference-Time Compute Really Help Robustness?",
     "authors": [
       "Tong Wu",
@@ -92,7 +117,7 @@
     "source": "manual"
   },
   {
-    "title": "Adversarial Manipulation of Reasoning Models using Internal\n  Representations",
+    "title": "Adversarial Manipulation of Reasoning Models using Internal Representations",
     "authors": [
       "Kureha Yamaguchi",
       "Benjamin Etheridge",
@@ -103,7 +128,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Towards Building Private LLMs: Exploring Multi-Node Expert Parallelism\n  on Apple Silicon for Mixture-of-Experts Large Language Model",
+    "title": "Towards Building Private LLMs: Exploring Multi-Node Expert Parallelism on Apple Silicon for Mixture-of-Experts Large Language Model",
     "authors": [
       "Mu-Chi Chen",
       "Po-Hsuan Huang",
@@ -117,7 +142,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering\n  Target Atoms",
+    "title": "Beyond Prompt Engineering: Robust Behavior Control in LLMs via Steering Target Atoms",
     "authors": [
       "Mengru Wang",
       "Ziwen Xu",
@@ -132,7 +157,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Context Reasoner: Incentivizing Reasoning Capability for Contextualized\n  Privacy and Safety Compliance via Reinforcement Learning",
+    "title": "Context Reasoner: Incentivizing Reasoning Capability for Contextualized Privacy and Safety Compliance via Reinforcement Learning",
     "authors": [
       "Wenbin Hu",
       "Haoran Li",
@@ -175,7 +200,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Beyond Single-Sentence Prompts: Upgrading Value Alignment Benchmarks\n  with Dialogues and Stories",
+    "title": "Beyond Single-Sentence Prompts: Upgrading Value Alignment Benchmarks with Dialogues and Stories",
     "authors": [
       "Yazhou Zhang",
       "Qimeng Liu",
@@ -188,7 +213,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Harnessing Chain-of-Thought Metadata for Task Routing and Adversarial\n  Prompt Detection",
+    "title": "Harnessing Chain-of-Thought Metadata for Task Routing and Adversarial Prompt Detection",
     "authors": [
       "Ryan Marinelli",
       "Josef Pichlmeier",
@@ -269,7 +294,7 @@
     "source": "manual"
   },
   {
-    "title": "Prompt Injection Detection and Mitigation via AI Multi-Agent NLP\n  Frameworks",
+    "title": "Prompt Injection Detection and Mitigation via AI Multi-Agent NLP Frameworks",
     "authors": [
       "Diego Gosmar",
       "Deborah A. Dahl",
@@ -280,7 +305,18 @@
     "source": "arxiv"
   },
   {
-    "title": "Beyond Surface-Level Patterns: An Essence-Driven Defense Framework\n  Against Jailbreak Attacks in LLMs",
+    "title": "PokéChamp: an Expert-level Minimax Language Agent",
+    "authors": [
+      "Seth Karten",
+      "Andy Luu Nguyen",
+      "Chi Jin"
+    ],
+    "date": "2025-03-06T05:06:27Z",
+    "url": "http://arxiv.org/abs/2503.04094v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Beyond Surface-Level Patterns: An Essence-Driven Defense Framework Against Jailbreak Attacks in LLMs",
     "authors": [
       "Shiyu Xiang",
       "Ansen Zhang",
@@ -293,7 +329,21 @@
     "source": "arxiv"
   },
   {
-    "title": "Do LLMs Understand the Safety of Their Inputs? Training-Free Moderation\n  via Latent Prototypes",
+    "title": "Guardians of the Agentic System: Preventing Many Shots Jailbreak with Agentic System",
+    "authors": [
+      "Saikat Barua",
+      "Mostafizur Rahman",
+      "Md Jafor Sadek",
+      "Rafiul Islam",
+      "Shehenaz Khaled",
+      "Ahmedul Kabir"
+    ],
+    "date": "2025-02-23T23:35:15Z",
+    "url": "http://arxiv.org/abs/2502.16750v4",
+    "source": "arxiv"
+  },
+  {
+    "title": "Do LLMs Understand the Safety of Their Inputs? Training-Free Moderation via Latent Prototypes",
     "authors": [
       "Maciej Chrabąszcz",
       "Filip Szatkowski",
@@ -321,7 +371,7 @@
     "source": "arxiv"
   },
   {
-    "title": "AILuminate: Introducing v1.0 of the AI Risk and Reliability Benchmark\n  from MLCommons",
+    "title": "AILuminate: Introducing v1.0 of the AI Risk and Reliability Benchmark from MLCommons",
     "authors": [
       "Shaona Ghosh",
       "Heather Frase",
@@ -431,7 +481,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Effective Black-Box Multi-Faceted Attacks Breach Vision Large Language\n  Model Guardrails",
+    "title": "Effective Black-Box Multi-Faceted Attacks Breach Vision Large Language Model Guardrails",
     "authors": [
       "Yijun Yang",
       "Lichao Wang",
@@ -441,20 +491,6 @@
     ],
     "date": "2025-02-09T04:21:27Z",
     "url": "http://arxiv.org/abs/2502.05772v1",
-    "source": "arxiv"
-  },
-  {
-    "title": "SafeSwitch: Steering Unsafe LLM Behavior via Internal Activation Signals",
-    "authors": [
-      "Peixuan Han",
-      "Cheng Qian",
-      "Xiusi Chen",
-      "Yuji Zhang",
-      "Heng Ji",
-      "Denghui Zhang"
-    ],
-    "date": "2025-02-03T04:23:33Z",
-    "url": "http://arxiv.org/abs/2502.01042v5",
     "source": "arxiv"
   },
   {
@@ -485,7 +521,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Enhancing Semantic Consistency of Large Language Models through Model\n  Editing: An Interpretability-Oriented Approach",
+    "title": "Enhancing Semantic Consistency of Large Language Models through Model Editing: An Interpretability-Oriented Approach",
     "authors": [
       "Jingyuan Yang",
       "Dapeng Chen",
@@ -499,7 +535,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Spot Risks Before Speaking! Unraveling Safety Attention Heads in Large\n  Vision-Language Models",
+    "title": "Spot Risks Before Speaking! Unraveling Safety Attention Heads in Large Vision-Language Models",
     "authors": [
       "Ziwei Zheng",
       "Junyao Zhao",
@@ -535,7 +571,7 @@
     "source": "arxiv"
   },
   {
-    "title": "LLMs Lost in Translation: M-ALERT uncovers Cross-Linguistic Safety\n  Inconsistencies",
+    "title": "LLMs Lost in Translation: M-ALERT uncovers Cross-Linguistic Safety Inconsistencies",
     "authors": [
       "Felix Friedrich",
       "Simone Tedeschi",
@@ -580,7 +616,7 @@
     "source": "arxiv"
   },
   {
-    "title": "All Languages Matter: Evaluating LMMs on Culturally Diverse 100\n  Languages",
+    "title": "All Languages Matter: Evaluating LMMs on Culturally Diverse 100 Languages",
     "authors": [
       "Ashmal Vayani",
       "Dinura Dissanayake",
@@ -657,7 +693,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Llama Guard 3-1B-INT4: Compact and Efficient Safeguard for Human-AI\n  Conversations",
+    "title": "Llama Guard 3-1B-INT4: Compact and Efficient Safeguard for Human-AI Conversations",
     "authors": [
       "Igor Fedorov",
       "Kate Plawiak",
@@ -685,7 +721,7 @@
     "source": "arxiv"
   },
   {
-    "title": "When are 1.58 bits enough? A Bottom-up Exploration of BitNet\n  Quantization",
+    "title": "When are 1.58 bits enough? A Bottom-up Exploration of BitNet Quantization",
     "authors": [
       "Jacob Nielsen",
       "Lukas Galke",
@@ -693,20 +729,6 @@
     ],
     "date": "2024-11-08T07:24:49Z",
     "url": "http://arxiv.org/abs/2411.05882v1",
-    "source": "arxiv"
-  },
-  {
-    "title": "Attention Tracker: Detecting Prompt Injection Attacks in LLMs",
-    "authors": [
-      "Kuo-Han Hung",
-      "Ching-Yun Ko",
-      "Ambrish Rawat",
-      "I-Hsin Chung",
-      "Winston H. Hsu",
-      "Pin-Yu Chen"
-    ],
-    "date": "2024-11-01T04:05:59Z",
-    "url": "http://arxiv.org/abs/2411.00348v2",
     "source": "arxiv"
   },
   {
@@ -734,7 +756,7 @@
     "source": "arxiv"
   },
   {
-    "title": "AmpleGCG-Plus: A Strong Generative Model of Adversarial Suffixes to\n  Jailbreak LLMs with Higher Success Rates in Fewer Attempts",
+    "title": "AmpleGCG-Plus: A Strong Generative Model of Adversarial Suffixes to Jailbreak LLMs with Higher Success Rates in Fewer Attempts",
     "authors": [
       "Vishal Kumar",
       "Zeyi Liao",
@@ -771,11 +793,11 @@
       "Jianfeng Gao"
     ],
     "date": "2024-10-24T06:36:12Z",
-    "url": "http://arxiv.org/abs/2410.18469v5",
+    "url": "http://arxiv.org/abs/2410.18469v6",
     "source": "arxiv"
   },
   {
-    "title": "An Interpretable N-gram Perplexity Threat Model for Large Language Model\n  Jailbreaks",
+    "title": "An Interpretable N-gram Perplexity Threat Model for Large Language Model Jailbreaks",
     "authors": [
       "Valentyn Boreiko",
       "Alexander Panfilov",
@@ -799,7 +821,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Feint and Attack: Attention-Based Strategies for Jailbreaking and\n  Protecting LLMs",
+    "title": "Feint and Attack: Attention-Based Strategies for Jailbreaking and Protecting LLMs",
     "authors": [
       "Rui Pu",
       "Chaozhuo Li",
@@ -857,7 +879,7 @@
     "source": "arxiv"
   },
   {
-    "title": "AttnGCG: Enhancing Jailbreaking Attacks on LLMs with Attention\n  Manipulation",
+    "title": "AttnGCG: Enhancing Jailbreaking Attacks on LLMs with Attention Manipulation",
     "authors": [
       "Zijun Wang",
       "Haoqin Tu",
@@ -871,7 +893,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Applying Pre-trained Multilingual BERT in Embeddings for Improved\n  Malicious Prompt Injection Attacks Detection",
+    "title": "Applying Pre-trained Multilingual BERT in Embeddings for Improved Malicious Prompt Injection Attacks Detection",
     "authors": [
       "Md Abdur Rahman",
       "Hossain Shahriar",
@@ -919,7 +941,7 @@
     "source": "arxiv"
   },
   {
-    "title": "ControlMLLM: Training-Free Visual Prompt Learning for Multimodal Large\n  Language Models",
+    "title": "ControlMLLM: Training-Free Visual Prompt Learning for Multimodal Large Language Models",
     "authors": [
       "Mingrui Wu",
       "Xinyue Cai",
@@ -937,7 +959,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Detecting and Understanding Vulnerabilities in Language Models via\n  Mechanistic Interpretability",
+    "title": "Detecting and Understanding Vulnerabilities in Language Models via Mechanistic Interpretability",
     "authors": [
       "Jorge García-Carrasco",
       "Alejandro Maté",
@@ -963,7 +985,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Multilingual Blending: LLM Safety Alignment Evaluation with Language\n  Mixture",
+    "title": "Multilingual Blending: LLM Safety Alignment Evaluation with Language Mixture",
     "authors": [
       "Jiayang Song",
       "Yuheng Huang",
@@ -975,7 +997,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Grounding and Evaluation for Large Language Models: Practical Challenges\n  and Lessons Learned (Survey)",
+    "title": "Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)",
     "authors": [
       "Krishnaram Kenthapadi",
       "Mehrnoosh Sameki",
@@ -1014,7 +1036,7 @@
     "source": "arxiv"
   },
   {
-    "title": "WildTeaming at Scale: From In-the-Wild Jailbreaks to (Adversarially)\n  Safer Language Models",
+    "title": "WildTeaming at Scale: From In-the-Wild Jailbreaks to (Adversarially) Safer Language Models",
     "authors": [
       "Liwei Jiang",
       "Kavel Rao",
@@ -1033,7 +1055,7 @@
     "source": "arxiv"
   },
   {
-    "title": "On the Hardness of Faithful Chain-of-Thought Reasoning in Large Language\n  Models",
+    "title": "On the Hardness of Faithful Chain-of-Thought Reasoning in Large Language Models",
     "authors": [
       "Sree Harsha Tanneru",
       "Dan Ley",
@@ -1045,7 +1067,7 @@
     "source": "arxiv"
   },
   {
-    "title": "CHiSafetyBench: A Chinese Hierarchical Safety Benchmark for Large\n  Language Models",
+    "title": "CHiSafetyBench: A Chinese Hierarchical Safety Benchmark for Large Language Models",
     "authors": [
       "Wenjing Zhang",
       "Xuejiao Lei",
@@ -1061,7 +1083,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Improving Language Models for Emotion Analysis: Insights from Cognitive\n  Science",
+    "title": "Improving Language Models for Emotion Analysis: Insights from Cognitive Science",
     "authors": [
       "Constant Bonard",
       "Gustave Cortal"
@@ -1087,7 +1109,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Improved Few-Shot Jailbreaking Can Circumvent Aligned Language Models\n  and Their Defenses",
+    "title": "Improved Few-Shot Jailbreaking Can Circumvent Aligned Language Models and Their Defenses",
     "authors": [
       "Xiaosen Zheng",
       "Tianyu Pang",
@@ -1101,7 +1123,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Improved Techniques for Optimization-Based Jailbreaking on Large\n  Language Models",
+    "title": "Improved Techniques for Optimization-Based Jailbreaking on Large Language Models",
     "authors": [
       "Xiaojun Jia",
       "Tianyu Pang",
@@ -1134,7 +1156,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Safe LoRA: the Silver Lining of Reducing Safety Risks when Fine-tuning\n  Large Language Models",
+    "title": "Safe LoRA: the Silver Lining of Reducing Safety Risks when Fine-tuning Large Language Models",
     "authors": [
       "Chia-Yi Hsu",
       "Yu-Lin Tsai",
@@ -1159,7 +1181,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Efficient Universal Goal Hijacking with Semantics-guided Prompt\n  Organization",
+    "title": "Efficient Universal Goal Hijacking with Semantics-guided Prompt Organization",
     "authors": [
       "Yihao Huang",
       "Chong Wang",
@@ -1175,7 +1197,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Efficient LLM Jailbreak via Adaptive Dense-to-sparse Constrained\n  Optimization",
+    "title": "Efficient LLM Jailbreak via Adaptive Dense-to-sparse Constrained Optimization",
     "authors": [
       "Kai Hu",
       "Weichen Yu",
@@ -1203,7 +1225,7 @@
     "source": "arxiv"
   },
   {
-    "title": "RAG and RAU: A Survey on Retrieval-Augmented Language Model in Natural\n  Language Processing",
+    "title": "RAG and RAU: A Survey on Retrieval-Augmented Language Model in Natural Language Processing",
     "authors": [
       "Yucheng Hu",
       "Yuxing Lu"
@@ -1267,7 +1289,7 @@
     "source": "arxiv"
   },
   {
-    "title": "AmpleGCG: Learning a Universal and Transferable Generative Model of\n  Adversarial Suffixes for Jailbreaking Both Open and Closed LLMs",
+    "title": "AmpleGCG: Learning a Universal and Transferable Generative Model of Adversarial Suffixes for Jailbreaking Both Open and Closed LLMs",
     "authors": [
       "Zeyi Liao",
       "Huan Sun"
@@ -1287,7 +1309,7 @@
     "source": "arxiv"
   },
   {
-    "title": "AEGIS: Online Adaptive AI Content Safety Moderation with Ensemble of LLM\n  Experts",
+    "title": "AEGIS: Online Adaptive AI Content Safety Moderation with Ensemble of LLM Experts",
     "authors": [
       "Shaona Ghosh",
       "Prasoon Varshney",
@@ -1328,7 +1350,7 @@
     "source": "arxiv"
   },
   {
-    "title": "RigorLLM: Resilient Guardrails for Large Language Models against\n  Undesired Content",
+    "title": "RigorLLM: Resilient Guardrails for Large Language Models against Undesired Content",
     "authors": [
       "Zhuowen Yuan",
       "Zidi Xiong",
@@ -1355,7 +1377,7 @@
     "source": "arxiv"
   },
   {
-    "title": "From One to Many: Expanding the Scope of Toxicity Mitigation in Language\n  Models",
+    "title": "From One to Many: Expanding the Scope of Toxicity Mitigation in Language Models",
     "authors": [
       "Luiza Pozzobon",
       "Patrick Lewis",
@@ -1367,22 +1389,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Breaking Down the Defenses: A Comparative Survey of Attacks on Large\n  Language Models",
-    "authors": [
-      "Arijit Ghosh Chowdhury",
-      "Md Mofijul Islam",
-      "Vaibhav Kumar",
-      "Faysal Hossain Shezan",
-      "Vaibhav Kumar",
-      "Vinija Jain",
-      "Aman Chadha"
-    ],
-    "date": "2024-03-03T04:46:21Z",
-    "url": "http://arxiv.org/abs/2403.04786v2",
-    "source": "arxiv"
-  },
-  {
-    "title": "Breaking Down the Defenses: A Comparative Survey of Attacks on Large\n  Language Models",
+    "title": "Breaking Down the Defenses: A Comparative Survey of Attacks on Large Language Models",
     "authors": [
       "Arijit Ghosh Chowdhury",
       "Md Mofijul Islam",
@@ -1410,7 +1417,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Making Them Ask and Answer: Jailbreaking Large Language Models in Few\n  Queries via Disguise and Reconstruction",
+    "title": "Making Them Ask and Answer: Jailbreaking Large Language Models in Few Queries via Disguise and Reconstruction",
     "authors": [
       "Tong Liu",
       "Yingjie Zhang",
@@ -1444,7 +1451,7 @@
     "source": "arxiv"
   },
   {
-    "title": "CodeChameleon: Personalized Encryption Framework for Jailbreaking Large\n  Language Models",
+    "title": "CodeChameleon: Personalized Encryption Framework for Jailbreaking Large Language Models",
     "authors": [
       "Huijie Lv",
       "Xiao Wang",
@@ -1461,7 +1468,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Defending Large Language Models against Jailbreak Attacks via Semantic\n  Smoothing",
+    "title": "Defending Large Language Models against Jailbreak Attacks via Semantic Smoothing",
     "authors": [
       "Jiabao Ji",
       "Bairu Hou",
@@ -1477,7 +1484,7 @@
     "source": "arxiv"
   },
   {
-    "title": "DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM\n  Jailbreakers",
+    "title": "DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM Jailbreakers",
     "authors": [
       "Xirui Li",
       "Ruochen Wang",
@@ -1490,7 +1497,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Semantic Mirror Jailbreak: Genetic Algorithm Based Jailbreak Prompts\n  Against Open-source LLMs",
+    "title": "Semantic Mirror Jailbreak: Genetic Algorithm Based Jailbreak Prompts Against Open-source LLMs",
     "authors": [
       "Xiaoxia Li",
       "Siyuan Liang",
@@ -1504,7 +1511,7 @@
     "source": "arxiv"
   },
   {
-    "title": "When \"Competency\" in Reasoning Opens the Door to Vulnerability:\n  Jailbreaking LLMs via Novel Complex Ciphers",
+    "title": "When \"Competency\" in Reasoning Opens the Door to Vulnerability: Jailbreaking LLMs via Novel Complex Ciphers",
     "authors": [
       "Divij Handa",
       "Zehua Zhang",
@@ -1519,7 +1526,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Leveraging the Context through Multi-Round Interactions for Jailbreaking\n  Attacks",
+    "title": "Leveraging the Context through Multi-Round Interactions for Jailbreaking Attacks",
     "authors": [
       "Yixin Cheng",
       "Markos Georgopoulos",
@@ -1531,7 +1538,7 @@
     "source": "arxiv"
   },
   {
-    "title": "JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against\n  LLMs",
+    "title": "JailbreakRadar: Comprehensive Assessment of Jailbreak Attacks Against LLMs",
     "authors": [
       "Junjie Chu",
       "Yugeng Liu",
@@ -1545,7 +1552,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Assessing the Brittleness of Safety Alignment via Pruning and Low-Rank\n  Modifications",
+    "title": "Assessing the Brittleness of Safety Alignment via Pruning and Low-Rank Modifications",
     "authors": [
       "Boyi Wei",
       "Kaixuan Huang",
@@ -1562,7 +1569,7 @@
     "source": "arxiv"
   },
   {
-    "title": "SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large\n  Language Models",
+    "title": "SALAD-Bench: A Hierarchical and Comprehensive Safety Benchmark for Large Language Models",
     "authors": [
       "Lijun Li",
       "Bowen Dong",
@@ -1578,7 +1585,7 @@
     "source": "arxiv"
   },
   {
-    "title": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming\n  and Robust Refusal",
+    "title": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
     "authors": [
       "Mantas Mazeika",
       "Long Phan",
@@ -1598,7 +1605,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Safety Fine-Tuning at (Almost) No Cost: A Baseline for Vision Large\n  Language Models",
+    "title": "Safety Fine-Tuning at (Almost) No Cost: A Baseline for Vision Large Language Models",
     "authors": [
       "Yongshuo Zong",
       "Ondrej Bohdal",
@@ -1626,7 +1633,7 @@
     "source": "arxiv"
   },
   {
-    "title": "The Language Barrier: Dissecting Safety Challenges of LLMs in\n  Multilingual Contexts",
+    "title": "The Language Barrier: Dissecting Safety Challenges of LLMs in Multilingual Contexts",
     "authors": [
       "Lingfeng Shen",
       "Weiting Tan",
@@ -1663,7 +1670,7 @@
     "source": "arxiv"
   },
   {
-    "title": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to\n  Challenge AI Safety by Humanizing LLMs",
+    "title": "How Johnny Can Persuade LLMs to Jailbreak Them: Rethinking Persuasion to Challenge AI Safety by Humanizing LLMs",
     "authors": [
       "Yi Zeng",
       "Hongpeng Lin",
@@ -1677,7 +1684,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Revisiting Jailbreaking for Large Language Models: A Representation\n  Engineering Perspective",
+    "title": "Revisiting Jailbreaking for Large Language Models: A Representation Engineering Perspective",
     "authors": [
       "Tianlong Li",
       "Zhenghua Wang",
@@ -1746,7 +1753,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Taiwan LLM: Bridging the Linguistic Divide with a Culturally Aligned\n  Language Model",
+    "title": "Taiwan LLM: Bridging the Linguistic Divide with a Culturally Aligned Language Model",
     "authors": [
       "Yen-Ting Lin",
       "Yun-Nung Chen"
@@ -1756,7 +1763,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Token-Level Adversarial Prompt Detection Based on Perplexity Measures\n  and Contextual Information",
+    "title": "Token-Level Adversarial Prompt Detection Based on Perplexity Measures and Contextual Information",
     "authors": [
       "Zhengmian Hu",
       "Gang Wu",
@@ -1771,7 +1778,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Cognitive Overload: Jailbreaking Large Language Models with Overloaded\n  Logical Thinking",
+    "title": "Cognitive Overload: Jailbreaking Large Language Models with Overloaded Logical Thinking",
     "authors": [
       "Nan Xu",
       "Fei Wang",
@@ -1813,7 +1820,7 @@
     "source": "arxiv"
   },
   {
-    "title": "A Survey on Hallucination in Large Language Models: Principles,\n  Taxonomy, Challenges, and Open Questions",
+    "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
     "authors": [
       "Lei Huang",
       "Weijiang Yu",
@@ -1832,7 +1839,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Scalable and Transferable Black-Box Jailbreaks for Language Models via\n  Persona Modulation",
+    "title": "Scalable and Transferable Black-Box Jailbreaks for Language Models via Persona Modulation",
     "authors": [
       "Rusheb Shah",
       "Quentin Feuillade--Montixi",
@@ -1846,7 +1853,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Robust Safety Classifier for Large Language Models: Adversarial Prompt\n  Shield",
+    "title": "Robust Safety Classifier for Large Language Models: Adversarial Prompt Shield",
     "authors": [
       "Jinhwa Kim",
       "Ali Derakhshan",
@@ -1857,7 +1864,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Improving Few-shot Generalization of Safety Classifiers via Data\n  Augmented Parameter-Efficient Fine-Tuning",
+    "title": "Improving Few-shot Generalization of Safety Classifiers via Data Augmented Parameter-Efficient Fine-Tuning",
     "authors": [
       "Ananth Balashankar",
       "Xiao Ma",
@@ -1872,7 +1879,7 @@
     "source": "arxiv"
   },
   {
-    "title": "AutoDAN: Interpretable Gradient-Based Adversarial Attacks on Large\n  Language Models",
+    "title": "AutoDAN: Interpretable Gradient-Based Adversarial Attacks on Large Language Models",
     "authors": [
       "Sicheng Zhu",
       "Ruiyi Zhang",
@@ -1928,7 +1935,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Jailbreak and Guard Aligned Language Models with Only Few In-Context\n  Demonstrations",
+    "title": "Jailbreak and Guard Aligned Language Models with Only Few In-Context Demonstrations",
     "authors": [
       "Zeming Wei",
       "Yifei Wang",
@@ -1941,7 +1948,7 @@
     "source": "arxiv"
   },
   {
-    "title": "SC-Safety: A Multi-round Open-ended Question Adversarial Safety\n  Benchmark for Large Language Models in Chinese",
+    "title": "SC-Safety: A Multi-round Open-ended Question Adversarial Safety Benchmark for Large Language Models in Chinese",
     "authors": [
       "Liang Xu",
       "Kangkang Zhao",
@@ -1953,7 +1960,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Fine-tuning Aligned Language Models Compromises Safety, Even When Users\n  Do Not Intend To!",
+    "title": "Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To!",
     "authors": [
       "Xiangyu Qi",
       "Yi Zeng",
@@ -1991,7 +1998,7 @@
     "source": "arxiv"
   },
   {
-    "title": "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language\n  Models",
+    "title": "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models",
     "authors": [
       "Xiaogeng Liu",
       "Nan Xu",
@@ -2003,7 +2010,7 @@
     "source": "arxiv"
   },
   {
-    "title": "On the Safety of Open-Sourced Large Language Models: Does Alignment\n  Really Prevent Them From Being Misused?",
+    "title": "On the Safety of Open-Sourced Large Language Models: Does Alignment Really Prevent Them From Being Misused?",
     "authors": [
       "Hangfan Zhang",
       "Zhimeng Guo",
@@ -2019,7 +2026,7 @@
     "source": "arxiv"
   },
   {
-    "title": "All Languages Matter: On the Multilingual Safety of Large Language\n  Models",
+    "title": "All Languages Matter: On the Multilingual Safety of Large Language Models",
     "authors": [
       "Wenxuan Wang",
       "Zhaopeng Tu",
@@ -2034,7 +2041,7 @@
     "source": "arxiv"
   },
   {
-    "title": "GPTFUZZER: Red Teaming Large Language Models with Auto-Generated\n  Jailbreak Prompts",
+    "title": "GPTFUZZER: Red Teaming Large Language Models with Auto-Generated Jailbreak Prompts",
     "authors": [
       "Jiahao Yu",
       "Xingwei Lin",
@@ -2046,7 +2053,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Advancing the Evaluation of Traditional Chinese Language Models: Towards\n  a Comprehensive Benchmark Suite",
+    "title": "Advancing the Evaluation of Traditional Chinese Language Models: Towards a Comprehensive Benchmark Suite",
     "authors": [
       "Chan-Jan Hsu",
       "Chang-Le Liu",
@@ -2060,7 +2067,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Baseline Defenses for Adversarial Attacks Against Aligned Language\n  Models",
+    "title": "Baseline Defenses for Adversarial Attacks Against Aligned Language Models",
     "authors": [
       "Neel Jain",
       "Avi Schwarzschild",
@@ -2116,7 +2123,7 @@
     "source": "arxiv"
   },
   {
-    "title": "\"Do Anything Now\": Characterizing and Evaluating In-The-Wild Jailbreak\n  Prompts on Large Language Models",
+    "title": "\"Do Anything Now\": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models",
     "authors": [
       "Xinyue Shen",
       "Zeyuan Chen",
@@ -2129,7 +2136,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Universal and Transferable Adversarial Attacks on Aligned Language\n  Models",
+    "title": "Universal and Transferable Adversarial Attacks on Aligned Language Models",
     "authors": [
       "Andy Zou",
       "Zifan Wang",
@@ -2143,7 +2150,7 @@
     "source": "arxiv"
   },
   {
-    "title": "CValues: Measuring the Values of Chinese Large Language Models from\n  Safety to Responsibility",
+    "title": "CValues: Measuring the Values of Chinese Large Language Models from Safety to Responsibility",
     "authors": [
       "Guohai Xu",
       "Jiayi Liu",
@@ -2165,7 +2172,7 @@
     "source": "arxiv"
   },
   {
-    "title": "MasterKey: Automated Jailbreak Across Multiple Large Language Model\n  Chatbots",
+    "title": "MasterKey: Automated Jailbreak Across Multiple Large Language Model Chatbots",
     "authors": [
       "Gelei Deng",
       "Yi Liu",
@@ -2231,7 +2238,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language\n  Model",
+    "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
     "authors": [
       "Kenneth Li",
       "Oam Patel",
@@ -2302,7 +2309,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation\n  in Natural Language Generation",
+    "title": "Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation",
     "authors": [
       "Lorenz Kuhn",
       "Yarin Gal",
@@ -2313,7 +2320,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Exploiting Programmatic Behavior of LLMs: Dual-Use Through Standard\n  Security Attacks",
+    "title": "Exploiting Programmatic Behavior of LLMs: Dual-Use Through Standard Security Attacks",
     "authors": [
       "Daniel Kang",
       "Xuechen Li",
@@ -2451,7 +2458,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning\n  from Human Feedback",
+    "title": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
     "authors": [
       "Yuntao Bai",
       "Andy Jones",
@@ -2506,7 +2513,7 @@
     "source": "arxiv"
   },
   {
-    "title": "ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and\n  Implicit Hate Speech Detection",
+    "title": "ToxiGen: A Large-Scale Machine-Generated Dataset for Adversarial and Implicit Hate Speech Detection",
     "authors": [
       "Thomas Hartvigsen",
       "Saadia Gabriel",
@@ -2520,7 +2527,7 @@
     "source": "arxiv"
   },
   {
-    "title": "A New Generation of Perspective API: Efficient Multilingual\n  Character-level Transformers",
+    "title": "A New Generation of Perspective API: Efficient Multilingual Character-level Transformers",
     "authors": [
       "Alyssa Lees",
       "Vinh Q. Tran",
@@ -2577,7 +2584,7 @@
     "source": "arxiv"
   },
   {
-    "title": "RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language\n  Models",
+    "title": "RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models",
     "authors": [
       "Samuel Gehman",
       "Suchin Gururangan",

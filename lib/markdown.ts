@@ -495,7 +495,7 @@ export async function getGalleryItemData(slug: string) {
               node.url = node.url.replace('/images/gallery/', '/images/optimized/gallery/');
             }
           }
-          return node;
+          // Don't return anything - visit expects undefined for in-place modifications
         });
       })
       .use(html)
@@ -546,7 +546,7 @@ export function saveGalleryItem(slug: string, data: Omit<GalleryItemMetadata, "s
 function transformMedia() {
   return (tree: Root) => {
     visit(tree, 'image', (node: MdastImage, index, parent) => {
-      if (!parent || index === null) return
+      if (!parent || index === undefined || index === null) return
 
       const url = node.url
       const alt = node.alt || ''

@@ -161,6 +161,7 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2502.05772
 2502.15334
 2502.16174
+2502.16750
 2502.19041
 2503.04094
 2503.05731
@@ -173,7 +174,9 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2506.23635
 2507.03167
 2507.15974
+2508.16406
 2508.19697
 2508.21038
 2510.06594
+2510.06732
 2510.18234
