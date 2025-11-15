@@ -194,3 +194,11 @@
     font-weight: 500;
   }
 }
+
+/* Ensure native anchor/element.scrollIntoView land below sticky header */
+#about,
+#updates,
+#projects,
+#gallery {
+  scroll-margin-top: var(--header-offset, 64px);
+}

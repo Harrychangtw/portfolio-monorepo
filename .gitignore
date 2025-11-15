@@ -34,3 +34,5 @@ next-env.d.ts
 .DS_Store
 
 /lib/generated/prisma
+combined.md
+scripts/context_export.sh

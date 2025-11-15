@@ -1,49 +1,77 @@
-// Define smooth scroll duration (keep consistent with header)
+// Keep duration in sync with header
 const SCROLL_ANIMATION_DURATION = 400; // ms
 
-// Easing function for smooth scroll animation
-const easeInOutQuad = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+// Easing unchanged
+const easeInOutQuad = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+
+// Optional: one global stopper so multiple calls don't fight each other
+let activeScrollStop: (() => void) | null = null;
 
 export const scrollToSection = (id: string, event?: React.MouseEvent) => {
-  if (event) {
-    event.preventDefault();
-  }
+    if (event) event.preventDefault();
 
-  const element = document.getElementById(id);
-  if (!element) return;
+    const el = document.getElementById(id);
+    if (!el) return;
 
-  const headerOffset = document.querySelector("header")?.offsetHeight || 0;
-  const startPosition = window.pageYOffset;
-  const targetPosition = element.getBoundingClientRect().top + startPosition - headerOffset;
-  const distance = targetPosition - startPosition;
-  let startTime: number | null = null;
-  let rafId: number;
+    // Hint the section to load ASAP (minimize layout shift)
+    window.dispatchEvent(new CustomEvent("force-load-section", { detail: id }));
 
-  const cleanup = () => {
-    cancelAnimationFrame(rafId);
-    window.removeEventListener("wheel", cleanup);
-    window.removeEventListener("touchstart", cleanup);
-  };
+    // Cancel any previous scroll
+    activeScrollStop?.();
 
-  window.addEventListener("wheel", cleanup, { once: true, passive: true });
-  window.addEventListener("touchstart", cleanup, { once: true, passive: true });
+    const startY = window.pageYOffset;
+    const headerAtStart = document.querySelector("header")?.getBoundingClientRect().height || 0;
+    const initialTarget = el.getBoundingClientRect().top + startY - headerAtStart;
 
-  const animationStep = (currentTime: number) => {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const progress = Math.min(timeElapsed / SCROLL_ANIMATION_DURATION, 1);
+    let rafId = 0;
+    let startTime: number | null = null;
+    let stopped = false;
 
-    window.scrollTo(0, startPosition + distance * easeInOutQuad(progress));
+    const stop = () => {
+        if (stopped) return;
+        stopped = true;
+        cancelAnimationFrame(rafId);
+        window.removeEventListener("wheel", stop as any);
+        window.removeEventListener("touchstart", stop as any);
+        window.removeEventListener("pointerdown", stop as any);
+    };
+    activeScrollStop = stop;
 
-    if (timeElapsed < SCROLL_ANIMATION_DURATION) {
-      rafId = requestAnimationFrame(animationStep);
-    } else {
-      cleanup();
-    }
-  };
+    // Fully interruptible by user input
+    window.addEventListener("wheel", stop as any, { passive: true, once: true });
+    window.addEventListener("touchstart", stop as any, { passive: true, once: true });
+    window.addEventListener("pointerdown", stop as any, { passive: true, once: true });
 
-  window.dispatchEvent(new CustomEvent("force-load-section", { detail: id }));
-  rafId = requestAnimationFrame(animationStep);
+    const step = (now: number) => {
+        if (stopped) return;
+
+        if (startTime === null) startTime = now;
+        const elapsed = now - startTime;
+        const t = Math.min(elapsed / SCROLL_ANIMATION_DURATION, 1);
+        const eased = easeInOutQuad(t);
+
+        // Recalculate live target to compensate for layout shifts
+        const headerNow = document.querySelector("header")?.getBoundingClientRect().height || 0;
+        const currentY = window.pageYOffset;
+        const liveTarget = el.getBoundingClientRect().top + currentY - headerNow;
+
+        // Follow the original path but add the shift delta so we land precisely
+        const baseY = startY + (initialTarget - startY) * eased;
+        const shift = liveTarget - initialTarget;
+        const nextY = baseY + shift;
+
+        window.scrollTo(0, Math.max(0, nextY));
+
+        if (t < 1) {
+            rafId = requestAnimationFrame(step);
+        } else {
+            stop();
+            // Final micro-align to reach perfect pixel alignment while content still settles
+            ensurePreciseAlign(id, 800);
+        }
+    };
+
+    rafId = requestAnimationFrame(step);
 };
 
 // Helper function for precise alignment (from header)
@@ -59,10 +87,12 @@ export const ensurePreciseAlign = (id: string, duration = 1200) => {
     cancelAnimationFrame(rafId);
     window.removeEventListener("wheel", cleanup);
     window.removeEventListener("touchstart", cleanup);
+    window.removeEventListener("pointerdown", cleanup as any);
   };
 
   window.addEventListener("wheel", cleanup, { once: true, passive: true });
   window.addEventListener("touchstart", cleanup, { once: true, passive: true });
+  window.addEventListener("pointerdown", cleanup as any, { once: true, passive: true });
 
   const start = performance.now();
 
@@ -74,7 +104,7 @@ export const ensurePreciseAlign = (id: string, duration = 1200) => {
       return;
     }
 
-    window.scrollBy({ top: delta, behavior: "auto" });
+    window.scrollBy({ top: delta * 0.35, behavior: "auto" });
     rafId = requestAnimationFrame(step);
   };
 

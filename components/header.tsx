@@ -11,8 +11,8 @@ import StaggeredMenu from "@/components/staggered-menu"
 import { useStableHashScroll } from "@/hooks/use-stable-hash-scroll"
 import { scrollToSection as utilScrollToSection, ensurePreciseAlign } from "@/lib/scrolling"
 
-// Define smooth scroll duration (adjust as needed, keep consistent with timeout)
-const SCROLL_ANIMATION_DURATION = 800; // ms
+// Keep duration consistent with lib/scrolling.ts
+const SCROLL_ANIMATION_DURATION = 400; // ms
 
 export default function Header() {
   const pathname = usePathname()
@@ -40,6 +40,17 @@ export default function Header() {
   
   // Use stable hash scroll hook for perfect alignment
   useStableHashScroll("header")
+
+  // Expose header height as CSS variable for native anchor scroll compensation
+  useEffect(() => {
+    const update = () => {
+      const h = document.querySelector('header')?.getBoundingClientRect().height || 0;
+      document.documentElement.style.setProperty('--header-offset', `${h}px`);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
 
   // Function to determine if a path corresponds to the current page or section
   const isActive = (sectionId: string) => activeSection === sectionId;
