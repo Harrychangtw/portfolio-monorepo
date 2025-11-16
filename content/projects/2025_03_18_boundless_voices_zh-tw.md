@@ -7,13 +7,13 @@ imageUrl: "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
 year: "2024"
 date: "2024-03-18"
 role: "設計師與導演"
-technologies: ["Davinci Resolve", "Affinity Designer"]
+technologies: ["DaVinci Resolve", "Affinity Designer"]
 pinned: 9
 locked: false
 featured: true
 ---
 
-## 無界之聲慈善音樂會：一段幕後紀實
+## 專案概覽
 
 這是一趟充滿啟發、合作與創造力的旅程。故事始於一個簡單而觸動人心的時刻：觀賞視障音樂家吳柏毅先生的演出。他驚人的才華，以及那份克服身體限制的毅力，深深地打動了我，並激發了我想更深入了解身障藝術家生命故事的渴望。
 

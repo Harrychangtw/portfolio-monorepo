@@ -188,18 +188,22 @@ export default function Footer() {
             {/* Column 1: Logo & Motto */}
             <div className="col-span-12 md:col-span-6 md:pr-24 md:mt-2 max-w-xl">
               {/* --- Logo with increased dimensions --- */}
-              <div className="relative h-12 mb-6">
+              <a 
+                href={getHref('/', 'logo')} 
+                className="relative h-12 mb-6 block cursor-pointer group"
+                aria-label="Return to home page"
+              >
                 <Image
                   src="/chinese_name_icon.png"
                   alt="Harry Chang/Chi-Wei Chang 張祺煒 Logo"
                   width={357}
                   height={120}
-                  className="object-contain"
+                  className="object-contain transition-opacity group-hover:opacity-80"
                   priority
                   style={{ width: 'auto', height: '48px' }}
                 />
                 <span className="sr-only">Harry Chang/Chi-Wei Chang 張祺煒</span>
-              </div>
+              </a>
               <div className="font-ibm-plex text-base text-primary space-y-3">
                 <p>{t('footer.motto1')}</p>
                 <p>

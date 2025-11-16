@@ -13,9 +13,9 @@ featured: true
 ---
 
 ## 專案概覽
-Chingshin RAGi 源於我們對校務系統在資源分配上低效的觀察。靜心高中作為私立學校，知名度有限，學生與家長對學校政策時常有疑問，而網站導覽的複雜更讓資訊取得變得不易。我們將此視為訓練開發經驗的良機，透過結合 RAG 技術打造客製化聊天機器人，全程未使用 LangChain 等一體式框架。
+靜心 RAGi 源於我們對校務系統在資源分配上低效的觀察。靜心高中作為私立學校，知名度有限，學生與家長對學校政策時常有疑問，而網站導覽的複雜更讓資訊取得變得不易。我們將此視為一個絕佳的開發訓練機會，目標是結合 RAG 技術打造一個客製化聊天機器人，並挑戰全程不使用 LangChain 等一體式框架。
 
-專案初期由 Ak 指導，而我主要負責後端 SQLite 資料庫建置、向量檢索開發，以及後期的介面優化。最終，本專案於**國家科學及技術委員會**主辦的 [**GenAI Star 競賽**](https://genaistars.org.tw/news/35)中榮獲**特優**，並代表靜心在研華文教基金會 ACT 論壇以全英文發表。
+專案初期由 AK 指導，而我主要負責後端 SQLite 資料庫建置、向量檢索開發，以及後期的介面優化。最終，本專案於**國家科學及技術委員會**主辦的 [**GenAI Stars 競賽**](https://genaistars.org.tw/news/35)中榮獲**特優**，並代表靜心在研華文教基金會 ACT 論壇以全英文發表。
   
 ---
 
@@ -58,12 +58,12 @@ Chingshin RAGi 源於我們對校務系統在資源分配上低效的觀察。�
 ![英文版簡報](images/optimized/projects/2024_09_23_chingshing_ragi/rag_english_slides.webp)
 
 ### 影片設計
-為參加 GenAI Star 競賽，我製作了一段簡短介紹影片，展示 Chingshin RAGi 的功能與特色，內容涵蓋設計理念及簡單的展示。
+為參加 GenAI Stars 競賽，我製作了一段簡短介紹影片，展示 Chingshin RAGi 的功能與特色，內容涵蓋設計理念及簡單的展示。
 ![Chingshin RAGi 介紹影片](https://drive.google.com/file/d/1A833CcgTPK7o6xh1lr7BhCPZIABs1oLc/view?usp=sharing)
 
 ---
 
 ## 致謝
-感謝出色的團隊夥伴，特別謝謝 PM Chaney 在各項協調與雜務上的辛勞，以及 Raymond 對 FastAPI 模組的貢獻；感謝 Ak 的指導與支持，也謝謝林逸萍主任對本專案的信任與鼓勵。這個專案不但深化了我們的技術能力，也讓我們在實務中切實體驗 RAG 技術的價值與潛力。
+感謝出色的團隊夥伴，特別謝謝 PM Chaney 在各項協調與雜務上的辛勞，以及 Raymond 對 FastAPI 模組的貢獻；感謝 AK 的指導與支持，也謝謝林逸萍主任對本專案的信任與鼓勵。這個專案不但深化了我們的技術能力，也讓我們在實務中切實體驗 RAG 技術的價值與潛力。
 
 封面 mockup 由 [Mockup Free](https://unsplash.com/photos/a-cell-phone-with-the-number-fifteen-on-it-NcmG1X1DWrI) 的素材製作而成。

@@ -13,7 +13,7 @@ featured: true
 ---
 
 ## Project Overview
-"Classics Reimagined" is our school's annual drama extravaganza, featuring class-based participation from 10th and 11th-grade students. The event encourages students to creatively reinterpret Chinese literary classics, with musical performance as a core element. In this year's competition, our class (11th Grade, Ai Class) won first place with our production, "Remnants of a Tumultuous Sun," which received high praise from the judges.
+"Classics Reimagined" is our school's annual drama extravaganza, featuring class-based participation from 10th and 11th-grade students. The event encourages students to creatively reinterpret Chinese literary classics, with musical performance as a core element. In this year's competition, our class (Class of 2026, Ai) won first place with our production, "Remnants of a Tumultuous Sun," which received high praise from the judges.
 
 ---
 
@@ -28,13 +28,13 @@ The play reaches its climax years later in a reunion. Li Zicheng, now a monk, me
 ---
 
 ## Curtain Call Video Production
-Building on last year's filming experience, I once again took on the responsibility for filming and editing the entire behind-the-scenes curtain call video. My goal was to present the hard work of every student involved in a style that was a bit "overly flashy."
+Building on last year's filming experience, I once again took on the responsibility for filming and editing the entire curtain call video. My goal was to present the hard work of every student involved in a style that was a bit "overly flashy."
 
 ![Final Video](https://drive.google.com/file/d/1aGQ9TryQcT7zw273gwb_uJrxAr64fmaa/view?usp=sharing)
 
 ### Production Equipment
 - **Camera**: FUJIFILM X-T5
-- **Lens**: SIGMA 18-50mmm f/2.8
+- **Lens**: SIGMA 18-50mm f/2.8
 - **Stabilizer**: DJI RS3 Mini
 - **Editing Software**: DaVinci Resolve Studio 19
 - **Design Software**: Affinity Designer

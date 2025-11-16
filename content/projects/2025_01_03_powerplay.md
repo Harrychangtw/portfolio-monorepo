@@ -1,8 +1,8 @@
 ---
 title: "2025 POWERPLAY"
-category: "Thetrical Performance"
+category: "Theatrical Performance"
 subcategory: "Video Production"
-description: "An annual English drama extravaganza led by the eleventh-grade students, showcasing their unique interpretation into love."
+description: "An annual English drama extravaganza led by the eleventh-grade students, showcasing their unique interpretations of love."
 imageUrl: "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
 year: "2025"
 date: "2025-01-05"
@@ -38,14 +38,14 @@ The train arrives at its final destination. The conductor concludes that love is
 
 ---
 
-## Credits Video Production
-Building on the success of my last project, "[Classics Reimagined](https://www.harrychang.me/projects/2024_08_19_classics_reimagined)," I once again took on the role of shooting and editing the one-minute credits video. This time, I also tried to assist a classmate who was passionate about editing, and he independently completed an eight-minute behind-the-scenes featurette.
+## Curtain Call Video Production
+Building on the success of my last project, "[Classics Reimagined](https://www.harrychang.me/projects/2024_08_19_classics_reimagined)," I once again took on the role of shooting and editing the one-minute curtain call video. This time, I also tried to assist a classmate who was passionate about editing, and he independently completed an eight-minute behind-the-scenes featurette.
 
 ![Final Video](https://drive.google.com/file/d/1HUxfhr16vn-gAso3RF1Vz-ShMEpfnStO/view?usp=sharing)
 
 ### Production Equipment
 - **Camera**: FUJIFILM X-T5
-- **Lens**: SIGMA 18-50mmm f/2.8
+- **Lens**: SIGMA 18-50mm f/2.8
 - **Stabilizer**: DJI RS3 Mini
 - **Editing Software**: DaVinci Resolve Studio 19
 - **Design Software**: Affinity Designer
@@ -91,7 +91,7 @@ In the final stages of the video, I focused on the following details to enhance 
 
 ---
 
-## Production Stills
+## Stills
 
 ![](images/optimized/projects/2025_01_08_powerplay/DSCF2377.webp)
 ![](images/optimized/projects/2025_01_08_powerplay/DSCF3700.webp)
@@ -111,5 +111,5 @@ For me personally, this video production was a valuable learning experience. By 
 
 ---
 
-## Acknowledgements
+## Acknowledgments
 Thank you to all the students who participated in this performance. From scriptwriting and directing to acting, everyone poured countless efforts into this production. Special thanks to Raymond, Allie, and others for their hard work, making our train prop and dynamic backdrops the highlights of the show. A heartfelt thanks also to Henry & Kai for filming and producing the behind-the-scenes featurette, allowing us to comprehensively document this remarkable performance. This experience will forever remain in my heart and inspire me to continue exploring the endless possibilities of video production in the future.

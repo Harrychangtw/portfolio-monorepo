@@ -1,8 +1,8 @@
 ---
-title: "SITCON 2025 Keynote"
+title: "SITCON 2025k Keynote"
 category: "Talks"
 subcategory: "Conferences"
-description: "A 40-minute keynote at SITCON 2025, where I shared insights on Retrieval-Augmented Generation (RAG) and my experience building the Chingshin RAG project."
+description: "A 40-minute keynote at SITCON 2025, where I shared insights on Retrieval-Augmented Generation (RAG) and my experience building the Chingshin RAGiproject."
 imageUrl: "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
 year: "2025"
 date: "2025-03-08"
@@ -57,7 +57,7 @@ All the slides were designed in **Affinity Publisher 2**. I love this software; 
 
 ---
 
-## Acknowledgements
+## Acknowledgments
 
 The most unforgettable part of the entire SITCON journey was the people. I met a group of passionate and helpful individuals. This was especially evident during the **rehearsal**, where I could feel everyone's dedication to the event. The organizing team gave me a lot of practical and constructive feedback, and this keynote wouldn't have been the same without them.
 

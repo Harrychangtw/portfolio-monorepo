@@ -6,7 +6,7 @@ description: "十一愛學生主導的年度英文戲劇盛事，旨在展現對
 imageUrl: "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
 year: "2025"
 date: "2025-01-05"
-role: "影片拍攝, 剪輯, 攝影"
+role: "影片拍攝、剪輯、攝影"
 technologies: ["DaVinci Resolve", "Affinity Designer"]
 pinned: 8
 featured: true
@@ -45,7 +45,7 @@ locked: false
 
 ### 製作設備
 - **相機**: FUJIFILM X-T5
-- **鏡頭**: SIGMA 18-50mmm f/2.8
+- **鏡頭**: SIGMA 18-50mm f/2.8
 - **穩定器**: DJI RS3 Mini
 - **剪輯軟體**: DaVinci Resolve Studio 19
 - **設計軟體**: Affinity Designer
@@ -78,7 +78,7 @@ locked: false
 3. 手動清理追蹤點的雜訊，將 3D 場景轉換至平面後，置入拍立得圖像。
 4. 精心調整每張拍立得的出現時機，讓它們完美對應音樂節奏。
 
-####  結尾時
+####  結尾段落
 在影片收尾階段，我專注於以下幾個執行細節，以提升整體質感：
 1. **轉場優化**: 在每個 Speed Ramp 轉場前一兩幀，使用 Magic Mask 將主體分離出來，使其在轉場時能優先出現，增強視覺衝擊力。同時，也搭配了精細的音效設計。
 2. **空間層次感**: 在演藝廳的場景中，為漂浮的拍立得疊加上椅子和麥克風的 Mask，創造出更豐富的空間層次感。
@@ -86,7 +86,7 @@ locked: false
 
 ![演藝廳漂浮拍立得的 Node Tree](images/optimized/projects/2025_01_08_powerplay/closing.webp)
 ![最後橫向轉場會用 Magic Mask 抓出椅子的元素](images/optimized/projects/2025_01_08_powerplay/credit-v2_01_01_16_20.webp)
-![在演繹廳的漂浮拍立得會疊加椅子、麥克風的 Mask 來增加空間感](images/optimized/projects/2025_01_08_powerplay/credit-v2_01_01_14_21.webp)
+![在演藝廳的漂浮拍立得會疊加椅子、麥克風的 Mask 來增加空間感](images/optimized/projects/2025_01_08_powerplay/credit-v2_01_01_14_21.webp)
 
 ---
 
@@ -106,9 +106,9 @@ locked: false
 ## 心得
 相較於上次，POWERPLAY 的準備時間更為充裕，這也讓我們有機會實現更多大膽的創意。除了演員們精湛的演出，我們班最大的亮點無疑是那台可電動行駛的火車道具，以及 Raymond 運用 After Effects 製作的動態背板。每次火車電動登場，都瞬間成為全場焦點；而動態背板的工程更是浩大，由衷佩服 Raymond 的毅力，尤其在劇本與畫面頻繁調整的壓力下，他總能迅速完成修改，非常不容易。
 
-對我個人而言，這次的影片製作是一次寶貴的學習歷程。透過在 Fusion 中實踐 Camera Tracker 與 3D 空間的整合，我對 DaVinci Resolve 的強大功能有了更深的理解。這次的專案不僅讓我磨練了剪輯技巧，更讓我對視覺敘事的可能性，有了更深刻的領悟。
+對我個人而言，這次的影片製作是一次寶貴的學習歷程。透過在 Fusion 中實踐 Camera Tracker 與 3D 空間的整合，我對 DaVinci Resolve 的強大功能有了更深的理解。這次的專案不但讓我磨練了剪輯技巧，更讓我對視覺敘事的可能性，有了更深刻的領悟。
 
 ---
 
 ## 致謝
-感謝所有參與這次演出的同學們，從編劇、導演到演員，每個人都為這部作品付出了無數心血。特別感謝 Raymond, Allie 等人的努力，讓我們的火車道具與動態背板成為全場的亮點。也特別感謝 Henry & Kai 拍攝及製作的幕後花絮，讓我們能夠更全面地記錄這次的精彩演出。這次的經歷將永遠留在我的心中，並激勵我在未來繼續探索影像製作的無限可能。 
+感謝所有參與這次演出的同學們，從編劇、導演到演員，每個人都為這部作品付出了無數心血。特別感謝 Raymond, Allie 等人的努力，讓我們的火車道具與動態背板成為全場的亮點。也特別感謝 Henry 與 Kai 拍攝及製作的幕後花絮，讓我們能夠更全面地記錄這次的精彩演出。這次的經歷將永遠留在我的心中，並激勵我在未來繼續探索影像製作的無限可能。 

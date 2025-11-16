@@ -1,13 +1,13 @@
 ---
 title: "WSDC 英文辯論經驗"
-category: "英語辯論"
-subcategory: "團隊競賽"
+category: "英文辯論"
+subcategory: "競賽回顧"
 description: ""
 imageUrl: "images/optimized/projects/2025_08_04_debate/titlecard.webp"
 year: "2020–2025"
 date: "2025-08-04"
 role: "辯士"
-technologies: ["茶和咖啡", "臨時抱佛腳"]
+technologies: ["公開演講", "批判性思維", "茶和咖啡"]
 pinned: 11
 featured: true
 ---
@@ -83,6 +83,6 @@ featured: true
 
 ## 致謝
 
-我想對我的隊友表達最深的感謝，感謝他們堅定不移的支持與合作，特別是 Morris 和 Sean 在每一場辯論中都扮演了關鍵的角色。我也要誠摯地感謝 Jeff 和 Yohan 在這段旅程中一路的指導，幫助我成長為一個更好的辯手和演講者。
+我想對我的隊友表達最深的感謝，感謝他們堅定不移的支持與合作，特別是 Morris 和 Sean 在每一場辯論中都扮演了關鍵的角色。我也要誠摯地感謝 Jeff 和 Yohan 在這段旅程中一路的指導，協助我成為一個更好的辯手和講者。
 
 封面圖片來自 Unsplash，由 [Planet Volumes](https://unsplash.com/photos/a-row-of-microphones-sitting-on-top-of-a-wooden-table-SGgvAWDoF3U) 拍攝。

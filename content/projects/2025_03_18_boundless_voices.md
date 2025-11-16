@@ -7,14 +7,14 @@ imageUrl: "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
 year: "2024"
 date: "2024-03-18"
 role: "Designer & Director"
-technologies: ["Davinci Resolve", "Affinity Designer"]
+technologies: ["DaVinci Resolve", "Affinity Designer"]
 pinned: 9
 locked: false
 featured: true
 tooltip: "Project Under Construction"
 ---
 
-## Boundless Voices Charity Concert: A Look Behind the Scenes
+## Project Overview
 
 This project was a journey of inspiration, collaboration, and creativity. It began with a simple, powerful moment: watching a performance by the visually impaired musician, Mr. Wu Po-yi. His incredible talent and perseverance in overcoming physical limitations moved me deeply and sparked a desire to learn more about the stories of artists with disabilities.
 
