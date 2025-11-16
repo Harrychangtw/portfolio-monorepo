@@ -36,3 +36,4 @@ next-env.d.ts
 /lib/generated/prisma
 combined.md
 scripts/context_export.sh
+public/fonts/**

@@ -31,6 +31,7 @@ const socialLinks = [
   { id: 'github', name: 'GitHub', href: '/github' },
   { id: 'instagram', name: 'Instagram', href: '/instagram' },
   { id: 'music', name: 'Music Playlists', href: '/spotify' },
+  { id: 'linkedin', name: 'LinkedIn', href: '/linkedin' },
   { id: 'letterboxd', name: 'Letterboxd', href: '/letterboxd' },
 ];
 
@@ -38,6 +39,7 @@ const resourceLinks = [
   { id: 'icarus', name: 'Icarus Lab', href: '/icarus' },
   { id: 'resume', name: 'Resume', href: '/cv' },
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto' },
+  { id: 'design', name: 'Design System', href: '/design' },
   { id: 'calendar', name: 'Schedule a Meeting', href: '/cal' },
   { id: 'uses', name: 'Uses', href: '/uses' },
   { id: 'reading', name: 'Paper Reading List', href: '/paper-reading' },

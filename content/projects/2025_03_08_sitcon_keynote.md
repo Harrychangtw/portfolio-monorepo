@@ -1,5 +1,5 @@
 ---
-title: "SITCON 2025k Keynote"
+title: "SITCON 2025 Keynote"
 category: "Talks"
 subcategory: "Conferences"
 description: "A 40-minute keynote at SITCON 2025, where I shared insights on Retrieval-Augmented Generation (RAG) and my experience building the Chingshin RAGiproject."

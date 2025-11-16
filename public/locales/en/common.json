@@ -9,7 +9,8 @@
     "manifesto": "Manifesto",
     "uses": "Uses",
     "lab": "Icarus Lab",
-    "links": "Links"
+    "links": "Links",
+    "design": "Design System"
   },
   "footer": {
     "socialContact": "Socials",
@@ -46,6 +47,22 @@
     "location": "Location",
     "tags": "Tags"
   },
+  "design": {
+    "title": "Design System",
+    "colorPalette": "Color Palette",
+    "typeScale": "Type Scale",
+    "weights": "Weights",
+    "characterSet": "Character Set",
+    "uppercase": "Uppercase",
+    "lowercase": "Lowercase",
+    "numbers": "Numbers",
+    "special": "Special",
+    "display": "Display",
+    "largeBody": "Large body",
+    "body": "Body",
+    "small": "Small",
+    "caption": "Caption"
+  },
   "social": {
     "gmail": "Email",
     "discord": "Discord",
@@ -62,8 +79,9 @@
     "icarus": "Icarus Lab",
     "music": "Spotify",
     "reading": "Reading List",
-    "uses": "Uses",
-    "site": "Portfolio Site"
+    "uses": "Setup",
+    "site": "Portfolio Site",
+    "design": "Style Guide"
   },
   "links": {
     "hero": "Code, camera, curiosity.",
@@ -87,14 +105,15 @@
     "calendar": "Book a time, let's chat!",
     "github": "Where good code goes to get overengineered",
     "instagram": "POV: You're watching a teenager pretend to be Fan Ho",
-    "linkedin": "For the professional inquiries.",
+    "linkedin": "Be my 6th connection.",
     "letterboxd": "4.5 stars for everything because I have no taste",
     "resume": "Yes it's literally just a Google Drive link.",
     "manifesto": "My philosophy on work, creation, and curiosity",
     "icarus": "For those who build their own wings.",
     "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
     "reading": "No TL;DR. Figure it out yourself.",
-    "uses": "Need these for \"school work\""
+    "uses": "Need these for \"school work\"",
+    "design": "Because \"Inspect Element\" is for amateurs."
   },
   
   "letterGlitch": {

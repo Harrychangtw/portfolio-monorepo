@@ -26,6 +26,7 @@ export default function Header() {
   const isManifestoPage = pathname?.startsWith('/manifesto');
   const isUsesPage = pathname?.startsWith('/uses');
   const isLinksPage = pathname?.startsWith('/linktree');
+  const isDesignPage = pathname?.startsWith('/design');
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
   const { t } = useLanguage()
@@ -217,7 +218,7 @@ export default function Header() {
   };
 
   // Determine when to show the staggered menu
-  const showStaggeredMenu = isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage && !isLab;
+  const showStaggeredMenu = isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage && !isDesignPage && !isLab;
   
   // Menu items for the staggered menu
   const menuItems = [
@@ -328,7 +329,7 @@ export default function Header() {
             )}
           </motion.div>
           <AnimatePresence mode="wait">
-            {showSectionTitle && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage && (
+            {showSectionTitle && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage && !isDesignPage && (
               <motion.div 
                 className="flex items-center"
                 initial={{ opacity: 0, y: -5 }}
@@ -455,6 +456,28 @@ export default function Header() {
                 </motion.span>
               </motion.div>
             )}
+            {
+              isDesignPage && (
+              <motion.div 
+                className="flex items-center"
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+              >
+                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
+                <motion.span 
+                  className="font-space-grotesk text-xl text-secondary"
+                  key="design"
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.15, ease: "easeOut" }}
+                >
+                  {t('header.design')}
+                </motion.span>
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
 
@@ -466,7 +489,7 @@ export default function Header() {
         >
 
           {/* Navigation - Only on desktop and when not on special pages */}
-          {!isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage&& !isLab && (
+          {!isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage && !isDesignPage && !isLab && (
             <>
               <nav className="flex space-x-8">
                 <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
