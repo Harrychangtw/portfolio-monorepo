@@ -1,4 +1,4 @@
-# Portfolio Monorepo (harrychang.me, emilychang-me)
+# Portfolio Monorepo (harrychang.me, emilychang.me)
 ## Architecture Overview
 
 - **Turbo monorepo**: Multiple Next.js 15 apps managed using Turborepo (`apps/`)
