@@ -1,0 +1,21 @@
+{
+  "name": "@portfolio/config",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "import": "./lib/index.ts",
+      "require": "./lib/index.ts"
+    },
+    "./tailwind": "./tailwind/tailwind.config.ts"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "latest",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "framer-motion": "^11.0.0",
+    "tailwindcss": "3.4.17",
+    "typescript": "^5"
+  }
+}

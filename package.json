@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "turbo": "^2.6.1",
+    "typescript": "5.9.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "overrides": {
+    "next": "15.5.6",
+    "tailwindcss": "3.4.17"
+  },
+  "packageManager": "pnpm@10.22.0"
+}

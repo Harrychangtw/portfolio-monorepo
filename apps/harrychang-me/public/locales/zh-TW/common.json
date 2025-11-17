@@ -1,0 +1,166 @@
+{
+  "header": {
+    "name": "Harry Chang",
+    "about": "關於我",
+    "updates": "最新動態",
+    "projects": "精選專案",
+    "gallery": "攝影作品",
+    "paperReading": "論文閱讀清單",
+    "manifesto": "理念",
+    "uses": "工具與設定",
+    "lab": "Icarus Lab",
+    "links": "連結",
+    "design": "設計系統"
+  },
+  "footer": {
+    "socialContact": "社交和聯繫",
+    "personalResources": "個人資源",
+    "siteNavigation": "網站導航",
+    "languageSwitch": "語言",
+    "motto1":"不走尋常路，不等誰允許；視野所及，皆為通途。",
+    "motto2":"一同探索可能 — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+  },
+  "about": {
+    "title": "關於我",
+    "roles": "角色",
+    "description": "描述"
+  },
+  "updates": {
+    "title": "最新動態"
+  },
+"projects": {
+    "title": "精選專案",
+    "backToProjects": "回到專案",
+    "noProjectsFound": "未找到專案。",
+    "year": "年份",
+    "role": "角色",
+    "technologies": "技術",
+    "client": "客戶",
+    "website": "網站"
+  },
+  "gallery": {
+    "title": "攝影作品",
+    "backToGallery": "回到攝影作品",
+    "noGalleryFound": "未找到攝影作品項目。",
+    "camera": "相機",
+    "lens": "鏡頭",
+    "location": "位置",
+    "tags": "標籤"
+  },
+  "design": {
+    "title": "設計系統",
+    "colorPalette": "色彩系統",
+    "typeScale": "字型級距",
+    "weights": "字重",
+    "characterSet": "字符集",
+    "uppercase": "大寫字母",
+    "lowercase": "小寫字母",
+    "numbers": "數字",
+    "special": "特殊符號",
+    "display": "展示標題",
+    "largeBody": "大號正文",
+    "body": "正文",
+    "small": "小號",
+    "caption": "說明文字"
+  },
+  "social": {
+    "gmail": "Email",
+    "discord": "Discord", 
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "letterboxd": "Letterboxd",
+    "linkedin": "LinkedIn",
+    "music": "Spotify"
+  },
+  "resources": {
+    "resume": "履歷",
+    "manifesto": "理念",
+    "calendar": "預約會議",
+    "icarus": "Icarus Lab",
+    "music": "Spotify",
+    "reading": "論文閱讀清單",
+    "uses": "工具與設定",
+    "site": "作品集網站",
+    "design": "設計系統"
+  },
+  "links": {
+    "hero": "Code, camera, curiosity."
+
+  },
+  "readingList": {
+    "title": "論文閱讀清單",
+    "previous": "上一頁",
+    "next": "下一頁",
+    "page": "",
+    "authors": "作者",
+    "publishedOn": "發表於"
+  },
+  "tooltips": {
+    "about":"沒人會看的自我介紹",
+    "updates":"偽裝成更新日誌的裝逼紀錄",
+    "projects":"證明我不出門的專案們",
+    "gallery":"昂貴玻璃對準平凡事物",
+    "gmail": "隨時歡迎交流！",
+    "discord": "全年無休上線，清醒僅三成",
+    "calendar": "預約時間來聊聊吧！",
+    "github": "好好的程式碼被我 overengineer 的墳墓",
+    "instagram": "高中生裝自己是何藩",
+    "linkedin": "歡迎成為我的第六位人脈",
+    "letterboxd": "全部 4.5 顆星因為我沒有品味",
+    "resume": "對，就是一個 Google Drive 連結",
+    "manifesto": "我對創作、工作與好奇心的理念",
+    "icarus": "翅膀，從未長在教科書裡",
+    "music": "爵士到嘻哈到蕭邦只需三首歌",
+    "reading": "沒 TL;DR，請自己想辦法",
+    "uses": "「學校功課」絕對會用到",
+    "design": "因為「檢查元素」是給麻瓜用的"
+  },
+  "letterGlitch": {
+    "line1": "我 從 未 被 教 會 創 造 ——",
+    "line2": "而 是 生 來 就 記 得 。",
+    "line3": "讓 思 緒 歸 於 沉 寂，",
+    "line4": "讓 指 尖 重 拾 ， 昔 日 那 份 童 貞 。"
+  }, 
+
+  "common": {
+    "close": "關閉",
+    "openMenu": "開啟選單",
+    "closeMenu": "關閉選單"
+  },
+  "notification": {
+    "pageNotFound": "頁面未找到，已重新導向至首頁。"
+  },
+  "lab": {
+    "capsule": "2026 Q2 · 限量開放",
+    "heroLine1": "十七歲的實戰心法",
+    "heroLine2": "獻給不甘相同的你",
+    "tagline": "中英口說、研究、創作的高層次課程，以及深度一對一共創。",
+    "heroEmailPlaceholder": "your@email.com",
+    "applyNow": "我感興趣",
+    "formTitle": "加入等候名單",
+    "formSubtitle": "搶先獲得早鳥優惠。",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "emailRequired": "電子郵件 *",
+    "whatInterests": "您感興趣的領域",
+    "preferredTier": "期望方案",
+    "processing": "提交中...",
+    "joinWaitlist": "加入等候名單",
+    "privacyNote": "絕不濫用您的資料，隱私至上。",
+    "successTitle": "預約成功",
+    "successMessage": "您是第 {position} 位加入等候名單的人。請查看您的信箱確認。",
+    "errorGeneric": "發生錯誤",
+    "errorNetwork": "網路錯誤。請再試一次。",
+    "close": "關閉",
+    "interests": {
+      "frameworks": "研究與思維框架",
+      "speaking": "中英口說與辯論",
+      "narrative": "內容敘事與設計"
+    },
+    "tiers": {
+      "async": "非同步課程",
+      "cohort": "線上同步課程",
+      "consulting": "一對一指導"
+    }
+  }
+}

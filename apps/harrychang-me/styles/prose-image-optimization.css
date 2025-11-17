@@ -1,0 +1,126 @@
+/* Prose Image Optimization - Prevent Layout Shifts */
+
+/* Base prose image styling with explicit aspect ratios */
+.prose img {
+  /* Reserve space immediately to prevent layout shift */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  /* Default aspect ratio for most project images */
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Specific optimizations for known problematic images */
+.prose img[src*="fulltimeline.webp"] {
+  /* fulltimeline.webp is 2000x1164, ratio = 1.718 */
+  aspect-ratio: 1.718;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.prose img[src*="titlecard.webp"] {
+  /* titlecard.webp is 1800x1200, ratio = 1.5 */
+  aspect-ratio: 1.5;
+}
+
+.prose img[src*="credit-v2"] {
+  /* DaVinci Resolve screenshots - typically 2000x1125, ratio = 1.778 */
+  aspect-ratio: 1.778;
+}
+
+/* Common aspect ratios for different image types */
+.prose img[src*="opening.webp"],
+.prose img[src*="floating.webp"],
+.prose img[src*="closing.webp"] {
+  /* Node tree images - typically wider */
+  aspect-ratio: 16 / 9;
+}
+
+.prose img[src*="DSCF"] {
+  /* Production stills - typically 3:2 ratio */
+  aspect-ratio: 3 / 2;
+}
+
+/* General fallback for images that don't match specific patterns */
+.prose img:not([src*="fulltimeline.webp"]):not([src*="opening.webp"]):not([src*="floating.webp"]):not([src*="closing.webp"]):not([src*="DSCF"]):not([src*="credit-v2"]):not([src*="titlecard"]) {
+  /* Default to common photo aspect ratio */
+  aspect-ratio: 4 / 3;
+}
+
+/* Ensure images don't cause horizontal overflow */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Loading placeholder to maintain space while image loads */
+.prose img[loading="lazy"] {
+  background-color: hsl(var(--muted));
+  background-image: 
+    linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.1) 25%, rgba(255,255,255,0.1) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.1) 75%);
+  background-size: 20px 20px;
+  animation: skeleton-loading 1.5s infinite linear;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -20px 0;
+  }
+  100% {
+    background-position: 20px 0;
+  }
+}
+
+/* Dark theme adjustments */
+.dark .prose img[loading="lazy"] {
+  background-color: hsl(var(--muted));
+  background-image: 
+    linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.05) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.05) 75%);
+}
+
+/* Figcaption styling - use consistent muted-foreground */
+.prose figcaption {
+  margin-top: 0.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Unified container spacing for both images and videos */
+.image-embed-container,
+.video-embed-container {
+  margin: 1.5rem 0;
+}
+
+/* Ensure consistent caption spacing */
+.image-embed-container p,
+.video-placeholder-subtitle {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  text-align: left;
+}
+
+/* Responsive sizing for smaller screens */
+@media (max-width: 768px) {
+  .prose img[src*="fulltimeline.webp"] {
+    /* Maintain aspect ratio on mobile */
+    aspect-ratio: 1.718;
+  }
+  
+  .prose figure {
+    margin: 1.5rem 0;
+  }
+  
+  .prose figcaption {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+}

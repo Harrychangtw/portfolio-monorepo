@@ -1,0 +1,236 @@
+{
+  "title": "Uses",
+  "description": "I'm a firm believer that a well-honed environment enhances both productivity and creativity. People often ask about the tools and gear I use, so I've compiled a list of my favorite hardware, software, and services. This setup is always evolving, but this is what I'm using as of late 2025.",
+  "hardware": {
+    "title": "Hardware & Desk",
+    "coreWorkstation": {
+      "title": "Core Workstation",
+      "items": [
+        {
+          "name": "Laptop",
+          "value": "M1 Max MacBook Pro 16"
+        },
+        {
+          "name": "External Monitor",
+          "value": "Gigabyte G27Q"
+        },
+        {
+          "name": "Keyboard",
+          "value": "Keychron K3 Max"
+        },
+        {
+          "name": "Mouse",
+          "value": "Logitech MX Master 3"
+        },
+        {
+          "name": "Headphones",
+          "value": "Bang & Olufsen H9i"
+        },
+        {
+          "name": "Earbuds",
+          "value": "Apple AirPods Pro 2"
+        },
+        {
+          "name": "Speakers",
+          "value": "Tivoli Audio Model Two"
+        }
+      ]
+    },
+    "office": {
+      "title": "Office & Ergonomics",
+      "items": [
+        {
+          "name": "Desk",
+          "value": "Sit/Stand Legs from Taibua with custom solid walnut top"
+        },
+        {
+          "name": "Chair",
+          "value": "Herman Miller Embody (Berry blue)"
+        },
+        {
+          "name": "Drawer",
+          "value": "IKEA Alex"
+        },
+        {
+          "name": "Lighting",
+          "value": "EDISON Galaxy II Desk Lamp"
+        }
+      ]
+    },
+    "homeServer": {
+      "title": "Home Server",
+      "items": [
+        {
+          "name": "Case",
+          "value": "Formd T1"
+        },
+        {
+          "name": "CPU",
+          "value": "AMD Ryzen 9 7900"
+        },
+        {
+          "name": "Motherboard",
+          "value": "ASRock B650i Lightning"
+        },
+        {
+          "name": "CPU Cooler",
+          "value": "ID-COOLING IS-47-XT"
+        },
+        {
+          "name": "GPU",
+          "value": "EVGA RTX 3090"
+        },
+        {
+          "name": "RAM",
+          "value": "64GB Kingston Fury DDR5 @ 6000MHz"
+        },
+        {
+          "name": "Storage",
+          "value": "4TB TeamGroup NVMe + 4TB SATA SSDs"
+        },
+        {
+          "name": "PSU",
+          "value": "Corsair SF750 2024"
+        },
+        {
+          "name": "Case Fans",
+          "value": "4x Phanteks T30 (custom LEGO mount)"
+        },
+        {
+          "name": "OS",
+          "value": "Ubuntu Server (Headless)"
+        },
+        {
+          "name": "Monitoring",
+          "value": "Grafana, Prometheus"
+        }
+      ]
+    },
+    "photography": {
+      "title": "Photography Gear",
+      "accessories": "Accessories",
+      "items": [
+        {
+          "key": "cameras",
+          "name": "Cameras",
+          "list": [
+            "Fujifilm X-T5",
+            "Fujifilm X-Pro1",
+            "Ricoh GR IIIx"
+          ]
+        },
+        {
+          "key": "lenses",
+          "name": "Lenses",
+          "list": [
+            "Viltrox 75mm f/1.2",
+            "Sigma 18-50mm f/2.8",
+            "Fujinon XF 100-400mm f/4.5-5.6",
+            "7Artisans 35mm f/1.4",
+            "TTArtisan 50mm f/0.95"
+          ]
+        },
+        {
+          "key": "stabilizer",
+          "name": "Stabilizer",
+          "list": [
+            "DJI RS 3 Mini"
+          ]
+        },
+        {
+          "key": "tripod",
+          "name": "Tripod",
+          "list": [
+            "Ulanzi Zero Y"
+          ]
+        }
+      ]
+    }
+  },
+  "software": {
+    "title": "Software & Services",
+    "development": {
+      "title": "Development & Coding",
+      "items": [
+        {
+          "name": "IDE",
+          "value": "Visual Studio Code"
+        },
+        {
+          "name": "Terminal",
+          "value": "Warp"
+        },
+        {
+          "name": "Launcher",
+          "value": "Raycast"
+        },
+        {
+          "name": "Browser",
+          "value": "Zen Browser"
+        },
+        {
+          "name": "Networking",
+          "value": "Tailscale"
+        }
+      ]
+    },
+    "design": {
+      "title": "Design & Creative",
+      "items": [
+        {
+          "name": "UI/UX Design",
+          "value": "Figma"
+        },
+        {
+          "name": "Creative Suite",
+          "value": "Affinity Designer 2, Photo 2, & Publisher 2"
+        },
+        {
+          "name": "Video Editing",
+          "value": "DaVinci Resolve Studio 20"
+        },
+        {
+          "name": "3D Modeling",
+          "value": "Fusion 360"
+        }
+      ]
+    },
+    "productivity": {
+      "title": "Productivity & Utilities",
+      "items": [
+        {
+          "name": "Note Taking",
+          "value": "Obsidian (journaling), Notion (collaboration)"
+        },
+        {
+          "name": "Task Management",
+          "value": "Apple Reminder with Raycast integration"
+        },
+        {
+          "name": "Communication",
+          "value": "Discord & Mattermost"
+        },
+        {
+          "name": "File Management",
+          "value": "Google Drive with custom Rclone scripting"
+        },
+        {
+          "name": "Alt-Tab",
+          "value": "Windows-style alt-tabbing for macOS"
+        },
+        {
+          "name": "Stats",
+          "value": "Menubar system status manager"
+        },
+        {
+          "name": "Ice",
+          "value": "Open-source menu bar manager"
+        },
+        {
+          "name": "Onyx",
+          "value": "System cleaning utility"
+        }
+      ]
+    }
+  }
+}

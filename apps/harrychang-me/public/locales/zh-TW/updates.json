@@ -1,0 +1,88 @@
+{
+  "entries": [
+    {
+      "date": "2025-10-20",
+      "text": "[成就] 榮獲 2025 哈佛大學校報全球知識競賽（CS）<a href=\"https://app.algoed.co/certification?Algoed=Pw4obYFse79M3wLgGPPK5Qq7KOdhKv%2FlKSQ4bc1x3hTTEkBnqd53aXsF1NsHRmeY\">全球亞軍</a>"
+    },
+    {
+      "date": "2025-10-13",
+      "text": "[成就] 榮獲 2025 哈佛大學校報全球知識競賽（CS）<a href=\"https://app.algoed.co/certification?Algoed=Pw4obYFse79M3wLgGPPK5U1Q%2FJ7YtUMZvDSFaSzzqNTelbGftH3Wj%2B8CMcuIgllu\">台灣個人冠軍</a>"
+    },
+    {
+      "date": "2025-10-12",
+      "text": "[研究] 我的第一作者論文 FORTRESS 已在 <a href=\"https://openreview.net/forum?id=lCn7RT9DGq\">TMLR</a> 發表"
+    },
+    {
+      "date": "2025-10-03",
+      "text": "[研究] 我關於 LLM 安全的文章發佈於 <a href=\"https://research.cycraft.ai/%E7%95%B6-ai-%E5%AE%A2%E6%9C%8D-%E6%AD%AA%E6%A8%93-%E5%BE%9E-prompt-injection-%E6%B7%BA%E8%AB%87%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%B3%87%E5%AE%89%E9%A2%A8%E9%9A%AA-341b3cfa29f1\">CyCraft Research Lab</a>"
+    },
+    {
+      "date": "2025-09-22",
+      "text": "[成就] 自學後在 <a href=\"https://drive.google.com/file/d/17u7maeyjuHDaeCJ85wdWdIOM-oP79j4b/view?usp=drive_link\">IELTS Academic 考試中獲得 8.5/9.0 分</a>"
+    },
+    {
+      "date": "2025-09-16",
+      "text": "[更新] 透過 API 快存，大幅縮減 <a href=\"/paper-reading\">論文閱讀清單</a> 的 LCP"
+    },
+    {
+      "date": "2025-09-10",
+      "text": "[更新] 加入了行動版專用的選單，並進行了額外的 UX 改善"
+    },
+    {
+      "date": "2025-08-08",
+      "text": "[更新] 為每個攝影畫廊貼文撰寫了攝影註解，去看看吧！"
+    },
+    {
+      "date": "2025-08-04",
+      "text": "[更新] 第一階段專案內容已經整理完成，更多內容將會陸續補上"
+    },
+    {
+      "date": "2025-08-02",
+      "text": "[更新] 使用 i18n 新增對英文和繁體中文的完整語言支援"
+    },
+    {
+      "date": "2025-08-01",
+      "text": "[更新] 新增對 Google Drive 和 YouTube 影片連結的支援"
+    },
+    {
+      "date": "2025-07-31",
+      "text": "[活動] 在台北世貿中心為 <a href=\"https://www.technice.com.tw/issues/ai/185561/\">AI WAVE 開幕典禮</a> 發表演講"
+    },
+    {
+      "date": "2025-07-30",
+      "text": "[研究] PATCH 經過大幅修訂後已提交至 ACL ARR July"
+    },
+    {
+      "date": "2025-07-04",
+      "text": "[成就] 參加數發部 AIGO 計畫在台大的黑客松，獲得 <a href=\"https://drive.google.com/file/d/1-Nm6tdic38YQcUcuploRbdpE28b4S9rS/view\">第一名</a>"
+    },
+    {
+      "date": "2025-07-05",
+      "text": "[研究] FORTRESS 已在 <a href=\"https://openreview.net/forum?id=lCn7RT9DGq\">TMLR</a> 接受審查"
+    },
+    {
+      "date": "2025-06-30",
+      "text": "[成就] PATCH 在校內高中專題研究競賽中獲得數理組唯一特優"
+    },
+    {
+      "date": "2025-06-15",
+      "text": "[成就] 感謝我出色的團隊，在 Fushing Debate Open 2025 中獲得冠軍，個人講者分數第三"
+    },
+    {
+      "date": "2025-06-11",
+      "text": "[獎項] 很榮幸能被授予哈佛書卷獎！"
+    },
+    {
+      "date": "2025-05-18",
+      "text": "[專案] 啟動 FORTRESS 專案，一個受 RAG 啟發的防禦系統"
+    },
+    {
+      "date": "2025-05-15",
+      "text": "[研究] PATCH 已提交至 ACL ARR May "
+    },
+    {
+      "date": "2025-04-01",
+      "text": "[里程碑] 個人作品集網站上線 🎉"
+    }
+  ]
+}

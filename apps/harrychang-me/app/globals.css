@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 31%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 68 100% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 31%;
+    --radius: 0.5rem;
+    --pixel-accent: hsl(var(--accent));
+    --accent-color: hsl(var(--accent));
+    --column-spacing: max(0.5rem, 0.2vw);
+  }
+  
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+
+
+/* App-specific overrides and additions */
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* View transitions */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.page-transition-enter {
+  animation: fade-in 0.5s ease-out;
+}
+
+.page-transition-exit {
+  animation: fade-out 0.3s ease-in;
+}
+
+/* Pixel art styles */
+.pixel-text {
+  font-size: 0.8rem;
+  line-height: 1;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+  image-rendering: pixelated;
+}
+
+.pixel-block {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: hsl(var(--accent));
+  margin: 0 8px;
+  animation: pixel-pulse 2s infinite;
+}
+
+.pixel-separator {
+  display: flex;
+  align-items: center;
+  margin: 0 4px;
+  height: 16px;
+}
+
+.pixel {
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  margin: 0 1px;
+}
+
+.pixel.accent {
+  background-color: var(--pixel-accent);
+  box-shadow: 0 0 4px var(--pixel-accent);
+}
+
+@keyframes pixel-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .link-external {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: #1A1A1A;
+    text-underline-offset: 0.2em;
+    font-weight: 500;
+    transition: text-decoration-color 0.2s ease-in-out;
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .link-external:hover {
+    color: hsl(var(--primary));
+    text-decoration-color: hsl(var(--accent));
+  }
+  
+  .link-external::after {
+    content: '*';
+    display: inline;
+    vertical-align: super;
+    margin-left: 0.1em;
+    color: hsl(var(--accent));
+    font-family: var(--font-ibm-plex-sans);
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+}
+
+/* Ensure native anchor/element.scrollIntoView land below sticky header */
+#about,
+#updates,
+#projects,
+#gallery {
+  scroll-margin-top: var(--header-offset, 64px);
+}
+
+

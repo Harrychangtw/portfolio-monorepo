@@ -1,0 +1,39 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "harrychang.me"
+        }
+      ],
+      "destination": "https://www.harrychang.me/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lab\\.harrychang\\.me"
+        }
+      ],
+      "destination": "/lab/:path*"
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.lab\\.harrychang\\.me"
+        }
+      ],
+      "destination": "/lab/:path*"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

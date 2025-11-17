@@ -1,0 +1,74 @@
+.gallery-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 0; /* Prevent container collapse */
+}
+
+.gallery-row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.gallery-image-container {
+  flex: 1;
+  margin: 0;
+  contain: size layout paint;
+  content-visibility: auto;
+}
+
+.image-frame {
+  width: 100%;
+  position: relative;
+  background-color: white;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+figcaption {
+  text-align: left;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  min-height: 1.5em;
+  margin-top: 0.5rem;
+}
+
+/* Prevent text jump during load */
+.gallery-title {
+  line-height: 1.2;
+  min-height: 1.2em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-row {
+    flex-direction: column;
+  }
+}
+
+/* For a more sophisticated masonry layout, you could use CSS grid with auto placement */
+@supports (display: grid) {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1.5rem;
+  }
+  
+  .gallery-row {
+    display: contents;
+  }
+  
+  .gallery-image-container {
+    break-inside: avoid;
+  }
+}

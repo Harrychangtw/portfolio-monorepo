@@ -1,0 +1,32 @@
+{
+  "bio1": "我是張祺煒。當他人在辯論何謂可能，我選擇動手打造。我的作品誕生於 AI 與藝術的交會、程式碼與故事的融合，以及一顆永不妥協的好奇心。",
+  "bio2": "目前就讀靜心高中十二年級，透過<a href=\"projects/2025_10_12_fortress/\">學術研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate\">辯論</a>，與<a href=\"projects/2025_01_05_aaai_video\">影片創作</a>探索各種可能。每一個媒介都是達成同一個使命的不同語言：讓明天比今天更有趣。",
+  "bio3": "從樂高積木到語言模型，我從未拋棄那份將事物拆解、再以更臻完美的方式重組的渴望。如果任何有趣的想法想要分享，<a href=\"mailto:chiwei@harrychang.me\">歡迎交流！</a>。",
+  "roles": {
+    "llmResearcher": {
+      "title": "LLM 研究員",
+      "period": "2023 - Present",
+      "description": "研究 LLM 安全與高效防護方法，一篇論文發表於 <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a>，另一篇於 EACL 審稿，並於 <a href=\"https://cycraft.com\">CyCraft</a> 擔任研究實習生。"
+    },
+    "speaker": {
+      "title": "講者 – AI WAVE SHOW, SITCON",
+      "period": "2024 - 2025",
+      "description": "在 <a href=\"https://www.technice.com.tw/issues/ai/185561/\">AI WAVE SHOW</a> 開幕式致詞並在 <a href=\"https://www.youtube.com/watch?v=ujxlUTXlC04\">SITCON 2025</a> 發表關於 RAG 的主題演講。"
+    },
+    "designer": {
+      "title": "美宣長 & 副會長 – 學生會",
+      "period": "2023 - 2024",
+      "description": "領導第五屆學生會美宣組，設計學校周年紀念服裝系列、校慶主視覺和品牌塑造材料。"
+    },
+    "developer": {
+      "title": "開發者 - 靜心 RAG 客服",
+      "period": "2023 - 2024",
+      "description": "深度參與靜心 RAG 聊天機器人的開發。在國科會 <a href=\"https://genaistars.org.tw/2024/award/hackathon/28\">GenAI Stars 競賽</a> 中獲得特優。"
+    },
+    "photographer": {
+      "title": "攝影師 & 影片剪輯師",
+      "period": "2022 - Present",
+      "description": "專精於 DaVinci Resolve，經驗範圍從各式學校影片到為 <a href=\"https://www.youtube.com/watch?v=eSuEhZpHesU&t=2s\">AAAI</a> 製作教育影片。"
+    }
+  }
+}

@@ -1,0 +1,90 @@
+/* Minimal LCP optimization styles - focused on performance */
+.lcp-bio {
+  /* Optimize text rendering for faster paint */
+  text-rendering: optimizeSpeed;
+  
+  /* Ensure high paint priority */
+  content-visibility: visible;
+  
+  /* Reduce layout calculations */
+  contain: paint;
+  
+  /* Ensure fast font display */
+  font-display: block;
+}
+
+/* Pre-connect to common font origins to speed up font loading */
+:root {
+  text-size-adjust: 100%;
+}
+
+/* Force the browser to assign high priority to paint */
+@supports (content-visibility: auto) {
+  .page-transition-enter {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 1000px;
+  }
+}
+
+/* Optimize for LCP */
+.gallery-image-container {
+  content-visibility: auto;
+  contain: size layout paint;
+}
+
+/* Pre-size image containers to prevent layout shifts */
+.gallery-card-container,
+.project-card-container {
+  min-height: 300px;
+  content-visibility: auto;
+  contain: size layout paint;
+}
+
+/* Optimize paint performance */
+.gallery-image,
+.project-image {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  content-visibility: visible;
+}
+
+/* Progressive loading indicators */
+.loading-indicator {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+/* Markdown images optimization */
+.gallery-figure {
+  contain: paint;
+  content-visibility: auto;
+}
+
+.gallery-figure .image-container {
+  transform: translateZ(0); /* Force GPU acceleration */
+  will-change: transform;
+}
+
+/* Footer layout stability */
+footer.bg-\[\#1a1a1a\] {
+  contain: layout paint;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Prevent layout shifts during image load */
+.aspect-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Optimize paint performance for animations */
+.gallery-transition {
+  transform: translate3d(0, 0, 0);
+}

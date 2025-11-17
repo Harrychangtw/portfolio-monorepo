@@ -1,0 +1,88 @@
+{
+  "entries": [
+    {
+      "date": "2025-10-20",
+      "text": "[Progress] Named <a href=\"https://app.algoed.co/certification?Algoed=Pw4obYFse79M3wLgGPPK5Qq7KOdhKv%2FlKSQ4bc1x3hTTEkBnqd53aXsF1NsHRmeY\"> Global 2nd place</a> in the Harvard Crimson Global Quiz Bowl 2025 (CS)."
+    },
+    {
+      "date": "2025-10-13",
+      "text": "[Progress] Named <a href=\"https://app.algoed.co/certification?Algoed=Pw4obYFse79M3wLgGPPK5U1Q%2FJ7YtUMZvDSFaSzzqNTelbGftH3Wj%2B8CMcuIgllu\">Individual Champion for Taiwan</a> in the Harvard Crimson Global Quiz Bowl 2025 (CS)."
+    },
+    {
+      "date": "2025-10-12",
+      "text": "[Publication] My first-authored paper, FORTRESS, has been published at <a href=\"https://openreview.net/forum?id=lCn7RT9DGq\">TMLR</a>"
+    },
+    {
+      "date": "2025-10-03",
+      "text": "[Publication] My blog post on LLM safety was published at <a href=\"https://research.cycraft.ai/%E7%95%B6-ai-%E5%AE%A2%E6%9C%8D-%E6%AD%AA%E6%A8%93-%E5%BE%9E-prompt-injection-%E6%B7%BA%E8%AB%87%E8%AA%9E%E8%A8%80%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%B3%87%E5%AE%89%E9%A2%A8%E9%9A%AA-341b3cfa29f1\">CyCraft Research Lab</a>"
+    },
+    {
+      "date": "2025-09-22",
+      "text": "[Progress] Scored <a href=\"https://drive.google.com/file/d/17u7maeyjuHDaeCJ85wdWdIOM-oP79j4b/view?usp=drive_link\">8.5/9.0 on IELTS Academic</a> after self-studying"
+    },
+    {
+      "date": "2025-09-16",
+      "text": "[Improved] Reduced <a href=\"/paper-reading\">paper reading page</a> LCP via build-time arXiv API caching"
+    },
+    {
+      "date": "2025-09-10",
+      "text": "[Improved] Introduced a dedicated mobile staggered menu with additional UX improvements"
+    },
+    {
+      "date": "2025-08-08",
+      "text": "[Improved] Wrote photography annotations for every gallery post, check them out!"
+    },
+    {
+      "date": "2025-08-04",
+      "text": "[Improved] Phase 1 project content has been curated, more will be retroactively added soon"
+    },
+    {
+      "date": "2025-08-02",
+      "text": "[Improved] Added full language support for English and Traditional Chinese using i18n!"
+    },
+    {
+      "date": "2025-08-01",
+      "text": "[Improved] Added support for Google Drive and YouTube video links"
+    },
+    {
+      "date": "2025-07-31",
+      "text": "[Activity] Gave a speech for <a href=\"https://www.technice.com.tw/issues/ai/185561/\">AI WAVE Opening Ceramony</a> at TWTC"
+    },
+    {
+      "date": "2025-07-30",
+      "text": "[Research] PATCH has been submitted to ACL ARR July cycle after extensive revisions"
+    },
+    {
+      "date": "2025-07-04",
+      "text": "[Progress] Participated in the AIGO program's one-day hackathon at NTU, won <a href=\"https://drive.google.com/file/d/1-Nm6tdic38YQcUcuploRbdpE28b4S9rS/view\">first prize</a>"
+    },
+    {
+      "date": "2025-07-05",
+      "text": "[Research] FORTRESS has underwent review for <a href=\"https://openreview.net/forum?id=lCn7RT9DGq\">TMLR</a>"
+    },
+    {
+      "date": "2025-06-30",
+      "text": "[Progress] PATCH won first prize in school's research competition"
+    },
+    {
+      "date": "2025-06-15",
+      "text": "[Progress] Won championship at Fushing Debate Open 2025 thanks to my amazing team!"
+    },
+    {
+      "date": "2025-06-11",
+      "text": "[Honered] Excited to announce that I have been Honereded the Harvard Prize Book!"
+    },
+    {
+      "date": "2025-05-18",
+      "text": "[Project] Kicked off the FORTRESS project, a RAG-inspired defense system"
+    },
+    {
+      "date": "2025-05-15",
+      "text": "[Research] PATCH has been submitted to ACL ARR May cycle"
+    },
+    {
+      "date": "2025-04-01",
+      "text": "[Milestone] Personal portfolio site launched 🎉"
+    }
+  ]
+}

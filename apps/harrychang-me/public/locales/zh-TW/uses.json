@@ -1,0 +1,236 @@
+{
+  "title": "我的工具與設定",
+  "description": "我相信一個精心打造的環境能同時提升生產力與創造力，因此我整理了這份清單，包含我最愛的硬體、軟體和服務。這份設定會持續更新，但這是我在 2025 年底所使用的配置。",
+  "hardware": {
+    "title": "硬體與桌面配置",
+    "coreWorkstation": {
+      "title": "核心工作站",
+      "items": [
+        {
+          "name": "主要電腦",
+          "value": "M1 Max MacBook Pro 16"
+        },
+        {
+          "name": "外接螢幕",
+          "value": "Gigabyte G27Q"
+        },
+        {
+          "name": "鍵盤",
+          "value": "Keychron K3 Max"
+        },
+        {
+          "name": "滑鼠",
+          "value": "Logitech MX Master 3"
+        },
+        {
+          "name": "耳罩式耳機",
+          "value": "Bang & Olufsen H9i"
+        },
+        {
+          "name": "入耳式耳機",
+          "value": "Apple AirPods Pro 2"
+        },
+        {
+          "name": "喇叭",
+          "value": "Tivoli Audio Model Two"
+        }
+      ]
+    },
+    "office": {
+      "title": "桌面與人體工學",
+      "items": [
+        {
+          "name": "書桌",
+          "value": "電動桌腳搭配胡桃木桌板"
+        },
+        {
+          "name": "椅子",
+          "value": "Herman Miller Embody (莓果藍)"
+        },
+        {
+          "name": "抽屜櫃",
+          "value": "IKEA Alex"
+        },
+        {
+          "name": "照明",
+          "value": "EDISON Galaxy II 桌燈"
+        }
+      ]
+    },
+    "homeServer": {
+      "title": "ML 伺服器",
+      "items": [
+        {
+          "name": "機殼",
+          "value": "Formd T1"
+        },
+        {
+          "name": "處理器",
+          "value": "AMD Ryzen 9 7900"
+        },
+        {
+          "name": "主機板",
+          "value": "ASRock B650i Lightning"
+        },
+        {
+          "name": "CPU 散熱",
+          "value": "ID-COOLING IS-47-XT"
+        },
+        {
+          "name": "顯示卡",
+          "value": "EVGA RTX 3090"
+        },
+        {
+          "name": "記憶體",
+          "value": "64GB Kingston Fury DDR5 @ 6000MHz"
+        },
+        {
+          "name": "儲存空間",
+          "value": "4TB TeamGroup NVMe + 4TB SATA SSDs"
+        },
+        {
+          "name": "電源供應器",
+          "value": "Corsair SF750 2024"
+        },
+        {
+          "name": "機殼風扇",
+          "value": "4x Phanteks T30"
+        },
+        {
+          "name": "作業系統",
+          "value": "Ubuntu Server (Headless)"
+        },
+        {
+          "name": "系統監控",
+          "value": "Grafana, Prometheus"
+        }
+      ]
+    },
+    "photography": {
+      "title": "攝影器材",
+      "accessories": "配件",
+      "items": [
+        {
+          "key": "cameras",
+          "name": "相機",
+          "list": [
+            "Fujifilm X-T5",
+            "Fujifilm X-Pro1",
+            "Ricoh GR IIIx"
+          ]
+        },
+        {
+          "key": "lenses",
+          "name": "鏡頭",
+          "list": [
+            "Viltrox 75mm f/1.2",
+            "Sigma 18-50mm f/2.8",
+            "Fujinon XF 100-400mm f/4.5-5.6",
+            "7Artisans 35mm f/1.4",
+            "TTArtisan 50mm f/0.95"
+          ]
+        },
+        {
+          "key": "stabilizer",
+          "name": "穩定器",
+          "list": [
+            "DJI RS 3 Mini"
+          ]
+        },
+        {
+          "key": "tripod",
+          "name": "腳架",
+          "list": [
+            "Ulanzi Zero Y"
+          ]
+        }
+      ]
+    }
+  },
+  "software": {
+    "title": "軟體與服務",
+    "development": {
+      "title": "開發",
+      "items": [
+        {
+          "name": "IDE",
+          "value": "Visual Studio Code"
+        },
+        {
+          "name": "終端機",
+          "value": "Warp"
+        },
+        {
+          "name": "啟動器",
+          "value": "Raycast"
+        },
+        {
+          "name": "瀏覽器",
+          "value": "Zen Browser"
+        },
+        {
+          "name": "VPN",
+          "value": "Tailscale"
+        }
+      ]
+    },
+    "design": {
+      "title": "設計與創作",
+      "items": [
+        {
+          "name": "UI/UX 設計",
+          "value": "Figma"
+        },
+        {
+          "name": "創作軟體",
+          "value": "Affinity Designer 2, Photo 2, & Publisher 2"
+        },
+        {
+          "name": "影片剪輯",
+          "value": "DaVinci Resolve Studio 20"
+        },
+        {
+          "name": "CAD",
+          "value": "Fusion 360"
+        }
+      ]
+    },
+    "productivity": {
+      "title": "生產力與工具程式",
+      "items": [
+        {
+          "name": "筆記軟體",
+          "value": "Obsidian (日誌), Notion (共編)"
+        },
+        {
+          "name": "任務管理",
+          "value": "Apple Reminder 搭配 Raycast"
+        },
+        {
+          "name": "通訊軟體",
+          "value": "Discord & Mattermost"
+        },
+        {
+          "name": "檔案管理",
+          "value": "Google Drive 搭配客製化 Rclone 腳本"
+        },
+        {
+          "name": "Alt-Tab",
+          "value": "在 macOS 上 Windows 風格的視窗切換"
+        },
+        {
+          "name": "Stats",
+          "value": "在選單列顯示系統狀態的監控工具"
+        },
+        {
+          "name": "Ice",
+          "value": "開源的 Menu-bar 工具"
+        },
+        {
+          "name": "Onyx",
+          "value": "系統清理與維護工具"
+        }
+      ]
+    }
+  }
+}
