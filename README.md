@@ -1,9 +1,7 @@
 # Portfolio Monorepo (harrychang.me, emilychang-me)
-
-
 ## Architecture Overview
 
-- **Turbo monorepo**: Multiple Next.js 15 apps managed via Turborepo (`apps/`)
+- **Turbo monorepo**: Multiple Next.js 15 apps managed using Turborepo (`apps/`)
 - **Dual-domain, single codebase**: `harrychang.me` (main) and `lab.harrychang.me` (lab) served from one Next.js app using middleware
 - **File-based CMS**: Markdown in `content/` with YAML frontmatter, auto-localized by filename suffix (`_zh-tw.md`)
 - **Custom i18n**: Client-only React Context, dynamic JSON loading from `/public/locales/`
