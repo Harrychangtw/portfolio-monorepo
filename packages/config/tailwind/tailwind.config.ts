@@ -53,6 +53,7 @@ const config: Omit<Config, 'content'> = {
         // Emily chang fonts
         "inter": ["var(--font-inter)", "sans-serif"],
         "playfair": ["var(--font-playfair-display)", "serif"],
+        "playfair-display": ["var(--font-playfair-display)", "serif"],
       },
       typography: {
         DEFAULT: {

@@ -4,26 +4,28 @@
 
 @layer base {
   :root {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 8%;
-    --secondary: 0 0% 25%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 280 65% 60%;
-    --accent-foreground: 0 0% 98%;
+    /* Emily's color scheme - light mode */
+    --background: 320 10% 95%; /* #F7EEF4 */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 0 0% 4%; /* #0A0A0A */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 0 0% 4%; /* #0A0A0A - text color */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 40%; /* Softer gray for secondary text */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 322 30% 90%;
+    --muted-foreground: 0 0% 30%;
+    --accent: 328 100% 64%; /* #FF49C5 */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 85% 55%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 0 0% 25%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 322 30% 85%; /* Light border matching background */
+    --input: 322 30% 85%;
+    --ring: 328 100% 64%;
     --radius: 0.5rem;
+    --column-spacing: max(0.5rem, 0.2vw);
   }
   
   * {
@@ -32,7 +34,7 @@
   
   body {
     background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    color: hsl(var(--primary));
   }
 }
 

@@ -1,0 +1,201 @@
+"use client"
+
+import { useState } from "react"
+import { motion } from "framer-motion"
+import { usePathname } from "next/navigation"
+import { scrollToSection } from "@portfolio/lib/lib/scrolling"
+
+const navigationLinks = [
+  { id: 'about', name: 'About', href: '/#about' },
+  { id: 'design', name: 'Design', href: '/#design' },
+  { id: 'creation', name: 'Creation', href: '/#creation' },
+  { id: 'art', name: 'Art', href: '/#art' },
+  { id: 'sketches', name: 'Sketches', href: '/#sketches' },
+]
+
+const socialLinks = [
+  { id: 'gmail', name: 'Email', href: '/email' },
+  { id: 'instagram', name: 'Instagram', href: '/instagram' },
+]
+
+const resourceLinks = [
+  { id: 'resume', name: 'Resume', href: '/cv' },
+  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal' },
+]
+
+export default function EmilyFooter() {
+  const pathname = usePathname()
+  const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null)
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
+
+  const handleMouseEnter = (e: React.MouseEvent, id: string) => {
+    setTooltipPosition({ x: e.clientX, y: e.clientY })
+    setActiveTooltipId(id)
+  }
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (activeTooltipId) {
+      setTooltipPosition({ x: e.clientX, y: e.clientY })
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setActiveTooltipId(null)
+  }
+
+  const isInternalLink = (href: string) => href.startsWith('/')
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.includes('#') && pathname === '/') {
+      const id = href.split('#')[1]
+      if (id) {
+        scrollToSection(id, e)
+      }
+    }
+  }
+
+  return (
+    <>
+      <footer className="bg-card text-primary py-12 md:py-16 border-t border-border">
+        <div className="container">
+          <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
+
+            {/* Column 1: Name & Description */}
+            <div className="col-span-12 md:col-span-6 md:pr-24 md:mt-2 max-w-xl">
+              <div className="block mb-6">
+                <h2 className="font-[var(--font-heading)] text-3xl text-primary">
+                  Emily Chang
+                </h2>
+              </div>
+              <div className="font-[var(--font-body)] text-base text-primary space-y-3">
+                <p>Designer & Artist exploring the intersection of creativity and expression.</p>
+                <p>
+                  Based in Taiwan, creating meaningful work through design, art, and illustration.
+                </p>
+              </div>
+            </div>
+
+            {/* Columns 2, 3, & 4 Wrapper */}
+            <div className="col-span-12 md:col-span-6">
+              <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-10">
+                
+                {/* Column 2: Social & Contact */}
+                <div className="col-span-1 md:col-span-4 md:pr-8">
+                  <h3 className="font-[var(--font-heading)] text-lg text-secondary mb-4 whitespace-nowrap">
+                    Connect
+                  </h3>
+                  <ul className="space-y-3">
+                    {socialLinks.map(link => (
+                      <li key={link.id}>
+                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                          <a
+                            href={link.href}
+                            {...(!isInternalLink(link.href) && {
+                              target: "_blank",
+                              rel: "noopener noreferrer"
+                            })}
+                            className="font-[var(--font-body)] text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
+                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                          >
+                            {link.name}
+                          </a>
+                        </motion.div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 3: Resources */}
+                <div className="col-span-1 md:col-span-4 md:pr-8">
+                  <h3 className="font-[var(--font-heading)] text-lg text-secondary mb-4 whitespace-nowrap">
+                    Resources
+                  </h3>
+                  <ul className="space-y-3">
+                    {resourceLinks.map(link => (
+                      <li key={link.id}>
+                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                          <a
+                            href={link.href}
+                            {...(!isInternalLink(link.href) && {
+                              target: "_blank",
+                              rel: "noopener noreferrer"
+                            })}
+                            className="font-[var(--font-body)] text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
+                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                          >
+                            {link.name}
+                          </a>
+                        </motion.div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 4: Site Navigation */}
+                <div className="col-span-1 md:col-span-4 md:pr-8 hidden md:block">
+                  <h3 className="font-[var(--font-heading)] text-lg text-secondary mb-4 whitespace-nowrap">
+                    Navigate
+                  </h3>
+                  <ul className="space-y-3">
+                    {navigationLinks.map(link => (
+                      <li key={link.id}>
+                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                          <a
+                            href={link.href}
+                            className="font-[var(--font-body)] text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
+                            onClick={(e) => handleNavClick(e, link.href)}
+                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+                            onMouseMove={handleMouseMove}
+                            onMouseLeave={handleMouseLeave}
+                          >
+                            {link.name}
+                          </a>
+                        </motion.div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <hr className="border-secondary mt-16 mb-10 md:mt-16 md:mb-4" />
+
+          {/* Bottom Row: Copyright */}
+          <div className="flex justify-center md:justify-end text-sm text-secondary">
+            <p className="whitespace-nowrap overflow-hidden text-ellipsis">
+              © {new Date().getFullYear()} Emily Chang. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Custom Tooltip */}
+      {activeTooltipId && (
+        <motion.div
+          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
+          className="fixed z-50"
+          style={{
+            top: tooltipPosition.y - 40,
+            left: tooltipPosition.x,
+            transform: 'translateX(-50%)',
+            pointerEvents: 'none',
+          }}
+        >
+          <div className="bg-[hsl(var(--accent))] text-white text-sm px-3 py-1.5 rounded-md shadow-lg font-[var(--font-body)]">
+            {activeTooltipId}
+          </div>
+        </motion.div>
+      )}
+    </>
+  )
+}

@@ -1,17 +1,19 @@
 import './globals.css'
 import type React from 'react'
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { IBM_Plex_Sans, Playfair_Display } from 'next/font/google'
 
-const inter = Inter({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-ibm-plex',
   display: 'swap',
 })
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
+  style: ['italic'],
   variable: '--font-playfair-display',
   display: 'swap',
 })
@@ -50,13 +52,13 @@ export default function RootLayout({
   return (
     <html 
       lang="en" 
-      className={`dark ${inter.variable} ${playfairDisplay.variable}`}
+      className={`${ibmPlexSans.variable} ${playfairDisplay.variable}`}
       style={{
-        '--font-body': 'var(--font-inter)',
+        '--font-body': 'var(--font-ibm-plex)',
         '--font-heading': 'var(--font-playfair-display)',
       } as React.CSSProperties}
     >
-      <body className={`bg-background text-primary antialiased min-h-screen flex flex-col`}>
+      <body className={`bg-background text-primary antialiased min-h-screen flex flex-col font-[var(--font-body)]`}>
         {children}
       </body>
     </html>
