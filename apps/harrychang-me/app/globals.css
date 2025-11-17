@@ -168,7 +168,7 @@
     vertical-align: super;
     margin-left: 0.1em;
     color: hsl(var(--accent));
-    font-family: var(--font-ibm-plex-sans);
+    font-family: var(--font-body);
     font-size: 0.85em;
     font-weight: 500;
   }

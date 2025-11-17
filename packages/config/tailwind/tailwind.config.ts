@@ -45,9 +45,14 @@ const config: Omit<Config, 'content'> = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-ibm-plex-sans)", ...(defaultTheme.fontFamily?.sans || [])],
+        sans: ["var(--font-body)", ...(defaultTheme.fontFamily?.sans || [])],
+        heading: ["var(--font-heading)", "sans-serif"],
+        // Legacy support for harrychang-me
         "space-grotesk": ["var(--font-space-grotesk)", "sans-serif"],
         "ibm-plex": ["var(--font-ibm-plex-sans)", "sans-serif"],
+        // Emily chang fonts
+        "inter": ["var(--font-inter)", "sans-serif"],
+        "playfair": ["var(--font-playfair-display)", "serif"],
       },
       typography: {
         DEFAULT: {
@@ -71,7 +76,7 @@ const config: Omit<Config, 'content'> = {
                 marginLeft: "0.1em",  
                 verticalAlign: "super",
                   color: "hsl(var(--accent))",
-                fontFamily: "var(--font-ibm-plex-sans)",
+                fontFamily: "var(--font-body)",
                 fontSize: "0.85em",
                 whiteSpace: "nowrap",
                 fontWeight: "700",
@@ -80,27 +85,27 @@ const config: Omit<Config, 'content'> = {
             },
             h1: {
               color: "hsl(var(--foreground))",
-              fontFamily: "var(--font-space-grotesk)",
+              fontFamily: "var(--font-heading)",
             },
             h2: {
               color: "hsl(var(--foreground))",
-              fontFamily: "var(--font-space-grotesk)",
+              fontFamily: "var(--font-heading)",
             },
             h3: {
               color: "hsl(var(--foreground))",
-              fontFamily: "var(--font-space-grotesk)",
+              fontFamily: "var(--font-heading)",
             },
             h4: {
               color: "hsl(var(--foreground))",
-              fontFamily: "var(--font-space-grotesk)",
+              fontFamily: "var(--font-heading)",
             },
             p: {
               color: "hsl(var(--foreground))",
-              fontFamily: "var(--font-ibm-plex-sans)",
+              fontFamily: "var(--font-body)",
             },
             li: {
               color: "hsl(var(--foreground))",
-              fontFamily: "var(--font-ibm-plex-sans)",
+              fontFamily: "var(--font-body)",
             },
             "ul > li::marker": 
             {
@@ -123,7 +128,7 @@ const config: Omit<Config, 'content'> = {
               borderLeftWidth: "4px",
               paddingLeft: "1.5em",
               color: "hsl(var(--foreground))",
-              fontFamily: "var(--font-ibm-plex-sans)",
+              fontFamily: "var(--font-body)",
             },
             "blockquote p:first-of-type::before": {
               content: "none"

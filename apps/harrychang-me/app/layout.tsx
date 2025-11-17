@@ -58,7 +58,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark ${spaceGrotesk.variable} ${ibmPlexSans.variable}`}>
+    <html 
+      lang="en" 
+      className={`dark ${spaceGrotesk.variable} ${ibmPlexSans.variable}`}
+      style={{
+        '--font-body': 'var(--font-ibm-plex-sans)',
+        '--font-heading': 'var(--font-space-grotesk)',
+      } as React.CSSProperties}
+    >
       <body className={`bg-background text-primary antialiased min-h-screen flex flex-col`}>
         {children}
       </body>
