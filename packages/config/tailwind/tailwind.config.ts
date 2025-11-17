@@ -62,7 +62,7 @@ const config: Omit<Config, 'content'> = {
               color: "hsl(var(--primary))",
               textDecoration: "underline",
               textDecorationStyle: "dashed",
-                textDecorationColor: "#1A1A1A",
+                textDecorationColor: "hsl(var(--border))",
               textUnderlineOffset: "0.2em",
               transition: "text-decoration-color 0.2s ease-in-out",
               whiteSpace: "nowrap",
@@ -109,14 +109,14 @@ const config: Omit<Config, 'content'> = {
             },
             "ul > li::marker": 
             {
-              color: "#4F4F4F",
+              color: "hsl(var(--muted-foreground))",
             },
             "ol > li::marker": 
             {
-              color: "#4F4F4F",
+              color: "hsl(var(--muted-foreground))",
             },
             hr: {
-              borderColor: "#1A1A1A",
+              borderColor: "hsl(var(--border))",
               borderTopWidth: "2px",
               marginTop: "2em",
               marginBottom: "2em"
@@ -138,7 +138,7 @@ const config: Omit<Config, 'content'> = {
             },
             code: {
               color: "hsl(var(--foreground))",
-              backgroundColor: "#4F4F4F",
+              backgroundColor: "hsl(var(--muted))",
               borderRadius: "0.25rem",
               paddingLeft: "0.25rem",
               paddingRight: "0.25rem",

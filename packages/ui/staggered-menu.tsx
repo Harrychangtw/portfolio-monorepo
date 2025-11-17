@@ -39,14 +39,14 @@ export interface StaggeredMenuProps {
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = 'right',
-  colors = ['hsl(var(--accent))', '#0A0A0A'],
+  colors = ['hsl(var(--accent))', 'hsl(var(--background))'],
   items = [],
   socialItems = [],
   displaySocials = false,
   displayItemNumbering = false,
   className,
-  menuButtonColor = '#fff',
-  openMenuButtonColor = '#fff',
+  menuButtonColor = 'hsl(var(--primary))',
+  openMenuButtonColor = 'hsl(var(--primary))',
   changeMenuColorOnOpen = true,
   accentColor = 'hsl(var(--accent))',
   onMenuOpen,

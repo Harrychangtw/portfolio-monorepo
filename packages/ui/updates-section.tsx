@@ -136,7 +136,7 @@ export default function UpdatesSection() {
                             <button
                                 onClick={handlePrevPage}
                                 disabled={currentPage === 0}
-                                className="font-space-grotesk text-2xl text-[#4F4F4F] hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                className="font-space-grotesk text-2xl text-muted-foreground hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                                 ←
                             </button>
@@ -145,7 +145,7 @@ export default function UpdatesSection() {
                             <button
                                 onClick={handleNextPage}
                                 disabled={currentPage === totalPages - 1}
-                                className="font-space-grotesk text-2xl text-[#4F4F4F] hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                className="font-space-grotesk text-2xl text-muted-foreground hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                                 →
                             </button>

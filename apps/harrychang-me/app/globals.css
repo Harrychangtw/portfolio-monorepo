@@ -149,7 +149,7 @@
     color: hsl(var(--primary));
     text-decoration: underline;
     text-decoration-style: dashed;
-    text-decoration-color: #1A1A1A;
+    text-decoration-color: hsl(var(--border));
     text-underline-offset: 0.2em;
     font-weight: 500;
     transition: text-decoration-color 0.2s ease-in-out;

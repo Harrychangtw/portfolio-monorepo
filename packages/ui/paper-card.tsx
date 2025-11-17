@@ -28,8 +28,8 @@ export default function PaperCard({ paper }: PaperCardProps) {
           {paper.title}
         </Link>
       </h3>
-      <p className="text-sm" style={{ color: '#4F4F4F' }}>{paper.authors.join(", ")}</p>
-      <p className="text-sm" style={{ color: '#4F4F4F' }}>{formatDate(paper.date)}</p>
+      <p className="text-sm text-muted-foreground">{paper.authors.join(", ")}</p>
+      <p className="text-sm text-muted-foreground">{formatDate(paper.date)}</p>
     </div>
   );
 }

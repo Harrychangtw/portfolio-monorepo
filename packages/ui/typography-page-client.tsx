@@ -18,13 +18,13 @@ export default function TypographyPageClient() {
           </h2>
           <div className="grid grid-cols-4 md:grid-cols-7 gap-4">
             {[
-              { name: 'Background', hex: '#0A0A0A' },
-              { name: 'Foreground', hex: '#FFFFFF' },
-              { name: 'Primary', hex: '#FFFFFF' },
-              { name: 'Secondary', hex: '#4F4F4F' },
-              { name: 'Muted', hex: '#262626' },
-              { name: 'Accent', hex: '#D8F600' },
-              { name: 'Border', hex: '#262626' },
+              { name: 'Background', hex: 'hsl(var(--background))' },
+              { name: 'Foreground', hex: 'hsl(var(--foreground))' },
+              { name: 'Primary', hex: 'hsl(var(--primary))' },
+              { name: 'Secondary', hex: 'hsl(var(--secondary))' },
+              { name: 'Muted', hex: 'hsl(var(--muted))' },
+              { name: 'Accent', hex: 'hsl(var(--accent))' },
+              { name: 'Border', hex: 'hsl(var(--border))' },
             ].map((color, idx) => (
               <div
                 key={color.name}

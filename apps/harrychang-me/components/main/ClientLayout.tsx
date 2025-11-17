@@ -27,7 +27,7 @@ export default function ClientLayout({
         children
       ) : (
         <ClickSpark
-          sparkColor="#ffffff"
+          sparkColor="hsl(var(--primary))"
           sparkSize={8}
           sparkRadius={15}
         sparkCount={4}

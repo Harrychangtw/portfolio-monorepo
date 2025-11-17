@@ -21,14 +21,14 @@ export default function LabPageClient() {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 bg-[#0a0a0a] flex items-center justify-center">
+      <div className="fixed inset-0 bg-background flex items-center justify-center">
         <div className="text-white/30">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="relative min-h-[100svh] bg-[#0a0a0a] overflow-hidden">
+    <div className="relative min-h-[100svh] bg-background overflow-hidden">
       <MinimalistBackground />
 
       <AnimatePresence>
@@ -116,7 +116,7 @@ export default function LabPageClient() {
                         type="email"
                         readOnly
                         placeholder={t('lab.heroEmailPlaceholder', 'common') || "Your Email Address"}
-                        className="w-full h-full bg-[#0F0F0F] border border-white/20 rounded-lg pl-6 pr-36 text-white placeholder-white/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
+                        className="w-full h-full bg-card border border-white/20 rounded-lg pl-6 pr-36 text-white placeholder-white/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
                     />
                     <button
                         className="absolute right-2 top-2 bottom-2 bg-white text-black rounded-md px-6 font-medium hover:bg-gray-200 transition-colors"
@@ -131,7 +131,7 @@ export default function LabPageClient() {
                         type="email"
                         readOnly
                         placeholder={t('lab.heroEmailPlaceholder', 'common') || "Your Email Address"}
-                        className="w-full h-12 bg-[#0F0F0F] border border-white/20 rounded-lg px-4 text-white placeholder-white/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
+                        className="w-full h-12 bg-card border border-white/20 rounded-lg px-4 text-white placeholder-white/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
                     />
                     <button
                         className="w-full h-12 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition-colors"

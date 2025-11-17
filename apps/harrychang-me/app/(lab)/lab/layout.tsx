@@ -62,7 +62,7 @@ export const metadata: Metadata = {
       {
         rel: 'mask-icon',
         url: '/safari-pinned-tab-lab.svg',
-        color: '#000000'
+        color: 'hsl(var(--background))'
       }
     ]
   },

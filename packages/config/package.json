@@ -7,7 +7,9 @@
       "import": "./lib/index.ts",
       "require": "./lib/index.ts"
     },
-    "./tailwind": "./tailwind/tailwind.config.ts"
+    "./tailwind": "./tailwind/tailwind.config.ts",
+    "./themes/harrychang": "./themes/harrychang.ts",
+    "./themes/emilychang": "./themes/emilychang.ts"
   },
   "dependencies": {
     "@tailwindcss/typography": "latest",

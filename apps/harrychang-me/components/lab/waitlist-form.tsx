@@ -95,7 +95,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
     return (
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-[#111] rounded-2xl p-8 max-w-md w-full mx-2 border border-primary/20 text-center"
+        className="bg-card rounded-2xl p-8 max-w-md w-full mx-2 border border-primary/20 text-center"
       >
         <div className="mb-4 text-4xl">🎉</div>
         <h2 className="text-2xl font-space-grotesk font-bold mb-4">
@@ -117,7 +117,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className="bg-[#111] rounded-2xl p-6 md:p-8 max-w-lg w-full mx-2 border border-white/20 max-h-[90vh] overflow-y-auto relative"
+      className="bg-card rounded-2xl p-6 md:p-8 max-w-lg w-full mx-2 border border-white/20 max-h-[90vh] overflow-y-auto relative"
     >
       <button
         onClick={onClose}
@@ -192,10 +192,10 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
           <select
             value={formData.tier}
             onChange={(e) => setFormData(prev => ({ ...prev, tier: e.target.value }))}
-            className="w-full px-4 py-2 bg-[#111] border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
+            className="w-full px-4 py-2 bg-card border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
           >
             {tierOptions.map(option => (
-              <option key={option.id} value={option.id} className="bg-[#111] text-white">
+              <option key={option.id} value={option.id} className="bg-card text-white">
                 {option.label}
               </option>
             ))}
