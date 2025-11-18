@@ -72,7 +72,7 @@ export default function EmilyFooter() {
                     aria-label="Return to home page"
                   >
                     <Image
-                      src="/footer_name_icon.png"
+                      src="/footer_icon.png"
                       alt="Emily Chang Logo"
                       width={446}
                       height={150}
