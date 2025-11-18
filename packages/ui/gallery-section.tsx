@@ -6,7 +6,6 @@ import { GalleryItemMetadata } from "@portfolio/lib/lib/markdown"
 import { createBalancedLayout } from "@portfolio/lib/lib/utils"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
-
 interface GallerySectionProps {
   section?: string
   title?: string
@@ -125,7 +124,7 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
   return (
     <section ref={sectionRef} id={sectionId} className="py-12 md:py-16">
       <div className="container">
-        <h2 className="font-heading italic text-2xl md:text-3xl text-primary mb-8">{title || t('gallery.title')}</h2>
+        <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('gallery.title')}</h2>
         
         {/* Container with space reservation */}
         <div 

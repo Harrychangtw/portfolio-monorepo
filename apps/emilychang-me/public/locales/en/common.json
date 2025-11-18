@@ -30,10 +30,12 @@
   },
   "sections": {
     "about": "About",
+    "projects": "Projects",
+    "canvas": "Canvas",
+    "sketches": "Sketches",
     "design": "Design",
     "creation": "Creation",
-    "art": "Art",
-    "sketches": "Sketches"
+    "art": "Art"
   },
   "projects": {
     "title": "Projects",

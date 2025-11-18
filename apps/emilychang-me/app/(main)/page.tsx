@@ -25,22 +25,15 @@ function HomeContent() {
   return (
     <>
       <AboutSection />
-      <GallerySection 
-        sectionId="design" 
-        source="projects" 
-        section="Design"
-        title={t('sections.design')}
+      <ProjectsSection 
+        sectionId="projects" 
+        section="Projects"
+        title={t('sections.projects')}
       />
       <GallerySection 
-        sectionId="creation" 
-        source="projects" 
-        section="Creation"
-        title={t('sections.creation')}
-      />
-      <GallerySection 
-        sectionId="art" 
+        sectionId="canvas" 
         source="gallery"
-        title={t('sections.art')}
+        title={t('sections.canvas')}
       />
       <SketchesSection />
     </>

@@ -103,9 +103,8 @@ export default function EmilyHeader() {
       
       const sections = [
         { id: 'about', element: document.getElementById('about') },
-        { id: 'design', element: document.getElementById('design') },
-        { id: 'creation', element: document.getElementById('creation') },
-        { id: 'art', element: document.getElementById('art') },
+        { id: 'projects', element: document.getElementById('projects') },
+        { id: 'canvas', element: document.getElementById('canvas') },
         { id: 'sketches', element: document.getElementById('sketches') },
       ]
 
@@ -147,7 +146,7 @@ export default function EmilyHeader() {
 
   const getLinkProps = (sectionId: string) => {
     const active = isActive(sectionId)
-    const baseClasses = `relative font-[var(--font-body)] text-base ${active ? "text-primary" : "text-secondary hover:text-[hsl(var(--accent))]"} transition-colors duration-200 outline-none`
+    const baseClasses = `relative font-body text-base ${active ? "text-primary" : "text-secondary hover:text-[hsl(var(--accent))]"} transition-colors duration-200 outline-none`
     const href = `/#${sectionId}`
     const onClick = isHomePage ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => scrollToSection(sectionId, e) : undefined
     return { className: baseClasses, href, onClick, scroll: false }
@@ -155,9 +154,8 @@ export default function EmilyHeader() {
 
   const menuItems = [
     { label: 'About', ariaLabel: 'About', link: '/#about', sectionId: 'about' },
-    { label: 'Design', ariaLabel: 'Design', link: '/#design', sectionId: 'design' },
-    { label: 'Creation', ariaLabel: 'Creation', link: '/#creation', sectionId: 'creation' },
-    { label: 'Art', ariaLabel: 'Art', link: '/#art', sectionId: 'art' },
+    { label: 'Projects', ariaLabel: 'Projects', link: '/#projects', sectionId: 'projects' },
+    { label: 'Canvas', ariaLabel: 'Canvas', link: '/#canvas', sectionId: 'canvas' },
     { label: 'Sketches', ariaLabel: 'Sketches', link: '/#sketches', sectionId: 'sketches' },
   ]
 
@@ -240,21 +238,15 @@ export default function EmilyHeader() {
                 </Link>
               </motion.div>
               <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                <Link {...getLinkProps('design')}>
-                  {isActive('design') && <Underline />}
-                  Design
+                <Link {...getLinkProps('projects')}>
+                  {isActive('projects') && <Underline />}
+                  Projects
                 </Link>
               </motion.div>
               <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                <Link {...getLinkProps('creation')}>
-                  {isActive('creation') && <Underline />}
-                  Creation
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                <Link {...getLinkProps('art')}>
-                  {isActive('art') && <Underline />}
-                  Art
+                <Link {...getLinkProps('canvas')}>
+                  {isActive('canvas') && <Underline />}
+                  Canvas
                 </Link>
               </motion.div>
               <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>

@@ -59,7 +59,7 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
   return (
     <section ref={sectionRef} id={sectionId} className="py-12 md:py-16 border-b border-border">
       <div className="container">
-        <h2 className="font-heading italic text-2xl md:text-3xl text-primary mb-8">{title || t('projects.title')}</h2>
+        <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{title || t('projects.title')}</h2>
         
         {/* Reserve space to prevent layout shift with responsive min-height */}
         <div 

@@ -1,6 +1,6 @@
 ---
 title: "Editorial Layout"
-category: "Design"
+category: "Projects"
 subcategory: "Publication Design"
 description: "Modern editorial design for a contemporary art magazine"
 imageUrl: "/placeholder.webp"

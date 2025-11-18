@@ -1,6 +1,6 @@
 ---
 title: "Ceramic Collection"
-category: "Creation"
+category: "Projects"
 subcategory: "Handmade Ceramics"
 description: "A series of handcrafted ceramic pieces exploring texture and form"
 imageUrl: "/placeholder.webp"

@@ -1,6 +1,6 @@
 ---
 title: "Botanical Branding"
-category: "Design"
+category: "Projects"
 subcategory: "Brand Identity"
 description: "A nature-inspired brand identity system for a sustainable lifestyle brand"
 imageUrl: "/placeholder.webp"

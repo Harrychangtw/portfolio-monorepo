@@ -8,10 +8,9 @@ import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
 
 const navigationLinks = [
   { id: 'about', name: 'About', href: '/#about' },
-  { id: 'design', name: 'Design', href: '/design' },
-  { id: 'creation', name: 'Creation', href: '/creation' },
-  { id: 'art', name: 'Art', href: '/art' },
-  { id: 'sketches', name: 'Sketches', href: '/sketches' },
+  { id: 'projects', name: 'Projects', href: '/projects' },
+  { id: 'canvas', name: 'Canvas', href: '/canvas' },
+  { id: 'sketches', name: 'Sketches', href: '/#sketches' },
 ]
 
 const socialLinks = [
@@ -65,11 +64,11 @@ export default function EmilyFooter() {
             {/* Column 1: Name & Description */}
             <div className="col-span-12 md:col-span-6 md:pr-24 md:mt-2 max-w-xl">
               <div className="block mb-6">
-                <h2 className="font-[var(--font-heading)] text-3xl text-primary">
+                <h2 className="font-heading text-3xl text-primary">
                   Emily Chang
                 </h2>
               </div>
-              <div className="font-[var(--font-body)] text-base text-primary space-y-3">
+              <div className="font-body text-base text-primary space-y-3">
                 <p>Designer & Artist exploring the intersection of creativity and expression.</p>
                 <p>
                   Based in Taiwan, creating meaningful work through design, art, and illustration.
@@ -83,7 +82,7 @@ export default function EmilyFooter() {
                 
                 {/* Column 2: Social & Contact */}
                 <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-[var(--font-heading)] italic text-lg text-primary mb-4 whitespace-nowrap">
+                  <h3 className="font-heading uppercase tracking-wider italic text-lg text-primary mb-4 whitespace-nowrap">
                     {t('footer.socialContact')}
                   </h3>
                   <ul className="space-y-3">
@@ -96,7 +95,7 @@ export default function EmilyFooter() {
                               target: "_blank",
                               rel: "noopener noreferrer"
                             })}
-                            className="font-[var(--font-body)] text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
+                            className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
                             onMouseEnter={(e) => handleMouseEnter(e, link.id)}
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
@@ -111,7 +110,7 @@ export default function EmilyFooter() {
 
                 {/* Column 3: Resources */}
                 <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-[var(--font-heading)] italic text-lg text-primary mb-4 whitespace-nowrap">
+                  <h3 className="font-heading uppercase tracking-wider italic text-lg text-primary mb-4 whitespace-nowrap">
                     {t('footer.personalResources')}
                   </h3>
                   <ul className="space-y-3">
@@ -124,7 +123,7 @@ export default function EmilyFooter() {
                               target: "_blank",
                               rel: "noopener noreferrer"
                             })}
-                            className="font-[var(--font-body)] text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
+                            className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
                             onMouseEnter={(e) => handleMouseEnter(e, link.id)}
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
@@ -139,7 +138,7 @@ export default function EmilyFooter() {
 
                 {/* Column 4: Site Navigation */}
                 <div className="col-span-1 md:col-span-4 md:pr-8 hidden md:block">
-                  <h3 className="font-[var(--font-heading)] italic text-lg text-primary mb-4 whitespace-nowrap">
+                  <h3 className="font-heading uppercase tracking-wider italic text-lg text-primary mb-4 whitespace-nowrap">
                     {t('footer.siteNavigation')}
                   </h3>
                   <ul className="space-y-3">
@@ -148,7 +147,7 @@ export default function EmilyFooter() {
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                           <a
                             href={link.href}
-                            className="font-[var(--font-body)] text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
+                            className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
                             onClick={(e) => handleNavClick(e, link.href)}
                             onMouseEnter={(e) => handleMouseEnter(e, link.id)}
                             onMouseMove={handleMouseMove}
@@ -193,7 +192,7 @@ export default function EmilyFooter() {
             pointerEvents: 'none',
           }}
         >
-          <div className="bg-[hsl(var(--accent))] text-white text-sm px-3 py-1.5 rounded-md shadow-lg font-[var(--font-body)]">
+          <div className="bg-[hsl(var(--accent))] text-white text-sm px-3 py-1.5 rounded-md shadow-lg font-body">
             {activeTooltipId}
           </div>
         </motion.div>
