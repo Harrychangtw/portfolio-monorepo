@@ -4,7 +4,7 @@ import Lanyard from './Lanyard'
 
 // Reusable component for section titles
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="font-heading text-base font-bold uppercase tracking-widest text-secondary mb-4">
+  <h2 className="font-heading italic text-base font-bold uppercase tracking-widest text-secondary mb-4">
     {children}
   </h2>
 )
@@ -54,7 +54,7 @@ export default function AboutSection() {
           {/* -- Center Column (Primary Bio) -- */}
           <div className="col-span-4 text-center flex flex-col justify-center items-center">
             <div className="mt-12">
-              <h1 className="font-heading text-3xl font-medium">Emily Chang</h1>
+              <h1 className="font-heading italic text-3xl font-medium">Emily Chang</h1>
               <p className="font-body text-secondary mt-2">Visual Artist & Graphic Designer</p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function AboutSection() {
         <div className="md:hidden relative z-10">
           {/* Bio appears after the lanyard space on mobile */}
           <div className="text-center pt-[450px]">
-            <h1 className="font-heading text-3xl font-medium">Emily Chang</h1>
+            <h1 className="font-heading italic text-3xl font-medium">Emily Chang</h1>
             <p className="font-body text-secondary mt-2">Visual Artist & Graphic Designer</p>
           </div>
 

@@ -195,7 +195,7 @@ export default function EmilyHeader() {
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <Link
               href="/"
-              className="font-playfair-display italic text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none"
+              className="font-heading italic text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none"
               onClick={(e) => { if(isHomePage) scrollToSection('about', e) }}
             >
               Emily Chang
@@ -212,7 +212,7 @@ export default function EmilyHeader() {
               >
                 <span className="text-secondary mx-2 text-xl">｜</span>
                 <motion.span 
-                  className="font-playfair-display italic text-xl text-secondary"
+                  className="font-heading italic text-xl text-secondary"
                   key={activeSection}
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}

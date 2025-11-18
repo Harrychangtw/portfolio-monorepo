@@ -55,7 +55,7 @@ export default function RootLayout({
       className={`${ibmPlexSans.variable} ${playfairDisplay.variable}`}
       style={{
         '--font-body': 'var(--font-ibm-plex)',
-        '--font-heading': 'var(--font-playfair-display)',
+        '--font-heading': 'var(--font-playfair-display) italic',
       } as React.CSSProperties}
     >
       <body className="bg-background text-primary antialiased min-h-screen flex flex-col">

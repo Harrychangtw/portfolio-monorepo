@@ -463,7 +463,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
             {/* Social Links Section */}
             {displaySocials && socialItems && socialItems.length > 0 && (
               <div className="sm-panel-socials mt-auto pt-4 pb-16">
-                <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
+                <h3 className="font-heading itatlic text-lg uppercase tracking-wider text-secondary mb-4">
                   {t('footer.socialContact') || 'Social & Contact'}
                 </h3>
                 <ul className="list-none m-0 p-0 flex flex-wrap gap-6" role="list">
