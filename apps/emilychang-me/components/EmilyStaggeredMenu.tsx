@@ -376,7 +376,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
           ref={preLayersRef}
           className="sm-prelayers fixed top-0 right-0 bottom-0 w-full pointer-events-none z-[55]"
         >
-          {colors.map((color, idx) => (
+          {(colors || []).map((color, idx) => (
             <div 
               key={idx}
               className="sm-prelayer absolute top-0 right-0 h-full w-full" 
@@ -454,7 +454,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
                   <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
                     <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                       <Link
-                        className="sm-panel-item relative text-foreground font-space-grotesk font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
+                        className="sm-panel-item relative text-foreground font-[var(--font-heading)] italic font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-tight transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
                         href={it.link}
                         aria-label={it.ariaLabel}
                         data-index={idx + 1}

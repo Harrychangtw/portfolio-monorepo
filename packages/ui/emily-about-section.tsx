@@ -133,8 +133,8 @@ export default function AboutSection() {
       </div>
 
       {/* Layer 3: Interactive Lanyard (Always on top) */}
-      <div className="absolute top-0 left-0 right-0 z-20 h-[600px] md:h-full w-full pointer-events-auto">
-        <Lanyard position={[0, 4, 20]} fov={25} />
+      <div className="absolute top-0 left-0 right-0 z-20 h-[500px] md:h-full w-full pointer-events-auto">
+        <Lanyard position={[0, 2, 20]} fov={24} />
       </div>
     </section>
   )

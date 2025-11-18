@@ -210,7 +210,7 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
 
   return (
     <>
-      <group position={[0, 8.5, 0]}>
+      <group position={[0, 8.2, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type={'fixed' as RigidBodyProps['type']} />
         <RigidBody position={[0.75, 0, 0]} ref={j1} {...segmentProps} type={'dynamic' as RigidBodyProps['type']}>
           <BallCollider args={[0.1]} />

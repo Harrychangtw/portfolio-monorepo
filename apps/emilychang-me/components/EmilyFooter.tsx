@@ -13,15 +13,14 @@ const navigationLinks = [
   { id: 'sketches', name: 'Sketches', href: '/#sketches' },
 ]
 
-const socialLinks = [
-  { id: 'gmail', name: 'Email', href: '/email' },
-  { id: 'instagram', name: 'Instagram', href: '/instagram' },
+const socialAndResourceLinks = [
+    { id: 'gmail', name: 'Email', href: 'mailto:koding.chang@gmail.com' },
+    { id: 'art_instagram', name: 'Art Instagram', href: 'https://www.instagram.com/weirdoo_club?igsh=ZjE2ZnR1anFneWp6&utm_source=qr' },
+    { id: 'personal_instagram', name: 'Personal Instagram', href: 'https://www.instagram.com/dumbass_emi_?igsh=MXR4dTB0emk2c2h0dQ%3D%3D&utm_source=qr' },
+    { id: 'beli', name: 'Beli', href: 'https://beliapp.co/app/emilysushigod' },
+    { id: 'spotify', name: 'Spotify', href: 'https://open.spotify.com/user/snth1yq0x1gilq0h52rsudjed?si=37WuZ9pOQ_2EwPdnVEYwww' },
 ]
 
-const resourceLinks = [
-  { id: 'resume', name: 'Resume', href: '/cv' },
-  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal' },
-]
 
 export default function EmilyFooter() {
   const pathname = usePathname()
@@ -44,7 +43,7 @@ export default function EmilyFooter() {
     setActiveTooltipId(null)
   }
 
-  const isInternalLink = (href: string) => href.startsWith('/')
+  const isInternalLink = (href: string) => href.startsWith('/') || href.startsWith('#') || href.startsWith('mailto:')
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.includes('#') && pathname === '/') {
@@ -76,17 +75,17 @@ export default function EmilyFooter() {
               </div>
             </div>
 
-            {/* Columns 2, 3, & 4 Wrapper */}
+            {/* Columns 2 & 3 Wrapper */}
             <div className="col-span-12 md:col-span-6">
-              <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-10">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-10">
                 
-                {/* Column 2: Social & Contact */}
-                <div className="col-span-1 md:col-span-4 md:pr-8">
+                {/* Column 2: Connect */}
+                <div className="col-span-1 md:pr-8">
                   <h3 className="font-heading uppercase tracking-wider italic text-lg text-primary mb-4 whitespace-nowrap">
-                    {t('footer.socialContact')}
+                    Connect
                   </h3>
                   <ul className="space-y-3">
-                    {socialLinks.map(link => (
+                    {socialAndResourceLinks.map(link => (
                       <li key={link.id}>
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                           <a
@@ -108,36 +107,8 @@ export default function EmilyFooter() {
                   </ul>
                 </div>
 
-                {/* Column 3: Resources */}
-                <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-heading uppercase tracking-wider italic text-lg text-primary mb-4 whitespace-nowrap">
-                    {t('footer.personalResources')}
-                  </h3>
-                  <ul className="space-y-3">
-                    {resourceLinks.map(link => (
-                      <li key={link.id}>
-                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                          <a
-                            href={link.href}
-                            {...(!isInternalLink(link.href) && {
-                              target: "_blank",
-                              rel: "noopener noreferrer"
-                            })}
-                            className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
-                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            {link.name}
-                          </a>
-                        </motion.div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Column 4: Site Navigation */}
-                <div className="col-span-1 md:col-span-4 md:pr-8 hidden md:block">
+                {/* Column 3: Site Navigation */}
+                <div className="col-span-1 md:pr-8">
                   <h3 className="font-heading uppercase tracking-wider italic text-lg text-primary mb-4 whitespace-nowrap">
                     {t('footer.siteNavigation')}
                   </h3>

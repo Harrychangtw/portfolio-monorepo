@@ -160,8 +160,10 @@ export default function EmilyHeader() {
   ]
 
   const socialItems = [
-    { label: 'Email', link: '/email' },
+    { label: 'Email', link: 'mailto:hello@emilychang.me' },
     { label: 'Instagram', link: '/instagram' },
+    { label: 'LinkedIn', link: '#' },
+    { label: 'Dribbble', link: '#' },
   ]
 
   useEffect(() => {
