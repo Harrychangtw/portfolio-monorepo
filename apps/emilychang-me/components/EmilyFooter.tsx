@@ -4,13 +4,14 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { usePathname } from "next/navigation"
 import { scrollToSection } from "@portfolio/lib/lib/scrolling"
+import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
 
 const navigationLinks = [
   { id: 'about', name: 'About', href: '/#about' },
-  { id: 'design', name: 'Design', href: '/#design' },
-  { id: 'creation', name: 'Creation', href: '/#creation' },
-  { id: 'art', name: 'Art', href: '/#art' },
-  { id: 'sketches', name: 'Sketches', href: '/#sketches' },
+  { id: 'design', name: 'Design', href: '/design' },
+  { id: 'creation', name: 'Creation', href: '/creation' },
+  { id: 'art', name: 'Art', href: '/art' },
+  { id: 'sketches', name: 'Sketches', href: '/sketches' },
 ]
 
 const socialLinks = [
@@ -25,6 +26,7 @@ const resourceLinks = [
 
 export default function EmilyFooter() {
   const pathname = usePathname()
+  const { t } = useLanguage()
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null)
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
 
@@ -81,8 +83,8 @@ export default function EmilyFooter() {
                 
                 {/* Column 2: Social & Contact */}
                 <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-[var(--font-heading)] text-lg text-secondary mb-4 whitespace-nowrap">
-                    Connect
+                  <h3 className="font-[var(--font-heading)] italic text-lg text-primary mb-4 whitespace-nowrap">
+                    {t('footer.socialContact')}
                   </h3>
                   <ul className="space-y-3">
                     {socialLinks.map(link => (
@@ -109,8 +111,8 @@ export default function EmilyFooter() {
 
                 {/* Column 3: Resources */}
                 <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-[var(--font-heading)] text-lg text-secondary mb-4 whitespace-nowrap">
-                    Resources
+                  <h3 className="font-[var(--font-heading)] italic text-lg text-primary mb-4 whitespace-nowrap">
+                    {t('footer.personalResources')}
                   </h3>
                   <ul className="space-y-3">
                     {resourceLinks.map(link => (
@@ -137,8 +139,8 @@ export default function EmilyFooter() {
 
                 {/* Column 4: Site Navigation */}
                 <div className="col-span-1 md:col-span-4 md:pr-8 hidden md:block">
-                  <h3 className="font-[var(--font-heading)] text-lg text-secondary mb-4 whitespace-nowrap">
-                    Navigate
+                  <h3 className="font-[var(--font-heading)] italic text-lg text-primary mb-4 whitespace-nowrap">
+                    {t('footer.siteNavigation')}
                   </h3>
                   <ul className="space-y-3">
                     {navigationLinks.map(link => (
@@ -152,7 +154,7 @@ export default function EmilyFooter() {
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                           >
-                            {link.name}
+                            {t(`sections.${link.id}`)}
                           </a>
                         </motion.div>
                       </li>

@@ -35,6 +35,7 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--primary));
+    font-family: var(--font-ibm-plex), sans-serif;
   }
 }
 

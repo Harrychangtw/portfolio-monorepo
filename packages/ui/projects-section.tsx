@@ -6,7 +6,13 @@ import { ProjectMetadata } from "@portfolio/lib/lib/markdown"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
 
-export default function ProjectsSection() {
+interface ProjectsSectionProps {
+  section?: string
+  title?: string
+  sectionId?: string
+}
+
+export default function ProjectsSection({ section, title, sectionId = "projects" }: ProjectsSectionProps = {}) {
   const { language, t } = useLanguage()
   const [projects, setProjects] = useState<ProjectMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -34,7 +40,8 @@ export default function ProjectsSection() {
   useEffect(() => {
     async function fetchProjects() {
       try {
-        const response = await fetch(`/api/projects?locale=${language}`)
+        const sectionParam = section ? `&section=${encodeURIComponent(section)}` : ''
+        const response = await fetch(`/api/projects?locale=${language}${sectionParam}`)
         const data = await response.json()
         setProjects(data)
       } catch (error) {
@@ -47,12 +54,12 @@ export default function ProjectsSection() {
     if (shouldLoadImmediately || isVisible || forceLoad) {
       fetchProjects()
     }
-  }, [isVisible, language, shouldLoadImmediately, forceLoad])
+  }, [isVisible, language, shouldLoadImmediately, forceLoad, section])
 
   return (
-    <section ref={sectionRef} id="projects" className="py-12 md:py-16 border-b border-border">
+    <section ref={sectionRef} id={sectionId} className="py-12 md:py-16 border-b border-border">
       <div className="container">
-        <h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('projects.title')}</h2>
+        <h2 className="font-heading italic text-2xl md:text-3xl text-primary mb-8">{title || t('projects.title')}</h2>
         
         {/* Reserve space to prevent layout shift with responsive min-height */}
         <div 

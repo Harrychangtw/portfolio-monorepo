@@ -17,6 +17,10 @@ const config: Config = {
       // colors: {
       //   primary: "hsl(var(--primary))",
       // },
+      fontFamily: {
+        body: ['var(--font-ibm-plex)', 'sans-serif'],
+        heading: ['var(--font-playfair-display)', 'serif'],
+      },
     },
   },
 };

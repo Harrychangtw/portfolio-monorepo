@@ -68,15 +68,21 @@ const parseHtmlToReact = (htmlString: string): React.ReactNode => {
   return parts.length > 0 ? <>{parts}</> : htmlString
 }
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
+export function LanguageProvider({ children, englishOnly = false }: { children: React.ReactNode; englishOnly?: boolean }) {
   const [language, setLanguageState] = useState<Language>('en')
   const [translations, setTranslations] = useState<Translations>({})
   const [isLoading, setIsLoading] = useState(true)
   // Track if we've completed the first load
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
 
-  // On mount, check for saved language preference on the client side
+  // On mount, check for saved language preference on the client side (unless englishOnly is true)
   useEffect(() => {
+    if (englishOnly) {
+      // Force English only, skip localStorage and browser detection
+      setLanguageState('en')
+      return
+    }
+    
     const saved = localStorage.getItem('language') as Language | null
     if (saved === 'en' || saved === 'zh-TW') {
       setLanguageState(saved)
@@ -84,7 +90,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       const browserLang = navigator.language?.toLowerCase().startsWith('zh') ? 'zh-TW' : 'en'
       setLanguageState(browserLang)
     }
-  }, [])
+  }, [englishOnly])
 
   // Load translations for a specific language
   const loadTranslations = async (lang: Language) => {
@@ -172,6 +178,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   // Set language and update localStorage; fetch happens via useEffect
   const setLanguage = (lang: Language) => {
+    if (englishOnly) {
+      // In English-only mode, prevent language changes
+      return
+    }
     setLanguageState(lang)
     localStorage.setItem('language', lang)
   }

@@ -21,7 +21,7 @@ export default function ClientLayout({
   useStableAnchor(["design", "creation", "art", "sketches"], "header")
 
   return (
-    <LanguageProvider>
+    <LanguageProvider englishOnly>
       <EmilyHeader />
       {isMobile ? (
         children

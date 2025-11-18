@@ -209,7 +209,7 @@ export function getAllGallerySlugs() {
 }
 
 // Get all projects metadata
-export function getAllProjectsMetadata(locale: string = 'en'): ProjectMetadata[] {
+export function getAllProjectsMetadata(locale: string = 'en', section?: string): ProjectMetadata[] {
   ensureDirectoriesExist()
   try {
     if (!fs.existsSync(projectsDirectory)) {
@@ -260,8 +260,16 @@ let fileNames = fs.readdirSync(projectsDirectory)
         }
       })
 
+    // Filter by section if provided
+    let filteredProjects = allProjectsData;
+    if (section) {
+      filteredProjects = allProjectsData.filter(project => 
+        project.category?.toLowerCase() === section.toLowerCase()
+      );
+    }
+
     // Sort projects by date
-    return allProjectsData.sort((a, b) => {
+    return filteredProjects.sort((a, b) => {
       // Handle pinned items with numeric values
       // -1 means not pinned, positive numbers indicate priority (1 is highest)
       if (typeof a.pinned === 'number' && a.pinned >= 0 && (typeof b.pinned !== 'number' || b.pinned < 0)) {
@@ -288,7 +296,7 @@ let fileNames = fs.readdirSync(projectsDirectory)
 }
 
 // Get all gallery items metadata
-export function getAllGalleryMetadata(locale: string = 'en'): GalleryItemMetadata[] {
+export function getAllGalleryMetadata(locale: string = 'en', section?: string): GalleryItemMetadata[] {
   ensureDirectoriesExist()
   try {
     if (!fs.existsSync(galleryDirectory)) {
@@ -347,8 +355,16 @@ let fileNames = fs.readdirSync(galleryDirectory)
         }
       })
 
+    // Filter by section if provided
+    let filteredGallery = allGalleryData;
+    if (section) {
+      filteredGallery = allGalleryData.filter(item => 
+        item.description?.toLowerCase().includes(section.toLowerCase())
+      );
+    }
+
     // Sort gallery items by date
-    return allGalleryData.sort((a, b) => {
+    return filteredGallery.sort((a, b) => {
       // Handle pinned items with numeric values
       // -1 means not pinned, positive numbers indicate priority (1 is highest)
       if (typeof a.pinned === 'number' && a.pinned >= 0 && (typeof b.pinned !== 'number' || b.pinned < 0)) {

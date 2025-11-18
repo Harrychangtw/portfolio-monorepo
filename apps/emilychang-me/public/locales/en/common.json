@@ -1,0 +1,173 @@
+{
+  "header": {
+    "name": "Harry Chang",
+    "about": "About",
+    "updates": "Updates",
+    "projects": "Projects",
+    "gallery": "Gallery",
+    "paperReading": "Paper Reading",
+    "manifesto": "Manifesto",
+    "uses": "Uses",
+    "lab": "Icarus Lab",
+    "links": "Links",
+    "design": "Design System"
+  },
+  "footer": {
+    "socialContact": "Socials",
+    "personalResources": "Resources",
+    "siteNavigation": "Site Map",
+    "languageSwitch": "Language",
+    "motto1":"They said pick a lane. I built a highway, launched it uninvited, and shot the chaos at f/0.95.",
+    "motto2":"Curious? So am I. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+  },
+  "about": {
+    "title": "About",
+    "roles": "Roles",
+    "description": "Description"
+  },
+  "updates": {
+    "title": "Updates"
+  },
+  "sections": {
+    "about": "About",
+    "design": "Design",
+    "creation": "Creation",
+    "art": "Art",
+    "sketches": "Sketches"
+  },
+  "projects": {
+    "title": "Projects",
+    "backToProjects": "Back to projects",
+    "noProjectsFound": "No projects found.",
+    "year": "Year",
+    "role": "Role", 
+    "technologies": "Technologies",
+    "client": "Client",
+    "website": "Website"
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "backToGallery": "Back to gallery",
+    "noGalleryFound": "No gallery items found.",
+    "camera": "Camera",
+    "lens": "Lens",
+    "location": "Location",
+    "tags": "Tags"
+  },
+  "design": {
+    "title": "Design System",
+    "colorPalette": "Color Palette",
+    "typeScale": "Type Scale",
+    "weights": "Weights",
+    "characterSet": "Character Set",
+    "uppercase": "Uppercase",
+    "lowercase": "Lowercase",
+    "numbers": "Numbers",
+    "special": "Special",
+    "display": "Display",
+    "largeBody": "Large body",
+    "body": "Body",
+    "small": "Small",
+    "caption": "Caption"
+  },
+  "social": {
+    "gmail": "Email",
+    "discord": "Discord",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "letterboxd": "Letterboxd",
+    "linkedin": "LinkedIn",
+    "music": "Spotify"
+  },
+  "resources": {
+    "calendar": "Schedules",
+    "resume": "Résumé",
+    "manifesto": "Manifesto",
+    "icarus": "Icarus Lab",
+    "music": "Spotify",
+    "reading": "Reading List",
+    "uses": "Setup",
+    "site": "Portfolio Site",
+    "design": "Style Guide"
+  },
+  "links": {
+    "hero": "Code, camera, curiosity.",
+    "bio": "Highschooler researching at CyCraft Technology"
+  },
+  "readingList": {
+    "title": "Paper Reading List",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page",
+    "authors": "Authors",
+    "publishedOn": "Published on"
+  },
+  "tooltips": {
+    "about":"The obligatory \"who am I\" nobody reads",
+    "updates":"Humble brags disguised as a changelog",
+    "projects":"Things I did instead of touching grass",
+    "gallery":"Expensive glass pointed at mundane things",
+    "gmail": "Always happy for a chat!",
+    "discord": "Online 24/7, mentally present 3/7",
+    "calendar": "Book a time, let's chat!",
+    "github": "Where good code goes to get overengineered",
+    "instagram": "POV: You're watching a teenager pretend to be Fan Ho",
+    "linkedin": "Be my 6th connection.",
+    "letterboxd": "4.5 stars for everything because I have no taste",
+    "resume": "Yes it's literally just a Google Drive link.",
+    "manifesto": "My philosophy on work, creation, and curiosity",
+    "icarus": "For those who build their own wings.",
+    "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
+    "reading": "No TL;DR. Figure it out yourself.",
+    "uses": "Need these for \"school work\"",
+    "design": "Because \"Inspect Element\" is for amateurs."
+  },
+  
+  "letterGlitch": {
+    "line1": "I was never taught to create—",
+    "line2": "I was born remembering how.",
+    "line3": "I quiet the noise of knowing,",
+    "line4": "So my hands recall the child I was."
+  },
+  "common": {
+    "close": "Close",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "notification": {
+    "pageNotFound": "Page not found. Redirected to home."
+  },
+  "lab": {
+    "capsule": "2026 Q2 · Limited Release",
+    "heroLine1": "Skills to Lead Tomorrow.",
+    "heroLine2": "Tools to Create Today.",
+    "tagline": "High-level skills for young creators—speaking, research, storytelling. Plus exclusive consulting for those ready to go deeper.",
+    "heroEmailPlaceholder": "your@email.com",
+    "applyNow": "Join Waitlist",
+    "formTitle": "Reserve Your Spot",
+    "formSubtitle": "Launching Q2 2026. Get early bird access.",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "emailRequired": "Email *",
+    "whatInterests": "What interests you most?",
+    "preferredTier": "Preferred format",
+    "processing": "Submitting...",
+    "joinWaitlist": "Join Waitlist",
+    "privacyNote": "Your info stays private. No spam, ever.",
+    "successTitle": "You're in!",
+    "successMessage": "You're #{position} on the waitlist. Check your email for confirmation.",
+    "errorGeneric": "Something went wrong",
+    "errorNetwork": "Connection failed. Try again?",
+    "close": "Close",
+    "interests": {
+      "frameworks": "Research & Frameworks",
+      "speaking": "Public Speaking & Debate",
+      "narrative": "Content & Narrative Design"
+    },
+    "tiers": {
+      "async": "Self-Paced Courses",
+      "cohort": "Live Cohorts",
+      "consulting": "1-on-1 Sessions"
+    }
+  }
+}

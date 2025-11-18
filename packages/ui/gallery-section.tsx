@@ -7,7 +7,14 @@ import { createBalancedLayout } from "@portfolio/lib/lib/utils"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
 
-export default function GallerySection() {
+interface GallerySectionProps {
+  section?: string
+  title?: string
+  sectionId?: string
+  source?: 'gallery' | 'projects' // Which API to fetch from
+}
+
+export default function GallerySection({ section, title, sectionId = "gallery", source = 'gallery' }: GallerySectionProps = {}) {
   const { language, t } = useLanguage()
   const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -34,9 +41,29 @@ export default function GallerySection() {
   useEffect(() => {
     async function fetchGalleryItems() {
       try {
-        const response = await fetch(`/api/gallery?locale=${language}`)
+        const sectionParam = section ? `&section=${encodeURIComponent(section)}` : ''
+        const apiEndpoint = source === 'projects' ? 'projects' : 'gallery'
+        const response = await fetch(`/api/${apiEndpoint}?locale=${language}${sectionParam}`)
         const data = await response.json()
-        setGalleryItems(data)
+        
+        // If fetching from projects, transform to gallery format
+        if (source === 'projects') {
+          const transformedData = data.map((project: any) => ({
+            slug: project.slug,
+            title: project.title,
+            description: project.description,
+            quote: project.subcategory || project.category,
+            imageUrl: project.imageUrl,
+            date: project.date,
+            pinned: project.pinned,
+            locked: project.locked,
+            width: project.imageWidth,
+            height: project.imageHeight,
+          }))
+          setGalleryItems(transformedData)
+        } else {
+          setGalleryItems(data)
+        }
       } catch (error) {
         console.error('Failed to fetch gallery items:', error)
       } finally {
@@ -48,7 +75,7 @@ export default function GallerySection() {
     if (shouldLoadImmediately || isVisible || forceLoad) {
       fetchGalleryItems()
     }
-  }, [isVisible, language, shouldLoadImmediately, forceLoad])
+  }, [isVisible, language, shouldLoadImmediately, forceLoad, section, source])
 
   // Handle pinned items (maintain their positions in the layout)
   const getPinnedItemsMap = (items: GalleryItemMetadata[]) => {
@@ -96,9 +123,9 @@ export default function GallerySection() {
   )
 
   return (
-    <section ref={sectionRef} id="gallery" className="py-12 md:py-16">
+    <section ref={sectionRef} id={sectionId} className="py-12 md:py-16">
       <div className="container">
-        <h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('gallery.title')}</h2>
+        <h2 className="font-heading italic text-2xl md:text-3xl text-primary mb-8">{title || t('gallery.title')}</h2>
         
         {/* Container with space reservation */}
         <div 

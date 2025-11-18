@@ -53,12 +53,8 @@ export default function RootLayout({
     <html 
       lang="en" 
       className={`${ibmPlexSans.variable} ${playfairDisplay.variable}`}
-      style={{
-        '--font-body': 'var(--font-ibm-plex)',
-        '--font-heading': 'var(--font-playfair-display)',
-      } as React.CSSProperties}
     >
-      <body className={`bg-background text-primary antialiased min-h-screen flex flex-col font-[var(--font-body)]`}>
+      <body className="bg-background text-primary antialiased min-h-screen flex flex-col">
         {children}
       </body>
     </html>

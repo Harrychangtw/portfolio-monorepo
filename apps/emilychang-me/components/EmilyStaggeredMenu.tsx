@@ -1,0 +1,551 @@
+"use client"
+
+import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import Link from "next/link"
+
+export interface StaggeredMenuItem {
+  label: string;
+  ariaLabel: string;
+  link: string;
+  sectionId: string;
+}
+
+export interface SocialItem {
+  label: string;
+  link: string;
+}
+
+export interface EmilyStaggeredMenuProps {
+  position?: 'left' | 'right';
+  colors?: string[];
+  items?: StaggeredMenuItem[];
+  socialItems?: SocialItem[];
+  displaySocials?: boolean;
+  displayItemNumbering?: boolean;
+  className?: string;
+  menuButtonColor?: string;
+  openMenuButtonColor?: string;
+  accentColor?: string;
+  changeMenuColorOnOpen?: boolean;
+  onMenuOpen?: () => void;
+  onMenuClose?: () => void;
+  onSectionClick?: (sectionId: string, event?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  onHeaderBackgroundToggle?: (isMenuOpen: boolean) => void;
+}
+
+export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
+  position = 'right',
+  colors = ['hsl(var(--accent))', 'hsl(var(--background))'],
+  items = [],
+  socialItems = [],
+  displaySocials = false,
+  displayItemNumbering = false,
+  className,
+  menuButtonColor = 'hsl(var(--primary))',
+  openMenuButtonColor = 'hsl(var(--primary))',
+  changeMenuColorOnOpen = true,
+  accentColor = 'hsl(var(--accent))',
+  onMenuOpen,
+  onMenuClose,
+  onSectionClick,
+  onHeaderBackgroundToggle
+}: EmilyStaggeredMenuProps) => {
+  const [open, setOpen] = useState(false);
+  const openRef = useRef(false);
+  const { t } = useLanguage()
+
+  // Ensure menu is closed on mount
+  useEffect(() => {
+    setOpen(false);
+    openRef.current = false;
+    
+    // Ensure panel and prelayers are off-screen initially
+    if (panelRef.current) {
+      const offscreen = position === 'left' ? -100 : 100;
+      gsap.set(panelRef.current, { xPercent: offscreen });
+      
+      // Also set prelayers if they exist
+      if (preLayersRef.current) {
+        const prelayerElements = preLayersRef.current.querySelectorAll('.sm-prelayer');
+        if (prelayerElements && prelayerElements.length > 0) {
+          gsap.set(Array.from(prelayerElements), { xPercent: offscreen });
+        }
+      }
+    }
+  }, [position]); // Run on mount and when position changes
+
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  const preLayersRef = useRef<HTMLDivElement | null>(null);
+  const preLayerElsRef = useRef<HTMLElement[]>([]);
+
+  const plusHRef = useRef<HTMLSpanElement | null>(null);
+  const plusVRef = useRef<HTMLSpanElement | null>(null);
+  const iconRef = useRef<HTMLSpanElement | null>(null);
+
+  const openTlRef = useRef<gsap.core.Timeline | null>(null);
+  const closeTweenRef = useRef<gsap.core.Tween | null>(null);
+  const spinTweenRef = useRef<gsap.core.Timeline | null>(null);
+  const colorTweenRef = useRef<gsap.core.Tween | null>(null);
+
+  const toggleBtnRef = useRef<HTMLButtonElement | null>(null);
+  const busyRef = useRef(false);
+
+  const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const panel = panelRef.current;
+      const preContainer = preLayersRef.current;
+      const toggleBtn = toggleBtnRef.current;
+
+      const plusH = plusHRef.current;
+      const plusV = plusVRef.current;
+      const icon = iconRef.current;
+
+      if (!panel || !plusH || !plusV || !icon || !toggleBtn) return;
+
+      let preLayers: HTMLElement[] = [];
+      if (preContainer) {
+        const prelayerElements = preContainer.querySelectorAll('.sm-prelayer');
+        if (prelayerElements && prelayerElements.length > 0) {
+          preLayers = Array.from(prelayerElements) as HTMLElement[];
+        }
+      }
+      preLayerElsRef.current = preLayers;
+
+      const offscreen = position === 'left' ? -100 : 100;
+      
+      // Set panel position
+      gsap.set(panel, { xPercent: offscreen, immediateRender: true });
+      
+      // Set prelayers position only if they exist
+      if (preLayers.length > 0) {
+        gsap.set(preLayers, { xPercent: offscreen, immediateRender: true });
+      }
+
+      // Ensure menu items are initially hidden
+      const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[];
+      if (itemEls.length > 0) {
+        gsap.set(itemEls, { yPercent: 140, rotate: 10 });
+      }
+      
+      const numberEls = Array.from(
+        panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item')
+      ) as HTMLElement[];
+      if (numberEls.length > 0) {
+        gsap.set(numberEls, { ['--sm-num-opacity' as any]: 0 });
+      }
+
+      gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
+      gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
+      gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
+      gsap.set(toggleBtn, { color: menuButtonColor });
+    });
+    return () => ctx.revert();
+  }, [menuButtonColor, position]);
+
+  const buildOpenTimeline = useCallback(() => {
+    const panel = panelRef.current;
+    const layers = preLayerElsRef.current || [];
+    if (!panel) return null;
+
+    openTlRef.current?.kill();
+    if (closeTweenRef.current) {
+      closeTweenRef.current.kill();
+      closeTweenRef.current = null;
+    }
+    itemEntranceTweenRef.current?.kill();
+
+    const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[];
+    const numberEls = Array.from(
+      panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item')
+    ) as HTMLElement[];
+
+    const layerStates = layers.length > 0 ? layers.map(el => ({ el, start: Number(gsap.getProperty(el, 'xPercent')) })) : [];
+    const panelStart = Number(gsap.getProperty(panel, 'xPercent'));
+
+    if (itemEls.length > 0) gsap.set(itemEls, { yPercent: 140, rotate: 10 });
+    if (numberEls.length > 0) gsap.set(numberEls, { ['--sm-num-opacity' as any]: 0 });
+
+    const tl = gsap.timeline({ paused: true });
+
+    // Only animate layers if they exist
+    if (layerStates.length > 0) {
+      layerStates.forEach((ls, i) => {
+        // First layer (accent) starts immediately, others are staggered
+        const delay = i === 0 ? 0 : i * 0.15;
+        tl.fromTo(ls.el, { xPercent: ls.start }, { 
+          xPercent: 0, 
+          duration: i === 0 ? 0.6 : 0.5, // Longer duration for accent to be more visible
+          ease: 'power4.out' 
+        }, delay);
+      });
+    }
+
+    // Calculate the correct last time based on actual delays used
+    const lastTime = layerStates.length > 0 ? (layerStates.length - 1) * 0.05 : 0;
+    const panelInsertTime = lastTime + 0.1; // Longer delay so accent is fully visible before panel
+    const panelDuration = 0.5;
+
+    tl.fromTo(
+      panel,
+      { xPercent: panelStart },
+      { xPercent: 0, duration: panelDuration, ease: 'power4.out' },
+      panelInsertTime
+    );
+
+    if (itemEls.length > 0) {
+      const itemsStartRatio = 0.15;
+      const itemsStart = panelInsertTime + panelDuration * itemsStartRatio;
+
+      tl.to(
+        itemEls,
+        { yPercent: 0, rotate: 0, duration: 1, ease: 'power4.out', stagger: { each: 0.1, from: 'start' } },
+        itemsStart
+      );
+
+      if (numberEls.length > 0) {
+        tl.to(
+          numberEls,
+          { duration: 0.6, ease: 'power2.out', ['--sm-num-opacity' as any]: 1, stagger: { each: 0.08, from: 'start' } },
+          itemsStart + 0.1
+        );
+      }
+    }
+
+    openTlRef.current = tl;
+    return tl;
+  }, [position]);
+
+  const playOpen = useCallback(() => {
+    if (busyRef.current) return;
+    busyRef.current = true;
+    const tl = buildOpenTimeline();
+    if (tl) {
+      tl.eventCallback('onComplete', () => {
+        busyRef.current = false;
+      });
+      tl.play(0);
+    } else {
+      busyRef.current = false;
+    }
+  }, [buildOpenTimeline]);
+
+  const playClose = useCallback(() => {
+    openTlRef.current?.kill();
+    openTlRef.current = null;
+    itemEntranceTweenRef.current?.kill();
+
+    const panel = panelRef.current;
+    const layers = preLayerElsRef.current || [];
+    if (!panel) return;
+
+    const all: HTMLElement[] = layers.length > 0 ? [...layers, panel] : [panel];
+    closeTweenRef.current?.kill();
+
+    const offscreen = position === 'left' ? -100 : 100;
+
+    closeTweenRef.current = gsap.to(all, {
+      xPercent: offscreen,
+      duration: 0.32,
+      ease: 'power3.in',
+      overwrite: 'auto',
+      onComplete: () => {
+        const itemEls = Array.from(panel.querySelectorAll('.sm-panel-itemLabel')) as HTMLElement[];
+        if (itemEls.length > 0) gsap.set(itemEls, { yPercent: 140, rotate: 10 });
+
+        const numberEls = Array.from(
+          panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item')
+        ) as HTMLElement[];
+        if (numberEls.length > 0) gsap.set(numberEls, { ['--sm-num-opacity' as any]: 0 });
+
+        // Hide the panel only after the slide-out animation finishes
+        setOpen(false);
+        busyRef.current = false;
+      }
+    });
+  }, [position]);
+
+  const animateIcon = useCallback((opening: boolean) => {
+    const icon = iconRef.current;
+    const h = plusHRef.current;
+    const v = plusVRef.current;
+    if (!icon || !h || !v) return;
+
+    spinTweenRef.current?.kill();
+
+    if (opening) {
+      gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
+      spinTweenRef.current = gsap
+        .timeline({ defaults: { ease: 'power4.out' } })
+        .to(h, { rotate: 45, duration: 0.5 }, 0)
+        .to(v, { rotate: -45, duration: 0.5 }, 0);
+    } else {
+      spinTweenRef.current = gsap
+        .timeline({ defaults: { ease: 'power3.inOut' } })
+        .to(h, { rotate: 0, duration: 0.35 }, 0)
+        .to(v, { rotate: 90, duration: 0.35 }, 0)
+        .to(icon, { rotate: 0, duration: 0.001 }, 0);
+    }
+  }, []);
+
+  const animateColor = useCallback(
+    (opening: boolean) => {
+      const btn = toggleBtnRef.current;
+      if (!btn) return;
+      colorTweenRef.current?.kill();
+      if (changeMenuColorOnOpen) {
+        const targetColor = opening ? openMenuButtonColor : menuButtonColor;
+        colorTweenRef.current = gsap.to(btn, { color: targetColor, delay: 0.18, duration: 0.3, ease: 'power2.out' });
+      } else {
+        gsap.set(btn, { color: menuButtonColor });
+      }
+    },
+    [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen]
+  );
+
+  React.useEffect(() => {
+    if (toggleBtnRef.current) {
+      if (changeMenuColorOnOpen) {
+        const targetColor = openRef.current ? openMenuButtonColor : menuButtonColor;
+        gsap.set(toggleBtnRef.current, { color: targetColor });
+      } else {
+        gsap.set(toggleBtnRef.current, { color: menuButtonColor });
+      }
+    }
+  }, [changeMenuColorOnOpen, menuButtonColor, openMenuButtonColor]);
+
+  const toggleMenu = useCallback(() => {
+    const target = !openRef.current;
+    openRef.current = target;
+
+    // Control body scroll - Lock/unlock scrolling
+    if (target) {
+      // Store current scroll position to prevent jump on unlock
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+      onMenuOpen?.();
+      onHeaderBackgroundToggle?.(true);
+      // Make panel visible before playing the open animation
+      setOpen(true);
+      playOpen();
+    } else {
+      // Restore scroll position
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflow = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
+      onMenuClose?.();
+      onHeaderBackgroundToggle?.(false);
+      playClose();
+    }
+
+    animateIcon(target);
+    animateColor(target);
+  }, [playOpen, playClose, animateIcon, animateColor, onMenuOpen, onMenuClose, onHeaderBackgroundToggle]);
+
+  const handleItemClick = (item: StaggeredMenuItem, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    // Close the menu
+    toggleMenu();
+    // Call the section click handler if provided
+    if (onSectionClick) {
+      onSectionClick(item.sectionId, e);
+    }
+  };
+
+  return (
+    <div className="sm-scope w-full h-full">
+      <div
+        className={(className ? className + ' ' : '') + 'staggered-menu-wrapper relative w-full h-full z-40'}
+        style={accentColor ? ({ ['--sm-accent' as any]: accentColor } as React.CSSProperties) : undefined}
+        data-position={position}
+        data-open={open || undefined}
+      >
+        {/* Integrated prelayers */}
+        <div 
+          ref={preLayersRef}
+          className="sm-prelayers fixed top-0 right-0 bottom-0 w-full pointer-events-none z-[55]"
+        >
+          {colors.map((color, idx) => (
+            <div 
+              key={idx}
+              className="sm-prelayer absolute top-0 right-0 h-full w-full" 
+              style={{ backgroundColor: color }} 
+            />
+          ))}
+        </div>
+
+        <div className="staggered-menu-toggle-container absolute top-0 right-0 z-20 pointer-events-auto">
+          <motion.button
+            ref={toggleBtnRef}
+            className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-white font-space-grotesk font-medium leading-none overflow-visible p-2 hover:scale-105 transition-transform duration-200"
+            aria-label={open ? t('common.closeMenu') || 'Close menu' : t('common.openMenu') || 'Open menu'}
+            aria-expanded={open}
+            aria-controls="staggered-menu-panel"
+            onClick={toggleMenu}
+            type="button"
+            whileHover={{ y: -2 }}
+            transition={{ duration: 0.2 }}
+          >
+            <AnimatePresence mode="wait">
+              {open && (
+                <motion.span 
+                key="close-text"
+                className="mr-2 whitespace-nowrap" 
+                aria-hidden="true" 
+                style={{ writingMode: 'horizontal-tb', textOrientation: 'mixed' }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ 
+                  duration: 0.3, 
+                  ease: "easeOut"
+                }}
+                >
+                {t('common.close') || 'Close'}
+                </motion.span>
+              )}
+            </AnimatePresence>
+
+            <span
+              ref={iconRef}
+              className="sm-icon relative w-[14px] h-[14px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
+              aria-hidden="true"
+            >
+              <span
+                ref={plusHRef}
+                className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+              />
+              <span
+                ref={plusVRef}
+                className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+              />
+            </span>
+          </motion.button>
+        </div>
+
+        <aside
+          id="staggered-menu-panel"
+          ref={panelRef}
+          className="staggered-menu-panel fixed top-0 right-0 h-[100dvh] bg-background flex flex-col p-[3rem_2rem_4rem_2rem] md:p-[6em_2rem_4rem_2rem] overflow-y-auto z-10"
+          style={{ 
+            visibility: open ? 'visible' : 'hidden'
+          }}
+          aria-hidden={!open}
+        >
+          <div className="sm-panel-inner flex-1 flex flex-col gap-5">
+            <ul
+              className="sm-panel-list list-none m-0 p-0 flex flex-col gap-4"
+              role="list"
+              data-numbering={displayItemNumbering || undefined}
+            >
+              {items && items.length ? (
+                items.map((it, idx) => (
+                  <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
+                    <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                      <Link
+                        className="sm-panel-item relative text-foreground font-space-grotesk font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
+                        href={it.link}
+                        aria-label={it.ariaLabel}
+                        data-index={idx + 1}
+                        onClick={(e) => handleItemClick(it, e)}
+                      >
+                        <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform whitespace-nowrap">
+                          {it.label}
+                          <span className="sm-panel-superscript">
+                            {String(idx + 1)}
+                          </span>
+                        </span>
+                      </Link>
+                    </motion.div>
+                  </li>
+                ))
+              ) : (
+                <li className="sm-panel-itemWrap relative overflow-hidden leading-none" aria-hidden="true">
+                  <span className="sm-panel-item relative text-foreground font-space-grotesk font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
+                    <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
+                      No items
+                    </span>
+                  </span>
+                </li>
+              )}
+            </ul>
+            
+            {/* Social Links Section */}
+            {displaySocials && socialItems && socialItems.length > 0 && (
+              <div className="sm-panel-socials mt-auto pt-4 pb-16">
+                <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+                  {t('footer.socialContact') || 'Social & Contact'}
+                </h3>
+                <ul className="list-none m-0 p-0 flex flex-wrap gap-6" role="list">
+                  {socialItems.map((social, idx) => (
+                    <li key={social.label + idx}>
+                      <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                        <a
+                          href={social.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-ibm-plex text-primary text-base transition-colors duration-200 ease-linear hover:text-[var(--sm-accent)]"
+                          aria-label={social.label}
+                        >
+                          {social.label}
+                        </a>
+                      </motion.div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </aside>
+      </div>
+
+      <style jsx>{`
+        .sm-scope .staggered-menu-wrapper { position: relative; width: 100%; height: 100%; z-index: 40; }
+        .sm-scope .sm-toggle { position: relative; display: inline-flex; align-items: center; gap: 0.3rem; background: transparent; border: none; cursor: pointer; font-weight: 500; line-height: 1; overflow: visible; }
+        .sm-scope .sm-toggle:focus-visible { outline: 2px solid #ffffffaa; outline-offset: 4px; border-radius: 4px; }
+        .sm-scope .sm-toggle-textWrap { position: relative; display: inline-block; height: 1em; overflow: hidden; white-space: nowrap; width: var(--sm-toggle-width, auto); min-width: var(--sm-toggle-width, auto); }
+        .sm-scope .sm-toggle-textInner { display: flex; flex-direction: column; line-height: 1; }
+        .sm-scope .sm-toggle-line { display: block; height: 1em; line-height: 1; }
+        .sm-scope .sm-icon { position: relative; width: 14px; height: 14px; flex: 0 0 14px; display: inline-flex; align-items: center; justify-content: center; will-change: transform; }
+        .sm-scope .sm-panel-itemWrap { position: relative; overflow: hidden; line-height: 1; }
+        .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 2px; background: currentColor; border-radius: 2px; transform: translate(-50%, -50%); will-change: transform; }
+        .sm-scope .staggered-menu-panel { width: clamp(280px, 40vw, 440px); }
+        .sm-scope [data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
+        .sm-scope .sm-prelayers { position: fixed; top: 0; right: 0; bottom: 0; width: clamp(280px, 40vw, 440px); pointer-events: none;}
+        .sm-scope [data-position='left'] .sm-prelayers { right: auto; left: 0; }
+        .sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; transform: translateX(0); }
+        .sm-scope .sm-panel-inner { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }
+        .sm-scope .sm-panel-item:hover { color: var(--sm-accent, hsl(var(--accent))); }
+        .sm-scope .sm-panel-list[data-numbering] { counter-reset: smItem; }
+        .sm-scope .sm-panel-list[data-numbering] .sm-panel-item::after { counter-increment: smItem; content: counter(smItem, decimal-leading-zero); display: inline-block; vertical-align: super; margin-left: 0.1em; font-size: 18px; font-weight: 700; color: var(--sm-accent, hsl(var(--accent))); white-space: nowrap; pointer-events: none; user-select: none; opacity: var(--sm-num-opacity, 0); }
+        .sm-scope .sm-panel-superscript { display: inline-block; vertical-align: super; margin-left: 0.3em; font-size: 18px; font-weight: 700; color: var(--sm-accent, hsl(var(--accent))); white-space: nowrap; pointer-events: none; user-select: none; }
+        @media (max-width: 1024px) { 
+          .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } 
+          .sm-scope .sm-prelayers { width: 100%; left: 0; right: 0; }
+        }
+        @media (max-width: 640px) { 
+          .sm-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } 
+          .sm-scope .sm-prelayers { width: 100%; left: 0; right: 0; }
+        }
+        @media (max-height: 600px) {
+          .sm-scope .sm-panel-socials {
+            display: none;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default EmilyStaggeredMenu;
