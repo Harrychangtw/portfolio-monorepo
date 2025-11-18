@@ -136,8 +136,8 @@ export default function ProjectCard({
 
       {/* Content area with fixed height and padding */}
       <div className="pt-3">
-        <h3 className="font-space-grotesk text-lg font-medium line-clamp-1">{title}</h3>
-          <p className="font-ibm-plex text-secondary text-sm mt-0.5 mb-4">
+        <h3 className="font-heading text-lg font-medium line-clamp-1 text-primary">{title}</h3>
+          <p className="font-body text-secondary text-sm mt-0.5 mb-4">
           {category}
           {subcategory && ` • ${subcategory}`}
           </p>
@@ -171,7 +171,7 @@ export default function ProjectCard({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.2 }}
-          className="fixed bg-[hsl(var(--accent))] text-black text-sm px-3 py-1 rounded shadow-lg font-space-grotesk z-50"
+          className="fixed bg-[hsl(var(--accent))] text-black text-sm px-3 py-1 rounded shadow-lg font-heading z-50"
           style={{ top: tooltip.y - 40, left: tooltip.x, pointerEvents: 'none', transform: 'translateX(-50%)' }}
         >
           {tooltipText}

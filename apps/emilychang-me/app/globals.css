@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Emily's color scheme - light mode */
-    --background: 320 10% 95%; /* #F7EEF4 */
+    --background: 330  50% 96%; /* #faf2f6 */
     --foreground: 0 0% 100%; /* #FFFFFF */
     --card: 0 0% 100%; /* #FFFFFF */
     --card-foreground: 0 0% 4%; /* #0A0A0A */
@@ -65,5 +65,19 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  /* Prose content styling */
+  .prose {
+    --tw-prose-body: hsl(var(--primary));
+    --tw-prose-headings: hsl(var(--primary));
+    --tw-prose-links: hsl(var(--primary));
+    --tw-prose-bold: hsl(var(--primary));
+    --tw-prose-counters: hsl(var(--muted-foreground));
+    --tw-prose-bullets: hsl(var(--muted-foreground));
+    --tw-prose-quotes: hsl(var(--primary));
+    --tw-prose-code: hsl(var(--primary));
   }
 }

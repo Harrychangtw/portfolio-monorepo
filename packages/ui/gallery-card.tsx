@@ -19,6 +19,7 @@ interface GalleryCardProps {
   aspectRatio?: number
   width?: number
   height?: number
+  basePath?: string
 }
 
 export default function GalleryCard({ 
@@ -32,7 +33,8 @@ export default function GalleryCard({
   index = 0,
   aspectRatio,
   width,
-  height
+  height,
+  basePath = 'gallery'
 }: GalleryCardProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isVisible = useIntersectionObserver({
@@ -130,7 +132,7 @@ export default function GalleryCard({
       }}
       onHoverStart={prefetchFullImage}
     >
-      <Link href={`/gallery/${slug}`} className="block">
+      <Link href={`/${basePath}/${slug}`} className="block">
         <div className="relative overflow-hidden bg-white">
           {/* Container for the image and border */}
           <div className="relative">
@@ -207,8 +209,8 @@ export default function GalleryCard({
           
           {/* Title overlay */}
           <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-            <h3 className="font-space-grotesk text-lg font-medium text-white">{title}</h3>
-            <p className="font-ibm-plex text-sm text-white/80 mt-1">{quote}</p>
+            <h3 className="font-heading text-lg font-medium text-white">{title}</h3>
+            <p className="font-body text-sm text-white/80 mt-1">{quote}</p>
           </div>
         </div>
       </Link>

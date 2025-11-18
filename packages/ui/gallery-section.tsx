@@ -11,9 +11,10 @@ interface GallerySectionProps {
   title?: string
   sectionId?: string
   source?: 'gallery' | 'projects' // Which API to fetch from
+  basePath?: string // Custom base path for card links (e.g., 'canvas' instead of 'gallery')
 }
 
-export default function GallerySection({ section, title, sectionId = "gallery", source = 'gallery' }: GallerySectionProps = {}) {
+export default function GallerySection({ section, title, sectionId = "gallery", source = 'gallery', basePath = 'gallery' }: GallerySectionProps = {}) {
   const { language, t } = useLanguage()
   const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -164,7 +165,8 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
                       priority={layoutItem.itemIndex < 3}
                       index={layoutItem.itemIndex}
                       width={layoutItem.item.width}       
-                      height={layoutItem.item.height}     
+                      height={layoutItem.item.height}
+                      basePath={basePath}
                     />
                   ))}
                 </div>

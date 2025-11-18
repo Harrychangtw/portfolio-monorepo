@@ -1,6 +1,6 @@
 "use client"
 
-import AboutSection from "@portfolio/ui/about-section"
+import EmilyAboutSection from "@portfolio/ui/emily-about-section"
 import ProjectsSection from "@portfolio/ui/projects-section"
 import GallerySection from "@portfolio/ui/gallery-section"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
@@ -24,8 +24,8 @@ function HomeContent() {
   
   return (
     <>
-      <AboutSection />
-      <ProjectsSection 
+      <EmilyAboutSection />
+      <ProjectsSection
         sectionId="projects" 
         section="Projects"
         title={t('sections.projects')}
@@ -34,6 +34,7 @@ function HomeContent() {
         sectionId="canvas" 
         source="gallery"
         title={t('sections.canvas')}
+        basePath="canvas"
       />
       <SketchesSection />
     </>

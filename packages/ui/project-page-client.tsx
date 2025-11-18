@@ -126,11 +126,11 @@ export default function ProjectPageClient({ initialProject }: ProjectPageClientP
                     className="inline-flex items-center text-secondary hover:text-primary transition-colors"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    <span className="font-ibm-plex">{t('projects.backToProjects')}</span>
+                    <span className="font-body">{t('projects.backToProjects')}</span>
                   </Link>
                   <div className="mt-8">
-                    <h1 className="font-space-grotesk text-3xl md:text-4xl font-bold mb-4 md:mb-8">{project.title}</h1>
-                    <p className="font-ibm-plex text-secondary uppercase text-sm mb-6 md:mb-12">{project.category}</p>
+                    <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{project.title}</h1>
+                    <p className="font-body text-secondary uppercase text-sm mb-6 md:mb-12">{project.category}</p>
                   </div>
                 </div>
               </div>
@@ -141,43 +141,43 @@ export default function ProjectPageClient({ initialProject }: ProjectPageClientP
               <div className="md:mt-14">
                 {/* Description area */}
                 <div className="mb-16 md:mb-24">
-                  <p className="font-ibm-plex text-lg md:text-xl mb-10 md:mb-16">{project.description}</p>
+                  <p className="font-body text-lg md:text-xl mb-10 md:mb-16 text-primary">{project.description}</p>
 
                   {/* Additional attributes in a grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8 md:gap-x-4 mb-16 md:mb-24 text-secondary">
                     {project.year && (
                       <div>
-                        <p className="font-space-grotesk uppercase text-xs mb-1">{t('projects.year')}</p>
-                        <p className="font-ibm-plex">{project.year}</p>
+                        <p className="font-heading uppercase text-xs mb-1 text-secondary">{t('projects.year')}</p>
+                        <p className="font-body text-secondary">{project.year}</p>
                       </div>
                     )}
                     {project.role && (
                       <div>
-                        <p className="font-space-grotesk uppercase text-xs mb-1">{t('projects.role')}</p>
-                        <p className="font-ibm-plex">{project.role}</p>
+                        <p className="font-heading uppercase text-xs mb-1 text-secondary">{t('projects.role')}</p>
+                        <p className="font-body text-secondary">{project.role}</p>
                       </div>
                     )}
                     {project.technologies && project.technologies.length > 0 && (
                       <div>
-                        <p className="font-space-grotesk uppercase text-xs mb-1">{t('projects.technologies')}</p>
-                        <p className="font-ibm-plex">{project.technologies.join(", ")}</p>
+                        <p className="font-heading uppercase text-xs mb-1 text-secondary">{t('projects.technologies')}</p>
+                        <p className="font-body text-secondary">{project.technologies.join(", ")}</p>
                       </div>
                     )}
                     {project.client && (
                       <div>
-                        <p className="font-space-grotesk uppercase text-xs mb-1">{t('projects.client')}</p>
-                        <p className="font-ibm-plex">{project.client}</p>
+                        <p className="font-heading uppercase text-xs mb-1 text-secondary">{t('projects.client')}</p>
+                        <p className="font-body text-secondary">{project.client}</p>
                       </div>
                     )}
                     {project.website && (
                       <div>
-                        <p className="font-space-grotesk uppercase text-xs mb-1">{t('projects.website')}</p>
-                        <p className="font-ibm-plex">
+                        <p className="font-heading uppercase text-xs mb-1 text-secondary">{t('projects.website')}</p>
+                        <p className="font-body text-secondary">
                           <a
                             href={project.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:underline"
+                            className="hover:underline hover:text-primary transition-colors"
                           >
                             {project.website.replace(/^https?:\/\//, '')}
                           </a>

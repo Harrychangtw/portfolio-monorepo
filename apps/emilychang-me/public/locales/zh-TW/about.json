@@ -1,0 +1,32 @@
+{
+  "bio1": "{{bio1}}",
+  "bio2": "{{bio2}}",
+  "bio3": "{{bio3}}",
+  "roles": {
+    "llmResearcher": {
+      "title": "{{llmResearcher_title}}",
+      "period": "{{llmResearcher_period}}",
+      "description": "{{llmResearcher_description}}"
+    },
+    "speaker": {
+      "title": "{{speaker_title}}",
+      "period": "{{speaker_period}}",
+      "description": "{{speaker_description}}"
+    },
+    "designer": {
+      "title": "{{designer_title}}",
+      "period": "{{designer_period}}",
+      "description": "{{designer_description}}"
+    },
+    "developer": {
+      "title": "{{developer_title}}",
+      "period": "{{developer_period}}",
+      "description": "{{developer_description}}"
+    },
+    "photographer": {
+      "title": "{{photographer_title}}",
+      "period": "{{photographer_period}}",
+      "description": "{{photographer_description}}"
+    }
+  }
+}

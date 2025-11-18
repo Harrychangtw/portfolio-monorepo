@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <motion.button
-          className="flex items-center space-x-2 font-space-grotesk text-secondary hover:text-[hsl(var(--accent))] transition-colors duration-200"
+          className="flex items-center space-x-2 font-heading text-secondary hover:text-[hsl(var(--accent))] transition-colors duration-200"
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.2 }}

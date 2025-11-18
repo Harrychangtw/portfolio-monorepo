@@ -16,7 +16,7 @@ export default function CanvasPage() {
           View my artistic works and visual creations.
         </p>
       </div>
-      <GallerySection source="gallery" sectionId="canvas" />
+      <GallerySection source="gallery" sectionId="canvas" basePath="canvas" />
     </div>
   )
 }

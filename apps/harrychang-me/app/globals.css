@@ -6,7 +6,7 @@
 @layer base {
   :root {
     --background: 0 0% 4%;
-    --foreground: 0 0% 100%;
+    --foreground: 0 0% 100%; 
     --card: 0 0% 6%;
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 6%;
@@ -171,6 +171,18 @@
     font-family: var(--font-body);
     font-size: 0.85em;
     font-weight: 500;
+  }
+
+  /* Prose content styling */
+  .prose {
+    --tw-prose-body: hsl(var(--foreground));
+    --tw-prose-headings: hsl(var(--foreground));
+    --tw-prose-links: hsl(var(--primary));
+    --tw-prose-bold: hsl(var(--foreground));
+    --tw-prose-counters: hsl(var(--muted-foreground));
+    --tw-prose-bullets: hsl(var(--muted-foreground));
+    --tw-prose-quotes: hsl(var(--foreground));
+    --tw-prose-code: hsl(var(--foreground));
   }
 }
 
