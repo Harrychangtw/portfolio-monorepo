@@ -7,7 +7,7 @@ imageUrl: "/placeholder.webp"
 date: "2023-11-05"
 year: "2023"
 pinned: -1
-locked: false
+locked: true
 featured: false
 ---
 

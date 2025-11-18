@@ -531,8 +531,8 @@ export default function Header() {
                 items={menuItems}
                 socialItems={socialItems}
                 accentColor="hsl(var(--accent))"
-                menuButtonColor="hsl(var(--primary))"
-                openMenuButtonColor="hsl(var(--primary))"
+                menuButtonColor="#ffffff"
+                openMenuButtonColor="#ffffff"
                 displaySocials={true}
                 displayItemNumbering={false}
                 onMenuOpen={() => setIsMenuOpen(true)}

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
@@ -57,25 +57,26 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
   const openRef = useRef(false);
   const { t } = useLanguage()
 
-  // Ensure menu is closed on mount
-  useEffect(() => {
-    setOpen(false);
-    openRef.current = false;
+  // Helper to resolve CSS variables to actual color values for GSAP
+  const resolveColor = useCallback((color: string): string => {
+    if (typeof window === 'undefined') return color;
     
-    // Ensure panel and prelayers are off-screen initially
-    if (panelRef.current) {
-      const offscreen = position === 'left' ? -100 : 100;
-      gsap.set(panelRef.current, { xPercent: offscreen });
-      
-      // Also set prelayers if they exist
-      if (preLayersRef.current) {
-        const prelayerElements = preLayersRef.current.querySelectorAll('.sm-prelayer');
-        if (prelayerElements && prelayerElements.length > 0) {
-          gsap.set(Array.from(prelayerElements), { xPercent: offscreen });
-        }
-      }
+    const match = color.match(/var\(([^)]+)\)/);
+    if (!match) return color;
+    
+    const varName = match[1];
+    const varValue = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+    
+    if (!varValue) return color;
+    
+    // If the color string already has hsl() wrapper, replace var() with the value
+    if (color.startsWith('hsl(')) {
+      return color.replace(/var\([^)]+\)/, varValue);
     }
-  }, [position]); // Run on mount and when position changes
+    
+    // Otherwise wrap in hsl()
+    return `hsl(${varValue})`;
+  }, []);
 
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
@@ -136,16 +137,16 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
         panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item')
       ) as HTMLElement[];
       if (numberEls.length > 0) {
-        gsap.set(numberEls, { ['--sm-num-opacity' as any]: 0 });
+        gsap.set(numberEls, { '--sm-num-opacity': 0 });
       }
 
       gsap.set(plusH, { transformOrigin: '50% 50%', rotate: 0 });
       gsap.set(plusV, { transformOrigin: '50% 50%', rotate: 90 });
       gsap.set(icon, { rotate: 0, transformOrigin: '50% 50%' });
-      gsap.set(toggleBtn, { color: menuButtonColor });
+      gsap.set(toggleBtn, { color: resolveColor(menuButtonColor) });
     });
     return () => ctx.revert();
-  }, [menuButtonColor, position]);
+  }, [menuButtonColor, position, resolveColor]);
 
   const buildOpenTimeline = useCallback(() => {
     const panel = panelRef.current;
@@ -168,7 +169,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
     const panelStart = Number(gsap.getProperty(panel, 'xPercent'));
 
     if (itemEls.length > 0) gsap.set(itemEls, { yPercent: 140, rotate: 10 });
-    if (numberEls.length > 0) gsap.set(numberEls, { ['--sm-num-opacity' as any]: 0 });
+    if (numberEls.length > 0) gsap.set(numberEls, { '--sm-num-opacity': 0 });
 
     const tl = gsap.timeline({ paused: true });
 
@@ -210,7 +211,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
       if (numberEls.length > 0) {
         tl.to(
           numberEls,
-          { duration: 0.6, ease: 'power2.out', ['--sm-num-opacity' as any]: 1, stagger: { each: 0.08, from: 'start' } },
+          { duration: 0.6, ease: 'power2.out', '--sm-num-opacity': 1, stagger: { each: 0.08, from: 'start' } },
           itemsStart + 0.1
         );
       }
@@ -218,7 +219,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
 
     openTlRef.current = tl;
     return tl;
-  }, [position]);
+  }, []);
 
   const playOpen = useCallback(() => {
     if (busyRef.current) return;
@@ -260,7 +261,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
         const numberEls = Array.from(
           panel.querySelectorAll('.sm-panel-list[data-numbering] .sm-panel-item')
         ) as HTMLElement[];
-        if (numberEls.length > 0) gsap.set(numberEls, { ['--sm-num-opacity' as any]: 0 });
+        if (numberEls.length > 0) gsap.set(numberEls, { '--sm-num-opacity': 0 });
 
         // Hide the panel only after the slide-out animation finishes
         setOpen(false);
@@ -292,31 +293,22 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
     }
   }, []);
 
+  // Always set button color to hsl(var(--primary))
   const animateColor = useCallback(
-    (opening: boolean) => {
+    () => {
       const btn = toggleBtnRef.current;
       if (!btn) return;
       colorTweenRef.current?.kill();
-      if (changeMenuColorOnOpen) {
-        const targetColor = opening ? openMenuButtonColor : menuButtonColor;
-        colorTweenRef.current = gsap.to(btn, { color: targetColor, delay: 0.18, duration: 0.3, ease: 'power2.out' });
-      } else {
-        gsap.set(btn, { color: menuButtonColor });
-      }
+      gsap.set(btn, { color: resolveColor('hsl(var(--primary))') });
     },
-    [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen]
+    [resolveColor]
   );
 
   React.useEffect(() => {
     if (toggleBtnRef.current) {
-      if (changeMenuColorOnOpen) {
-        const targetColor = openRef.current ? openMenuButtonColor : menuButtonColor;
-        gsap.set(toggleBtnRef.current, { color: targetColor });
-      } else {
-        gsap.set(toggleBtnRef.current, { color: menuButtonColor });
-      }
+      gsap.set(toggleBtnRef.current, { color: resolveColor('hsl(var(--primary))') });
     }
-  }, [changeMenuColorOnOpen, menuButtonColor, openMenuButtonColor]);
+  }, [resolveColor]);
 
   const toggleMenu = useCallback(() => {
     const target = !openRef.current;
@@ -351,7 +343,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
     }
 
     animateIcon(target);
-    animateColor(target);
+    animateColor();
   }, [playOpen, playClose, animateIcon, animateColor, onMenuOpen, onMenuClose, onHeaderBackgroundToggle]);
 
   const handleItemClick = (item: StaggeredMenuItem, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -367,28 +359,15 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
     <div className="sm-scope w-full h-full">
       <div
         className={(className ? className + ' ' : '') + 'staggered-menu-wrapper relative w-full h-full z-40'}
-        style={accentColor ? ({ ['--sm-accent' as any]: accentColor } as React.CSSProperties) : undefined}
+        style={accentColor ? ({ '--sm-accent': accentColor } as React.CSSProperties) : undefined}
         data-position={position}
         data-open={open || undefined}
       >
-        {/* Integrated prelayers */}
-        <div 
-          ref={preLayersRef}
-          className="sm-prelayers fixed top-0 right-0 bottom-0 w-full pointer-events-none z-[55]"
-        >
-          {(colors || []).map((color, idx) => (
-            <div 
-              key={idx}
-              className="sm-prelayer absolute top-0 right-0 h-full w-full" 
-              style={{ backgroundColor: color }} 
-            />
-          ))}
-        </div>
 
         <div className="staggered-menu-toggle-container absolute top-0 right-0 z-20 pointer-events-auto">
           <motion.button
             ref={toggleBtnRef}
-            className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-white font-space-grotesk font-medium leading-none overflow-visible p-2 hover:scale-105 transition-transform duration-200"
+            className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-white font-body font-medium leading-none overflow-visible p-2 hover:scale-105 transition-transform duration-200"
             aria-label={open ? t('common.closeMenu') || 'Close menu' : t('common.openMenu') || 'Open menu'}
             aria-expanded={open}
             aria-controls="staggered-menu-panel"
@@ -449,12 +428,12 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
               role="list"
               data-numbering={displayItemNumbering || undefined}
             >
-              {items && items.length ? (
-                items.map((it, idx) => (
+              {(items || []).length > 0 ? (
+                (items || []).map((it, idx) => (
                   <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
                     <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                       <Link
-                        className="sm-panel-item relative text-foreground font-[var(--font-heading)] italic font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-tight transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
+                        className="pb-3 sm-panel-item relative text-foreground font-heading italic font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-tight transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
                         href={it.link}
                         aria-label={it.ariaLabel}
                         data-index={idx + 1}
@@ -472,7 +451,7 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
                 ))
               ) : (
                 <li className="sm-panel-itemWrap relative overflow-hidden leading-none" aria-hidden="true">
-                  <span className="sm-panel-item relative text-foreground font-space-grotesk font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
+                  <span className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
                     <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                       No items
                     </span>
@@ -484,18 +463,18 @@ export const EmilyStaggeredMenu: React.FC<EmilyStaggeredMenuProps> = ({
             {/* Social Links Section */}
             {displaySocials && socialItems && socialItems.length > 0 && (
               <div className="sm-panel-socials mt-auto pt-4 pb-16">
-                <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+                <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
                   {t('footer.socialContact') || 'Social & Contact'}
                 </h3>
                 <ul className="list-none m-0 p-0 flex flex-wrap gap-6" role="list">
-                  {socialItems.map((social, idx) => (
+                  {(socialItems || []).map((social, idx) => (
                     <li key={social.label + idx}>
                       <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                         <a
                           href={social.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="font-ibm-plex text-primary text-base transition-colors duration-200 ease-linear hover:text-[var(--sm-accent)]"
+                          className="font-body text-primary text-base transition-colors duration-200 ease-linear hover:text-[var(--sm-accent)]"
                           aria-label={social.label}
                         >
                           {social.label}

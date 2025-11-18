@@ -1,14 +1,11 @@
 {
   "header": {
-    "name": "Harry Chang",
+    "name": "Emily Chang",
     "about": "About",
-    "updates": "Updates",
     "projects": "Projects",
-    "gallery": "Gallery",
-    "paperReading": "Paper Reading",
-    "manifesto": "Manifesto",
+    "canvas": "Canvas",
+    "sketches": "Sketches",
     "uses": "Uses",
-    "lab": "Icarus Lab",
     "links": "Links",
     "design": "Design System"
   },
@@ -48,7 +45,7 @@
     "website": "Website"
   },
   "gallery": {
-    "title": "Photo Gallery",
+    "title": "Gallery",
     "backToGallery": "Back to gallery",
     "noGalleryFound": "No gallery items found.",
     "camera": "Camera",

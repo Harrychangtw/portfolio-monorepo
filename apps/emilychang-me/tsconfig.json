@@ -53,7 +53,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    "../../packages/ui/meshline.d.ts"
   ],
   "exclude": [
     "node_modules"

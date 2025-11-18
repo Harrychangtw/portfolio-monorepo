@@ -81,7 +81,7 @@ export default function EmilyFooter() {
                 
                 {/* Column 2: Connect */}
                 <div className="col-span-1 md:pr-8">
-                  <h3 className="font-heading uppercase tracking-wider italic text-lg text-primary mb-4 whitespace-nowrap">
+                  <h3 className="font-heading uppercase tracking-wider italic text-lg text-secondary mb-4 whitespace-nowrap">
                     Connect
                   </h3>
                   <ul className="space-y-3">
@@ -109,7 +109,7 @@ export default function EmilyFooter() {
 
                 {/* Column 3: Site Navigation */}
                 <div className="col-span-1 md:pr-8">
-                  <h3 className="font-heading uppercase tracking-wider italic text-lg text-primary mb-4 whitespace-nowrap">
+                  <h3 className="font-heading uppercase tracking-wider italic text-lg text-secondary mb-4 whitespace-nowrap">
                     {t('footer.siteNavigation')}
                   </h3>
                   <ul className="space-y-3">
@@ -137,7 +137,7 @@ export default function EmilyFooter() {
           </div>
 
           {/* Divider */}
-          <hr className="border-secondary mt-16 mb-10 md:mt-16 md:mb-4" />
+          <hr className="border-[hsl(var(--background))] mt-16 mb-10 md:mt-16 md:mb-4" />
 
           {/* Bottom Row: Copyright */}
           <div className="flex justify-center md:justify-end text-sm text-secondary">

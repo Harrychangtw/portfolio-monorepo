@@ -5,9 +5,9 @@ description: "Quick sketches capturing the energy of city life"
 imageUrl: "/placeholder.webp"
 date: "2023-09-22"
 year: "2023"
-pinned: -1
-locked: false
-featured: false
+pinned: 2
+locked: true
+featured: true
 ---
 
 # Urban Sketches

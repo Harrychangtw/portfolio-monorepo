@@ -18,7 +18,7 @@ export async function GET(
     }
 
     return NextResponse.json(item)
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: "Failed to fetch gallery item" }, { status: 500 })
   }
 }

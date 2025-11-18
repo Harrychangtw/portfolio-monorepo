@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
+import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
 import EmilyStaggeredMenu from "./EmilyStaggeredMenu"
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll"
 import { scrollToSection as utilScrollToSection } from "@portfolio/lib/lib/scrolling"
@@ -30,7 +31,7 @@ export default function EmilyHeader() {
   const isHomePage = pathname === "/"
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-  
+  const { t } = useLanguage()  
   useStableHashScroll("header")
 
   useEffect(() => {
@@ -160,10 +161,10 @@ export default function EmilyHeader() {
   ]
 
   const socialItems = [
-    { label: 'Email', link: 'mailto:hello@emilychang.me' },
-    { label: 'Instagram', link: '/instagram' },
-    { label: 'LinkedIn', link: '#' },
-    { label: 'Dribbble', link: '#' },
+    { label: 'Email', link: '/email' },
+    { label: 'Instagram', link: '/ig_main' },
+    { label: 'beli', link: '/beli' },
+    { label: 'Spotify', link: '/spotify' },
   ]
 
   useEffect(() => {
@@ -236,25 +237,25 @@ export default function EmilyHeader() {
               <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                 <Link {...getLinkProps('about')}>
                   {isActive('about') && <Underline />}
-                  About
+                  {t('header.about')}
                 </Link>
               </motion.div>
               <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                 <Link {...getLinkProps('projects')}>
                   {isActive('projects') && <Underline />}
-                  Projects
+                  {t('header.projects')}
                 </Link>
               </motion.div>
               <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                 <Link {...getLinkProps('canvas')}>
                   {isActive('canvas') && <Underline />}
-                  Canvas
+                  {t('header.canvas')}
                 </Link>
               </motion.div>
               <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                 <Link {...getLinkProps('sketches')}>
                   {isActive('sketches') && <Underline />}
-                  Sketches
+                  {t('header.sketches')}
                 </Link>
               </motion.div>
             </nav>
@@ -271,8 +272,8 @@ export default function EmilyHeader() {
                 socialItems={socialItems}
                 colors={['hsl(var(--accent))', 'hsl(var(--background))']}
                 accentColor="hsl(var(--accent))"
-                menuButtonColor="hsl(var(--primary))"
-                openMenuButtonColor="hsl(var(--primary))"
+                menuButtonColor="#000000"
+                openMenuButtonColor="#000000"
                 displaySocials={true}
                 displayItemNumbering={false}
                 onMenuOpen={() => setIsMenuOpen(true)}
