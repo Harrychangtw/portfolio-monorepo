@@ -41,7 +41,7 @@ export default function AboutSection() {
             <div>
               <SectionTitle>Education</SectionTitle>
               <div className="space-y-6">
-                <InfoEntry primary="2021.9 - 2024.6" secondary="Taipei Gakugaku Experimental Education Institute" />
+                <InfoEntry primary="2021.9 - 2024.6" secondary="Taipei Xue Xue Experimental Education Institute" />
                 <InfoEntry primary="2020.9 - 2021.6" secondary="National Taipei University of Business" />
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function AboutSection() {
                     <SectionTitle>Skills & Interests</SectionTitle>
                     <div className="space-y-1">
                         <ListItem>Procreate, Photoshop, Illustrator</ListItem>
-                        <ListItem>Painting, Independent Films, Music</ListItem>
+                        <ListItem>Painting, Films, Music, Oat Milk Latte</ListItem>
                     </div>
                 </div>
             </div>

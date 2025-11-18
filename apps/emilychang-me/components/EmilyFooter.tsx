@@ -17,7 +17,6 @@ const socialAndResourceLinks = [
     { id: 'gmail', name: 'Email', href: 'mailto:koding.chang@gmail.com' },
     { id: 'art_instagram', name: 'Art Instagram', href: 'https://www.instagram.com/weirdoo_club?igsh=ZjE2ZnR1anFneWp6&utm_source=qr' },
     { id: 'personal_instagram', name: 'Personal Instagram', href: 'https://www.instagram.com/dumbass_emi_?igsh=MXR4dTB0emk2c2h0dQ%3D%3D&utm_source=qr' },
-    { id: 'beli', name: 'Beli', href: 'https://beliapp.co/app/emilysushigod' },
     { id: 'spotify', name: 'Spotify', href: 'https://open.spotify.com/user/snth1yq0x1gilq0h52rsudjed?si=37WuZ9pOQ_2EwPdnVEYwww' },
 ]
 

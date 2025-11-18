@@ -13,7 +13,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
-  style: ['italic'],
+  style:  'italic',
   variable: '--font-playfair-display',
   display: 'swap',
 })
@@ -55,7 +55,7 @@ export default function RootLayout({
       className={`${ibmPlexSans.variable} ${playfairDisplay.variable}`}
       style={{
         '--font-body': 'var(--font-ibm-plex)',
-        '--font-heading': 'var(--font-playfair-display) italic',
+        '--font-heading': 'var(--font-playfair-display)',
       } as React.CSSProperties}
     >
       <body className="bg-background text-primary antialiased min-h-screen flex flex-col">

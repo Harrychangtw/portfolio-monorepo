@@ -130,6 +130,13 @@ export interface GalleryItemMetadata {
   height?: number         // Added for build-time dimension detection
 }
 
+export interface SketchMetadata {
+  slug: string
+  imageUrl: string
+  width?: number
+  height?: number
+}
+
 // Helper function to parse paper metadata from frontmatter
 export function getPaperMetadata(data: any): Paper | null {
   try {
@@ -386,6 +393,49 @@ let fileNames = fs.readdirSync(galleryDirectory)
     })
   } catch (error) {
     console.error("Error getting gallery metadata:", error)
+    return []
+  }
+}
+
+// Get all sketches metadata - scans optimized images folder directly
+export function getAllSketchesMetadata(locale: string = 'en'): SketchMetadata[] {
+  try {
+    // Look in the optimized sketches directory
+    const optimizedSketchesDir = path.join(process.cwd(), 'public', 'images', 'optimized', 'sketches')
+    
+    if (!fs.existsSync(optimizedSketchesDir)) {
+      return []
+    }
+
+    const fileNames = fs.readdirSync(optimizedSketchesDir)
+    
+    // Filter for full-size webp images (not thumbnails)
+    const sketchFiles = fileNames.filter(fileName => 
+      fileName.endsWith('.webp') && !fileName.includes('-thumb')
+    )
+    
+    const allSketchesData = sketchFiles.map((fileName) => {
+      // Remove ".webp" to get slug
+      const slug = fileName.replace(/\.webp$/, "")
+      
+      // Build the thumbnail path
+      const thumbnailUrl = `/images/optimized/sketches/${fileName.replace('.webp', '-thumb.webp')}`
+      
+      // Get dimensions from the thumbnail file
+      const dims = getDimsFromWebPath(thumbnailUrl)
+      
+      return {
+        slug,
+        imageUrl: thumbnailUrl,
+        width: dims?.width,
+        height: dims?.height,
+      }
+    })
+
+    // Sort sketches by filename (alphabetical)
+    return allSketchesData.sort((a, b) => a.slug.localeCompare(b.slug))
+  } catch (error) {
+    console.error("Error getting sketches metadata:", error)
     return []
   }
 }
