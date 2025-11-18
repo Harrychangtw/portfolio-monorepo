@@ -6,8 +6,21 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { LockIcon } from "lucide-react"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
+import { cva, type VariantProps } from "class-variance-authority"
 
-interface GalleryCardProps {
+const cardVariants = cva("", {
+  variants: {
+    hoverEffect: {
+      inward: "",
+      gentle: "",
+    },
+  },
+  defaultVariants: {
+    hoverEffect: "inward",
+  },
+})
+
+interface GalleryCardProps extends VariantProps<typeof cardVariants> {
   title: string
   quote: string
   slug: string
@@ -34,7 +47,8 @@ export default function GalleryCard({
   aspectRatio,
   width,
   height,
-  basePath = 'gallery'
+  basePath = 'gallery',
+  hoverEffect = "inward"
 }: GalleryCardProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isVisible = useIntersectionObserver({
@@ -122,14 +136,21 @@ export default function GalleryCard({
   const thumbnailSizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
   const fullImageSizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
 
+  const hoverAnimation = hoverEffect === "gentle" 
+    ? { 
+        scale: 1.02,
+        transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as any }
+      }
+    : { 
+        scale: 0.98,
+        transition: { duration: 0.2, ease: [0.4, 0, 0.6, 1] as any }
+      }
+
   return (
     <motion.div 
       ref={containerRef}
-      className="group relative"
-      whileHover={{ 
-        scale: 0.98,
-        transition: { duration: 0.2, ease: "easeInOut" }
-      }}
+      className={`group relative ${!locked && hoverEffect === "gentle" ? "hover:shadow-xl" : ""}`}
+      whileHover={!locked ? hoverAnimation : {}}
       onHoverStart={prefetchFullImage}
     >
       <Link href={`/${basePath}/${slug}`} className="block">

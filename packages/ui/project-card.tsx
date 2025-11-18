@@ -7,8 +7,21 @@ import { motion } from "framer-motion"
 import { PinIcon, LockIcon } from "lucide-react"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
+import { cva, type VariantProps } from "class-variance-authority"
 
-interface ProjectCardProps {
+const cardVariants = cva("", {
+  variants: {
+    hoverEffect: {
+      inward: "",
+      gentle: "",
+    },
+  },
+  defaultVariants: {
+    hoverEffect: "inward",
+  },
+})
+
+interface ProjectCardProps extends VariantProps<typeof cardVariants> {
   title: string
   category: string
   subcategory?: string
@@ -31,7 +44,8 @@ export default function ProjectCard({
   locked,
   tooltip: tooltipText,
   priority = false,
-  index = 0
+  index = 0,
+  hoverEffect = "inward"
 }: ProjectCardProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isVisible = useIntersectionObserver({
@@ -79,9 +93,22 @@ export default function ProjectCard({
     }
   };
 
+  const hoverAnimation = hoverEffect === "gentle" 
+    ? { 
+        scale: 1.02,
+        transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as any }
+      }
+    : { 
+        scale: 0.98,
+        transition: { duration: 0.2, ease: [0.4, 0, 0.6, 1] as any }
+      }
+
   const CardContent = (
     <>
-      <div className="relative overflow-hidden bg-muted">
+      <motion.div 
+        className={`relative overflow-hidden bg-muted ${!locked && hoverEffect === "gentle" ? "hover:shadow-xl" : ""}`}
+        whileHover={!locked ? hoverAnimation : {}}
+      >
         {/* Strict 3:2 aspect ratio container */}
         <div className="relative w-full aspect-[3/2]">
           <div className="absolute inset-0">
@@ -132,7 +159,7 @@ export default function ProjectCard({
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
 
       {/* Content area with fixed height and padding */}
       <div className="pt-3">
@@ -146,13 +173,9 @@ export default function ProjectCard({
   );
 
   return (
-    <motion.div
+    <div
       ref={containerRef}
       className="group relative flex flex-col"
-      whileHover={!locked ? {
-        scale: 0.98,
-        transition: { duration: 0.2, ease: "easeInOut" }
-      } : {}}
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -177,6 +200,6 @@ export default function ProjectCard({
           {tooltipText}
         </motion.div>
       )}
-    </motion.div>
+    </div>
   )
 }

@@ -16,7 +16,7 @@ export default function ProjectsPage() {
           Explore my creative projects across design and creation.
         </p>
       </div>
-      <ProjectsSection section="Projects" sectionId="projects" />
+      <ProjectsSection section="Projects" sectionId="projects" hoverEffect="gentle" />
     </div>
   )
 }

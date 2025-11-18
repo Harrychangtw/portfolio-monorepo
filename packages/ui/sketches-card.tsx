@@ -4,8 +4,21 @@ import { useState, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
+import { cva, type VariantProps } from "class-variance-authority"
 
-interface SketchesCardProps {
+const cardVariants = cva("", {
+  variants: {
+    hoverEffect: {
+      inward: "",
+      gentle: "",
+    },
+  },
+  defaultVariants: {
+    hoverEffect: "inward",
+  },
+})
+
+interface SketchesCardProps extends VariantProps<typeof cardVariants> {
   imageUrl: string
   priority?: boolean
   index?: number
@@ -14,7 +27,8 @@ interface SketchesCardProps {
 export default function SketchesCard({ 
   imageUrl, 
   priority = false,
-  index = 0
+  index = 0,
+  hoverEffect = "inward"
 }: SketchesCardProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isVisible = useIntersectionObserver({
@@ -37,14 +51,21 @@ export default function SketchesCard({
   const thumbnailSizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
   const fullImageSizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 
+  const hoverAnimation = hoverEffect === "gentle" 
+    ? { 
+        scale: 1.02,
+        transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as any }
+      }
+    : { 
+        scale: 0.98,
+        transition: { duration: 0.2, ease: [0.4, 0, 0.6, 1] as any }
+      }
+
   return (
     <motion.div 
       ref={containerRef}
-      className="group relative"
-      whileHover={{ 
-        scale: 0.98,
-        transition: { duration: 0.2, ease: "easeInOut" }
-      }}
+      className={`group relative ${hoverEffect === "gentle" ? "hover:shadow-xl" : ""}`}
+      whileHover={hoverAnimation}
     >
       <div className="relative overflow-hidden bg-white">
         {/* Container for the image and border */}

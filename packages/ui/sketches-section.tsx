@@ -13,9 +13,10 @@ interface SketchMetadata {
 
 interface SketchesSectionProps {
   sectionId?: string
+  hoverEffect?: 'inward' | 'gentle' // Hover animation variant
 }
 
-export default function SketchesSection({ sectionId = "sketches" }: SketchesSectionProps = {}) {
+export default function SketchesSection({ sectionId = "sketches", hoverEffect = 'inward' }: SketchesSectionProps = {}) {
   const { language, t } = useLanguage()
   const [allSketches, setAllSketches] = useState<SketchMetadata[]>([])
   const [displayedSketches, setDisplayedSketches] = useState<SketchMetadata[]>([])
@@ -150,9 +151,7 @@ export default function SketchesSection({ sectionId = "sketches" }: SketchesSect
                               imageUrl={sketch.imageUrl}
                               priority={slotIndex < 3}
                               index={slotIndex}
-                              locked={hoveredIndex === slotIndex}
-                              onMouseEnter={() => setHoveredIndex(slotIndex)}
-                              onMouseLeave={() => setHoveredIndex(null)}
+                              hoverEffect={hoverEffect}
                             />
                           </motion.div>
                         )}

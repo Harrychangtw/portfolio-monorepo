@@ -16,14 +16,16 @@ function HomeContent() {
         sectionId="projects" 
         section="Projects"
         title={t('sections.projects')}
+        hoverEffect="gentle"
       />
       <GallerySection 
         sectionId="canvas" 
         source="gallery"
         title={t('sections.canvas')}
         basePath="canvas"
+        hoverEffect="gentle"
       />
-      <SketchesSection />
+      <SketchesSection hoverEffect="gentle" />
     </>
   )
 }

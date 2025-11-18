@@ -10,9 +10,10 @@ interface ProjectsSectionProps {
   section?: string
   title?: string
   sectionId?: string
+  hoverEffect?: 'inward' | 'gentle' // Hover animation variant
 }
 
-export default function ProjectsSection({ section, title, sectionId = "projects" }: ProjectsSectionProps = {}) {
+export default function ProjectsSection({ section, title, sectionId = "projects", hoverEffect = 'inward' }: ProjectsSectionProps = {}) {
   const { language, t } = useLanguage()
   const [projects, setProjects] = useState<ProjectMetadata[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -101,6 +102,7 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
                 tooltip={project.tooltip}
                 priority={index < 3}
                 index={index}
+                hoverEffect={hoverEffect}
               />
             ))
           )}
