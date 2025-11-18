@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState } from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -65,7 +66,7 @@ export default function EmilyFooter() {
             {/* Column 1: Name & Credits */}
             <div className="col-span-12 md:col-span-6 md:pr-24 max-w-xl">
               <div className="block mb-20">
-                  <a
+                  <Link
                     href="/"
                     className="relative h-12 mb-8 block cursor-pointer group"
                     aria-label="Return to home page"
@@ -80,7 +81,7 @@ export default function EmilyFooter() {
                       style={{ width: 'auto', height: '96px' }}
                     />
                     <span className="sr-only">Emily Chang</span>
-                  </a>
+                  </Link>
               </div>
               <div className="text-sm text-secondary space-y-2">
                 <p>© {new Date().getFullYear()} Emily Chang. All rights reserved.</p>
@@ -103,19 +104,19 @@ export default function EmilyFooter() {
                     {socialAndResourceLinks.map(link => (
                       <li key={link.id}>
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                          <a
+                          <Link
                             href={link.href}
                             {...(!isInternalLink(link.href) && {
                               target: "_blank",
                               rel: "noopener noreferrer"
                             })}
                             className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
-                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+                            onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => handleMouseEnter(e, link.id)}
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                           >
                             {link.name}
-                          </a>
+                          </Link>
                         </motion.div>
                       </li>
                     ))}
@@ -131,16 +132,16 @@ export default function EmilyFooter() {
                     {navigationLinks.map(link => (
                       <li key={link.id}>
                         <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                          <a
+                          <Link
                             href={link.href}
                             className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
-                            onClick={(e) => handleNavClick(e, link.href)}
-                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+                            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, link.href)}
+                            onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => handleMouseEnter(e, link.id)}
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
                           >
                             {t(`sections.${link.id}`)}
-                          </a>
+                          </Link>
                         </motion.div>
                       </li>
                     ))}

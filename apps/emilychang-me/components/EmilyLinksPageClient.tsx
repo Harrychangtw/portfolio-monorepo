@@ -3,16 +3,13 @@
 import React from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import {
-  Instagram,
-  Mail,
-  Github,
-  Linkedin,
-  PenTool,
-  Utensils,
-  Lightbulb,
-  Music,
-} from "lucide-react"
+// import {
+//   Instagram,
+//   Mail,
+//   Utensils,
+//   Lightbulb,
+//   Music,
+// } from "lucide-react"
 
 interface LinkItem {
   icon: React.ReactNode
@@ -21,39 +18,47 @@ interface LinkItem {
   external?: boolean
 }
 
+// ...existing code...
+
 const links: LinkItem[] = [
-    {
-        icon: <Lightbulb className="w-5 h-5" />,
-        label: "Portfolio",
-        href: "/",
-        external: true,
-    },
-    {
-    icon: <Mail className="w-5 h-5" />, // Email
+  {
+    // icon: <Lightbulb className="w-5 h-5" />,
+    icon: <span className="w-5 h-5">💡</span>,
+    label: "Portfolio",
+    href: "https://www.emilychang.me",
+    external: true,
+  },
+  {
+    // icon: <Mail className="w-5 h-5" />, // Email
+    icon: <span className="w-5 h-5">✉️</span>,
     label: "Email",
     href: "/email",
     external: true,
   },
   {
-    icon: <Instagram className="w-5 h-5" />, // Instagram
+    // icon: <Instagram className="w-5 h-5" />, // Instagram
+    icon: <span className="w-5 h-5">📸</span>,
     label: "Instagram (Main)",
     href: "/ig_main",
     external: true,
   },
   {
-    icon: <PenTool className="w-5 h-5" />, // Instagram
+    // icon: <PenTool className="w-5 h-5" />, // Instagram
+    icon: <span className="w-5 h-5">🖊️</span>,
     label: "Instagram (Art)",
     href: "/ig_art",
     external: true,
   },
   {
-    icon: <Utensils className="w-5 h-5" />, // Beli
+    // icon: <Utensils className="w-5 h-5" />, // Beli
+    icon: <span className="w-5 h-5">🍽️</span>,
     label: "Beli",
     href: "/beli",
     external: true,
   },
   {
-    icon: <Music className="w-5 h-5" />, // LinkedIn
+    // icon: <Music className="w-5 h-5" />, // LinkedIn
+    icon: <span className="w-5 h-5">🎵</span>,
     label: "Spotify",
     href: "/spotify",
     external: true,
@@ -104,7 +109,7 @@ export default function EmilyLinksPageClient() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="-mt-8 text-secondary text-muted-foreground mb-2 text-center md:mb-6"
         >
-          If it makes you happy, it doesn't have to make sense to others
+           If it makes you happy, it doesn&apos;t have to make sense to others
         </motion.p>
 
         {/* Links Grid */}
