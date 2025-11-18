@@ -43,14 +43,14 @@ export default function GalleryItemClient({ item }: GalleryItemClientProps) {
                 <div className="relative">
                   <Link
                     href="/#gallery"
-                    className="inline-flex items-center text-secondary hover:text-primary transition-colors"
+                    className="inline-flex items-center text-secondary hover:text-primary transition-colors font-body"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     {t('gallery.backToGallery')}
                   </Link>
                   <div className="mt-8">
-                    <h1 className="font-space-grotesk text-3xl md:text-4xl font-bold mb-4 md:mb-8">{item.title}</h1>
-                    <p className="text-secondary mb-6 md:mb-12">
+                    <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{item.title}</h1>
+                    <p className="text-secondary mb-6 md:mb-12 font-body">
                       {new Date(item.date).toLocaleDateString(language === 'zh-TW' ? "zh-TW" : "en-US", {
                         year: "numeric",
                         month: "long",
@@ -68,7 +68,7 @@ export default function GalleryItemClient({ item }: GalleryItemClientProps) {
                 {/* Description area and attributes - restructured to handle missing description */}
                 <div className="mb-16 md:mb-24">
                   {hasDescription && (
-                    <p className="text-lg md:text-xl mb-10 md:mb-16">{item.description}</p>
+                    <p className="text-lg md:text-xl mb-10 md:mb-16 font-body text-primary">{item.description}</p>
                   )}
                   
                   {/* Additional attributes in a grid - adjusted margins when no description */}
@@ -77,26 +77,26 @@ export default function GalleryItemClient({ item }: GalleryItemClientProps) {
                   } text-secondary`}>
                     {item.camera && (
                       <div>
-                        <p className="uppercase text-xs mb-1">{t('gallery.camera')}</p>
-                        <p>{item.camera}</p>
+                        <p className="uppercase text-xs mb-1 font-heading text-secondary">{t('gallery.camera')}</p>
+                        <p className="font-body text-secondary">{item.camera}</p>
                       </div>
                     )}
                     {item.lens && (
                       <div>
-                        <p className="uppercase text-xs mb-1">{t('gallery.lens')}</p>
-                        <p>{item.lens}</p>
+                        <p className="uppercase text-xs mb-1 font-heading text-secondary">{t('gallery.lens')}</p>
+                        <p className="font-body text-secondary">{item.lens}</p>
                       </div>
                     )}
                     {item.location && (
                       <div>
-                        <p className="uppercase text-xs mb-1">{t('gallery.location')}</p>
-                        <p>{item.location}</p>
+                        <p className="uppercase text-xs mb-1 font-heading text-secondary">{t('gallery.location')}</p>
+                        <p className="font-body text-secondary">{item.location}</p>
                       </div>
                     )}
                     {item.tags && item.tags.length > 0 && (
                       <div>
-                        <p className="uppercase text-xs mb-1">{t('gallery.tags')}</p>
-                        <p>{item.tags.join(", ")}</p>
+                        <p className="uppercase text-xs mb-1 font-heading text-secondary">{t('gallery.tags')}</p>
+                        <p className="font-body text-secondary">{item.tags.join(", ")}</p>
                       </div>
                     )}
                   </div>

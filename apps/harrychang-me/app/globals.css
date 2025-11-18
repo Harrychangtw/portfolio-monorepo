@@ -184,6 +184,23 @@
     --tw-prose-quotes: hsl(var(--foreground));
     --tw-prose-code: hsl(var(--foreground));
   }
+
+  /* Ensure prose content uses correct fonts */
+  .prose :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-family: var(--font-body);
+  }
+  
+  .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-family: var(--font-heading);
+  }
+  
+  .prose :where(li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-family: var(--font-body);
+  }
+  
+  .prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    font-family: var(--font-body);
+  }
 }
 
 /* Ensure native anchor/element.scrollIntoView land below sticky header */

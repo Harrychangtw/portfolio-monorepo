@@ -1,89 +1,140 @@
 "use client"
 
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import Lanyard from './Lanyard'
 
-export default function EmilyAboutSection() {
-  const { t, tHtml } = useLanguage()
+// Reusable component for section titles
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="font-heading text-base font-bold uppercase tracking-widest text-secondary mb-4">
+    {children}
+  </h2>
+)
+
+// Reusable component for info entries
+const InfoEntry = ({ primary, secondary }: { primary: string; secondary: string }) => (
+  <div>
+    <p className="font-body text-secondary">{primary}</p>
+    <p className="font-body text-primary">{secondary}</p>
+  </div>
+)
+
+// Reusable component for simple list items
+const ListItem = ({ children }: { children: React.ReactNode }) => (
+  <p className="font-body text-primary">{children}</p>
+)
+
+export default function AboutSection() {
   return (
-    <section id="about" className="py-12 md:py-16 border-b border-border">
-      <div className="container">
-        <div className="grid grid-cols-12 gap-2">
-          {/* About column - spans half the width on desktop */}
-          <div className="col-span-12 md:col-span-6 pr-0 md:pr-12">
-            <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('about.title')}</h2>
-            <p className="font-body text-primary lcp-bio" style={{contain: "paint"}}>
-              {tHtml('bio1', 'about')}
-              <br /><br />
-              {tHtml('bio2', 'about')}
-              <br /><br />
-              {tHtml('bio3', 'about')}
-            </p>
-          </div>
+    <section id="about" className="relative border-b border-border">
+      <div className="container min-h-[800px] md:min-h-[700px] py-16 md:py-24">
 
-          {/* Two-column section for roles and descriptions */}
-          <div className="col-span-12 md:col-span-6 mt-8 md:mt-0">
-            <div className="grid grid-cols-12 gap-4">
-              <div className="col-span-5">
-                <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('about.roles')}</h2>
-              </div>
-              <div className="col-span-7">
-                <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('about.description')}</h2>
+        {/* Layer 1 & 2: Main Content Grid (Desktop) */}
+        <div className="hidden md:grid grid-cols-12 gap-x-12 absolute inset-0 z-10 container py-16 md:py-24 pointer-events-none">
+          
+          {/* -- Left Column -- */}
+          <div className="col-span-4 flex flex-col justify-center space-y-12">
+            <div>
+                <SectionTitle>About</SectionTitle>
+                <p className="font-body text-primary max-w-md">
+                    A visual artist with a deep interest in the intersection of fashion and digital media, exploring bold color palettes and narrative-driven concepts.
+                </p>
+            </div>
+            <div>
+              <SectionTitle>Education</SectionTitle>
+              <div className="space-y-6">
+                <InfoEntry primary="2021.9 - 2024.6" secondary="Taipei Gakugaku Experimental Education Institute" />
+                <InfoEntry primary="2020.9 - 2021.6" secondary="National Taipei University of Business" />
               </div>
             </div>
+            <div>
+              <SectionTitle>Awards</SectionTitle>
+              <InfoEntry primary="112 Academic Year" secondary="Taipei City Student Art Competition, Merit Award" />
+            </div>
+          </div>
 
-            <div className="space-y-6">
-              <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-5">
-                  <h3 className="font-heading font-medium">{t('roles.llmResearcher.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.llmResearcher.period', 'about')}</p>
-                </div>
-                <div className="col-span-7">
-                  <p className="font-body text-primary">{tHtml('roles.llmResearcher.description', 'about')}</p>
-                </div>
-              </div>
+          {/* -- Center Column (Primary Bio) -- */}
+          <div className="col-span-4 text-center flex flex-col justify-center items-center">
+            <div className="mt-12">
+              <h1 className="font-heading text-3xl font-medium">Emily Chang</h1>
+              <p className="font-body text-secondary mt-2">Visual Artist & Graphic Designer</p>
+            </div>
+          </div>
 
-              <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-5">
-                  <h3 className="font-heading font-medium">{t('roles.speaker.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.speaker.period', 'about')}</p>
-                </div>
-                <div className="col-span-7">
-                  <p className="font-body text-primary">{tHtml('roles.speaker.description', 'about')}</p>
-                </div>
+          {/* -- Right Column -- */}
+          <div className="col-span-4 flex flex-col justify-center space-y-12 text-right">
+            <div>
+              <SectionTitle>Exhibitions</SectionTitle>
+              <div className="space-y-6">
+                <InfoEntry primary="2023" secondary="Story Wear Joint Exhibition" />
+                <InfoEntry primary="111 Term 2" secondary="Student Showcase" />
+                <InfoEntry primary="111 Term 1" secondary="Student Showcase" />
               </div>
-
-              <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-5">
-                  <h3 className="font-heading font-medium">{t('roles.designer.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.designer.period', 'about')}</p>
+            </div>
+            <div className="space-y-12">
+                <div>
+                    <SectionTitle>Skills & Interests</SectionTitle>
+                    <div className="space-y-1">
+                        <ListItem>Procreate, Photoshop, Illustrator</ListItem>
+                        <ListItem>Painting, Independent Films, Music</ListItem>
+                    </div>
                 </div>
-                <div className="col-span-7">
-                  <p className="font-body text-primary">{t('roles.designer.description', 'about')}</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-5">
-                  <h3 className="font-heading font-medium">{t('roles.developer.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.developer.period', 'about')}</p>
-                </div>
-                <div className="col-span-7">
-                  <p className="font-body text-primary">{tHtml('roles.developer.description', 'about')}</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-5">
-                  <h3 className="font-heading font-medium">{t('roles.photographer.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.photographer.period', 'about')}</p>
-                </div>
-                <div className="col-span-7">
-                  <p className="font-body text-primary">{tHtml('roles.photographer.description', 'about')}</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
+
+        {/* Mobile Layout Fallback */}
+        <div className="md:hidden relative z-10">
+          {/* Bio appears after the lanyard space on mobile */}
+          <div className="text-center pt-[450px]">
+            <h1 className="font-heading text-3xl font-medium">Emily Chang</h1>
+            <p className="font-body text-secondary mt-2">Visual Artist & Graphic Designer</p>
+          </div>
+
+          <div className="mt-16">
+            <SectionTitle>About</SectionTitle>
+            <p className="font-body text-primary">
+                A visual artist with a deep interest in the intersection of fashion and digital media, exploring bold color palettes and narrative-driven concepts.
+            </p>
+          </div>
+          
+          {/* Info grid for mobile */}
+          <div className="grid grid-cols-2 gap-x-8 gap-y-12 mt-12">
+            <div className="space-y-12">
+               <div>
+                  <SectionTitle>Education</SectionTitle>
+                  <div className="space-y-6">
+                    <InfoEntry primary="2021.9 - 2024.6" secondary="Taipei Gakugaku Institute" />
+                    <InfoEntry primary="2020.9 - 2021.6" secondary="National Taipei University..." />
+                  </div>
+                </div>
+                <div>
+                  <SectionTitle>Awards</SectionTitle>
+                  <InfoEntry primary="112 Academic Year" secondary="Taipei City Student Art..." />
+                </div>
+            </div>
+            <div className="space-y-12">
+                <div>
+                  <SectionTitle>Exhibitions</SectionTitle>
+                  <div className="space-y-6">
+                    <InfoEntry primary="2023" secondary="Story Wear Joint..." />
+                    <InfoEntry primary="111 Term 2" secondary="Student Showcase" />
+                  </div>
+                </div>
+                <div>
+                    <SectionTitle>Skills & Interests</SectionTitle>
+                     <div className="space-y-1">
+                        <ListItem>Procreate, Photoshop...</ListItem>
+                        <ListItem>Painting, Films, Music...</ListItem>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* Layer 3: Interactive Lanyard (Always on top) */}
+      <div className="absolute top-0 left-0 right-0 z-20 h-[600px] md:h-full w-full pointer-events-auto">
+        <Lanyard position={[0, 4, 20]} fov={25} />
       </div>
     </section>
   )

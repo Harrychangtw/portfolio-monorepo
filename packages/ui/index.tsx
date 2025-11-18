@@ -65,6 +65,7 @@ export * from './gallery-section';
 export * from './GalleryImage';
 export * from './header';
 export * from './language-switcher';
+export { default as Lanyard } from './Lanyard';
 export * from './letter-glitch';
 export * from './links-page-client';
 export * from './minimalist-background';

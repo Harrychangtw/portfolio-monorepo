@@ -12,10 +12,15 @@
     "@portfolio/config": "workspace:*",
     "@portfolio/lib": "workspace:*",
     "@portfolio/ui": "workspace:*",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.0",
+    "@react-three/rapier": "^2.2.0",
     "framer-motion": "^12.23.24",
+    "meshline": "^3.3.1",
     "next": "15.5.6",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "three": "^0.181.1"
   },
   "devDependencies": {
     "@types/node": "^20",
