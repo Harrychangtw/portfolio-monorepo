@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Emily's color scheme - light mode */
-    --background: 350  5% 90%; /* #faf2f6 */
+    --background: 350  5% 95%; /* #faf2f6 */
     --foreground: 0 0% 4%; /* #0A0A0A - Dark text on light background */
     --card: 0 0% 100%; /* #FFFFFF */
     --card-foreground: 0 0% 4%; /* #0A0A0A */
@@ -15,14 +15,14 @@
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 30%; /* Softer gray for secondary text */
     --secondary-foreground: 0 0% 100%;
-    --muted: 322 30% 90%;
+    --muted: 350 40% 90%;
     --muted-foreground: 0 0% 30%;
     --accent: 350 85% 40%; /* #FF49C5 */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 322 10% 85%; /* Light border matching background */
-    --input: 322 10% 85%;
+    --border: 350 10% 85%; /* Light border matching background */
+    --input: 350 10% 85%;
     --ring: 350 85% 40%;
     --radius: 0.5rem;
     --column-spacing: max(0.5rem, 0.2vw);
