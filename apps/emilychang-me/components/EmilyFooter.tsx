@@ -139,10 +139,13 @@ export default function EmilyFooter() {
           {/* Divider */}
           <hr className="border-[hsl(var(--background))] mt-16 mb-10 md:mt-16 md:mb-4" />
 
-          {/* Bottom Row: Copyright */}
-          <div className="flex justify-center md:justify-end text-sm text-secondary">
-            <p className="whitespace-nowrap overflow-hidden text-ellipsis">
+          {/* Bottom Row: Copyright & Developer Credit */}
+          <div className="flex flex-col md:flex-row md:justify-between items-center text-sm text-secondary gap-2 md:gap-0">
+            <p className="whitespace-nowrap overflow-hidden text-ellipsis md:text-left text-center w-full md:w-auto">
               © {new Date().getFullYear()} Emily Chang. All rights reserved.
+            </p>
+            <p className="whitespace-nowrap overflow-hidden text-ellipsis md:text-right text-center w-full md:w-auto">
+              Developed by <a href="https://harrychang.me" target="_blank" rel="noopener noreferrer" className="underline hover:text-[hsl(var(--accent))]">Harry Chang</a>
             </p>
           </div>
         </div>
