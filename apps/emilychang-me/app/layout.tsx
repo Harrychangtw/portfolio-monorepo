@@ -25,6 +25,16 @@ export const metadata: Metadata = {
     template: '%s | Emily Chang',
   },
   description: 'Portfolio of Emily Chang',
+  icons: {
+    icon: '/favicon.png',
+    apple: '/apple-icon.png',
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+      },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
@@ -34,6 +44,13 @@ export const metadata: Metadata = {
     description: 'Portfolio of Emily Chang',
     url: 'https://www.emilychang.me',
     siteName: 'Emily Chang',
+    images: [
+      {
+        url: 'https://www.emilychang.me/og-image.webp',
+        width: 1200,
+        height: 630,
+      },
+    ],
     locale: 'en_US',
     type: 'website',
   },
@@ -41,6 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Emily Chang',
     description: 'Portfolio of Emily Chang',
+    images: ['https://www.emilychang.me/og-image.webp'],
   },
 }
 

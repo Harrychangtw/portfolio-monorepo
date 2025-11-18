@@ -1,7 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { scrollToSection } from "@portfolio/lib/lib/scrolling"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
@@ -19,6 +20,8 @@ const socialAndResourceLinks = [
     { id: 'personal_instagram', name: 'Personal Instagram', href: 'https://www.instagram.com/dumbass_emi_?igsh=MXR4dTB0emk2c2h0dQ%3D%3D&utm_source=qr' },
     { id: 'spotify', name: 'Spotify', href: 'https://open.spotify.com/user/snth1yq0x1gilq0h52rsudjed?si=37WuZ9pOQ_2EwPdnVEYwww' },
 ]
+
+
 
 
 export default function EmilyFooter() {
@@ -59,17 +62,30 @@ export default function EmilyFooter() {
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
 
-            {/* Column 1: Name & Description */}
-            <div className="col-span-12 md:col-span-6 md:pr-24 md:mt-2 max-w-xl">
-              <div className="block mb-6">
-                <h2 className="font-heading text-3xl text-primary">
-                  Emily Chang
-                </h2>
+            {/* Column 1: Name & Credits */}
+            <div className="col-span-12 md:col-span-6 md:pr-24 max-w-xl">
+              <div className="block mb-20">
+                  <a
+                    href="/"
+                    className="relative h-12 mb-8 block cursor-pointer group"
+                    aria-label="Return to home page"
+                  >
+                    <Image
+                      src="/footer_name_icon.png"
+                      alt="Emily Chang Logo"
+                      width={446}
+                      height={150}
+                      className="object-contain transition-opacity group-hover:opacity-80"
+                      priority
+                      style={{ width: 'auto', height: '96px' }}
+                    />
+                    <span className="sr-only">Emily Chang</span>
+                  </a>
               </div>
-              <div className="font-body text-base text-primary space-y-3">
-                <p>Designer & Artist exploring the intersection of creativity and expression.</p>
+              <div className="text-sm text-secondary space-y-2">
+                <p>© {new Date().getFullYear()} Emily Chang. All rights reserved.</p>
                 <p>
-                  Based in Taiwan, creating meaningful work through design, art, and illustration.
+                  Developed by <a href="https://harrychang.me" target="_blank" rel="noopener noreferrer" className="underline hover:text-[hsl(var(--accent))]">Harry Chang</a>
                 </p>
               </div>
             </div>
@@ -133,19 +149,6 @@ export default function EmilyFooter() {
 
               </div>
             </div>
-          </div>
-
-          {/* Divider */}
-          <hr className="border-[hsl(var(--background))] mt-16 mb-10 md:mt-16 md:mb-4" />
-
-          {/* Bottom Row: Copyright & Developer Credit */}
-          <div className="flex flex-col md:flex-row md:justify-between items-center text-sm text-secondary gap-2 md:gap-0">
-            <p className="whitespace-nowrap overflow-hidden text-ellipsis md:text-left text-center w-full md:w-auto">
-              © {new Date().getFullYear()} Emily Chang. All rights reserved.
-            </p>
-            <p className="whitespace-nowrap overflow-hidden text-ellipsis md:text-right text-center w-full md:w-auto">
-              Developed by <a href="https://harrychang.me" target="_blank" rel="noopener noreferrer" className="underline hover:text-[hsl(var(--accent))]">Harry Chang</a>
-            </p>
           </div>
         </div>
       </footer>

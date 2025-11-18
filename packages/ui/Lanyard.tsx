@@ -115,7 +115,7 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
   };
 
   const { nodes, materials } = useGLTF('/images/card.glb') as any;
-  const cardTexture = useTexture('/images/landyard_texture.png');
+  const cardTexture = useTexture('/images/landyard_texture.webp');
   
   // Fix texture orientation and sharpness
   useEffect(() => {
@@ -242,16 +242,14 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
               drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())));
             }}
           >
-            <mesh geometry={nodes.card.geometry}>
-              <meshPhysicalMaterial
-                map={cardTexture}
-                map-anisotropy={16}
-                clearcoat={1}
-                clearcoatRoughness={0.15}
-                roughness={0.3}
-                metalness={0.5}
-              />
-            </mesh>
+              <mesh geometry={nodes.card.geometry}>
+                <meshPhysicalMaterial
+                  map={cardTexture}
+                  map-anisotropy={16}
+                  roughness={0.8}
+                  metalness={0}
+                />
+              </mesh>              
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
             <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
           </group>

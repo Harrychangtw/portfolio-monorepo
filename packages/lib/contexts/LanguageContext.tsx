@@ -69,28 +69,26 @@ const parseHtmlToReact = (htmlString: string): React.ReactNode => {
 }
 
 export function LanguageProvider({ children, englishOnly = false }: { children: React.ReactNode; englishOnly?: boolean }) {
-  const [language, setLanguageState] = useState<Language>('en')
-  const [translations, setTranslations] = useState<Translations>({})
-  const [isLoading, setIsLoading] = useState(true)
-  // Track if we've completed the first load
-  const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
-
-  // On mount, check for saved language preference on the client side (unless englishOnly is true)
-  useEffect(() => {
-    if (englishOnly) {
-      // Force English only, skip localStorage and browser detection
-      setLanguageState('en')
-      return
+  // Initialize language state with a function to read from localStorage synchronously
+  const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window === 'undefined' || englishOnly) {
+      return 'en'
     }
     
     const saved = localStorage.getItem('language') as Language | null
     if (saved === 'en' || saved === 'zh-TW') {
-      setLanguageState(saved)
-    } else {
-      const browserLang = navigator.language?.toLowerCase().startsWith('zh') ? 'zh-TW' : 'en'
-      setLanguageState(browserLang)
+      return saved
     }
-  }, [englishOnly])
+    
+    // Fallback to browser language detection
+    const browserLang = navigator.language?.toLowerCase().startsWith('zh') ? 'zh-TW' : 'en'
+    return browserLang
+  })
+  
+  const [translations, setTranslations] = useState<Translations>({})
+  const [isLoading, setIsLoading] = useState(true)
+  // Track if we've completed the first load
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
 
   // Load translations for a specific language
   const loadTranslations = async (lang: Language) => {
@@ -98,7 +96,9 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
     try {
       const namespaces = ['common', 'about', 'updates', 'uses']
       const translationPromises = namespaces.map(async (namespace) => {
-        const response = await fetch(`/locales/${lang}/${namespace}.json`)
+        const response = await fetch(`/locales/${lang}/${namespace}.json`, {
+          cache: 'force-cache', // Ensure translations are cached
+        })
         if (response.ok) {
           const data = await response.json()
           return { namespace, data }
@@ -117,6 +117,8 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
       setHasLoadedOnce(true) // First load finished
     } catch (error) {
       console.error('Failed to load translations:', error)
+      // Even on error, mark as loaded to prevent infinite hidden state
+      setHasLoadedOnce(true)
     } finally {
       setIsLoading(false)
     }
@@ -198,9 +200,21 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
         isLoading,
       }}
     >
-      <div style={{ visibility: hasLoadedOnce ? 'visible' : 'hidden' }}>
-        {children}
-      </div>
+      {!hasLoadedOnce ? (
+        <div 
+          style={{ 
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'hsl(var(--background))',
+            zIndex: 9999,
+          }}
+        />
+      ) : (
+        children
+      )}
     </LanguageContext.Provider>
   )
 }
