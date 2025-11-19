@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Emily's color scheme - light mode */
-    --background: 350  5% 95%; /* #faf2f6 */
+    --background: 350  5% 92%; /* #faf2f6 */
     --foreground: 0 0% 4%; /* #0A0A0A - Dark text on light background */
     --card: 0 0% 100%; /* #FFFFFF */
     --card-foreground: 0 0% 4%; /* #0A0A0A */
@@ -36,6 +36,11 @@
     background-color: hsl(var(--background));
     color: hsl(var(--primary));
     font-family: var(--font-ibm-plex), sans-serif;
+  }
+  
+  /* Force Playfair Display to always render as italic */
+  .font-heading {
+    font-style: italic !important;
   }
 }
 

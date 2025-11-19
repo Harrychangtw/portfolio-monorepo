@@ -192,7 +192,7 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
         const clampedDistance = Math.max(0.1, Math.min(1, ref.current.lerped.distanceTo(ref.current.translation())));
         ref.current.lerped.lerp(
           ref.current.translation(),
-          delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))
+          Math.min(1, Math.max(0, (delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))) || 0))
         );
       });
       curve.points[0].copy(j3.current.translation());
@@ -246,8 +246,12 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
                 <meshPhysicalMaterial
                   map={cardTexture}
                   map-anisotropy={16}
-                  roughness={0.8}
-                  metalness={0}
+                  roughness={0.8} // Keep this high for a matte, paper-like finish
+                  metalness={0}   // Keep this at 0 to avoid a metallic look
+                  sheen={0.1}          // Add a slight sheen to catch light on the edges
+                  sheenColor="white"   // Ensure the sheen is a neutral color
+                  clearcoat={0.1}        // Add a very subtle clearcoat for a slight gloss
+                  clearcoatRoughness={0.9} // Make the clearcoat rough to diffuse the light
                 />
               </mesh>              
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />

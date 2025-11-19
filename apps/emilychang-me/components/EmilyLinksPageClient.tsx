@@ -158,13 +158,11 @@ function LinkCard({ link }: { link: LinkItem }) {
       {/* Hover Effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
       <div className="relative flex items-center gap-2.5 sm:gap-3">
-        {/* Icon */}
-        <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-muted/50 flex items-center justify-center text-foreground group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300">
-          {link.icon}
-        </div>
+        {/* Icon (emoji inline) */}
+        <span className="text-xl sm:text-2xl mr-1 align-middle">{link.icon}</span>
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm sm:text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+          <h3 className="text-sm sm:text-base font-semibold text-foreground group-hover:text-primary transition-colors inline-block align-middle">
             {link.label}
           </h3>
         </div>

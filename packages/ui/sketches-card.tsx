@@ -54,11 +54,13 @@ export default function SketchesCard({
   const hoverAnimation = hoverEffect === "gentle" 
     ? { 
         scale: 1.02,
+        zIndex: 11,
         transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as any }
       }
     : { 
         scale: 0.98,
-        transition: { duration: 0.2, ease: [0.4, 0, 0.6, 1] as any }
+        zIndex: 10,
+        transition: { duration: 0.3, ease: [0.4, 0, 0.6, 1] as any }
       }
 
   return (

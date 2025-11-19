@@ -23,9 +23,13 @@ export default function SketchesSection({ sectionId = "sketches", hoverEffect = 
   const [isLoading, setIsLoading] = useState(true)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   
+
   // Ref to track the hovered index without restarting the interval
   const hoveredIndexRef = useRef(hoveredIndex)
   hoveredIndexRef.current = hoveredIndex
+
+  // Ref to track which language's sketches have been fetched
+  const fetchedLanguageRef = useRef<string | null>(null)
 
   const sectionRef = useRef<HTMLElement>(null)
   
@@ -41,7 +45,7 @@ export default function SketchesSection({ sectionId = "sketches", hoverEffect = 
         const response = await fetch(`/api/sketches?locale=${language}`)
         const data = await response.json()
         setAllSketches(data)
-        
+        fetchedLanguageRef.current = language // Keep track of the fetched language
         if (data.length > 9) {
           const shuffled = [...data].sort(() => Math.random() - 0.5)
           setDisplayedSketches(shuffled.slice(0, 9))
@@ -55,7 +59,7 @@ export default function SketchesSection({ sectionId = "sketches", hoverEffect = 
       }
     }
 
-    if (isVisible) {
+    if (isVisible && fetchedLanguageRef.current !== language) {
       fetchSketches()
     }
   }, [isVisible, language])
