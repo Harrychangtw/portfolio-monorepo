@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from 'react'
 import Lanyard from './Lanyard'
 
 // Reusable component for section titles
@@ -23,6 +24,35 @@ const ListItem = ({ children }: { children: React.ReactNode }) => (
 )
 
 export default function AboutSection() {
+  // State to handle responsive Z-position (distance) of the Lanyard
+  const [lanyardZ, setLanyardZ] = useState(25)
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth
+      
+      // Logic to determining Z distance based on screen width:
+      // The narrower the screen, the higher the Z value needs to be (pushing it back)
+      // to make it appear smaller and prevent text overlap.
+      if (width >= 1600) {
+        setLanyardZ(25) // Standard Desktop (Original size)
+      } else if (width >= 1000) {
+        setLanyardZ(32) // Small Laptop/Large Tablet: Push back slightly
+      } else if (width >= 768) {
+        setLanyardZ(40) // Portrait Tablet: Push back significantly (Fixes the overlap issue)
+      } else {
+        setLanyardZ(25) // Mobile: Adjust slightly for the vertical stack layout
+      }
+    }
+
+    // Initial call
+    handleResize()
+
+    // Event listener
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
     <section id="about" className="relative border-b border-border overflow-hidden">
       {/* Parent Container: Sets minimum height but allows growth via relative children */}
@@ -30,9 +60,8 @@ export default function AboutSection() {
 
         {/* -------------------------------------------------------
             DESKTOP GRID
-            Changed: 'absolute inset-0' -> 'relative' to allow height growth
            ------------------------------------------------------- */}
-        <div className="hidden md:grid grid-cols-12 gap-x-12 relative z-10 pointer-events-none">
+        <div className="hidden md:grid grid-cols-12 gap-x-12 relative z-10 pointer-events-none h-full">
           
           {/* -- Left Column: Extended Bio -- */}
           <div className="col-span-4 flex flex-col justify-start pt-10 text-left pointer-events-auto">
@@ -58,10 +87,9 @@ export default function AboutSection() {
           </div>
 
           {/* -- Center Column: Name & Title (Background) -- */}
-          {/* Using sticky/centered logic or just flex to keep it roughly in place */}
-          <div className="col-span-4 text-center flex flex-col justify-start pt-32 items-center opacity-50 hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+          <div className="col-span-4 text-center flex flex-col justify-center items-center opacity-50 hover:opacity-100 transition-opacity duration-500 pointer-events-none">
             <div> 
-              <h1 className="font-heading italic text-4xl lg:text-5xl font-medium">Emily Chang</h1>
+              <h1 className="font-heading italic text-3xl lg:text-3xl font-medium">Emily Chang</h1>
               <p className="font-body text-secondary mt-3 tracking-wide">Visual Artist & Graphic Designer</p>
             </div>
           </div>
@@ -94,7 +122,7 @@ export default function AboutSection() {
                 <SectionTitle>Skills & Interests</SectionTitle>
                 <div className="space-y-1">
                     <ListItem>Procreate, Photoshop, Illustrator</ListItem>
-                    <ListItem>Painting, Films, Music, Oat Milk Latte</ListItem>
+                    <ListItem>Painting, Films, Music, Oat Milk Lattes</ListItem>
                 </div>
             </div>
 
@@ -139,7 +167,7 @@ export default function AboutSection() {
                 <div className="space-y-4 mt-4">
                   <InfoEntry primary="Current" secondary="Fu Jen Catholic University" />
                   <InfoEntry primary="2021 - 2024" secondary="Taipei Xue Xue Institute" />
-                  <InfoEntry primary="2020 - 2021" secondary="National Taipei University..." />
+                  <InfoEntry primary="2020 - 2021" secondary="National Taipei University of Business" />
                 </div>
               </div>
 
@@ -156,7 +184,7 @@ export default function AboutSection() {
                   <SectionTitle>Skills & Interests</SectionTitle>
                    <div className="space-y-2 mt-4">
                       <ListItem>Procreate, Photoshop, Illustrator</ListItem>
-                      <ListItem>Painting, Films, Crudo Sauces</ListItem>
+                      <ListItem>Painting, Films, Oat Milk Lattes</ListItem>
                   </div>
               </div>
           </div>
@@ -166,10 +194,13 @@ export default function AboutSection() {
 
       {/* -------------------------------------------------------
           LAYER 3: Lanyard
-          Changed: Mobile height increased to 800px to cover name area
          ------------------------------------------------------- */}
       <div className="absolute top-0 left-0 right-0 z-20 h-[500px] md:h-full w-full pointer-events-auto">
-        <Lanyard position={[0, 0, 25]} gravity={[0, -40, 0]} />
+        {/* 
+           Pass the dynamic Z-position to scale the lanyard visually based on screen width.
+           gravity defaults were: [0, -40, 0]
+        */}
+        <Lanyard position={[0, 0, lanyardZ]} gravity={[0, -40, 0]} />
       </div>
     </section>
   )

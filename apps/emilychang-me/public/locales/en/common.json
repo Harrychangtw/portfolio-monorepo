@@ -102,24 +102,14 @@
     "publishedOn": "Published on"
   },
   "tooltips": {
-    "about":"The obligatory \"who am I\" nobody reads",
-    "updates":"Humble brags disguised as a changelog",
-    "projects":"Things I did instead of touching grass",
-    "gallery":"Expensive glass pointed at mundane things",
-    "gmail": "Always happy for a chat!",
-    "discord": "Online 24/7, mentally present 3/7",
-    "calendar": "Book a time, let's chat!",
-    "github": "Where good code goes to get overengineered",
-    "instagram": "POV: You're watching a teenager pretend to be Fan Ho",
-    "linkedin": "Be my 6th connection.",
-    "letterboxd": "4.5 stars for everything because I have no taste",
-    "resume": "Yes it's literally just a Google Drive link.",
-    "manifesto": "My philosophy on work, creation, and curiosity",
-    "icarus": "For those who build their own wings.",
-    "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
-    "reading": "No TL;DR. Figure it out yourself.",
-    "uses": "Need these for \"school work\"",
-    "design": "Because \"Inspect Element\" is for amateurs."
+    "gmail": "Get in touch",
+    "about": "The rundown",
+    "projects": "Things I’ve made",
+    "canvas": "Where the mess happens",
+    "music": "My audio palette",
+    "sketches": "The not-so-rough one",
+    "personal_instagram": "My civilian identity",
+    "art_instagram": "Archive"
   },
   
   "letterGlitch": {

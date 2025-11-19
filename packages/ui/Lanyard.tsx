@@ -3,7 +3,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Canvas, extend, useFrame } from '@react-three/fiber';
+import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
 import {
   BallCollider,
@@ -38,21 +38,29 @@ export default function Lanyard({
     <div className="lanyard-wrapper">
       <Canvas
         camera={{ position, fov }}
-        dpr={[1, 2]} // Support high-DPI displays (Retina screens)
+        // OPTIMIZATION: Cap DPR at 1.5. Visually similar to 2 on Retina, but much less GPU load.
+        dpr={[1, 1.5]} 
         gl={{ 
           alpha: transparent,
-          antialias: true // Enable antialiasing for smoother edges
+          // OPTIMIZATION: Antialias is expensive on Safari/iOS. 
+          // With DPR > 1, we can often turn it off. If edges look too jagged, set to true.
+          antialias: false, 
+          powerPreference: "high-performance",
+          stencil: false, // Save memory, not needed for this scene
+          depth: true
         }}
         onCreated={({ gl }) => {
           gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
-          gl.toneMapping = THREE.ACESFilmicToneMapping; // Better color/contrast
+          // Standard tone mapping is slightly faster than ACESFilmic and looks fine for this
+          gl.toneMapping = THREE.ACESFilmicToneMapping; 
         }}
       >
         <ambientLight intensity={Math.PI} />
         <Physics gravity={gravity} timeStep={1 / 60}>
           <Band />
         </Physics>
-        <Environment blur={0.75}>
+        {/* OPTIMIZATION: Lower resolution for lighting calculation. 256 is plenty for blurred lights. */}
+        <Environment blur={0.75} resolution={256}>
           <Lightformer
             intensity={2}
             color="white"
@@ -92,14 +100,14 @@ interface BandProps {
   minSpeed?: number;
 }
 
-function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
-  // Using "any" for refs since the exact types depend on Rapier's internals
+function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   const band = useRef<any>(null);
   const fixed = useRef<any>(null);
   const j1 = useRef<any>(null);
   const j2 = useRef<any>(null);
   const j3 = useRef<any>(null);
   const card = useRef<any>(null);
+  const { gl } = useThree();
 
   const vec = new THREE.Vector3();
   const ang = new THREE.Vector3();
@@ -110,29 +118,29 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
     type: 'dynamic' as RigidBodyProps['type'],
     canSleep: true,
     colliders: false,
-    angularDamping: 4,
-    linearDamping: 4
+    angularDamping: 2,
+    linearDamping: 2
   };
 
   const { nodes, materials } = useGLTF('/images/card.glb') as any;
   const cardTexture = useTexture('/images/landyard_texture.webp');
   
-  // Fix texture orientation and sharpness
   useEffect(() => {
     if (cardTexture) {
       cardTexture.flipY = false;
       cardTexture.wrapS = THREE.RepeatWrapping;
-      cardTexture.repeat.x = 1; // Mirror horizontally
+      cardTexture.repeat.x = 1;
       
-      // Improve sharpness
-      cardTexture.anisotropy = 16; // Maximum anisotropic filtering
-      cardTexture.minFilter = THREE.LinearMipMapLinearFilter; // Best quality minification
-      cardTexture.magFilter = THREE.LinearFilter; // Smooth magnification
-      cardTexture.generateMipmaps = true; // Generate mipmaps for better quality at distance
+      // OPTIMIZATION: Limit anisotropy. 16 is overkill for mobile bandwidth.
+      // 4 provides good oblique viewing angles without the heavy cost.
+      cardTexture.anisotropy = Math.min(gl.capabilities.getMaxAnisotropy(), 4); 
       
+      cardTexture.minFilter = THREE.LinearMipMapLinearFilter; 
+      cardTexture.magFilter = THREE.LinearFilter; 
+      cardTexture.generateMipmaps = true; 
       cardTexture.needsUpdate = true;
     }
-  }, [cardTexture]);
+  }, [cardTexture, gl]);
   
   const [curve] = useState(
     () =>
@@ -152,7 +160,7 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
     const handleResize = (): void => {
       setIsSmall(window.innerWidth < 1024);
     };
-
+    // Debounce resize if possible, but for this snippet we keep it simple
     window.addEventListener('resize', handleResize);
     return (): void => window.removeEventListener('resize', handleResize);
   }, []);
@@ -187,6 +195,7 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
       });
     }
     if (fixed.current) {
+      // Calculate lerped positions
       [j1, j2].forEach(ref => {
         if (!ref.current.lerped) ref.current.lerped = new THREE.Vector3().copy(ref.current.translation());
         const clampedDistance = Math.max(0.1, Math.min(1, ref.current.lerped.distanceTo(ref.current.translation())));
@@ -195,11 +204,15 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
           Math.min(1, Math.max(0, (delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))) || 0))
         );
       });
+      
+      // Update Curve
       curve.points[0].copy(j3.current.translation());
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
       band.current.geometry.setPoints(curve.getPoints(32));
+      
+      // Tilt logic
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
@@ -243,15 +256,16 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
             }}
           >
               <mesh geometry={nodes.card.geometry}>
-                <meshPhysicalMaterial
+                {/* OPTIMIZATION: Switch to meshStandardMaterial. 
+                    Physical material with sheen/clearcoat is extremely expensive on Safari/Mobile.
+                    Standard material is much faster and Roughness 0.7-0.8 mimics paper well. 
+                */}
+                <meshStandardMaterial
                   map={cardTexture}
-                  map-anisotropy={16}
-                  roughness={0.8} // Keep this high for a matte, paper-like finish
-                  metalness={0}   // Keep this at 0 to avoid a metallic look
-                  sheen={0.1}          // Add a slight sheen to catch light on the edges
-                  sheenColor="white"   // Ensure the sheen is a neutral color
-                  clearcoat={0.1}        // Add a very subtle clearcoat for a slight gloss
-                  clearcoatRoughness={0.9} // Make the clearcoat rough to diffuse the light
+                  map-anisotropy={4} 
+                  roughness={0.75}
+                  metalness={0.05}
+                  envMapIntensity={0.8}
                 />
               </mesh>              
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
@@ -264,7 +278,8 @@ function Band({ maxSpeed = 30, minSpeed = 0 }: BandProps) {
         <meshLineMaterial
           color="black"
           depthTest={false}
-          resolution={isSmall ? [1000, 2000] : [1000, 1000]}
+          // OPTIMIZATION: Slightly reduce resolution for mobile
+          resolution={isSmall ? [800, 1600] : [1200, 1200]}
           lineWidth={0.75}
         />
       </mesh>
