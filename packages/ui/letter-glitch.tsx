@@ -10,7 +10,7 @@ interface LetterGlitchProps {
 }
 
 const LetterGlitch = ({
-  glitchColors = ["#2b4539", "hsl(var(--accent))", "#61b3dc"],
+  glitchColors = ["#2b4539", "#D8F600", "#61b3dc"],
   glitchSpeed = 50,
   smooth = true,
   onAnimationComplete

@@ -49,6 +49,9 @@
   },
   "design": {
     "title": "Design System",
+    "identity": "Ethos & Identity",
+    "identityText1": "The Tower of Babel is often cited as a cautionary tale of hubris, yet I see it as the ultimate testament to human curiosity. We build not to challenge the divine, but to measure our own reach. It represents the audacity to construct languages, systems, and narratives that bridge the gap between the earth we walk on and the ideals we dream of.",
+    "identityText2": "I choose to climb with the full knowledge that gravity waits for no one. To code, to capture, and to create is to risk a magnificent failure in pursuit of a singular breakthrough. I would rather scorch my wings against the sun than never leave the ground, for the view from the ascent is worth the fall.",
     "colorPalette": "Color Palette",
     "typeScale": "Type Scale",
     "weights": "Weights",
