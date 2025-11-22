@@ -7,7 +7,7 @@ import LanguageSwitcher from '@portfolio/ui/language-switcher';
 const manifestoChunksEn = [
     [
         "I am the child who saw marvels in LEGO bricks,",
-        "Not for their colors, but for the sacred geometry within—",
+        "Not for their colors, but for the latent architecture within—",
         "Each joint a prayer to possibility,",
         "Each mechanism a meditation on what could be."
     ],

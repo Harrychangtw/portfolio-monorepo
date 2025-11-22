@@ -1,5 +1,26 @@
 [
   {
+    "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
+    "authors": [
+      "Monte MacDiarmid, Benjamin Wright, Jonathan Uesato, Joe Benton, Jon Kutasov, Sara Price, Naia Bouscal, Sam Bowman, Trenton Bricken, Alex Cloud, Carson Denison, Johannes Gasteiger, Ryan Greenblatt, Jan Leike, Jack Lindsey, Vlad Mikulik, Ethan Perez, Alex Rodrigues, Drake Thomas, Albert Webson, Daniel Ziegler, Evan Hubinger"
+    ],
+    "date": "2025-11-22",
+    "url": "https://assets.anthropic.com/m/74342f2c96095771/original/Natural-emergent-misalignment-from-reward-hacking-paper.pdf",
+    "source": "manual"
+  },
+  {
+    "title": "APP: Accelerated Path Patching with Task-Specific Pruning",
+    "authors": [
+      "Frauke Andersen",
+      "William Rudman",
+      "Ruochen Zhang",
+      "Carsten Eickhoff"
+    ],
+    "date": "2025-11-07T17:20:32Z",
+    "url": "http://arxiv.org/abs/2511.05442v1",
+    "source": "arxiv"
+  },
+  {
     "title": "DeepSeek-OCR: Contexts Optical Compression",
     "authors": [
       "Haoran Wei",

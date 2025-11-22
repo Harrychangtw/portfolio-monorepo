@@ -37,10 +37,9 @@ export function TypographySpecimen({ font, index }: TypographySpecimenProps) {
 
       {/* Weights - Compact display */}
       <div className="mb-12">
-        <h3 className="font-space-grotesk text-sm uppercase tracking-wider text-white/40 mb-6">
-          {t('design.weights')}
-        </h3>
-        {font.weights.map((weight) => (
+          {font.weights
+            .filter((weight) => weight >= 300)
+            .map((weight) => (
           <div
             key={weight}
             className="grid grid-cols-12 gap-4 items-baseline py-3 border-b border-white/5"
@@ -100,8 +99,6 @@ export function TypographySpecimen({ font, index }: TypographySpecimenProps) {
 
 function getWeightName(weight: number): string {
   const weightNames: Record<number, string> = {
-    100: 'Thin',
-    200: 'Extra Light',
     300: 'Light',
     400: 'Regular',
     500: 'Medium',

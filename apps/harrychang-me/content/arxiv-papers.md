@@ -180,3 +180,4 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2510.06594
 2510.06732
 2510.18234
+2511.05442
