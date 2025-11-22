@@ -46,7 +46,7 @@ Performance, scalability, and advanced features were primary goals during develo
 
 **Internationalization (i18n):** The site supports English and Traditional Chinese through a custom, client-side React Context. Content is localized based on filename suffixes (`_zh-tw.md`), and the site gracefully falls back to English if a translation is unavailable.
 
-![Lighthouse audit report for the portfolio website, showing near-perfect performance scores.](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
+![Lighthouse audit report for the portfolio website.](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
 
 
 ### Content & Features

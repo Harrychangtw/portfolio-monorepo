@@ -46,7 +46,7 @@ featured: true
 
 **國際化（i18n）**：網站透過客製化的客戶端 React Context，完整支援英文與繁體中文。內容是依據檔案後綴（`_zh-tw.md`）進行本地化，當特定內容的中文版本不存在時，網站會自動顯示英文版本。
 
-![作品集網站的 Lighthouse 跑分，顯示接近滿分的效能評分。](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
+![作品集網站的 Lighthouse 跑分](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
 
 ### 內容與功能
 
