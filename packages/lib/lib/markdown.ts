@@ -769,7 +769,7 @@ function transformMedia() {
                   object-fit: contain;
                 " 
               />
-              ${alt ? `<figcaption class="mt-2 text-sm text-left" style="color: #4F4F4F;">${alt}</figcaption>` : ''}
+              ${alt ? `<figcaption class="mt-2 text-sm text-left" style="color: hsl(var(--secondary));">${alt}</figcaption>` : ''}
 
             </figure>
           `
