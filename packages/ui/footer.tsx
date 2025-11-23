@@ -183,7 +183,7 @@ export default function Footer() {
         }
 
       `}</style>
-      <footer className="bg-background text-primary py-12 md:py-16 border-t border-border">
+      <footer className="bg-card text-primary py-12 md:py-16 border-t border-border">
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
 
