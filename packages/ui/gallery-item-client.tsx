@@ -5,12 +5,14 @@ import { ArrowLeft } from "lucide-react"
 import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
 import type { GalleryItemMetadata } from "@portfolio/lib/lib/markdown"
 import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import NextUpCard from "@portfolio/ui/next-up-card"
 
 interface GalleryItemClientProps {
   item: GalleryItemMetadata & { contentHtml: string }
+  nextItem?: { slug: string; title: string; category: string; imageUrl: string } | null
 }
 
-export default function GalleryItemClient({ item }: GalleryItemClientProps) {
+export default function GalleryItemClient({ item, nextItem }: GalleryItemClientProps) {
   const { language, t } = useLanguage()
   
   // Extract the full image URL (not thumbnail) for the main hero image
@@ -141,6 +143,16 @@ export default function GalleryItemClient({ item }: GalleryItemClientProps) {
             </div>
           </div>
         </div>
+        {/* Next Up Card */}
+        {nextItem && (
+          <NextUpCard 
+            title={nextItem.title}
+            category={nextItem.category}
+            slug={nextItem.slug}
+            imageUrl={nextItem.imageUrl}
+            basePath="gallery"
+          />
+        )}
       </div>
     </div>
   )

@@ -7,12 +7,14 @@ import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
 import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
 import { useImagePreloader } from '@portfolio/lib/hooks/use-image-preloader'
 import type { ProjectMetadata } from '@portfolio/lib/lib/markdown'
+import NextUpCard from "@portfolio/ui/next-up-card"
 
 interface ProjectPageClientProps {
   initialProject: ProjectMetadata & { contentHtml: string }
+  nextProject?: { slug: string; title: string; category: string; imageUrl: string } | null
 }
 
-export default function ProjectPageClient({ initialProject }: ProjectPageClientProps) {
+export default function ProjectPageClient({ initialProject, nextProject }: ProjectPageClientProps) {
   const { language, t } = useLanguage()
   const [project, setProject] = useState(initialProject)
   const [loading, setLoading] = useState(false)
@@ -194,6 +196,16 @@ export default function ProjectPageClient({ initialProject }: ProjectPageClientP
                     __html: project.contentHtml
                   }}
                 />
+                {/* Next Up Card */}
+                {nextProject && (
+                  <NextUpCard 
+                    title={nextProject.title}
+                    category={nextProject.category}
+                    slug={nextProject.slug}
+                    imageUrl={nextProject.imageUrl}
+                    basePath="projects"
+                  />
+                )}
               </div>
             </div>
           </div>

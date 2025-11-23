@@ -46,7 +46,7 @@ Performance, scalability, and advanced features were primary goals during develo
 
 **Internationalization (i18n):** The site supports English and Traditional Chinese through a custom, client-side React Context. Content is localized based on filename suffixes (`_zh-tw.md`), and the site gracefully falls back to English if a translation is unavailable.
 
-![Lighthouse audit report for the portfolio website.](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
+![Lighthouse audit report showing perfect 100 scores across Performance, Accessibility, Best Practices, and SEO.](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
 
 
 ### Content & Features
@@ -58,4 +58,5 @@ The portfolio is designed to showcase a variety of work and thought, with key se
 - [**Manifesto Page:**](https://harrychang.me/manifesto) A dedicated space to express the core principles and philosophies that drive my work.
 - [**Paper Reading Section:**](https://harrychang.me/paper-reading) A dynamic list of academic papers I have studied.
 - [**Uses**](https://harrychang.me/uses) A list of tools and technologies I use regularly.
+
 The source code for this site is available on [GitHub](https://github.com/Harrychangtw/portfolio-monorepo) under a CC BY-NC 4.0 license. All content, including text and images, is protected by copyright.

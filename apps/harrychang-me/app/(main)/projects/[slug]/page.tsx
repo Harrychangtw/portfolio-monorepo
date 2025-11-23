@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
-import { getProjectData, getAllProjectSlugs } from "@portfolio/lib/lib/markdown"
+import { getProjectData, getAllProjectSlugs, getNextProject } from "@portfolio/lib/lib/markdown"
 import ProjectPageClient from "@portfolio/ui/project-page-client"
 
 const baseUrl = 'https://www.harrychang.me'
@@ -102,6 +102,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   if (!slug) notFound()
   
   const project = await getProjectData(slug)
+  const nextProject = await getNextProject(slug)
 
   if (!project || project.locked) { // Check if project exists and is not locked
     notFound()
@@ -156,7 +157,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <ProjectPageClient initialProject={project} />
+      <ProjectPageClient initialProject={project} nextProject={nextProject} />
     </>
   )
 }

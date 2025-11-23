@@ -3,13 +3,15 @@
 import { useEffect, useState } from 'react'
 import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
 import GalleryItemClient from './gallery-item-client'
+import NextUpCard from "@portfolio/ui/next-up-card"
 import type { GalleryItemMetadata } from '@portfolio/lib/lib/markdown'
 
 interface GalleryItemPageClientProps {
   initialItem: GalleryItemMetadata & { contentHtml: string }
+  nextItem?: { slug: string; title: string; category: string; imageUrl: string } | null
 }
 
-export default function GalleryItemPageClient({ initialItem }: GalleryItemPageClientProps) {
+export default function GalleryItemPageClient({ initialItem, nextItem }: GalleryItemPageClientProps) {
   const { language } = useLanguage()
   const [item, setItem] = useState(initialItem)
   const [loading, setLoading] = useState(false) // remains false unless fetching new language
@@ -81,5 +83,25 @@ export default function GalleryItemPageClient({ initialItem }: GalleryItemPageCl
     )
   }
 
-  return <GalleryItemClient item={item} />
+  return (
+    <>
+      <GalleryItemClient item={item} />
+      {nextItem && (
+        <div className="container pb-16 md:pb-24">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
+            <div className="md:col-span-8 md:col-start-5">
+              <NextUpCard 
+                title={nextItem.title}
+                category={nextItem.category}
+                slug={nextItem.slug}
+                imageUrl={nextItem.imageUrl}
+                basePath="gallery"
+                
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
 }

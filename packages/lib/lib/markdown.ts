@@ -609,6 +609,87 @@ export function saveGalleryItem(slug: string, data: Omit<GalleryItemMetadata, "s
   }
 }
 
+
+// Helper to find the next unlocked project
+export async function getNextProject(currentSlug: string) {
+  ensureDirectoriesExist()
+  
+  // Determine locale from slug
+  const locale = currentSlug.includes('_zh-tw') ? 'zh-TW' : 'en'
+  const allProjects = getAllProjectsMetadata(locale)
+  
+  if (allProjects.length === 0) return null
+
+  const currentIndex = allProjects.findIndex(p => p.slug
+
+ === currentSlug)
+  if (currentIndex === -1) return null
+
+  // Find next unlocked project (circular navigation)
+  let nextIndex = (currentIndex + 1) % allProjects.length
+  let attempts = 0
+  
+  while (attempts < allProjects.length) {
+    const candidate = allProjects[nextIndex]
+    
+    // Check if not locked and not the current one (in case only 1 exists)
+    if (!candidate.locked && candidate.slug !== currentSlug) {
+      // Get full data for the candidate (mainly to ensure we have valid paths)
+      // We only need basic metadata, so existing metadata is fine, 
+      // but let's ensure image is optimized thumbnail
+      return {
+        slug: candidate.slug,
+        title: candidate.title,
+        category: candidate.category,
+        imageUrl: candidate.imageUrl // Already thumbnail from getAllProjectsMetadata
+      }
+    }
+    
+    nextIndex = (nextIndex + 1) % allProjects.length
+    attempts++
+  }
+
+  return null
+}
+
+// Helper to find the next unlocked gallery item
+export async function getNextGalleryItem(currentSlug: string) {
+  ensureDirectoriesExist()
+  
+  const locale = currentSlug.includes('_zh-tw') ? 'zh-TW' : 'en'
+  const allItems = getAllGalleryMetadata(locale)
+  
+  if (allItems.length === 0) return null
+
+  const currentIndex = allItems.findIndex(p => p.slug === currentSlug)
+  if (currentIndex === -1) return null
+
+  // Find next unlocked item (circular)
+  let nextIndex = (currentIndex + 1) % allItems.length
+  let attempts = 0
+  
+  while (attempts < allItems.length) {
+    const candidate = allItems[nextIndex]
+    
+    if (!candidate.locked && candidate.slug !== currentSlug) {
+      return {
+        slug: candidate.slug,
+        title: candidate.title,
+        category: candidate.quote, // Use quote as category subtitle for gallery
+        imageUrl: candidate.imageUrl
+      }
+    }
+    
+    nextIndex = (nextIndex + 1
+
+) % allItems.length
+    attempts++
+  }
+
+  return null
+}
+
+
 function transformMedia() {
   return (tree: Root) => {
     visit(tree, 'image', (node: MdastImage, index, parent) => {

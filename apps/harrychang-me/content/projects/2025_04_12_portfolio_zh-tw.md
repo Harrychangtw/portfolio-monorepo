@@ -46,7 +46,7 @@ featured: true
 
 **國際化（i18n）**：網站透過客製化的客戶端 React Context，完整支援英文與繁體中文。內容是依據檔案後綴（`_zh-tw.md`）進行本地化，當特定內容的中文版本不存在時，網站會自動顯示英文版本。
 
-![作品集網站的 Lighthouse 跑分](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
+![效能、無障礙、最佳實務與 SEO 皆獲得滿分的 Lighthouse 檢測報告](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
 
 ### 內容與功能
 
@@ -57,4 +57,5 @@ featured: true
 -   [**理念**](https://harrychang.me/manifesto)：一個專屬頁面，用來表達驅動我的核心原則，讓讀者能更專注地閱讀。
 -   [**論文閱讀**](https://harrychang.me/paper-reading)：動態更新的學術論文閱讀筆記列表。
 -   [**工具與設定**](https://harrychang.me/uses)：列出我日常使用的工具與軟體。
+
 本站的原始程式碼已開源於 [GitHub](https://github.com/Harrychangtw/portfolio-monorepo)，並採用 CC BY-NC 4.0 授權。網站內所有文字與圖片內容則保留版權。

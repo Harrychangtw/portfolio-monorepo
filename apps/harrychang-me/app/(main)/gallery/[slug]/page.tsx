@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { getGalleryItemData, getAllGallerySlugs } from "@portfolio/lib/lib/markdown"
+import { getGalleryItemData, getAllGallerySlugs, getNextGalleryItem } from "@portfolio/lib/lib/markdown"
 import GalleryItemPageClient from "@portfolio/ui/gallery-item-page-client"
 
 const baseUrl = 'https://www.harrychang.me'
@@ -95,6 +95,7 @@ export default async function GalleryItemPage({ params }: { params: Promise<{ sl
   if (!slug) notFound()
   
   const item = await getGalleryItemData(slug)
+  const nextItem = await getNextGalleryItem(slug)
 
   if (!item) {
     notFound()
@@ -145,7 +146,7 @@ export default async function GalleryItemPage({ params }: { params: Promise<{ sl
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <GalleryItemPageClient initialItem={item} />
+      <GalleryItemPageClient initialItem={item} nextItem={nextItem} />
     </>
   )
 }
