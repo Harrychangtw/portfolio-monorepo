@@ -47,7 +47,6 @@ export * from './ui/toast';
 export * from './ui/toggle-group';
 export * from './ui/toggle';
 export * from './ui/tooltip';
-export * from './ui/use-mobile';
 export * from './ui/use-toast';
 
 // Custom components
