@@ -43,7 +43,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.metadata.title.default,
     description: `${siteConfig.author.name} (${siteConfig.author.alternateName}) portfolio showcasing photography development and design work`,
-    creator: siteConfig.social.twitter,
     images: [`${siteConfig.url}${siteConfig.media.ogImage.url}`],
   },
   robots: {

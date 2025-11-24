@@ -16,13 +16,11 @@ export const metadata: Metadata = {
     canonical: `${siteConfig.url}/`,
     languages: {
       'en': `${siteConfig.url}/`,
-      'zh-TW': `${siteConfig.url}/?lang=zh-TW`,
     },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    alternateLocale: ['zh_TW'],
     url: siteConfig.url,
     siteName: siteConfig.metadata.siteName,
     title: siteConfig.metadata.title.default,
