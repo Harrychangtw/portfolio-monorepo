@@ -3,6 +3,7 @@ import type React from 'react'
 import type { Metadata } from 'next'
 import { Space_Grotesk, Press_Start_2P, IBM_Plex_Sans } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
+import { siteConfig } from '@/config/site'
 
 
 const spaceGrotesk = Space_Grotesk({
@@ -19,26 +20,26 @@ const ibmPlexSans = IBM_Plex_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.harrychang.me'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Harry Chang',
-    template: '%s | Harry Chang',
+    default: siteConfig.author.name,
+    template: `%s | ${siteConfig.author.name}`,
   },
-  description: 'Portfolio of Harry Chang',
+  description: `Portfolio of ${siteConfig.author.name}`,
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: 'Harry Chang',
-    description: 'Portfolio of Harry Chang',
-    url: 'https://www.harrychang.me',
-    siteName: 'Harry Chang',
+    title: siteConfig.author.name,
+    description: `Portfolio of ${siteConfig.author.name}`,
+    url: siteConfig.url,
+    siteName: siteConfig.author.name,
     images: [
       {
-        url: 'https://www.harrychang.me/images/og-image.png',
-        width: 1200,
-        height: 630,
+        url: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
+        width: siteConfig.media.ogImage.width,
+        height: siteConfig.media.ogImage.height,
       },
     ],
     locale: 'en_US',
@@ -46,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Harry Chang',
-    description: 'Portfolio of Harry Chang',
-    images: ['https://www.harrychang.me/images/og-image.png'],
+    title: siteConfig.author.name,
+    description: `Portfolio of ${siteConfig.author.name}`,
+    images: [`${siteConfig.url}${siteConfig.media.ogImage.url}`],
   },
 }
 

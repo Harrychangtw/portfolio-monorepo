@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
 
 export default function InstagramMainRedirect() {
-  redirect('https://www.instagram.com/dumbass_emi_')
+  redirect(siteConfig.social.personalInstagram.url)
 }

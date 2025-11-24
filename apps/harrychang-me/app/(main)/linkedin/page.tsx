@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
 
 export default function LinkedinRedirect() {
-  redirect('https://www.linkedin.com/in/chi-wei-chang-928408375/')
+  redirect(siteConfig.social.linkedin)
 }

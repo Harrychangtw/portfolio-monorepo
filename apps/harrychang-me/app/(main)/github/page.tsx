@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
 
 export default function GitHubRedirect() {
-  redirect('https://github.com/Harrychangtw')
+  redirect(siteConfig.social.github)
 }

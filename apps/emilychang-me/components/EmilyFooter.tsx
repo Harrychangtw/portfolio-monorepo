@@ -7,19 +7,16 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { scrollToSection } from "@portfolio/lib/lib/scrolling"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { siteConfig } from "@/config/site"
+import { ANIMATION, UI } from "@portfolio/config"
 
-const navigationLinks = [
-  { id: 'about', name: 'About', href: '/#about' },
-  { id: 'projects', name: 'Projects', href: '/projects' },
-  { id: 'canvas', name: 'Canvas', href: '/canvas' },
-  { id: 'sketches', name: 'Sketches', href: '/#sketches' },
-]
+const navigationLinks = siteConfig.navigation
 
 const socialAndResourceLinks = [
-    { id: 'gmail', name: 'Email', href: 'mailto:koding.chang@gmail.com' },
-    { id: 'art_instagram', name: 'Art Instagram', href: 'https://www.instagram.com/weirdoo_club?igsh=ZjE2ZnR1anFneWp6&utm_source=qr' },
-    { id: 'personal_instagram', name: 'Personal Instagram', href: 'https://www.instagram.com/dumbass_emi_?igsh=MXR4dTB0emk2c2h0dQ%3D%3D&utm_source=qr' },
-    { id: 'music', name: 'Spotify', href: 'https://open.spotify.com/user/snth1yq0x1gilq0h52rsudjed?si=37WuZ9pOQ_2EwPdnVEYwww' },
+    { id: 'gmail', name: 'Email', href: `mailto:${siteConfig.author.email}` },
+    { id: 'art_instagram', name: siteConfig.social.artInstagram.name, href: siteConfig.social.artInstagram.url },
+    { id: 'personal_instagram', name: siteConfig.social.personalInstagram.name, href: siteConfig.social.personalInstagram.url },
+    { id: 'music', name: siteConfig.social.spotify.name, href: siteConfig.social.spotify.url },
 ]
 
 
@@ -72,21 +69,21 @@ export default function EmilyFooter() {
                     aria-label="Return to home page"
                   >
                     <Image
-                      src="/footer_icon.png"
-                      alt="Emily Chang Logo"
-                      width={446}
-                      height={150}
+                      src={siteConfig.media.footerIcon}
+                      alt={`${siteConfig.author.name} Logo`}
+                      width={siteConfig.media.footerIconDimensions.width}
+                      height={siteConfig.media.footerIconDimensions.height}
                       className="object-contain transition-opacity group-hover:opacity-80"
                       priority
-                      style={{ width: 'auto', height: '96px' }}
+                      style={{ width: 'auto', height: `${siteConfig.media.footerIconDimensions.displayHeight}px` }}
                     />
-                    <span className="sr-only">Emily Chang</span>
+                    <span className="sr-only">{siteConfig.author.name}</span>
                   </Link>
               </div>
               <div className="text-sm text-secondary space-y-2">
-                <p>© {new Date().getFullYear()} Emily Chang. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} {siteConfig.author.name}. All rights reserved.</p>
                 <p>
-                  Developed by <a href="https://harrychang.me" target="_blank" rel="noopener noreferrer" className="underline hover:text-[hsl(var(--accent))]">Harry Chang</a>
+                  Developed by <a href={siteConfig.developer.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-[hsl(var(--accent))]">{siteConfig.developer.name}</a>
                 </p>
               </div>
             </div>
@@ -103,7 +100,7 @@ export default function EmilyFooter() {
                   <ul className="space-y-3">
                     {socialAndResourceLinks.map(link => (
                       <li key={link.id}>
-                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                        <motion.div whileHover={{ y: UI.motion.hoverLift }} transition={{ duration: ANIMATION.duration.normal }}>
                           <Link
                             href={link.href}
                             {...(!isInternalLink(link.href) && {
@@ -131,7 +128,7 @@ export default function EmilyFooter() {
                   <ul className="space-y-3">
                     {navigationLinks.map(link => (
                       <li key={link.id}>
-                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                        <motion.div whileHover={{ y: UI.motion.hoverLift }} transition={{ duration: ANIMATION.duration.normal }}>
                           <Link
                             href={link.href}
                             className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
@@ -157,13 +154,13 @@ export default function EmilyFooter() {
       {/* Custom Tooltip */}
       {activeTooltipId && (
         <motion.div
-          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-          transition={{ duration: 0.15, ease: "easeOut" }}
+          initial={{ opacity: ANIMATION.opacity.hidden, y: 10, scale: ANIMATION.scale.subtle }}
+          animate={{ opacity: ANIMATION.opacity.visible, y: 0, scale: ANIMATION.scale.normal }}
+          exit={{ opacity: ANIMATION.opacity.hidden, y: 10, scale: ANIMATION.scale.subtle }}
+          transition={{ duration: ANIMATION.duration.fast, ease: ANIMATION.easing.easeOut }}
           className="fixed z-50"
           style={{
-            top: tooltipPosition.y - 40,
+            top: tooltipPosition.y + UI.tooltip.offsetY,
             left: tooltipPosition.x,
             transform: 'translateX(-50%)',
             pointerEvents: 'none',

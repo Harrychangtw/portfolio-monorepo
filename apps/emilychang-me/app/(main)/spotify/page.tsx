@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
 
 export default function SpotifyRedirect() {
-  redirect('https://open.spotify.com/user/snth1yq0x1gilq0h52rsudjed')
+  redirect(siteConfig.social.spotify.url)
 }

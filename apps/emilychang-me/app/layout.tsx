@@ -2,6 +2,7 @@ import './globals.css'
 import type React from 'react'
 import type { Metadata } from 'next'
 import { IBM_Plex_Sans, Playfair_Display } from 'next/font/google'
+import { siteConfig } from '@/config/site'
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -19,12 +20,12 @@ const playfairDisplay = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.emilychang.me'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Emily Chang',
-    template: '%s | Emily Chang',
+    default: siteConfig.author.name,
+    template: `%s | ${siteConfig.author.name}`,
   },
-  description: 'Portfolio of Emily Chang',
+  description: `Portfolio of ${siteConfig.author.name}`,
   icons: {
     icon: '/favicon.png',
     apple: '/apple-icon.png',
@@ -40,13 +41,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Emily Chang',
-    description: 'Portfolio of Emily Chang',
-    url: 'https://www.emilychang.me',
-    siteName: 'Emily Chang',
+    title: siteConfig.author.name,
+    description: `Portfolio of ${siteConfig.author.name}`,
+    url: siteConfig.url,
+    siteName: siteConfig.author.name,
     images: [
       {
-        url: 'https://www.emilychang.me/og-image.webp',
+        url: `${siteConfig.url}/og-image.webp`,
         width: 1200,
         height: 630,
       },
@@ -56,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Emily Chang',
-    description: 'Portfolio of Emily Chang',
-    images: ['https://www.emilychang.me/og-image.webp'],
+    title: siteConfig.author.name,
+    description: `Portfolio of ${siteConfig.author.name}`,
+    images: [`${siteConfig.url}/og-image.webp`],
   },
 }
 
