@@ -743,34 +743,37 @@ function transformMedia() {
       } else {
         // It's a regular image with optimized loading and dimensions to prevent CLS
         const imageUrl = getFullResolutionPath(url)
-        
+
         // Get actual dimensions to prevent CLS
         const dims = getDimsFromWebPath(imageUrl)
         let dimensionAttrs = ''
-        
+        let aspectRatioStyle = ''
+
         if (dims) {
           dimensionAttrs = `width="${dims.width}" height="${dims.height}"`
+          // Add explicit aspect-ratio CSS property for zero-CLS loading
+          aspectRatioStyle = `aspect-ratio: ${dims.width} / ${dims.height};`
         }
-        
+
         const imageNode: HTML = {
           type: 'html',
           value: `
             <figure class="my-6">
-              <img 
-                src="${imageUrl}" 
-                alt="${alt}" 
+              <img
+                src="${imageUrl}"
+                alt="${alt}"
                 ${dimensionAttrs}
-                loading="lazy" 
+                loading="lazy"
                 decoding="async"
                 style="
                   width: 100%;
                   height: auto;
+                  ${aspectRatioStyle}
                   display: block;
                   object-fit: contain;
-                " 
+                "
               />
               ${alt ? `<figcaption class="mt-2 text-sm text-left" style="color: hsl(var(--secondary));">${alt}</figcaption>` : ''}
-
             </figure>
           `
         }

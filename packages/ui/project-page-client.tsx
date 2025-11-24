@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
@@ -18,20 +18,9 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
   const { language, t } = useLanguage()
   const [project, setProject] = useState(initialProject)
   const [loading, setLoading] = useState(false)
-  
+
   // Preload the hero image with high priority for better LCP
   useImagePreloader({ src: project.imageUrl, priority: true })
-
-  // Calculate hero image dimensions for CLS prevention
-  const heroImageDims = useMemo(() => {
-    return {
-      width: project.imageWidth || 2000,
-      height: project.imageHeight || 1200,
-      aspectRatio: project.imageWidth && project.imageHeight 
-        ? project.imageWidth / project.imageHeight 
-        : 1.5
-    }
-  }, [project.imageWidth, project.imageHeight])
 
   useEffect(() => {
     async function fetchLocalizedProject() {
@@ -78,7 +67,7 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
         <div className="pb-12">
           <div className="container">
             <div className="animate-pulse">
-              <div className="bg-gray-300 aspect-[16/9] rounded mb-8"></div>
+              <div className="bg-gray-300 aspect-[3/2] rounded mb-8"></div>
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
                 <div className="md:col-span-4">
                   <div className="h-4 bg-gray-300 rounded mb-4"></div>
@@ -104,7 +93,7 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
     <div className="page-transition-enter">
       <div className="pb-12">
         <div className="container">
-          {/* Hero image section */}
+          {/* Hero image section - Enforcing strict 3:2 (1.5) aspect ratio */}
           <div className="relative w-full mb-8">
             <GalleryImageContainer
               src={project.imageUrl}
@@ -112,7 +101,7 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
               priority={true}
               quality={95}
               noInsetPadding={true}
-              aspectRatio={heroImageDims.aspectRatio}
+              aspectRatio={1.5}
             />
           </div>
         </div>
