@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
 
 export default function BeliRedirect() {
-  redirect('https://beliapp.co/app/emilysushigod')
+  redirect(siteConfig.social.beli)
 }

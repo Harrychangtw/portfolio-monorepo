@@ -2,47 +2,45 @@ import type React from 'react'
 import type { Metadata } from 'next'
 import ClientLayout from '@/components/ClientLayout'
 import EmilyFooter from '@/components/EmilyFooter'
+import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.emilychang.me'),
-  title: {
-    template: '%s | Emily Chang',
-    default: 'Emily Chang | Portfolio',
-  },
-  description: 'Emily Chang explores the intersection of design, art, and creative expression. Explore her portfolio of design work, creations, and artistic endeavors.',
-  keywords: ['Emily Chang', 'portfolio', 'design', 'art', 'illustration', 'creative'],
-  authors: [{ name: 'Emily Chang', url: 'https://www.emilychang.me' }],
-  creator: 'Emily Chang',
-  publisher: 'Emily Chang',
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.metadata.title,
+  description: siteConfig.metadata.description,
+  keywords: siteConfig.metadata.keywords,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
   alternates: {
-    canonical: 'https://www.emilychang.me/',
+    canonical: `${siteConfig.url}/`,
     languages: {
-      'en': 'https://www.emilychang.me/',
-      'zh-TW': 'https://www.emilychang.me/?lang=zh-TW',
+      'en': `${siteConfig.url}/`,
+      'zh-TW': `${siteConfig.url}/?lang=zh-TW`,
     },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['zh_TW'],
-    url: 'https://www.emilychang.me',
-    siteName: 'Emily Chang Portfolio',
-    title: 'Emily Chang | Portfolio',
-    description: 'Emily Chang explores the intersection of design, art, and creative expression.',
+    url: siteConfig.url,
+    siteName: siteConfig.metadata.siteName,
+    title: siteConfig.metadata.title.default,
+    description: siteConfig.author.description,
     images: [
       {
-        url: 'https://www.emilychang.me/images/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Emily Chang Portfolio',
+        url: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
+        width: siteConfig.media.ogImage.width,
+        height: siteConfig.media.ogImage.height,
+        alt: siteConfig.media.ogImage.alt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Emily Chang | Portfolio',
-    description: 'Emily Chang portfolio showcasing design and art work',
-    images: ['https://www.emilychang.me/images/og-image.png'],
+    title: siteConfig.metadata.title.default,
+    description: `${siteConfig.author.name} portfolio showcasing design and art work`,
+    images: [`${siteConfig.url}${siteConfig.media.ogImage.url}`],
   },
   robots: {
     index: true,
@@ -77,12 +75,12 @@ export default function MainLayout({
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Emily Chang',
-    url: 'https://www.emilychang.me',
-    image: 'https://www.emilychang.me/images/og-image.png',
-    jobTitle: 'Designer & Artist',
-    description: 'Emily Chang explores the intersection of design, art, and creative expression',
-    knowsAbout: ['Design', 'Art', 'Illustration', 'Creative Direction'],
+    name: siteConfig.author.name,
+    url: siteConfig.url,
+    image: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
+    jobTitle: siteConfig.author.jobTitle,
+    description: siteConfig.author.description,
+    knowsAbout: siteConfig.skills,
   }
 
   return (

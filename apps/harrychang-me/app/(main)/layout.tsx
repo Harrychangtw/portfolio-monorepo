@@ -5,48 +5,46 @@ import type { Metadata } from 'next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import ClientLayout from '@/components/main/ClientLayout'
 import Footer from '@portfolio/ui/footer'
+import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.harrychang.me'),
-  title: {
-    template: '%s | Harry Chang',
-    default: 'Harry Chang 張祺煒 | Portfolio',
-  },
-  description: 'Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Explore his portfolio of software development, photography, and design.',
-  keywords: ['Harry Chang', '張祺煒', 'portfolio', 'photography', 'software development', 'design', 'research', 'AI', 'machine learning'],
-  authors: [{ name: 'Harry Chang', url: 'https://www.harrychang.me' }],
-  creator: 'Harry Chang',
-  publisher: 'Harry Chang',
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.metadata.title,
+  description: siteConfig.metadata.description,
+  keywords: siteConfig.metadata.keywords,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
   alternates: {
-    canonical: 'https://www.harrychang.me/',
+    canonical: `${siteConfig.url}/`,
     languages: {
-      'en': 'https://www.harrychang.me/',
-      'zh-TW': 'https://www.harrychang.me/?lang=zh-TW',
+      'en': `${siteConfig.url}/`,
+      'zh-TW': `${siteConfig.url}/?lang=zh-TW`,
     },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['zh_TW'],
-    url: 'https://www.harrychang.me',
-    siteName: 'Harry Chang Portfolio',
-    title: 'Harry Chang 張祺煒 | Portfolio',
-    description: 'Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Explore his portfolio of software development, photography, and design.',
+    url: siteConfig.url,
+    siteName: siteConfig.metadata.siteName,
+    title: siteConfig.metadata.title.default,
+    description: siteConfig.metadata.description,
     images: [
       {
-        url: 'https://www.harrychang.me/images/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Harry Chang Portfolio',
+        url: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
+        width: siteConfig.media.ogImage.width,
+        height: siteConfig.media.ogImage.height,
+        alt: siteConfig.media.ogImage.alt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Harry Chang 張祺煒 | Portfolio',
-    description: 'Harry Chang (張祺煒) portfolio showcasing photography development and design work',
-    creator: '@harrychangtw',
-    images: ['https://www.harrychang.me/images/og-image.png'],
+    title: siteConfig.metadata.title.default,
+    description: `${siteConfig.author.name} (${siteConfig.author.alternateName}) portfolio showcasing photography development and design work`,
+    creator: siteConfig.social.twitter,
+    images: [`${siteConfig.url}${siteConfig.media.ogImage.url}`],
   },
   robots: {
     index: true,
@@ -79,7 +77,7 @@ export const metadata: Metadata = {
     ]
   },
   verification: {
-    google: 'googleb0d95f7ad2ffc31f'   
+    google: siteConfig.verification.google,
   },
 }
 
@@ -92,18 +90,18 @@ export default function MainLayout({
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Harry Chang',
-    alternateName: '張祺煒',
-    url: 'https://www.harrychang.me',
-    image: 'https://www.harrychang.me/images/og-image.png',
+    name: siteConfig.author.name,
+    alternateName: siteConfig.author.alternateName,
+    url: siteConfig.url,
+    image: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
     sameAs: [
-      'https://github.com/Harrychangtw',
-      // 'https://twitter.com/harrychangtw',
-      // 'https://linkedin.com/in/harrychangtw',
+      siteConfig.social.github,
+      // siteConfig.social.twitterUrl,
+      // siteConfig.social.linkedinUrl,
     ],
-    jobTitle: 'Developer & Researcher',
-    description: 'Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling',
-    knowsAbout: ['Software Development', 'Photography', 'Design', 'Artificial Intelligence', 'Machine Learning', 'Research'],
+    jobTitle: siteConfig.author.jobTitle,
+    description: siteConfig.author.description,
+    knowsAbout: siteConfig.skills,
   }
 
   return (

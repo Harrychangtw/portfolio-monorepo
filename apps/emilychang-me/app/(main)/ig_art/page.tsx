@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
 
 export default function InstagramArtRedirect() {
-  redirect('https://www.instagram.com/weirdoo_club')
+  redirect(siteConfig.social.artInstagram.url)
 }

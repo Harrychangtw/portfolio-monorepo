@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
 
 export default function InstagramRedirect() {
-  redirect('https://www.instagram.com/pomelo_chang_08/')
+  redirect(siteConfig.social.instagram)
 }
