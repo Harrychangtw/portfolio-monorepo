@@ -55,6 +55,7 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath }
                   quality={60}
                   priority={false}
                   noInsetPadding={true}
+                  aspectRatio={basePath === "projects" ? 1.5 : undefined}
                 />
               ) : (
                 <div className="w-full aspect-[3/2] bg-card" />

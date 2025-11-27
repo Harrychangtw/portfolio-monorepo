@@ -44,7 +44,7 @@ export function GalleryImageContainer({
 
   // Get thumbnail URL for blur-up loading
   const thumbnailSrc = src?.replace('.webp', '-thumb.webp')
-
+  
   // Calculate border thickness as 0.01 (1%) of container width
   // Min 1px, max 4px on mobile and 6px on desktop
   const minThickness = isMobile ? 1 : 1
