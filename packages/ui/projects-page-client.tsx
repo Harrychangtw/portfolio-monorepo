@@ -39,7 +39,7 @@ export default function ProjectsPageClient() {
     return (
       <div className="page-transition-enter">
         <div className="container py-16 md:py-24">
-          <h1 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('projects.title')}</h1>
+          <h1 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('projects.title')}</h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--column-spacing)]">
             {[...Array(6)].map((_, i) => (
               <div key={i} className="group relative flex flex-col">
@@ -69,7 +69,7 @@ export default function ProjectsPageClient() {
   return (
     <div className="page-transition-enter">
       <div className="container py-16 md:py-24">
-        <h1 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">{t('projects.title')}</h1>
+        <h1 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('projects.title')}</h1>
         {projects.length === 0 ? (
           <p className="font-ibm-plex text-muted-foreground">{t('projects.noProjectsFound')}</p>
         ) : (

@@ -81,7 +81,7 @@ export default function LabPageClient() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
-                className="text-5xl md:text-6xl lg:text-6xl font-space-grotesk font-bold mb-6 leading-[1.1] tracking-tighter"
+                className="text-5xl md:text-6xl lg:text-6xl font-heading font-bold mb-6 leading-[1.1] tracking-tighter"
                 
               >
                 <span className="text-white">

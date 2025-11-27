@@ -43,8 +43,8 @@ const ColorCard = ({ name, cssValue }: { name: string; cssValue: string }) => {
         style={{ backgroundColor: cssValue }}
       />
       <div>
-        <p className="font-space-grotesk text-xs">{name}</p>
-        <p className="font-space-grotesk text-xs text-white/40 uppercase font-mono">
+        <p className="font-heading text-xs">{name}</p>
+        <p className="font-heading text-xs text-white/40 uppercase font-mono">
           {resolvedHex || '...'}
         </p>
       </div>
@@ -83,7 +83,7 @@ export default function TypographyPageClient() {
               priority
             />
           </div>
-          <h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-8">
+          <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-8">
             {t('design.identity')}
           </h2>
 
@@ -102,7 +102,7 @@ export default function TypographyPageClient() {
       {/* Color System - Compact */}
       <section className="container mx-auto px-4 md:px-8 py-12">
         <div>
-          <h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-8">
+          <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-8">
             {t('design.colorPalette')}
           </h2>
           <div className="grid grid-cols-4 md:grid-cols-7 gap-4">

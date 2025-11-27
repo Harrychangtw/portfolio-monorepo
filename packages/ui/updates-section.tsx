@@ -128,7 +128,7 @@ export default function UpdatesSection() {
         >
             <div className="container">
                 <div className="flex justify-between items-center mb-4">
-                    <h2 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary">
+                    <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">
                         {t('updates.title')}
                     </h2>
                     <div className="flex space-x-4">
@@ -136,7 +136,7 @@ export default function UpdatesSection() {
                             <button
                                 onClick={handlePrevPage}
                                 disabled={currentPage === 0}
-                                className="font-space-grotesk text-2xl text-muted-foreground hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                            className="font-heading text-2xl text-secondary hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                                 ←
                             </button>
@@ -145,7 +145,7 @@ export default function UpdatesSection() {
                             <button
                                 onClick={handleNextPage}
                                 disabled={currentPage === totalPages - 1}
-                                className="font-space-grotesk text-2xl text-muted-foreground hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                className="font-heading text-2xl text-secondary hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                                 →
                             </button>

@@ -9,7 +9,7 @@ interface TypographySpecimenProps {
 }
 
 export function TypographySpecimen({ font, index }: TypographySpecimenProps) {
-  const fontClass = font.variable === '--font-ibm-plex-sans' ? 'font-ibm-plex' : 'font-space-grotesk'
+  const fontClass = font.variable === '--font-ibm-plex-sans' ? 'font-ibm-plex' : 'font-heading'
   const { t } = useLanguage()
 
   return (
@@ -27,10 +27,10 @@ export function TypographySpecimen({ font, index }: TypographySpecimenProps) {
 
         {/* Minimal info */}
         <div className="flex gap-6 text-white/60 text-sm">
-          <span className="font-space-grotesk">{font.classification}</span>
-          <span className="font-space-grotesk">{font.weights.length} weights</span>
+          <span className="font-heading">{font.classification}</span>
+          <span className="font-heading">{font.weights.length} weights</span>
           {font.yearDesigned && (
-            <span className="font-space-grotesk">{font.yearDesigned}</span>
+            <span className="font-heading">{font.yearDesigned}</span>
           )}
         </div>
       </div>
@@ -45,7 +45,7 @@ export function TypographySpecimen({ font, index }: TypographySpecimenProps) {
             className="grid grid-cols-12 gap-4 items-baseline py-3 border-b border-white/5"
           >
             <div className="col-span-2">
-              <span className="font-space-grotesk text-xs text-white/40">
+              <span className="font-heading text-xs text-white/40">
                 {getWeightName(weight)}
               </span>
             </div>
@@ -63,30 +63,30 @@ export function TypographySpecimen({ font, index }: TypographySpecimenProps) {
 
       {/* Character Set - Simplified */}
       <div className="mb-12">
-        <h3 className="font-space-grotesk text-sm uppercase tracking-wider text-white/40 mb-6">
+        <h3 className="font-heading text-sm uppercase tracking-wider text-white/40 mb-6">
           {t('design.characterSet')}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <p className="font-space-grotesk text-xs text-white/40 mb-2">{t('design.uppercase')}</p>
+            <p className="font-heading text-xs text-white/40 mb-2">{t('design.uppercase')}</p>
             <p className={`${fontClass} text-lg md:text-xl tracking-wide break-all`}>
               ABCDEFGHIJKLMNOPQRSTUVWXYZ
             </p>
           </div>
           <div>
-            <p className="font-space-grotesk text-xs text-white/40 mb-2">{t('design.lowercase')}</p>
+            <p className="font-heading text-xs text-white/40 mb-2">{t('design.lowercase')}</p>
             <p className={`${fontClass} text-lg md:text-xl tracking-wide break-all`}>
               abcdefghijklmnopqrstuvwxyz
             </p>
           </div>
           <div>
-            <p className="font-space-grotesk text-xs text-white/40 mb-2">{t('design.numbers')}</p>
+            <p className="font-heading text-xs text-white/40 mb-2">{t('design.numbers')}</p>
             <p className={`${fontClass} text-lg md:text-xl tracking-wide`}>
               0123456789
             </p>
           </div>
           <div>
-            <p className="font-space-grotesk text-xs text-white/40 mb-2">{t('design.special')}</p>
+            <p className="font-heading text-xs text-white/40 mb-2">{t('design.special')}</p>
             <p className={`${fontClass} text-lg md:text-xl tracking-wide break-all`}>
               !@#$%^&*()_+-=↗↙[]{}
             </p>

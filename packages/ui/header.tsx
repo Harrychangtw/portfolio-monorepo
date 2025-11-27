@@ -210,7 +210,7 @@ export default function Header() {
   // Helper to generate link props (no changes needed here)
   const getLinkProps = (sectionId: string, pagePath: string) => {
     const active = isActive(sectionId);
-    const baseClasses = `relative font-space-grotesk ${active ? "text-primary" : "text-secondary hover:text-[hsl(var(--accent))]"} transition-colors duration-200 outline-none`;
+    const baseClasses = `relative font-heading ${active ? "text-primary" : "text-secondary hover:text-[hsl(var(--accent))]"} transition-colors duration-200 outline-none`;
     const href = pathname?.startsWith(pagePath) && pagePath !== '/' ? pagePath : `/#${sectionId}`;
     const onClick = isHomePage ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => scrollToSection(sectionId, e) : undefined;
     const scroll = !pathname?.startsWith(pagePath);
@@ -314,14 +314,14 @@ export default function Header() {
             {isLab ? (
               <a
                 href={getHomeUrl()}
-                className="font-space-grotesk text-xl font-bold transition-colors hover:text-[hsl(var(--accent))] outline-none"
+                className="font-heading text-xl font-bold transition-colors hover:text-[hsl(var(--accent))] outline-none"
               >
                 Harry Chang
               </a>
             ) : (
               <Link
                 href="/"
-                className="font-space-grotesk text-xl font-bold transition-colors hover:text-[hsl(var(--accent))] outline-none"
+                className="font-heading text-xl font-bold transition-colors hover:text-[hsl(var(--accent))] outline-none"
                 onClick={(e) => { if(isHomePage) scrollToSection('about', e); }}
               >
                 Harry Chang
@@ -339,7 +339,7 @@ export default function Header() {
               >
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
-                  className="font-space-grotesk text-xl text-secondary"
+                  className="font-heading text-xl text-secondary"
                   key={activeSection}
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -360,7 +360,7 @@ export default function Header() {
               >
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
-                  className="font-space-grotesk text-xl text-secondary"
+                  className="font-heading text-xl text-secondary"
                   key="paper-reading"
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -381,7 +381,7 @@ export default function Header() {
               >
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
-                  className="font-space-grotesk text-xl text-secondary"
+                  className="font-heading text-xl text-secondary"
                   key="manifesto"
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -402,7 +402,7 @@ export default function Header() {
               >
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
-                  className="font-space-grotesk text-xl text-secondary"
+                  className="font-heading text-xl text-secondary"
                   key="uses"
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -423,7 +423,7 @@ export default function Header() {
               >
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
-                  className="font-space-grotesk text-xl text-secondary"
+                  className="font-heading text-xl text-secondary"
                   key="lab"
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -445,7 +445,7 @@ export default function Header() {
               >
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
-                  className="font-space-grotesk text-xl text-secondary"
+                  className="font-heading text-xl text-secondary"
                   key="lab"
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -467,7 +467,7 @@ export default function Header() {
               >
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
-                  className="font-space-grotesk text-xl text-secondary"
+                  className="font-heading text-xl text-secondary"
                   key="design"
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}

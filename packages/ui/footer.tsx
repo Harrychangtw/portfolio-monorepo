@@ -220,7 +220,7 @@ export default function Footer() {
                 
                 {/* Column 2: Social & Contact - Aligns with "Roles" */}
                 <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
+                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.socialContact')}
                   </h3>
                   <ul className="space-y-3">
@@ -255,7 +255,7 @@ export default function Footer() {
 
                 {/* Column 3: Personal & Resources - Aligns with "Description" */}
                 <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
+                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.personalResources')}
                   </h3>
                   <ul className="space-y-3">
@@ -287,7 +287,7 @@ export default function Footer() {
 
                 {/* Column 4: Site Navigation */}
                 <div className="col-span-1 md:col-span-4 md:pr-8 hidden md:block">
-                  <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
+                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
                     {t('footer.siteNavigation')}
                   </h3>
                   <ul className="space-y-3">
@@ -358,7 +358,7 @@ export default function Footer() {
               data={nowPlaying}
             />
           ) : (
-            <div className="bg-[hsl(var(--accent))] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-space-grotesk">
+            <div className="bg-[hsl(var(--accent))] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-heading">
               {t(`tooltips.${activeTooltipId}`)}
             </div>
           )}

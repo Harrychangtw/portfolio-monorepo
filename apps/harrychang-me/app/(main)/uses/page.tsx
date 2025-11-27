@@ -65,7 +65,7 @@ export default function UsesPage() {
           
           {/* Core Workstation */}
           <div>
-            <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+            <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
               {t('hardware.coreWorkstation.title', 'uses')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
@@ -84,7 +84,7 @@ export default function UsesPage() {
 
           {/* Office & Ergonomics */}
           <div>
-            <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+            <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
               {t('hardware.office.title', 'uses')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
@@ -103,7 +103,7 @@ export default function UsesPage() {
 
           {/* Home Server */}
           <div>
-            <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+            <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
               {t('hardware.homeServer.title', 'uses')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
@@ -122,7 +122,7 @@ export default function UsesPage() {
 
           {/* Photography Gear */}
           <div>
-            <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+            <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
               {t('hardware.photography.title', 'uses')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
@@ -173,7 +173,7 @@ export default function UsesPage() {
 
           {/* Development & Coding */}
           <div>
-            <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+            <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
               {t('software.development.title', 'uses')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
@@ -192,7 +192,7 @@ export default function UsesPage() {
 
           {/* Design & Creative */}
           <div>
-            <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+            <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
               {t('software.design.title', 'uses')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">
@@ -211,7 +211,7 @@ export default function UsesPage() {
 
           {/* Productivity & Utilities */}
           <div>
-            <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+            <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
               {t('software.productivity.title', 'uses')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-3">

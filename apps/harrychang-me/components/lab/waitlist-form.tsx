@@ -98,7 +98,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         className="bg-card rounded-2xl p-8 max-w-md w-full mx-2 border border-primary/20 text-center"
       >
         <div className="mb-4 text-4xl">🎉</div>
-        <h2 className="text-2xl font-space-grotesk font-bold mb-4">
+        <h2 className="text-2xl font-heading font-bold mb-4">
           {t('lab.successTitle', 'common')}
         </h2>
         <p className="text-muted-foreground mb-4">
@@ -127,7 +127,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         <X className="w-5 h-5" />
       </button>
 
-      <h2 className="text-2xl font-space-grotesk font-bold mb-2 text-white">
+      <h2 className="text-2xl font-heading font-bold mb-2 text-white">
         {t('lab.formTitle', 'common')}
       </h2>
       

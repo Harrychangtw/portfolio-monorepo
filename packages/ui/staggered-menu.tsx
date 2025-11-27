@@ -361,7 +361,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <div className="staggered-menu-toggle-container absolute top-0 right-0 z-20 pointer-events-auto">
           <motion.button
             ref={toggleBtnRef}
-            className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-white font-space-grotesk font-medium leading-none overflow-visible p-2 hover:scale-105 transition-transform duration-200"
+            className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-white font-heading font-medium leading-none overflow-visible p-2 hover:scale-105 transition-transform duration-200"
             aria-label={open ? t('common.closeMenu') || 'Close menu' : t('common.openMenu') || 'Open menu'}
             aria-expanded={open}
             aria-controls="staggered-menu-panel"
@@ -427,7 +427,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                   <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
                     <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
                       <Link
-                        className="sm-panel-item relative text-foreground font-space-grotesk font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
+                        className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
                         href={it.link}
                         aria-label={it.ariaLabel}
                         data-index={idx + 1}
@@ -445,7 +445,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 ))
               ) : (
                 <li className="sm-panel-itemWrap relative overflow-hidden leading-none" aria-hidden="true">
-                  <span className="sm-panel-item relative text-foreground font-space-grotesk font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
+                  <span className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
                     <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                       No items
                     </span>
@@ -457,7 +457,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             {/* Social Links Section */}
             {displaySocials && socialItems && socialItems.length > 0 && (
               <div className="sm-panel-socials mt-auto pt-4 pb-16">
-                <h3 className="font-space-grotesk text-lg uppercase tracking-wider text-secondary mb-4">
+                <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
                   {t('footer.socialContact') || 'Social & Contact'}
                 </h3>
                 <ul className="list-none m-0 p-0 flex flex-wrap gap-6" role="list">
