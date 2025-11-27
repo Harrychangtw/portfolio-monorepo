@@ -5,7 +5,6 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
 import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
-import { useImagePreloader } from '@portfolio/lib/hooks/use-image-preloader'
 import type { ProjectMetadata } from '@portfolio/lib/lib/markdown'
 import NextUpCard from "@portfolio/ui/next-up-card"
 
@@ -18,9 +17,6 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
   const { language, t } = useLanguage()
   const [project, setProject] = useState(initialProject)
   const [loading, setLoading] = useState(false)
-
-  // Preload the hero image with high priority for better LCP
-  useImagePreloader({ src: project.imageUrl, priority: true })
 
   useEffect(() => {
     async function fetchLocalizedProject() {
