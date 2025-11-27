@@ -19,14 +19,15 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState<string>("about")
   const [isScrolling, setIsScrolling] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [hideForFooter, setHideForFooter] = useState(false)
   const [isLab, setIsLab] = useState(false)
+  const [readingProgress, setReadingProgress] = useState(0)
   const isHomePage = pathname === "/"
   const isPaperReadingPage = pathname?.startsWith('/paper-reading');
   const isManifestoPage = pathname?.startsWith('/manifesto');
   const isUsesPage = pathname?.startsWith('/uses');
   const isLinksPage = pathname?.startsWith('/linktree');
   const isDesignPage = pathname?.startsWith('/design');
+  const isProjectDetailPage = pathname?.match(/^\/projects\/[^/]+$/);
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
   const { t } = useLanguage()
@@ -268,28 +269,42 @@ export default function Header() {
     }
   ];
 
-  // Detect when user reaches the bottom (footer fully revealed)
-  useEffect(() => {
-    const onScroll = () => {
-      // Don't hide header on mobile or when menu is open
-      if (isMobile || isMenuOpen || isLab) { // Add isLab here
-        setHideForFooter(false);
-        return;
-      }
-      const doc = document.documentElement;
-      // Check if scroll is within 1px of the bottom
-      const atBottom = doc.scrollHeight - (window.scrollY + window.innerHeight) <= 1;
-      setHideForFooter(atBottom);
-    }
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('resize', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-    }
-  }, [isMobile, isMenuOpen, isLab]) // Add isLab to the dependency array
 
+
+  // Track reading progress for project detail pages with damping
+  useEffect(() => {
+    if (!isProjectDetailPage || isLab) return;
+
+    let animationFrameId: number;
+    let targetProgress = 0;
+
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const scrollableHeight = documentHeight - windowHeight;
+      targetProgress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+    };
+
+    const animate = () => {
+      setReadingProgress((current) => {
+        const diff = targetProgress - current;
+        // Smooth damping: move 15% of the distance each frame
+        const damped = current + diff * 0.15;
+        return Math.abs(diff) < 0.1 ? targetProgress : damped;
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    handleScroll(); // Initial calculation
+    animationFrameId = requestAnimationFrame(animate);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [isProjectDetailPage, isLab]);
 
   // Get the home URL - use absolute URL if on lab subdomain
   const getHomeUrl = () => {
@@ -304,10 +319,17 @@ export default function Header() {
   }
 
   return (
-    
-    <header 
-      className={`fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background transition-transform duration-300 ease-out will-change-transform ${hideForFooter ? '-translate-y-full' : 'translate-y-0'}`}
+
+    <header
+      className="fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background"
     >
+      {/* Reading progress indicator - only shown on project detail pages */}
+      {isProjectDetailPage && !isLab && (
+        <div
+          className="absolute top-0 left-0 h-[1px] bg-[hsl(var(--accent))]"
+          style={{ width: `${readingProgress}%` }}
+        />
+      )}
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
