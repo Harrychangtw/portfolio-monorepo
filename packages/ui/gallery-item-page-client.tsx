@@ -1,16 +1,16 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
 import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
 import NextUpCard from "@portfolio/ui/next-up-card"
 import type { GalleryItemMetadata } from '@portfolio/lib/lib/markdown'
+import NavigationLink from "@portfolio/ui/navigation-link"
 
 interface GalleryItemPageClientProps {
   initialItem: GalleryItemMetadata & { contentHtml: string }
-  nextItem?: { slug: string; title: string; category: string; imageUrl: string } | null
+  nextItem?: { slug: string; title: string; category: string; imageUrl: string; aspectRatio?: number } | null
 }
 
 export default function GalleryItemPageClient({ initialItem, nextItem }: GalleryItemPageClientProps) {
@@ -34,6 +34,8 @@ export default function GalleryItemPageClient({ initialItem, nextItem }: Gallery
           const response = await fetch(`/api/gallery/${targetSlug}`)
           if (response.ok) {
             const itemData = await response.json()
+            // Preserve dimension data (width, height, aspectRatio) from initial load
+            // API returns full dimension data via getGalleryItemData(), so this should be available
             setItem(itemData)
           } else {
             // If the target version doesn't exist, fall back to base version
@@ -113,13 +115,13 @@ export default function GalleryItemPageClient({ initialItem, nextItem }: Gallery
             <div className="md:col-span-4 mb-10 md:mb-0">
               <div className="md:sticky md:top-24">
                 <div className="relative">
-                  <Link
+                  <NavigationLink
                     href="/#gallery"
                     className="inline-flex items-center text-secondary hover:text-primary transition-colors font-body"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     {t('gallery.backToGallery')}
-                  </Link>
+                  </NavigationLink>
                   <div className="mt-8">
                     <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{item.title}</h1>
                     <p className="text-secondary mb-6 md:mb-12 font-body">
@@ -218,6 +220,7 @@ export default function GalleryItemPageClient({ initialItem, nextItem }: Gallery
                     slug={nextItem.slug}
                     imageUrl={nextItem.imageUrl}
                     basePath="gallery"
+                    aspectRatio={nextItem.aspectRatio}
                   />
                 )}
               </div>

@@ -1,10 +1,10 @@
 "use client"
 
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
 import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
+import NavigationLink from "@portfolio/ui/navigation-link"
 
 interface NextUpCardProps {
   title: string
@@ -12,18 +12,19 @@ interface NextUpCardProps {
   slug: string
   imageUrl: string
   basePath: "projects" | "gallery"
+  aspectRatio?: number
 }
 
-export default function NextUpCard({ title, category, slug, imageUrl, basePath }: NextUpCardProps) {
+export default function NextUpCard({ title, category, slug, imageUrl, basePath, aspectRatio }: NextUpCardProps) {
   const { t } = useLanguage()
-  
+
   // Ensure we pass the full resolution URL to GalleryImageContainer
   // It expects the full path and handles creating the -thumb path internally for the blur effect
   const fullImageUrl = imageUrl?.replace('-thumb.webp', '.webp')
 
   return (
     <div className="w-full mt-4 md:mt-6 pt-4">
-      <Link href={`/${basePath}/${slug}`} className="block group">
+      <NavigationLink href={`/${basePath}/${slug}`} className="block group">
         <motion.div 
           className="relative overflow-hidden border border-border bg-muted/30 hover:bg-muted/60 transition-colors p-1"
           whileHover={{ scale: 0.98 }}
@@ -55,7 +56,7 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath }
                   quality={60}
                   priority={false}
                   noInsetPadding={true}
-                  aspectRatio={basePath === "projects" ? 1.5 : undefined}
+                  aspectRatio={aspectRatio}
                 />
               ) : (
                 <div className="w-full aspect-[3/2] bg-card" />
@@ -63,7 +64,7 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath }
             </div>
           </div>
         </motion.div>
-      </Link>
+      </NavigationLink>
     </div>
   )
 }

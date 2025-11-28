@@ -2,12 +2,12 @@
 
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { motion } from "framer-motion"
 import { PinIcon, LockIcon } from "lucide-react"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 import { cva, type VariantProps } from "class-variance-authority"
+import NavigationLink from "@portfolio/ui/navigation-link"
 
 const cardVariants = cva("", {
   variants: {
@@ -183,9 +183,9 @@ export default function ProjectCard({
       {locked ? (
         <div className="block cursor-not-allowed">{CardContent}</div>
       ) : (
-        <Link href={`/projects/${slug}`} className="block">
+        <NavigationLink href={`/projects/${slug}`} className="block">
           {CardContent}
-        </Link>
+        </NavigationLink>
       )}
       {/* Tooltip for locked projects */}
       {tooltipText && tooltip.visible && (

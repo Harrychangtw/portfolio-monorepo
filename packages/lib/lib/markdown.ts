@@ -641,7 +641,8 @@ export async function getNextProject(currentSlug: string) {
         slug: candidate.slug,
         title: candidate.title,
         category: candidate.category,
-        imageUrl: candidate.imageUrl // Already thumbnail from getAllProjectsMetadata
+        imageUrl: candidate.imageUrl, // Already thumbnail from getAllProjectsMetadata
+        aspectRatio: 1.5 // Projects are always 3:2 by design
       }
     }
     
@@ -676,7 +677,8 @@ export async function getNextGalleryItem(currentSlug: string) {
         slug: candidate.slug,
         title: candidate.title,
         category: candidate.quote, // Use quote as category subtitle for gallery
-        imageUrl: candidate.imageUrl
+        imageUrl: candidate.imageUrl,
+        aspectRatio: candidate.aspectRatio // Include aspect ratio for gallery items
       }
     }
     
@@ -747,32 +749,34 @@ function transformMedia() {
         // Get actual dimensions to prevent CLS
         const dims = getDimsFromWebPath(imageUrl)
         let dimensionAttrs = ''
-        let aspectRatioStyle = ''
+        let containerStyle = ''
 
         if (dims) {
           dimensionAttrs = `width="${dims.width}" height="${dims.height}"`
-          // Add explicit aspect-ratio CSS property for zero-CLS loading
-          aspectRatioStyle = `aspect-ratio: ${dims.width} / ${dims.height};`
+          // Set aspect-ratio on the wrapper div to reserve space BEFORE image loads
+          // This prevents CLS by ensuring the container has the correct height from the start
+          containerStyle = `aspect-ratio: ${dims.width} / ${dims.height};`
         }
 
         const imageNode: HTML = {
           type: 'html',
           value: `
             <figure class="my-6">
-              <img
-                src="${imageUrl}"
-                alt="${alt}"
-                ${dimensionAttrs}
-                loading="lazy"
-                decoding="async"
-                style="
-                  width: 100%;
-                  height: auto;
-                  ${aspectRatioStyle}
-                  display: block;
-                  object-fit: contain;
-                "
-              />
+              <div style="width: 100%; ${containerStyle} position: relative;">
+                <img
+                  src="${imageUrl}"
+                  alt="${alt}"
+                  ${dimensionAttrs}
+                  loading="lazy"
+                  decoding="async"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: contain;
+                  "
+                />
+              </div>
               ${alt ? `<figcaption class="mt-2 text-sm text-left" style="color: hsl(var(--secondary));">${alt}</figcaption>` : ''}
             </figure>
           `
