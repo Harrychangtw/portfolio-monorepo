@@ -21,6 +21,16 @@
     "source": "arxiv"
   },
   {
+    "title": "Self-Jailbreaking: Language Models Can Reason Themselves Out of Safety Alignment After Benign Reasoning Training",
+    "authors": [
+      "Zheng-Xin Yong",
+      "Stephen H. Bach"
+    ],
+    "date": "2025-10-23T19:34:24Z",
+    "url": "http://arxiv.org/abs/2510.20956v1",
+    "source": "arxiv"
+  },
+  {
     "title": "DeepSeek-OCR: Contexts Optical Compression",
     "authors": [
       "Haoran Wei",
@@ -29,6 +39,19 @@
     ],
     "date": "2025-10-21T02:41:44Z",
     "url": "http://arxiv.org/abs/2510.18234v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Decoupling Safety into Orthogonal Subspace: Cost-Efficient and Performance-Preserving Alignment for Large Language Models",
+    "authors": [
+      "Yutao Mou",
+      "Xiaoling Zhou",
+      "Yuxiao Luo",
+      "Shikun Zhang",
+      "Wei Ye"
+    ],
+    "date": "2025-10-10T05:01:44Z",
+    "url": "http://arxiv.org/abs/2510.09004v1",
     "source": "arxiv"
   },
   {
@@ -51,6 +74,19 @@
     ],
     "date": "2025-10-08T02:55:31Z",
     "url": "http://arxiv.org/abs/2510.06594v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Beyond Linear Probes: Dynamic Safety Monitoring for Language Models",
+    "authors": [
+      "James Oldfield",
+      "Philip Torr",
+      "Ioannis Patras",
+      "Adel Bibi",
+      "Fazl Barez"
+    ],
+    "date": "2025-09-30T13:32:59Z",
+    "url": "http://arxiv.org/abs/2509.26238v2",
     "source": "arxiv"
   },
   {
@@ -499,6 +535,31 @@
     ],
     "date": "2025-02-19T05:58:52Z",
     "url": "http://arxiv.org/abs/2503.05731v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "SafeDialBench: A Fine-Grained Safety Benchmark for Large Language Models in Multi-Turn Dialogues with Diverse Jailbreak Attacks",
+    "authors": [
+      "Hongye Cao",
+      "Yanming Wang",
+      "Sijia Jing",
+      "Ziyue Peng",
+      "Zhixin Bai",
+      "Zhe Cao",
+      "Meng Fang",
+      "Fan Feng",
+      "Boyan Wang",
+      "Jiaheng Liu",
+      "Tianpei Yang",
+      "Jing Huo",
+      "Yang Gao",
+      "Fanyu Meng",
+      "Xi Yang",
+      "Chao Deng",
+      "Junlan Feng"
+    ],
+    "date": "2025-02-16T12:08:08Z",
+    "url": "http://arxiv.org/abs/2502.11090v3",
     "source": "arxiv"
   },
   {

@@ -10,7 +10,7 @@ import NextUpCard from "@portfolio/ui/next-up-card"
 
 interface ProjectPageClientProps {
   initialProject: ProjectMetadata & { contentHtml: string }
-  nextProject?: { slug: string; title: string; category: string; imageUrl: string } | null
+  nextProject?: { slug: string; title: string; category: string; imageUrl: string; aspectRatio?: number } | null
 }
 
 export default function ProjectPageClient({ initialProject, nextProject }: ProjectPageClientProps) {
@@ -22,11 +22,11 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
     async function fetchLocalizedProject() {
       const baseSlug = project.slug.replace('_zh-tw', '')
       let targetSlug = baseSlug
-      
+
       if (language === 'zh-TW') {
         targetSlug = `${baseSlug}_zh-tw`
       }
-      
+
       // Only fetch if we need a different version than what we currently have
       if (targetSlug !== project.slug) {
         try {
@@ -34,6 +34,8 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
           const response = await fetch(`/api/projects/${targetSlug}`)
           if (response.ok) {
             const projectData = await response.json()
+            // Preserve dimension data (imageWidth, imageHeight) from initial load
+            // API returns full dimension data, so this should be available
             setProject(projectData)
           } else {
             // If the target version doesn't exist, fall back to base version
@@ -183,12 +185,13 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
                 />
                 {/* Next Up Card */}
                 {nextProject && (
-                  <NextUpCard 
+                  <NextUpCard
                     title={nextProject.title}
                     category={nextProject.category}
                     slug={nextProject.slug}
                     imageUrl={nextProject.imageUrl}
                     basePath="projects"
+                    aspectRatio={nextProject.aspectRatio}
                   />
                 )}
               </div>

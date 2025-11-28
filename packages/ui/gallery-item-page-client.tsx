@@ -10,7 +10,7 @@ import type { GalleryItemMetadata } from '@portfolio/lib/lib/markdown'
 
 interface GalleryItemPageClientProps {
   initialItem: GalleryItemMetadata & { contentHtml: string }
-  nextItem?: { slug: string; title: string; category: string; imageUrl: string } | null
+  nextItem?: { slug: string; title: string; category: string; imageUrl: string; aspectRatio?: number } | null
 }
 
 export default function GalleryItemPageClient({ initialItem, nextItem }: GalleryItemPageClientProps) {
@@ -34,6 +34,8 @@ export default function GalleryItemPageClient({ initialItem, nextItem }: Gallery
           const response = await fetch(`/api/gallery/${targetSlug}`)
           if (response.ok) {
             const itemData = await response.json()
+            // Preserve dimension data (width, height, aspectRatio) from initial load
+            // API returns full dimension data via getGalleryItemData(), so this should be available
             setItem(itemData)
           } else {
             // If the target version doesn't exist, fall back to base version
@@ -218,6 +220,7 @@ export default function GalleryItemPageClient({ initialItem, nextItem }: Gallery
                     slug={nextItem.slug}
                     imageUrl={nextItem.imageUrl}
                     basePath="gallery"
+                    aspectRatio={nextItem.aspectRatio}
                   />
                 )}
               </div>

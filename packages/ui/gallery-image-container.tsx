@@ -31,12 +31,12 @@ export function GalleryImageContainer({
     rootMargin: '50px'
   })
   // Initialize dimensions based on provided aspect ratio to prevent CLS
-  const initialDimensions = providedAspectRatio 
+  const initialDimensions = providedAspectRatio
     ? { width: 1200, height: Math.round(1200 / providedAspectRatio) }
     : { width: 1200, height: 800 }
-  
+
   const [dimensions, setDimensions] = useState(initialDimensions)
-  const [loading, setLoading] = useState(!providedAspectRatio) // Don't show loading if aspectRatio is provided
+  const [loading, setLoading] = useState(false) // Always start with loading false to prevent CLS
   const [imageError, setImageError] = useState(false)
   const [blurComplete, setBlurComplete] = useState(false)
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
@@ -57,41 +57,34 @@ export function GalleryImageContainer({
   // Reset loading states when source changes
   useEffect(() => {
     setBlurComplete(false)
-    // Only reset loading if no aspect ratio is provided
-    if (!providedAspectRatio) {
-      setLoading(true)
-    }
     setImageError(false)
-  }, [src, providedAspectRatio])
+  }, [src])
 
   useEffect(() => {
-    if (!isVisible && !priority && !hasLoadedOnce) return
-    
-    if (typeof window === 'undefined') return
-    
+    // Skip dimension detection entirely if aspectRatio is provided
     if (providedAspectRatio) {
-      const width = 1200
-      setDimensions({ 
-        width, 
-        height: Math.round(width / providedAspectRatio)
-      })
-      setLoading(false)
       return
     }
-    
+
+    // Only load dimensions for images without provided aspect ratio
+    if (!isVisible && !priority && !hasLoadedOnce) return
+
+    if (typeof window === 'undefined') return
+
+    setLoading(true)
     const img = new window.Image()
-    
+
     img.onload = () => {
       setDimensions({ width: img.width, height: img.height })
       setLoading(false)
       setHasLoadedOnce(true)
     }
-    
+
     img.onerror = () => {
       setImageError(true)
       setLoading(false)
     }
-    
+
     img.src = src
   }, [src, providedAspectRatio, isVisible, priority, hasLoadedOnce])
 

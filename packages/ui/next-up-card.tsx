@@ -12,11 +12,12 @@ interface NextUpCardProps {
   slug: string
   imageUrl: string
   basePath: "projects" | "gallery"
+  aspectRatio?: number
 }
 
-export default function NextUpCard({ title, category, slug, imageUrl, basePath }: NextUpCardProps) {
+export default function NextUpCard({ title, category, slug, imageUrl, basePath, aspectRatio }: NextUpCardProps) {
   const { t } = useLanguage()
-  
+
   // Ensure we pass the full resolution URL to GalleryImageContainer
   // It expects the full path and handles creating the -thumb path internally for the blur effect
   const fullImageUrl = imageUrl?.replace('-thumb.webp', '.webp')
@@ -55,7 +56,7 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath }
                   quality={60}
                   priority={false}
                   noInsetPadding={true}
-                  aspectRatio={basePath === "projects" ? 1.5 : undefined}
+                  aspectRatio={aspectRatio}
                 />
               ) : (
                 <div className="w-full aspect-[3/2] bg-card" />
