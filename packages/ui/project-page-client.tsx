@@ -1,12 +1,13 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import Link from "next/link"
+
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
 import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
 import type { ProjectMetadata } from '@portfolio/lib/lib/markdown'
 import NextUpCard from "@portfolio/ui/next-up-card"
+import NavigationLink from "@portfolio/ui/navigation-link"
 
 interface ProjectPageClientProps {
   initialProject: ProjectMetadata & { contentHtml: string }
@@ -110,13 +111,13 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
             <div className="md:col-span-4 mb-10 md:mb-0">
               <div className="md:sticky md:top-24">
                 <div className="relative">
-                  <Link
+                  <NavigationLink
                     href="/#projects"
                     className="inline-flex items-center text-secondary hover:text-primary transition-colors"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     <span className="font-body">{t('projects.backToProjects')}</span>
-                  </Link>
+                  </NavigationLink>
                   <div className="mt-8">
                     <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{project.title}</h1>
                     <p className="font-body text-secondary uppercase text-sm mb-6 md:mb-12">{project.category}</p>

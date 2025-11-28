@@ -10,6 +10,7 @@ export * from './lib/utils';
 
 // Contexts
 export * from './contexts/LanguageContext';
+export * from './contexts/NavigationContext';
 
 // Hooks
 export * from './hooks/use-image-preloader';

@@ -43,6 +43,20 @@ const manifestoChunksEn = [
         "Still lives in the very person who unlocks technology's mysteries."
     ],
     [
+        "Yet, I confess, I still build fortresses for my ideas,",
+        "Still pursuit the flawless algorithm, the perfect frame.",
+        "I mistake being \"correct\" for being \"true\",",
+        "And forget the boy who learned more from a broken lock",
+        "Than a finished one."
+    ],
+    [
+        "This path I forge is often a solitary one;",
+        "My focus, a wall mistaken for a fortress;",
+        "My silence, a stillness mistaken for scorn;",
+        "I must learn to open the gate not just for the next project;",
+        "But for the hands that might help me build."
+    ],
+    [
         "When breath came hard in hospital beds,",
         "When lungs collapsed like faulty code,",
         "I learned that existence precedes essence—",
@@ -61,8 +75,8 @@ const manifestoChunksEn = [
         "Every line of code I write,",
         "Every frame I cut,",
         "Every speech I give,",
-        `Is a conversation with that child who asked not "Is this useful?"`,
-        `But "What worlds can this create?"`
+        "Is a conversation with that child who asked not \"Is this useful?\"",
+        "But \"What worlds can this create?\""
     ],
     [
         "I pledge to remain forever unfinished,",
@@ -128,6 +142,20 @@ const manifestoChunksZhTw = [
         "拒絕讓成就築起高牆，隔絕了曾用好奇心搭建的橋樑",
         "那個拆解門鎖，只為理解其中奧義的男孩",
         "依然活在今日，這個解開科技之謎的青年心中"
+    ],
+     [
+        "然而，我仍為思緒砌起堡壘",
+        "仍追逐分毫不差的程式，天衣無縫的畫面",
+        "錯把「正確」當作「真誠」",
+        "卻忘了那個男孩，從壞損的鎖中",
+        "學到的遠比完整的更多"
+    ],
+    [
+        "我開闢的這條路，也常是孤途",
+        "我的專注，被誤解為高牆",
+        "我的沉默，被錯認為冷漠",
+        "我必須學會敞開大門，不只為了下個計畫",
+        "更為了那，願意一同砌築的雙手"
     ],
     [
         "當呼吸在病床上變得艱難",

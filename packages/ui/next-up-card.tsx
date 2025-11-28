@@ -1,10 +1,10 @@
 "use client"
 
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
 import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
+import NavigationLink from "@portfolio/ui/navigation-link"
 
 interface NextUpCardProps {
   title: string
@@ -24,7 +24,7 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath, 
 
   return (
     <div className="w-full mt-4 md:mt-6 pt-4">
-      <Link href={`/${basePath}/${slug}`} className="block group">
+      <NavigationLink href={`/${basePath}/${slug}`} className="block group">
         <motion.div 
           className="relative overflow-hidden border border-border bg-muted/30 hover:bg-muted/60 transition-colors p-1"
           whileHover={{ scale: 0.98 }}
@@ -64,7 +64,7 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath, 
             </div>
           </div>
         </motion.div>
-      </Link>
+      </NavigationLink>
     </div>
   )
 }

@@ -1,13 +1,15 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useTransition } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useNavigation } from "@portfolio/lib/contexts/NavigationContext"
 import LanguageSwitcher from "@portfolio/ui/language-switcher"
 import StaggeredMenu from "@portfolio/ui/staggered-menu"
+import NavigationLink from "@portfolio/ui/navigation-link"
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll"
 import { scrollToSection as utilScrollToSection, ensurePreciseAlign } from "@portfolio/lib/lib/scrolling"
 
@@ -16,6 +18,8 @@ const SCROLL_ANIMATION_DURATION = 400; // ms
 
 export default function Header() {
   const pathname = usePathname()
+  const router = useRouter()
+  const { isNavigating } = useNavigation()
   const [activeSection, setActiveSection] = useState<string>("about")
   const [isScrolling, setIsScrolling] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,7 +35,7 @@ export default function Header() {
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
   const { t } = useLanguage()
-  
+
   // Detect if we're on the lab subdomain
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -323,8 +327,35 @@ export default function Header() {
     <header
       className="fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background"
     >
+      {/* Navigation loading indicator */}
+      {isNavigating && (
+        <motion.div
+          className="absolute top-0 left-0 h-[1px] bg-[hsl(var(--accent))]"
+          initial={{ x: "-100%", width: "18%" }}
+          animate={{ 
+            x: ["-100%", "600%"],
+            width: ["18%", "28%", "18%"]
+          }}
+          transition={{
+            x: {
+              duration: 0.55,
+              repeat: Infinity,
+              ease: "linear",
+            },
+            width: {
+              duration: 0.55,
+              repeat: Infinity,
+              ease: [0.4, 0, 0.6, 1],
+              times: [0, 0.5, 1]
+            }
+          }}
+        />
+      )}
+
+
+
       {/* Reading progress indicator - only shown on project detail pages */}
-      {isProjectDetailPage && !isLab && (
+      {isProjectDetailPage && !isLab && !isNavigating && (
         <div
           className="absolute top-0 left-0 h-[1px] bg-[hsl(var(--accent))]"
           style={{ width: `${readingProgress}%` }}
@@ -341,13 +372,13 @@ export default function Header() {
                 Harry Chang
               </a>
             ) : (
-              <Link
+              <NavigationLink
                 href="/"
                 className="font-heading text-xl font-bold transition-colors hover:text-[hsl(var(--accent))] outline-none"
                 onClick={(e) => { if(isHomePage) scrollToSection('about', e); }}
               >
                 Harry Chang
-              </Link>
+              </NavigationLink>
             )}
           </motion.div>
           <AnimatePresence mode="wait">
@@ -515,28 +546,28 @@ export default function Header() {
             <>
               <nav className="flex space-x-8">
                 <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <Link {...getLinkProps('about', '/')}>
+                  <NavigationLink {...getLinkProps('about', '/')}>
                     {isActive('about') && <Underline />}
                     {t('header.about')}
-                  </Link>
+                  </NavigationLink>
                 </motion.div>
                 <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <Link {...getLinkProps('updates', '/')}>
+                  <NavigationLink {...getLinkProps('updates', '/')}>
                     {isActive('updates') && <Underline />}
                     {t('header.updates')}
-                  </Link>
+                  </NavigationLink>
                 </motion.div>
                 <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <Link {...getLinkProps('projects', '/projects')}>
+                  <NavigationLink {...getLinkProps('projects', '/projects')}>
                     {isActive('projects') && <Underline />}
                     {t('header.projects')}
-                  </Link>
+                  </NavigationLink>
                 </motion.div>
                 <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <Link {...getLinkProps('gallery', '/gallery')}>
+                  <NavigationLink {...getLinkProps('gallery', '/gallery')}>
                     {isActive('gallery') && <Underline />}
                     {t('header.gallery')}
-                  </Link>
+                  </NavigationLink>
                 </motion.div>
               </nav>
             </>

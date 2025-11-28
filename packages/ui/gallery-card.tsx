@@ -2,11 +2,11 @@
 
 import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { motion } from "framer-motion"
 import { LockIcon } from "lucide-react"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { cva, type VariantProps } from "class-variance-authority"
+import NavigationLink from "@portfolio/ui/navigation-link"
 
 const cardVariants = cva("", {
   variants: {
@@ -153,7 +153,7 @@ export default function GalleryCard({
       whileHover={!locked ? hoverAnimation : {}}
       onHoverStart={prefetchFullImage}
     >
-      <Link href={`/${basePath}/${slug}`} className="block">
+      <NavigationLink href={`/${basePath}/${slug}`} className="block">
         <div className="relative overflow-hidden bg-white">
           {/* Container for the image and border */}
           <div className="relative">
@@ -234,7 +234,7 @@ export default function GalleryCard({
             <p className="font-body text-sm text-white/80 mt-1">{quote}</p>
           </div>
         </div>
-      </Link>
+      </NavigationLink>
     </motion.div>
   )
 }
