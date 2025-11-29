@@ -67,6 +67,7 @@
     "caption": "Caption"
   },
   "social": {
+    "calendar": "Schedules",
     "gmail": "Email",
     "discord": "Discord",
     "github": "GitHub",
@@ -76,7 +77,6 @@
     "music": "Spotify"
   },
   "resources": {
-    "calendar": "Schedules",
     "resume": "Résumé",
     "manifesto": "Manifesto",
     "icarus": "Icarus Lab",
@@ -84,7 +84,8 @@
     "reading": "Reading List",
     "uses": "Setup",
     "site": "Portfolio Site",
-    "design": "Style Guide"
+    "design": "Style Guide",
+    "issues": "Issues"
   },
   "links": {
     "hero": "Code, camera, curiosity.",
@@ -116,7 +117,8 @@
     "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
     "reading": "No TL;DR. Figure it out yourself.",
     "uses": "Need these for \"school work\"",
-    "design": "Because \"Inspect Element\" is for amateurs."
+    "design": "Because \"Inspect Element\" is for amateurs.",
+    "issues": "Report bugs or suggest features"
   },
   
   "letterGlitch": {

@@ -1,0 +1,25 @@
+name: 🧹 Tech Debt & Performance
+description: Refactoring, code cleanup, or performance issues
+title: "[Refactor]: "
+labels: ["tech-debt"]
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Code Quality / Refactoring
+        - Performance (CLS/LCP)
+        - Accessibility (a11y)
+        - Build / Infrastructure
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs to be improved and why?
+    validations:
+      required: true
+

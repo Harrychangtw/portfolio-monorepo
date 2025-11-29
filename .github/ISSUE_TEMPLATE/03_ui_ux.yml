@@ -1,0 +1,27 @@
+name: 🎨 UI/UX Improvement
+description: Visual tweaks, animations, or user experience improvements
+title: "[UI/UX]: "
+labels: ["UI/UX"]
+body:
+  - type: textarea
+    id: current
+    attributes:
+      label: Current Behavior/Design
+      description: What does it look like now?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Change
+      description: Describe the visual or interaction change.
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Mockups
+      description: Paste images here.
+

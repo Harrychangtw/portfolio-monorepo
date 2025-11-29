@@ -31,6 +31,7 @@ export const siteConfig = {
   // Social Media & External Links
   social: {
     github: 'https://github.com/Harrychangtw',
+    issues: 'https://github.com/Harrychangtw/portfolio-monorepo/issues/new/choose',
     linkedin: 'https://www.linkedin.com/in/chi-wei-chang-928408375/',
     instagram: 'https://www.instagram.com/pomelo_chang_08/',
     spotify: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3',

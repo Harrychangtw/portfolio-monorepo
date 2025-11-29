@@ -13,9 +13,9 @@
     "design": "設計系統"
   },
   "footer": {
-    "socialContact": "社交和聯繫",
-    "personalResources": "個人資源",
-    "siteNavigation": "網站導航",
+    "socialContact": "社交與聯繫",
+    "personalResources": "探索與資源",
+    "siteNavigation": "網站導覽",
     "languageSwitch": "語言",
     "motto1":"不走尋常路，不等誰允許；視野所及，皆為通途。",
     "motto2":"一同探索可能 — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
@@ -73,18 +73,19 @@
     "instagram": "Instagram",
     "letterboxd": "Letterboxd",
     "linkedin": "LinkedIn",
+    "calendar": "預約會議",
     "music": "Spotify"
   },
   "resources": {
     "resume": "履歷",
     "manifesto": "理念",
-    "calendar": "預約會議",
     "icarus": "Icarus Lab",
     "music": "Spotify",
     "reading": "論文閱讀清單",
     "uses": "工具與設定",
     "site": "作品集網站",
-    "design": "設計系統"
+    "design": "設計系統",
+    "issues": "問題回報"
   },
   "links": {
     "hero": "Code, camera, curiosity."
@@ -116,7 +117,8 @@
     "music": "爵士到嘻哈到蕭邦只需三首歌",
     "reading": "沒 TL;DR，請自己想辦法",
     "uses": "「學校功課」絕對會用到",
-    "design": "因為「檢查元素」是給麻瓜用的"
+    "design": "因為「檢查元素」是給麻瓜用的",
+    "issues": "回報 Bug 或建議新功能"
   },
   "letterGlitch": {
     "line1": "我 從 未 被 教 會 創 造 ——",

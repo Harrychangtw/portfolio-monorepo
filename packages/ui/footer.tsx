@@ -17,36 +17,56 @@ const LanguageSwitcher = dynamic(
   { ssr: false }
 )
 
-// --- Link Data ---
-const navigationLinks = [
-  { id: 'about', name: 'About', href: '/#about' },
-  { id: 'updates', name: 'Updates', href: '/#updates' },
-  { id: 'projects', name: 'Projects', href: '/#projects' },
-  { id: 'gallery', name: 'Gallery', href: '/#gallery' },
-];
-
-const socialLinks = [
+// --- Reorganized Link Data ---
+const connectLinks = [
   { id: 'gmail', name: 'Email', href: '/email' },
   { id: 'discord', name: 'Discord', href: '/discord' },
+  { id: 'linkedin', name: 'LinkedIn', href: '/linkedin' },
   { id: 'github', name: 'GitHub', href: '/github' },
   { id: 'instagram', name: 'Instagram', href: '/instagram' },
-  { id: 'music', name: 'Music Playlists', href: '/spotify' },
-  { id: 'linkedin', name: 'LinkedIn', href: '/linkedin' },
-  { id: 'letterboxd', name: 'Letterboxd', href: '/letterboxd' },
+  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal' },
 ];
 
-const resourceLinks = [
+const exploreLinks = [
   { id: 'icarus', name: 'Icarus Lab', href: '/icarus' },
+  { id: 'music', name: 'Music Playlists', href: '/spotify' },
+  { id: 'letterboxd', name: 'Letterboxd', href: '/letterboxd' },
   { id: 'resume', name: 'Resume', href: '/cv' },
-  { id: 'manifesto', name: 'Manifesto', href: '/manifesto' },
-  { id: 'design', name: 'Design System', href: '/design' },
-  { id: 'calendar', name: 'Schedule a Meeting', href: '/cal' },
   { id: 'uses', name: 'Uses', href: '/uses' },
   { id: 'reading', name: 'Paper Reading List', href: '/paper-reading' },
 ];
 
-const allLinks = [...socialLinks, ...resourceLinks];
+const siteLinks = [
+  { id: 'about', name: 'About', href: '/#about' },
+  { id: 'updates', name: 'Updates', href: '/#updates' },
+  { id: 'projects', name: 'Projects', href: '/#projects' },
+  { id: 'gallery', name: 'Gallery', href: '/#gallery' },
+  { id: 'manifesto', name: 'Manifesto', href: '/manifesto' },
+  // { id: 'design', name: 'Design System', href: '/design' }, temporarily removed for balance
+  { id: 'issues', name: 'Issues', href: '/issues' },
+];
 
+// For tooltip lookups
+const allLinks = [...connectLinks, ...exploreLinks, ...siteLinks];
+
+// Helper to get translation key based on link type
+const getTranslationKey = (id: string) => {
+  if (connectLinks.some(l => l.id === id)) {
+    return `social.${id}`;
+  }
+  if (exploreLinks.some(l => l.id === id)) {
+    // Map to existing translation keys
+    const socialIds = ['music', 'letterboxd'];
+    if (socialIds.includes(id)) return `social.${id}`;
+    return `resources.${id}`;
+  }
+  if (siteLinks.some(l => l.id === id)) {
+    const headerIds = ['about', 'updates', 'projects', 'gallery'];
+    if (headerIds.includes(id)) return `header.${id}`;
+    return `resources.${id}`;
+  }
+  return id;
+};
 
 export default function Footer() {
   const isMobile = useIsMobile();
@@ -54,7 +74,6 @@ export default function Footer() {
   const pathname = usePathname();
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const [showManifesto, setShowManifesto] = useState(true); 
   const [isClient, setIsClient] = useState(false);
   const [isLab, setIsLab] = useState(false);
   const footerRef = useRef<HTMLElement | null>(null)
@@ -68,19 +87,9 @@ export default function Footer() {
 
   useEffect(() => {
     setIsClient(true);
-    
-    // Detect if we're on lab subdomain
     const hostname = window.location.hostname;
     setIsLab(hostname.startsWith('lab.'));
-    
-    const checkWidth = () => {
-      setShowManifesto(window.innerWidth >= 800);
-    };
-    checkWidth();
-    window.addEventListener('resize', checkWidth);
-    return () => window.removeEventListener('resize', checkWidth);
   }, []);
-
 
   const handleMouseEnter = (e: React.MouseEvent, id: string) => {
     if (!isMobile) {
@@ -100,41 +109,27 @@ export default function Footer() {
       setActiveTooltipId(null);
     }
   };
-  
-  const filteredResourceLinks = resourceLinks.filter(link => link.id !== 'manifesto' || showManifesto);
 
-  // Helper function to determine if a link is internal
-  const isInternalLink = (href: string) => {
-    return href.startsWith('/');
-  };
+  const isInternalLink = (href: string) => href.startsWith('/');
+  const isAnchorLink = (href: string) => href.includes('#');
 
-  // Helper to get the correct href based on lab vs main domain
   const getHref = (href: string, id: string) => {
-    if (!isClient) {
-      return href; // Return original href during SSR
-    }
+    if (!isClient) return href;
 
     const protocol = window.location.protocol;
     const hostname = window.location.hostname;
     const port = window.location.port ? `:${window.location.port}` : '';
 
-    const isIcarusLink = id === 'icarus';
-
-    if (isIcarusLink) {
+    if (id === 'icarus') {
       if (hostname.includes('localhost')) {
-        // Handle localhost, redirect to lab.localhost:3000
         return `${protocol}//lab.localhost${port}`;
       }
-      // Handle production domain - properly handle www prefix
-      let baseDomain = hostname.replace(/^lab\./, ''); // Remove lab. if present
-      baseDomain = baseDomain.replace(/^www\./, '');   // Remove www. if present
+      let baseDomain = hostname.replace(/^lab\./, '').replace(/^www\./, '');
       return `${protocol}//lab.${baseDomain}`;
     }
 
-    // If we're on the lab subdomain, and it's an internal link to the main site
     if (isLab && isInternalLink(href)) {
-      let mainDomain = hostname.replace(/^lab\./, ''); // Remove lab. prefix
-      // Add www. back if needed (for production)
+      let mainDomain = hostname.replace(/^lab\./, '');
       if (!mainDomain.includes('localhost') && !mainDomain.startsWith('www.')) {
         mainDomain = `www.${mainDomain}`;
       }
@@ -144,22 +139,47 @@ export default function Footer() {
     return href;
   };
 
-  // NEW: Click handler for navigation links
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // If on lab, let browser handle the cross-domain navigation
-    if (isLab) {
-      return;
-    }
+    if (isLab) return;
     
-    // Check if it's a hash link and we're on the home page
-    if (href.includes('#') && pathname === '/') {
+    if (isAnchorLink(href) && pathname === '/') {
       const id = href.split('#')[1];
-      if (id) {
-        scrollToSection(id, e);
-      }
+      if (id) scrollToSection(id, e);
     }
-    // For other links, let Next.js handle the navigation
   };
+
+  // Reusable link renderer
+  const renderLink = (link: typeof connectLinks[0], showNowPlaying = false) => (
+    <li key={link.id}>
+      <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+        <a
+          href={getHref(link.href, link.id)}
+          {...(!isInternalLink(link.href) && {
+            target: "_blank",
+            rel: "noopener noreferrer"
+          })}
+          className={`font-ibm-plex text-primary transition-colors whitespace-nowrap ${
+            link.id === 'icarus'
+              ? 'icarus-link'
+              : 'hover:text-[hsl(var(--accent))]'
+          }`}
+          onClick={isAnchorLink(link.href) ? (e) => handleNavClick(e, link.href) : undefined}
+          onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          {showNowPlaying && link.id === 'music' ? (
+            <span className="inline-flex items-center">
+              {t(getTranslationKey(link.id))}
+              <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
+            </span>
+          ) : (
+            t(getTranslationKey(link.id))
+          )}
+        </a>
+      </motion.div>
+    </li>
+  );
 
   return (
     <>
@@ -174,22 +194,17 @@ export default function Footer() {
         }
 
         @keyframes gradient-loop {
-          0% {
-            background-position: 0% 50%;
-          }
-          100% {
-            background-position: 200% 50%;
-          }
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
         }
-
       `}</style>
-      <footer className="bg-card text-primary py-12 md:py-16 border-t border-border">
+
+      <footer ref={footerRef} className="bg-card text-primary py-12 md:py-16 border-t border-border">
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
 
             {/* Column 1: Logo & Motto */}
             <div className="col-span-12 md:col-span-6 md:pr-24 md:mt-2 max-w-xl">
-              {/* --- Logo with increased dimensions --- */}
               <a 
                 href={getHref('/', 'logo')} 
                 className="relative h-12 mb-6 block cursor-pointer group"
@@ -208,106 +223,41 @@ export default function Footer() {
               </a>
               <div className="font-ibm-plex text-base text-primary space-y-3">
                 <p>{t('footer.motto1')}</p>
-                <p>
-                  {tHtml('footer.motto2')}
-                </p>
+                <p>{tHtml('footer.motto2')}</p>
               </div>
             </div>
 
-            {/* Columns 2, 3, & 4 Wrapper - Aligns with the "Roles & Description" columns */}
+            {/* Link Columns */}
             <div className="col-span-12 md:col-span-6">
-              <div className="grid grid-cols-2 md:grid-cols-12 gap-x-4 gap-y-10">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-10">
                 
-                {/* Column 2: Social & Contact - Aligns with "Roles" */}
-                <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
+                {/* Connect */}
+                <div className="col-span-1">
+                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
                     {t('footer.socialContact')}
                   </h3>
                   <ul className="space-y-3">
-                    {socialLinks.map(link => (
-                      <li key={link.id}>
-                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                          <a
-                            href={getHref(link.href, link.id)}
-                            {...(!isInternalLink(link.href) && {
-                              target: "_blank",
-                              rel: "noopener noreferrer"
-                            })}
-                            className="font-ibm-plex text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
-                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            {link.id === 'music' ? (
-                              <span className="inline-flex items-center">
-                                {t(`social.${link.id}`)}
-                                <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
-                              </span>
-                            ) : (
-                              t(`social.${link.id}`)
-                            )}
-                          </a>
-                        </motion.div>
-                      </li>
-                    ))}
+                    {connectLinks.map(link => renderLink(link))}
                   </ul>
                 </div>
 
-                {/* Column 3: Personal & Resources - Aligns with "Description" */}
-                <div className="col-span-1 md:col-span-4 md:pr-8">
-                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
+                {/* Explore */}
+                <div className="col-span-1">
+                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
                     {t('footer.personalResources')}
                   </h3>
                   <ul className="space-y-3">
-                    {filteredResourceLinks.map(link => (
-                      <li key={link.id}>
-                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                          <a
-                            href={getHref(link.href, link.id)}
-                            {...(!isInternalLink(link.href) && {
-                              target: "_blank",
-                              rel: "noopener noreferrer"
-                            })}
-                            className={`font-ibm-plex text-primary transition-colors whitespace-nowrap ${
-                              link.id === 'icarus'
-                                ? 'icarus-link'
-                                : 'hover:text-[hsl(var(--accent))]'
-                            }`}
-                            onMouseEnter={(e) => handleMouseEnter(e, link.id)}
-                            onMouseMove={handleMouseMove}
-                            onMouseLeave={handleMouseLeave}
-                          >
-                            {t(`resources.${link.id}`)}
-                          </a>
-                        </motion.div>
-                      </li>
-                    ))}
+                    {exploreLinks.map(link => renderLink(link, true))}
                   </ul>
                 </div>
 
-                {/* Column 4: Site Navigation */}
-                <div className="col-span-1 md:col-span-4 md:pr-8 hidden md:block">
-                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4 whitespace-nowrap">
+                {/* Site - Hidden on mobile, shown on md+ */}
+                <div className="col-span-2 md:col-span-1 hidden md:block">
+                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
                     {t('footer.siteNavigation')}
                   </h3>
                   <ul className="space-y-3">
-                    {navigationLinks.map(link => (
-                      <li key={link.id}>
-                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                        <a
-                          href={getHref(link.href, link.id)}
-                          className="font-ibm-plex text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
-                          onClick={(e) => handleNavClick(e, link.href)}
-                          onMouseEnter={(e) => handleMouseEnter(e, link.id)}
-                          onMouseMove={handleMouseMove}
-                          onMouseLeave={handleMouseLeave}
-                          >
-                            {/* Reuses keys from the header localization */}
-                            {t(`header.${link.id}`)}
-                          </a>
-                        </motion.div>
-                      </li>
-                    ))}
+                    {siteLinks.map(link => renderLink(link))}
                   </ul>
                 </div>
 
@@ -315,20 +265,20 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* --- Divider --- */}
+          {/* Divider */}
           <hr className="border-secondary mt-16 mb-10 md:mt-16 md:mb-4" />
 
-          {/* --- Bottom Row: Lang Switcher & Copyright --- */}
+          {/* Bottom Row */}
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-4 text-sm text-secondary">
             <LanguageSwitcher />
             <p className="whitespace-nowrap overflow-hidden text-ellipsis">
-              @ {new Date().getFullYear()} Chi-Wei Chang. All rights reserved.
+              © {new Date().getFullYear()} Chi-Wei Chang. All rights reserved.
             </p>
           </div>
         </div>
       </footer>
 
-      {/* --- Custom Tooltip Component --- */}
+      {/* Tooltip */}
       {activeTooltipId && !isMobile && (
         <motion.div
           initial={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -353,10 +303,7 @@ export default function Footer() {
           }
         >
           {isMusicTooltip ? (
-            <NowPlayingCard
-              key={nowPlaying?.songUrl ?? nowPlaying?.title ?? 'np'}
-              data={nowPlaying}
-            />
+            <NowPlayingCard key={nowPlaying?.songUrl ?? nowPlaying?.title ?? 'np'} data={nowPlaying} />
           ) : (
             <div className="bg-[hsl(var(--accent))] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-heading">
               {t(`tooltips.${activeTooltipId}`)}
