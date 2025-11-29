@@ -13,12 +13,13 @@ interface GallerySectionProps {
   source?: 'gallery' | 'projects' // Which API to fetch from
   basePath?: string // Custom base path for card links (e.g., 'canvas' instead of 'gallery')
   hoverEffect?: 'inward' | 'gentle' // Hover animation variant
+  initialItems?: GalleryItemMetadata[] // Server-provided data
 }
 
-export default function GallerySection({ section, title, sectionId = "gallery", source = 'gallery', basePath = 'gallery', hoverEffect = 'inward' }: GallerySectionProps = {}) {
+export default function GallerySection({ section, title, sectionId = "gallery", source = 'gallery', basePath = 'gallery', hoverEffect = 'inward', initialItems = [] }: GallerySectionProps = {}) {
   const { language, t } = useLanguage()
-  const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>(initialItems)
+  const [isLoading, setIsLoading] = useState(initialItems.length === 0) // Only loading if no initial data
   const [forceLoad, setForceLoad] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
   
@@ -40,13 +41,19 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
   }, [])
 
   useEffect(() => {
+    // Skip fetch if we have initial data and language matches
+    if (initialItems.length > 0 && language === 'en') {
+      setIsLoading(false)
+      return
+    }
+
     async function fetchGalleryItems() {
       try {
         const sectionParam = section ? `&section=${encodeURIComponent(section)}` : ''
         const apiEndpoint = source === 'projects' ? 'projects' : 'gallery'
         const response = await fetch(`/api/${apiEndpoint}?locale=${language}${sectionParam}`)
         const data = await response.json()
-        
+
         // If fetching from projects, transform to gallery format
         if (source === 'projects') {
           const transformedData = data.map((project: any) => ({
@@ -76,7 +83,7 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
     if (shouldLoadImmediately || isVisible || forceLoad) {
       fetchGalleryItems()
     }
-  }, [isVisible, language, shouldLoadImmediately, forceLoad, section, source])
+  }, [isVisible, language, shouldLoadImmediately, forceLoad, section, source, initialItems])
 
   // Handle pinned items (maintain their positions in the layout)
   const getPinnedItemsMap = (items: GalleryItemMetadata[]) => {

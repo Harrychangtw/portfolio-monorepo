@@ -56,7 +56,8 @@ export default function GalleryCard({
     rootMargin: '50px'
   })
   const [imageLoaded, setImageLoaded] = useState(false)
-  const [blurComplete, setBlurComplete] = useState(false)
+  const [thumbLoaded, setThumbLoaded] = useState(false)
+  const [fullLoaded, setFullLoaded] = useState(false)
 
   // If we have width/height, calculate aspect ratio immediately to prevent CLS
   const haveDims = !!width && !!height
@@ -180,39 +181,44 @@ export default function GalleryCard({
               <div className="absolute inset-0 w-full h-full">
                 {shouldLoad && (
                   <>
+                    {/* Thumbnail: Always loads first with priority */}
                     {thumbnailSrc && (
                       <Image
                         src={thumbnailSrc}
                         alt={title}
                         fill
-                        className={`transition-all duration-700 ease-in-out group-hover:brightness-95 ${
-                          (haveDims ? constrained.isPortrait : isPortrait) && 
+                        className={`transition-all duration-500 ease-out group-hover:brightness-95 ${
+                          (haveDims ? constrained.isPortrait : isPortrait) &&
                           (haveDims ? (width! / height!) < 0.8 : originalAspect < 0.8) ||
-                          (!haveDims ? !isPortrait : !constrained.isPortrait) && 
+                          (!haveDims ? !isPortrait : !constrained.isPortrait) &&
                           (haveDims ? (width! / height!) > 1.25 : originalAspect > 1.25)
                             ? "object-contain" : "object-cover"
-                        } object-center ${blurComplete ? 'opacity-0' : 'opacity-100'}`}
+                        } object-center ${fullLoaded ? 'opacity-0' : 'opacity-100'}`}
                         sizes={thumbnailSizes}
                         quality={20}
+                        priority={priority || index < 6}
+                        onLoad={() => setThumbLoaded(true)}
                       />
                     )}
-                    
-                    <Image
-                      src={fullImageUrl || "/placeholder.svg"}
-                      alt={title}
-                      fill
-                      className={`transition-all duration-700 ease-in-out group-hover:brightness-95 ${
-                        (haveDims ? constrained.isPortrait : isPortrait) && 
-                        (haveDims ? (width! / height!) < 0.8 : originalAspect < 0.8) ||
-                        (!haveDims ? !isPortrait : !constrained.isPortrait) && 
-                        (haveDims ? (width! / height!) > 1.25 : originalAspect > 1.25)
-                          ? "object-contain" : "object-cover"
-                      } object-center ${blurComplete ? 'opacity-100' : 'opacity-0'}`}
-                      sizes={fullImageSizes}
-                      priority={priority || index < 3}
-                      quality={70}
-                      onLoad={() => setBlurComplete(true)}
-                    />
+
+                    {/* Full: Only start loading after thumbnail is ready */}
+                    {thumbLoaded && (
+                      <Image
+                        src={fullImageUrl || "/placeholder.svg"}
+                        alt={title}
+                        fill
+                        className={`transition-all duration-700 ease-in-out group-hover:brightness-95 ${
+                          (haveDims ? constrained.isPortrait : isPortrait) &&
+                          (haveDims ? (width! / height!) < 0.8 : originalAspect < 0.8) ||
+                          (!haveDims ? !isPortrait : !constrained.isPortrait) &&
+                          (haveDims ? (width! / height!) > 1.25 : originalAspect > 1.25)
+                            ? "object-contain" : "object-cover"
+                        } object-center ${fullLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        sizes={fullImageSizes}
+                        quality={70}
+                        onLoad={() => setFullLoaded(true)}
+                      />
+                    )}
                   </>
                 )}
               </div>
