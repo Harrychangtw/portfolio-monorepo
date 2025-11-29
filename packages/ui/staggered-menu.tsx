@@ -4,7 +4,7 @@ import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from
 import { gsap } from 'gsap';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
-import Link from "next/link"
+import NavigationLink from "@portfolio/ui/navigation-link"
 import { usePathname } from "next/navigation"
 
 export interface StaggeredMenuItem {
@@ -426,7 +426,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 items.map((it, idx) => (
                   <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
                     <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                      <Link
+                      <NavigationLink
                         className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
                         href={it.link}
                         aria-label={it.ariaLabel}
@@ -439,7 +439,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                             {String(idx + 1)}
                           </span>
                         </span>
-                      </Link>
+                      </NavigationLink>
                     </motion.div>
                   </li>
                 ))
