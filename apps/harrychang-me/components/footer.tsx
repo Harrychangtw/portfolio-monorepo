@@ -11,6 +11,7 @@ import NowPlayingIndicator from "@portfolio/ui/now-playing-indicator"
 import NowPlayingCard from "@portfolio/ui/now-playing-card"
 import { usePathname } from "next/navigation"
 import { scrollToSection } from "@portfolio/lib/lib/scrolling"
+import NavigationLink from "@portfolio/ui/navigation-link"
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
@@ -149,37 +150,55 @@ export default function Footer() {
   };
 
   // Reusable link renderer
-  const renderLink = (link: typeof connectLinks[0], showNowPlaying = false) => (
-    <li key={link.id}>
-      <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-        <a
-          href={getHref(link.href, link.id)}
-          {...(!isInternalLink(link.href) && {
-            target: "_blank",
-            rel: "noopener noreferrer"
-          })}
-          className={`font-ibm-plex text-primary transition-colors whitespace-nowrap ${
-            link.id === 'icarus'
-              ? 'icarus-link'
-              : 'hover:text-[hsl(var(--accent))]'
-          }`}
-          onClick={isAnchorLink(link.href) ? (e) => handleNavClick(e, link.href) : undefined}
-          onMouseEnter={(e) => handleMouseEnter(e, link.id)}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-        >
-          {showNowPlaying && link.id === 'music' ? (
-            <span className="inline-flex items-center">
-              {t(getTranslationKey(link.id))}
-              <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
-            </span>
+  const renderLink = (link: typeof connectLinks[0], showNowPlaying = false) => {
+    const href = getHref(link.href, link.id);
+    const isInternal = isInternalLink(link.href);
+    const linkClassName = `font-ibm-plex text-primary transition-colors whitespace-nowrap ${
+      link.id === 'icarus'
+        ? 'icarus-link'
+        : 'hover:text-[hsl(var(--accent))]'
+    }`;
+
+    const linkContent = showNowPlaying && link.id === 'music' ? (
+      <span className="inline-flex items-center">
+        {t(getTranslationKey(link.id))}
+        <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
+      </span>
+    ) : (
+      t(getTranslationKey(link.id))
+    );
+
+    return (
+      <li key={link.id}>
+        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+          {isInternal ? (
+            <NavigationLink
+              href={href}
+              className={linkClassName}
+              onClick={isAnchorLink(link.href) ? (e) => handleNavClick(e, link.href) : undefined}
+              onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              {linkContent}
+            </NavigationLink>
           ) : (
-            t(getTranslationKey(link.id))
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClassName}
+              onMouseEnter={(e) => handleMouseEnter(e, link.id)}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              {linkContent}
+            </a>
           )}
-        </a>
-      </motion.div>
-    </li>
-  );
+        </motion.div>
+      </li>
+    );
+  };
 
   return (
     <>
@@ -205,8 +224,8 @@ export default function Footer() {
 
             {/* Column 1: Logo & Motto */}
             <div className="col-span-12 md:col-span-6 md:pr-24 md:mt-2 max-w-xl">
-              <a 
-                href={getHref('/', 'logo')} 
+              <NavigationLink
+                href={getHref('/', 'logo')}
                 className="relative h-12 mb-6 block cursor-pointer group"
                 aria-label="Return to home page"
               >
@@ -220,7 +239,7 @@ export default function Footer() {
                   style={{ width: 'auto', height: '48px' }}
                 />
                 <span className="sr-only">Harry Chang/Chi-Wei Chang 張祺煒</span>
-              </a>
+              </NavigationLink>
               <div className="font-ibm-plex text-base text-primary space-y-3">
                 <p>{t('footer.motto1')}</p>
                 <p>{tHtml('footer.motto2')}</p>
