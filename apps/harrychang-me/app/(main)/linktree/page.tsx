@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import LinksPageClient from "@portfolio/ui/links-page-client"
+import LinksPageClient from "@/components/main/links-page-client"
 
 export const metadata: Metadata = {
   title: "Links | Harry Chang 張祺煒",

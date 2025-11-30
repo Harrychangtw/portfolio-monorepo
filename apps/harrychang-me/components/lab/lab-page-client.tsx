@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext';
+import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import WaitlistForm from '@/components/lab/waitlist-form';
-import MinimalistBackground from '@portfolio/ui/minimalist-background';
+import MinimalistBackground from '@/components/lab/minimalist-background';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedIcarusIcon from '@/components/lab/animated-icon';
 

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { scrollToSection } from "@portfolio/lib/lib/scrolling"
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { siteConfig } from "@/config/site"
 import { ANIMATION, UI } from "@portfolio/config"
 

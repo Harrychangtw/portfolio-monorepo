@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext";
+import { useLanguage } from '@portfolio/lib/contexts/language-context';
 
 interface LetterGlitchProps {
   glitchColors?: string[];

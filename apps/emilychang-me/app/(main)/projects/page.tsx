@@ -1,7 +1,7 @@
 "use client"
 
 import ProjectsSection from "@portfolio/ui/projects-section"
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
 export default function ProjectsPage() {
   const { t } = useLanguage()

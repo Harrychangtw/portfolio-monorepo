@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { render } from '@testing-library/react'
-import { LanguageProvider, useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import { LanguageProvider, useLanguage } from '@portfolio/lib/contexts/language-context'
 import { act } from 'react'
 
 // Test component that uses the language context

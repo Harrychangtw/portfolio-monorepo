@@ -1,7 +1,7 @@
 'use client'
 
 import type { FontFamily } from '@portfolio/lib/lib/typography'
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
 interface TypographySpecimenProps {
   font: FontFamily

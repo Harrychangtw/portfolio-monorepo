@@ -1,9 +1,9 @@
 "use client"
 
 import type React from "react"
-import { LanguageProvider } from "@portfolio/lib/contexts/LanguageContext"
-import Header from "@portfolio/ui/header"
-import Footer from "@portfolio/ui/footer"
+import { LanguageProvider } from '@portfolio/lib/contexts/language-context'
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 /**
  * Client layout wrapper for the Lab subdomain.

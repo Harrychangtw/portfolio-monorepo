@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import GalleryCard from '@portfolio/ui/gallery-card'
 import { createBalancedLayout } from '@portfolio/lib/lib/utils'
 import type { GalleryItemMetadata } from '@portfolio/lib/lib/markdown'

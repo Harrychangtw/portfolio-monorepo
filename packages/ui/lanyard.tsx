@@ -17,7 +17,7 @@ import {
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import * as THREE from 'three';
 
-import './Lanyard.css';
+import './lanyard.css';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -127,9 +127,10 @@ function Band({ maxSpeed = 50, minSpeed = 10 }: BandProps) {
   
   useEffect(() => {
     if (cardTexture) {
-      cardTexture.flipY = false;
-      cardTexture.wrapS = THREE.RepeatWrapping;
-      cardTexture.repeat.x = 1;
+      const texture = cardTexture.clone(); 
+    texture.flipY = false;
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.repeat.x = 1;
       
       // OPTIMIZATION: Limit anisotropy. 16 is overkill for mobile bandwidth.
       // 4 provides good oblique viewing angles without the heavy cost.

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext';
+import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
 

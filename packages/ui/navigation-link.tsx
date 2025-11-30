@@ -1,6 +1,6 @@
 "use client"
 
-import { useNavigation } from "@portfolio/lib/contexts/NavigationContext"
+import { useNavigation } from '@portfolio/lib/contexts/navigation-context'
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { forwardRef, type ComponentProps } from "react"

@@ -5,10 +5,10 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
-import { useNavigation } from "@portfolio/lib/contexts/NavigationContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import { useNavigation } from '@portfolio/lib/contexts/navigation-context'
 import LanguageSwitcher from "@portfolio/ui/language-switcher"
-import StaggeredMenu from "@portfolio/ui/staggered-menu"
+import StaggeredMenu from "@/components/staggered-menu"
 import NavigationLink from "@portfolio/ui/navigation-link"
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll"
 import { scrollToSection as utilScrollToSection, ensurePreciseAlign } from "@portfolio/lib/lib/scrolling"

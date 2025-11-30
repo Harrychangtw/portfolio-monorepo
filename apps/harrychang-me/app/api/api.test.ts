@@ -4,7 +4,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { GET as getProjects } from '@/app/api/projects/route'
 import { GET as getGallery } from '@/app/api/gallery/route'
-import { mockProjects, mockGalleryItems } from '@/test/mockData'
+import { mockProjects, mockGalleryItems } from '@/test/mock-data'
 
 // Mock the markdown lib
 vi.mock('@portfolio/lib/lib/markdown', () => ({

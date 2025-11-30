@@ -2,12 +2,12 @@
 
 import type React from "react"
 import { Suspense } from "react"
-import Header from "@portfolio/ui/header"
+import Header from "@/components/header"
 import { Analytics } from "@vercel/analytics/react"
 import ClickSpark from "@portfolio/ui/ui/click-spark"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { LanguageProvider } from "@portfolio/lib/contexts/LanguageContext"
-import { NavigationProvider } from "@portfolio/lib/contexts/NavigationContext"
+import { LanguageProvider } from '@portfolio/lib/contexts/language-context'
+import { NavigationProvider } from '@portfolio/lib/contexts/navigation-context'
 import VideoInitializer from "@portfolio/ui/video-initializer"
 import NotificationProvider from "@portfolio/ui/notification-provider"
 import { useStableAnchor } from "@portfolio/lib/hooks/use-stable-anchor"

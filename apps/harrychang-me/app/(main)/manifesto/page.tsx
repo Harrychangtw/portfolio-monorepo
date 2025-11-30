@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import LetterGlitch from '@portfolio/ui/letter-glitch';
-import { useLanguage } from '@portfolio/lib/contexts//LanguageContext';
+import LetterGlitch from '@/components/main/letter-glitch';
+import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import LanguageSwitcher from '@portfolio/ui/language-switcher';
 
 const manifestoChunksEn = [

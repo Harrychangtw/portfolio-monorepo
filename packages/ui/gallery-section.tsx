@@ -5,7 +5,7 @@ import GalleryCard from "./gallery-card"
 import { GalleryItemMetadata } from "@portfolio/lib/lib/markdown"
 import { createBalancedLayout } from "@portfolio/lib/lib/utils"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 interface GallerySectionProps {
   section?: string
   title?: string

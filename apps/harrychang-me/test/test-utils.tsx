@@ -1,6 +1,6 @@
 import { render, RenderOptions } from '@testing-library/react'
 import { ReactElement, ReactNode } from 'react'
-import { LanguageProvider } from '@portfolio/lib/contexts//LanguageContext'
+import { LanguageProvider } from '@portfolio/lib/contexts/language-context'
 
 // Custom render function that includes common providers
 export function renderWithProviders(

@@ -2,11 +2,11 @@
 
 import type React from "react"
 import { Suspense } from "react"
-import EmilyHeader from "./EmilyHeader"
+import EmilyHeader from './emily-header'
 import { Analytics } from "@vercel/analytics/react"
 import ClickSpark from "@portfolio/ui/ui/click-spark"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { LanguageProvider } from "@portfolio/lib/contexts/LanguageContext"
+import { LanguageProvider } from '@portfolio/lib/contexts/language-context'
 import VideoInitializer from "@portfolio/ui/video-initializer"
 import NotificationProvider from "@portfolio/ui/notification-provider"
 import { useStableAnchor } from "@portfolio/lib/hooks/use-stable-anchor"
