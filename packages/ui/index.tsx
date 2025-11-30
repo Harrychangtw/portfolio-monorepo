@@ -55,7 +55,7 @@ export * from './gallery-image-container';
 export * from './gallery-item-page-client';
 export * from './gallery-loading-skeleton';
 export * from './gallery-page-client';
-export * from './gallery-section';;
+export * from './gallery-section';
 export * from './language-switcher';
 export { default as Lanyard } from './lanyard';
 export * from './notification-banner';

@@ -1,8 +1,8 @@
 "use client"
 
-import { useLanguage } from '@portfolio/lib/contexts//language-context'
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { GalleryImageContainer } from '@portfolio/ui/gallery-image-container'
-import { useIsMobile } from '@portfolio/lib/hooks//use-mobile'
+import { useIsMobile } from '@portfolio/lib/hooks/use-mobile'
 
 export default function UsesPage() {
   const { t, getTranslationData } = useLanguage()
