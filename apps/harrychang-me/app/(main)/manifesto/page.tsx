@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import LetterGlitch from '@portfolio/ui/letter-glitch';
+import LetterGlitch from '@/components/main/letter-glitch';
 import { useLanguage } from '@portfolio/lib/contexts//LanguageContext';
 import LanguageSwitcher from '@portfolio/ui/language-switcher';
 

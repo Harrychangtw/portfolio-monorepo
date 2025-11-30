@@ -4,7 +4,7 @@ import type React from 'react'
 import type { Metadata } from 'next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import ClientLayout from '@/components/main/ClientLayout'
-import Footer from '@portfolio/ui/footer'
+import Footer from '@/components/footer'
 import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {

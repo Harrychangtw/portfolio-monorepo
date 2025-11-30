@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
-import EmilyStaggeredMenu from "./EmilyStaggeredMenu"
+import EmilyStaggeredMenu from "@/components/EmilyStaggeredMenu"
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll"
 import { scrollToSection as utilScrollToSection } from "@portfolio/lib/lib/scrolling"
 

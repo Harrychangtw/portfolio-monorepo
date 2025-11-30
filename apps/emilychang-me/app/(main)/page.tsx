@@ -1,6 +1,6 @@
 "use client"
 
-import EmilyAboutSection from "@portfolio/ui/emily-about-section"
+import EmilyAboutSection from "@/components/about-section"
 import ProjectsSection from "@portfolio/ui/projects-section"
 import GallerySection from "@portfolio/ui/gallery-section"
 import SketchesSection from "@portfolio/ui/sketches-section"

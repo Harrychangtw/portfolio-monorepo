@@ -55,7 +55,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "../../packages/ui/meshline.d.ts"
-  ],
+, "../../packages/ui/sketches-card.tsx", "../../packages/ui/sketches-section.tsx", "../../packages/ui/Lanyard.tsx"  ],
   "exclude": [
     "node_modules"
   ]

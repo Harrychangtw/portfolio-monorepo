@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import Lanyard from './Lanyard'
+import Lanyard from '@portfolio/ui/Lanyard'
 
 // Reusable component for section titles
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { TypographySpecimen } from '@portfolio/ui/typography-specimen'
+import { TypographySpecimen } from './TypographySpecimen'
 import { getAllFontFamilies } from '@portfolio/lib/lib/typography'
 import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
 import { GalleryImageContainer } from '@portfolio/ui/gallery-image-container'

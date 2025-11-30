@@ -29,6 +29,6 @@
       "@portfolio/config/*": ["../../packages/config/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/main/about-section.tsx", "components/header.tsx", "components/main/letter-glitch.tsx"],
   "exclude": ["node_modules"]
 }

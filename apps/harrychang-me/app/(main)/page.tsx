@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import AboutSection from "@portfolio/ui/about-section"
-import UpdatesSection from "@portfolio/ui/updates-section"
+import AboutSection from "@/components/main/about-section"
+import UpdatesSection from "@/components/main/updates-section"
 import ProjectsSection from "@portfolio/ui/projects-section"
 import GallerySection from "@portfolio/ui/gallery-section"
 import { getAllGalleryMetadata } from "@portfolio/lib/lib/markdown"

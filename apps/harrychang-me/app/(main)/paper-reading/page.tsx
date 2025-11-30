@@ -1,6 +1,6 @@
 import { fetchArxivPapers, getManualPapers, getArxivPaperIds, getPrebuiltPapers } from "@portfolio/lib/lib/arxiv";
 import { Paper } from "@portfolio/lib/types/paper";
-import PaperReadingPageClient from "@portfolio/ui/paper-reading-page-client";
+import PaperReadingPageClient from "@/components/main/paper-reading-page-client";
 
 export default async function PaperReadingPage({
   searchParams,
