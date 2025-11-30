@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react"
 import ProjectCard from "./project-card"
 import { ProjectMetadata } from "@portfolio/lib/lib/markdown"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
 interface ProjectsSectionProps {
   section?: string

@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import {
   DropdownMenu,
   DropdownMenuContent,

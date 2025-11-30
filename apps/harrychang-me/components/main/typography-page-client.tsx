@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { TypographySpecimen } from './TypographySpecimen'
+import { TypographySpecimen } from './typography-specimen'
 import { getAllFontFamilies } from '@portfolio/lib/lib/typography'
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { GalleryImageContainer } from '@portfolio/ui/gallery-image-container'
 
 //Helper to convert RGB string (returned by getComputedStyle) to Hex

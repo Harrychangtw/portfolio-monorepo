@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import TypographyPageClient from '@/components/main/TypographyPageClient'
+import TypographyPageClient from '@/components/main/typography-page-client'
 
 export const metadata: Metadata = {
   title: 'Typography',

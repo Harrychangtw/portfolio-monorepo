@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile" 
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { useNowPlaying } from "@portfolio/lib/hooks/use-now-playing"
 import NowPlayingIndicator from "@portfolio/ui/now-playing-indicator"
 import NowPlayingCard from "@portfolio/ui/now-playing-card"

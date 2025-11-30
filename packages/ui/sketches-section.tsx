@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from "react"
 import SketchesCard from "./sketches-card"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { motion, AnimatePresence } from "framer-motion"
 
 interface SketchMetadata {

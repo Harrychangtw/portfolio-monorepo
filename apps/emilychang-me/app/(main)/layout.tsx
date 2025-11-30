@@ -1,7 +1,7 @@
 import type React from 'react'
 import type { Metadata } from 'next'
-import ClientLayout from '@/components/ClientLayout'
-import EmilyFooter from '@/components/EmilyFooter'
+import ClientLayout from '@/components/client-layout'
+import EmilyFooter from '@/components/emily-footer'
 import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {

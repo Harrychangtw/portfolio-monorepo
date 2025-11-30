@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import ProjectCard from '@portfolio/ui/project-card'
 import type { ProjectMetadata } from '@portfolio/lib/lib/markdown'
 

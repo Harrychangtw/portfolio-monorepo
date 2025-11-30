@@ -17,7 +17,7 @@ import {
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import * as THREE from 'three';
 
-import './Lanyard.css';
+import './lanyard.css';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 

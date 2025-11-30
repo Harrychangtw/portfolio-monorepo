@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext";
+import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import AnimatedPaperList from "@/components/main/animated-paper-list";
 import PaginationControls from "@portfolio/ui/pagination-controls";
 import { Paper } from "@portfolio/lib/types/paper";

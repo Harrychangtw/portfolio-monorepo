@@ -3,7 +3,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import Link from "next/link"
 
 export interface StaggeredMenuItem {

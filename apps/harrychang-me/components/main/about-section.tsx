@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from '@portfolio/lib/contexts/LanguageContext'
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
 export default function AboutSection() {
   const { t, tHtml } = useLanguage()

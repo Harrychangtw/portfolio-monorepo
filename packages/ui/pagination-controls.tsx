@@ -3,7 +3,7 @@
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { Button } from "@portfolio/ui/ui/button";
 import { motion } from "framer-motion";
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext";
+import { useLanguage } from '@portfolio/lib/contexts/language-context';
 
 interface PaginationControlsProps {
   hasNextPage: boolean;

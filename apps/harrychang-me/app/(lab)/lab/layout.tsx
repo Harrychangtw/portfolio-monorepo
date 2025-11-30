@@ -2,7 +2,7 @@ import '@/styles/lcp-optimize.css';
 import '@/styles/video-embed.css';
 import type React from 'react';
 import type { Metadata } from 'next';
-import LabClientLayout from '@/components/lab/ClientLayout';
+import LabClientLayout from '@/components/lab/client-layout';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lab.harrychang.me'),

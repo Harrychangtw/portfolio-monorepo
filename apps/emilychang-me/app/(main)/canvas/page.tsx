@@ -1,7 +1,7 @@
 "use client"
 
 import GallerySection from "@portfolio/ui/gallery-section"
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
 export default function CanvasPage() {
   const { t } = useLanguage()

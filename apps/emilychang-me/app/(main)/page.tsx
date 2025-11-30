@@ -4,7 +4,7 @@ import EmilyAboutSection from "@/components/about-section"
 import ProjectsSection from "@portfolio/ui/projects-section"
 import GallerySection from "@portfolio/ui/gallery-section"
 import SketchesSection from "@portfolio/ui/sketches-section"
-import { useLanguage } from "@portfolio/lib/contexts/LanguageContext"
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
 function HomeContent() {
   const { t } = useLanguage()

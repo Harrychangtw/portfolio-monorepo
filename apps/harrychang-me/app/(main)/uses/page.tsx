@@ -1,6 +1,6 @@
 "use client"
 
-import { useLanguage } from '@portfolio/lib/contexts//LanguageContext'
+import { useLanguage } from '@portfolio/lib/contexts//language-context'
 import { GalleryImageContainer } from '@portfolio/ui/gallery-image-container'
 import { useIsMobile } from '@portfolio/lib/hooks//use-mobile'
 

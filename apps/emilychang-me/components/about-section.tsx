@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import Lanyard from '@portfolio/ui/Lanyard'
+import Lanyard from '@portfolio/ui/lanyard'
 
 // Reusable component for section titles
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
@@ -24,7 +24,7 @@ const ListItem = ({ children }: { children: React.ReactNode }) => (
 )
 
 export default function AboutSection() {
-  // State to handle responsive Z-position (distance) of the Lanyard
+  // State to handle responsive Z-position (distance) of the lanyard
   const [lanyardZ, setLanyardZ] = useState(25)
 
   useEffect(() => {

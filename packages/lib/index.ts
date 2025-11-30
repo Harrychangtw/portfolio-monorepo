@@ -9,8 +9,8 @@ export * from './lib/typography';
 export * from './lib/utils';
 
 // Contexts
-export * from './contexts/LanguageContext';
-export * from './contexts/NavigationContext';
+export * from './contexts/language-context';
+export * from './contexts/navigation-context';
 
 // Hooks
 export * from './hooks/use-image-preloader';

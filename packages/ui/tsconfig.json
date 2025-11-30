@@ -5,6 +5,6 @@
     "baseUrl": ".",
     "outDir": "dist"
   },
-  "include": ["./**/*.ts", "./**/*.tsx", "meshline.d.ts", "../../apps/harrychang-me/components/lab/minimalist-background.tsx", "../../apps/harrychang-me/components/staggered-menu.tsx", "../../apps/harrychang-me/components/main/paper-reading-page-client.tsx", "../../apps/harrychang-me/components/main/paper-card.tsx", "../../apps/harrychang-me/components/main/about-section.tsx", "../../apps/harrychang-me/components/header.tsx", "../../apps/harrychang-me/components/main/letter-glitch.tsx", "../../apps/harrychang-me/components/main/updates-section.tsx", "../../apps/harrychang-me/components/footer.tsx", "../../apps/harrychang-me/components/main/animated-paper-list.tsx", "../../apps/harrychang-me/components/main/links-page-client.tsx", "../../apps/emilychang-me/components/about-section.tsx", "Lanyard.tsx", "sketches-section.tsx", "sketches-card.tsx"],
+  "include": ["./**/*.ts", "./**/*.tsx", "meshline.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
