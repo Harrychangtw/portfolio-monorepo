@@ -41,7 +41,7 @@ export default function LanguageSwitcher() {
           <ChevronDown className="w-4 h-4" />
         </motion.button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className="bg-background">
         <DropdownMenuItem onClick={() => handleSetLanguage('en')}>
           English
         </DropdownMenuItem>

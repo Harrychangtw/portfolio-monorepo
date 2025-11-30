@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo} from 'react';
 import LetterGlitch from '@/components/main/letter-glitch';
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import LanguageSwitcher from '@portfolio/ui/language-switcher';
@@ -21,7 +21,17 @@ const manifestoChunksEn = [
         "I live not for applause or accolades,",
         "But for the five-year-old who rode uncertain bicycles",
         "Through Shanghai factory yards,",
-        "Eyes wide with wonder at machines that breathed and sang."
+        "Eyes wide with wonder at machines that breathed and sang.",
+        "He did not know he was building a debt I would spend my life repaying."
+    ],
+    [
+        "I am haunted by the weight of wasted seconds,",
+        "Convinced that youth's potential bleeds through idle fingers—",
+        "Every aimless scroll a quiet betrayal,",
+        "Every unmeasured pause a door swinging shut.",
+        "Yet the boy in the factory yard never watched the clock.",
+        "He only watched. He only wondered.",
+        "Perhaps becoming need not be weighed by the minute."
     ],
     [
         "While I honor the child I once was,",
@@ -39,13 +49,18 @@ const manifestoChunksEn = [
     [
         "I refuse to let expertise become arrogance,",
         "To let achievement build walls where curiosity built bridges.",
-        "The boy who dismantled locks to understand their secrets",
-        "Still lives in the very person who unlocks technology's mysteries."
+        "Yet I confess: I still grow impatient with unfamiliarity,",
+        "Still mistake another's slowness for insufficiency—",
+        "Forgetting the boy who dismantled locks",
+        "Was once the clumsiest hand, the most confused mind,",
+        "And the world was patient with him."
     ],
     [
-        "Yet, I confess, I still build fortresses for my ideas,",
-        "Still pursuit the flawless algorithm, the perfect frame.",
-        "I mistake being \"correct\" for being \"true\",",
+        "Yet I confess, I still build fortresses for my ideas,",
+        "Still chase the flawless algorithm, the perfect frame,",
+        "Still perform mastery on stages I find hollow.",
+        "I mistake being \"correct\" for being \"true,\"",
+        "I mistake being \"published\" for being \"understood,\"",
         "And forget the boy who learned more from a broken lock",
         "Than a finished one."
     ],
@@ -80,10 +95,12 @@ const manifestoChunksEn = [
     ],
     [
         "I pledge to remain forever unfinished,",
-        "Forever learning, forever teaching,",
-        "Forever taking the road less traveled—",
-        "Not because it's harder,",
-        "But because it's mine to make."
+        "Forever clumsy in some new tongue,",
+        "Forever the slowest hand in an unfamiliar room—",
+        "And to grant myself the grace",
+        "I am still learning to give others.",
+        "Not because the road is harder,",
+        "But because it is mine to make."
     ],
     [
         "For I am not building a resume or a reputation.",
@@ -122,8 +139,16 @@ const manifestoChunksZhTw = [
         "而是為了那個五歲的自己",
         "騎著搖晃的單車，穿梭在上海的工廠",
         "對著那些會呼吸、會歌唱的機器，滿眼驚奇",
-        "有人說，燃燒得加倍明亮的火焰，持續的時間也只有一半",
-        "而我，選擇光芒"
+        "他不知道，他正在築一筆債，讓我用一生償還"
+    ],
+    [
+        "我被虛度的光陰纏繞",
+        "深信年少的潛能，正悄然流逝——",
+        "流逝於每一次漫無目的的滑動",
+        "流逝於每一刻未經計算的空轉",
+        "然而工廠裡的孩子，從不看錶",
+        "他只是看著，只是驚嘆",
+        "或許，成為不必時刻以產出衡量"
     ],
     [
         "我遙想那個孩子，卻非出於自私",
@@ -140,13 +165,18 @@ const manifestoChunksZhTw = [
     [
         "我拒絕讓專業變成傲慢",
         "拒絕讓成就築起高牆，隔絕了曾用好奇心搭建的橋樑",
-        "那個拆解門鎖，只為理解其中奧義的男孩",
-        "依然活在今日，這個解開科技之謎的青年心中"
+        "然而我仍承認：我對陌生仍缺乏耐心",
+        "仍將他人的緩慢，視作不足——",
+        "卻忘了那個拆解門鎖的男孩",
+        "曾是最笨拙的手，最困惑的心",
+        "而世界，曾對他溫柔以待"
     ],
-     [
+    [
         "然而，我仍為思緒砌起堡壘",
         "仍追逐分毫不差的程式，天衣無縫的畫面",
+        "仍在空洞的舞台上，扮演著精通",
         "錯把「正確」當作「真誠」",
+        "錯把「發表」當作「被理解」",
         "卻忘了那個男孩，從壞損的鎖中",
         "學到的遠比完整的更多"
     ],
@@ -181,8 +211,10 @@ const manifestoChunksZhTw = [
     ],
     [
         "我誓願永遠保持未完成",
-        "永遠在學習，永遠在傳承",
-        "永遠走那條人跡罕至的路",
+        "永遠在某種新語言裡笨拙",
+        "永遠是陌生房間裡，最慢的那雙手——",
+        "並學會給予自己",
+        "我仍在學習給予他人的寬容",
         "不因其艱難",
         "只因那條路，由我親手開創"
     ],
@@ -206,121 +238,122 @@ const manifestoChunksZhTw = [
     ]
 ];
 
+
+// ... (Keep your manifestoChunksEn and manifestoChunksZhTw arrays here) ...
+
 export default function ManifestoPage() {
     const { language } = useLanguage();
     const [introComplete, setIntroComplete] = useState(false);
     
-    // Get the appropriate manifesto chunks based on language
-    const manifestoChunks = language === 'zh-TW' ? manifestoChunksZhTw : manifestoChunksEn;
-    
-    const [visibleChunks, setVisibleChunks] = useState<boolean[]>(
+    // Memoize chunks to prevent unnecessary recalculations
+    const manifestoChunks = useMemo(() => {
+        return language === 'zh-TW' ? manifestoChunksZhTw : manifestoChunksEn;
+    }, [language]);
+
+    const [activeChunks, setActiveChunks] = useState<boolean[]>(
         new Array(manifestoChunks.length).fill(false)
     );
+    
     const chunkRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     const handleAnimationComplete = () => {
         setTimeout(() => setIntroComplete(true), 500);
     };
 
-    // Scroll to top when component mounts
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
-    // Block scrolling until the intro animation is complete
     useEffect(() => {
-        if (!introComplete) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
+        document.body.style.overflow = introComplete ? 'auto' : 'hidden';
     }, [introComplete]);
 
-    
+    // Reset state on language change
     useEffect(() => {
-        setVisibleChunks(new Array(manifestoChunks.length).fill(false));
-    }, [language, manifestoChunks.length]);
+        setActiveChunks(new Array(manifestoChunks.length).fill(false));
+    }, [manifestoChunks.length]);
 
-    // Set up IntersectionObserver to reveal chunks on scroll
+    // The Spotlight Logic
     useEffect(() => {
         if (!introComplete) return;
 
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = parseInt(entry.target.getAttribute('data-index') || '0', 10);
-                        setVisibleChunks((prev) => {
-                            const newVisible = [...prev];
-                            newVisible[index] = true;
-                            return newVisible;
-                        });
-                        // Stop observing the element once it's visible
-                        observer.unobserve(entry.target);
-                    }
+                    const index = parseInt(entry.target.getAttribute('data-index') || '0', 10);
+                    
+                    // Toggle active state based on intersection
+                    setActiveChunks((prev) => {
+                        // Performance optimization: prevent state update if value hasn't changed
+                        if (prev[index] === entry.isIntersecting) return prev;
+                        
+                        const newActive = [...prev];
+                        newActive[index] = entry.isIntersecting;
+                        return newActive;
+                    });
                 });
             },
             {
-                rootMargin: '0px',
-                threshold: 0.2 // Trigger when 20% of the chunk is visible
+                // Root margin creates the "Spotlight" area.
+                // Negative margins shrink the detection area to the center of the screen.
+                // -30% means top 30% and bottom 30% of screen are "inactive zones".
+                rootMargin: '-30% 0px -30% 0px',
+                threshold: 0
             }
         );
 
-        chunkRefs.current.forEach((ref) => {
+        const currentRefs = chunkRefs.current;
+        currentRefs.forEach((ref) => {
             if (ref) observer.observe(ref);
         });
 
-        // Cleanup observer on component unmount
-        return () => observer.disconnect();
-
-    }, [introComplete, language]);
+        return () => {
+            currentRefs.forEach((ref) => {
+                if (ref) observer.unobserve(ref);
+            });
+            observer.disconnect();
+        };
+    }, [introComplete, manifestoChunks.length]);
 
     return (
         <div className="min-h-screen font-mono bg-background text-gray-300">
-            {/* Header section with glitch effect */}
             <div className="h-screen relative">
-                <LetterGlitch 
-                    onAnimationComplete={handleAnimationComplete}
-                />
+                <LetterGlitch onAnimationComplete={handleAnimationComplete} />
             </div>
             
-            {/* Content section, revealed after the intro */}
             <div className={`transition-opacity duration-1000 ${introComplete ? 'opacity-100' : 'opacity-0'}`}>
-                <div className="container min-h-screen py-24">
+                <div className="container min-h-screen py-24 md:py-24">
                     <div className="max-w-4xl mx-auto">
-                        <article className="space-y-24 bg-background/50 backdrop-blur-sm p-8 md:p-12 rounded-lg">
-                            {manifestoChunks.map((chunk, chunkIndex) => (
-                                <div
-                                    key={chunkIndex}
-                                    ref={(el) => {
-                                        chunkRefs.current[chunkIndex] = el;
-                                    }}
-                                    data-index={chunkIndex}
-                                    className="space-y-4"
-                                >
-                                    {chunk.map((line, lineIndex) => (
-                                        <div 
-                                            key={`${chunkIndex}-${lineIndex}`} 
-                                            className={`block transition-all duration-1000 ease-out ${
-                                                visibleChunks[chunkIndex] 
-                                                    ? 'opacity-100 translate-y-0' 
-                                                    : 'opacity-0 translate-y-8'
-                                            }`}
-                                            style={{
-                                                transitionDelay: visibleChunks[chunkIndex] ? `${lineIndex * 200}ms` : '0ms'
-                                            }}
-                                        >
-                                            <p className="text-base md:text-lg leading-relaxed text-gray-200">
+                        <article className="space-y-20 md:space-y-20 px-4 md:px-12">
+                            {manifestoChunks.map((chunk, chunkIndex) => {
+                                const isActive = activeChunks[chunkIndex];
+                                return (
+                                    <div
+                                        key={chunkIndex}
+                                        ref={(el) => { chunkRefs.current[chunkIndex] = el; }}
+                                        data-index={chunkIndex}
+                                        className={`
+                                            space-y-4 transition-all duration-700 ease-in-out will-change-[opacity,filter]
+                                            ${isActive 
+                                                ? 'opacity-100 blur-0 translate-y-0 scale-100' 
+                                                : 'opacity-20 blur-[2px] translate-y-2 scale-[0.98]'
+                                            }
+                                        `}
+                                    >
+                                        {chunk.map((line, lineIndex) => (
+                                            <p 
+                                                key={`${chunkIndex}-${lineIndex}`} 
+                                                className="text-base md:text-lg leading-relaxed text-gray-200"
+                                            >
                                                 {line}
                                             </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            ))}
+                                        ))}
+                                    </div>
+                                );
+                            })}
                         </article>
+                        {/* Extra padding at bottom to allow last item to reach center */}
+                        <div className="h-[10vh]" /> 
                     </div>
                 </div>
             </div>

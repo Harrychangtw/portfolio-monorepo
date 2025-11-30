@@ -18,7 +18,7 @@
 - **Content**: 
   - Projects: `content/projects/[slug].md` (+ `_zh-tw.md` for Chinese)
   - Gallery: `content/gallery/[slug].md`
-  - Images: Place originals in `public/images/[type]/[slug]/`, always run `npm run optimize-images` after adding
+  - Images: Place originals in `public/images/[type]/[slug]/`, always run `node scripts/optimize-images.js` after adding
 - **i18n**: 
   - Use `useLanguage()` hook, `t(key, ns)` for translations
   - Add new keys to both `en` and `zh-TW` JSON files in `/public/locales/`
@@ -29,21 +29,16 @@
 - **Styling**: 
   - Tailwind CSS, dark mode only, custom HSL variables in `app/globals.css`
   - Radix UI for complex UI
-- **API**: 
+- **API**:
   - Locale-aware: always accept `?locale=` param, call markdown fetchers with locale
   - Return JSON via `NextResponse.json()`
-- **Testing**: 
-  - Vitest + React Testing Library, config in `vitest.config.ts`, setup in `test/setup.tsx`
-  - Test files: `**/*.{test,spec}.{ts,tsx}`
 
 ## Developer Workflows
 
-- **Install**: `npm install` (runs Prisma generate)
-- **Dev main**: `npm run dev` (http://localhost:3000)
-- **Dev lab**: `npm run dev:lab` (http://localhost:3001, sets `NEXT_PUBLIC_IS_STUDIO=true`)
-- **Content update**: Add markdown/images, run `npm run optimize-images`, commit
-- **Test**: `npm run test`, `npm run test:watch`, `npm run test:ui`
-- **Build**: `npm run build` (runs prebuild hooks), `npm run start` (prod)
+- **Install**: `pnpm install`
+- **Dev main**: `pnpm dev` (http://localhost:3000)
+- **Content update**: Add markdown/images, run `node scripts/optimize-images.js`, commit
+- **Build**: `pnpm build` (runs prebuild hooks), `pnpm start` (prod)
 - **DB**: Local: `npx prisma migrate dev`. Deploy: `prisma migrate deploy` (in prebuild)
 
 ## Key Files & Directories
@@ -72,7 +67,7 @@
 
 1. Add `content/projects/my-project.md` (see frontmatter schema in `apps/harrychang-me/README.md`)
 2. Add images to `public/images/projects/my-project/`
-3. Run `npm run optimize-images`
+3. Run `node scripts/optimize-images.js`
 4. Commit and push
 
 ## License
@@ -87,5 +82,4 @@ Content: All Rights Reserved (see `/content/`, `/public/`)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [Prisma](https://www.prisma.io/)
-- [Vitest](https://vitest.dev/)
 - [React Bits](https://github.com/DavidHDev/react-bits)

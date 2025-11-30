@@ -73,6 +73,7 @@
     "caption": "Caption"
   },
   "social": {
+    "calendar": "Schedules",
     "gmail": "Email",
     "discord": "Discord",
     "github": "GitHub",
