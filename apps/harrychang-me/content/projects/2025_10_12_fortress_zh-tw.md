@@ -16,7 +16,7 @@ technologies: [PyTorch, ChromaDB, HF Transformers]
 
 大型語言模型（LLM）的世界正處於不斷變動的狀態。隨著模型變得越來越強大，用來攻擊它們的方法也日益精進。對於開發者和研究人員來說，確保 LLM 的安全性就像一場永無止境的貓捉老鼠遊戲。現有的安全分類器通常需要耗費大量資源進行 fine-tuning，這種運算成本高昂的方法在面對層出不窮的新型攻擊手法時顯得脆弱，且需要昂貴且耗時的訓練週期。
 
-今天，我很高興能向各位介紹我的第一作者研究論文，發表於 TMLR：**FORTRESS**。本文將提供系統的概要介紹；若希望深入了解完整的技術細節，論文全文已發佈於 [OpenReview](https://openreview.net/pdf?id=lCn7RT9DGq)。
+今天，我很高興能向各位介紹我的第一作者研究論文，發表於 TMLR：**FORTRESS: Fast, Orchestrated Tuning-free Retrieval Ensemble for Scalable Safety**。本文將提供系統的概要介紹；若希望深入了解完整的技術細節，論文全文已發佈於 [OpenReview](https://openreview.net/pdf?id=lCn7RT9DGq)。
 
 
 
