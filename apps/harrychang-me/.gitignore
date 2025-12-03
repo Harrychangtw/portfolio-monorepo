@@ -37,3 +37,10 @@ next-env.d.ts
 combined.md
 scripts/context_export.sh
 public/fonts/**
+
+# Playwright E2E tests
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/blob-report/
+/e2e-results/

@@ -12,7 +12,15 @@
     "start": "next start",
     "lint": "next lint",
     "optimize-images": "node scripts/optimize-images.js",
-    "prepare-content": "npm run optimize-images"
+    "prepare-content": "npm run optimize-images",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:codegen": "playwright codegen http://localhost:3000",
+    "test:e2e:report": "playwright show-report",
+    "test:e2e:main": "playwright test --grep-invert '.*lab.*'",
+    "test:e2e:lab": "playwright test --grep '.*lab.*'"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -59,8 +67,9 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "@prisma/client": "^6.19.0",
-    "@types/node": "^22.18.13",
+    "@types/node": "^22.19.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "image-size": "^2.0.2",
