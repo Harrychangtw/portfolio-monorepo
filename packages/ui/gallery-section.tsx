@@ -22,10 +22,12 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
   const [isLoading, setIsLoading] = useState(initialItems.length === 0) // Only loading if no initial data
   const [forceLoad, setForceLoad] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  
+  const hasFetchedRef = useRef(false) // Track if we've already fetched
+  const lastLanguageRef = useRef(language) // Track last language to prevent redundant fetches
+
   // Check if we should load immediately (when there's a hash in URL)
   const shouldLoadImmediately = typeof window !== 'undefined' && window.location.hash === '#gallery'
-  
+
   const isVisible = useIntersectionObserver({
     elementRef: sectionRef as React.RefObject<Element>,
     rootMargin: '100px'
@@ -44,6 +46,12 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
     // Skip fetch if we have initial data and language matches
     if (initialItems.length > 0 && language === 'en') {
       setIsLoading(false)
+      hasFetchedRef.current = true
+      return
+    }
+
+    // Skip if already fetched and language hasn't actually changed
+    if (hasFetchedRef.current && lastLanguageRef.current === language) {
       return
     }
 
@@ -72,6 +80,10 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
         } else {
           setGalleryItems(data)
         }
+
+        // Mark as fetched and update last language
+        hasFetchedRef.current = true
+        lastLanguageRef.current = language
       } catch (error) {
         console.error('Failed to fetch gallery items:', error)
       } finally {
