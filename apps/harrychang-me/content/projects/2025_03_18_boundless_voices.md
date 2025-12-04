@@ -11,7 +11,7 @@ technologies: ["DaVinci Resolve", "Affinity Designer"]
 pinned: 9
 locked: false
 featured: true
-tooltip: "Project Under Construction"
+tooltip: ""
 ---
 
 ## Project Overview
@@ -25,7 +25,6 @@ Inspired, I joined forces with a group of passionate classmates to create the "B
 ## Designing the Program
 
 One of the most significant challenges was creating the program booklet. The initial hurdle was organizational; as more and more talented individuals joined our cause, compiling their information became a complex task. We streamlined this process using Google Forms, but the layout and typesetting still required meticulous attention to detail.
-
 The cover design was a truly memorable experience. After many discussions and revisions with the team, we decided on a concept that would visually represent the concert's theme. We chose an image of a vast blue sky with white clouds to evoke a sense of the "boundless" world we envisioned. Soaring musical notes were added to convey a feeling of light, elegant, and joyful energy, perfectly capturing the spirit of our musical theater.
 
 ---
