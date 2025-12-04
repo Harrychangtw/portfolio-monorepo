@@ -335,8 +335,8 @@ export default function ManifestoPage() {
                                         className={`
                                             space-y-4 transition-all duration-700 ease-in-out will-change-[opacity,filter]
                                             ${isActive 
-                                                ? 'opacity-100 blur-0 translate-y-0 scale-100' 
-                                                : 'opacity-20 blur-[2px] translate-y-2 scale-[0.98]'
+                                                ? 'opacity-100 translate-y-0 scale-100' 
+                                                : 'opacity-20 translate-y-2 scale-[0.98]'
                                             }
                                         `}
                                     >
