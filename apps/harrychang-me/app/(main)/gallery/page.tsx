@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import GalleryPageClient from "@portfolio/ui/gallery-page-client"
+import { redirect } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -29,6 +30,6 @@ export const metadata: Metadata = {
 }
 
 export default function GalleryPage() {
-  return <GalleryPageClient />
+  redirect("/#gallery")
 }
 
