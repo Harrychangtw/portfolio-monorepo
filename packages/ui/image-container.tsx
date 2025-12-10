@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { GalleryLoadingSkeleton } from "./gallery-loading-skeleton"
+import { ImageLoadingSkeleton } from "./image-loading-skeleton"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 
-interface GalleryImageContainerProps {
+interface ImageContainerProps {
   src: string
   alt: string
   caption?: string
@@ -14,17 +14,19 @@ interface GalleryImageContainerProps {
   quality?: number
   aspectRatio?: number // Optional aspect ratio override (width/height)
   noInsetPadding?: boolean // Option to remove the inset padding (outline effect)
+  sizes?: string // Optional sizes attribute for responsive layouts
 }
 
-export function GalleryImageContainer({ 
-  src, 
-  alt, 
-  caption, 
-  priority = false, 
+export function ImageContainer({
+  src,
+  alt,
+  caption,
+  priority = false,
   quality = 80,
   aspectRatio: providedAspectRatio,
-  noInsetPadding = false
-}: GalleryImageContainerProps) {
+  noInsetPadding = false,
+  sizes = "100vw",
+}: ImageContainerProps) {
   const containerRef = useRef<HTMLElement>(null)
   const isVisible = useIntersectionObserver({
     elementRef: containerRef as React.RefObject<Element>,
@@ -42,8 +44,23 @@ export function GalleryImageContainer({
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
   const isMobile = useIsMobile()
 
-  // Get thumbnail URL for blur-up loading
-  const thumbnailSrc = src?.replace('.webp', '-thumb.webp')
+  // Derive thumbnail and full-resolution URLs for blur-up loading.
+  // Works whether `src` is a full image or already a `-thumb` URL.
+  let thumbnailSrc: string | undefined
+  let fullSrc = src
+
+  if (src?.endsWith("-thumb.webp")) {
+    // Card / preview URLs already point at the thumbnail
+    thumbnailSrc = src
+    fullSrc = src.replace("-thumb.webp", ".webp")
+  } else if (src?.endsWith(".webp")) {
+    thumbnailSrc = src.replace(".webp", "-thumb.webp")
+    fullSrc = src
+  } else if (src) {
+    // Non-webp fallback – just use the same URL for both
+    thumbnailSrc = src
+    fullSrc = src
+  }
   
   // Calculate border thickness as 0.01 (1%) of container width
   // Min 1px, max 4px on mobile and 6px on desktop
@@ -85,8 +102,8 @@ export function GalleryImageContainer({
       setLoading(false)
     }
 
-    img.src = src
-  }, [src, providedAspectRatio, isVisible, priority, hasLoadedOnce])
+    img.src = fullSrc
+  }, [fullSrc, providedAspectRatio, isVisible, priority, hasLoadedOnce])
 
   // Calculate aspect ratio from dimensions
   const rawAspectRatio = dimensions.width / dimensions.height
@@ -124,7 +141,7 @@ export function GalleryImageContainer({
   }
 
   return (
-    <figure className="w-full" ref={containerRef}>
+    <figure className="w-full not-prose" ref={containerRef}>
       <div className="w-full">
         <div 
           className={`relative w-full ${noInsetPadding ? '' : 'bg-white'}`}
@@ -136,7 +153,7 @@ export function GalleryImageContainer({
           }}
         >
           {loading ? (
-            <GalleryLoadingSkeleton />
+            <ImageLoadingSkeleton />
           ) : (
             <div 
               className="relative w-full overflow-hidden"
@@ -144,7 +161,7 @@ export function GalleryImageContainer({
                 paddingBottom: containerPadding,
               }}
             >
-              {!noInsetPadding && (
+              {!noInsetPadding && containerClass && (
                 <div className={`absolute inset-0 z-10 pointer-events-none ${containerClass}`}></div>
               )}
               <div className="absolute inset-0">
@@ -156,17 +173,17 @@ export function GalleryImageContainer({
                         alt={alt}
                         fill
                         className={`object-contain object-center transition-opacity duration-500 ${blurComplete ? 'opacity-0' : 'opacity-100'}`}
-                        sizes="100vw"
+                        sizes={sizes}
                         quality={20}
                       />
                     )}
                     
                     <Image
-                      src={src}
+                      src={fullSrc}
                       alt={alt}
                       fill
                       className={`object-contain object-center transition-opacity duration-500 ${blurComplete ? 'opacity-100' : 'opacity-0'}`}
-                      sizes="100vw"
+                      sizes={sizes}
                       priority={priority}
                       quality={quality}
                       onLoad={() => setBlurComplete(true)}
