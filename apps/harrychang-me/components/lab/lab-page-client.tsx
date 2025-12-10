@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import WaitlistForm from '@/components/lab/waitlist-form';
 import MinimalistBackground from '@/components/lab/minimalist-background';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import AnimatedIcarusIcon from '@/components/lab/animated-icon';
 
 export default function LabPageClient() {

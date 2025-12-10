@@ -4,7 +4,7 @@ import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import AnimatedPaperList from "@/components/main/animated-paper-list";
 import PaginationControls from "@portfolio/ui/pagination-controls";
 import { Paper } from "@portfolio/lib/types/paper";
-import { motion } from "framer-motion";
+import { motion } from 'motion/react';
 
 interface PaperReadingPageClientProps {
   paginatedPapers: Paper[];
