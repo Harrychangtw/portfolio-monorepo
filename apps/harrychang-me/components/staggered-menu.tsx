@@ -2,7 +2,7 @@
 
 import React, { useCallback, useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import NavigationLink from "@portfolio/ui/navigation-link"
 import { usePathname } from "next/navigation"

@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef, useTransition } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, LayoutGroup } from "motion/react"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { useNavigation } from '@portfolio/lib/contexts/navigation-context'
@@ -198,9 +198,22 @@ export default function Header() {
   const Underline = () => (
     <motion.span
       layoutId="navUnderline"
+      layout="position"
       className="absolute left-0 bottom-[-4px] h-[1px] w-full bg-primary"
-      transition={{ type: "spring", stiffness: 500, damping: 40 }}
       initial={false}
+      transition={{ type: "spring", stiffness: 500, damping: 40 }}
+      transformTemplate={(_, transform) =>
+        transform
+          // kill translateY(...)
+          .replace(/translateY\([^)]*\)/g, "translateY(0px)")
+          // kill translate(x, y)
+          .replace(/translate\(\s*([^,]+),\s*([^)]+)\)/g, "translate($1, 0px)")
+          // kill translate3d(x, y, z)
+          .replace(
+            /translate3d\(\s*([^,]+),\s*([^,]+),\s*([^)]+)\)/g,
+            "translate3d($1, 0px, $3)"
+          )
+      }
     />
   );
 
@@ -277,7 +290,8 @@ export default function Header() {
   }
 
   return (
-    <header
+    <motion.header
+      layoutRoot
       className="fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background"
     >
       {/* Navigation loading indicator */}
@@ -372,16 +386,18 @@ export default function Header() {
         >
           {/* Navigation - Only on desktop and when not on special pages */}
           {!shouldHideNav && (
-            <nav className="flex space-x-8">
-              {NAV_ITEMS.map((item) => (
-                <motion.div key={item.id} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <NavigationLink {...getLinkProps(item.id, item.path)}>
-                    {isActive(item.id) && <Underline />}
-                    {t(`header.${item.id}`)}
-                  </NavigationLink>
-                </motion.div>
-              ))}
-            </nav>
+            <LayoutGroup id="header-nav">
+              <nav className="flex space-x-8">
+                {NAV_ITEMS.map((item) => (
+                  <motion.div key={item.id} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                    <NavigationLink {...getLinkProps(item.id, item.path)}>
+                      {isActive(item.id) && <Underline />}
+                      {t(`header.${item.id}`)}
+                    </NavigationLink>
+                  </motion.div>
+                ))}
+              </nav>
+            </LayoutGroup>
           )}
         </motion.div>
       </div>
@@ -411,6 +427,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   )
 }
