@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { TypographySpecimen } from './typography-specimen'
 import { getAllFontFamilies } from '@portfolio/lib/lib/typography'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from '@portfolio/ui/gallery-image-container'
+import { GalleryImageContainer } from '@portfolio/ui/image-container'
 
 //Helper to convert RGB string (returned by getComputedStyle) to Hex
 function rgbToHex(rgb: string) {

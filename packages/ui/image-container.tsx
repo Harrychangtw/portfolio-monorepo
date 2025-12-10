@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { GalleryLoadingSkeleton } from "./gallery-loading-skeleton"
+import { GalleryLoadingSkeleton } from "./image-loading-skeleton"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 
 interface GalleryImageContainerProps {

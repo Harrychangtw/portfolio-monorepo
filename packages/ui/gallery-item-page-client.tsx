@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
+import { GalleryImageContainer } from "@portfolio/ui/image-container"
 import NextUpCard from "@portfolio/ui/next-up-card"
 import type { GalleryItemMetadata } from '@portfolio/lib/lib/markdown'
 import NavigationLink from "@portfolio/ui/navigation-link"

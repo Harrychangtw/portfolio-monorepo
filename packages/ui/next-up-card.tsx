@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
+import { GalleryImageContainer } from "@portfolio/ui/image-container"
 import NavigationLink from "@portfolio/ui/navigation-link"
 
 interface NextUpCardProps {
