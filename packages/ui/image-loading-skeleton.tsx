@@ -1,4 +1,4 @@
-export function GalleryLoadingSkeleton() {
+export function ImageLoadingSkeleton() {
   return (
     <div className="relative w-full overflow-hidden">
       <div className="w-full" style={{ paddingBottom: "66.67%" /* 3:2 aspect ratio */ }}>

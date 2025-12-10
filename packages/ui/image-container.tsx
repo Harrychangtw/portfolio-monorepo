@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { GalleryLoadingSkeleton } from "./image-loading-skeleton"
+import { ImageLoadingSkeleton } from "./image-loading-skeleton"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 
-interface GalleryImageContainerProps {
+interface ImageContainerProps {
   src: string
   alt: string
   caption?: string
@@ -16,7 +16,7 @@ interface GalleryImageContainerProps {
   noInsetPadding?: boolean // Option to remove the inset padding (outline effect)
 }
 
-export function GalleryImageContainer({ 
+export function ImageContainer({ 
   src, 
   alt, 
   caption, 
@@ -24,7 +24,7 @@ export function GalleryImageContainer({
   quality = 80,
   aspectRatio: providedAspectRatio,
   noInsetPadding = false
-}: GalleryImageContainerProps) {
+}: ImageContainerProps) {
   const containerRef = useRef<HTMLElement>(null)
   const isVisible = useIntersectionObserver({
     elementRef: containerRef as React.RefObject<Element>,
@@ -136,7 +136,7 @@ export function GalleryImageContainer({
           }}
         >
           {loading ? (
-            <GalleryLoadingSkeleton />
+            <ImageLoadingSkeleton />
           ) : (
             <div 
               className="relative w-full overflow-hidden"

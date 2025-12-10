@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { TypographySpecimen } from './typography-specimen'
 import { getAllFontFamilies } from '@portfolio/lib/lib/typography'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from '@portfolio/ui/image-container'
+import { ImageContainer } from '@portfolio/ui/image-container'
 
 //Helper to convert RGB string (returned by getComputedStyle) to Hex
 function rgbToHex(rgb: string) {
@@ -75,7 +75,7 @@ export default function TypographyPageClient() {
         <div>
           {/* OG Image Container */}
           <div className="w-full mb-8">
-            <GalleryImageContainer
+            <ImageContainer
               src="/images/optimized/projects/og/ogimage.webp"
               alt="Harry Chang Portfolio Identity - The Tower of Babel"
               aspectRatio={1.5}

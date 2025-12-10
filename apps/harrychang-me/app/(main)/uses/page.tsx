@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from '@portfolio/ui/image-container'
+import { ImageContainer } from '@portfolio/ui/image-container'
 import { useIsMobile } from '@portfolio/lib/hooks/use-mobile'
 
 export default function UsesPage() {
@@ -11,7 +11,7 @@ export default function UsesPage() {
   const hardware = getTranslationData('hardware', 'uses')
   const software = getTranslationData('software', 'uses')
   
-  // The GalleryImageContainer adds horizontal padding to portrait images on desktop 
+  // The ImageContainer adds horizontal padding to portrait images on desktop 
   // to fit a 1.5 target aspect ratio. This creates unwanted space.
   // This style object calculates the necessary width and negative margin 
   // to counteract the internal padding, making the image fill its column.
@@ -35,7 +35,7 @@ export default function UsesPage() {
           <div className="w-full -mt-4 mb-8">
             {isMobile ? (
               // Mobile: Show only the center image, full width
-              <GalleryImageContainer
+              <ImageContainer
                 src={images[1].src}
                 alt={images[1].alt}
                 aspectRatio={0.8}
@@ -49,7 +49,7 @@ export default function UsesPage() {
                   // This outer div clips the oversized child to prevent layout disruption
                   <div key={image.src} className="overflow-hidden">
                     <div style={desktopImageWrapperStyle}>
-                      <GalleryImageContainer
+                      <ImageContainer
                         src={image.src}
                         alt={image.alt}
                         aspectRatio={0.8}

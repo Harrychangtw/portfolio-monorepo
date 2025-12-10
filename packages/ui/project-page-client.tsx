@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from "@portfolio/ui/image-container"
+import { ImageContainer } from "@portfolio/ui/image-container"
 import type { ProjectMetadata } from '@portfolio/lib/lib/markdown'
 import NextUpCard from "@portfolio/ui/next-up-card"
 import NavigationLink from "@portfolio/ui/navigation-link"
@@ -94,7 +94,7 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
         <div className="container">
           {/* Hero image section - Enforcing strict 3:2 (1.5) aspect ratio */}
           <div className="relative w-full mb-8">
-            <GalleryImageContainer
+            <ImageContainer
               src={project.imageUrl}
               alt={project.title}
               priority={true}
