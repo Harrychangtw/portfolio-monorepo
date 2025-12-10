@@ -1,8 +1,12 @@
 "use client"
 
 import { useEffect } from "react"
+import { usePathname, useSearchParams } from "next/navigation"
 
 export function useStableHashScroll(headerSelector: string = "header") {
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+
     useEffect(() => {
         const id = typeof window !== "undefined" ? window.location.hash.replace("#", "") : ""
         if (!id) return
@@ -80,5 +84,5 @@ export function useStableHashScroll(headerSelector: string = "header") {
         window.addEventListener("touchstart", stop, { passive: true } as any)
 
         return stop
-    }, [])
+    }, [pathname, searchParams])
 }

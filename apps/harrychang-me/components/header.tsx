@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { useNavigation } from '@portfolio/lib/contexts/navigation-context'
-import LanguageSwitcher from "@portfolio/ui/language-switcher"
 import StaggeredMenu from "@/components/staggered-menu"
 import NavigationLink from "@portfolio/ui/navigation-link"
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll"
@@ -15,6 +14,22 @@ import { scrollToSection as utilScrollToSection, ensurePreciseAlign } from "@por
 
 // Keep duration consistent with lib/scrolling.ts
 const SCROLL_ANIMATION_DURATION = 400; // ms
+
+// Configuration for special pages to reduce repetitive boolean checks
+const SPECIAL_PAGES = [
+  { prefix: '/paper-reading', key: 'paperReading' },
+  { prefix: '/manifesto', key: 'manifesto' },
+  { prefix: '/uses', key: 'uses' },
+  { prefix: '/linktree', key: 'links' },
+  { prefix: '/design', key: 'design' },
+];
+
+const NAV_ITEMS = [
+  { id: 'about', path: '/' },
+  { id: 'updates', path: '/' },
+  { id: 'projects', path: '/projects' },
+  { id: 'gallery', path: '/gallery' },
+];
 
 export default function Header() {
   const pathname = usePathname()
@@ -26,14 +41,14 @@ export default function Header() {
   const [isLab, setIsLab] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const isHomePage = pathname === "/"
-  const isPaperReadingPage = pathname?.startsWith('/paper-reading');
-  const isManifestoPage = pathname?.startsWith('/manifesto');
-  const isUsesPage = pathname?.startsWith('/uses');
-  const isLinksPage = pathname?.startsWith('/linktree');
-  const isDesignPage = pathname?.startsWith('/design');
+  
+  // DRY: Identify if we are on a special page
+  const currentSpecialPage = SPECIAL_PAGES.find(page => pathname?.startsWith(page.prefix));
+  const isSpecialPage = !!currentSpecialPage;
+  
   const isProjectDetailPage = pathname?.match(/^\/projects\/[^/]+$/);
   const isMobile = useIsMobile()
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref to manage timeout
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { t } = useLanguage()
 
   // Detect if we're on the lab subdomain
@@ -47,7 +62,7 @@ export default function Header() {
   // Use stable hash scroll hook for perfect alignment
   useStableHashScroll("header")
 
-  // Expose header height as CSS variable for native anchor scroll compensation
+  // Expose header height as CSS variable
   useEffect(() => {
     const update = () => {
       const h = document.querySelector('header')?.getBoundingClientRect().height || 0;
@@ -58,39 +73,30 @@ export default function Header() {
     return () => window.removeEventListener('resize', update);
   }, []);
 
-  // Function to determine if a path corresponds to the current page or section
   const isActive = (sectionId: string) => activeSection === sectionId;
 
   const scrollToSection = (id: string, event?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    // Clear any existing scroll timeout to prevent premature resetting of isScrolling
     if (scrollTimeoutRef.current) {
       clearTimeout(scrollTimeoutRef.current);
     }
 
-    // If we are already on the home page, prevent navigation and scroll
     if (isHomePage) {
-      event?.preventDefault(); // Prevent default link behavior only if already home
+      event?.preventDefault();
       const element = document.getElementById(id)
       if (element) {
-        // 1. Set scrolling flag immediately
         setIsScrolling(true)
-        // 2. Set active section immediately for instant underline feedback
         setActiveSection(id)
-
-        // 3. Use the utility function for scrolling (now fully smooth and interruptible)
         utilScrollToSection(id);
 
-        // 4. Set timeout to reset scrolling flag *after* scroll likely finishes
         scrollTimeoutRef.current = setTimeout(() => {
           setIsScrolling(false)
-          scrollTimeoutRef.current = null; // Clear the ref
-        }, SCROLL_ANIMATION_DURATION + 100) // Add a small buffer
+          scrollTimeoutRef.current = null;
+        }, SCROLL_ANIMATION_DURATION + 100)
       }
     }
-    // If not on the home page, the Link's default href="/#id" will handle navigation.
   }
 
-  // Effect for handling initial load - simplified since useStableHashScroll handles hash navigation
+  // Effect for handling initial load
   useEffect(() => {
     if (isHomePage && window.location.hash) {
       const id = window.location.hash.substring(1)
@@ -99,7 +105,6 @@ export default function Header() {
       setActiveSection('about');
     }
     
-    // Cleanup timeout on component unmount or if isHomePage changes
     return () => {
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
@@ -107,38 +112,23 @@ export default function Header() {
     };
   }, [isHomePage])
 
-  // Effect for updating active section based on scroll position (only on homepage)
+  // Effect for updating active section based on scroll position
   useEffect(() => {
     if (!isHomePage) return
 
     const handleScroll = () => {
-      // --- CRITICAL: Check isScrolling flag FIRST ---
-      if (isScrolling) {
-        // console.log("Skipping scroll update because isScrolling is true"); // Debugging
-        return;
-      }
-      
-      // --- CRITICAL: Skip scroll handling if menu is open ---
-      if (isMenuOpen) {
-        return;
-      }
-      // --- END CRITICAL CHECK ---
+      if (isScrolling || isMenuOpen) return;
 
       const headerHeight = document.querySelector('header')?.offsetHeight || 0;
       const scrollY = window.scrollY;
       
-      // Get all sections with their positions
-      const sections = [
-        { id: 'about', element: document.getElementById('about') },
-        { id: 'updates', element: document.getElementById('updates') },
-        { id: 'projects', element: document.getElementById('projects') },
-        { id: 'gallery', element: document.getElementById('gallery') },
-      ];
+      const sections = NAV_ITEMS.map(item => ({
+        id: item.id,
+        element: document.getElementById(item.id)
+      }));
 
-      let currentSection = 'about'; // Default
+      let currentSection = 'about';
       
-      // Find the current section based on which section's top is closest to being above the header bottom
-      // but still visible (i.e., its top hasn't passed the bottom of the header by too much)
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         if (!section.element) continue;
@@ -146,46 +136,36 @@ export default function Header() {
         const sectionTop = section.element.offsetTop;
         const sectionBottom = sectionTop + section.element.offsetHeight;
         
-        // Check if we're currently viewing this section:
-        // - The section top should be at or above the bottom of header (with some tolerance)
-        // - OR we're somewhere within the section bounds
         const isInSection = (
-          // Case 1: Section top is visible just below header or we've scrolled past it slightly
           (sectionTop <= scrollY + headerHeight + 50) &&
-          // Case 2: We haven't scrolled past the section completely
           (sectionBottom > scrollY + headerHeight)
         );
         
         if (isInSection) {
           currentSection = section.id;
-          // Don't break here - continue to find the most appropriate section
-          // The last matching section will be the active one
         }
       }
       
-      // Only update state if the section actually changed
       setActiveSection(prevSection => {
           if (prevSection !== currentSection) {
-              // console.log(`Scroll detected change to: ${currentSection}`); // Debugging
               return currentSection;
           }
           return prevSection;
       });
     };
 
-    handleScroll(); // Run once on mount/homepage load
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
 
-  }, [isHomePage, isScrolling]) // isScrolling dependency IS important here
+  }, [isHomePage, isScrolling, isMenuOpen])
 
-  // Effect for updating active section based on pathname (for non-homepage routes)
+  // Effect for updating active section based on pathname
   useEffect(() => {
     if (!isHomePage) {
-      // When navigating *away* from home, cancel any pending scroll timeout
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
-        setIsScrolling(false); // Ensure flag is reset if navigating away mid-scroll
+        setIsScrolling(false);
       }
       if (pathname?.startsWith('/projects')) {
         setActiveSection('projects')
@@ -197,22 +177,34 @@ export default function Header() {
     }
   }, [pathname, isHomePage])
 
-  const showSectionTitle = (isHomePage && activeSection !== "about") ||
+  // DRY: Logic for determining which title to show
+  const showStandardSectionTitle = (isHomePage && activeSection !== "about") ||
                            (!isHomePage && (pathname?.startsWith('/projects') || pathname?.startsWith('/gallery')));
-  const titleToShow = activeSection.charAt(0).toUpperCase() + activeSection.slice(1);
+  
+  let activeTitleKey: string | null = null;
 
-  // Reusable Underline Component - APPLY WORKAROUND HERE
+  if (isLab) {
+    activeTitleKey = 'lab';
+  } else if (currentSpecialPage) {
+    activeTitleKey = currentSpecialPage.key;
+  } else if (showStandardSectionTitle) {
+    activeTitleKey = activeSection;
+  }
+
+  // DRY: Helper logic to determine if nav should be hidden
+  const shouldHideNav = isMobile || isSpecialPage || isLab;
+
+  // Reusable Underline Component
   const Underline = () => (
     <motion.span
       layoutId="navUnderline"
       className="absolute left-0 bottom-[-4px] h-[1px] w-full bg-primary"
-      // WORKAROUND: Use a spring animation to minimize visual jump effect
-      transition={{ type: "spring", stiffness: 500, damping: 40 }} // Stiffer spring, more damping
+      transition={{ type: "spring", stiffness: 500, damping: 40 }}
       initial={false}
     />
   );
 
-  // Helper to generate link props (no changes needed here)
+  // Helper to generate link props
   const getLinkProps = (sectionId: string, pagePath: string) => {
     const active = isActive(sectionId);
     const baseClasses = `relative font-heading ${active ? "text-primary" : "text-secondary hover:text-[hsl(var(--accent))]"} transition-colors duration-200 outline-none`;
@@ -223,59 +215,24 @@ export default function Header() {
   };
 
   // Determine when to show the staggered menu
-  const showStaggeredMenu = isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage && !isDesignPage && !isLab;
+  const showStaggeredMenu = isMobile && !isSpecialPage && !isLab;
   
   // Menu items for the staggered menu
-  const menuItems = [
-    {
-      label: t('header.about'),
-      ariaLabel: t('header.about'),
-      link: '/#about',
-      sectionId: 'about'
-    },
-    {
-      label: t('header.updates'),
-      ariaLabel: t('header.updates'), 
-      link: '/#updates',
-      sectionId: 'updates'
-    },
-    {
-      label: t('header.projects'),
-      ariaLabel: t('header.projects'),
-      link: '/#projects',
-      sectionId: 'projects'
-    },
-    {
-      label: t('header.gallery'),
-      ariaLabel: t('header.gallery'),
-      link: '/#gallery', 
-      sectionId: 'gallery'
-    }
-  ];
+  const menuItems = NAV_ITEMS.map(item => ({
+    label: t(`header.${item.id}`),
+    ariaLabel: t(`header.${item.id}`),
+    link: `/#${item.id}`,
+    sectionId: item.id
+  }));
 
-  // Social items for the staggered menu
   const socialItems = [
-    {
-      label: t('social.gmail'),
-      link: '/email'
-    },
-    {
-      label: t('social.github'),
-      link: '/github'
-    },
-    {
-      label: t('social.instagram'),
-      link: '/instagram'
-    },
-    {
-      label: t('social.discord'),
-      link: '/discord'
-    }
+    { label: t('social.gmail'), link: '/email' },
+    { label: t('social.github'), link: '/github' },
+    { label: t('social.instagram'), link: '/instagram' },
+    { label: t('social.discord'), link: '/discord' }
   ];
 
-
-
-  // Track reading progress for project detail pages with damping
+  // Track reading progress
   useEffect(() => {
     if (!isProjectDetailPage || isLab) return;
 
@@ -293,14 +250,13 @@ export default function Header() {
     const animate = () => {
       setReadingProgress((current) => {
         const diff = targetProgress - current;
-        // Smooth damping: move 15% of the distance each frame
         const damped = current + diff * 0.15;
         return Math.abs(diff) < 0.1 ? targetProgress : damped;
       });
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    handleScroll(); // Initial calculation
+    handleScroll();
     animationFrameId = requestAnimationFrame(animate);
     window.addEventListener('scroll', handleScroll, { passive: true });
 
@@ -310,10 +266,8 @@ export default function Header() {
     };
   }, [isProjectDetailPage, isLab]);
 
-  // Get the home URL - use absolute URL if on lab subdomain
   const getHomeUrl = () => {
     if (isLab) {
-      // On lab subdomain, link to main domain
       const protocol = typeof window !== 'undefined' && window.location.protocol || 'http:'
       const hostnameWithPort = typeof window !== 'undefined' && window.location.host || 'localhost:3000'
       const mainDomain = hostnameWithPort.replace('lab.', '')
@@ -323,7 +277,6 @@ export default function Header() {
   }
 
   return (
-
     <header
       className="fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background"
     >
@@ -352,15 +305,14 @@ export default function Header() {
         />
       )}
 
-
-
-      {/* Reading progress indicator - only shown on project detail pages */}
+      {/* Reading progress indicator */}
       {isProjectDetailPage && !isLab && !isNavigating && (
         <div
           className="absolute top-0 left-0 h-[1px] bg-[hsl(var(--accent))]"
           style={{ width: `${readingProgress}%` }}
         />
       )}
+
       <div className="container flex justify-between items-center">
         <div className="flex items-center">
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
@@ -381,8 +333,10 @@ export default function Header() {
               </NavigationLink>
             )}
           </motion.div>
+          
+          {/* DRY: Consolidated Title Rendering */}
           <AnimatePresence mode="wait">
-            {showSectionTitle && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage && !isDesignPage && (
+            {activeTitleKey && (
               <motion.div 
                 className="flex items-center"
                 initial={{ opacity: 0, y: -5 }}
@@ -393,141 +347,17 @@ export default function Header() {
                 <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
                 <motion.span 
                   className="font-heading text-xl text-secondary"
-                  key={activeSection}
+                  key={activeTitleKey}
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
                   transition={{ duration: 0.15, ease: "easeOut" }}
                 >
-                  {t(`header.${activeSection}`)}
-                </motion.span>
-              </motion.div>
-            )}
-            {isPaperReadingPage && (
-               <motion.div 
-                className="flex items-center"
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-              >
-                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
-                <motion.span 
-                  className="font-heading text-xl text-secondary"
-                  key="paper-reading"
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                >
-                  {t('header.paperReading')}
-                </motion.span>
-              </motion.div>
-            )}
-            {isManifestoPage && (
-               <motion.div 
-                className="flex items-center"
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-              >
-                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
-                <motion.span 
-                  className="font-heading text-xl text-secondary"
-                  key="manifesto"
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                >
-                  {t('header.manifesto')}
-                </motion.span>
-              </motion.div>
-            )}
-            {isUsesPage && (
-               <motion.div 
-                className="flex items-center"
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-              >
-                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
-                <motion.span 
-                  className="font-heading text-xl text-secondary"
-                  key="uses"
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                >
-                  {t('header.uses')}
-                </motion.span>
-              </motion.div>
-            )}
-            {isLab && (
-               <motion.div 
-                className="flex items-center"
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-              >
-                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
-                <motion.span 
-                  className="font-heading text-xl text-secondary"
-                  key="lab"
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                >
-                  {t('header.lab')}
-                </motion.span>
-              </motion.div>
-            )}
-            {
-              isLinksPage && (
-              <motion.div 
-                className="flex items-center"
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-              >
-                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
-                <motion.span 
-                  className="font-heading text-xl text-secondary"
-                  key="lab"
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                >
-                  {t('header.links')}
-                </motion.span>
-              </motion.div>
-            )}
-            {
-              isDesignPage && (
-              <motion.div 
-                className="flex items-center"
-                initial={{ opacity: 0, y: -5 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -5 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
-              >
-                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
-                <motion.span 
-                  className="font-heading text-xl text-secondary"
-                  key="design"
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -5 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                >
-                  {t('header.design')}
+                  {/* Handle uppercase for standard sections, translation key for others */}
+                  {showStandardSectionTitle && !isSpecialPage && !isLab 
+                    ? t(`header.${activeTitleKey}`) 
+                    : t(`header.${activeTitleKey}`)
+                  }
                 </motion.span>
               </motion.div>
             )}
@@ -540,37 +370,18 @@ export default function Header() {
           className="flex items-center space-x-4"
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
-
           {/* Navigation - Only on desktop and when not on special pages */}
-          {!isMobile && !isPaperReadingPage && !isManifestoPage && !isUsesPage && !isLinksPage && !isDesignPage && !isLab && (
-            <>
-              <nav className="flex space-x-8">
-                <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <NavigationLink {...getLinkProps('about', '/')}>
-                    {isActive('about') && <Underline />}
-                    {t('header.about')}
+          {!shouldHideNav && (
+            <nav className="flex space-x-8">
+              {NAV_ITEMS.map((item) => (
+                <motion.div key={item.id} whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                  <NavigationLink {...getLinkProps(item.id, item.path)}>
+                    {isActive(item.id) && <Underline />}
+                    {t(`header.${item.id}`)}
                   </NavigationLink>
                 </motion.div>
-                <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <NavigationLink {...getLinkProps('updates', '/')}>
-                    {isActive('updates') && <Underline />}
-                    {t('header.updates')}
-                  </NavigationLink>
-                </motion.div>
-                <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <NavigationLink {...getLinkProps('projects', '/projects')}>
-                    {isActive('projects') && <Underline />}
-                    {t('header.projects')}
-                  </NavigationLink>
-                </motion.div>
-                <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                  <NavigationLink {...getLinkProps('gallery', '/gallery')}>
-                    {isActive('gallery') && <Underline />}
-                    {t('header.gallery')}
-                  </NavigationLink>
-                </motion.div>
-              </nav>
-            </>
+              ))}
+            </nav>
           )}
         </motion.div>
       </div>
