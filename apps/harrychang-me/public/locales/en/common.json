@@ -5,6 +5,7 @@
     "updates": "Updates",
     "projects": "Projects",
     "gallery": "Gallery",
+    "blog": "Blog",
     "paperReading": "Paper Reading",
     "manifesto": "Manifesto",
     "uses": "Uses",
@@ -46,6 +47,14 @@
     "lens": "Lens",
     "location": "Location",
     "tags": "Tags"
+  },
+  "blog": {
+    "title": "Blog",
+    "backToBlog": "Back to Blog",
+    "tags": "Tags",
+    "noPostsFound": "No posts found.",
+    "latestWriting": "Latest Writing",
+    "viewAll": "View All"
   },
   "design": {
     "title": "Design System",

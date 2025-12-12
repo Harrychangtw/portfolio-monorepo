@@ -72,3 +72,5 @@ export * from './text-type';
 export * from './theme-provider';
 export * from './video-embed';
 export * from './video-initializer';
+export * from './article-card';
+export * from './latest-writing-section';

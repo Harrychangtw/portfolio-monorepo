@@ -11,7 +11,7 @@ interface NextUpCardProps {
   category: string
   slug: string
   imageUrl: string
-  basePath: "projects" | "gallery"
+  basePath: "projects" | "gallery" | "blog"
   aspectRatio?: number
 }
 

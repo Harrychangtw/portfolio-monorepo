@@ -5,6 +5,7 @@
     "updates": "最新動態",
     "projects": "精選專案",
     "gallery": "攝影作品",
+    "blog": "部落格",
     "paperReading": "論文閱讀清單",
     "manifesto": "理念",
     "uses": "工具與設定",
@@ -46,6 +47,14 @@
     "lens": "鏡頭",
     "location": "位置",
     "tags": "標籤"
+  },
+  "blog": {
+    "title": "部落格",
+    "backToBlog": "返回部落格",
+    "tags": "標籤",
+    "noPostsFound": "尚無文章。",
+    "latestWriting": "最新文章",
+    "viewAll": "查看全部"
   },
   "design": {
     "title": "設計系統",

@@ -3,6 +3,7 @@ import AboutSection from "@/components/main/about-section"
 import UpdatesSection from "@/components/main/updates-section"
 import ProjectsSection from "@portfolio/ui/projects-section"
 import GallerySection from "@portfolio/ui/gallery-section"
+import LatestWritingSection from "@portfolio/ui/latest-writing-section"
 import { getAllGalleryMetadata } from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
