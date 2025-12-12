@@ -72,3 +72,4 @@ export * from './text-type';
 export * from './theme-provider';
 export * from './video-embed';
 export * from './video-initializer';
+export * from './table-of-contents';
