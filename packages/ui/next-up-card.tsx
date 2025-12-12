@@ -3,7 +3,7 @@
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
+import { ImageContainer } from "@portfolio/ui/image-container"
 import NavigationLink from "@portfolio/ui/navigation-link"
 
 interface NextUpCardProps {
@@ -18,7 +18,7 @@ interface NextUpCardProps {
 export default function NextUpCard({ title, category, slug, imageUrl, basePath, aspectRatio }: NextUpCardProps) {
   const { t } = useLanguage()
 
-  // Ensure we pass the full resolution URL to GalleryImageContainer
+  // Ensure we pass the full resolution URL to ImageContainer
   // It expects the full path and handles creating the -thumb path internally for the blur effect
   const fullImageUrl = imageUrl?.replace('-thumb.webp', '.webp')
 
@@ -50,7 +50,7 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath, 
             {/* Right Image Container - Width fixed, height adapts to aspect ratio */}
             <div className="relative shrink-0 w-24 md:w-36">
               {fullImageUrl ? (
-                <GalleryImageContainer
+                <ImageContainer
                   src={fullImageUrl}
                   alt={title}
                   quality={60}

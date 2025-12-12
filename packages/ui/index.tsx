@@ -51,9 +51,9 @@ export * from './ui/use-toast';
 
 // Custom components
 export * from './gallery-card';
-export * from './gallery-image-container';
+export * from './image-container';
 export * from './gallery-item-page-client';
-export * from './gallery-loading-skeleton';
+export * from './image-loading-skeleton';
 export * from './gallery-page-client';
 export * from './gallery-section';
 export * from './language-switcher';

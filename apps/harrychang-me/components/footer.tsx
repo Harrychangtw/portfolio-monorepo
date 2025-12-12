@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile" 

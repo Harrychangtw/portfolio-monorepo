@@ -19,11 +19,13 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
   const [isLoading, setIsLoading] = useState(true)
   const [forceLoad, setForceLoad] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  
+  const hasFetchedRef = useRef(false) // Track if we've already fetched
+  const lastLanguageRef = useRef(language) // Track last language to prevent redundant fetches
+
   // Load immediately if hash points to gallery or projects
-  const shouldLoadImmediately = typeof window !== 'undefined' && 
+  const shouldLoadImmediately = typeof window !== 'undefined' &&
     (window.location.hash === '#projects' || window.location.hash === '#gallery')
-  
+
   const isVisible = useIntersectionObserver({
     elementRef: sectionRef as React.RefObject<Element>,
     rootMargin: '100px'
@@ -39,12 +41,21 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
   }, [])
 
   useEffect(() => {
+    // Skip if already fetched and language hasn't actually changed
+    if (hasFetchedRef.current && lastLanguageRef.current === language) {
+      return
+    }
+
     async function fetchProjects() {
       try {
         const sectionParam = section ? `&section=${encodeURIComponent(section)}` : ''
         const response = await fetch(`/api/projects?locale=${language}${sectionParam}`)
         const data = await response.json()
         setProjects(data)
+
+        // Mark as fetched and update last language
+        hasFetchedRef.current = true
+        lastLanguageRef.current = language
       } catch (error) {
         console.error('Failed to fetch projects:', error)
       } finally {

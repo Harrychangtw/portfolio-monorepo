@@ -1,7 +1,7 @@
 
 import { Paper } from "@portfolio/lib/types/paper";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion } from 'motion/react';
 
 interface PaperCardProps {
   paper: Paper;
