@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect, useLayoutEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from 'motion/react'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 

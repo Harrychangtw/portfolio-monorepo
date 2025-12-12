@@ -792,45 +792,41 @@ function transformMedia() {
         }
         parent.children.splice(index, 1, videoNode)
       } else {
-        // It's a regular image with optimized loading and dimensions to prevent CLS
+        // Regular image inside markdown.
+        // Emit a lightweight placeholder that will be hydrated on the client
+        // with the shared <ImageContainer> for progressive loading.
         const imageUrl = getFullResolutionPath(url)
-
-        // Get actual dimensions to prevent CLS
         const dims = getDimsFromWebPath(imageUrl)
-        let dimensionAttrs = ''
-        let containerStyle = ''
+        const aspectRatio =
+          dims && dims.width && dims.height
+            ? (dims.width / dims.height).toFixed(4)
+            : ""
 
-        if (dims) {
-          dimensionAttrs = `width="${dims.width}" height="${dims.height}"`
-          // Set aspect-ratio on the wrapper div to reserve space BEFORE image loads
-          // This prevents CLS by ensuring the container has the correct height from the start
-          containerStyle = `aspect-ratio: ${dims.width} / ${dims.height};`
-        }
+        const escapeAttr = (value: string) =>
+          value
+            .replace(/&/g, "&amp;")
+            .replace(/"/g, "&quot;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
 
-        const imageNode: HTML = {
-          type: 'html',
+        const placeholderNode: HTML = {
+          type: "html",
           value: `
-            <figure class="my-6">
-              <div style="width: 100%; ${containerStyle} position: relative;">
-                <img
-                  src="${imageUrl}"
-                  alt="${alt}"
-                  ${dimensionAttrs}
-                  loading="lazy"
-                  decoding="async"
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    display: block;
-                    object-fit: contain;
-                  "
-                />
-              </div>
-              ${alt ? `<figcaption class="mt-2 text-sm text-left" style="color: hsl(var(--secondary));">${alt}</figcaption>` : ''}
+            <figure class="my-6 w-full">
+              <div
+                class="markdown-image-placeholder"
+                data-src="${escapeAttr(imageUrl)}"
+                data-aspect-ratio="${aspectRatio}"
+              ></div>
+              ${
+                alt
+                  ? `<figcaption class="mt-2 text-sm text-left" style="color: hsl(var(--secondary)); font-family: var(--font-body);">${alt}</figcaption>`
+                  : ""
+              }
             </figure>
-          `
+          `,
         }
-        parent.children.splice(index, 1, imageNode)
+        parent.children.splice(index, 1, placeholderNode)
       }
     })
   }

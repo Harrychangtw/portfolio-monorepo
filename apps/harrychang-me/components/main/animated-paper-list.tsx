@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from 'motion/react'
 import { useSearchParams } from "next/navigation"
 import { Paper } from "@portfolio/lib/types/paper"
 import PaperCard from "./paper-card"
