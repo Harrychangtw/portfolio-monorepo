@@ -40,9 +40,12 @@ export default function ArticleCard({
     <div className={`group relative flex flex-col h-full ${className || ""}`}>
       <NavigationLink href={`/blog/${slug}`} className="block flex flex-col h-full">
         
+        {/* 1. Added Top Divider */}
+        <div className="w-full border-t border-secondary/30 mb-3" />
+        
         {/* Text Content Section */}
         <div className="flex flex-col justify-between flex-grow">
-          {/* Title - refined size, more elegant */}
+          {/* Title */}
           <h3 className="font-heading text-base md:text-lg font-medium uppercase leading-snug tracking-wide text-primary line-clamp-3">
             {title}
           </h3>
@@ -50,23 +53,23 @@ export default function ArticleCard({
           {/* Spacer to push metadata to bottom */}
           <div className="flex-grow min-h-[4rem] md:min-h-[6rem]" />
 
+          {/* 2. Aligned items-end works better with smaller fonts for a clean baseline alignment */}
           {/* Metadata Row: Tags (Left) and Date (Right) */}
           <div className="flex items-end justify-between pb-4">
-            
             {/* Left: Stacked tags */}
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start gap-1">
               {displayTags.map((tag) => (
                 <span 
                   key={tag} 
-                  className="font-body text-[11px] font-medium uppercase tracking-wider text-secondary"
+                  className="font-body text-[10px] md:text-[11px] font-medium uppercase tracking-wider text-secondary leading-none"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            {/* Right: Large Date (DD.MM) */}
-            <span className="font-heading text-3xl md:text-5xl font-[200] leading-none text-secondary">
+            {/* Right: Date */}
+            <span className="font-heading text-lg md:text-3xl font-light text-primary" style={{ lineHeight: '0.7' }}>
               {formatDate(date)}
             </span>
           </div>
