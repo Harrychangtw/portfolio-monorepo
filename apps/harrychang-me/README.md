@@ -42,6 +42,24 @@ A modern, performant portfolio website built with Next.js 15, featuring a dual-d
 - **Image Processing**: Sharp
 - **Markdown**: gray-matter, remark, remark-html
 
+## 🎨 Design Philosophy
+
+This portfolio deviates from standard web trends (massive hero images, scroll-jacking animations) to focus on **intent-driven navigation** and **micro-interactions**.
+
+### The "Anti-Hero" Architecture
+The site lacks a traditional "Hero" section. This is a deliberate UX choice based on the premise that visitors arriving at the domain already possess intent. Instead of forcing users to scroll past a splash screen, the site offers immediate access to content (`About`, `Updates`), respecting the visitor's time and attention.
+
+### Micro-Interactions over Macro-Animations
+Large-scale layout animations were avoided to maintain high performance and readability. Instead, "delighters" were implemented to reward user interaction:
+- **Click Sparks:** A subtle particle effect on desktop clicks that adds tactile feedback.
+- **Contextual Footer:** The footer serves as a secondary navigation hub with a dynamic Spotify integration that reveals "Now Playing" data only on hover/interaction.
+- **Visual Feedback:** A custom indeterminate loading bar integrated into the header provides system status without layout shifts.
+
+### Visual Framing
+The [Gallery] section utilizes a custom framing engine that calculates image aspect ratios (Portrait vs. Cinematic vs. Standard) to apply specific border padding dynamically. This ensures that regardless of the source media dimensions, the visual rhythm of the grid remains consistent and museum-like.
+
+
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -56,7 +74,7 @@ git clone https://github.com/Harrychangtw/portfolio_site.git
 cd portfolio_site
 
 # Install dependencies (runs prisma generate automatically)
-npm install
+pnpm install
 
 # Set up environment variables
 cp .env.example .env.local
@@ -66,8 +84,7 @@ cp .env.example .env.local
 npx prisma migrate dev
 
 # Start development server
-npm run dev                 # Main site on http://localhost:3000
-npm run dev:lab            # Lab site on http://localhost:3001
+pnpm dev                 # Main site on http://localhost:3000
 ```
 
 ### Environment Variables
@@ -122,7 +139,7 @@ The system automatically shows the appropriate version based on user language pr
 ```bash
 # 1. Add original images (JPG/PNG) to public/images/[projects|gallery]/[slug]/
 # 2. Run optimization script
-npm run optimize-images
+node scripts/optimize-images.mjs
 
 # Output: Generates WebP files in public/images/optimized/
 # - image.webp (full resolution)
@@ -136,10 +153,10 @@ The markdown system automatically converts image paths to optimized versions.
 ### Available Scripts
 
 ```bash
-npm run dev              # Start main site (:3000)
-npm run build            # Production build (runs prebuild hooks)
-npm run start            # Start production server
-npm run optimize-images  # Optimize all images in public/images/
+pnpm dev              # Start main site (:3000)
+pnpm build            # Production build (runs prebuild hooks)
+pnpm start            # Start production server
+node scripts/optimize-images.mjs  # Optimize all images in public/images/
 ```
 
 ### Build Hooks

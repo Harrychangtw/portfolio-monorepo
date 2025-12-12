@@ -1,10 +1,11 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import { createRoot } from 'react-dom/client'
 
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
+import { ImageContainer } from "@portfolio/ui/image-container"
 import type { ProjectMetadata } from '@portfolio/lib/lib/markdown'
 import NextUpCard from "@portfolio/ui/next-up-card"
 import NavigationLink from "@portfolio/ui/navigation-link"
@@ -18,6 +19,8 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
   const { language, t } = useLanguage()
   const [project, setProject] = useState(initialProject)
   const [loading, setLoading] = useState(false)
+  const contentRef = useRef<HTMLDivElement | null>(null)
+  const rootsMapRef = useRef<Map<HTMLElement, any>>(new Map())
 
   useEffect(() => {
     async function fetchLocalizedProject() {
@@ -60,6 +63,60 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
     fetchLocalizedProject()
   }, [language, project.slug])
 
+  // Hydrate markdown image placeholders into <ImageContainer> instances.
+  useEffect(() => {
+    if (!contentRef.current) return
+
+    const container = contentRef.current
+    const placeholders = container.querySelectorAll<HTMLElement>('.markdown-image-placeholder')
+    const currentRootsMap = rootsMapRef.current
+
+    placeholders.forEach((el) => {
+      const src = el.dataset.src
+      if (!src) return
+
+      const alt = el.dataset.alt || ''
+      const caption = el.dataset.caption || ''
+      const aspectRatioAttr = el.dataset.aspectRatio
+      const aspectRatio = aspectRatioAttr ? parseFloat(aspectRatioAttr) : undefined
+
+      const imageComponent = (
+        <ImageContainer
+          src={src}
+          alt={alt}
+          aspectRatio={aspectRatio}
+          noInsetPadding={true}   // Projects: no frameline
+          quality={95}
+        />
+      )
+
+      // Reuse existing root or create new one
+      let root = currentRootsMap.get(el)
+      if (root) {
+        root.render(imageComponent)
+      } else {
+        root = createRoot(el)
+        root.render(imageComponent)
+        currentRootsMap.set(el, root)
+      }
+    })
+
+    // Clean up roots for placeholders that no longer exist
+    return () => {
+      const currentPlaceholders = container.querySelectorAll<HTMLElement>('.markdown-image-placeholder')
+      const currentElements = new Set(currentPlaceholders)
+
+      currentRootsMap.forEach((root, el) => {
+        if (!currentElements.has(el)) {
+          setTimeout(() => {
+            root.unmount()
+            currentRootsMap.delete(el)
+          }, 0)
+        }
+      })
+    }
+  }, [project.contentHtml])
+
   if (loading) {
     return (
       <div className="page-transition-enter">
@@ -94,7 +151,7 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
         <div className="container">
           {/* Hero image section - Enforcing strict 3:2 (1.5) aspect ratio */}
           <div className="relative w-full mb-8">
-            <GalleryImageContainer
+            <ImageContainer
               src={project.imageUrl}
               alt={project.title}
               priority={true}
@@ -179,6 +236,7 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
 
                 {/* Main content */}
                 <div
+                  ref={contentRef}
                   className="prose prose-lg max-w-none dark:prose-invert mb-16 md:mb-24"
                   dangerouslySetInnerHTML={{
                     __html: project.contentHtml

@@ -9,6 +9,24 @@
     "source": "manual"
   },
   {
+    "title": "Adversarial Poetry as a Universal Single-Turn Jailbreak Mechanism in Large Language Models",
+    "authors": [
+      "Piercosma Bisconti",
+      "Matteo Prandi",
+      "Federico Pierucci",
+      "Francesco Giarrusso",
+      "Marcantonio Bracale",
+      "Marcello Galisai",
+      "Vincenzo Suriani",
+      "Olga Sorokoletova",
+      "Federico Sartore",
+      "Daniele Nardi"
+    ],
+    "date": "2025-11-19T10:14:08Z",
+    "url": "http://arxiv.org/abs/2511.15304v2",
+    "source": "arxiv"
+  },
+  {
     "title": "APP: Accelerated Path Patching with Task-Specific Pruning",
     "authors": [
       "Frauke Andersen",
@@ -229,6 +247,27 @@
     ],
     "date": "2025-05-20T16:40:09Z",
     "url": "http://arxiv.org/abs/2505.14585v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+    "authors": [
+      "Zihan Qiu",
+      "Zekun Wang",
+      "Bo Zheng",
+      "Zeyu Huang",
+      "Kaiyue Wen",
+      "Songlin Yang",
+      "Rui Men",
+      "Le Yu",
+      "Fei Huang",
+      "Suozhi Huang",
+      "Dayiheng Liu",
+      "Jingren Zhou",
+      "Junyang Lin"
+    ],
+    "date": "2025-05-10T17:15:49Z",
+    "url": "http://arxiv.org/abs/2505.06708v1",
     "source": "arxiv"
   },
   {

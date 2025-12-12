@@ -266,6 +266,9 @@ export default function ManifestoPage() {
 
     useEffect(() => {
         document.body.style.overflow = introComplete ? 'auto' : 'hidden';
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
     }, [introComplete]);
 
     // Reset state on language change

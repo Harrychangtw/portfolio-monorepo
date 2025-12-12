@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { GalleryImageContainer } from "@portfolio/ui/gallery-image-container"
+import { ImageContainer } from "@portfolio/ui/image-container"
 import NextUpCard from "@portfolio/ui/next-up-card"
 import type { GalleryItemMetadata } from '@portfolio/lib/lib/markdown'
 import NavigationLink from "@portfolio/ui/navigation-link"
@@ -98,7 +98,7 @@ export default function GalleryItemPageClient({ initialItem, nextItem }: Gallery
       <div className="pb-12">
         <div className="container">
           <div className="relative w-full mb-8">
-            <GalleryImageContainer
+            <ImageContainer
               src={fullImageUrl}
               alt={item.title}
               priority={true}
@@ -198,7 +198,7 @@ export default function GalleryItemPageClient({ initialItem, nextItem }: Gallery
                             marginBottom: 'clamp(1rem, 2.5vw, 2rem)'
                           }}
                         >
-                          <GalleryImageContainer
+                          <ImageContainer
                             src={fullUrl}
                             alt={image.caption || `${item.title} image ${index + 1}`}
                             caption={image.caption}

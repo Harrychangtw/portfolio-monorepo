@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import ProjectsPageClient from "@portfolio/ui/projects-page-client"
+import { redirect } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -29,6 +30,6 @@ export const metadata: Metadata = {
 }
 
 export default function ProjectsPage() {
-  return <ProjectsPageClient />
+  redirect("/#projects")
 }
 

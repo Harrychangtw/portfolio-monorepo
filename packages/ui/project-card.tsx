@@ -1,13 +1,12 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
-import Image from "next/image"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
-import { PinIcon, LockIcon } from "lucide-react"
-import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
+import { LockIcon } from "lucide-react"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 import { cva, type VariantProps } from "class-variance-authority"
 import NavigationLink from "@portfolio/ui/navigation-link"
+import { ImageContainer } from "@portfolio/ui/image-container"
 
 const cardVariants = cva("", {
   variants: {
@@ -48,30 +47,6 @@ export default function ProjectCard({
   hoverEffect = "inward"
 }: ProjectCardProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const isVisible = useIntersectionObserver({
-    elementRef: containerRef as React.RefObject<Element>,
-    rootMargin: '50px',
-    threshold: 0.1
-  })
-
-  const [blurComplete, setBlurComplete] = useState(false)
-  const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
-
-  // Progressive image loading strategy
-  const thumbnailSrc = imageUrl
-  const fullImageUrl = imageUrl ? imageUrl.replace('-thumb.webp', '.webp') : "/placeholder.svg"
-  const shouldLoadImmediately = priority || (index !== undefined && index < 3)
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-  const shouldLoad = shouldLoadImmediately || (mounted && isVisible) || hasLoadedOnce
-
-  // Optimized sizes for responsive images
-  // Project cards display at:
-  // - Mobile: 100vw (full width)
-  // - Tablet: 50vw (2 columns)
-  // - Desktop: ~448px (3 columns with 33vw but max 448px for 1440px screens)
-  const thumbnailSizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
-  const fullImageSizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
 
   const isMobile = useIsMobile();
   const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0 });
@@ -109,48 +84,15 @@ export default function ProjectCard({
         className={`relative overflow-hidden bg-muted ${!locked && hoverEffect === "gentle" ? "hover:shadow-xl" : ""}`}
         whileHover={!locked ? hoverAnimation : {}}
       >
-        {/* Strict 3:2 aspect ratio container */}
-        <div className="relative w-full aspect-[3/2]">
-          <div className="absolute inset-0">
-            {shouldLoad ? (
-              <>
-                {thumbnailSrc && (
-                  <Image
-                    src={thumbnailSrc}
-                    alt={`${title} thumbnail`}
-                    fill
-                    className={`object-cover transition-opacity duration-500 ${blurComplete ? 'opacity-0' : 'opacity-100'}`}
-                    sizes={thumbnailSizes}
-                    quality={20}
-                    onLoad={() => {
-                      if (!hasLoadedOnce) setHasLoadedOnce(true);
-                    }}
-                  />
-                )}
-                <Image
-                  src={fullImageUrl}
-                  alt={title}
-                  fill
-                  className={`object-cover transition-opacity duration-500 ${blurComplete ? 'opacity-100' : 'opacity-0'}`}
-                  sizes={fullImageSizes}
-                  priority={shouldLoadImmediately}
-                  quality={70}
-                  loading={shouldLoadImmediately ? 'eager' : 'lazy'}
-                  onLoad={() => setBlurComplete(true)}
-                  onError={(e) => {
-                    console.error("Image failed to load:", fullImageUrl, e);
-                    setBlurComplete(true);
-                    if (!hasLoadedOnce) setHasLoadedOnce(true);
-                  }}
-                />
-              </>
-            ) : (
-              <div className="absolute inset-0 bg-muted animate-pulse">
-                <div className="animate-shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-muted via-muted/50 to-muted" />
-              </div>
-            )}
-          </div>
-        </div>
+        <ImageContainer
+          src={imageUrl}
+          alt={title}
+          priority={priority || (index ?? 0) < 3}
+          quality={70}
+          aspectRatio={1.5} // Enforce 3:2 for cards
+          noInsetPadding={true} // No frameline for projects
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
+        />
 
         {locked && (
           <div className="absolute top-3 right-3 flex gap-2 z-10">
