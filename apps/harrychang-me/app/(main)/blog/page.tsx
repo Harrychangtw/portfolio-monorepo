@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['zh_TW'],
+    images: ['/images/og-image-blog.webp'],
   },
   twitter: {
     card: 'summary_large_image',

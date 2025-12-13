@@ -29,7 +29,7 @@ export default function ArticleCard({
         const d = new Date(dateStr)
         const day = d.getDate().toString().padStart(2, "0")
         const month = (d.getMonth() + 1).toString().padStart(2, "0")
-        return `${day}.${month}`
+        return `${month}.${day}`
     }
 
     // We allow more tags in the DOM so the CSS can handle the cutoff logic dynamically

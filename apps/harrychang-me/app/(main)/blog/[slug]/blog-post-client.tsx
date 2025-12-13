@@ -166,7 +166,7 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
             <div className="md:col-span-8">
                {/* Description / Lead Paragraph */}
                {post.description && (
-                  <p className="font-body text-lg md:text-xl leading-relaxed text-primary mb-12 font-medium">
+                  <p className="font-body text-lg leading-relaxed text-primary mb-12 italic">
                     {post.description}
                   </p>
                )}
