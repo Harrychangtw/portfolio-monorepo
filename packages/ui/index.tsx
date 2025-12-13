@@ -74,3 +74,4 @@ export * from './video-embed';
 export * from './video-initializer';
 export * from './article-card';
 export * from './latest-writing-section';
+export * from './table-of-contents';

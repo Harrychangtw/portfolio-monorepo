@@ -4,7 +4,7 @@ import matter from "gray-matter"
 import { remark } from "remark"
 import html from "remark-html"
 import { visit } from "unist-util-visit"
-import type { Image as MdastImage, Root, HTML } from "mdast"
+import type { Image as MdastImage, Root, HTML, Heading, Text} from "mdast"
 import { imageSize } from "image-size"
 import { Paper } from "@portfolio/lib/types/paper"
 
@@ -15,6 +15,54 @@ export type { Paper } from "@portfolio/lib/types/paper"
 const projectsDirectory = path.join(process.cwd(), "content/projects")
 const galleryDirectory = path.join(process.cwd(), "content/gallery")
 const postsDirectory = path.join(process.cwd(), "content/posts")
+
+// Helper to generate slug from text
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/--+/g, '-')
+    .trim()
+}
+
+// Remark plugin to add IDs to headings for ToC navigation
+function addHeadingIds() {
+  return (tree: Root) => {
+    const usedIds = new Set<string>()
+    
+    visit(tree, 'heading', (node: Heading, index, parent) => {
+      if (!parent || index === undefined) return
+      
+      // Extract text content from heading
+      let text = ''
+      visit(node, 'text', (textNode: Text) => {
+        text += textNode.value
+      })
+      
+      if (!text.trim()) return
+      
+      // Generate unique ID
+      let id = slugify(text)
+      let counter = 1
+      const baseId = id
+      while (usedIds.has(id)) {
+        id = `${baseId}-${counter}`
+        counter++
+      }
+      usedIds.add(id)
+      
+      // Add data attribute for ID (will be converted to id in HTML)
+      if (!node.data) {
+        node.data = {}
+      }
+      if (!node.data.hProperties) {
+        node.data.hProperties = {}
+      }
+      (node.data.hProperties as Record<string, string>).id = id
+    })
+  }
+}
 
 // Helper function to process image paths
 function getThumbnailPath(imagePath: string): string {
@@ -528,6 +576,7 @@ export async function getProjectData(slug: string) {
 
     // Use remark to convert markdown into HTML string
     const processedContent = await remark()
+      .use(addHeadingIds)
       .use(transformMedia)
       .use(html, { sanitize: false })
       .process(matterResult.content);

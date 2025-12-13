@@ -9,6 +9,7 @@ import { ImageContainer } from "@portfolio/ui/image-container"
 import type { ProjectMetadata } from '@portfolio/lib/lib/markdown'
 import NextUpCard from "@portfolio/ui/next-up-card"
 import NavigationLink from "@portfolio/ui/navigation-link"
+import { TableOfContents } from '@portfolio/ui/table-of-contents'
 
 interface ProjectPageClientProps {
   initialProject: ProjectMetadata & { contentHtml: string }
@@ -166,8 +167,8 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
             {/* Left column */}
             <div className="md:col-span-4 mb-10 md:mb-0">
-              <div className="md:sticky md:top-24">
-                <div className="relative">
+              <div className="md:sticky md:top-24 md:h-[calc(100vh-8rem)] md:flex md:flex-col md:justify-between">
+                <div>
                   <NavigationLink
                     href="/#projects"
                     className="inline-flex items-center text-secondary hover:text-primary transition-colors"
@@ -179,6 +180,10 @@ export default function ProjectPageClient({ initialProject, nextProject }: Proje
                     <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{project.title}</h1>
                     <p className="font-body text-secondary uppercase text-sm mb-6 md:mb-12">{project.category}</p>
                   </div>
+                </div>
+    
+                <div className="hidden md:block pb-8 pt-8 border-t border-border">
+                  <TableOfContents contentHtml={project.contentHtml} />
                 </div>
               </div>
             </div>
