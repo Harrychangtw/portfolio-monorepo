@@ -22,6 +22,7 @@ const SPECIAL_PAGES = [
   { prefix: '/uses', key: 'uses' },
   { prefix: '/linktree', key: 'links' },
   { prefix: '/design', key: 'design' },
+  { prefix: '/blog', key: 'blog' },
 ];
 
 const NAV_ITEMS = [

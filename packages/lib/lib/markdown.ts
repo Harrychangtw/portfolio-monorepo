@@ -758,6 +758,7 @@ export async function getPostData(slug: string) {
     const matterResult = matter(fileContents)
 
     const processedContent = await remark()
+      .use(addHeadingIds)
       .use(transformMedia)
       .use(html, { sanitize: false })
       .process(matterResult.content);
