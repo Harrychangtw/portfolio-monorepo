@@ -167,15 +167,18 @@ export default function Header() {
         clearTimeout(scrollTimeoutRef.current);
         setIsScrolling(false);
       }
-      if (pathname?.startsWith('/projects')) {
-        setActiveSection('projects')
+      
+      if (isSpecialPage) {
+        setActiveSection(''); // On special pages, no section is active
+      } else if (pathname?.startsWith('/projects')) {
+        setActiveSection('projects');
       } else if (pathname?.startsWith('/gallery')) {
-        setActiveSection('gallery')
+        setActiveSection('gallery');
       } else {
-        setActiveSection('about')
+        setActiveSection(''); // Default to no active section for other pages
       }
     }
-  }, [pathname, isHomePage])
+  }, [pathname, isHomePage, isSpecialPage]);
 
   // DRY: Logic for determining which title to show
   const showStandardSectionTitle = (isHomePage && activeSection !== "about") ||
@@ -191,8 +194,9 @@ export default function Header() {
     activeTitleKey = activeSection;
   }
 
-  // DRY: Helper logic to determine if nav should be hidden
-  const shouldHideNav = isMobile || isSpecialPage || isLab;
+  // Helper logic to determine if nav should be hidden
+  // UPDATED: Nav is now only hidden on mobile or on the lab subdomain
+  const shouldHideNav = isMobile || isLab;
 
   // Reusable Underline Component
   const Underline = () => (
@@ -221,14 +225,14 @@ export default function Header() {
   const getLinkProps = (sectionId: string, pagePath: string) => {
     const active = isActive(sectionId);
     const baseClasses = `relative font-heading ${active ? "text-primary" : "text-secondary hover:text-[hsl(var(--accent))]"} transition-colors duration-200 outline-none`;
-    const href = pathname?.startsWith(pagePath) && pagePath !== '/' ? pagePath : `/#${sectionId}`;
+    const href = isHomePage ? `/#${sectionId}` : pagePath === '/' ? `/#${sectionId}` : pagePath;
     const onClick = isHomePage ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => scrollToSection(sectionId, e) : undefined;
-    const scroll = !pathname?.startsWith(pagePath);
+    const scroll = !isHomePage;
     return { className: baseClasses, href, onClick, scroll };
   };
 
   // Determine when to show the staggered menu
-  const showStaggeredMenu = isMobile && !isSpecialPage && !isLab;
+  const showStaggeredMenu = isMobile && !isLab;
   
   // Menu items for the staggered menu
   const menuItems = NAV_ITEMS.map(item => ({
