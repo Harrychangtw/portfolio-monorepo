@@ -4,6 +4,8 @@ import LetterGlitch from '@/components/main/letter-glitch';
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import LanguageSwitcher from '@portfolio/ui/language-switcher';
 
+
+
 const manifestoChunksEn = [
     [
         "I am the child who saw marvels in LEGO bricks,",
@@ -239,7 +241,6 @@ const manifestoChunksZhTw = [
 ];
 
 
-// ... (Keep your manifestoChunksEn and manifestoChunksZhTw arrays here) ...
 
 export default function ManifestoPage() {
     const { language } = useLanguage();
