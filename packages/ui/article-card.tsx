@@ -32,7 +32,6 @@ export default function ArticleCard({
         return `${month}.${day}`
     }
 
-    // We allow more tags in the DOM so the CSS can handle the cutoff logic dynamically
     const displayTags = tags && tags.length > 0 ? tags : ["Blog"]
 
     return (
@@ -41,43 +40,40 @@ export default function ArticleCard({
                 {/* Top Divider */}
                 <div className="w-full border-t border-secondary/30 mb-3" />
 
-                {/* Text Content Section */}
-                <div className="flex flex-col justify-between flex-grow">
-                    {/* Title */}
-                    <h3 className="font-heading text-base md:text-lg font-medium leading-snug tracking-wide text-primary line-clamp-3">
-                        {title}
-                    </h3>
+                {/* Content Grid: Left (Title/Tags) vs Right (Date) */}
+                <div className="flex-grow grid grid-cols-[1fr_auto] gap-6 mb-4">
+                    {/* Left Column: Title & Tags */}
+                    <div className="flex flex-col justify-between min-w-0">
+                        {/* Title */}
+                        <h3 className="font-heading text-base md:text-lg font-medium leading-snug tracking-wide text-primary line-clamp-3 mb-24">
+                            {title}
+                        </h3>
 
-                    {/* Spacer to push metadata to bottom */}
-                    <div className="flex-grow min-h-[3.5rem] md:min-h-[5rem]" />
-
-                    {/* Metadata Row */}
-                    <div className="flex items-end justify-between gap-6 pb-4">
-                        {/* 
-                           Left: Tag blocks 
-                           - max-w-[50%]: Ensures tags never take more than half width.
-                           - h-7: Fixed height matching exactly one tag row (text-sm + py-1).
-                           - overflow-hidden: Hides any tags that wrap to the next line.
-                           - flex-wrap: Forces tags that don't fit to drop to the next line (and disappear).
+                        {/* Tags Container 
+                            - w-full: Takes full width of the left column
+                            - h-7: Fixed height for exactly one row of tags
+                            - overflow-hidden: Hides wrapped tags
+                            - flex-wrap: Forces overflow tags to next line (invisible)
                         */}
-                        <div className="flex flex-wrap items-center gap-2 max-w-[50%] h-7 overflow-hidden content-start">
+                        <div className="flex flex-wrap items-center gap-2 w-full h-7 overflow-hidden content-start">
                             {displayTags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className={[
-                                        "font-body text-sm text-secondary bg-muted px-2 py-1 rounded",
-                                        "whitespace-nowrap flex-shrink-0" // Prevents text wrap inside tag & prevents tag compression
-                                    ].join(" ")}
+                                    className="font-body text-sm text-secondary bg-muted px-2 py-1 rounded whitespace-nowrap flex-shrink-0"
                                     title={tag}
                                 >
                                     {tag}
                                 </span>
                             ))}
                         </div>
+                    </div>
 
-                        {/* Right: Minimal date */}
+                    {/* Right Column: Date 
+                        - Aligned to bottom to sit on the same baseline as tags
+                    */}
+                    <div className="flex flex-col justify-end">
                         <span
-                            className="font-heading text-lg md:text-3xl font-light text-secondary whitespace-nowrap"
+                            className="font-heading text-lg md:text-3xl font-light text-secondary whitespace-nowrap leading-none"
                             aria-label={`Published ${date}`}
                         >
                             {formatDate(date)}
@@ -87,7 +83,7 @@ export default function ArticleCard({
 
                 {/* Image Section - Bottom */}
                 <motion.div
-                    className="relative overflow-hidden bg-muted"
+                    className="relative overflow-hidden bg-muted mt-auto"
                     whileHover={{
                         scale: 0.98,
                         transition: { duration: 0.2, ease: [0.4, 0, 0.6, 1] },

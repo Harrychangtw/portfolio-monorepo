@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef } from 'react'
+import { createRoot } from 'react-dom/client'
 import { ArrowLeft } from "lucide-react"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { ImageContainer } from "@portfolio/ui/image-container"
@@ -19,7 +20,8 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
   const [post, setPost] = useState(initialPost)
   const [loading, setLoading] = useState(false)
   const contentRef = useRef<HTMLDivElement | null>(null)
-
+  const rootsMapRef = useRef<Map<HTMLElement, any>>(new Map())
+  
   useEffect(() => {
     async function fetchLocalizedPost() {
       const baseSlug = post.slug.replace('_zh-tw', '')
@@ -55,7 +57,57 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
 
     fetchLocalizedPost()
   }, [language, post.slug])
+useEffect(() => {
+    if (!contentRef.current) return
 
+    const container = contentRef.current
+    const placeholders = container.querySelectorAll<HTMLElement>('.markdown-image-placeholder')
+    const currentRootsMap = rootsMapRef.current
+
+    placeholders.forEach((el) => {
+      const src = el.dataset.src
+      if (!src) return
+
+      const alt = el.dataset.alt || ''
+      const aspectRatioAttr = el.dataset.aspectRatio
+      const aspectRatio = aspectRatioAttr ? parseFloat(aspectRatioAttr) : undefined
+
+      const imageComponent = (
+        <ImageContainer
+          src={src}
+          alt={alt}
+          aspectRatio={aspectRatio}
+          noInsetPadding={true}
+          quality={95}
+        />
+      )
+
+      // Reuse existing root or create new one
+      let root = currentRootsMap.get(el)
+      if (root) {
+        root.render(imageComponent)
+      } else {
+        root = createRoot(el)
+        root.render(imageComponent)
+        currentRootsMap.set(el, root)
+      }
+    })
+    
+    // Clean up roots for placeholders that no longer exist
+    return () => {
+      const currentPlaceholders = container.querySelectorAll<HTMLElement>('.markdown-image-placeholder')
+      const currentElements = new Set(currentPlaceholders)
+
+      currentRootsMap.forEach((root, el) => {
+        if (!currentElements.has(el)) {
+          setTimeout(() => {
+            root.unmount()
+            currentRootsMap.delete(el)
+          }, 0)
+        }
+      })
+    }
+  }, [post.contentHtml])
   // Format date
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr)
