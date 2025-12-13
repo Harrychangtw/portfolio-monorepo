@@ -5,7 +5,6 @@ imageUrl: "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
 date: "2025-12-12"
 author: "Harry Chang"
 tags: ["Introduction", "Writing", "Reflection"]
-featured: true
 pinned: -1
 ---
 
@@ -32,3 +31,6 @@ I aim to post at least once a month, with the flexibility to write more frequent
 -   **Originality:** This space will be free of generic content or AI-generated filler. All posts will be built from my own original thoughts and experiences.
 
 Thank you for joining me at the start of this new chapter. I'm excited to share my thoughts and hope to spark some of your own along the way. Stay tuned.
+
+## Acknowledgments
+- Title image: *The Astronomer* by <a href="https://en.wikipedia.org/wiki/en:Johannes_Vermeer" class="extiw" title="w:en:Johannes Vermeer"><span title="Dutch painter (1632–1675)">Johannes Vermeer</span></a> - <a rel="nofollow" class="external free" href="https://artsandculture.google.com/asset/wd/bQELiVC_QJaAlQ">https://artsandculture.google.com/asset/wd/bQELiVC_QJaAlQ</a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=116806430">Link</a></p>
