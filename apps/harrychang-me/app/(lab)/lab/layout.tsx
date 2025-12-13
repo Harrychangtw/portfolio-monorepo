@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: 'Icuras Lab',
     images: [
       {
-        url: '/images/og-image-lab.png', // 1200x630px recommended
+        url: '/images/og-image-lab.webp', // 1200x630px recommended
         width: 1200,
         height: 630,
         alt: 'Icuras Lab by Harry Chang',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Icuras Lab by Harry Chang',
     description: 'What if they only warned us about the sun because they were afraid to fly?',
-    images: ['/images/og-image-lab.png'],
+    images: ['/images/og-image-lab.webp'],
   },
   icons: {
     icon: [

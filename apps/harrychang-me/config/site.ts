@@ -57,7 +57,7 @@ export const siteConfig = {
   // Media & Assets
   media: {
     ogImage: {
-      url: '/images/og-image.png',
+      url: '/images/og-image.webp',
       width: 1200,
       height: 630,
       alt: 'Harry Chang Portfolio',
