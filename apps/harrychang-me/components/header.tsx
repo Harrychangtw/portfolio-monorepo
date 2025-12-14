@@ -49,6 +49,7 @@ export default function Header() {
   const isSpecialPage = !!currentSpecialPage;
   
   const isProjectDetailPage = pathname?.match(/^\/projects\/[^/]+$/);
+  const isBlogDetailPage = pathname?.match(/^\/blog\/[^/]+$/);
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const { t } = useLanguage()
@@ -263,7 +264,7 @@ export default function Header() {
 
   // Track reading progress
   useEffect(() => {
-    if (!isProjectDetailPage || isLab) return;
+    if ((!isProjectDetailPage && !isBlogDetailPage) || isLab) return;
 
     let animationFrameId: number;
     let targetProgress = 0;
@@ -293,7 +294,7 @@ export default function Header() {
       window.removeEventListener('scroll', handleScroll);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isProjectDetailPage, isLab]);
+  }, [isProjectDetailPage, isBlogDetailPage, isLab]);
 
   const getHomeUrl = () => {
     if (isLab) {
@@ -336,7 +337,7 @@ export default function Header() {
       )}
 
       {/* Reading progress indicator */}
-      {isProjectDetailPage && !isLab && !isNavigating && (
+      {(isProjectDetailPage || isBlogDetailPage) && !isLab && !isNavigating && (
         <div
           className="absolute top-0 left-0 h-[1px] bg-[hsl(var(--accent))]"
           style={{ width: `${readingProgress}%` }}

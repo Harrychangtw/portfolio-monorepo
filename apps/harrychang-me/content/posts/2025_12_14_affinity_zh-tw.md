@@ -1,8 +1,8 @@
 ---
 title: "Affinity V3 使用 45 天後：免費的軟體，熟悉的恐懼"
 description: "反思 Canva 出人意料地讓 Affinity 免費，一次性買斷的終結，以及為何我對不可預測的善意比可預測的邪惡更害怕。"
-imageUrl: "images/optimized/blogs/2025_12_13_affinity/titlecard.webp"
-date: "2025-12-13"
+imageUrl: "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
+date: "2025-12-14"
 author: "Harry Chang"
 tags: ["Design", "Software"]
 pinned: -1
@@ -28,13 +28,13 @@ pinned: -1
 
 老實說，我真的很喜歡用 Affinity。V2 已經很快了，應用程式之間的切換也很順暢，我幾乎所有東西都用它做。學校簡報、學習歷程檔案、週年紀念品設計、研究論文圖表，這個網站的所有資源。
 
-![我的作品集主檔案在新的統一 Affinity 介面中。40 多個畫板，一個 .af 檔案，0 應用程式切換。](images/optimized/blogs/2025_12_13_affinity/ui_portfolio.webp)
+![我的作品集主檔案在新的統一 Affinity 介面中。40 多個畫板，一個 .af 檔案，0 應用程式切換。](images/optimized/blogs/2025_12_14_affinity/ui_portfolio.webp)
 
 V3 延續了這種基因，而統一化也確實解決了實際的摩擦。在 V2 中，匯出切片或進行 Liquify 工作需要在應用程式之間切，現在只換一個分頁。新的物件選取工具（終於有像樣的了）幫我節省了數小時的手動 Masking。統一的 `.af` 格式意味著我再也不用糾結 `.afdesign`、`afphoto` 和 `.afpub` 檔案了，雖然它們一直都是相容的。
 
 但我最濫用的功能？Glitching Effect。
 
-![我一直在實驗的四種故障效果變化。它是非破壞性的，代表著我可以無限調整，雖然有（非常）嚴重的效能負擔。](images/optimized/blogs/2025_12_13_affinity/glitch_demo.webp)
+![我一直在實驗的四種故障效果變化。它是非破壞性的，代表著我可以無限調整，雖然有（非常）嚴重的效能負擔。](images/optimized/blogs/2025_12_14_affinity/glitch_demo.webp)
 
 作為一個已經過度使用所有內建效果的人，這東西很令人上癮。色差滑桿、粉碎控制、變形參數，全都是即時且非破壞性的。我已經做了好幾種可能永遠不會用的圖案變化。仍然不後悔。
 

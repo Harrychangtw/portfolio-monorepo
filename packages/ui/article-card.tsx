@@ -35,17 +35,18 @@ export default function ArticleCard({
     const displayTags = tags && tags.length > 0 ? tags : ["Blog"]
 
     return (
-        <div className={`group relative flex flex-col h-full ${className || ""}`}>
+        <div className={`group relative flex flex-col h-full pb-12 ${className || ""}`}>
+            <div className="h-px bg-muted mb-2" />
             <NavigationLink href={`/blog/${slug}`} className="block flex flex-col h-full">
-                {/* Top Divider */}
+                {/* Accent line at top anchors the card */}
                 <div className="w-full" />
 
                 {/* Content Grid: Left (Title/Tags) vs Right (Date) */}
-                <div className="flex-grow grid grid-cols-[1fr_auto] gap-6 mb-4">
+                <div className="flex-grow grid grid-cols-[1fr_auto] gap-6 mb-2">
                     {/* Left Column: Title & Tags */}
                     <div className="flex flex-col justify-between min-w-0">
                         {/* Title */}
-                        <h3 className="font-heading text-base md:text-lg font-medium leading-snug tracking-wide text-primary line-clamp-4 mb-8">
+                        <h3 className="font-heading text-base md:text-lg font-medium leading-snug tracking-wide text-primary line-clamp-4 mb-6">
                             {title}
                         </h3>
 

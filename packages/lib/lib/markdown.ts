@@ -951,7 +951,16 @@ function transformMedia() {
       if (!parent || index === undefined || index === null) return
 
       const url = node.url
-      const alt = node.alt || ''
+      let alt = node.alt || ''
+      let isFramed = false
+
+      if (alt.toLowerCase().startsWith('framed:')) {
+        isFramed = true
+        alt = alt.replace(/^framed:\s*/i, '')
+      } else if (alt.toLowerCase().endsWith(':framed')) {
+        isFramed = true
+        alt = alt.replace(/\s*:framed$/i, '')
+      }
 
       // Check if it's a Google Drive video link
       const driveRegex = /https?:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/
@@ -1021,6 +1030,8 @@ function transformMedia() {
                 class="markdown-image-placeholder"
                 data-src="${escapeAttr(imageUrl)}"
                 data-aspect-ratio="${aspectRatio}"
+                data-framed="${isFramed}"
+                data-alt="${escapeAttr(alt)}"
               ></div>
               ${
                 alt

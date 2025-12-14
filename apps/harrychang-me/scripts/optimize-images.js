@@ -376,7 +376,8 @@ async function processBlogImages() {
     
     try {
       // Get image metadata
-      const metadata = await sharp(imagePath).metadata();
+      const pipeline = sharp(imagePath).rotate();
+      const metadata = await pipeline.metadata();
       const isPortrait = metadata.height > metadata.width;
       const isHero = imagePath.toLowerCase().includes('hero') || path.basename(imagePath).startsWith('hero');
       const isTitleCard = imagePath.toLowerCase().includes('titlecard') || path.basename(imagePath).toLowerCase().includes('title');
@@ -384,7 +385,7 @@ async function processBlogImages() {
       // Generate optimized full-size image
       if (isTitleCard) {
         // Use highest quality settings for title cards
-        await sharp(imagePath)
+        await pipeline.clone()
           .resize({
             width: config.blogs.title.width,
             fit: 'inside',
@@ -395,7 +396,7 @@ async function processBlogImages() {
           
         console.log(`  Optimized title card (high quality): ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
       } else if (isHero) {
-        await sharp(imagePath)
+        await pipeline.clone()
           .resize({
             width: config.blogs.hero.width,
             fit: 'inside',
@@ -406,7 +407,7 @@ async function processBlogImages() {
           
         console.log(`  Optimized hero: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
       } else if (isPortrait) {
-        await sharp(imagePath)
+        await pipeline.clone()
           .resize({
             width: config.blogs.portrait.width,
             height: config.blogs.portrait.height,
@@ -418,7 +419,7 @@ async function processBlogImages() {
           
         console.log(`  Optimized portrait: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
       } else {
-        await sharp(imagePath)
+        await pipeline.clone()
           .resize({
             width: config.blogs.landscape.width,
             height: config.blogs.landscape.height,
@@ -436,7 +437,7 @@ async function processBlogImages() {
         const thumbFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '-thumb.webp'));
         const thumbReplacementMsg = checkFileReplacement(thumbFilename);
         
-        await sharp(imagePath)
+        await pipeline.clone()
           .resize({
             width: config.blogs.thumbnail.width,
             withoutEnlargement: true,
@@ -460,8 +461,8 @@ async function processBlogImages() {
 // Run the optimization
 async function main() {
   console.log('Starting image optimization...');
-  await processGalleryImages();
-  await processProjectImages();
+  // await processGalleryImages();
+  // await processProjectImages();
   await processBlogImages();
   console.log('Image optimization complete!');
 }

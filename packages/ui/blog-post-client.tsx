@@ -69,6 +69,7 @@ useEffect(() => {
       if (!src) return
 
       const alt = el.dataset.alt || ''
+      const isFramed = el.dataset.framed === 'true'
       const aspectRatioAttr = el.dataset.aspectRatio
       const aspectRatio = aspectRatioAttr ? parseFloat(aspectRatioAttr) : undefined
 
@@ -77,7 +78,7 @@ useEffect(() => {
           src={src}
           alt={alt}
           aspectRatio={aspectRatio}
-          noInsetPadding={true}
+          noInsetPadding={!isFramed}
           quality={95}
         />
       )

@@ -11,12 +11,13 @@ interface ProjectsSectionProps {
   title?: string
   sectionId?: string
   hoverEffect?: 'inward' | 'gentle' // Hover animation variant
+  initialItems?: ProjectMetadata[]
 }
 
-export default function ProjectsSection({ section, title, sectionId = "projects", hoverEffect = 'inward' }: ProjectsSectionProps = {}) {
+export default function ProjectsSection({ section, title, sectionId = "projects", hoverEffect = 'inward', initialItems = [] }: ProjectsSectionProps = {}) {
   const { language, t } = useLanguage()
-  const [projects, setProjects] = useState<ProjectMetadata[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [projects, setProjects] = useState<ProjectMetadata[]>(initialItems)
+  const [isLoading, setIsLoading] = useState(initialItems.length === 0)
   const [forceLoad, setForceLoad] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
   const hasFetchedRef = useRef(false) // Track if we've already fetched
@@ -41,6 +42,13 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
   }, [])
 
   useEffect(() => {
+    // Skip fetch if we have initial data and language matches
+    if (initialItems.length > 0 && language === 'en') {
+      setIsLoading(false)
+      hasFetchedRef.current = true
+      return
+    }
+
     // Skip if already fetched and language hasn't actually changed
     if (hasFetchedRef.current && lastLanguageRef.current === language) {
       return
@@ -66,7 +74,7 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
     if (shouldLoadImmediately || isVisible || forceLoad) {
       fetchProjects()
     }
-  }, [isVisible, language, shouldLoadImmediately, forceLoad, section])
+  }, [isVisible, language, shouldLoadImmediately, forceLoad, section, initialItems])
 
   return (
     <section ref={sectionRef} id={sectionId} className="py-12 md:py-16 border-b border-border">

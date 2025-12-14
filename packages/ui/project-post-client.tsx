@@ -78,6 +78,7 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
 
       const alt = el.dataset.alt || ''
       const caption = el.dataset.caption || ''
+      const isFramed = el.dataset.framed === 'true'
       const aspectRatioAttr = el.dataset.aspectRatio
       const aspectRatio = aspectRatioAttr ? parseFloat(aspectRatioAttr) : undefined
 
@@ -86,7 +87,7 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
           src={src}
           alt={alt}
           aspectRatio={aspectRatio}
-          noInsetPadding={true}   // Projects: no frameline
+          noInsetPadding={!isFramed}
           quality={95}
         />
       )
