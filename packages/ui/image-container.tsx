@@ -40,6 +40,7 @@ export function ImageContainer({
   const [dimensions, setDimensions] = useState(initialDimensions)
   const [loading, setLoading] = useState(false) // Always start with loading false to prevent CLS
   const [imageError, setImageError] = useState(false)
+  const [thumbLoaded, setThumbLoaded] = useState(false)
   const [blurComplete, setBlurComplete] = useState(false)
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
   const isMobile = useIsMobile()
@@ -74,6 +75,7 @@ export function ImageContainer({
   // Reset loading states when source changes
   useEffect(() => {
     setBlurComplete(false)
+    setThumbLoaded(false)
     setImageError(false)
   }, [src])
 
@@ -100,10 +102,11 @@ export function ImageContainer({
     img.onerror = () => {
       setImageError(true)
       setLoading(false)
+      setThumbLoaded(true)
     }
 
-    img.src = fullSrc
-  }, [fullSrc, providedAspectRatio, isVisible, priority, hasLoadedOnce])
+    img.src = thumbnailSrc || fullSrc
+  }, [fullSrc, thumbnailSrc, providedAspectRatio, isVisible, priority, hasLoadedOnce])
 
   // Calculate aspect ratio from dimensions
   const rawAspectRatio = dimensions.width / dimensions.height
@@ -167,14 +170,23 @@ export function ImageContainer({
               <div className="absolute inset-0">
                 {(isVisible || priority || hasLoadedOnce) && (
                   <>
-                    {!blurComplete && thumbnailSrc && (
+                    {thumbnailSrc && (
                       <Image
                         src={thumbnailSrc}
                         alt={alt}
                         fill
-                        className={`object-contain object-center transition-opacity duration-500 ${blurComplete ? 'opacity-0' : 'opacity-100'}`}
+                        // Logic: Hide thumbnail only when full image is done (blurComplete)
+                        className={`object-contain object-center transition-opacity duration-500 ${
+                          blurComplete ? "opacity-0" : "opacity-100"
+                        }`}
                         sizes={sizes}
+                        priority={priority} // Optional: usually thumbnails don't need high priority if full res is coming
                         quality={20}
+                        onLoad={() => setThumbLoaded(true)}
+                        onError={() => {
+                          setImageError(true)
+                          setThumbLoaded(true)
+                        }}
                       />
                     )}
                     
@@ -182,7 +194,10 @@ export function ImageContainer({
                       src={fullSrc}
                       alt={alt}
                       fill
-                      className={`object-contain object-center transition-opacity duration-500 ${blurComplete ? 'opacity-100' : 'opacity-0'}`}
+                      // Logic: Keep opacity-0 until the full image itself is loaded
+                      className={`object-contain object-center transition-opacity duration-500 ${
+                        blurComplete ? "opacity-100" : "opacity-0"
+                      }`}
                       sizes={sizes}
                       priority={priority}
                       quality={quality}
