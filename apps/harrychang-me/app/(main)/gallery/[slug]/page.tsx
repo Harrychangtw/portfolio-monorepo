@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getGalleryItemData, getAllGallerySlugs, getNextGalleryItem } from "@portfolio/lib/lib/markdown"
-import GalleryItemPageClient from "@portfolio/ui/gallery-item-page-client"
+import GalleryPostClient from "@portfolio/ui/gallery-post-client"
 
 const baseUrl = 'https://www.harrychang.me'
 
@@ -146,7 +146,7 @@ export default async function GalleryItemPage({ params }: { params: Promise<{ sl
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <GalleryItemPageClient initialItem={item} nextItem={nextItem} />
+      <GalleryPostClient initialItem={item} nextItem={nextItem} />
     </>
   )
 }

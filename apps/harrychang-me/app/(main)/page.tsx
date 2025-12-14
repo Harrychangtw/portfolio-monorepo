@@ -3,6 +3,7 @@ import AboutSection from "@/components/main/about-section"
 import UpdatesSection from "@/components/main/updates-section"
 import ProjectsSection from "@portfolio/ui/projects-section"
 import GallerySection from "@portfolio/ui/gallery-section"
+import BlogSection from "@portfolio/ui/blog-section"
 import { getAllGalleryMetadata } from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function Home() {
       <UpdatesSection />
       <ProjectsSection />
       <GallerySection initialItems={galleryItems} />
+      <BlogSection />
     </>
   )
 }

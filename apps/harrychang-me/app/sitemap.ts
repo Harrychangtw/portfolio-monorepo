@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import { headers } from 'next/headers'
-import { getAllProjectSlugs, getProjectData, getAllGallerySlugs, getGalleryItemData } from '@portfolio/lib/lib/markdown'
+import { getAllProjectSlugs, getProjectData, getAllGallerySlugs, getGalleryItemData, getAllPostSlugs, getPostData } from '@portfolio/lib/lib/markdown'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const headersList = await headers()
@@ -36,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/projects',
     '/gallery',
+    '/blog',
     '/paper-reading',
     '/manifesto',
     '/uses',
@@ -122,6 +123,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           en: `${baseUrl}/gallery/${slug}`,
           ...(hasChineseVersion && {
             'zh-TW': `${baseUrl}/gallery/${slug}?lang=zh-TW`,
+          }),
+        },
+      },
+    })
+  }
+
+  // Get all post slugs
+  const postSlugs = getAllPostSlugs()
+
+  // Add blog post pages with both language versions
+  for (const { params } of postSlugs) {
+    const slug = params.slug
+
+    // Skip language-specific files (we'll handle them via the base slug)
+    if (slug.includes('_zh-tw') || slug.includes('_zh-TW')) {
+      continue
+    }
+
+    // Try to get the post data to get the date
+    const postData = await getPostData(slug)
+    
+    // Check if there's a Chinese version
+    const hasChineseVersion = postSlugs.some(
+      ({ params }) => params.slug === `${slug}_zh-tw` || params.slug === `${slug}_zh-TW`
+    )
+
+    sitemap.push({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: postData?.date ? new Date(postData.date) : new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${baseUrl}/blog/${slug}`,
+          ...(hasChineseVersion && {
+            'zh-TW': `${baseUrl}/blog/${slug}?lang=zh-TW`,
           }),
         },
       },

@@ -35,6 +35,7 @@ const exploreLinks = [
   { id: 'resume', name: 'Resume', href: '/cv' },
   { id: 'uses', name: 'Uses', href: '/uses' },
   { id: 'reading', name: 'Paper Reading List', href: '/paper-reading' },
+  { id: 'design', name: 'Design System', href: '/design' },
 ];
 
 const siteLinks = [
@@ -43,7 +44,7 @@ const siteLinks = [
   { id: 'projects', name: 'Projects', href: '/#projects' },
   { id: 'gallery', name: 'Gallery', href: '/#gallery' },
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto' },
-  // { id: 'design', name: 'Design System', href: '/design' }, temporarily removed for balance
+  { id: 'blog', name: 'Blog', href: '/blog' },
   { id: 'issues', name: 'Issues', href: '/issues' },
 ];
 
@@ -62,7 +63,7 @@ const getTranslationKey = (id: string) => {
     return `resources.${id}`;
   }
   if (siteLinks.some(l => l.id === id)) {
-    const headerIds = ['about', 'updates', 'projects', 'gallery'];
+    const headerIds = ['about', 'updates', 'projects', 'gallery', 'blog'];
     if (headerIds.includes(id)) return `header.${id}`;
     return `resources.${id}`;
   }

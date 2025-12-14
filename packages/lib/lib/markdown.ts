@@ -14,6 +14,7 @@ export type { Paper } from "@portfolio/lib/types/paper"
 // Define the directories
 const projectsDirectory = path.join(process.cwd(), "content/projects")
 const galleryDirectory = path.join(process.cwd(), "content/gallery")
+const postsDirectory = path.join(process.cwd(), "content/posts")
 
 // Helper to generate slug from text
 function slugify(text: string): string {
@@ -127,6 +128,7 @@ function getDimsFromWebPath(webPath: string): { width: number; height: number } 
   }
 }
 
+
 export interface ProjectMetadata {
   slug: string
   title: string
@@ -178,6 +180,18 @@ export interface GalleryItemMetadata {
   height?: number         // Added for build-time dimension detection
 }
 
+export interface PostMetadata {
+  slug: string
+  title: string
+  description: string
+  imageUrl: string
+  date: string
+  author?: string
+  tags?: string[]
+  featured?: boolean
+  pinned?: number
+}
+
 export interface SketchMetadata {
   slug: string
   imageUrl: string
@@ -212,6 +226,9 @@ function ensureDirectoriesExist() {
   }
   if (!fs.existsSync(galleryDirectory)) {
     fs.mkdirSync(galleryDirectory, { recursive: true })
+  }
+  if (!fs.existsSync(postsDirectory)) {
+    fs.mkdirSync(postsDirectory, { recursive: true })
   }
 }
 
@@ -259,6 +276,30 @@ export function getAllGallerySlugs() {
       })
   } catch (error) {
     console.error("Error reading gallery directory:", error)
+    return []
+  }
+}
+
+// Get all post files
+export function getAllPostSlugs() {
+  ensureDirectoriesExist()
+  try {
+    if (!fs.existsSync(postsDirectory)) {
+      return []
+    }
+
+    const fileNames = fs.readdirSync(postsDirectory)
+    return fileNames
+      .filter(fileName => fileName.endsWith('.md'))
+      .map((fileName) => {
+        return {
+          params: {
+            slug: fileName.replace(/\.md$/, ""),
+          },
+        }
+      })
+  } catch (error) {
+    console.error("Error reading posts directory:", error)
     return []
   }
 }
@@ -488,6 +529,79 @@ export function getAllSketchesMetadata(locale: string = 'en'): SketchMetadata[] 
   }
 }
 
+// Get all posts metadata
+export function getAllPostsMetadata(locale: string = 'en'): PostMetadata[] {
+  ensureDirectoriesExist()
+  try {
+    if (!fs.existsSync(postsDirectory)) {
+      return []
+    }
+
+    let fileNames = fs.readdirSync(postsDirectory)
+
+    // Filter files based on locale to show only one version
+    fileNames = fileNames.filter(fileName => {
+      if (locale === 'zh-TW') {
+        if (fileName.includes('_zh-tw')) {
+          return true
+        }
+        const baseName = fileName.replace('.md', '')
+        const chineseVersion = `${baseName}_zh-tw.md`
+        return !fs.existsSync(path.join(postsDirectory, chineseVersion)) && !fileName.includes('_')
+      } else {
+        return !fileName.includes('_zh-tw') && !fileName.includes('_zh-TW')
+      }
+    })
+
+    const allPostsData = fileNames
+      .filter(fileName => fileName.endsWith('.md'))
+      .map((fileName) => {
+        const slug = fileName.replace(/\.md$/, "")
+        const fullPath = path.join(postsDirectory, fileName)
+        const fileContents = fs.readFileSync(fullPath, "utf8")
+        const matterResult = matter(fileContents)
+
+        const data = matterResult.data as Omit<PostMetadata, "slug">;
+        if (data.imageUrl) {
+          data.imageUrl = getThumbnailPath(data.imageUrl);
+        }
+
+        return {
+          slug,
+          ...data,
+        }
+      })
+
+    // Sort posts: pinned first, then by date
+    return allPostsData.sort((a, b) => {
+      if (typeof a.pinned === 'number' && a.pinned >= 0 && (typeof b.pinned !== 'number' || b.pinned < 0)) {
+        return -1;
+      }
+      if ((typeof a.pinned !== 'number' || a.pinned < 0) && typeof b.pinned === 'number' && b.pinned >= 0) {
+        return 1;
+      }
+      if (typeof a.pinned === 'number' && typeof b.pinned === 'number' && a.pinned >= 0 && b.pinned >= 0) {
+        return a.pinned - b.pinned;
+      }
+
+      if (a.date < b.date) {
+        return 1
+      } else {
+        return -1
+      }
+    })
+  } catch (error) {
+    console.error("Error getting posts metadata:", error)
+    return []
+  }
+}
+
+// Get latest posts for homepage
+export function getLatestPosts(locale: string = 'en', count: number = 3): PostMetadata[] {
+  const allPosts = getAllPostsMetadata(locale)
+  return allPosts.slice(0, count)
+}
+
 // Get project data by slug
 export async function getProjectData(slug: string) {
   ensureDirectoriesExist()
@@ -630,6 +744,49 @@ export async function getGalleryItemData(slug: string) {
   }
 }
 
+// Get post data by slug
+export async function getPostData(slug: string) {
+  ensureDirectoriesExist()
+  try {
+    const fullPath = path.join(postsDirectory, `${slug}.md`)
+
+    if (!fs.existsSync(fullPath)) {
+      return null
+    }
+
+    const fileContents = fs.readFileSync(fullPath, "utf8")
+    const matterResult = matter(fileContents)
+
+    const processedContent = await remark()
+      .use(addHeadingIds)
+      .use(transformMedia)
+      .use(html, { sanitize: false })
+      .process(matterResult.content);
+    const contentHtml = processedContent.toString()
+
+    const data = matterResult.data as Omit<PostMetadata, "slug">;
+
+    if (data.imageUrl) {
+      data.imageUrl = getFullResolutionPath(data.imageUrl);
+
+      const dims = getDimsFromWebPath(data.imageUrl);
+      if (dims) {
+        (data as any).imageWidth = dims.width;
+        (data as any).imageHeight = dims.height;
+      }
+    }
+
+    return {
+      slug,
+      contentHtml,
+      ...data,
+    }
+  } catch (error) {
+    console.error(`Error getting post data for slug ${slug}:`, error)
+    return null
+  }
+}
+
 // Save a new project
 export function saveProject(slug: string, data: Omit<ProjectMetadata, "slug">, content: string) {
   ensureDirectoriesExist()
@@ -654,6 +811,20 @@ export function saveGalleryItem(slug: string, data: Omit<GalleryItemMetadata, "s
     return true
   } catch (error) {
     console.error(`Error saving gallery item ${slug}:`, error)
+    return false
+  }
+}
+
+// Save a new blog post
+export function savePost(slug: string, data: Omit<PostMetadata, "slug">, content: string) {
+  ensureDirectoriesExist()
+  try {
+    const fullPath = path.join(postsDirectory, `${slug}.md`)
+    const fileContent = matter.stringify(content, data)
+    fs.writeFileSync(fullPath, fileContent)
+    return true
+  } catch (error) {
+    console.error(`Error saving post ${slug}:`, error)
     return false
   }
 }
@@ -731,9 +902,42 @@ export async function getNextGalleryItem(currentSlug: string) {
       }
     }
     
-    nextIndex = (nextIndex + 1
+    nextIndex = (nextIndex + 1) % allItems.length
+    attempts++
+  }
 
-) % allItems.length
+  return null
+}
+
+// Helper to find the next unlocked post
+export async function getNextPost(currentSlug: string) {
+  ensureDirectoriesExist()
+
+  const locale = currentSlug.includes('_zh-tw') ? 'zh-TW' : 'en'
+  const allPosts = getAllPostsMetadata(locale)
+
+  if (allPosts.length === 0) return null
+
+  const currentIndex = allPosts.findIndex(p => p.slug === currentSlug)
+  if (currentIndex === -1) return null
+
+  let nextIndex = (currentIndex + 1) % allPosts.length
+  let attempts = 0
+
+  while (attempts < allPosts.length) {
+    const candidate = allPosts[nextIndex]
+
+    if (candidate.slug !== currentSlug) {
+      return {
+        slug: candidate.slug,
+        title: candidate.title,
+        category: candidate.description,
+        imageUrl: candidate.imageUrl,
+        aspectRatio: 1.5
+      }
+    }
+
+    nextIndex = (nextIndex + 1) % allPosts.length
     attempts++
   }
 

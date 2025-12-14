@@ -31,6 +31,6 @@ export const metadata: Metadata = {
 }
 
 export default function GalleryPage() {
-  redirect("/#gallery")
+  return <GalleryPageClient />
 }
 

@@ -5,6 +5,7 @@
     "updates": "最新動態",
     "projects": "精選專案",
     "gallery": "攝影作品",
+    "blog": "部落格",
     "paperReading": "論文閱讀清單",
     "manifesto": "理念",
     "uses": "工具與設定",
@@ -46,6 +47,14 @@
     "lens": "鏡頭",
     "location": "位置",
     "tags": "標籤"
+  },
+  "blog": {
+    "title": "部落格",
+    "backToBlog": "返回部落格",
+    "tags": "標籤",
+    "noPostsFound": "尚無文章。",
+    "latestWriting": "最新文章",
+    "viewAll": "查看全部"
   },
   "design": {
     "title": "設計系統",
@@ -119,7 +128,8 @@
     "reading": "沒 TL;DR，請自己想辦法",
     "uses": "「學校功課」絕對會用到",
     "design": "因為「檢查元素」是給麻瓜用的",
-    "issues": "回報 Bug 或建議新功能"
+    "issues": "回報 Bug 或建議新功能",
+    "blog": "內容不保證有用，但保證很花你時間"
   },
   "letterGlitch": {
     "line1": "我 從 未 被 教 會 創 造 ——",

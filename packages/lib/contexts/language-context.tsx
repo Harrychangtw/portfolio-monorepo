@@ -96,8 +96,14 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
     try {
       const namespaces = ['common', 'about', 'updates', 'uses']
       const translationPromises = namespaces.map(async (namespace) => {
-        const response = await fetch(`/locales/${lang}/${namespace}.json`, {
-          cache: 'force-cache', // Ensure translations are cached
+        // In dev: Add timestamp to URL to force fresh fetch
+        // In prod: Clean URL allows standard caching
+        const url = `/locales/${lang}/${namespace}.json${process.env.NODE_ENV === 'development' ? `?t=${Date.now()}` : ''}`
+        
+        const response = await fetch(url, {
+          // In dev: 'no-store' prevents caching entirely
+          // In prod: 'no-cache' allows caching but forces validation (ETag check) with server before using it
+          cache: process.env.NODE_ENV === 'development' ? 'no-store' : 'no-cache',
         })
         if (response.ok) {
           const data = await response.json()

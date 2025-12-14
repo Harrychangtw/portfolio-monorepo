@@ -68,9 +68,34 @@ const config = {
       quality: 60,
     }
   },
+    blogs: {
+    landscape: {
+      width: 2000,
+      height: 1200,
+      quality: 90,
+    },
+    portrait: {
+      width: 1200,
+      height: 1800,
+      quality: 90,
+    },
+    hero: {
+      width: 2560,
+      quality: 95,
+    },
+    title: {
+      width: 3200,
+      quality: 98,
+    },
+    thumbnail: {
+      width: 20,
+      quality: 60,
+    }
+  },
   directories: {
     projectsSource: path.join(process.cwd(), 'public', 'images', 'projects'),
     gallerySource: path.join(process.cwd(), 'public', 'images', 'gallery'),
+    blogsSource: path.join(process.cwd(), 'public', 'images', 'blogs'),
     optimized: path.join(process.cwd(), 'public', 'images', 'optimized'),
   }
 };
@@ -323,11 +348,121 @@ async function processProjectImages() {
   }
 }
 
+
+
+ 
+// Process blog images
+async function processBlogImages() {
+  console.log('Processing blog images...');
+  
+  if (!fs.existsSync(config.directories.blogsSource)) {
+    console.log('Blogs directory does not exist. Skipping.');
+    return;
+  }
+
+  const images = await processDirectory(config.directories.blogsSource);
+
+  for (const imagePath of images) {
+    // Maintain the directory structure in the output
+    const relativePath = path.relative(config.directories.blogsSource, imagePath);
+    const outputPath = path.join(config.directories.optimized, 'blogs', path.dirname(relativePath));
+    
+    if (!fs.existsSync(outputPath)) {
+      fs.mkdirSync(outputPath, { recursive: true });
+    }
+    
+    const outputFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '.webp'));
+    const replacementMsg = checkFileReplacement(outputFilename);
+    
+    try {
+      // Get image metadata
+      const metadata = await sharp(imagePath).metadata();
+      const isPortrait = metadata.height > metadata.width;
+      const isHero = imagePath.toLowerCase().includes('hero') || path.basename(imagePath).startsWith('hero');
+      const isTitleCard = imagePath.toLowerCase().includes('titlecard') || path.basename(imagePath).toLowerCase().includes('title');
+      
+      // Generate optimized full-size image
+      if (isTitleCard) {
+        // Use highest quality settings for title cards
+        await sharp(imagePath)
+          .resize({
+            width: config.blogs.title.width,
+            fit: 'inside',
+            withoutEnlargement: true
+          })
+          .webp({ quality: config.blogs.title.quality })
+          .toFile(outputFilename);
+          
+        console.log(`  Optimized title card (high quality): ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
+      } else if (isHero) {
+        await sharp(imagePath)
+          .resize({
+            width: config.blogs.hero.width,
+            fit: 'inside',
+            withoutEnlargement: true
+          })
+          .webp({ quality: config.blogs.hero.quality })
+          .toFile(outputFilename);
+          
+        console.log(`  Optimized hero: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
+      } else if (isPortrait) {
+        await sharp(imagePath)
+          .resize({
+            width: config.blogs.portrait.width,
+            height: config.blogs.portrait.height,
+            fit: 'inside',
+            withoutEnlargement: true
+          })
+          .webp({ quality: config.blogs.portrait.quality })
+          .toFile(outputFilename);
+          
+        console.log(`  Optimized portrait: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
+      } else {
+        await sharp(imagePath)
+          .resize({
+            width: config.blogs.landscape.width,
+            height: config.blogs.landscape.height,
+            fit: 'inside',
+            withoutEnlargement: true
+          })
+          .webp({ quality: config.blogs.landscape.quality })
+          .toFile(outputFilename);
+          
+        console.log(`  Optimized landscape: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
+      }
+      
+      // Generate thumbnail for blur-up loading
+      if (!imagePath.includes('thumb')) {
+        const thumbFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '-thumb.webp'));
+        const thumbReplacementMsg = checkFileReplacement(thumbFilename);
+        
+        await sharp(imagePath)
+          .resize({
+            width: config.blogs.thumbnail.width,
+            withoutEnlargement: true,
+            fit: 'inside',
+          })
+          .blur(2)
+          .webp({ quality: config.blogs.thumbnail.quality })
+          .toFile(thumbFilename);
+          
+        console.log(`  Generated thumbnail: ${relativePath} -> ${path.basename(thumbFilename)}${thumbReplacementMsg}`);
+      }
+    } catch (error) {
+      console.error(`  Error processing ${relativePath}:`, error);
+    }
+  }
+}
+
+
+
+
 // Run the optimization
 async function main() {
   console.log('Starting image optimization...');
   await processGalleryImages();
   await processProjectImages();
+  await processBlogImages();
   console.log('Image optimization complete!');
 }
 

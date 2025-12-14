@@ -11,12 +11,12 @@ import NextUpCard from "@portfolio/ui/next-up-card"
 import NavigationLink from "@portfolio/ui/navigation-link"
 import { TableOfContents } from '@portfolio/ui/table-of-contents'
 
-interface ProjectPageClientProps {
+interface ProjectPostClientProps {
   initialProject: ProjectMetadata & { contentHtml: string }
   nextProject?: { slug: string; title: string; category: string; imageUrl: string; aspectRatio?: number } | null
 }
 
-export default function ProjectPageClient({ initialProject, nextProject }: ProjectPageClientProps) {
+export default function ProjectPostClient({ initialProject, nextProject }: ProjectPostClientProps) {
   const { language, t } = useLanguage()
   const [project, setProject] = useState(initialProject)
   const [loading, setLoading] = useState(false)
