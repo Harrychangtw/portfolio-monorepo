@@ -38,3 +38,4 @@ next-env.d.ts
 combined.md
 scripts/context_export.sh
 public/fonts/**
+content/.obsidian

@@ -1,9 +1,14 @@
 # Harry Chang Portfolio Site
 
+<p align="center">
+  <img src="public/images/optimized/projects/og/ogimage.webp" alt="Harry Chang Portfolio Site" width="1800" />
+</p>
+
+
 A modern, performant portfolio website built with Next.js 15, featuring a dual-domain architecture, custom i18n implementation, file-based CMS, and advanced image optimization.
 
-## Key Features
 
+## Key Features
 ### Dual-Domain Architecture
 - **Main site** (`harrychang.me`): Portfolio, projects, gallery
 - **Lab subdomain** (`lab.harrychang.me`): Future hub for courses and engaging educational content
@@ -59,6 +64,27 @@ Large-scale layout animations were avoided to maintain high performance and read
 The [Gallery] section utilizes a custom framing engine that calculates image aspect ratios (Portrait vs. Cinematic vs. Standard) to apply specific border padding dynamically. This ensures that regardless of the source media dimensions, the visual rhythm of the grid remains consistent and museum-like.
 
 
+### Aesthetic Direction: Classical Integration
+The site integrates classical artwork (featuring Vermeer, Tiepolo, and others) as distinct visual motifs for each section. This juxtaposition of Renaissance/Baroque art with a brutalist digital grid grounds the modern tech stack in timeless aesthetics.
+
+<table align="center">
+  <tr>
+    <td width="50%">
+      <img src="public/images/og-image-blog.webp" alt="Blog: The Astronomer" />
+    </td>
+    <td width="50%">
+      <img src="public/images/og-image-gallery.webp" alt="Gallery: The Art of Painting" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="public/images/og-image-lab.webp" alt="Lab: The Fall of Icarus" />
+    </td>
+    <td width="50%">
+      <img src="public/images/og-image-projects.webp" alt="Projects: The Forge of Vulcan" />
+    </td>
+  </tr>
+</table>
 
 ## 🚀 Quick Start
 
