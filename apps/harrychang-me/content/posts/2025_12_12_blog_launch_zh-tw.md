@@ -35,4 +35,4 @@ pinned: -1
 感謝你陪伴我展開這段新的旅程。我很期待與你分享我的思考，也希望能夠激發你的靈感。
 
 ## 致謝
-- 封面照: *The Astronomer* by <a href="https://en.wikipedia.org/wiki/en:Johannes_Vermeer" class="extiw" title="w:en:Johannes Vermeer"><span title="Dutch painter (1632–1675)">Johannes Vermeer</span></a>, Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=116806430">Link</a></p>
+- 封面照：*The Astronomer* by [Johannes Vermeer](https://en.wikipedia.org/wiki/en:Johannes_Vermeer), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=116806430)
