@@ -123,6 +123,14 @@ export default function Header() {
 
       const headerHeight = document.querySelector('header')?.offsetHeight || 0;
       const scrollY = window.scrollY;
+
+      // Handle edge case where the last section is smaller than the viewport
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      if (windowHeight + scrollY >= documentHeight - 50) {
+        setActiveSection(NAV_ITEMS[NAV_ITEMS.length - 1].id);
+        return;
+      }
       
       const sections = NAV_ITEMS.map(item => ({
         id: item.id,
