@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import NavigationLink from "@portfolio/ui/navigation-link"
 import { ImageContainer } from "@portfolio/ui/image-container"
 
-interface ArticleCardProps {
+interface BlogCardProps {
     title: string
     date: string
     slug: string
@@ -15,7 +15,7 @@ interface ArticleCardProps {
     className?: string
 }
 
-export default function ArticleCard({
+export default function BlogCard({
     title,
     date,
     slug,
@@ -24,7 +24,7 @@ export default function ArticleCard({
     priority = false,
     index = 0,
     className,
-}: ArticleCardProps) {
+}: BlogCardProps) {
     const formatDate = (dateStr: string) => {
         const d = new Date(dateStr)
         const day = d.getDate().toString().padStart(2, "0")

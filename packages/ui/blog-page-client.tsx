@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import ArticleCard from '@portfolio/ui/article-card'
+import BlogCard from '@portfolio/ui/blog-card'
 import type { PostMetadata } from '@portfolio/lib/lib/markdown'
 
 export default function BlogPageClient() {
@@ -78,7 +78,7 @@ export default function BlogPageClient() {
           >
             {/* Removed the absolute positioned vertical lines to match ProjectSection consistency */}
             {posts.map((post, index) => (
-              <ArticleCard
+              <BlogCard
                 key={post.slug}
                 title={post.title}
                 date={post.date}

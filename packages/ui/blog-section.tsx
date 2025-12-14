@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import ArticleCard from "./article-card"
+import BlogCard from "@portfolio/ui/blog-card"
 import { PostMetadata } from "@portfolio/lib/lib/markdown"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
@@ -77,7 +77,7 @@ export default function BlogSection({ section, title, sectionId = "blog" }: Blog
           style={{ transition: 'min-height 0.3s ease-out' }}
         >
           {isLoading ? (
-            // Placeholder cards matching ArticleCard structure
+            // Placeholder cards matching BlogCard structure
             [...Array(6)].map((_, i) => (
               <div key={i} className="group relative flex flex-col">
                 <div className="pb-3">
@@ -98,7 +98,7 @@ export default function BlogSection({ section, title, sectionId = "blog" }: Blog
             ))
           ) : (
             posts.map((post, index) => (
-              <ArticleCard
+              <BlogCard
                 key={post.slug}
                 title={post.title}
                 date={post.date}

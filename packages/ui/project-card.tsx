@@ -48,9 +48,11 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile();  
   const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0 });
-
+  if (locked && isMobile) {
+    return null // Added for better mobile experience, communicating via tooltip and top right lock icon is not ideal on small screens
+  }
   // Tooltip handlers for locked cards
   const handleMouseEnter = (e: React.MouseEvent) => {
     if (!isMobile && tooltipText) {

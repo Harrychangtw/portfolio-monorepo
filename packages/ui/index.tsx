@@ -72,7 +72,7 @@ export * from './text-type';
 export * from './theme-provider';
 export * from './video-embed';
 export * from './video-initializer';
-export * from './article-card';
+export * from './blog-card';
 export * from './blog-page-client';
 export * from './blog-post-client';
 export * from './blog-section';

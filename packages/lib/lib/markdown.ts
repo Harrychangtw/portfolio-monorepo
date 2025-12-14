@@ -190,6 +190,7 @@ export interface PostMetadata {
   tags?: string[]
   featured?: boolean
   pinned?: number
+  locked?: boolean
 }
 
 export interface SketchMetadata {
@@ -571,6 +572,7 @@ export function getAllPostsMetadata(locale: string = 'en'): PostMetadata[] {
           ...data,
         }
       })
+      .filter(post => !post.locked)
 
     // Sort posts: pinned first, then by date
     return allPostsData.sort((a, b) => {
