@@ -38,14 +38,14 @@ export default function ArticleCard({
         <div className={`group relative flex flex-col h-full ${className || ""}`}>
             <NavigationLink href={`/blog/${slug}`} className="block flex flex-col h-full">
                 {/* Top Divider */}
-                <div className="w-full border-t border-secondary/30 mb-3" />
+                <div className="w-full" />
 
                 {/* Content Grid: Left (Title/Tags) vs Right (Date) */}
                 <div className="flex-grow grid grid-cols-[1fr_auto] gap-6 mb-4">
                     {/* Left Column: Title & Tags */}
                     <div className="flex flex-col justify-between min-w-0">
                         {/* Title */}
-                        <h3 className="font-heading text-base md:text-lg font-medium leading-snug tracking-wide text-primary line-clamp-3 mb-24">
+                        <h3 className="font-heading text-base md:text-lg font-medium leading-snug tracking-wide text-primary line-clamp-4 mb-8">
                             {title}
                         </h3>
 

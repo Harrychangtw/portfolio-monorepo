@@ -143,7 +143,7 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
   )
 
   return (
-    <section ref={sectionRef} id={sectionId} className="py-12 md:py-16">
+    <section ref={sectionRef} id={sectionId} className="py-12 md:py-16 border-b border-border">
       <div className="container">
         <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('gallery.title')}</h2>
         

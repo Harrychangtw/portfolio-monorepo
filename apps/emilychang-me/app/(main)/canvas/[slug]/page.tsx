@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getGalleryItemData, getAllGallerySlugs } from "@portfolio/lib/lib/markdown"
-import GalleryItemPageClient from "@portfolio/ui/gallery-item-page-client"
+import GalleryPostClient from "@portfolio/ui/gallery-post-client"
 
 const baseUrl = 'https://www.emilychang.me'
 
@@ -115,7 +115,7 @@ export default async function CanvasItemPage({ params }: { params: Promise<{ slu
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <GalleryItemPageClient initialItem={item} />
+      <GalleryPostClient initialItem={item} />
     </>
   )
 }

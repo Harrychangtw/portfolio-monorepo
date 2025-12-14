@@ -8,12 +8,12 @@ import NextUpCard from "@portfolio/ui/next-up-card"
 import type { GalleryItemMetadata } from '@portfolio/lib/lib/markdown'
 import NavigationLink from "@portfolio/ui/navigation-link"
 
-interface GalleryItemPageClientProps {
+interface GalleryPostClientProps {
   initialItem: GalleryItemMetadata & { contentHtml: string }
   nextItem?: { slug: string; title: string; category: string; imageUrl: string; aspectRatio?: number } | null
 }
 
-export default function GalleryItemPageClient({ initialItem, nextItem }: GalleryItemPageClientProps) {
+export default function GalleryPostClient({ initialItem, nextItem }: GalleryPostClientProps) {
   const { language, t } = useLanguage()
   const [item, setItem] = useState(initialItem)
   const [loading, setLoading] = useState(false)

@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import BlogPageClient from "./blog-page-client"
+import BlogPageClient from "@portfolio/ui/blog-page-client"
 
 export const metadata: Metadata = {
   title: "Blog",

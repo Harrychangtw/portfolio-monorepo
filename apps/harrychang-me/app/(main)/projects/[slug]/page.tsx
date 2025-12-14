@@ -3,7 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 import { getProjectData, getAllProjectSlugs, getNextProject } from "@portfolio/lib/lib/markdown"
-import ProjectPageClient from "@portfolio/ui/project-page-client"
+import ProjectPostClient from "@portfolio/ui/project-post-client"
 
 const baseUrl = 'https://www.harrychang.me'
 
@@ -157,7 +157,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <ProjectPageClient initialProject={project} nextProject={nextProject} />
+      <ProjectPostClient initialProject={project} nextProject={nextProject} />
     </>
   )
 }

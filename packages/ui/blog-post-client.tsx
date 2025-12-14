@@ -155,9 +155,7 @@ useEffect(() => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 mb-8 md:mb-12 items-start">
             {/* Title - Spans 2 columns of visual weight (cols 1-8) */}
             <div className="md:col-span-8">
-              <h1 className="font-heading text-4xl md:text-4xl lg:text-4xl font-bold text-primary leading-tight">
-                {post.title}
-              </h1>
+              <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary"> {post.title}</h1>
             </div>
 
             {/* Date & Tags - Right column (cols 9-12), left aligned within that column */}
@@ -201,7 +199,7 @@ useEffect(() => {
             <div className="md:col-span-4">
               <div className="md:sticky md:top-24 flex flex-col gap-8">
                  <NavigationLink
-                    href="/blog"
+                    href="/#blog"
                     className="inline-flex items-center text-secondary hover:text-primary transition-colors"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />

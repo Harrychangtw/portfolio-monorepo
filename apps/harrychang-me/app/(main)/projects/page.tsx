@@ -31,6 +31,6 @@ export const metadata: Metadata = {
 }
 
 export default function ProjectsPage() {
-  redirect("/#projects")
+  return <ProjectsPageClient />
 }
 

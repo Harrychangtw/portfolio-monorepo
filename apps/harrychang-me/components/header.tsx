@@ -22,7 +22,7 @@ const SPECIAL_PAGES = [
   { prefix: '/uses', key: 'uses' },
   { prefix: '/linktree', key: 'links' },
   { prefix: '/design', key: 'design' },
-  { prefix: '/blog', key: 'blog' },
+  
 ];
 
 const NAV_ITEMS = [
@@ -30,6 +30,7 @@ const NAV_ITEMS = [
   { id: 'updates', path: '/' },
   { id: 'projects', path: '/projects' },
   { id: 'gallery', path: '/gallery' },
+  { id: 'blog', path: '/blog' }
 ];
 
 export default function Header() {
@@ -175,6 +176,8 @@ export default function Header() {
         setActiveSection('projects');
       } else if (pathname?.startsWith('/gallery')) {
         setActiveSection('gallery');
+      } else if (pathname?.startsWith('/blog')) {
+        setActiveSection('blog');
       } else {
         setActiveSection(''); // Default to no active section for other pages
       }
@@ -183,7 +186,7 @@ export default function Header() {
 
   // DRY: Logic for determining which title to show
   const showStandardSectionTitle = (isHomePage && activeSection !== "about") ||
-                           (!isHomePage && (pathname?.startsWith('/projects') || pathname?.startsWith('/gallery')));
+                           (!isHomePage && (pathname?.startsWith('/projects') || pathname?.startsWith('/gallery') || pathname?.startsWith('/blog')));
   
   let activeTitleKey: string | null = null;
 

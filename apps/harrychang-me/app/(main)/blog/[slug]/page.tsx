@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getPostData, getAllPostSlugs, getNextPost } from "@portfolio/lib/lib/markdown"
-import BlogPostClient from "./blog-post-client"
+import BlogPostClient from "@portfolio/ui/blog-post-client"
 
 const baseUrl = '<https://www.harrychang.me>'
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { getProjectData, getAllProjectSlugs } from "@portfolio/lib/lib/markdown"
-import ProjectPageClient from "@portfolio/ui/project-page-client"
+import ProjectPostClient from "@portfolio/ui/project-post-client"
 
 const baseUrl = 'https://www.emilychang.me'
 
@@ -116,7 +116,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <ProjectPageClient initialProject={project} />
+      <ProjectPostClient initialProject={project} />
     </>
   )
 }
