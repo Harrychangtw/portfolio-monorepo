@@ -74,7 +74,16 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
     if (typeof window === 'undefined' || englishOnly) {
       return 'en'
     }
-    
+    // Priority 1: URL query param (?lang=zh-tw)
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('lang')?.toLowerCase() === 'zh-tw') {
+      return 'zh-TW'
+    }
+
+    // Priority 2: URL path suffix ([slug]_zh-tw)
+    if (window.location.pathname.replace(/\/$/, '').endsWith('_zh-tw')) {
+      return 'zh-TW'
+    }
     const saved = localStorage.getItem('language') as Language | null
     if (saved === 'en' || saved === 'zh-TW') {
       return saved

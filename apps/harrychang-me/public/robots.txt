@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.harrychang.me/sitemap.xml
+Sitemap: https://lab.harrychang.me/sitemap-lab.xml
+
+# Disallow admin/private routes (if any)
+Disallow: /api/

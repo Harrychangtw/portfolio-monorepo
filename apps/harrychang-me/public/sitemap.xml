@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.harrychang.me</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/blog</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/blog?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2024_08_19_classics_reimagined</loc>
+    <lastmod>2024-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2024_08_19_classics_reimagined"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2024_08_19_classics_reimagined?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2024_09_23_chingshin_rag</loc>
+    <lastmod>2024-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2024_09_23_chingshin_rag"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2024_09_23_chingshin_rag?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2024_10_04_proj_zephyr</loc>
+    <lastmod>2024-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2024_10_04_proj_zephyr"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2024_10_04_proj_zephyr?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2024_10_09_vrc_2813b_nova</loc>
+    <lastmod>2024-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2024_10_09_vrc_2813b_nova"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2024_10_09_vrc_2813b_nova?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2025_01_03_powerplay</loc>
+    <lastmod>2025-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2025_01_03_powerplay"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2025_01_03_powerplay?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2025_01_05_aaai_video</loc>
+    <lastmod>2025-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2025_01_05_aaai_video"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2025_01_05_aaai_video?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2025_03_08_sitcon_keynote</loc>
+    <lastmod>2025-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2025_03_08_sitcon_keynote"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2025_03_08_sitcon_keynote?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2025_03_18_boundless_voices</loc>
+    <lastmod>2024-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2025_03_18_boundless_voices"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2025_03_18_boundless_voices?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2025_04_12_portfolio</loc>
+    <lastmod>2025-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2025_04_12_portfolio"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2025_04_12_portfolio?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2025_05_18_patch_dataset</loc>
+    <lastmod>2025-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2025_05_18_patch_dataset"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2025_05_18_patch_dataset?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2025_08_04_debate</loc>
+    <lastmod>2025-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2025_08_04_debate"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2025_08_04_debate?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/projects/2025_10_12_fortress</loc>
+    <lastmod>2025-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects/2025_10_12_fortress"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/projects/2025_10_12_fortress?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_06_30_city_stroll</loc>
+    <lastmod>2023-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_06_30_city_stroll"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_06_30_city_stroll?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_07_07_splash_of_red</loc>
+    <lastmod>2023-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_07_07_splash_of_red"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_07_07_splash_of_red?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_08_10_intersection</loc>
+    <lastmod>2024-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_08_10_intersection"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_08_10_intersection?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_10_05_solitary_glow</loc>
+    <lastmod>2023-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_10_05_solitary_glow"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_10_05_solitary_glow?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_10_06_against_giants</loc>
+    <lastmod>2023-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_10_06_against_giants"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_10_06_against_giants?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_10_06_guided_by_the_tides</loc>
+    <lastmod>2024-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_10_06_guided_by_the_tides"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_10_06_guided_by_the_tides?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_10_12_lessons_from_the_light</loc>
+    <lastmod>2023-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_10_12_lessons_from_the_light"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_10_12_lessons_from_the_light?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_11_18_dusk_impressions</loc>
+    <lastmod>2023-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_11_18_dusk_impressions"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_11_18_dusk_impressions?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_12_30_against_the_unknown</loc>
+    <lastmod>2023-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_12_30_against_the_unknown"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_12_30_against_the_unknown?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2023_12_30_sky_above</loc>
+    <lastmod>2023-12-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2023_12_30_sky_above"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2023_12_30_sky_above?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2024_01_06_hehuanshan</loc>
+    <lastmod>2024-01-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2024_01_06_hehuanshan"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2024_01_06_hehuanshan?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2024_02_09_mortal_sparks</loc>
+    <lastmod>2024-02-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2024_02_09_mortal_sparks"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2024_02_09_mortal_sparks?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2024_02_14_go_where_you_feel_most_alive</loc>
+    <lastmod>2024-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2024_02_14_go_where_you_feel_most_alive"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2024_02_14_go_where_you_feel_most_alive?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2024_04_06_city_of_tears</loc>
+    <lastmod>2024-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2024_04_06_city_of_tears"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2024_04_06_city_of_tears?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2024_07_03_simple_in_a_complex_world</loc>
+    <lastmod>2023-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2024_07_03_simple_in_a_complex_world"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2024_07_03_simple_in_a_complex_world?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/blog/2025_12_12_blog_launch</loc>
+    <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog/2025_12_12_blog_launch"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/blog/2025_12_12_blog_launch?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/blog/2025_12_13_sisyphus</loc>
+    <lastmod>2025-12-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog/2025_12_13_sisyphus"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/blog/2025_12_13_sisyphus?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/blog/2025_12_14_affinity</loc>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog/2025_12_14_affinity"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/blog/2025_12_14_affinity?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/blog/2025_12_20_xpro1</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog/2025_12_20_xpro1"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/blog/2025_12_20_xpro1?lang=zh-TW"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/blog/2025_12_27_aftesun_paris_texas</loc>
+    <lastmod>2025-12-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog/2025_12_27_aftesun_paris_texas"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/blog/2025_12_27_aftesun_paris_texas?lang=zh-TW"/>
+  </url>
+</urlset>

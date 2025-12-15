@@ -4,6 +4,7 @@ public/images/gallery
 public/images/projects
 public/images/blogs
 
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -36,6 +37,9 @@ next-env.d.ts
 
 /lib/generated/prisma
 combined.md
+blog_combined.md
 scripts/context_export.sh
+scripts/blog_export.sh
 public/fonts/**
 content/.obsidian
+content/workflows
