@@ -1,5 +1,5 @@
 ---
-title: "為愛之名，成為陌生人：關於《日麗》與《巴黎，德州》"
+title: "因愛，陌生：關於《日麗》與《巴黎，德州》"
 description: "兩部關於親子、距離以及「被看見」那無法承受之重的電影。一篇綜合論述。"
 imageUrl: "images/optimized/blogs/2025_12_25_aftersun_paris_texas/titlecard.webp"
 date: "2025-12-27"

@@ -185,6 +185,8 @@ export interface PostMetadata {
   title: string
   description: string
   imageUrl: string
+  imageWidth?: number
+  imageHeight?: number
   date: string
   author?: string
   tags?: string[]
@@ -637,8 +639,8 @@ export async function getProjectData(slug: string) {
       // Add dimensions for hero image to prevent CLS
       const dims = getDimsFromWebPath(data.imageUrl);
       if (dims) {
-        (data as any).imageWidth = dims.width;
-        (data as any).imageHeight = dims.height;
+        data.imageWidth = dims.width;
+        data.imageHeight = dims.height;
       }
     }
 
