@@ -672,20 +672,18 @@ export async function getGalleryItemData(slug: string) {
     // Process the gallery images to add thumbnailUrl if available
     const data = matterResult.data as Omit<GalleryItemMetadata, "slug">;
     
-    // Ensure the main imageUrl has a leading slash for absolute path
-    if (data.imageUrl && !data.imageUrl.startsWith('/') && !data.imageUrl.startsWith('http')) {
-      data.imageUrl = '/' + data.imageUrl;
-    }
-    
-    // Add dimension detection for main image
+    // Ensure the main imageUrl uses full resolution for individual item pages
     if (data.imageUrl) {
-      const dims = getDimsFromWebPath(data.imageUrl)
+      data.imageUrl = getFullResolutionPath(data.imageUrl);
+      
+      // Add dimension detection for main image
+      const dims = getDimsFromWebPath(data.imageUrl);
       if (dims) {
-        data.width = dims.width
-        data.height = dims.height
-        const ratio = dims.width / dims.height
-        data.aspectRatio = Number(ratio.toFixed(4))
-        data.aspectType = ratio < 1 ? 'v' : 'h'
+        data.width = dims.width;
+        data.height = dims.height;
+        const ratio = dims.width / dims.height;
+        data.aspectRatio = Number(ratio.toFixed(4));
+        data.aspectType = ratio < 1 ? 'v' : 'h';
       }
     }
     
