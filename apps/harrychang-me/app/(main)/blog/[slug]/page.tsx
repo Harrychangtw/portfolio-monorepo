@@ -3,7 +3,7 @@ import { notFound } from "next/navigation"
 import { getPostData, getAllPostSlugs, getNextPost } from "@portfolio/lib/lib/markdown"
 import BlogPostClient from "@portfolio/ui/blog-post-client"
 
-const baseUrl = '<https://www.harrychang.me>'
+const baseUrl = 'https://www.harrychang.me'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     : `${baseUrl}${post.imageUrl.startsWith('/') ? '' : '/'}${post.imageUrl}`
 
   const structuredData = {
-    '@context': '<https://schema.org>',
+    '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.description,
