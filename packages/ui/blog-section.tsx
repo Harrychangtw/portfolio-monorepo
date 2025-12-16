@@ -86,9 +86,9 @@ export default function BlogSection({ section, title, sectionId = "blog", initia
           <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">{title || t('blog.title')}</h2>
           {showSeeAll && (
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <NavigationLink href={`/projects`} className="group flex items-center gap-2">
+              <NavigationLink href={`/blog`} className="group flex items-center gap-2">
                 <span className="font-ibm-plex text-sg text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
-                  {t('projects.seeAll')}
+                  {t('blog.seeAll')}
                 </span>
                 <span className="font-heading text-xl text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
                   →

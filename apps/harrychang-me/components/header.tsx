@@ -27,10 +27,10 @@ const SPECIAL_PAGES = [
 
 const NAV_ITEMS = [
   { id: 'about', path: '/' },
-  { id: 'updates', path: '/' },
-  { id: 'projects', path: '/projects' },
-  { id: 'gallery', path: '/gallery' },
-  { id: 'blog', path: '/blog' }
+  { id: 'updates', path: '/#updates' },
+  { id: 'projects', path: '/#projects' },
+  { id: 'gallery', path: '/#gallery' },
+  { id: 'blog', path: '/#blog' }
 ];
 
 export default function Header() {
