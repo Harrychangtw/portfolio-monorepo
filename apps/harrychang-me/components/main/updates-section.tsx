@@ -136,7 +136,7 @@ export default function UpdatesSection() {
                             <button
                                 onClick={handlePrevPage}
                                 disabled={currentPage === 0}
-                            className="font-heading text-2xl text-secondary hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                            className="font-heading text-xl text-secondary hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                                 ←
                             </button>
@@ -145,7 +145,7 @@ export default function UpdatesSection() {
                             <button
                                 onClick={handleNextPage}
                                 disabled={currentPage === totalPages - 1}
-                                className="font-heading text-2xl text-secondary hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                className="font-heading text-xl text-secondary hover:text-[hsl(var(--accent))] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                             >
                                 →
                             </button>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import GalleryPageClient from "@portfolio/ui/gallery-page-client"
-import { redirect } from "next/navigation"
+import GallerySection from "@portfolio/ui/gallery-section"
+import { getAllGalleryMetadata } from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 }
 
 export default function GalleryPage() {
-  return <GalleryPageClient />
+  const galleryItems = getAllGalleryMetadata('en')
+  return <GallerySection initialItems={galleryItems} />
 }
 

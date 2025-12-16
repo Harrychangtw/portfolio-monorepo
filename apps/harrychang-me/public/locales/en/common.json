@@ -37,7 +37,8 @@
     "role": "Role", 
     "technologies": "Technologies",
     "client": "Client",
-    "website": "Website"
+    "website": "Website",
+    "seeAll": "See All"
   },
   "gallery": {
     "title": "Photo Gallery",
@@ -46,7 +47,8 @@
     "camera": "Camera",
     "lens": "Lens",
     "location": "Location",
-    "tags": "Tags"
+    "tags": "Tags",
+    "seeAll": "See All"
   },
   "blog": {
     "title": "Blog",
@@ -54,7 +56,7 @@
     "tags": "Tags",
     "noPostsFound": "No posts found.",
     "latestWriting": "Latest Writing",
-    "viewAll": "View All"
+    "seeAll": "See All"
   },
   "design": {
     "title": "Design System",

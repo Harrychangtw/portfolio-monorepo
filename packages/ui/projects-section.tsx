@@ -5,6 +5,8 @@ import ProjectCard from "./project-card"
 import { ProjectMetadata } from "@portfolio/lib/lib/markdown"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import NavigationLink from "@portfolio/ui/navigation-link"
+import { motion } from "framer-motion"
 
 interface ProjectsSectionProps {
   section?: string
@@ -12,9 +14,11 @@ interface ProjectsSectionProps {
   sectionId?: string
   hoverEffect?: 'inward' | 'gentle' // Hover animation variant
   initialItems?: ProjectMetadata[]
+  limit?: number
+  showSeeAll?: boolean
 }
 
-export default function ProjectsSection({ section, title, sectionId = "projects", hoverEffect = 'inward', initialItems = [] }: ProjectsSectionProps = {}) {
+export default function ProjectsSection({ section, title, sectionId = "projects", hoverEffect = 'inward', initialItems = [], limit, showSeeAll = false }: ProjectsSectionProps = {}) {
   const { language, t } = useLanguage()
   const [projects, setProjects] = useState<ProjectMetadata[]>(initialItems)
   const [isLoading, setIsLoading] = useState(initialItems.length === 0)
@@ -76,10 +80,26 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
     }
   }, [isVisible, language, shouldLoadImmediately, forceLoad, section, initialItems])
 
+  const displayedProjects = limit ? projects.slice(0, limit) : projects
+
   return (
     <section ref={sectionRef} id={sectionId} className="py-12 md:py-16 border-b border-border">
       <div className="container">
-        <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{title || t('projects.title')}</h2>
+        <div className="flex items-baseline justify-between mb-4">
+          <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">{title || t('projects.title')}</h2>
+          {showSeeAll && (
+            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+              <NavigationLink href={`/projects`} className="group flex items-center gap-2">
+                <span className="font-ibm-plex text-sg text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
+                  {t('projects.seeAll')}
+                </span>
+                <span className="font-heading text-xl text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
+                  →
+                </span>
+              </NavigationLink>
+            </motion.div>
+          )}
+        </div>
         
         {/* Reserve space to prevent layout shift with responsive min-height */}
         <div 
@@ -88,7 +108,7 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
         >
           {isLoading ? (
             // Placeholder cards while loading - match exact project card structure
-            [...Array(6)].map((_, i) => (
+            [...Array(limit || 12)].map((_, i) => (
               <div key={i} className="group relative flex flex-col">
                 <div className="relative overflow-hidden bg-muted">
                   {/* Strict 3:2 aspect ratio container - matches ProjectCard */}
@@ -108,10 +128,10 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
               </div>
             ))
           ) : (
-            projects.map((project, index) => (
+            displayedProjects.map((project, index) => (
               <ProjectCard
                 key={project.slug}
-                title={project.title}
+                title={project.title} 
                 category={project.category}
                 subcategory={project.subcategory || ""}
                 slug={project.slug}

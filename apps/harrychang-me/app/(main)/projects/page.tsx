@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import ProjectsPageClient from "@portfolio/ui/projects-page-client"
-import { redirect } from "next/navigation"
+import ProjectsSection from "@portfolio/ui/projects-section"
+import { getAllProjectsMetadata } from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
 }
 
 export default function ProjectsPage() {
-  return <ProjectsPageClient />
+  const projects = getAllProjectsMetadata('en')
+  return <ProjectsSection initialItems={projects} />
 }
 
