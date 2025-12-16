@@ -37,7 +37,8 @@
     "role": "角色",
     "technologies": "技術",
     "client": "客戶",
-    "website": "網站"
+    "website": "網站",
+    "seeAll": "查看全部"
   },
   "gallery": {
     "title": "攝影作品",
@@ -46,7 +47,8 @@
     "camera": "相機",
     "lens": "鏡頭",
     "location": "位置",
-    "tags": "標籤"
+    "tags": "標籤",
+    "seeAll": "查看全部"
   },
   "blog": {
     "title": "部落格",
@@ -54,7 +56,7 @@
     "tags": "標籤",
     "noPostsFound": "尚無文章。",
     "latestWriting": "最新文章",
-    "viewAll": "查看全部"
+    "seeAll": "查看全部"
   },
   "design": {
     "title": "設計系統",

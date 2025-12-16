@@ -4,7 +4,7 @@ import UpdatesSection from "@/components/main/updates-section"
 import ProjectsSection from "@portfolio/ui/projects-section"
 import GallerySection from "@portfolio/ui/gallery-section"
 import BlogSection from "@portfolio/ui/blog-section"
-import { getAllGalleryMetadata, getAllProjectsMetadata} from "@portfolio/lib/lib/markdown"
+import { getAllGalleryMetadata, getAllProjectsMetadata, getAllPostsMetadata} from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
   title: "Harry Chang 張祺煒 | Portfolio",
@@ -22,13 +22,14 @@ export default function Home() {
   // Fetch gallery items at build/request time - dimensions available immediately
   const galleryItems = getAllGalleryMetadata('en')
   const projectsItems = getAllProjectsMetadata('en')
+  const blogPosts = getAllPostsMetadata('en')
   return (
     <>
       <AboutSection />
       <UpdatesSection />
-      <ProjectsSection initialItems={projectsItems} />
-      <GallerySection initialItems={galleryItems} />
-      <BlogSection />
+      <ProjectsSection initialItems={projectsItems} limit={12}/>
+      <GallerySection initialItems={galleryItems} limit={15}/>
+      <BlogSection initialItems={blogPosts} limit={6} showSeeAll />
     </>
   )
 }

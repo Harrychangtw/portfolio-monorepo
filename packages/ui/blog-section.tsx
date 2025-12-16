@@ -5,17 +5,22 @@ import BlogCard from "@portfolio/ui/blog-card"
 import { PostMetadata } from "@portfolio/lib/lib/markdown"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import NavigationLink from "@portfolio/ui/navigation-link"
+import { motion } from "framer-motion"
 
 interface BlogSectionProps {
   section?: string
   title?: string
   sectionId?: string
+  initialItems?: PostMetadata[]
+  limit?: number
+  showSeeAll?: boolean
 }
 
-export default function BlogSection({ section, title, sectionId = "blog" }: BlogSectionProps = {}) {
+export default function BlogSection({ section, title, sectionId = "blog", initialItems = [], limit, showSeeAll = false }: BlogSectionProps = {}) {
   const { language, t } = useLanguage()
-  const [posts, setPosts] = useState<PostMetadata[]>([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [posts, setPosts] = useState<PostMetadata[]>(initialItems)
+  const [isLoading, setIsLoading] = useState(initialItems.length === 0)
   const [forceLoad, setForceLoad] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
   const hasFetchedRef = useRef(false) // Track if we've already fetched
@@ -39,6 +44,12 @@ export default function BlogSection({ section, title, sectionId = "blog" }: Blog
   }, [])
 
   useEffect(() => {
+    // Skip fetch if we have initial data and language matches
+    if (initialItems.length > 0 && language === 'en') {
+      setIsLoading(false)
+      hasFetchedRef.current = true
+      return
+    }
     // Skip if already fetched and language hasn't actually changed
     if (hasFetchedRef.current && lastLanguageRef.current === language) {
       return
@@ -49,7 +60,7 @@ export default function BlogSection({ section, title, sectionId = "blog" }: Blog
         const response = await fetch(`/api/posts?locale=${language}`)
         const data = await response.json()
         // Slice to top 6 posts as requested
-        setPosts(data.slice(0, 6))
+        setPosts(data)
 
         // Mark as fetched and update last language
         hasFetchedRef.current = true
@@ -64,12 +75,28 @@ export default function BlogSection({ section, title, sectionId = "blog" }: Blog
     if (shouldLoadImmediately || isVisible || forceLoad) {
       fetchPosts()
     }
-  }, [isVisible, language, shouldLoadImmediately, forceLoad])
+  }, [isVisible, language, shouldLoadImmediately, forceLoad, initialItems])
+
+  const displayedPosts = limit ? posts.slice(0, limit) : posts
 
   return (
     <section ref={sectionRef} id={sectionId} className="py-12 md:py-16 border-b border-border">
       <div className="container">
-        <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{title || t('blog.title')}</h2>
+        <div className="flex items-baseline justify-between mb-4">
+          <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">{title || t('blog.title')}</h2>
+          {showSeeAll && (
+            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+              <NavigationLink href={`/projects`} className="group flex items-center gap-2">
+                <span className="font-ibm-plex text-sg text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
+                  {t('projects.seeAll')}
+                </span>
+                <span className="font-heading text-xl text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
+                  →
+                </span>
+              </NavigationLink>
+            </motion.div>
+          )}
+        </div>
         
         {/* Reserve space to prevent layout shift - Matches loading state of BlogPageClient */}
         <div 
@@ -78,7 +105,7 @@ export default function BlogSection({ section, title, sectionId = "blog" }: Blog
         >
           {isLoading ? (
             // Placeholder cards matching BlogCard structure
-            [...Array(6)].map((_, i) => (
+            [...Array(limit || 6)].map((_, i) => (
               <div key={i} className="group relative flex flex-col">
                 <div className="pb-3">
                   <div className="h-6 w-3/4 bg-muted animate-pulse rounded-md mb-2"></div>
@@ -97,7 +124,7 @@ export default function BlogSection({ section, title, sectionId = "blog" }: Blog
               </div>
             ))
           ) : (
-            posts.map((post, index) => (
+            displayedPosts.map((post, index) => (
               <BlogCard
                 key={post.slug}
                 title={post.title}

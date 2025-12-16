@@ -6,6 +6,8 @@ import { GalleryItemMetadata } from "@portfolio/lib/lib/markdown"
 import { createBalancedLayout } from "@portfolio/lib/lib/utils"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import { motion } from "framer-motion";
+import NavigationLink from "@portfolio/ui/navigation-link"
 interface GallerySectionProps {
   section?: string
   title?: string
@@ -14,9 +16,11 @@ interface GallerySectionProps {
   basePath?: string // Custom base path for card links (e.g., 'canvas' instead of 'gallery')
   hoverEffect?: 'inward' | 'gentle' // Hover animation variant
   initialItems?: GalleryItemMetadata[] // Server-provided data
+  limit?: number
+  showSeeAll?: boolean
 }
 
-export default function GallerySection({ section, title, sectionId = "gallery", source = 'gallery', basePath = 'gallery', hoverEffect = 'inward', initialItems = [] }: GallerySectionProps = {}) {
+export default function GallerySection({ section, title, sectionId = "gallery", source = 'gallery', basePath = 'gallery', hoverEffect = 'inward', initialItems = [], limit, showSeeAll = false }: GallerySectionProps = {}) {
   const { language, t } = useLanguage()
   const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>(initialItems)
   const [isLoading, setIsLoading] = useState(initialItems.length === 0) // Only loading if no initial data
@@ -116,9 +120,10 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
     
     return pinnedMap
   }
-
+  // Handle limiting items
+  const displayedItems = limit ? galleryItems.slice(0, limit) : galleryItems
   // Create a balanced layout using our algorithm
-  const layoutResult = isLoading ? null : createBalancedLayout(galleryItems, getPinnedItemsMap(galleryItems))
+  const layoutResult = isLoading ? null : createBalancedLayout(displayedItems, getPinnedItemsMap(displayedItems))
 
   // Helper function to create a placeholder with a specific aspect ratio
   const renderPlaceholderCard = (aspectRatio: string, index: number) => (
@@ -145,7 +150,21 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
   return (
     <section ref={sectionRef} id={sectionId} className="py-12 md:py-16 border-b border-border">
       <div className="container">
-        <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('gallery.title')}</h2>
+        <div className="flex items-baseline justify-between mb-4">
+          <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">{title || t('gallery.title')}</h2>
+          {showSeeAll && (
+            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+              <NavigationLink href={`/projects`} className="group flex items-center gap-2">
+                <span className="font-ibm-plex text-sg text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
+                  {t('projects.seeAll')}
+                </span>
+                <span className="font-heading text-xl text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
+                  →
+                </span>
+              </NavigationLink>
+            </motion.div>
+          )}
+        </div>
         
         {/* Container with space reservation */}
         <div 

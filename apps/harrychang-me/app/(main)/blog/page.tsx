@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import BlogPageClient from "@portfolio/ui/blog-page-client"
+import BlogSection from "@portfolio/ui/blog-section"
+import { getAllPostsMetadata } from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
-  return <BlogPageClient />
+  const blogPosts = getAllPostsMetadata('en')
+  return <BlogSection initialItems={blogPosts} />
 }
 
