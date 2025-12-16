@@ -25,7 +25,7 @@ In *Paris, Texas*, Travis walks out of the desert after four years of self-impos
 
 He doesn't stay. He *can't* stay. The film ends with Travis watching from a distance as Jane and Hunter embrace, then driving off into another kind of desert. He loved them enough to bring them together. He loved them enough to leave.
 
-In *Aftersun*, the distance is different but equally devastating. Sophie is 11, on vacation with her father Calum, and she doesn't understand what she's seeing. She can't. The camera catches glimpses of Calum staring into nothing, crying alone on a balcony, moving through the days with a heaviness she won't recognize until decades later. The film is pieced as memory, as home video footage revisited and re-examined by an adult Sophie who now understands what her 11-year-old self couldn't.
+In *Aftersun*, the distance is different but equally devastating. Sophie is 11, on vacation with her father Calum, and she doesn't understand what she's seeing. She can't. The camera catches glimpses of Calum staring into nothing, crying alone on a balcony, moving through the days with a heaviness she won't recognize until decades later. The film is constructed as memory, as home video footage revisited and re-examined by an adult Sophie who now understands what her 11-year-old self couldn't.
 
 ![framed:Calum balancing on the balcony railing](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Aftersun_44.webp)
 Calum was already leaving. He was already becoming a stranger. Sophie just didn't know it yet.
@@ -38,7 +38,7 @@ Both films weaponize barriers. In *Paris, Texas*, it's the one-way mirror in the
 
 In *Aftersun*, the barrier is time itself. Sophie watches her father through the mediation of a camcorder, through the distortion of memory, through the impossible gap between child-perception and adult understanding. She can see him now. But she's seeing a recording. She's seeing absence wearing her father's face.
 
-What strikes me is that both barriers enable a kind of intimacy that direct contact couldn't. Travis needed to be invisible to tell the truth. Sophie needed thirty years to see what was always there. Perheps, sometimes the clearest view comes through glass.
+What strikes me is that both barriers enable a kind of intimacy that direct contact couldn't. Travis needed to be invisible to tell the truth. Sophie needed thirty years to see what was always there. Perheps, the clearest view comes through glass.
 
 ### "Sometimes, to love someone, you gotta be a stranger"
 
@@ -84,23 +84,18 @@ To be seen is to be known. To be known is to be vulnerable. And for men carrying
 
 ### Why These Films Stay
 
-I think about my own tendencies to retreat. To process alone. To perform competence while struggling underneath. I'm not comparing myself to Travis or Calum. Their situations are drastically distinct. But there's something in their logic that feels uncomfortably familiar.
-
-The idea that loving someone means protecting them from yourself. The idea that your presence might be a burden. The idea that distance is a gift you give to people you care about.
-
-![framed:Travis standing alone in the parking lot](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Paris_Texas_62.webp)
-
-*Aftersun* and *Paris, Texas* both reject and validate this logic simultaneously. They show us the cost of absence. Sophie, grown, still searching for her father in footage that will never bestow her what she needs. Hunter, reunited with his mother but losing his father again. The children are shaped by the distances their fathers created.
+*Aftersun* and *Paris, Texas* both reject and validate this logic simultaneously. They show us the cost of absence. Sophie, grown, still searching for her father in footage that will never yield what she needs. Hunter, reunited with his mother but losing his father again. The children are shaped by the distances their fathers created.
 
 And yet, Travis's departure allows Jane and Hunter to heal without him. Calum's struggle, hidden as it was, gave Sophie a vacation full of genuine moments, real connection, memories worth revisiting. The fathers were drowning, but they kept their children above water as long as they could.
 
 Is that enough? Is love measured by what we give or what we spare others from?
 
-I don't have answers. These films don't offer them either. What they offer is the question, held up to the light, examined from angles I hadn't considered before.
+Maybe that's the wrong question. Maybe love was never a shape we got to choose. Travis chose the desert. Calum chose the balcony. Sophie chose the rewind button. And we, the audience, choose to press play again and again, knowing the ending won't change, still hoping that this time, the man on the other side of the glass will turn around.
 
-Sometimes, to love someone, you gotta be a stranger. Sometimes the stranger was there all along, hiding in plain sight, and you only recognize them when it's too late to reach across the glass.
+They won't.
+But we'll keep watching anyway.
 
-I'll keep thinking about this. I'll keep rewatching both films, looking for my father in the gaps, looking for myself in the children, looking for something I can't quite name.
+![framed:Travis standing alone in the parking lot](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Paris_Texas_62.webp)
 
 ---
 

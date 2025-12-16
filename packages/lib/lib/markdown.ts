@@ -979,15 +979,21 @@ function transformMedia() {
         const videoNode: HTML = {
           type: 'html',
           value: `
-            <div class="video-embed-container" data-type="googledrive" data-src="${embedUrl}" data-title="${alt}">
-              <div class="video-placeholder">
-                <div class="video-placeholder-content">
-                  <div class="video-placeholder-icon">▶</div>
-                  <p class="video-placeholder-text">Google Drive Video</p>
-                  <p class="video-placeholder-subtitle" style="text-align: left;">${alt}</p>
+            <figure class="my-6 w-full">
+              <div class="video-embed-container" data-type="googledrive" data-src="${embedUrl}">
+                <div class="video-placeholder">
+                  <div class="video-placeholder-content">
+                    <div class="video-placeholder-icon">▶</div>
+                    <p class="video-placeholder-text">Google Drive Video</p>
+                  </div>
                 </div>
               </div>
-            </div>
+              ${
+                alt
+                  ? `<figcaption class="-mt-4 text-sm text-left" style="color: hsl(var(--secondary)); font-family: var(--font-body);">${alt}</figcaption>`
+                  : ""
+              }
+            </figure>
           `
         }
         parent.children.splice(index, 1, videoNode)
@@ -998,11 +1004,17 @@ function transformMedia() {
         const videoNode: HTML = {
           type: 'html',
           value: `
-            <div class="video-embed-container" data-type="youtube" data-src="${embedUrl}" data-title="${alt}">
-              <div class="video-placeholder">
-                <div class="video-placeholder-title" style="text-align: left;">${alt}</div>
+            <figure class="my-6 w-full">
+              <div class="video-embed-container" data-type="youtube" data-src="${embedUrl}">
+                <div class="video-placeholder">
+                </div>
               </div>
-            </div>
+              ${
+                alt
+                  ? `<figcaption class="-mt-4 text-sm text-left" style="color: hsl(var(--secondary)); font-family: var(--font-body);">${alt}</figcaption>`
+                  : ""
+              }
+            </figure>
           `
         }
         parent.children.splice(index, 1, videoNode)
