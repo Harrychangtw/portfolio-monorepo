@@ -20,11 +20,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Determine if this is a Chinese version
   const isChineseVersion = slug.includes('_zh-tw') || slug.includes('_zh-TW')
   const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, '')
-  const canonicalUrl = `${baseUrl}/gallery/${baseSlug}`
-  
+  const canonicalUrl = `${baseUrl}/gallery/${slug}`
+
   // Get full URL for the image
-  const imageUrl = item.imageUrl.startsWith('http') 
-    ? item.imageUrl 
+  const imageUrl = item.imageUrl.startsWith('http')
+    ? item.imageUrl
     : `${baseUrl}${item.imageUrl.startsWith('/') ? '' : '/'}${item.imageUrl}`
 
   return {
@@ -43,8 +43,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'en': canonicalUrl,
-        'zh-TW': `${canonicalUrl}?lang=zh-TW`,
+        'en': `${baseUrl}/gallery/${baseSlug}`,
+        'zh-TW': `${baseUrl}/gallery/${baseSlug}_zh-tw`,
       },
     },
     openGraph: {
@@ -103,41 +103,70 @@ export default async function GalleryItemPage({ params }: { params: Promise<{ sl
 
   // Determine if this is a Chinese version
   const isChineseVersion = slug.includes('_zh-tw') || slug.includes('_zh-TW')
-  const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, '')
-  const canonicalUrl = `${baseUrl}/gallery/${baseSlug}`
+
   
+  const canonicalUrl = `${baseUrl}/gallery/${slug}`
+
   // Get full URL for the image
-  const imageUrl = item.imageUrl.startsWith('http') 
-    ? item.imageUrl 
+  const imageUrl = item.imageUrl.startsWith('http')
+    ? item.imageUrl
     : `${baseUrl}${item.imageUrl.startsWith('/') ? '' : '/'}${item.imageUrl}`
 
-  // Create structured data for better SEO
+  // Create structured data for better SEO with Entity Graph
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Photograph',
-    name: item.title,
-    description: item.description,
-    image: imageUrl,
-    datePublished: item.date,
-    author: {
-      '@type': 'Person',
-      name: 'Harry Chang',
-      alternateName: '張祺煒',
-      url: baseUrl,
-    },
-    creator: {
-      '@type': 'Person',
-      name: 'Harry Chang',
-    },
-    copyrightHolder: {
-      '@type': 'Person',
-      name: 'Harry Chang',
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': canonicalUrl,
-    },
-    inLanguage: isChineseVersion ? 'zh-TW' : 'en-US',
+    '@graph': [
+      // Photograph Schema
+      {
+        '@type': 'Photograph',
+        '@id': `${canonicalUrl}/#photograph`,
+        name: item.title,
+        description: item.description,
+        image: imageUrl,
+        datePublished: item.date,
+        author: {
+          '@id': `${baseUrl}/#person`
+        },
+        creator: {
+          '@id': `${baseUrl}/#person`
+        },
+        copyrightHolder: {
+          '@id': `${baseUrl}/#person`
+        },
+        isPartOf: {
+          '@id': `${baseUrl}/#website`
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalUrl,
+        },
+        inLanguage: isChineseVersion ? 'zh-TW' : 'en-US',
+      },
+      // BreadcrumbList Schema
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Home',
+            'item': baseUrl
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Gallery',
+            'item': `${baseUrl}/gallery`
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'name': item.title,
+            'item': canonicalUrl
+          }
+        ]
+      }
+    ]
   }
 
   return (

@@ -37,6 +37,7 @@ export const siteConfig = {
     spotify: 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3',
     discord: 'https://discord.com/users/836567989209661481',
     letterboxd: 'https://boxd.it/fSKuF',
+    scholar:"https://scholar.google.com/citations?hl=en&user=SDpion0AAAAJ",
   },
 
   // External Resources

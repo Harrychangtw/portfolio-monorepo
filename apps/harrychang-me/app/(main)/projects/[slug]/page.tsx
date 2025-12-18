@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
-import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft } from "lucide-react"
 import { getProjectData, getAllProjectSlugs, getNextProject } from "@portfolio/lib/lib/markdown"
 import ProjectPostClient from "@portfolio/ui/project-post-client"
 
@@ -10,7 +8,7 @@ const baseUrl = 'https://www.harrychang.me'
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   if (!slug) return { title: "Project Not Found" }
-  
+
   const project = await getProjectData(slug)
 
   if (!project) {
@@ -22,11 +20,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   // Determine if this is a Chinese version
   const isChineseVersion = slug.includes('_zh-tw') || slug.includes('_zh-TW')
   const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, '')
-  const canonicalUrl = `${baseUrl}/projects/${baseSlug}`
+
   
+  const canonicalUrl = `${baseUrl}/projects/${slug}`
+
   // Get full URL for the image
-  const imageUrl = project.imageUrl.startsWith('http') 
-    ? project.imageUrl 
+  const imageUrl = project.imageUrl.startsWith('http')
+    ? project.imageUrl
     : `${baseUrl}${project.imageUrl.startsWith('/') ? '' : '/'}${project.imageUrl}`
 
   return {
@@ -46,8 +46,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'en': canonicalUrl,
-        'zh-TW': `${canonicalUrl}?lang=zh-TW`,
+        'en': `${baseUrl}/projects/${baseSlug}`,
+        'zh-TW': `${baseUrl}/projects/${baseSlug}_zh-tw`,
       },
     },
     openGraph: {
@@ -110,45 +110,74 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   // Determine if this is a Chinese version
   const isChineseVersion = slug.includes('_zh-tw') || slug.includes('_zh-TW')
-  const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, '')
-  const canonicalUrl = `${baseUrl}/projects/${baseSlug}`
+
   
+  const canonicalUrl = `${baseUrl}/projects/${slug}`
+
   // Get full URL for the image
-  const imageUrl = project.imageUrl.startsWith('http') 
-    ? project.imageUrl 
+  const imageUrl = project.imageUrl.startsWith('http')
+    ? project.imageUrl
     : `${baseUrl}${project.imageUrl.startsWith('/') ? '' : '/'}${project.imageUrl}`
 
-  // Create structured data for better SEO
+  // Create structured data for better SEO with Entity Graph
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
-    headline: project.title,
-    description: project.description,
-    image: imageUrl,
-    datePublished: project.date,
-    author: {
-      '@type': 'Person',
-      name: 'Harry Chang',
-      alternateName: '張祺煒',
-      url: baseUrl,
-    },
-    publisher: {
-      '@type': 'Person',
-      name: 'Harry Chang',
-      url: baseUrl,
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': canonicalUrl,
-    },
-    keywords: [
-      project.category,
-      ...(project.subcategory ? [project.subcategory] : []),
-      ...(project.technologies || []),
-    ].join(', '),
-    inLanguage: isChineseVersion ? 'zh-TW' : 'en-US',
-    ...(project.role && { contributor: project.role }),
-    ...(project.website && { url: project.website }),
+    '@graph': [
+      // CreativeWork Schema
+      {
+        '@type': 'CreativeWork',
+        '@id': `${canonicalUrl}/#article`,
+        headline: project.title,
+        description: project.description,
+        image: imageUrl,
+        datePublished: project.date,
+        author: {
+          '@id': `${baseUrl}/#person`
+        },
+        publisher: {
+          '@id': `${baseUrl}/#person`
+        },
+        isPartOf: {
+          '@id': `${baseUrl}/#website`
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalUrl,
+        },
+        keywords: [
+          project.category,
+          ...(project.subcategory ? [project.subcategory] : []),
+          ...(project.technologies || []),
+        ].join(', '),
+        inLanguage: isChineseVersion ? 'zh-TW' : 'en-US',
+        ...(project.role && { contributor: project.role }),
+        ...(project.website && { url: project.website }),
+      },
+      // BreadcrumbList Schema
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Home',
+            'item': baseUrl
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Projects',
+            'item': `${baseUrl}/projects`
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'name': project.title,
+            'item': canonicalUrl
+          }
+        ]
+      }
+    ]
   }
 
   return (

@@ -8,13 +8,43 @@ import { getAllGalleryMetadata, getAllProjectsMetadata, getAllPostsMetadata} fro
 
 export const metadata: Metadata = {
   title: "Harry Chang 張祺煒 | Portfolio",
-  description: "Harry Chang (張祺煒) portfolio showcasing design and development work",
-  keywords: ["Harry Chang", "張祺煒", "portfolio", "design", "development", "photography", "Chingshin Academy"],
+  description: "Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Developer, researcher, and photographer based in Taiwan.",
+  keywords: [
+    "Harry Chang",
+    "張祺煒",
+    "Chi-Wei Chang",
+    "Harry Chang Portfolio",
+    "張祺煒作品集",
+    "portfolio",
+    "AI researcher",
+    "machine learning",
+    "LLM safety",
+    "software developer",
+    "photographer",
+    "Next.js portfolio",
+    "design",
+    "development",
+    "photography",
+    "Chingshin Academy",
+    "TMLR FORTRESS",
+    "Chingshin RAGi",
+    "academic research"
+  ],
+  authors: [{ name: "Harry Chang", url: "https://www.harrychang.me" }],
   alternates: {
     canonical: 'https://www.harrychang.me/',
+    languages: {
+      'en': 'https://www.harrychang.me/',
+      'zh-TW': 'https://www.harrychang.me/?lang=zh-TW',
+    },
   },
   openGraph: {
+    title: "Harry Chang 張祺煒 | Developer, Researcher & Photographer",
+    description: "Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling",
     url: 'https://www.harrychang.me/',
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['zh_TW'],
   },
 }
 
@@ -23,6 +53,7 @@ export default function Home() {
   const galleryItems = getAllGalleryMetadata('en')
   const projectsItems = getAllProjectsMetadata('en')
   const blogPosts = getAllPostsMetadata('en')
+
   return (
     <>
       <AboutSection />

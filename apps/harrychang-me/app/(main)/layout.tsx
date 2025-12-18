@@ -85,22 +85,56 @@ export default function MainLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // Website structured data for better SEO
+  // Enhanced structured data for better SEO with WebSite, Person, and Organization
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: siteConfig.author.name,
-    alternateName: siteConfig.author.alternateName,
-    url: siteConfig.url,
-    image: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
-    sameAs: [
-      siteConfig.social.github,
-      // siteConfig.social.twitterUrl,
-      // siteConfig.social.linkedinUrl,
-    ],
-    jobTitle: siteConfig.author.jobTitle,
-    description: siteConfig.author.description,
-    knowsAbout: siteConfig.skills,
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${siteConfig.url}/#website`,
+        url: siteConfig.url,
+        name: siteConfig.metadata.siteName,
+        description: siteConfig.metadata.description,
+        inLanguage: ['en-US', 'zh-TW'],
+        publisher: {
+          '@id': `${siteConfig.url}/#person`
+        },
+      },
+      {
+        '@type': 'Person',
+        '@id': `${siteConfig.url}/#person`,
+        name: siteConfig.author.name,
+        alternateName: siteConfig.author.alternateName,
+        url: siteConfig.url,
+        image: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
+        sameAs: [
+          siteConfig.social.scholar,
+          siteConfig.social.github,
+          siteConfig.social.linkedin,
+          siteConfig.social.instagram,
+          siteConfig.social.letterboxd,
+        ],
+        jobTitle: siteConfig.author.jobTitle,
+        description: siteConfig.author.description,
+        knowsAbout: siteConfig.skills,
+        knowsLanguage: [
+          {
+            '@type': 'Language',
+            name: 'English',
+            alternateName: 'en'
+          },
+          {
+            '@type': 'Language',
+            name: 'Chinese (Traditional)',
+            alternateName: 'zh-TW'
+          }
+        ],
+        alumniOf: {
+          '@type': 'EducationalOrganization',
+          name: 'Chingshin Academy'
+        }
+      }
+    ]
   }
 
   return (

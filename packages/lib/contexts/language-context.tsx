@@ -215,7 +215,8 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
         isLoading,
       }}
     >
-      {!hasLoadedOnce ? (
+      {children}
+      {!hasLoadedOnce && (
         <div 
           style={{ 
             position: 'fixed',
@@ -227,8 +228,6 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
             zIndex: 9999,
           }}
         />
-      ) : (
-        children
       )}
     </LanguageContext.Provider>
   )

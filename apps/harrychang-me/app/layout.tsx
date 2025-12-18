@@ -1,10 +1,8 @@
 import './globals.css'
 import type React from 'react'
-import type { Metadata } from 'next'
-import { Space_Grotesk, Press_Start_2P, IBM_Plex_Sans } from 'next/font/google'
-import type { PropsWithChildren } from 'react'
+import type { Metadata, Viewport } from 'next' // Added Viewport type
+import { Space_Grotesk, IBM_Plex_Sans } from 'next/font/google'
 import { siteConfig } from '@/config/site'
-
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -19,37 +17,95 @@ const ibmPlexSans = IBM_Plex_Sans({
   display: 'swap',
 })
 
+// Separate viewport export (Next.js 14+ best practice)
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.author.name,
-    template: `%s | ${siteConfig.author.name}`,
+    default: siteConfig.metadata.title.default,
+    template: siteConfig.metadata.title.template,
   },
-  description: `Portfolio of ${siteConfig.author.name}`,
+  description: siteConfig.metadata.description,
+  keywords: siteConfig.metadata.keywords,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
+  applicationName: siteConfig.metadata.siteName, // Added: Helps with PWA/saved-to-home-screen naming
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: siteConfig.verification.google,
+  },
+  alternates: {
+    canonical: siteConfig.url,
+    languages: {
+      'en': siteConfig.url,
+      'zh-TW': `${siteConfig.url}?lang=zh-TW`,
+    },
   },
   openGraph: {
-    title: siteConfig.author.name,
-    description: `Portfolio of ${siteConfig.author.name}`,
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['zh_TW'],
     url: siteConfig.url,
-    siteName: siteConfig.author.name,
+    siteName: siteConfig.metadata.siteName,
+    title: siteConfig.metadata.title.default,
+    description: siteConfig.metadata.description,
     images: [
       {
         url: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
         width: siteConfig.media.ogImage.width,
         height: siteConfig.media.ogImage.height,
+        alt: siteConfig.media.ogImage.alt,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.author.name,
-    description: `Portfolio of ${siteConfig.author.name}`,
+    title: siteConfig.metadata.title.default,
+    description: siteConfig.metadata.description,
+    creator: '@harrychangtw',
+    site: '@harrychangtw',
     images: [`${siteConfig.url}${siteConfig.media.ogImage.url}`],
+  },
+  // Added: Essential for favicons and mobile icons
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+        color: '#0A0A0A',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: siteConfig.metadata.siteName,
   },
 }
 
@@ -61,6 +117,8 @@ export default function RootLayout({
   return (
     <html 
       lang="en" 
+      // Added suppressHydrationWarning because you are using next-themes or dark mode class manipulation
+      suppressHydrationWarning
       className={`dark ${spaceGrotesk.variable} ${ibmPlexSans.variable}`}
       style={{
         '--font-body': 'var(--font-ibm-plex-sans)',

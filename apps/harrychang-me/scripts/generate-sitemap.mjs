@@ -138,8 +138,9 @@ function generateMainSitemap() {
     projectSlugs.add(slug)
 
     // Check if Chinese version exists
+    const chineseSlug = `${slug}_zh-tw`
     const hasChineseVersion = projects.some(
-      p => p.slug === `${slug}_zh-tw` || p.slug === `${slug}_zh-TW`
+      p => p.slug === chineseSlug || p.slug === `${slug}_zh-TW`
     )
 
     const alternates = {
@@ -147,7 +148,7 @@ function generateMainSitemap() {
     }
 
     if (hasChineseVersion) {
-      alternates['zh-TW'] = `${MAIN_DOMAIN}/projects/${slug}?lang=zh-TW`
+      alternates['zh-TW'] = `${MAIN_DOMAIN}/projects/${chineseSlug}`
     }
 
     urls.push({
@@ -157,6 +158,21 @@ function generateMainSitemap() {
       priority: 0.7,
       alternates,
     })
+
+    // Add Chinese version as separate indexable URL if it exists
+    if (hasChineseVersion) {
+      const chineseDate = projects.find(p => p.slug === chineseSlug || p.slug === `${slug}_zh-TW`)?.date
+      urls.push({
+        loc: `${MAIN_DOMAIN}/projects/${chineseSlug}`,
+        lastmod: formatDate(chineseDate || date),
+        changefreq: 'monthly',
+        priority: 0.6, // Slightly lower than English
+        alternates: {
+          'en': `${MAIN_DOMAIN}/projects/${slug}`,
+          'zh-TW': `${MAIN_DOMAIN}/projects/${chineseSlug}`
+        }
+      })
+    }
   })
 
   console.log(`  ✓ Added ${projectSlugs.size} project pages`)
@@ -174,8 +190,9 @@ function generateMainSitemap() {
     gallerySlugs.add(slug)
 
     // Check if Chinese version exists
+    const chineseSlug = `${slug}_zh-tw`
     const hasChineseVersion = gallery.some(
-      g => g.slug === `${slug}_zh-tw` || g.slug === `${slug}_zh-TW`
+      g => g.slug === chineseSlug || g.slug === `${slug}_zh-TW`
     )
 
     const alternates = {
@@ -183,7 +200,7 @@ function generateMainSitemap() {
     }
 
     if (hasChineseVersion) {
-      alternates['zh-TW'] = `${MAIN_DOMAIN}/gallery/${slug}?lang=zh-TW`
+      alternates['zh-TW'] = `${MAIN_DOMAIN}/gallery/${chineseSlug}`
     }
 
     urls.push({
@@ -193,6 +210,21 @@ function generateMainSitemap() {
       priority: 0.6,
       alternates,
     })
+
+    // Add Chinese version as separate indexable URL if it exists
+    if (hasChineseVersion) {
+      const chineseDate = gallery.find(g => g.slug === chineseSlug || g.slug === `${slug}_zh-TW`)?.date
+      urls.push({
+        loc: `${MAIN_DOMAIN}/gallery/${chineseSlug}`,
+        lastmod: formatDate(chineseDate || date),
+        changefreq: 'monthly',
+        priority: 0.5, // Slightly lower than English
+        alternates: {
+          'en': `${MAIN_DOMAIN}/gallery/${slug}`,
+          'zh-TW': `${MAIN_DOMAIN}/gallery/${chineseSlug}`
+        }
+      })
+    }
   })
 
   console.log(`  ✓ Added ${gallerySlugs.size} gallery pages`)
@@ -210,8 +242,9 @@ function generateMainSitemap() {
     postSlugs.add(slug)
 
     // Check if Chinese version exists
+    const chineseSlug = `${slug}_zh-tw`
     const hasChineseVersion = posts.some(
-      p => p.slug === `${slug}_zh-tw` || p.slug === `${slug}_zh-TW`
+      p => p.slug === chineseSlug || p.slug === `${slug}_zh-TW`
     )
 
     const alternates = {
@@ -219,7 +252,8 @@ function generateMainSitemap() {
     }
 
     if (hasChineseVersion) {
-      alternates['zh-TW'] = `${MAIN_DOMAIN}/blog/${slug}?lang=zh-TW`
+      
+      alternates['zh-TW'] = `${MAIN_DOMAIN}/blog/${chineseSlug}`
     }
 
     urls.push({
@@ -229,6 +263,21 @@ function generateMainSitemap() {
       priority: 0.7,
       alternates,
     })
+
+    // Add Chinese version as separate indexable URL if it exists
+    if (hasChineseVersion) {
+      const chineseDate = posts.find(p => p.slug === chineseSlug || p.slug === `${slug}_zh-TW`)?.date
+      urls.push({
+        loc: `${MAIN_DOMAIN}/blog/${chineseSlug}`,
+        lastmod: formatDate(chineseDate || date),
+        changefreq: 'monthly',
+        priority: 0.6, // Slightly lower than English
+        alternates: {
+          'en': `${MAIN_DOMAIN}/blog/${slug}`,
+          'zh-TW': `${MAIN_DOMAIN}/blog/${chineseSlug}`
+        }
+      })
+    }
   })
 
   console.log(`  ✓ Added ${postSlugs.size} blog posts`)

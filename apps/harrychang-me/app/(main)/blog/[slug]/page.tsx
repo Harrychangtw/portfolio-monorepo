@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const isChineseVersion = slug.includes('_zh-tw') || slug.includes('_zh-TW')
   const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, '')
-  const canonicalUrl = `${baseUrl}/blog/${baseSlug}`
+  const canonicalUrl = `${baseUrl}/blog/${slug}`
 
   const imageUrl = post.imageUrl.startsWith('http')
     ? post.imageUrl
@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'en': canonicalUrl,
-        'zh-TW': `${canonicalUrl}?lang=zh-TW`,
+        'en': `${baseUrl}/blog/${baseSlug}`,
+        'zh-TW': `${baseUrl}/blog/${baseSlug}_zh-tw`,
       },
     },
     openGraph: {
@@ -87,37 +87,67 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   const isChineseVersion = slug.includes('_zh-tw') || slug.includes('_zh-TW')
-  const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, '')
-  const canonicalUrl = `${baseUrl}/blog/${baseSlug}`
+
+
+  const canonicalUrl = `${baseUrl}/blog/${slug}`
 
   const imageUrl = post.imageUrl.startsWith('http')
     ? post.imageUrl
     : `${baseUrl}${post.imageUrl.startsWith('/') ? '' : '/'}${post.imageUrl}`
 
+  // Create structured data for better SEO with Entity Graph
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: post.title,
-    description: post.description,
-    image: imageUrl,
-    datePublished: post.date,
-    author: {
-      '@type': 'Person',
-      name: post.author || 'Harry Chang',
-      alternateName: '張祺煒',
-      url: baseUrl,
-    },
-    publisher: {
-      '@type': 'Person',
-      name: 'Harry Chang',
-      url: baseUrl,
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': canonicalUrl,
-    },
-    keywords: (post.tags || []).join(', '),
-    inLanguage: isChineseVersion ? 'zh-TW' : 'en-US',
+    '@graph': [
+      // BlogPosting Schema
+      {
+        '@type': 'BlogPosting',
+        '@id': `${canonicalUrl}/#article`,
+        headline: post.title,
+        description: post.description,
+        image: imageUrl,
+        datePublished: post.date,
+        author: {
+          '@id': `${baseUrl}/#person`
+        },
+        publisher: {
+          '@id': `${baseUrl}/#person`
+        },
+        isPartOf: {
+          '@id': `${baseUrl}/#website`
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalUrl,
+        },
+        keywords: (post.tags || []).join(', '),
+        inLanguage: isChineseVersion ? 'zh-TW' : 'en-US',
+      },
+      // BreadcrumbList Schema
+      {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Home',
+            'item': baseUrl
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Blog',
+            'item': `${baseUrl}/blog`
+          },
+          {
+            '@type': 'ListItem',
+            'position': 3,
+            'name': post.title,
+            'item': canonicalUrl
+          }
+        ]
+      }
+    ]
   }
 
   return (
