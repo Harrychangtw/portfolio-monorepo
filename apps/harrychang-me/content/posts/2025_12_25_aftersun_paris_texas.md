@@ -2,7 +2,7 @@
 title: "Being a Stranger, in the Name of Love: On Aftersun and Paris, Texas"
 description: "Two films about parenthood, distance, and the unbearable weight of being seen. A synthesis."
 imageUrl: "images/optimized/blogs/2025_12_25_aftersun_paris_texas/titlecard.webp"
-date: "2025-12-27"
+date: "2025-12-25"
 author: "Harry Chang"
 tags: ["Film", "Reflection"]
 pinned: -1

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import React, { createContext, useContext, useState, useEffect, Suspense} from 'react'
 
 type Language = 'en' | 'zh-TW'
 
@@ -215,7 +215,10 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
         isLoading,
       }}
     >
-      {!hasLoadedOnce ? (
+      <Suspense fallback={null}>
+        {children}
+      </Suspense>
+      {!hasLoadedOnce && (
         <div 
           style={{ 
             position: 'fixed',
@@ -227,8 +230,6 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
             zIndex: 9999,
           }}
         />
-      ) : (
-        children
       )}
     </LanguageContext.Provider>
   )

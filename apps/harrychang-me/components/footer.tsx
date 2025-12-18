@@ -43,8 +43,8 @@ const siteLinks = [
   { id: 'updates', name: 'Updates', href: '/#updates' },
   { id: 'projects', name: 'Projects', href: '/#projects' },
   { id: 'gallery', name: 'Gallery', href: '/#gallery' },
-  { id: 'manifesto', name: 'Manifesto', href: '/manifesto' },
   { id: 'blog', name: 'Blog', href: '/blog' },
+  { id: 'manifesto', name: 'Manifesto', href: '/manifesto' },
   { id: 'issues', name: 'Issues', href: '/issues' },
 ];
 
