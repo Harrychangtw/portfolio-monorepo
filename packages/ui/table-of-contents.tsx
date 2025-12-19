@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useCallback, useRef } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import { cn } from '@portfolio/lib/lib/utils'
 import { scrollToSection } from '@portfolio/lib/lib/scrolling'
 
@@ -25,6 +25,8 @@ function slugify(text: string): string {
 
 export function TableOfContents({ contentHtml, className }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>('')
+  // Initialize as empty array to match Server-Side Rendering (SSR) state
+  const [headings, setHeadings] = useState<TocItem[]>([])
   const activeIdRef = useRef(activeId)
 
   // Update ref when state changes to use inside the effect without re-binding
@@ -33,9 +35,13 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
   }, [activeId])
 
   // Parse headings from HTML content
-  const headings = useMemo(() => {
-    if (typeof window === 'undefined') return []
-    
+  // Moved to useEffect to strictly run on client-side, avoiding hydration mismatch
+  useEffect(() => {
+    if (!contentHtml) {
+      setHeadings([])
+      return
+    }
+
     const parser = new DOMParser()
     const doc = parser.parseFromString(contentHtml, 'text/html')
     const elements = doc.querySelectorAll('h2, h3, h4')
@@ -44,13 +50,14 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
     elements.forEach((el) => {
       const text = el.textContent || ''
       const level = parseInt(el.tagName.charAt(1))
+      // Prefer existing IDs, fallback to generated slugs
       const id = el.id || slugify(text)
       if (text.trim()) {
         items.push({ id, text, level })
       }
     })
     
-    return items
+    setHeadings(items)
   }, [contentHtml])
 
   // Scroll spy effect
@@ -66,8 +73,7 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
         requestRunning = null
         
         // Define trigger zone: 
-        // 120px provides a buffer slightly below the sticky sidebar top (top-24 = 96px)
-        // ensuring the user has actually started reading the section.
+        // 120px provides a buffer slightly below the sticky sidebar top
         const TRIGGER_OFFSET = 120
         
         const windowHeight = window.innerHeight
@@ -84,7 +90,6 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
         }
 
         // Find the active heading using viewport-relative coordinates
-        // Strategy: The active heading is the *last* one that is above the trigger line.
         let newActiveId = headings[0].id
 
         for (let i = 0; i < headings.length; i++) {
@@ -93,15 +98,14 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
           
           if (!element) continue
 
-          // getBoundingClientRect is precise regardless of layout context (sticky, grid, relative)
+          // getBoundingClientRect is precise regardless of layout context
           const rect = element.getBoundingClientRect()
           
           // If the heading top is above or at the trigger offset, it's a candidate
           if (rect.top <= TRIGGER_OFFSET) {
             newActiveId = id
           } else {
-            // Once we find a heading that is below the trigger offset, we stop.
-            // The previous candidate (newActiveId) is the correct active section.
+            // Once we find a heading below the trigger offset, the previous one is active
             break
           }
         }
@@ -116,7 +120,7 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
     handleScroll()
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    window.addEventListener('resize', handleScroll, { passive: true }) // Handle layout shifts on resize
+    window.addEventListener('resize', handleScroll, { passive: true })
     
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -127,23 +131,19 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
     }
   }, [headings])
 
-  // Handle click navigation - use shared scrolling utility
+  // Handle click navigation
   const handleClick = useCallback((id: string) => {
     scrollToSection(id)
   }, [])
 
+  // Render null if no headings (matches initial SSR state)
   if (headings.length === 0) return null
 
-  // Hidden on mobile, shown on desktop only
   return (
     <nav className={cn("table-of-contents hidden md:block", className)}>
-      {/* ToC list - tree structure implies it's a ToC, no label needed */}
       <ul className="space-y-1">
         {headings.map(({ id, text, level }) => (
-          <li
-            key={id}
-            className="relative"
-          >
+          <li key={id} className="relative">
             <button
               onClick={() => handleClick(id)}
               className={cn(
@@ -153,7 +153,7 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
                 level === 2 && "pl-0",
                 level === 3 && "pl-3",
                 level === 4 && "pl-6",
-                // Active state - just color change, no dot
+                // Active state
                 activeId === id
                   ? "text-primary"
                   : "text-secondary"

@@ -19,6 +19,7 @@ import {
   Lightbulb,
   Wrench,
   ArrowLeft,
+  PenTool,
 } from "lucide-react"
 
 interface LinkItem {
@@ -63,16 +64,14 @@ export default function LinksPageClient() {
       external: false,
     },
     {
+      icon: <PenTool className="w-5 h-5" />,
+      label: t("resources.blog"),
+      href: "/blog",
+    },
+    {
       icon: <Mail className="w-5 h-5" />,
       label: t("social.gmail"),
       href: "/email",
-      external: true,
-    },
-    
-    {
-      icon: <MessageCircle className="w-5 h-5" />,
-      label: t("social.discord"),
-      href: "/discord",
       external: true,
     },
     {
@@ -94,15 +93,15 @@ export default function LinksPageClient() {
       external: true,
     },
     {
-      icon: <Music className="w-5 h-5" />,
-      label: t("resources.music"),
-      href: "/spotify",
+      icon: <MessageCircle className="w-5 h-5" />,
+      label: t("social.discord"),
+      href: "/discord",
       external: true,
     },
     {
-      icon: <Film className="w-5 h-5" />,
-      label: t("social.letterboxd"),
-      href: "/letterboxd",
+      icon: <Music className="w-5 h-5" />,
+      label: t("resources.music"),
+      href: "/spotify",
       external: true,
     },
     {
@@ -120,6 +119,12 @@ export default function LinksPageClient() {
       icon: <BookOpen className="w-5 h-5" />,
       label: t("resources.reading"),
       href: "/paper-reading",
+    },
+    {
+      icon: <Film className="w-5 h-5" />,
+      label: t("social.letterboxd"),
+      href: "/letterboxd",
+      external: true,
     },
     {
       icon: <Wrench className="w-5 h-5" />,
