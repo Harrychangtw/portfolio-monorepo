@@ -1,8 +1,8 @@
 ---
 title: "Being a Stranger, in the Name of Love: On Aftersun and Paris, Texas"
 description: "Two films about parenthood, distance, and the unbearable weight of being seen. A synthesis."
-imageUrl: "images/optimized/blogs/2025_12_25_aftersun_paris_texas/titlecard.webp"
-date: "2025-12-25"
+imageUrl: "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
+date: "2025-12-22"
 author: "Harry Chang"
 tags: ["Film", "Reflection"]
 pinned: -1
@@ -21,20 +21,20 @@ Both films ask a question I've been sitting with for a while now: what does it m
 
 In *Paris, Texas*, Travis walks out of the desert after four years of self-imposed exile. He's been running from the wreckage of his marriage, from his son Hunter, from the violence of his own love. When he finally reunites with Jane in that peep show booth, speaking to her through a one-way mirror, he does the only thing he knows how to do: he tells her the truth, then disappears again.
 
-![framed:Walt leaning on the car under green neon light](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Paris_Texas_08.webp)
+![framed:Walt leaning on the car under green neon light](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Paris_Texas_08.webp)
 
 He doesn't stay. He *can't* stay. The film ends with Travis watching from a distance as Jane and Hunter embrace, then driving off into another kind of desert. He loved them enough to bring them together. He loved them enough to leave.
 
 In *Aftersun*, the distance is different but equally devastating. Sophie is 11, on vacation with her father Calum, and she doesn't understand what she's seeing. She can't. The camera catches glimpses of Calum staring into nothing, crying alone on a balcony, moving through the days with a heaviness she won't recognize until decades later. The film is constructed as memory, as home video footage revisited and re-examined by an adult Sophie who now understands what her 11-year-old self couldn't.
 
-![framed:Calum balancing on the balcony railing](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Aftersun_44.webp)
+![framed:Calum balancing on the balcony railing](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Aftersun_44.webp)
 Calum was already leaving. He was already becoming a stranger. Sophie just didn't know it yet.
 
 ### The Mirror and the Camcorder
 
 Both films weaponize barriers. In *Paris, Texas*, it's the one-way mirror in the peep show booth. Travis can see Jane. Jane cannot see Travis. He speaks into a phone, narrating their shared history, and she slowly realizes who's on the other end. The glass makes confession possible. Without it, he wouldn't have been able to speak at all.
 
-![framed:Travis reflected in the peep show booth mirror](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Paris_Texas_58.webp)
+![framed:Travis reflected in the peep show booth mirror](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Paris_Texas_58.webp)
 
 In *Aftersun*, the barrier is time itself. Sophie watches her father through the mediation of a camcorder, through the distortion of memory, through the impossible gap between child-perception and adult understanding. She can see him now. But she's seeing a recording. She's seeing absence wearing her father's face.
 
@@ -54,7 +54,7 @@ The difference is intention. Travis chooses to leave. Calum, perhaps, couldn't c
 
 Hunter remembers Travis from photographs. Sophie remembers Calum from MiniDV tapes. Both children grow up reconstructing fathers from fragments, trying to understand men who couldn't explain themselves.
 
-![framed:The polaroid photograph of Calum and Sophie](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Aftersun_61.webp)
+![framed:The polaroid photograph of Calum and Sophie](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Aftersun_61.webp)
 
 In one pivotal scene of *Aftersun*, Sophie asks Calum what he thought he'd be doing at her age. His answer reveals the void where his future should be:
 
@@ -76,7 +76,7 @@ Travis hides behind a one-way mirror. He narrates his failures in third person, 
 
 Calum hides behind the performance of being a good dad. He plans activities, he dances with Sophie at the resort, he pretends everything is fine. But the cracks show. 
 
-![framed:Sophie and Calum swimming in the ocean](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Aftersun_12.webp)
+![framed:Sophie and Calum swimming in the ocean](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Aftersun_12.webp)
 
 The camcorder catches what his face tries to conceal. And when Sophie, as an adult, watches those recordings, she sees a man drowning in the very sea she once swam in with joy without even noticing.
 
@@ -95,7 +95,7 @@ Maybe that's the wrong question. Maybe love was never a shape we got to choose. 
 They won't.
 But we'll keep watching anyway.
 
-![framed:Travis standing alone in the parking lot](images/optimized/blogs/2025_12_25_aftersun_paris_texas/Paris_Texas_62.webp)
+![framed:Travis standing alone in the parking lot](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Paris_Texas_62.webp)
 
 ---
 
