@@ -461,8 +461,8 @@ async function processBlogImages() {
 // Run the optimization
 async function main() {
   console.log('Starting image optimization...');
-  // await processGalleryImages();
-  // await processProjectImages();
+  await processGalleryImages();
+  await processProjectImages();
   await processBlogImages();
   console.log('Image optimization complete!');
 }

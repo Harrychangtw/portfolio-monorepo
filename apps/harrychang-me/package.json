@@ -6,7 +6,7 @@
     "dev": "next dev",
     "dev:lab": "NEXT_PUBLIC_IS_STUDIO=true next dev -p 3001",
     "postinstall": "prisma generate",
-    "prebuild": "prisma migrate deploy && node scripts/build-papers.mjs && node scripts/generate-sitemap.mjs",
+    "prebuild": "prisma migrate deploy && node scripts/build-papers.mjs && node scripts/generate-sitemap.mjs && node scripts/fetch-fonts.mjs",
     "build": "next build",
     "build:analyze": "ANALYZE=true npm run build",
     "start": "next start",

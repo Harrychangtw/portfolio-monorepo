@@ -350,14 +350,14 @@ export default function Header() {
             {isLab ? (
               <a
                 href={getHomeUrl()}
-                className="font-heading text-xl font-bold transition-colors hover:text-[hsl(var(--accent))] outline-none"
+                className="font-heading text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none"
               >
                 Harry Chang
               </a>
             ) : (
               <NavigationLink
                 href="/"
-                className="font-heading text-xl font-bold transition-colors hover:text-[hsl(var(--accent))] outline-none"
+                className="font-heading text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none"
                 onClick={(e) => { if(isHomePage) scrollToSection('about', e); }}
               >
                 Harry Chang

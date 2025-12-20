@@ -9,7 +9,7 @@ export interface FontFamily {
   classification: string
   weights: number[]
   usage: 'primary' | 'display' | 'accent'
-  description: string
+  description?: string
   yearDesigned?: string
   designer?: string
 }
@@ -34,20 +34,19 @@ export const fontFamilies: FontFamily[] = [
     classification: 'Neo-Grotesque Sans-Serif',
     weights: [100, 200, 300, 400, 500, 600, 700],
     usage: 'primary',
-    description: 'A versatile sans-serif typeface designed by IBM to reflect their brand spirit, philosophy and principles. With excellent readability and a modern, approachable character, IBM Plex Sans serves as the primary body text throughout the portfolio.',
     yearDesigned: '2017',
     designer: 'Mike Abbink, Bold Monday',
   },
   {
-    name: 'Space Grotesk',
-    variable: '--font-space-grotesk',
-    classification: 'Display Grotesque',
-    weights: [300, 400, 500, 600, 700],
+    name: 'Artific',
+    variable: '--font-artific',
+    classification: 'Modern Geometric Sans-Serif',
+    weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     usage: 'display',
-    description: 'A proportional variant of Space Mono designed for display purposes. With its geometric forms and distinctive character, Space Grotesk is used for all headings, navigation elements, and prominent UI text, creating a strong visual hierarchy and modern aesthetic.',
-    yearDesigned: '2018',
-    designer: 'Florian Karsten',
-  },
+    yearDesigned: '2024',
+    designer: 'Teguh Arief',
+  }
+
 ]
 
 export const fontSizes: FontSize[] = [
