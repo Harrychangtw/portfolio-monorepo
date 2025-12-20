@@ -29,15 +29,15 @@ export const viewport: Viewport = {
 }
 const artific = localFont({
   src: [
-    { path: '../public/fonts/Artific/Artific-Thin.woff2', weight: '100', style: 'normal' },
-    { path: '../public/fonts/Artific/Artific-SuperLight.woff2', weight: '200', style: 'normal' },
-    { path: '../public/fonts/Artific/Artific-Light.woff2', weight: '300', style: 'normal' },
-    { path: '../public/fonts/Artific/Artific-Regular.woff2', weight: '400', style: 'normal' },
-    { path: '../public/fonts/Artific/Artific-Medium.woff2', weight: '500', style: 'normal' },
-    { path: '../public/fonts/Artific/Artific-SemiBold.woff2', weight: '600', style: 'normal' },
-    { path: '../public/fonts/Artific/Artific-Bold.woff2', weight: '700', style: 'normal' },
-    { path: '../public/fonts/Artific/Artific-SuperBold.woff2', weight: '800', style: 'normal' },
-    { path: '../public/fonts/Artific/Artific-Black.woff2', weight: '900', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-Thin.woff2', weight: '100', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-SuperLight.woff2', weight: '200', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-Light.woff2', weight: '300', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-Medium.woff2', weight: '500', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-SemiBold.woff2', weight: '600', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-Bold.woff2', weight: '700', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-SuperBold.woff2', weight: '800', style: 'normal' },
+    { path: '../public/fonts/artific-fonts/Artific-Black.woff2', weight: '900', style: 'normal' },
   ],
   variable: '--font-artific', // New variable name
   display: 'swap',
@@ -138,11 +138,7 @@ export default function RootLayout({
       className={`dark ${artific.variable} ${ibmPlexSans.variable}`}
       style={{
         '--font-body': 'var(--font-ibm-plex-sans)',
-        // 🔄 REPLACEMENT MAGIC:
-        // Map both the generic heading var AND the old space-grotesk var to Artific.
-        // This ensures all existing UI components switch over instantly.
         '--font-heading': 'var(--font-artific)',
-        '--font-space-grotesk': 'var(--font-artific)',
       } as React.CSSProperties}
     >
       <body className={`bg-background text-primary antialiased min-h-screen flex flex-col`}>
