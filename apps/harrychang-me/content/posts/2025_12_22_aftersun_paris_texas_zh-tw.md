@@ -6,7 +6,6 @@ date: "2025-12-22"
 author: "Harry Chang"
 tags: ["Film", "Reflection"]
 pinned: -1
-locked: true
 ---
 
 ## 那些不曾離去的電影
