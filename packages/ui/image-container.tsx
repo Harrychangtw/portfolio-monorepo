@@ -105,8 +105,8 @@ export function ImageContainer({
       setThumbLoaded(true)
     }
 
-    img.src = thumbnailSrc || fullSrc
-  }, [fullSrc, thumbnailSrc, providedAspectRatio, isVisible, priority, hasLoadedOnce])
+    img.src = fullSrc
+  }, [fullSrc, providedAspectRatio, isVisible, priority, hasLoadedOnce])
 
   // Calculate aspect ratio from dimensions
   const rawAspectRatio = dimensions.width / dimensions.height

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useRef, useTransition } from "react"
+import { useEffect, useState, useRef, useCallback } from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { motion, AnimatePresence, LayoutGroup } from "motion/react"
@@ -33,6 +33,46 @@ const NAV_ITEMS = [
   { id: 'blog', path: '/#blog' }
 ];
 
+const LOADING_STATUSES = [
+  "Spelunking",
+  "Brewing ideas",
+  "Computing",
+  "Pondering",
+  "Connecting",
+  "Decoding",
+  "Contemplating",
+  "Wrangling",
+  "Assembling",
+  "Discombobulating",
+  "Processing",
+  "Ideating",
+  "Syncing",
+] as const
+
+// Extended wait messages (>5s)
+const EXTENDED_STATUSES = [
+  "Still here",
+  "Almost there",
+  "Bear with me",
+  "Refining",
+  "Polishing",
+  "Persisting",
+  "Percolating",
+  "Crystallizing",
+  "Struggling",
+  "Fine-tuning",
+  "Hang tight",
+  "Nearly done",
+  "Finalizing",
+  "Worth the wait",
+  "Just a sec",
+] as const
+
+// Timing configuration
+const STATUS_CYCLE_INTERVAL = 1000; // ms between status changes
+const EXTENDED_WAIT_THRESHOLD = 3000; // ms before showing extended messages
+const EXTENDED_CYCLE_INTERVAL = 2000; // slower cycling for extended wait
+
 export default function Header() {
   const pathname = usePathname()
   const router = useRouter()
@@ -43,6 +83,10 @@ export default function Header() {
   const [isLab, setIsLab] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const isHomePage = pathname === "/"
+  const [loadingStatus, setLoadingStatus] = useState(LOADING_STATUSES[0])
+  const [dots, setDots] = useState(".")
+  const [isExtendedWait, setIsExtendedWait] = useState(false)
+  const navigationStartRef = useRef<number | null>(null)
   
   // DRY: Identify if we are on a special page
   const currentSpecialPage = SPECIAL_PAGES.find(page => pathname?.startsWith(page.prefix));
@@ -52,8 +96,67 @@ export default function Header() {
   const isBlogDetailPage = pathname?.match(/^\/blog\/[^/]+$/);
   const isMobile = useIsMobile()
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
+  // Cycle through loading statuses
+  useEffect(() => {
+    if (!isNavigating) {
+      // Reset state when navigation ends
+      navigationStartRef.current = null
+      setIsExtendedWait(false)
+      // Don't reset status string here to allow for smooth exit animation
+      return
+    }
+
+    // Track navigation start time
+    if (!navigationStartRef.current) {
+      navigationStartRef.current = Date.now()
+    }
+
+    const statusMap = isExtendedWait ? EXTENDED_STATUSES : LOADING_STATUSES
+    const statuses = statusMap
+    
+    // Pick a random start index for nuance
+    let statusIndex = Math.floor(Math.random() * statuses.length)
+    setLoadingStatus(statuses[statusIndex])
+
+    const interval = isExtendedWait ? EXTENDED_CYCLE_INTERVAL : STATUS_CYCLE_INTERVAL
+
+    const cycleStatus = () => {
+      statusIndex = (statusIndex + 1) % statuses.length
+      setLoadingStatus(statuses[statusIndex])
+    }
+
+    const statusInterval = setInterval(cycleStatus, interval)
+
+    // Check for extended wait
+    const extendedCheckInterval = setInterval(() => {
+      if (
+        navigationStartRef.current &&
+        Date.now() - navigationStartRef.current > EXTENDED_WAIT_THRESHOLD &&
+        !isExtendedWait
+      ) {
+        setIsExtendedWait(true)
+      }
+    }, 500)
+
+    return () => {
+      clearInterval(statusInterval)
+      clearInterval(extendedCheckInterval)
+    }
+  }, [isNavigating, isExtendedWait, language])
+
+  // Cycle dots while navigating
+  useEffect(() => {
+    if (!isNavigating) {
+      setDots("");
+      return;
+    }
+    const interval = setInterval(() => {
+      setDots(prev => prev.length >= 3 ? "" : prev + ".");
+    }, 400);
+    return () => clearInterval(interval);
+  }, [isNavigating]);
   // Detect if we're on the lab subdomain
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -311,10 +414,32 @@ export default function Header() {
       layoutRoot
       className="fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background"
     >
+      <style jsx global>{`
+        .loading-gradient {
+          color: transparent;
+          background-clip: text;
+          -webkit-background-clip: text;
+          background-image: linear-gradient(60deg, #eaff4b, #eaff4b, #3affa3, #5cd2ef, #3affa3, #eaff4b, #eaff4b);
+          background-size: 200% 100%;
+          animation: gradient-loop 2s linear infinite;
+        }
+
+        .loading-bar {
+          background-image: linear-gradient(60deg, #eaff4b, #eaff4b, #3affa3, #5cd2ef, #3affa3, #eaff4b, #eaff4b);
+          background-size: 200% 100%;
+          animation: gradient-loop 2s linear infinite;
+        }
+
+        @keyframes gradient-loop {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 200% 50%; }
+        }
+      `}</style>
+
       {/* Navigation loading indicator */}
       {isNavigating && (
         <motion.div
-          className="absolute top-0 left-0 h-[1px] bg-[hsl(var(--accent))]"
+          className="absolute top-0 left-0 h-[1px] loading-bar"
           initial={{ x: "-100%", width: "18%" }}
           animate={{ 
             x: ["-100%", "600%"],
@@ -345,39 +470,60 @@ export default function Header() {
       )}
 
       <div className="container flex justify-between items-center">
-        <div className="flex items-center">
+        <div className={`flex items-center min-w-0 flex-1 ${showStaggeredMenu ? 'mr-12' : 'mr-4'}`}>
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            {isLab ? (
+{isLab ? (
               <a
                 href={getHomeUrl()}
-                className="font-heading text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none"
+                className="font-heading text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none whitespace-nowrap"
               >
                 Harry Chang
               </a>
             ) : (
               <NavigationLink
                 href="/"
-                className="font-heading text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none"
+                className="font-heading text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none whitespace-nowrap"
                 onClick={(e) => { if(isHomePage) scrollToSection('about', e); }}
               >
                 Harry Chang
               </NavigationLink>
-            )}
-          </motion.div>
-          
-          {/* DRY: Consolidated Title Rendering */}
+            )}         
+            </motion.div>
+
+          {/* Loading Status or Section Title */}
           <AnimatePresence mode="wait">
-            {activeTitleKey && (
+            {isNavigating ? (
               <motion.div 
-                className="flex items-center"
+                className="flex items-center min-w-0"
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
+              >
+                <span className="text-secondary mx-1 text-xl">｜</span>
+                <motion.span 
+                  className="font-heading text-xl text-secondary truncate loading-gradient"
+                  key={loadingStatus}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -5 }}
+                  transition={{ duration: 0.12, ease: "easeOut" }}
+                >
+                  {loadingStatus}
+                  {dots}
+                </motion.span>
+              </motion.div>
+            ) : activeTitleKey ? (
+              <motion.div 
+                className="flex items-center min-w-0"
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
                 transition={{ duration: 0.15, ease: "easeOut" }}
               >
-                <span className="text-secondary mx-1 text-xl text-secondary">｜</span>
+                <span className="text-secondary mx-1 text-xl">｜</span>
                 <motion.span 
-                  className="font-heading text-xl text-secondary"
+                  className="font-heading text-xl text-secondary truncate"
                   key={activeTitleKey}
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -391,7 +537,7 @@ export default function Header() {
                   }
                 </motion.span>
               </motion.div>
-            )}
+            ) : null}
           </AnimatePresence>
         </div>
 
