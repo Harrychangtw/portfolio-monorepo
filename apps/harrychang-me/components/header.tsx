@@ -83,7 +83,7 @@ export default function Header() {
   const [isLab, setIsLab] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const isHomePage = pathname === "/"
-  const [loadingStatus, setLoadingStatus] = useState(LOADING_STATUSES[0])
+  const [loadingStatus, setLoadingStatus] = useState<typeof LOADING_STATUSES[number] | typeof EXTENDED_STATUSES[number]>(LOADING_STATUSES[0])
   const [dots, setDots] = useState(".")
   const [isExtendedWait, setIsExtendedWait] = useState(false)
   const navigationStartRef = useRef<number | null>(null)
