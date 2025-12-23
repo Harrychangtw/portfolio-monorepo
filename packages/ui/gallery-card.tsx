@@ -1,12 +1,12 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
-import Image from "next/image"
 import { motion } from "framer-motion"
 import { LockIcon } from "lucide-react"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 import { cva, type VariantProps } from "class-variance-authority"
 import NavigationLink from "@portfolio/ui/navigation-link"
+import { ImageContainer } from "@portfolio/ui/image-container"
 
 const cardVariants = cva("", {
   variants: {
@@ -55,87 +55,50 @@ export default function GalleryCard({
     elementRef: containerRef as React.RefObject<Element>,
     rootMargin: '50px'
   })
-  const [imageLoaded, setImageLoaded] = useState(false)
-  const [thumbLoaded, setThumbLoaded] = useState(false)
-  const [fullLoaded, setFullLoaded] = useState(false)
 
-  // If we have width/height, calculate aspect ratio immediately to prevent CLS
+  // 1. Aspect Ratio Logic: Force 4:5 (0.8) or 5:4 (1.25)
+  // If metadata is present, we calculate immediately.
+  // If not, we must load the image to determine which "bin" it falls into.
+  
+  const [fallbackAspectRatio, setFallbackAspectRatio] = useState<number | null>(null)
+  
   const haveDims = !!width && !!height
-  const constrained = (() => {
-    if (!haveDims) return { w: 1, h: 1, isPortrait: false }
-    const raw = width! / height!
+  
+  // Logic to clamp the raw ratio to our gallery standards
+  const getConstrainedRatio = (w: number, h: number) => {
+    const raw = w / h
     const maxLandscapeRatio = 1.25 // 5:4
     const minPortraitRatio = 0.8   // 4:5
-    let ratio = raw
-    if (raw < minPortraitRatio) ratio = minPortraitRatio
-    else if (raw > maxLandscapeRatio) ratio = maxLandscapeRatio
-    return { w: ratio, h: 1, isPortrait: ratio < 1 }
-  })()
-
-  // Fallback dynamic measurement for cases without metadata dimensions
-  const [originalAspect, setOriginalAspect] = useState<number>(1)
-  const [isPortrait, setIsPortrait] = useState(false)
-  const [aspectRatioPadding, setAspectRatioPadding] = useState<string>('100%')
-
-  // Get the full resolution image URL and thumbnail
-  const fullImageUrl = imageUrl?.replace('-thumb.webp', '.webp')
-  const thumbnailSrc = imageUrl
-
-  // Prefetch full resolution image on hover
-  const prefetchFullImage = () => {
-    if (typeof window !== 'undefined' && fullImageUrl) {
-      const imgElement = new window.Image()
-      imgElement.src = fullImageUrl
-    }
+    
+    if (raw < minPortraitRatio) return minPortraitRatio
+    if (raw > maxLandscapeRatio) return maxLandscapeRatio
+    return raw
   }
 
-  // Detect original image dimensions when possible (only as fallback if no metadata)
+  // Determine the target aspect ratio for the container
+  let targetAspectRatio = 1 // Default to square while loading fallback
+  
+  if (haveDims) {
+    targetAspectRatio = getConstrainedRatio(width, height)
+  } else if (fallbackAspectRatio) {
+    targetAspectRatio = fallbackAspectRatio
+  }
+
+  // Fallback: Detect dimensions if metadata missing
   useEffect(() => {
-    if (haveDims || (!isVisible && !priority)) return
+    if (haveDims || (!isVisible && !priority) || fallbackAspectRatio) return
 
     if (typeof window !== 'undefined') {
       const imgElement = new window.Image()
-      
       imgElement.onload = () => {
         if (imgElement.height > 0) {
-          const rawAspectRatio = imgElement.width / imgElement.height
-          setOriginalAspect(rawAspectRatio)
-          setIsPortrait(rawAspectRatio < 1)
-          
-          // Apply aspect ratio constraints
-          const maxLandscapeRatio = 1.25 // 5:4
-          const minPortraitRatio = 0.8 // 4:5
-          
-          let constrainedRatio = rawAspectRatio
-          
-          if (rawAspectRatio < minPortraitRatio) {
-            constrainedRatio = minPortraitRatio
-          } else if (rawAspectRatio > maxLandscapeRatio) {
-            constrainedRatio = maxLandscapeRatio
-          }
-          
-          setAspectRatioPadding(`${(1 / constrainedRatio) * 100}%`)
+          setFallbackAspectRatio(getConstrainedRatio(imgElement.width, imgElement.height))
         }
-        setImageLoaded(true)
       }
-      
-      imgElement.onerror = () => {
-        setImageLoaded(true)
-      }
-      
+      // On error, default to 1 (already set implicitly by not updating state)
       imgElement.src = imageUrl || "/placeholder.svg"
     }
-  }, [imageUrl, isVisible, priority, haveDims])
-
-  const shouldLoad = isVisible || priority || index < 6 // Load first 6 images immediately
-
-  // Optimized sizes for responsive images
-  // Gallery cards display at:
-  // - Mobile: 100vw (full width)
-  // - Tablet: 50vw (2 columns)  
-  // - Desktop: ~448px (3 columns with 33vw but max 448px for 1440px screens)
-  const thumbnailSizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
-  const fullImageSizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
+  }, [imageUrl, isVisible, priority, haveDims, fallbackAspectRatio])
 
   const hoverAnimation = hoverEffect === "gentle" 
     ? { 
@@ -152,78 +115,27 @@ export default function GalleryCard({
       ref={containerRef}
       className={`group relative ${!locked && hoverEffect === "gentle" ? "hover:shadow-xl" : ""}`}
       whileHover={!locked ? hoverAnimation : {}}
-      onHoverStart={prefetchFullImage}
     >
       <NavigationLink href={`/${basePath}/${slug}`} className="block">
         <div className="relative overflow-hidden bg-white">
-          {/* Container for the image and border */}
-          <div className="relative">
-            {/* Border overlay */}
-            <div 
-              className={`absolute inset-0 z-10 pointer-events-none ${
-                (haveDims ? constrained.isPortrait : isPortrait)
-                  ? "border-t-4 border-b-4 border-white" 
-                  : "border-l-4 border-r-4 border-white"
-              }`}
-            ></div>
-            
-            {/* Image container */}
-            <div 
-              className="relative w-full overflow-hidden" 
-              style={
-                haveDims
-                  // Use aspect-ratio to prevent CLS immediately
-                  ? { aspectRatio: `${constrained.w} / ${constrained.h}` }
-                  // Fallback if dims not available (rare)
-                  : { paddingBottom: aspectRatioPadding }
-              }
-            >
-              <div className="absolute inset-0 w-full h-full">
-                {shouldLoad && (
-                  <>
-                    {/* Thumbnail: Always loads first with priority */}
-                    {thumbnailSrc && (
-                      <Image
-                        src={thumbnailSrc}
-                        alt={title}
-                        fill
-                        className={`transition-all duration-500 ease-out group-hover:brightness-95 ${
-                          (haveDims ? constrained.isPortrait : isPortrait) &&
-                          (haveDims ? (width! / height!) < 0.8 : originalAspect < 0.8) ||
-                          (!haveDims ? !isPortrait : !constrained.isPortrait) &&
-                          (haveDims ? (width! / height!) > 1.25 : originalAspect > 1.25)
-                            ? "object-contain" : "object-cover"
-                        } object-center ${fullLoaded ? 'opacity-0' : 'opacity-100'}`}
-                        sizes={thumbnailSizes}
-                        quality={20}
-                        priority={priority || index < 6}
-                        onLoad={() => setThumbLoaded(true)}
-                      />
-                    )}
-
-                    {/* Full: Only start loading after thumbnail is ready */}
-                    {thumbLoaded && (
-                      <Image
-                        src={fullImageUrl || "/placeholder.svg"}
-                        alt={title}
-                        fill
-                        className={`transition-all duration-700 ease-in-out group-hover:brightness-95 ${
-                          (haveDims ? constrained.isPortrait : isPortrait) &&
-                          (haveDims ? (width! / height!) < 0.8 : originalAspect < 0.8) ||
-                          (!haveDims ? !isPortrait : !constrained.isPortrait) &&
-                          (haveDims ? (width! / height!) > 1.25 : originalAspect > 1.25)
-                            ? "object-contain" : "object-cover"
-                        } object-center ${fullLoaded ? 'opacity-100' : 'opacity-0'}`}
-                        sizes={fullImageSizes}
-                        quality={70}
-                        onLoad={() => setFullLoaded(true)}
-                      />
-                    )}
-                  </>
-                )}
-              </div>
-            </div>
-          </div>
+          
+          {/* 
+             Using ImageContainer:
+             1. We pass 'targetAspectRatio' to enforce the Gallery look (4:5 or 5:4).
+             2. We pass 'restrictPortraitWidth={false}' to ensure the card fills the grid column on desktop.
+             3. We pass 'noInsetPadding={false}' to keep the gallery white framelines/mat.
+          */}
+          <ImageContainer 
+            src={imageUrl}
+            alt={title}
+            aspectRatio={targetAspectRatio}
+            priority={priority || index < 6}
+            quality={70}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
+            noInsetPadding={false}
+            restrictPortraitWidth={false}
+            imgClassName="transition-all duration-500 ease-out group-hover:brightness-95"
+          />
           
           {/* Status indicators */}
           {locked && (

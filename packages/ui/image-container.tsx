@@ -15,6 +15,8 @@ interface ImageContainerProps {
   aspectRatio?: number // Optional aspect ratio override (width/height)
   noInsetPadding?: boolean // Option to remove the inset padding (outline effect)
   sizes?: string // Optional sizes attribute for responsive layouts
+  imgClassName?: string // Added: Pass classes to the inner Image component
+  restrictPortraitWidth?: boolean // Added: Toggle desktop portrait centering (default true)
 }
 
 export function ImageContainer({
@@ -26,6 +28,8 @@ export function ImageContainer({
   aspectRatio: providedAspectRatio,
   noInsetPadding = false,
   sizes = "100vw",
+  imgClassName,
+  restrictPortraitWidth = true,
 }: ImageContainerProps) {
   const containerRef = useRef<HTMLElement>(null)
   const isVisible = useIntersectionObserver({
@@ -122,13 +126,13 @@ export function ImageContainer({
   
   if (isPortrait) {
     // On mobile, portrait images should always span full width
-    // On desktop, maintain the target ratio with horizontal padding
-    if (isMobile) {
-      // For all vertical images on mobile, use full width
+    // On desktop, maintain the target ratio with horizontal padding ONLY if restrictPortraitWidth is true
+    if (isMobile || !restrictPortraitWidth) {
+      // For all vertical images on mobile OR grid cards, use full width
       containerPadding = `${(1 / rawAspectRatio) * 100}%`
       horizontalPadding = '0px'
     } else {
-      // For desktop, maintain target ratio with horizontal padding
+      // For desktop feed views, maintain target ratio with horizontal padding
       containerPadding = `${(1 / rawAspectRatio) * 100}%`
       const relativeWidth = (rawAspectRatio / targetRatio) * 100
       horizontalPadding = `${(100 - relativeWidth) / 2}%`
@@ -179,7 +183,7 @@ export function ImageContainer({
                       fill
                       className={`object-contain object-center transition-opacity duration-500 ${
                         blurComplete ? "opacity-0" : "opacity-100"
-                      }`}
+                      } ${imgClassName || ''}`}
                       sizes={sizes}
                       priority={priority}
                       quality={20}
@@ -197,7 +201,7 @@ export function ImageContainer({
                     fill
                     className={`object-contain object-center transition-opacity duration-500 ${
                       blurComplete ? "opacity-100" : "opacity-0"
-                    }`}
+                    } ${imgClassName || ''}`}
                     sizes={sizes}
                     priority={priority}
                     quality={quality}
