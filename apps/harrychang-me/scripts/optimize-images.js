@@ -39,7 +39,7 @@ const config = {
       quality: 98,
     },
     thumbnail: {
-      width: 20,  // Very small for blur-up effect
+      width: 60,  // Very small for blur-up effect
       quality: 60,
     }
   },
@@ -64,7 +64,7 @@ const config = {
       quality: 98,
     },
     thumbnail: {
-      width: 20,
+      width: 60,
       quality: 60,
     }
   },
@@ -88,7 +88,7 @@ const config = {
       quality: 98,
     },
     thumbnail: {
-      width: 20,
+      width: 60,
       quality: 60,
     }
   },

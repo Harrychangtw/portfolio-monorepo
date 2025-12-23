@@ -105,7 +105,8 @@ export function ImageContainer({
       setThumbLoaded(true)
     }
 
-    img.src = fullSrc
+    // Use thumbnail for faster dimension detection (fixes CLS)
+    img.src = thumbnailSrc || fullSrc
   }, [fullSrc, providedAspectRatio, isVisible, priority, hasLoadedOnce])
 
   // Calculate aspect ratio from dimensions
@@ -155,59 +156,65 @@ export function ImageContainer({
             paddingRight: isPortrait ? `calc(${horizontalPadding} + ${insetPadding}px)` : `${insetPadding}px`
           }}
         >
-          {loading ? (
-            <ImageLoadingSkeleton />
-          ) : (
-            <div 
-              className="relative w-full overflow-hidden"
-              style={{ 
-                paddingBottom: containerPadding,
-              }}
-            >
-              {!noInsetPadding && containerClass && (
-                <div className={`absolute inset-0 z-10 pointer-events-none ${containerClass}`}></div>
-              )}
-              <div className="absolute inset-0">
-                {(isVisible || priority || hasLoadedOnce) && (
-                  <>
-                    {thumbnailSrc && (
-                      <Image
-                        src={thumbnailSrc}
-                        alt={alt}
-                        fill
-                        // Logic: Hide thumbnail only when full image is done (blurComplete)
-                        className={`object-contain object-center transition-opacity duration-500 ${
-                          blurComplete ? "opacity-0" : "opacity-100"
-                        }`}
-                        sizes={sizes}
-                        priority={priority} // Optional: usually thumbnails don't need high priority if full res is coming
-                        quality={20}
-                        onLoad={() => setThumbLoaded(true)}
-                        onError={() => {
-                          setImageError(true)
-                          setThumbLoaded(true)
-                        }}
-                      />
-                    )}
-                    
+          <div 
+            className="relative w-full overflow-hidden"
+            style={{ 
+              paddingBottom: containerPadding,
+            }}
+          >
+            {!noInsetPadding && containerClass && (
+              <div className={`absolute inset-0 z-10 pointer-events-none ${containerClass}`}></div>
+            )}
+            
+            {/* Overlay Skeleton if loading or waiting for blur to complete */}
+            {(!blurComplete) && <ImageLoadingSkeleton />}
+
+            <div className="absolute inset-0">
+              {(isVisible || priority || hasLoadedOnce) && (
+                <>
+                  {thumbnailSrc && (
                     <Image
-                      src={fullSrc}
+                      src={thumbnailSrc}
                       alt={alt}
                       fill
-                      // Logic: Keep opacity-0 until the full image itself is loaded
                       className={`object-contain object-center transition-opacity duration-500 ${
-                        blurComplete ? "opacity-100" : "opacity-0"
+                        blurComplete ? "opacity-0" : "opacity-100"
                       }`}
                       sizes={sizes}
                       priority={priority}
-                      quality={quality}
-                      onLoad={() => setBlurComplete(true)}
+                      quality={20}
+                      onLoad={() => setThumbLoaded(true)}
+                      onError={() => {
+                        setImageError(true)
+                        setThumbLoaded(true)
+                      }}
                     />
-                  </>
-                )}
-              </div>
+                  )}
+                  
+                  <Image
+                    src={fullSrc}
+                    alt={alt}
+                    fill
+                    className={`object-contain object-center transition-opacity duration-500 ${
+                      blurComplete ? "opacity-100" : "opacity-0"
+                    }`}
+                    sizes={sizes}
+                    priority={priority}
+                    quality={quality}
+                    onLoad={(e) => {
+                      // 1. Update dimensions with full image precision (fixes thumbnail rounding errors)
+                      const target = e.target as HTMLImageElement
+                      if (!providedAspectRatio && target.naturalWidth && target.naturalHeight) {
+                        setDimensions({ width: target.naturalWidth, height: target.naturalHeight })
+                      }
+                      // 2. Add delay to ensure loading state is perceptible and smooth
+                      setTimeout(() => setBlurComplete(true))
+                    }}
+                  />
+                </>
+              )}
             </div>
-          )}
+          </div>
         </div>
       </div>
       {caption && (

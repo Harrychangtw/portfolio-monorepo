@@ -1,21 +1,100 @@
+"use client"
+
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "motion/react"
+
+const LOADING_STATUSES = [
+  "Loading",
+  "Developing",
+  "Focusing",
+  "Composing",
+  "Adjusting",
+  "Rendering",
+  "Optimizing",
+  "Finalizing",
+  "Coloring",
+  "Sharpening",
+  "Cropping",
+  "Scaling",
+  "Encoding",
+  "Filtering",
+  "Blurring",
+  "Saturating",
+  "Balancing",
+  "Brightening",
+  "Darkening",
+  "Contrasting",
+  "Exporting",
+  "Converting",
+  "Compressing",
+  "Denoising",
+  "Grading",
+  "Masking",
+  "Layering",
+  "Blending",
+  "Merging",
+  "Stitching",
+  "Warping",
+  "Distorting",
+  "Inverting",
+  "Posterizing",
+  "Vignetting",
+  "Calibrating",
+  "Previewing",
+  "Caching",
+  "Buffering",
+  "Streaming",
+  "Transcoding",
+  "Demuxing",
+  "Muxing",
+  "Stabilizing",
+  "Tracking",
+  "Keying",
+  "Matting",
+  "Compositing",
+  "Sequencing",
+  "Trimming",
+]
+
+
 export function ImageLoadingSkeleton() {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => {
+        // 3. Cheap randomness (prevents consecutive duplicates)
+        let next
+        do {
+          next = Math.floor(Math.random() * LOADING_STATUSES.length)
+        } while (next === prev)
+        return next
+      })
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
-    <div className="relative w-full overflow-hidden">
-      <div className="w-full" style={{ paddingBottom: "66.67%" /* 3:2 aspect ratio */ }}>
-        <div className="absolute inset-0 bg-muted overflow-hidden">
-          {/* Shimmer effect */}
-          <div className="animate-shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-muted via-muted/50 to-muted" />
-          
-          {/* Loading indicator */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-black/50 backdrop-blur-sm px-4 py-2 rounded-lg">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                <span className="text-xs text-white">Loading image...</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div 
+      // 2. Define the container type for relative sizing
+      style={{ containerType: "size" }}
+      className="absolute inset-0 bg-muted/10 backdrop-blur-[2px] flex items-center justify-center z-20 pointer-events-none"
+    >
+      <div className="h-auto overflow-hidden flex flex-col items-center justify-center">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.2 }}
+            // 1. mix-blend-difference for contrast
+            // 2. text-[...] with cqmin for relative sizing
+            className="text-[clamp(8px,5cqmin,16px)] font-heading font-medium uppercase text-muted-foreground/80 mix-blend-difference"
+          >
+            {LOADING_STATUSES[index]}
+          </motion.span>
+        </AnimatePresence>
       </div>
     </div>
   )

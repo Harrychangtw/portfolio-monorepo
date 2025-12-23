@@ -2,7 +2,8 @@
 
 import React, { useState, useCallback } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { Play, AlertCircle, Loader2 } from 'lucide-react'
+import { Play, AlertCircle } from 'lucide-react'
+import { ImageLoadingSkeleton } from './image-loading-skeleton'
 
 interface VideoEmbedProps {
   src: string
@@ -37,8 +38,6 @@ export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
   // For Google Drive, auto-load when in view
   const shouldShowIframe = inView && (shouldLoad || type === 'googledrive')
 
-  // No longer need to get thumbnail for YouTube videos
-
   return (
     <figure className="my-6">
       <div 
@@ -59,22 +58,7 @@ export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
         ) : (
           // iframe container with loading state
           <div className="absolute inset-0">
-            {!isLoaded && !hasError && (
-              <div className="absolute inset-0 bg-muted overflow-hidden z-10">
-                {/* Shimmer effect */}
-                <div className="animate-shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-muted via-muted/50 to-muted" />
-                
-                {/* Loading indicator */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-black/50 backdrop-blur-sm px-4 py-2 rounded-lg">
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      <span className="text-xs text-white">Loading video...</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+            {!isLoaded && !hasError && <ImageLoadingSkeleton />}
             
             {hasError ? (
               <div className="absolute inset-0 flex items-center justify-center bg-muted">
