@@ -59,7 +59,7 @@ These are my accumulations through high school so far. I sincerely hope to enter
 
 ### Architectural Debate on FORTRESS
 
-**Professor Center-Right (Prof. Shang-Tse Chen):** Can you explain what the TMLR paper does?
+**Professor Center-Right:** Can you explain what the TMLR paper does?
 
 **Me:** The problem FORTRESS aims to solve is that attacks constantly evolve, but existing defense mechanisms rely on expensive fine-tuning. So I combined ideas from retrieval that I developed during RAG development, to see if a database could handle known attacks. And use token-level perplexity to handle newer attacks, possibly those using gradient optimization like GCG. The system also uses the attack category inferred from the database to set an optimal threshold for improved accuracy.
 
@@ -69,7 +69,7 @@ These are my accumulations through high school so far. I sincerely hope to enter
 
 ### The AAAI Video and a Stumble
 
-**Professor Center-Left (Prof. Shih-Wei Li):** I saw you have an AAAI educational video. AAAI is quite a good conference. Could you share what the submission was about?
+**Professor Center-Left:** I saw you have an AAAI educational video. AAAI is quite a good conference. Could you share what the submission was about?
 
 **Me:** (rushing to explain motivation) Because I normally enjoy video editing and sharing, when I saw AAAI was holding an educational video event, I thought I could combine my expertise with my current research content, using accessible methods or motion graphics to introduce language model security.
 
@@ -79,7 +79,7 @@ These are my accumulations through high school so far. I sincerely hope to enter
 
 ### On Independence and Guidance
 
-**Professor Left (Prof. Chu-Song Chen):** I'm more curious about your interaction style with Professor Richard Tzong-Han Tsai at National Central University.
+**Professor Left:** I'm more curious about your interaction style with Professor Richard Tzong-Han Tsai at National Central University.
 
 **Me:** During initial learning, I would self-study weekly, produce research on a topic, and report to the professor. The professor would then give feedback or ask questions.
 
