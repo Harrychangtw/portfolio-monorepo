@@ -21,6 +21,10 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
   const [loading, setLoading] = useState(false)
   const contentRef = useRef<HTMLDivElement | null>(null)
   const rootsMapRef = useRef<Map<HTMLElement, any>>(new Map())
+  // Force scroll to top on navigation
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [initialPost.slug])
   
   useEffect(() => {
     async function fetchLocalizedPost() {

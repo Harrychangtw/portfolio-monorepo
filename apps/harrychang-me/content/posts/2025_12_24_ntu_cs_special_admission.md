@@ -15,6 +15,8 @@ locked: false
 
 The results are out. The outcome is good.
 
+Final score: 91.25 for review, 95 for interview. I share these numbers not to boast, but as concrete proof that a non-traditional path can indeed be recognized.
+
 Throughout my preparation for NTU CSIE's Special Talent Admission, I discovered that online experience shares were extraordinarily rare. The reference materials I could find amounted to maybe two or three posts. This scarcity of information made the path feel even more mysterious and unsettling than it needed to be. Facing this information desert, I felt suffocated. Writing this down is perhaps just a way to confirm that the path did, in fact, exist.
 
 This isn't a strategic analysis teaching you how to get admitted. It's more of a process log. I hope my experience can provide some reference for future applicants, and more importantly, inspire the courage to dare to be different.

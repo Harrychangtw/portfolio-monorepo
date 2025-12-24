@@ -23,6 +23,11 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
   const contentRef = useRef<HTMLDivElement | null>(null)
   const rootsMapRef = useRef<Map<HTMLElement, any>>(new Map())
 
+  // Force scroll to top on navigation
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [initialProject.slug])
+
   useEffect(() => {
     async function fetchLocalizedProject() {
       const baseSlug = project.slug.replace('_zh-tw', '')

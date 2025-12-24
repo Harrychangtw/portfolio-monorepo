@@ -18,6 +18,11 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
   const [item, setItem] = useState(initialItem)
   const [loading, setLoading] = useState(false)
 
+  // Force scroll to top on navigation
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [initialItem.slug])
+
   useEffect(() => {
     async function fetchLocalizedItem() {
       const baseSlug = item.slug.replace('_zh-tw', '')
