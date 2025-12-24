@@ -4,7 +4,7 @@ description: ""
 imageUrl: "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
 date: "2025-12-12"
 author: "Harry Chang"
-tags: ["introduction", "writing", "reflection"]
+tags: ["Introduction", "Writing", "Reflection"]
 pinned: -1
 ---
 
