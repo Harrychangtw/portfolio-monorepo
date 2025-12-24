@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 import Image from "next/image"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 import { ImageLoadingSkeleton } from "./image-loading-skeleton"
@@ -32,21 +32,17 @@ export function ImageContainer({
   restrictPortraitWidth = true,
 }: ImageContainerProps) {
   const containerRef = useRef<HTMLElement>(null)
-  const isVisible = useIntersectionObserver({
+  const isVisible = useIntersectionObserver({ 
     elementRef: containerRef as React.RefObject<Element>,
     rootMargin: '50px'
   })
-  // Initialize dimensions based on provided aspect ratio to prevent CLS
-  const initialDimensions = providedAspectRatio
-    ? { width: 1200, height: Math.round(1200 / providedAspectRatio) }
-    : { width: 1200, height: 800 }
+  
+  // Use provided aspect ratio or default to 3:2 (standard photo ratio)
+  // Never detect from thumbnail - trust build-time data
+  const aspectRatio = providedAspectRatio ?? 1.5
 
-  const [dimensions, setDimensions] = useState(initialDimensions)
-  const [loading, setLoading] = useState(false) // Always start with loading false to prevent CLS
-  const [imageError, setImageError] = useState(false)
   const [thumbLoaded, setThumbLoaded] = useState(false)
   const [blurComplete, setBlurComplete] = useState(false)
-  const [hasLoadedOnce, setHasLoadedOnce] = useState(false)
   const isMobile = useIsMobile()
 
   // Derive thumbnail and full-resolution URLs for blur-up loading.
@@ -76,47 +72,9 @@ export function ImageContainer({
   // Responsive internal padding in pixels
   const insetPadding = noInsetPadding ? 0 : (isMobile ? 4 : 7)
 
-  // Reset loading states when source changes
-  useEffect(() => {
-    setBlurComplete(false)
-    setThumbLoaded(false)
-    setImageError(false)
-  }, [src])
-
-  useEffect(() => {
-    // Skip dimension detection entirely if aspectRatio is provided
-    if (providedAspectRatio) {
-      return
-    }
-
-    // Only load dimensions for images without provided aspect ratio
-    if (!isVisible && !priority && !hasLoadedOnce) return
-
-    if (typeof window === 'undefined') return
-
-    setLoading(true)
-    const img = new window.Image()
-
-    img.onload = () => {
-      setDimensions({ width: img.width, height: img.height })
-      setLoading(false)
-      setHasLoadedOnce(true)
-    }
-
-    img.onerror = () => {
-      setImageError(true)
-      setLoading(false)
-      setThumbLoaded(true)
-    }
-
-    // Use thumbnail for faster dimension detection (fixes CLS)
-    img.src = thumbnailSrc || fullSrc
-  }, [fullSrc, providedAspectRatio, isVisible, priority, hasLoadedOnce])
-
-  // Calculate aspect ratio from dimensions
-  const rawAspectRatio = dimensions.width / dimensions.height
-  const isPortrait = rawAspectRatio < 1
-  const isCinematic = rawAspectRatio >= 2.2 && rawAspectRatio <= 2.4
+  // Derive layout from aspect ratio (no dimension state needed)
+  const isPortrait = aspectRatio < 1
+  const isCinematic = aspectRatio >= 2.2 && aspectRatio <= 2.4
   const targetRatio = 1.5
   
   let containerPadding
@@ -129,22 +87,22 @@ export function ImageContainer({
     // On desktop, maintain the target ratio with horizontal padding ONLY if restrictPortraitWidth is true
     if (isMobile || !restrictPortraitWidth) {
       // For all vertical images on mobile OR grid cards, use full width
-      containerPadding = `${(1 / rawAspectRatio) * 100}%`
+      containerPadding = `${(1 / aspectRatio) * 100}%`
       horizontalPadding = '0px'
     } else {
       // For desktop feed views, maintain target ratio with horizontal padding
-      containerPadding = `${(1 / rawAspectRatio) * 100}%`
-      const relativeWidth = (rawAspectRatio / targetRatio) * 100
+      containerPadding = `${(1 / aspectRatio) * 100}%`
+      const relativeWidth = (aspectRatio / targetRatio) * 100
       horizontalPadding = `${(100 - relativeWidth) / 2}%`
     }
     containerClass = `border-t-[${borderThickness}] border-b-[${borderThickness}] border-white`
   } else if (isCinematic) {
     containerPadding = `${(1 / targetRatio) * 100}%`
-    const cinematic_height_percentage = (targetRatio / rawAspectRatio) * 100
+    const cinematic_height_percentage = (targetRatio / aspectRatio) * 100
     verticalPadding = `${(100 - cinematic_height_percentage) / 2}%`
     containerClass = `border-l-[${borderThickness}] border-r-[${borderThickness}] border-white`
   } else {
-    containerPadding = `${(1 / rawAspectRatio) * 100}%`
+    containerPadding = `${(1 / aspectRatio) * 100}%`
     containerClass = `border-l-[${borderThickness}] border-r-[${borderThickness}] border-white`
   }
 
@@ -174,7 +132,7 @@ export function ImageContainer({
             {(!blurComplete) && <ImageLoadingSkeleton />}
 
             <div className="absolute inset-0">
-              {(isVisible || priority || hasLoadedOnce) && (
+              {(isVisible || priority) && (
                 <>
                   {thumbnailSrc && (
                     <Image
@@ -188,10 +146,6 @@ export function ImageContainer({
                       priority={priority}
                       quality={20}
                       onLoad={() => setThumbLoaded(true)}
-                      onError={() => {
-                        setImageError(true)
-                        setThumbLoaded(true)
-                      }}
                     />
                   )}
                   
@@ -205,14 +159,8 @@ export function ImageContainer({
                     sizes={sizes}
                     priority={priority}
                     quality={quality}
-                    onLoad={(e) => {
-                      // 1. Update dimensions with full image precision (fixes thumbnail rounding errors)
-                      const target = e.target as HTMLImageElement
-                      if (!providedAspectRatio && target.naturalWidth && target.naturalHeight) {
-                        setDimensions({ width: target.naturalWidth, height: target.naturalHeight })
-                      }
-                      // 2. Add delay to ensure loading state is perceptible and smooth
-                      setTimeout(() => setBlurComplete(true))
+                    onLoad={() => {
+                      setBlurComplete(true)
                     }}
                   />
                 </>
