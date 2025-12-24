@@ -13,7 +13,7 @@ locked: false
 
 ## Finding the Signal in the Noise
 
-The results are out. The outcome is good.
+The results are out. First place.
 
 Final score: 91.25 for review, 95 for interview. I share these numbers not to boast, but as concrete proof that a non-traditional path can indeed be recognized.
 
@@ -35,7 +35,7 @@ This path is narrow, new, and somewhat lonely. But precisely because of this, I 
 
 December 12th. DerTien Hall. I was the sixth to enter.
 
-The room was smaller than I'd imagined, tables arranged in a U-shape. Directly across sat Professors Shih-Wei Li and Shang-Tse Chen. On the left sat Director Chu-Song Chen, his expression stern. There was none of the traditional security grilling I'd expected. The atmosphere felt closer to an AI research discussion.
+The room was smaller than I'd imagined, tables arranged in a U-shape. There was none of the traditional security grilling I'd expected. The atmosphere felt closer to an AI research discussion.
 
 To maximize this article's practical value, I've reconstructed those hundreds of seconds from memory. No embellishment, no filters.
 
