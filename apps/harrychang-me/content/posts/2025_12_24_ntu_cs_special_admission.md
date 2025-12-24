@@ -9,7 +9,7 @@ pinned: -1
 locked: false
 ---
 
-> **Note:** This post was originally written in Traditional Chinese. For the best reading experience, consider the [Chinese version](https://harrychang.me/blog/2025_12_24_ntu_cs_special_admission_zh-TW).
+> **Note:** This post was originally written in Traditional Chinese. For the best reading experience, consider the [Chinese version](https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission_zh-tw).
 
 ## Finding the Signal in the Noise
 
