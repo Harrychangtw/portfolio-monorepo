@@ -346,9 +346,17 @@ let fileNames = fs.readdirSync(projectsDirectory)
         // Use gray-matter to parse the post metadata section
         const matterResult = matter(fileContents)
         
-        // Process imageUrl to add thumbnail for cards/previews
         const data = matterResult.data as Omit<ProjectMetadata, "slug">;
+        
+        // Get dimensions from FULL RESOLUTION image BEFORE converting to thumbnail
         if (data.imageUrl) {
+          const fullResPath = getFullResolutionPath(data.imageUrl);
+          const dims = getDimsFromWebPath(fullResPath);
+          if (dims) {
+            data.imageWidth = dims.width;
+            data.imageHeight = dims.height;
+          }
+          // Now convert to thumbnail path for card display
           data.imageUrl = getThumbnailPath(data.imageUrl);
         }
 
@@ -433,18 +441,21 @@ let fileNames = fs.readdirSync(galleryDirectory)
         // Use gray-matter to parse the post metadata section
         const matterResult = matter(fileContents)
         
-        // Process imageUrl to add thumbnail for cards/previews
         const data = matterResult.data as Omit<GalleryItemMetadata, "slug">;
+        
+        // Get dimensions from FULL RESOLUTION image BEFORE converting to thumbnail
         if (data.imageUrl) {
-          data.imageUrl = getThumbnailPath(data.imageUrl);
-          const dims = getDimsFromWebPath(data.imageUrl)  // ADD: compute once here
+          const fullResPath = getFullResolutionPath(data.imageUrl);
+          const dims = getDimsFromWebPath(fullResPath);
           if (dims) {
-            data.width = dims.width
-            data.height = dims.height
-            const ratio = dims.width / dims.height
-            data.aspectRatio = Number(ratio.toFixed(4))
-            data.aspectType = ratio < 1 ? 'v' : 'h'
+            data.width = dims.width;
+            data.height = dims.height;
+            const ratio = dims.width / dims.height;
+            data.aspectRatio = Number(ratio.toFixed(4));
+            data.aspectType = ratio < 1 ? 'v' : 'h';
           }
+          // Now convert to thumbnail path for card display
+          data.imageUrl = getThumbnailPath(data.imageUrl);
         }
 
         // Combine the data with the slug
@@ -565,7 +576,16 @@ export function getAllPostsMetadata(locale: string = 'en'): PostMetadata[] {
         const matterResult = matter(fileContents)
 
         const data = matterResult.data as Omit<PostMetadata, "slug">;
+        
+        // Get dimensions from FULL RESOLUTION image BEFORE converting to thumbnail
         if (data.imageUrl) {
+          const fullResPath = getFullResolutionPath(data.imageUrl);
+          const dims = getDimsFromWebPath(fullResPath);
+          if (dims) {
+            data.imageWidth = dims.width;
+            data.imageHeight = dims.height;
+          }
+          // Now convert to thumbnail path for card display
           data.imageUrl = getThumbnailPath(data.imageUrl);
         }
 
