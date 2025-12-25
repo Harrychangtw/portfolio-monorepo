@@ -21,6 +21,9 @@ featured: true
 前端採用 **React** 與 **TypeScript** 開發，確保了程式碼庫的穩健性與型別安全。使用者介面則用 **TailwindCSS**，透過它 utility-first 的特性，實現了快速開發。網站的三欄式版面設計，靈感來自 [Joseph Zhang](https://joseph.cv/) 的作品集。
 
 ![作品集網站在 Affinity 中的版面與規劃](images/optimized/projects/2025_04_12_portfolio_design/affinity_branding-thumb.webp)
+
+![手機版選單，基於 React Bits](images/optimized/projects/2025_04_12_portfolio_design/clip-mobile-menu.mp4)
+
 ### 以內容為核心的多網域架構
 
 這個專案的心臟是它極具彈性的架構。透過 Next.js 的 middleware，系統能根據不同的 subdomain 動態重寫請求，將使用者導向主要作品集或實驗性網站，而這一切都由同一個 Next.js 應用程式驅動。主要作品集的內容以 Markdown 檔案形式儲存，使其扮演了一個 Headless CMS 的角色。一個客製化程式會透過以下幾個關鍵函式庫來處理這些檔案：
@@ -32,9 +35,9 @@ featured: true
 
 ### 技術亮點
 
+![Header 的客製化載入指示器，在頁面轉換期間提供視覺回饋。](images/optimized/projects/2025_04_12_portfolio_design/clip-header-loading.mp4)
+
 在開發過程中，我特別著重於網站的效能、擴展性與功能的實現。
-
-
 
 **Monorepo 的高效率**：透過 **Turborepo**，我們能將共用的 UI 元件、Hooks 與工具函式集中於 `packages/ui` 和 `packages/lib`，讓多個應用程式共享。這大幅減少了重複的程式碼，並簡化了依賴管理。
 
@@ -44,7 +47,13 @@ featured: true
 
 **圖片最佳化**：透過 Scripting，自動將圖片轉換為現代的 WebP 格式並調整尺寸，同時產生低解析度的圖片預覽圖，用來實現模糊載入的視覺效果。
 
+**API 整合**：頁尾整合了即時的「音樂播放中」元件，透過 Spotify API 取得我目前的聽歌狀態，並以客製化的動畫進度卡片呈現。
+
+![網站頁尾的即時 Spotify「音樂播放中」整合功能。](images/optimized/projects/2025_04_12_portfolio_design/clip-spotify-intergration.mp4)
+
 **國際化（i18n）**：網站透過客製化的客戶端 React Context，完整支援英文與繁體中文。內容是依據檔案後綴（`_zh-tw.md`）進行本地化，當特定內容的中文版本不存在時，網站會自動顯示英文版本。
+
+![客戶端的語言切換器，讓使用者能在英文與繁體中文之間切換。](images/optimized/projects/2025_04_12_portfolio_design/clip-language-switcher.mp4)
 
 ![效能、無障礙、最佳實務與 SEO 皆獲得滿分的 Lighthouse 檢測報告](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
 
@@ -54,6 +63,7 @@ featured: true
 
 -   [**專案列表**](https://harrychang.me/#projects)：展示所有專案，每個專案都有獨立的頁面，包含詳細的描述、圖片與影片。
 -   [**攝影畫廊**](https://harrychang.me/#gallery)：一系列影像的集合，每張圖片都有專屬的頁面進行詳細展示，並透過客製化的畫框系統提升視覺呈現效果。
+-   [**部落格**](https://harrychang.me/#blog)：涵蓋各種主題的文章區域，從評論到各式隨筆。
 -   [**理念**](https://harrychang.me/manifesto)：一個專屬頁面，用來表達驅動我的核心原則，讓讀者能更專注地閱讀。
 -   [**論文閱讀**](https://harrychang.me/paper-reading)：動態更新的學術論文閱讀筆記列表。
 -   [**工具與設定**](https://harrychang.me/uses)：列出我日常使用的工具與軟體。

@@ -37,8 +37,11 @@ export function ImageContainer({
     rootMargin: '50px'
   })
   
+  // Detect video content
+  const isVideo = src?.toLowerCase().endsWith('.mp4')
+  
   // Use provided aspect ratio or default to 3:2 (standard photo ratio)
-  // Never detect from thumbnail - trust build-time data
+  // For videos, markdown usually provides 1.7778 (16:9)
   const aspectRatio = providedAspectRatio ?? 1.5
 
   const [thumbLoaded, setThumbLoaded] = useState(false)
@@ -46,11 +49,15 @@ export function ImageContainer({
   const isMobile = useIsMobile()
 
   // Derive thumbnail and full-resolution URLs for blur-up loading.
-  // Works whether `src` is a full image or already a `-thumb` URL.
   let thumbnailSrc: string | undefined
   let fullSrc = src
 
-  if (src?.endsWith("-thumb.webp")) {
+  if (isVideo) {
+    // Videos don't have generated thumbnails in this pipeline
+    // We rely on the skeleton until the video data loads
+    thumbnailSrc = undefined
+    fullSrc = src
+  } else if (src?.endsWith("-thumb.webp")) {
     // Card / preview URLs already point at the thumbnail
     thumbnailSrc = src
     fullSrc = src.replace("-thumb.webp", ".webp")
@@ -134,7 +141,7 @@ export function ImageContainer({
             <div className="absolute inset-0">
               {(isVisible || priority) && (
                 <>
-                  {thumbnailSrc && (
+                  {!isVideo && thumbnailSrc && (
                     <Image
                       src={thumbnailSrc}
                       alt={alt}
@@ -149,20 +156,36 @@ export function ImageContainer({
                     />
                   )}
                   
-                  <Image
-                    src={fullSrc}
-                    alt={alt}
-                    fill
-                    className={`object-contain object-center transition-opacity duration-500 ${
-                      blurComplete ? "opacity-100" : "opacity-0"
-                    } ${imgClassName || ''}`}
-                    sizes={sizes}
-                    priority={priority}
-                    quality={quality}
-                    onLoad={() => {
-                      setBlurComplete(true)
-                    }}
-                  />
+                  {isVideo ? (
+                    <video
+                      src={fullSrc}
+                      className={`w-full h-full object-cover object-center transition-opacity duration-500 ${
+                        blurComplete ? "opacity-100" : "opacity-0"
+                      } ${imgClassName || ''}`}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      onLoadedData={() => {
+                        setBlurComplete(true)
+                      }}
+                    />
+                  ) : (
+                    <Image
+                      src={fullSrc}
+                      alt={alt}
+                      fill
+                      className={`object-contain object-center transition-opacity duration-500 ${
+                        blurComplete ? "opacity-100" : "opacity-0"
+                      } ${imgClassName || ''}`}
+                      sizes={sizes}
+                      priority={priority}
+                      quality={quality}
+                      onLoad={() => {
+                        setBlurComplete(true)
+                      }}
+                    />
+                  )}
                 </>
               )}
             </div>
