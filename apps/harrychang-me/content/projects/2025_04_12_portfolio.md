@@ -22,6 +22,8 @@ The front end is developed with **React** and **TypeScript**, ensuring a robust,
 
 ![Portfolio website layout and planning in Affinity](images/optimized/projects/2025_04_12_portfolio_design/affinity_branding.webp)
 
+![The responsive staggered menu on mobile, prototype sourced from React Bits](images/optimized/projects/2025_04_12_portfolio_design/clip-mobile-menu.mp4)
+
 ### A Content-First, Multi-Domain Architecture
 
 The heart of this project is its flexible architecture. Next.js middleware dynamically rewrites requests based on the subdomain, directing users to either the main portfolio or the lab while using a single Next.js instance. Content for the main portfolio is stored in Markdown files, effectively creating a headless CMS. A custom script processes these files using several key libraries:
@@ -32,6 +34,8 @@ The heart of this project is its flexible architecture. Next.js middleware dynam
 This structure cleanly separates content from presentation and allows for simple, Git-baㄇsed content updates.
 
 ### Technical Highlights
+
+![A custom loading indicator in the header provides visual feedback during page transitions.](images/optimized/projects/2025_04_12_portfolio_design/clip-header-loading.mp4)
 
 Performance, scalability, and advanced features were primary goals during development.
 
@@ -44,10 +48,13 @@ Performance, scalability, and advanced features were primary goals during develo
 
 **Image Optimization:** A custom script automates converting images to the modern WebP format. It also resizes them and generates low-quality image placeholders to create a "blur-up" effect while loading.
 
+**API Integration:** The footer includes a real-time "Now Playing" component that fetches my current Spotify activity via the Spotify API, displayed with a custom animated progress card.
+
+![The real-time Spotify "Now Playing" integration in the site's footer.](images/optimized/projects/2025_04_12_portfolio_design/clip-spotify-intergration.mp4)
+
 **Internationalization (i18n):** The site supports English and Traditional Chinese through a custom, client-side React Context. Content is localized based on filename suffixes (`_zh-tw.md`), and the site gracefully falls back to English if a translation is unavailable.
 
-![Lighthouse audit report showing perfect 100 scores across Performance, Accessibility, Best Practices, and SEO.](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
-
+![The client-side language switcher allows toggling between English and Traditional Chinese.](images/optimized/projects/2025_04_12_portfolio_design/clip-language-switcher.mp4)
 
 ### Content & Features
 
@@ -55,6 +62,7 @@ The portfolio is designed to showcase a variety of work and thought, with key se
 
 - [**Projects Section:**](https://harrychang.me/#projects) A list of projects, each with its own page containing detailed descriptions, images, and videos.
 - [**Gallery Section:**](https://harrychang.me/#gallery) A collection of images with dedicated pages, enhanced by a custom framing system for visual presentation.
+- [**Blog Section:**](https://harrychang.me/#blog) A series of articles and posts on various topics, ranging from reviews to random musings.
 - [**Manifesto Page:**](https://harrychang.me/manifesto) A dedicated space to express the core principles and philosophies that drive my work.
 - [**Paper Reading Section:**](https://harrychang.me/paper-reading) A dynamic list of academic papers I have studied.
 - [**Uses**](https://harrychang.me/uses) A list of tools and technologies I use regularly.

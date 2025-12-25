@@ -75,7 +75,7 @@ export default function BlogCard({
                     <div className="flex flex-col justify-end">
                         <span
                             className="font-heading text-lg md:text-3xl font-light text-secondary whitespace-nowrap leading-none"
-                            aria-label={`Published ${date}`}
+                            aria-label={`Published ${new Date(date).toDateString()}`}
                         >
                             {formatDate(date)}
                         </span>

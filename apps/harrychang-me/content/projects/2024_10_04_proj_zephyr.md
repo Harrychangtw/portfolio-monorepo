@@ -18,7 +18,7 @@ Zephyr is a fully automated ticket-grabbing bot designed for the Tixcraft ticket
 
 The core design of this project focuses on high efficiency and stability. It maximizes the probability of successfully purchasing tickets through multithreading, random delays to simulate human behavior, and a sophisticated error-handling mechanism.
 
-![Zephyr in Action (Logged Out)](https://drive.google.com/file/d/1imDvKqCPAYGSzrnU0QTaSFk43AdxTkBc/view?usp=sharing)
+![Zephyr in Action (Logged Out)](images/optimized/projects/2024_10_04_zephyr/zephyr_demo_video_1080p.mp4)
 
 ---
 

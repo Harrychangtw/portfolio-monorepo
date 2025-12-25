@@ -1038,6 +1038,41 @@ function transformMedia() {
           `
         }
         parent.children.splice(index, 1, videoNode)
+      } else if (url.toLowerCase().endsWith('.mp4')) {
+        // Handle local MP4 videos - treat as looping video clips
+        const videoUrl = getFullResolutionPath(url)
+        
+        // Default to 16:9 (1.7778) aspect ratio for videos
+        const aspectRatio = "1.7778"
+        
+        const escapeAttr = (value: string) =>
+          value
+            .replace(/&/g, "&amp;")
+            .replace(/"/g, "&quot;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+        
+        const videoNode: HTML = {
+          type: "html",
+          value: `
+            <figure class="my-6 w-full">
+              <div
+                class="markdown-image-placeholder"
+                data-src="${escapeAttr(videoUrl)}"
+                data-aspect-ratio="${aspectRatio}"
+                data-framed="${isFramed}"
+                data-alt="${escapeAttr(alt)}"
+                data-video="true"
+              ></div>
+              ${
+                alt
+                  ? `<figcaption class="mt-2 text-sm text-left" style="color: hsl(var(--secondary)); font-family: var(--font-body);">${alt}</figcaption>`
+                  : ""
+              }
+            </figure>
+          `,
+        }
+        parent.children.splice(index, 1, videoNode)
       } else {
         // Regular image inside markdown.
         // Emit a lightweight placeholder that will be hydrated on the client

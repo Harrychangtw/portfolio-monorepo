@@ -18,7 +18,7 @@ Zephyr 是一個全自動的搶票機器人，專為 Tixcraft 拓元售票網站
 
 這個專案的設計核心是高效率與高穩定性，透過多執行緒處理、模擬人類行為的隨機延遲，以及精密的錯誤處理機制，最大化搶票成功的機率。
 
-![Zephyr 運作展示（未登入）](https://drive.google.com/file/d/1imDvKqCPAYGSzrnU0QTaSFk43AdxTkBc/view?usp=sharing)
+![Zephyr 運作展示（未登入）](images/optimized/projects/2024_10_04_zephyr/zephyr_demo_video_1080p.mp4)
 
 ---
 
