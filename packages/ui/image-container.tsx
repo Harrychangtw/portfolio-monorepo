@@ -139,7 +139,7 @@ export function ImageContainer({
                       src={thumbnailSrc}
                       alt={alt}
                       fill
-                      className={`object-contain object-center transition-opacity duration-500 ${
+                      className={`object-cover object-center transition-opacity duration-500 ${
                         blurComplete ? "opacity-0" : "opacity-100"
                       } ${imgClassName || ''}`}
                       sizes={sizes}
