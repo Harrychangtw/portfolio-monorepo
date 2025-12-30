@@ -46,6 +46,10 @@ export default function BlogSection({ section, title, sectionId = "blog", initia
   useEffect(() => {
     // Skip fetch if we have initial data and language matches
     if (initialItems.length > 0 && language === 'en') {
+      if (lastLanguageRef.current !== 'en') {
+        setPosts(initialItems)
+        lastLanguageRef.current = 'en'
+      }
       setIsLoading(false)
       hasFetchedRef.current = true
       return

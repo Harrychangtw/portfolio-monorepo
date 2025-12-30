@@ -49,6 +49,10 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
   useEffect(() => {
     // Skip fetch if we have initial data and language matches
     if (initialItems.length > 0 && language === 'en') {
+      if (lastLanguageRef.current !== 'en') {
+        setGalleryItems(initialItems)
+        lastLanguageRef.current = 'en'
+      }
       setIsLoading(false)
       hasFetchedRef.current = true
       return

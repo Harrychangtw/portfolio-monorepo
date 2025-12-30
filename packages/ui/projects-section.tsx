@@ -48,6 +48,10 @@ export default function ProjectsSection({ section, title, sectionId = "projects"
   useEffect(() => {
     // Skip fetch if we have initial data and language matches
     if (initialItems.length > 0 && language === 'en') {
+      if (lastLanguageRef.current !== 'en') {
+        setProjects(initialItems)
+        lastLanguageRef.current = 'en'
+      }
       setIsLoading(false)
       hasFetchedRef.current = true
       return

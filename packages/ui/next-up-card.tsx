@@ -26,7 +26,7 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath, 
     <div className="w-full mt-4 md:mt-6 pt-4">
       <NavigationLink href={`/${basePath}/${slug}`} className="block group">
         <motion.div 
-          className="relative overflow-hidden border border-border bg-muted/30 hover:bg-muted/60 transition-colors p-1"
+          className="relative overflow-hidden border border-border bg-card hover:bg-muted/60 transition-colors p-1"
           whileHover={{ scale: 0.98 }}
           transition={{ duration: 0.2 }}
         >
