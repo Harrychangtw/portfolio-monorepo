@@ -1,6 +1,14 @@
 import { fetchArxivPapers, getManualPapers, getArxivPaperIds, getPrebuiltPapers } from "@portfolio/lib/lib/arxiv";
 import { Paper } from "@portfolio/lib/types/paper";
 import PaperReadingPageClient from "@/components/main/paper-reading-page-client";
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default async function PaperReadingPage({
   searchParams,

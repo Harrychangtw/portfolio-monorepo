@@ -8,3 +8,4 @@ Sitemap: https://lab.harrychang.me/sitemap-lab.xml
 
 # Disallow admin/private routes (if any)
 Disallow: /api/
+Disallow: /_next/

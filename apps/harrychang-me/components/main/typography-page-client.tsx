@@ -76,7 +76,7 @@ export default function TypographyPageClient() {
           {/* OG Image Container */}
           <div className="w-full mb-8">
             <ImageContainer
-              src="/images/optimized/projects/og/ogimage.webp"
+              src="/images/optimized/projects/og/titlecard.webp"
               alt="Harry Chang Portfolio Identity - The Tower of Babel"
               aspectRatio={1.5}
               noInsetPadding={true}

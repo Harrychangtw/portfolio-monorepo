@@ -1,5 +1,14 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function DiscordRedirect() {
-  redirect('https://discord.com/users/836567989209661481')
+  redirect(siteConfig.social.discord)
 }

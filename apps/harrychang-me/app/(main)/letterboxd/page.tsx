@@ -1,5 +1,14 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
+import type { Metadata } from 'next'
 
-export default function CalendarRedirect() {
-  redirect('https://boxd.it/fSKuF')
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
+
+export default function LetterboxdRedirect() {
+  redirect(siteConfig.social.letterboxd)
 }

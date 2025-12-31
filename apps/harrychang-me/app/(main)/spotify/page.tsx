@@ -1,5 +1,14 @@
 import { redirect } from 'next/navigation'
+import { siteConfig } from '@/config/site'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function SpotifyRedirect() {
-  redirect('https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3')
+  redirect(siteConfig.social.spotify)
 }

@@ -1,5 +1,64 @@
 [
   {
+    "title": "Mindscape-Aware Retrieval Augmented Generation for Improved Long Context Understanding",
+    "authors": [
+      "Yuqing Li",
+      "Jiangnan Li",
+      "Zheng Lin",
+      "Ziyan Zhou",
+      "Junjie Wu",
+      "Weiping Wang",
+      "Jie Zhou",
+      "Mo Yu"
+    ],
+    "date": "2025-12-19T04:08:29Z",
+    "url": "http://arxiv.org/abs/2512.17220v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "DataFlow: An LLM-Driven Framework for Unified Data Preparation and Workflow Automation in the Era of Data-Centric AI",
+    "authors": [
+      "Hao Liang",
+      "Xiaochen Ma",
+      "Zhou Liu",
+      "Zhen Hao Wong",
+      "Zhengyang Zhao",
+      "Zimo Meng",
+      "Runming He",
+      "Chengyu Shen",
+      "Qifeng Cai",
+      "Zhaoyang Han",
+      "Meiyi Qiang",
+      "Yalin Feng",
+      "Tianyi Bai",
+      "Zewei Pan",
+      "Ziyi Guo",
+      "Yizhen Jiang",
+      "Jingwen Deng",
+      "Qijie You",
+      "Peichao Lai",
+      "Tianyu Guo",
+      "Chi Hsu Tsai",
+      "Hengyi Feng",
+      "Rui Hu",
+      "Wenkai Yu",
+      "Junbo Niu",
+      "Bohan Zeng",
+      "Ruichuan An",
+      "Lu Ma",
+      "Jihao Huang",
+      "Yaowei Zheng",
+      "Conghui He",
+      "Linpeng Tang",
+      "Bin Cui",
+      "Weinan E",
+      "Wentao Zhang"
+    ],
+    "date": "2025-12-18T15:46:15Z",
+    "url": "http://arxiv.org/abs/2512.16676v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
     "authors": [
       "Monte MacDiarmid, Benjamin Wright, Jonathan Uesato, Joe Benton, Jon Kutasov, Sara Price, Naia Bouscal, Sam Bowman, Trenton Bricken, Alex Cloud, Carson Denison, Johannes Gasteiger, Ryan Greenblatt, Jan Leike, Jack Lindsey, Vlad Mikulik, Ethan Perez, Alex Rodrigues, Drake Thomas, Albert Webson, Daniel Ziegler, Evan Hubinger"
@@ -24,6 +83,25 @@
     ],
     "date": "2025-11-19T10:14:08Z",
     "url": "http://arxiv.org/abs/2511.15304v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Agent READMEs: An Empirical Study of Context Files for Agentic Coding",
+    "authors": [
+      "Worawalan Chatlatanagulchai",
+      "Hao Li",
+      "Yutaro Kashiwa",
+      "Brittany Reid",
+      "Kundjanasith Thonglek",
+      "Pattara Leelaprute",
+      "Arnon Rungsawang",
+      "Bundit Manaskasemsak",
+      "Bram Adams",
+      "Ahmed E. Hassan",
+      "Hajimu Iida"
+    ],
+    "date": "2025-11-17T02:18:55Z",
+    "url": "http://arxiv.org/abs/2511.12884v1",
     "source": "arxiv"
   },
   {
@@ -666,6 +744,18 @@
     ],
     "date": "2025-01-03T07:01:15Z",
     "url": "http://arxiv.org/abs/2501.02029v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+    "authors": [
+      "Yijia Xiao",
+      "Edward Sun",
+      "Di Luo",
+      "Wei Wang"
+    ],
+    "date": "2024-12-28T12:54:06Z",
+    "url": "http://arxiv.org/abs/2412.20138v7",
     "source": "arxiv"
   },
   {
@@ -2352,10 +2442,11 @@
       "Yepang Liu",
       "Haoyu Wang",
       "Yan Zheng",
+      "Leo Yu Zhang",
       "Yang Liu"
     ],
     "date": "2023-06-08T18:43:11Z",
-    "url": "http://arxiv.org/abs/2306.05499v2",
+    "url": "http://arxiv.org/abs/2306.05499v3",
     "source": "arxiv"
   },
   {
