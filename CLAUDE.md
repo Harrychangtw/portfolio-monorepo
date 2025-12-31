@@ -179,9 +179,9 @@ featured: true  # Optional
 All images are optimized via the same optimization script, but are displayed with different aspect ratios based on context:
 
 **Title/Thumbnail Cards:**
-- **Project cards:** 3:2 aspect ratio (1.5) by design
-- **Gallery cards:** Variable aspect ratios (4:5 or 5:4) with white framelines to contain photos of varying aspect ratios
-- **Blog cards:** 3:2 aspect ratio (1.5) matching projects
+- **Project cards:** Strict 3:2 aspect ratio (1.5) by design
+- **Gallery cards:** Variable aspect ratios (4:5 or 5:4) with white framelines to contain photos of varying aspect ratios. This design is deliberate given how the underlying photos may have distinct aspect ratios, the frameline design and consistent card size help maintain a uniform grid layout by containing photos.
+- **Blog cards:** Strict 3:2 aspect ratio (1.5) matching projects by design
 
 **Detail Pages (Slug Routes):**
 
