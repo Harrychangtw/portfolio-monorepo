@@ -93,7 +93,7 @@ export default function ProjectCard({
           quality={70}
           aspectRatio={1.5} // Enforce 3:2 for cards
           noInsetPadding={true} // No frameline for projects
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 500px"
         />
 
         {locked && (

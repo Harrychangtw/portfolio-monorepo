@@ -131,7 +131,7 @@ export default function GalleryCard({
             aspectRatio={targetAspectRatio}
             priority={priority || index < 6}
             quality={70}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 500px"
             noInsetPadding={false}
             restrictPortraitWidth={false}
             imgClassName="transition-all duration-500 ease-out group-hover:brightness-95"

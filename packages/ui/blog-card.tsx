@@ -97,7 +97,7 @@ export default function BlogCard({
                         quality={70}
                         aspectRatio={1.5}
                         noInsetPadding={true}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 448px"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 500px"   
                     />
                 </motion.div>
             </NavigationLink>
