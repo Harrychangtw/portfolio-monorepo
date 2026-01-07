@@ -35,7 +35,7 @@ export default function NowPlayingCard({ data }: { data: NowPlaying }) {
             : 0;
 
     return (
-        <div className="w-[320px] max-w-[90vw] rounded-lg bg-[#1a1a1a] text-primary shadow-2xl border border-border p-3 font-ibm-plex">
+        <div className="w-[320px] max-w-[90vw] rounded-lg bg-card text-primary shadow-2xl border border-border p-3 font-ibm-plex">
             <div className="flex items-center gap-3">
                 {data.albumImageUrl ? (
                     <Image
@@ -69,7 +69,7 @@ export default function NowPlayingCard({ data }: { data: NowPlaying }) {
                 <div className="mt-3">
                     <div className="h-1 bg-secondary rounded-full">
                         <div
-                            className="h-1 bg-[hsl(var(--accent))] rounded-full"
+                            className="h-1 bg-accent rounded-full"
                             style={{ 
                                 width: `${progressPercentage}%`,
                                 transition: 'width 1s ease-in-out'

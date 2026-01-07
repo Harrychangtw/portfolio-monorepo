@@ -177,7 +177,7 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
                 <div>
                   <NavigationLink
                     href="/#projects"
-                    className="inline-flex items-center text-secondary hover:text-primary transition-colors"
+                    className="inline-flex items-center text-secondary hover:text-accent transition-colors"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     <span className="font-body">{t('projects.backToProjects')}</span>

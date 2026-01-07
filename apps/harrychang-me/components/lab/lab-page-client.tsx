@@ -22,13 +22,13 @@ export default function LabPageClient() {
   if (isLoading) {
     return (
       <div className="fixed inset-0 bg-background flex items-center justify-center">
-        <div className="text-white/30">Loading...</div>
+        <div className="text-muted-foreground">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="relative min-h-[100svh] bg-background overflow-hidden">
+    <div className="relative min-h-[100svh] bg-background overflow-hidden transition-colors duration-500">
       <MinimalistBackground />
 
       <AnimatePresence>
@@ -39,7 +39,7 @@ export default function LabPageClient() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/50 z-40"
+            className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
             onClick={() => setShowForm(false)}
           />
         )}
@@ -58,7 +58,7 @@ export default function LabPageClient() {
               className="text-center max-w-4xl mx-auto w-full"
             >
               {/* Animated Icon */}
-              <div className="flex justify-center">
+              <div className="flex justify-center lab-logo">
                 <AnimatedIcarusIcon />
               </div>
               
@@ -69,8 +69,8 @@ export default function LabPageClient() {
                 transition={{ delay: 0, duration: 0.5, ease: "easeOut" }}
                 className="inline-block mb-12"
               >
-                <div className="px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm">
-                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/40">
+                <div className="px-4 py-1.5 rounded-full border border-border bg-card/50 backdrop-blur-sm">
+                  <span className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
                     {t('lab.capsule', 'common')}
                   </span>
                 </div>
@@ -84,11 +84,11 @@ export default function LabPageClient() {
                 className="text-5xl md:text-6xl lg:text-6xl font-heading font-bold mb-6 leading-[1.1]"
                 
               >
-                <span className="text-white">
+                <span className="text-foreground">
                   {t('lab.heroLine1', 'common')}
                 </span>
                 <br />
-                <span className="text-white/30">
+                <span className="text-muted-foreground/60">
                   {t('lab.heroLine2', 'common')}
                 </span>
               </motion.h1>
@@ -98,7 +98,7 @@ export default function LabPageClient() {
                 initial={{ opacity: 0, y: 4 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.5, ease: "easeOut" }}
-                className="text-base md:text-lg text-white/40 mb-16 font-ibm-plex-sans font-light tracking-wide max-w-2xl mx-auto"
+                className="text-base md:text-lg text-muted-foreground mb-16 font-ibm-plex-sans font-light tracking-wide max-w-2xl mx-auto"
               >
                 {t('lab.tagline', 'common')}
               </motion.p>
@@ -116,10 +116,10 @@ export default function LabPageClient() {
                         type="email"
                         readOnly
                         placeholder={t('lab.heroEmailPlaceholder', 'common') || "Your Email Address"}
-                        className="w-full h-full bg-card border border-white/20 rounded-lg pl-6 pr-36 text-white placeholder-white/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
+                        className="w-full h-full bg-card border border-border rounded-lg pl-6 pr-36 text-foreground placeholder:text-secondary cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                     />
                     <button
-                        className="absolute right-2 top-2 bottom-2 bg-white text-black rounded-md px-6 font-medium hover:bg-gray-200 transition-colors"
+                        className="absolute right-2 top-2 bottom-2 bg-foreground text-background rounded-md px-6 font-medium hover:bg-foreground/90 transition-colors"
                     >
                         {t('lab.applyNow', 'common')}
                     </button>
@@ -131,10 +131,10 @@ export default function LabPageClient() {
                         type="email"
                         readOnly
                         placeholder={t('lab.heroEmailPlaceholder', 'common') || "Your Email Address"}
-                        className="w-full h-12 bg-card border border-white/20 rounded-lg px-4 text-white placeholder-white/40 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/30 transition-all"
+                        className="w-full h-12 bg-card border border-border rounded-lg px-4 text-foreground placeholder:text-muted-foreground cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                     />
                     <button
-                        className="w-full h-12 bg-white text-black rounded-lg font-medium hover:bg-gray-200 transition-colors"
+                        className="w-full h-12 bg-foreground text-background rounded-lg font-medium hover:bg-foreground/90 transition-colors"
                     >
                         {t('lab.applyNow', 'common')}
                     </button>

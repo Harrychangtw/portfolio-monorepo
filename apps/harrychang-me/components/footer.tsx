@@ -18,6 +18,11 @@ const LanguageSwitcher = dynamic(
   { ssr: false }
 )
 
+const ThemeSwitcher = dynamic(
+  () => import("@portfolio/ui/theme-switcher"),
+  { ssr: false }
+)
+
 // --- Reorganized Link Data ---
 const connectLinks = [
   { id: 'gmail', name: 'Email', href: '/email' },
@@ -157,7 +162,7 @@ export default function Footer() {
     const linkClassName = `font-ibm-plex text-primary transition-colors whitespace-nowrap ${
       link.id === 'icarus'
         ? 'icarus-link'
-        : 'hover:text-[hsl(var(--accent))]'
+        : 'hover:text-accent'
     }`;
 
     const linkContent = showNowPlaying && link.id === 'music' ? (
@@ -203,22 +208,6 @@ export default function Footer() {
 
   return (
     <>
-      <style jsx global>{`
-        .icarus-link:hover {
-          color: transparent;
-          background-clip: text;
-          -webkit-background-clip: text;
-          background-image: linear-gradient(60deg, #eaff4b, #3affa3, #4aa4d1, #3affa3, #eaff4b);
-          background-size: 200% 100%;
-          animation: gradient-loop 1s linear infinite;
-        }
-
-        @keyframes gradient-loop {
-          0% { background-position: 0% 50%; }
-          100% { background-position: 200% 50%; }
-        }
-      `}</style>
-
       <footer ref={footerRef} className="bg-card text-primary py-12 md:py-16 border-t border-border">
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
@@ -235,7 +224,7 @@ export default function Footer() {
                   alt="Harry Chang/Chi-Wei Chang 張祺煒 Logo"
                   width={357}
                   height={120}
-                  className="object-contain transition-opacity group-hover:opacity-80"
+                  className="object-contain transition-opacity group-hover:opacity-80 footer-logo"
                   priority
                   style={{ width: 'auto', height: '48px' }}
                 />
@@ -290,7 +279,10 @@ export default function Footer() {
 
           {/* Bottom Row */}
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-4 text-sm text-secondary">
-            <LanguageSwitcher />
+            <div className="flex items-center gap-6">
+              <LanguageSwitcher />
+              <ThemeSwitcher />
+            </div>
             <p className="whitespace-nowrap overflow-hidden text-ellipsis">
               © {new Date().getFullYear()} Chi-Wei Chang. All rights reserved.
             </p>
@@ -325,7 +317,7 @@ export default function Footer() {
           {isMusicTooltip ? (
             <NowPlayingCard key={nowPlaying?.songUrl ?? nowPlaying?.title ?? 'np'} data={nowPlaying} />
           ) : (
-            <div className="bg-[hsl(var(--accent))] text-black text-sm px-3 py-1.5 rounded-md shadow-lg font-heading">
+            <div className="bg-accent text-background text-sm px-3 py-1.5 rounded-md shadow-lg font-heading">
               {t(`tooltips.${activeTooltipId}`)}
             </div>
           )}

@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
+import { useTheme } from '@portfolio/lib/contexts/theme-context';
 
 interface LetterGlitchProps {
   glitchColors?: string[];
@@ -16,6 +17,9 @@ const LetterGlitch = ({
   onAnimationComplete
 }: LetterGlitchProps) => {
   const { t } = useLanguage();
+  const { theme } = useTheme();
+  const baseTextColor = theme === 'light' ? '#1a1a1a' : '#ffffff';
+  
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
   const letters = useRef<{
@@ -88,7 +92,12 @@ const LetterGlitch = ({
   };
 
   const getRandomChar = () => lettersAndSymbols[Math.floor(Math.random() * lettersAndSymbols.length)];
-  const getRandomColor = () => glitchColors[Math.floor(Math.random() * glitchColors.length)];
+  
+  const activeGlitchColors = theme === 'light' 
+    ? ["#2563eb", "#ea580c", "#7c3aed"] 
+    : glitchColors;
+  const getRandomColor = () => activeGlitchColors[Math.floor(Math.random() * activeGlitchColors.length)];
+
   const calculateGrid = (width: number, height: number) => ({
     columns: Math.ceil(width / charWidth),
     rows: Math.ceil(height / charHeight),
@@ -106,7 +115,7 @@ const LetterGlitch = ({
   const initializeLetters = (columns: number, rows: number) => {
     grid.current = { columns, rows };
     letters.current = Array.from({ length: columns * rows }, () => ({
-      char: " ", color: "#ffffff", targetColor: "#ffffff",
+      char: " ", color: baseTextColor, targetColor: baseTextColor,
       colorProgress: 1, originalChar: " ", isAnimating: false, isAsciiArt: false
     }));
   };
@@ -117,8 +126,8 @@ const LetterGlitch = ({
       letter.char = " "; 
       letter.originalChar = " ";
       letter.isAnimating = false; 
-      letter.color = "#ffffff";
-      letter.targetColor = "#ffffff"; 
+      letter.color = baseTextColor;
+      letter.targetColor = baseTextColor; 
       letter.colorProgress = 1;
       letter.isAsciiArt = false;
     });
@@ -345,6 +354,17 @@ const LetterGlitch = ({
     animationRef.current = requestAnimationFrame(animate);
   };
 
+  // Handle theme changes for existing letters
+  useEffect(() => {
+    letters.current.forEach(letter => {
+      // Update color for non-special characters (avoiding scroll indicator or active animations)
+      if (!letter.isAnimating && letter.color !== '#4F4F4F') {
+        letter.color = baseTextColor;
+        letter.targetColor = baseTextColor;
+      }
+    });
+  }, [baseTextColor]);
+
   useEffect(() => {
     const checkWidth = () => {
       const wide = window.innerWidth >= minWidth;
@@ -494,7 +514,7 @@ const LetterGlitch = ({
 
   const containerStyle: React.CSSProperties = {
     position: "relative", width: "100%", height: "100vh",
-    backgroundColor: "#0A0A0A", overflow: "hidden",
+    backgroundColor: "transparent", overflow: "hidden",
   };
   const canvasStyle: React.CSSProperties = {
     display: "block", width: "100%", height: "100%",
@@ -511,9 +531,9 @@ const LetterGlitch = ({
           alignItems: 'center',
           width: '100%',
           height: '100%',
-          color: '#ffffff',
+          color: baseTextColor,
           fontSize: '2rem',
-          fontFamily: 'monospace',
+          fontFamily: 'heading',
           padding: '1rem',
           textAlign: 'center'
         }}>

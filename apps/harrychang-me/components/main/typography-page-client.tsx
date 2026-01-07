@@ -39,12 +39,12 @@ const ColorCard = ({ name, cssValue }: { name: string; cssValue: string }) => {
     <div className="space-y-2">
       <div
         ref={swatchRef}
-        className="w-full aspect-square border border-white/10"
+        className="w-full aspect-square border border-border"
         style={{ backgroundColor: cssValue }}
       />
       <div>
-        <p className="font-heading text-xs">{name}</p>
-        <p className="font-heading text-xs text-white/40 uppercase font-mono">
+        <p className="font-heading text-xs text-primary">{name}</p>
+        <p className="font-heading text-xs text-secondary uppercase font-mono">
           {resolvedHex || '...'}
         </p>
       </div>
@@ -68,7 +68,7 @@ export default function TypographyPageClient() {
   ]
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-white">
       
       {/* Design Philosophy & Identity */}
       <section className="container mx-auto px-4 md:px-8 py-12">
@@ -88,7 +88,7 @@ export default function TypographyPageClient() {
           </h2>
 
           {/* Philosophy Text */}
-          <div className="">
+        <div className="">
             <p className="font-ibm-plex text-lg text-primary mb-6">
               {t('design.identityText1')}
             </p>

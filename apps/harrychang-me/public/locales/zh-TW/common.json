@@ -18,8 +18,15 @@
     "personalResources": "探索與資源",
     "siteNavigation": "網站導覽",
     "languageSwitch": "語言",
+    "themeSwitch": "主題",
     "motto1":"不走尋常路，不等誰允許。路還在鋪，人已在走。",
     "motto2":"一同探索可能 — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+  },
+  "theme": {
+    "light": "淺色",
+    "dark": "深色",
+    "switchToLight": "切換至淺色模式",
+    "switchToDark": "切換至深色模式"
   },
   "about": {
     "title": "關於我",
