@@ -326,7 +326,7 @@ export default function ManifestoPage() {
     }, [introComplete, manifestoChunks.length]);
 
     return (
-        <div className="min-h-screen font-mono bg-background text-gray-300">
+        <div className="min-h-screen font-heading bg-background text-foreground transition-colors duration-500">
             <div className="h-screen relative">
                 <LetterGlitch onAnimationComplete={handleAnimationComplete} />
             </div>
@@ -353,7 +353,7 @@ export default function ManifestoPage() {
                                         {chunk.map((line, lineIndex) => (
                                             <p 
                                                 key={`${chunkIndex}-${lineIndex}`} 
-                                                className="text-base md:text-lg leading-relaxed text-gray-200"
+                                                className="md:text-lg text-foreground"
                                             >
                                                 {line}
                                             </p>

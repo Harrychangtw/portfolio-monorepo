@@ -147,7 +147,7 @@ export default function EmilyHeader() {
 
   const getLinkProps = (sectionId: string) => {
     const active = isActive(sectionId)
-    const baseClasses = `relative font-body text-base ${active ? "text-primary" : "text-secondary hover:text-[hsl(var(--accent))]"} transition-colors duration-200 outline-none`
+    const baseClasses = `relative font-body text-base ${active ? "text-primary" : "text-secondary hover:text-accent"} transition-colors duration-200 outline-none`
     const href = `/#${sectionId}`
     const onClick = isHomePage ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => scrollToSection(sectionId, e) : undefined
     return { className: baseClasses, href, onClick, scroll: false }
@@ -195,7 +195,7 @@ export default function EmilyHeader() {
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <Link
               href="/"
-              className="font-heading italic text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none"
+              className="font-heading italic text-xl font-semibold transition-colors hover:text-accent outline-none"
               onClick={(e) => { if(isHomePage) scrollToSection('about', e) }}
             >
               Emily Chang

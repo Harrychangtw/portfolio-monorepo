@@ -57,7 +57,7 @@ function getEmailTemplate(displayName: string, position: number, locale: string)
     ? 'waitlist-confirmation-zh-tw.html' 
     : 'waitlist-confirmation-en.html';
   
-  const templatePath = path.join(process.cwd(), 'lib', 'email-templates', templateFileName);
+  const templatePath = path.join(process.cwd(), 'components', 'lab', 'email-templates', templateFileName);
   
   try {
     let template = fs.readFileSync(templatePath, 'utf-8');

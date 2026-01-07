@@ -83,7 +83,7 @@ export default function EmilyFooter() {
               <div className="text-sm text-secondary space-y-2">
                 <p>© {new Date().getFullYear()} {siteConfig.author.name}. All rights reserved.</p>
                 <p>
-                  Developed by <a href={siteConfig.developer.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-[hsl(var(--accent))]">{siteConfig.developer.name}</a>
+                  Developed by <a href={siteConfig.developer.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-accent">{siteConfig.developer.name}</a>
                 </p>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function EmilyFooter() {
                               target: "_blank",
                               rel: "noopener noreferrer"
                             })}
-                            className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
+                            className="font-body text-primary hover:text-accent transition-colors whitespace-nowrap"
                             onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => handleMouseEnter(e, link.id)}
                             onMouseMove={handleMouseMove}
                             onMouseLeave={handleMouseLeave}
@@ -131,7 +131,7 @@ export default function EmilyFooter() {
                         <motion.div whileHover={{ y: UI.motion.hoverLift }} transition={{ duration: ANIMATION.duration.normal }}>
                           <Link
                             href={link.href}
-                            className="font-body text-primary hover:text-[hsl(var(--accent))] transition-colors whitespace-nowrap"
+                            className="font-body text-primary hover:text-accent transition-colors whitespace-nowrap"
                             onClick={(e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, link.href)}
                             onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => handleMouseEnter(e, link.id)}
                             onMouseMove={handleMouseMove}
@@ -166,7 +166,7 @@ export default function EmilyFooter() {
             pointerEvents: 'none',
           }}
         >
-          <div className="bg-[hsl(var(--accent))] text-white text-sm px-3 py-1.5 rounded-md shadow-lg font-body">
+          <div className="bg-accent text-white text-sm px-3 py-1.5 rounded-md shadow-lg font-body">
             {t(`tooltips.${activeTooltipId}`)}
           </div>
         </motion.div>

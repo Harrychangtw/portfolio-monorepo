@@ -340,7 +340,7 @@ export default function Header() {
   // Helper to generate link props
   const getLinkProps = (sectionId: string, pagePath: string) => {
     const active = isActive(sectionId);
-    const baseClasses = `relative font-heading ${active ? "text-primary" : "text-secondary hover:text-[hsl(var(--accent))]"} transition-colors duration-200 outline-none`;
+    const baseClasses = `relative font-heading ${active ? "text-primary" : "text-secondary hover:text-accent"} transition-colors duration-200 outline-none`;
     const href = isHomePage ? `/#${sectionId}` : pagePath === '/' ? `/#${sectionId}` : pagePath;
     const onClick = isHomePage ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => scrollToSection(sectionId, e) : undefined;
     const scroll = !isHomePage;
@@ -414,32 +414,10 @@ export default function Header() {
       layoutRoot
       className="fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background"
     >
-      <style jsx global>{`
-        .loading-gradient {
-          color: transparent;
-          background-clip: text;
-          -webkit-background-clip: text;
-          background-image: linear-gradient(60deg, #eaff4b, #eaff4b, #3affa3, #5cd2ef, #3affa3, #eaff4b, #eaff4b);
-          background-size: 200% 100%;
-          animation: gradient-loop 2s linear infinite;
-        }
-
-        .loading-bar {
-          background-image: linear-gradient(60deg, #eaff4b, #eaff4b, #3affa3, #5cd2ef, #3affa3, #eaff4b, #eaff4b);
-          background-size: 200% 100%;
-          animation: gradient-loop 2s linear infinite;
-        }
-
-        @keyframes gradient-loop {
-          0% { background-position: 0% 50%; }
-          100% { background-position: 200% 50%; }
-        }
-      `}</style>
-
       {/* Navigation loading indicator */}
       {isNavigating && (
         <motion.div
-          className="absolute top-0 left-0 h-[1px] loading-bar"
+          className="absolute top-0 left-0 h-[2px] loading-bar"
           initial={{ x: "-100%", width: "18%" }}
           animate={{ 
             x: ["-100%", "600%"],
@@ -464,7 +442,7 @@ export default function Header() {
       {/* Reading progress indicator */}
       {(isProjectDetailPage || isBlogDetailPage) && !isLab && !isNavigating && (
         <div
-          className="absolute top-0 left-0 h-[1px] bg-[hsl(var(--accent))]"
+          className="absolute top-0 left-0 h-[2px] bg-accent"
           style={{ width: `${readingProgress}%` }}
         />
       )}
@@ -475,14 +453,14 @@ export default function Header() {
 {isLab ? (
               <a
                 href={getHomeUrl()}
-                className="font-heading text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none whitespace-nowrap"
+                className="font-heading text-xl font-semibold transition-colors hover:text-accent outline-none whitespace-nowrap"
               >
                 Harry Chang
               </a>
             ) : (
               <NavigationLink
                 href="/"
-                className="font-heading text-xl font-semibold transition-colors hover:text-[hsl(var(--accent))] outline-none whitespace-nowrap"
+                className="font-heading text-xl font-semibold transition-colors hover:text-accent outline-none whitespace-nowrap"
                 onClick={(e) => { if(isHomePage) scrollToSection('about', e); }}
               >
                 Harry Chang

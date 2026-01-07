@@ -77,7 +77,7 @@ const config: Omit<Config, 'content'> = {
                 marginLeft: "0.1em",  
                 verticalAlign: "super",
                   color: "hsl(var(--accent))",
-                fontFamily: "var(--font-body)",
+                fontFamily: "var(--font-heading)",
                 fontSize: "0.85em",
                 whiteSpace: "nowrap",
                 fontWeight: "700",
@@ -99,6 +99,10 @@ const config: Omit<Config, 'content'> = {
             h4: {
               color: "hsl(var(--foreground))",
               fontFamily: "var(--font-heading)",
+            },
+            strong: {
+              color: "hsl(var(--foreground))",
+              fontWeight: "600",
             },
             p: {
               color: "hsl(var(--foreground))",

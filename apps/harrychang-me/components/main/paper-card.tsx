@@ -18,7 +18,7 @@ export default function PaperCard({ paper }: PaperCardProps) {
     <div 
       className="border-b border-border py-4"
     >
-      <h3 className="text-lg font-semibold break-words leading-tight">
+      <h3 className="text-lg font-heading font-semibold break-words leading-tight">
         <Link 
           href={paper.url} 
           target="_blank" 
