@@ -1,8 +1,6 @@
-"use client";
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
-import { motion } from 'motion/react';
 import { X } from 'lucide-react';
 
 interface WaitlistFormProps {
@@ -95,10 +93,10 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
     return (
       <div
         onClick={(e) => e.stopPropagation()}
-        className="bg-card rounded-2xl p-8 max-w-md w-full mx-2 border border-primary/20 text-center"
+        className="bg-card rounded-2xl p-8 max-w-md w-full mx-2 border border-border text-center shadow-lg"
       >
         <div className="mb-4 text-4xl">🎉</div>
-        <h2 className="text-2xl font-heading font-bold mb-4">
+        <h2 className="text-2xl font-heading font-bold mb-4 text-foreground">
           {t('lab.successTitle', 'common')}
         </h2>
         <p className="text-muted-foreground mb-4">
@@ -106,7 +104,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         </p>
         <button
           onClick={onClose}
-          className="px-6 py-2 bg-primary text-background rounded-full font-medium hover:bg-primary/90 transition-colors"
+          className="px-6 py-2 font-heading bg-primary text-background rounded-md hover:bg-primary/90 transition-colors"
         >
           {t('lab.close', 'common')}
         </button>
@@ -117,21 +115,21 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className="bg-card rounded-2xl p-6 md:p-8 max-w-lg w-full mx-2 border border-white/20 max-h-[90vh] overflow-y-auto relative"
+      className="bg-card rounded-2xl p-6 md:p-8 max-w-lg w-full mx-2 border border-border max-h-[90vh] overflow-y-auto relative shadow-2xl"
     >
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 p-2 rounded-full text-white/50 hover:bg-white/10 hover:text-white transition-colors"
+        className="absolute top-4 right-4 p-2 rounded-full text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
         aria-label="Close"
       >
         <X className="w-5 h-5" />
       </button>
 
-      <h2 className="text-2xl font-heading font-bold mb-2 text-white">
+      <h2 className="text-2xl font-heading font-bold mb-2 text-foreground">
         {t('lab.formTitle', 'common')}
       </h2>
       
-      <p className="text-sm text-muted-foreground mb-6">
+      <p className="text-sm font-heading text-muted-foreground mb-6">
         {t('lab.formSubtitle', 'common')}
       </p>
 
@@ -142,14 +140,14 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
             placeholder={t('lab.firstName', 'common')}
             value={formData.firstName}
             onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-            className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
+            className="px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground placeholder:text-secondary"
           />
           <input
             type="text"
             placeholder={t('lab.lastName', 'common')}
             value={formData.lastName}
             onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-            className="px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
+            className="px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground placeholder:text-secondary"
           />
         </div>
 
@@ -160,11 +158,11 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
           placeholder={t('lab.emailRequired', 'common')}
           value={formData.email}
           onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-          className="w-full px-4 py-2 bg-transparent border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white placeholder:text-white/80"
+          className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground placeholder:text-secondary"
         />
 
         <div>
-          <label className="block text-sm font-medium mb-2 text-white/80">
+          <label className="block text-sm font-heading font-medium mb-2 text-foreground/80">
             {t('lab.whatInterests', 'common')}
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -176,7 +174,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
                 className={`px-3 py-2 text-sm rounded-lg border transition-all ${
                   formData.interests.includes(option.id)
                     ? 'bg-primary text-background border-primary'
-                    : 'bg-transparent border-white/20 hover:border-white/40 text-white/80'
+                    : 'bg-background border-border hover:border-primary/50 text-muted-foreground hover:bg-background'
                 }`}
               >
                 {option.label}
@@ -186,16 +184,16 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2 text-white/80">
+          <label className="block text-sm font-heading font-medium mb-2 text-foreground/80">
             {t('lab.preferredTier', 'common')}
           </label>
           <select
             value={formData.tier}
             onChange={(e) => setFormData(prev => ({ ...prev, tier: e.target.value }))}
-            className="w-full px-4 py-2 bg-card border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors text-white"
+            className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground"
           >
             {tierOptions.map(option => (
-              <option key={option.id} value={option.id} className="bg-card text-white">
+              <option key={option.id} value={option.id} className="bg-background text-foreground">
                 {option.label}
               </option>
             ))}
@@ -211,7 +209,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full py-3 bg-primary text-background rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full py-3 bg-primary text-background rounded-lg font-heading hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {status === 'loading' 
             ? t('lab.processing', 'common')

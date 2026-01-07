@@ -122,7 +122,7 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
                 <div className="relative">
                   <NavigationLink
                     href="/#gallery"
-                    className="inline-flex items-center text-secondary hover:text-primary transition-colors font-body"
+                    className="inline-flex items-center text-secondary hover:text-accent transition-colors font-body"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4" />
                     {t('gallery.backToGallery')}

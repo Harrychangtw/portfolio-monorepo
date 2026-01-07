@@ -138,7 +138,7 @@ export default function ProjectCard({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.2 }}
-          className="fixed bg-[hsl(var(--accent))] text-black text-sm px-3 py-1 rounded shadow-lg font-heading z-50"
+          className="fixed bg-accent text-background text-sm px-3 py-1 rounded shadow-lg font-heading z-50"
           style={{ top: tooltip.y - 40, left: tooltip.x, pointerEvents: 'none', transform: 'translateX(-50%)' }}
         >
           {tooltipText}

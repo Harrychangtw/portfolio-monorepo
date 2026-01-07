@@ -205,7 +205,7 @@ useEffect(() => {
               <div className="md:sticky md:top-24 flex flex-col gap-8">
                  <NavigationLink
                     href="/#blog"
-                    className="inline-flex items-center text-secondary hover:text-primary transition-colors"
+                    className="inline-flex items-center text-secondary hover:text-accent transition-colors"
                   >
                     <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
                     <span className="font-body">{t('blog.backToBlog')}</span>

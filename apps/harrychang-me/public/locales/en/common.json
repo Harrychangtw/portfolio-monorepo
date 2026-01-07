@@ -18,8 +18,15 @@
     "personalResources": "Resources",
     "siteNavigation": "Site Map",
     "languageSwitch": "Language",
+    "themeSwitch": "Theme",
     "motto1":"Building highways when lanes feel too narrow. Sometimes it's sharp, sometimes it's f/0.95 blur.",
     "motto2":"Curious? So am I. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
   },
   "about": {
     "title": "About",

@@ -159,10 +159,10 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
           {showSeeAll && (
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
               <NavigationLink href={`/gallery`} className="group flex items-center gap-2">
-                <span className="font-ibm-plex text-sg text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
+                <span className="font-ibm-plex text-sg text-secondary group-hover:text-accent transition-colors">
                   {t('gallery.seeAll')}
                 </span>
-                <span className="font-heading text-xl text-secondary group-hover:text-[hsl(var(--accent))] transition-colors">
+                <span className="font-heading text-xl text-secondary group-hover:text-accent transition-colors">
                   →
                 </span>
               </NavigationLink>
