@@ -15,6 +15,18 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
+// Helper: Get cookie value
+const getCookie = (name: string) => {
+  if (typeof document === 'undefined') return null
+  return document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=')[1] || null
+}
+
+// Helper: Set cookie with root domain for cross-subdomain persistence
+const setCookie = (name: string, value: string) => {
+  const domain = window.location.hostname.includes('harrychang.me') ? '; domain=.harrychang.me' : ''
+  document.cookie = `${name}=${value}; path=/${domain}; max-age=31536000` // 1 year
+}
+
 interface Translations {
   [namespace: string]: {
     [key: string]: any
@@ -84,7 +96,7 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
     if (window.location.pathname.replace(/\/$/, '').endsWith('_zh-tw')) {
       return 'zh-TW'
     }
-    const saved = localStorage.getItem('language') as Language | null
+    const saved = getCookie('language') as Language | null
     if (saved === 'en' || saved === 'zh-TW') {
       return saved
     }
@@ -200,7 +212,7 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
       return
     }
     setLanguageState(lang)
-    localStorage.setItem('language', lang)
+    setCookie('language', lang)
   }
 
   // Gate visibility until first load completes (prevents FOUC without layout shift)

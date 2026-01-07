@@ -36,7 +36,7 @@ export default function ThemeSwitcher() {
         />
       )}
       <span className="tracking-wider">
-        {theme === 'dark' ? t('theme.light') : t('theme.dark')}
+        {theme === 'dark' ? t('theme.dark') : t('theme.light')}
       </span>
       <ArrowRightLeft className="w-3.5 h-3.5" />
     </motion.button>
