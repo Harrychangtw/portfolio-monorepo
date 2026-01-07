@@ -5,7 +5,6 @@ import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import LanguageSwitcher from '@portfolio/ui/language-switcher';
 
 
-
 const manifestoChunksEn = [
     [
         "I am the child who saw marvels in LEGO bricks,",
@@ -20,9 +19,10 @@ const manifestoChunksEn = [
         "No hell but the silence of unexpressed potential."
     ],
     [
-        "I live not for applause or accolades,",
-        "But for the five-year-old who rode uncertain bicycles",
-        "Through Shanghai factory yards,",
+        "I cannot claim indifference to being seen—",
+        "Every frame composed is a hand extended outward.",
+        "But deeper than the reach lives the five-year-old",
+        "Who rode uncertain bicycles through Shanghai factory yards,",
         "Eyes wide with wonder at machines that breathed and sang.",
         "He did not know he was building a debt I would spend my life repaying."
     ],
@@ -78,15 +78,16 @@ const manifestoChunksEn = [
         "When lungs collapsed like faulty code,",
         "I learned that existence precedes essence—",
         "That we are not defined by our limitations but by our response to them.",
-        "For the light that burns twice as bright burns half as long,",
-        "and I have always chosen to burn brightly."
+        "The light that burns twice as bright burns half as long—",
+        "Perhaps there are other ways to glow."
     ],
     [
         "I am my own audience, my own critic, my own muse.",
-        "Not from narcissism, but from freedom—",
+        "Part freedom, part fortress, part fear—",
         "The freedom to fail magnificently,",
         "The freedom to explore without permission,",
-        "The freedom to share without expectation."
+        "The freedom to share without expectation,",
+        "And the cost of a gallery where I am the only guest."
     ],
     [
         "Every line of code I write,",
@@ -119,8 +120,10 @@ const manifestoChunksEn = [
         "Forever beginning,",
         "Forever that child in the factory yard,",
         "Looking up at the infinite.",
-        "Hands dirty with creation, heart crystal with marvels.",
+        "Hands dirty with creation,",
+        "Heart crystal—and every crack, a place for light to enter."
     ],
+
 ];
 
 const manifestoChunksZhTw = [
@@ -137,8 +140,9 @@ const manifestoChunksZhTw = [
         "深淵，是潛能身陷囹圄的死寂"
     ],
     [
-        "我活著，不為掌聲或喝采",
-        "而是為了那個五歲的自己",
+        "我無法假裝不渴望被看見——",
+        "每一幀構圖，都是一隻向外伸出的手",
+        "但比渴望更深處，住著那個五歲的自己",
         "騎著搖晃的單車，穿梭在上海的工廠",
         "對著那些會呼吸、會歌唱的機器，滿眼驚奇",
         "他不知道，他正在築一筆債，讓我用一生償還"
@@ -193,15 +197,18 @@ const manifestoChunksZhTw = [
         "當呼吸在病床上變得艱難",
         "當肺泡如壞損的程式碼般崩塌",
         "我學會了：存在先於本質",
-        "定義我們的，從非我們的極限",
-        "而是我們如何回應極限"
+        "定義我們的，不是我們的極限",
+        "而是我們如何回應極限",
+        "燃燒得最亮的光，熄滅得最快——",
+        "或許，還有其他發光的方式"
     ],
     [
         "我是自己的觀眾，自己的評審，自己的繆思",
-        "這並非自負，而是源於自由",
+        "半是自由，半是堡壘，半是恐懼——",
         "一種得以華麗失敗的自由",
         "一種無須許可便能探索的自由",
-        "一種不求回報就能分享的自由"
+        "一種不求回報就能分享的自由",
+        "以及，展廊裡唯我獨覽的重量"
     ],
     [
         "我寫下的每一行程式碼",
@@ -236,7 +243,6 @@ const manifestoChunksZhTw = [
         "永遠是那個工廠裡的孩子",
         "雙手滿是創造的塵土",
         "指尖輕觸無垠，內心澄澈如初。"
-
     ]
 ];
 

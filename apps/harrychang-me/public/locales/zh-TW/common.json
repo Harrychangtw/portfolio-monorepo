@@ -113,32 +113,32 @@
     "publishedOn": "發表於"
   },
   "tooltips": {
-    "about":"沒人會看的自我介紹",
-    "updates":"偽裝成更新日誌的裝逼紀錄",
-    "projects":"證明我不出門的專案們",
-    "gallery":"昂貴玻璃對準平凡事物",
+    "about":"關於我是誰，在做什麼，為什麼做",
+    "updates":"最近在忙的事，值得記錄的瞬間",
+    "projects":"從研究到創作，值得分享的作品",
+    "gallery":"透過鏡頭捕捉的片刻與思考",
     "gmail": "隨時歡迎交流！",
-    "discord": "全年無休上線，清醒僅三成",
+    "discord": "常在線上，偶爾放空，隨時歡迎交流",
     "calendar": "預約時間來聊聊吧！",
-    "github": "好好的程式碼被我 overengineer 的墳墓",
-    "instagram": "高中生裝自己是何藩",
-    "linkedin": "歡迎成為我的第六位人脈",
-    "letterboxd": "全部 4.5 顆星因為我沒有品味",
-    "resume": "對，就是一個 Google Drive 連結",
+    "github": "打造、實驗、偶爾過度設計的地方",
+    "instagram": "正在學習用相機說故事",
+    "linkedin": "歡迎交流！",
+    "letterboxd": "留下印象的電影",
+    "resume": "兩頁版履歷（對，就放在 Google Drive）",
     "manifesto": "我對創作、工作與好奇心的理念",
     "icarus": "翅膀，從未長在教科書裡",
     "music": "爵士到嘻哈到蕭邦只需三首歌",
-    "reading": "沒 TL;DR，請自己想辦法",
-    "uses": "「學校功課」絕對會用到",
-    "design": "因為「檢查元素」是給麻瓜用的",
+    "reading": "正在讀的論文，需要時間慢慢啃",
+    "uses": "桌上與日常使用的工具",
+    "design": "這個網站的設計理念與細節",
     "issues": "回報 Bug 或建議新功能",
-    "blog": "內容不保證有用，但保證很花你時間"
+    "blog": "關於電影、工具、生活的文字痕跡"
   },
   "letterGlitch": {
     "line1": "我 從 未 被 教 會 創 造 ——",
-    "line2": "而 是 生 來 就 記 得 。",
+    "line2": "而 是 懵 懂 到 願 意 嘗 試 。",
     "line3": "讓 思 緒 歸 於 沉 寂，",
-    "line4": "讓 指 尖 重 拾 ， 昔 日 那 份 童 貞 。"
+    "line4": "讓 指 尖 重 拾 ， 昔 日 那 份 天 真 。"
   }, 
 
   "common": {
@@ -152,7 +152,7 @@
   "lab": {
     "capsule": "2026 Q2 · 限量開放",
     "heroLine1": "十七歲的實戰心法",
-    "heroLine2": "獻給不甘相同的你",
+    "heroLine2": "獻給走自己路的你",
     "tagline": "中英口說、研究、創作的高層次課程，以及深度一對一共創。",
     "heroEmailPlaceholder": "your@email.com",
     "applyNow": "我感興趣",
