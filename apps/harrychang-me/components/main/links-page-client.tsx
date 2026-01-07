@@ -175,7 +175,7 @@ export default function LinksPageClient() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-2xl sm:text-3xl font-bold mb-2"
+            className="text-2xl sm:text-3xl font-heading font-semibold mb-4"
           >
             Harry Chang 張祺煒
           </motion.h1>
@@ -185,7 +185,7 @@ export default function LinksPageClient() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base sm:text-lg text-muted-foreground mb-2"
+            className="text-base font-heading sm:text-lg text-muted-foreground mb-2"
           >
             {t("links.hero")}
           </motion.p>
@@ -251,7 +251,7 @@ function LinkCard({ link }: { link: LinkItem }) {
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm sm:text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+          <h3 className="text-sm sm:text-base font-body font-semibold text-foreground group-hover:text-primary transition-colors">
             {link.label}
           </h3>
         </div>

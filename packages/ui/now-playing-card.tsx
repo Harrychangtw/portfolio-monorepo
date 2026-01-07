@@ -54,7 +54,7 @@ export default function NowPlayingCard({ data }: { data: NowPlaying }) {
                         href={data.songUrl ?? '#'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block font-medium truncate hover:underline"
+                        className="block font-heading truncate hover:underline"
                         title={data.title}
                     >
                         {data.title ?? 'Unknown Track'}
