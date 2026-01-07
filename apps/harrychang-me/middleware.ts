@@ -39,7 +39,9 @@ export function middleware(request: NextRequest) {
     '/robots.txt',     // Allow dynamic robots.txt
     '/sitemap.xml',    // Allow dynamic sitemap
     '/googleb0d95f7ad2ffc31f.html',
-    '/language.svg',   
+    '/language.svg',
+    '/theme_moon.svg',
+    '/theme_sun.svg',   
     '/chinese_name_icon.png', 
     '/placeholder-logo.png',
     '/images/og-image.webp',

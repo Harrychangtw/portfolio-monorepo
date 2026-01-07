@@ -5,8 +5,9 @@
 
 @layer base {
   :root {
+    /* Dark mode colors (default) */
     --background: 0 0% 4%;
-    --foreground: 0 0% 100%; 
+    --foreground: 0 0% 100%;
     --card: 0 0% 6%;
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 4%;
@@ -28,6 +29,29 @@
     --pixel-accent: hsl(var(--accent));
     --accent-color: hsl(var(--accent));
     --column-spacing: max(0.5rem, 0.2vw);
+  }
+
+  .light {
+    /* Light mode colors */
+    --background: 24 10% 95%;
+    --foreground: 0 0% 4%;
+    --card: 24 1% 99%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 53%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 223 100% 50%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 53%;
   }
   
   * {
@@ -168,22 +192,12 @@
     vertical-align: super;
     margin-left: 0.1em;
     color: hsl(var(--accent));
-    font-family: var(--font-body);
-    font-size: 0.85em;
-    font-weight: 500;
+    font-family: var(--font-heading);
+    font-size: 0.8em;
+    font-weight: 800;
   }
 
-  /* Prose content styling */
-  .prose {
-    --tw-prose-body: hsl(var(--foreground));
-    --tw-prose-headings: hsl(var(--foreground));
-    --tw-prose-links: hsl(var(--primary));
-    --tw-prose-bold: hsl(var(--foreground));
-    --tw-prose-counters: hsl(var(--muted-foreground));
-    --tw-prose-bullets: hsl(var(--muted-foreground));
-    --tw-prose-quotes: hsl(var(--foreground));
-    --tw-prose-code: hsl(var(--foreground));
-  }
+  
 
   /* Ensure prose content uses correct fonts */
   .prose :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
@@ -211,4 +225,52 @@
   scroll-margin-top: var(--header-offset, 64px);
 }
 
+:root {
+  /* Dark mode gradient (Neon Yellow/Green/Blue) */
+  --gradient-primary: linear-gradient(60deg, #eaff4b, #eaff4b, #3affa3, #5cd2ef, #3affa3, #eaff4b, #eaff4b);
+}
+
+html.light {
+  /* Light mode gradient (Blue/Cyan/Purple) - Darker for contrast against white */
+  --gradient-primary: linear-gradient(60deg, #2563eb, #2563eb, #C700FF, #FF6700, #C700FF, #2563eb, #2563eb);
+}
+
+@keyframes gradient-loop {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.loading-gradient {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: var(--gradient-primary);
+  background-size: 200% 100%;
+  animation: gradient-loop 2s linear infinite;
+}
+
+.loading-bar {
+  background-image: var(--gradient-primary);
+  background-size: 200% 100%;
+  animation: gradient-loop 2s linear infinite;
+}
+
+.icarus-link:hover {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: var(--gradient-primary);
+  background-size: 200% 100%;
+  animation: gradient-loop 1s linear infinite;
+}
+
+/* --- Theme Adaptation --- */
+/* Invert the white footer logo when in light mode */
+html.light .footer-logo {
+  filter: invert(1);
+}
+
+html.light .lab-logo {
+  filter: invert(1);
+}
 
