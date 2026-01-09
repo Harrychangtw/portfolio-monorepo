@@ -1,6 +1,10 @@
 "use client"
 
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import dynamic from 'next/dynamic'
+
+const LanguageSwitcher = dynamic(() => import("@portfolio/ui/language-switcher"), { ssr: false })
+const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), { ssr: false })
 
 export default function AboutSection() {
   const { t, tHtml } = useLanguage()
@@ -9,15 +13,21 @@ export default function AboutSection() {
       <div className="container">
         <div className="grid grid-cols-12 gap-2">
           {/* About column - spans half the width on desktop */}
-          <div className="col-span-12 md:col-span-6 pr-0 md:pr-12">
-            <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('about.title')}</h2>
-            <p className="font-body text-primary lcp-bio" style={{contain: "paint"}}>
-              {tHtml('bio1', 'about')}
-              <br /><br />
-              {tHtml('bio2', 'about')}
-              <br /><br />
-              {tHtml('bio3', 'about')}
-            </p>
+          <div className="col-span-12 md:col-span-6 pr-0 md:pr-12 flex flex-col">
+            <div>
+              <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">{t('about.title')}</h2>
+              <p className="font-body text-primary lcp-bio" style={{contain: "paint"}}>
+                {tHtml('bio1', 'about')}
+                <br /><br />
+                {tHtml('bio2', 'about')}
+                <br /><br />
+                {tHtml('bio3', 'about')}
+              </p>
+            </div>
+            <div className="hidden md:flex items-center gap-6 mt-auto pt-8">
+              <LanguageSwitcher />
+              <ThemeSwitcher />
+            </div>
           </div>
 
           {/* Two-column section for roles and descriptions */}

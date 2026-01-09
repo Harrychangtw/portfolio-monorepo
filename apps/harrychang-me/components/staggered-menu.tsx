@@ -6,6 +6,10 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import NavigationLink from "@portfolio/ui/navigation-link"
 import { usePathname } from "next/navigation"
+import dynamic from "next/dynamic"
+
+const LanguageSwitcher = dynamic(() => import("@portfolio/ui/language-switcher"), { ssr: false })
+const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), { ssr: false })
 
 export interface StaggeredMenuItem {
   label: string;
@@ -406,7 +410,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel fixed top-0 right-0 h-[100dvh] bg-background flex flex-col p-[3rem_2rem_4rem_2rem] md:p-[6em_2rem_4rem_2rem] overflow-y-auto z-10"
+          className="staggered-menu-panel fixed top-0 right-0 h-[100dvh] bg-background flex flex-col p-[3rem_2rem_6rem_2rem] md:p-[6em_2rem_6rem_2rem] overflow-y-auto z-10"
           style={{ 
             visibility: open ? 'visible' : 'hidden'
           }}
@@ -450,31 +454,38 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               )}
             </ul>
             
-            {/* Social Links Section */}
-            {displaySocials && socialItems && socialItems.length > 0 && (
-              <div className="sm-panel-socials mt-auto pt-4 pb-16">
-                <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
-                  {t('footer.socialContact') || 'Social & Contact'}
-                </h3>
-                <ul className="list-none m-0 p-0 flex flex-wrap gap-6" role="list">
-                  {socialItems.map((social, idx) => (
-                    <li key={social.label + idx}>
-                      <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                        <a
-                          href={social.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-ibm-plex text-primary text-base transition-colors duration-200 ease-linear hover:text-[var(--sm-accent)]"
-                          aria-label={social.label}
-                        >
-                          {social.label}
-                        </a>
-                      </motion.div>
-                    </li>
-                  ))}
-                </ul>
+            {/* Bottom Section: Socials & Switchers */}
+            <div className="mt-auto pt-4 pb-24 flex flex-col gap-10">
+              {displaySocials && socialItems && socialItems.length > 0 && (
+                <div className="sm-panel-socials">
+                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
+                    {t('footer.socialContact') || 'Social & Contact'}
+                  </h3>
+                  <ul className="list-none m-0 p-0 flex flex-wrap gap-6" role="list">
+                    {socialItems.map((social, idx) => (
+                      <li key={social.label + idx}>
+                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                          <a
+                            href={social.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-ibm-plex text-primary text-base transition-colors duration-200 ease-linear hover:text-[var(--sm-accent)]"
+                            aria-label={social.label}
+                          >
+                            {social.label}
+                          </a>
+                        </motion.div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="flex items-center gap-6">
+                <LanguageSwitcher />
+                <ThemeSwitcher />
               </div>
-            )}
+            </div>
           </div>
         </aside>
       </div>

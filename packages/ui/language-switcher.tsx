@@ -1,37 +1,50 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { ArrowRightLeft } from 'lucide-react'
+import { useState } from 'react'
 
 export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage()
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'zh-TW' : 'en')
-  }
+  const isEn = language === 'en'
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
     <motion.button
-      onClick={toggleLanguage}
-      className="flex items-center space-x-2 font-heading text-secondary hover:text-accent transition-colors duration-200"
-      whileHover={{ y: -2 }}
-      whileTap={{ scale: 0.95 }}
+      onClick={() => setLanguage(isEn ? 'zh-TW' : 'en')}
+      className="flex items-center gap-1.5 font-heading text-sm font-medium select-none"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      whileHover={{ y: -2 }} 
       transition={{ duration: 0.2 }}
     >
-      <Image
-        src="/language.svg"
-        alt="Language"
-        width={14}
-        height={14}
-        priority
-        style={{ width: '14px', height: '14px' }}
-      />
-      <span className="tracking-wider">
-        {language === 'en' ? 'English' : '繁體中文'}
+      <span 
+        className={`transition-colors duration-200 ${
+          !isEn 
+            ? 'text-primary' 
+            : isHovered ? 'text-accent' : 'text-secondary'
+        }`}
+      >
+        中
       </span>
-      <ArrowRightLeft className="w-3.5 h-3.5" />
+      <motion.span 
+        className="text-secondary font-heading font-medium inline-block w-[2ch] text-center"
+        animate={{
+          opacity: isHovered ? [1, 0.6, 1] : 1,
+        }}
+        transition={{ duration: 0.2}}
+      >
+        {isHovered ? (isEn ? '→' : '←') : '／'}
+      </motion.span>
+      <span 
+        className={`transition-colors duration-200 ${
+          isEn 
+            ? 'text-primary' 
+            : isHovered ? 'text-accent' : 'text-secondary'
+        }`}
+      >
+        EN
+      </span>
     </motion.button>
   );
 }
