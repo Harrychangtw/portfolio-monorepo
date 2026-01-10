@@ -147,8 +147,8 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
             <button
               onClick={() => handleClick(id)}
               className={cn(
-                "text-left text-sm font-body transition-all duration-200 w-full py-1",
-                "hover:text-primary",
+                "text-left text-sm font-heading transition-all duration-200 w-full py-1",
+                "hover:text-accent",
                 // Indent based on heading level
                 level === 2 && "pl-0",
                 level === 3 && "pl-3",

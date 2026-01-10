@@ -3,8 +3,11 @@
 import { useEffect, useState, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import { ArrowLeft } from "lucide-react"
+import dynamic from 'next/dynamic'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
+
+const LanguageSwitcher = dynamic(() => import("@portfolio/ui/language-switcher"), { ssr: false })
+const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), { ssr: false })
 import { ImageContainer } from "@portfolio/ui/image-container"
 import type { ProjectMetadata } from '@portfolio/lib/lib/markdown'
 import NextUpCard from "@portfolio/ui/next-up-card"
@@ -19,6 +22,7 @@ interface ProjectPostClientProps {
 export default function ProjectPostClient({ initialProject, nextProject }: ProjectPostClientProps) {
   const { language, t } = useLanguage()
   const [project, setProject] = useState(initialProject)
+  const [nextProjectData, setNextProjectData] = useState(nextProject)
   const [loading, setLoading] = useState(false)
   const contentRef = useRef<HTMLDivElement | null>(null)
   const rootsMapRef = useRef<Map<HTMLElement, any>>(new Map())
@@ -27,6 +31,57 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [initialProject.slug])
+
+  // Fetch localized version of the Next Up project
+  useEffect(() => {
+    async function fetchLocalizedNextProject() {
+      if (!nextProject) return
+
+      const baseSlug = nextProject.slug.replace('_zh-tw', '')
+      let targetSlug = baseSlug
+
+      if (language === 'zh-TW') {
+        targetSlug = `${baseSlug}_zh-tw`
+      }
+
+      // If the current nextProjectData slug matches target, we are good (optimistic check)
+      // but to be safe against switching back and forth, we check against the current state
+      if (nextProjectData && nextProjectData.slug === targetSlug) return
+
+      try {
+        const response = await fetch(`/api/projects/${targetSlug}`)
+        if (response.ok) {
+          const data = await response.json()
+          setNextProjectData({
+            slug: data.slug,
+            title: data.title,
+            category: data.category,
+            imageUrl: data.imageUrl,
+            aspectRatio: nextProject.aspectRatio // Projects always 1.5
+          })
+        } else {
+          // Fallback to base if localized version missing
+          if (language === 'zh-TW' && targetSlug.includes('_zh-tw')) {
+            const fallbackResponse = await fetch(`/api/projects/${baseSlug}`)
+            if (fallbackResponse.ok) {
+              const data = await fallbackResponse.json()
+              setNextProjectData({
+                slug: data.slug,
+                title: data.title,
+                category: data.category,
+                imageUrl: data.imageUrl,
+                aspectRatio: nextProject.aspectRatio
+              })
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching localized next project:', error)
+      }
+    }
+
+    fetchLocalizedNextProject()
+  }, [language, nextProject]) // Depend on language and the initial prop
 
   useEffect(() => {
     async function fetchLocalizedProject() {
@@ -179,8 +234,8 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
                     href="/#projects"
                     className="inline-flex items-center text-secondary hover:text-accent transition-colors"
                   >
-                    <ArrowLeft className="mr-2 h-4 w-4" />
-                    <span className="font-body">{t('projects.backToProjects')}</span>
+                    <span className="mr-2 font-heading">←</span>
+                    <span className="font-heading">{t('projects.backToProjects')}</span>
                   </NavigationLink>
                   <div className="mt-8">
                     <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{project.title}</h1>
@@ -190,6 +245,10 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
     
                 <div className="hidden md:block pb-8 pt-8 border-t border-border">
                   <TableOfContents contentHtml={project.contentHtml} />
+                  <div className="flex items-center gap-6 mt-8">
+                    <LanguageSwitcher />
+                    <ThemeSwitcher />
+                  </div>
                 </div>
               </div>
             </div>
@@ -254,14 +313,14 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
                   }}
                 />
                 {/* Next Up Card */}
-                {nextProject && (
+                {nextProjectData && (
                   <NextUpCard
-                    title={nextProject.title}
-                    category={nextProject.category}
-                    slug={nextProject.slug}
-                    imageUrl={nextProject.imageUrl}
+                    title={nextProjectData.title}
+                    category={nextProjectData.category}
+                    slug={nextProjectData.slug}
+                    imageUrl={nextProjectData.imageUrl}
                     basePath="projects"
-                    aspectRatio={nextProject.aspectRatio}
+                    aspectRatio={nextProjectData.aspectRatio}
                   />
                 )}
               </div>

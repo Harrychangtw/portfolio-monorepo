@@ -1,6 +1,5 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { ImageContainer } from "@portfolio/ui/image-container"

@@ -2,8 +2,11 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ArrowLeft } from "lucide-react"
+import dynamic from 'next/dynamic'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
+
+const LanguageSwitcher = dynamic(() => import("@portfolio/ui/language-switcher"), { ssr: false })
+const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), { ssr: false })
 import { ImageContainer } from "@portfolio/ui/image-container"
 import type { PostMetadata } from '@portfolio/lib/lib/markdown'
 import NextUpCard from "@portfolio/ui/next-up-card"
@@ -18,6 +21,7 @@ interface BlogPostClientProps {
 export default function BlogPostClient({ initialPost, nextPost }: BlogPostClientProps) {
   const { language, t } = useLanguage()
   const [post, setPost] = useState(initialPost)
+  const [nextPostData, setNextPostData] = useState(nextPost)
   const [loading, setLoading] = useState(false)
   const contentRef = useRef<HTMLDivElement | null>(null)
   const rootsMapRef = useRef<Map<HTMLElement, any>>(new Map())
@@ -26,6 +30,54 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
     window.scrollTo(0, 0)
   }, [initialPost.slug])
   
+  // Fetch localized version of the Next Up post
+  useEffect(() => {
+    async function fetchLocalizedNextPost() {
+      if (!nextPost) return
+
+      const baseSlug = nextPost.slug.replace('_zh-tw', '')
+      let targetSlug = baseSlug
+
+      if (language === 'zh-TW') {
+        targetSlug = `${baseSlug}_zh-tw`
+      }
+
+      if (nextPostData && nextPostData.slug === targetSlug) return
+
+      try {
+        const response = await fetch(`/api/posts/${targetSlug}`)
+        if (response.ok) {
+          const data = await response.json()
+          setNextPostData({
+            slug: data.slug,
+            title: data.title,
+            category: data.description, // Blog uses description as category in card
+            imageUrl: data.imageUrl,
+            aspectRatio: nextPost.aspectRatio // Blog cards are 1.5
+          })
+        } else {
+          if (language === 'zh-TW' && targetSlug.includes('_zh-tw')) {
+            const fallbackResponse = await fetch(`/api/posts/${baseSlug}`)
+            if (fallbackResponse.ok) {
+              const data = await fallbackResponse.json()
+              setNextPostData({
+                slug: data.slug,
+                title: data.title,
+                category: data.description,
+                imageUrl: data.imageUrl,
+                aspectRatio: nextPost.aspectRatio
+              })
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching localized next post:', error)
+      }
+    }
+
+    fetchLocalizedNextPost()
+  }, [language, nextPost])
+
   useEffect(() => {
     async function fetchLocalizedPost() {
       const baseSlug = post.slug.replace('_zh-tw', '')
@@ -207,12 +259,16 @@ useEffect(() => {
                     href="/#blog"
                     className="inline-flex items-center text-secondary hover:text-accent transition-colors"
                   >
-                    <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                    <span className="font-body">{t('blog.backToBlog')}</span>
+                    <span className="mr-2 font-heading">←</span>
+                    <span className="font-heading">{t('blog.backToBlog')}</span>
                   </NavigationLink>
 
                   <div className="hidden md:block pt-8 border-t border-border">
                     <TableOfContents contentHtml={post.contentHtml} />
+                    <div className="flex items-center gap-6 mt-8">
+                      <LanguageSwitcher />
+                      <ThemeSwitcher />
+                    </div>
                   </div>
               </div>
             </div>
@@ -236,14 +292,14 @@ useEffect(() => {
               />
 
               {/* Next Up Card */}
-              {nextPost && (
+              {nextPostData && (
                 <NextUpCard
-                  title={nextPost.title}
-                  category={nextPost.category}
-                  slug={nextPost.slug}
-                  imageUrl={nextPost.imageUrl}
+                  title={nextPostData.title}
+                  category={nextPostData.category}
+                  slug={nextPostData.slug}
+                  imageUrl={nextPostData.imageUrl}
                   basePath="blog"
-                  aspectRatio={nextPost.aspectRatio}
+                  aspectRatio={nextPostData.aspectRatio}
                 />
               )}
             </div>

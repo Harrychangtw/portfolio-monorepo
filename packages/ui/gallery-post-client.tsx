@@ -1,8 +1,11 @@
 "use client"
 
 import { useEffect, useState } from 'react'
-import { ArrowLeft } from "lucide-react"
+import dynamic from 'next/dynamic'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
+
+const LanguageSwitcher = dynamic(() => import("@portfolio/ui/language-switcher"), { ssr: false })
+const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), { ssr: false })
 import { ImageContainer } from "@portfolio/ui/image-container"
 import NextUpCard from "@portfolio/ui/next-up-card"
 import type { GalleryItemMetadata } from '@portfolio/lib/lib/markdown'
@@ -16,12 +19,61 @@ interface GalleryPostClientProps {
 export default function GalleryPostClient({ initialItem, nextItem }: GalleryPostClientProps) {
   const { language, t } = useLanguage()
   const [item, setItem] = useState(initialItem)
+  const [nextItemData, setNextItemData] = useState(nextItem)
   const [loading, setLoading] = useState(false)
 
   // Force scroll to top on navigation
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [initialItem.slug])
+
+  // Fetch localized version of the Next Up gallery item
+  useEffect(() => {
+    async function fetchLocalizedNextItem() {
+      if (!nextItem) return
+
+      const baseSlug = nextItem.slug.replace('_zh-tw', '')
+      let targetSlug = baseSlug
+
+      if (language === 'zh-TW') {
+        targetSlug = `${baseSlug}_zh-tw`
+      }
+
+      if (nextItemData && nextItemData.slug === targetSlug) return
+
+      try {
+        const response = await fetch(`/api/gallery/${targetSlug}`)
+        if (response.ok) {
+          const data = await response.json()
+          setNextItemData({
+            slug: data.slug,
+            title: data.title,
+            category: data.quote, // Gallery uses quote as category subtitle
+            imageUrl: data.imageUrl,
+            aspectRatio: data.aspectRatio || nextItem.aspectRatio
+          })
+        } else {
+          if (language === 'zh-TW' && targetSlug.includes('_zh-tw')) {
+            const fallbackResponse = await fetch(`/api/gallery/${baseSlug}`)
+            if (fallbackResponse.ok) {
+              const data = await fallbackResponse.json()
+              setNextItemData({
+                slug: data.slug,
+                title: data.title,
+                category: data.quote,
+                imageUrl: data.imageUrl,
+                aspectRatio: data.aspectRatio || nextItem.aspectRatio
+              })
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching localized next item:', error)
+      }
+    }
+
+    fetchLocalizedNextItem()
+  }, [language, nextItem])
 
   useEffect(() => {
     async function fetchLocalizedItem() {
@@ -124,8 +176,8 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
                     href="/#gallery"
                     className="inline-flex items-center text-secondary hover:text-accent transition-colors font-body"
                   >
-                    <ArrowLeft className="mr-2 h-4 w-4" />
-                    {t('gallery.backToGallery')}
+                    <span className="mr-2 font-heading">←</span>
+                    <span className="font-heading">{t('gallery.backToGallery')}</span>
                   </NavigationLink>
                   <div className="mt-8">
                     <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{item.title}</h1>
@@ -137,6 +189,10 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
                       })}
                     </p>
                   </div>
+                </div>
+                <div className="hidden md:flex items-center gap-6 mt-8 pt-8 border-t border-border">
+                  <LanguageSwitcher />
+                  <ThemeSwitcher />
                 </div>
               </div>
             </div>
@@ -218,14 +274,14 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
                 )}
 
                 {/* Next Up Card */}
-                {nextItem && (
+                {nextItemData && (
                   <NextUpCard
-                    title={nextItem.title}
-                    category={nextItem.category}
-                    slug={nextItem.slug}
-                    imageUrl={nextItem.imageUrl}
+                    title={nextItemData.title}
+                    category={nextItemData.category}
+                    slug={nextItemData.slug}
+                    imageUrl={nextItemData.imageUrl}
                     basePath="gallery"
-                    aspectRatio={nextItem.aspectRatio}
+                    aspectRatio={nextItemData.aspectRatio}
                   />
                 )}
               </div>
