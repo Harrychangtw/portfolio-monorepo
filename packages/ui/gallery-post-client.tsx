@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react'
+import parse, { Element } from 'html-react-parser'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
@@ -238,10 +239,24 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
                 </div>
 
                 {/* Main content */}
-                <div
-                  className="prose prose-lg max-w-none dark:prose-invert mb-16 md:mb-24"
-                  dangerouslySetInnerHTML={{ __html: item.contentHtml }}
-                />
+                <div className="prose prose-lg max-w-none dark:prose-invert mb-16 md:mb-24">
+                  {parse(item.contentHtml, {
+                    replace: (domNode) => {
+                      if (domNode instanceof Element && domNode.attribs && domNode.attribs.class === 'markdown-image-placeholder') {
+                        const { 'data-src': src, 'data-alt': alt, 'data-aspect-ratio': aspectRatio, 'data-framed': framed } = domNode.attribs;
+                        return (
+                          <ImageContainer
+                            src={src}
+                            alt={alt || ''}
+                            aspectRatio={aspectRatio ? parseFloat(aspectRatio) : undefined}
+                            noInsetPadding={framed !== 'true'}
+                            quality={95}
+                          />
+                        );
+                      }
+                    }
+                  })}
+                </div>
 
                 {/* Gallery grid with consistent spacing */}
                 {item.gallery && item.gallery.length > 0 && (

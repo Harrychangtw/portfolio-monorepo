@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useState, useRef } from 'react'
-import { createRoot } from 'react-dom/client'
+import { useEffect, useState } from 'react'
+import parse, { Element } from 'html-react-parser'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
@@ -23,8 +23,6 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
   const [post, setPost] = useState(initialPost)
   const [nextPostData, setNextPostData] = useState(nextPost)
   const [loading, setLoading] = useState(false)
-  const contentRef = useRef<HTMLDivElement | null>(null)
-  const rootsMapRef = useRef<Map<HTMLElement, any>>(new Map())
   // Force scroll to top on navigation
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -113,58 +111,6 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
 
     fetchLocalizedPost()
   }, [language, post.slug])
-useEffect(() => {
-    if (!contentRef.current) return
-
-    const container = contentRef.current
-    const placeholders = container.querySelectorAll<HTMLElement>('.markdown-image-placeholder')
-    const currentRootsMap = rootsMapRef.current
-
-    placeholders.forEach((el) => {
-      const src = el.dataset.src
-      if (!src) return
-
-      const alt = el.dataset.alt || ''
-      const isFramed = el.dataset.framed === 'true'
-      const aspectRatioAttr = el.dataset.aspectRatio
-      const aspectRatio = aspectRatioAttr ? parseFloat(aspectRatioAttr) : undefined
-
-      const imageComponent = (
-        <ImageContainer
-          src={src}
-          alt={alt}
-          aspectRatio={aspectRatio}
-          noInsetPadding={!isFramed}
-          quality={95}
-        />
-      )
-
-      // Reuse existing root or create new one
-      let root = currentRootsMap.get(el)
-      if (root) {
-        root.render(imageComponent)
-      } else {
-        root = createRoot(el)
-        root.render(imageComponent)
-        currentRootsMap.set(el, root)
-      }
-    })
-    
-    // Clean up roots for placeholders that no longer exist
-    return () => {
-      const currentPlaceholders = container.querySelectorAll<HTMLElement>('.markdown-image-placeholder')
-      const currentElements = new Set(currentPlaceholders)
-
-      currentRootsMap.forEach((root, el) => {
-        if (!currentElements.has(el)) {
-          setTimeout(() => {
-            root.unmount()
-            currentRootsMap.delete(el)
-          }, 0)
-        }
-      })
-    }
-  }, [post.contentHtml])
   // Format date
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr)
@@ -283,13 +229,24 @@ useEffect(() => {
                )}
 
               {/* Markdown Content */}
-              <div
-                ref={contentRef}
-                className="prose prose-lg max-w-none dark:prose-invert mb-16 md:mb-24"
-                dangerouslySetInnerHTML={{
-                  __html: post.contentHtml
-                }}
-              />
+              <div className="prose prose-lg max-w-none dark:prose-invert mb-16 md:mb-24">
+                {parse(post.contentHtml, {
+                  replace: (domNode) => {
+                    if (domNode instanceof Element && domNode.attribs && domNode.attribs.class === 'markdown-image-placeholder') {
+                      const { 'data-src': src, 'data-alt': alt, 'data-aspect-ratio': aspectRatio, 'data-framed': framed } = domNode.attribs;
+                      return (
+                        <ImageContainer
+                          src={src}
+                          alt={alt || ''}
+                          aspectRatio={aspectRatio ? parseFloat(aspectRatio) : undefined}
+                          noInsetPadding={framed !== 'true'}
+                          quality={95}
+                        />
+                      );
+                    }
+                  }
+                })}
+              </div>
 
               {/* Next Up Card */}
               {nextPostData && (
