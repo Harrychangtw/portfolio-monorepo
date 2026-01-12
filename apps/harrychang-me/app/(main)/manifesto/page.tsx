@@ -106,8 +106,9 @@ const manifestoChunksEn = [
         "But because it is mine to make."
     ],
     [
-        "For I am not building a resume or a reputation.",
-        "I am building a bridge back to wonder,",
+        "Yes, I am building a resume and a reputation.",
+        "But I am also building a bridge back to wonder—",
+        "One that I need more than any accolade.",
         "A bridge others might cross",
         "To find their own five-year-old selves",
         "Waiting patiently in the machinery of dreams."
@@ -228,10 +229,11 @@ const manifestoChunksZhTw = [
         "只因那條路，由我親手開創"
     ],
     [
-        "因為我建造的，不是履歷或名聲",
-        "我建造的，是一座橋，回到最初的童貞",
+        "是的，我在建造履歷與名聲",
+        "但我也在建造一座橋，回到最初的驚嘆——",
+        "一座我比任何獎項都更需要的橋",
         "一座讓他人也能走過的橋",
-        "去尋找他們自己心中那個五歲的靈魂",
+        "去尋找他們心中那個五歲的靈魂",
         "在夢想的機械回眸中，耐心等候"
     ],
     [
