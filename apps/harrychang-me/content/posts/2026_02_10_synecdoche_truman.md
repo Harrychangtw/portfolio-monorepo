@@ -102,6 +102,10 @@ Caden created the play. He built the warehouse, hired the actors, obsessed over 
 
 Those are Caden's almost-final words. A lifetime of artistic struggle, and he finally understands. But the system he built no longer needs his understanding. The play runs itself. He's just another body in the ruins of actors playing another actor.
 
+This ambition has a philosophical dimension. In one scene, Caden watches a minister deliver a sermon at a funeral. The minister says something about everyone being everyone else, about the protagonist of every life being everyone who ever lived. It's Kaufman at his most philosophically dense.
+
+Truman's project was about *his* freedom. Caden's was about *everyone's* meaning. One is achievable. The other is madness.
+
 ### The Audience Problem
 
 In *The Truman Show*, the audience is us. Literally. The film cuts between Truman's manufactured life and viewers around the world watching it as entertainment. We see people in bars, living rooms, bathtubs, all transfixed by this man's unwitting performance. The film implicates us in the voyeurism. We've been watching too.
@@ -116,19 +120,7 @@ In one of the film's most devastating moments, Sammy (the actor playing Caden) w
 
 The accusation is brutal because it's true. Caden's grand artistic project was never about connecting with others. It was about understanding himself. And that's a show no one else can really watch.
 
-### The End Built Into the Beginning
-
-*Synecdoche* repeats this phrase like a mantra: "The end is built into the beginning."
-
-Hazel, the woman Caden loves but repeatedly fails to commit to, lives in a house that is perpetually on fire. She moves in knowing it will kill her. She stays anyway. When she finally dies of smoke inhalation, decades later, it's not a surprise. It was always coming. She chose it.
-
-That's the film's thesis on life, perheps. Every choice we make contains its own conclusion. The house we enter will be the house we die in. The play we start will be the play that ends us.
-
-*The Truman Show* inverts this. The end Christof built for Truman, a safe, predictable life inside the dome, is *not* what Truman accepts. He rewrites his ending. He takes the door.
-
-Both films acknowledge that constructed realities shape us. But only one believes we can escape them.
-
-### Why These Films Stay
+### The Door You're Standing In Front Of
 
 I keep returning to a question: Which ending is more honest?
 
@@ -136,15 +128,7 @@ Truman's escape is satisfying, but it's also a fantasy. The film ends before let
 
 Caden's non-escape is devastating, but it might be truer. Most of us don't have a single oppressor we can identify and resist. Most of our prisons are internal, built from our own ambitions, anxieties, and patterns of behavior. Walking out requires knowing where the door is and actually walking through it. And if you're the one who built the room, can you ever see the walls?
 
-Maybe that's too cynical. Maybe Kaufman's vision is bleak in ways that flatten the genuine possibility of change. But I keep thinking about Truman's bravery in one film and Caden's final silencing in the other, and I wonder which one I'm living.
-
-The door exists for Truman because someone else put it there.
-
-Caden has no door because he *is* the door.
-
-### A Final Thought
-
-There's a moment in *Synecdoche* where Caden watches a minister deliver a sermon at a funeral. The minister says something about everyone being everyone else, about the protagonist of every life being everyone who ever lived. It's Kaufman at his most philosophically dense, but it lands differently after sitting with these two films together.
+But I keep thinking about Truman's bravery in one film and Caden's final silencing in the other, and I wonder which one I'm living.
 
 Truman's triumph is individual. He walks out alone. His freedom is *his*.
 

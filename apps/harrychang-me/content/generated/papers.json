@@ -59,6 +59,18 @@
     "source": "arxiv"
   },
   {
+    "title": "Extending the Context of Pretrained LLMs by Dropping Their Positional Embeddings",
+    "authors": [
+      "Yoav Gelberg",
+      "Koshi Eguchi",
+      "Takuya Akiba",
+      "Edoardo Cetin"
+    ],
+    "date": "2025-12-13T04:23:47Z",
+    "url": "http://arxiv.org/abs/2512.12167v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
     "authors": [
       "Monte MacDiarmid, Benjamin Wright, Jonathan Uesato, Joe Benton, Jon Kutasov, Sara Price, Naia Bouscal, Sam Bowman, Trenton Bricken, Alex Cloud, Carson Denison, Johannes Gasteiger, Ryan Greenblatt, Jan Leike, Jack Lindsey, Vlad Mikulik, Ethan Perez, Alex Rodrigues, Drake Thomas, Albert Webson, Daniel Ziegler, Evan Hubinger"
@@ -292,6 +304,21 @@
     ],
     "date": "2025-06-30T09:04:25Z",
     "url": "http://arxiv.org/abs/2506.23635v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Overcoming Multi-step Complexity in Multimodal Theory-of-Mind Reasoning: A Scalable Bayesian Planner",
+    "authors": [
+      "Chunhui Zhang",
+      "Zhongyu Ouyang",
+      "Kwonjoon Lee",
+      "Nakul Agarwal",
+      "Sean Dae Houlihan",
+      "Soroush Vosoughi",
+      "Shao-Yuan Lo"
+    ],
+    "date": "2025-06-02T04:23:45Z",
+    "url": "http://arxiv.org/abs/2506.01301v1",
     "source": "arxiv"
   },
   {
@@ -677,6 +704,19 @@
     ],
     "date": "2025-02-16T12:08:08Z",
     "url": "http://arxiv.org/abs/2502.11090v3",
+    "source": "arxiv"
+  },
+  {
+    "title": "Towards Zero-Shot Anomaly Detection and Reasoning with Multimodal Large Language Models",
+    "authors": [
+      "Jiacong Xu",
+      "Shao-Yuan Lo",
+      "Bardia Safaei",
+      "Vishal M. Patel",
+      "Isht Dwivedi"
+    ],
+    "date": "2025-02-11T14:50:43Z",
+    "url": "http://arxiv.org/abs/2502.07601v2",
     "source": "arxiv"
   },
   {
@@ -2779,6 +2819,17 @@
     ],
     "date": "2021-09-08T17:15:27Z",
     "url": "http://arxiv.org/abs/2109.07958v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Adversarially Robust One-class Novelty Detection",
+    "authors": [
+      "Shao-Yuan Lo",
+      "Poojan Oza",
+      "Vishal M. Patel"
+    ],
+    "date": "2021-08-25T10:41:29Z",
+    "url": "http://arxiv.org/abs/2108.11168v2",
     "source": "arxiv"
   },
   {
