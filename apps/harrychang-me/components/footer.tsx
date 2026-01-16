@@ -30,6 +30,7 @@ const connectLinks = [
   { id: 'linkedin', name: 'LinkedIn', href: '/linkedin' },
   { id: 'github', name: 'GitHub', href: '/github' },
   { id: 'instagram', name: 'Instagram', href: '/instagram' },
+  { id: 'medium', name: 'Medium', href: '/medium' },
   { id: 'calendar', name: 'Schedule a Meeting', href: '/cal' },
 ];
 

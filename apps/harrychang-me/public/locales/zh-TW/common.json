@@ -92,7 +92,8 @@
     "letterboxd": "Letterboxd",
     "linkedin": "LinkedIn",
     "calendar": "預約會議",
-    "music": "Spotify"
+    "music": "Spotify",
+    "medium": "Medium"
   },
   "resources": {
     "calendar": "預約會議",
@@ -139,7 +140,8 @@
     "uses": "桌上與日常使用的工具",
     "design": "這個網站的設計理念與細節",
     "issues": "回報 Bug 或建議新功能",
-    "blog": "關於電影、工具、生活的文字痕跡"
+    "blog": "關於電影、工具、生活的文字痕跡",
+    "medium": "同步刊登的隨筆，文字另一處棲息地"
   },
   "letterGlitch": {
     "line1": "我 從 未 被 教 會 創 造 ——",

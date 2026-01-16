@@ -38,6 +38,7 @@ export const siteConfig = {
     discord: 'https://discord.com/users/836567989209661481',
     letterboxd: 'https://boxd.it/fSKuF',
     scholar:"https://scholar.google.com/citations?hl=en&user=SDpion0AAAAJ",
+    medium: "https://medium.com/@chiwei_chang",
   },
 
   // External Resources

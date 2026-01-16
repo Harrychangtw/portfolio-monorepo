@@ -156,6 +156,19 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      {/* Server-rendered article content for crawlers (hidden visually, visible to bots) */}
+      <article 
+        className="sr-only" 
+        itemScope 
+        itemType="https://schema.org/BlogPosting"
+        aria-hidden="true"
+      >
+        <h1 itemProp="headline">{post.title}</h1>
+        <p itemProp="description">{post.description}</p>
+        <time itemProp="datePublished" dateTime={post.date}>{post.date}</time>
+        <span itemProp="author">{post.author || 'Harry Chang'}</span>
+        <div itemProp="articleBody" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+      </article>
       <BlogPostClient initialPost={post} nextPost={nextPost} />
     </>
   )

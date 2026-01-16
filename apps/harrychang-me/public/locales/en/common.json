@@ -92,7 +92,8 @@
     "instagram": "Instagram",
     "letterboxd": "Letterboxd",
     "linkedin": "LinkedIn",
-    "music": "Spotify"
+    "music": "Spotify",
+    "medium": "Medium"
   },
   "resources": {
     "calendar": "Schedules",
@@ -139,7 +140,8 @@
     "uses": "Tools I've collected along the way",
     "design": "The design choices behind this site",
     "issues": "Report bugs or suggest features",
-    "blog": "Writings, thoughts, and occasional rants"
+    "blog": "Writings, thoughts, and occasional rants",
+    "medium": "Syndicated stories, another home for my words"
   },
   
   "letterGlitch": {
