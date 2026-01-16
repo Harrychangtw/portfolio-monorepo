@@ -232,7 +232,6 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
       </Suspense>
       {!hasLoadedOnce && (
         <div 
-          className="fouc-overlay"
           style={{ 
             position: 'fixed',
             top: 0,
@@ -242,8 +241,6 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
             backgroundColor: 'hsl(var(--background))',
             zIndex: 9999,
           }}
-          aria-hidden="true"
-          data-nosnippet="true"
         />
       )}
     </LanguageContext.Provider>
