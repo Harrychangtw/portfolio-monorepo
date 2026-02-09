@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8"
 location: "靜心, 台北"
 tags: ["街頭攝影"]
 featured: true
-pinned: 9
+pinned: 7
 locked: false
 gallery:
 ---

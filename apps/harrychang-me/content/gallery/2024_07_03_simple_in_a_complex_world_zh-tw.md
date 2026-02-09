@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8, VILTROX 75mm f/1.2"
 location: "台灣"
 tags: ["街頭攝影"]
 featured: true
-pinned: 8
+pinned: 6
 locked: false
 gallery:
     - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1516.RAF.webp"

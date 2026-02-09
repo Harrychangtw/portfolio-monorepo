@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8"
 location: "Chingshin, Taipei"
 tags: ["Street Photography"]
 featured: true
-pinned: 9
+pinned: 7
 locked: false
 gallery:
 ---

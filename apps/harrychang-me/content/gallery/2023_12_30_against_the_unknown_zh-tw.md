@@ -8,7 +8,7 @@ lens: "FUJINON 100-400mm f/4.5-5.6"
 location: "瑞芳, 新北市"
 tags: ["風光攝影", "海洋"]
 featured: true
-pinned: 2
+pinned: 18
 locked: false
 gallery:
 

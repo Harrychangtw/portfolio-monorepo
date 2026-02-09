@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8"
 location: "New Taipei City"
 tags: ["Street Photography", "Sunset"]
 featured: true
-pinned: 11
+pinned: 15
 locked: false
 gallery:
   - url: "images/optimized/gallery/2023_11_18_at_dawn/DSCF0012 3 Edited.webp"

@@ -8,7 +8,7 @@ lens: "VILTROX 75mm f/1.2"
 location: "合歡山"
 tags: ["風光攝影", "自然"]
 featured: true
-pinned: 4
+pinned: 12
 locked: false
 gallery:
   - url: "images/optimized/gallery/2024_01_06_hehuanshan/DSCF0038.webp"

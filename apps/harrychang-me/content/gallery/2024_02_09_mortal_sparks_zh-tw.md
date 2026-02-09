@@ -8,7 +8,7 @@ lens: "VILTROX 75mm f/1.2"
 location: "台北"
 tags: ["街頭攝影"]
 featured: true
-pinned: 15
+pinned: 13
 locked: false
 gallery:
   - url: "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0004 1 Edited.webp"

@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8, TTARTISAN 50mm f/0.95"
 location: "東京"
 tags: ["街頭攝影"]
 featured: true
-pinned: 12
+pinned: 16
 locked: false
 gallery:
   - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0007 12 Edited.webp"
