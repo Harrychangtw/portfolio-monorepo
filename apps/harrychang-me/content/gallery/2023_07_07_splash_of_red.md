@@ -8,7 +8,7 @@ lens: "TTARTISAN 50mm f/0.95"
 location: "Taipei"
 tags: ["Street Photography"]
 featured: true
-pinned: 13
+pinned: 11
 locked: false
 gallery:
   - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0007 32 Edited.webp"

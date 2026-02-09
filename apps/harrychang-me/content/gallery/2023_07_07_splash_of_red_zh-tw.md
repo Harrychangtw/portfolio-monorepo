@@ -8,7 +8,7 @@ lens: "TTARTISAN 50mm f/0.95"
 location: "台北"
 tags: ["街頭攝影"]
 featured: true
-pinned: 13
+pinned: 11
 locked: false
 gallery:
   - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0007 32 Edited.webp"

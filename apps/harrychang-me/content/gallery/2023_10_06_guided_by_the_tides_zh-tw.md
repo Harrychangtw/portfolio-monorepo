@@ -8,7 +8,7 @@ lens: "FUJINON 100-400mm f/4.5-5.6"
 location: "台南"
 tags: ["風光攝影", "海洋"]
 featured: true
-pinned: 6
+pinned: 10
 locked: false
 gallery:
 

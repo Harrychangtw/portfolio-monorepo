@@ -8,7 +8,7 @@ lens: "VILTROX 75mm f/1.2, SIGMA 18-50mm f/2.8"
 location: "Keelung"
 tags: ["Street Photography"]
 featured: true
-pinned: 10
+pinned: 9
 locked: false
 gallery:
   - url: "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0420 13 Edited.webp"

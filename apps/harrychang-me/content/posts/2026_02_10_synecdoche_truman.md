@@ -6,7 +6,7 @@ date: "2026-02-10"
 author: "Harry Chang"
 tags: ["Film", "Reflection"]
 pinned: -1
-locked: true
+locked: false
 ---
 
 ## The Door and the Cue

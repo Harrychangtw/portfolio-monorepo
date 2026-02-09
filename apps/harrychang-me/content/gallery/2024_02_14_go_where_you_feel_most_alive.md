@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8"
 location: "Tainan & Taichung"
 tags: ["Street Photography"]
 featured: true
-pinned: 5
+pinned: 8
 locked: false
 gallery:
     - url: "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 18 Edited-thumb.webp"
