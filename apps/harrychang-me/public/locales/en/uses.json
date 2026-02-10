@@ -114,19 +114,20 @@
           "key": "cameras",
           "name": "Cameras",
           "list": [
+            "LEICA M11-D",
             "Fujifilm X-T5",
-            "Fujifilm X-Pro1",
-            "Ricoh GR IIIx"
+            "Fujifilm X-Pro1"
           ]
         },
         {
           "key": "lenses",
           "name": "Lenses",
           "list": [
+            "VOIGTLÄNDER 50mm f/1.5",
             "Viltrox 75mm f/1.2",
             "Sigma 18-50mm f/2.8",
-            "Fujinon XF 100-400mm f/4.5-5.6",
             "7Artisans 35mm f/1.4",
+            "Fujinon XF 100-400mm f/4.5-5.6",
             "TTArtisan 50mm f/0.95"
           ]
         },

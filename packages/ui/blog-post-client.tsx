@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import parse, { Element } from 'html-react-parser'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
@@ -24,9 +24,14 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
   const [nextPostData, setNextPostData] = useState(nextPost)
   const [loading, setLoading] = useState(false)
   // Force scroll to top on navigation
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [initialPost.slug])
+  useLayoutEffect(() => {
+        // Use instant behavior to ensure immediate scroll without animation
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+        // Also try to prevent scroll restoration
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual'
+        }
+      }, [initialPost.slug])
   
   // Fetch localized version of the Next Up post
   useEffect(() => {
