@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState} from 'react'
 import parse, { Element } from 'html-react-parser'
 import dynamic from 'next/dynamic'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
@@ -23,9 +23,15 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
   const [nextItemData, setNextItemData] = useState(nextItem)
   const [loading, setLoading] = useState(false)
 
-  // Force scroll to top on navigation
-  useEffect(() => {
-    window.scrollTo(0, 0)
+  // Force scroll to top on navigation - use useLayoutEffect for synchronous execution
+  // before browser paint to prevent scroll restoration issues on mobile
+  useLayoutEffect(() => {
+    // Use instant behavior to ensure immediate scroll without animation
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    // Also try to prevent scroll restoration
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
   }, [initialItem.slug])
 
   // Fetch localized version of the Next Up gallery item
