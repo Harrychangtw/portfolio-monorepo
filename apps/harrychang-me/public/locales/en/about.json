@@ -7,7 +7,7 @@
     "llmResearcher": {
       "title": "LLM Researcher",
       "period": "2023 - Present",
-      "description": "Researching LLM safety and lightweight defense mechanisms, with one paper published at <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> and another under review at EACL, while interning at <a href=\"https://cycraft.com\">CyCraft</a>."
+      "description": "Constructing automated safety taxonomies via internal representation analysis. Work at <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> and <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL SRW</a>; interning at <a href=\"https://cycraft.com\">CyCraft</a>."
     },
     "speaker": {
       "title": "Speaker – AI WAVE SHOW, SITCON",
