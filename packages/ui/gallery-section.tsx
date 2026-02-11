@@ -193,29 +193,53 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
               </div>
             </div>
           ) : (
-            <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]">
-              {layoutResult && layoutResult.columns.map((column, colIndex) => (
-                <div key={colIndex} className="flex-1 space-y-[var(--column-spacing)]">
-                  {column.map((layoutItem) => (
-                    <GalleryCard
-                      key={layoutItem.item.slug}
-                      title={layoutItem.item.title}
-                      quote={layoutItem.item.quote}
-                      slug={layoutItem.item.slug}
-                      imageUrl={layoutItem.item.imageUrl}
-                      pinned={layoutItem.item.pinned}
-                      locked={layoutItem.item.locked}
-                      priority={layoutItem.itemIndex < 3}
-                      index={layoutItem.itemIndex}
-                      width={layoutItem.item.width}       
-                      height={layoutItem.item.height}
-                      basePath={basePath}
-                      hoverEffect={hoverEffect}
-                    />
-                  ))}
-                </div>
-              ))}
-            </div>
+            <>
+              {/* Mobile View: Linear Stack */}
+              <div className="flex flex-col w-full gap-[var(--column-spacing)] md:hidden">
+                {displayedItems.map((item, index) => (
+                  <GalleryCard
+                    key={item.slug}
+                    title={item.title}
+                    quote={item.quote}
+                    slug={item.slug}
+                    imageUrl={item.imageUrl}
+                    pinned={item.pinned}
+                    locked={item.locked}
+                    priority={index < 3}
+                    index={index}
+                    width={item.width}
+                    height={item.height}
+                    basePath={basePath}
+                    hoverEffect={hoverEffect}
+                  />
+                ))}
+              </div>
+
+              {/* Desktop View: Balanced Columns */}
+              <div className="hidden md:flex flex-row w-full gap-[var(--column-spacing)]">
+                {layoutResult && layoutResult.columns.map((column, colIndex) => (
+                  <div key={colIndex} className="flex-1 space-y-[var(--column-spacing)]">
+                    {column.map((layoutItem) => (
+                      <GalleryCard
+                        key={layoutItem.item.slug}
+                        title={layoutItem.item.title}
+                        quote={layoutItem.item.quote}
+                        slug={layoutItem.item.slug}
+                        imageUrl={layoutItem.item.imageUrl}
+                        pinned={layoutItem.item.pinned}
+                        locked={layoutItem.item.locked}
+                        priority={layoutItem.itemIndex < 3}
+                        index={layoutItem.itemIndex}
+                        width={layoutItem.item.width}       
+                        height={layoutItem.item.height}
+                        basePath={basePath}
+                        hoverEffect={hoverEffect}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </>
           )}
         </div>
       </div>
