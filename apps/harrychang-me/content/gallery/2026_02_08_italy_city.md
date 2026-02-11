@@ -8,7 +8,7 @@ lens: "VOIGTLÄNDER 50mm f/1.5"
 location: "Milan, Florence, Rome"
 tags: ["Street Photography"]
 featured: true
-pinned: 5
+pinned: 3
 locked: false
 gallery:
     - url: "images/optimized/gallery/2026-italy-city/L1000064.webp"

@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8"
 location: "桃園"
 tags: ["風光攝影"]
 featured: true
-pinned: 3
+pinned: 5
 locked: false
 gallery:
   - url: "images/optimized/gallery/2023_10_07_dune/DSCF7304 1 Edited.webp"

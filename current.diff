@@ -1,0 +1,222 @@
+diff --git a/apps/harrychang-me/content/arxiv-papers.md b/apps/harrychang-me/content/arxiv-papers.md
+index 475ccb0..75378f3 100644
+--- a/apps/harrychang-me/content/arxiv-papers.md
++++ b/apps/harrychang-me/content/arxiv-papers.md
+@@ -195,3 +195,4 @@ description: "List of ArXiv paper IDs for the paper reading section"
+ 2512.12167
+ 2512.16676
+ 2512.17220
++2602.06258
+\ No newline at end of file
+diff --git a/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md b/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md
+index d3da78a..22d45cd 100644
+--- a/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md
++++ b/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md
+@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8"
+ location: "Taoyuan"
+ tags: ["Landscape"]
+ featured: true
+-pinned: 3
++pinned: 5
+ locked: false
+ gallery:
+   - url: "images/optimized/gallery/2023_10_07_dune/DSCF7304 1 Edited.webp"
+diff --git a/apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md b/apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md
+index b7e0eaf..f8fe3e6 100644
+--- a/apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md
++++ b/apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md
+@@ -8,7 +8,7 @@ lens: "SIGMA 18-50mm f/2.8"
+ location: "桃園"
+ tags: ["風光攝影"]
+ featured: true
+-pinned: 3
++pinned: 5
+ locked: false
+ gallery:
+   - url: "images/optimized/gallery/2023_10_07_dune/DSCF7304 1 Edited.webp"
+diff --git a/apps/harrychang-me/content/gallery/2026_02_08_italy_city.md b/apps/harrychang-me/content/gallery/2026_02_08_italy_city.md
+index e9c7df8..ab08670 100644
+--- a/apps/harrychang-me/content/gallery/2026_02_08_italy_city.md
++++ b/apps/harrychang-me/content/gallery/2026_02_08_italy_city.md
+@@ -8,7 +8,7 @@ lens: "VOIGTLÄNDER 50mm f/1.5"
+ location: "Milan, Florence, Rome"
+ tags: ["Street Photography"]
+ featured: true
+-pinned: 5
++pinned: 3
+ locked: false
+ gallery:
+     - url: "images/optimized/gallery/2026-italy-city/L1000064.webp"
+diff --git a/apps/harrychang-me/content/gallery/2026_02_08_italy_city_zh-tw.md b/apps/harrychang-me/content/gallery/2026_02_08_italy_city_zh-tw.md
+index 6167000..d97f357 100644
+--- a/apps/harrychang-me/content/gallery/2026_02_08_italy_city_zh-tw.md
++++ b/apps/harrychang-me/content/gallery/2026_02_08_italy_city_zh-tw.md
+@@ -8,7 +8,7 @@ lens: "VOIGTLÄNDER 50mm f/1.5"
+ location: "米蘭、佛羅倫斯、羅馬"
+ tags: ["Street Photography"]
+ featured: true
+-pinned: 5
++pinned: 3
+ locked: false
+ gallery:
+     - url: "images/optimized/gallery/2026-italy-city/L1000064.webp"
+diff --git a/apps/harrychang-me/content/projects/2025_05_18_patch_dataset.md b/apps/harrychang-me/content/projects/2025_05_18_patch_dataset.md
+index f3845a5..1f7e1cc 100644
+--- a/apps/harrychang-me/content/projects/2025_05_18_patch_dataset.md
++++ b/apps/harrychang-me/content/projects/2025_05_18_patch_dataset.md
+@@ -10,6 +10,6 @@ role: "First Author"
+ pinned: 2
+ featured: true
+ locked: true
+-tooltip: "Paper under review at ACL ARR October cycle"
++tooltip: "Accepted to EACL SRW, project page coming soon"
+ ---
+ 
+diff --git a/apps/harrychang-me/content/projects/2025_05_18_patch_dataset_zh-tw.md b/apps/harrychang-me/content/projects/2025_05_18_patch_dataset_zh-tw.md
+index 245046b..3f8c5da 100644
+--- a/apps/harrychang-me/content/projects/2025_05_18_patch_dataset_zh-tw.md
++++ b/apps/harrychang-me/content/projects/2025_05_18_patch_dataset_zh-tw.md
+@@ -10,6 +10,6 @@ role: "第一作者"
+ pinned: 2
+ featured: true
+ locked: true
+-tooltip: "論文在 ACL ARR October 審稿中"
++tooltip: "錄取於 EACL SRW，專案頁面即將推出"
+ ---
+ 
+diff --git a/apps/harrychang-me/public/locales/en/about.json b/apps/harrychang-me/public/locales/en/about.json
+index 302db1b..c2751c8 100644
+--- a/apps/harrychang-me/public/locales/en/about.json
++++ b/apps/harrychang-me/public/locales/en/about.json
+@@ -7,7 +7,7 @@
+     "llmResearcher": {
+       "title": "LLM Researcher",
+       "period": "2023 - Present",
+-      "description": "Researching LLM safety and lightweight defense mechanisms, with one paper published at <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> and another under review at EACL, while interning at <a href=\"https://cycraft.com\">CyCraft</a>."
++      "description": "Constructing automated safety taxonomies via internal representation analysis. Work at <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> and <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL 2026 SRW</a>; interning at <a href=\"https://cycraft.com\">CyCraft</a>."
+     },
+     "speaker": {
+       "title": "Speaker – AI WAVE SHOW, SITCON",
+diff --git a/apps/harrychang-me/public/locales/en/common.json b/apps/harrychang-me/public/locales/en/common.json
+index c985009..2290958 100644
+--- a/apps/harrychang-me/public/locales/en/common.json
++++ b/apps/harrychang-me/public/locales/en/common.json
+@@ -19,7 +19,7 @@
+     "siteNavigation": "Site Map",
+     "languageSwitch": "Language",
+     "themeSwitch": "Theme",
+-    "motto1":"Building highways when lanes feel too narrow. Sometimes it's sharp, sometimes it's f/0.95 blur.",
++    "motto1":"Building highways when lanes feel too narrow. Sometimes it's sharp, sometimes it's f/1.5 blur.",
+     "motto2":"Curious? So am I. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+   },
+   "theme": {
+diff --git a/apps/harrychang-me/public/locales/en/updates.json b/apps/harrychang-me/public/locales/en/updates.json
+index 83971ff..e0ab435 100644
+--- a/apps/harrychang-me/public/locales/en/updates.json
++++ b/apps/harrychang-me/public/locales/en/updates.json
+@@ -2,7 +2,7 @@
+   "entries": [
+     {
+       "date": "2026-02-03",
+-      "text": "[Research] Co-first-authored paper PATCH accepted to EACL 2026 SRW (Non-archival); targeting NAACL/EMNLP via ARR March cycle"
++      "text": "[Research] Co-first-authored paper PATCH accepted to <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL 2026 SRW</a> (Non-archival); targeting NAACL/EMNLP via ARR March cycle"
+     },
+     {
+       "date": "2025-12-24",
+diff --git a/apps/harrychang-me/public/locales/zh-TW/about.json b/apps/harrychang-me/public/locales/zh-TW/about.json
+index 8355bfc..dc23ef5 100644
+--- a/apps/harrychang-me/public/locales/zh-TW/about.json
++++ b/apps/harrychang-me/public/locales/zh-TW/about.json
+@@ -6,7 +6,7 @@
+     "llmResearcher": {
+       "title": "LLM 研究員",
+       "period": "2023 - Present",
+-      "description": "研究 LLM 安全與高效防護方法，一篇論文發表於 <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a>，另一篇於 EACL 審稿，並於 <a href=\"https://cycraft.com\">CyCraft</a> 擔任研究實習生。"
++      "description": "透過內部表徵分析建構自動化安全分類學。論文發表於 <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> 與 <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL 2026 SRW</a>，現於 <a href=\"https://cycraft.com\">CyCraft</a> 擔任研究實習生。"
+     },
+     "speaker": {
+       "title": "講者 – AI WAVE SHOW, SITCON",
+diff --git a/apps/harrychang-me/public/locales/zh-TW/updates.json b/apps/harrychang-me/public/locales/zh-TW/updates.json
+index 11737d4..c60e485 100644
+--- a/apps/harrychang-me/public/locales/zh-TW/updates.json
++++ b/apps/harrychang-me/public/locales/zh-TW/updates.json
+@@ -2,7 +2,7 @@
+   "entries": [
+     {
+       "date": "2026-02-03",
+-      "text": "[研究] 共同一作論文 PATCH 錄取於 EACL 2026 SRW (Non-archival)，將續投 ARR March"
++      "text": "[研究] 共同一作論文 PATCH 錄取於 <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL 2026 SRW</a> (Non-archival)，將續投 ARR March"
+     },
+     {
+       "date": "2025-12-24",
+diff --git a/apps/harrychang-me/public/sitemap-index.xml b/apps/harrychang-me/public/sitemap-index.xml
+index 0332bc3..8a3819e 100644
+--- a/apps/harrychang-me/public/sitemap-index.xml
++++ b/apps/harrychang-me/public/sitemap-index.xml
+@@ -2,10 +2,10 @@
+ <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <sitemap>
+     <loc>https://www.harrychang.me/sitemap.xml</loc>
+-    <lastmod>2026-02-10</lastmod>
++    <lastmod>2026-02-11</lastmod>
+   </sitemap>
+   <sitemap>
+     <loc>https://lab.harrychang.me/sitemap-lab.xml</loc>
+-    <lastmod>2026-02-10</lastmod>
++    <lastmod>2026-02-11</lastmod>
+   </sitemap>
+ </sitemapindex>
+\ No newline at end of file
+diff --git a/apps/harrychang-me/public/sitemap-lab.xml b/apps/harrychang-me/public/sitemap-lab.xml
+index 3401e4a..e15c9d8 100644
+--- a/apps/harrychang-me/public/sitemap-lab.xml
++++ b/apps/harrychang-me/public/sitemap-lab.xml
+@@ -3,7 +3,7 @@
+         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+   <url>
+     <loc>https://lab.harrychang.me</loc>
+-    <lastmod>2026-02-10</lastmod>
++    <lastmod>2026-02-11</lastmod>
+     <changefreq>weekly</changefreq>
+     <priority>1</priority>
+   </url>
+diff --git a/apps/harrychang-me/public/sitemap.xml b/apps/harrychang-me/public/sitemap.xml
+index f58a26e..df48345 100644
+--- a/apps/harrychang-me/public/sitemap.xml
++++ b/apps/harrychang-me/public/sitemap.xml
+@@ -3,7 +3,7 @@
+         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+   <url>
+     <loc>https://www.harrychang.me</loc>
+-    <lastmod>2026-02-10</lastmod>
++    <lastmod>2026-02-11</lastmod>
+     <changefreq>weekly</changefreq>
+     <priority>1</priority>
+     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me"/>
+@@ -11,7 +11,7 @@
+   </url>
+   <url>
+     <loc>https://www.harrychang.me/projects</loc>
+-    <lastmod>2026-02-10</lastmod>
++    <lastmod>2026-02-11</lastmod>
+     <changefreq>weekly</changefreq>
+     <priority>0.8</priority>
+     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects"/>
+@@ -19,7 +19,7 @@
+   </url>
+   <url>
+     <loc>https://www.harrychang.me/gallery</loc>
+-    <lastmod>2026-02-10</lastmod>
++    <lastmod>2026-02-11</lastmod>
+     <changefreq>weekly</changefreq>
+     <priority>0.8</priority>
+     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery"/>
+@@ -27,7 +27,7 @@
+   </url>
+   <url>
+     <loc>https://www.harrychang.me/blog</loc>
+-    <lastmod>2026-02-10</lastmod>
++    <lastmod>2026-02-11</lastmod>
+     <changefreq>weekly</changefreq>
+     <priority>0.8</priority>
+     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog"/>
