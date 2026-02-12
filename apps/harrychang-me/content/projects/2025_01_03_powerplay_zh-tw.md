@@ -8,9 +8,9 @@ year: "2025"
 date: "2025-01-05"
 role: "影片拍攝、剪輯、攝影"
 technologies: ["DaVinci Resolve", "Affinity Designer"]
+tooltip: "為年度英文戲劇「POWERPLAY」製作謝幕影片。"
 pinned: 8
 featured: true
-locked: false
 ---
 
 

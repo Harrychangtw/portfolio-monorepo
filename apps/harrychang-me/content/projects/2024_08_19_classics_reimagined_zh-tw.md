@@ -8,6 +8,7 @@ year: "2024"
 date: "2024-08-19"
 role: "影片拍攝、剪輯、攝影"
 technologies: ["Affinity Designer", "DaVinci Resolve"]
+tooltip: "為獲獎的班級戲劇《亂世殘陽》製作謝幕影片。"
 pinned: 7
 featured: true
 ---

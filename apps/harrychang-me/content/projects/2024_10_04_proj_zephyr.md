@@ -8,6 +8,7 @@ year: "2024"
 date: "2024-10-04"
 role: "Sole Developer"
 technologies: ["PyTorch", "Selenium"]
+tooltip: "An automated ticket bot with a custom CNN to solve CAPTCHAs."
 pinned: 10
 featured: true
 ---

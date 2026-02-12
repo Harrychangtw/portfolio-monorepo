@@ -2,12 +2,13 @@
 title: "WSDC 英文辯論經驗"
 category: "英文辯論"
 subcategory: "競賽回顧"
-description: ""
+description: "回顧我五年來的 WSDC 英文辯論生涯，記錄了從新手到贏得 FHDO 2025 冠軍的成長、挑戰與團隊合作。"
 imageUrl: "images/optimized/projects/2025_08_04_debate/titlecard.webp"
 year: "2020–2025"
 date: "2025-08-04"
 role: "辯士"
 technologies: ["公開演講", "批判性思維", "茶和咖啡"]
+tooltip: "回顧我五年來的 WSDC 英文辯論生涯，從新手到贏得冠軍。"
 pinned: 11
 featured: true
 ---

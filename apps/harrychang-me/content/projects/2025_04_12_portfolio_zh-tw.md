@@ -8,6 +8,7 @@ year: "2025"
 date: "2025-04-12"
 role: "設計師與開發者"
 technologies: ["Next.js", "React", "TypeScript", "TailwindCSS"]
+tooltip: "My personal portfolio, built with Next.js, Turborepo, and a file-based CMS."
 pinned: 5
 featured: true
 ---

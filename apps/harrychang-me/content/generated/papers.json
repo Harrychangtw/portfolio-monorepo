@@ -1,5 +1,19 @@
 [
   {
+    "title": "GRP-Obliteration: Unaligning LLMs With a Single Unlabeled Prompt",
+    "authors": [
+      "Mark Russinovich",
+      "Yanan Cai",
+      "Keegan Hines",
+      "Giorgio Severi",
+      "Blake Bullwinkel",
+      "Ahmed Salem"
+    ],
+    "date": "2026-02-05T23:17:37Z",
+    "url": "http://arxiv.org/abs/2602.06258v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Mindscape-Aware Retrieval Augmented Generation for Improved Long Context Understanding",
     "authors": [
       "Yuqing Li",
@@ -86,7 +100,7 @@
       "Matteo Prandi",
       "Federico Pierucci",
       "Francesco Giarrusso",
-      "Marcantonio Bracale",
+      "Marcantonio Bracale Syrnikov",
       "Marcello Galisai",
       "Vincenzo Suriani",
       "Olga Sorokoletova",
@@ -94,7 +108,7 @@
       "Daniele Nardi"
     ],
     "date": "2025-11-19T10:14:08Z",
-    "url": "http://arxiv.org/abs/2511.15304v2",
+    "url": "http://arxiv.org/abs/2511.15304v3",
     "source": "arxiv"
   },
   {
@@ -544,7 +558,7 @@
     "source": "arxiv"
   },
   {
-    "title": "Do LLMs Understand the Safety of Their Inputs? Training-Free Moderation via Latent Prototypes",
+    "title": "Efficient LLM Moderation with Multi-Layer Latent Prototypes",
     "authors": [
       "Maciej Chrabąszcz",
       "Filip Szatkowski",
@@ -554,7 +568,7 @@
       "Sebastian Cygert"
     ],
     "date": "2025-02-22T10:31:50Z",
-    "url": "http://arxiv.org/abs/2502.16174v2",
+    "url": "http://arxiv.org/abs/2502.16174v3",
     "source": "arxiv"
   },
   {
@@ -682,11 +696,11 @@
     "source": "arxiv"
   },
   {
-    "title": "SafeDialBench: A Fine-Grained Safety Benchmark for Large Language Models in Multi-Turn Dialogues with Diverse Jailbreak Attacks",
+    "title": "SafeDialBench: A Fine-Grained Safety Evaluation Benchmark for Large Language Models in Multi-Turn Dialogues with Diverse Jailbreak Attacks",
     "authors": [
       "Hongye Cao",
-      "Yanming Wang",
       "Sijia Jing",
+      "Yanming Wang",
       "Ziyue Peng",
       "Zhixin Bai",
       "Zhe Cao",
@@ -703,7 +717,7 @@
       "Junlan Feng"
     ],
     "date": "2025-02-16T12:08:08Z",
-    "url": "http://arxiv.org/abs/2502.11090v3",
+    "url": "http://arxiv.org/abs/2502.11090v4",
     "source": "arxiv"
   },
   {

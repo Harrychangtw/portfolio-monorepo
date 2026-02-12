@@ -8,9 +8,9 @@ year: "2025"
 date: "2025-01-05"
 role: "Video Producer"
 technologies: ["DaVinci Resolve", "Affinity Designer"]
+tooltip: "Created an award-winning video on LLM safety for AAAI 2025."
 pinned: 4
 featured: true
-locked: false
 ---
 
 ## Project Overview

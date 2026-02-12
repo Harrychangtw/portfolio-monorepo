@@ -8,10 +8,9 @@ year: "2025"
 date: "2025-01-05"
 role: "影片製作人"
 technologies: ["DaVinci Resolve", "Affinity Designer"]
+tooltip: "為 AAAI 2025 製作的獲獎影片，介紹 LLM 安全中的攻防。"
 pinned: 4
 featured: true
-locked: false
-
 ---
 
 ## 專案概覽

@@ -8,6 +8,7 @@ year: "2023-2024"
 date: "2024-09-23"
 role: "Designer & Developer"
 technologies: ["Svelte", "PyTorch", "FastAPI"]
+tooltip: "Built an award-winning RAG chatbot for my school from scratch."
 pinned: 6
 featured: true
 ---
