@@ -25,13 +25,19 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
   const [loading, setLoading] = useState(false)
   // Force scroll to top on navigation
   useLayoutEffect(() => {
-        // Use instant behavior to ensure immediate scroll without animation
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-        // Also try to prevent scroll restoration
-        if ('scrollRestoration' in history) {
-          history.scrollRestoration = 'manual'
-        }
-      }, [initialPost.slug])
+    // Set scroll restoration to manual first
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
+    // Immediate scroll
+    window.scrollTo(0, 0)
+    // Backup scroll after any pending browser scroll restoration
+    const frame = requestAnimationFrame(() => {
+      window.scrollTo(0, 0)
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [initialPost.slug])
+  
   
   // Fetch localized version of the Next Up post
   useEffect(() => {
