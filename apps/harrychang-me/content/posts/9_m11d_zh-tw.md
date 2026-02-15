@@ -1,7 +1,7 @@
 ---
 title: "Leica M11-D：關於特權、在場，以及我無法為這筆消費辯護的種種"
 description: "一台我無法以任何理性指標辯護的相機。一個我會毫不猶豫再做一次的決定。關於消費而非投資，關於不存在的螢幕，以及承諾放慢腳步的意義。"
-imageUrl: "images/optimized/blogs/2026_02_21_m11d/titlecard.webp"
+imageUrl: "images/optimized/blogs/9_m11d/titlecard.webp"
 date: "2026-02-21"
 author: "Harry Chang"
 tags: ["Photography", "Hardware", "Reflection"]
@@ -21,7 +21,7 @@ locked: true
 
 明天我還是會做同樣的決定。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/front.webp)
+![framed:](images/optimized/blogs/9_m11d/front.webp)
 
 ## 房間裡的大象，先說在前
 
@@ -42,11 +42,11 @@ locked: true
 
 但那位店員沒有。他的英文流利而優雅，耐心無窮，語氣毫無我半預期的居高臨下。我們聊機身、談鏡頭。我原本想要黑色的 Nokton，但鏡頭店只有銀色現貨。這反倒成了一份意外的禮物，銀色鏡身與機身的接環完美對齊，一種我無法預先計畫的偶然雅緻。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/back.webp)
+![framed:](images/optimized/blogs/9_m11d/back.webp)
 
 走出店門的感覺，超現實到我難以言喻。我們對遭竊是如此偏執，以至於沒用那時尚的購物袋，而是將相機盒塞進我媽那亮黃色的史努比圖案手提袋裡。我姐看我猶豫不決，以為我在考慮花個幾千台幣。數字是歐元。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000260.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000260.webp)
 
 ## 邏輯的終點
 
@@ -74,7 +74,7 @@ M11-D 補完了這個迴路。一個真正的連動測距儀，代表著光學�
 
 有一張在羅馬拍的照片，我按下快門的瞬間幾乎就恨不得把它刪除。男子在夜晚撐著紅傘。我邊走邊拍，慌張，確定在 f/1.5 與 1/4 秒快門下搞砸了。幾天後看到影像，動態模糊讓它變成平移追焦。不全然刻意，也不全然偶然。但卻比兩者都好。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000758.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000758.webp)
 
 這就是移除回饋循環的重點。你不再試圖拍出完美的照片，你開始試圖*為那張照片而在場*。影像成為專注的副產品，而非最佳化的標的。
 
@@ -84,19 +84,19 @@ M11-D 補完了這個迴路。一個真正的連動測距儀，代表著光學�
 
 我的褲子濕透了，它們不防水。我的襪子在理應防水的鞋裡微濕。計畫取消。明智之舉應是衝回住宿地點，保護相機，等雨停。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000768.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000768.webp)
 
 但我繼續按著自己的步調走著。穿梭在神似台北夏季午後的那種大雨中，雙腿冰冷，脖子上掛著荒謬昂貴的德國工藝。每一次按下快門，聲響都像一個小小的承諾。我不知道曝光是否正確，也無從確認。
 
 雙腿冰冷，計畫取消，人卻如此清醒。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000667.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000667.webp)
 
 這是旅行前我說不清的：相機沒有創造這些時刻，但改變了我面對它們的方式。當你無法重播，你就無法縮回螢幕裡。你留在場景中，信任，然後繼續前進。
 
 幾天前，我們租的車在多洛米蒂山區陷在雪裡。雙向車輛堵塞。家人焦急，情況不斷升溫。然後五個德國人出現，二話不說的幫忙。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000264.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000264.webp)
 
 把我們推出來。不求回報。民宿主人的兒子載著我們安全下山，駛過我們自己絕不可能駕馭的道路。
 
@@ -105,13 +105,13 @@ M11-D 補完了這個迴路。一個真正的連動測距儀，代表著光學�
 
 最後一天清晨，我和我姐三點半離開公寓，最後一次羅馬散步。走過空無一人的許願池，走過沒有人群的萬神殿，走過只有老鼠的羅馬競技場。6.5 公里，用唯一感覺正確的方式，向一座城市道別。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000721.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000721.webp)
 
 M11-D 跟著我。快門偶爾響起。但多數時候我只是走著、看著，讓城市存在，而不試圖捕捉它。
 
 我想，這才是這台相機的真正用途。不是為了解析度，不是為了測距窗。而是為了允許自己，比世界要求的，更慢一些。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000478.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000478.webp)
 
 ## 感光元件看見什麼
 
@@ -119,7 +119,7 @@ M11-D 跟著我。快門偶爾響起。但多數時候我只是走著、看著�
 
 那顆 Voigtländer 鏡頭渲染對比的方式，像在證明什麼。有一張在刀鋒山拍的照片，我放大前就能感覺銳利——六千萬畫素解析出的山脊細節，在我幾天後終於打開檔案時，讓我為之震懾。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000213.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000213.webp)
 
 相機有它的怪癖。自動白平衡有點情緒化。測光需要一些變通方法。我學會在困難情況下同時拍攝 DNG 與 JPEG，並在失誤時信任檔案的寬容度。
 
@@ -131,7 +131,7 @@ M11-D 跟著我。快門偶爾響起。但多數時候我只是走著、看著�
 
 有個我逃不掉的諷刺：我研究時間花在為最佳化語言模型的安全性，建立護欄，分類風險。我讓 AI 系統更擅長應對限制。然後我拿起一台完全拒絕被最佳化的相機。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000957.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000957.webp)
 
 但或許這不是矛盾。或許是平衡。
 
@@ -145,7 +145,7 @@ M11-D 跟著我。快門偶爾響起。但多數時候我只是走著、看著�
 
 在義大利，我看到人們用我遺忘的方式生活。他們吃飯時不看手機。他們嚴寒慢跑，因為身體本就該活動。米蘭的街道上美感如此普遍，以至於我大概只看到兩張不順眼的海報。我一直想著：這就是生活，而非只是存活。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000934.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000934.webp)
 
 相機成為那課的一部分。不是捕捉時光的設備，而是一個讓自己值得擁有那些片刻的練習。
 
@@ -171,7 +171,7 @@ M11-D 跟著我。快門偶爾響起。但多數時候我只是走著、看著�
 
 但米蘭與羅馬之間，雷陣雨與清晨漫步之間，我忘了自己在扛著它。
 
-![framed:](images/optimized/blogs/2026_02_21_m11d/L1000927.webp)
+![framed:](images/optimized/blogs/9_m11d/L1000927.webp)
 
 ---
 
