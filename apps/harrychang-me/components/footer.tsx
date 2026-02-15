@@ -177,7 +177,7 @@ export default function Footer() {
 
     return (
       <li key={link.id}>
-        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+        <motion.div whileHover={{ y: -2, x: 4 }} transition={{ duration: 0.2 }}>
           {isInternal ? (
             <NavigationLink
               href={href}
