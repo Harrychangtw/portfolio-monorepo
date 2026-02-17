@@ -12,6 +12,8 @@ import NowPlayingCard from "@portfolio/ui/now-playing-card"
 import { usePathname } from "next/navigation"
 import { scrollToSection } from "@portfolio/lib/lib/scrolling"
 import NavigationLink from "@portfolio/ui/navigation-link"
+import GuestbookWidget from "@/components/guestbook-widget"
+import { ArrowUpRight, ArrowRight } from "lucide-react"
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
@@ -160,13 +162,13 @@ export default function Footer() {
   const renderLink = (link: typeof connectLinks[0], showNowPlaying = false) => {
     const href = getHref(link.href, link.id);
     const isInternal = isInternalLink(link.href);
-    const linkClassName = `font-ibm-plex text-primary transition-colors whitespace-nowrap ${
+    const linkClassName = `font-ibm-plex text-primary transition-colors flex items-center justify-between w-full group ${
       link.id === 'icarus'
         ? 'icarus-link'
         : 'hover:text-accent'
     }`;
 
-    const linkContent = showNowPlaying && link.id === 'music' ? (
+    const label = showNowPlaying && link.id === 'music' ? (
       <span className="inline-flex items-center">
         {t(getTranslationKey(link.id))}
         <NowPlayingIndicator isPlaying={nowPlaying?.isPlaying} />
@@ -174,6 +176,13 @@ export default function Footer() {
     ) : (
       t(getTranslationKey(link.id))
     );
+
+    const linkContent = (
+      <>
+        <span>{label}</span>
+        <ArrowUpRight className="w-4 h-4 text-secondary transition-all duration-300 group-hover:text-accent group-hover:translate-x-0.5" />
+      </>
+    )
 
     return (
       <li key={link.id}>
@@ -211,10 +220,10 @@ export default function Footer() {
     <>
       <footer ref={footerRef} className="bg-card text-primary py-12 md:py-16 border-t border-border">
         <div className="container">
-          <div className="grid grid-cols-12 gap-y-10 md:gap-x-2">
+          <div className="grid grid-cols-12 gap-y-10 md:gap-x-2 items-center">
 
             {/* Column 1: Logo & Motto */}
-            <div className="col-span-12 md:col-span-6 md:pr-24 md:mt-2 max-w-xl">
+            <div className="col-span-12 md:col-span-6 md:pr-24 max-w-xl">
               <NavigationLink
                 href={getHref('/', 'logo')}
                 className="relative h-12 mb-6 block cursor-pointer group"
@@ -238,7 +247,14 @@ export default function Footer() {
             </div>
 
             {/* Link Columns */}
-            <div className="col-span-12 md:col-span-6">
+            <div className="col-span-12 md:col-span-6 space-y-10">
+              <div className="w-full">
+                <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
+                  {t('footer.guestbook')}
+                </h3>
+                <GuestbookWidget />
+              </div>
+
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-10">
                 
                 {/* Connect */}
