@@ -227,10 +227,7 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
         isLoading,
       }}
     >
-      <Suspense fallback={null}>
-        {children}
-      </Suspense>
-      {!hasLoadedOnce && (
+      {!hasLoadedOnce ? (
         <div 
           style={{ 
             position: 'fixed',
@@ -242,6 +239,10 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
             zIndex: 9999,
           }}
         />
+        ) : (
+          <Suspense fallback={null}>
+            {children}
+          </Suspense>
       )}
     </LanguageContext.Provider>
   )
