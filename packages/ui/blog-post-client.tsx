@@ -212,13 +212,21 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
             {/* Left Sidebar: Back Button & Table of Contents */}
             <div className="md:col-span-4">
               <div className="md:sticky md:top-24 flex flex-col gap-8">
-                 <NavigationLink
-                    href="/#blog"
-                    className="inline-flex items-center text-secondary hover:text-accent transition-colors"
-                  >
-                    <span className="mr-2 font-heading">←</span>
-                    <span className="font-heading">{t('blog.backToBlog')}</span>
-                  </NavigationLink>
+                  {/* Mobile: Flex row for Nav + Switchers */}
+                  <div className="flex items-center justify-between md:block">
+                    <NavigationLink
+                      href="/#blog"
+                      className="inline-flex items-center text-secondary hover:text-accent transition-colors"
+                    >
+                      <span className="mr-2 font-heading">←</span>
+                      <span className="font-heading">{t('blog.backToBlog')}</span>
+                    </NavigationLink>
+
+                    {/* Mobile-only Switchers */}
+                    <div className="flex md:hidden items-center gap-4">
+                      <LanguageSwitcher />
+                    </div>
+                  </div>
 
                   <div className="hidden md:block pt-8 border-t border-border">
                     <TableOfContents contentHtml={post.contentHtml} />

@@ -184,13 +184,21 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
             <div className="md:col-span-4 mb-10 md:mb-0">
               <div className="md:sticky md:top-24">
                 <div className="relative">
-                  <NavigationLink
-                    href="/#gallery"
-                    className="inline-flex items-center text-secondary hover:text-accent transition-colors font-body"
-                  >
-                    <span className="mr-2 font-heading">←</span>
-                    <span className="font-heading">{t('gallery.backToGallery')}</span>
-                  </NavigationLink>
+                  {/* Mobile: Flex row for Nav + Switchers */}
+                  <div className="flex items-center justify-between md:block">
+                    <NavigationLink
+                      href="/#gallery"
+                      className="inline-flex items-center text-secondary hover:text-accent transition-colors font-body"
+                    >
+                      <span className="mr-2 font-heading">←</span>
+                      <span className="font-heading">{t('gallery.backToGallery')}</span>
+                    </NavigationLink>
+                    
+                    {/* Mobile-only Switchers */}
+                    <div className="flex md:hidden items-center gap-4">
+                      <LanguageSwitcher />
+                    </div>
+                  </div>
                   <div className="mt-8">
                     <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{item.title}</h1>
                     <p className="text-secondary mb-6 md:mb-12 font-body">
