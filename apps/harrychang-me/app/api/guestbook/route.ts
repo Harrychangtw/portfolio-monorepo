@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 // --- Rate Limiting Configuration ---
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute window
-const MAX_REQUESTS_PER_WINDOW = 1;   // Limit to 3 requests per minute
+const MAX_REQUESTS_PER_WINDOW = 5;   // Limit to 3 requests per minute
 const CLEANUP_INTERVAL = 5 * 60 * 1000; // Cleanup expired entries every 5 minutes
 
 // In-memory store for rate limiting
