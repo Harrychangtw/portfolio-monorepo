@@ -455,7 +455,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             </ul>
             
             {/* Bottom Section: Socials & Switchers */}
-            <div className="mt-auto pt-4 pb-24 flex flex-col gap-10">
+            <div className="mt-auto pt-8 pb-4 flex flex-col gap-8">
               {displaySocials && socialItems && socialItems.length > 0 && (
                 <div className="sm-panel-socials">
                   <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
@@ -481,7 +481,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 </div>
               )}
 
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-4">
                 <LanguageSwitcher />
                 <ThemeSwitcher />
               </div>

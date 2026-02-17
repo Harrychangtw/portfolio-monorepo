@@ -14,6 +14,7 @@
     "design": "設計系統"
   },
   "footer": {
+    "guestbook": "匿名留言板",
     "socialContact": "社交與聯繫",
     "personalResources": "探索與資源",
     "siteNavigation": "網站導覽",
@@ -21,6 +22,17 @@
     "themeSwitch": "主題",
     "motto1":"不走尋常路，不等誰允許。路還在鋪，人已在走。",
     "motto2":"一同探索可能 — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+  },
+  "guestbook": {
+    "placeholder1": "有什麼讓你產生共鳴，或發現什麼需要修正嗎？",
+    "placeholder2": "歡迎暢所欲言～",
+    "placeholder3": "任何回饋都歡迎，哪裡能做得更好？",
+    "placeholder4": "發現問題？有任何疑問？歡迎留言",
+    "placeholder5": "任何想法、回饋，或單純打聲招呼。",
+    "placeholder6": "這網站可以更好,如果...",
+    "placeholder7": "留下一點什麼吧",
+    "focusedPlaceholder": "輸入你的訊息...",
+    "error": "發送失敗，請再試一次。"
   },
   "theme": {
     "light": "淺色",

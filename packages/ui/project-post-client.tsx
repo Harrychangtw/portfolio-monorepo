@@ -26,13 +26,18 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
   const [loading, setLoading] = useState(false)
 
   useLayoutEffect(() => {
-      // Use instant behavior to ensure immediate scroll without animation
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-      // Also try to prevent scroll restoration
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual'
-      }
-    }, [initialProject.slug])
+      // Set scroll restoration to manual first
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual'
+    }
+    // Immediate scroll
+    window.scrollTo(0, 0)
+    // Backup scroll after any pending browser scroll restoration
+    const frame = requestAnimationFrame(() => {
+      window.scrollTo(0, 0)
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [initialProject.slug])
 
   // Fetch localized version of the Next Up project
   useEffect(() => {
@@ -178,13 +183,21 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
             <div className="md:col-span-4 mb-10 md:mb-0">
               <div className="md:sticky md:top-24 md:h-[calc(100vh-8rem)] md:flex md:flex-col md:justify-between">
                 <div>
-                  <NavigationLink
-                    href="/#projects"
-                    className="inline-flex items-center text-secondary hover:text-accent transition-colors"
-                  >
-                    <span className="mr-2 font-heading">←</span>
-                    <span className="font-heading">{t('projects.backToProjects')}</span>
-                  </NavigationLink>
+                  {/* Mobile: Flex row for Nav + Switchers. Desktop: Block */}
+                  <div className="flex items-center justify-between md:block">
+                    <NavigationLink
+                      href="/#projects"
+                      className="inline-flex items-center text-secondary hover:text-accent transition-colors"
+                    >
+                      <span className="mr-2 font-heading">←</span>
+                      <span className="font-heading">{t('projects.backToProjects')}</span>
+                    </NavigationLink>
+                    
+                    {/* Mobile-only Switchers in Nav Row */}
+                    <div className="flex md:hidden items-center gap-4">
+                      <LanguageSwitcher />
+                    </div>
+                  </div>
                   <div className="mt-8">
                     <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">{project.title}</h1>
                     <p className="font-body text-secondary uppercase text-sm mb-6 md:mb-12">{project.category}</p>

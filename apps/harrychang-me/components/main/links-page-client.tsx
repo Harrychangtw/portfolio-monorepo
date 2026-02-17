@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import { motion } from 'motion/react'
+import GuestbookWidget from '@/components/guestbook-widget'
 import {
   Mail,
   Github,
@@ -99,6 +100,12 @@ export default function LinksPageClient() {
       external: true,
     },
     {
+      icon: <Film className="w-5 h-5" />,
+      label: t("social.letterboxd"),
+      href: "/letterboxd",
+      external: true,
+    },
+    {
       icon: <Music className="w-5 h-5" />,
       label: t("resources.music"),
       href: "/spotify",
@@ -119,12 +126,6 @@ export default function LinksPageClient() {
       icon: <BookOpen className="w-5 h-5" />,
       label: t("resources.reading"),
       href: "/paper-reading",
-    },
-    {
-      icon: <Film className="w-5 h-5" />,
-      label: t("social.letterboxd"),
-      href: "/letterboxd",
-      external: true,
     },
     {
       icon: <Wrench className="w-5 h-5" />,
@@ -189,6 +190,16 @@ export default function LinksPageClient() {
           >
             {t("links.hero")}
           </motion.p>
+
+          {/* Guestbook Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="max-w-xs mx-auto mt-6"
+          >
+            <GuestbookWidget />
+          </motion.div>
 
           {/* Bio
           <motion.p

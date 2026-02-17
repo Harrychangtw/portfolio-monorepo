@@ -14,6 +14,7 @@
     "design": "Design System"
   },
   "footer": {
+    "guestbook": "Guestbook",
     "socialContact": "Socials",
     "personalResources": "Resources",
     "siteNavigation": "Site Map",
@@ -21,6 +22,17 @@
     "themeSwitch": "Theme",
     "motto1":"Building highways when lanes feel too narrow. Sometimes it's sharp, sometimes it's f/1.5 blur.",
     "motto2":"Curious? So am I. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+  },
+  "guestbook": {
+    "placeholder1": "Did something connect? Or break? Leave a note.",
+    "placeholder2": "This site could be better if...",
+    "placeholder3": "What are you thinking about?",
+    "placeholder4": "All feedback is a gift. What could be better?",
+    "placeholder5": "Spotted an issue? Have a question? Drop a line.",
+    "placeholder6": "Thoughts, feedback, or just a hello.",
+    "placeholder7": "Anonymous feedback welcome",
+    "focusedPlaceholder": "Type your message...",
+    "error": "Failed to send. Please try again."
   },
   "theme": {
     "light": "Light",

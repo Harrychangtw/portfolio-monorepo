@@ -23,6 +23,12 @@ const NavigationLink = forwardRef<HTMLAnchorElement, NavigationLinkProps>(
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
         return
       }
+      // Prevent browser's automatic scroll restoration before navigation starts
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual'
+      }
+      // Pre-emptively scroll to top to prevent flash of wrong scroll position
+      window.scrollTo(0, 0)
 
       // Extract the target path from href
       const targetHref = typeof href === 'string' ? href : href.pathname || ''
