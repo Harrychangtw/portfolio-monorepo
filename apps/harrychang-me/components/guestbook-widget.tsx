@@ -135,7 +135,7 @@ export default function GuestbookWidget({ className = "" }: { className?: string
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
                 transition={{ duration: 0.2 }}
-                className="absolute right-0 top-0 p-2 text-foreground hover:text-foreground/70 disabled:opacity-30 transition-colors"
+                className="absolute right-0 top-0 pt-2 text-foreground hover:text-foreground/70 disabled:opacity-30 transition-colors"
               >
                 {status === "loading" ? (
                   <Loader2 className="w-4 h-4 animate-spin" />

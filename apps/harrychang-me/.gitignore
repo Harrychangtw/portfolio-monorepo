@@ -30,7 +30,7 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
+# typescript∫
 *.tsbuildinfo
 next-env.d.ts
 
@@ -44,3 +44,4 @@ scripts/blog_export.sh
 public/fonts/**
 content/.obsidian
 content/workflows
+content/drafts

@@ -292,7 +292,7 @@ export default function Footer() {
           </div>
 
           {/* Divider */}
-          <hr className="border-secondary mt-16 mb-10 md:mt-16 md:mb-4" />
+          <hr className="border-border mt-16 mb-10 md:mt-16 md:mb-4" />
 
           {/* Bottom Row */}
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-4 text-sm text-secondary">
