@@ -2,11 +2,10 @@
 title: "Leica M11-D：關於特權、在場，以及我無法為這筆消費辯護的種種"
 description: "一台我無法以任何理性指標辯護的相機。一個我會毫不猶豫再做一次相同的決定。關於消費而非投資，關於不存在的螢幕，以及承諾放慢腳步的意義。"
 imageUrl: "images/optimized/blogs/9_m11d/titlecard.webp"
-date: "2026-02-20"
+date: "2026-02-19"
 author: "Harry Chang"
 tags: ["Photography", "Hardware", "Reflection"]
 pinned: -1
-locked: true
 ---
 
 ## 無法辯護的選擇
@@ -175,6 +174,16 @@ M11-D 補完了這個迴路。一個真正的連動測距儀，代表著光學�
 但米蘭與羅馬之間，雷陣雨與清晨漫步之間，我忘了自己在扛著它。
 
 ![framed:](images/optimized/blogs/9_m11d/L1000927.webp)
+
+---
+
+## 影像輯錄
+
+我花了許多篇幅描寫關於沒有螢幕的拍攝體驗。如果好奇這塊感光元件在義大利的那幾週究竟留下了什麼，我將影像整理成了三個合集。
+
+- **[如果在冬夜，一個旅人...](/gallery/2026_02_08_italy_mountain)**：多洛米蒂、白雪，以及山裡的寂靜。
+- **[間奏](/gallery/2026_02_08_italy_city)**：米蘭、佛羅倫斯與羅馬的街頭影像與那些稍縱即逝的瞬間。
+- **[閒章](/gallery/2026_02_08_italy_town)**：在小鎮裡遇見的，那些關於光影的偶然。
 
 ---
 
