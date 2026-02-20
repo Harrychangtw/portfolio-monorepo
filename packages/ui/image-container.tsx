@@ -151,7 +151,6 @@ export function ImageContainer({
                       } ${imgClassName || ''}`}
                       sizes={sizes}
                       priority={priority}
-                      quality={20}
                       onLoad={() => setThumbLoaded(true)}
                     />
                   )}
@@ -179,7 +178,6 @@ export function ImageContainer({
                         blurComplete || priority ? "opacity-100" : "opacity-0"
                       } ${imgClassName || ''}`}
                       sizes={sizes}
-                      priority={priority}
                       quality={quality}
                       onLoad={() => {
                         setBlurComplete(true)
