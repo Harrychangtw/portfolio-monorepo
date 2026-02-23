@@ -15,7 +15,7 @@ export async function GET(request: Request) {
         const res = NextResponse.json(payload);
 
         if (fresh) {
-            res.headers.set('Cache-Control', 'no-store');
+            res.headers.set('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=10');
         } else {
             res.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
         }
@@ -23,7 +23,7 @@ export async function GET(request: Request) {
         return res;
     } catch {
         const res = NextResponse.json({ isPlaying: false });
-        res.headers.set('Cache-Control', 'no-store');
+        res.headers.set('Cache-Control', 'public, s-maxage=10');
         return res;
     }
 }

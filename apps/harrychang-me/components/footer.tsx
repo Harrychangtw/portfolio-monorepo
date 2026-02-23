@@ -89,7 +89,7 @@ export default function Footer() {
   const footerRef = useRef<HTMLElement | null>(null)
   
   const hoveringMusic = activeTooltipId === 'music';
-  const { data: nowPlaying } = useNowPlaying(hoveringMusic ? 5000 : 60000, {
+  const { data: nowPlaying } = useNowPlaying(hoveringMusic ? 10000 : 600000, {
     fresh: hoveringMusic,
   });
   
