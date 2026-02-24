@@ -199,6 +199,15 @@
     "source": "arxiv"
   },
   {
+    "title": "The New Quant: A Survey of Large Language Models in Financial Prediction and Trading",
+    "authors": [
+      "Weilong Fu"
+    ],
+    "date": "2025-10-07T02:46:18Z",
+    "url": "http://arxiv.org/abs/2510.05533v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Beyond Linear Probes: Dynamic Safety Monitoring for Language Models",
     "authors": [
       "James Oldfield",
@@ -267,6 +276,16 @@
     ],
     "date": "2025-08-22T14:13:16Z",
     "url": "http://arxiv.org/abs/2508.16406v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Sentiment-Aware Stock Price Prediction with Transformer and LLM-Generated Formulaic Alpha",
+    "authors": [
+      "Qizhao Chen",
+      "Hiroaki Kawashima"
+    ],
+    "date": "2025-08-07T02:02:39Z",
+    "url": "http://arxiv.org/abs/2508.04975v1",
     "source": "arxiv"
   },
   {
@@ -348,6 +367,18 @@
     ],
     "date": "2025-05-23T17:59:18Z",
     "url": "http://arxiv.org/abs/2505.20322v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "From Local Patterns to Global Understanding: Cross-Stock Trend Integration for Enhanced Predictive Modeling",
+    "authors": [
+      "Yi Hu",
+      "Hanchi Ren",
+      "Jingjing Deng",
+      "Xianghua Xie"
+    ],
+    "date": "2025-05-22T12:04:10Z",
+    "url": "http://arxiv.org/abs/2505.16573v1",
     "source": "arxiv"
   },
   {
@@ -1155,6 +1186,18 @@
     ],
     "date": "2024-10-11T17:55:09Z",
     "url": "http://arxiv.org/abs/2410.09040v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "Mamba Meets Financial Markets: A Graph-Mamba Approach for Stock Price Prediction",
+    "authors": [
+      "Ali Mehrabian",
+      "Ehsan Hoseinzade",
+      "Mahdi Mazloum",
+      "Xiaohong Chen"
+    ],
+    "date": "2024-09-26T03:29:26Z",
+    "url": "http://arxiv.org/abs/2410.03707v2",
     "source": "arxiv"
   },
   {
@@ -1966,6 +2009,34 @@
     "source": "arxiv"
   },
   {
+    "title": "DGDNN: Decoupled Graph Diffusion Neural Network for Stock Movement Prediction",
+    "authors": [
+      "Zinuo You",
+      "Zijian Shi",
+      "Hongbo Bo",
+      "John Cartlidge",
+      "Li Zhang",
+      "Yan Ge"
+    ],
+    "date": "2024-01-03T17:36:27Z",
+    "url": "http://arxiv.org/abs/2401.01846v1",
+    "source": "arxiv"
+  },
+  {
+    "title": "MASTER: Market-Guided Stock Transformer for Stock Price Forecasting",
+    "authors": [
+      "Tong Li",
+      "Zhaoyang Liu",
+      "Yanyan Shen",
+      "Xue Wang",
+      "Haokun Chen",
+      "Sen Huang"
+    ],
+    "date": "2023-12-23T12:06:17Z",
+    "url": "http://arxiv.org/abs/2312.15235v1",
+    "source": "arxiv"
+  },
+  {
     "title": "Retrieval-Augmented Generation for Large Language Models: A Survey",
     "authors": [
       "Yunfan Gao",
@@ -2398,6 +2469,20 @@
     ],
     "date": "2023-08-07T16:55:20Z",
     "url": "http://arxiv.org/abs/2308.03825v2",
+    "source": "arxiv"
+  },
+  {
+    "title": "Alpha-GPT: Human-AI Interactive Alpha Mining for Quantitative Investment",
+    "authors": [
+      "Saizhuo Wang",
+      "Hang Yuan",
+      "Leon Zhou",
+      "Lionel M. Ni",
+      "Heung-Yeung Shum",
+      "Jian Guo"
+    ],
+    "date": "2023-07-31T16:40:06Z",
+    "url": "http://arxiv.org/abs/2308.00016v2",
     "source": "arxiv"
   },
   {
