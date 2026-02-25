@@ -18,6 +18,7 @@ interface Spark {
     y: number;
     angle: number;
     startTime: number;
+    color: string;
 }
 
 const ClickSpark: React.FC<ClickSparkProps> = ({
@@ -67,7 +68,6 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
         };
     }, []);
 
-
     const easeFunc = useCallback(
         (t: number) => {
             switch (easing) {
@@ -96,7 +96,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
             if (!startTimeRef.current) {
                 startTimeRef.current = timestamp;
             }
-            ctx?.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             sparksRef.current = sparksRef.current.filter((spark: Spark) => {
                 const elapsed = timestamp - spark.startTime;
@@ -115,7 +115,8 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
                 const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
                 const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
 
-                ctx.strokeStyle = sparkColor;
+                // Use the resolved color saved on the spark
+                ctx.strokeStyle = spark.color;
                 ctx.lineWidth = 2;
                 ctx.beginPath();
                 ctx.moveTo(x1, y1);
@@ -133,7 +134,16 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
         return () => {
             cancelAnimationFrame(animationId);
         };
-    }, [sparkColor, sparkSize, sparkRadius, sparkCount, duration, easeFunc, extraScale]);
+    }, [sparkSize, sparkRadius, duration, easeFunc, extraScale]);
+
+    // Helper to resolve CSS variables into computed string values
+    const resolveColor = (color: string, el: HTMLElement) => {
+        if (!color.includes("var(")) return color;
+        return color.replace(/var\((--[a-zA-Z0-9-]+)\)/g, (match, varName) => {
+            const val = getComputedStyle(el).getPropertyValue(varName).trim();
+            return val || match;
+        });
+    };
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
         const canvas = canvasRef.current;
@@ -143,11 +153,15 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
         const y = e.clientY - rect.top;
 
         const now = performance.now();
+        // Dynamically compute the color based on current active theme variable
+        const resolvedColor = resolveColor(sparkColor, canvas);
+
         const newSparks: Spark[] = Array.from({length: sparkCount}, (_, i) => ({
             x,
             y,
             angle: (2 * Math.PI * i) / sparkCount,
             startTime: now,
+            color: resolvedColor
         }));
 
         sparksRef.current.push(...newSparks);
