@@ -57,10 +57,11 @@ const LOADING_STATUSES = [
 ]
 
 
-export function ImageLoadingSkeleton() {
+export function ImageLoadingSkeleton({ visible = true }: { visible?: boolean }) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
+    if(!visible) return
     const interval = setInterval(() => {
       setIndex((prev) => {
         // 3. Cheap randomness (prevents consecutive duplicates)
@@ -72,13 +73,15 @@ export function ImageLoadingSkeleton() {
       })
     }, 1000)
     return () => clearInterval(interval)
-  }, [])
+  }, [visible])
 
   return (
     <div 
       // 2. Define the container type for relative sizing
       style={{ containerType: "size" }}
-      className="absolute inset-0 bg-muted/10 backdrop-blur-[2px] flex items-center justify-center z-20 pointer-events-none"
+      className={`absolute inset-0 bg-muted/10 backdrop-blur-[2px] flex items-center justify-center z-20 pointer-events-none transition-opacity duration-500 ${
+        visible ? "opacity-100" : "opacity-0"
+      }`}
     >
       <div className="h-auto overflow-hidden flex flex-col items-center justify-center">
         <AnimatePresence mode="wait">

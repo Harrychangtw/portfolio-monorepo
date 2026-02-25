@@ -136,7 +136,7 @@ export function ImageContainer({
             )}
             
             {/* Overlay Skeleton if loading or waiting for blur to complete */}
-            {(!blurComplete) && <ImageLoadingSkeleton />}
+            <ImageLoadingSkeleton visible={!blurComplete} />
 
             <div className="absolute inset-0">
               {(isVisible || priority) && (
@@ -146,7 +146,7 @@ export function ImageContainer({
                       src={thumbnailSrc}
                       alt={alt}
                       fill
-                      className={`object-cover object-center transition-opacity duration-500 ${
+                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center transition-opacity duration-500 ${
                         blurComplete ? "opacity-0" : "opacity-100"
                       } ${imgClassName || ''}`}
                       sizes={sizes}
@@ -174,7 +174,7 @@ export function ImageContainer({
                       src={fullSrc}
                       alt={alt}
                       fill
-                      className={`object-contain object-center ${priority ? '' : 'transition-opacity duration-500'} ${
+                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center ${priority ? '' : 'transition-opacity duration-500'} ${
                         blurComplete || priority ? "opacity-100" : "opacity-0"
                       } ${imgClassName || ''}`}
                       sizes={sizes}
