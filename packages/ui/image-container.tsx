@@ -174,11 +174,12 @@ export function ImageContainer({
                       src={fullSrc}
                       alt={alt}
                       fill
-                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center ${priority ? '' : 'transition-opacity duration-500'} ${
-                        blurComplete || priority ? "opacity-100" : "opacity-0"
+                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center transition-opacity duration-500 ${
++                        blurComplete ? "opacity-100" : "opacity-0"
                       } ${imgClassName || ''}`}
                       sizes={sizes}
                       quality={quality}
+                      priority={priority}
                       onLoad={() => {
                         setBlurComplete(true)
                       }}
