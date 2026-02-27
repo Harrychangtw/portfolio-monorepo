@@ -1,4 +1,3 @@
-// /Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/lab/waitlist/route.ts
 import { NextResponse } from 'next/server';
 import { prisma } from '@portfolio/lib/lib/prisma';
 import { z } from 'zod';
@@ -103,7 +102,7 @@ export async function POST(request: Request) {
     const verificationToken = crypto.randomBytes(32).toString('hex');
     
     // Save to database
-    const entry = await prisma.waitlistEntry.create({
+    await prisma.waitlistEntry.create({
       data: {
         ...data,
         verificationToken
@@ -111,7 +110,7 @@ export async function POST(request: Request) {
     });
     
     // Send confirmation email
-    const emailResult = await sendWaitlistConfirmationEmail({
+    await sendWaitlistConfirmationEmail({
       email: data.email,
       firstName: data.firstName,
       lastName: data.lastName,

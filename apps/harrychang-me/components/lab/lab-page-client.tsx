@@ -140,7 +140,9 @@ export default function LabPageClient() {
             transition={{ delay: 1.5, duration: 1 }}
             className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40 pointer-events-none z-20"
           >
-            <span className="text-[10px] font-mono uppercase tracking-widest mb-3 text-foreground">FAQ</span>
+            <span className="text-[10px] font-mono uppercase tracking-widest mb-3 text-foreground">
+              {t('lab.faq.title', 'common') || 'FAQ'}
+            </span>
             <div className="w-[1px] h-8 bg-gradient-to-b from-foreground to-transparent"></div>
           </motion.div>
 
