@@ -38,7 +38,7 @@ export default function FaqSection() {
           >
             {/* Index Number */}
             <div className="col-span-1 hidden md:block">
-              <span className="font-mono text-xs text-secondary/60">
+              <span className="font-mono text-xs text-primary">
                 {String(index + 1).padStart(2, "0")}
               </span>
             </div>
