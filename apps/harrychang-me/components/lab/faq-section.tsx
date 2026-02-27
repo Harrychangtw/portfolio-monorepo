@@ -51,7 +51,7 @@ export default function FaqSection() {
             </div>
 
             {/* Answer */}
-            <div className="col-span-12 md:col-span-7">
+            <div className="col-span-12 md:col-start-7 md:col-span-6">
               <p className="font-body text-secondary leading-relaxed">
                 {t(`lab.faq.a${index + 1}`, "common")}
               </p>

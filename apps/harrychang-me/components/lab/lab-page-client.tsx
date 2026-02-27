@@ -59,7 +59,7 @@ export default function LabPageClient() {
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0, duration: 0.5, ease: "easeOut" }}
-              className="inline-block mb-10 md:mb-12"
+              className="inline-block mb-6 md:mb-10"
             >
               <div className="px-4 py-1.5 rounded-full border border-border bg-card/50 backdrop-blur-sm">
                 <span className="text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground">
