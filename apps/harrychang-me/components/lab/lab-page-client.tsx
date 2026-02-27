@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import WaitlistForm from '@/components/lab/waitlist-form';
 import MinimalistBackground from '@/components/lab/minimalist-background';
@@ -10,6 +10,15 @@ import FaqSection from '@/components/lab/faq-section';
 export default function LabPageClient() {
   const { t, isLoading } = useLanguage();
   const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    if (showForm) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [showForm]);
 
   if (isLoading) {
     return (
@@ -31,7 +40,7 @@ export default function LabPageClient() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-black/60 z-40 backdrop-blur-sm"
+            className="fixed inset-0 bg-background/80 z-40"
             onClick={() => setShowForm(false)}
           />
         )}
