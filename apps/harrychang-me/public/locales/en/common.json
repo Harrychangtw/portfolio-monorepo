@@ -202,6 +202,17 @@
       "quickConsult": "Quick Consult · $800 / 30 min",
       "deepDive": "Deep Dive · $1,500 / 1 hr",
       "writtenReview": "Written Review · $1,000 / piece"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "What exactly does a session entail?",
+      "a1": "I focus on narrative architecture. This is not basic tutoring. We analyze your existing profile, identify structural gaps, refine your presentation, and build a strategy to ensure your work is recognized by your target institutions.",
+      "q2": "Can you supervise a research project from scratch?",
+      "a2": "No. I do not act as a primary investigator or provide foundational technical instruction. I work with students who have a baseline of work or a clear direction but need high-level guidance on execution and presentation.",
+      "q3": "Does this framework require an international or privileged educational background?",
+      "a3": "Not at all. I am entirely locally educated. The framework focuses on universal communication, structural clarity, and strategic positioning. These principles apply regardless of your starting environment.",
+      "q4": "What is your long-term availability?",
+      "a4": "I take on a strictly limited number of clients to maintain focus. I am fully committed to my current academic timeline in Taiwan and will remain consistently available for the students I choose to work with."
     }
   }
 }

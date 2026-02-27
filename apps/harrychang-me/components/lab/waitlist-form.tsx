@@ -116,7 +116,7 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
     >
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 p-2 rounded-full text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
+        className="absolute top-4 right-4 p-2 rounded-full text-muted-foreground hover:bg-accent hover:text-background transition-colors"
         aria-label="Close"
       >
         <X className="w-5 h-5" />
