@@ -12,7 +12,6 @@ interface SendWaitlistConfirmationParams {
   email: string;
   firstName?: string;
   lastName?: string;
-  position: number;
   locale: string;
 }
 
@@ -20,7 +19,6 @@ export async function sendWaitlistConfirmationEmail({
   email,
   firstName,
   lastName,
-  position,
   locale
 }: SendWaitlistConfirmationParams) {
   const displayName = firstName 
@@ -29,11 +27,12 @@ export async function sendWaitlistConfirmationEmail({
 
   const isZhTw = locale === 'zh-TW';
 
+  // Updated subject lines to reflect the new Application model
   const subject = isZhTw 
-    ? '🎉 歡迎加入 Icarus Lab by Harry Chang 等候名單'
-    : '🎉 Welcome to Icarus Lab by Harry Chang Waitlist';
+    ? '申請已收悉：Icarus Lab by Harry Chang'
+    : 'Application Received: Icarus Lab by Harry Chang';
 
-  const htmlContent = getEmailTemplate(displayName, position, locale);
+  const htmlContent = getEmailTemplate(displayName, locale);
 
   try {
     const data = await resend.emails.send({
@@ -43,7 +42,6 @@ export async function sendWaitlistConfirmationEmail({
       html: htmlContent,
     });
 
-    
     return { success: true, data };
   } catch (error) {
     console.error('Failed to send email:', error);
@@ -51,7 +49,7 @@ export async function sendWaitlistConfirmationEmail({
   }
 }
 
-function getEmailTemplate(displayName: string, position: number, locale: string): string {
+function getEmailTemplate(displayName: string, locale: string): string {
   const isZhTw = locale === 'zh-TW';
   const templateFileName = isZhTw 
     ? 'waitlist-confirmation-zh-tw.html' 
@@ -64,7 +62,8 @@ function getEmailTemplate(displayName: string, position: number, locale: string)
     
     // Replace placeholders with actual values
     template = template.replace(/\{\{displayName\}\}/g, displayName);
-    template = template.replace(/\{\{position\}\}/g, position.toString());
+    
+    // Position replacement removed entirely
     
     return template;
   } catch (error) {
@@ -72,4 +71,3 @@ function getEmailTemplate(displayName: string, position: number, locale: string)
     throw new Error('Failed to load email template');
   }
 }
-

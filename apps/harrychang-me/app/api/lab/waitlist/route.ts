@@ -17,37 +17,72 @@ const WaitlistSchema = z.object({
   utmCampaign: z.string().nullish()
 });
 
-// Rate limiting map (simple in-memory implementation)
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+// --- Rate Limiting Configuration ---
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute window
+const MAX_REQUESTS_PER_WINDOW = 5;   // Limit to 5 requests per minute
+const CLEANUP_INTERVAL = 5 * 60 * 1000; // Cleanup expired entries every 5 minutes
 
-function checkRateLimit(ip: string): boolean {
+// In-memory store for rate limiting
+// Note: In a serverless environment (Vercel), this map persists only as long as the 
+// lambda container is warm. This is sufficient to block high-frequency spam scripts.
+// For distributed persistence, you would need Redis or a Database table.
+const rateLimitMap = new Map<string, { count: number; startTime: number }>();
+let lastCleanup = Date.now();
+
+// Helper: Get Client IP robustly
+function getClientIp(req: Request) {
+  const forwardedFor = req.headers.get('x-forwarded-for');
+  if (forwardedFor) {
+    // x-forwarded-for can be a list, take the first one
+    return forwardedFor.split(',')[0].trim();
+  }
+  return req.headers.get('x-real-ip') || 'unknown';
+}
+
+// Helper: Prune expired entries to prevent memory leaks
+function pruneRateLimitMap() {
   const now = Date.now();
-  const limit = rateLimitMap.get(ip);
-  
-  if (!limit || now > limit.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + 60000 }); // 1 minute window
-    return true;
+  // Only scan for cleanup occasionally
+  if (now - lastCleanup > CLEANUP_INTERVAL) {
+    for (const [ip, data] of rateLimitMap.entries()) {
+      if (now - data.startTime > RATE_LIMIT_WINDOW) {
+        rateLimitMap.delete(ip);
+      }
+    }
+    lastCleanup = now;
   }
-  
-  if (limit.count >= 5) { // Max 5 requests per minute
-    return false;
-  }
-  
-  limit.count++;
-  return true;
 }
 
 export async function POST(request: Request) {
   try {
-    // Get IP for rate limiting
-    const ip = request.headers.get('x-forwarded-for') || 'unknown';
-    if (!checkRateLimit(ip)) {
+    // 1. IP Extraction & Rate Limiting
+    const ip = getClientIp(request);
+    const now = Date.now();
+    
+    pruneRateLimitMap(); // Lazy cleanup trigger
+
+    const rateData = rateLimitMap.get(ip) || { count: 0, startTime: now };
+
+    // Reset window if the previous window has expired
+    if (now - rateData.startTime > RATE_LIMIT_WINDOW) {
+      rateData.count = 0;
+      rateData.startTime = now;
+    }
+
+    // Check if limit exceeded
+    if (rateData.count >= MAX_REQUESTS_PER_WINDOW) {
+      console.warn(`[Waitlist] Rate limit exceeded for IP: ${ip}`);
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
         { status: 429 }
       );
     }
 
+    // Increment request count
+    rateData.count++;
+    rateLimitMap.set(ip, rateData);
+
+    // 2. Request Validation & Processing
     const body = await request.json();
     const data = WaitlistSchema.parse(body);
     
@@ -58,7 +93,7 @@ export async function POST(request: Request) {
     
     if (existing) {
       return NextResponse.json(
-        { error: 'This email is already on the waitlist.' },
+        { error: 'This email has already submitted an application.' },
         { status: 400 }
       );
     }
@@ -67,29 +102,52 @@ export async function POST(request: Request) {
     const verificationToken = crypto.randomBytes(32).toString('hex');
     
     // Save to database
-    const entry = await prisma.waitlistEntry.create({
+    await prisma.waitlistEntry.create({
       data: {
         ...data,
         verificationToken
       }
     });
     
-    // Get position in waitlist
-    const position = await prisma.waitlistEntry.count();
-    
     // Send confirmation email
-    const emailResult = await sendWaitlistConfirmationEmail({
+    await sendWaitlistConfirmationEmail({
       email: data.email,
       firstName: data.firstName,
       lastName: data.lastName,
-      position,
       locale: data.locale
     });
-    
+
+    // Dispatch to Discord Webhook
+    const webhookUrl = process.env.DISCORD_LAB_WEBHOOK_URL;
+    if (webhookUrl) {
+      const name = [data.firstName, data.lastName].filter(Boolean).join(' ') || 'No Name Provided';
+      const interestsStr = data.interests.length > 0 ? data.interests.join(', ') : 'None';
+      
+      const discordMessage = [
+        `**🚨 New Icarus Lab Application!**`,
+        `> **Name:** ${name}`,
+        `> **Email:** ${data.email}`,
+        `> **Tier:** ${data.tier || 'Not specified'}`,
+        `> **Interests:** ${interestsStr}`,
+        `> **Locale:** ${data.locale}`
+      ].join('\n');
+      
+      try {
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            content: discordMessage,
+            username: "Icarus Lab Portal",
+          }),
+        });
+      } catch (webhookError) {
+        console.error('Failed to send Discord webhook:', webhookError);
+      }
+    }
     
     return NextResponse.json({ 
-      success: true, 
-      position 
+      success: true
     });
     
   } catch (error) {
@@ -109,36 +167,5 @@ export async function POST(request: Request) {
       { error: 'Something went wrong. Please try again.' },
       { status: 500 }
     );
-  }
-}
-
-export async function GET() {
-  try {
-    const total = await prisma.waitlistEntry.count();
-    const recentSignups = await prisma.waitlistEntry.count({
-      where: {
-        createdAt: {
-          gte: new Date(Date.now() - 24 * 60 * 60 * 1000) // Last 24h
-        }
-      }
-    });
-    
-    // Add some artificial scarcity
-    const spotsRemaining = Math.max(0, 500 - total);
-    
-    return NextResponse.json({ 
-      total, 
-      recentSignups,
-      spotsRemaining,
-      limitReached: total >= 500
-    });
-  } catch (error) {
-    // console.error('Waitlist stats error:', error);
-    return NextResponse.json({ 
-      total: 0, 
-      recentSignups: 0,
-      spotsRemaining: 500,
-      limitReached: false
-    });
   }
 }

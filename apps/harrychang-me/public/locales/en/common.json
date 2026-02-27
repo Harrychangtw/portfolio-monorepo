@@ -171,36 +171,48 @@
     "pageNotFound": "Page not found. Redirected to home."
   },
   "lab": {
-    "capsule": "2026 Q2 · Limited Release",
+    "capsule": "Open · Closing September 2026",
     "heroLine1": "Skills to Lead Tomorrow.",
     "heroLine2": "Tools to Create Today.",
-    "tagline": "High-level skills for young creators—speaking, research, storytelling. Plus exclusive consulting for those ready to go deeper.",
+    "tagline": "Strategic consulting for admissions, research narrative, and public speaking. Extremely limited bandwidth—apply to work together.",
     "heroEmailPlaceholder": "your@email.com",
-    "applyNow": "Join Waitlist",
-    "formTitle": "Reserve Your Spot",
-    "formSubtitle": "Launching Q2 2026. Get early bird access.",
+    "applyNow": "Apply Now",
+    "formTitle": "Request a Consultation",
+    "formSubtitle": "I take on 1–2 clients at a time. Describe your goals and I'll follow up within 48 hours.",
     "firstName": "First Name",
     "lastName": "Last Name",
     "emailRequired": "Email *",
-    "whatInterests": "What interests you most?",
-    "preferredTier": "Preferred format",
+    "whatInterests": "What do you need help with?",
+    "preferredTier": "Service type",
     "processing": "Submitting...",
-    "joinWaitlist": "Join Waitlist",
+    "submitApplication": "Submit Application",
     "privacyNote": "Your info stays private. No spam, ever.",
-    "successTitle": "You're in!",
-    "successMessage": "You're #{position} on the waitlist. Check your email for confirmation.",
+    "successTitle": "Application Received",
+    "successMessage": "Thank you. I'll review your details and reach out within 48 hours.",
     "errorGeneric": "Something went wrong",
     "errorNetwork": "Connection failed. Try again?",
+    "errorDuplicate": "This email has already submitted an application.",
     "close": "Close",
     "interests": {
       "frameworks": "Research & Frameworks",
       "speaking": "Public Speaking & Debate",
-      "narrative": "Content & Narrative Design"
+      "narrative": "Admissions & Narrative Design"
     },
     "tiers": {
-      "async": "Self-Paced Courses",
-      "cohort": "Live Cohorts",
-      "consulting": "1-on-1 Sessions"
+      "quickConsult": "Quick Consult · $800 / 30 min",
+      "deepDive": "Deep Dive · $1,500 / 1 hr",
+      "writtenReview": "Written Review · $1,000 / piece"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "What exactly does a session entail?",
+      "a1": "I focus on narrative architecture. This is not basic tutoring. We analyze your existing profile, identify structural gaps, refine your presentation, and build a strategy to ensure your work is recognized by your target institutions.",
+      "q2": "Can you supervise a research project from scratch?",
+      "a2": "No. I do not act as a primary investigator or provide foundational technical instruction. I work with students who have a baseline of work or a clear direction but need high-level guidance on execution and presentation.",
+      "q3": "Does this framework require an international or privileged educational background?",
+      "a3": "Not at all. I am entirely locally educated. The framework focuses on universal communication, structural clarity, and strategic positioning. These principles apply regardless of your starting environment.",
+      "q4": "What is your long-term availability?",
+      "a4": "I take on a strictly limited number of clients to maintain focus. I am fully committed to my current academic timeline in Taiwan and will remain consistently available for the students I choose to work with."
     }
   }
 }

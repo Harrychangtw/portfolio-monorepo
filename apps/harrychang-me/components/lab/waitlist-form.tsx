@@ -5,10 +5,9 @@ import { X } from 'lucide-react';
 
 interface WaitlistFormProps {
   onClose: () => void;
-  initialCount: number | null;
 }
 
-export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProps) {
+export default function WaitlistForm({ onClose }: WaitlistFormProps) {
   const { t, language } = useLanguage();
   const searchParams = useSearchParams();
   const emailInputRef = useRef<HTMLInputElement>(null);
@@ -18,11 +17,10 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
     firstName: '',
     lastName: '',
     interests: [] as string[],
-    tier: 'foundation',
+    tier: 'quickConsult',
   });
   
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [position, setPosition] = useState<number | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
@@ -39,9 +37,9 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
   ];
 
   const tierOptions = [
-    { id: 'async', label: t('lab.tiers.async', 'common') },
-    { id: 'cohort', label: t('lab.tiers.cohort', 'common') },
-    { id: 'consulting', label: t('lab.tiers.consulting', 'common') },
+    { id: 'quickConsult', label: t('lab.tiers.quickConsult', 'common') },
+    { id: 'deepDive', label: t('lab.tiers.deepDive', 'common') },
+    { id: 'writtenReview', label: t('lab.tiers.writtenReview', 'common') },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -69,7 +67,6 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
       
       if (response.ok) {
         setStatus('success');
-        setPosition(data.position);
       } else {
         setStatus('error');
         setErrorMessage(data.error || t('lab.errorGeneric', 'common'));
@@ -95,12 +92,12 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         onClick={(e) => e.stopPropagation()}
         className="bg-card rounded-2xl p-8 max-w-md w-full mx-2 border border-border text-center shadow-lg"
       >
-        <div className="mb-4 text-4xl">🎉</div>
+        <div className="mb-4 text-4xl">✓</div>
         <h2 className="text-2xl font-heading font-bold mb-4 text-foreground">
           {t('lab.successTitle', 'common')}
         </h2>
-        <p className="text-muted-foreground mb-4">
-          {t('lab.successMessage', 'common').replace('{position}', String(position))}
+        <p className="text-muted-foreground mb-6">
+          {t('lab.successMessage', 'common')}
         </p>
         <button
           onClick={onClose}
@@ -119,7 +116,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
     >
       <button
         onClick={onClose}
-        className="absolute top-4 right-4 p-2 rounded-full text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
+        className="absolute top-4 right-4 p-2 rounded-full text-muted-foreground hover:bg-accent hover:text-background transition-colors"
         aria-label="Close"
       >
         <X className="w-5 h-5" />
@@ -213,7 +210,7 @@ export default function WaitlistForm({ onClose, initialCount }: WaitlistFormProp
         >
           {status === 'loading' 
             ? t('lab.processing', 'common')
-            : t('lab.joinWaitlist', 'common')}
+            : t('lab.submitApplication', 'common')}
         </button>
 
         <p className="text-xs text-muted-foreground text-center">

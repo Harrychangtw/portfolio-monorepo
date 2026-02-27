@@ -171,36 +171,48 @@
     "pageNotFound": "頁面未找到，已重新導向至首頁。"
   },
   "lab": {
-    "capsule": "2026 Q2 · 限量開放",
+    "capsule": "開放申請中 · 九月前限定",
     "heroLine1": "十七歲的實戰心法",
     "heroLine2": "獻給走自己路的你",
-    "tagline": "中英口說、研究、創作的高層次課程，以及深度一對一共創。",
+    "tagline": "備審、研究敘事與口說表達的策略諮詢。名額極度有限，歡迎提出申請。",
     "heroEmailPlaceholder": "your@email.com",
-    "applyNow": "我感興趣",
-    "formTitle": "加入等候名單",
-    "formSubtitle": "搶先獲得早鳥優惠。",
+    "applyNow": "立即申請",
+    "formTitle": "申請諮詢",
+    "formSubtitle": "同時僅接 1–2 位合作對象。請簡述你的目標，我將於 48 小時內回覆。",
     "firstName": "名字",
     "lastName": "姓氏",
     "emailRequired": "電子郵件 *",
-    "whatInterests": "您感興趣的領域",
-    "preferredTier": "期望方案",
+    "whatInterests": "你需要什麼協助？",
+    "preferredTier": "服務類型",
     "processing": "提交中...",
-    "joinWaitlist": "加入等候名單",
-    "privacyNote": "絕不濫用您的資料，隱私至上。",
-    "successTitle": "預約成功",
-    "successMessage": "您是第 {position} 位加入等候名單的人。請查看您的信箱確認。",
+    "submitApplication": "提交申請",
+    "privacyNote": "絕不濫用你的資料，隱私至上。",
+    "successTitle": "申請已送出",
+    "successMessage": "感謝你的申請。我將在 48 小時內審閱並與你聯繫。",
     "errorGeneric": "發生錯誤",
     "errorNetwork": "網路錯誤。請再試一次。",
+    "errorDuplicate": "此信箱已提交過申請。",
     "close": "關閉",
     "interests": {
       "frameworks": "研究與思維框架",
       "speaking": "中英口說與辯論",
-      "narrative": "內容敘事與設計"
+      "narrative": "備審敘事與設計"
     },
     "tiers": {
-      "async": "非同步課程",
-      "cohort": "線上同步課程",
-      "consulting": "一對一指導"
+      "quickConsult": "快速諮詢 · $800 / 30 分鐘",
+      "deepDive": "深度指導 · $1,500 / 1 小時",
+      "writtenReview": "書面建議 · $1,000 / 份"
+    },
+    "faq": {
+      "title": "常見問題",
+      "q1": "諮詢的具體內容是什麼？",
+      "a1": "我的核心價值在於「敘事架構」，這並非一般的課業補習。我們會盤點你現有的經歷，找出結構上的斷層，精修你的呈現方式，並建立一套能讓你的成果被目標機構看見的策略。",
+      "q2": "能從零帶領一份專題研究嗎？",
+      "a2": "不能。我不取代指導教授的角色，也不提供基礎的技術與程式教學。我協助已經具備初步成果或明確方向，但在執行與包裝上需要高階策略指導的學生。",
+      "q3": "這套策略是否只適用於擁有海外或特殊教育背景的學生？",
+      "a3": "完全不是。我本身是在地升學體系出身。我們探討的框架著重於普適的溝通邏輯、清晰的結構與精準的定位。這些原則與你的背景出身無關。",
+      "q4": "未來的長期諮詢時間是否穩定？",
+      "a4": "為了確保服務品質，我僅收取極少數的長期學生。我目前的學術重心將留在台灣，因此能為合作的學生提供穩定且持續的指導。"
     }
   }
 }
