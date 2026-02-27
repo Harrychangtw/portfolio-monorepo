@@ -171,36 +171,37 @@
     "pageNotFound": "Page not found. Redirected to home."
   },
   "lab": {
-    "capsule": "2026 Q2 · Limited Release",
+    "capsule": "Open · Closing September 2026",
     "heroLine1": "Skills to Lead Tomorrow.",
     "heroLine2": "Tools to Create Today.",
-    "tagline": "High-level skills for young creators—speaking, research, storytelling. Plus exclusive consulting for those ready to go deeper.",
+    "tagline": "Strategic consulting for admissions, research narrative, and public speaking. Extremely limited bandwidth—apply to work together.",
     "heroEmailPlaceholder": "your@email.com",
-    "applyNow": "Join Waitlist",
-    "formTitle": "Reserve Your Spot",
-    "formSubtitle": "Launching Q2 2026. Get early bird access.",
+    "applyNow": "Apply Now",
+    "formTitle": "Request a Consultation",
+    "formSubtitle": "I take on 1–2 clients at a time. Describe your goals and I'll follow up within 48 hours.",
     "firstName": "First Name",
     "lastName": "Last Name",
     "emailRequired": "Email *",
-    "whatInterests": "What interests you most?",
-    "preferredTier": "Preferred format",
+    "whatInterests": "What do you need help with?",
+    "preferredTier": "Service type",
     "processing": "Submitting...",
-    "joinWaitlist": "Join Waitlist",
+    "submitApplication": "Submit Application",
     "privacyNote": "Your info stays private. No spam, ever.",
-    "successTitle": "You're in!",
-    "successMessage": "You're #{position} on the waitlist. Check your email for confirmation.",
+    "successTitle": "Application Received",
+    "successMessage": "Thank you. I'll review your details and reach out within 48 hours.",
     "errorGeneric": "Something went wrong",
     "errorNetwork": "Connection failed. Try again?",
+    "errorDuplicate": "This email has already submitted an application.",
     "close": "Close",
     "interests": {
       "frameworks": "Research & Frameworks",
       "speaking": "Public Speaking & Debate",
-      "narrative": "Content & Narrative Design"
+      "narrative": "Admissions & Narrative Design"
     },
     "tiers": {
-      "async": "Self-Paced Courses",
-      "cohort": "Live Cohorts",
-      "consulting": "1-on-1 Sessions"
+      "quickConsult": "Quick Consult · $800 / 30 min",
+      "deepDive": "Deep Dive · $1,500 / 1 hr",
+      "writtenReview": "Written Review · $1,000 / piece"
     }
   }
 }

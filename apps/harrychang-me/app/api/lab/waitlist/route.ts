@@ -58,7 +58,7 @@ export async function POST(request: Request) {
     
     if (existing) {
       return NextResponse.json(
-        { error: 'This email is already on the waitlist.' },
+        { error: 'This email has already submitted an application.' },
         { status: 400 }
       );
     }
@@ -74,22 +74,16 @@ export async function POST(request: Request) {
       }
     });
     
-    // Get position in waitlist
-    const position = await prisma.waitlistEntry.count();
-    
     // Send confirmation email
     const emailResult = await sendWaitlistConfirmationEmail({
       email: data.email,
       firstName: data.firstName,
       lastName: data.lastName,
-      position,
       locale: data.locale
     });
     
-    
     return NextResponse.json({ 
-      success: true, 
-      position 
+      success: true
     });
     
   } catch (error) {
@@ -115,30 +109,10 @@ export async function POST(request: Request) {
 export async function GET() {
   try {
     const total = await prisma.waitlistEntry.count();
-    const recentSignups = await prisma.waitlistEntry.count({
-      where: {
-        createdAt: {
-          gte: new Date(Date.now() - 24 * 60 * 60 * 1000) // Last 24h
-        }
-      }
-    });
     
-    // Add some artificial scarcity
-    const spotsRemaining = Math.max(0, 500 - total);
-    
-    return NextResponse.json({ 
-      total, 
-      recentSignups,
-      spotsRemaining,
-      limitReached: total >= 500
-    });
+    return NextResponse.json({ total });
   } catch (error) {
-    // console.error('Waitlist stats error:', error);
-    return NextResponse.json({ 
-      total: 0, 
-      recentSignups: 0,
-      spotsRemaining: 500,
-      limitReached: false
-    });
+    return NextResponse.json({ total: 0 });
   }
 }
+

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
 import WaitlistForm from '@/components/lab/waitlist-form';
 import MinimalistBackground from '@/components/lab/minimalist-background';
@@ -11,13 +11,6 @@ export default function LabPageClient() {
   const [showForm, setShowForm] = useState(false);
   const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
 
-  // Fetch waitlist count on mount
-  useEffect(() => {
-    fetch('/api/lab/waitlist')
-      .then(res => res.json())
-      .then(data => setWaitlistCount(data.total))
-      .catch(() => setWaitlistCount(null));
-  }, []);
 
   if (isLoading) {
     return (
@@ -153,7 +146,6 @@ export default function LabPageClient() {
             >
               <WaitlistForm 
                 onClose={() => setShowForm(false)}
-                initialCount={waitlistCount}
               />
             </motion.div>
           )}
