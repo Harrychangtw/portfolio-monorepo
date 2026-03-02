@@ -139,6 +139,7 @@ export default function RootLayout({
       style={{
         '--font-body': 'var(--font-ibm-plex-sans)',
         '--font-heading': 'var(--font-artific)',
+        fontFeatureSettings: '"ss01" 1'
       } as React.CSSProperties}
     >
       <body className={`bg-background text-primary antialiased min-h-screen flex flex-col`}>

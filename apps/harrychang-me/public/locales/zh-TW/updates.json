@@ -1,6 +1,10 @@
 {
   "entries": [
     {
+      "date": "2026-03-02",
+      "text": "[活動] 3/28 將於 <a href=\"https://sitcon.org/2026/agenda/e0203c/\">SITCON 2026 (R0)</a> 發表議程「透視 AI 抓內鬼：以注意力防範提示注入」"
+    },
+    {
       "date": "2026-02-03",
       "text": "[研究] 共同一作論文 PATCH 錄取於 <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL 2026 SRW</a> (Non-archival)，將續投 ARR March"
     },

@@ -19,6 +19,8 @@ model WaitlistEntry {
   referralSource String? // 'twitter', 'linkedin', 'word-of-mouth'
   locale        String   @default("en")
   tier          String?  // 'foundation', 'cohort', 'premium'
+  background    String?
+  challenges    String?
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
   

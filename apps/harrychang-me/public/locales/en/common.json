@@ -203,6 +203,11 @@
       "deepDive": "Deep Dive · $1,500 / 1 hr",
       "writtenReview": "Written Review · $1,000 / piece"
     },
+    "backgroundLabel": "Your Background",
+    "backgroundPlaceholder": "e.g. Grade 11, preparing for special admission to NTU CSIE",
+    "challengesLabel": "Current Challenges & Goals",
+    "challengesPlaceholder": "Describe what you're working on, what you're stuck on, and what outcome you're hoping for.",
+    "errorSelectInterest": "Please select at least one area.",
     "faq": {
       "title": "Frequently Asked Questions",
       "q1": "What exactly does a session entail?",

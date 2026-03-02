@@ -203,6 +203,11 @@
       "deepDive": "深度指導 · $1,500 / 1 小時",
       "writtenReview": "書面建議 · $1,000 / 份"
     },
+    "backgroundLabel": "你的背景",
+    "backgroundPlaceholder": "例：高二，準備臺大資工特殊選才",
+    "challengesLabel": "目前的挑戰與目標",
+    "challengesPlaceholder": "請簡述你正在做的事、遇到的瓶頸，以及你希望達到的結果。",
+    "errorSelectInterest": "請至少選擇一個領域。",
     "faq": {
       "title": "常見問題",
       "q1": "諮詢的具體內容是什麼？",
