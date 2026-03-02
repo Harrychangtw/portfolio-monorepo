@@ -1,3 +1,4 @@
+// components/lab/waitlist-form.tsx
 import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
@@ -10,7 +11,7 @@ interface WaitlistFormProps {
 export default function WaitlistForm({ onClose }: WaitlistFormProps) {
   const { t, language } = useLanguage();
   const searchParams = useSearchParams();
-  const emailInputRef = useRef<HTMLInputElement>(null);
+  const firstNameRef = useRef<HTMLInputElement>(null);
 
   const [formData, setFormData] = useState({
     email: '',
@@ -18,14 +19,17 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
     lastName: '',
     interests: [] as string[],
     tier: 'quickConsult',
+    background: '',
+    challenges: '',
   });
-  
+
+  const [validationErrors, setValidationErrors] = useState<Record<string, boolean>>({});
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      emailInputRef.current?.focus();
+      firstNameRef.current?.focus();
     }, 100);
     return () => clearTimeout(timer);
   }, []);
@@ -42,11 +46,25 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
     { id: 'writtenReview', label: t('lab.tiers.writtenReview', 'common') },
   ];
 
+  const validate = (): boolean => {
+    const errors: Record<string, boolean> = {};
+    if (!formData.firstName.trim()) errors.firstName = true;
+    if (!formData.lastName.trim()) errors.lastName = true;
+    if (!formData.email.trim()) errors.email = true;
+    if (formData.interests.length === 0) errors.interests = true;
+    if (!formData.background.trim()) errors.background = true;
+    if (!formData.challenges.trim()) errors.challenges = true;
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
+
     setStatus('loading');
     setErrorMessage('');
-    
+
     const payload = {
       ...formData,
       locale: language,
@@ -55,36 +73,43 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
       utmMedium: searchParams.get('utm_medium'),
       utmCampaign: searchParams.get('utm_campaign'),
     };
-    
+
     try {
       const response = await fetch('/api/lab/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
-      
+
       const data = await response.json();
-      
+
       if (response.ok) {
         setStatus('success');
       } else {
         setStatus('error');
         setErrorMessage(data.error || t('lab.errorGeneric', 'common'));
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
       setErrorMessage(t('lab.errorNetwork', 'common'));
     }
   };
 
   const toggleInterest = (interestId: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       interests: prev.interests.includes(interestId)
-        ? prev.interests.filter(id => id !== interestId)
-        : [...prev.interests, interestId]
+        ? prev.interests.filter((id) => id !== interestId)
+        : [...prev.interests, interestId],
     }));
+    // Clear interest validation error on toggle
+    if (validationErrors.interests) {
+      setValidationErrors((prev) => ({ ...prev, interests: false }));
+    }
   };
+
+  const fieldClass = (field: string, base: string) =>
+    `${base} ${validationErrors[field] ? 'border-red-500/60 focus:border-red-500' : 'border-border focus:border-primary'}`;
 
   if (status === 'success') {
     return (
@@ -125,45 +150,110 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
       <h2 className="text-2xl font-heading font-bold mb-2 text-foreground">
         {t('lab.formTitle', 'common')}
       </h2>
-      
+
       <p className="text-sm font-heading text-muted-foreground mb-6">
         {t('lab.formSubtitle', 'common')}
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Name */}
         <div className="grid grid-cols-2 gap-3">
           <input
+            ref={firstNameRef}
             type="text"
-            placeholder={t('lab.firstName', 'common')}
+            required
+            placeholder={`${t('lab.firstName', 'common')} *`}
             value={formData.firstName}
-            onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
-            className="px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground placeholder:text-secondary"
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, firstName: e.target.value }));
+              if (validationErrors.firstName) setValidationErrors((prev) => ({ ...prev, firstName: false }));
+            }}
+            className={fieldClass(
+              'firstName',
+              'px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary'
+            )}
           />
           <input
             type="text"
-            placeholder={t('lab.lastName', 'common')}
+            required
+            placeholder={`${t('lab.lastName', 'common')} *`}
             value={formData.lastName}
-            onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
-            className="px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground placeholder:text-secondary"
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, lastName: e.target.value }));
+              if (validationErrors.lastName) setValidationErrors((prev) => ({ ...prev, lastName: false }));
+            }}
+            className={fieldClass(
+              'lastName',
+              'px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary'
+            )}
           />
         </div>
 
+        {/* Email */}
         <input
-          ref={emailInputRef}
           type="email"
           required
           placeholder={t('lab.emailRequired', 'common')}
           value={formData.email}
-          onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-          className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground placeholder:text-secondary"
+          onChange={(e) => {
+            setFormData((prev) => ({ ...prev, email: e.target.value }));
+            if (validationErrors.email) setValidationErrors((prev) => ({ ...prev, email: false }));
+          }}
+          className={fieldClass(
+            'email',
+            'w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary'
+          )}
         />
 
+        {/* Background */}
         <div>
-          <label className="block text-sm font-heading font-medium mb-2 text-foreground/80">
-            {t('lab.whatInterests', 'common')}
+          <label className="block text-sm font-heading font-medium mb-1.5 text-foreground/80">
+            {t('lab.backgroundLabel', 'common')} *
+          </label>
+          <textarea
+            required
+            rows={2}
+            placeholder={t('lab.backgroundPlaceholder', 'common')}
+            value={formData.background}
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, background: e.target.value }));
+              if (validationErrors.background) setValidationErrors((prev) => ({ ...prev, background: false }));
+            }}
+            className={fieldClass(
+              'background',
+              'w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary resize-none'
+            )}
+          />
+        </div>
+
+        {/* Challenges */}
+        <div>
+          <label className="block text-sm font-heading font-medium mb-1.5 text-foreground/80">
+            {t('lab.challengesLabel', 'common')} *
+          </label>
+          <textarea
+            required
+            rows={3}
+            placeholder={t('lab.challengesPlaceholder', 'common')}
+            value={formData.challenges}
+            onChange={(e) => {
+              setFormData((prev) => ({ ...prev, challenges: e.target.value }));
+              if (validationErrors.challenges) setValidationErrors((prev) => ({ ...prev, challenges: false }));
+            }}
+            className={fieldClass(
+              'challenges',
+              'w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary resize-none'
+            )}
+          />
+        </div>
+
+        {/* Interests */}
+        <div>
+          <label className="block text-sm font-heading font-medium mb-1.5 text-foreground/80">
+            {t('lab.whatInterests', 'common')} *
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-            {interestOptions.map(option => (
+            {interestOptions.map((option) => (
               <button
                 key={option.id}
                 type="button"
@@ -171,25 +261,31 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
                 className={`px-3 py-2 text-sm rounded-lg border transition-all ${
                   formData.interests.includes(option.id)
                     ? 'bg-primary text-background border-primary'
-                    : 'bg-background border-border hover:border-primary/50 text-muted-foreground hover:bg-background'
+                    : validationErrors.interests
+                      ? 'bg-background border-red-500/60 text-muted-foreground hover:bg-background'
+                      : 'bg-background border-border hover:border-primary/50 text-muted-foreground hover:bg-background'
                 }`}
               >
                 {option.label}
               </button>
             ))}
           </div>
+          {validationErrors.interests && (
+            <p className="text-xs text-red-400 mt-1.5">{t('lab.errorSelectInterest', 'common')}</p>
+          )}
         </div>
 
+        {/* Tier */}
         <div>
-          <label className="block text-sm font-heading font-medium mb-2 text-foreground/80">
-            {t('lab.preferredTier', 'common')}
+          <label className="block text-sm font-heading font-medium mb-1.5 text-foreground/80">
+            {t('lab.preferredTier', 'common')} *
           </label>
           <select
             value={formData.tier}
-            onChange={(e) => setFormData(prev => ({ ...prev, tier: e.target.value }))}
+            onChange={(e) => setFormData((prev) => ({ ...prev, tier: e.target.value }))}
             className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground"
           >
-            {tierOptions.map(option => (
+            {tierOptions.map((option) => (
               <option key={option.id} value={option.id} className="bg-background text-foreground">
                 {option.label}
               </option>
@@ -197,18 +293,20 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
           </select>
         </div>
 
+        {/* Error */}
         {status === 'error' && (
           <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-400">
             {errorMessage}
           </div>
         )}
 
+        {/* Submit */}
         <button
           type="submit"
           disabled={status === 'loading'}
           className="w-full py-3 bg-primary text-background rounded-lg font-heading hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {status === 'loading' 
+          {status === 'loading'
             ? t('lab.processing', 'common')
             : t('lab.submitApplication', 'common')}
         </button>

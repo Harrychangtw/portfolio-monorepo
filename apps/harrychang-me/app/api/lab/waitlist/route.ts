@@ -6,12 +6,14 @@ import { sendWaitlistConfirmationEmail } from '@portfolio/lib/lib/email';
 
 const WaitlistSchema = z.object({
   email: z.string().email(),
-  firstName: z.string().optional(),
-  lastName: z.string().optional(),
-  interests: z.array(z.string()).default([]),
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  interests: z.array(z.string()).min(1, "Select at least one interest"),
   referralSource: z.string().nullish(),
   locale: z.string().default('en'),
-  tier: z.string().optional(),
+  tier: z.string().min(1, "Service type is required"),
+  background: z.string().min(1, "Background is required"),
+  challenges: z.string().min(1, "Please describe your challenges"),
   utmSource: z.string().nullish(),
   utmMedium: z.string().nullish(),
   utmCampaign: z.string().nullish()
@@ -129,7 +131,13 @@ export async function POST(request: Request) {
         `> **Email:** ${data.email}`,
         `> **Tier:** ${data.tier || 'Not specified'}`,
         `> **Interests:** ${interestsStr}`,
-        `> **Locale:** ${data.locale}`
+        `> **Locale:** ${data.locale}`,
+        ``,
+        `**Background:**`,
+        `${data.background}`,
+        ``,
+        `**Challenges & Goals:**`,
+        `${data.challenges}`
       ].join('\n');
       
       try {
