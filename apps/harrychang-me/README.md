@@ -1,71 +1,49 @@
 # Harry Chang Portfolio Site
 
 <p align="center">
-  <img src="public/images/optimized/projects/og/ogimage.webp" alt="Harry Chang Portfolio Site" width="1800" />
+  <img src="public/images/optimized/projects/og/titlecard.webp" alt="Harry Chang Portfolio Site" width="1800" />
 </p>
 
+A modern, highly optimized portfolio website built with Next.js 15 and React 19, featuring a dual-domain architecture, custom cross-domain theme persistence, an interactive 404 experience, and a flawless 100 Real Experience Score (RES) under heavy traffic.
 
-A modern, performant portfolio website built with Next.js 15, featuring a dual-domain architecture, custom i18n implementation, file-based CMS, and advanced image optimization.
+## ⚡ Performance: 100 RES
 
+This site is engineered for uncompromising performance. Verified by Vercel Analytics, the site maintains a **perfect 100 Real Experience Score (RES)** across both desktop and mobile devices, gracefully handling surges of 4,000+ visitors with:
+* **First Contentful Paint (FCP):** ~1.55s
+* **Largest Contentful Paint (LCP):** ~1.66s
+* **Interaction to Next Paint (INP):** 80ms
+* **Cumulative Layout Shift (CLS):** 0.01
 
-## Key Features
+## 🌟 Key Features
+
 ### Dual-Domain Architecture
-- **Main site** (`harrychang.me`): Portfolio, projects, gallery
-- **Lab subdomain** (`lab.harrychang.me`): Future hub for courses and engaging educational content
-- Single codebase with middleware-based routing
-- Shared resources (API, images, translations) across both domains
+- **Main site** (`harrychang.me`): Portfolio, projects, photo gallery, blog, links, design system, and manifesto.
+- **Lab subdomain** (`lab.harrychang.me`): Hub for consulting, strategy, and educational content.
+- Single codebase utilizing Next.js middleware routing. Shared components, APIs, and cross-subdomain cookie persistence (`.harrychang.me`) for theme preferences.
 
-### Content Management
-- **Markdown-based CMS** with YAML frontmatter
-- Bilingual support (English/Traditional Chinese) via file suffixes
-- Dynamic content serving through API routes
-- Automated arXiv paper fetching and aggregation
-- Template system for quick content creation
+### Advanced Design & Micro-Interactions
+- **The "Rangefinder" 404 Page:** An interactive, camera-inspired 404 page. Users scroll their mouse wheel to "focus" a misaligned split-image text projection. Once focused, it locks on and transports the user to a random piece of content (Mobile users are auto-redirected to reduce friction).
+- **Dynamic Headers & Navigation:** Custom navigation hooks cycle through nuanced loading messages ("Computing", "Spelunking") while traversing pages. Uses smooth `motion/react` transitions.
+- **Guestbook Widget:** An integrated anonymous feedback module featuring animated, rotating text placeholders and live database submission.
+- **Live Spotify Status:** Context-aware "Now Playing" footer widget with a custom animated equalizer and dynamic tooltips.
+- **Cross-Subdomain Theme Engine:** A custom light/dark mode implementation using root domain cookies to ensure seamless transitions when navigating between the main site and the Lab subdomain without FOUC.
 
-### Advanced Image Optimization
-- Automated WebP conversion with multiple quality tiers
-- Progressive loading with blur-up thumbnails (20px)
-- Dimension detection to prevent Cumulative Layout Shift (CLS)
-- Responsive sizes optimized for different content types:
-  - Title/Hero images: 3200-3840px @ 95-98% quality
-  - Standard images: 2000-2560px @ 90% quality
-  - Thumbnails: 20px @ 60% quality with blur
+### Automated Asset Pipelines
+- **Google Drive Font Fetching:** Custom fonts are intentionally kept out of the repository. A pre-build Node script (`fetch-fonts.mjs`) securely pulls the required typefaces from Google Drive, unzips them, and cleans up the assets for the build.
+- **Image Processing:** Automated WebP conversion, progressive 20px blur-up thumbnails, and strict dimension detection to eliminate Layout Shift.
 
-### Custom Internationalization
-- Client-side i18n with React Context (no next-i18next runtime)
-- Dynamic JSON translation loading from `/public/locales/`
-- FOUC prevention with visibility gating
-- HTML parsing for rich text content with links
-- Browser language detection with localStorage persistence
-
-### Tech Stack
-- **Framework**: Next.js 15 (App Router, React 19, TypeScript)
-- **Styling**: Tailwind CSS with custom design system, Radix UI components
-- **Animation**: Framer Motion
-- **Database**: PostgreSQL (Vercel Postgres) with Prisma ORM
-- **Testing**: Vitest with React Testing Library
-- **Image Processing**: Sharp
-- **Markdown**: gray-matter, remark, remark-html
+### Custom Internationalization & CMS
+- **Client-side i18n:** Context-based language switching (EN / ZH-TW) with visibility gating.
+- **File-based Markdown CMS:** Stores data for projects, gallery items, and blog posts, with automated fallback logic for localization.
 
 ## 🎨 Design Philosophy
 
-This portfolio deviates from standard web trends (massive hero images, scroll-jacking animations) to focus on **intent-driven navigation** and **micro-interactions**.
-
 ### The "Anti-Hero" Architecture
-The site lacks a traditional "Hero" section. This is a deliberate UX choice based on the premise that visitors arriving at the domain already possess intent. Instead of forcing users to scroll past a splash screen, the site offers immediate access to content (`About`, `Updates`), respecting the visitor's time and attention.
+The site actively avoids standard web tropes like massive hero sections or scroll-jacking. Intent-driven navigation replaces splash screens, giving visitors immediate access to the content (`About`, `Updates`, `Projects`, `Links`).
 
-### Micro-Interactions over Macro-Animations
-Large-scale layout animations were avoided to maintain high performance and readability. Instead, "delighters" were implemented to reward user interaction:
-- **Click Sparks:** A subtle particle effect on desktop clicks that adds tactile feedback.
-- **Contextual Footer:** The footer serves as a secondary navigation hub with a dynamic Spotify integration that reveals "Now Playing" data only on hover/interaction.
-- **Visual Feedback:** A custom indeterminate loading bar integrated into the header provides system status without layout shifts.
-
-### Visual Framing
-The [Gallery] section utilizes a custom framing engine that calculates image aspect ratios (Portrait vs. Cinematic vs. Standard) to apply specific border padding dynamically. This ensures that regardless of the source media dimensions, the visual rhythm of the grid remains consistent and museum-like.
-
-
-### Aesthetic Direction: Classical Integration
-The site integrates classical artwork (featuring Vermeer, Tiepolo, and others) as distinct visual motifs for each section. This juxtaposition of Renaissance/Baroque art with a brutalist digital grid grounds the modern tech stack in timeless aesthetics.
+### Visual Framing & Classical Integration
+- **Dynamic Aspect Ratios:** The Gallery applies custom border padding based on mathematical aspect ratios (Portrait, Cinematic, Standard) to create a museum-like visual rhythm.
+- **Classical Motif:** Blends brutalist digital grids, pixel art accents, and neon fluid gradients (`--gradient-primary`) with Renaissance/Baroque art themes (Vermeer, Tiepolo, Bruegel) to ground the modern tech stack in timeless aesthetics.
 
 <table align="center">
   <tr>
@@ -89,8 +67,9 @@ The site integrates classical artwork (featuring Vermeer, Tiepolo, and others) a
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ and npm
-- PostgreSQL database (or Vercel Postgres) if intending to setup the lab site
+- Node.js 18+ and pnpm
+- PostgreSQL database (or Vercel Postgres) for the Lab waitlist and guestbook
+- Google Drive API ID for the font pipeline
 
 ### Installation
 
@@ -104,7 +83,29 @@ pnpm install
 
 # Set up environment variables
 cp .env.example .env.local
-# Edit .env.local with your database credentials and API keys
+```
+
+### Environment Variables (.env.local)
+
+```bash
+# Database 
+DATABASE_POSTGRES_URL=postgres://user:pass@host/db
+DATABASE_PRISMA_DATABASE_URL=postgres://user:pass@host/db?pgbouncer=true
+
+# Spotify API (for contextual footer widget)
+SPOTIFY_CLIENT_ID=your_client_id
+SPOTIFY_CLIENT_SECRET=your_client_secret
+SPOTIFY_REFRESH_TOKEN=your_refresh_token
+
+# Build Assets
+FONT_DRIVE_ID=your_google_drive_file_id
+```
+
+### Start Development
+
+```bash
+# Fetch required fonts before first run
+node apps/harrychang-me/scripts/fetch-fonts.mjs
 
 # Run database migrations
 npx prisma migrate dev
@@ -113,126 +114,24 @@ npx prisma migrate dev
 pnpm dev                 # Main site on http://localhost:3000
 ```
 
-### Environment Variables
-
-Create `.env.local` with the following:
-
-```bash
-# Database (Vercel Postgres or local PostgreSQL) This is not needed for the main portfolio site to run
-DATABASE_POSTGRES_URL=postgres://user:pass@host/db
-DATABASE_PRISMA_DATABASE_URL=postgres://user:pass@host/db?pgbouncer=true&connect_timeout=15
-
-# Spotify API (for now-playing widget)
-SPOTIFY_CLIENT_ID=your_client_id
-SPOTIFY_CLIENT_SECRET=your_client_secret
-SPOTIFY_REFRESH_TOKEN=your_refresh_token
-```
-
 ## 📝 Content Management
 
-### Adding a New Project
-
-1. Create markdown file: `content/projects/my-project.md`
-2. Add frontmatter:
-```markdown
----
-title: "My Project"
-category: "Design"
-description: "A brief description"
-imageUrl: "/images/projects/my-project/cover.jpg"
-date: "2024-11-04"
-year: "2024"
-pinned: -1        # -1 = not pinned, 1-10 = pin priority (1 = highest)
-featured: true
-technologies: ["Next.js", "TypeScript"]
----
-```
-3. Write content in markdown below frontmatter
-4. Add images to `public/images/projects/my-project/`
-5. Run `npm run optimize-images` to generate WebP variants
-6. Commit and deploy
-
-### Adding a Chinese Translation
-
-Create a localized version with `_zh-tw.md` suffix:
-- English: `content/projects/my-project.md`
-- Chinese: `content/projects/my-project_zh-tw.md`
-
-The system automatically shows the appropriate version based on user language preference.
-
-### Image Optimization Workflow
-
-```bash
-# 1. Add original images (JPG/PNG) to public/images/[projects|gallery]/[slug]/
-# 2. Run optimization script
-node scripts/optimize-images.mjs
-
-# Output: Generates WebP files in public/images/optimized/
-# - image.webp (full resolution)
-# - image-thumb.webp (20px blur thumbnail)
-```
-
-The markdown system automatically converts image paths to optimized versions.
-
-## 🧪 Development
-
-### Available Scripts
-
-```bash
-pnpm dev              # Start main site (:3000)
-pnpm build            # Production build (runs prebuild hooks)
-pnpm start            # Start production server
-node scripts/optimize-images.mjs  # Optimize all images in public/images/
-```
-
-### Build Hooks
-
-The build process runs in this order (see `package.json`):
-1. `postinstall`: `prisma generate` (generates Prisma Client)
-2. `prebuild`: `prisma migrate deploy` + `node scripts/build-papers.mjs` (fetches arXiv papers)
-3. `build`: `npm run build`
-
-
-
-
+1. **Adding Projects/Posts:** Add markdown files with YAML frontmatter to `/content/`. Add `_zh-tw` suffix for localized versions. (Blog posts require a `YYYY_MM_DD_` prefix).
+2. **Optimizing Media:** Place raw images in `public/images/` and run `pnpm --filter harry-chang-portfolio optimize-images` to auto-generate WebP variants.
+3. **Updating Translations:** Edit the namespaces inside `public/locales/en/` and `public/locales/zh-TW/`.
 
 ## 📄 License
 
-This project uses a dual-licensing model. The source code is licensed under CC BY-NC 4.0, while the creative content (text, images, and other media) is under a standard copyright.
+This project uses a dual-licensing model. The source code is licensed under **CC BY-NC 4.0**, while the creative content (text, images, markdown files in `/content/`, and assets in `/public/`) is under standard copyright.
 
-### Code License
-
-The source code used to build and display this website is licensed under the **[Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)**.
-
-This includes all files within this repository **except** for the contents of the `/content/` and `/public/` directories.
-
-You are free to:
-- **Share** — copy and redistribute the code in any medium or format.
-- **Adapt** — remix, transform, and build upon the code for non-commercial purposes.
-
-Under the following terms:
-- **Attribution** — You must give appropriate credit.
-- **NonCommercial** — You may not use the material for commercial purposes.
-
-### Content License
-
-All original creative content, including but not limited to text, articles, project descriptions, and images, is the exclusive property of Chi-Wei Chang (張祺煒) and is protected by international copyright law.
-
-This applies specifically to all content within the following directories:
-- `/content/`
-- `/public/`
-
-**All Rights Reserved.**
-
-No part of this content may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the owner.
+**All Rights Reserved for Content.** No part of the original creative material may be reproduced without prior written permission.
 
 ## 🙏 Acknowledgments
 
 Built with:
-- [Next.js](https://nextjs.org/) - React framework
-- [Radix UI](https://www.radix-ui.com/) - Accessible component primitives
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [Prisma](https://www.prisma.io/) - Database ORM
-- [Vitest](https://vitest.dev/) - Testing framework
-- [v0](https://v0.app/) - Accelerated project prototyping
+- [Next.js 15](https://nextjs.org/) & [React 19](https://react.dev/)
+- [Turborepo](https://turbo.build/)
+- [Tailwind CSS](https://tailwindcss.com/) & [Radix UI](https://www.radix-ui.com/)
+- [Motion](https://motion.dev/)
+- [Prisma](https://www.prisma.io/)
+- [v0](https://v0.app/)
