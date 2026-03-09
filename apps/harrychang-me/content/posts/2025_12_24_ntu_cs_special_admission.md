@@ -2,7 +2,7 @@
 title: "An Unconventional Path: Admitted to NTU CSIE via Special Talent Admission"
 description: "When online resources are scarce and everyone around you is a CTF or Olympiad prodigy, this is a story about finding your own lane and believing that being different has value. For anyone curious about NTU CSIE's special admission, or lost on their own path."
 imageUrl: images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp
-date: 2025-12-24
+date: "2025-12-24"
 author: Harry Chang
 tags: ["Admission", "Experience", "Reflection"]
 pinned: -1

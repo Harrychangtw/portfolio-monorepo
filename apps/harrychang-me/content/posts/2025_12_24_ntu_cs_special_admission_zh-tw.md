@@ -2,7 +2,7 @@
 title: 一條非典型的路：115 臺大資工資安組特選正取經驗
 description: 當網路上的心得屈指可數，當身邊全是 CTF 與資奧電神，這是一趟關於尋找自己賽道、並相信不同的價值的故事。給所有對臺大資工特選感到好奇，或對自己道路感到迷惘的你。
 imageUrl: images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp
-date: 2025-12-24
+date: "2025-12-24"
 author: Harry Chang
 tags: ["Admission", "Experience", "Reflection"]
 pinned: -1
