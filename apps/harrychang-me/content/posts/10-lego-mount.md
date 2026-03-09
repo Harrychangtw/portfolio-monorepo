@@ -6,7 +6,7 @@ date: "2026-03-12"
 author: "Harry Chang"
 tags: ["Hardware", "Homelab", "DIY"]
 pinned: -1
-locked: true
+locked: false
 ---
 
 ## The Coincidence

@@ -2,11 +2,11 @@
 title: "十七格寬：一個樂高風扇架，以及為何不需要「長大」"
 description: "用童年工具解決家用伺服器的散熱問題。關於樂高那奇異的精準、迭代設計，以及為什麼成長不代表拋下什麼。"
 imageUrl: "images/optimized/blogs/10-lego-mount/titlecard.webp"
-date: "2026-03-12"
+date: "2026-03-09"
 author: "Harry Chang"
 tags: ["Hardware", "Homelab", "DIY"]
 pinned: -1
-locked: true
+locked: false
 ---
 
 ## 巧合
