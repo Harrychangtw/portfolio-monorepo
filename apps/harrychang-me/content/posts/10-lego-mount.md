@@ -19,7 +19,7 @@ First: why did I need a fan mount at all?
 
 ### The Machine That Taught Me
 
-I built the homeserver between late 2023 and early 2024. The immediate reason was practical: I'm part of my school's AI club, and we were trying to finish a full academic paper before graduation. Our school's 3080 Ti had 12GB of VRAM, which made running anything substantial an exercise in frustration. Even Q4 quantization wasn't enough for the multi-model adversarial framework I was building.
+I built the homeserver between late 2024 and early 2025. The immediate reason was practical: I'm part of my school's AI club, and we were trying to finish a full academic paper before graduation. Our school's 3080 Ti had 12GB of VRAM, which made running anything substantial an exercise in frustration. Even Q4 quantization wasn't enough for the multi-model adversarial framework I was building.
 The RTX 3090 I bought secondhand had 24GB. The fins had a bit of rust. It worked perfectly.
 
 Initially, I doubted whether the server would stay useful once the ML experiments wound down. I figured the cumulative cost of cloud compute would eventually justify the hardware, but I wasn't sure. Then something shifted. 
