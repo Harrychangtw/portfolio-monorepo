@@ -2,7 +2,7 @@
 title: "17 Studs Wide: A LEGO Fan Mount and the Case Against Outgrowing"
 description: "A homeserver thermal problem solved with childhood tools. On the strange precision of LEGO, iterative design, and why growing up doesn't mean growing out of things."
 imageUrl: "images/optimized/blogs/10-lego-mount/titlecard.webp"
-date: "2026-03-12"
+date: "2026-03-09"
 author: "Harry Chang"
 tags: ["Hardware", "Homelab", "DIY"]
 pinned: -1
