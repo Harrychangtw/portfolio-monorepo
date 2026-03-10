@@ -9,6 +9,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function GitHubIssuesRedirect() {
-  redirect(siteConfig.social.issues)
+export default function GitHubReadmeRedirect() {
+  redirect(siteConfig.social.readme)
 }

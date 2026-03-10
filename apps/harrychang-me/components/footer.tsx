@@ -53,7 +53,7 @@ const siteLinks = [
   { id: 'gallery', name: 'Gallery', href: '/#gallery' },
   { id: 'blog', name: 'Blog', href: '/blog' },
   { id: 'manifesto', name: 'Manifesto', href: '/manifesto' },
-  { id: 'issues', name: 'Issues', href: '/issues' },
+  { id: 'source', name: 'Source Code', href: '/readme' },
 ];
 
 // For tooltip lookups

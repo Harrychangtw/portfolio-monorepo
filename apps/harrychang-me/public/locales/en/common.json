@@ -118,7 +118,7 @@
     "site": "Portfolio Site",
     "blog": "Blog",
     "design": "Style Guide",
-    "issues": "Issues"
+    "source": "Source Code"
   },
   "links": {
     "hero": "Code. Camera. Curiosity.",
@@ -151,9 +151,9 @@
     "reading": "Papers I'm slowly working through",
     "uses": "Tools I've collected along the way",
     "design": "The design choices behind this site",
-    "issues": "Report bugs or suggest features",
     "blog": "Writings, thoughts, and occasional rants",
-    "medium": "Syndicated stories, another home for my words"
+    "medium": "Syndicated stories, another home for my words",
+    "source": "View the monorepo source code and README on GitHub"
   },
   
   "letterGlitch": {
