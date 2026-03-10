@@ -7,246 +7,269 @@ import LanguageSwitcher from '@portfolio/ui/language-switcher';
 
 const manifestoChunksEn = [
     [
-        "I am the child who saw marvels in LEGO bricks,",
-        "Not for their colors, but for the latent architecture within—",
-        "Each joint a prayer to possibility,",
-        "Each mechanism a meditation on what could be."
+        "I am the child who dismantled locks",
+        "not to break them, but to hear",
+        "the click of each tumbler falling into place—",
+        "the small sound a secret makes",
+        "when it decides to open."
     ],
     [
-        "I seek no gods beyond the wonders I craft with my bare hands",
-        "No blueprint but the code I write at dawn,",
-        "No heaven but the moment when an idea takes flight,",
-        "No hell but the silence of unexpressed potential."
+        "I seek no blueprint but the one I draft at dawn,",
+        "no validation but the hum of a thing that works,",
+        "no certainty but this:",
+        "the silence of something unbuilt",
+        "is the only silence I fear."
     ],
     [
         "I cannot claim indifference to being seen—",
-        "Every frame composed is a hand extended outward.",
-        "But deeper than the reach lives the five-year-old",
-        "Who rode uncertain bicycles through Shanghai factory yards,",
-        "Eyes wide with wonder at machines that breathed and sang.",
-        "He did not know he was building a debt I would spend my life repaying."
+        "every frame composed is a hand extended outward.",
+        "But deeper than the reach lives the boy",
+        "who pressed his ear to a stamping press in Shanghai,",
+        "cheek warm against steel,",
+        "convinced the rhythm was about to resolve into language.",
+        "He did not know he was building a debt",
+        "I would spend my life repaying."
     ],
     [
-        "I am haunted by the weight of wasted seconds,",
-        "Convinced that youth's potential bleeds through idle fingers—",
-        "Every aimless scroll a quiet betrayal,",
-        "Every unmeasured pause a door swinging shut.",
-        "Yet the boy in the factory yard never watched the clock.",
-        "He only watched. He only wondered.",
-        "Perhaps becoming need not be weighed by the minute."
+        "I am haunted by the hours between things.",
+        "A speech in the morning. Surgery by afternoon.",
+        "The distance between those two facts",
+        "still measures how I spend my time.",
+        "Yet the boy in the factory yard never counted.",
+        "He only listened. He only stayed.",
+        "Perhaps urgency is not the same as attention."
     ],
     [
-        "While I honor the child I once was,",
-        "This is not a self-centered reverence—",
-        "I am profoundly grateful for the family that nurtured that child,",
-        "Who saw in dismantled locks not destruction but discovery,",
-        "Who understood that wonder needs both freedom and foundation."
+        "I did not raise myself.",
+        "Hands steadier than mine",
+        "saw in dismantled locks not destruction but discovery,",
+        "let the parts scatter across the kitchen table,",
+        "and trusted I would learn",
+        "what goes back where."
     ],
     [
         "Knowledge is not my crown but my compass—",
-        "Each algorithm learned, each frame edited,",
-        "Each robot programmed, each story told,",
-        `Returns me to that first question: "Where can this be used?"`
+        "each model trained, each frame cut,",
+        "each argument lost and studied afterward,",
+        "returns me to the same question",
+        "the boy asked the machine:",
+        "what are you trying to say?"
     ],
     [
-        "I refuse to let expertise become arrogance,",
-        "To let achievement build walls where curiosity built bridges.",
-        "Yet I confess: I still grow impatient with unfamiliarity,",
-        "Still mistake another's slowness for insufficiency—",
-        "Forgetting the boy who dismantled locks",
-        "Was once the clumsiest hand, the most confused mind,",
-        "And the world was patient with him."
+        "I refuse to let fluency become impatience,",
+        "to let my speed become another's measure.",
+        "Yet I confess: I still mistake silence for slowness,",
+        "still forget that the child who read machines",
+        "once stood for an hour",
+        "hearing nothing,",
+        "and called it listening."
     ],
     [
-        "Yet I confess, I still build fortresses for my ideas,",
-        "Still chase the flawless algorithm, the perfect frame,",
-        "Still perform mastery on stages I find hollow.",
-        "I mistake being \"correct\" for being \"true,\"",
-        "I mistake being \"published\" for being \"understood,\"",
-        "And forget the boy who learned more from a broken lock",
-        "Than a finished one."
+        "I still build fortresses for my ideas,",
+        "still chase the flawless frame, the airtight argument,",
+        "still perform competence in rooms that do not ask for it.",
+        "I mistake being correct for being true.",
+        "I mistake being published for being understood.",
+        "The boy learned more from a broken lock",
+        "than a finished one.",
+        "I keep forgetting that."
     ],
     [
-        "This path I forge is often a solitary one;",
-        "My focus, a wall mistaken for a fortress;",
-        "My silence, a stillness mistaken for scorn;",
-        "I must learn to open the gate not just for the next project;",
-        "But for the hands that might help me build."
+        "This path is often quiet.",
+        "My focus, mistaken for distance.",
+        "My silence, mistaken for indifference.",
+        "I must learn to leave the door open—",
+        "not just for the next project,",
+        "but for the hands that might help me build."
     ],
     [
-        "When breath came hard in hospital beds,",
-        "When lungs collapsed like faulty code,",
-        "I learned that existence precedes essence—",
-        "That we are not defined by our limitations but by our response to them.",
-        "The light that burns twice as bright burns half as long—",
-        "Perhaps there are other ways to glow."
+        "At sixteen, in a room at 3am,",
+        "machines did the breathing I could not.",
+        "I had given a speech that morning.",
+        "By afternoon, my lungs had folded shut.",
+        "No philosophy prepared me for that arithmetic.",
+        "But the hours taught me:",
+        "presence is not guaranteed,",
+        "and so it cannot be deferred."
     ],
     [
-        "I am my own audience, my own critic, my own muse.",
-        "Part freedom, part fortress, part fear—",
-        "The freedom to fail magnificently,",
-        "The freedom to explore without permission,",
-        "The freedom to share without expectation,",
-        "And the cost of a gallery where I am the only guest."
+        "I am my own audience, my own critic, my own first draft.",
+        "Part freedom, part fortress—",
+        "the freedom to fail without witnesses,",
+        "the freedom to build without permission,",
+        "and the cost of a gallery",
+        "where I am sometimes the only guest."
     ],
     [
         "Every line of code I write,",
-        "Every frame I cut,",
-        "Every speech I give,",
-        "Is a conversation with that child who asked not \"Is this useful?\"",
-        "But \"What worlds can this create?\""
+        "every frame I cut,",
+        "every sentence I revise past midnight,",
+        "is a conversation with the child",
+        "who never asked, is this useful—",
+        "only, what worlds can this build."
     ],
     [
-        "I pledge to remain forever unfinished,",
-        "Forever clumsy in some new tongue,",
-        "Forever the slowest hand in an unfamiliar room—",
-        "And to grant myself the grace",
-        "I am still learning to give others.",
-        "Not because the road is harder,",
-        "But because it is mine to make."
+        "I pledge to remain unfinished.",
+        "Forever clumsy in some new language,",
+        "forever the slowest hand in an unfamiliar room.",
+        "To grant myself the grace",
+        "I am still learning to give others—",
+        "not because the harder road is better,",
+        "but because this one is mine to cut."
     ],
     [
-        "Yes, I am building a resume and a reputation.",
-        "But I am also building a bridge back to wonder—",
-        "One that I need more than any accolade.",
-        "A bridge others might cross",
-        "To find their own five-year-old selves",
-        "Waiting patiently in the machinery of dreams."
+        "Yes, I am building a résumé.",
+        "Yet, I am also building a bridge back to the factory yard—",
+        "one I need more than any publication,",
+        "more than any score.",
+        "A bridge someone else might cross",
+        "to find their own machine,",
+        "still humming, still waiting to finish its sentence."
     ],
     [
-        "In this existence I choose to create,",
         "I am both the question and the quest,",
-        "Both the builder and the built,",
-        "Forever becoming,",
-        "Forever beginning,",
-        "Forever that child in the factory yard,",
-        "Looking up at the infinite.",
-        "Hands dirty with creation,",
-        "Heart crystal—and every crack, a place for light to enter."
-    ],
-
-];
+        "both the mechanism and the hand that turns it.",
+        "Forever the child with his ear against the steel,",
+        "listening for what the machine almost said—",
+        "hands dirty with building,",
+        "heart still open enough",
+        "to hear it when it does."
+    ]
+]
 
 const manifestoChunksZhTw = [
     [
-        "我是那個孩子，在樂高積木裡，看見了奇蹟",
-        "不為斑斕色彩，只為其中精妙的設計",
-        "每一處接榫，皆是涓滴成河之始",
-        "每一具齒輪，盡是鑑往知來之思"
+        "我是那個拆解門鎖的孩子，",
+        "不為破壞，只為傾聽",
+        "鎖簧逐一歸位的清脆",
+        "那是秘密決意綻放時，",
+        "最細微的聲響。"
     ],
     [
-        "我不追尋神祇，只求親手打造的驚奇",
-        "我不追索藍圖，除非那是我黎明寫下的程式碼",
-        "巔峰，是思想展翅高飛的瞬間",
-        "深淵，是潛能身陷囹圄的死寂"
+        "不求藍圖，只跟循黎明時親手繪就的草稿；", 
+        "不求認可，只傾聽齒輪咬合時運轉的低鳴；", 
+        "不求確信，只篤信這唯一的真理：",
+        "尚未被造之物的沉默",
+        "是我唯一畏懼的沉默。"
     ],
     [
         "我無法假裝不渴望被看見——",
-        "每一幀構圖，都是一隻向外伸出的手",
-        "但比渴望更深處，住著那個五歲的自己",
-        "騎著搖晃的單車，穿梭在上海的工廠",
-        "對著那些會呼吸、會歌唱的機器，滿眼驚奇",
-        "他不知道，他正在築一筆債，讓我用一生償還"
+        "每一幀構圖，都是一隻向外伸出的手。",
+        "但比渴望更深處，住著那個男孩",
+        "他將耳朵貼在上海的沖壓機上，",
+        "稚嫩的臉頰感受著鋼鐵的餘溫，",
+        "深信那無規律的節奏，即將化作言語。",
+        "他並不知道，自己正築起一筆債，",
+        "讓我用一生來償。"
     ],
     [
-        "我被虛度的光陰纏繞",
-        "深信年少的潛能，正悄然流逝——",
-        "流逝於每一次漫無目的的滑動",
-        "流逝於每一刻未經計算的空轉",
-        "然而工廠裡的孩子，從不看錶",
-        "他只是看著，只是驚嘆",
-        "或許，成為不必時刻以產出衡量"
+        "我時常被事物之間的縫隙縈繞。",
+        "早晨的演說。午後的手術。", 
+        "這兩段事之間的距離，",
+        "至今仍丈量著我度過時間的尺度。",
+        "然而，工廠裡的男孩從不計時。",
+        "他只傾聽。他只停留。",
+        "或許急迫，從不等於專注。"
     ],
     [
-        "我遙想那個孩子，卻非出於自私",
-        "我深深感謝，那個開明的家庭",
-        "在被拆解的鎖裡，他們看到的不是破壞，而是探索",
-        "他們明白，成長需要自由，也需要根基"
+        "我並非憑空成長。",
+        "是那些比我更沉穩的雙手，",
+        "在散落的鎖件中，看見的不是破壞而是探索；",
+        "由零件散落廚房桌面，",
+        "並深信我終會學懂，",
+        "如何將一切歸位。"
     ],
     [
-        "知識不是我的桂冠，而是羅盤",
-        "學習的每道演算法，剪輯的每幀影像",
-        "開發的每個機器人，訴說的每個故事",
-        "都引我回到最初的提問：「它，能用在何方？」"
+        "知識不是我的桂冠，而是我的羅盤——",
+        "訓練的每一個模型，剪輯的每一格畫面，", 
+        "每一場輸了又反覆推敲的辯論，",
+        "都引我回到同一個問題，",
+        "那個男孩曾問向機器的問題：",
+        "「你，究竟想說什麼？」"
     ],
     [
-        "我拒絕讓專業變成傲慢",
-        "拒絕讓成就築起高牆，隔絕了曾用好奇心搭建的橋樑",
-        "然而我仍承認：我對陌生仍缺乏耐心",
-        "仍將他人的緩慢，視作不足——",
-        "卻忘了那個拆解門鎖的男孩",
-        "曾是最笨拙的手，最困惑的心",
-        "而世界，曾對他溫柔以待"
+        "我拒絕讓熟練淪為不耐，", 
+        "拒絕讓自己的速度，成為衡量他人的標尺。",
+        "但我承認：我仍會將沉默誤認為遲緩，",
+        "仍會忘記那個試圖聽懂機器的孩子，",
+        "曾獨自站立一整個小時，",
+        "什麼都沒聽見，",
+        "卻稱之為，傾聽。"
     ],
     [
-        "然而，我仍為思緒砌起堡壘",
-        "仍追逐分毫不差的程式，天衣無縫的畫面",
-        "仍在空洞的舞台上，扮演著精通",
-        "錯把「正確」當作「真誠」",
-        "錯把「發表」當作「被理解」",
-        "卻忘了那個男孩，從壞損的鎖中",
-        "學到的遠比完整的更多"
+        "我仍會為自己的思緒砌起高牆，",
+        "仍會追逐無瑕的畫面與滴水不漏的論點，",
+        "仍會在不求表現的場合裡，賣弄著精通。",
+        "我錯把「正確」當作「真實」。",
+        "我錯把「發表」當作「理解」。",
+        "那個男孩從損壞的門鎖中學到的，",
+        "遠比完好的更多。",
+        "而我，卻總是一再忘記。"
     ],
     [
-        "我開闢的這條路，也常是孤途",
-        "我的專注，被誤解為高牆",
-        "我的沉默，被錯認為冷漠",
-        "我必須學會敞開大門，不只為了下個計畫",
-        "更為了那，願意一同砌築的雙手"
+        "我所行的這條路，時常悄然無聲。",
+        "我的專注，被誤解為疏離。", 
+        "我的沉默，被錯認為冷漠。",
+        "我必須學會為這扇門留一道縫隙——",
+        "不只為了下一個計畫，",
+        "也為了那些願意一同砌築的手。"
     ],
     [
-        "當呼吸在病床上變得艱難",
-        "當肺泡如壞損的程式碼般崩塌",
-        "我學會了：存在先於本質",
-        "定義我們的，不是我們的極限",
-        "而是我們如何回應極限",
-        "燃燒得最亮的光，熄滅得最快——",
-        "或許，還有其他發光的方式"
+        "十六歲，凌晨三點的病房裡，",
+        "機器替我完成我所無法的呼吸。",
+        "那個早晨，我還在台上演說；",
+        "到了午後，我的肺葉卻已摺疊閉鎖。",
+        "沒有哲學能教我面對這道題目，",
+        "但那些時刻教會了我：",
+        "存在並非理所當然，",
+        "所以不容推遲。"
     ],
     [
-        "我是自己的觀眾，自己的評審，自己的繆思",
-        "半是自由，半是堡壘，半是恐懼——",
-        "一種得以華麗失敗的自由",
-        "一種無須許可便能探索的自由",
-        "一種不求回報就能分享的自由",
-        "以及，展廊裡唯我獨覽的重量"
+        "我是自己的觀眾、自己的樂評、自己的初稿。",
+        "半是自由，半是牢籠——",
+        "是那得以在無人目睹下失敗的自由，", 
+        "是那得以在無須許可下建造的自由，",
+        "以及是那座空曠展廳的代價：",
+        "在這裡，我時常是唯一的訪客。"
     ],
     [
-        "我寫下的每一行程式碼",
-        "剪下的每一格影片",
-        "發表的每一次演說",
-        "都是與那個孩子的對話",
-        "他問的不是「這有用嗎？」",
-        "而是「這能創造怎樣的世界？」"
+        "我寫下的每一行程式碼，", 
+        "剪裁的每一格畫面，",
+        "在午夜後反覆修改的每一個句子，",
+        "都是與那個孩子的對話——",
+        "他從不問：這有用嗎？",
+        "他只問：這能建造怎樣的世界？"
     ],
     [
-        "我誓願永遠保持未完成",
-        "永遠在某種新語言裡笨拙",
-        "永遠是陌生房間裡，最慢的那雙手——",
-        "並學會給予自己",
-        "我仍在學習給予他人的寬容",
-        "不因其艱難",
-        "只因那條路，由我親手開創"
+        "我誓願永遠保持未完成的姿態。",
+        "永遠在某種新語言裡無比笨拙，", 
+        "永遠是陌生房間裡，最慢的那雙手。",
+        "去給予自己一份寬容，",
+        "一份我仍在學習如何給予他人的寬容——", 
+        "不是因為崎嶇的路更為高尚，",
+        "而是因為這條路，由我親手開鑿。"
     ],
     [
-        "是的，我在建造履歷與名聲",
-        "但我也在建造一座橋，回到最初的驚嘆——",
-        "一座我比任何獎項都更需要的橋",
-        "一座讓他人也能走過的橋",
-        "去尋找他們心中那個五歲的靈魂",
-        "在夢想的機械回眸中，耐心等候"
+        "是的，我在打造履歷。",
+        "但我也在建造一座橋，通回那座工廠——",
+        "比任何發表更需要的橋，",
+        "比任何分數更需要的橋。",
+        "一座他人或許也能走過的橋，",
+        "去找到他們自己的那台機器。",
+        "仍在低鳴，仍在等待，",
+        "說完它未竟的那句話。",
     ],
     [
-        "在這我選擇創造的實存中",
-        "我既是提問，也是追尋",
-        "既是建造者，也是被造物",
-        "永遠在演化",
-        "永遠在初始",
-        "永遠是那個工廠裡的孩子",
-        "雙手滿是創造的塵土",
-        "指尖輕觸無垠，內心澄澈如初。"
+        "我既是提問，也是追尋；", 
+        "既是齒輪的機關，也是轉動它的手。",
+        "永遠是那個耳朵貼著鋼鐵的孩子，",
+        "傾聽著機器幾乎說出的秘密——",
+        "雙手沾滿砌築的塵土，",
+        "而心依然敞開，",
+        "敞開到足以在它終於開口時，聽見"
     ]
 ];
+
 
 
 
