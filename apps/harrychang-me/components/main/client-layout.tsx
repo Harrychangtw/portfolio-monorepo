@@ -12,6 +12,7 @@ import { ThemeProvider } from '@portfolio/lib/contexts/theme-context'
 import VideoInitializer from "@portfolio/ui/video-initializer"
 import NotificationProvider from "@portfolio/ui/notification-provider"
 import { useStableAnchor } from "@portfolio/lib/hooks/use-stable-anchor"
+import PageTransition from "@/components/main/page-transition"
 
 export default function ClientLayout({
   children,
@@ -28,17 +29,17 @@ export default function ClientLayout({
         <LanguageProvider>
           <Header />
           {isMobile ? (
-            children
+            <PageTransition>{children}</PageTransition>
           ) : (
             <ClickSpark
               sparkColor="hsl(var(--primary))"
               sparkSize={8}
               sparkRadius={15}
-            sparkCount={4}
+              sparkCount={4}
               duration={500}
               extraScale={1.2}
             >
-              {children}
+              <PageTransition>{children}</PageTransition>
             </ClickSpark>
           )}
           <VideoInitializer />

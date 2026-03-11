@@ -7,7 +7,7 @@ import { forwardRef, type ComponentProps } from "react"
 type NavigationLinkProps = ComponentProps<typeof Link>
 
 const NavigationLink = forwardRef<HTMLAnchorElement, NavigationLinkProps>(
-  ({ onClick, href, ...props }, ref) => {
+  ({ onClick, href, target, ...props }, ref) => {
     const { startNavigation } = useNavigation()
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -19,26 +19,27 @@ const NavigationLink = forwardRef<HTMLAnchorElement, NavigationLinkProps>(
         return
       }
 
-      // Prevent infinite loading when opening in new tab
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+      // Ignore non-primary clicks and modified clicks
+      if (e.button !== 0) {
         return
       }
-      // Prevent browser's automatic scroll restoration before navigation starts
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual'
-      }
-      // Pre-emptively scroll to top to prevent flash of wrong scroll position
-      window.scrollTo(0, 0)
 
-      // Extract the target path from href
-      const targetHref = typeof href === 'string' ? href : href.pathname || ''
+      // Prevent infinite loading when opening in a new tab/window or downloading
+      if (target === "_blank" || props.download || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+        return
+      }
+
+      // Extract the target URL from href
+      const targetHref = typeof href === 'string'
+        ? href
+        : `${href.pathname ?? ''}${href.search ?? ''}${href.hash ?? ''}`
 
       try {
         const currentUrl = new URL(window.location.href)
         const targetUrl = new URL(targetHref, window.location.href)
 
         // Check if we're navigating to the exact same page (origin + path + search)
-        // This handles hash changes and absolute URLs pointing to current page
+        // This still allows same-page hash links to work without triggering the loading state
         const isSamePage =
           targetUrl.origin === currentUrl.origin &&
           targetUrl.pathname === currentUrl.pathname &&
@@ -51,10 +52,15 @@ const NavigationLink = forwardRef<HTMLAnchorElement, NavigationLinkProps>(
         // If URL parsing fails, proceed normally
       }
 
+      // Prevent browser scroll restoration for actual route changes only
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual'
+      }
+
       startNavigation()
     }
 
-    return <Link ref={ref} href={href} onClick={handleClick} {...props} />
+    return <Link ref={ref} href={href} target={target} onClick={handleClick} {...props} />
   }
 )
 

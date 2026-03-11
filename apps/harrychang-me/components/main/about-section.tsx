@@ -25,7 +25,8 @@ export default function AboutSection() {
               </p>
             </div>
             {/* Visible on mobile (mt-8), kept at bottom on desktop (mt-auto) */}
-            <div className="flex items-center gap-6 mt-8 md:mt-auto pt-8 border-t border-border md:border-t-0">
+            {/* min-h-[24px] prevents CLS while dynamic switchers are loading */}
+            <div className="flex items-center gap-6 mt-8 md:mt-auto pt-8 border-t border-border md:border-t-0 min-h-[24px]">
               <LanguageSwitcher />
               <ThemeSwitcher />
             </div>

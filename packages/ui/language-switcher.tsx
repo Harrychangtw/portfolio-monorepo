@@ -10,9 +10,15 @@ export default function LanguageSwitcher() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <motion.button
-      onClick={() => setLanguage(isEn ? 'zh-TW' : 'en')}
-      className="flex items-center gap-1.5 font-heading text-sm font-medium select-none"
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+      className="flex"
+    >
+      <motion.button
+        onClick={() => setLanguage(isEn ? 'zh-TW' : 'en')}
+        className="flex items-center gap-1.5 font-heading text-sm font-medium select-none"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       whileHover={{ y: -2 }} 
@@ -46,5 +52,6 @@ export default function LanguageSwitcher() {
         EN
       </span>
     </motion.button>
+    </motion.div>
   );
 }

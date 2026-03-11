@@ -113,6 +113,50 @@
   animation: fade-out 0.3s ease-in;
 }
 
+/* Native View Transitions API — page enter */
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-exit {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+::view-transition-old(root) {
+  animation: page-exit 1000ms ease-in forwards;
+}
+
+::view-transition-new(root) {
+  animation: page-enter 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* React-driven fallback: .page-entering class applied on route change */
+.page-entering {
+  animation: page-enter 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+  .page-entering {
+    animation: none !important;
+  }
+}
+
 /* Pixel art styles */
 .pixel-text {
   font-size: 0.8rem;
