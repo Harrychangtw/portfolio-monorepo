@@ -19,7 +19,7 @@ export default function ThemeSwitcher() {
       className="flex"
     >
       <motion.button
-        onClick={() => setLanguage(isEn ? 'zh-TW' : 'en')}
+        onClick={toggleTheme}
         className="flex items-center gap-1.5 font-heading text-sm font-medium select-none"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
