@@ -121,7 +121,7 @@
 @keyframes page-enter {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -158,25 +158,17 @@
   z-index: 55;
   pointer-events: none;
   opacity: 0;
-  background: hsl(var(--background) / 0.88);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  transition:
-    opacity 180ms ease,
-    backdrop-filter 220ms ease,
-    -webkit-backdrop-filter 220ms ease;
+  background: hsl(var(--background));
+  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity;
 }
 
 .page-transition-shell[data-nav-overlay="covering"] .page-transition-overlay {
   opacity: 1;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 .page-transition-shell[data-nav-overlay="revealing"] .page-transition-overlay {
   opacity: 0;
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -189,10 +181,8 @@
     animation: none !important;
   }
 
-  .page-transition-overlay {
+.page-transition-overlay {
     transition: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
   }
 }
 
