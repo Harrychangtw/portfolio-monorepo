@@ -141,20 +141,7 @@ export function ImageContainer({
             <div className="absolute inset-0">
               {(isVisible || priority) && (
                 <>
-                  {!isVideo && thumbnailSrc && (
-                    <Image
-                      src={thumbnailSrc}
-                      alt={alt}
-                      fill
-                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center transition-opacity duration-500 ${
-                        blurComplete ? "opacity-0" : "opacity-100"
-                      } ${imgClassName || ''}`}
-                      sizes={sizes}
-                      priority={priority}
-                      onLoad={() => setThumbLoaded(true)}
-                    />
-                  )}
-                  
+                  {/* Render Main Content First (Ensures optimal LCP tracking by the browser) */}
                   {isVideo ? (
                     <video
                       src={fullSrc}
@@ -174,14 +161,33 @@ export function ImageContainer({
                       src={fullSrc}
                       alt={alt}
                       fill
-                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center ${priority ? '' : 'transition-opacity duration-500'} ${
+                      // priority images are ALWAYS opacity-100 to ensure fast LCP tracking.
+                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center ${priority ? 'opacity-100' : 'transition-opacity duration-700'} ${
                         blurComplete || priority ? "opacity-100" : "opacity-0"
                       } ${imgClassName || ''}`}
                       sizes={sizes}
                       quality={quality}
+                      priority={priority}
                       onLoad={() => {
                         setBlurComplete(true)
                       }}
+                    />
+                  )}
+
+                  {/* Render Thumbnail ON TOP to mask scanline loading of the main image */}
+                  {!isVideo && thumbnailSrc && (
+                    <Image
+                      src={thumbnailSrc}
+                      alt={alt}
+                      fill
+                      // [image-rendering:pixelated] is vastly more compute-light than CSS blur filters
+                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center transition-opacity duration-700 [image-rendering:pixelated] ${
+                        blurComplete ? "opacity-0 pointer-events-none" : "opacity-100"
+                      } ${imgClassName || ''}`}
+                      sizes={sizes}
+                      priority={priority}
+                      onLoad={() => setThumbLoaded(true)}
+                      aria-hidden="true"
                     />
                   )}
                 </>
