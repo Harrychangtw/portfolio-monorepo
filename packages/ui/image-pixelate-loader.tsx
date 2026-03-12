@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react"
 
 /** CSS-pixel block sizes, largest → smallest (6 steps × 1000 ms = 6 000 ms) */
 const PIXEL_STEPS = [128, 64, 32, 16, 8, 4, 2, 1] as const
-const STEP_MS = 200
+const STEP_MS = 100
 
 interface PixelateLoaderProps {
   /** The tiny thumbnail URL produced by the image pipeline */
