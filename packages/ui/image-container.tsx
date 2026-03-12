@@ -3,7 +3,7 @@
 import { useState, useRef } from "react"
 import Image from "next/image"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { ImageLoadingSkeleton } from "./image-loading-skeleton"
+import { PixelateLoader } from "./image-pixelate-loader"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 
 interface ImageContainerProps {
@@ -44,7 +44,6 @@ export function ImageContainer({
   // For videos, markdown usually provides 1.7778 (16:9)
   const aspectRatio = providedAspectRatio ?? 1.5
 
-  const [thumbLoaded, setThumbLoaded] = useState(false)
   const [blurComplete, setBlurComplete] = useState(false)
   const isMobile = useIsMobile()
 
@@ -132,29 +131,19 @@ export function ImageContainer({
             }}
           >
             {!noInsetPadding && containerClass && (
-              <div className={`absolute inset-0 z-10 pointer-events-none ${containerClass}`}></div>
+              <div className={`absolute inset-0 z-20 pointer-events-none ${containerClass}`}></div>
             )}
             
-            {/* Overlay Skeleton if loading or waiting for blur to complete */}
-            <ImageLoadingSkeleton visible={!blurComplete} />
+            {/* Depixelation loader — canvas fades out once full image is ready */}
+            <PixelateLoader
+              thumbnailSrc={isVisible && !isVideo && !priority ? thumbnailSrc : undefined}
+              shown={!blurComplete && !priority}
+              objectFit={noInsetPadding ? "cover" : "contain"}
+            />
 
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 z-0">
               {(isVisible || priority) && (
                 <>
-                  {!isVideo && thumbnailSrc && (
-                    <Image
-                      src={thumbnailSrc}
-                      alt={alt}
-                      fill
-                      className={`${noInsetPadding ? 'object-cover' : 'object-contain'} object-center transition-opacity duration-500 ${
-                        blurComplete ? "opacity-0" : "opacity-100"
-                      } ${imgClassName || ''}`}
-                      sizes={sizes}
-                      priority={priority}
-                      onLoad={() => setThumbLoaded(true)}
-                    />
-                  )}
-                  
                   {isVideo ? (
                     <video
                       src={fullSrc}
