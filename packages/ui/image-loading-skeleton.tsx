@@ -79,7 +79,7 @@ export function ImageLoadingSkeleton({ visible = true }: { visible?: boolean }) 
     <div 
       // 2. Define the container type for relative sizing
       style={{ containerType: "size" }}
-      className={`absolute inset-0 bg-muted/20 flex items-center justify-center z-20 pointer-events-none transition-opacity duration-500 ${
+      className={`absolute inset-0 bg-muted/10 backdrop-blur-[2px] flex items-center justify-center z-20 pointer-events-none transition-opacity duration-500 ${
         visible ? "opacity-100" : "opacity-0"
       }`}
     >
