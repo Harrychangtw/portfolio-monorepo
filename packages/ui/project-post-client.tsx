@@ -23,7 +23,6 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
   const { language, t } = useLanguage()
   const [project, setProject] = useState(initialProject)
   const [nextProjectData, setNextProjectData] = useState(nextProject)
-  const [loading, setLoading] = useState(false)
 
   useLayoutEffect(() => {
       // Set scroll restoration to manual first
@@ -102,7 +101,6 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
       // Only fetch if we need a different version than what we currently have
       if (targetSlug !== project.slug) {
         try {
-          setLoading(true)
           const response = await fetch(`/api/projects/${targetSlug}`)
           if (response.ok) {
             const projectData = await response.json()
@@ -122,43 +120,12 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
         } catch (error) {
           console.error('Error fetching localized version:', error)
           // Keep the current project on error
-        } finally {
-          setLoading(false)
         }
       }
     }
 
     fetchLocalizedProject()
   }, [language, project.slug])
-
-
-  if (loading) {
-    return (
-      <div className="page-transition-enter">
-        <div className="pb-12">
-          <div className="container">
-            <div className="animate-pulse">
-              <div className="bg-gray-300 aspect-[3/2] rounded mb-8"></div>
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
-                <div className="md:col-span-4">
-                  <div className="h-4 bg-gray-300 rounded mb-4"></div>
-                  <div className="h-8 bg-gray-300 rounded mb-2"></div>
-                  <div className="h-4 bg-gray-300 rounded w-1/2"></div>
-                </div>
-                <div className="md:col-span-8">
-                  <div className="space-y-4">
-                    <div className="h-4 bg-gray-300 rounded"></div>
-                    <div className="h-4 bg-gray-300 rounded"></div>
-                    <div className="h-4 bg-gray-300 rounded w-3/4"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className="page-transition-enter">

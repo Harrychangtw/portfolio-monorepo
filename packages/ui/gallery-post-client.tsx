@@ -21,7 +21,6 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
   const { language, t } = useLanguage()
   const [item, setItem] = useState(initialItem)
   const [nextItemData, setNextItemData] = useState(nextItem)
-  const [loading, setLoading] = useState(false)
 
   // Force scroll to top on navigation - use useLayoutEffect for synchronous execution
   // before browser paint to prevent scroll restoration issues on mobile
@@ -99,7 +98,6 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
       // Only fetch if we need a different version than what we currently have
       if (targetSlug !== item.slug) {
         try {
-          setLoading(true)
           const response = await fetch(`/api/gallery/${targetSlug}`)
           if (response.ok) {
             const itemData = await response.json()
@@ -119,42 +117,12 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
         } catch (error) {
           console.error('Error fetching localized version:', error)
           // Keep the current item on error
-        } finally {
-          setLoading(false)
         }
       }
     }
 
     fetchLocalizedItem()
   }, [language, item.slug])
-
-  if (loading) {
-    return (
-      <div className="page-transition-enter">
-        <div className="min-h-screen">
-          <div className="container">
-            <div className="animate-pulse">
-              <div className="bg-gray-300 aspect-[4/5] rounded mb-8"></div>
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
-                <div className="md:col-span-4">
-                  <div className="h-4 bg-gray-300 rounded mb-4"></div>
-                  <div className="h-8 bg-gray-300 rounded mb-2"></div>
-                  <div className="h-4 bg-gray-300 rounded w-1/2"></div>
-                </div>
-                <div className="md:col-span-8">
-                  <div className="space-y-4">
-                    <div className="h-4 bg-gray-300 rounded"></div>
-                    <div className="h-4 bg-gray-300 rounded"></div>
-                    <div className="h-4 bg-gray-300 rounded w-3/4"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
 
   // Extract the full image URL (not thumbnail) for the main hero image
   const fullImageUrl = item.imageUrl?.replace('-thumb.webp', '.webp') || '/placeholder.svg';

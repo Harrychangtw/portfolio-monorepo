@@ -22,7 +22,6 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
   const { language, t } = useLanguage()
   const [post, setPost] = useState(initialPost)
   const [nextPostData, setNextPostData] = useState(nextPost)
-  const [loading, setLoading] = useState(false)
   // Force scroll to top on navigation
   useLayoutEffect(() => {
     // Set scroll restoration to manual first
@@ -98,7 +97,6 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
 
       if (targetSlug !== post.slug) {
         try {
-          setLoading(true)
           const response = await fetch(`/api/posts/${targetSlug}`)
           if (response.ok) {
             const postData = await response.json()
@@ -114,8 +112,6 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
           }
         } catch (error) {
           console.error('Error fetching localized version:', error)
-        } finally {
-          setLoading(false)
         }
       }
     }
@@ -130,34 +126,6 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
       month: 'long',
       day: 'numeric'
     })
-  }
-
-  if (loading) {
-    return (
-      <div className="page-transition-enter">
-        <div className="pb-12 pt-24">
-          <div className="container">
-            <div className="animate-pulse">
-              <div className="h-12 bg-gray-300 rounded w-2/3 mb-12"></div>
-              <div className="bg-gray-300 aspect-[3/2] rounded mb-12"></div>
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12">
-                <div className="md:col-span-4">
-                   <div className="h-4 bg-gray-300 rounded w-1/2 mb-4"></div>
-                   <div className="h-32 bg-gray-300 rounded"></div>
-                </div>
-                <div className="md:col-span-8">
-                  <div className="space-y-4">
-                    <div className="h-4 bg-gray-300 rounded"></div>
-                    <div className="h-4 bg-gray-300 rounded"></div>
-                    <div className="h-4 bg-gray-300 rounded w-3/4"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
   }
 
   return (
