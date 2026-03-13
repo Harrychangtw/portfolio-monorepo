@@ -114,33 +114,7 @@
 }
 
 /* Native View Transitions API — page enter */
-@view-transition {
-  navigation: auto;
-}
 
-@keyframes page-enter {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes page-exit {
-  from { opacity: 1; }
-  to   { opacity: 0.92; }
-}
-
-::view-transition-old(root) {
-  animation: page-exit 180ms ease-out forwards;
-}
-
-::view-transition-new(root) {
-  animation: page-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
 
 /* React-driven fallback: .page-entering class applied on route change */
 .page-entering {
@@ -149,26 +123,45 @@
 
 .page-transition-shell {
   position: relative;
-  min-height: 0;
 }
 
-.page-transition-overlay {
+.page-transition-content {
+  min-height: 0;
+  transform-origin: 50% 50%;
+}
+
+#main-header {
+  position: fixed !important;
+}
+
+/* Centre overlay: frosted scrim + timer frame */
+.page-transition-overlay-center {
   position: fixed;
-  inset: var(--header-offset, 64px) 0 0 0;
+  inset: 0;
   z-index: 55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
   opacity: 0;
   background: hsl(var(--background));
-  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity;
+  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.page-transition-shell[data-nav-overlay="covering"] .page-transition-overlay {
+.page-transition-overlay-center[data-phase="out"] {
   opacity: 1;
+  transition-delay: 0ms;
 }
 
-.page-transition-shell[data-nav-overlay="revealing"] .page-transition-overlay {
+.page-transition-overlay-center[data-phase="in"] {
   opacity: 0;
+  transition-delay: 0ms;
+}
+
+.page-transition-overlay-center[data-phase="idle"] {
+  opacity: 0;
+  visibility: hidden;
+  transition: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -181,8 +174,9 @@
     animation: none !important;
   }
 
-.page-transition-overlay {
+  .page-transition-overlay-center {
     transition: none !important;
+    opacity: 0 !important;
   }
 }
 

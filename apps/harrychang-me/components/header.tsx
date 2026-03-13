@@ -411,6 +411,7 @@ export default function Header() {
 
   return (
     <motion.header
+      id="main-header"
       layoutRoot
       className="fixed top-0 left-0 right-0 border-b border-border py-4 z-[60] bg-background"
     >

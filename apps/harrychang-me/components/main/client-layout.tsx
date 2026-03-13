@@ -27,21 +27,23 @@ export default function ClientLayout({
     <ThemeProvider>
       <NavigationProvider>
         <LanguageProvider>
-          <Header />
-          {isMobile ? (
-            <PageTransition>{children}</PageTransition>
-          ) : (
-            <ClickSpark
-              sparkColor="hsl(var(--primary))"
-              sparkSize={8}
-              sparkRadius={15}
-              sparkCount={4}
-              duration={500}
-              extraScale={1.2}
-            >
-              <PageTransition>{children}</PageTransition>
-            </ClickSpark>
-          )}
+          <PageTransition>
+            <Header />
+            {isMobile ? (
+              children
+            ) : (
+              <ClickSpark
+                sparkColor="hsl(var(--primary))"
+                sparkSize={8}
+                sparkRadius={15}
+                sparkCount={4}
+                duration={500}
+                extraScale={1}
+              >
+                {children}
+              </ClickSpark>
+            )}
+          </PageTransition>
           <VideoInitializer />
           <Suspense fallback={null}>
             <NotificationProvider />

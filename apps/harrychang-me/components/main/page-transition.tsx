@@ -2,100 +2,190 @@
 
 import { useNavigation } from "@portfolio/lib/contexts/navigation-context"
 import { usePathname, useSearchParams } from "next/navigation"
-import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react"
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react"
 
-const OVERLAY_RESET_DELAY = 260
-
+/**
+ * Global page transition — zoom-out / zoom-in with a centred count-up timer.
+ *
+ * Phase machine:
+ *   idle  →  out  (isNavigating becomes true)
+ *   out   →  in   (isNavigating becomes false / route key changes)
+ *   in    →  idle  (after zoom-in animation settles)
+ */
 export default function PageTransition({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const { isNavigating } = useNavigation()
 
-  const ref = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
   const prevRouteKey = useRef<string | null>(null)
-  const overlayTimerRef = useRef<number | null>(null)
+  const timerIntervalRef = useRef<number | null>(null)
+  const timerStartRef = useRef(0)
+  const idleTimeoutRef = useRef<number | null>(null)
+  const phaseRef = useRef<"idle" | "out" | "in">("idle")
+  const minWaitRef = useRef<number | null>(null)
 
-  const [overlayState, setOverlayState] = useState<"idle" | "covering" | "revealing">("idle")
+  const [phase, setPhase] = useState<"idle" | "out" | "in">("idle")
+  const [elapsed, setElapsed] = useState(0)
 
   const routeKey = `${pathname}?${searchParams.toString()}`
 
+  /* ── helpers ─────────────────────────────────────── */
+
+  const stopTimer = () => {
+    if (timerIntervalRef.current !== null) {
+      clearInterval(timerIntervalRef.current)
+      timerIntervalRef.current = null
+    }
+  }
+
+  const cancelIdle = () => {
+    if (idleTimeoutRef.current !== null) {
+      clearTimeout(idleTimeoutRef.current)
+      idleTimeoutRef.current = null
+    }
+  }
+
+  const scheduleIdle = (delay: number) => {
+    cancelIdle()
+    idleTimeoutRef.current = window.setTimeout(() => {
+      setPhase("idle")
+      phaseRef.current = "idle"
+      setElapsed(0)
+      document.body.style.overflow = ""
+      idleTimeoutRef.current = null
+    }, delay)
+  }
+
+  /* ── zoom out when navigating, zoom in when done ── */
+
   useEffect(() => {
     if (isNavigating) {
-      if (overlayTimerRef.current !== null) {
-        window.clearTimeout(overlayTimerRef.current)
-        overlayTimerRef.current = null
+      cancelIdle()
+      if (minWaitRef.current) {
+        clearTimeout(minWaitRef.current)
+        minWaitRef.current = null
       }
 
-      setOverlayState("covering")
+      setPhase("out")
+      phaseRef.current = "out"
+
+      // Start count-up timer
+      timerStartRef.current = Date.now()
+      setElapsed(0)
+      timerIntervalRef.current = window.setInterval(() => {
+        setElapsed(Date.now() - timerStartRef.current)
+      }, 10)
+
+      // Lock scrolling
+      document.body.style.overflow = "hidden"
       return
     }
 
-    if (overlayState === "covering") {
-      setOverlayState("idle")
+    // Navigation ended (or was cancelled) while zoomed out
+    if (phaseRef.current === "out") {
+      const elapsedTime = Date.now() - timerStartRef.current
+      const MIN_WAIT = 500 // force a smooth pause before dropping in
+      const remaining = Math.max(0, MIN_WAIT - elapsedTime)
+
+      minWaitRef.current = window.setTimeout(() => {
+        stopTimer()
+        setPhase("in")
+        phaseRef.current = "in"
+        scheduleIdle(1000)
+      }, remaining)
     }
-  }, [isNavigating, overlayState])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isNavigating])
+
+  /* ── scroll-to-top + entering animation on route change ── */
 
   useLayoutEffect(() => {
     if (prevRouteKey.current === null) {
       prevRouteKey.current = routeKey
       return
     }
-
-    if (prevRouteKey.current === routeKey) {
-      return
-    }
-
+    if (prevRouteKey.current === routeKey) return
     prevRouteKey.current = routeKey
 
-    // Only force top for real page changes without a hash target.
-    // Hash-based navigation is handled elsewhere by the stable hash scroll logic.
+    // Scroll to top for non-hash navigations
     if (!window.location.hash) {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "auto",
-      })
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" })
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
     }
 
-    const el = ref.current
-    if (el && !document.startViewTransition) {
+    // Fallback entering animation (browsers without View Transitions API)
+
+    // Fallback entering animation (browsers without View Transitions API)
+    const el = contentRef.current
+    if (el && !(document as any).startViewTransition) {
       el.classList.remove("page-entering")
-      // Force reflow so the class re-triggers the animation
       void el.offsetWidth
       el.classList.add("page-entering")
-
-      const onEnd = () => el.classList.remove("page-entering")
-      el.addEventListener("animationend", onEnd, { once: true })
+      el.addEventListener(
+        "animationend",
+        () => el.classList.remove("page-entering"),
+        { once: true },
+      )
     }
-
-    setOverlayState("revealing")
-
-    if (overlayTimerRef.current !== null) {
-      window.clearTimeout(overlayTimerRef.current)
-    }
-
-    overlayTimerRef.current = window.setTimeout(() => {
-      setOverlayState("idle")
-      overlayTimerRef.current = null
-    }, OVERLAY_RESET_DELAY)
   }, [routeKey])
+
+  /* ── cleanup ── */
 
   useEffect(() => {
     return () => {
-      if (overlayTimerRef.current !== null) {
-        window.clearTimeout(overlayTimerRef.current)
-      }
+      stopTimer()
+      cancelIdle()
+      if (minWaitRef.current) clearTimeout(minWaitRef.current)
+      document.body.style.overflow = ""
     }
   }, [])
 
+  /* ── timer format: SS.cc ── */
+
+  const fmt = (ms: number) => {
+    const s = Math.floor(ms / 1000)
+    const cs = Math.floor((ms % 1000) / 10)
+    return `${String(s).padStart(2, "0")}.${String(cs).padStart(2, "0")}`
+  }
+
   return (
-    <div className="page-transition-shell" data-nav-overlay={overlayState}>
-      <div ref={ref} style={{ minHeight: 0 }}>
+    <div className="page-transition-shell">
+      {/* Zoomable content wrapper */}
+      <div
+        ref={contentRef}
+        className="page-transition-content"
+        data-phase={phase}
+      >
         {children}
       </div>
-      <div aria-hidden="true" className="page-transition-overlay" />
+
+      {/* Centre overlay — corner brackets + count-up timer */}
+      <div
+        className="page-transition-overlay-center"
+        data-phase={phase}
+        aria-hidden="true"
+      >
+        <div className="relative flex items-center justify-center w-32 h-24">
+          {/* Corner framelines (echoing the 404 rangefinder) */}
+          <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-foreground/20" />
+          <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-foreground/20" />
+          <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-foreground/20" />
+          <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-foreground/20" />
+
+          {/* Timer readout */}
+          <span className="font-mono text-[12px] tracking-[0.25em] text-secondary tabular-nums">
+            {fmt(elapsed)}
+          </span>
+        </div>
+      </div>
     </div>
   )
 }
