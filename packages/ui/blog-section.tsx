@@ -138,6 +138,7 @@ export default function BlogSection({ section, title, sectionId = "blog", initia
                 imageUrl={post.imageUrl}
                 priority={index < 3}
                 index={index}
+                locked={post.locked}
               />
             ))
           )}

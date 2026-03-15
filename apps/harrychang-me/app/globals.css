@@ -118,7 +118,7 @@
 
 /* React-driven fallback: .page-entering class applied on route change */
 .page-entering {
-  animation: page-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: page-enter 500ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .page-transition-shell {
@@ -145,7 +145,7 @@
   pointer-events: none;
   opacity: 0;
   background: hsl(var(--background));
-  transition: opacity 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 250ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .page-transition-overlay-center[data-phase="out"] {

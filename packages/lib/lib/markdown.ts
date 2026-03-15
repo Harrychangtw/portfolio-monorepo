@@ -594,7 +594,6 @@ export function getAllPostsMetadata(locale: string = 'en'): PostMetadata[] {
           ...data,
         }
       })
-      .filter(post => !post.locked)
 
     // Sort posts: pinned first, then by date
     return allPostsData.sort((a, b) => {
@@ -959,7 +958,10 @@ export async function getNextPost(currentSlug: string) {
   while (attempts < allPosts.length) {
     const candidate = allPosts[nextIndex]
 
-    if (candidate.slug !== currentSlug) {
+    // Evaluate against the post's standard release date
+    const isUnlocked = !candidate.locked || (candidate.locked && new Date(candidate.date).getTime() <= Date.now());
+
+    if (candidate.slug !== currentSlug && isUnlocked) {
       return {
         slug: candidate.slug,
         title: candidate.title,
