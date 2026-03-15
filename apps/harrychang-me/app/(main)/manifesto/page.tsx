@@ -357,39 +357,48 @@ export default function ManifestoPage() {
             </div>
             
             <div className={`transition-opacity duration-1000 ${introComplete ? 'opacity-100' : 'opacity-0'}`}>
-                <div className="container min-h-screen py-24 md:py-24">
-                    <div className="max-w-4xl mx-auto">
-                        <article className="space-y-20 md:space-y-20 px-4 md:px-12">
-                            {manifestoChunks.map((chunk, chunkIndex) => {
-                                const isActive = activeChunks[chunkIndex];
-                                return (
-                                    <div
-                                        key={chunkIndex}
-                                        ref={(el) => { chunkRefs.current[chunkIndex] = el; }}
-                                        data-index={chunkIndex}
-                                        className={`
-                                            space-y-4 transition-all duration-700 ease-in-out will-change-[opacity,filter]
-                                            ${isActive 
-                                                ? 'opacity-100 translate-y-0 scale-100' 
-                                                : 'opacity-20 translate-y-2 scale-[0.98]'
-                                            }
-                                        `}
-                                    >
+                <div className="container min-h-screen py-24 md:py-32">
+                    <article>
+                        {manifestoChunks.map((chunk, chunkIndex) => {
+                            const isActive = activeChunks[chunkIndex];
+                            return (
+                                <div
+                                    key={chunkIndex}
+                                    ref={(el) => { chunkRefs.current[chunkIndex] = el; }}
+                                    data-index={chunkIndex}
+                                    className={`
+                                        grid grid-cols-12 gap-4 md:gap-6 py-10 md:py-14 border-t border-border
+                                        transition-all duration-700 ease-in-out will-change-[opacity,filter]
+                                        ${isActive 
+                                            ? 'opacity-100 translate-y-0 scale-100' 
+                                            : 'opacity-20 translate-y-2 scale-[0.94]'
+                                        }
+                                    `}
+                                >
+                                    {/* Stanza number */}
+                                    <div className="col-span-1 hidden md:block">
+                                        <span className="font-mono text-xs text-secondary">
+                                            {String(chunkIndex + 1).padStart(2, "0")}
+                                        </span>
+                                    </div>
+
+                                    {/* Stanza text - Anchored to the center line */}
+                                    <div className="col-span-12 md:col-start-7 md:col-span-6 space-y-4">
                                         {chunk.map((line, lineIndex) => (
                                             <p 
                                                 key={`${chunkIndex}-${lineIndex}`} 
-                                                className="md:text-lg text-foreground"
+                                                className="md:text-xl text-foreground leading-relaxed"
                                             >
                                                 {line}
                                             </p>
                                         ))}
                                     </div>
-                                );
-                            })}
-                        </article>
-                        {/* Extra padding at bottom to allow last item to reach center */}
-                        <div className="h-[10vh]" /> 
-                    </div>
+                                </div>
+                            );
+                        })}
+                    </article>
+                    {/* Extra padding at bottom to allow last item to reach center */}
+                    <div className="h-[10vh]" /> 
                 </div>
             </div>
         </div>

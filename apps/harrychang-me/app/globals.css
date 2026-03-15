@@ -135,6 +135,14 @@
 }
 
 /* Centre overlay: frosted scrim + timer frame */
+:root {
+  /* Easily adjust the reveal timings here */
+  --reveal-duration: 1000ms;
+  --reveal-half: 500ms; /* Duration for each expansion phase (width, then height) */
+  --reveal-ease-horizontal: cubic-bezier(0, 0.85, 0.15, 1);
+  --reveal-ease-vertical: cubic-bezier(0.90, 0.0, 0.10, 1); /* Cinematic ease-in-out */
+}
+
 .page-transition-overlay-center {
   position: fixed;
   inset: 0;
@@ -144,8 +152,7 @@
   justify-content: center;
   pointer-events: none;
   opacity: 0;
-  background: hsl(var(--background));
-  transition: opacity 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 150ms ease-out;
 }
 
 .page-transition-overlay-center[data-phase="out"] {
@@ -154,14 +161,62 @@
 }
 
 .page-transition-overlay-center[data-phase="in"] {
-  opacity: 0;
+  opacity: 1; /* Keep the overlay active during the reveal animation */
   transition-delay: 0ms;
 }
 
 .page-transition-overlay-center[data-phase="idle"] {
   opacity: 0;
   visibility: hidden;
-  transition: none;
+  transition: none; /* Instant cleanup after idle */
+}
+
+/* Ensure all internal elements instantly snap back to their default states 
+   without invisible transitions that could be paused by the browser */
+.page-transition-overlay-center[data-phase="idle"] * {
+  transition: none !important;
+}
+
+/* ── Reveal Animation Styles ── */
+.reveal-frame {
+  width: 8rem;  /* w-32 */
+  height: 6rem; /* h-24 */
+  /* Expands horizontally first, then vertically */
+  transition: width var(--reveal-half) var(--reveal-ease-horizontal),
+              height var(--reveal-half) var(--reveal-ease-vertical) 150ms;
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-frame {
+  width: 100vw;
+  height: 100vh;
+}
+
+.reveal-backdrop {
+  /* box-shadow extends infinitely to cover the screen outside the frame */
+  box-shadow: 0 0 0 100vmax hsl(var(--background));
+  background: hsl(var(--background));
+  transition: background-color 0.15s ease;
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-backdrop {
+  /* Inner frame becomes transparent, creating a window to the new page */
+  background: transparent;
+}
+
+.reveal-timer {
+  transition: opacity 0.2s ease;
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-timer {
+  opacity: 0;
+}
+
+.reveal-corner {
+  transition: opacity 0.2s ease 800ms; /* Fade out at the tail end of the expansion */
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-corner {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

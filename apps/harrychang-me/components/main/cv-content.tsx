@@ -132,7 +132,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       {/* ── Name ──────────────────────────────────────────── */}
       <div className="mb-6 md:mb-8 flex flex-col md:flex-row md:justify-between md:items-baseline"
       >
-        <h1 className="font-heading text-[clamp(2.25rem,5.5vw,4.5rem)] font-medium tracking-[-0.02em] text-foreground leading-[0.95]">
+        <h1 className="font-heading text-[clamp(2.25rem,5.5vw,4.5rem)] font-regular tracking-[-0.02em] text-foreground leading-[0.95]">
           {t("header.name", "cv")}
         </h1>
       </div>

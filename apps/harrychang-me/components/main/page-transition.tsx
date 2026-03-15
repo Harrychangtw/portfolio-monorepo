@@ -91,14 +91,14 @@ export default function PageTransition({ children }: { children: ReactNode }) {
     // Navigation ended (or was cancelled) while zoomed out
     if (phaseRef.current === "out") {
       const elapsedTime = Date.now() - timerStartRef.current
-      const MIN_WAIT = 500 // force a smooth pause before dropping in
+      const MIN_WAIT = 250 // force a smooth pause before dropping in
       const remaining = Math.max(0, MIN_WAIT - elapsedTime)
 
       minWaitRef.current = window.setTimeout(() => {
         stopTimer()
         setPhase("in")
         phaseRef.current = "in"
-        scheduleIdle(1000)
+        scheduleIdle(800)
       }, remaining)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -173,15 +173,18 @@ export default function PageTransition({ children }: { children: ReactNode }) {
         data-phase={phase}
         aria-hidden="true"
       >
-        <div className="relative flex items-center justify-center w-32 h-24">
+        <div className="reveal-frame relative flex items-center justify-center">
+          {/* Outer solid mask that frames the center window */}
+          <div className="reveal-backdrop absolute inset-0 pointer-events-none" />
+
           {/* Corner framelines (echoing the 404 rangefinder) */}
-          <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-foreground/20" />
-          <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-foreground/20" />
-          <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-foreground/20" />
-          <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-foreground/20" />
+          <div className="reveal-corner absolute top-0 left-0 w-3 h-3 border-t border-l border-foreground/20" />
+          <div className="reveal-corner absolute top-0 right-0 w-3 h-3 border-t border-r border-foreground/20" />
+          <div className="reveal-corner absolute bottom-0 left-0 w-3 h-3 border-b border-l border-foreground/20" />
+          <div className="reveal-corner absolute bottom-0 right-0 w-3 h-3 border-b border-r border-foreground/20" />
 
           {/* Timer readout */}
-          <span className="font-mono text-[12px] tracking-[0.25em] text-secondary tabular-nums">
+          <span className="reveal-timer relative z-10 font-mono text-[12px] tracking-[0.25em] text-secondary tabular-nums">
             {fmt(elapsed)}
           </span>
         </div>
