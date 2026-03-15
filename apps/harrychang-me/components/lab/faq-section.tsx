@@ -45,7 +45,7 @@ export default function FaqSection() {
 
             {/* Question */}
             <div className="col-span-12 md:col-span-4">
-              <h3 className="font-heading font-medium text-foreground leading-snug">
+              <h3 className="font-heading font-medium text-primary leading-snug">
                 {t(`lab.faq.${key}`, "common")}
               </h3>
             </div>

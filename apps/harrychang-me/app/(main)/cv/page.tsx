@@ -1,5 +1,6 @@
 import { siteConfig } from '@/config/site'
 import type { Metadata } from 'next'
+import CvContent from '@/components/main/cv-content'
 
 export const metadata: Metadata = {
   title: 'Harry Chang 張祺煒 | Curriculum Vitae',
@@ -20,10 +21,5 @@ export const metadata: Metadata = {
 }
 
 export default function ResumePage() {
-  return (
-    <div className="flex h-[50vh] items-center justify-center text-muted-foreground">
-      <meta httpEquiv="refresh" content={`0;url=${siteConfig.external.cv}`} />
-      <p>Redirecting to CV...</p>
-    </div>
-  )
+  return <CvContent pdfUrl={siteConfig.external.cv} />
 }

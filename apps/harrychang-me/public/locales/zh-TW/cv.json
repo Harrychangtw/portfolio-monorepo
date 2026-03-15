@@ -1,0 +1,227 @@
+{
+  "header": {
+    "name": "張祺煒",
+    "location": "台灣，台北",
+    "viewPdf": "查看 PDF"
+  },
+  "sections": {
+    "summary": {
+      "title": "簡介",
+      "content": "充滿熱忱的高三學生，在 AI 研究、軟體開發與領導力方面具經驗。具備交付高影響力成果的能力，包含以第一作者身分於 TMLR、EACL 發表研究論文，以及開發屢獲殊榮的 RAG 系統。熱衷於運用科技解決複雜問題，並專注於大型語言模型安全性與人工智慧倫理。精通中文與英文。"
+    },
+    "education": {
+      "title": "學歷",
+      "items": [
+        {
+          "title": "國立台灣大學 (NTU)",
+          "subtitle": "資訊工程學系 學士",
+          "meta": "台灣，台北",
+          "date": "預計 September 2026 入學",
+          "bullets": [
+            "特殊選才入學",
+            "正取一 · 總分 91.25 · 面試分數 95"
+          ]
+        },
+        {
+          "title": "靜心高中",
+          "subtitle": "高中部",
+          "meta": "台灣，台北",
+          "date": "預計 June 2026 畢業",
+          "bullets": [
+            "榮獲哈佛書卷獎 (Harvard Prize Book)",
+            "GPA: 4.01 / 4.30 (校排 4)",
+            "AI 研究計畫 · 程式競賽 (圖靈計畫)",
+            "APCS: 4/4 · 雅思 8.5",
+            "2025 哈佛大學 Crimson Quiz Bowl (CS): 全球第二名 · 台灣個人冠軍"
+          ]
+        },
+        {
+          "title": "靜心國中",
+          "subtitle": "雙語班 畢業",
+          "meta": "台灣，台北",
+          "date": "June 2023 畢業",
+          "bullets": [
+            "2020 Robofest 機器人世界錦標賽 未知任務 — 全球第一名",
+            "英語辯論校隊 · 學校合唱團 · 遊戲開發 (Unity)"
+          ]
+        }
+      ]
+    },
+    "research": {
+      "title": "研究與開發",
+      "items": [
+        {
+          "title": "AI 研究實習生",
+          "subtitle": "奧義智慧科技 (CyCraft Technology)",
+          "meta": "台灣，台北",
+          "date": "Sep 2025 – Present",
+          "bullets": [
+            "最年輕實習生；由資安研究處長邀請",
+            "研究大型語言模型系統中安全性及可解釋性"
+          ]
+        },
+        {
+          "title": "首席 AI 研究員與開發者",
+          "subtitle": "Chingshin RAGi — GenAI Stars 第一名",
+          "meta": "台灣，台北",
+          "date": "April 2024 – Present",
+          "bullets": [
+            "榮獲國科會 GenAI Stars 生成式 AI 百工百業應用選拔 特優 (2024)",
+            "為校園 AI 溝通工具開發客製化 RAG 系統",
+            "從零建置後端 (Python, SQLite, 混合 BM25/ANN) 與前端 (Svelte)"
+          ]
+        },
+        {
+          "title": "獨立 AI 研究員",
+          "subtitle": "LLM 安全性與應用",
+          "meta": "台灣，台北",
+          "date": "September 2023 – Present",
+          "bullets": [
+            "以第一作者身分發表 FORTRESS (TMLR) 與 PATCH 資料集 (EACL 2026 SRW)",
+            "製作 LLM 安全性教育影片，入選 AAAI 2025",
+            "於 SITCON 2025 發表 40 分鐘的 RAG 技術主題演講",
+            "開發 CNN 驗證碼破解器 (100% 準確率) 與 Transformer 交易模型"
+          ]
+        },
+        {
+          "title": "核心成員，AI 研究計畫",
+          "subtitle": "靜心高中與數位發展部 AIGO 計畫",
+          "meta": "台灣，台北",
+          "date": "September 2022 – September 2024",
+          "bullets": [
+            "自學進階 AI 知識；每週進行研究簡報",
+            "AIGO 計畫：綜合表現獎 (2024) · 傑出表現獎 (2025)",
+            "帶領黑客松獲獎團隊；於閉幕典禮發表演講",
+            "受邀擔任 2025 AI WAVE SHOW 開場講者"
+          ]
+        }
+      ]
+    },
+    "leadership": {
+      "title": "領導力與設計",
+      "items": [
+        {
+          "title": "副會長與設計總監",
+          "subtitle": "學生會 — 靜心高中",
+          "meta": "台灣，台北",
+          "date": "August 2023 – January 2025",
+          "bullets": [
+            "主導全校性活動的品牌建立、平面設計與周邊商品",
+            "為學校 73 週年校慶主舞台設計主視覺識別"
+          ]
+        },
+        {
+          "title": "首席程式設計師與多媒體總監",
+          "subtitle": "VEX 機器人校隊 — 靜心高中",
+          "meta": "台灣，台北",
+          "date": "September 2022 – Present",
+          "bullets": [
+            "以物件導向原則主導 C++ 程式開發；指導新進成員",
+            "設計團隊服裝；透過錄影與攝影紀錄團隊歷程"
+          ]
+        },
+        {
+          "title": "導演、剪輯與攝影師",
+          "subtitle": "學校製作與活動",
+          "meta": "台灣，台北",
+          "date": "September 2022 – Present",
+          "bullets": [
+            "執導、拍攝並剪輯超過 10 支學校大型影片 (DaVinci Resolve)",
+            "擔任超過 30 場學校活動的志工主攝影師"
+          ]
+        },
+        {
+          "title": "核心團隊與多媒體總監",
+          "subtitle": "無界之聲 (Boundless Voices) 慈善音樂會",
+          "meta": "台灣，台北",
+          "date": "September 2023 – August 2023",
+          "bullets": [
+            "參與劇本撰寫、影片製作與手冊設計",
+            "榮獲台北市服務學習銀獎"
+          ]
+        },
+        {
+          "title": "辯論員與公開講者",
+          "subtitle": "靜心高中與各大平台",
+          "meta": "台灣，台北",
+          "date": "September 2023 – Present",
+          "bullets": [
+            "復興盃英語辯論賽 冠軍與大會第三最佳辯士 (2025)",
+            "台灣高中生英語辯論賽 (TSDC) 準決賽 (2023, 2024)",
+            "外交部外交小尖兵 全國第五名 (2023)",
+            "2024 國際 PBL 與數位教學論壇 主持人"
+          ]
+        }
+      ]
+    },
+    "publications": {
+      "title": "發表論文",
+      "items": [
+        {
+          "title": "FORTRESS: Fast, Tuning-Free Retrieval Ensemble for Scalable LLM Safety",
+          "meta": "",
+          "date": "July 2025",
+          "description": "Chi-Wei Chang, et al. — Transactions on Machine Learning Research (TMLR)"
+        },
+        {
+          "title": "PATCH Dataset: Empowering Traditional Chinese Safety Classifiers for Lightweight LLM",
+          "meta": "",
+          "date": "February 2026",
+          "description": "Chi-Wei Chang, et al. — EACL 2026 Student Research Workshop (SRW)"
+        }
+      ]
+    },
+    "projects": {
+      "title": "精選專案",
+      "items": [
+        {
+          "title": "個人作品集網站",
+          "meta": "",
+          "date": "2024",
+          "bullets": [
+            "採用 Markdown CMS 與雙網域架構的高效能網站",
+            "手機與電腦版首頁 Lighthouse 跑分雙 100；4000+ 訪客下達到 100 RES"
+          ]
+        },
+        {
+          "title": "2022 Robofest 機器人錦標賽 — 未知任務",
+          "meta": "",
+          "date": "2022",
+          "bullets": [
+            "全球第一名；負責設計、組裝與程式開發",
+            "為機器人攀爬機制發明了一套新穎的掛鉤系統"
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "title": "技能",
+      "items": [
+        {
+          "category": "AI 與機器學習",
+          "skills": "LLMs · RAG · NLP · CNN · Transformers · 對抗性訓練 · 微調 (PEFT) · PyTorch · NumPy"
+        },
+        {
+          "category": "程式開發",
+          "skills": "Python · C++ · JavaScript (Next.js, Svelte, TypeScript) · SQL · Git · REST APIs · Docker"
+        },
+        {
+          "category": "設計",
+          "skills": "DaVinci Resolve · Adobe 軟體 · Affinity 軟體 · Figma · Blender · 攝影 · 錄影"
+        },
+        {
+          "category": "語言",
+          "skills": "中文 (母語) · 英文 (CEFR C2)"
+        },
+        {
+          "category": "其他",
+          "skills": "公眾演講 · 領導力 · 辯論 · 活動企劃 · 研究與學術寫作"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "text": "張祺煒 · 履歷 · February 2026",
+    "downloadPdf": "下載完整 PDF"
+  }
+}

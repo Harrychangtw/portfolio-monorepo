@@ -1,0 +1,227 @@
+{
+  "header": {
+    "name": "Chang Chi-Wei",
+    "location": "Taipei, Taiwan",
+    "viewPdf": "View PDF"
+  },
+  "sections": {
+    "summary": {
+      "title": "Summary",
+      "content": "Highly motivated 12th-grade student with deep experience in AI research, software development, and leadership. Proven ability to deliver high-impact results, including first-authored research published at TMLR and an award-winning RAG system. Passionate about leveraging technology for complex problem-solving, with a focus on LLM safety and ethical AI. Fluent in Mandarin and English."
+    },
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "title": "National Taiwan University (NTU)",
+          "subtitle": "B.S. in Computer Science and Information Engineering",
+          "meta": "Taipei, Taiwan",
+          "date": "Expected Sep 2026",
+          "bullets": [
+            "Admission via Special Talent Selection",
+            "Rank 1 (正取一) · Total Score 91.25 · Interview Score 95"
+          ]
+        },
+        {
+          "title": "Chingshin Academy",
+          "subtitle": "High School",
+          "meta": "Taipei, Taiwan",
+          "date": "Expected Jun 2026",
+          "bullets": [
+            "Awarded the Harvard Prize Book",
+            "GPA: 4.01 / 4.30 (Rank 4 / Year)",
+            "AI Research Program · Competitive Programming (Turing Program)",
+            "APCS: 4/4 · IELTS 8.5 · TOEIC 965",
+            "Harvard Crimson Quiz Bowl 2025 (CS): Global 2nd Place · Individual Champion (Taiwan)"
+          ]
+        },
+        {
+          "title": "Chingshin Middle School",
+          "subtitle": "Bilingual Program Graduate",
+          "meta": "Taipei, Taiwan",
+          "date": "Graduated Jun 2023",
+          "bullets": [
+            "Robofest 2020 Unknown Mission — 1st Place Worldwide (VEX IQ)",
+            "Debate Team · School Choir · Game Development (Unity)"
+          ]
+        }
+      ]
+    },
+    "research": {
+      "title": "Research & Development",
+      "items": [
+        {
+          "title": "AI Research Intern",
+          "subtitle": "CyCraft Technology",
+          "meta": "Taipei, Taiwan",
+          "date": "Sep 2025 – Present",
+          "bullets": [
+            "Youngest intern; personally invited by the Security Research Director",
+            "Researching divergence between model safety and interoperability in LLM systems"
+          ]
+        },
+        {
+          "title": "Lead AI Researcher & Developer",
+          "subtitle": "Chingshin RAGi — GenAI Stars 1st Prize Winner",
+          "meta": "Taipei, Taiwan",
+          "date": "Apr 2024 – Present",
+          "bullets": [
+            "Won 1st Prize at the NSTC GenAI Stars Competition (Oct 2024)",
+            "Engineered a custom RAG system for school AI communication tool",
+            "Built backend (Python, SQLite, hybrid BM25/ANN) and frontend (Svelte) from scratch"
+          ]
+        },
+        {
+          "title": "Independent AI Researcher",
+          "subtitle": "LLM Safety & Applications",
+          "meta": "Taipei, Taiwan",
+          "date": "Sep 2023 – Present",
+          "bullets": [
+            "First-authored FORTRESS (TMLR) and PATCH Dataset (EACL 2026 SRW)",
+            "Created educational AI video on LLM safety, selected for AAAI 2025",
+            "Delivered 40-minute keynote on RAG technology at SITCON 2025",
+            "Built CNN CAPTCHA solver (100% accuracy) and Transformer trading model"
+          ]
+        },
+        {
+          "title": "Core Member, AI Research Programs",
+          "subtitle": "Chingshin Academy & AIGO Program (MODA)",
+          "meta": "Taipei, Taiwan",
+          "date": "Sep 2022 – Sep 2024",
+          "bullets": [
+            "Self-studied advanced AI; delivered weekly research presentations",
+            "AIGO: Overall Excellence Award (2024) · Outstanding Performance Award (2025)",
+            "Led winning hackathon team; delivered closing ceremony speech",
+            "Invited opening speaker at AI WAVE SHOW 2025"
+          ]
+        }
+      ]
+    },
+    "leadership": {
+      "title": "Leadership & Design",
+      "items": [
+        {
+          "title": "Vice President & Design Lead",
+          "subtitle": "Student Council — Chingshin Academy",
+          "meta": "Taipei, Taiwan",
+          "date": "Aug 2023 – Jan 2025",
+          "bullets": [
+            "Spearheaded branding, graphic design, and merchandise for school-wide events",
+            "Created key visual identity for the school's 73rd anniversary main stage"
+          ]
+        },
+        {
+          "title": "Lead Programmer & Multimedia Lead",
+          "subtitle": "VEX Robotics — Chingshin Academy",
+          "meta": "Taipei, Taiwan",
+          "date": "Sep 2022 – Present",
+          "bullets": [
+            "Led C++ programming with OOP principles; mentored new members",
+            "Designed team apparel; documented journey through videography and photography"
+          ]
+        },
+        {
+          "title": "Director, Editor & Photographer",
+          "subtitle": "School Productions & Events",
+          "meta": "Taipei, Taiwan",
+          "date": "Sep 2022 – Present",
+          "bullets": [
+            "Directed, filmed, and edited 10+ major school videos (DaVinci Resolve)",
+            "Lead volunteer photographer for 30+ school events"
+          ]
+        },
+        {
+          "title": "Core Team & Multimedia Lead",
+          "subtitle": "Boundless Voices Charity Concert",
+          "meta": "Taipei, Taiwan",
+          "date": "Jan – Aug 2023",
+          "bullets": [
+            "Contributed to scriptwriting, video production, and brochure design",
+            "Silver Award — Taipei City Service Learning Award"
+          ]
+        },
+        {
+          "title": "Debater & Public Speaker",
+          "subtitle": "Chingshin Academy & Various Platforms",
+          "meta": "Taipei, Taiwan",
+          "date": "Sep 2020 – Present",
+          "bullets": [
+            "Champion & Overall 3rd Best Speaker, Fushing Debate Open (2025)",
+            "Semi-Finalist, Taiwan Schools Debating Championships (2023, 2024)",
+            "National 5th Place, Young Diplomats Program (MOFA, 2023)",
+            "Lead Host, 2024 International PBL & Digital Teaching Forum"
+          ]
+        }
+      ]
+    },
+    "publications": {
+      "title": "Publications",
+      "items": [
+        {
+          "title": "FORTRESS: Fast, Tuning-Free Retrieval Ensemble for Scalable LLM Safety",
+          "meta": "",
+          "date": "July 2025",
+          "description": "Chi-Wei Chang, et al. — Transactions on Machine Learning Research (TMLR)"
+        },
+        {
+          "title": "PATCH Dataset: Empowering Traditional Chinese Safety Classifiers for Lightweight LLM",
+          "meta": "",
+          "date": "February 2026",
+          "description": "Chi-Wei Chang, et al. — EACL 2026 Student Research Workshop (SRW)"
+        }
+      ]
+    },
+    "projects": {
+      "title": "Selected Projects",
+      "items": [
+        {
+          "title": "Personal Portfolio Website",
+          "meta": "",
+          "date": "2024",
+          "bullets": [
+            "High-performance site with Markdown CMS and dual-domain architecture",
+            "Lighthouse 100 on both mobile and desktop; 100 RES under 4k+ visitors"
+          ]
+        },
+        {
+          "title": "Robofest 2022 — Unknown Mission (VEX IQ)",
+          "meta": "",
+          "date": "2022",
+          "bullets": [
+            "1st Place Worldwide; responsible for design, build, and programming",
+            "Invented a novel hook system for the robot climbing mechanism"
+          ]
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "items": [
+        {
+          "category": "AI & ML",
+          "skills": "LLMs · RAG · NLP · CNN · Transformers · Adversarial Training · Fine-tuning (PEFT) · PyTorch · NumPy"
+        },
+        {
+          "category": "Development",
+          "skills": "Python · C++ · JavaScript (Next.js, Svelte, TypeScript) · SQL · Git · REST APIs · Docker"
+        },
+        {
+          "category": "Design",
+          "skills": "DaVinci Resolve · Adobe Suite · Affinity Suite · Figma · Blender · Photography · Videography"
+        },
+        {
+          "category": "Languages",
+          "skills": "Mandarin (Native) · English (IELTS 8.5)"
+        },
+        {
+          "category": "Other",
+          "skills": "Public Speaking · Leadership · Debate · Event Management · Research & Academic Writing"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 Feb",
+    "downloadPdf": "Download Full PDF"
+  }
+}

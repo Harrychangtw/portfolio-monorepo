@@ -115,7 +115,7 @@ export function LanguageProvider({ children, englishOnly = false }: { children: 
   const loadTranslations = async (lang: Language) => {
     setIsLoading(true)
     try {
-      const namespaces = ['common', 'about', 'updates', 'uses']
+      const namespaces = ['common', 'about', 'updates', 'uses', 'cv']
       const translationPromises = namespaces.map(async (namespace) => {
         // In dev: Add timestamp to URL to force fresh fetch
         // In prod: Clean URL allows standard caching
