@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "motion/react"
+import { motion, AnimatePresence } from "framer-motion"
 import NavigationLink from "@portfolio/ui/navigation-link"
 import { ImageContainer } from "@portfolio/ui/image-container"
 
@@ -87,7 +87,7 @@ export default function BlogCard({
     }
 
     // Degrade to a non-clickable block when locked to hide the route from DOM
-    const Wrapper = isEffectivelyLocked ? "div" : NavigationLink
+    const Wrapper = (isEffectivelyLocked ? "div" : NavigationLink) as React.ElementType;
     const wrapperProps = isEffectivelyLocked
         ? { className: "block flex flex-col h-full cursor-default" }
         : { href: `/blog/${slug}`, className: "block flex flex-col h-full" }
