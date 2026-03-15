@@ -1,6 +1,6 @@
 {
   "header": {
-    "name": "張祺煒",
+    "name": "張祺煒 Chi-Wei Chang",
     "location": "台灣，台北",
     "viewPdf": "查看 PDF"
   },
@@ -13,7 +13,7 @@
       "title": "學歷",
       "items": [
         {
-          "title": "國立台灣大學 (NTU)",
+          "title": "國立臺灣大學 (NTU)",
           "subtitle": "資訊工程學系 學士",
           "meta": "台灣，台北",
           "date": "預計 September 2026 入學",
@@ -52,7 +52,7 @@
       "items": [
         {
           "title": "AI 研究實習生",
-          "subtitle": "奧義智慧科技 (CyCraft Technology)",
+          "subtitle": "奧義智慧科技股份有限公司 (CyCraft Technology)",
           "meta": "台灣，台北",
           "date": "Sep 2025 – Present",
           "bullets": [
@@ -132,7 +132,7 @@
         },
         {
           "title": "核心團隊與多媒體總監",
-          "subtitle": "無界之聲 (Boundless Voices) 慈善音樂會",
+          "subtitle": "無界之聲慈善音樂會",
           "meta": "台灣，台北",
           "date": "September 2023 – August 2023",
           "bullets": [
@@ -199,7 +199,7 @@
       "items": [
         {
           "category": "AI 與機器學習",
-          "skills": "LLMs · RAG · NLP · CNN · Transformers · 對抗性訓練 · 微調 (PEFT) · PyTorch · NumPy"
+          "skills": "LLMs · RAG · NLP · CNN · Transformers · 對抗性訓練 · PEFT · PyTorch · NumPy"
         },
         {
           "category": "程式開發",

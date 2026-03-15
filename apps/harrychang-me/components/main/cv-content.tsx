@@ -27,13 +27,7 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-25px" }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border"
-    >
+    <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
         <span className="font-mono text-xs text-secondary">
@@ -52,7 +46,7 @@ function Section({
       <div className="col-span-12 md:col-start-7 md:col-span-6">
         {children}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -136,24 +130,15 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
   return (
     <article className="container mt-24 md:mt-32 mb-24 md:mb-32">
       {/* ── Name ──────────────────────────────────────────── */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.05 }}
-        className="mb-6 md:mb-8 flex flex-col md:flex-row md:justify-between md:items-baseline"
+      <div className="mb-6 md:mb-8 flex flex-col md:flex-row md:justify-between md:items-baseline"
       >
         <h1 className="font-heading text-[clamp(2.25rem,5.5vw,4.5rem)] font-medium tracking-[-0.02em] text-foreground leading-[0.95]">
           {t("header.name", "cv")}
         </h1>
-      </motion.div>
+      </div>
 
       {/* ── Contact + PDF link ─────────────────────────────── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.15 }}
-        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-12 md:mb-16"
-      >
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-12 md:mb-16">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-body text text-primary">
           <span>{t("header.location", "cv")}</span>
           <span className="text-border">—</span>
@@ -172,7 +157,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
             <ArrowUpRight className="w-4 h-4 text-secondary transition-all duration-300 group-hover:text-accent" />
           </a>
         </motion.div>
-      </motion.div>
+      </div>
       {/* ════════════════════════════════════════════════════
          Sections
          ════════════════════════════════════════════════════ */}
@@ -282,13 +267,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       </Section>
 
       {/* ── Footer ────────────────────────────────────────── */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="border-t border-border pt-8 md:pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-      >
+      <div className="border-t border-border pt-8 md:pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <span className="font-body text-sm text-secondary uppercase">
           {t("footer.text", "cv")}
         </span>
@@ -303,7 +282,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
             <ArrowUpRight className="w-4 h-4 text-secondary transition-all duration-300 group-hover:text-accent" />
           </a>
         </motion.div>
-      </motion.div>
+      </div>
     </article>
   );
 }
