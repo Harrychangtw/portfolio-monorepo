@@ -152,16 +152,18 @@
   justify-content: center;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 150ms ease-out;
+  transition: opacity 250ms ease-out;
 }
 
 .page-transition-overlay-center[data-phase="out"] {
   opacity: 1;
+  pointer-events: auto;
   transition-delay: 0ms;
 }
 
 .page-transition-overlay-center[data-phase="in"] {
   opacity: 1; /* Keep the overlay active during the reveal animation */
+  pointer-events: auto;
   transition-delay: 0ms;
 }
 

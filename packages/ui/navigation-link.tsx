@@ -2,13 +2,15 @@
 
 import { useNavigation } from '@portfolio/lib/contexts/navigation-context'
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { forwardRef, type ComponentProps } from "react"
 
 type NavigationLinkProps = ComponentProps<typeof Link>
 
 const NavigationLink = forwardRef<HTMLAnchorElement, NavigationLinkProps>(
-  ({ onClick, href, target, ...props }, ref) => {
+  ({ onClick, href, target, replace, scroll, ...props }, ref) => {
     const { startNavigation } = useNavigation()
+    const router = useRouter()
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
       // Call the original onClick if provided
@@ -57,10 +59,21 @@ const NavigationLink = forwardRef<HTMLAnchorElement, NavigationLinkProps>(
         history.scrollRestoration = 'manual'
       }
 
+      e.preventDefault()
       startNavigation()
+
+      // Delay the actual navigation by 250ms to allow the overlay fade-in to complete.
+      // This ensures the new page doesn't visually snap underneath a partially transparent overlay.
+      setTimeout(() => {
+        if (replace) {
+          router.replace(targetHref, { scroll: scroll ?? true })
+        } else {
+          router.push(targetHref, { scroll: scroll ?? true })
+        }
+      }, 250)
     }
 
-    return <Link ref={ref} href={href} target={target} onClick={handleClick} {...props} />
+    return <Link ref={ref} href={href} target={target} replace={replace} scroll={scroll} onClick={handleClick} {...props} />
   }
 )
 
