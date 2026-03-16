@@ -1,6 +1,6 @@
-import { redirect } from 'next/navigation'
 import { siteConfig } from '@/config/site'
 import type { Metadata } from 'next'
+import RedirectPage from '@/components/main/redirect-page'
 
 export const metadata: Metadata = {
   robots: {
@@ -10,5 +10,5 @@ export const metadata: Metadata = {
 }
 
 export default function InstagramRedirect() {
-  redirect(siteConfig.social.instagram)
+  return <RedirectPage href={siteConfig.social.instagram} label="Instagram" />
 }

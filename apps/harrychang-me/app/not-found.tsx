@@ -160,7 +160,10 @@ export function NotFoundContent() {
   const displayLabel = currentDestination?.label ?? "";
 
   return (
-    <div className="fixed inset-0 z-50 bg-background flex items-center justify-center overflow-hidden select-none cursor-crosshair">
+    <div 
+      style={{ top: 'var(--header-offset, 64px)' }}
+      className="fixed inset-x-0 bottom-0 z-50 bg-background flex items-center justify-center overflow-hidden select-none cursor-crosshair"
+    >
       {/* Corner framelines */}
       <div className="absolute inset-10 pointer-events-none">
         {/* Top left */}

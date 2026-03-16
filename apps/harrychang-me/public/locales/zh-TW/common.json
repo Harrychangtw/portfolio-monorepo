@@ -21,8 +21,8 @@
     "siteNavigation": "網站導覽",
     "languageSwitch": "語言",
     "themeSwitch": "主題",
-    "motto1":"不走尋常路，不等誰允許。路還在鋪，人已在走。",
-    "motto2":"一同探索可能 — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+    "motto1":"在既有的車道外另闢蹊徑。有時追求銳利，有時偏愛模糊。",
+    "motto2":"打聲招呼？ — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
   },
   "guestbook": {
     "placeholder1": "有什麼讓你產生共鳴，或發現什麼需要修正嗎？",
@@ -96,6 +96,7 @@
     "body": "正文",
     "small": "小號",
     "caption": "說明文字"
+
   },
   "social": {
     "gmail": "Email",

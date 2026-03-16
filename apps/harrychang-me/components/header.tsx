@@ -313,7 +313,8 @@ export default function Header() {
 
   // Helper logic to determine if nav should be hidden
   // UPDATED: Nav is now only hidden on mobile or on the lab subdomain
-  const shouldHideNav = isMobile || isLab;
+  const isNotFound = !isHomePage && !isSpecialPage && !isProjectDetailPage && !isBlogDetailPage && !activeTitleKey;
+  const shouldHideNav = isMobile || isLab || isNotFound;
 
   // Reusable Underline Component
   const Underline = () => (
