@@ -123,7 +123,6 @@
   },
   "links": {
     "hero": "Code. Camera. Curiosity."
-
   },
   "readingList": {
     "title": "論文閱讀清單",
@@ -136,7 +135,7 @@
   "tooltips": {
     "about":"關於我是誰，在做什麼，為什麼做",
     "updates":"最近在忙的事，值得記錄的瞬間",
-    "projects":"從研究到創作，值得分享的作品",
+    "projects":"論文、演講、影像，以及之間的種種嘗試",
     "gallery":"透過鏡頭捕捉的片刻與思考",
     "gmail": "隨時歡迎交流！",
     "discord": "常在線上，偶爾放空，隨時歡迎交流",
@@ -145,14 +144,14 @@
     "instagram": "正在學習用相機說故事",
     "linkedin": "歡迎交流！",
     "letterboxd": "留下印象的電影",
-    "resume": "兩頁版履歷（對，就放在 Google Drive）",
+    "resume": "所有經歷一次統整",
     "manifesto": "我對創作、工作與好奇心的理念",
     "icarus": "翅膀，從未長在教科書裡",
     "music": "爵士到嘻哈到蕭邦只需三首歌",
     "reading": "正在讀的論文，需要時間慢慢啃",
     "uses": "桌上與日常使用的工具",
     "design": "這個網站的設計理念與細節",
-    "blog": "關於電影、工具、生活的文字痕跡",
+    "blog": "關於電影、工具、生活的隨筆",
     "medium": "同步刊登的隨筆，文字另一處棲息地",
     "source": "在 GitHub 上探索本站的架構"
 

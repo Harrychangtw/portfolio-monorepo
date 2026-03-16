@@ -4,6 +4,8 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
+import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
+import ClientLayout from "@/components/main/client-layout";
 
 const destinations = [
   { label: "Manifesto", path: "/manifesto" },
@@ -44,8 +46,9 @@ const destinations = [
   { label: "Affinity V3", path: "/blog/2025_12_14_affinity" },
 ];
 
-export default function NotFound() {
+export function NotFoundContent() {
   const router = useRouter();
+  const { startNavigation } = useNavigation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [speed, setSpeed] = useState(120);
   const [isLocked, setIsLocked] = useState(false);
@@ -62,7 +65,7 @@ export default function NotFound() {
   // Mobile detection and redirect
   useEffect(() => {
     if (isMobile) {
-      router.replace("/");
+      router.replace("/?from404=true")
     }
   }, [isMobile, router]);
 
@@ -95,13 +98,16 @@ export default function NotFound() {
         setLockedDestination(dest);
 
         setTimeout(() => {
-          router.push(dest.path);
-        }, 1200);
+          startNavigation();
+          setTimeout(() => {
+            router.push(dest.path);
+          }, 250);
+        }, 950);
       }
     }, 50);
 
     return () => clearInterval(checkLock);
-  }, [isAligned, isLocked, currentIndex, router]);
+  }, [isAligned, isLocked, currentIndex, router, startNavigation]);
 
   // Scroll handler - scroll down to slow, scroll up to speed
   const handleWheel = useCallback(
@@ -154,7 +160,7 @@ export default function NotFound() {
   const displayLabel = currentDestination?.label ?? "";
 
   return (
-    <div className="fixed inset-0 bg-background flex items-center justify-center overflow-hidden select-none cursor-crosshair">
+    <div className="fixed inset-0 z-50 bg-background flex items-center justify-center overflow-hidden select-none cursor-crosshair">
       {/* Corner framelines */}
       <div className="absolute inset-10 pointer-events-none">
         {/* Top left */}
@@ -305,5 +311,14 @@ export default function NotFound() {
         404 · Not Found
       </div>
     </div>
+  );
+}
+
+// Wrap the global 404 in the NavigationProvider to satisfy the context requirement
+export default function NotFound() {
+  return (
+    <ClientLayout>
+      <NotFoundContent />
+    </ClientLayout>
   );
 }

@@ -122,8 +122,7 @@
     "source": "Source Code"
   },
   "links": {
-    "hero": "Code. Camera. Curiosity.",
-    "bio": "Highschooler researching at CyCraft Technology"
+    "hero": "Code. Camera. Curiosity."
   },
   "readingList": {
     "title": "Paper Reading List",
@@ -136,7 +135,7 @@
   "tooltips": {
     "about":"Who I am, what I do, why it matters to me",
     "updates":"Recent milestones and what I've been working on",
-    "projects":"Work I'm genuinely proud of, from research to robots",
+    "projects":"Published research, keynotes, and the builds in between",
     "gallery":"Moments captured, some planned, most stumbled upon",
     "gmail": "Always happy for a chat!",
     "discord": "Usually around, sometimes responsive, always curious",
@@ -145,14 +144,14 @@
     "instagram": "Learning to see through a viewfinder, one frame at a time",
     "linkedin": "Let's connect—I try to respond when I can",
     "letterboxd": "What I've been watching lately",
-    "resume": "The two-page version (yes, it's a Google Drive link)",
+    "resume": "Everything organized in one place",
     "manifesto": "My philosophy on work, creation, and curiosity",
     "icarus": "For those who build their own wings.",
     "music": "Jazz to EDM to rap in 3 songs. I'm multi-polar if that's a thing.",
     "reading": "Papers I'm slowly working through",
     "uses": "Tools I've collected along the way",
     "design": "The design choices behind this site",
-    "blog": "Writings, thoughts, and occasional rants",
+    "blog": "Film essays, hardware reflections, and the things worth sitting with",
     "medium": "Syndicated stories, another home for my words",
     "source": "View the monorepo source code and README on GitHub"
   },
