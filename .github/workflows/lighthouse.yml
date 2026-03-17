@@ -48,6 +48,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Create stub font files (private fonts not available in CI)
+        run: |
+          mkdir -p apps/harrychang-me/public/fonts/artific-fonts
+          for weight in Thin SuperLight Light Regular Medium SemiBold Bold SuperBold Black; do
+            touch "apps/harrychang-me/public/fonts/artific-fonts/Artific-${weight}.woff2"
+          done
+
       - name: Build harrychang-me (CI build — skips DB migration)
         run: pnpm --filter harry-chang-portfolio build:ci
 
