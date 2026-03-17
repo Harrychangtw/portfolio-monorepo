@@ -1,0 +1,77 @@
+name: Lighthouse Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/harrychang-me/**"
+      - "packages/**"
+      - ".github/workflows/lighthouse.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/harrychang-me/**"
+      - "packages/**"
+      - ".github/workflows/lighthouse.yml"
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+
+    env:
+      NEXT_PUBLIC_BASE_URL: "http://localhost:3000"
+      NEXT_PUBLIC_MAIN_URL: "http://localhost:3000"
+      # Prisma generate only reads the schema — any valid URL format works here
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/portfolio"
+      # Font download is skipped gracefully when FONT_DRIVE_ID is absent
+      # Spotify / Resend stubs prevent build errors for unused runtime env vars
+      SPOTIFY_CLIENT_ID: stub
+      SPOTIFY_CLIENT_SECRET: stub
+      SPOTIFY_REFRESH_TOKEN: stub
+      RESEND_API_KEY: stub
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build harrychang-me (CI build — skips DB migration)
+        run: pnpm --filter harry-chang-portfolio build:ci
+
+      - name: Start production server
+        run: pnpm --filter harry-chang-portfolio start &
+
+      - name: Wait for server to be ready
+        run: npx wait-on http://localhost:3000 --timeout 60000
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            http://localhost:3000/
+            http://localhost:3000/blog
+            http://localhost:3000/projects
+            http://localhost:3000/gallery
+            http://localhost:3000/paper-reading
+            http://localhost:3000/manifesto
+            http://localhost:3000/uses
+            http://localhost:3000/cv
+            http://localhost:3000/linktree
+          configPath: apps/harrychang-me/.lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
