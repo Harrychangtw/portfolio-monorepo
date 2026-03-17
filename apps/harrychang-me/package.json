@@ -8,6 +8,7 @@
     "postinstall": "prisma generate",
     "prebuild": "prisma migrate deploy && node scripts/generate-sitemap.mjs && node scripts/fetch-fonts.mjs",
     "build": "next build",
+    "build:ci": "node scripts/generate-sitemap.mjs && node scripts/fetch-fonts.mjs && next build",
     "build:analyze": "ANALYZE=true npm run build",
     "start": "next start",
     "lint": "next lint",
