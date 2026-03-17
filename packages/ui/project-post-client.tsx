@@ -136,7 +136,7 @@ export default function ProjectPostClient({ initialProject, nextProject }: Proje
             <ImageContainer
               src={project.imageUrl}
               alt={project.title}
-              priority={true}
+              priority={false}
               quality={95}
               noInsetPadding={true}
               aspectRatio={1.5}

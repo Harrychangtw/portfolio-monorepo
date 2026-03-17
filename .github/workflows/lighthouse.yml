@@ -2,13 +2,13 @@ name: Lighthouse Audit
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
     paths:
       - "apps/harrychang-me/**"
       - "packages/**"
       - ".github/workflows/lighthouse.yml"
   pull_request:
-    branches: [main]
+    branches: [**]
     paths:
       - "apps/harrychang-me/**"
       - "packages/**"
@@ -72,8 +72,6 @@ jobs:
             http://localhost:3000/blog
             http://localhost:3000/projects
             http://localhost:3000/gallery
-            http://localhost:3000/paper-reading
-            http://localhost:3000/manifesto
             http://localhost:3000/uses
             http://localhost:3000/cv
             http://localhost:3000/linktree

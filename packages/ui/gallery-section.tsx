@@ -219,7 +219,7 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
               <div className="hidden md:flex flex-row w-full gap-[var(--column-spacing)]">
                 {layoutResult && layoutResult.columns.map((column, colIndex) => (
                   <div key={colIndex} className="flex-1 space-y-[var(--column-spacing)]">
-                    {column.map((layoutItem) => (
+                    {column.map((layoutItem, itemPosition) => (
                       <GalleryCard
                         key={layoutItem.item.slug}
                         title={layoutItem.item.title}
@@ -228,7 +228,7 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
                         imageUrl={layoutItem.item.imageUrl}
                         pinned={layoutItem.item.pinned}
                         locked={layoutItem.item.locked}
-                        priority={layoutItem.itemIndex < 3}
+                        priority={itemPosition === 0}
                         index={layoutItem.itemIndex}
                         width={layoutItem.item.width}       
                         height={layoutItem.item.height}

@@ -129,7 +129,7 @@ export default function GalleryCard({
             src={imageUrl}
             alt={title}
             aspectRatio={targetAspectRatio}
-            priority={priority || index < 6}
+            priority={priority}
             quality={70}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 500px"
             noInsetPadding={false}

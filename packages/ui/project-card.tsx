@@ -89,7 +89,7 @@ export default function ProjectCard({
         <ImageContainer
           src={imageUrl}
           alt={title}
-          priority={priority || (index ?? 0) < 3}
+          priority={priority}
           quality={70}
           aspectRatio={1.5} // Enforce 3:2 for cards
           noInsetPadding={true} // No frameline for projects

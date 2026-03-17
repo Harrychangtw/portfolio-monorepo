@@ -167,7 +167,7 @@ export default function BlogPostClient({ initialPost, nextPost }: BlogPostClient
             <ImageContainer
               src={post.imageUrl}
               alt={post.title}
-              priority={true}
+              priority={false}
               quality={95}
               noInsetPadding={true}
               aspectRatio={1.5}

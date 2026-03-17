@@ -138,7 +138,7 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
             <ImageContainer
               src={fullImageUrl}
               alt={item.title}
-              priority={true}
+              priority={false}
               quality={90}
               aspectRatio={item.aspectRatio}
               noInsetPadding={true}
@@ -265,7 +265,7 @@ export default function GalleryPostClient({ initialItem, nextItem }: GalleryPost
                             src={fullUrl}
                             alt={image.caption || `${item.title} image ${index + 1}`}
                             caption={image.caption}
-                            priority={index === 0}
+                            priority={false}
                             quality={90}
                             aspectRatio={aspectRatio}
                           />

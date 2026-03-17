@@ -5,8 +5,6 @@ let userConfig = undefined
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true,
-
     contentDispositionType: 'attachment',
     remotePatterns: [
       {
