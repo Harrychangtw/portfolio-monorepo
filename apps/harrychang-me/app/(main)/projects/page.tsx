@@ -4,7 +4,7 @@ import { getAllProjectsMetadata } from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Browse design and development projects by Harry Chang (張祺煒). Explore academic research, web development, and creative projects.",
+  description: "Published research, keynotes, and the builds in between. A collection of Harry Chang's work across AI, software development, and creative technology.",
   keywords: ['projects', 'portfolio', 'development', 'research', 'design', 'Harry Chang', '張祺煒'],
   alternates: {
     canonical: '/projects',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Projects | Harry Chang 張祺煒",
-    description: "Browse design and development projects by Harry Chang (張祺煒)",
+    description: "Published research, keynotes, and the builds in between — Harry Chang's work across AI, software, and creative technology.",
     url: 'https://www.harrychang.me/projects',
     siteName: 'Harry Chang Portfolio',
     type: 'website',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Projects | Harry Chang 張祺煒",
-    description: "Browse design and development projects by Harry Chang (張祺煒)",
+    description: "Published research, keynotes, and the builds in between — Harry Chang's work across AI, software, and creative technology.",
   },
 }
 

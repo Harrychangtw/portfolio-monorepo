@@ -4,7 +4,11 @@ import PaperReadingPageClient from "@/components/main/paper-reading-page-client"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  title: 'Paper Reading',
+  description: "Papers I'm slowly working through. An annotated reading list of research in AI, machine learning, and the ideas worth sitting with.",
   openGraph: {
+    title: 'Paper Reading | Harry Chang 張祺煒',
+    description: "Papers I'm slowly working through — research in AI, machine learning, and the ideas worth sitting with.",
     images: [
       {
         url: 'https://www.harrychang.me/images/og-image-reading.webp',

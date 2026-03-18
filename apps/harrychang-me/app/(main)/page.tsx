@@ -7,8 +7,10 @@ import BlogSection from "@portfolio/ui/blog-section"
 import { getAllGalleryMetadata, getAllProjectsMetadata, getAllPostsMetadata} from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
-  title: "Harry Chang 張祺煒 | Portfolio",
-  description: "Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Developer, researcher, and photographer based in Taiwan.",
+  title: {
+    absolute: "Harry Chang 張祺煒 | Portfolio",
+  },
+  description: "Harry Chang (張祺煒) builds at the intersection of AI, code, and visual storytelling. Curiosity that refuses to apologize — code, camera, and everything in between.",
   keywords: [
     "Harry Chang",
     "張祺煒",
@@ -39,8 +41,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Harry Chang 張祺煒 | Developer, Researcher & Photographer",
-    description: "Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling",
+    title: "Harry Chang 張祺煒 | Code. Camera. Curiosity.",
+    description: "Harry Chang (張祺煒) builds at the intersection of AI, code, and visual storytelling. Developer, researcher, and photographer based in Taiwan.",
     url: 'https://www.harrychang.me/',
     type: 'website',
     locale: 'en_US',

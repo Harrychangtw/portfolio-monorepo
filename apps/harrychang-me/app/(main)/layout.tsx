@@ -9,7 +9,6 @@ import { siteConfig } from '@/config/site'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: siteConfig.metadata.title,
   description: siteConfig.metadata.description,
   keywords: siteConfig.metadata.keywords,
   authors: [{ name: siteConfig.author.name, url: siteConfig.url }],

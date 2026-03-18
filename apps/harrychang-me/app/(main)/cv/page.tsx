@@ -3,15 +3,16 @@ import type { Metadata } from 'next'
 import CvContent from '@/components/main/cv-content'
 
 export const metadata: Metadata = {
-  title: 'Harry Chang 張祺煒 | Curriculum Vitae',
+  title: 'Résumé',
+  description: "Everything organized in one place. Harry Chang's full curriculum vitae — research, experience, and the work that defines the journey so far.",
   openGraph: {
-    title: 'Harry Chang 張祺煒 | Curriculum Vitae',
-    description: 'View my full resume and professional experience.',
+    title: 'Résumé | Harry Chang 張祺煒',
+    description: "Everything organized in one place — research, experience, and the work that defines the journey so far.",
     images: [{
       url: '/images/og-image-resume.webp',
       width: 1200,
       height: 630,
-      alt: 'Harry Chang Resume',
+      alt: 'Harry Chang Résumé',
     }],
   },
   robots: {

@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import TypographyPageClient from '@/components/main/typography-page-client'
 
 export const metadata: Metadata = {
-  title: 'Typography',
-  description: 'Live typography system guideline showcasing all font families, weights, and styles used throughout the portfolio website.',
+  title: 'Design System',
+  description: 'The design choices behind this site. Every pixel is a decision, every whitespace a breath — type, color, motion, and layout in one living reference.',
   openGraph: {
-    title: 'Typography | Harry Chang',
-    description: 'Live typography system guideline showcasing all font families, weights, and styles used throughout the portfolio website.',
+    title: 'Design System | Harry Chang 張祺煒',
+    description: 'Every pixel is a decision, every whitespace a breath. The type, color, motion, and layout system behind harrychang.me.',
     images: [
       {
         url: 'https://www.harrychang.me/images/og-image-design.webp',

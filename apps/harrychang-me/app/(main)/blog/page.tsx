@@ -4,8 +4,8 @@ import { getAllPostsMetadata } from "@portfolio/lib/lib/markdown"
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Thoughts, ideas, and writings by Harry Chang (張祺煒). Explore articles on technology, design, and creative work.",
-  keywords: ['blog', 'articles', 'writing', 'thoughts', 'Harry Chang', '張祺煒'],
+  description: "Film essays, hardware reflections, and the things worth sitting with. Writing by Harry Chang on technology, creation, and curiosity.",
+  keywords: ['blog', 'articles', 'writing', 'essays', 'film', 'technology', 'Harry Chang', '張祺煒'],
   alternates: {
     canonical: '/blog',
     languages: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Blog | Harry Chang 張祺煒",
-    description: "Thoughts, ideas, and writings by Harry Chang (張祺煒)",
+    description: "Film essays, hardware reflections, and the things worth sitting with — writing by Harry Chang 張祺煒.",
     url: 'https://www.harrychang.me/blog',
     siteName: 'Harry Chang Portfolio',
     type: 'website',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Blog | Harry Chang 張祺煒",
-    description: "Thoughts, ideas, and writings by Harry Chang (張祺煒)",
+    description: "Film essays, hardware reflections, and the things worth sitting with — writing by Harry Chang 張祺煒.",
   },
 }
 
