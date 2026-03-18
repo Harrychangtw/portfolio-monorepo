@@ -268,7 +268,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
 
       {/* ── Footer ────────────────────────────────────────── */}
       <div className="border-t border-border pt-8 md:pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <span className="font-body text-sm text-secondary uppercase">
+        <span className="font-mono text-xs uppercase text-secondary whitespace-nowrap overflow-hidden text-ellipsis">
           {t("footer.text", "cv")}
         </span>
         <motion.div whileHover={{ y: -2, x: 4 }} transition={{ duration: 0.2 }}>

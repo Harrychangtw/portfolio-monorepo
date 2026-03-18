@@ -8,104 +8,60 @@ interface TypographySpecimenProps {
   index: number
 }
 
-export function TypographySpecimen({ font, index }: TypographySpecimenProps) {
-  const fontClass = font.variable === '--font-ibm-plex-sans' ? 'font-ibm-plex' : 'font-heading'
+export function TypographySpecimen({ font }: TypographySpecimenProps) {
+  const fontClass =
+    font.variable === '--font-ibm-plex-sans' ? 'font-ibm-plex' : 'font-heading'
   const { t } = useLanguage()
 
   return (
-    <section
-      className="mb-16"
-    >
-      {/* Font Name Header - Much smaller */}
-      <div className="mb-8">
-        <h2
-          className={`${fontClass} text-primary text-3xl md:text-4xl font-bold mb-4`}
-          style={{ fontWeight: Math.max(...font.weights) }}
-        >
-          {font.name}
-        </h2>
-
-        {/* Minimal info */}
-        <div className="flex gap-6 text-secondary text-sm">
-          <span className="font-heading">{font.classification}</span>
-          <span className="font-heading">{font.weights.length} weights</span>
-          {font.yearDesigned && (
-            <span className="font-heading">{font.yearDesigned}</span>
-          )}
-        </div>
+    <div className="space-y-12">
+      <div className="space-y-0">
+        {font.weights
+          .filter((weight) => weight >= 300)
+          .map((weight) => (
+            <div
+              key={weight}
+              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 border-b border-border/30 last:border-b-0"
+            >
+              <div className="order-2 md:order-1 min-w-0">
+                <p
+                  className={`${fontClass} text-primary md:text-lg truncate`}
+                  style={{ fontWeight: weight }}
+                >
+                  {t('design.pangram')}
+                </p>
+              </div>
+              <div className="order-1 md:order-2 shrink-0 md:text-right">
+                <span className="font-mono text-xs md:text-xs text-secondary uppercase tracking-wider">
+                  {t(`design.weightsLabel.${weight}`)} · {weight}
+                </span>
+              </div>
+            </div>
+          ))}
       </div>
 
-      {/* Weights - Compact display */}
-      <div className="mb-12">
-          {font.weights
-            .filter((weight) => weight >= 300)
-            .map((weight) => (
-          <div
-            key={weight}
-            className="grid grid-cols-12 gap-4 items-baseline py-3 border-b border-white/5"
-          >
-            <div className="col-span-2">
-              <span className="font-heading text-xs text-secondary">
-                {getWeightName(weight)}
-              </span>
-            </div>
-            <div className="col-span-10">
-              <p
-                className={`${fontClass} text-primary md:text-lg truncate`}
-                style={{ fontWeight: weight }}
+      {/* ── Character set ──────────────────────────────── */}
+      <div className="pt-8">
+        <div className="flex flex-col gap-3">
+          <p className="font-mono text-xs md:text-xs text-secondary uppercase tracking-wider">
+            {t('design.characterSet')}
+          </p>
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(2.5rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(3rem,1fr))] border-l border-t border-secondary">
+            {'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=↗↙[]{}'.split('').map((char, i) => (
+              <div 
+                key={i} 
+                className="flex items-center justify-center aspect-square border-r border-b border-secondary hover:bg-foreground hover:text-background transition-colors cursor-default"
               >
-                Packing new knowledge, I vex, judge, quiz, from bytes.
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Character Set - Simplified */}
-      <div className="mb-12">
-        <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-6">
-          {t('design.characterSet')}
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <p className="font-heading text-xs text-secondary mb-2">{t('design.uppercase')}</p>
-            <p className={`${fontClass} text-lg md:text-xl text-primary tracking-wide break-all`}>
-              ABCDEFGHIJKLMNOPQRSTUVWXYZ
-            </p>
-          </div>
-          <div>
-            <p className="font-heading text-xs text-secondary mb-2">{t('design.lowercase')}</p>
-            <p className={`${fontClass} text-lg md:text-xl text-primary tracking-wide break-all`}>
-              abcdefghijklmnopqrstuvwxyz
-            </p>
-          </div>
-          <div>
-            <p className="font-heading text-xs text-secondary mb-2">{t('design.numbers')}</p>
-            <p className={`${fontClass} text-lg md:text-xl text-primary tracking-wide`}>
-              0123456789
-            </p>
-          </div>
-          <div>
-            <p className="font-heading text-xs text-secondary mb-2">{t('design.special')}</p>
-            <p className={`${fontClass} text-lg md:text-xl tracking-wide text-primary break-all`}>
-              !@#$%^&*()_+-=↗↙[]{}
-            </p>
+                <span className={`${fontClass} text-lg md:text-xl transition-colors`}>
+                  {char}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
-function getWeightName(weight: number): string {
-  const weightNames: Record<number, string> = {
-    300: 'Light',
-    400: 'Regular',
-    500: 'Medium',
-    600: 'Semi Bold',
-    700: 'Bold',
-    800: 'Extra Bold',
-    900: 'Black',
-  }
-  return weightNames[weight] || `${weight}`
-}
+
