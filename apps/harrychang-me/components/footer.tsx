@@ -300,7 +300,7 @@ export default function Footer() {
               <LanguageSwitcher />
               <ThemeSwitcher />
             </div>
-            <p className="whitespace-nowrap overflow-hidden text-ellipsis">
+            <p className="whitespace-nowrap overflow-hidden text-ellipsis font-mono text-xs uppercase">
               © {new Date().getFullYear()} Chi-Wei Chang. All rights reserved.
             </p>
           </div>

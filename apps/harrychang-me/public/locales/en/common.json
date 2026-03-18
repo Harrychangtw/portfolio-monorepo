@@ -95,7 +95,52 @@
     "largeBody": "Large body",
     "body": "Body",
     "small": "Small",
-    "caption": "Caption"
+    "caption": "Caption",
+    "heading": "Heading",
+    "spacingGrid": "Spacing & Layout",
+    "spacing": {
+      "container": "Container",
+      "containerVal": "1800px max-width",
+      "grid": "Grid",
+      "gridVal": "12-column, responsive",
+      "header": "Header",
+      "headerVal": "64px fixed offset",
+      "section": "Section",
+      "sectionVal": "py-12 → md:py-16 → lg:py-24",
+      "gap": "Gap",
+      "gapVal": "0.5rem → 4rem scale"
+    },
+    "motionInteraction": "Motion & Interaction",
+    "motion": {
+      "library": "Library",
+      "libraryVal": "motion/react (Framer Motion)",
+      "transitions": "Transitions",
+      "transitionsVal": "Zoom-out reveal · count-up timer",
+      "error404": "404",
+      "error404Val": "Rangefinder split-image focus",
+      "images": "Images",
+      "imagesVal": "Canvas pixelation → progressive depixelation",
+      "nowPlaying": "Now Playing",
+      "nowPlayingVal": "Live Spotify dynamic tooltip",
+      "scroll": "Scroll",
+      "scrollVal": "Stable hash-based anchor alignment"
+    },
+    "specimen1": "The Tower",
+    "specimen2": "Audacity in Creation",
+    "specimen3": "Every pixel is a decision, every whitespace a breath.",
+    "specimen4": "Code. Camera. Curiosity. The intersection of craft and intention drives every decision.",
+    "specimen5": "Building highways when lanes feel too narrow.",
+    "specimen6": "HARRY CHANG · PORTFOLIO · 2026",
+    "pangram": "Packing new knowledge, I vex, judge, quiz, from bytes.",
+    "weightsLabel": {
+      "300": "Light",
+      "400": "Regular",
+      "500": "Medium",
+      "600": "Semi Bold",
+      "700": "Bold",
+      "800": "Extra Bold",
+      "900": "Black"
+    }
   },
   "social": {
     "calendar": "Schedules",
