@@ -235,7 +235,7 @@ export default function TypographyPageClient() {
           <div className="grid grid-cols-2 gap-2">
             <NavigationLink href="/blog" className="block hover:opacity-90 transition-opacity">
               <ImageContainer
-                src="/images/og-image-blog.webp"
+                src="/images/optimized/projects/og/og-image-blog.webp"
                 alt="Blog: The Astronomer"
                 aspectRatio={1200/630}
                 noInsetPadding={true}
@@ -243,7 +243,7 @@ export default function TypographyPageClient() {
             </NavigationLink>
             <NavigationLink href="/#gallery" className="block hover:opacity-90 transition-opacity">
               <ImageContainer
-                src="/images/og-image-gallery.webp"
+                src="/images/optimized/projects/og/og-image-gallery.webp"
                 alt="Gallery: The Art of Painting"
                 aspectRatio={1200/630}
                 noInsetPadding={true}
@@ -251,7 +251,7 @@ export default function TypographyPageClient() {
             </NavigationLink>
             <a href="https://lab.harrychang.me" target="_blank" rel="noopener noreferrer" className="block hover:opacity-90 transition-opacity">
               <ImageContainer
-                src="/images/og-image-lab.webp"
+                src="/images/optimized/projects/og/og-image-lab.webp"
                 alt="Lab: The Fall of Icarus"
                 aspectRatio={1200/630}
                 noInsetPadding={true}
@@ -259,7 +259,7 @@ export default function TypographyPageClient() {
             </a>
             <NavigationLink href="/#projects" className="block hover:opacity-90 transition-opacity">
               <ImageContainer
-                src="/images/og-image-projects.webp"
+                src="/images/optimized/projects/og/og-image-projects.webp"
                 alt="Projects: The Forge of Vulcan"
                 aspectRatio={1200/630}
                 noInsetPadding={true}
