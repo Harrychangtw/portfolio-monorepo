@@ -7,6 +7,7 @@ import { useLanguage } from '@portfolio/lib/contexts/language-context'
 import NavigationLink from "@portfolio/ui/navigation-link"
 import { usePathname } from "next/navigation"
 import dynamic from "next/dynamic"
+import { ArrowUpRight } from "lucide-react"
 
 const LanguageSwitcher = dynamic(() => import("@portfolio/ui/language-switcher"), { ssr: false })
 const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), { ssr: false })
@@ -27,7 +28,8 @@ export interface StaggeredMenuProps {
   position?: 'left' | 'right';
   colors?: string[];
   items?: StaggeredMenuItem[];
-  socialItems?: SocialItem[];
+  connectItems?: SocialItem[];
+  exploreItems?: SocialItem[];
   displaySocials?: boolean;
   displayItemNumbering?: boolean;
   className?: string;
@@ -43,9 +45,10 @@ export interface StaggeredMenuProps {
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = 'right',
-  colors = ['hsl(var(--accent))', '#0A0A0A'],
+  colors =['hsl(var(--accent))', '#0A0A0A'],
   items = [],
-  socialItems = [],
+  connectItems = [],
+  exploreItems =[],
   displaySocials = false,
   displayItemNumbering = false,
   className,
@@ -339,13 +342,44 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     animateColor(target);
   }, [playOpen, playClose, animateIcon, animateColor, onMenuOpen, onMenuClose, onHeaderBackgroundToggle]);
 
-  const handleItemClick = (item: StaggeredMenuItem, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    // Close the menu
-    toggleMenu();
-    // Call the section click handler if provided
-    if (onSectionClick) {
-      onSectionClick(item.sectionId, e);
-    }
+  const renderLinkItem = (item: SocialItem, onClick?: () => void) => {
+    const isInternal = item.link.startsWith('/');
+    const isIcarus = item.link.includes('lab.') || item.link.includes('icarus');
+    const linkClassName = `group flex items-center justify-between w-full min-w-0`;
+    const textClassName = `font-ibm-plex text-primary text-[14px] sm:text-[15px] truncate transition-colors duration-200 ease-linear group-hover:text-[var(--sm-accent)] ${isIcarus ? 'icarus-link' : ''}`;
+
+    const content = (
+      <>
+        <span className={textClassName}>{item.label}</span>
+        <ArrowUpRight className="w-3.5 h-3.5 text-secondary transition-all duration-300 group-hover:text-[var(--sm-accent)] group-hover:translate-x-0.5 shrink-0 ml-2" />
+      </>
+    );
+
+    return (
+      <li key={item.label + item.link} className="w-full">
+        <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
+          {isInternal ? (
+            <NavigationLink
+              href={item.link}
+              className={linkClassName}
+              onClick={onClick}
+            >
+              {content}
+            </NavigationLink>
+          ) : (
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClassName}
+              onClick={onClick}
+            >
+              {content}
+            </a>
+          )}
+        </motion.div>
+      </li>
+    );
   };
 
   return (
@@ -456,32 +490,33 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             
             {/* Bottom Section: Socials & Switchers */}
             <div className="mt-auto pt-8 pb-4 flex flex-col gap-8">
-              {displaySocials && socialItems && socialItems.length > 0 && (
-                <div className="sm-panel-socials">
-                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
-                    {t('footer.socialContact') || 'Social & Contact'}
-                  </h3>
-                  <ul className="list-none m-0 p-0 flex flex-wrap gap-6" role="list">
-                    {socialItems.map((social, idx) => (
-                      <li key={social.label + idx}>
-                        <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                          <a
-                            href={social.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-ibm-plex text-primary text-base transition-colors duration-200 ease-linear hover:text-[var(--sm-accent)]"
-                            aria-label={social.label}
-                          >
-                            {social.label}
-                          </a>
-                        </motion.div>
-                      </li>
-                    ))}
-                  </ul>
+              {displaySocials && (connectItems.length > 0 || exploreItems.length > 0) && (
+                <div className="sm-panel-socials grid grid-cols-2 gap-x-6 gap-y-8 w-full">
+                  {connectItems.length > 0 && (
+                    <div className="col-span-1">
+                      <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
+                        {t('footer.socialContact') || 'Social & Contact'}
+                      </h3>
+                      <ul className="list-none m-0 p-0 flex flex-col gap-3.5" role="list">
+                        {connectItems.map(item => renderLinkItem(item, toggleMenu))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {exploreItems.length > 0 && (
+                    <div className="col-span-1">
+                      <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
+                        {t('footer.personalResources') || 'Resources'}
+                      </h3>
+                      <ul className="list-none m-0 p-0 flex flex-col gap-3.5" role="list">
+                        {exploreItems.map(item => renderLinkItem(item, toggleMenu))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               )}
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-2">
                 <LanguageSwitcher />
                 <ThemeSwitcher />
               </div>

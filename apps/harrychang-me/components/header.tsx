@@ -360,11 +360,37 @@ export default function Header() {
     sectionId: item.id
   }));
 
-  const socialItems = [
+  const[icarusUrl, setIcarusUrl] = useState('https://lab.harrychang.me');
+  
+  useEffect(() => {
+    const hostname = window.location.hostname;
+    const protocol = window.location.protocol;
+    const port = window.location.port ? `:${window.location.port}` : '';
+    if (hostname.includes('localhost')) {
+      setIcarusUrl(`${protocol}//lab.localhost${port}`);
+    } else {
+      setIcarusUrl(`${protocol}//lab.${hostname.replace(/^www\./, '')}`);
+    }
+  }, []);
+
+  const connectItems =[
     { label: t('social.gmail'), link: '/email' },
+    { label: t('social.discord'), link: '/discord' },
+    { label: t('social.linkedin'), link: '/linkedin' },
     { label: t('social.github'), link: '/github' },
     { label: t('social.instagram'), link: '/instagram' },
-    { label: t('social.discord'), link: '/discord' }
+    { label: t('social.medium'), link: '/medium' },
+    { label: t('social.calendar'), link: '/cal' },
+  ];
+
+  const exploreItems =[
+    { label: t('resources.icarus'), link: icarusUrl },
+    { label: t('social.music'), link: '/spotify' },
+    { label: t('social.letterboxd'), link: '/letterboxd' },
+    { label: t('resources.resume'), link: '/cv' },
+    { label: t('resources.uses'), link: '/uses' },
+    { label: t('resources.reading'), link: '/paper-reading' },
+    { label: t('resources.design'), link: '/design' },
   ];
 
   // Track reading progress
@@ -553,7 +579,8 @@ export default function Header() {
             <div className="absolute top-4 right-4 pointer-events-auto">
               <StaggeredMenu
                 items={menuItems}
-                socialItems={socialItems}
+                connectItems={connectItems}
+                exploreItems={exploreItems}
                 accentColor="hsl(var(--accent))"
                 menuButtonColor="hsl(var(--foreground))"
                 openMenuButtonColor="hsl(var(--foreground))"
