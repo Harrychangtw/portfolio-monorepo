@@ -4,6 +4,16 @@ import PaperReadingPageClient from "@/components/main/paper-reading-page-client"
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  openGraph: {
+    images: [
+      {
+        url: 'https://www.harrychang.me/images/og-image-reading.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Paper Reading | Harry Chang',
+      },
+    ],
+  },
   robots: {
     index: false,
     follow: false,

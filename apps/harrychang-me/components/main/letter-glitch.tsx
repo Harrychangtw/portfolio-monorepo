@@ -39,7 +39,7 @@ const LetterGlitch = ({
   const [isInitialized, setIsInitialized] = useState(false);
   const [animationCompleted, setAnimationCompleted] = useState(false);
   const [isWideEnough, setIsWideEnough] = useState(true);
-  const minWidth = 800;
+  const minWidth = 768;
   
   // Refs to hold the latest state for the animation loop, preventing stale closures.
   const animationPhaseRef = useRef(animationPhase);
@@ -522,23 +522,8 @@ const LetterGlitch = ({
 
   return (
     <div style={containerStyle}>
-      {isWideEnough ? (
+      {isWideEnough && (
         <canvas ref={canvasRef} style={canvasStyle} />
-      ) : (
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: '100%',
-          height: '100%',
-          color: baseTextColor,
-          fontSize: '2rem',
-          fontFamily: 'heading',
-          padding: '1rem',
-          textAlign: 'center'
-        }}>
-          L'enfant que j'étais
-        </div>
       )}
     </div>
   );

@@ -265,6 +265,38 @@ export default function TypographyPageClient() {
                 noInsetPadding={true}
               />
             </NavigationLink>
+            <NavigationLink href="/design" className="block hover:opacity-90 transition-opacity">
+              <ImageContainer
+                src="/images/optimized/projects/og/og-image-design.webp"
+                alt="Design System"
+                aspectRatio={1200/630}
+                noInsetPadding={true}
+              />
+            </NavigationLink>
+            <NavigationLink href="/manifesto" className="block hover:opacity-90 transition-opacity">
+              <ImageContainer
+                src="/images/optimized/projects/og/og-image-manifesto.webp"
+                alt="Manifesto"
+                aspectRatio={1200/630}
+                noInsetPadding={true}
+              />
+            </NavigationLink>
+            <NavigationLink href="/paper-reading" className="block hover:opacity-90 transition-opacity">
+              <ImageContainer
+                src="/images/optimized/projects/og/og-image-reading.webp"
+                alt="Paper Reading"
+                aspectRatio={1200/630}
+                noInsetPadding={true}
+              />
+            </NavigationLink>
+            <NavigationLink href="/uses" className="block hover:opacity-90 transition-opacity">
+              <ImageContainer
+                src="/images/optimized/projects/og/og-image-uses.webp"
+                alt="Uses & Setup"
+                aspectRatio={1200/630}
+                noInsetPadding={true}
+              />
+            </NavigationLink>
           </div>
         </div>
       </SectionSplit>

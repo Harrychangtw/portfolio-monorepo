@@ -1,11 +1,11 @@
 "use client";
-import { useState, useEffect, useRef, useMemo} from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import LetterGlitch from '@/components/main/letter-glitch';
 import { useLanguage } from '@portfolio/lib/contexts/language-context';
-import LanguageSwitcher from '@portfolio/ui/language-switcher';
+import { useIsMobile } from '@portfolio/lib/hooks/use-mobile';
 
 
-const manifestoChunksEn = [
+const manifestoChunksEn =[
     [
         "I am the child who dismantled locks",
         "not to break them, but to hear",
@@ -274,8 +274,9 @@ const manifestoChunksZhTw = [
 
 
 export default function ManifestoPage() {
-    const { language } = useLanguage();
-    const [introComplete, setIntroComplete] = useState(false);
+    const { language, t } = useLanguage();
+    const isMobile = useIsMobile();
+    const[introComplete, setIntroComplete] = useState(false);
     
     // Memoize chunks to prevent unnecessary recalculations
     const manifestoChunks = useMemo(() => {
@@ -294,14 +295,19 @@ export default function ManifestoPage() {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    },[]);
 
     useEffect(() => {
-        document.body.style.overflow = introComplete ? 'auto' : 'hidden';
+        if (isMobile) {
+            setIntroComplete(true);
+            document.body.style.overflow = '';
+        } else {
+            document.body.style.overflow = introComplete ? '' : 'hidden';
+        }
         return () => {
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = '';
         };
-    }, [introComplete]);
+    }, [introComplete, isMobile]);
 
     // Reset state on language change
     useEffect(() => {
@@ -352,12 +358,22 @@ export default function ManifestoPage() {
 
     return (
         <div className="min-h-screen font-heading bg-background text-foreground transition-colors duration-500">
-            <div className="h-screen relative">
-                <LetterGlitch onAnimationComplete={handleAnimationComplete} />
-            </div>
+            {/* Desktop Intro Animation */}
+            {!isMobile && (
+                <div className="hidden md:block h-screen relative">
+                    <LetterGlitch onAnimationComplete={handleAnimationComplete} />
+                </div>
+            )}
             
             <div className={`transition-opacity duration-1000 ${introComplete ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="container min-h-screen py-24 md:py-32">
+                    {/* Mobile Title */}
+                    <div className="block md:hidden mb-6 md:mb-8">
+                        <h1 className="font-heading text-[clamp(2.25rem,5.5vw,4.5rem)] font-regular tracking-[-0.02em] text-foreground leading-[0.95]">
+                            L'enfant que j'étais
+                        </h1>
+                    </div>
+
                     <article>
                         {manifestoChunks.map((chunk, chunkIndex) => {
                             const isActive = activeChunks[chunkIndex];
