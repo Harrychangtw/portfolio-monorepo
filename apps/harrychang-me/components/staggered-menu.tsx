@@ -342,6 +342,13 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     animateColor(target);
   }, [playOpen, playClose, animateIcon, animateColor, onMenuOpen, onMenuClose, onHeaderBackgroundToggle]);
 
+  const handleItemClick = useCallback((item: StaggeredMenuItem, event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (onSectionClick) {
+      onSectionClick(item.sectionId, event);
+    }
+    toggleMenu();
+  }, [onSectionClick, toggleMenu]);
+  
   const renderLinkItem = (item: SocialItem, onClick?: () => void) => {
     const isInternal = item.link.startsWith('/');
     const isIcarus = item.link.includes('lab.') || item.link.includes('icarus');
