@@ -24,7 +24,7 @@ export default function AnimatedPaperList({ papers }: AnimatedPaperListProps) {
           duration: 0.2,
           ease: "easeInOut"
         }}
-        className="space-y-4"
+        className="flex flex-col"
       >
         {papers.map((paper, index) => (
           <motion.div

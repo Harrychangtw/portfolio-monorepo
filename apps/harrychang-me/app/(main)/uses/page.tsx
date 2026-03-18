@@ -97,7 +97,7 @@ export default function UsesPage() {
   return (
     <article className="container mt-24 md:mt-32 mb-24 md:mb-32">
       {/* ── Name / Title ──────────────────────────────────── */}
-      <div className="mb-12 md:mb-16">
+      <div className="mb-6 md:mb-8">
         <h1 className="font-heading text-[clamp(2.25rem,5.5vw,4.5rem)] font-regular tracking-[-0.02em] text-foreground leading-[0.95]">
           Uses & Setup
         </h1>
