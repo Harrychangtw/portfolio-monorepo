@@ -103,7 +103,7 @@ function SectionSplit({
 }: {
   index: number
   title: string
-  description: ReactNode
+  description?: ReactNode
   children: ReactNode
 }) {
   return (
