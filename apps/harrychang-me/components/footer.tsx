@@ -244,6 +244,10 @@ export default function Footer() {
                 <p>{t('footer.motto1')}</p>
                 <p>{tHtml('footer.motto2')}</p>
               </div>
+              <div className="hidden md:flex items-center gap-6 mt-6">
+                <LanguageSwitcher />
+                <ThemeSwitcher />
+              </div>
             </div>
 
             {/* Link Columns */}
@@ -291,18 +295,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Divider */}
-          <hr className="border-border mt-16 mb-10 md:mt-16 md:mb-4" />
-
-          {/* Bottom Row */}
-          <div className="flex flex-col md:flex-row justify-between md:items-center gap-y-4 text-sm text-secondary">
-            <div className="flex items-center gap-6">
-              <LanguageSwitcher />
-              <ThemeSwitcher />
-            </div>
-            <p className="whitespace-nowrap overflow-hidden text-ellipsis font-mono text-xs uppercase">
-              © {new Date().getFullYear()} Chi-Wei Chang. All rights reserved.
-            </p>
+          {/* Mobile Switches */}
+          <div className="flex md:hidden items-center gap-6 mt-10">
+            <LanguageSwitcher />
+            <ThemeSwitcher />
           </div>
         </div>
       </footer>
