@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { PixelateLoader } from "./image-pixelate-loader"
+import { ImageLoadingSkeleton } from "./image-loading-skeleton"
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
 
 interface ImageContainerProps {
@@ -141,12 +141,27 @@ export function ImageContainer({
               <div className={`absolute inset-0 z-20 pointer-events-none ${containerClass}`}></div>
             )}
             
-            {/* Depixelation loader — canvas fades out once full image is ready */}
-            <PixelateLoader
-              thumbnailSrc={isVisible && !isVideo && !priority ? thumbnailSrc : undefined}
-              shown={!blurComplete && !priority}
-              objectFit={noInsetPadding ? "cover" : "contain"}
-            />
+            {/* Blurred thumbnail placeholder — fades out once full image is ready */}
+            {!priority && !isVideo && thumbnailSrc && isVisible && (
+              <div
+                className={`absolute inset-0 z-[5] pointer-events-none transition-opacity duration-500 ${
+                  blurComplete ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={thumbnailSrc}
+                  alt=""
+                  className={`w-full h-full ${
+                    noInsetPadding ? "object-cover" : "object-contain"
+                  } object-center`}
+                  style={{ filter: "blur(20px)", transform: "scale(1.1)" }}
+                />
+              </div>
+            )}
+
+            {/* Loading skeleton text overlay */}
+            <ImageLoadingSkeleton visible={!blurComplete && !priority} />
 
             <div className="absolute inset-0 z-0">
               {(isVisible || priority) && (
