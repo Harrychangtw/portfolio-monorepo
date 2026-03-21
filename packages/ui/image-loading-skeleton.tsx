@@ -53,7 +53,6 @@ const LOADING_STATUSES = [
   "Matting",
   "Compositing",
   "Sequencing",
-  "Trimming",
 ]
 
 
