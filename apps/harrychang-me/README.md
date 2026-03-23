@@ -16,16 +16,19 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 
 ### Lighthouse CI Results
 <!-- LIGHTHOUSE_RESULTS_START -->
-| Tested Route | Performance Score |
-|:---|:---|
-| `/` | ![Lighthouse Score 99](https://img.shields.io/badge/99-success?style=flat-square&logo=lighthouse) |
-| `/blog` | ![Lighthouse Score 99](https://img.shields.io/badge/99-success?style=flat-square&logo=lighthouse) |
-| `/cv` | ![Lighthouse Score 100](https://img.shields.io/badge/100-success?style=flat-square&logo=lighthouse) |
-| `/gallery` | ![Lighthouse Score 99](https://img.shields.io/badge/99-success?style=flat-square&logo=lighthouse) |
-| `/linktree` | ![Lighthouse Score 100](https://img.shields.io/badge/100-success?style=flat-square&logo=lighthouse) |
-| `/projects` | ![Lighthouse Score 99](https://img.shields.io/badge/99-success?style=flat-square&logo=lighthouse) |
-| `/uses` | ![Lighthouse Score 97](https://img.shields.io/badge/97-success?style=flat-square&logo=lighthouse) |
+> 🕐 **Last audited:** _(updated automatically on each CI run)_
+
+| Tested Route | Performance | FCP | LCP | TBT | CLS | Speed Index |
+|:---|:---|:---|:---|:---|:---|:---|
+| `/` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | ~1.5 s | ~1.7 s | ~50 ms | 0.01 | ~1.3 s |
+| `/blog` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | - | - | - | - | - |
+| `/cv` | ![Lighthouse 100](https://img.shields.io/badge/lighthouse-100-success?style=flat-square) | - | - | - | - | - |
+| `/gallery` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | - | - | - | - | - |
+| `/linktree` | ![Lighthouse 100](https://img.shields.io/badge/lighthouse-100-success?style=flat-square) | - | - | - | - | - |
+| `/projects` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | - | - | - | - | - |
+| `/uses` | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square) | - | - | - | - | - |
 <!-- LIGHTHOUSE_RESULTS_END -->
+>>>> REPLACE
 
 ## 🌟 Key Features
 

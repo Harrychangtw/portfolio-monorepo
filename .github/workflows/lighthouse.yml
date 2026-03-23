@@ -82,45 +82,7 @@ jobs:
           temporaryPublicStorage: true
 
       - name: Update README with Lighthouse Badges
-        run: |
-          node -e "
-          const fs = require('fs');
-          const path = require('path');
-          
-          const manifestPath = path.join('.lighthouseci', 'manifest.json');
-          if (!fs.existsSync(manifestPath)) {
-            console.log('No Lighthouse manifest found. Skipping README update.');
-            process.exit(0);
-          }
-          
-          const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-          const scores = {};
-          
-          manifest.forEach(run => {
-            const urlPath = new URL(run.url).pathname || '/';
-            const score = Math.round(run.summary.performance * 100);
-            if (!scores[urlPath] || score > scores[urlPath]) {
-              scores[urlPath] = score;
-            }
-          });
-          
-          let markdown = '<!-- LIGHTHOUSE_RESULTS_START -->\n';
-          markdown += '| Tested Route | Performance Score |\n';
-          markdown += '|:---|:---|\n';
-          
-          Object.keys(scores).sort().forEach(route => {
-            const score = scores[route];
-            const color = score >= 90 ? 'success' : score >= 50 ? 'important' : 'critical';
-            markdown += \`| \\\`\${route}\\\` | ![Lighthouse Score \${score}](https://img.shields.io/badge/\${score}-\${color}?style=flat-square&logo=lighthouse) |\n\`;
-          });
-          
-          markdown += '<!-- LIGHTHOUSE_RESULTS_END -->';
-          
-          const readmePath = path.join('apps', 'harrychang-me', 'README.md');
-          let readme = fs.readFileSync(readmePath, 'utf8');
-          readme = readme.replace(/<!-- LIGHTHOUSE_RESULTS_START -->[\s\S]*<!-- LIGHTHOUSE_RESULTS_END -->/, markdown);
-          fs.writeFileSync(readmePath, readme);
-          "
+        run: node .github/scripts/update-lighthouse-readme.js
 
       - name: Commit Lighthouse Changes
         uses: stefanzweifel/git-auto-commit-action@v5
