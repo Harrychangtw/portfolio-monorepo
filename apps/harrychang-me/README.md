@@ -16,6 +16,15 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 
 ### Lighthouse CI Results
 <!-- LIGHTHOUSE_RESULTS_START -->
+| Tested Route | Performance Score |
+|:---|:---|
+| `/` | ![Lighthouse Score 99](https://img.shields.io/badge/99-success?style=flat-square&logo=lighthouse) |
+| `/blog` | ![Lighthouse Score 99](https://img.shields.io/badge/99-success?style=flat-square&logo=lighthouse) |
+| `/cv` | ![Lighthouse Score 100](https://img.shields.io/badge/100-success?style=flat-square&logo=lighthouse) |
+| `/gallery` | ![Lighthouse Score 99](https://img.shields.io/badge/99-success?style=flat-square&logo=lighthouse) |
+| `/linktree` | ![Lighthouse Score 100](https://img.shields.io/badge/100-success?style=flat-square&logo=lighthouse) |
+| `/projects` | ![Lighthouse Score 99](https://img.shields.io/badge/99-success?style=flat-square&logo=lighthouse) |
+| `/uses` | ![Lighthouse Score 97](https://img.shields.io/badge/97-success?style=flat-square&logo=lighthouse) |
 <!-- LIGHTHOUSE_RESULTS_END -->
 
 ## 🌟 Key Features
