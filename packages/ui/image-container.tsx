@@ -155,7 +155,7 @@ export function ImageContainer({
                   className={`w-full h-full ${
                     noInsetPadding ? "object-cover" : "object-contain"
                   } object-center`}
-                  style={noInsetPadding ? { filter: "blur(20px)", transform: "scale(1.1)" } : undefined}
+                  style={noInsetPadding ? { filter: "blur(20px)", transform: "scale(1.5)" } : undefined}
                 />
               </div>
             )}

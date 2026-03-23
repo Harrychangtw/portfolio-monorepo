@@ -1,13 +1,13 @@
 {
-  "bio1": "I'm Harry Chang. I learn best by building things, even if they break. My work lives at the intersection of AI and creation, code and story, carried forward by a curiosity that refuses to apologize.",
-  "bio2": "Admitted to <a href=\"blog/2025_12_24_ntu_cs_special_admission/\">NTU CSIE through Special Admission</a> and graduating Chingshin Academy this July, I work across <a href=\"projects/2025_10_12_fortress/\">research</a>, <a href=\"#gallery\">photography</a>, <a href=\"projects/2025_08_04_debate\">debate</a>, and <a href=\"projects/2025_01_05_aaai_video\">film</a>, all to make tomorrow more interesting than today.",
-  "bio3": "From LEGO bricks to language models, I've never outgrown the urge to take things apart and rebuild them better. Got an idea? <a href=\"mailto:chiwei@harrychang.me\">Let's talk</a>.",
+  "bio1": "I'm Harry Chang. I build safety systems for language models, take photographs on cameras without screens, and argue for positions I'm not sure I believe in. The tools keep changing. The questions stay the same.",
+  "bio2": "Admitted to <a href=\"blog/2025_12_24_ntu_cs_special_admission/\">NTU CSIE through Special Admission</a> and graduating Chingshin Academy this July. I work across <a href=\"projects/2025_10_12_fortress/\">research</a>, <a href=\"#gallery\">photography</a>, <a href=\"projects/2025_08_04_debate\">debate</a>, and <a href=\"projects/2025_01_05_aaai_video\">film</a>, convinced each medium will teach me what the last one couldn't.",
+  "bio3": "From LEGO bricks to language models, the urge to take things apart never quite left. Got an idea? <a href=\"mailto:chiwei@harrychang.me\">Let's talk</a>.",
   "roles": {
     
     "llmResearcher": {
       "title": "LLM Researcher",
       "period": "2023 - Present",
-      "description": "Constructing automated safety taxonomies via internal representation analysis. Work at <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> and <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL SRW</a>; interning at <a href=\"https://cycraft.com\">CyCraft</a>."
+      "description": "Constructing automated safety taxonomies via internal representation analysis. Work at <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> and <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL SRW</a>; researching at <a href=\"https://cycraft.com\">CyCraft</a>."
     },
     "speaker": {
       "title": "Speaker – AI WAVE SHOW, SITCON",
@@ -22,7 +22,7 @@
     "developer": {
       "title": "Developer - Chingshin RAG",
       "period": "2023 - 2024",
-      "description": "Involved heavily development of Chingshin's RAG chatbot. Won first prize in the <a href=\"https://genaistars.org.tw/2024/award/hackathon/28\"> NSTC's GenAI Star</a>."
+      "description": "Core developer of Chingshin's RAG chatbot. Won first prize in the <a href=\"https://genaistars.org.tw/2024/award/hackathon/28\"> NSTC's GenAI Star</a>."
     },
     "photographer": {
       "title": "Photographer & Editor",

@@ -116,7 +116,6 @@ export default function UsesPage() {
                   alt={images[1].alt}
                   aspectRatio={0.8}
                   noInsetPadding={true}
-                  priority
                 />
               ) : (
                 // Desktop: Show all three images in a grid, matching 12-col alignment
@@ -130,7 +129,6 @@ export default function UsesPage() {
                           alt={image.alt}
                           aspectRatio={0.8}
                           noInsetPadding={true}
-                          priority
                         />
                       </div>
                     </div>

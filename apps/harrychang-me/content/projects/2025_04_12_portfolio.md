@@ -8,7 +8,7 @@ year: "2025"
 date: "2025-04-12"
 role: "Designer & Developer"
 technologies: ["Next.js", "React", "TypeScript", "TailwindCSS"]
-tooltip: "以 Next.js 與 Turborepo 打造的個人網站，整合檔案式 CMS。"
+tooltip: "My personal portfolio, built with Next.js, Turborepo, and a file-based CMS."
 pinned: 5
 featured: true
 ---

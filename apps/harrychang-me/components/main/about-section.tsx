@@ -47,7 +47,7 @@ export default function AboutSection() {
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-5">
                   <h3 className="font-heading font-medium">{t('roles.llmResearcher.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.llmResearcher.period', 'about')}</p>
+                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">{t('roles.llmResearcher.period', 'about')}</p>
                 </div>
                 <div className="col-span-7">
                   <p className="font-body text-primary">{tHtml('roles.llmResearcher.description', 'about')}</p>
@@ -57,7 +57,7 @@ export default function AboutSection() {
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-5">
                   <h3 className="font-heading font-medium">{t('roles.speaker.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.speaker.period', 'about')}</p>
+                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">{t('roles.speaker.period', 'about')}</p>
                 </div>
                 <div className="col-span-7">
                   <p className="font-body text-primary">{tHtml('roles.speaker.description', 'about')}</p>
@@ -67,7 +67,7 @@ export default function AboutSection() {
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-5">
                   <h3 className="font-heading font-medium">{t('roles.designer.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.designer.period', 'about')}</p>
+                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">{t('roles.designer.period', 'about')}</p>
                 </div>
                 <div className="col-span-7">
                   <p className="font-body text-primary">{t('roles.designer.description', 'about')}</p>
@@ -77,7 +77,7 @@ export default function AboutSection() {
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-5">
                   <h3 className="font-heading font-medium">{t('roles.developer.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.developer.period', 'about')}</p>
+                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">{t('roles.developer.period', 'about')}</p>
                 </div>
                 <div className="col-span-7">
                   <p className="font-body text-primary">{tHtml('roles.developer.description', 'about')}</p>
@@ -87,7 +87,7 @@ export default function AboutSection() {
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-5">
                   <h3 className="font-heading font-medium">{t('roles.photographer.title', 'about')}</h3>
-                  <p className="font-body text-secondary">{t('roles.photographer.period', 'about')}</p>
+                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">{t('roles.photographer.period', 'about')}</p>
                 </div>
                 <div className="col-span-7">
                   <p className="font-body text-primary">{tHtml('roles.photographer.description', 'about')}</p>

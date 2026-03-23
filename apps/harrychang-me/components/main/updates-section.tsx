@@ -2,7 +2,6 @@
 import { useState, useEffect, useLayoutEffect } from "react"
 import { motion, AnimatePresence } from 'motion/react'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
 
 const parseHtmlToReact = (htmlString: string): React.ReactNode => {
     const linkRegex = /<a\s+href="([^"]*)"[^>]*>([^<]*)<\/a>/g
@@ -49,9 +48,6 @@ export default function UpdatesSection() {
     const [height, setHeight] = useState<number>(0)
     const [ready, setReady] = useState(false)
     const [transitionsOn, setTransitionsOn] = useState(false)
-
-    const isMobile = useIsMobile()
-    const [isHolding, setIsHolding] = useState(false)
 
     const updatesNamespaceData = getTranslationData('', 'updates')
     const updates = updatesNamespaceData?.entries || []
@@ -105,9 +101,6 @@ export default function UpdatesSection() {
     const handlePrevPage = () => setCurrentPage(p => (p > 0 ? p - 1 : p))
     const handleNextPage = () => setCurrentPage(p => (p < totalPages - 1 ? p + 1 : p))
 
-    const handleHoldStart = () => { if (isMobile) setIsHolding(true) }
-    const handleHoldEnd = () => { if (isMobile) setIsHolding(false) }
-
     // Helper re-measure after animation completes (extra safety)
     const handleAnimationComplete = () => {
         if (!containerEl) return
@@ -119,12 +112,6 @@ export default function UpdatesSection() {
         <section
             id="updates"
             className="py-12 md:py-16 border-b border-border"
-            onMouseDown={handleHoldStart}
-            onMouseUp={handleHoldEnd}
-            onMouseLeave={handleHoldEnd}
-            onTouchStart={handleHoldStart}
-            onTouchEnd={handleHoldEnd}
-            onTouchCancel={handleHoldEnd}
         >
             <div className="container">
                 <div className="flex justify-between items-center mb-4">
@@ -170,7 +157,7 @@ export default function UpdatesSection() {
                     <AnimatePresence initial={false} mode="wait">
                         <motion.div
                             key={currentPage}
-                            className="space-y-4"
+                            className="space-y-0"
                             initial={{ opacity: 0, y: 4 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -4 }}
@@ -178,34 +165,19 @@ export default function UpdatesSection() {
                             onAnimationComplete={handleAnimationComplete}
                         >
                             {currentEntries.map((entry: any, index: number) => (
-                                <div key={index} className="relative flex justify-between items-start gap-4">
-                                    <p className="font-ibm-plex text-primary flex-1">
+                                <div
+                                    key={index}
+                                    className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 py-3 first:pt-0 border-b border-border/30 last:border-b-0"
+                                >
+                                    <p className="font-ibm-plex text-sm text-primary leading-relaxed">
                                         {parseHtmlToReact(entry.text || '')}
                                     </p>
-
-                                    {!isMobile ? (
-                                        <p className="font-ibm-plex text-secondary text-right">
-                                            {entry.date || ''}
-                                        </p>
-                                    ) : (
-                                        <AnimatePresence>
-                                            {isHolding && (
-                                                <motion.div
-                                                    initial={{ opacity: 0, x: 10 }}
-                                                    animate={{ opacity: 1, x: 0 }}
-                                                    exit={{ opacity: 0, x: 10 }}
-                                                    transition={{ duration: 0.2, ease: 'easeOut' }}
-                                                    className="absolute right-0 top-0"
-                                                >
-                                                    <span className="font-ibm-plex text-secondary tracking-wider text-sm bg-background px-2 py-1 rounded">
-                                                        {entry.date || ''}
-                                                    </span>
-                                                </motion.div>
-                                            )}
-                                        </AnimatePresence>
-                                    )}
+                                    <span className="font-mono text-xs text-secondary/50 whitespace-nowrap shrink-0">
+                                        {entry.date || ''}
+                                    </span>
                                 </div>
                             ))}
+
                         </motion.div>
                     </AnimatePresence>
                 </div>
