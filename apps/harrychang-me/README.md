@@ -14,6 +14,10 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 * **Interaction to Next Paint (INP):** 80ms
 * **Cumulative Layout Shift (CLS):** 0.01
 
+### Lighthouse CI Results
+<!-- LIGHTHOUSE_RESULTS_START -->
+<!-- LIGHTHOUSE_RESULTS_END -->
+
 ## 🌟 Key Features
 
 ### Dual-Domain Architecture
