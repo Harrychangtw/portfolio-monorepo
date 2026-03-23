@@ -28,7 +28,6 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 | `/projects` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms | 0 | 0.7 s |
 | `/uses` | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square) | 0.3 s | 1.2 s | 10 ms | 0 | 0.9 s |
 <!-- LIGHTHOUSE_RESULTS_END -->
->>>> REPLACE
 
 ## 🌟 Key Features
 
