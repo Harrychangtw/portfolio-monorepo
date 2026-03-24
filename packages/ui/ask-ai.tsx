@@ -3,18 +3,22 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { useIsMobile } from '@portfolio/lib/hooks/use-mobile'
-
-const aiLinks = [
-  { id: 'ChatGPT', name: 'ChatGPT', icon: '/chatgpt.svg', url: 'https://chatgpt.com/?q=Who+is+Harry+Chang+(harrychang.me)%3F' },
-  { id: 'Claude', name: 'Claude', icon: '/claude.svg', url: 'https://claude.ai/new?q=Who+is+Harry+Chang+(harrychang.me)%3F' },
-  { id: 'Gemini', name: 'Gemini', icon: '/gemini.svg', url: 'https://gemini.google.com/app?q=Who+is+Harry+Chang+(harrychang.me)%3F' },
-  { id: 'Perplexity', name: 'Perplexity', icon: '/perplexity.svg', url: 'https://www.perplexity.ai/search?q=Who+is+Harry+Chang+(harrychang.me)%3F' },
-];
+import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
 export default function AskAi() {
   const isMobile = useIsMobile()
+  const { t } = useLanguage()
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null)
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
+
+  const query = encodeURIComponent(t('askAi.query') || "Who is Harry Chang (harrychang.me)?");
+
+  const aiLinks = [
+    { id: 'ChatGPT', name: 'ChatGPT', icon: '/chatgpt.svg', url: `https://chatgpt.com/?q=${query}` },
+    { id: 'Claude', name: 'Claude', icon: '/claude.svg', url: `https://claude.ai/new?q=${query}` },
+    { id: 'Gemini', name: 'Gemini', icon: '/gemini.svg', url: `https://www.google.com/search?udm=50&q=${query}` },
+    { id: 'Perplexity', name: 'Perplexity', icon: '/perplexity.svg', url: `https://www.perplexity.ai/search?q=${query}` },
+  ];
 
   const handleMouseEnter = (e: React.MouseEvent, id: string) => {
     if (!isMobile) {
@@ -80,7 +84,7 @@ export default function AskAi() {
             }}
           >
             <div className="bg-accent text-background text-sm px-3 py-1.5 rounded-md shadow-lg font-heading whitespace-nowrap">
-              Ask {activeTooltipId} who I am
+              {(t('askAi.tooltip') || 'Ask {{name}} who I am').replace('{{name}}', activeTooltipId || '')}
             </div>
           </motion.div>
         )}
