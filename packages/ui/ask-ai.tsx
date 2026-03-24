@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'motion/react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useIsMobile } from '@portfolio/lib/hooks/use-mobile'
 import { useLanguage } from '@portfolio/lib/contexts/language-context'
 
