@@ -10,6 +10,7 @@ export default function AskAi() {
   const { t } = useLanguage()
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null)
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
+  const [loadedImages, setLoadedImages] = useState(0)
 
   const query = encodeURIComponent(t('askAi.query') || "Who is Harry Chang (harrychang.me)?");
 
@@ -39,11 +40,13 @@ export default function AskAi() {
     }
   };
 
+  const isAllLoaded = loadedImages >= aiLinks.length;
+
   return (
     <>
       <motion.div
         initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={isAllLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         className="flex items-center gap-2"
       >
@@ -63,7 +66,8 @@ export default function AskAi() {
             <img 
               src={ai.icon} 
               alt={ai.name} 
-              className="w-4 h-4 opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300 dark:invert" 
+              onLoad={() => setLoadedImages((prev) => prev + 1)}
+              className="w-4 h-4 opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300 ai-logo" 
             />
           </motion.a>
         ))}
