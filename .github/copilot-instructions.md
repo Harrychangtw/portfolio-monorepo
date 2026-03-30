@@ -25,12 +25,6 @@ Run these from the repository root or within `apps/harrychang-me/`:
 pnpm --filter harry-chang-portfolio dev           # Start main site (:3000)
 pnpm --filter harry-chang-portfolio dev:lab       # Start lab site (:3001)
 
-# Testing
-pnpm --filter harry-chang-portfolio test          # Run tests once
-pnpm --filter harry-chang-portfolio test:watch    # Run tests in watch mode
-pnpm --filter harry-chang-portfolio test:ui       # Open Vitest UI
-pnpm --filter harry-chang-portfolio test:coverage # Generate coverage report
-
 # Content Management
 pnpm --filter harry-chang-portfolio optimize-images  # Generate optimized WebP images
 
@@ -132,14 +126,6 @@ export async function GET(request: Request) {
   return NextResponse.json(projects)
 }
 ```
-
-## Testing
-
-Tests use Vitest + React Testing Library:
-- Config: `apps/harrychang-me/vitest.config.ts`
-- Setup: `apps/harrychang-me/test/setup.tsx`
-- Environment: `happy-dom`
-- Test files: `**/*.{test,spec}.{ts,tsx}`
 
 ## Database
 

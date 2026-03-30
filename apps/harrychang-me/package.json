@@ -14,7 +14,8 @@
     "lint": "next lint",
     "optimize-images": "node scripts/optimize-images.js",
     "generate-sitemap": "node scripts/generate-sitemap.mjs",
-    "prepare-content": "npm run optimize-images"
+    "prepare-content": "npm run optimize-images",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
