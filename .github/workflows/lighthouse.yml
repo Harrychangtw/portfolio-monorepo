@@ -47,6 +47,48 @@ jobs:
           node-version: 20
           cache: pnpm
 
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            apps/harrychang-me/node_modules
+            packages/ui/node_modules
+            packages/lib/node_modules
+            packages/config/node_modules
+          key: ${{ runner.os }}-pnpm-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-modules-
+
+      - name: Cache Next.js build artifacts
+        uses: actions/cache@v4
+        with:
+          path: apps/harrychang-me/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('apps/harrychang-me/**.[jt]s', 'apps/harrychang-me/**.[jt]sx', 'packages/**.[jt]s') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-
+
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            apps/harrychang-me/node_modules
+            packages/ui/node_modules
+            packages/lib/node_modules
+            packages/config/node_modules
+          key: ${{ runner.os }}-pnpm-modules-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-modules-
+
+      - name: Cache Next.js build artifacts
+        uses: actions/cache@v4
+        with:
+          path: apps/harrychang-me/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('apps/harrychang-me/**.[jt]s', 'apps/harrychang-me/**.[jt]sx', 'packages/**.[jt]s') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -55,7 +97,7 @@ jobs:
           mkdir -p apps/harrychang-me/public/fonts/artific-fonts
           for weight in Thin SuperLight Light Regular Medium SemiBold Bold SuperBold Black; do
             touch "apps/harrychang-me/public/fonts/artific-fonts/Artific-${weight}.woff2"
-          done
+        done
 
       - name: Build harrychang-me (CI build — skips DB migration)
         run: pnpm --filter harry-chang-portfolio build:ci
@@ -78,6 +120,9 @@ jobs:
             http://localhost:3000/cv
             http://localhost:3000/linktree
             http://localhost:3000/design
+            http://localhost:3000/projects/2025_04_12
+            http://localhost:3000/gallery/2026_02_08_italy_mountain
+            http://localhost:3000/blog/9_m11d
           configPath: apps/harrychang-me/.lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
