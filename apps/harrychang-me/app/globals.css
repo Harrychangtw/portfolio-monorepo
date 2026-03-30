@@ -181,8 +181,12 @@
 
 /* ── Reveal Animation Styles ── */
 .reveal-frame {
-  width: 8rem;  /* w-32 */
-  height: 6rem; /* h-24 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8rem;
+  height: 6rem;
   /* Expands horizontally first, then vertically */
   transition: width var(--reveal-half) var(--reveal-ease-horizontal),
               height var(--reveal-half) var(--reveal-ease-vertical) 150ms;
@@ -201,8 +205,18 @@
 }
 
 .page-transition-overlay-center[data-phase="in"] .reveal-backdrop {
-  /* Inner frame becomes transparent, creating a window to the new page */
   background: transparent;
+}
+
+/* Fixed-size decoration container — never resizes, so children never shift */
+.reveal-decorations {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8rem;
+  height: 6rem;
+  pointer-events: none;
 }
 
 .reveal-timer {
@@ -213,12 +227,36 @@
   opacity: 0;
 }
 
+/* Corners fly outward via transform (CLS-free — transforms never affect layout position).
+   They are positioned in the fixed-size .reveal-decorations box (8rem × 6rem centred at
+   50vw/50vh). The translate values move each corner to the matching viewport corner:
+     x-travel = ±(50vw − 4rem)   [ half-viewport minus half the initial frame width ]
+     y-travel = ±(50vh − 3rem)   [ half-viewport minus half the initial frame height ]
+   Horizontal axis matches the frame's h-expand ease; vertical adds the 150ms stagger. */
 .reveal-corner {
-  transition: opacity 0.2s ease 800ms; /* Fade out at the tail end of the expansion */
+  transition:
+    transform var(--reveal-half) var(--reveal-ease-horizontal),
+    opacity 0.25s ease calc(var(--reveal-half) + 150ms);
 }
 
 .page-transition-overlay-center[data-phase="in"] .reveal-corner {
   opacity: 0;
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-corner-tl {
+  transform: translate(calc(-50vw + 4rem), calc(-50vh + 3rem));
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-corner-tr {
+  transform: translate(calc(50vw - 4rem), calc(-50vh + 3rem));
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-corner-bl {
+  transform: translate(calc(-50vw + 4rem), calc(50vh - 3rem));
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-corner-br {
+  transform: translate(calc(50vw - 4rem), calc(50vh - 3rem));
 }
 
 @media (prefers-reduced-motion: reduce) {

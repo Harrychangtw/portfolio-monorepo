@@ -173,18 +173,18 @@ export default function PageTransition({ children }: { children: ReactNode }) {
         data-phase={phase}
         aria-hidden="true"
       >
-        <div className="reveal-frame relative flex items-center justify-center">
-          {/* Outer solid mask that frames the center window */}
+        {/* Expanding backdrop frame — no children, so expansion causes zero child shifts */}
+        <div className="reveal-frame">
           <div className="reveal-backdrop absolute inset-0 pointer-events-none" />
+        </div>
 
-          {/* Corner framelines (echoing the 404 rangefinder) */}
-          <div className="reveal-corner absolute top-0 left-0 w-3 h-3 border-t border-l border-foreground/20" />
-          <div className="reveal-corner absolute top-0 right-0 w-3 h-3 border-t border-r border-foreground/20" />
-          <div className="reveal-corner absolute bottom-0 left-0 w-3 h-3 border-b border-l border-foreground/20" />
-          <div className="reveal-corner absolute bottom-0 right-0 w-3 h-3 border-b border-r border-foreground/20" />
-
-          {/* Timer readout */}
-          <span className="reveal-timer relative z-10 font-mono text-[12px] tracking-[0.25em] text-secondary tabular-nums">
+        {/* Fixed-size decoration layer — positioned at viewport center, never changes size */}
+        <div className="reveal-decorations">
+          <div className="reveal-corner reveal-corner-tl absolute top-0 left-0 w-3 h-3 border-t border-l border-foreground/20" />
+          <div className="reveal-corner reveal-corner-tr absolute top-0 right-0 w-3 h-3 border-t border-r border-foreground/20" />
+          <div className="reveal-corner reveal-corner-bl absolute bottom-0 left-0 w-3 h-3 border-b border-l border-foreground/20" />
+          <div className="reveal-corner reveal-corner-br absolute bottom-0 right-0 w-3 h-3 border-b border-r border-foreground/20" />
+          <span className="reveal-timer absolute inset-0 z-10 flex items-center justify-center font-mono text-[12px] tracking-[0.25em] text-secondary tabular-nums">
             {fmt(elapsed)}
           </span>
         </div>
