@@ -7,7 +7,7 @@ imageUrl: "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
 year: "2025"
 date: "2025-05-18"
 role: "共同第一作者"
-pinned: 2
+pinned: 3
 featured: true
 technologies: [PyTorch, ChromaDB, HF Transformers]
 tooltip: "共同第一作者的 EACL 研究，建立了首個繁體中文的大規模對抗性安全資料集。"
