@@ -128,7 +128,8 @@ Some gaps close without you. You just build around them.
 ---
 
 ## Acknowledgments
-- Title image: *Der arme Poet* by [Carl Spitzweg](https://en.wikipedia.org/wiki/en:Carl_Spitzweg), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=159093). The poet makes his garret into a world. Not despite the leaking roof and the cold, but inside them. Some corners of the internet begin the same way.
+
+- Title image: _Der arme Poet_ by [Carl Spitzweg](https://en.wikipedia.org/wiki/en:Carl_Spitzweg), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=159093). The poet makes his garret into a world. Not despite the leaking roof and the cold, but inside them. Some corners of the internet begin the same way.
 - Design inspiration from [Joseph Zhang](https://joseph.cv/), whose three-column layout I borrowed and never gave back
 - Source code available on [GitHub](https://github.com/Harrychangtw/portfolio-monorepo) under CC BY-NC 4.0
 - Built with Next.js, React, TypeScript, TailwindCSS, and an unreasonable amount of stubbornness

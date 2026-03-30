@@ -31,7 +31,7 @@ featured: true
 
 以下是我參加過的一些主要比賽，大部分是 2023 年以後的，因為更早的 TabbyCat 連結已經淹沒在我 Gmail 收件匣的大海中了。
 
-### [TSDC 2023](https://tsdc2023.calicotab.com/tsdc2023/)   
+### [TSDC 2023](https://tsdc2023.calicotab.com/tsdc2023/)
 
 台灣學校辯論挑戰賽（TSDC）是台灣最重要的辯論賽事之一，吸引了頂尖的學校和辯手，包括來自台灣辯論國家隊（TDU）的隊伍。在 2023 年，Morris、Sean 和我一同打進了半決賽。
 

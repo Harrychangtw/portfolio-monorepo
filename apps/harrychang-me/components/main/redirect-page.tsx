@@ -1,36 +1,36 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "motion/react"
+import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 interface RedirectPageProps {
-  href: string
-  label: string
+  href: string;
+  label: string;
 }
 
 export default function RedirectPage({ href, label }: RedirectPageProps) {
-  const [elapsed, setElapsed] = useState(0)
+  const [elapsed, setElapsed] = useState(0);
 
   useEffect(() => {
-    const start = Date.now()
-    const timer = setInterval(() => setElapsed(Date.now() - start), 10)
+    const start = Date.now();
+    const timer = setInterval(() => setElapsed(Date.now() - start), 10);
 
     const timeout = setTimeout(() => {
-      clearInterval(timer)
-      window.location.href = href
-    }, 500)
+      clearInterval(timer);
+      window.location.href = href;
+    }, 500);
 
     return () => {
-      clearInterval(timer)
-      clearTimeout(timeout)
-    }
-  }, [href])
+      clearInterval(timer);
+      clearTimeout(timeout);
+    };
+  }, [href]);
 
   const fmt = (ms: number) => {
-    const s = Math.floor(ms / 1000)
-    const cs = Math.floor((ms % 1000) / 10)
-    return `${String(s).padStart(2, "0")}.${String(cs).padStart(2, "0")}`
-  }
+    const s = Math.floor(ms / 1000);
+    const cs = Math.floor((ms % 1000) / 10);
+    return `${String(s).padStart(2, "0")}.${String(cs).padStart(2, "0")}`;
+  };
 
   return (
     <div
@@ -97,5 +97,5 @@ export default function RedirectPage({ href, label }: RedirectPageProps) {
         301 · Redirect
       </div>
     </div>
-  )
+  );
 }

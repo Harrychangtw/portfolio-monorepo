@@ -122,13 +122,9 @@ FormD T1 很美。緊湊、極簡、沒有 RGB。我想要的一切。
 ---
 
 ## 致謝
-- 封面照：*Boy Building a House of Cards* by [Jean-Baptiste-Siméon Chardin](https://en.wikipedia.org/wiki/en:Jean_Sim%C3%A9on_Chardin), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=57787211)。如同畫中小心翼翼堆疊紙牌屋的男孩，這次的組裝提醒了我：童年看似簡單的玩具，依然能為真實世界的問題建構出優雅的解法。
+
+- 封面照：_Boy Building a House of Cards_ by [Jean-Baptiste-Siméon Chardin](https://en.wikipedia.org/wiki/en:Jean_Sim%C3%A9on_Chardin), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=57787211)。如同畫中小心翼翼堆疊紙牌屋的男孩，這次的組裝提醒了我：童年看似簡單的玩具，依然能為真實世界的問題建構出優雅的解法。
 - 機殼：FormD T1，我仍然認為是最美的 SFF 機殼
 - 風扇：Phanteks T30，每一毫米的厚度都值得
 - 樂高：各種 Technic 零件，以及一組出乎意料能承重的輪胎
 - 完整 [Setup](/uses)，樂高風扇架現在有了永久的一席之地
-
-
-
-
-

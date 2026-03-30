@@ -14,6 +14,7 @@ featured: true
 ---
 
 ## 專案概覽
+
 [AAAI](https://aaai.org) 作為人工智慧領域的頂尖學術會議，在 2025 年發起了一場[教育影片競賽](https://aaai.org/about-aaai/aaai-awards/aaai-educational-ai-videos/)，旨在透過三分鐘短片普及 AI 各領域的知識。這對我而言是個絕佳的機會，得以結合自身在語言模型安全領域的經驗與對影片製作的熱忱，最終，我以一部探討語言模型攻擊與防禦的影片參賽。
 
 ![最後的成片](https://www.youtube.com/watch?v=eSuEhZpHesU&t=2s&pp=ygUZYWFhaSBlZHVjYXRpb25hbCBhaSB2aWRlbw%3D%3D)
@@ -21,6 +22,7 @@ featured: true
 ---
 
 ## 影片內容
+
 這部影片的核心目標，是在三分鐘內向不具備專業背景的觀眾，清晰地闡述大型語言模型安全中的「越獄攻擊」（Jailbreak Attacks）與其防禦機制。為此，我採用了經典的「問題－解決方案」敘事結構，並藉由具體案例和生動比喻，將複雜的技術概念轉化為易於理解的內容。
 
 1.  **開場：引人入勝的懸念 (0:00 - 0:30)**
@@ -38,6 +40,7 @@ featured: true
 ---
 
 ## 影片製作
+
 ![最後的時間線](images/optimized/projects/2025_01_05_aaai_video/full_timeline.webp)
 在整個製作流程中，影片拍攝反倒是相對單純的環節。架設好燈光與腳架後，A-roll 的部分只需對著鏡頭說話即可。儘管我在鏡頭前的表現有些生澀，仍在短時間內順利完成了拍攝。
 
@@ -46,6 +49,7 @@ featured: true
 ![先在 Affinity Designer 中編排好圖示](images/optimized/projects/2025_01_05_aaai_video/element_design.webp)
 
 其中，開場的動畫序列是製作過程中耗時最長的部分。它要呼應影片開頭的懸念，更要透過一個仿 ChatGPT 的介面來揭示主題。其製作流程大致如下：
+
 1.  **介面設計**：參考 ChatGPT 的實際介面後，我在 Fusion 中重新打造了一個風格相似的版型。
 2.  **動畫設計**：使用 Fusion 的 Text+ 工具，將文字與圖示結合，並設計動態效果。
 3.  **音效設計**：利用 3D 攝影機為介面增添縮放與運鏡效果，並在主時間軸上搭配對應的打字與提示音效。
@@ -57,6 +61,7 @@ featured: true
 ---
 
 ## 心得
+
 我很慶幸能有這次機會，將對語言模型安全的鑽研與對影片創作的喜愛合而為一。過程中，我不只學習到寶貴的動態設計技巧，更深刻體會到，那些如 [Vox](https://www.youtube.com/@Vox) 和 [Kurzgesagt](https://www.youtube.com/@kurzgesagt) 的頂尖頻道，其背後是多麽龐大的心血結晶，即便擁有專業團隊，每一個精緻畫面的背後，都堆疊著難以想像的時間與精力。
 
 期望未來能將這次的經驗應用到更多的創作中，持續磨練自己的技能。相信這次的經驗不只是一次成功的專案，更是探索科技傳播與視覺敘事可能性的起點。
@@ -64,6 +69,7 @@ featured: true
 ---
 
 ## 致謝
+
 感謝 AK 將這個競賽資訊分享給我，以及他在影片劇本轉寫初期提供的建議，讓我能更清晰地表達核心概念。
 
 封面 mockup 由 [Micro Volume](https://microvolume.gumroad.com/l/macbook1) 的素材製作而成。

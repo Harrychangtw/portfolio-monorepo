@@ -1,24 +1,28 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface NotificationBannerProps {
-  message: string
-  isVisible: boolean
-  onDismiss: () => void
+  message: string;
+  isVisible: boolean;
+  onDismiss: () => void;
 }
 
-export default function NotificationBanner({ message, isVisible, onDismiss }: NotificationBannerProps) {
+export default function NotificationBanner({
+  message,
+  isVisible,
+  onDismiss,
+}: NotificationBannerProps) {
   useEffect(() => {
     if (isVisible) {
       const timer = setTimeout(() => {
-        onDismiss()
-      }, 3000)
+        onDismiss();
+      }, 3000);
 
-      return () => clearTimeout(timer)
+      return () => clearTimeout(timer);
     }
-  }, [isVisible, onDismiss])
+  }, [isVisible, onDismiss]);
 
   return (
     <AnimatePresence>
@@ -36,5 +40,5 @@ export default function NotificationBanner({ message, isVisible, onDismiss }: No
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

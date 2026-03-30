@@ -34,7 +34,6 @@ pinned: -1
 
 這份禮物的重量沒有消失。但或許，承受重量就是重點。或許它理應讓你更認真思考該如何使用它。
 
-
 ## 米蘭，一月二十二日
 
 這一天有兩個驚喜。
@@ -188,5 +187,6 @@ M11-D 補完了這個迴路。一個真正的連動測距儀，代表著光學�
 ---
 
 ## 致謝
-- 封面照：*Les raboteurs de parquet* by [Gustave Caillebotte](https://en.wikipedia.org/wiki/en:Gustave_Caillebotte), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=21856443)。如同畫中的工人，這台相機要求你沉浸於技藝本身，而非只追求產出的效率。
+
+- 封面照：_Les raboteurs de parquet_ by [Gustave Caillebotte](https://en.wikipedia.org/wiki/en:Gustave_Caillebotte), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=21856443)。如同畫中的工人，這台相機要求你沉浸於技藝本身，而非只追求產出的效率。
 - 感謝 Justin 與 Charlie，謝謝你們閱讀了這篇文章的草稿並給予回饋。

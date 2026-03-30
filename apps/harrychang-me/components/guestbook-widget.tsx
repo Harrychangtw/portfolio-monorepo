@@ -1,77 +1,83 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "motion/react"
-import { ArrowRight, Loader2, Check } from "lucide-react"
-import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { ArrowRight, Loader2, Check } from "lucide-react";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
 
-export default function GuestbookWidget({ className = "" }: { className?: string }) {
-  const { t } = useLanguage()
-  const [message, setMessage] = useState("")
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
-  const [serverError, setServerError] = useState<string | null>(null)
-  const [placeholderIndex, setPlaceholderIndex] = useState(0)
-  const [isFocused, setIsFocused] = useState(false)
-  const inputRef = useRef<HTMLInputElement>(null)
+export default function GuestbookWidget({
+  className = "",
+}: {
+  className?: string;
+}) {
+  const { t } = useLanguage();
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [serverError, setServerError] = useState<string | null>(null);
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [isFocused, setIsFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // Dynamic placeholders from translation files
   const placeholders = [
-    t('guestbook.placeholder1'),
-    t('guestbook.placeholder2'),
-    t('guestbook.placeholder3'),
-    t('guestbook.placeholder4'),
-    t('guestbook.placeholder5'),
-    t('guestbook.placeholder6'),
-    t('guestbook.placeholder7'),
-  ]
+    t("guestbook.placeholder1"),
+    t("guestbook.placeholder2"),
+    t("guestbook.placeholder3"),
+    t("guestbook.placeholder4"),
+    t("guestbook.placeholder5"),
+    t("guestbook.placeholder6"),
+    t("guestbook.placeholder7"),
+  ];
 
   // Cycle placeholders
   useEffect(() => {
-    if (isFocused) return
+    if (isFocused) return;
     const interval = setInterval(() => {
-      setPlaceholderIndex((prev) => (prev + 1) % placeholders.length)
-    }, 2500)
-    return () => clearInterval(interval)
-  }, [isFocused, placeholders.length])
+      setPlaceholderIndex((prev) => (prev + 1) % placeholders.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [isFocused, placeholders.length]);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!message.trim()) return
+    e.preventDefault();
+    if (!message.trim()) return;
 
-    setStatus("loading")
-    setServerError(null)
+    setStatus("loading");
+    setServerError(null);
 
     try {
       const res = await fetch("/api/guestbook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }),
-      })
+      });
 
-      const data = await res.json()
-      
+      const data = await res.json();
+
       if (!res.ok) {
-        throw new Error(data.error || "Something went wrong")
+        throw new Error(data.error || "Something went wrong");
       }
 
-      setStatus("success")
-      setMessage("")
+      setStatus("success");
+      setMessage("");
       setTimeout(() => {
-        setStatus("idle")
-        inputRef.current?.blur()
-        setIsFocused(false)
-      }, 2000)
+        setStatus("idle");
+        inputRef.current?.blur();
+        setIsFocused(false);
+      }, 2000);
     } catch (error) {
-      setStatus("error")
+      setStatus("error");
       if (error instanceof Error) {
-        setServerError(error.message)
+        setServerError(error.message);
       }
       setTimeout(() => {
-        setStatus("idle")
-        setServerError(null)
-      }, 3000)
+        setStatus("idle");
+        setServerError(null);
+      }, 3000);
     }
-  }
+  };
 
   return (
     <div className={`relative ${className}`}>
@@ -109,7 +115,7 @@ export default function GuestbookWidget({ className = "" }: { className?: string
             onBlur={() => !message && setIsFocused(false)}
             maxLength={500}
             className="pb-3 w-full bg-transparent text-base text-secondary outline-none placeholder:text-secondary truncate"
-            placeholder={isFocused ? t('guestbook.focusedPlaceholder') : ""}
+            placeholder={isFocused ? t("guestbook.focusedPlaceholder") : ""}
           />
 
           {/* Underline */}
@@ -158,11 +164,11 @@ export default function GuestbookWidget({ className = "" }: { className?: string
               exit={{ opacity: 0, y: -10 }}
               className="text-xs text-red-400 mt-2 truncate"
             >
-              {serverError || t('guestbook.error')}
+              {serverError || t("guestbook.error")}
             </motion.p>
           )}
         </AnimatePresence>
       </form>
     </div>
-  )
+  );
 }

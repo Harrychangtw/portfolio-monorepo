@@ -4,15 +4,15 @@ const nextConfig: NextConfig = {
   // Image optimization configuration
   images: {
     unoptimized: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'i.scdn.co',
+        protocol: "https",
+        hostname: "i.scdn.co",
       },
       {
-        protocol: 'http',
-        hostname: 'localhost',
+        protocol: "http",
+        hostname: "localhost",
       },
     ],
   },
@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(glb|gltf)$/,
-      type: 'asset/resource',
+      type: "asset/resource",
     });
     return config;
   },

@@ -1,27 +1,34 @@
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { getProjectData, getAllProjectSlugs } from "@portfolio/lib/lib/markdown"
-import ProjectPostClient from "@portfolio/ui/project-post-client"
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import {
+  getProjectData,
+  getAllProjectSlugs,
+} from "@portfolio/lib/lib/markdown";
+import ProjectPostClient from "@portfolio/ui/project-post-client";
 
-const baseUrl = 'https://www.emilychang.me'
+const baseUrl = "https://www.emilychang.me";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params
-  if (!slug) return { title: "Project Not Found" }
-  
-  const project = await getProjectData(slug)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  if (!slug) return { title: "Project Not Found" };
+
+  const project = await getProjectData(slug);
 
   if (!project) {
     return {
       title: "Project Not Found",
-    }
+    };
   }
 
-  const canonicalUrl = `${baseUrl}/projects/${slug}`
-  
-  const imageUrl = project.imageUrl.startsWith('http') 
-    ? project.imageUrl 
-    : `${baseUrl}${project.imageUrl.startsWith('/') ? '' : '/'}${project.imageUrl}`
+  const canonicalUrl = `${baseUrl}/projects/${slug}`;
+
+  const imageUrl = project.imageUrl.startsWith("http")
+    ? project.imageUrl
+    : `${baseUrl}${project.imageUrl.startsWith("/") ? "" : "/"}${project.imageUrl}`;
 
   return {
     title: `${project.title} | Projects`,
@@ -30,11 +37,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       project.title,
       project.category,
       ...(project.subcategory ? [project.subcategory] : []),
-      'Emily Chang',
+      "Emily Chang",
     ].filter(Boolean),
-    authors: [{ name: 'Emily Chang' }],
-    creator: 'Emily Chang',
-    publisher: 'Emily Chang',
+    authors: [{ name: "Emily Chang" }],
+    creator: "Emily Chang",
+    publisher: "Emily Chang",
     alternates: {
       canonical: canonicalUrl,
     },
@@ -42,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: project.title,
       description: project.description,
       url: canonicalUrl,
-      siteName: 'Emily Chang Portfolio',
+      siteName: "Emily Chang Portfolio",
       images: [
         {
           url: imageUrl,
@@ -51,64 +58,68 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           alt: project.title,
         },
       ],
-      locale: 'en_US',
-      type: 'article',
+      locale: "en_US",
+      type: "article",
       publishedTime: project.date,
     },
     robots: {
       index: true,
       follow: true,
     },
-  }
+  };
 }
 
-export async function generateStaticParams() {  
-  const paths = getAllProjectSlugs()
-  return paths
+export async function generateStaticParams() {
+  const paths = getAllProjectSlugs();
+  return paths;
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  if (!slug) notFound()
-  
-  const project = await getProjectData(slug)
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  if (!slug) notFound();
+
+  const project = await getProjectData(slug);
 
   if (!project || project.locked) {
-    notFound()
+    notFound();
   }
 
-  const canonicalUrl = `${baseUrl}/projects/${slug}`
-  const imageUrl = project.imageUrl.startsWith('http') 
-    ? project.imageUrl 
-    : `${baseUrl}${project.imageUrl.startsWith('/') ? '' : '/'}${project.imageUrl}`
+  const canonicalUrl = `${baseUrl}/projects/${slug}`;
+  const imageUrl = project.imageUrl.startsWith("http")
+    ? project.imageUrl
+    : `${baseUrl}${project.imageUrl.startsWith("/") ? "" : "/"}${project.imageUrl}`;
 
   const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
     headline: project.title,
     description: project.description,
     image: imageUrl,
     datePublished: project.date,
     author: {
-      '@type': 'Person',
-      name: 'Emily Chang',
+      "@type": "Person",
+      name: "Emily Chang",
       url: baseUrl,
     },
     publisher: {
-      '@type': 'Person',
-      name: 'Emily Chang',
+      "@type": "Person",
+      name: "Emily Chang",
       url: baseUrl,
     },
     mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': canonicalUrl,
+      "@type": "WebPage",
+      "@id": canonicalUrl,
     },
     keywords: [
       project.category,
       ...(project.subcategory ? [project.subcategory] : []),
-    ].join(', '),
-    inLanguage: 'en-US',
-  }
+    ].join(", "),
+    inLanguage: "en-US",
+  };
 
   return (
     <>
@@ -118,5 +129,5 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       />
       <ProjectPostClient initialProject={project} />
     </>
-  )
+  );
 }

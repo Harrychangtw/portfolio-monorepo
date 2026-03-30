@@ -19,7 +19,6 @@ gallery:
   - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0050 28 Edited.webp"
 ---
 
-
 > so much depends
 > upon
 > a red wheel barrow

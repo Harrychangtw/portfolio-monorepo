@@ -1,9 +1,9 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-import { GalleryItemMetadata } from "./markdown"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { GalleryItemMetadata } from "./markdown";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export interface ImageLayout {
@@ -26,15 +26,15 @@ const getAspectType = (item: GalleryItemMetadata): string => {
   if (item.aspectType) {
     return item.aspectType;
   }
-  
+
   // Default to checking if imageUrl contains indicators like '_v' or '_h'
-  const imageUrl = item.imageUrl || '';
-  if (imageUrl.includes('_v') || imageUrl.includes('-v.')) {
+  const imageUrl = item.imageUrl || "";
+  if (imageUrl.includes("_v") || imageUrl.includes("-v.")) {
     return VERTICAL_ASPECT;
-  } else if (imageUrl.includes('_h') || imageUrl.includes('-h.')) {
+  } else if (imageUrl.includes("_h") || imageUrl.includes("-h.")) {
     return HORIZONTAL_ASPECT;
   }
-  
+
   // Default to horizontal if we can't determine
   return HORIZONTAL_ASPECT;
 };
@@ -53,67 +53,71 @@ const getRelativeHeight = (aspectType: string): number => {
  */
 export function createBalancedLayout(
   items: GalleryItemMetadata[],
-  pinnedItems: Map<number, { rowIndex: number, columnIndex: number }> = new Map()
+  pinnedItems: Map<
+    number,
+    { rowIndex: number; columnIndex: number }
+  > = new Map(),
 ): BalancedLayoutResult {
   // Initialize columns and heights
   const columns: ImageLayout[][] = [[], [], []];
   const columnHeights: number[] = [0, 0, 0];
-  
+
   // Track which indices have been placed
   const placedIndices = new Set<number>();
-  
+
   // First, place pinned items
   pinnedItems.forEach((position, itemIndex) => {
     if (itemIndex >= 0 && itemIndex < items.length) {
       const { rowIndex, columnIndex } = position;
-      
+
       // Ensure the column has enough rows
       while (columns[columnIndex].length <= rowIndex) {
         columns[columnIndex].push({
           itemIndex: -1, // Placeholder
           columnIndex,
-          item: {} as GalleryItemMetadata
+          item: {} as GalleryItemMetadata,
         });
       }
-      
+
       // Place the pinned item
       const item = items[itemIndex];
       const aspectType = getAspectType(item);
       const relativeHeight = getRelativeHeight(aspectType);
-      
+
       columns[columnIndex][rowIndex] = {
         itemIndex,
         columnIndex,
-        item
+        item,
       };
-      
+
       columnHeights[columnIndex] += relativeHeight;
       placedIndices.add(itemIndex);
     }
   });
-  
+
   // Group remaining items in sets of 3 for row-by-row layout
   let currentRow = 0;
-  
+
   while (placedIndices.size < items.length) {
     // For each row, try to follow the pattern:
     // Row 0: h v h
     // Row 1: v h v
     // Row 2: h v h, etc.
-    const rowPattern = currentRow % 2 === 0 
-      ? [HORIZONTAL_ASPECT, VERTICAL_ASPECT, HORIZONTAL_ASPECT]
-      : [VERTICAL_ASPECT, HORIZONTAL_ASPECT, VERTICAL_ASPECT];
-    
+    const rowPattern =
+      currentRow % 2 === 0
+        ? [HORIZONTAL_ASPECT, VERTICAL_ASPECT, HORIZONTAL_ASPECT]
+        : [VERTICAL_ASPECT, HORIZONTAL_ASPECT, VERTICAL_ASPECT];
+
     // Find items matching the desired pattern for this row
     const rowItems: number[] = [-1, -1, -1]; // Init with -1 (unfilled)
-    
+
     // First pass: try to find exact aspect ratio matches
     for (let i = 0; i < items.length; i++) {
       if (placedIndices.has(i)) continue;
-      
+
       const item = items[i];
       const aspectType = getAspectType(item);
-      
+
       // Check if this item matches any unfilled position in the pattern
       for (let j = 0; j < 3; j++) {
         if (rowItems[j] === -1 && aspectType === rowPattern[j]) {
@@ -122,11 +126,11 @@ export function createBalancedLayout(
           break;
         }
       }
-      
+
       // If we've filled the row, break
       if (!rowItems.includes(-1)) break;
     }
-    
+
     // Second pass: fill any remaining positions with any available items
     for (let j = 0; j < 3; j++) {
       if (rowItems[j] === -1) {
@@ -140,7 +144,7 @@ export function createBalancedLayout(
         }
       }
     }
-    
+
     // Place items in this row
     for (let j = 0; j < 3; j++) {
       const itemIndex = rowItems[j];
@@ -148,22 +152,22 @@ export function createBalancedLayout(
         const item = items[itemIndex];
         const aspectType = getAspectType(item);
         const relativeHeight = getRelativeHeight(aspectType);
-        
+
         columns[j].push({
           itemIndex,
           columnIndex: j,
-          item
+          item,
         });
-        
+
         columnHeights[j] += relativeHeight;
       }
     }
-    
+
     currentRow++;
-    
+
     // Break if we've processed all items
     if (placedIndices.size >= items.length) break;
-    
+
     // Optimization: After initial pattern-based placement, balance remaining items
     if (currentRow >= 2) {
       // Place remaining items one-by-one into the shortest column
@@ -175,7 +179,7 @@ export function createBalancedLayout(
             shortestColumn = i;
           }
         }
-        
+
         // Find next unplaced item
         let nextItemIndex = -1;
         for (let i = 0; i < items.length; i++) {
@@ -184,18 +188,18 @@ export function createBalancedLayout(
             break;
           }
         }
-        
+
         if (nextItemIndex !== -1) {
           const item = items[nextItemIndex];
           const aspectType = getAspectType(item);
           const relativeHeight = getRelativeHeight(aspectType);
-          
+
           columns[shortestColumn].push({
             itemIndex: nextItemIndex,
             columnIndex: shortestColumn,
-            item
+            item,
           });
-          
+
           columnHeights[shortestColumn] += relativeHeight;
           placedIndices.add(nextItemIndex);
         } else {
@@ -204,9 +208,9 @@ export function createBalancedLayout(
       }
     }
   }
-  
+
   return {
     columns,
-    heightPerColumn: columnHeights
+    heightPerColumn: columnHeights,
   };
 }

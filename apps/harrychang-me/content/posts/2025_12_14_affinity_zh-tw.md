@@ -42,7 +42,7 @@ V3 延續了這種基因，而統一化也確實解決了實際的摩擦。在 V
 
 這裡是 45 天的日常使用開始出現裂縫的地方。
 
-我在 M1 Max MacBook Pro 上運行它，整整 32GB RAM。這台機器在 Resolve 中處理 4K 時間軸不費吹灰之力，但在 Affinity V3 中，*拖曳一個沒有效果的文字框* 有時會出現明顯的延遲。一個非常令人煩躁的狀況，害我必須重新安裝、匯出為 PDF 並在 V2 中重建我的檔案才能正常工作。
+我在 M1 Max MacBook Pro 上運行它，整整 32GB RAM。這台機器在 Resolve 中處理 4K 時間軸不費吹灰之力，但在 Affinity V3 中，_拖曳一個沒有效果的文字框_ 有時會出現明顯的延遲。一個非常令人煩躁的狀況，害我必須重新安裝、匯出為 PDF 並在 V2 中重建我的檔案才能正常工作。
 
 這是早期軟體，我稍微理解。但 Affinity 的吸引力在於它比 Adobe 臃腫的替代品更輕、更快。如果這種差距變得微乎其微，價值就會減弱。
 
@@ -85,4 +85,5 @@ Canva 是*不可預測的善良*。這反而難以應對。
 因為巨石總是會滾回山下。問題只是在於，是你自己推它，還是有人在山下等著向你收取授權費用。
 
 ## 致謝
--  封面照：*The Procession of the Trojan Horse in Troy* by [Giovanni Domenico Tiepolo](https://en.wikipedia.org/wiki/en:Giovanni_Domenico_Tiepolo), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=15398455)
+
+- 封面照：_The Procession of the Trojan Horse in Troy_ by [Giovanni Domenico Tiepolo](https://en.wikipedia.org/wiki/en:Giovanni_Domenico_Tiepolo), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=15398455)

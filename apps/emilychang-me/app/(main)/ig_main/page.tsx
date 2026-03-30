@@ -1,6 +1,6 @@
-import { redirect } from 'next/navigation'
-import { siteConfig } from '@/config/site'
+import { redirect } from "next/navigation";
+import { siteConfig } from "@/config/site";
 
 export default function InstagramMainRedirect() {
-  redirect(siteConfig.social.personalInstagram.url)
+  redirect(siteConfig.social.personalInstagram.url);
 }

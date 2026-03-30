@@ -1,7 +1,7 @@
-import type { Config } from "tailwindcss"
-import defaultTheme from "tailwindcss/defaultTheme"
+import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
-const config: Omit<Config, 'content'> = {
+const config: Omit<Config, "content"> = {
   darkMode: "class",
   prefix: "",
   theme: {
@@ -51,8 +51,8 @@ const config: Omit<Config, 'content'> = {
         "space-grotesk": ["var(--font-space-grotesk)", "sans-serif"],
         "ibm-plex": ["var(--font-ibm-plex-sans)", "sans-serif"],
         // Emily chang fonts
-        "inter": ["var(--font-inter)", "sans-serif"],
-        "playfair": ["var(--font-playfair-display)", "serif"],
+        inter: ["var(--font-inter)", "sans-serif"],
+        playfair: ["var(--font-playfair-display)", "serif"],
         "playfair-display": ["var(--font-playfair-display)", "serif"],
       },
       typography: {
@@ -63,20 +63,20 @@ const config: Omit<Config, 'content'> = {
               color: "hsl(var(--primary))",
               textDecoration: "underline",
               textDecorationStyle: "dashed",
-                textDecorationColor: "hsl(var(--border))",
+              textDecorationColor: "hsl(var(--border))",
               textUnderlineOffset: "0.2em",
               transition: "text-decoration-color 0.2s ease-in-out",
               whiteSpace: "nowrap",
               "&:hover": {
                 color: "hsl(var(--primary))",
-                  textDecorationColor: "hsl(var(--accent))",
+                textDecorationColor: "hsl(var(--accent))",
               },
               "&::after": {
                 content: '"*"',
                 display: "inline",
-                marginLeft: "0.1em",  
+                marginLeft: "0.1em",
                 verticalAlign: "super",
-                  color: "hsl(var(--accent))",
+                color: "hsl(var(--accent))",
                 fontFamily: "var(--font-heading)",
                 fontSize: "0.85em",
                 whiteSpace: "nowrap",
@@ -112,19 +112,17 @@ const config: Omit<Config, 'content'> = {
               color: "hsl(var(--foreground))",
               fontFamily: "var(--font-body)",
             },
-            "ul > li::marker": 
-            {
+            "ul > li::marker": {
               color: "hsl(var(--muted-foreground))",
             },
-            "ol > li::marker": 
-            {
+            "ol > li::marker": {
               color: "hsl(var(--muted-foreground))",
             },
             hr: {
               borderColor: "hsl(var(--border))",
               borderTopWidth: "2px",
               marginTop: "2em",
-              marginBottom: "2em"
+              marginBottom: "2em",
             },
             blockquote: {
               quotes: "none",
@@ -136,10 +134,10 @@ const config: Omit<Config, 'content'> = {
               fontFamily: "var(--font-body)",
             },
             "blockquote p:first-of-type::before": {
-              content: "none"
+              content: "none",
             },
             "blockquote p:last-of-type::after": {
-              content: "none"
+              content: "none",
             },
             code: {
               color: "hsl(var(--foreground))",
@@ -149,15 +147,16 @@ const config: Omit<Config, 'content'> = {
               paddingRight: "0.25rem",
               paddingTop: "0.125rem",
               paddingBottom: "0.125rem",
-              fontFamily: "ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace",
+              fontFamily:
+                "ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace",
               fontSize: "0.875em",
               fontWeight: "400",
             },
             "code::before": {
-              content: "none"
+              content: "none",
             },
             "code::after": {
-              content: "none"
+              content: "none",
             },
             // Ensure pre > code blocks don't get the inline styling
             "pre code": {
@@ -165,7 +164,7 @@ const config: Omit<Config, 'content'> = {
               borderRadius: "0",
               padding: "0",
               fontSize: "1em",
-            }
+            },
           },
         },
       },
@@ -199,9 +198,8 @@ const config: Omit<Config, 'content'> = {
     // @ts-ignore
     require("tailwindcss-animate"),
     // @ts-ignore
-    require("@tailwindcss/typography")
+    require("@tailwindcss/typography"),
   ],
-}
+};
 
-export default config
-
+export default config;

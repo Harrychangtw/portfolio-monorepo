@@ -3,6 +3,6 @@
  * Centralized configuration and constants
  */
 
-export * from './animation-constants'
-export * from './ui-constants'
-export * from './design-tokens'
+export * from "./animation-constants";
+export * from "./ui-constants";
+export * from "./design-tokens";

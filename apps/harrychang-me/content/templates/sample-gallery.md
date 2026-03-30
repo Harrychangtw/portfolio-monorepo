@@ -1,7 +1,7 @@
 ---
 title: "Find Your Peak..."
 
-imageUrl: "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp" 
+imageUrl: "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp"
 quote: "Finding geometry in the concrete jungle"
 date: "2023-04-10"
 camera: "Sony A7III"

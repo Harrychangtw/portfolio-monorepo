@@ -1,20 +1,27 @@
-import { fetchArxivPapers, getManualPapers, getArxivPaperIds, getPrebuiltPapers } from "@portfolio/lib/lib/arxiv";
+import {
+  fetchArxivPapers,
+  getManualPapers,
+  getArxivPaperIds,
+  getPrebuiltPapers,
+} from "@portfolio/lib/lib/arxiv";
 import { Paper } from "@portfolio/lib/types/paper";
 import PaperReadingPageClient from "@/components/main/paper-reading-page-client";
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Paper Reading',
-  description: "Papers I'm slowly working through. An annotated reading list of research in AI, machine learning, and the ideas worth sitting with.",
+  title: "Paper Reading",
+  description:
+    "Papers I'm slowly working through. An annotated reading list of research in AI, machine learning, and the ideas worth sitting with.",
   openGraph: {
-    title: 'Paper Reading | Harry Chang 張祺煒',
-    description: "Papers I'm slowly working through — research in AI, machine learning, and the ideas worth sitting with.",
+    title: "Paper Reading | Harry Chang 張祺煒",
+    description:
+      "Papers I'm slowly working through — research in AI, machine learning, and the ideas worth sitting with.",
     images: [
       {
-        url: 'https://www.harrychang.me/images/og-image-reading.webp',
+        url: "https://www.harrychang.me/images/og-image-reading.webp",
         width: 1200,
         height: 630,
-        alt: 'Paper Reading | Harry Chang',
+        alt: "Paper Reading | Harry Chang",
       },
     ],
   },
@@ -22,7 +29,7 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
-}
+};
 
 export default async function PaperReadingPage({
   searchParams,
@@ -37,10 +44,10 @@ export default async function PaperReadingPage({
     const arxivPaperIds = getArxivPaperIds();
     const [arxivPapers, manualPapers] = await Promise.all([
       fetchArxivPapers(arxivPaperIds),
-      getManualPapers()
+      getManualPapers(),
     ]);
     allPapers = [...arxivPapers, ...manualPapers].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
     );
   }
 
@@ -51,14 +58,14 @@ export default async function PaperReadingPage({
 
   const paginatedPapers = allPapers.slice(
     (currentPage - 1) * papersPerPage,
-    currentPage * papersPerPage
+    currentPage * papersPerPage,
   );
 
   const hasPrevPage = currentPage > 1;
   const hasNextPage = allPapers.length > currentPage * papersPerPage;
 
   return (
-    <PaperReadingPageClient 
+    <PaperReadingPageClient
       paginatedPapers={paginatedPapers}
       hasNextPage={hasNextPage}
       hasPrevPage={hasPrevPage}

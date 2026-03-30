@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import React from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { motion } from 'motion/react'
-import GuestbookWidget from '@/components/guestbook-widget'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import { motion } from "motion/react";
+import GuestbookWidget from "@/components/guestbook-widget";
 import {
   Mail,
   Github,
@@ -21,13 +21,13 @@ import {
   Wrench,
   ArrowLeft,
   PenTool,
-} from "lucide-react"
+} from "lucide-react";
 
 interface LinkItem {
-  icon: React.ReactNode
-  label: string
-  href: string
-  external?: boolean
+  icon: React.ReactNode;
+  label: string;
+  href: string;
+  external?: boolean;
 }
 
 const containerVariants = {
@@ -39,7 +39,7 @@ const containerVariants = {
       delayChildren: 0.2,
     },
   },
-}
+};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -52,10 +52,10 @@ const itemVariants = {
       damping: 15,
     },
   },
-}
+};
 
 export default function LinksPageClient() {
-  const { t, language } = useLanguage()
+  const { t, language } = useLanguage();
 
   const links: LinkItem[] = [
     {
@@ -132,8 +132,7 @@ export default function LinksPageClient() {
       label: t("resources.uses"),
       href: "/uses",
     },
-    
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center py-8   px-4 sm:px-6">
@@ -143,9 +142,7 @@ export default function LinksPageClient() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-8"
-        >
-    
-        </motion.div>
+        ></motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -245,7 +242,7 @@ export default function LinksPageClient() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
 
 function LinkCard({ link }: { link: LinkItem }) {
@@ -253,7 +250,7 @@ function LinkCard({ link }: { link: LinkItem }) {
     <div className="relative overflow-hidden rounded-xl bg-card border border-border p-2 sm:p-2 transition-all duration-300 hover:border-primary/50 hover:bg-card/80 hover:shadow-lg hover:shadow-primary/5 active:scale-[0.98]">
       {/* Hover Effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-      
+
       <div className="relative flex items-center gap-2.5 sm:gap-3">
         {/* Icon */}
         <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-muted/50 flex items-center justify-center text-foreground group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300">
@@ -285,5 +282,5 @@ function LinkCard({ link }: { link: LinkItem }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

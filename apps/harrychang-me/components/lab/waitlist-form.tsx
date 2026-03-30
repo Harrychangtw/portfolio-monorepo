@@ -1,8 +1,8 @@
 // components/lab/waitlist-form.tsx
-import { useState, useEffect, useRef } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { useLanguage } from '@portfolio/lib/contexts/language-context';
-import { X } from 'lucide-react';
+import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "next/navigation";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import { X } from "lucide-react";
 
 interface WaitlistFormProps {
   onClose: () => void;
@@ -14,18 +14,22 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
   const firstNameRef = useRef<HTMLInputElement>(null);
 
   const [formData, setFormData] = useState({
-    email: '',
-    firstName: '',
-    lastName: '',
+    email: "",
+    firstName: "",
+    lastName: "",
     interests: [] as string[],
-    tier: 'quickConsult',
-    background: '',
-    challenges: '',
+    tier: "quickConsult",
+    background: "",
+    challenges: "",
   });
 
-  const [validationErrors, setValidationErrors] = useState<Record<string, boolean>>({});
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [validationErrors, setValidationErrors] = useState<
+    Record<string, boolean>
+  >({});
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,15 +39,15 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
   }, []);
 
   const interestOptions = [
-    { id: 'frameworks', label: t('lab.interests.frameworks', 'common') },
-    { id: 'speaking', label: t('lab.interests.speaking', 'common') },
-    { id: 'narrative', label: t('lab.interests.narrative', 'common') },
+    { id: "frameworks", label: t("lab.interests.frameworks", "common") },
+    { id: "speaking", label: t("lab.interests.speaking", "common") },
+    { id: "narrative", label: t("lab.interests.narrative", "common") },
   ];
 
   const tierOptions = [
-    { id: 'quickConsult', label: t('lab.tiers.quickConsult', 'common') },
-    { id: 'deepDive', label: t('lab.tiers.deepDive', 'common') },
-    { id: 'writtenReview', label: t('lab.tiers.writtenReview', 'common') },
+    { id: "quickConsult", label: t("lab.tiers.quickConsult", "common") },
+    { id: "deepDive", label: t("lab.tiers.deepDive", "common") },
+    { id: "writtenReview", label: t("lab.tiers.writtenReview", "common") },
   ];
 
   const validate = (): boolean => {
@@ -62,36 +66,36 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
     e.preventDefault();
     if (!validate()) return;
 
-    setStatus('loading');
-    setErrorMessage('');
+    setStatus("loading");
+    setErrorMessage("");
 
     const payload = {
       ...formData,
       locale: language,
-      referralSource: searchParams.get('ref'),
-      utmSource: searchParams.get('utm_source'),
-      utmMedium: searchParams.get('utm_medium'),
-      utmCampaign: searchParams.get('utm_campaign'),
+      referralSource: searchParams.get("ref"),
+      utmSource: searchParams.get("utm_source"),
+      utmMedium: searchParams.get("utm_medium"),
+      utmCampaign: searchParams.get("utm_campaign"),
     };
 
     try {
-      const response = await fetch('/api/lab/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/lab/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        setStatus('success');
+        setStatus("success");
       } else {
-        setStatus('error');
-        setErrorMessage(data.error || t('lab.errorGeneric', 'common'));
+        setStatus("error");
+        setErrorMessage(data.error || t("lab.errorGeneric", "common"));
       }
     } catch {
-      setStatus('error');
-      setErrorMessage(t('lab.errorNetwork', 'common'));
+      setStatus("error");
+      setErrorMessage(t("lab.errorNetwork", "common"));
     }
   };
 
@@ -109,9 +113,9 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
   };
 
   const fieldClass = (field: string, base: string) =>
-    `${base} ${validationErrors[field] ? 'border-red-500/60 focus:border-red-500' : 'border-border focus:border-primary'}`;
+    `${base} ${validationErrors[field] ? "border-red-500/60 focus:border-red-500" : "border-border focus:border-primary"}`;
 
-  if (status === 'success') {
+  if (status === "success") {
     return (
       <div
         onClick={(e) => e.stopPropagation()}
@@ -119,16 +123,16 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
       >
         <div className="mb-4 text-4xl">✓</div>
         <h2 className="text-2xl font-heading font-bold mb-4 text-foreground">
-          {t('lab.successTitle', 'common')}
+          {t("lab.successTitle", "common")}
         </h2>
         <p className="text-muted-foreground mb-6">
-          {t('lab.successMessage', 'common')}
+          {t("lab.successMessage", "common")}
         </p>
         <button
           onClick={onClose}
           className="px-6 py-2 font-heading bg-primary text-background rounded-md hover:bg-primary/90 transition-colors"
         >
-          {t('lab.close', 'common')}
+          {t("lab.close", "common")}
         </button>
       </div>
     );
@@ -148,11 +152,11 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
       </button>
 
       <h2 className="text-2xl font-heading font-bold mb-2 text-foreground">
-        {t('lab.formTitle', 'common')}
+        {t("lab.formTitle", "common")}
       </h2>
 
       <p className="text-sm font-heading text-muted-foreground mb-6">
-        {t('lab.formSubtitle', 'common')}
+        {t("lab.formSubtitle", "common")}
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -162,29 +166,31 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
             ref={firstNameRef}
             type="text"
             required
-            placeholder={`${t('lab.firstName', 'common')} *`}
+            placeholder={`${t("lab.firstName", "common")} *`}
             value={formData.firstName}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, firstName: e.target.value }));
-              if (validationErrors.firstName) setValidationErrors((prev) => ({ ...prev, firstName: false }));
+              if (validationErrors.firstName)
+                setValidationErrors((prev) => ({ ...prev, firstName: false }));
             }}
             className={fieldClass(
-              'firstName',
-              'px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary'
+              "firstName",
+              "px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary",
             )}
           />
           <input
             type="text"
             required
-            placeholder={`${t('lab.lastName', 'common')} *`}
+            placeholder={`${t("lab.lastName", "common")} *`}
             value={formData.lastName}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, lastName: e.target.value }));
-              if (validationErrors.lastName) setValidationErrors((prev) => ({ ...prev, lastName: false }));
+              if (validationErrors.lastName)
+                setValidationErrors((prev) => ({ ...prev, lastName: false }));
             }}
             className={fieldClass(
-              'lastName',
-              'px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary'
+              "lastName",
+              "px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary",
             )}
           />
         </div>
@@ -193,35 +199,37 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
         <input
           type="email"
           required
-          placeholder={t('lab.emailRequired', 'common')}
+          placeholder={t("lab.emailRequired", "common")}
           value={formData.email}
           onChange={(e) => {
             setFormData((prev) => ({ ...prev, email: e.target.value }));
-            if (validationErrors.email) setValidationErrors((prev) => ({ ...prev, email: false }));
+            if (validationErrors.email)
+              setValidationErrors((prev) => ({ ...prev, email: false }));
           }}
           className={fieldClass(
-            'email',
-            'w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary'
+            "email",
+            "w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary",
           )}
         />
 
         {/* Background */}
         <div>
           <label className="block text-sm font-heading font-medium mb-1.5 text-foreground/80">
-            {t('lab.backgroundLabel', 'common')} *
+            {t("lab.backgroundLabel", "common")} *
           </label>
           <textarea
             required
             rows={2}
-            placeholder={t('lab.backgroundPlaceholder', 'common')}
+            placeholder={t("lab.backgroundPlaceholder", "common")}
             value={formData.background}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, background: e.target.value }));
-              if (validationErrors.background) setValidationErrors((prev) => ({ ...prev, background: false }));
+              if (validationErrors.background)
+                setValidationErrors((prev) => ({ ...prev, background: false }));
             }}
             className={fieldClass(
-              'background',
-              'w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary resize-none'
+              "background",
+              "w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary resize-none",
             )}
           />
         </div>
@@ -229,20 +237,21 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
         {/* Challenges */}
         <div>
           <label className="block text-sm font-heading font-medium mb-1.5 text-foreground/80">
-            {t('lab.challengesLabel', 'common')} *
+            {t("lab.challengesLabel", "common")} *
           </label>
           <textarea
             required
             rows={3}
-            placeholder={t('lab.challengesPlaceholder', 'common')}
+            placeholder={t("lab.challengesPlaceholder", "common")}
             value={formData.challenges}
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, challenges: e.target.value }));
-              if (validationErrors.challenges) setValidationErrors((prev) => ({ ...prev, challenges: false }));
+              if (validationErrors.challenges)
+                setValidationErrors((prev) => ({ ...prev, challenges: false }));
             }}
             className={fieldClass(
-              'challenges',
-              'w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary resize-none'
+              "challenges",
+              "w-full px-4 py-2 bg-background border rounded-lg focus:outline-none transition-colors text-foreground placeholder:text-secondary resize-none",
             )}
           />
         </div>
@@ -250,7 +259,7 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
         {/* Interests */}
         <div>
           <label className="block text-sm font-heading font-medium mb-1.5 text-foreground/80">
-            {t('lab.whatInterests', 'common')} *
+            {t("lab.whatInterests", "common")} *
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {interestOptions.map((option) => (
@@ -260,10 +269,10 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
                 onClick={() => toggleInterest(option.id)}
                 className={`px-3 py-2 text-sm rounded-lg border transition-all ${
                   formData.interests.includes(option.id)
-                    ? 'bg-primary text-background border-primary'
+                    ? "bg-primary text-background border-primary"
                     : validationErrors.interests
-                      ? 'bg-background border-red-500/60 text-muted-foreground hover:bg-background'
-                      : 'bg-background border-border hover:border-primary/50 text-muted-foreground hover:bg-background'
+                      ? "bg-background border-red-500/60 text-muted-foreground hover:bg-background"
+                      : "bg-background border-border hover:border-primary/50 text-muted-foreground hover:bg-background"
                 }`}
               >
                 {option.label}
@@ -271,22 +280,30 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
             ))}
           </div>
           {validationErrors.interests && (
-            <p className="text-xs text-red-400 mt-1.5">{t('lab.errorSelectInterest', 'common')}</p>
+            <p className="text-xs text-red-400 mt-1.5">
+              {t("lab.errorSelectInterest", "common")}
+            </p>
           )}
         </div>
 
         {/* Tier */}
         <div>
           <label className="block text-sm font-heading font-medium mb-1.5 text-foreground/80">
-            {t('lab.preferredTier', 'common')} *
+            {t("lab.preferredTier", "common")} *
           </label>
           <select
             value={formData.tier}
-            onChange={(e) => setFormData((prev) => ({ ...prev, tier: e.target.value }))}
+            onChange={(e) =>
+              setFormData((prev) => ({ ...prev, tier: e.target.value }))
+            }
             className="w-full px-4 py-2 bg-background border border-border rounded-lg focus:outline-none focus:border-primary transition-colors text-foreground"
           >
             {tierOptions.map((option) => (
-              <option key={option.id} value={option.id} className="bg-background text-foreground">
+              <option
+                key={option.id}
+                value={option.id}
+                className="bg-background text-foreground"
+              >
                 {option.label}
               </option>
             ))}
@@ -294,7 +311,7 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
         </div>
 
         {/* Error */}
-        {status === 'error' && (
+        {status === "error" && (
           <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-lg text-sm text-red-400">
             {errorMessage}
           </div>
@@ -303,16 +320,16 @@ export default function WaitlistForm({ onClose }: WaitlistFormProps) {
         {/* Submit */}
         <button
           type="submit"
-          disabled={status === 'loading'}
+          disabled={status === "loading"}
           className="w-full py-3 bg-primary text-background rounded-lg font-heading hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {status === 'loading'
-            ? t('lab.processing', 'common')
-            : t('lab.submitApplication', 'common')}
+          {status === "loading"
+            ? t("lab.processing", "common")
+            : t("lab.submitApplication", "common")}
         </button>
 
         <p className="text-xs text-muted-foreground text-center">
-          {t('lab.privacyNote', 'common')}
+          {t("lab.privacyNote", "common")}
         </p>
       </form>
     </div>

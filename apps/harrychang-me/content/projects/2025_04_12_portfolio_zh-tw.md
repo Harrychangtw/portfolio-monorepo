@@ -29,8 +29,8 @@ featured: true
 
 這個專案的心臟是它極具彈性的架構。透過 Next.js 的 middleware，系統能根據不同的 subdomain 動態重寫請求，將使用者導向主要作品集或實驗性網站，而這一切都由同一個 Next.js 應用程式驅動。主要作品集的內容以 Markdown 檔案形式儲存，使其扮演了一個 Headless CMS 的角色。一個客製化程式會透過以下幾個關鍵函式庫來處理這些檔案：
 
--   `gray-matter`：用於解析每個檔案頭部的 YAML frontmatter，來提取 metadata。
--   `remark` 與 `remark-html`：將 Markdown 內容轉換為 HTML，以便在網頁上渲染。
+- `gray-matter`：用於解析每個檔案頭部的 YAML frontmatter，來提取 metadata。
+- `remark` 與 `remark-html`：將 Markdown 內容轉換為 HTML，以便在網頁上渲染。
 
 這樣的架構將內容與呈現方式完全分離，讓更新網站內容就像操作 Git 一樣簡單。
 
@@ -64,11 +64,11 @@ featured: true
 
 這個作品集旨在展示多元的作品與想法。
 
--   [**專案列表**](https://harrychang.me/#projects)：展示所有專案，每個專案都有獨立的頁面，包含詳細的描述、圖片與影片。
--   [**攝影畫廊**](https://harrychang.me/#gallery)：一系列影像的集合，每張圖片都有專屬的頁面進行詳細展示，並透過客製化的畫框系統提升視覺呈現效果。
--   [**部落格**](https://harrychang.me/#blog)：涵蓋各種主題的文章區域，從評論到各式隨筆。
--   [**理念**](https://harrychang.me/manifesto)：一個專屬頁面，用來表達驅動我的核心原則，讓讀者能更專注地閱讀。
--   [**論文閱讀**](https://harrychang.me/paper-reading)：動態更新的學術論文閱讀筆記列表。
--   [**工具與設定**](https://harrychang.me/uses)：列出我日常使用的工具與軟體。
+- [**專案列表**](https://harrychang.me/#projects)：展示所有專案，每個專案都有獨立的頁面，包含詳細的描述、圖片與影片。
+- [**攝影畫廊**](https://harrychang.me/#gallery)：一系列影像的集合，每張圖片都有專屬的頁面進行詳細展示，並透過客製化的畫框系統提升視覺呈現效果。
+- [**部落格**](https://harrychang.me/#blog)：涵蓋各種主題的文章區域，從評論到各式隨筆。
+- [**理念**](https://harrychang.me/manifesto)：一個專屬頁面，用來表達驅動我的核心原則，讓讀者能更專注地閱讀。
+- [**論文閱讀**](https://harrychang.me/paper-reading)：動態更新的學術論文閱讀筆記列表。
+- [**工具與設定**](https://harrychang.me/uses)：列出我日常使用的工具與軟體。
 
 本站的原始程式碼已開源於 [GitHub](https://github.com/Harrychangtw/portfolio-monorepo)，並採用 CC BY-NC 4.0 授權。網站內所有文字與圖片內容則保留版權。

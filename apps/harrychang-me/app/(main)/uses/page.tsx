@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import type { ReactNode } from "react"
-import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { ImageContainer } from '@portfolio/ui/image-container'
-import { useIsMobile } from '@portfolio/lib/hooks/use-mobile'
+import type { ReactNode } from "react";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import { ImageContainer } from "@portfolio/ui/image-container";
+import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 
 /* ── Section wrapper ────────────────────────────────────── */
 function Section({
@@ -11,9 +11,9 @@ function Section({
   title,
   children,
 }: {
-  index: number
-  title: string
-  children: ReactNode
+  index: number;
+  title: string;
+  children: ReactNode;
 }) {
   return (
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
@@ -32,24 +32,30 @@ function Section({
       </div>
 
       {/* Content */}
-      <div className="col-span-12 md:col-start-7 md:col-span-6">
-        {children}
-      </div>
+      <div className="col-span-12 md:col-start-7 md:col-span-6">{children}</div>
     </div>
-  )
+  );
 }
 
 /* ── Item row ────────────────────────────────────────────── */
-function ItemRow({ label, value }: { label: string; value: string | string[] }) {
+function ItemRow({
+  label,
+  value,
+}: {
+  label: string;
+  value: string | string[];
+}) {
   return (
     <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 border-b border-border/30 last:border-b-0">
-      
       {/* Actual Item (Value) - Left on desktop, Bottom on mobile */}
       <div className="order-2 md:order-1 min-w-0">
         {Array.isArray(value) ? (
           <div className="flex flex-col gap-1">
             {value.map((v, i) => (
-              <span key={i} className="font-ibm-plex text-sm md:text-base text-primary leading-relaxed block">
+              <span
+                key={i}
+                className="font-ibm-plex text-sm md:text-base text-primary leading-relaxed block"
+              >
                 {v}
               </span>
             ))}
@@ -67,31 +73,39 @@ function ItemRow({ label, value }: { label: string; value: string | string[] }) 
           {label}
         </span>
       </div>
-
     </div>
-  )
+  );
 }
 
 export default function UsesPage() {
-  const { t, getTranslationData } = useLanguage()
-  const isMobile = useIsMobile()
+  const { t, getTranslationData } = useLanguage();
+  const isMobile = useIsMobile();
 
-  const hardware = getTranslationData('hardware', 'uses')
-  const software = getTranslationData('software', 'uses')
-  
-  // The ImageContainer adds horizontal padding to portrait images on desktop 
+  const hardware = getTranslationData("hardware", "uses");
+  const software = getTranslationData("software", "uses");
+
+  // The ImageContainer adds horizontal padding to portrait images on desktop
   // to fit a 1.5 target aspect ratio. This creates unwanted space.
-  // This style object calculates the necessary width and negative margin 
+  // This style object calculates the necessary width and negative margin
   // to counteract the internal padding, making the image fill its column.
   const desktopImageWrapperStyle = {
-    width: '187.5%',
-    marginLeft: '-43.75%',
+    width: "187.5%",
+    marginLeft: "-43.75%",
   };
-  
+
   const images = [
-    { src: "/images/optimized/projects/uses/vertical_left.webp", alt: "Workspace left view" },
-    { src: "/images/optimized/projects/uses/vertical_center.webp", alt: "Workspace center view" },
-    { src: "/images/optimized/projects/uses/vertical_right.webp", alt: "Workspace right view" },
+    {
+      src: "/images/optimized/projects/uses/vertical_left.webp",
+      alt: "Workspace left view",
+    },
+    {
+      src: "/images/optimized/projects/uses/vertical_center.webp",
+      alt: "Workspace center view",
+    },
+    {
+      src: "/images/optimized/projects/uses/vertical_right.webp",
+      alt: "Workspace right view",
+    },
   ];
 
   return (
@@ -104,7 +118,6 @@ export default function UsesPage() {
       </div>
 
       <div className="space-y-0">
-        
         {/* Intro Images span full width */}
         <div className="grid grid-cols-12 gap-4 md:gap-6 pb-12 md:pb-16">
           <div className="col-span-12">
@@ -140,16 +153,18 @@ export default function UsesPage() {
         </div>
 
         {/* 01 — Core Workstation */}
-        <Section index={1} title={t('hardware.coreWorkstation.title', 'uses')}>
+        <Section index={1} title={t("hardware.coreWorkstation.title", "uses")}>
           <div className="space-y-0">
-            {(hardware?.coreWorkstation?.items || []).map((item: any, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(hardware?.coreWorkstation?.items || []).map(
+              (item: any, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
 
         {/* 02 — Office & Ergonomics */}
-        <Section index={2} title={t('hardware.office.title', 'uses')}>
+        <Section index={2} title={t("hardware.office.title", "uses")}>
           <div className="space-y-0">
             {(hardware?.office?.items || []).map((item: any, i: number) => (
               <ItemRow key={i} label={item.name} value={item.value} />
@@ -158,7 +173,7 @@ export default function UsesPage() {
         </Section>
 
         {/* 03 — Home Server */}
-        <Section index={3} title={t('hardware.homeServer.title', 'uses')}>
+        <Section index={3} title={t("hardware.homeServer.title", "uses")}>
           <div className="space-y-0">
             {(hardware?.homeServer?.items || []).map((item: any, i: number) => (
               <ItemRow key={i} label={item.name} value={item.value} />
@@ -167,25 +182,33 @@ export default function UsesPage() {
         </Section>
 
         {/* 04 — Photography Gear */}
-        <Section index={4} title={t('hardware.photography.title', 'uses')}>
+        <Section index={4} title={t("hardware.photography.title", "uses")}>
           <div className="space-y-0">
-            {(hardware?.photography?.items || []).map((item: any, i: number) => (
-              <ItemRow key={i} label={item.name || item.key} value={item.list} />
-            ))}
+            {(hardware?.photography?.items || []).map(
+              (item: any, i: number) => (
+                <ItemRow
+                  key={i}
+                  label={item.name || item.key}
+                  value={item.list}
+                />
+              ),
+            )}
           </div>
         </Section>
 
         {/* 05 — Development & Coding */}
-        <Section index={5} title={t('software.development.title', 'uses')}>
+        <Section index={5} title={t("software.development.title", "uses")}>
           <div className="space-y-0">
-            {(software?.development?.items || []).map((item: any, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(software?.development?.items || []).map(
+              (item: any, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
 
         {/* 06 — Design & Creative */}
-        <Section index={6} title={t('software.design.title', 'uses')}>
+        <Section index={6} title={t("software.design.title", "uses")}>
           <div className="space-y-0">
             {(software?.design?.items || []).map((item: any, i: number) => (
               <ItemRow key={i} label={item.name} value={item.value} />
@@ -194,15 +217,16 @@ export default function UsesPage() {
         </Section>
 
         {/* 07 — Productivity & Utilities */}
-        <Section index={7} title={t('software.productivity.title', 'uses')}>
+        <Section index={7} title={t("software.productivity.title", "uses")}>
           <div className="space-y-0">
-            {(software?.productivity?.items || []).map((item: any, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(software?.productivity?.items || []).map(
+              (item: any, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
-
       </div>
     </article>
-  )
+  );
 }

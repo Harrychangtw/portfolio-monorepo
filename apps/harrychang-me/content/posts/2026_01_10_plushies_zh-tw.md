@@ -28,8 +28,6 @@ pinned: -1
 
 幾個月後，媽媽的朋友在 eBay 上找到了她。同一隻蒼蠅，同樣的怪異氣質。雖然眼神略有差異，但重逢仍然讓人激動。
 
-
-
 ### 咕嚕咕嚕：醫院裡初見面的獨角獸
 
 ![framed: 獨角獸咕嚕咕嚕在陪我去交大面試的路上](images/optimized/blogs/2026_01_10_plushies/DSCF9779.webp)
@@ -76,14 +74,11 @@ Jellycat 在絨毛世界裡很特別。他們絕對是備受敬重的品牌，�
 
 也許這就是這些玩偶真正的魅力。他們不落俗套，也不討好所有人。他們就只是存在著，怪得驕傲，怪得頑固，等著某個人走來，發現自己生活中缺少的，就是這份獨一無二的混亂。
 
-
 ---
 
 ## 致謝
--  絨毛玩具來自 [Beasttown](https://sigikid.de/Beasts/)、新加坡環球影城與 [Jellycat](https://eu.jellycat.com/jubjub-yonnie/)
--  特別感謝我媽的朋友 eBay 救援。
--  也感謝一位重要的朋友，謝謝她理解有時候，一隻獨角獸是沒有商量餘地的。
--  封面照：*Peaceable Kingdom* by [Edward Hicks](https://en.wikipedia.org/wiki/en:Edward_Hicks), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=175611)
 
-
-
+- 絨毛玩具來自 [Beasttown](https://sigikid.de/Beasts/)、新加坡環球影城與 [Jellycat](https://eu.jellycat.com/jubjub-yonnie/)
+- 特別感謝我媽的朋友 eBay 救援。
+- 也感謝一位重要的朋友，謝謝她理解有時候，一隻獨角獸是沒有商量餘地的。
+- 封面照：_Peaceable Kingdom_ by [Edward Hicks](https://en.wikipedia.org/wiki/en:Edward_Hicks), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=175611)

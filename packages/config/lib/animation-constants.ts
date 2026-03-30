@@ -24,10 +24,10 @@ export const ANIMATION = {
 
   // Easing functions
   easing: {
-    easeOut: 'easeOut',
-    easeIn: 'easeIn',
-    easeInOut: 'easeInOut',
-    linear: 'linear',
+    easeOut: "easeOut",
+    easeIn: "easeIn",
+    easeInOut: "easeInOut",
+    linear: "linear",
   },
 
   // Common animation variants
@@ -50,6 +50,6 @@ export const ANIMATION = {
     visible: 1,
     subtle: 0.5,
   },
-} as const
+} as const;
 
-export type AnimationConfig = typeof ANIMATION
+export type AnimationConfig = typeof ANIMATION;

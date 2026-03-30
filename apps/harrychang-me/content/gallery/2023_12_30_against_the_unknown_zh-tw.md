@@ -1,7 +1,7 @@
 ---
 title: "峙"
 description: ""
-imageUrl: "images/optimized/gallery/2023_12_30_against_the_unknown/154BA3D2-BF8E-4723-B427-E4ACB33B14A1-8577-000006A57CC6F050.webp" 
+imageUrl: "images/optimized/gallery/2023_12_30_against_the_unknown/154BA3D2-BF8E-4723-B427-E4ACB33B14A1-8577-000006A57CC6F050.webp"
 date: "2023-12-30"
 camera: "FUJIFILM XT-5"
 lens: "FUJINON 100-400mm f/4.5-5.6"
@@ -11,8 +11,6 @@ featured: true
 pinned: 18
 locked: false
 gallery:
-
-
 ---
 
 在無垠的湛藍面前，人顯得何其渺小。那是一場無聲的對峙，浪濤是亙古的低語，而礁岩是沉默的觀眾。

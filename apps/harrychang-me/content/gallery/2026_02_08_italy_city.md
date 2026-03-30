@@ -11,18 +11,18 @@ featured: true
 pinned: 3
 locked: false
 gallery:
-    - url: "images/optimized/gallery/2026-italy-city/L1000064.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000121.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000758.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000472.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000474.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000480.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000486.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000492.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000502.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000505.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000563.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000735.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000064.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000121.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000758.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000472.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000474.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000480.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000486.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000492.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000502.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000505.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000563.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000735.webp"
 ---
 
 To walk through an Italian city is to trace a map of time itself. It is a place where the present is merely the latest layer of a story that began centuries ago. Here, history is not confined to museums. It echoes in the rain slicked cobblestones and breathes in the shadow of a forgotten statue.

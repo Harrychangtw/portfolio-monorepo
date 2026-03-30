@@ -1,0 +1,98 @@
+name: Bundle Size
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/harrychang-me/**"
+      - "packages/**"
+      - ".github/workflows/bundle-size.yml"
+  workflow_dispatch:
+
+jobs:
+  bundle-size:
+    name: Bundle Size Report
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    env:
+      NEXT_PUBLIC_BASE_URL: "http://localhost:3000"
+      NEXT_PUBLIC_MAIN_URL: "http://localhost:3000"
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/portfolio"
+      SPOTIFY_CLIENT_ID: stub
+      SPOTIFY_CLIENT_SECRET: stub
+      SPOTIFY_REFRESH_TOKEN: stub
+      RESEND_API_KEY: stub
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Create stub font files (private fonts not available in CI)
+        run: |
+          mkdir -p apps/harrychang-me/public/fonts/artific-fonts
+          for weight in Thin SuperLight Light Regular Medium SemiBold Bold SuperBold Black; do
+            touch "apps/harrychang-me/public/fonts/artific-fonts/Artific-${weight}.woff2"
+          done
+
+      - name: Build harrychang-me
+        run: pnpm --filter harry-chang-portfolio build:ci
+
+      - name: Generate bundle size report
+        run: |
+          echo "## Bundle Size Report" > bundle-report.md
+          echo "" >> bundle-report.md
+          echo "### Page Sizes" >> bundle-report.md
+          echo '```' >> bundle-report.md
+          cat apps/harrychang-me/.next/trace 2>/dev/null | head -0 || true
+          # Next.js outputs build manifest with page sizes
+          node -e "
+            const fs = require('fs');
+            const manifest = JSON.parse(
+              fs.readFileSync('apps/harrychang-me/.next/build-manifest.json', 'utf8')
+            );
+            const pages = Object.keys(manifest.pages).sort();
+            console.log('Route                                          JS Files');
+            console.log('─'.repeat(70));
+            for (const page of pages) {
+              const files = manifest.pages[page];
+              const totalSize = files.reduce((sum, f) => {
+                try {
+                  const stat = fs.statSync('apps/harrychang-me/.next/' + f);
+                  return sum + stat.size;
+                } catch { return sum; }
+              }, 0);
+              const kb = (totalSize / 1024).toFixed(1);
+              console.log(page.padEnd(47) + kb + ' kB (' + files.length + ' files)');
+            }
+          " >> bundle-report.md
+          echo '```' >> bundle-report.md
+          echo "" >> bundle-report.md
+          echo "### Total .next Size" >> bundle-report.md
+          echo '```' >> bundle-report.md
+          du -sh apps/harrychang-me/.next >> bundle-report.md
+          echo '```' >> bundle-report.md
+          cat bundle-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-build-output
+          path: |
+            apps/harrychang-me/.next/build-manifest.json
+            apps/harrychang-me/.next/package.json
+            bundle-report.md
+          retention-days: 14

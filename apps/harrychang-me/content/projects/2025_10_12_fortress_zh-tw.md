@@ -18,8 +18,6 @@ technologies: [PyTorch, ChromaDB, HF Transformers]
 
 今天，我很高興能向各位介紹我的第一作者研究論文，發表於 TMLR：**FORTRESS: Fast, Orchestrated Tuning-free Retrieval Ensemble for Scalable Safety**。本文將提供系統的概要介紹；若希望深入了解完整的技術細節，論文全文已發佈於 [OpenReview](https://openreview.net/pdf?id=lCn7RT9DGq)。
 
-
-
 ### 什麼是 FORTRESS？
 
 FORTRESS 是一個高速、無需訓練的 LLM 輸入安全分類系統。它透過在單一、高效的架構中整合向量檢索與動態 perplexity 分析，克服了先前文獻的限制。FORTRESS 的核心是利用單一、輕量的 instruction-tuned 語言模型（如 Gemma 或 Qwen）同時進行向量嵌入生成與 perplexity 分析，以最小的運算開銷確保強大的效能。
@@ -50,9 +48,9 @@ FORTRESS 採用一個兩階段偵測流程，結合了互補的分析技術。�
 
 第一階段會評估使用者 prompt 與一個經過策展的向量資料庫之間的向量相似度。
 
-*   **向量嵌入生成：** 使用單一的 instruction-tuned LLM（例如 Qwen、Gemma）從模型的 hidden states 中提取一個密集的向量嵌入。
+- **向量嵌入生成：** 使用單一的 instruction-tuned LLM（例如 Qwen、Gemma）從模型的 hidden states 中提取一個密集的向量嵌入。
 
-*   **相似度搜尋：** 一個 ChromaDB 向量資料庫會執行 k-Nearest Neighbors 搜尋，從資料庫中檢索向量上最相似的前例，從而形成關於查詢安全性的初步假設。
+- **相似度搜尋：** 一個 ChromaDB 向量資料庫會執行 k-Nearest Neighbors 搜尋，從資料庫中檢索向量上最相似的前例，從而形成關於查詢安全性的初步假設。
 
 #### 2. 次要分析器：動態 perplexity 分析
 
@@ -64,8 +62,8 @@ FORTRESS 採用一個兩階段偵測流程，結合了互補的分析技術。�
 
 最終的分類由一個加權多數決決定，結合了來自主要與次要偵測器的信號。該策略的關鍵優勢在於它會根據檢索結果的一致性動態調整權重。
 
-*   如果檢索到的 prompts 是同質的（例如，全部標記為不安全），系統會優先考慮強烈的向量信號。
-*   如果檢索到的 prompts 存在衝突，系統會重新平衡權重，更加依賴 perplexity 分析的結果。
+- 如果檢索到的 prompts 是同質的（例如，全部標記為不安全），系統會優先考慮強烈的向量信號。
+- 如果檢索到的 prompts 存在衝突，系統會重新平衡權重，更加依賴 perplexity 分析的結果。
 
 這使得 FORTRESS 在上下文清晰時能夠果斷決策，而在面對模糊或新型的可能攻擊時則更加謹慎。
 
@@ -123,8 +121,8 @@ FORTRESS 為 LLM 安全建立了一個同時具備穩健、高效與適應性的
 
 或許正像那句「與其詛咒黑暗，不如點亮一盞燭」，我學到的，不過是先點起第一盞的勇氣。
 
-
 ---
 
 ## 致謝
+
 我衷心感謝我的指導教授蔡教授，對本專案的全力支持。我也要感謝 AK 在早期提供的指導，為我獨立進行這項研究奠定了學術基礎。最後，我感謝 TMLR 審稿人提供的建設性反饋，他們的意見大大強化了論文的內容。

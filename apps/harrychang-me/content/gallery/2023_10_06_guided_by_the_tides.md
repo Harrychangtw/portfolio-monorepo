@@ -1,7 +1,7 @@
 ---
 title: "Guided by the Tides"
 description: ""
-imageUrl: "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp" 
+imageUrl: "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
 date: "2024-01-06"
 camera: "FUJIFILM XT-5"
 lens: "FUJINON 100-400mm f/4.5-5.6"
@@ -11,8 +11,6 @@ featured: true
 pinned: 10
 locked: false
 gallery:
-
-
 ---
 
 > "We're just here to be memories for our kids."

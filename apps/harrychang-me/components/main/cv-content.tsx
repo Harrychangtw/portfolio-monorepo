@@ -5,7 +5,6 @@ import type { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 
-
 /* ================================================================
    CV Content — Swiss / Pentagram-style typographic résumé
    Grid pattern mirrors the FAQ section (12-col, numbered rows).
@@ -43,9 +42,7 @@ function Section({
       </div>
 
       {/* Content */}
-      <div className="col-span-12 md:col-start-7 md:col-span-6">
-        {children}
-      </div>
+      <div className="col-span-12 md:col-start-7 md:col-span-6">{children}</div>
     </div>
   );
 }
@@ -76,9 +73,7 @@ function Entry({
         </span>
       </div>
       {subtitle && (
-        <p className="font-body text-sm text-secondary">
-          {subtitle}
-        </p>
+        <p className="font-body text-sm text-secondary">{subtitle}</p>
       )}
       {items && items.length > 0 && (
         <ul className="mt-2.5 space-y-1">
@@ -120,18 +115,22 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
   const { t, getTranslationData } = useLanguage();
 
   // Safely fetch dynamic array content from localization JSON
-  const educationItems = getTranslationData("sections.education.items", "cv") || [];
-  const researchItems = getTranslationData("sections.research.items", "cv") || [];
-  const leadershipItems = getTranslationData("sections.leadership.items", "cv") || [];
-  const publicationItems = getTranslationData("sections.publications.items", "cv") || [];
-  const projectItems = getTranslationData("sections.projects.items", "cv") || [];
+  const educationItems =
+    getTranslationData("sections.education.items", "cv") || [];
+  const researchItems =
+    getTranslationData("sections.research.items", "cv") || [];
+  const leadershipItems =
+    getTranslationData("sections.leadership.items", "cv") || [];
+  const publicationItems =
+    getTranslationData("sections.publications.items", "cv") || [];
+  const projectItems =
+    getTranslationData("sections.projects.items", "cv") || [];
   const skillItems = getTranslationData("sections.skills.items", "cv") || [];
 
   return (
     <article className="container mt-24 md:mt-32 mb-24 md:mb-32">
       {/* ── Name ──────────────────────────────────────────── */}
-      <div className="mb-6 md:mb-8 flex flex-col md:flex-row md:justify-between md:items-baseline"
-      >
+      <div className="mb-6 md:mb-8 flex flex-col md:flex-row md:justify-between md:items-baseline">
         <h1 className="font-heading text-[clamp(2.25rem,5.5vw,4.5rem)] font-regular tracking-[-0.02em] text-foreground leading-[0.95]">
           {t("header.name", "cv")}
         </h1>
@@ -257,11 +256,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       <Section index={7} title={t("sections.skills.title", "cv")}>
         <div className="space-y-4">
           {skillItems.map((item: any, i: number) => (
-            <SkillRow
-              key={i}
-              category={item.category}
-              items={item.skills}
-            />
+            <SkillRow key={i} category={item.category} items={item.skills} />
           ))}
         </div>
       </Section>

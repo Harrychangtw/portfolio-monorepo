@@ -1,19 +1,19 @@
-export { };
+export {};
 
 // Declaration for .glb files (3D model assets)
-declare module '*.glb' {
+declare module "*.glb" {
   const value: string;
   export default value;
 }
 
 // Declaration for .png files
-declare module '*.png' {
+declare module "*.png" {
   const value: string;
   export default value;
 }
 
 // Declaration for meshline library
-declare module 'meshline' {
+declare module "meshline" {
   export const MeshLineGeometry: any;
   export const MeshLineMaterial: any;
 }

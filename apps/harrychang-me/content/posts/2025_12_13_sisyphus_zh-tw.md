@@ -34,7 +34,7 @@ pinned: -1
 
 ### 推石上山本身
 
->「單單朝向高處的奮鬥，本身就足以填滿一個人的心靈」
+> 「單單朝向高處的奮鬥，本身就足以填滿一個人的心靈」
 
 這個部落格是我的巨石。研究、攝影、日常的無常，全是巨石。它們會滾回山下，總是如此。但卡繆告訴我，滾回山下不是悲劇，停下來才是。
 
@@ -44,6 +44,4 @@ pinned: -1
 
 ## 致謝
 
-- 封面照：*Man with a Hoe* by [Jean-François Millet](https://en.wikipedia.org/wiki/en:Jean-Fran%C3%A7ois_Millet), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=21993525)
-
-
+- 封面照：_Man with a Hoe_ by [Jean-François Millet](https://en.wikipedia.org/wiki/en:Jean-Fran%C3%A7ois_Millet), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=21993525)

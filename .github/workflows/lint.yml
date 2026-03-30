@@ -1,0 +1,46 @@
+name: Lint & Format
+
+on:
+  push:
+    branches: [main, dev]
+    paths:
+      - "apps/harrychang-me/**"
+      - "packages/**"
+      - ".github/workflows/lint.yml"
+  pull_request:
+    branches: [main, dev]
+    paths:
+      - "apps/harrychang-me/**"
+      - "packages/**"
+      - ".github/workflows/lint.yml"
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint & Format Check
+    runs-on: ubuntu-latest
+
+    env:
+      DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/portfolio"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm --filter harry-chang-portfolio lint
+
+      - name: Format check
+        run: npx prettier --check "**/*.{ts,tsx,md}"

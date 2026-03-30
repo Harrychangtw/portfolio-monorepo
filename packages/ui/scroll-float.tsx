@@ -26,7 +26,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   ease = "back.inOut(2)",
   scrollStart = "center bottom+=50%",
   scrollEnd = "bottom bottom-=40%",
-  stagger = 0.03
+  stagger = 0.03,
 }) => {
   const containerRef = useRef<HTMLHeadingElement>(null);
 
@@ -58,7 +58,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
         yPercent: 120,
         scaleY: 2.3,
         scaleX: 0.7,
-        transformOrigin: "50% 0%"
+        transformOrigin: "50% 0%",
       },
       {
         duration: animationDuration,
@@ -73,9 +73,9 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
           scroller,
           start: scrollStart,
           end: scrollEnd,
-          scrub: true
+          scrub: true,
         },
-      }
+      },
     );
   }, [
     scrollContainerRef,
@@ -83,7 +83,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
     ease,
     scrollStart,
     scrollEnd,
-    stagger
+    stagger,
   ]);
 
   return (

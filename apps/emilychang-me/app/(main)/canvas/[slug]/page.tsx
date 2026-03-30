@@ -1,40 +1,42 @@
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { getGalleryItemData, getAllGallerySlugs } from "@portfolio/lib/lib/markdown"
-import GalleryPostClient from "@portfolio/ui/gallery-post-client"
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import {
+  getGalleryItemData,
+  getAllGallerySlugs,
+} from "@portfolio/lib/lib/markdown";
+import GalleryPostClient from "@portfolio/ui/gallery-post-client";
 
-const baseUrl = 'https://www.emilychang.me'
+const baseUrl = "https://www.emilychang.me";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params
-  if (!slug) return { title: "Canvas Item Not Found" }
-  
-  const item = await getGalleryItemData(slug)
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  if (!slug) return { title: "Canvas Item Not Found" };
+
+  const item = await getGalleryItemData(slug);
 
   if (!item) {
     return {
       title: "Canvas Item Not Found",
-    }
+    };
   }
 
-  const canonicalUrl = `${baseUrl}/canvas/${slug}`
-  
-  const imageUrl = item.imageUrl.startsWith('http') 
-    ? item.imageUrl 
-    : `${baseUrl}${item.imageUrl.startsWith('/') ? '' : '/'}${item.imageUrl}`
+  const canonicalUrl = `${baseUrl}/canvas/${slug}`;
+
+  const imageUrl = item.imageUrl.startsWith("http")
+    ? item.imageUrl
+    : `${baseUrl}${item.imageUrl.startsWith("/") ? "" : "/"}${item.imageUrl}`;
 
   return {
     title: `${item.title} | Canvas`,
     description: item.description,
-    keywords: [
-      item.title,
-      'art',
-      'canvas',
-      'Emily Chang',
-    ].filter(Boolean),
-    authors: [{ name: 'Emily Chang' }],
-    creator: 'Emily Chang',
-    publisher: 'Emily Chang',
+    keywords: [item.title, "art", "canvas", "Emily Chang"].filter(Boolean),
+    authors: [{ name: "Emily Chang" }],
+    creator: "Emily Chang",
+    publisher: "Emily Chang",
     alternates: {
       canonical: canonicalUrl,
     },
@@ -42,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: item.title,
       description: item.description,
       url: canonicalUrl,
-      siteName: 'Emily Chang Portfolio',
+      siteName: "Emily Chang Portfolio",
       images: [
         {
           url: imageUrl,
@@ -51,63 +53,67 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           alt: item.title,
         },
       ],
-      locale: 'en_US',
-      type: 'article',
+      locale: "en_US",
+      type: "article",
       publishedTime: item.date,
     },
     robots: {
       index: true,
       follow: true,
     },
-  }
+  };
 }
 
 export async function generateStaticParams() {
-  const paths = getAllGallerySlugs()
-  return paths
+  const paths = getAllGallerySlugs();
+  return paths;
 }
 
-export default async function CanvasItemPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  if (!slug) notFound()
-  
-  const item = await getGalleryItemData(slug)
+export default async function CanvasItemPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  if (!slug) notFound();
+
+  const item = await getGalleryItemData(slug);
 
   if (!item) {
-    notFound()
+    notFound();
   }
 
-  const canonicalUrl = `${baseUrl}/canvas/${slug}`
-  const imageUrl = item.imageUrl.startsWith('http') 
-    ? item.imageUrl 
-    : `${baseUrl}${item.imageUrl.startsWith('/') ? '' : '/'}${item.imageUrl}`
+  const canonicalUrl = `${baseUrl}/canvas/${slug}`;
+  const imageUrl = item.imageUrl.startsWith("http")
+    ? item.imageUrl
+    : `${baseUrl}${item.imageUrl.startsWith("/") ? "" : "/"}${item.imageUrl}`;
 
   const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'VisualArtwork',
+    "@context": "https://schema.org",
+    "@type": "VisualArtwork",
     name: item.title,
     description: item.description,
     image: imageUrl,
     datePublished: item.date,
     author: {
-      '@type': 'Person',
-      name: 'Emily Chang',
+      "@type": "Person",
+      name: "Emily Chang",
       url: baseUrl,
     },
     creator: {
-      '@type': 'Person',
-      name: 'Emily Chang',
+      "@type": "Person",
+      name: "Emily Chang",
     },
     copyrightHolder: {
-      '@type': 'Person',
-      name: 'Emily Chang',
+      "@type": "Person",
+      name: "Emily Chang",
     },
     mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': canonicalUrl,
+      "@type": "WebPage",
+      "@id": canonicalUrl,
     },
-    inLanguage: 'en-US',
-  }
+    inLanguage: "en-US",
+  };
 
   return (
     <>
@@ -117,5 +123,5 @@ export default async function CanvasItemPage({ params }: { params: Promise<{ slu
       />
       <GalleryPostClient initialItem={item} />
     </>
-  )
+  );
 }

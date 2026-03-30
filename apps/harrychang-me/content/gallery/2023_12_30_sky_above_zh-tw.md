@@ -1,7 +1,7 @@
 ---
 title: "雲端之城"
 description: ""
-imageUrl: "images/optimized/gallery/2023_12_30_sky_above/DSCF0191.webp" 
+imageUrl: "images/optimized/gallery/2023_12_30_sky_above/DSCF0191.webp"
 date: "2023-12-30"
 camera: "FUJIFILM XT-5"
 lens: "FUJINON 100-400mm f/4.5-5.6"
@@ -11,8 +11,6 @@ featured: true
 pinned: 14
 locked: false
 gallery:
-
-
 ---
 
 遠眺那座雲霧之城，讓人不禁想起蘇軾的詞句：「我欲乘風歸去，又恐瓊樓玉宇，高處不勝寒。」

@@ -1,45 +1,45 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useRef } from 'react'
-import type { ReactNode } from 'react'
-import { motion } from 'motion/react'
-import { TypographySpecimen } from './typography-specimen'
-import { getAllFontFamilies } from '@portfolio/lib/lib/typography'
-import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { ImageContainer } from '@portfolio/ui/image-container'
-import NavigationLink from "@portfolio/ui/navigation-link"
+import { useState, useEffect, useRef } from "react";
+import type { ReactNode } from "react";
+import { motion } from "motion/react";
+import { TypographySpecimen } from "./typography-specimen";
+import { getAllFontFamilies } from "@portfolio/lib/lib/typography";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import { ImageContainer } from "@portfolio/ui/image-container";
+import NavigationLink from "@portfolio/ui/navigation-link";
 
 /* ── Helpers ──────────────────────────────────────────────── */
 
 function rgbToHex(rgb: string) {
-  const values = rgb.match(/\d+/g)?.map(Number)
-  if (!values || values.length < 3) return rgb
+  const values = rgb.match(/\d+/g)?.map(Number);
+  if (!values || values.length < 3) return rgb;
   return (
-    '#' +
+    "#" +
     values
       .slice(0, 3)
       .map((x) => {
-        const hex = x.toString(16)
-        return hex.length === 1 ? '0' + hex : hex
+        const hex = x.toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
       })
-      .join('')
+      .join("")
       .toUpperCase()
-  )
+  );
 }
 
 /* ── Color swatch ─────────────────────────────────────────── */
 
 function ColorCard({ name, cssValue }: { name: string; cssValue: string }) {
-  const swatchRef = useRef<HTMLDivElement>(null)
-  const [resolvedHex, setResolvedHex] = useState<string>('')
+  const swatchRef = useRef<HTMLDivElement>(null);
+  const [resolvedHex, setResolvedHex] = useState<string>("");
 
   useEffect(() => {
     if (swatchRef.current) {
-      const computed = window.getComputedStyle(swatchRef.current)
-      const hex = rgbToHex(computed.backgroundColor)
-      setResolvedHex(hex.startsWith('#') ? hex : '')
+      const computed = window.getComputedStyle(swatchRef.current);
+      const hex = rgbToHex(computed.backgroundColor);
+      setResolvedHex(hex.startsWith("#") ? hex : "");
     }
-  }, [cssValue])
+  }, [cssValue]);
 
   return (
     <div className="space-y-2">
@@ -51,11 +51,11 @@ function ColorCard({ name, cssValue }: { name: string; cssValue: string }) {
       <div>
         <p className="font-heading text-xs text-primary">{name}</p>
         <p className="font-mono text-[10px] text-secondary/50 uppercase">
-          {resolvedHex || '—'}
+          {resolvedHex || "—"}
         </p>
       </div>
     </div>
-  )
+  );
 }
 
 /* ── Section (standard — mirrors CV/FAQ 12-col grid) ──────── */
@@ -65,16 +65,16 @@ function Section({
   title,
   children,
 }: {
-  index: number
-  title: string
-  children: ReactNode
+  index: number;
+  title: string;
+  children: ReactNode;
 }) {
   return (
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
         <span className="font-mono text-xs text-secondary">
-          {String(index).padStart(2, '0')}
+          {String(index).padStart(2, "0")}
         </span>
       </div>
 
@@ -86,11 +86,9 @@ function Section({
       </div>
 
       {/* Content */}
-      <div className="col-span-12 md:col-start-7 md:col-span-6">
-        {children}
-      </div>
+      <div className="col-span-12 md:col-start-7 md:col-span-6">{children}</div>
     </div>
-  )
+  );
 }
 
 /* ── Section Split (Title + Desc on left, Elements on right) ──────── */
@@ -101,17 +99,17 @@ function SectionSplit({
   description,
   children,
 }: {
-  index: number
-  title: string
-  description?: ReactNode
-  children: ReactNode
+  index: number;
+  title: string;
+  description?: ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
         <span className="font-mono text-xs text-secondary">
-          {String(index).padStart(2, '0')}
+          {String(index).padStart(2, "0")}
         </span>
       </div>
 
@@ -130,11 +128,9 @@ function SectionSplit({
       </div>
 
       {/* Right Col: Elements */}
-      <div className="col-span-12 md:col-start-7 md:col-span-6">
-        {children}
-      </div>
+      <div className="col-span-12 md:col-start-7 md:col-span-6">{children}</div>
     </div>
-  )
+  );
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -142,62 +138,62 @@ function SectionSplit({
    ═══════════════════════════════════════════════════════════════ */
 
 export default function TypographyPageClient() {
-  const { t } = useLanguage()
-  const fonts = getAllFontFamilies()
+  const { t } = useLanguage();
+  const fonts = getAllFontFamilies();
 
   /* ── Color palette data ─────────────────────────────────── */
 
   const colorPalette = [
-    { name: 'Background', value: 'hsl(var(--background))' },
-    { name: 'Foreground', value: 'hsl(var(--foreground))' },
-    { name: 'Primary', value: 'hsl(var(--primary))' },
-    { name: 'Secondary', value: 'hsl(var(--secondary))' },
-    { name: 'Muted', value: 'hsl(var(--muted))' },
-    { name: 'Accent', value: 'hsl(var(--accent))' },
-    { name: 'Border', value: 'hsl(var(--border))' },
-    { name: 'Gradient', value: 'var(--gradient-primary)' },
-  ]
+    { name: "Background", value: "hsl(var(--background))" },
+    { name: "Foreground", value: "hsl(var(--foreground))" },
+    { name: "Primary", value: "hsl(var(--primary))" },
+    { name: "Secondary", value: "hsl(var(--secondary))" },
+    { name: "Muted", value: "hsl(var(--muted))" },
+    { name: "Accent", value: "hsl(var(--accent))" },
+    { name: "Border", value: "hsl(var(--border))" },
+    { name: "Gradient", value: "var(--gradient-primary)" },
+  ];
 
   /* ── Type scale data ────────────────────────────────────── */
 
   const typeScale = [
     {
-      label: t('design.display'),
-      className: 'font-heading text-5xl md:text-6xl font-bold tracking-tight',
-      specimen: t('design.specimen1'),
+      label: t("design.display"),
+      className: "font-heading text-5xl md:text-6xl font-bold tracking-tight",
+      specimen: t("design.specimen1"),
     },
     {
-      label: t('design.heading'),
-      className: 'font-heading text-3xl font-semibold',
-      specimen: t('design.specimen2'),
+      label: t("design.heading"),
+      className: "font-heading text-3xl font-semibold",
+      specimen: t("design.specimen2"),
     },
     {
-      label: t('design.largeBody'),
-      className: 'font-ibm-plex text-xl',
-      specimen: t('design.specimen3'),
+      label: t("design.largeBody"),
+      className: "font-ibm-plex text-xl",
+      specimen: t("design.specimen3"),
     },
     {
-      label: t('design.body'),
-      className: 'font-ibm-plex text-base',
-      specimen: t('design.specimen4'),
+      label: t("design.body"),
+      className: "font-ibm-plex text-base",
+      specimen: t("design.specimen4"),
     },
     {
-      label: t('design.small'),
-      className: 'font-body text-sm',
-      specimen: t('design.specimen5'),
+      label: t("design.small"),
+      className: "font-body text-sm",
+      specimen: t("design.specimen5"),
     },
     {
-      label: t('design.caption'),
-      className: 'font-mono text-xs uppercase',
-      specimen: t('design.specimen6'),
+      label: t("design.caption"),
+      className: "font-mono text-xs uppercase",
+      specimen: t("design.specimen6"),
     },
-  ]
+  ];
 
   /* ── Dynamic section numbering ──────────────────────────── */
 
-  const fontStartIndex = 4
-  const spacingIndex = fontStartIndex + fonts.length
-  const motionIndex = spacingIndex + 1
+  const fontStartIndex = 4;
+  const spacingIndex = fontStartIndex + fonts.length;
+  const motionIndex = spacingIndex + 1;
 
   return (
     <article className="container mt-24 md:mt-32 mb-24 md:mb-32">
@@ -213,18 +209,21 @@ export default function TypographyPageClient() {
          ════════════════════════════════════════════════════ */}
 
       {/* 01 — Identity */}
-      <SectionSplit 
-        index={1} 
-        title={t('design.identity')}
+      <SectionSplit
+        index={1}
+        title={t("design.identity")}
         description={
           <div className="space-y-4">
-            <p>{t('design.identityText1')}</p>
-            <p>{t('design.identityText2')}</p>
+            <p>{t("design.identityText1")}</p>
+            <p>{t("design.identityText2")}</p>
           </div>
         }
       >
         <div className="flex flex-col gap-2">
-          <NavigationLink href="/" className="block hover:opacity-90 transition-opacity">
+          <NavigationLink
+            href="/"
+            className="block hover:opacity-90 transition-opacity"
+          >
             <ImageContainer
               src="/images/optimized/projects/og/titlecard.webp"
               alt="Harry Chang Portfolio Identity — The Tower of Babel"
@@ -233,67 +232,93 @@ export default function TypographyPageClient() {
             />
           </NavigationLink>
           <div className="grid grid-cols-2 gap-2">
-            <NavigationLink href="/blog" className="block hover:opacity-90 transition-opacity">
+            <NavigationLink
+              href="/blog"
+              className="block hover:opacity-90 transition-opacity"
+            >
               <ImageContainer
                 src="/images/optimized/projects/og/og-image-blog.webp"
                 alt="Blog: The Astronomer"
-                aspectRatio={1200/630}
+                aspectRatio={1200 / 630}
                 noInsetPadding={true}
               />
             </NavigationLink>
-            <NavigationLink href="/#gallery" className="block hover:opacity-90 transition-opacity">
+            <NavigationLink
+              href="/#gallery"
+              className="block hover:opacity-90 transition-opacity"
+            >
               <ImageContainer
                 src="/images/optimized/projects/og/og-image-gallery.webp"
                 alt="Gallery: The Art of Painting"
-                aspectRatio={1200/630}
+                aspectRatio={1200 / 630}
                 noInsetPadding={true}
               />
             </NavigationLink>
-            <a href="https://lab.harrychang.me" target="_blank" rel="noopener noreferrer" className="block hover:opacity-90 transition-opacity">
+            <a
+              href="https://lab.harrychang.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:opacity-90 transition-opacity"
+            >
               <ImageContainer
                 src="/images/optimized/projects/og/og-image-lab.webp"
                 alt="Lab: The Fall of Icarus"
-                aspectRatio={1200/630}
+                aspectRatio={1200 / 630}
                 noInsetPadding={true}
               />
             </a>
-            <NavigationLink href="/#projects" className="block hover:opacity-90 transition-opacity">
+            <NavigationLink
+              href="/#projects"
+              className="block hover:opacity-90 transition-opacity"
+            >
               <ImageContainer
                 src="/images/optimized/projects/og/og-image-projects.webp"
                 alt="Projects: The Forge of Vulcan"
-                aspectRatio={1200/630}
+                aspectRatio={1200 / 630}
                 noInsetPadding={true}
               />
             </NavigationLink>
-            <NavigationLink href="/design" className="block hover:opacity-90 transition-opacity">
+            <NavigationLink
+              href="/design"
+              className="block hover:opacity-90 transition-opacity"
+            >
               <ImageContainer
                 src="/images/optimized/projects/og/og-image-design.webp"
                 alt="Design System"
-                aspectRatio={1200/630}
+                aspectRatio={1200 / 630}
                 noInsetPadding={true}
               />
             </NavigationLink>
-            <NavigationLink href="/manifesto" className="block hover:opacity-90 transition-opacity">
+            <NavigationLink
+              href="/manifesto"
+              className="block hover:opacity-90 transition-opacity"
+            >
               <ImageContainer
                 src="/images/optimized/projects/og/og-image-manifesto.webp"
                 alt="Manifesto"
-                aspectRatio={1200/630}
+                aspectRatio={1200 / 630}
                 noInsetPadding={true}
               />
             </NavigationLink>
-            <NavigationLink href="/paper-reading" className="block hover:opacity-90 transition-opacity">
+            <NavigationLink
+              href="/paper-reading"
+              className="block hover:opacity-90 transition-opacity"
+            >
               <ImageContainer
                 src="/images/optimized/projects/og/og-image-reading.webp"
                 alt="Paper Reading"
-                aspectRatio={1200/630}
+                aspectRatio={1200 / 630}
                 noInsetPadding={true}
               />
             </NavigationLink>
-            <NavigationLink href="/uses" className="block hover:opacity-90 transition-opacity">
+            <NavigationLink
+              href="/uses"
+              className="block hover:opacity-90 transition-opacity"
+            >
               <ImageContainer
                 src="/images/optimized/projects/og/og-image-uses.webp"
                 alt="Uses & Setup"
-                aspectRatio={1200/630}
+                aspectRatio={1200 / 630}
                 noInsetPadding={true}
               />
             </NavigationLink>
@@ -302,7 +327,7 @@ export default function TypographyPageClient() {
       </SectionSplit>
 
       {/* 02 — Color Palette */}
-      <Section index={2} title={t('design.colorPalette')}>
+      <Section index={2} title={t("design.colorPalette")}>
         <div className="grid grid-cols-4 gap-2">
           {colorPalette.map((color) => (
             <ColorCard
@@ -315,7 +340,7 @@ export default function TypographyPageClient() {
       </Section>
 
       {/* 03 — Type Scale */}
-      <Section index={3} title={t('design.typeScale')}>
+      <Section index={3} title={t("design.typeScale")}>
         <div className="space-y-0">
           {typeScale.map((level, i) => (
             <div
@@ -339,27 +364,35 @@ export default function TypographyPageClient() {
 
       {/* 04+ — Font Specimens */}
       {fonts.map((font, i) => (
-        <Section
-          key={font.name}
-          index={fontStartIndex + i}
-          title={font.name}
-        >
+        <Section key={font.name} index={fontStartIndex + i} title={font.name}>
           <TypographySpecimen font={font} index={i} />
         </Section>
       ))}
 
       {/* N — Spacing & Layout */}
-      <SectionSplit 
-        index={spacingIndex} 
-        title={t('design.spacingGrid')}
-      >
+      <SectionSplit index={spacingIndex} title={t("design.spacingGrid")}>
         <div className="space-y-0">
           {[
-            { label: t('design.spacing.container'), value: t('design.spacing.containerVal') },
-            { label: t('design.spacing.grid'), value: t('design.spacing.gridVal') },
-            { label: t('design.spacing.header'), value: t('design.spacing.headerVal') },
-            { label: t('design.spacing.section'), value: t('design.spacing.sectionVal') },
-            { label: t('design.spacing.gap'), value: t('design.spacing.gapVal') },
+            {
+              label: t("design.spacing.container"),
+              value: t("design.spacing.containerVal"),
+            },
+            {
+              label: t("design.spacing.grid"),
+              value: t("design.spacing.gridVal"),
+            },
+            {
+              label: t("design.spacing.header"),
+              value: t("design.spacing.headerVal"),
+            },
+            {
+              label: t("design.spacing.section"),
+              value: t("design.spacing.sectionVal"),
+            },
+            {
+              label: t("design.spacing.gap"),
+              value: t("design.spacing.gapVal"),
+            },
           ].map((item) => (
             <div
               key={item.label}
@@ -381,18 +414,33 @@ export default function TypographyPageClient() {
       </SectionSplit>
 
       {/* N+1 — Motion & Interaction */}
-      <SectionSplit 
-        index={motionIndex} 
-        title={t('design.motionInteraction')}
-      >
+      <SectionSplit index={motionIndex} title={t("design.motionInteraction")}>
         <div className="space-y-0">
           {[
-            { label: t('design.motion.library'), value: t('design.motion.libraryVal') },
-            { label: t('design.motion.transitions'), value: t('design.motion.transitionsVal') },
-            { label: t('design.motion.error404'), value: t('design.motion.error404Val') },
-            { label: t('design.motion.images'), value: t('design.motion.imagesVal') },
-            { label: t('design.motion.nowPlaying'), value: t('design.motion.nowPlayingVal') },
-            { label: t('design.motion.scroll'), value: t('design.motion.scrollVal') },
+            {
+              label: t("design.motion.library"),
+              value: t("design.motion.libraryVal"),
+            },
+            {
+              label: t("design.motion.transitions"),
+              value: t("design.motion.transitionsVal"),
+            },
+            {
+              label: t("design.motion.error404"),
+              value: t("design.motion.error404Val"),
+            },
+            {
+              label: t("design.motion.images"),
+              value: t("design.motion.imagesVal"),
+            },
+            {
+              label: t("design.motion.nowPlaying"),
+              value: t("design.motion.nowPlayingVal"),
+            },
+            {
+              label: t("design.motion.scroll"),
+              value: t("design.motion.scrollVal"),
+            },
           ].map((item) => (
             <div
               key={item.label}
@@ -413,5 +461,5 @@ export default function TypographyPageClient() {
         </div>
       </SectionSplit>
     </article>
-  )
+  );
 }

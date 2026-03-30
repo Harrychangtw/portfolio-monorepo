@@ -131,16 +131,16 @@ This reflection is full of my personal biases, and an enormous amount of fortune
 
 This path felt solitary, but I never truly walked it alone. If this admission result holds any weight, it is only because I stood on the shoulders of these individuals:
 
-* Thanks to **Professor Richard Tzong-Han Tsai** for nearly three years of patient guidance, lighting the first lamp on my long academic research journey.
-* Thanks to **AK (senior)** for guidance during early development, countless paper reviews, and interview simulations. You were my most reliable support.
-* Thanks to **CK** and **frozenkp** at CyCraft, and the entire team for giving me this precious opportunity, letting me see what research looks like when it lands in industry.
-* Thanks to **Chingshin High School's Director Yi-Ping** and **Homeroom Teacher Wen-Ting**, who always provided maximum assistance and support when I needed it.
-* Thanks to **my parents** for unconditionally trusting every seemingly crazy decision I made, letting me venture forth without worry.
-* Thanks to **my friends**, especially for enduring my countless self-introduction bombardments before the interview.
-* Finally, and most importantly, thanks to [**EM**](https://emtech.cc/p/srecruit-ntu/) and [**Grasping631**](https://hackmd.io/@Grasping631/Hy_PmOzPT) for sharing their experiences.
+- Thanks to **Professor Richard Tzong-Han Tsai** for nearly three years of patient guidance, lighting the first lamp on my long academic research journey.
+- Thanks to **AK (senior)** for guidance during early development, countless paper reviews, and interview simulations. You were my most reliable support.
+- Thanks to **CK** and **frozenkp** at CyCraft, and the entire team for giving me this precious opportunity, letting me see what research looks like when it lands in industry.
+- Thanks to **Chingshin High School's Director Yi-Ping** and **Homeroom Teacher Wen-Ting**, who always provided maximum assistance and support when I needed it.
+- Thanks to **my parents** for unconditionally trusting every seemingly crazy decision I made, letting me venture forth without worry.
+- Thanks to **my friends**, especially for enduring my countless self-introduction bombardments before the interview.
+- Finally, and most importantly, thanks to [**EM**](https://emtech.cc/p/srecruit-ntu/) and [**Grasping631**](https://hackmd.io/@Grasping631/Hy_PmOzPT) for sharing their experiences.
 
 I hope this rough record of mine can also become a glimmer of light for some future explorer.
 
 ---
 
-Title image: *Wanderer above the Sea of Fog* by [Caspar David Friedrich](https://en.wikipedia.org/wiki/en:Caspar_David_Friedrich), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=127245432)
+Title image: _Wanderer above the Sea of Fog_ by [Caspar David Friedrich](https://en.wikipedia.org/wiki/en:Caspar_David_Friedrich), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=127245432)

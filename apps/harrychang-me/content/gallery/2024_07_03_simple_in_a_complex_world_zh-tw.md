@@ -11,21 +11,18 @@ featured: true
 pinned: 6
 locked: false
 gallery:
-    - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1516.RAF.webp"
-    - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0036Edited.webp"
-    - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0091 3 Edited.webp"
-    - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1423 4 Edited.webp"
-    - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0007 14 Edited.webp"
-    - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1474 5 Edited.webp"
-    - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0105 1 Edited.webp"
-    
-
-
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1516.RAF.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0036Edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0091 3 Edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1423 4 Edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0007 14 Edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1474 5 Edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0105 1 Edited.webp"
 ---
 
 > 「行到水窮處，坐看雲起時。」
-> 
->  — 王維
+>
+> — 王維
 
 生命或許就是一場漫長的行路，在無盡的景物與人事中，我們尋覓著一處心靈的留白。那留白，是暮色溫柔擁抱新月的瞬間；是雨滴輕觸水面，漾開無聲漣漪的剎那；是遠方層疊的山巒，對映著一個孤獨卻寧靜的剪影。
 

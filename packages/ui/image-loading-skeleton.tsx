@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const LOADING_STATUSES = [
   "Loading",
@@ -53,29 +53,32 @@ const LOADING_STATUSES = [
   "Matting",
   "Compositing",
   "Sequencing",
-]
+];
 
-
-export function ImageLoadingSkeleton({ visible = true }: { visible?: boolean }) {
-  const [index, setIndex] = useState(0)
+export function ImageLoadingSkeleton({
+  visible = true,
+}: {
+  visible?: boolean;
+}) {
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if(!visible) return
+    if (!visible) return;
     const interval = setInterval(() => {
       setIndex((prev) => {
         // 3. Cheap randomness (prevents consecutive duplicates)
-        let next
+        let next;
         do {
-          next = Math.floor(Math.random() * LOADING_STATUSES.length)
-        } while (next === prev)
-        return next
-      })
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [visible])
+          next = Math.floor(Math.random() * LOADING_STATUSES.length);
+        } while (next === prev);
+        return next;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [visible]);
 
   return (
-    <div 
+    <div
       // 2. Define the container type for relative sizing
       style={{ containerType: "size" }}
       className={`absolute inset-0 bg-muted/10 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-500 ${
@@ -99,5 +102,5 @@ export function ImageLoadingSkeleton({ visible = true }: { visible?: boolean }) 
         </AnimatePresence>
       </div>
     </div>
-  )
+  );
 }
