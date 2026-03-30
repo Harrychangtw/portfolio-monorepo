@@ -51,7 +51,7 @@ locked: true
 
 演變是一層一層發生的。首先是國際化，一個在英文與繁體中文之間切換的客戶端 React Context。接著是部落格區塊，重新思考了內容如何呈現與渲染。然後是 Turborepo 重構，一次架構大改，為了讓應用程式之間共用元件，並為我姐的個人網站打下基礎。最近一次，標題字體從 Space Grotesk 換成了 [Artific Variable](https://power-type.com/artific)，一套來自 Powertype 的字型，風格介於瑞士風精準與真實個性之間。那種花十分鐘就能完成，卻要花三個星期才停止自我懷疑的改變。
 
-技術細節對在乎技術細節的人很重要。給他們：Vercel 上桌面與行動裝置皆達 100 的 Real Experience Score，即便在 24 小時內有 4,000 名訪客。FCP 約 1.55 秒。LCP 約 1.66 秒。CLS 0.01。我為這些數字跌了夠多個坑，以至於它們與其說是指標，不如說是我與 Chrome DevTools 爭論後的紀念品。
+技術細節對在乎技術細節的人很重要。（如果想看完整的技術架構解析，請見[專案頁面](/projects/2025_04_12_portfolio)）。給他們：Vercel 上桌面與行動裝置皆達 100 的 Real Experience Score，即便在 24 小時內有 4,000 名訪客。FCP 約 1.55 秒。LCP 約 1.66 秒。CLS 0.01。我為這些數字跌了夠多個坑，以至於它們與其說是指標，不如說是我與 Chrome DevTools 爭論後的紀念品。
 
 但數字不是重點。
 

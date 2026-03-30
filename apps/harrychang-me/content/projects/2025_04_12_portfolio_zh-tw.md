@@ -42,6 +42,8 @@ featured: true
 
 **Monorepo 的高效率**：透過 **Turborepo**，我們能將共用的 UI 元件、Hooks 與工具函式集中於 `packages/ui` 和 `packages/lib`，讓多個應用程式共享。這大幅減少了重複的程式碼，並簡化了依賴管理。
 
+![4,000+ 當日使用者時桌面和手機版的滿分 Vercel 真實體驗分數](images/optimized/projects/2025_04_12_portfolio_design/vercel-dual-res.webp)
+
 **靜態與動態渲染**：主要作品集採用靜態網站生成（SSG）以追求效能。所有頁面都在建置階段預先渲染完成，結合 Next.js 自動化的 code-splitting，確保了最快的載入速度。實驗性網站則採用動態渲染，以支援由資料庫驅動的功能。
 
 **動態媒體處理**：我開發了一個名為 `transformMedia` 的客製化 Remark 插件，用來智慧地處理不同類型的媒體。它會遍歷 Markdown 結構，自動嵌入帶有自訂預覽圖的 YouTube 和 Google Drive 影片，同時將標準的圖片標籤轉換為優化過的 figure 元素，具備延遲載入與微光載入動畫。

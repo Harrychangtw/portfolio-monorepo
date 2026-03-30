@@ -43,6 +43,8 @@ Performance, scalability, and advanced features were primary goals during develo
 
 **Monorepo Efficiency:** Using **Turborepo**, we share UI components, hooks, and utility functions across different applications from `packages/ui` and `packages/lib`. This drastically reduces code duplication and simplifies dependency management.
 
+![Vercel Speed Insights showing a 100 Real Experience Score on both desktop and mobile under 4,000 users](images/optimized/projects/2025_04_12_portfolio_design/vercel-dual-res.webp)
+
 **Static & Dynamic Rendering:** The main portfolio uses Static Site Generation (SSG) for exceptional performance. All pages are pre-rendered at build time, and Next.js’s automatic code-splitting ensures minimal load times. The lab section is rendered dynamically to support its database-driven features.
 
 **Dynamic Media:** A custom Remark plugin, `transformMedia`, was developed to intelligently handle various media types. It traverses the Markdown structure to embed YouTube and Google Drive videos with custom placeholders and replaces standard images with optimized figure elements that feature lazy loading and a shimmer effect.
