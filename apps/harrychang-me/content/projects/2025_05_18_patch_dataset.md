@@ -7,7 +7,7 @@ imageUrl: "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
 year: "2025"
 date: "2025-05-18"
 role: "Co-First Author"
-pinned: 2
+pinned: 3
 featured: true
 locked: false
 technologies: [PyTorch, HF Transformers, LoRA]

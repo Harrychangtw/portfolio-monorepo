@@ -9,7 +9,7 @@ date: "2025-04-12"
 role: "Designer & Developer"
 technologies: ["Next.js", "React", "TypeScript", "TailwindCSS"]
 tooltip: "My personal portfolio, built with Next.js, Turborepo, and a file-based CMS."
-pinned: 5
+pinned: 4
 featured: true
 ---
 
@@ -42,6 +42,8 @@ Performance, scalability, and advanced features were primary goals during develo
 
 
 **Monorepo Efficiency:** Using **Turborepo**, we share UI components, hooks, and utility functions across different applications from `packages/ui` and `packages/lib`. This drastically reduces code duplication and simplifies dependency management.
+
+![Vercel Speed Insights showing a 100 Real Experience Score on both desktop and mobile under 4,000 users](images/optimized/projects/2025_04_12_portfolio_design/vercel-dual-res.webp)
 
 **Static & Dynamic Rendering:** The main portfolio uses Static Site Generation (SSG) for exceptional performance. All pages are pre-rendered at build time, and Next.js’s automatic code-splitting ensures minimal load times. The lab section is rendered dynamically to support its database-driven features.
 
