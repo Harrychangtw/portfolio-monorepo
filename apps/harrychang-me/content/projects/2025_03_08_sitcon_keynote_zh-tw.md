@@ -9,7 +9,7 @@ date: "2025-03-08"
 role: "設計師與講者"
 technologies: ["Affinity Publisher", "Apple Keynote"]
 tooltip: "在 SITCON 2025 發表關於從零打造 RAG 聊天機器人的演講。"
-pinned: 3
+pinned: 13
 featured: true
 ---
 

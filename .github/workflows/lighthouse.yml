@@ -78,6 +78,9 @@ jobs:
             http://localhost:3000/cv
             http://localhost:3000/linktree
             http://localhost:3000/design
+            http://localhost:3000/projects/2025_04_12_portfolio
+            http://localhost:3000/gallery/2026_02_08_italy_mountain
+            http://localhost:3000/blog/9_m11d
           configPath: apps/harrychang-me/.lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
