@@ -88,6 +88,9 @@ jobs:
       - name: Update README with Lighthouse Badges
         run: node .github/scripts/update-lighthouse-readme.js
 
+      - name: Format README with Prettier
+        run: npx prettier --write apps/harrychang-me/README.md
+
       - name: Commit Lighthouse Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
