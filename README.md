@@ -1,4 +1,16 @@
 # Portfolio Monorepo (harrychang.me, emilychang.me)
+
+> A Turborepo monorepo powering [harrychang.me](https://harrychang.me) and related portfolio sites.
+> For the full feature overview, performance benchmarks, and public-facing quick start guide, see
+> [`apps/harrychang-me/README.md`](apps/harrychang-me/README.md).
+
+## Apps
+
+| App | README | Description |
+|:---|:---|:---|
+| `harrychang-me` | [→ README](apps/harrychang-me/README.md) | Main portfolio + `lab.harrychang.me` subdomain |
+| `emilychang-me` | — | Secondary portfolio |
+
 ## Architecture Overview
 
 - **Turbo monorepo**: Multiple Next.js 15 apps managed using Turborepo (`apps/`)
@@ -65,7 +77,7 @@
 
 ## Example: Adding a Project
 
-1. Add `content/projects/my-project.md` (see frontmatter schema in `apps/harrychang-me/README.md`)
+1. Add `content/projects/my-project.md` with YAML frontmatter (fields: `title`, `date`, `description`, `tags`, `pinned`, `locked`, `featured`)
 2. Add images to `public/images/projects/my-project/`
 3. Run `node scripts/optimize-images.js`
 4. Commit and push
@@ -80,6 +92,6 @@ Content: All Rights Reserved (see `/content/`, `/public/`)
 - [Next.js](https://nextjs.org/)
 - [Radix UI](https://www.radix-ui.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
+- [Motion](https://motion.dev/)
 - [Prisma](https://www.prisma.io/)
 - [React Bits](https://github.com/DavidHDev/react-bits)
