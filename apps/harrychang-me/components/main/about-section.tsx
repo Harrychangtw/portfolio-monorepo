@@ -5,9 +5,11 @@ import dynamic from 'next/dynamic'
 
 const LanguageSwitcher = dynamic(() => import("@portfolio/ui/language-switcher"), { ssr: false })
 const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), { ssr: false })
+const AskAi = dynamic(() => import("@portfolio/ui/ask-ai"), { ssr: false })
 
 export default function AboutSection() {
   const { t, tHtml } = useLanguage()
+
   return (
     <section id="about" className="py-12 md:py-16 border-b border-border">
       <div className="container">
@@ -26,9 +28,15 @@ export default function AboutSection() {
             </div>
             {/* Visible on mobile (mt-8), kept at bottom on desktop (mt-auto) */}
             {/* min-h-[24px] prevents CLS while dynamic switchers are loading */}
-            <div className="flex items-center gap-6 mt-8 md:mt-auto pt-8 border-t border-border md:border-t-0 min-h-[54px]">
-              <LanguageSwitcher />
-              <ThemeSwitcher />
+            <div className="flex items-center justify-between mt-8 md:mt-auto pt-8 border-t border-border md:border-t-0 min-h-[64px] w-full">
+              <div className="flex items-center gap-6">
+                <LanguageSwitcher />
+                <ThemeSwitcher />
+              </div>
+              
+              <div className="flex items-center gap-3">
+                <AskAi />
+              </div>
             </div>
           </div>
 

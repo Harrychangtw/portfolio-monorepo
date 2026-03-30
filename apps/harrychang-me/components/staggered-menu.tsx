@@ -451,7 +451,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel fixed top-0 right-0 h-[100dvh] bg-background flex flex-col p-[3rem_2rem_6rem_2rem] md:p-[6em_2rem_6rem_2rem] overflow-y-auto z-10"
+          className="staggered-menu-panel fixed top-0 right-0 h-[100dvh] bg-background flex flex-col p-[3rem_2rem_2rem_2rem] md:p-[6em_2rem_2rem_2rem] overflow-y-auto z-10"
           style={{ 
             visibility: open ? 'visible' : 'hidden'
           }}

@@ -147,7 +147,7 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
             <button
               onClick={() => handleClick(id)}
               className={cn(
-                "text-left text-sm font-heading transition-all duration-200 w-full py-1",
+                "flex items-center justify-between text-left text-sm font-heading transition-all duration-200 w-full py-1",
                 "hover:text-accent",
                 // Indent based on heading level
                 level === 2 && "pl-0",
@@ -159,7 +159,10 @@ export function TableOfContents({ contentHtml, className }: TableOfContentsProps
                   : "text-secondary"
               )}
             >
-              {text}
+              <span className="truncate pr-4">{text}</span>
+              {activeId === id && (
+                <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+              )}
             </button>
           </li>
         ))}

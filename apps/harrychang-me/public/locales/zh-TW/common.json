@@ -41,6 +41,10 @@
     "switchToLight": "切換至淺色模式",
     "switchToDark": "切換至深色模式"
   },
+  "askAi": {
+    "query": "請以一位熟悉 Harry Chang（harrychang.me）且具洞察力的導覽者身份，向初次到訪的訪客介紹他。\n\n核心事實與連結路徑：\n- 背景：18 歲的台灣學生，以特殊選才正取一錄取台大資工系（[特選經驗](/blog/2025_12_24_ntu_cs_special_admission)）。\n- AI 研究：以第一作者發表 TMLR 論文 FORTRESS（速度快 5 倍的免微調 LLM 安全系統，[FORTRESS 專案](/projects/2025_10_12_fortress_zh-tw)）與 PATCH 資料集（EACL 2026 SRW）。目前為奧義智慧最年輕研究實習生，並於 SITCON 擔任講者（[完整履歷](/cv)）。\n- 攝影：使用無螢幕的 Leica M11-D（[Leica M11-D](/blog/9_m11d_zh-tw)）與 Fujifilm X-Pro1（[X-Pro1](/blog/2025_12_19_xpro1_zh-tw)），追求活在當下而非完美的數位紀錄（[攝影作品](/gallery)）。\n- 文字：撰寫關於《Aftersun》、《紐約浮世繪》等電影的長篇散文（[部落格](/blog)）。\n- 創客精神：用樂高積木為自己的伺服器打造散熱支架（[硬體組裝](/blog/10-lego-mount_zh-tw)），對工具極度講究（[工具與設定](/uses)）。\n- 顧問服務：經營 [Icarus Lab](https://lab.harrychang.me)，協助學生建構研究敘事與升學策略。\n- 設計與架構：親手開發此雙網域作品集，效能達滿分（Lighthouse/RES 100），設計上融合了包浩斯網格與古典藝術（[設計系統](/design)），且全站架構皆為開源（[網站原始碼](https://github.com/Harrychangtw/portfolio-monorepo)）。\n\n任務：寫一段 3 至 4 段的文字描繪他。重點不在於條列成就，而是捕捉貫穿這一切的主線：一種不斷尋找新樂器演奏、解構世界的好奇心。\n\n限制：\n1. 絕對必要：當提及他的專案、文章或攝影時，請務必將上述提供的 Markdown 連結「自然地」嵌入在句子中，不要在文末獨立列出連結。\n2. 避免使用條列式、履歷式的生硬語言或空洞的讚美。\n3. 請以介紹一個「真實、立體的人」的語氣來撰寫。",
+    "tooltip": "問 {{name}} 我是誰"
+  },
   "about": {
     "title": "關於我",
     "roles": "角色",

@@ -398,3 +398,11 @@ html.light .lab-logo {
   filter: invert(1);
 }
 
+.ai-logo {
+  filter: invert(1);
+}
+
+html.light .ai-logo {
+  filter: invert(0);
+}
+
