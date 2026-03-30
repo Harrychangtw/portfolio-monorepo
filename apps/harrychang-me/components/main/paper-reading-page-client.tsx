@@ -1,10 +1,10 @@
 "use client";
 
-import { useLanguage } from '@portfolio/lib/contexts/language-context';
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import AnimatedPaperList from "@/components/main/animated-paper-list";
 import PaginationControls from "@portfolio/ui/pagination-controls";
 import { Paper } from "@portfolio/lib/types/paper";
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
 
 interface PaperReadingPageClientProps {
   paginatedPapers: Paper[];
@@ -27,11 +27,11 @@ export default function PaperReadingPageClient({
           Paper Reading List
         </h1>
       </div>
-      
+
       <div className="border-t border-border">
         <AnimatedPaperList papers={paginatedPapers} />
       </div>
-      
+
       <PaginationControls hasNextPage={hasNextPage} hasPrevPage={hasPrevPage} />
     </article>
   );

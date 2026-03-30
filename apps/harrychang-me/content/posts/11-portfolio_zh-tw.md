@@ -128,7 +128,8 @@ locked: true
 ---
 
 ## 致謝
-- 封面照：*Der arme Poet* by [Carl Spitzweg](https://en.wikipedia.org/wiki/en:Carl_Spitzweg), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=159093)。詩人將他的閣樓變成了一個世界。不是無視漏水的屋頂與嚴寒，而是置身其中。網路的某些角落，也如此開始。
+
+- 封面照：_Der arme Poet_ by [Carl Spitzweg](https://en.wikipedia.org/wiki/en:Carl_Spitzweg), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=159093)。詩人將他的閣樓變成了一個世界。不是無視漏水的屋頂與嚴寒，而是置身其中。網路的某些角落，也如此開始。
 - 設計靈感來自 [Joseph Zhang](https://joseph.cv/)，他的三欄式版面我借了就沒還過
 - 原始碼公開於 [GitHub](https://github.com/Harrychangtw/portfolio-monorepo)，採 CC BY-NC 4.0
 - 以 Next.js、React、TypeScript、TailwindCSS，以及過量的固執打造。

@@ -1,30 +1,37 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useLanguage } from '@portfolio/lib/contexts/language-context'
-import { ImageContainer } from "@portfolio/ui/image-container"
-import NavigationLink from "@portfolio/ui/navigation-link"
+import { motion } from "framer-motion";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import { ImageContainer } from "@portfolio/ui/image-container";
+import NavigationLink from "@portfolio/ui/navigation-link";
 
 interface NextUpCardProps {
-  title: string
-  category: string
-  slug: string
-  imageUrl: string
-  basePath: "projects" | "gallery" | "blog"
-  aspectRatio?: number
+  title: string;
+  category: string;
+  slug: string;
+  imageUrl: string;
+  basePath: "projects" | "gallery" | "blog";
+  aspectRatio?: number;
 }
 
-export default function NextUpCard({ title, category, slug, imageUrl, basePath, aspectRatio }: NextUpCardProps) {
-  const { t } = useLanguage()
+export default function NextUpCard({
+  title,
+  category,
+  slug,
+  imageUrl,
+  basePath,
+  aspectRatio,
+}: NextUpCardProps) {
+  const { t } = useLanguage();
 
   // Ensure we pass the full resolution URL to ImageContainer
   // It expects the full path and handles creating the -thumb path internally for the blur effect
-  const fullImageUrl = imageUrl?.replace('-thumb.webp', '.webp')
+  const fullImageUrl = imageUrl?.replace("-thumb.webp", ".webp");
 
   return (
     <div className="w-full mt-4 md:mt-6 pt-4">
       <NavigationLink href={`/${basePath}/${slug}`} className="block group">
-        <motion.div 
+        <motion.div
           className="relative overflow-hidden border border-border bg-card hover:bg-muted/60 transition-colors p-1"
           whileHover={{ scale: 0.98 }}
           transition={{ duration: 0.2 }}
@@ -33,12 +40,12 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath, 
             {/* Left Content */}
             <div className="flex-1 min-w-0 flex flex-col justify-center">
               <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                <span className="text-xs font-heading uppercase tracking-wider">{t('common.nextUp') || "Next Up"}</span>
+                <span className="text-xs font-heading uppercase tracking-wider">
+                  {t("common.nextUp") || "Next Up"}
+                </span>
               </div>
-              
-              
 
-<h3 className="font-heading text-lg md:text-xl font-bold text-primary truncate pr-4">
+              <h3 className="font-heading text-lg md:text-xl font-bold text-primary truncate pr-4">
                 {title}
               </h3>
               <p className="font-body text-sm text-secondary truncate mt-1">
@@ -65,5 +72,5 @@ export default function NextUpCard({ title, category, slug, imageUrl, basePath, 
         </motion.div>
       </NavigationLink>
     </div>
-  )
+  );
 }

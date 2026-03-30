@@ -1,7 +1,7 @@
 ---
 title: "俯仰之間"
 description: ""
-imageUrl: "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp" 
+imageUrl: "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp"
 date: "2024-01-06"
 camera: "FUJIFILM XT-5"
 lens: "VILTROX 75mm f/1.2"
@@ -15,12 +15,10 @@ gallery:
   - url: "images/optimized/gallery/2024_01_06_hehuanshan/DSCF0182.webp"
   - url: "images/optimized/gallery/2024_01_06_hehuanshan/DSCF0037.webp"
   - url: "images/optimized/gallery/2024_01_06_hehuanshan/DSCF0008.webp"
-
 ---
 
-
 > 仰觀宇宙之大，俯察品類之盛，所以遊目騁懷，足以極視聽之娛，信可樂也。
-> 
+>
 > — 王羲之《蘭亭集序》
 
 行走在蜿蜒的山路上，我們是旅人，也是過客。

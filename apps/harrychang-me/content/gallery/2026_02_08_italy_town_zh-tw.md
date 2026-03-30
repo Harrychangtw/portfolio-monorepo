@@ -11,14 +11,14 @@ featured: true
 pinned: 2
 locked: false
 gallery:
-    - url: "images/optimized/gallery/2026-italy-town/L1000317.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000343.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000337.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000372.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000365.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000374.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000403.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000813.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000317.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000343.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000337.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000372.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000365.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000374.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000403.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000813.webp"
 ---
 
 每一趟旅程都是一部書寫中的鉅著，而這些照片，是我在頁緣蓋下的閒章。

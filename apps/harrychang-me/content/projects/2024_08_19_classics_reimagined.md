@@ -14,6 +14,7 @@ featured: true
 ---
 
 ## Project Overview
+
 "Classics Reimagined" is our school's annual drama extravaganza, featuring class-based participation from 10th and 11th-grade students. The event encourages students to creatively reinterpret Chinese literary classics, with musical performance as a core element. In this year's competition, our class (Class of 2026, Ai) won first place with our production, "Remnants of a Tumultuous Sun," which received high praise from the judges.
 
 ---
@@ -29,11 +30,13 @@ The play reaches its climax years later in a reunion. Li Zicheng, now a monk, me
 ---
 
 ## Curtain Call Video Production
+
 Building on last year's filming experience, I once again took on the responsibility for filming and editing the entire curtain call video. My goal was to present the hard work of every student involved in a style that was a bit "overly flashy."
 
 ![Final Video](https://drive.google.com/file/d/1aGQ9TryQcT7zw273gwb_uJrxAr64fmaa/view?usp=sharing)
 
 ### Production Equipment
+
 - **Camera**: FUJIFILM X-T5
 - **Lens**: SIGMA 18-50mm f/2.8
 - **Stabilizer**: DJI RS3 Mini
@@ -42,15 +45,20 @@ Building on last year's filming experience, I once again took on the responsibil
 - **Music Source**: From Motion Array
 
 ### Creative Process
+
 #### Pre-production and Filming
+
 The overall aim for the video was to present the entire production process with a fast pace. After downloading the music, I followed these steps:
+
 1.  **Music Rhythm Analysis**: I imported the selected music into DaVinci Resolve to analyze its rhythm and structure, keeping the total length to about one minute to establish the video's narrative framework.
 2.  **Shot Planning**: Based on the music's beat, I planned the shots for each segment on the timeline and set preliminary edit points on the rhythm markers. Camera movements were primarily pushes, pulls, and orbits to create a fluid visual dynamic.
 3.  **Planning the Intro and Outro**: Since the beginning and end would feature more flashy effects, I planned the specific shots needed for these sections in advance to make filming more efficient and to know exactly what footage to get.
 4.  **Filming**: After planning the shots according to the music's rhythm, I began filming. Throughout the process, I tried to ensure the speed and consistency of each shot to make post-production less painful. This was a very long process, often requiring more than five takes for each shot to ensure it met the desired effect.
 
 #### Post-production
+
 ![The Final Timeline](images/optimized/projects/2024_08_19_classics_reimagined/full_timeline.webp)
+
 1.  **Asset Organization and Rough Cut**: I imported the footage into DaVinci Resolve and placed it on the timeline according to the plan.
 2.  **Transition Matching**: I added a Speed Curve to the beginning and end of each clip, making it fast at the ends and slow in the middle (0.4x).
 3.  **Opening Sequence**: The opening was created in Fusion with a seamless zoom out from a computer screen, transitioning into the first high-speed push-pull shot.
@@ -67,12 +75,14 @@ The overall aim for the video was to present the entire production process with 
 ![Fusion Node Tree for the Closing Transition](images/optimized/projects/2024_08_19_classics_reimagined/closing_squence_fusion_comp.webp)
 
 ### Polaroid Photoshoot
+
 In addition to the video production, to give the intro a warmer and more commemorative feel, I used a flash to take Polaroid-style photos of each student. I also integrated messages they wanted to share in the design, incorporating these precious moments into the start of the video.
 ![Polaroid photos organized in Affinity Designer](images/optimized/projects/2024_08_19_classics_reimagined/polaroid_design.webp)
 
 ---
 
 ## Stills
+
 ![](images/optimized/projects/2024_08_19_classics_reimagined/_DSF3005%2086%20Edited.webp)
 ![](images/optimized/projects/2024_08_19_classics_reimagined/_DSF3072%2090%20Edited.webp)
 ![](images/optimized/projects/2024_08_19_classics_reimagined/DSCF1949%206%20Edited.webp)
@@ -84,6 +94,7 @@ In addition to the video production, to give the intro a warmer and more commemo
 ---
 
 ## Reflection
+
 Although my main role during the preparation was as a documentarian rather than a performer, it gave me the unique privilege of witnessing every brilliant moment of our class's teamwork—from set design and costume selection to directing, acting, and musical arrangement. The sight of my classmates working together in harmony is still vivid in my memory.
 
 Despite the challenges of filming, the moment the video ended and I heard the applause from the entire audience, I was convinced that all the effort poured into that short minute and a half was worthwhile and had no regrets.
@@ -91,4 +102,5 @@ Despite the challenges of filming, the moment the video ended and I heard the ap
 ---
 
 ## Acknowledgments
+
 Special thanks to all the students who participated in this performance, especially the directors, scriptwriters, and all the partners who worked tirelessly behind the scenes. Your efforts and creativity made this performance possible and gave me the opportunity to capture these wonderful memories through video.

@@ -1,7 +1,7 @@
 ---
 title: "Against the Unknown"
 description: ""
-imageUrl: "images/optimized/gallery/2023_12_30_against_the_unknown/154BA3D2-BF8E-4723-B427-E4ACB33B14A1-8577-000006A57CC6F050.webp" 
+imageUrl: "images/optimized/gallery/2023_12_30_against_the_unknown/154BA3D2-BF8E-4723-B427-E4ACB33B14A1-8577-000006A57CC6F050.webp"
 date: "2023-12-30"
 camera: "FUJIFILM XT-5"
 lens: "FUJINON 100-400mm f/4.5-5.6"

@@ -22,7 +22,6 @@ gallery:
   - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0059 7 Edited.webp"
   - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 14 Edited.webp"
   - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 19 Edited.webp"
-
 ---
 
 In Tokyo, I became a greedy collector.
@@ -30,4 +29,3 @@ In Tokyo, I became a greedy collector.
 I collected the shadow cast upon a staircase, which held a sharper silhouette than the person themselves. I collected the unexpected glimpse of the Skytree at the end of an alley, like a hidden surprise from the city. I also collected the glow of the Tokyo Tower at night, and the people attempting to fit it into their phone screens.
 
 Each photograph is a page torn from the city's vast narrative. They represent a secret dialogue between Tokyo and me, a conversation about light, shadow, brief encounters, and endless imagination. These disjointed pieces ultimately form my complete picture of the city: chaotic, gentle, and full of poetry.
-

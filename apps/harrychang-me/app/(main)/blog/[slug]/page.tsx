@@ -1,29 +1,37 @@
-import type { Metadata } from "next"
-import { notFound } from "next/navigation"
-import { getPostData, getAllPostSlugs, getNextPost } from "@portfolio/lib/lib/markdown"
-import BlogPostClient from "@portfolio/ui/blog-post-client"
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import {
+  getPostData,
+  getAllPostSlugs,
+  getNextPost,
+} from "@portfolio/lib/lib/markdown";
+import BlogPostClient from "@portfolio/ui/blog-post-client";
 
-const baseUrl = 'https://www.harrychang.me'
+const baseUrl = "https://www.harrychang.me";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params
-  if (!slug) return { title: "Post Not Found" }
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  if (!slug) return { title: "Post Not Found" };
 
-  const post = await getPostData(slug)
+  const post = await getPostData(slug);
 
   if (!post) {
     return {
       title: "Post Not Found",
-    }
+    };
   }
 
-  const isChineseVersion = slug.includes('_zh-tw') || slug.includes('_zh-TW')
-  const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, '')
-  const canonicalUrl = `${baseUrl}/blog/${slug}`
+  const isChineseVersion = slug.includes("_zh-tw") || slug.includes("_zh-TW");
+  const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, "");
+  const canonicalUrl = `${baseUrl}/blog/${slug}`;
 
-  const imageUrl = post.imageUrl.startsWith('http')
+  const imageUrl = post.imageUrl.startsWith("http")
     ? post.imageUrl
-    : `${baseUrl}${post.imageUrl.startsWith('/') ? '' : '/'}${post.imageUrl}`
+    : `${baseUrl}${post.imageUrl.startsWith("/") ? "" : "/"}${post.imageUrl}`;
 
   return {
     title: `${post.title} | Blog`,
@@ -31,23 +39,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords: [
       post.title,
       ...(post.tags || []),
-      'Harry Chang',
-      '張祺煒',
-      'blog',
+      "Harry Chang",
+      "張祺煒",
+      "blog",
     ].filter(Boolean),
-    authors: [{ name: post.author || 'Harry Chang' }],
+    authors: [{ name: post.author || "Harry Chang" }],
     alternates: {
       canonical: canonicalUrl,
       languages: {
-        'en': `${baseUrl}/blog/${baseSlug}`,
-        'zh-TW': `${baseUrl}/blog/${baseSlug}_zh-tw`,
+        en: `${baseUrl}/blog/${baseSlug}`,
+        "zh-TW": `${baseUrl}/blog/${baseSlug}_zh-tw`,
       },
     },
     openGraph: {
       title: post.title,
       description: post.description,
       url: canonicalUrl,
-      siteName: 'Harry Chang Portfolio',
+      siteName: "Harry Chang Portfolio",
       images: [
         {
           url: imageUrl,
@@ -56,99 +64,102 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           alt: post.title,
         },
       ],
-      locale: isChineseVersion ? 'zh_TW' : 'en_US',
-      type: 'article',
+      locale: isChineseVersion ? "zh_TW" : "en_US",
+      type: "article",
       publishedTime: post.date,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: post.title,
       description: post.description,
       images: [imageUrl],
-      creator: '@harrychangtw',
+      creator: "@harrychangtw",
     },
-  }
+  };
 }
 
 export async function generateStaticParams() {
-  const paths = getAllPostSlugs()
-  return paths
+  const paths = getAllPostSlugs();
+  return paths;
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  if (!slug) notFound()
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  if (!slug) notFound();
 
-  const post = await getPostData(slug)
-  const nextPost = await getNextPost(slug)
+  const post = await getPostData(slug);
+  const nextPost = await getNextPost(slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
-  const isChineseVersion = slug.includes('_zh-tw') || slug.includes('_zh-TW')
+  const isChineseVersion = slug.includes("_zh-tw") || slug.includes("_zh-TW");
 
+  const canonicalUrl = `${baseUrl}/blog/${slug}`;
 
-  const canonicalUrl = `${baseUrl}/blog/${slug}`
-
-  const imageUrl = post.imageUrl.startsWith('http')
+  const imageUrl = post.imageUrl.startsWith("http")
     ? post.imageUrl
-    : `${baseUrl}${post.imageUrl.startsWith('/') ? '' : '/'}${post.imageUrl}`
+    : `${baseUrl}${post.imageUrl.startsWith("/") ? "" : "/"}${post.imageUrl}`;
 
   // Create structured data for better SEO with Entity Graph
   const structuredData = {
-    '@context': 'https://schema.org',
-    '@graph': [
+    "@context": "https://schema.org",
+    "@graph": [
       // BlogPosting Schema
       {
-        '@type': 'BlogPosting',
-        '@id': `${canonicalUrl}/#article`,
+        "@type": "BlogPosting",
+        "@id": `${canonicalUrl}/#article`,
         headline: post.title,
         description: post.description,
         image: imageUrl,
         datePublished: post.date,
         author: {
-          '@id': `${baseUrl}/#person`
+          "@id": `${baseUrl}/#person`,
         },
         publisher: {
-          '@id': `${baseUrl}/#person`
+          "@id": `${baseUrl}/#person`,
         },
         isPartOf: {
-          '@id': `${baseUrl}/#website`
+          "@id": `${baseUrl}/#website`,
         },
         mainEntityOfPage: {
-          '@type': 'WebPage',
-          '@id': canonicalUrl,
+          "@type": "WebPage",
+          "@id": canonicalUrl,
         },
-        keywords: (post.tags || []).join(', '),
-        inLanguage: isChineseVersion ? 'zh-TW' : 'en-US',
+        keywords: (post.tags || []).join(", "),
+        inLanguage: isChineseVersion ? "zh-TW" : "en-US",
       },
       // BreadcrumbList Schema
       {
-        '@type': 'BreadcrumbList',
-        'itemListElement': [
+        "@type": "BreadcrumbList",
+        itemListElement: [
           {
-            '@type': 'ListItem',
-            'position': 1,
-            'name': 'Home',
-            'item': baseUrl
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: baseUrl,
           },
           {
-            '@type': 'ListItem',
-            'position': 2,
-            'name': 'Blog',
-            'item': `${baseUrl}/blog`
+            "@type": "ListItem",
+            position: 2,
+            name: "Blog",
+            item: `${baseUrl}/blog`,
           },
           {
-            '@type': 'ListItem',
-            'position': 3,
-            'name': post.title,
-            'item': canonicalUrl
-          }
-        ]
-      }
-    ]
-  }
+            "@type": "ListItem",
+            position: 3,
+            name: post.title,
+            item: canonicalUrl,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <>
@@ -158,6 +169,5 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       />
       <BlogPostClient initialPost={post} nextPost={nextPost} />
     </>
-  )
+  );
 }
-

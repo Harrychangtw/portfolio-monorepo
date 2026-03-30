@@ -22,7 +22,7 @@ First: why did I need a fan mount at all?
 I built the homeserver between late 2024 and early 2025. The immediate reason was practical: I'm part of my school's AI club, and we were trying to finish a full academic paper before graduation. Our school's 3080 Ti had 12GB of VRAM, which made running anything substantial an exercise in frustration. Even Q4 quantization wasn't enough for the multi-model adversarial framework I was building.
 The RTX 3090 I bought secondhand had 24GB. The fins had a bit of rust. It worked perfectly.
 
-Initially, I doubted whether the server would stay useful once the ML experiments wound down. I figured the cumulative cost of cloud compute would eventually justify the hardware, but I wasn't sure. Then something shifted. 
+Initially, I doubted whether the server would stay useful once the ML experiments wound down. I figured the cumulative cost of cloud compute would eventually justify the hardware, but I wasn't sure. Then something shifted.
 
 Having low-stakes access to real hardware changed how I learned. CLI fluency came from necessity, not tutorials. Grafana became a rabbit hole I fell into on a whim—I'd always wanted a task-manager-type dashboard, and suddenly I could just build one. Kernel panics stopped being terrifying and became puzzles. When I eventually needed to spin something up on runpod.io, the learning curve was already behind me.
 
@@ -121,7 +121,8 @@ One millimeter. That's all it took.
 ---
 
 ## Acknowledgments
-- Title image: *Boy Building a House of Cards* by [Jean-Baptiste-Siméon Chardin](https://en.wikipedia.org/wiki/en:Jean_Sim%C3%A9on_Chardin), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=57787211). Like the boy carefully balancing his cards, this build is a reminder that the simple tools of childhood can still be used to construct elegant solutions for adult problems.
+
+- Title image: _Boy Building a House of Cards_ by [Jean-Baptiste-Siméon Chardin](https://en.wikipedia.org/wiki/en:Jean_Sim%C3%A9on_Chardin), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=57787211). Like the boy carefully balancing his cards, this build is a reminder that the simple tools of childhood can still be used to construct elegant solutions for adult problems.
 - Case: FormD T1, which I still think is one of the most beautiful SFF cases ever made
 - Fans: Phanteks T30, worth every millimeter of thickness
 - LEGO: Various Technic pieces and one surprisingly load-bearing set of tires

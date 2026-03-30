@@ -9,38 +9,44 @@ A modern, highly optimized portfolio website built with Next.js 15 and React 19,
 ## ⚡ Performance: 100 RES
 
 This site is engineered for uncompromising performance. Verified by Vercel Analytics, the site maintains a **perfect 100 Real Experience Score (RES)** across both desktop and mobile devices, gracefully handling surges of 4,000+ visitors with:
-* **First Contentful Paint (FCP):** ~1.55s
-* **Largest Contentful Paint (LCP):** ~1.66s
-* **Interaction to Next Paint (INP):** 80ms
-* **Cumulative Layout Shift (CLS):** 0.01
+
+- **First Contentful Paint (FCP):** ~1.55s
+- **Largest Contentful Paint (LCP):** ~1.66s
+- **Interaction to Next Paint (INP):** 80ms
+- **Cumulative Layout Shift (CLS):** 0.01
 
 ### Lighthouse CI Results
+
 <!-- LIGHTHOUSE_RESULTS_START -->
+
 > 🕐 **Last audited:** Mon, 30 Mar 2026 07:34:16 GMT
 
-| Tested Route | Performance | FCP | LCP | TBT | CLS | Speed Index |
-|:---|:---|:---|:---|:---|:---|:---|
-| `/` | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square) | 0.3 s | 1.0 s | 100 ms | 0 | 0.7 s |
-| `/blog` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms | 0 | 0.7 s |
-| `/blog/9_m11d` | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square) | 0.3 s | 1.6 s | 10 ms | 0 | 1.2 s |
-| `/cv` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.8 s | 0 ms | 0 | 0.4 s |
-| `/design` | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square) | 0.3 s | 1.3 s | 0 ms | 0 | 0.7 s |
-| `/gallery` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms | 0 | 0.7 s |
-| `/gallery/2026_02_08_italy_mountain` | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square) | 0.3 s | 1.2 s | 10 ms | 0 | 0.7 s |
-| `/linktree` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms | 0 | 0.6 s |
-| `/projects` | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms | 0 | 0.7 s |
-| `/projects/2025_04_12_portfolio` | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square) | 0.3 s | 1.1 s | 0 ms | 0 | 1.1 s |
-| `/uses` | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square) | 0.3 s | 1.2 s | 0 ms | 0 | 0.8 s |
+| Tested Route                         | Performance                                                                            | FCP   | LCP   | TBT    | CLS | Speed Index |
+| :----------------------------------- | :------------------------------------------------------------------------------------- | :---- | :---- | :----- | :-- | :---------- |
+| `/`                                  | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square) | 0.3 s | 1.0 s | 100 ms | 0   | 0.7 s       |
+| `/blog`                              | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms   | 0   | 0.7 s       |
+| `/blog/9_m11d`                       | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square) | 0.3 s | 1.6 s | 10 ms  | 0   | 1.2 s       |
+| `/cv`                                | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.8 s | 0 ms   | 0   | 0.4 s       |
+| `/design`                            | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square) | 0.3 s | 1.3 s | 0 ms   | 0   | 0.7 s       |
+| `/gallery`                           | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms   | 0   | 0.7 s       |
+| `/gallery/2026_02_08_italy_mountain` | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square) | 0.3 s | 1.2 s | 10 ms  | 0   | 0.7 s       |
+| `/linktree`                          | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms   | 0   | 0.6 s       |
+| `/projects`                          | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms   | 0   | 0.7 s       |
+| `/projects/2025_04_12_portfolio`     | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square) | 0.3 s | 1.1 s | 0 ms   | 0   | 1.1 s       |
+| `/uses`                              | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square) | 0.3 s | 1.2 s | 0 ms   | 0   | 0.8 s       |
+
 <!-- LIGHTHOUSE_RESULTS_END -->
 
 ## 🌟 Key Features
 
 ### Dual-Domain Architecture
+
 - **Main site** (`harrychang.me`): Portfolio, projects, photo gallery, blog, links, design system, and manifesto.
 - **Lab subdomain** (`lab.harrychang.me`): Hub for consulting, strategy, and educational content.
 - Single codebase utilizing Next.js middleware routing. Shared components, APIs, and cross-subdomain cookie persistence (`.harrychang.me`) for theme preferences.
 
 ### Advanced Design & Micro-Interactions
+
 - **The "Rangefinder" 404 Page:** An interactive, camera-inspired 404 page. Users scroll their mouse wheel to "focus" a misaligned split-image text projection. Once focused, it locks on and transports the user to a random piece of content (Mobile users are auto-redirected to reduce friction).
 - **Dynamic Headers & Navigation:** Custom navigation hooks cycle through nuanced loading messages ("Computing", "Spelunking") while traversing pages. Uses smooth `motion/react` transitions.
 - **Guestbook Widget:** An integrated anonymous feedback module featuring animated, rotating text placeholders and live database submission.
@@ -48,19 +54,23 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 - **Cross-Subdomain Theme Engine:** A custom light/dark mode implementation using root domain cookies to ensure seamless transitions when navigating between the main site and the Lab subdomain without FOUC.
 
 ### Automated Asset Pipelines
+
 - **Google Drive Font Fetching:** Custom fonts are intentionally kept out of the repository. A pre-build Node script (`fetch-fonts.mjs`) securely pulls the required typefaces from Google Drive, unzips them, and cleans up the assets for the build.
 - **Image Processing:** Automated WebP conversion, progressive 20px blur-up thumbnails, and strict dimension detection to eliminate Layout Shift.
 
 ### Custom Internationalization & CMS
+
 - **Client-side i18n:** Context-based language switching (EN / ZH-TW) with visibility gating.
 - **File-based Markdown CMS:** Stores data for projects, gallery items, and blog posts, with automated fallback logic for localization.
 
 ## 🎨 Design Philosophy
 
 ### The "Anti-Hero" Architecture
+
 The site actively avoids standard web tropes like massive hero sections or scroll-jacking. Intent-driven navigation replaces splash screens, giving visitors immediate access to the content (`About`, `Updates`, `Projects`, `Links`).
 
 ### Visual Framing & Classical Integration
+
 - **Dynamic Aspect Ratios:** The Gallery applies custom border padding based on mathematical aspect ratios (Portrait, Cinematic, Standard) to create a museum-like visual rhythm.
 - **Classical Motif:** Blends brutalist digital grids, pixel art accents, and neon fluid gradients (`--gradient-primary`) with Renaissance/Baroque art themes (Vermeer, Tiepolo, Bruegel) to ground the modern tech stack in timeless aesthetics.
 
@@ -86,6 +96,7 @@ The site actively avoids standard web tropes like massive hero sections or scrol
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ and pnpm
 - PostgreSQL database (or Vercel Postgres) for the Lab waitlist and guestbook
 - Google Drive API ID for the font pipeline
@@ -107,7 +118,7 @@ cp .env.example .env.local
 ### Environment Variables (.env.local)
 
 ```bash
-# Database 
+# Database
 DATABASE_POSTGRES_URL=postgres://user:pass@host/db
 DATABASE_PRISMA_DATABASE_URL=postgres://user:pass@host/db?pgbouncer=true
 
@@ -148,6 +159,7 @@ This project uses a dual-licensing model. The source code is licensed under **CC
 ## 🙏 Acknowledgments
 
 Built with:
+
 - [Next.js 15](https://nextjs.org/) & [React 19](https://react.dev/)
 - [Turborepo](https://turbo.build/)
 - [Tailwind CSS](https://tailwindcss.com/) & [Radix UI](https://www.radix-ui.com/)

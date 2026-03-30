@@ -1,8 +1,8 @@
-import type React from 'react'
-import type { Metadata } from 'next'
-import ClientLayout from '@/components/client-layout'
-import EmilyFooter from '@/components/emily-footer'
-import { siteConfig } from '@/config/site'
+import type React from "react";
+import type { Metadata } from "next";
+import ClientLayout from "@/components/client-layout";
+import EmilyFooter from "@/components/emily-footer";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${siteConfig.url}/`,
     languages: {
-      'en': `${siteConfig.url}/`,
+      en: `${siteConfig.url}/`,
     },
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.metadata.siteName,
     title: siteConfig.metadata.title.default,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteConfig.metadata.title.default,
     description: `${siteConfig.author.name} portfolio showcasing design and art work`,
     images: [`${siteConfig.url}${siteConfig.media.ogImage.url}`],
@@ -46,40 +46,40 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   icons: {
     icon: [
       {
-        url: '/favicon.png',
-        sizes: 'any'
-      }
+        url: "/favicon.png",
+        sizes: "any",
+      },
     ],
     apple: {
-      url: '/apple-icon.png',
-      type: 'image/png'
+      url: "/apple-icon.png",
+      type: "image/png",
     },
   },
-}
+};
 
 export default function MainLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
+    "@context": "https://schema.org",
+    "@type": "Person",
     name: siteConfig.author.name,
     url: siteConfig.url,
     image: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
     jobTitle: siteConfig.author.jobTitle,
     description: siteConfig.author.description,
     knowsAbout: siteConfig.skills,
-  }
+  };
 
   return (
     <>
@@ -88,11 +88,9 @@ export default function MainLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <ClientLayout>
-        <div className="flex-1 pt-16">
-          {children}
-        </div>
+        <div className="flex-1 pt-16">{children}</div>
         <EmilyFooter />
       </ClientLayout>
     </>
-  )
+  );
 }

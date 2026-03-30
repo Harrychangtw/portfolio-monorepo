@@ -54,7 +54,7 @@ This portfolio site uses a simple yet powerful markdown-based content management
 ### Required Gallery Fields
 
 - `title`: The title of your gallery entry
-- `description`: A short description (1-2 sentences) 
+- `description`: A short description (1-2 sentences)
 - `imageUrl`: Path to the main/cover image
 - `quote`: A short quote that appears on hover in the gallery grid
 - `date`: ISO format date (YYYY-MM-DD) for sorting purposes
@@ -93,6 +93,7 @@ This project includes an image optimization script that automatically processes 
    - Gallery images: `/public/images/gallery/your-gallery-slug/`
 
 2. Run the optimization script:
+
    ```bash
    npm run optimize-images
    ```

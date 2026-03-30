@@ -13,7 +13,6 @@ pinned: 12
 featured: true
 ---
 
-
 ## Project Overview
 
 SITCON is one of, if not the largest student developer conference in Taiwan. I was first introduced to this community by Andrew Kuo, who had previously given an excellent [talk on LLMs](https://www.youtube.com/watch?v=JGgZTngrJB4) there. He was the one who encouraged me to develop my **“Chingshin RAG”** project into a full-length keynote.
@@ -47,6 +46,7 @@ With these concepts laid out, sharing my experience of developing the **“Ching
 The visual style for this keynote was an extension of the **project proposal slides** I had previously designed for **GenAI Stars**.
 
 To enrich the style, I used a mix of different fonts and layouts:
+
 - **Source Han Serif** for the body text
 - **Lanting Black** for the titles
 
@@ -63,6 +63,3 @@ All the slides were designed in **Affinity Publisher 2**. I love this software; 
 The most unforgettable part of the entire SITCON journey was the people. I met a group of passionate and helpful individuals. This was especially evident during the **rehearsal**, where I could feel everyone's dedication to the event. The organizing team gave me a lot of practical and constructive feedback, and this keynote wouldn't have been the same without them.
 
 I want to extend my sincere gratitude to the SITCON 2025 organizing team, especially AK, Danny, and everyone who provided feedback during the rehearsal. This talk would not have been possible without your support and encouragement. Thank you to everyone who helped me along the way; you made this journey meaningful and truly unforgettable.
-
-
-

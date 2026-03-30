@@ -1,169 +1,181 @@
-import { MetadataRoute } from 'next'
-import { headers } from 'next/headers'
-import { getAllProjectSlugs, getProjectData, getAllGallerySlugs, getGalleryItemData, getAllPostSlugs, getPostData } from '@portfolio/lib/lib/markdown'
+import { MetadataRoute } from "next";
+import { headers } from "next/headers";
+import {
+  getAllProjectSlugs,
+  getProjectData,
+  getAllGallerySlugs,
+  getGalleryItemData,
+  getAllPostSlugs,
+  getPostData,
+} from "@portfolio/lib/lib/markdown";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const headersList = await headers()
-  const host = headersList.get('host') || 'www.harrychang.me'
-  
+  const headersList = await headers();
+  const host = headersList.get("host") || "www.harrychang.me";
+
   // Determine if this is the lab subdomain
-  const isLab = host.includes('lab.harrychang.me')
-  const baseUrl = isLab ? 'https://lab.harrychang.me' : 'https://www.harrychang.me'
-  
+  const isLab = host.includes("lab.harrychang.me");
+  const baseUrl = isLab
+    ? "https://lab.harrychang.me"
+    : "https://www.harrychang.me";
+
   // If this is the lab subdomain, return lab-specific sitemap
   if (isLab) {
     return [
       {
         url: `${baseUrl}`,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
+        changeFrequency: "weekly",
         priority: 1.0,
       },
       {
         url: `${baseUrl}/waitlist`,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
+        changeFrequency: "weekly",
         priority: 0.8,
       },
-    ]
+    ];
   }
-  
+
   // Main domain sitemap
-  const sitemap: MetadataRoute.Sitemap = []
+  const sitemap: MetadataRoute.Sitemap = [];
 
   // Add static pages
   const staticPages = [
-    '',
-    '/projects',
-    '/gallery',
-    '/blog',
-    '/paper-reading',
-    '/manifesto',
-    '/uses',
-  ]
+    "",
+    "/projects",
+    "/gallery",
+    "/blog",
+    "/paper-reading",
+    "/manifesto",
+    "/uses",
+  ];
 
   staticPages.forEach((page) => {
     sitemap.push({
       url: `${baseUrl}${page}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: page === '' ? 1.0 : 0.8,
+      changeFrequency: "weekly",
+      priority: page === "" ? 1.0 : 0.8,
       alternates: {
         languages: {
           en: `${baseUrl}${page}`,
-          'zh-TW': `${baseUrl}${page}?lang=zh-TW`,
+          "zh-TW": `${baseUrl}${page}?lang=zh-TW`,
         },
       },
-    })
-  })
+    });
+  });
 
   // Get all project slugs
-  const projectSlugs = getAllProjectSlugs()
+  const projectSlugs = getAllProjectSlugs();
 
   // Add project pages with both language versions
   for (const { params } of projectSlugs) {
-    const slug = params.slug
+    const slug = params.slug;
 
     // Skip language-specific files (we'll handle them via the base slug)
-    if (slug.includes('_zh-tw') || slug.includes('_zh-TW')) {
-      continue
+    if (slug.includes("_zh-tw") || slug.includes("_zh-TW")) {
+      continue;
     }
 
     // Try to get the project data to get the date
-    const projectData = await getProjectData(slug)
-    
+    const projectData = await getProjectData(slug);
+
     // Check if there's a Chinese version
     const hasChineseVersion = projectSlugs.some(
-      ({ params }) => params.slug === `${slug}_zh-tw` || params.slug === `${slug}_zh-TW`
-    )
+      ({ params }) =>
+        params.slug === `${slug}_zh-tw` || params.slug === `${slug}_zh-TW`,
+    );
 
     sitemap.push({
       url: `${baseUrl}/projects/${slug}`,
       lastModified: projectData?.date ? new Date(projectData.date) : new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.7,
       alternates: {
         languages: {
           en: `${baseUrl}/projects/${slug}`,
           ...(hasChineseVersion && {
-            'zh-TW': `${baseUrl}/projects/${slug}?lang=zh-TW`,
+            "zh-TW": `${baseUrl}/projects/${slug}?lang=zh-TW`,
           }),
         },
       },
-    })
+    });
   }
 
   // Get all gallery slugs
-  const gallerySlugs = getAllGallerySlugs()
+  const gallerySlugs = getAllGallerySlugs();
 
   // Add gallery pages with both language versions
   for (const { params } of gallerySlugs) {
-    const slug = params.slug
+    const slug = params.slug;
 
     // Skip language-specific files (we'll handle them via the base slug)
-    if (slug.includes('_zh-tw') || slug.includes('_zh-TW')) {
-      continue
+    if (slug.includes("_zh-tw") || slug.includes("_zh-TW")) {
+      continue;
     }
 
     // Try to get the gallery item data to get the date
-    const galleryData = await getGalleryItemData(slug)
-    
+    const galleryData = await getGalleryItemData(slug);
+
     // Check if there's a Chinese version
     const hasChineseVersion = gallerySlugs.some(
-      ({ params }) => params.slug === `${slug}_zh-tw` || params.slug === `${slug}_zh-TW`
-    )
+      ({ params }) =>
+        params.slug === `${slug}_zh-tw` || params.slug === `${slug}_zh-TW`,
+    );
 
     sitemap.push({
       url: `${baseUrl}/gallery/${slug}`,
       lastModified: galleryData?.date ? new Date(galleryData.date) : new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.6,
       alternates: {
         languages: {
           en: `${baseUrl}/gallery/${slug}`,
           ...(hasChineseVersion && {
-            'zh-TW': `${baseUrl}/gallery/${slug}?lang=zh-TW`,
+            "zh-TW": `${baseUrl}/gallery/${slug}?lang=zh-TW`,
           }),
         },
       },
-    })
+    });
   }
 
   // Get all post slugs
-  const postSlugs = getAllPostSlugs()
+  const postSlugs = getAllPostSlugs();
 
   // Add blog post pages with both language versions
   for (const { params } of postSlugs) {
-    const slug = params.slug
+    const slug = params.slug;
 
     // Skip language-specific files (we'll handle them via the base slug)
-    if (slug.includes('_zh-tw') || slug.includes('_zh-TW')) {
-      continue
+    if (slug.includes("_zh-tw") || slug.includes("_zh-TW")) {
+      continue;
     }
 
     // Try to get the post data to get the date
-    const postData = await getPostData(slug)
-    
+    const postData = await getPostData(slug);
+
     // Check if there's a Chinese version
     const hasChineseVersion = postSlugs.some(
-      ({ params }) => params.slug === `${slug}_zh-tw` || params.slug === `${slug}_zh-TW`
-    )
+      ({ params }) =>
+        params.slug === `${slug}_zh-tw` || params.slug === `${slug}_zh-TW`,
+    );
 
     sitemap.push({
       url: `${baseUrl}/blog/${slug}`,
       lastModified: postData?.date ? new Date(postData.date) : new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 0.7,
       alternates: {
         languages: {
           en: `${baseUrl}/blog/${slug}`,
           ...(hasChineseVersion && {
-            'zh-TW': `${baseUrl}/blog/${slug}?lang=zh-TW`,
+            "zh-TW": `${baseUrl}/blog/${slug}?lang=zh-TW`,
           }),
         },
       },
-    })
+    });
   }
 
-  return sitemap
+  return sitemap;
 }

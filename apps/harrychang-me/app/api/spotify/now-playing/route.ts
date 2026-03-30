@@ -1,29 +1,35 @@
 // app/api/spotify/now-playing/route.ts
-import { NextResponse } from 'next/server';
-import { getNowPlaying } from '@portfolio/lib/lib/spotify';
+import { NextResponse } from "next/server";
+import { getNowPlaying } from "@portfolio/lib/lib/spotify";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
-    try {
-        const { searchParams } = new URL(request.url);
-        const fresh = searchParams.get('fresh') === '1';
+  try {
+    const { searchParams } = new URL(request.url);
+    const fresh = searchParams.get("fresh") === "1";
 
-        const np = await getNowPlaying();
-        const payload = np ?? { isPlaying: false };
+    const np = await getNowPlaying();
+    const payload = np ?? { isPlaying: false };
 
-        const res = NextResponse.json(payload);
+    const res = NextResponse.json(payload);
 
-        if (fresh) {
-            res.headers.set('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=10');
-        } else {
-            res.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate=300');
-        }
-
-        return res;
-    } catch {
-        const res = NextResponse.json({ isPlaying: false });
-        res.headers.set('Cache-Control', 'public, s-maxage=10');
-        return res;
+    if (fresh) {
+      res.headers.set(
+        "Cache-Control",
+        "public, s-maxage=10, stale-while-revalidate=10",
+      );
+    } else {
+      res.headers.set(
+        "Cache-Control",
+        "public, s-maxage=60, stale-while-revalidate=300",
+      );
     }
+
+    return res;
+  } catch {
+    const res = NextResponse.json({ isPlaying: false });
+    res.headers.set("Cache-Control", "public, s-maxage=10");
+    return res;
+  }
 }

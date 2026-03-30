@@ -1,77 +1,97 @@
-"use client"
+"use client";
 
-import { useEffect, useState, useRef } from "react"
-import GalleryCard from "./gallery-card"
-import { GalleryItemMetadata } from "@portfolio/lib/lib/markdown"
-import { createBalancedLayout } from "@portfolio/lib/lib/utils"
-import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer"
-import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import { useEffect, useState, useRef } from "react";
+import GalleryCard from "./gallery-card";
+import { GalleryItemMetadata } from "@portfolio/lib/lib/markdown";
+import { createBalancedLayout } from "@portfolio/lib/lib/utils";
+import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { motion } from "framer-motion";
-import NavigationLink from "@portfolio/ui/navigation-link"
+import NavigationLink from "@portfolio/ui/navigation-link";
 interface GallerySectionProps {
-  section?: string
-  title?: string
-  sectionId?: string
-  source?: 'gallery' | 'projects' // Which API to fetch from
-  basePath?: string // Custom base path for card links (e.g., 'canvas' instead of 'gallery')
-  hoverEffect?: 'inward' | 'gentle' // Hover animation variant
-  initialItems?: GalleryItemMetadata[] // Server-provided data
-  limit?: number
-  showSeeAll?: boolean
+  section?: string;
+  title?: string;
+  sectionId?: string;
+  source?: "gallery" | "projects"; // Which API to fetch from
+  basePath?: string; // Custom base path for card links (e.g., 'canvas' instead of 'gallery')
+  hoverEffect?: "inward" | "gentle"; // Hover animation variant
+  initialItems?: GalleryItemMetadata[]; // Server-provided data
+  limit?: number;
+  showSeeAll?: boolean;
 }
 
-export default function GallerySection({ section, title, sectionId = "gallery", source = 'gallery', basePath = 'gallery', hoverEffect = 'inward', initialItems = [], limit, showSeeAll = false }: GallerySectionProps = {}) {
-  const { language, t } = useLanguage()
-  const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>(initialItems)
-  const [isLoading, setIsLoading] = useState(initialItems.length === 0) // Only loading if no initial data
-  const [forceLoad, setForceLoad] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-  const hasFetchedRef = useRef(false) // Track if we've already fetched
-  const lastLanguageRef = useRef(language) // Track last language to prevent redundant fetches
+export default function GallerySection({
+  section,
+  title,
+  sectionId = "gallery",
+  source = "gallery",
+  basePath = "gallery",
+  hoverEffect = "inward",
+  initialItems = [],
+  limit,
+  showSeeAll = false,
+}: GallerySectionProps = {}) {
+  const { language, t } = useLanguage();
+  const [galleryItems, setGalleryItems] =
+    useState<GalleryItemMetadata[]>(initialItems);
+  const [isLoading, setIsLoading] = useState(initialItems.length === 0); // Only loading if no initial data
+  const [forceLoad, setForceLoad] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const hasFetchedRef = useRef(false); // Track if we've already fetched
+  const lastLanguageRef = useRef(language); // Track last language to prevent redundant fetches
 
   // Check if we should load immediately (when there's a hash in URL)
-  const shouldLoadImmediately = typeof window !== 'undefined' && window.location.hash === '#gallery'
+  const shouldLoadImmediately =
+    typeof window !== "undefined" && window.location.hash === "#gallery";
 
   const isVisible = useIntersectionObserver({
     elementRef: sectionRef as React.RefObject<Element>,
-    rootMargin: '100px'
-  })
+    rootMargin: "100px",
+  });
 
   useEffect(() => {
     const onForce = (e: Event) => {
-      const ce = e as CustomEvent<string>
-      if (ce.detail === "gallery") setForceLoad(true)
-    }
-    window.addEventListener("force-load-section", onForce as EventListener)
-    return () => window.removeEventListener("force-load-section", onForce as EventListener)
-  }, [])
+      const ce = e as CustomEvent<string>;
+      if (ce.detail === "gallery") setForceLoad(true);
+    };
+    window.addEventListener("force-load-section", onForce as EventListener);
+    return () =>
+      window.removeEventListener(
+        "force-load-section",
+        onForce as EventListener,
+      );
+  }, []);
 
   useEffect(() => {
     // Skip fetch if we have initial data and language matches
-    if (initialItems.length > 0 && language === 'en') {
-      if (lastLanguageRef.current !== 'en') {
-        setGalleryItems(initialItems)
-        lastLanguageRef.current = 'en'
+    if (initialItems.length > 0 && language === "en") {
+      if (lastLanguageRef.current !== "en") {
+        setGalleryItems(initialItems);
+        lastLanguageRef.current = "en";
       }
-      setIsLoading(false)
-      hasFetchedRef.current = true
-      return
+      setIsLoading(false);
+      hasFetchedRef.current = true;
+      return;
     }
 
     // Skip if already fetched and language hasn't actually changed
     if (hasFetchedRef.current && lastLanguageRef.current === language) {
-      return
+      return;
     }
 
     async function fetchGalleryItems() {
       try {
-        const sectionParam = section ? `&section=${encodeURIComponent(section)}` : ''
-        const apiEndpoint = source === 'projects' ? 'projects' : 'gallery'
-        const response = await fetch(`/api/${apiEndpoint}?locale=${language}${sectionParam}`)
-        const data = await response.json()
+        const sectionParam = section
+          ? `&section=${encodeURIComponent(section)}`
+          : "";
+        const apiEndpoint = source === "projects" ? "projects" : "gallery";
+        const response = await fetch(
+          `/api/${apiEndpoint}?locale=${language}${sectionParam}`,
+        );
+        const data = await response.json();
 
         // If fetching from projects, transform to gallery format
-        if (source === 'projects') {
+        if (source === "projects") {
           const transformedData = data.map((project: any) => ({
             slug: project.slug,
             title: project.title,
@@ -83,51 +103,64 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
             locked: project.locked,
             width: project.imageWidth,
             height: project.imageHeight,
-          }))
-          setGalleryItems(transformedData)
+          }));
+          setGalleryItems(transformedData);
         } else {
-          setGalleryItems(data)
+          setGalleryItems(data);
         }
 
         // Mark as fetched and update last language
-        hasFetchedRef.current = true
-        lastLanguageRef.current = language
+        hasFetchedRef.current = true;
+        lastLanguageRef.current = language;
       } catch (error) {
-        console.error('Failed to fetch gallery items:', error)
+        console.error("Failed to fetch gallery items:", error);
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
     }
 
     // Load immediately if hash is #gallery, otherwise wait for visibility
     if (shouldLoadImmediately || isVisible || forceLoad) {
-      fetchGalleryItems()
+      fetchGalleryItems();
     }
-  }, [isVisible, language, shouldLoadImmediately, forceLoad, section, source, initialItems])
+  }, [
+    isVisible,
+    language,
+    shouldLoadImmediately,
+    forceLoad,
+    section,
+    source,
+    initialItems,
+  ]);
 
   // Handle pinned items (maintain their positions in the layout)
   const getPinnedItemsMap = (items: GalleryItemMetadata[]) => {
-    const pinnedMap = new Map<number, { rowIndex: number, columnIndex: number }>()
-    
+    const pinnedMap = new Map<
+      number,
+      { rowIndex: number; columnIndex: number }
+    >();
+
     items.forEach((item, index) => {
-      if (typeof item.pinned === 'number' && item.pinned >= 0) {
-        const pinOrder = item.pinned - 1
-        const naturalRow = Math.floor(pinOrder / 3)
-        const naturalColumn = pinOrder % 3
-        
+      if (typeof item.pinned === "number" && item.pinned >= 0) {
+        const pinOrder = item.pinned - 1;
+        const naturalRow = Math.floor(pinOrder / 3);
+        const naturalColumn = pinOrder % 3;
+
         pinnedMap.set(index, {
           rowIndex: naturalRow,
-          columnIndex: naturalColumn
-        })
+          columnIndex: naturalColumn,
+        });
       }
-    })
-    
-    return pinnedMap
-  }
+    });
+
+    return pinnedMap;
+  };
   // Handle limiting items
-  const displayedItems = limit ? galleryItems.slice(0, limit) : galleryItems
+  const displayedItems = limit ? galleryItems.slice(0, limit) : galleryItems;
   // Create a balanced layout using our algorithm
-  const layoutResult = isLoading ? null : createBalancedLayout(displayedItems, getPinnedItemsMap(displayedItems))
+  const layoutResult = isLoading
+    ? null
+    : createBalancedLayout(displayedItems, getPinnedItemsMap(displayedItems));
 
   // Helper function to create a placeholder with a specific aspect ratio
   const renderPlaceholderCard = (aspectRatio: string, index: number) => (
@@ -135,9 +168,9 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
       <div className="relative overflow-hidden bg-white">
         <div className="relative">
           <div className="absolute inset-0 z-10 pointer-events-none border-l-4 border-r-4 border-white"></div>
-          
-          <div 
-            className="relative w-full overflow-hidden" 
+
+          <div
+            className="relative w-full overflow-hidden"
             style={{ paddingBottom: aspectRatio }}
           >
             <div className="absolute inset-0 w-full h-full">
@@ -149,18 +182,27 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
         </div>
       </div>
     </div>
-  )
+  );
 
   return (
-    <section ref={sectionRef} id={sectionId} className="py-12 md:py-16 border-b border-border">
+    <section
+      ref={sectionRef}
+      id={sectionId}
+      className="py-12 md:py-16 border-b border-border"
+    >
       <div className="container">
         <div className="flex items-baseline justify-between mb-4">
-          <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">{title || t('gallery.title')}</h2>
+          <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">
+            {title || t("gallery.title")}
+          </h2>
           {showSeeAll && (
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <NavigationLink href={`/gallery`} className="group flex items-center gap-2">
+              <NavigationLink
+                href={`/gallery`}
+                className="group flex items-center gap-2"
+              >
                 <span className="font-body text-sg text-secondary group-hover:text-accent transition-colors">
-                  {t('gallery.seeAll')}
+                  {t("gallery.seeAll")}
                 </span>
                 <span className="font-heading text-xl text-secondary group-hover:text-accent transition-colors">
                   →
@@ -169,24 +211,24 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
             </motion.div>
           )}
         </div>
-        
+
         {/* Container with space reservation */}
-        <div 
-          className={`w-full ${isLoading ? 'min-h-[2400px] md:min-h-[900px]' : ''}`}
-          style={{ transition: 'min-height 0.3s ease-out' }}
+        <div
+          className={`w-full ${isLoading ? "min-h-[2400px] md:min-h-[900px]" : ""}`}
+          style={{ transition: "min-height 0.3s ease-out" }}
         >
           {isLoading ? (
-            <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]" >
+            <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]">
               <div className="flex-1 space-y-[var(--column-spacing)]">
                 {renderPlaceholderCard("100%", 1)}
                 {renderPlaceholderCard("100%", 2)}
               </div>
-              
+
               <div className="flex-1 space-y-[var(--column-spacing)]">
                 {renderPlaceholderCard("100%", 3)}
                 {renderPlaceholderCard("100%", 4)}
               </div>
-              
+
               <div className="flex-1 space-y-[var(--column-spacing)]">
                 {renderPlaceholderCard("100%", 5)}
                 {renderPlaceholderCard("100%", 6)}
@@ -217,33 +259,36 @@ export default function GallerySection({ section, title, sectionId = "gallery", 
 
               {/* Desktop View: Balanced Columns */}
               <div className="hidden md:flex flex-row w-full gap-[var(--column-spacing)]">
-                {layoutResult && layoutResult.columns.map((column, colIndex) => (
-                  <div key={colIndex} className="flex-1 space-y-[var(--column-spacing)]">
-                    {column.map((layoutItem, itemPosition) => (
-                      <GalleryCard
-                        key={layoutItem.item.slug}
-                        title={layoutItem.item.title}
-                        quote={layoutItem.item.quote}
-                        slug={layoutItem.item.slug}
-                        imageUrl={layoutItem.item.imageUrl}
-                        pinned={layoutItem.item.pinned}
-                        locked={layoutItem.item.locked}
-                        priority={itemPosition === 0}
-                        index={layoutItem.itemIndex}
-                        width={layoutItem.item.width}       
-                        height={layoutItem.item.height}
-                        basePath={basePath}
-                        hoverEffect={hoverEffect}
-                      />
-                    ))}
-                  </div>
-                ))}
+                {layoutResult &&
+                  layoutResult.columns.map((column, colIndex) => (
+                    <div
+                      key={colIndex}
+                      className="flex-1 space-y-[var(--column-spacing)]"
+                    >
+                      {column.map((layoutItem, itemPosition) => (
+                        <GalleryCard
+                          key={layoutItem.item.slug}
+                          title={layoutItem.item.title}
+                          quote={layoutItem.item.quote}
+                          slug={layoutItem.item.slug}
+                          imageUrl={layoutItem.item.imageUrl}
+                          pinned={layoutItem.item.pinned}
+                          locked={layoutItem.item.locked}
+                          priority={itemPosition === 0}
+                          index={layoutItem.itemIndex}
+                          width={layoutItem.item.width}
+                          height={layoutItem.item.height}
+                          basePath={basePath}
+                          hoverEffect={hoverEffect}
+                        />
+                      ))}
+                    </div>
+                  ))}
               </div>
             </>
           )}
         </div>
       </div>
     </section>
-  )
+  );
 }
-

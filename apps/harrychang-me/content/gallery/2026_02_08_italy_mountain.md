@@ -11,21 +11,19 @@ featured: true
 pinned: 4
 locked: false
 gallery:
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000164.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000165.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000192.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000217.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000226.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000274.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000279.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000288.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000296.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000300.webp"
-    - url: "images/optimized/gallery/2026-italy-mountain/L1000350.webp"
-    
-
-
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000164.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000165.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000192.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000217.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000226.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000274.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000279.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000288.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000296.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000300.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/L1000350.webp"
 ---
+
 Here, you become the traveler from Calvino's novel. Each scene is the first chapter of a different book.
 
 A story begins with a small church nearly lost in a blizzard, a narrative of solitude and faith. Then, it is cut short. A new story opens with a skier set against the monumental Dolomites, a tale of grace and daring. This too is abandoned. The chapters shift without warning. A quiet village under a blanket of snow, a chairlift hanging in the silent air, a train track pointing toward distant, sunlit peaks.

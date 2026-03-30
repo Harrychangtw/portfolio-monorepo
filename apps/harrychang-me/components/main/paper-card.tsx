@@ -9,14 +9,14 @@ export default function PaperCard({ paper }: PaperCardProps) {
   // Format date as yyyy-mm-dd
   const formatDate = (date: string) => {
     const dateObj = new Date(date);
-    return dateObj.toISOString().split('T')[0];
+    return dateObj.toISOString().split("T")[0];
   };
-  
+
   return (
-    <a 
-      href={paper.url} 
-      target="_blank" 
-      rel="noopener noreferrer" 
+    <a
+      href={paper.url}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-6 py-6 border-b border-border/30 hover:border-border transition-colors duration-300"
     >
       <div className="order-2 md:order-1 min-w-0 md:max-w-[75%]">

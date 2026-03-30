@@ -11,7 +11,7 @@ const destinations = [
   { label: "Manifesto", path: "/manifesto" },
   { label: "Home", path: "/" },
   { label: "Setup", path: "/uses" },
-  
+
   // Projects
   { label: "Projects", path: "/#projects" },
   { label: "FORTRESS", path: "/projects/2025_10_12_fortress" },
@@ -20,27 +20,42 @@ const destinations = [
   { label: "Portfolio", path: "/projects/2025_04_12_portfolio" },
   { label: "Chingshin RAG", path: "/projects/2024_09_23_chingshin_rag" },
   { label: "Project Zephyr", path: "/projects/2024_10_04_proj_zephyr" },
-  { label: "Classics Reimagined", path: "/projects/2024_08_19_classics_reimagined" },
+  {
+    label: "Classics Reimagined",
+    path: "/projects/2024_08_19_classics_reimagined",
+  },
   { label: "Boundless Voices", path: "/projects/2025_03_18_boundless_voices" },
-  
+
   // Gallery
   { label: "Gallery", path: "/#gallery" },
   { label: "Intersection", path: "/gallery/2023_08_10_intersection" },
   { label: "Against Giants", path: "/gallery/2023_10_06_against_giants" },
-  { label: "Guided by the Tides", path: "/gallery/2023_10_06_guided_by_the_tides" },
+  {
+    label: "Guided by the Tides",
+    path: "/gallery/2023_10_06_guided_by_the_tides",
+  },
   { label: "Mortal Sparks", path: "/gallery/2024_02_09_mortal_sparks" },
-  { label: "Lessons from Light", path: "/gallery/2023_10_12_lessons_from_the_light" },
+  {
+    label: "Lessons from Light",
+    path: "/gallery/2023_10_12_lessons_from_the_light",
+  },
   { label: "City of Tears", path: "/gallery/2024_04_06_city_of_tears" },
   { label: "Dusk Impressions", path: "/gallery/2023_11_18_dusk_impressions" },
   { label: "Italy Mountain", path: "/gallery/2026_02_08_italy_mountain" },
-  { label: "Simple in Complexity", path: "/gallery/2024_07_03_simple_in_a_complex_world" },
-  
+  {
+    label: "Simple in Complexity",
+    path: "/gallery/2024_07_03_simple_in_a_complex_world",
+  },
+
   // Blog
   { label: "Blog", path: "/#blog" },
   { label: "Leica M11-D", path: "/blog/9_m11d" },
   { label: "The X-Pro1", path: "/blog/2025_12_19_xpro1" },
   { label: "Aftersun & Paris", path: "/blog/2025_12_22_aftersun_paris_texas" },
-  { label: "NTU CS Admission", path: "/blog/2025_12_24_ntu_cs_special_admission" },
+  {
+    label: "NTU CS Admission",
+    path: "/blog/2025_12_24_ntu_cs_special_admission",
+  },
   { label: "Unhinged Plushies", path: "/blog/2026_01_10_plushies" },
   { label: "Synecdoche & Truman", path: "/blog/2026_02_10_synecdoche_truman" },
   { label: "Affinity V3", path: "/blog/2025_12_14_affinity" },
@@ -52,7 +67,9 @@ export function NotFoundContent() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [speed, setSpeed] = useState(120);
   const [isLocked, setIsLocked] = useState(false);
-  const [lockedDestination, setLockedDestination] = useState<(typeof destinations)[0] | null>(null);
+  const [lockedDestination, setLockedDestination] = useState<
+    (typeof destinations)[0] | null
+  >(null);
   const isMobile = useIsMobile();
 
   const lastScrollTime = useRef(Date.now());
@@ -65,7 +82,7 @@ export function NotFoundContent() {
   // Mobile detection and redirect
   useEffect(() => {
     if (isMobile) {
-      router.replace("/?from404=true")
+      router.replace("/?from404=true");
     }
   }, [isMobile, router]);
 
@@ -123,7 +140,7 @@ export function NotFoundContent() {
         return Math.max(40, Math.min(500, prev + change));
       });
     },
-    [isLocked]
+    [isLocked],
   );
 
   // Speed decay - gradually returns to fast if not scrolling
@@ -160,8 +177,8 @@ export function NotFoundContent() {
   const displayLabel = currentDestination?.label ?? "";
 
   return (
-    <div 
-      style={{ top: 'var(--header-offset, 64px)' }}
+    <div
+      style={{ top: "var(--header-offset, 64px)" }}
       className="fixed inset-x-0 bottom-0 z-50 bg-background flex items-center justify-center overflow-hidden select-none cursor-crosshair"
     >
       {/* Corner framelines */}
@@ -214,9 +231,12 @@ export function NotFoundContent() {
                     animate={{
                       x: isLocked ? 0 : misalignment,
                     }}
-                    transition={{ 
-                      duration: isAligned || isLocked ? 0.12 : 0.45, 
-                      ease: isAligned || isLocked ? [0.32, 0, 0.67, 0] : [0.45, 0.05, 0.55, 0.95] 
+                    transition={{
+                      duration: isAligned || isLocked ? 0.12 : 0.45,
+                      ease:
+                        isAligned || isLocked
+                          ? [0.32, 0, 0.67, 0]
+                          : [0.45, 0.05, 0.55, 0.95],
                     }}
                   >
                     <span className="text-foreground font-mono text-xl tracking-[0.15em] uppercase whitespace-nowrap px-6 overflow-hidden text-ellipsis max-w-[18rem]">
@@ -235,9 +255,12 @@ export function NotFoundContent() {
                     animate={{
                       x: isLocked ? 0 : -misalignment,
                     }}
-                    transition={{ 
-                      duration: isAligned || isLocked ? 0.12 : 0.45, 
-                      ease: isAligned || isLocked ? [0.32, 0, 0.67, 0] : [0.45, 0.05, 0.55, 0.95] 
+                    transition={{
+                      duration: isAligned || isLocked ? 0.12 : 0.45,
+                      ease:
+                        isAligned || isLocked
+                          ? [0.32, 0, 0.67, 0]
+                          : [0.45, 0.05, 0.55, 0.95],
                     }}
                   >
                     <span className="text-foreground font-mono text-xl tracking-[0.15em] uppercase whitespace-nowrap px-6 overflow-hidden text-ellipsis max-w-[18rem]">
@@ -291,7 +314,9 @@ export function NotFoundContent() {
       <motion.div
         className="absolute bottom-14 font-mono text-[10px] tracking-[0.35em] uppercase"
         animate={{
-          color: isLocked ? "hsl(var(--foreground) / 0.8)" : "hsl(var(--foreground) / 0.25)",
+          color: isLocked
+            ? "hsl(var(--foreground) / 0.8)"
+            : "hsl(var(--foreground) / 0.25)",
         }}
         transition={{ duration: 0.2 }}
       >

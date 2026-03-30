@@ -1,24 +1,46 @@
-"use client"
+"use client";
 
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { useIsMobile } from '@portfolio/lib/hooks/use-mobile'
-import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
 
 export default function AskAi() {
-  const isMobile = useIsMobile()
-  const { t } = useLanguage()
-  const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null)
-  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
-  const [loadedImages, setLoadedImages] = useState(0)
+  const isMobile = useIsMobile();
+  const { t } = useLanguage();
+  const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+  const [loadedImages, setLoadedImages] = useState(0);
 
-  const query = encodeURIComponent(t('askAi.query') || "Who is Harry Chang (harrychang.me)?");
+  const query = encodeURIComponent(
+    t("askAi.query") || "Who is Harry Chang (harrychang.me)?",
+  );
 
   const aiLinks = [
-    { id: 'ChatGPT', name: 'ChatGPT', icon: '/chatgpt.svg', url: `https://chatgpt.com/?q=${query}` },
-    { id: 'Claude', name: 'Claude', icon: '/claude.svg', url: `https://claude.ai/new?q=${query}` },
-    { id: 'Gemini', name: 'Gemini', icon: '/gemini.svg', url: `https://www.google.com/search?udm=50&q=${query}` },
-    { id: 'Perplexity', name: 'Perplexity', icon: '/perplexity.svg', url: `https://www.perplexity.ai/search?q=${query}` },
+    {
+      id: "ChatGPT",
+      name: "ChatGPT",
+      icon: "/chatgpt.svg",
+      url: `https://chatgpt.com/?q=${query}`,
+    },
+    {
+      id: "Claude",
+      name: "Claude",
+      icon: "/claude.svg",
+      url: `https://claude.ai/new?q=${query}`,
+    },
+    {
+      id: "Gemini",
+      name: "Gemini",
+      icon: "/gemini.svg",
+      url: `https://www.google.com/search?udm=50&q=${query}`,
+    },
+    {
+      id: "Perplexity",
+      name: "Perplexity",
+      icon: "/perplexity.svg",
+      url: `https://www.perplexity.ai/search?q=${query}`,
+    },
   ];
 
   const handleMouseEnter = (e: React.MouseEvent, id: string) => {
@@ -60,14 +82,14 @@ export default function AskAi() {
             onMouseEnter={(e) => handleMouseEnter(e, ai.name)}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            whileHover={{ y: -2 }} 
+            whileHover={{ y: -2 }}
             transition={{ duration: 0.2 }}
           >
-            <img 
-              src={ai.icon} 
-              alt={ai.name} 
+            <img
+              src={ai.icon}
+              alt={ai.name}
               onLoad={() => setLoadedImages((prev) => prev + 1)}
-              className="w-4 h-4 opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300 ai-logo" 
+              className="w-4 h-4 opacity-50 hover:opacity-100 hover:scale-110 transition-all duration-300 ai-logo"
             />
           </motion.a>
         ))}
@@ -84,15 +106,18 @@ export default function AskAi() {
             style={{
               top: tooltipPosition.y - 40,
               left: tooltipPosition.x,
-              transform: 'translateX(-50%)',
+              transform: "translateX(-50%)",
             }}
           >
             <div className="bg-accent text-background text-sm px-3 py-1.5 rounded-md shadow-lg font-heading whitespace-nowrap">
-              {(t('askAi.tooltip') || 'Ask {{name}} who I am').replace('{{name}}', activeTooltipId || '')}
+              {(t("askAi.tooltip") || "Ask {{name}} who I am").replace(
+                "{{name}}",
+                activeTooltipId || "",
+              )}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
-  )
+  );
 }

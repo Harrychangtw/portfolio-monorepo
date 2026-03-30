@@ -6,10 +6,10 @@
 
 ## Apps
 
-| App | README | Description |
-|:---|:---|:---|
+| App             | README                                   | Description                                    |
+| :-------------- | :--------------------------------------- | :--------------------------------------------- |
 | `harrychang-me` | [→ README](apps/harrychang-me/README.md) | Main portfolio + `lab.harrychang.me` subdomain |
-| `emilychang-me` | — | Secondary portfolio |
+| `emilychang-me` | —                                        | Secondary portfolio                            |
 
 ## Architecture Overview
 
@@ -22,23 +22,23 @@
 
 ## Key Patterns & Conventions
 
-- **Routing**: 
+- **Routing**:
   - Main: `app/(main)/[route]/`
   - Lab: `app/(lab)/lab/[route]/`
   - Shared API: `app/api/`
   - Middleware (`middleware.ts`) rewrites/redirects based on subdomain
-- **Content**: 
+- **Content**:
   - Projects: `content/projects/[slug].md` (+ `_zh-tw.md` for Chinese)
   - Gallery: `content/gallery/[slug].md`
   - Images: Place originals in `public/images/[type]/[slug]/`, always run `node scripts/optimize-images.js` after adding
-- **i18n**: 
+- **i18n**:
   - Use `useLanguage()` hook, `t(key, ns)` for translations
   - Add new keys to both `en` and `zh-TW` JSON files in `/public/locales/`
-- **Components**: 
+- **Components**:
   - Server components by default. Use `"use client"` only for interactivity, hooks, or context
   - Framer Motion for animation (client only)
   - Custom hooks in `packages/lib/hooks/`
-- **Styling**: 
+- **Styling**:
   - Tailwind CSS, dark mode only, custom HSL variables in `app/globals.css`
   - Radix UI for complex UI
 - **API**:

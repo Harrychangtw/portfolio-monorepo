@@ -100,8 +100,9 @@ Calum 躲在扮演好爸爸的偽裝後。他安排活動，在度假村與 Soph
 ---
 
 ## 致謝
-- 封面照：*Two Human Beings (The Lonely Ones)* by [Edvard Munch](https://en.wikipedia.org/wiki/en:Edvard_Munch), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=167910158)
+
+- 封面照：_Two Human Beings (The Lonely Ones)_ by [Edvard Munch](https://en.wikipedia.org/wiki/en:Edvard_Munch), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=167910158)
 - 劇照來自 [FILMGRAB](https://film-grab.com/)，版權分屬各自的電影創作團隊
-- *Aftersun* (2022)，由 Charlotte Wells 執導
-- *Paris, Texas* (1984)，由 Wim Wenders 執導
-- 引言來自 *Blade Runner 2049* (2017)，由 Denis Villeneuve 執導
+- _Aftersun_ (2022)，由 Charlotte Wells 執導
+- _Paris, Texas_ (1984)，由 Wim Wenders 執導
+- 引言來自 _Blade Runner 2049_ (2017)，由 Denis Villeneuve 執導

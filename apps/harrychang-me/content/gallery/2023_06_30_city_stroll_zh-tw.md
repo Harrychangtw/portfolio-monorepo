@@ -22,8 +22,8 @@ gallery:
   - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0059 7 Edited.webp"
   - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 14 Edited.webp"
   - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 19 Edited.webp"
-
 ---
+
 在東京，我成為一個貪婪的收集者。
 
 收集灑落在階梯上的影子，它有著比本人更清晰的輪廓；收集巷弄盡頭意外探出頭的晴空塔，像是這座城市藏起來的驚喜；也收集夜晚亮起的東京鐵塔，以及試圖將它裝進手機螢幕裡的人們。

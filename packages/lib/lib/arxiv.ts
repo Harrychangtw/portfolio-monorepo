@@ -1,4 +1,3 @@
-
 import { Paper } from "@portfolio/lib/types/paper";
 import fs from "fs";
 import path from "path";
@@ -12,14 +11,14 @@ export function getArxivPaperIds(): string[] {
   if (!fs.existsSync(arxivPapersFile)) {
     return [];
   }
-  
+
   const fileContents = fs.readFileSync(arxivPapersFile, "utf8");
   const { content } = matter(fileContents);
-  
+
   // Extract paper IDs from the markdown content
-  const lines = content.split('\n');
+  const lines = content.split("\n");
   const paperIds: string[] = [];
-  
+
   for (const line of lines) {
     const trimmedLine = line.trim();
     // Check if line matches arxiv ID pattern (4 digits.5 digits)
@@ -27,7 +26,7 @@ export function getArxivPaperIds(): string[] {
       paperIds.push(trimmedLine);
     }
   }
-  
+
   return paperIds;
 }
 
@@ -37,7 +36,7 @@ export async function fetchArxivPapers(ids: string[]): Promise<Paper[]> {
   }
   const query = ids.join(",");
   const response = await fetch(
-    `${ARXIV_API_URL}${query}&max_results=${ids.length}`
+    `${ARXIV_API_URL}${query}&max_results=${ids.length}`,
   );
   const xmlText = await response.text();
 

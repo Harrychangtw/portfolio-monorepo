@@ -11,18 +11,18 @@ featured: true
 pinned: 3
 locked: false
 gallery:
-    - url: "images/optimized/gallery/2026-italy-city/L1000064.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000121.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000758.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000472.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000474.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000480.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000486.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000492.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000502.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000505.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000563.webp"
-    - url: "images/optimized/gallery/2026-italy-city/L1000735.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000064.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000121.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000758.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000472.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000474.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000480.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000486.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000492.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000502.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000505.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000563.webp"
+  - url: "images/optimized/gallery/2026-italy-city/L1000735.webp"
 ---
 
 在義大利，時間從不是一條直線。千年的石板路，承接著當代匆忙的；歷史並不安靜地陳列在博物館裡，它就活在街角，奔放在雨後濕潤的空氣中。

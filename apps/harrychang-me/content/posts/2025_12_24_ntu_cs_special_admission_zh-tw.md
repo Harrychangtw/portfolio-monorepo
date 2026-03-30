@@ -114,6 +114,7 @@ locked: false
 **我：** 好的，謝謝教授 (邊走出去)！
 
 ---
+
 ## 你的賽道，你的定義
 
 這趟旅程，與其說是關於如何上榜，不如說是關於如何找到自己。
@@ -124,20 +125,20 @@ locked: false
 
 這份心得，充滿了我的個人偏見、倖存者偏差與極多的幸運。如果你的路與我迥異，請務必相信你自己的版本。因為最終，能說服教授的，不是你模仿了誰，而是你展現了絕無僅有的自己。
 
-
 ## 致謝
 
 這條路看似孤獨，但我從未真正隻身一人。如果這份錄取資格有任何價值，那是因為我站在了這些人的肩膀上：
 
-*   感謝**蔡宗翰教授**，近三年來的耐心指導，為我學術研究的漫漫長路點亮了第一盞燈。
-*   感謝 **AK 學長**，從初期開發的引導、無數次論文的 Review、到面試前的模擬，你是我最可靠的後盾。
-*   感謝奧義智慧的 **CK** 與 **frozenkp**，以及整個團隊給予我這個寶貴的機會，讓我在業界的視野中，看見研究落地的樣貌。
-*   感謝**靜心高中**的**逸萍主任**與**文婷導師**，總是在我需要的時候，給予最大的協助與支持。
-*   感謝**我的爸媽**，無條件地信任我每一個看似瘋狂的決定，讓我能無後顧之憂地去闖。
-*   感謝**我的朋友們**，特別是在面試前，忍受我無數次的自我介紹轟炸。
-*   最後，也最重要的，感謝[**毛哥 EM**](https://emtech.cc/p/srecruit-ntu/) 與 [**Grasping631**](https://hackmd.io/@Grasping631/Hy_PmOzPT) 的經驗分享。
+- 感謝**蔡宗翰教授**，近三年來的耐心指導，為我學術研究的漫漫長路點亮了第一盞燈。
+- 感謝 **AK 學長**，從初期開發的引導、無數次論文的 Review、到面試前的模擬，你是我最可靠的後盾。
+- 感謝奧義智慧的 **CK** 與 **frozenkp**，以及整個團隊給予我這個寶貴的機會，讓我在業界的視野中，看見研究落地的樣貌。
+- 感謝**靜心高中**的**逸萍主任**與**文婷導師**，總是在我需要的時候，給予最大的協助與支持。
+- 感謝**我的爸媽**，無條件地信任我每一個看似瘋狂的決定，讓我能無後顧之憂地去闖。
+- 感謝**我的朋友們**，特別是在面試前，忍受我無數次的自我介紹轟炸。
+- 最後，也最重要的，感謝[**毛哥 EM**](https://emtech.cc/p/srecruit-ntu/) 與 [**Grasping631**](https://hackmd.io/@Grasping631/Hy_PmOzPT) 的經驗分享。
 
 希望我這篇粗淺的紀錄，也能成為未來某位探索者的微光。
 
 ---
-封面照：*Wanderer above the Sea of Fog* by [Caspar David Friedrich](https://en.wikipedia.org/wiki/en:Caspar_David_Friedrich), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=127245432)
+
+封面照：_Wanderer above the Sea of Fog_ by [Caspar David Friedrich](https://en.wikipedia.org/wiki/en:Caspar_David_Friedrich), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=127245432)

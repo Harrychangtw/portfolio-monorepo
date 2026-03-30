@@ -11,14 +11,14 @@ featured: true
 pinned: 2
 locked: false
 gallery:
-    - url: "images/optimized/gallery/2026-italy-town/L1000317.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000343.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000337.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000372.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000365.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000374.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000403.webp"
-    - url: "images/optimized/gallery/2026-italy-town/L1000813.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000317.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000343.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000337.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000372.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000365.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000374.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000403.webp"
+  - url: "images/optimized/gallery/2026-italy-town/L1000813.webp"
 ---
 
 Every journey is a book being written. These photographs are the notes I left in the margins.

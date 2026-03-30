@@ -19,7 +19,7 @@ gallery:
   - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0050 28 Edited.webp"
 ---
 
-> 「我心裡有過你…… 我不怕說出來，我心裡有過你。」 
+> 「我心裡有過你…… 我不怕說出來，我心裡有過你。」
 >
 > —《一代宗師》
 

@@ -1,23 +1,23 @@
-import './globals.css'
-import type React from 'react'
-import type { Metadata } from 'next'
-import { IBM_Plex_Sans, Playfair_Display } from 'next/font/google'
-import { siteConfig } from '@/config/site'
+import "./globals.css";
+import type React from "react";
+import type { Metadata } from "next";
+import { IBM_Plex_Sans, Playfair_Display } from "next/font/google";
+import { siteConfig } from "@/config/site";
 
 const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-ibm-plex',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex",
+  display: "swap",
+});
 
 const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800', '900'],
-  style: ['italic'],
-  variable: '--font-playfair-display',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["italic"],
+  variable: "--font-playfair-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
   },
   description: `Portfolio of ${siteConfig.author.name}`,
   icons: {
-    icon: '/favicon.png',
-    apple: '/apple-icon.png',
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
     other: [
       {
-        rel: 'mask-icon',
-        url: '/safari-pinned-tab.svg',
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
       },
     ],
   },
@@ -52,34 +52,36 @@ export const metadata: Metadata = {
         height: 630,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteConfig.author.name,
     description: `Portfolio of ${siteConfig.author.name}`,
     images: [`${siteConfig.url}/og-image.webp`],
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html 
-      lang="en" 
+    <html
+      lang="en"
       className={`${ibmPlexSans.variable} ${playfairDisplay.variable}`}
-      style={{
-        '--font-body': 'var(--font-ibm-plex)',
-        '--font-heading': 'var(--font-playfair-display)',
-      } as React.CSSProperties}
+      style={
+        {
+          "--font-body": "var(--font-ibm-plex)",
+          "--font-heading": "var(--font-playfair-display)",
+        } as React.CSSProperties
+      }
     >
       <body className="bg-background text-primary antialiased min-h-screen flex flex-col">
         {children}
       </body>
     </html>
-  )
+  );
 }

@@ -9,7 +9,7 @@ export const UI = {
     offsetY: -40,
     padding: {
       x: 12, // px-3
-      y: 6,  // py-1.5
+      y: 6, // py-1.5
     },
   },
 
@@ -38,8 +38,8 @@ export const UI = {
     md: 768,
     lg: 1024,
     xl: 1280,
-    '2xl': 1536,
+    "2xl": 1536,
   },
-} as const
+} as const;
 
-export type UIConfig = typeof UI
+export type UIConfig = typeof UI;

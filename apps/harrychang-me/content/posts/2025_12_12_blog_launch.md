@@ -18,19 +18,20 @@ This post marks the beginning of a multi-year commitment to this medium. In cont
 
 I plan to cover a range of topics that capture my curiosity:
 
--   **Technology & AI:** The current state of LLMs, fascinating software, and other technologies that are shaping our future.
--   **Perspectives & Critiques:** My thoughts on films, albums, literature, and human creation as a whole.
--   **Experiences & Retrospectives:** A look back on key experiences, projects, and events to distill what I've learned.
--   **Introspections & Commentary:** My take on emerging trends, societal shifts, and the larger questions they pose.
+- **Technology & AI:** The current state of LLMs, fascinating software, and other technologies that are shaping our future.
+- **Perspectives & Critiques:** My thoughts on films, albums, literature, and human creation as a whole.
+- **Experiences & Retrospectives:** A look back on key experiences, projects, and events to distill what I've learned.
+- **Introspections & Commentary:** My take on emerging trends, societal shifts, and the larger questions they pose.
 
 ### My Commitment
 
 I aim to post at least once a month, with the flexibility to write more frequently when inspiration strikes. More importantly, I'm making a commitment to you, the reader:
 
--   **Authenticity:** Every post will be a genuine reflection of my own voice and perspective.
--   **Originality:** This space will be free of generic content or AI-generated filler. All posts will be built from my own original thoughts and experiences.
+- **Authenticity:** Every post will be a genuine reflection of my own voice and perspective.
+- **Originality:** This space will be free of generic content or AI-generated filler. All posts will be built from my own original thoughts and experiences.
 
 Thank you for joining me at the start of this new chapter. I'm excited to share my thoughts and hope to spark some of your own along the way. Stay tuned.
 
 ## Acknowledgments
-- Title image: *The Astronomer* by [Johannes Vermeer](https://en.wikipedia.org/wiki/en:Johannes_Vermeer), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=116806430)
+
+- Title image: _The Astronomer_ by [Johannes Vermeer](https://en.wikipedia.org/wiki/en:Johannes_Vermeer), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=116806430)

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import React from "react"
-import Image from "next/image"
-import { motion } from "framer-motion"
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 // import {
 //   Instagram,
 //   Mail,
@@ -12,10 +12,10 @@ import { motion } from "framer-motion"
 // } from "lucide-react"
 
 interface LinkItem {
-  icon: React.ReactNode
-  label: string
-  href: string
-  external?: boolean
+  icon: React.ReactNode;
+  label: string;
+  href: string;
+  external?: boolean;
 }
 
 // ...existing code...
@@ -63,7 +63,7 @@ const links: LinkItem[] = [
     href: "/spotify",
     external: true,
   },
-]
+];
 
 export default function EmilyLinksPageClient() {
   return (
@@ -109,7 +109,7 @@ export default function EmilyLinksPageClient() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="-mt-8 text-secondary text-muted-foreground mb-2 text-center md:mb-6"
         >
-           If it makes you happy, it doesn&apos;t have to make sense to others
+          If it makes you happy, it doesn&apos;t have to make sense to others
         </motion.p>
 
         {/* Links Grid */}
@@ -133,7 +133,11 @@ export default function EmilyLinksPageClient() {
               key={idx}
               variants={{
                 hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { type: "spring", stiffness: 100, damping: 15 },
+                },
               }}
             >
               <a
@@ -149,7 +153,7 @@ export default function EmilyLinksPageClient() {
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
 
 function LinkCard({ link }: { link: LinkItem }) {
@@ -159,7 +163,9 @@ function LinkCard({ link }: { link: LinkItem }) {
       <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
       <div className="relative flex items-center gap-2.5 sm:gap-3">
         {/* Icon (emoji inline) */}
-        <span className="text-xl sm:text-2xl mr-1 align-middle">{link.icon}</span>
+        <span className="text-xl sm:text-2xl mr-1 align-middle">
+          {link.icon}
+        </span>
         {/* Content */}
         <div className="flex-1 min-w-0">
           <h3 className="text-sm sm:text-base font-semibold text-foreground group-hover:text-primary transition-colors inline-block align-middle">
@@ -184,5 +190,5 @@ function LinkCard({ link }: { link: LinkItem }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

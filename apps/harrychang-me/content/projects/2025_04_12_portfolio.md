@@ -40,7 +40,6 @@ This structure cleanly separates content from presentation and allows for simple
 
 Performance, scalability, and advanced features were primary goals during development.
 
-
 **Monorepo Efficiency:** Using **Turborepo**, we share UI components, hooks, and utility functions across different applications from `packages/ui` and `packages/lib`. This drastically reduces code duplication and simplifies dependency management.
 
 ![Vercel Speed Insights showing a 100 Real Experience Score on both desktop and mobile under 4,000 users](images/optimized/projects/2025_04_12_portfolio_design/vercel-dual-res.webp)

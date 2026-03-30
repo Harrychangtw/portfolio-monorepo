@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useState, useRef } from "react"
-import { motion } from "framer-motion"
-import { LockIcon } from "lucide-react"
-import { useIsMobile } from "@portfolio/lib/hooks/use-mobile"
-import { cva, type VariantProps } from "class-variance-authority"
-import NavigationLink from "@portfolio/ui/navigation-link"
-import { ImageContainer } from "@portfolio/ui/image-container"
+import { useState, useRef } from "react";
+import { motion } from "framer-motion";
+import { LockIcon } from "lucide-react";
+import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
+import { cva, type VariantProps } from "class-variance-authority";
+import NavigationLink from "@portfolio/ui/navigation-link";
+import { ImageContainer } from "@portfolio/ui/image-container";
 
 const cardVariants = cva("", {
   variants: {
@@ -18,19 +18,19 @@ const cardVariants = cva("", {
   defaultVariants: {
     hoverEffect: "inward",
   },
-})
+});
 
 interface ProjectCardProps extends VariantProps<typeof cardVariants> {
-  title: string
-  category: string
-  subcategory?: string
-  slug: string
-  imageUrl: string
-  pinned?: number
-  locked?: boolean
-  tooltip?: string
-  priority?: boolean
-  index?: number
+  title: string;
+  category: string;
+  subcategory?: string;
+  slug: string;
+  imageUrl: string;
+  pinned?: number;
+  locked?: boolean;
+  tooltip?: string;
+  priority?: boolean;
+  index?: number;
 }
 
 export default function ProjectCard({
@@ -44,14 +44,14 @@ export default function ProjectCard({
   tooltip: tooltipText,
   priority = false,
   index = 0,
-  hoverEffect = "inward"
+  hoverEffect = "inward",
 }: ProjectCardProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const isMobile = useIsMobile();  
+  const isMobile = useIsMobile();
   const [tooltip, setTooltip] = useState({ visible: false, x: 0, y: 0 });
   if (locked && isMobile) {
-    return null // Added for better mobile experience, communicating via tooltip and top right lock icon is not ideal on small screens
+    return null; // Added for better mobile experience, communicating via tooltip and top right lock icon is not ideal on small screens
   }
   // Tooltip handlers for locked cards
   const handleMouseEnter = (e: React.MouseEvent) => {
@@ -70,19 +70,20 @@ export default function ProjectCard({
     }
   };
 
-  const hoverAnimation = hoverEffect === "gentle" 
-    ? { 
-        scale: 1.02,
-        transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as any }
-      }
-    : { 
-        scale: 0.98,
-        transition: { duration: 0.2, ease: [0.4, 0, 0.6, 1] as any }
-      }
+  const hoverAnimation =
+    hoverEffect === "gentle"
+      ? {
+          scale: 1.02,
+          transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as any },
+        }
+      : {
+          scale: 0.98,
+          transition: { duration: 0.2, ease: [0.4, 0, 0.6, 1] as any },
+        };
 
   const CardContent = (
     <>
-      <motion.div 
+      <motion.div
         className={`relative overflow-hidden bg-muted ${!locked && hoverEffect === "gentle" ? "hover:shadow-xl" : ""}`}
         whileHover={!locked ? hoverAnimation : {}}
       >
@@ -107,11 +108,13 @@ export default function ProjectCard({
 
       {/* Content area with fixed height and padding */}
       <div className="pt-3">
-        <h3 className="font-heading text-lg font-medium line-clamp-1 text-primary">{title}</h3>
-          <p className="font-body text-secondary text-sm mt-0.5 mb-4">
+        <h3 className="font-heading text-lg font-medium line-clamp-1 text-primary">
+          {title}
+        </h3>
+        <p className="font-body text-secondary text-sm mt-0.5 mb-4">
           {category}
           {subcategory && ` • ${subcategory}`}
-          </p>
+        </p>
       </div>
     </>
   );
@@ -139,11 +142,16 @@ export default function ProjectCard({
           exit={{ opacity: 0, y: 10 }}
           transition={{ duration: 0.2 }}
           className="fixed bg-accent text-background text-sm px-3 py-1 rounded shadow-lg font-heading z-50"
-          style={{ top: tooltip.y - 40, left: tooltip.x, pointerEvents: 'none', transform: 'translateX(-50%)' }}
+          style={{
+            top: tooltip.y - 40,
+            left: tooltip.x,
+            pointerEvents: "none",
+            transform: "translateX(-50%)",
+          }}
         >
           {tooltipText}
         </motion.div>
       )}
     </div>
-  )
+  );
 }

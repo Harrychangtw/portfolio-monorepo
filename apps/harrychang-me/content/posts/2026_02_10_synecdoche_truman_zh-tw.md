@@ -31,7 +31,6 @@ Seahaven 是個穹頂。字面意義的穹頂，從太空可見，裝著人造�
 
 他認識的每個人都是演員，他經歷的每件事都經過編排。天氣、交通、甚至父親「溺斃」——全由節目創作者 Christof 一手設計，他在人造月亮裡的控製室俯瞰一切。
 
-
 這部電影的結構妙在它的直白。一旦你知道該往哪看，邊界便清晰可見。一盞舞台燈光從天而降；收音機意外接收到幕後人員的對話；大雨只跟著 Truman 一個人下。這個被建構的世界有著縫隙，而 Truman 在相信了三十年後，開始注意到它們。
 
 Caden Cotard 的監獄則恰恰相反。沒有穹頂、沒有隱藏鏡頭、沒有 Christof 在幕後操盤。Caden 打造了自己的牢籠。在獲得麥克阿瑟「天才」獎助後，他在曼哈頓租下一座倉庫，開始建造一個等比例的紐約市複製品。
@@ -90,12 +89,9 @@ Truman 認出舞台的虛假，選擇未知而逃脫。Caden 從未逃脫，因�
 
 兩部電影都有一個神一般的角色，控制著主角的現實。但創造者與被造物之間的關係卻是顛倒的。
 
-
 Christof 創造了「楚門秀」。他建造圓頂、雇用演員、撰寫劇本。Truman 在其中誕生、被其撫養、受其塑造。當 Truman 最終反抗時，他反抗的是外部力量。壓迫者有臉孔、有聲音，身在假月亮裡。你可以指向他。
 
-
 Caden 創造了那齣戲。他建造倉庫、雇用演員、執著於真實性。但他也將自己設定為戲中的角色，接著又找 Sammy 來扮演他，然後 Sammy 又找某人來扮演 Sammy。遞迴吞噬了創始者。到了最後，Caden 早已無法區分戲劇與人生，因為兩者早已合而為一。導演成了被導演的人；作者成了自己故事裡的角色，受制於他不再撰寫的指令。
-
 
 > 「我現在知道該怎麼演這齣戲了。」
 
@@ -106,7 +102,6 @@ Caden 創造了那齣戲。他建造倉庫、雇用演員、執著於真實性�
 Truman 的計畫是關於「他的」自由。Caden 的計畫是關於「所有人的」意義。一個可以達成，另一個是瘋狂。
 
 ### 觀眾的問題
-
 
 《楚門的世界》裡，觀眾就是我們。字面上的。電影在 Truman 的人造生活與全球觀看者間切換。我們看見酒吧、客廳、浴缸裡的人們，全神貫注於這男人不自知的演出。電影讓我們共謀這場窺視。我們也在觀看。
 
@@ -119,7 +114,6 @@ Truman 的計畫是關於「他的」自由。Caden 的計畫是關於「所有�
 在電影最殘酷的一幕，Sammy（扮演 Caden 的演員）觀察了 Caden 二十年，痴迷地記錄他的人生。然後 Sammy 自殺了，死前吶喊道：「我看了你一輩子，Caden，但你從未真正看過除了你自己以外的任何人。」
 
 這個指控之所以殘酷，因為它是真的。Caden 宏大的藝術計畫從不是為了與他人連結，而是為了理解自己。而那是一齣沒有別人能真正觀看的戲。
-
 
 ### 你正站在哪扇門前
 
@@ -148,8 +142,8 @@ Caden 聽見「去死」，然後再也無話可說。
 ---
 
 ## 致謝
-- 封面照：*Las Meninas* by [Diego Velázquez](https://en.wikipedia.org/wiki/en:Diego_Vel%C3%A1zquez), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=22600614")
-- 劇照來自 [FILMGRAB](https://film-grab.com/)，版權分屬各自的電影創作團隊
-- *The Truman Show* (1998)，由 Peter Weir 執導
-- *Synecdoche, New York* (2008)，由 Charlie Kaufman 執導
 
+- 封面照：_Las Meninas_ by [Diego Velázquez](https://en.wikipedia.org/wiki/en:Diego_Vel%C3%A1zquez), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=22600614")
+- 劇照來自 [FILMGRAB](https://film-grab.com/)，版權分屬各自的電影創作團隊
+- _The Truman Show_ (1998)，由 Peter Weir 執導
+- _Synecdoche, New York_ (2008)，由 Charlie Kaufman 執導

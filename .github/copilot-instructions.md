@@ -1,6 +1,7 @@
 ## Monorepo Structure
 
 This is a Turborepo monorepo managed with pnpm. The codebase consists of:
+
 - **apps/harrychang-me**: Main Next.js 15 app serving dual domains (harrychang.me + lab.harrychang.me)
 - **apps/emilychang-me**: Secondary Next.js 15 app
 - **packages/ui**: Shared UI components
@@ -10,6 +11,7 @@ This is a Turborepo monorepo managed with pnpm. The codebase consists of:
 ## Development Commands
 
 ### Root-Level (Turborepo)
+
 ```bash
 pnpm install              # Install all dependencies
 pnpm build               # Build all apps and packages
@@ -19,7 +21,9 @@ pnpm format              # Format code with Prettier
 ```
 
 ### Main App (harrychang-me)
+
 Run these from the repository root or within `apps/harrychang-me/`:
+
 ```bash
 # Development
 pnpm --filter harry-chang-portfolio dev           # Start main site (:3000)
@@ -46,10 +50,12 @@ Note: The main app `postinstall` script automatically runs `prisma generate`. Th
 ### Dual-Domain Architecture via Middleware
 
 The harrychang-me app serves **two distinct applications** from a single codebase using subdomain-based routing:
+
 - **Main domain** (`harrychang.me`): Routes in `app/(main)/`
 - **Lab subdomain** (`lab.harrychang.me`): Routes in `app/(lab)/lab/`
 
 **Middleware logic** (`apps/harrychang-me/middleware.ts`):
+
 - Detects subdomain via hostname inspection
 - Rewrites `lab.harrychang.me/` → `/lab` internally
 - Redirects `/lab` → `/` on main domain in production
@@ -57,6 +63,7 @@ The harrychang-me app serves **two distinct applications** from a single codebas
 - Shared resources (`/api/`, `/images/`, `/locales/`) bypass rewriting (see `sharedPaths` array)
 
 When adding routes:
+
 - Main site: `app/(main)/[route]/page.tsx`
 - Lab features: `app/(lab)/lab/[route]/page.tsx`
 - API routes: `app/api/[route]/route.ts` (shared across both domains)
@@ -64,33 +71,39 @@ When adding routes:
 ### Custom Client-Side i18n System
 
 **No server-side i18n** - this project uses a custom React Context pattern (`apps/harrychang-me/contexts/LanguageContext.tsx`):
+
 - Detects language from `localStorage` or browser on mount
 - Fetches JSON translation files from `/public/locales/{lang}/{namespace}.json`
 - Provides `t(key, namespace)`, `tHtml(key)`, and `getTranslationData(key)` functions
 - Uses visibility gating to prevent FOUC (flash of untranslated content)
 
 Usage in components:
+
 ```tsx
-const { t, tHtml, language, setLanguage } = useLanguage()
-const text = t('projects.title', 'common') // namespace defaults to 'common'
+const { t, tHtml, language, setLanguage } = useLanguage();
+const text = t("projects.title", "common"); // namespace defaults to 'common'
 ```
 
 Adding new translations:
+
 1. Add keys to both `/public/locales/en/[namespace].json` and `/public/locales/zh-TW/[namespace].json`
 2. If adding a new namespace, update the `loadTranslations()` function in `LanguageContext.tsx`
 
 ### File-Based CMS with Markdown
 
 Content is stored as markdown files with YAML frontmatter:
+
 - Projects: `content/projects/[slug].md` or `[slug]_zh-tw.md`
 - Gallery: `content/gallery/[slug].md` or `[slug]_zh-tw.md`
 
 **Locale handling:**
+
 - English: Files without suffix (e.g., `project.md`)
 - Chinese: Files with `_zh-tw.md` suffix (MUST be lowercase, not `_zh-TW.md`)
 - If Chinese version exists, it's shown for `zh-TW` locale; otherwise fallback to English
 
 **Metadata handling** (`apps/harrychang-me/lib/markdown.ts`):
+
 - `getAllProjectsMetadata(locale)` / `getAllGalleryMetadata(locale)` - Lists all items, filtered by locale
 - `getProjectData(slug)` / `getGalleryItemData(slug)` - Fetches single item with HTML content
 - Sorting: Pinned items first (numeric `pinned: 1` field = highest priority), then by `date` DESC
@@ -111,6 +124,7 @@ Content is stored as markdown files with YAML frontmatter:
    - `getFullResolutionPath()`: Removes `-thumb` for detail views
 
 **Workflow for adding images:**
+
 1. Place originals in `/public/images/[projects|gallery]/[slug]/`
 2. Run `pnpm --filter harry-chang-portfolio optimize-images`
 3. Reference in markdown: `/images/projects/slug/image.jpg` (auto-converted to optimized WebP)
@@ -118,18 +132,20 @@ Content is stored as markdown files with YAML frontmatter:
 ### API Routes Pattern
 
 All API routes accept `?locale=en` or `?locale=zh-TW` query param:
+
 ```typescript
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const locale = searchParams.get('locale') || 'en'
-  const projects = getAllProjectsMetadata(locale)
-  return NextResponse.json(projects)
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get("locale") || "en";
+  const projects = getAllProjectsMetadata(locale);
+  return NextResponse.json(projects);
 }
 ```
 
 ## Database
 
 PostgreSQL via Vercel Postgres with Prisma:
+
 - Schema: `apps/harrychang-me/prisma/schema.prisma`
 - Client: Shared via `packages/lib/lib/prisma.ts`
 - Models: `WaitlistEntry` (lab subdomain waitlist), `EmailCampaign`

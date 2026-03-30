@@ -30,6 +30,7 @@ The core design of this project focuses on high efficiency and stability. It max
 CAPTCHA authentication is the most critical challenge in the ticket-grabbing process, and often the most challenging and time-consuming phase for human users. To overcome this, I developed an efficient CNN model, with a training process divided into several stages:
 
 **Sources of Base Training Data**:
+
 1.  **Web Scraper**: I wrote an automated scraper to collect a large number of real CAPTCHA images from the Tixcraft [CAPTCHA training website](https://webbboxx.com/), creating a foundational database.
 2.  **Data Generation**: To expand the dataset and ensure label accuracy, I also developed an additional program to generate synthetic images with features closely resembling real CAPTCHAs.
 
@@ -38,6 +39,7 @@ The core of the model is a Convolutional Neural Network. The architecture has be
 
 **Later Stage Training Method (Fine-Tuning)**:
 To handle difficult cases encountered by the model in real-world scenarios, I designed a semi-automated improvement workflow:
+
 1.  **Error Case Collection**: If Zephyr fails to recognize a CAPTCHA during execution, it automatically saves the image to a specific folder.
 2.  **Manual Labeling and Retraining**: I would manually label these collected "error cases" and add them to the training set to fine-tune the existing model. This continuous iterative process allowed the model to learn more complex and ambiguous patterns, pushing its accuracy toward perfection.
 
@@ -52,13 +54,15 @@ Zephyr's automated workflow is meticulously designed to ensure stability and eff
 
 **Configuration Method**:
 The bot's behavior is driven by a JSON configuration file. Users can customize:
--   `event_url`: The URL of the event page.
--   `ticket_number`: The number of tickets to purchase.
--   `desired_areas`: A list of keywords for desired seating areas, arranged in order of priority.
--   `shift`: A list corresponding to `desired_areas`. This parameter solves the problem of duplicate area names (for example, multiple "Area A" links). `shift: [0]` means clicking the first matching area, while `shift: [1]` means clicking the second, and so on.
+
+- `event_url`: The URL of the event page.
+- `ticket_number`: The number of tickets to purchase.
+- `desired_areas`: A list of keywords for desired seating areas, arranged in order of priority.
+- `shift`: A list corresponding to `desired_areas`. This parameter solves the problem of duplicate area names (for example, multiple "Area A" links). `shift: [0]` means clicking the first matching area, while `shift: [1]` means clicking the second, and so on.
 
 **Features Added for Stability**:
 Rather than purely pursuing speed, Zephyr prioritizes stability in a real-world environment. To achieve this, I incorporated several mechanisms to simulate human actions and handle unexpected situations:
+
 1.  **Simulating Human Behavior**: The program inserts a `random_sleep` with a small, random delay between operations like clicking and typing to avoid being detected as a bot.
 2.  **Multithreading**: While selecting the number of tickets, the program calls the CNN model in a separate thread to recognize the CAPTCHA. These two time-consuming operations run in parallel, significantly reducing the overall process time.
 3.  **Sophisticated Error and Alert Handling**: The code includes extensive error-handling logic. For example, an `@alert_handler` is used to automatically manage various web alerts (like "Incorrect CAPTCHA" or "No contiguous seats available in this area") and determines the next action based on the alert's content (for example, re-entering the CAPTCHA or switching to another area).

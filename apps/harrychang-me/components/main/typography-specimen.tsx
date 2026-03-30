@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import type { FontFamily } from '@portfolio/lib/lib/typography'
-import { useLanguage } from '@portfolio/lib/contexts/language-context'
+import type { FontFamily } from "@portfolio/lib/lib/typography";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
 
 interface TypographySpecimenProps {
-  font: FontFamily
-  index: number
+  font: FontFamily;
+  index: number;
 }
 
 export function TypographySpecimen({ font }: TypographySpecimenProps) {
   const fontClass =
-    font.variable === '--font-ibm-plex-sans' ? 'font-ibm-plex' : 'font-heading'
-  const { t } = useLanguage()
+    font.variable === "--font-ibm-plex-sans" ? "font-ibm-plex" : "font-heading";
+  const { t } = useLanguage();
 
   return (
     <div className="space-y-12">
@@ -28,7 +28,7 @@ export function TypographySpecimen({ font }: TypographySpecimenProps) {
                   className={`${fontClass} text-primary md:text-lg truncate`}
                   style={{ fontWeight: weight }}
                 >
-                  {t('design.pangram')}
+                  {t("design.pangram")}
                 </p>
               </div>
               <div className="order-1 md:order-2 shrink-0 md:text-right">
@@ -44,24 +44,26 @@ export function TypographySpecimen({ font }: TypographySpecimenProps) {
       <div className="pt-8">
         <div className="flex flex-col gap-3">
           <p className="font-mono text-xs md:text-xs text-secondary uppercase tracking-wider">
-            {t('design.characterSet')}
+            {t("design.characterSet")}
           </p>
           <div className="grid grid-cols-[repeat(auto-fill,minmax(2.5rem,1fr))] sm:grid-cols-[repeat(auto-fill,minmax(3rem,1fr))] border-l border-t border-secondary">
-            {'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=↗↙[]{}'.split('').map((char, i) => (
-              <div 
-                key={i} 
-                className="flex items-center justify-center aspect-square border-r border-b border-secondary hover:bg-foreground hover:text-background transition-colors cursor-default"
-              >
-                <span className={`${fontClass} text-lg md:text-xl transition-colors`}>
-                  {char}
-                </span>
-              </div>
-            ))}
+            {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=↗↙[]{}"
+              .split("")
+              .map((char, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center aspect-square border-r border-b border-secondary hover:bg-foreground hover:text-background transition-colors cursor-default"
+                >
+                  <span
+                    className={`${fontClass} text-lg md:text-xl transition-colors`}
+                  >
+                    {char}
+                  </span>
+                </div>
+              ))}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
-
-

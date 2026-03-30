@@ -14,6 +14,7 @@ featured: true
 ---
 
 ## Project Overview
+
 [AAAI](https://aaai.org), as a top-tier academic conference in artificial intelligence, launched an [Educational AI Video competition](https://aaai.org/about-aaai/aaai-awards/aaai-educational-ai-videos/) in 2025, aiming to popularize knowledge across various AI fields through three-minute short films. This was an excellent opportunity for me to combine my experience in language model safety with my passion for video production. Ultimately, I entered the competition with a video exploring attacks and defenses in language models.
 
 ![The final video published by AAAI](https://www.youtube.com/watch?v=eSuEhZpHesU&t=2s&pp=ygUZYWFhaSBlZHVjYXRpb25hbCBhaSB2aWRlbw%3D%3D)
@@ -21,6 +22,7 @@ featured: true
 ---
 
 ## Video Content
+
 The core objective of this video was to clearly explain "Jailbreak Attacks" and their defense mechanisms in large language model security to a non-expert audience within three minutes. To achieve this, I adopted the classic "problem-solution" narrative structure, using concrete examples and vivid analogies to transform complex technical concepts into easily digestible content.
 
 1.  **Opening: An Intriguing Hook (0:00 - 0:30)**
@@ -38,6 +40,7 @@ The core objective of this video was to clearly explain "Jailbreak Attacks" and 
 ---
 
 ## Video Production
+
 ![The final timeline](images/optimized/projects/2025_01_05_aaai_video/full_timeline.webp)
 Throughout the production process, filming was the relatively straightforward part. After setting up the lights and tripod, the A-roll simply required me to speak to the camera. Although I was a bit awkward on camera, I managed to complete the filming smoothly in a short amount of time.
 
@@ -46,6 +49,7 @@ Post-production was also completed in DaVinci Resolve Studio 19. Besides basic e
 ![Icons being composed in Affinity Designer](images/optimized/projects/2025_01_05_aaai_video/element_design.webp)
 
 Among these, the opening animation sequence was the most time-consuming part of the production. It had to echo the opening hook while revealing the theme through a mock-ChatGPT interface. The production process was roughly as follows:
+
 1.  **Interface Design**: After studying the actual ChatGPT interface, I recreated a similar layout in Fusion.
 2.  **Animation Design**: I used Fusion's Text+ tool to combine text and icons and designed the dynamic effects.
 3.  **Sound Design**: I used a 3D camera to add zoom and camera movement effects to the interface and matched them with typing and notification sound effects on the main timeline.
@@ -57,6 +61,7 @@ Although this was my first time tackling this type of video, the entire process 
 ---
 
 ## Reflection
+
 I am grateful for this opportunity to merge my research in language model security with my love for video creation. Throughout the process, I not only learned valuable motion graphics skills but also gained a profound appreciation for the immense effort behind top-tier channels like [Vox](https://www.youtube.com/@Vox) and [Kurzgesagt](https://www.youtube.com/@kurzgesagt). Even with professional teams, an unimaginable amount of time and energy is poured into every polished frame.
 
 I hope to apply the experience gained from this project to more creations in the future and continue to hone my skills. I believe this experience is not just a successful project but a starting point for exploring the possibilities of science communication and visual narrative.
@@ -64,6 +69,7 @@ I hope to apply the experience gained from this project to more creations in the
 ---
 
 ## Acknowledgments
+
 Special thanks to AK for forwarding information about this competition to me and for his advice during the initial script-writing phase, which helped me articulate the core concepts more clearly.
 
 Cover mockup image created with assets from [Micro Volume](https://microvolume.gumroad.com/l/macbook1).
