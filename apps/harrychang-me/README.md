@@ -4,6 +4,11 @@
   <img src="public/images/optimized/projects/og/titlecard.webp" alt="Harry Chang Portfolio Site" width="1800" />
 </p>
 
+[![Lint & Format](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lint.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lint.yml)
+[![Typecheck](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/typecheck.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/typecheck.yml)
+[![Lighthouse CI](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml)
+[![Dependency Audit](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml)
+
 A modern, highly optimized portfolio website built with Next.js 15 and React 19, featuring a dual-domain architecture, custom cross-domain theme persistence, an interactive 404 experience, and a flawless 100 Real Experience Score (RES) under heavy traffic.
 
 ## ⚡ Performance: 100 RES
@@ -19,7 +24,7 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 
 <!-- LIGHTHOUSE_RESULTS_START -->
 
-> 🕐 **Last audited:** Mon, 30 Mar 2026 08:31:39 GMT
+> 🕐 **Last audited:** Mon, 30 Mar 2026 08:49:17 GMT
 
 | Tested Route                         | Performance                                                                              | FCP   | LCP   | TBT   | CLS | Speed Index |
 | :----------------------------------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :---- | :-- | :---------- |
@@ -28,12 +33,12 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 | `/blog/9_m11d`                       | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square)   | 0.3 s | 1.5 s | 10 ms | 0   | 1.1 s       |
 | `/cv`                                | ![Lighthouse 100](https://img.shields.io/badge/lighthouse-100-success?style=flat-square) | 0.3 s | 0.8 s | 0 ms  | 0   | 0.4 s       |
 | `/design`                            | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.3 s | 0 ms  | 0   | 0.7 s       |
-| `/gallery`                           | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 0.9 s | 10 ms | 0   | 0.7 s       |
-| `/gallery/2026_02_08_italy_mountain` | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square)   | 0.3 s | 1.2 s | 0 ms  | 0   | 0.7 s       |
+| `/gallery`                           | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 0.9 s | 20 ms | 0   | 0.8 s       |
+| `/gallery/2026_02_08_italy_mountain` | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square)   | 0.3 s | 1.2 s | 10 ms | 0   | 0.7 s       |
 | `/linktree`                          | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 0.8 s | 0 ms  | 0   | 0.6 s       |
 | `/projects`                          | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 0.9 s | 0 ms  | 0   | 0.7 s       |
-| `/projects/2025_04_12_portfolio`     | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 0.9 s | 0 ms  | 0   | 0.9 s       |
-| `/uses`                              | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.2 s | 0 ms  | 0   | 0.8 s       |
+| `/projects/2025_04_12_portfolio`     | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square)   | 0.3 s | 1.1 s | 30 ms | 0   | 1.0 s       |
+| `/uses`                              | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.2 s | 40 ms | 0   | 0.8 s       |
 
 <!-- LIGHTHOUSE_RESULTS_END -->
 
