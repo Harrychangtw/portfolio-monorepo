@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Loader2, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Loader2, Check } from "lucide-react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 
 export default function GuestbookWidget({
@@ -131,16 +131,32 @@ export default function GuestbookWidget({
             />
           </motion.div>
 
-          {/* Submit Button */}
+          {/* Idle Arrow — mirrors other footer entries */}
+          <AnimatePresence>
+            {!isFocused && !message && (
+              <motion.span
+                key="arrow-up-right"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+                className="absolute right-0 top-0 pt-2 text-secondary pointer-events-none"
+              >
+                <ArrowUpRight className="w-4 h-4" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+
+          {/* Submit Button — shown on focus/typing */}
           <AnimatePresence>
             {(isFocused || message) && (
               <motion.button
                 type="submit"
                 disabled={status === "loading" || !message.trim()}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -10 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
                 className="absolute right-0 top-0 pt-2 text-foreground hover:text-foreground/70 disabled:opacity-30 transition-colors"
               >
                 {status === "loading" ? (

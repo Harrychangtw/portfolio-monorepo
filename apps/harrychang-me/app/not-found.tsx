@@ -16,7 +16,8 @@ const destinations = [
   { label: "Projects", path: "/#projects" },
   { label: "FORTRESS", path: "/projects/2025_10_12_fortress" },
   { label: "PATCH Dataset", path: "/projects/2025_05_18_patch_dataset" },
-  { label: "SITCON Keynote", path: "/projects/2025_03_08_sitcon_keynote" },
+  { label: "SITCON 2025", path: "/projects/2025_03_08_sitcon_keynote" },
+  { label: "SITCON 2026", path: "/projects/siton-2026" },
   { label: "Portfolio", path: "/projects/2025_04_12_portfolio" },
   { label: "Chingshin RAG", path: "/projects/2024_09_23_chingshin_rag" },
   { label: "Project Zephyr", path: "/projects/2024_10_04_proj_zephyr" },
@@ -49,8 +50,10 @@ const destinations = [
 
   // Blog
   { label: "Blog", path: "/#blog" },
+  { label: "Site Anniversery", path: "/blog/10-lego-mount"},
+  { label: "Lego Fan Mount", path: "/blog/10-lego-mount"},
   { label: "Leica M11-D", path: "/blog/9_m11d" },
-  { label: "The X-Pro1", path: "/blog/2025_12_19_xpro1" },
+  { label: "The X-Pro1", path: "/blog/2025_12_19_xpro1"},
   { label: "Aftersun & Paris", path: "/blog/2025_12_22_aftersun_paris_texas" },
   {
     label: "NTU CS Admission",
