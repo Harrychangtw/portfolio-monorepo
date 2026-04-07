@@ -24,7 +24,7 @@
     "prisma": "^6.19.0",
     "react-i18next": "^15.6.1",
     "remark": "latest",
-    "remark-html": "latest",
+    "remark-html": "^16.0.1",
     "resend": "^6.4.2",
     "tailwind-merge": "^2.5.5",
     "unist-util-visit": "^5.0.0",

@@ -54,7 +54,7 @@
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
     "remark": "latest",
-    "remark-html": "latest",
+    "remark-html": "^16.0.1",
     "resend": "^6.4.0",
     "sonner": "^1.7.1",
     "unist-util-visit": "^5.0.0",
