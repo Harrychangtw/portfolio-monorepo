@@ -837,7 +837,7 @@ export async function getGalleryItemData(slug: string) {
           // Don't return anything - visit expects undefined for in-place modifications
         });
       })
-      .use(html)
+      .use(html, { sanitize: true })
       .process(matterResult.content);
 
     const contentHtml = processedContent.toString();
