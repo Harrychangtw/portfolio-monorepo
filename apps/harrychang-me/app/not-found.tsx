@@ -50,10 +50,10 @@ const destinations = [
 
   // Blog
   { label: "Blog", path: "/#blog" },
-  { label: "Site Anniversery", path: "/blog/10-lego-mount"},
-  { label: "Lego Fan Mount", path: "/blog/10-lego-mount"},
+  { label: "Site Anniversery", path: "/blog/10-lego-mount" },
+  { label: "Lego Fan Mount", path: "/blog/10-lego-mount" },
   { label: "Leica M11-D", path: "/blog/9_m11d" },
-  { label: "The X-Pro1", path: "/blog/2025_12_19_xpro1"},
+  { label: "The X-Pro1", path: "/blog/2025_12_19_xpro1" },
   { label: "Aftersun & Paris", path: "/blog/2025_12_22_aftersun_paris_texas" },
   {
     label: "NTU CS Admission",
