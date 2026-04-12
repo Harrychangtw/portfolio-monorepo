@@ -2,11 +2,10 @@
 title: "與 harrychang.me 的 365 天：關於心血來潮以及擁有網路的一角"
 description: "365 天前，我錯過了一座山，卻建了一個網站。關於缺席、模仿，以及學會在繞著空缺生長。"
 imageUrl: "images/optimized/blogs/11-portfolio/titlecard.webp"
-date: "2026-04-13"
+date: "2026-04-12"
 author: "Harry Chang"
 tags: ["Web Development", "Reflection", "Personal"]
 pinned: -1
-locked: true
 ---
 
 ## 我沒爬的那座山

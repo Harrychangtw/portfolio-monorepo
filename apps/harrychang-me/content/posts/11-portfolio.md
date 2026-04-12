@@ -2,11 +2,10 @@
 title: "365 with harrychang.me: On Whims, Rebellion, and Owning a Corner of the Internet"
 description: "365 days ago, I missed a mountain and built a website instead. On absence, imitation, and learning to build around the gaps."
 imageUrl: "images/optimized/blogs/11-portfolio/titlecard.webp"
-date: "2026-04-13"
+date: "2026-04-12"
 author: "Harry Chang"
 tags: ["Web Development", "Reflection", "Personal"]
 pinned: -1
-locked: true
 ---
 
 ## The Mountain I Didn't Climb
