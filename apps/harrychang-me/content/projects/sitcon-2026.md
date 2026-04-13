@@ -19,7 +19,7 @@ Returning to the SITCON stage in 2026 felt like a major milestone. Exactly one y
 
 While last year was all about _building_ with LLMs, this year was about _securing_ them. Specifically, I wanted to tackle a fundamental and dangerous vulnerability known as Prompt Injection.
 
-<!-- ![Official recording of the keynote](https://www.youtube.com/watch?v=mwj43ZKDDF4) -->
+![Official recording of the keynote](https://www.youtube.com/watch?v=GHC2oRj7TS4)
 
 ---
 
