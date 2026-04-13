@@ -19,7 +19,7 @@ featured: true
 
 如果說去年的一切都圍繞著如何用 LLM 打造專案，那麼今年，重點則是該如何保護它們。具體來說，我想解決一個根本但又危險的漏洞：Prompt Injection。
 
-<!-- ![Keynote 的官方錄影](https://www.youtube.com/watch?v=mwj43ZKDDF4) -->
+![議程的官方錄影](https://www.youtube.com/watch?v=GHC2oRj7TS4)
 
 ---
 
