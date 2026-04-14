@@ -322,7 +322,7 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       next:
-        specifier: ^14.0.0 || ^15.5.7
+        specifier: 15.5.15
         version: 15.5.15(@playwright/test@1.57.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next-i18next:
         specifier: ^15.4.3
@@ -503,7 +503,7 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1(three@0.181.2)
       next:
-        specifier: ^14.0.0 || ^15.5.7
+        specifier: 15.5.15
         version: 15.5.15(@playwright/test@1.57.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next-themes:
         specifier: ^0.4.6
