@@ -180,13 +180,17 @@ Maybe loss is sometimes clarifying.
 
 Boston has actual texture. Not touristy the way Manhattan performs it. People here seem to live rather than perform living. I noticed how the city is dominated by Patagonia while New York drowns in Arc'teryx. Small observation. Means nothing. Means something about aspiration and identity I can't quite articulate.
 
+On our last afternoon, we walked along the Charles River as the sun dropped behind distant buildings. I sat on a bench. Fred Again in my earphones. I didn't take a photo, or I forgot to. I'm not sure which. I just heard it: leaves washing to shore, people laughing as they ran across the bridge toward a sky tinted the lightest green, the palette of aurora. A tram gliding somewhere behind me. The moment didn't need documenting. Or maybe it did, and I failed it. I went back early, said I wanted to use the restroom. I did. But I also wanted to write it down before I lost it.
+
 The trip didn't cohere. It wasn't supposed to. San Francisco was hollowed out by capital. New York was diverse yet excluding. Boston was old yet home to new talents. Contradictions everywhere, refusing to flatten into conclusions.
 
 I'm still thinking about the pizza incident. Still thinking about the man with the dog, the crowd with the Hermès bags, my own silence. I complied. They didn't. Neither choice was wrong. Both choices had costs.
 
 Somewhere, the ghost self who went abroad is living a life I'll never know. The city that screamed "Go back to New Jersey" is still welcoming someone else with the same breath.
 
-Somewhere, the bottle I bought in Cupertino is riding a bus I'll never take. Scratches on matte paint, wearing damage without wearing it well. The loop doesn't close. I stopped asking it to.
+Somewhere, the bottle I bought in Cupertino is riding a bus I'll never take. Scratches on matte paint, wearing damage without wearing it well. 
+
+The last morning. I put White Ferrari on by choice instead of waiting for the algorithm to find it. Birds outside. Light casting in. Weather that didn't know it was our last day. An ordinary morning for everyone else. I closed the suitcase shut with the weight of my body, finished half a bag of lox we'd bought too late and enjoyed anyway. The loop doesn't close. I stopped asking it to.
 
 ---
 
