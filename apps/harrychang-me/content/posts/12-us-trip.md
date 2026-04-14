@@ -7,6 +7,7 @@ author: "Harry Chang"
 tags: ["Travel", "Reflection"]
 pinned: -1
 locked: true
+hidden: true
 ---
 
 ## The Same Bus
@@ -35,13 +36,11 @@ We drove to Stanford. Beautiful, obviously. The kind of beautiful that makes you
 
 ![framed:](images/optimized/blogs/12-us-trip/L1001460.webp)
 
-Google's visitor center was stale and unmemorable, but even a random parking lot attendant was friendlier than the staff inside. Apple was gorgeous. I bought a matte black Swell bottle eeven though I already had a brushed silver one my cousin gave me, worn in over two and a half years of use. The black would scratch. The silver wore its scratches as patina. I didn't think about this until later.
-
-
+Google's visitor center was stale and unmemorable, but even a random parking lot attendant was friendlier than the staff inside. Apple was gorgeous. I bought a matte black Swell bottle even though I already had a brushed silver one my cousin gave me, worn in over two and a half years of use. The black would scratch. The silver wore its scratches as patina. I didn't think about this until later.
 
 At Blue Bottle in Palo Alto, the kind of place where unassuming people could be founders of the next big thing or VCs managing billions. I was probably profiling and romanticizing at the same time.
 
-My dad dropped family lore out of nowhere. We went from talking about Rimowa to how my grandfather lost his mother at three, went to Taipei to hustle at ten, struggled to find work, lost a whole shipment and fell into debt, then lost both legs after surviving a crash that should have killed him. All while my dad hadn't passed high school.
+My dad dropped family lore out of nowhere. We'd been talking about luggage. Then, without transition, my grandfather: what he lost young, what he built, what a crash took from him decades later. My dad told it plainly, the way you mention weather.
 
 People contain multitudes and those that rarely reveal themselves. But when they do, it's surely interesting.
 
@@ -51,7 +50,7 @@ The Golden Gate Bridge was massive. The wind was brutal. The scale reminded me h
 
 New York announced itself immediately.
 
-The first night, we arrived at our apartment at Upper West Side and went to Los Tacos. The line was almost unbearably chaotic, yet it moved fast. Finance bros and people who looked like they'd seen too much shared the same subway car. Within minutes of arriving, we got stopped by a boxer named Michael Dominguez. He welcomed us to the city, told us to search him up, mentioned his sister who's a famous singer, then warned us to be mindful. Welcome and warning, inseparable.
+The first night, we arrived at our apartment on the Upper West Side and went to Los Tacos. The line was almost unbearably chaotic, yet it moved fast. Finance bros and people who looked like they'd seen too much shared the same subway car. Within minutes of arriving, we got stopped by a boxer named Michael Dominguez. He welcomed us to the city, told us to search him up, mentioned his sister who's a famous singer, then warned us to be mindful. Welcome and warning, inseparable.
 
 I love this place. That was my first thought. I love the diversity, the sounds, how overwhelming it is. Chaotic and quiet at the same time. The camera mostly stayed in my pocket. I couldn't get a single good shot. It didn't matter.
 
@@ -67,7 +66,7 @@ We rushed the MET in three hours, which is criminal but unavoidable. Louder than
 
 ![framed:](images/optimized/blogs/12-us-trip/L1001656.webp)
 
-Then came Theodora, the highlight of the trip. Puffer fish ceviche. Bread with cream that walked a perfect line between sweet and savory. The waiter wore a Issey Miyake TO watch, minimal and metallic. Everything was exceptional. The afternoon tension, dad being grumpy, weather making the day difficult, resolved in the face of fusion between distinctively brilliant sauces and fresh ingredients. 250 for three before tax and tips. Worth it.
+Then came Theodora, the highlight of the trip. Puffer fish ceviche. Bread with cream that walked a perfect line between sweet and savory. The waiter wore an Issey Miyake TO watch, minimal and metallic. Everything was exceptional. The afternoon tension, dad being grumpy, weather making the day difficult, resolved in the face of fusion between distinctively brilliant sauces and fresh ingredients. 250 for three before tax and tips. Worth it.
 
 I wrote in my journal that night, shoes wet from Brooklyn rain, stomach full, feeling grateful and beyond privileged.
 
@@ -91,7 +90,7 @@ Then came the pizza.
 
 ## Go Back to New Jersey
 
-We stopped at a pretty good pizza shop. Hot honey made it unforgettable. We were eating across the street, me and my sister sitting on tree fences, plates balanced on our legs. Quite a makeshift table. In front of a supposedly upscale apartment.
+We stopped at a pretty good pizza shop. Hot honey made it unforgettable. We were eating across the street, my sister and I sitting on tree fences, plates balanced on our legs. Quite a makeshift table. In front of a supposedly upscale apartment.
 
 An elderly man with a dog walked down after the doorman opened his car. He walked straight to us and the people at the next tree.
 
@@ -154,7 +153,7 @@ Places I've never been to and perhaps never will. The phrase kept circling. Gene
 
 Boston felt reserved.
 
-The ceremony, the reason we came, was anticlimactic. Low ceiling. Terrible lighting. Wrinkled flags. Is this what they mean when they say travelling expands your horizon? Because my horizon was surely not expanding under the absurdly low ceiling for a lecture hall.
+The ceremony, the reason we came, was anticlimactic. Low ceiling. Terrible lighting. Wrinkled flags. Is this what they mean when they say travelling expands your horizons? Because my horizon was surely not expanding under the absurdly low ceiling for a lecture hall.
 
 
 ![framed:](images/optimized/blogs/12-us-trip/L1001897.webp)
@@ -165,7 +164,7 @@ The morning before had been difficult. Late arrival, hunger, the small frustrati
 
 Then the highlight: 2nd Street thrift store.
 
-Thirty minutes inside. 140 dollars total. A 20 dollar trench coat that looked like 5,000 and fit too well. My sister's eye found it. A 99 dollar Naga Gen 2 LEAF hoodie, rare, in dad's favorite army green color that he'd never admit he likes. 20 dollars for a Polo jacket for my sister.
+Thirty minutes inside. 140 dollars total. A 20-dollar trench coat that looked like way more and fit too well. My sister's eye found it. A 99-dollar Naga Gen 2 LEAF hoodie, rare, in dad's favorite army green color that he'd never admit he likes. 20-dollars for a Polo jacket for my sister.
 
 Dad spent forty on short pants but was definitely proud of our Asianness coming into play. If we had to choose between the ceremony and 2nd Street, the choice was obvious.
 

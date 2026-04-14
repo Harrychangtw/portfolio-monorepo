@@ -152,6 +152,7 @@ export interface ProjectMetadata {
   featured?: boolean;
   pinned?: number; // Changed from boolean to number, -1 for not pinned, positive numbers for pinning order
   locked?: boolean;
+  hidden?: boolean;
   tooltip?: string;
 }
 
@@ -179,6 +180,7 @@ export interface GalleryItemMetadata {
   featured?: boolean;
   pinned?: number; // Changed from boolean to number, -1 for not pinned, positive numbers for pinning order
   locked?: boolean;
+  hidden?: boolean;
   aspectType?: string; // 'v' for vertical (4:5) or 'h' for horizontal (5:4)
   aspectRatio?: number;
   width?: number; // Added for build-time dimension detection
@@ -198,6 +200,7 @@ export interface PostMetadata {
   featured?: boolean;
   pinned?: number;
   locked?: boolean;
+  hidden?: boolean;
 }
 
 export interface SketchMetadata {
@@ -376,7 +379,8 @@ export function getAllProjectsMetadata(
           slug,
           ...data,
         };
-      });
+      })
+      .filter((project) => !project.hidden);
 
     // Filter by section if provided
     let filteredProjects = allProjectsData;
@@ -493,7 +497,8 @@ export function getAllGalleryMetadata(
           slug,
           ...data,
         };
-      });
+      })
+      .filter((project) => !project.hidden);
 
     // Filter by section if provided
     let filteredGallery = allGalleryData;
@@ -647,7 +652,8 @@ export function getAllPostsMetadata(locale: string = "en"): PostMetadata[] {
           slug,
           ...data,
         };
-      });
+      })
+      .filter((project) => !project.hidden);
 
     // Sort posts: pinned first, then by date
     return allPostsData.sort((a, b) => {
@@ -696,7 +702,10 @@ export function getLatestPosts(
 }
 
 // Get project data by slug
+// Get project data by slug
 export async function getProjectData(slug: string) {
+  // Deliberately explicitly allowing direct route access for insider previewing and reviewing
+  // by skipping checks on `hidden` or `locked` here.
   ensureDirectoriesExist();
   try {
     const fullPath = path.join(projectsDirectory, `${slug}.md`);
@@ -747,6 +756,8 @@ export async function getProjectData(slug: string) {
 
 // Get gallery item data by slug
 export async function getGalleryItemData(slug: string) {
+  // Deliberately explicitly allowing direct route access for insider previewing and reviewing
+  // by skipping checks on `hidden` or `locked` here.
   ensureDirectoriesExist();
   try {
     const fullPath = path.join(galleryDirectory, `${slug}.md`);
@@ -856,6 +867,8 @@ export async function getGalleryItemData(slug: string) {
 
 // Get post data by slug
 export async function getPostData(slug: string) {
+  // Deliberately explicitly allowing direct route access for insider previewing and reviewing
+  // by skipping checks on `hidden` or `locked` here.
   ensureDirectoriesExist();
   try {
     const fullPath = path.join(postsDirectory, `${slug}.md`);
