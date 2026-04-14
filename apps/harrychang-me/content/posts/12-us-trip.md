@@ -14,7 +14,7 @@ hidden: true
 
 On the same bus, a child is laughing with her parents, a person is struggling to hold onto the outer door while crawling inward, and another person has a strong odor and pants not fully pulled up. All in a city where capital flows like water under a beautiful sunset.
 
-This was San Francisco, riding back from Mission District. The bus was better than I expected. 
+This was San Francisco, riding back from Mission District. The bus was better than I expected.
 
 ![framed:](images/optimized/blogs/12-us-trip/L1001562.webp)
 
@@ -32,7 +32,7 @@ In-N-Out was beyond overrated. The fries were mushy in a way that made me questi
 
 Waymo, though. Waymo was insane. Thirty-five dollars for a fourteen-kilometer city tour where the driver was a ghost. The car knew things. It anticipated. I sat in the passenger seat of the future and wondered why the present felt so hollow.
 
-We drove to Stanford. Beautiful, obviously. The kind of beautiful that makes you feel small in ways both inspiring and uncomfortable. 
+We drove to Stanford. Beautiful, obviously. The kind of beautiful that makes you feel small in ways both inspiring and uncomfortable.
 
 ![framed:](images/optimized/blogs/12-us-trip/L1001460.webp)
 
@@ -76,7 +76,7 @@ I wrote in my journal that night, shoes wet from Brooklyn rain, stomach full, fe
 
 The city started showing its other face.
 
-The Highline after the Vessel: brutal, unrelenting wind that made four degrees feel like negative four. Breakfast at a supposedly good spot: fine, but not sixty-three dollars for three fine. 
+The Highline after the Vessel: brutal, unrelenting wind that made four degrees feel like negative four. Breakfast at a supposedly good spot: fine, but not sixty-three dollars for three fine.
 
 ![framed:](images/optimized/blogs/12-us-trip/L1001696.webp)
 
@@ -104,10 +104,9 @@ Then the line that would stay with me: "Go back to New Jersey."
 
 He stormed back to the apartment.
 
-I thought about that moment more than I would like to admit. Maybe out of regret that I should have stood my ground. Maybe out of realizing how excluding some people still are. 
+I thought about that moment more than I would like to admit. Maybe out of regret that I should have stood my ground. Maybe out of realizing how excluding some people still are.
 
 We walked to Katz's. Good, worth the twenty-minute wait. We dipped our toes into SoHo and Chinatown. But my mood remained low. The diversity I loved contained exclusions I couldn't ignore. The city that felt alive also felt predatory. Both things, simultaneously true, refusing to resolve.
-
 
 ## The Afternoon Alone
 
@@ -143,7 +142,7 @@ What a way to say goodbye to this city. What a quick seven days.
 
 Maybe this is what presence feels like. Knowing you're in the moment that will become memories. The head bumping to Born Sinner on the subway. The gaze out at the Hudson River as the bus drove across places I've never been to and perhaps never will, under a blue hour Friday sky on an almost empty bus.
 
-White Ferrari came on—the demo version, with verses that cut deeper. *Which part of the circle will you stand on?*
+White Ferrari came on—the demo version, with verses that cut deeper. _Which part of the circle will you stand on?_
 
 It should not have been playing right now. But maybe it should have. The song about goodbyes, about dimensions where things went differently, playing as I left a city that showed me both what I loved and what I couldn't accept.
 
@@ -155,10 +154,9 @@ Boston felt reserved.
 
 The ceremony, the reason we came, was anticlimactic. Low ceiling. Terrible lighting. Wrinkled flags. Is this what they mean when they say travelling expands your horizons? Because my horizon was surely not expanding under the absurdly low ceiling for a lecture hall.
 
-
 ![framed:](images/optimized/blogs/12-us-trip/L1001897.webp)
 
-Don't even mention the pre-ceremony rush to CVS for black socks because I'd worn white with a dark grey suit. Or the speed run through the art museum thinking we were late for a grand ceremony that delayed anyway. 
+Don't even mention the pre-ceremony rush to CVS for black socks because I'd worn white with a dark grey suit. Or the speed run through the art museum thinking we were late for a grand ceremony that delayed anyway.
 
 The morning before had been difficult. Late arrival, hunger, the small frustrations that accumulate when three people share too little space for too many days. I slept on the sofa. By the next morning, it dissipated the way these things do—not resolved, just set aside.
 
@@ -193,7 +191,8 @@ Somewhere, the bottle I bought in Cupertino is riding a bus I'll never take. Scr
 ---
 
 ## Acknowledgments
-- Title image: *The Third-Class Carriage* by [Honoré Daumier](https://en.wikipedia.org/wiki/en:Honoré_Daumier), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=30139434). A nursing mother, an old woman, a sleeping boy, and a carriage full of strangers who will never resolve into a community. Some cities work the same way.
+
+- Title image: _The Third-Class Carriage_ by [Honoré Daumier](https://en.wikipedia.org/wiki/en:Honoré_Daumier), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=30139434). A nursing mother, an old woman, a sleeping boy, and a carriage full of strangers who will never resolve into a community. Some cities work the same way.
 - To my sister, who carried the itinerary as usual and found every restaurant worth remembering
 - To my dad, for the family lore at Blue Bottle
 - To Michael Dominguez, wherever you are, for the welcome and the warning

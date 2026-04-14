@@ -13,34 +13,34 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "@prisma/client": "^6.19.0",
+    "@prisma/client": "^6.19.3",
     "clsx": "^2.1.1",
-    "fast-xml-parser": "^5.5.7",
+    "fast-xml-parser": "^5.5.12",
     "gray-matter": "latest",
-    "i18next": "^25.3.2",
+    "i18next": "^25.10.10",
     "image-size": "^2.0.2",
     "mdast": "^3.0.0",
-    "next-i18next": "^15.4.2",
-    "prisma": "^6.19.0",
-    "react-i18next": "^15.6.1",
+    "next": "^14.0.0 || ^15.5.7",
+    "next-i18next": "^15.4.3",
+    "prisma": "^6.19.3",
+    "react-i18next": "^15.7.4",
     "remark": "latest",
     "remark-html": "^16.0.1",
-    "resend": "^6.4.2",
-    "tailwind-merge": "^2.5.5",
-    "unist-util-visit": "^5.0.0",
-    "zod": "^3.24.1"
+    "resend": "^6.11.0",
+    "tailwind-merge": "^2.6.1",
+    "unist-util-visit": "^5.1.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/mdast": "^4.0.4",
-    "@types/react": "^19",
-    "react": "^19.2.1",
+    "@types/react": "^19.2.14",
+    "react": "^19.2.5",
     "tailwindcss": "3.4.17",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   },
-    "peerDependencies": {
-      "next": "^14.0.0 || ^15.5.7", 
-      "react": "^18.0.0 || >=19.2.1"
-    }
-
+  "peerDependencies": {
+    "next": "^14.0.0 || ^15.5.7",
+    "react": "^18.0.0 || >=19.2.1"
+  }
 }
