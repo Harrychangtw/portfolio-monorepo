@@ -188,7 +188,7 @@ I'm still thinking about the pizza incident. Still thinking about the man with t
 
 Somewhere, the ghost self who went abroad is living a life I'll never know. The city that screamed "Go back to New Jersey" is still welcoming someone else with the same breath.
 
-Somewhere, the bottle I bought in Cupertino is riding a bus I'll never take. Scratches on matte paint, wearing damage without wearing it well. 
+Somewhere, the bottle I bought in Cupertino is riding a bus I'll never take. Scratches on matte paint, wearing damage without wearing it well.
 
 The last morning. I put White Ferrari on by choice instead of waiting for the algorithm to find it. Birds outside. Light casting in. Weather that didn't know it was our last day. An ordinary morning for everyone else. I closed the suitcase shut with the weight of my body, finished half a bag of lox we'd bought too late and enjoyed anyway. The loop doesn't close. I stopped asking it to.
 
