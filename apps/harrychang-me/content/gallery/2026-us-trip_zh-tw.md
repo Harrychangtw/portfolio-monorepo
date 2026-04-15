@@ -25,7 +25,7 @@ gallery:
   - url: "images/optimized/gallery/2026-us-trip/L1001728.webp"
   - url: "images/optimized/gallery/2026-us-trip/L1001832.webp"
   - url: "images/optimized/gallery/2026-us-trip/L1001936.webp"
-  
+
 pinned: 7
 ---
 

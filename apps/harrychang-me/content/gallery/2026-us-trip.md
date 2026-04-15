@@ -41,6 +41,3 @@ Maybe this is what presence feels like. Knowing you are in the moment that will 
 Contradictions are ifs in space. Ifs are contradictions in time.
 
 White Ferrari should not have been playing. But I put it on anyway. -->
-
-
-
