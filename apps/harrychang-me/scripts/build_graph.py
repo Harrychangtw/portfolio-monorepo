@@ -951,20 +951,65 @@ def main():
     print(f"  Tag nodes: {len(tag_nodes)}")
     print(f"  Tag edges: {len(tag_edges)}")
 
+    # Step 3.5: Build hub (category) nodes
+    print("\n[3.5/7] Building hub nodes...")
+    HUB_URL_MAP = {
+        "post": f"{BASE_URL}/blog",
+        "project": f"{BASE_URL}/projects",
+        "gallery": f"{BASE_URL}/gallery",
+    }
+    HUB_TITLE_MAP = {"post": "Blog", "project": "Projects", "gallery": "Gallery"}
+
+    hub_nodes = []
+    hub_edges = []
+    for source_type in CONTENT_DIRS:
+        for locale in ("en", "zh-TW"):
+            hub_id = f"hub-{source_type}-{locale}"
+            hub_nodes.append({
+                "id": hub_id,
+                "nodeType": "hub",
+                "title": HUB_TITLE_MAP[source_type],
+                "snippet": f"All {HUB_TITLE_MAP[source_type].lower()} entries",
+                "sourceType": source_type,
+                "sourceSlug": source_type,
+                "locale": locale,
+                "url": HUB_URL_MAP[source_type],
+                "date": None,
+                "tags": [],
+                "heading": None,
+                "imageUrl": None,
+                "parentId": None,
+                "mediaSource": None,
+            })
+            # Link hub -> file nodes of this type+locale
+            for fnode in all_file_nodes:
+                if fnode["sourceType"] == source_type and fnode["locale"] == locale:
+                    hub_edges.append({
+                        "source": hub_id,
+                        "target": fnode["id"],
+                        "weight": 1.0,
+                        "linkType": "structural",
+                    })
+                    fnode["parentId"] = hub_id
+
+    all_structural_edges.extend(hub_edges)
+    print(f"  Hub nodes: {len(hub_nodes)}")
+    print(f"  Hub edges: {len(hub_edges)}")
+
     # Step 4: Generate embeddings (only for file + section nodes)
-    print("\n[4/6] Generating embeddings...")
+    print("\n[4/7] Generating embeddings...")
     embeddable_chunks = all_file_nodes + all_section_nodes + locale_chunks
     cache = load_cache()
     embeddings = compute_embeddings(embeddable_chunks, cache)
 
     # Step 5: Compute semantic similarity edges
-    print(f"\n[5/6] Computing semantic edges (threshold={args.threshold}, max_edges={args.max_edges})...")
+    print(f"\n[5/7] Computing semantic edges (threshold={args.threshold}, max_edges={args.max_edges})...")
     semantic_edges = compute_edges(embeddings, embeddable_chunks, args.threshold, args.max_edges)
     print(f"  Semantic edges: {len(semantic_edges)}")
 
     # Step 6: Optional LLM descriptions
-    print("\n[6/6] LLM descriptions...")
-    all_chunks = all_file_nodes + all_section_nodes + locale_chunks + all_image_nodes + all_video_nodes + tag_nodes
+    print("\n[6/7] LLM descriptions...")
+    all_chunks = all_file_nodes + all_section_nodes + locale_chunks + all_image_nodes + all_video_nodes + tag_nodes + hub_nodes
     if not args.no_llm:
         generate_descriptions(all_chunks, cache)
     else:
@@ -975,7 +1020,7 @@ def main():
 
     # Build output - strip embedding text from nodes
     nodes = []
-    node_type_counts = {"file": 0, "section": 0, "image": 0, "video": 0, "tag": 0}
+    node_type_counts = {"hub": 0, "file": 0, "section": 0, "image": 0, "video": 0, "tag": 0}
     for chunk in all_chunks:
         node = {
             "id": chunk["id"],

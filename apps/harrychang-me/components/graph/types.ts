@@ -1,4 +1,4 @@
-export type NodeType = "file" | "section" | "image" | "video" | "tag";
+export type NodeType = "file" | "section" | "image" | "video" | "tag" | "hub";
 export type SourceType = "post" | "project" | "gallery" | "locale";
 export type LinkType = "semantic" | "structural" | "tag";
 

@@ -84,7 +84,7 @@ export default function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLab, setIsLab] = useState(false);
-  const [isGraph, setIsGraph] = useState(false);
+  const isGraph = pathname?.startsWith("/graph") ?? false;
   const [readingProgress, setReadingProgress] = useState(0);
   const isHomePage = pathname === "/";
   const [loadingStatus, setLoadingStatus] = useState<
@@ -174,10 +174,6 @@ export default function Header() {
       setIsLab(
         hostname.includes("lab.localhost") ||
           hostname.includes("lab.harrychang.me"),
-      );
-      setIsGraph(
-        hostname.includes("graph.localhost") ||
-          hostname.includes("graph.harrychang.me"),
       );
     }
   }, []);
@@ -465,15 +461,13 @@ export default function Header() {
   }, [isProjectDetailPage, isBlogDetailPage, isLab]);
 
   const getHomeUrl = () => {
-    if (isLab || isGraph) {
+    if (isLab) {
       const protocol =
         (typeof window !== "undefined" && window.location.protocol) || "http:";
       const hostnameWithPort =
         (typeof window !== "undefined" && window.location.host) ||
         "localhost:3000";
-      const mainDomain = hostnameWithPort
-        .replace("lab.", "")
-        .replace("graph.", "");
+      const mainDomain = hostnameWithPort.replace("lab.", "");
       return `${protocol}//${mainDomain}`;
     }
     return "/";
@@ -526,7 +520,7 @@ export default function Header() {
           className={`flex items-center min-w-0 flex-1 ${showStaggeredMenu ? "mr-12" : "mr-4"}`}
         >
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            {isLab || isGraph ? (
+            {isLab ? (
               <a
                 href={getHomeUrl()}
                 className="font-heading text-xl font-semibold transition-colors hover:text-accent outline-none whitespace-nowrap"

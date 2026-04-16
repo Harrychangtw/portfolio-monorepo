@@ -12,6 +12,7 @@ const sourceLabels: Record<SourceType, string> = {
 };
 
 const nodeTypeLabels: Record<NodeType, string> = {
+  hub: "Hub",
   file: "File",
   section: "Section",
   image: "Image",
@@ -84,10 +85,9 @@ export default function NodePreviewCard({
               src={imageSrc}
               alt={node.title}
               aspectRatio={1.5}
-              noInsetPadding
+              noInsetPadding={false}
               quality={60}
               sizes="280px"
-              imgClassName="object-cover"
             />
             <div className="px-3 py-1.5">
               <p className="font-mono text-[10px] text-muted-foreground truncate">
@@ -111,20 +111,20 @@ export default function NodePreviewCard({
             )}
 
             <div className="p-3 space-y-2">
-              {/* Header badges */}
-              <div className="flex items-center gap-1.5 flex-wrap">
+              {/* Header badges — blog-card tag capsule style */}
+              <div className="flex items-center gap-2 flex-wrap">
                 {!isTag && (
                   <span
-                    className={`inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-background ${sourceColors[node.sourceType]}`}
+                    className={`font-body text-sm px-2 py-1 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
                   >
                     {sourceLabels[node.sourceType]}
                   </span>
                 )}
-                <span className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider bg-muted text-muted-foreground">
+                <span className="font-body text-sm px-2 py-1 rounded whitespace-nowrap bg-muted text-secondary">
                   {nodeTypeLabels[node.nodeType]}
                 </span>
                 {!isTag && (
-                  <span className="inline-flex items-center px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider bg-muted text-muted-foreground">
+                  <span className="font-body text-sm px-2 py-1 rounded whitespace-nowrap bg-muted text-secondary">
                     {node.locale === "zh-TW" ? "ZH" : "EN"}
                   </span>
                 )}

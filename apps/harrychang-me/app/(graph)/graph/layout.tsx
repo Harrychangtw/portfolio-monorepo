@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import GraphClientLayout from "@/components/graph/client-layout";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://graph.harrychang.me"),
+  metadataBase: new URL("https://www.harrychang.me"),
   title: {
     template: "%s | Knowledge Graph by Harry Chang",
     default: "Knowledge Graph | Harry Chang",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "An interactive knowledge graph mapping semantic connections across blog posts, projects, gallery items, and more.",
   alternates: {
-    canonical: "https://graph.harrychang.me",
+    canonical: "https://www.harrychang.me/graph",
   },
   robots: {
     index: true,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Knowledge Graph | Harry Chang",
     description:
       "An interactive knowledge graph mapping semantic connections across blog posts, projects, gallery items, and more.",
-    url: "https://graph.harrychang.me",
+    url: "https://www.harrychang.me/graph",
     siteName: "Knowledge Graph",
     locale: "en_US",
     type: "website",

@@ -11,6 +11,7 @@ import {
 } from "d3-force";
 import { zoom as d3Zoom, zoomIdentity } from "d3-zoom";
 import { select } from "d3-selection";
+import "d3-transition"; // side-effect: adds .transition() to d3 selections
 import type {
   GraphData,
   GraphNode,
@@ -25,6 +26,9 @@ interface GraphCanvasProps {
   onNodeClick: (node: GraphNode | null) => void;
   onNodeHover: (node: GraphNode | null, cursorPos?: { x: number; y: number }) => void;
   selectedNodeId?: string | null;
+  isMobile?: boolean;
+  onCenterNodeChange?: (node: GraphNode | null) => void;
+  focusNodeId?: string | null;
 }
 
 /* ─── Color helpers ────────────────────────────────────────────────────────── */
@@ -74,8 +78,8 @@ function getThemeColors() {
 
 function getGlowColor(): string {
   const style = getComputedStyle(document.documentElement);
-  const accent = style.getPropertyValue("--accent").trim();
-  return accent ? `hsl(${accent})` : "#eaff4b";
+  const fg = style.getPropertyValue("--foreground").trim();
+  return fg ? `hsl(${fg})` : "#ffffff";
 }
 
 /* ─── Node radius by type (minimal aesthetic) ──────────────────────────────── */
@@ -86,6 +90,7 @@ const NODE_TYPE_BASE_RADIUS: Record<NodeType, number> = {
   image: 1.0,
   video: 1.2,
   tag: 2.0,
+  hub: 5.0,
 };
 
 const NODE_TYPE_MAX_BONUS: Record<NodeType, number> = {
@@ -94,6 +99,7 @@ const NODE_TYPE_MAX_BONUS: Record<NodeType, number> = {
   image: 0,
   video: 0,
   tag: 0.5,
+  hub: 0,
 };
 
 function computeNodeRadius(
@@ -115,11 +121,13 @@ const CHARGE_STRENGTH: Record<NodeType, number> = {
   tag: -160,
   image: -40,
   video: -50,
+  hub: -400,
 };
 
 /* ─── Label priority (higher = drawn first = wins overlap) ─────────────────── */
 
 const LABEL_PRIORITY: Record<NodeType, number> = {
+  hub: 6,
   file: 5,
   tag: 4,
   section: 3,
@@ -130,6 +138,7 @@ const LABEL_PRIORITY: Record<NodeType, number> = {
 /* ─── Label zoom thresholds (k value where labels start appearing) ─────────── */
 
 const LABEL_ZOOM_THRESHOLD: Record<NodeType, number> = {
+  hub: 0.3,
   file: 0.8,
   tag: 1.2,
   section: 2.0,
@@ -144,6 +153,9 @@ export default function GraphCanvas({
   onNodeClick,
   onNodeHover,
   selectedNodeId,
+  isMobile,
+  onCenterNodeChange,
+  focusNodeId,
 }: GraphCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -153,6 +165,7 @@ export default function GraphCanvas({
   const edgesRef = useRef<SimulationEdge[]>([]);
   const transformRef = useRef({ x: 0, y: 0, k: 1 });
   const hoveredRef = useRef<SimulationNode | null>(null);
+  const centerNodeRef = useRef<string | null>(null);
   const nodeColorsRef = useRef<Record<SourceType, string>>(
     {} as Record<SourceType, string>,
   );
@@ -169,6 +182,8 @@ export default function GraphCanvas({
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
   const neighborMap = useRef<Map<string, Set<string>>>(new Map());
   const parentEdgesRef = useRef<Set<string>>(new Set()); // "source|target" keys for structural parent edges to media nodes
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const zoomBehaviorRef = useRef<any>(null);
 
   // Initialize colors
   useEffect(() => {
@@ -397,6 +412,35 @@ export default function GraphCanvas({
       ctx.translate(tx, ty);
       ctx.scale(k, k);
 
+      // ─── Draw background grid ──────────────────────────────────────────
+      {
+        const gridSpacing = 50;
+        // Compute visible bounds in simulation coords
+        const visMinX = -tx / k;
+        const visMinY = -ty / k;
+        const visMaxX = (width - tx) / k;
+        const visMaxY = (height - ty) / k;
+        // Snap to grid
+        const startX = Math.floor(visMinX / gridSpacing) * gridSpacing;
+        const startY = Math.floor(visMinY / gridSpacing) * gridSpacing;
+
+        ctx.beginPath();
+        ctx.strokeStyle = theme.card;
+        ctx.lineWidth = 0.5 / k;
+        ctx.globalAlpha = 0.8;
+
+        for (let x = startX; x <= visMaxX; x += gridSpacing) {
+          ctx.moveTo(x, visMinY);
+          ctx.lineTo(x, visMaxY);
+        }
+        for (let y = startY; y <= visMaxY; y += gridSpacing) {
+          ctx.moveTo(visMinX, y);
+          ctx.lineTo(visMaxX, y);
+        }
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+
       // ─── Draw edges ─────────────────────────────────────────────────────
       for (const edge of edges) {
         const src = edge.source;
@@ -468,15 +512,18 @@ export default function GraphCanvas({
         const isNeighborOfHover =
           hovered && hoveredNeighbors?.has(node.id);
         const isMedia = node.nodeType === "image" || node.nodeType === "video";
-        const color = isMedia
-          ? mediaColor
-          : node.nodeType === "tag"
-            ? tagColor
-            : nodeColors[node.sourceType] || "#888";
+        const isHub = node.nodeType === "hub";
+        const color = isHub
+          ? theme.foreground
+          : isMedia
+            ? mediaColor
+            : node.nodeType === "tag"
+              ? tagColor
+              : nodeColors[node.sourceType] || "#888";
 
         // Determine node opacity based on hover spotlight and hierarchy
         const isSection = node.nodeType === "section";
-        let nodeAlpha = isMedia ? 0.5 : isSection ? 0.55 : 0.85;
+        let nodeAlpha = isHub ? 1 : isMedia ? 0.5 : isSection ? 0.55 : 0.85;
         if (hasHoverSpotlight) {
           if (isHovered || isSelected || isNeighborOfHover) {
             nodeAlpha = 1;
@@ -514,6 +561,16 @@ export default function GraphCanvas({
         ctx.fillStyle = color;
         ctx.globalAlpha = nodeAlpha;
         ctx.fill();
+
+        // Hub nodes: subtle ring at rest
+        if (isHub && !isHovered && !isSelected) {
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r + 1.5 / k, 0, Math.PI * 2);
+          ctx.strokeStyle = theme.foreground;
+          ctx.lineWidth = 0.8 / k;
+          ctx.globalAlpha = 0.3;
+          ctx.stroke();
+        }
 
         // Node border for hovered/selected
         if (isHovered || isSelected) {
@@ -657,11 +714,32 @@ export default function GraphCanvas({
 
       ctx.globalAlpha = 1;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+      // ─── Mobile: find closest node to screen center ───────────────────
+      if (onCenterNodeChange) {
+        const centerSimX = (width / 2 - tx) / k;
+        const centerSimY = (height / 2 - ty) / k;
+        let closest: SimulationNode | null = null;
+        let closestDist = Infinity;
+        for (const node of nodes) {
+          const dx = node.x - centerSimX;
+          const dy = node.y - centerSimY;
+          const dist = dx * dx + dy * dy;
+          if (dist < closestDist) {
+            closest = node;
+            closestDist = dist;
+          }
+        }
+        if (closest?.id !== centerNodeRef.current) {
+          centerNodeRef.current = closest?.id ?? null;
+          onCenterNodeChange(closest);
+        }
+      }
     };
 
     animFrameRef.current = requestAnimationFrame(render);
     return () => cancelAnimationFrame(animFrameRef.current);
-  }, [dimensions, selectedNodeId]);
+  }, [dimensions, selectedNodeId, onCenterNodeChange]);
 
   // Hit testing
   const findNodeAtPoint = useCallback(
@@ -703,6 +781,9 @@ export default function GraphCanvas({
         return;
       }
 
+      // On mobile, skip hover tracking — use tap-to-select instead
+      if (isMobile) return;
+
       const node = findNodeAtPoint(e.clientX, e.clientY);
       if (hoveredRef.current?.id !== node?.id) {
         hoveredRef.current = node;
@@ -713,6 +794,8 @@ export default function GraphCanvas({
     };
 
     const handleDown = (e: PointerEvent) => {
+      // On mobile, don't start drag on node tap — reserve for pan
+      if (isMobile) return;
       const node = findNodeAtPoint(e.clientX, e.clientY);
       if (node) {
         isDraggingRef.current = true;
@@ -741,6 +824,13 @@ export default function GraphCanvas({
     const handleClick = (e: MouseEvent) => {
       if (isDraggingRef.current) return;
       const node = findNodeAtPoint(e.clientX, e.clientY);
+      if (isMobile && node) {
+        // On mobile, tap selects the node (shows in bottom card) instead of navigating
+        hoveredRef.current = node;
+        needsRenderRef.current = true;
+        onNodeHover(node, { x: e.clientX, y: e.clientY });
+        return;
+      }
       onNodeClick(node);
     };
 
@@ -755,7 +845,7 @@ export default function GraphCanvas({
       canvas.removeEventListener("pointerup", handleUp);
       canvas.removeEventListener("click", handleClick);
     };
-  }, [findNodeAtPoint, onNodeClick, onNodeHover, screenToSim]);
+  }, [findNodeAtPoint, onNodeClick, onNodeHover, screenToSim, isMobile]);
 
   // Zoom — d3-zoom with center offset baked into the initial transform
   useEffect(() => {
@@ -782,6 +872,7 @@ export default function GraphCanvas({
         needsRenderRef.current = true;
       });
 
+    zoomBehaviorRef.current = zoomBehavior;
     const selection = select(canvas);
     selection.call(zoomBehavior as any); // eslint-disable-line @typescript-eslint/no-explicit-any
 
@@ -817,6 +908,26 @@ export default function GraphCanvas({
       selection.on(".zoom", null);
     };
   }, [dimensions.width, dimensions.height]);
+
+  // Pan to focused node (mobile swipe navigation)
+  useEffect(() => {
+    if (!focusNodeId || !dimensions.width || !canvasRef.current) return;
+    const node = nodesRef.current.find((n) => n.id === focusNodeId);
+    if (!node) return;
+    const { width, height } = dimensions;
+    const k = transformRef.current.k;
+    const targetTransform = zoomIdentity
+      .translate(width / 2, height / 2)
+      .scale(k)
+      .translate(-node.x, -node.y);
+    const sel = select(canvasRef.current);
+    if (zoomBehaviorRef.current) {
+      sel
+        .transition()
+        .duration(300)
+        .call(zoomBehaviorRef.current.transform as any, targetTransform); // eslint-disable-line @typescript-eslint/no-explicit-any
+    }
+  }, [focusNodeId, dimensions]);
 
   return (
     <div ref={containerRef} className="w-full h-full">

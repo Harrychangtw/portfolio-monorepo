@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 import { AnimatePresence } from "motion/react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
+import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import GraphCanvas from "./graph-canvas";
 import NodePreviewCard from "./node-preview-card";
+import MobileNodeCard from "./mobile-node-card";
 import type { GraphData, GraphNode, SourceType, NodeType } from "./types";
 
 const LanguageSwitcher = dynamic(
@@ -14,9 +18,10 @@ const LanguageSwitcher = dynamic(
 );
 
 const SOURCE_TYPES: SourceType[] = ["post", "project", "gallery", "locale"];
-const NODE_TYPES: NodeType[] = ["file", "section", "image", "video", "tag"];
+const NODE_TYPES: NodeType[] = ["hub", "file", "section", "image", "video", "tag"];
 
 const NODE_TYPE_LABELS: Record<NodeType, string> = {
+  hub: "Hub",
   file: "File",
   section: "Section",
   image: "Image",
@@ -26,10 +31,17 @@ const NODE_TYPE_LABELS: Record<NodeType, string> = {
 
 export default function GraphPageClient() {
   const { language } = useLanguage();
+  const { startNavigation } = useNavigation();
+  const router = useRouter();
+  const isMobile = useIsMobile();
   const [graphData, setGraphData] = useState<GraphData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [centerNode, setCenterNode] = useState<GraphNode | null>(null);
+  const [focusNodeId, setFocusNodeId] = useState<string | null>(null);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
+  const visibleNodesRef = useRef<GraphNode[]>([]);
 
   // Sync locale filter with the global language switcher
   const filterLocale: "en" | "zh-TW" = language === "zh-TW" ? "zh-TW" : "en";
@@ -37,7 +49,7 @@ export default function GraphPageClient() {
     new Set(SOURCE_TYPES),
   );
   const [filterNodeTypes, setFilterNodeTypes] = useState<Set<NodeType>>(
-    new Set(["file", "section", "tag"]),
+    new Set(["hub", "file", "section", "tag", "image", "video"]),
   );
 
   useEffect(() => {
@@ -50,14 +62,37 @@ export default function GraphPageClient() {
       .catch((e) => setError(e.message));
   }, []);
 
-  const handleNodeClick = useCallback((node: GraphNode | null) => {
-    // Tag nodes are non-clickable
-    if (!node || node.nodeType === "tag") return;
-    // Navigate directly to the node's URL
-    if (node.url) {
-      window.open(node.url, "_blank", "noopener,noreferrer");
-    }
-  }, []);
+  const navigateToNode = useCallback(
+    (node: GraphNode) => {
+      if (!node.url) return;
+      try {
+        const target = new URL(node.url, window.location.origin);
+        // Treat harrychang.me URLs as internal even on localhost
+        const isInternal =
+          target.origin === window.location.origin ||
+          target.hostname.endsWith("harrychang.me");
+        if (isInternal) {
+          startNavigation();
+          setTimeout(() => {
+            router.push(target.pathname + target.search + target.hash);
+          }, 250);
+        } else {
+          window.open(node.url, "_blank", "noopener,noreferrer");
+        }
+      } catch {
+        window.open(node.url, "_blank", "noopener,noreferrer");
+      }
+    },
+    [startNavigation, router],
+  );
+
+  const handleNodeClick = useCallback(
+    (node: GraphNode | null) => {
+      if (!node || node.nodeType === "tag") return;
+      navigateToNode(node);
+    },
+    [navigateToNode],
+  );
 
   const handleNodeHover = useCallback(
     (node: GraphNode | null, cursorPos?: { x: number; y: number }) => {
@@ -93,6 +128,35 @@ export default function GraphPageClient() {
     });
   }, []);
 
+  // Mobile: handle center node change
+  const handleCenterNodeChange = useCallback((node: GraphNode | null) => {
+    setCenterNode(node);
+  }, []);
+
+  // Mobile: handle swipe to cycle through nodes
+  const handleSwipe = useCallback(
+    (direction: "left" | "right") => {
+      const nodes = visibleNodesRef.current;
+      if (nodes.length === 0) return;
+      const activeNode = centerNode || hoveredNode;
+      const currentIdx = activeNode
+        ? nodes.findIndex((n) => n.id === activeNode.id)
+        : -1;
+      let nextIdx: number;
+      if (direction === "left") {
+        nextIdx = currentIdx < nodes.length - 1 ? currentIdx + 1 : 0;
+      } else {
+        nextIdx = currentIdx > 0 ? currentIdx - 1 : nodes.length - 1;
+      }
+      const nextNode = nodes[nextIdx];
+      if (nextNode) {
+        setFocusNodeId(nextNode.id);
+        setCenterNode(nextNode);
+      }
+    },
+    [centerNode, hoveredNode],
+  );
+
   // Filter graph data
   const filteredData: GraphData | null = useMemo(() => {
     if (!graphData) return null;
@@ -103,6 +167,11 @@ export default function GraphPageClient() {
       if (!filterNodeTypes.has(n.nodeType)) return false;
       return true;
     });
+
+    // Keep visible nodes ref in sync for swipe navigation
+    visibleNodesRef.current = nodes.filter(
+      (n) => n.nodeType === "file" || n.nodeType === "hub",
+    );
 
     const nodeIds = new Set(nodes.map((n) => n.id));
     const edges = graphData.edges.filter(
@@ -146,80 +215,147 @@ export default function GraphPageClient() {
     );
   }
 
+  // The active node for mobile bottom card: tapped node or center node
+  const mobileActiveNode = hoveredNode || centerNode;
+
   return (
     <div className="relative w-full h-[calc(100vh-4rem)]">
       <GraphCanvas
         data={filteredData}
         onNodeClick={handleNodeClick}
         onNodeHover={handleNodeHover}
+        isMobile={isMobile}
+        onCenterNodeChange={isMobile ? handleCenterNodeChange : undefined}
+        focusNodeId={isMobile ? focusNodeId : undefined}
       />
 
       {/* Controls - top right */}
-      <div className="absolute top-4 right-4 z-10 flex flex-col gap-3">
-        {/* Stats */}
-        <div className="font-mono text-xs text-secondary/50">
-          {filteredData.nodes.length} nodes &middot; {filteredData.edges.length}{" "}
-          edges
+      {isMobile ? (
+        /* Mobile: compact toggle for filters */
+        <div className="absolute top-4 right-4 z-10">
+          <button
+            onClick={() => setShowMobileFilters((v) => !v)}
+            className="font-mono text-xs text-secondary bg-card/80 border border-border px-2 py-1"
+          >
+            {filteredData.nodes.length}n &middot; {filteredData.edges.length}e
+          </button>
+          {showMobileFilters && (
+            <div className="mt-2 bg-card border border-border p-2 flex flex-col gap-2 max-h-[60vh] overflow-y-auto">
+              <div className="flex items-center">
+                <LanguageSwitcher />
+              </div>
+              <div className="flex flex-wrap gap-1">
+                {SOURCE_TYPES.map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => toggleType(type)}
+                    className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors ${
+                      filterTypes.has(type)
+                        ? "border-border text-primary"
+                        : "border-border/30 text-secondary/50"
+                    }`}
+                  >
+                    <span
+                      className={`inline-block w-1.5 h-1.5 mr-1 ${
+                        filterTypes.has(type) ? "" : "opacity-30"
+                      }`}
+                      style={{
+                        backgroundColor: `hsl(var(--graph-node-${type}))`,
+                      }}
+                    />
+                    {type}
+                  </button>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-1 pt-1 border-t border-border/30">
+                {NODE_TYPES.map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => toggleNodeType(type)}
+                    className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors ${
+                      filterNodeTypes.has(type)
+                        ? "border-border text-primary"
+                        : "border-border/30 text-secondary/50"
+                    }`}
+                  >
+                    {NODE_TYPE_LABELS[type]}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-
-        {/* Language switcher (syncs graph locale filter) */}
-        <div className="flex items-center">
-          <LanguageSwitcher />
-        </div>
-
-        {/* Source type filter */}
-        <div className="flex flex-col gap-1">
-          {SOURCE_TYPES.map((type) => (
-            <button
-              key={type}
-              onClick={() => toggleType(type)}
-              className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors ${
-                filterTypes.has(type)
-                  ? "border-border text-primary"
-                  : "border-border/30 text-secondary/50"
-              }`}
-            >
-              <span
-                className={`inline-block w-2 h-2 mr-2 ${
-                  filterTypes.has(type) ? "" : "opacity-30"
+      ) : (
+        /* Desktop: full filter panel */
+        <div className="absolute top-4 right-4 z-10 flex flex-col gap-3">
+          <div className="font-mono text-xs text-secondary/50">
+            {filteredData.nodes.length} nodes &middot;{" "}
+            {filteredData.edges.length} edges
+          </div>
+          <div className="flex items-center">
+            <LanguageSwitcher />
+          </div>
+          <div className="flex flex-col gap-1">
+            {SOURCE_TYPES.map((type) => (
+              <button
+                key={type}
+                onClick={() => toggleType(type)}
+                className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors ${
+                  filterTypes.has(type)
+                    ? "border-border text-primary"
+                    : "border-border/30 text-secondary/50"
                 }`}
-                style={{
-                  backgroundColor: `hsl(var(--graph-node-${type}))`,
-                }}
-              />
-              {type}
-            </button>
-          ))}
+              >
+                <span
+                  className={`inline-block w-2 h-2 mr-2 ${
+                    filterTypes.has(type) ? "" : "opacity-30"
+                  }`}
+                  style={{
+                    backgroundColor: `hsl(var(--graph-node-${type}))`,
+                  }}
+                />
+                {type}
+              </button>
+            ))}
+          </div>
+          <div className="flex flex-col gap-1 pt-2 border-t border-border/30">
+            {NODE_TYPES.map((type) => (
+              <button
+                key={type}
+                onClick={() => toggleNodeType(type)}
+                className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors ${
+                  filterNodeTypes.has(type)
+                    ? "border-border text-primary"
+                    : "border-border/30 text-secondary/50"
+                }`}
+              >
+                {NODE_TYPE_LABELS[type]}
+              </button>
+            ))}
+          </div>
         </div>
+      )}
 
-        {/* Node type filter */}
-        <div className="flex flex-col gap-1 pt-2 border-t border-border/30">
-          {NODE_TYPES.map((type) => (
-            <button
-              key={type}
-              onClick={() => toggleNodeType(type)}
-              className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors ${
-                filterNodeTypes.has(type)
-                  ? "border-border text-primary"
-                  : "border-border/30 text-secondary/50"
-              }`}
-            >
-              {NODE_TYPE_LABELS[type]}
-            </button>
-          ))}
-        </div>
-      </div>
+      {/* Desktop: cursor-following preview tooltip */}
+      {!isMobile && (
+        <AnimatePresence>
+          {hoveredNode && (
+            <NodePreviewCard
+              key={hoveredNode.id}
+              node={hoveredNode}
+              cursorPosition={cursorPosition}
+            />
+          )}
+        </AnimatePresence>
+      )}
 
-      {/* Cursor-following preview tooltip */}
-      <AnimatePresence>
-        {hoveredNode && (
-          <NodePreviewCard
-            key={hoveredNode.id}
-            node={hoveredNode}
-            cursorPosition={cursorPosition}
-          />
-        )}
-      </AnimatePresence>
+      {/* Mobile: sticky bottom card */}
+      {isMobile && (
+        <MobileNodeCard
+          node={mobileActiveNode}
+          onSwipe={handleSwipe}
+        />
+      )}
     </div>
   );
 }

@@ -29,10 +29,17 @@ export function middleware(request: NextRequest) {
     hostname.includes("lab.harrychang.me") ||
     hostname.includes("lab.localhost");
 
-  // Handle graph subdomain
+  // Handle graph subdomain — redirect to main domain /graph
   const isGraph =
     hostname.includes("graph.harrychang.me") ||
     hostname.includes("graph.localhost");
+
+  if (isGraph) {
+    const newUrl = new URL(request.url);
+    newUrl.host = "www.harrychang.me";
+    newUrl.pathname = `/graph${url.pathname === "/" ? "" : url.pathname}`;
+    return NextResponse.redirect(newUrl, 308);
+  }
 
   // Paths that should NOT be rewritten (shared resources)
   const sharedPaths = [
@@ -72,19 +79,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
-  if (isGraph && !url.pathname.startsWith("/graph") && !isSharedPath) {
-    // Rewrite to graph routes (only for page routes)
-    url.pathname = `/graph${url.pathname}`;
-    return NextResponse.rewrite(url);
-  }
-
-  // Prevent accessing lab/graph routes from main domain in production
-  if (!isLab && !isGraph && url.pathname.startsWith("/lab")) {
-    url.pathname = "/";
-    return NextResponse.redirect(url);
-  }
-
-  if (!isGraph && !isLab && url.pathname.startsWith("/graph")) {
+  // Prevent accessing lab routes from main domain in production
+  if (!isLab && url.pathname.startsWith("/lab")) {
     url.pathname = "/";
     return NextResponse.redirect(url);
   }
