@@ -6,7 +6,7 @@ date: "2024-02-14"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8"
 location: "台南＆台中"
-tags: ["街頭攝影"]
+tags: ["Street Photography"]
 featured: true
 pinned: 8
 locked: false

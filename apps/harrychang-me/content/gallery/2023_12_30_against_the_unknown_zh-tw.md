@@ -6,7 +6,7 @@ date: "2023-12-30"
 camera: "FUJIFILM XT-5"
 lens: "FUJINON 100-400mm f/4.5-5.6"
 location: "瑞芳, 新北市"
-tags: ["風光攝影", "海洋"]
+tags: ["Landscape", "Ocean"]
 featured: true
 pinned: 18
 locked: false

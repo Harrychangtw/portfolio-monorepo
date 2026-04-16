@@ -6,7 +6,7 @@ date: "2024-04-06"
 camera: "FUJIFILM XT-5"
 lens: "VILTROX 75mm f/1.2, SIGMA 18-50mm f/2.8"
 location: "基隆"
-tags: ["街頭攝影"]
+tags: ["Street Photography"]
 featured: true
 pinned: 9
 locked: false
