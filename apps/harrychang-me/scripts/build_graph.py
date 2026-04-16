@@ -970,7 +970,6 @@ def main():
                 "updates": _header.get("updates", "Updates"),
                 "uses": _header.get("uses", "Setup"),
                 "cv": _header.get("cv", "Resume"),
-                "lab": _header.get("lab", "Icarus Lab"),
                 "linktree": _header.get("links", "Linktree"),
                 "reading": _common.get("readingList", {}).get("title", "Reading List")
                     if isinstance(_common.get("readingList"), dict)
@@ -1087,26 +1086,7 @@ def main():
             "mediaSource": None,
         })
 
-    # --- Icarus Lab hub (external subdomain) ---
-    for locale in ("en", "zh-TW"):
-        hub_id = f"hub-lab-{locale}"
-        title = _hub_title("lab", locale)
-        hub_nodes.append({
-            "id": hub_id,
-            "nodeType": "hub",
-            "title": title,
-            "snippet": title,
-            "sourceType": "locale",
-            "sourceSlug": "lab",
-            "locale": locale,
-            "url": "https://lab.harrychang.me",
-            "date": None,
-            "tags": [],
-            "heading": None,
-            "imageUrl": None,
-            "parentId": None,
-            "mediaSource": None,
-        })
+    
 
     # --- Linktree hub + social link nodes ---
     SOCIAL_LINKS = [

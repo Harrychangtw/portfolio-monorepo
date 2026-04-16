@@ -196,6 +196,12 @@ export default function GraphCanvas({
   const zoomBehaviorRef = useRef<any>(null);
   const magnetDebounceRef = useRef<number>(0);
   const lastMagnetTimeRef = useRef<number>(0);
+  const dimensionsRef = useRef(dimensions);
+
+  // Keep dimensionsRef in sync
+  useEffect(() => {
+    dimensionsRef.current = dimensions;
+  }, [dimensions]);
 
   // Initialize colors
   useEffect(() => {
@@ -731,8 +737,14 @@ export default function GraphCanvas({
             closestDist = dist;
           }
         }
-        if (closest?.id !== centerNodeRef.current) {
-          centerNodeRef.current = closest?.id ?? null;
+        // Only switch if the new closest node is significantly closer
+        // or if we don't have a current center node
+        const currentCenterId = centerNodeRef.current;
+        const shouldSwitch = !currentCenterId || 
+          (closest?.id !== currentCenterId && closestDist < 2500); // ~50px threshold
+        
+        if (closest && shouldSwitch && closest.id !== currentCenterId) {
+          centerNodeRef.current = closest.id;
           onCenterNodeChange(closest);
         }
       }
@@ -845,6 +857,21 @@ export default function GraphCanvas({
           hoveredRef.current = node;
           needsRenderRef.current = true;
           onNodeHover(node, { x: e.clientX, y: e.clientY });
+
+          // Snap the tapped node to the viewport center
+          if (zoomBehaviorRef.current) {
+            const { k } = transformRef.current;
+            const { width, height } = dimensionsRef.current;
+            const targetTransform = zoomIdentity
+              .translate(width / 2, height / 2)
+              .scale(k)
+              .translate(-node.x, -node.y);
+            select(canvas)
+              .transition()
+              .duration(350)
+              .ease((t) => t * (2 - t)) // ease-out quad
+              .call(zoomBehaviorRef.current.transform as any, targetTransform); // eslint-disable-line @typescript-eslint/no-explicit-any
+          }
         } else {
           // Tap on empty area defocuses
           hoveredRef.current = null;
@@ -899,7 +926,7 @@ export default function GraphCanvas({
           magnetDebounceRef.current = window.setTimeout(() => {
             const now = Date.now();
             // Throttle magnet animations to avoid jitter
-            if (now - lastMagnetTimeRef.current < 400) return;
+            if (now - lastMagnetTimeRef.current < 300) return;
             lastMagnetTimeRef.current = now;
 
             const nodes = nodesRef.current;
@@ -935,7 +962,7 @@ export default function GraphCanvas({
                 .ease((t) => t * (2 - t)) // ease-out quad
                 .call(zoomBehavior.transform as any, targetTransform); // eslint-disable-line @typescript-eslint/no-explicit-any
             }
-          }, 150);
+          }, 250);
         }
       });
 

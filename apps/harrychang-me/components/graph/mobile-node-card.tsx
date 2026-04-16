@@ -124,14 +124,14 @@ export default function MobileNodeCard({
   };
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {node && (
         <motion.div
           key={node.id}
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.25, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.15, ease: "easeOut" }}
           className="fixed bottom-0 left-0 right-0 z-50 pb-[env(safe-area-inset-bottom)]"
         >
           <CardWrapper>
@@ -188,11 +188,6 @@ export default function MobileNodeCard({
                     <span className="font-body text-xs px-2 py-0.5 rounded whitespace-nowrap bg-muted text-secondary">
                       {nodeTypeLabels[node.nodeType]}
                     </span>
-                    {!isRichContent && node.tags && node.tags.length > 0 && (
-                      <span className="font-mono text-[10px] text-secondary/70 truncate">
-                        {node.tags.slice(0, 3).join(" · ")}
-                      </span>
-                    )}
                   </div>
 
                   {/* Title */}

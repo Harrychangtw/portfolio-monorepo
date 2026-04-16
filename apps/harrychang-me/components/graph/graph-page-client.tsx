@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, easeOut, motion } from "motion/react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
@@ -14,6 +14,11 @@ import type { GraphData, GraphNode, SourceType, NodeType } from "./types";
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
+  { ssr: false },
+);
+
+const ThemeSwitcher = dynamic(
+  () => import("@portfolio/ui/theme-switcher"),
   { ssr: false },
 );
 
@@ -40,6 +45,8 @@ export default function GraphPageClient() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [centerNode, setCenterNode] = useState<GraphNode | null>(null);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
+  const centerNodeDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastCenterNodeRef = useRef<GraphNode | null>(null);
 
   // Sync locale filter with the global language switcher
   const filterLocale: "en" | "zh-TW" = language === "zh-TW" ? "zh-TW" : "en";
@@ -80,13 +87,13 @@ export default function GraphPageClient() {
           startNavigation();
           setTimeout(() => {
             router.push(target.pathname + target.search + target.hash);
-          }, 250);
+          }, 300);
         } else if (isCrossSubdomain) {
           // Different subdomain (e.g. lab.harrychang.me): same tab, full navigation
           startNavigation();
           setTimeout(() => {
             window.location.href = node.url;
-          }, 250);
+          }, 300);
         } else {
           // Truly external: same tab
           window.location.href = node.url;
@@ -142,9 +149,32 @@ export default function GraphPageClient() {
     });
   }, []);
 
-  // Mobile: handle center node change (magnet effect updates this automatically)
+  // Mobile: handle center node change with debouncing to prevent rapid flashing
   const handleCenterNodeChange = useCallback((node: GraphNode | null) => {
-    setCenterNode(node);
+    // Clear any pending update
+    if (centerNodeDebounceRef.current) {
+      clearTimeout(centerNodeDebounceRef.current);
+    }
+    
+    // If node is the same, no need to update
+    if (node?.id === lastCenterNodeRef.current?.id) {
+      return;
+    }
+    
+    // Debounce the update to prevent rapid switching during pan
+    centerNodeDebounceRef.current = setTimeout(() => {
+      lastCenterNodeRef.current = node;
+      setCenterNode(node);
+    }, 300); // 300ms debounce for smoother experience
+  }, []);
+  
+  // Cleanup debounce on unmount
+  useEffect(() => {
+    return () => {
+      if (centerNodeDebounceRef.current) {
+        clearTimeout(centerNodeDebounceRef.current);
+      }
+    };
   }, []);
 
   // Filter graph data
@@ -223,10 +253,18 @@ export default function GraphPageClient() {
           >
             {filteredData.nodes.length}n &middot; {filteredData.edges.length}e
           </button>
-          {showMobileFilters && (
-            <div className="mt-2 bg-card border border-border p-2 flex flex-col gap-2 max-h-[60vh] overflow-y-auto">
-              <div className="flex items-center">
+          <AnimatePresence>
+            {showMobileFilters && (
+              <motion.div
+                initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                transition={{ duration: 0.2, ease: easeOut }}
+                className="mt-2 bg-card border border-border p-2 flex flex-col gap-2 max-h-[60vh] overflow-y-auto origin-top-right"
+              >
+              <div className="flex items-center gap-6 min-h-[28px]">
                 <LanguageSwitcher />
+                <ThemeSwitcher />
               </div>
               <div className="flex flex-wrap gap-1">
                 {SOURCE_TYPES.map((type) => (
@@ -266,8 +304,9 @@ export default function GraphPageClient() {
                   </button>
                 ))}
               </div>
-            </div>
+            </motion.div>
           )}
+          </AnimatePresence>
         </div>
       ) : (
         /* Desktop: full filter panel */
@@ -276,8 +315,9 @@ export default function GraphPageClient() {
             {filteredData.nodes.length} nodes &middot;{" "}
             {filteredData.edges.length} edges
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center justify-between min-h-[28px]">
             <LanguageSwitcher />
+            <ThemeSwitcher />
           </div>
           <div className="flex flex-col gap-1">
             {SOURCE_TYPES.map((type) => (
