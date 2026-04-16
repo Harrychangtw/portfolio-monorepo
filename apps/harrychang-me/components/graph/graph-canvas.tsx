@@ -197,6 +197,9 @@ export default function GraphCanvas({
   const magnetDebounceRef = useRef<number>(0);
   const lastMagnetTimeRef = useRef<number>(0);
   const dimensionsRef = useRef(dimensions);
+  // Focus patch (mobile viewfinder): progress 0 = square/unlocked, 1 = circle/locked
+  const focusProgressRef = useRef(0);
+  const focusOffsetRef = useRef({ x: 0, y: 0 });
 
   // Keep dimensionsRef in sync
   useEffect(() => {
@@ -419,11 +422,18 @@ export default function GraphCanvas({
       const glowColor = glowColorRef.current;
       const parentEdgeKeys = parentEdgesRef.current;
 
-      // Build set of hovered-node neighbors for spotlight effect
-      const hoveredNeighbors = hovered
-        ? neighborMap.current.get(hovered.id)
+      // Build set of hovered-node neighbors for spotlight effect.
+      // On mobile, also treat the crosshair center node as the "effective hover"
+      // so its connections are highlighted even without an explicit tap.
+      const mobileCenterNode =
+        isMobile && centerNodeRef.current
+          ? nodes.find((n) => n.id === centerNodeRef.current) ?? null
+          : null;
+      const effectiveHover = hovered ?? mobileCenterNode;
+      const hoveredNeighbors = effectiveHover
+        ? neighborMap.current.get(effectiveHover.id)
         : null;
-      const hasHoverSpotlight = !!hovered;
+      const hasHoverSpotlight = !!effectiveHover;
 
       // Reset transform and clear
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -467,7 +477,8 @@ export default function GraphCanvas({
         const src = edge.source;
         const tgt = edge.target;
         const isConnectedToHover =
-          hovered && (src.id === hovered.id || tgt.id === hovered.id);
+          effectiveHover &&
+          (src.id === effectiveHover.id || tgt.id === effectiveHover.id);
         const isConnectedToSelected =
           selectedNodeId &&
           (src.id === selectedNodeId || tgt.id === selectedNodeId);
@@ -492,15 +503,11 @@ export default function GraphCanvas({
           ctx.strokeStyle = theme.foreground;
           ctx.globalAlpha = 0.9;
           ctx.lineWidth = 2.0 / k;
-        } else if (hasHoverSpotlight) {
-          ctx.strokeStyle = theme.secondary;
-          ctx.globalAlpha = 0.03;
-          ctx.lineWidth = 0.5 / k;
         } else {
-            ctx.strokeStyle = theme.secondary;
-            ctx.globalAlpha = 0.3;
-            ctx.lineWidth = 0.6 / k;
-          }
+          ctx.strokeStyle = theme.secondary;
+          ctx.globalAlpha = 0.3;
+          ctx.lineWidth = 0.6 / k;
+        }
         ctx.stroke();
         ctx.setLineDash([]);
       }
@@ -514,10 +521,10 @@ export default function GraphCanvas({
         const minScreenR = 1.5;
         const r = screenR < minScreenR ? minScreenR / k : baseR;
 
-        const isHovered = hovered?.id === node.id;
+        const isHovered = effectiveHover?.id === node.id;
         const isSelected = selectedNodeId === node.id;
         const isNeighborOfHover =
-          hovered && hoveredNeighbors?.has(node.id);
+          effectiveHover && hoveredNeighbors?.has(node.id);
         const isMedia = node.nodeType === "image" || node.nodeType === "video";
         const isHub = node.nodeType === "hub";
         const color = isHub
@@ -530,12 +537,12 @@ export default function GraphCanvas({
 
         // Determine node opacity based on hover spotlight and hierarchy
         const isSection = node.nodeType === "section";
-        let nodeAlpha = isHub ? 1 : isMedia ? 0.5 : isSection ? 0.55 : 0.85;
+        let nodeAlpha = isHub ? 1 : isMedia ? 0.5 : isSection ? 0.28 : 0.85;
         if (hasHoverSpotlight) {
           if (isHovered || isSelected || isNeighborOfHover) {
             nodeAlpha = 1;
           } else {
-            nodeAlpha = 0.12;
+            nodeAlpha = 0.50;
           }
         }
 
@@ -595,8 +602,8 @@ export default function GraphCanvas({
       // ─── Draw labels (anti-overlap, fixed screen size) ──────────────────
       // Sort nodes by priority so important labels render first and claim space
       const sortedNodes = [...nodes].sort((a, b) => {
-        const aHovered = hovered?.id === a.id ? 100 : 0;
-        const bHovered = hovered?.id === b.id ? 100 : 0;
+        const aHovered = effectiveHover?.id === a.id ? 100 : 0;
+        const bHovered = effectiveHover?.id === b.id ? 100 : 0;
         const aSelected = selectedNodeId === a.id ? 90 : 0;
         const bSelected = selectedNodeId === b.id ? 90 : 0;
         const aNeighbor = hovered && hoveredNeighbors?.has(a.id) ? 80 : 0;
@@ -640,10 +647,10 @@ export default function GraphCanvas({
         const minScreenR = 1.5;
         const r = screenR < minScreenR ? minScreenR / k : baseR;
 
-        const isHovered = hovered?.id === node.id;
+        const isHovered = effectiveHover?.id === node.id;
         const isSelected = selectedNodeId === node.id;
         const isNeighborOfHover =
-          hovered && hoveredNeighbors?.has(node.id);
+          effectiveHover && hoveredNeighbors?.has(node.id);
 
         // Determine label alpha based on state and zoom threshold
         let labelAlpha: number;
@@ -720,6 +727,114 @@ export default function GraphCanvas({
       }
 
       ctx.globalAlpha = 1;
+
+      // ─── Mobile: Focus patch (viewfinder crosshair) ─────────────────────
+      if (isMobile) {
+        // Reset to CSS-pixel screen space (keep DPR scale)
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        const cx = width / 2;
+        const cy = height / 2;
+
+        // Resolve locked node (if any)
+        const lockedId = centerNodeRef.current;
+        const lockedNode = lockedId
+          ? nodes.find((n) => n.id === lockedId) || null
+          : null;
+
+        // Animate lock progress (0 → 1 when locked, 1 → 0 when unlocked)
+        const target = lockedNode ? 1 : 0;
+        const prevProgress = focusProgressRef.current;
+        const nextProgress = prevProgress + (target - prevProgress) * 0.18;
+        if (Math.abs(target - prevProgress) > 0.002) {
+          focusProgressRef.current = nextProgress;
+          needsRenderRef.current = true;
+        } else {
+          focusProgressRef.current = target;
+        }
+        const progress = focusProgressRef.current;
+
+        // Containment box — patch can drift within ±BOX_HALF px of screen centre,
+        // scaled down so it magnets toward centre rather than fully tracking the node.
+        const BOX_HALF = 20;
+        const DRIFT_SCALE = 0.5;
+        let targetDx = 0;
+        let targetDy = 0;
+        if (lockedNode) {
+          const nsx = lockedNode.x * k + tx;
+          const nsy = lockedNode.y * k + ty;
+          const rawDx = nsx - cx;
+          const rawDy = nsy - cy;
+          targetDx = Math.max(-BOX_HALF, Math.min(BOX_HALF, rawDx)) * DRIFT_SCALE;
+          targetDy = Math.max(-BOX_HALF, Math.min(BOX_HALF, rawDy)) * DRIFT_SCALE;
+        }
+
+        // Smooth offset (also magnets back to 0,0 when unlocked)
+        const off = focusOffsetRef.current;
+        off.x += (targetDx - off.x) * 0.2;
+        off.y += (targetDy - off.y) * 0.2;
+        if (
+          Math.abs(targetDx - off.x) > 0.1 ||
+          Math.abs(targetDy - off.y) > 0.1
+        ) {
+          needsRenderRef.current = true;
+        }
+
+        const px = cx + off.x;
+        const py = cy + off.y;
+
+        // Size interpolation: square half-size → circle radius matching locked node
+        const squareHalf = 9;
+        const nodeScreenR = lockedNode
+          ? (nodeRadiusMap.current.get(lockedNode.id) || 1.5) * k
+          : 0;
+        const circleR = Math.max(nodeScreenR + 8, 14);
+        const size = squareHalf + (circleR - squareHalf) * progress;
+
+        // Colour: secondary (unlocked) → foreground/primary (locked)
+        const theme = themeColorsRef.current;
+        const strokeColor = progress > 0.5 ? theme.foreground : theme.secondary;
+
+        ctx.strokeStyle = strokeColor;
+        ctx.lineWidth = 1.5;
+        ctx.lineCap = "round";
+        ctx.globalAlpha = 0.7 + 0.3 * progress;
+        // Dashed when unfocused, solid when focused
+        if (progress > 0.98) {
+          ctx.setLineDash([]);
+        } else {
+          const dashLen = 4;
+          ctx.setLineDash([dashLen, dashLen]);
+        }
+
+        // Morphing square → rounded-rect → circle
+        ctx.beginPath();
+        if (progress < 0.02) {
+          ctx.rect(px - size, py - size, size * 2, size * 2);
+        } else if (progress > 0.98) {
+          ctx.arc(px, py, size, 0, Math.PI * 2);
+        } else {
+          const r = Math.min(size * progress, size);
+          const x0 = px - size;
+          const y0 = py - size;
+          const s = size * 2;
+          ctx.moveTo(x0 + r, y0);
+          ctx.lineTo(x0 + s - r, y0);
+          ctx.arcTo(x0 + s, y0, x0 + s, y0 + r, r);
+          ctx.lineTo(x0 + s, y0 + s - r);
+          ctx.arcTo(x0 + s, y0 + s, x0 + s - r, y0 + s, r);
+          ctx.lineTo(x0 + r, y0 + s);
+          ctx.arcTo(x0, y0 + s, x0, y0 + s - r, r);
+          ctx.lineTo(x0, y0 + r);
+          ctx.arcTo(x0, y0, x0 + r, y0, r);
+          ctx.closePath();
+        }
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.globalAlpha = 1;
+      }
+
       ctx.setTransform(1, 0, 0, 1, 0, 0);
 
       // ─── Mobile: find closest node to screen center ───────────────────
@@ -727,32 +842,43 @@ export default function GraphCanvas({
         const centerSimX = (width / 2 - tx) / k;
         const centerSimY = (height / 2 - ty) / k;
         let closest: SimulationNode | null = null;
-        let closestDist = Infinity;
+        let closestDistSq = Infinity;
         for (const node of nodes) {
           const dx = node.x - centerSimX;
           const dy = node.y - centerSimY;
-          const dist = dx * dx + dy * dy;
-          if (dist < closestDist) {
+          const distSq = dx * dx + dy * dy;
+          if (distSq < closestDistSq) {
             closest = node;
-            closestDist = dist;
+            closestDistSq = distSq;
           }
         }
-        // Only switch if the new closest node is significantly closer
-        // or if we don't have a current center node
+
+        // Screen-space focus threshold: 30px regardless of zoom level.
+        // Converting to sim-space: threshold_sim = threshold_px / k
+        const FOCUS_THRESHOLD_PX = 30;
+        const focusThresholdSim = FOCUS_THRESHOLD_PX / k;
+        const closestDist = Math.sqrt(closestDistSq);
         const currentCenterId = centerNodeRef.current;
-        const shouldSwitch = !currentCenterId || 
-          (closest?.id !== currentCenterId && closestDist < 2500); // ~50px threshold
-        
-        if (closest && shouldSwitch && closest.id !== currentCenterId) {
-          centerNodeRef.current = closest.id;
-          onCenterNodeChange(closest);
+
+        if (closest && closestDist < focusThresholdSim) {
+          // Focus on the nearest node if it changed
+          if (closest.id !== currentCenterId) {
+            centerNodeRef.current = closest.id;
+            onCenterNodeChange(closest);
+            needsRenderRef.current = true;
+          }
+        } else if (currentCenterId) {
+          // No node is close enough — defocus the crosshair
+          centerNodeRef.current = null;
+          onCenterNodeChange(null);
+          needsRenderRef.current = true;
         }
       }
     };
 
     animFrameRef.current = requestAnimationFrame(render);
     return () => cancelAnimationFrame(animFrameRef.current);
-  }, [dimensions, selectedNodeId, onCenterNodeChange]);
+  }, [dimensions, selectedNodeId, onCenterNodeChange, isMobile]);
 
   // Hit testing
   const findNodeAtPoint = useCallback(
@@ -875,8 +1001,10 @@ export default function GraphCanvas({
         } else {
           // Tap on empty area defocuses
           hoveredRef.current = null;
+          centerNodeRef.current = null;
           needsRenderRef.current = true;
           onNodeHover(null);
+          onCenterNodeChange?.(null);
         }
         return;
       }

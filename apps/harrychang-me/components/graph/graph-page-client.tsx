@@ -271,7 +271,7 @@ export default function GraphPageClient() {
                   <button
                     key={type}
                     onClick={() => toggleType(type)}
-                    className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors ${
+                    className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors bg-background ${
                       filterTypes.has(type)
                         ? "border-border text-primary"
                         : "border-border/30 text-secondary/50"
@@ -294,7 +294,7 @@ export default function GraphPageClient() {
                   <button
                     key={type}
                     onClick={() => toggleNodeType(type)}
-                    className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors ${
+                    className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors bg-background ${
                       filterNodeTypes.has(type)
                         ? "border-border text-primary"
                         : "border-border/30 text-secondary/50"
@@ -324,7 +324,7 @@ export default function GraphPageClient() {
               <button
                 key={type}
                 onClick={() => toggleType(type)}
-                className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors ${
+                className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors bg-background ${
                   filterTypes.has(type)
                     ? "border-border text-primary"
                     : "border-border/30 text-secondary/50"
@@ -347,7 +347,7 @@ export default function GraphPageClient() {
               <button
                 key={type}
                 onClick={() => toggleNodeType(type)}
-                className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors ${
+                className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors bg-background ${
                   filterNodeTypes.has(type)
                     ? "border-border text-primary"
                     : "border-border/30 text-secondary/50"

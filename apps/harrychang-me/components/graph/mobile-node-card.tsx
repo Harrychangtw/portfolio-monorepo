@@ -109,9 +109,9 @@ export default function MobileNodeCard({
     <>
       {/* Layout: horizontal split when image exists, vertical otherwise */}
       {hasImage ? (
-        <div className="flex h-28">
-          {/* Left: Image (50% width) */}
-          <div className="w-1/2 flex-shrink-0">
+        <div className="flex">
+          {/* Left: Image — strictly 3:2; width drives the card height */}
+          <div className="w-2/5 flex-shrink-0">
             <ImageContainer
               src={imageSrc}
               alt={node.title}
@@ -121,8 +121,8 @@ export default function MobileNodeCard({
             />
           </div>
 
-          {/* Right: Title top, tags bottom */}
-          <div className="w-1/2 flex">
+          {/* Right: Title top, tags bottom — stretches to match image height */}
+          <div className="flex-1 flex">
             <div className="flex-1 p-3 min-w-0 flex flex-col">
               {/* Title — top */}
               <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-2 flex-1">
