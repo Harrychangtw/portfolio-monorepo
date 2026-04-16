@@ -185,6 +185,8 @@ export default function GraphCanvas({
   const dragNodeRef = useRef<SimulationNode | null>(null);
   const isDraggingRef = useRef(false);
   const wasDraggingRef = useRef(false);
+  const dragMovedRef = useRef(false);
+  const dragStartClientRef = useRef({ x: 0, y: 0 });
   const needsRenderRef = useRef(true);
 
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
@@ -782,6 +784,11 @@ export default function GraphCanvas({
 
     const handleMove = (e: PointerEvent) => {
       if (isDraggingRef.current && dragNodeRef.current) {
+        const dx = e.clientX - dragStartClientRef.current.x;
+        const dy = e.clientY - dragStartClientRef.current.y;
+        if (!dragMovedRef.current && Math.sqrt(dx * dx + dy * dy) > 4) {
+          dragMovedRef.current = true;
+        }
         const { sx, sy } = screenToSim(e.clientX, e.clientY);
         dragNodeRef.current.fx = sx;
         dragNodeRef.current.fy = sy;
@@ -805,10 +812,12 @@ export default function GraphCanvas({
       // On mobile, don't start drag on node tap — reserve for pan
       if (isMobile) return;
       wasDraggingRef.current = false;
+      dragMovedRef.current = false;
       const node = findNodeAtPoint(e.clientX, e.clientY);
       if (node) {
         isDraggingRef.current = true;
         dragNodeRef.current = node;
+        dragStartClientRef.current = { x: e.clientX, y: e.clientY };
         const { sx, sy } = screenToSim(e.clientX, e.clientY);
         node.fx = sx;
         node.fy = sy;
@@ -818,19 +827,21 @@ export default function GraphCanvas({
       }
     };
 
+
     const handleUp = (e: PointerEvent) => {
       if (isDraggingRef.current && dragNodeRef.current) {
         dragNodeRef.current.fx = null;
         dragNodeRef.current.fy = null;
         simulationRef.current?.alphaTarget(0);
-        wasDraggingRef.current = true;
+        // Only suppress the subsequent click if the pointer genuinely moved
+        wasDraggingRef.current = dragMovedRef.current;
         isDraggingRef.current = false;
+        dragMovedRef.current = false;
         dragNodeRef.current = null;
         canvas.releasePointerCapture(e.pointerId);
         return;
       }
     };
-
     const handleClick = (e: MouseEvent) => {
       if (wasDraggingRef.current) {
         wasDraggingRef.current = false;

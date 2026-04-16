@@ -96,9 +96,17 @@ export default function PageTransition({ children }: { children: ReactNode }) {
 
       minWaitRef.current = window.setTimeout(() => {
         stopTimer();
-        setPhase("in");
-        phaseRef.current = "in";
-        scheduleIdle(800);
+        // Double RAF ensures the new page content has actually painted
+        // before we start revealing. Without this, the backdrop becomes
+        // transparent while the browser is still painting the new content,
+        // causing a black flash (visible as --background color).
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setPhase("in");
+            phaseRef.current = "in";
+            scheduleIdle(800);
+          });
+        });
       }, remaining);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
