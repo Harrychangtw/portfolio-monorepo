@@ -23,7 +23,7 @@ import type {
 interface GraphCanvasProps {
   data: GraphData;
   onNodeClick: (node: GraphNode | null) => void;
-  onNodeHover: (node: GraphNode | null) => void;
+  onNodeHover: (node: GraphNode | null, cursorPos?: { x: number; y: number }) => void;
   selectedNodeId?: string | null;
 }
 
@@ -52,15 +52,23 @@ function getTagColor(): string {
   return hsl ? `hsl(${hsl})` : "#3d9970";
 }
 
+function getMediaColor(): string {
+  const style = getComputedStyle(document.documentElement);
+  const secondary = style.getPropertyValue("--secondary").trim();
+  return secondary ? `hsl(${secondary})` : "#888";
+}
+
 function getThemeColors() {
   const style = getComputedStyle(document.documentElement);
   const bg = style.getPropertyValue("--background").trim();
   const fg = style.getPropertyValue("--foreground").trim();
   const secondary = style.getPropertyValue("--secondary").trim();
+  const card = style.getPropertyValue("--card").trim();
   return {
     background: bg ? `hsl(${bg})` : "#0a0a0a",
     foreground: fg ? `hsl(${fg})` : "#ffffff",
     secondary: secondary ? `hsl(${secondary})` : "#888",
+    card: card ? `hsl(${card})` : "#111",
   };
 }
 
@@ -150,6 +158,7 @@ export default function GraphCanvas({
   );
   const tagColorRef = useRef("#3d9970");
   const themeColorsRef = useRef(getThemeColors());
+  const mediaColorRef = useRef("#888");
   const glowColorRef = useRef("#eaff4b");
   const animFrameRef = useRef<number>(0);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -159,17 +168,20 @@ export default function GraphCanvas({
 
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
   const neighborMap = useRef<Map<string, Set<string>>>(new Map());
+  const parentEdgesRef = useRef<Set<string>>(new Set()); // "source|target" keys for structural parent edges to media nodes
 
   // Initialize colors
   useEffect(() => {
     nodeColorsRef.current = getNodeColors();
     tagColorRef.current = getTagColor();
+    mediaColorRef.current = getMediaColor();
     themeColorsRef.current = getThemeColors();
     glowColorRef.current = getGlowColor();
 
     const observer = new MutationObserver(() => {
       nodeColorsRef.current = getNodeColors();
       tagColorRef.current = getTagColor();
+      mediaColorRef.current = getMediaColor();
       themeColorsRef.current = getThemeColors();
       glowColorRef.current = getGlowColor();
       needsRenderRef.current = true;
@@ -220,6 +232,23 @@ export default function GraphCanvas({
       neighbors.get(edge.target)?.add(edge.source);
     }
     neighborMap.current = neighbors;
+
+    // Track structural edges to image/video nodes (for dashed rendering)
+    const parentEdgeKeys = new Set<string>();
+    const nodeTypeMap = new Map(data.nodes.map((n) => [n.id, n.nodeType]));
+    for (const edge of data.edges) {
+      if (edge.linkType === "structural") {
+        const targetType = nodeTypeMap.get(edge.target);
+        const sourceType = nodeTypeMap.get(edge.source);
+        if (targetType === "image" || targetType === "video") {
+          parentEdgeKeys.add(`${edge.source}|${edge.target}`);
+        }
+        if (sourceType === "image" || sourceType === "video") {
+          parentEdgeKeys.add(`${edge.target}|${edge.source}`);
+        }
+      }
+    }
+    parentEdgesRef.current = parentEdgeKeys;
 
     const maxConnections = Math.max(...connectionCount.values(), 1);
     for (const node of data.nodes) {
@@ -291,9 +320,9 @@ export default function GraphCanvas({
           .radius((d) => (nodeRadiusMap.current.get(d.id) || 1.5) + 0.5)
           .strength(0.9),
       )
-      .alphaDecay(0.032)
+      .alphaDecay(0.018)
       .alphaMin(0.001)
-      .velocityDecay(0.5)
+      .velocityDecay(0.6)
       .on("tick", () => {
         needsRenderRef.current = true;
       })
@@ -349,8 +378,10 @@ export default function GraphCanvas({
       const theme = themeColorsRef.current;
       const nodeColors = nodeColorsRef.current;
       const tagColor = tagColorRef.current;
+      const mediaColor = mediaColorRef.current;
       const hovered = hoveredRef.current;
       const glowColor = glowColorRef.current;
+      const parentEdgeKeys = parentEdgesRef.current;
 
       // Build set of hovered-node neighbors for spotlight effect
       const hoveredNeighbors = hovered
@@ -376,12 +407,24 @@ export default function GraphCanvas({
           selectedNodeId &&
           (src.id === selectedNodeId || tgt.id === selectedNodeId);
 
+        // Check if this is a parent-to-media edge (dashed)
+        const isParentMediaEdge =
+          parentEdgeKeys.has(`${src.id}|${tgt.id}`) ||
+          parentEdgeKeys.has(`${tgt.id}|${src.id}`);
+
         ctx.beginPath();
+        if (isParentMediaEdge && !isConnectedToHover && !isConnectedToSelected) {
+          // Dashed line for parent-to-media structural edges
+          const dashLen = 3 / k;
+          ctx.setLineDash([dashLen, dashLen]);
+        } else {
+          ctx.setLineDash([]);
+        }
         ctx.moveTo(src.x, src.y);
         ctx.lineTo(tgt.x, tgt.y);
 
         if (isConnectedToHover || isConnectedToSelected) {
-          ctx.strokeStyle = glowColor;
+          ctx.strokeStyle = theme.foreground;
           ctx.globalAlpha = 0.9;
           ctx.lineWidth = 1.5 / k;
         } else if (hasHoverSpotlight) {
@@ -389,8 +432,12 @@ export default function GraphCanvas({
           ctx.globalAlpha = 0.02;
           ctx.lineWidth = 0.3 / k;
         } else {
-          // Subtle differentiation by linkType
-          if (edge.linkType === "structural") {
+          if (isParentMediaEdge) {
+            // Dashed grey for media parent edges — slightly more visible
+            ctx.strokeStyle = mediaColor;
+            ctx.globalAlpha = 0.15;
+            ctx.lineWidth = 0.4 / k;
+          } else if (edge.linkType === "structural") {
             const srcColor = src.nodeType === "tag" ? tagColor : (nodeColors[src.sourceType] || "#888");
             ctx.strokeStyle = srcColor;
             ctx.globalAlpha = 0.06;
@@ -404,6 +451,7 @@ export default function GraphCanvas({
           ctx.lineWidth = 0.3 / k;
         }
         ctx.stroke();
+        ctx.setLineDash([]);
       }
       ctx.globalAlpha = 1;
 
@@ -419,8 +467,10 @@ export default function GraphCanvas({
         const isSelected = selectedNodeId === node.id;
         const isNeighborOfHover =
           hovered && hoveredNeighbors?.has(node.id);
-        const color =
-          node.nodeType === "tag"
+        const isMedia = node.nodeType === "image" || node.nodeType === "video";
+        const color = isMedia
+          ? mediaColor
+          : node.nodeType === "tag"
             ? tagColor
             : nodeColors[node.sourceType] || "#888";
 
@@ -512,10 +562,12 @@ export default function GraphCanvas({
       // Fixed screen-space font size (10px on screen regardless of zoom)
       const screenFontSize = 10;
       const simFontSize = screenFontSize / k;
+      const labelPadH = 3 / k; // horizontal padding in sim coords
+      const labelPadV = 1.5 / k; // vertical padding in sim coords
 
       ctx.font = `${simFontSize}px sans-serif`;
       ctx.textAlign = "center";
-      ctx.textBaseline = "top";
+      ctx.textBaseline = "bottom";
 
       for (const node of sortedNodes) {
         const baseR = nodeRadiusMap.current.get(node.id) || 1.5;
@@ -539,35 +591,43 @@ export default function GraphCanvas({
           labelAlpha = 0.8;
           maxChars = 30;
         } else if (hasHoverSpotlight) {
-          // During hover, only show labels for hovered + neighbors
           labelAlpha = 0;
           maxChars = 0;
         } else {
-          // Zoom-based visibility per node type
           const threshold = LABEL_ZOOM_THRESHOLD[node.nodeType] || 2.0;
           if (k < threshold) {
             labelAlpha = 0;
             maxChars = 0;
           } else {
-            // Linear fade-in over 0.3k range
-            labelAlpha = Math.min(0.5, (k - threshold) / 0.3 * 0.5);
+            labelAlpha = Math.min(0.7, (k - threshold) / 0.3 * 0.7);
             maxChars = node.nodeType === "file" ? 30 : 20;
           }
         }
 
         if (labelAlpha <= 0) continue;
 
+        // Section nodes: prefer heading over title to avoid showing post title
+        const rawLabel = node.nodeType === "section" && node.heading
+          ? node.heading
+          : node.title;
         const label =
-          node.title.length > maxChars
-            ? node.title.slice(0, maxChars - 2) + "..."
-            : node.title;
+          rawLabel.length > maxChars
+            ? rawLabel.slice(0, maxChars - 2) + "..."
+            : rawLabel;
+
+        // Label positioned ABOVE the node
+        const labelWidth = ctx.measureText(label).width;
+        const labelY = node.y - r - 2 / k; // above the node
+        const bgX = node.x - labelWidth / 2 - labelPadH;
+        const bgY = labelY - simFontSize - labelPadV;
+        const bgW = labelWidth + labelPadH * 2;
+        const bgH = simFontSize + labelPadV * 2;
 
         // Compute screen-space bounding box for overlap check
-        const labelWidth = ctx.measureText(label).width;
-        const screenLabelX = (node.x - labelWidth / 2) * k + tx;
-        const screenLabelY = (node.y + r + 2 / k) * k + ty;
-        const screenLabelW = labelWidth * k;
-        const screenLabelH = screenFontSize * 1.2;
+        const screenLabelX = bgX * k + tx;
+        const screenLabelY = bgY * k + ty;
+        const screenLabelW = bgW * k;
+        const screenLabelH = bgH * k;
 
         // Skip if it would overlap (unless it's the hovered/selected node)
         if (!isHovered && !isSelected) {
@@ -576,7 +636,6 @@ export default function GraphCanvas({
           }
         }
 
-        // Register this label's bounding box
         occupiedBoxes.push({
           x: screenLabelX,
           y: screenLabelY,
@@ -584,9 +643,15 @@ export default function GraphCanvas({
           h: screenLabelH,
         });
 
+        // Draw background rectangle
+        ctx.fillStyle = theme.card;
+        ctx.globalAlpha = labelAlpha * 0.85;
+        ctx.fillRect(bgX, bgY, bgW, bgH);
+
+        // Draw label text
         ctx.fillStyle = themeColorsRef.current.foreground;
         ctx.globalAlpha = labelAlpha;
-        ctx.fillText(label, node.x, node.y + r + 2 / k);
+        ctx.fillText(label, node.x, labelY);
       }
 
       ctx.globalAlpha = 1;
@@ -633,7 +698,7 @@ export default function GraphCanvas({
         const { sx, sy } = screenToSim(e.clientX, e.clientY);
         dragNodeRef.current.fx = sx;
         dragNodeRef.current.fy = sy;
-        simulationRef.current?.alpha(0.05).restart();
+        simulationRef.current?.alpha(0.03).restart();
         return;
       }
 
@@ -642,7 +707,7 @@ export default function GraphCanvas({
         hoveredRef.current = node;
         needsRenderRef.current = true;
         canvas.style.cursor = node ? "pointer" : "grab";
-        onNodeHover(node);
+        onNodeHover(node, node ? { x: e.clientX, y: e.clientY } : undefined);
       }
     };
 
@@ -654,7 +719,7 @@ export default function GraphCanvas({
         const { sx, sy } = screenToSim(e.clientX, e.clientY);
         node.fx = sx;
         node.fy = sy;
-        simulationRef.current?.alphaTarget(0.05).restart();
+        simulationRef.current?.alphaTarget(0.03).restart();
         canvas.setPointerCapture(e.pointerId);
         e.stopPropagation();
       }

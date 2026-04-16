@@ -1,10 +1,17 @@
 "use client";
 
 import { useEffect, useState, useCallback, useMemo } from "react";
+import dynamic from "next/dynamic";
 import { AnimatePresence } from "motion/react";
+import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import GraphCanvas from "./graph-canvas";
 import NodePreviewCard from "./node-preview-card";
 import type { GraphData, GraphNode, SourceType, NodeType } from "./types";
+
+const LanguageSwitcher = dynamic(
+  () => import("@portfolio/ui/language-switcher"),
+  { ssr: false },
+);
 
 const SOURCE_TYPES: SourceType[] = ["post", "project", "gallery", "locale"];
 const NODE_TYPES: NodeType[] = ["file", "section", "image", "video", "tag"];
@@ -18,13 +25,14 @@ const NODE_TYPE_LABELS: Record<NodeType, string> = {
 };
 
 export default function GraphPageClient() {
+  const { language } = useLanguage();
   const [graphData, setGraphData] = useState<GraphData | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
   const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
-  const [filterLocale, setFilterLocale] = useState<"all" | "en" | "zh-TW">(
-    "all",
-  );
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  // Sync locale filter with the global language switcher
+  const filterLocale: "en" | "zh-TW" = language === "zh-TW" ? "zh-TW" : "en";
   const [filterTypes, setFilterTypes] = useState<Set<SourceType>>(
     new Set(SOURCE_TYPES),
   );
@@ -44,13 +52,22 @@ export default function GraphPageClient() {
 
   const handleNodeClick = useCallback((node: GraphNode | null) => {
     // Tag nodes are non-clickable
-    if (node && node.nodeType === "tag") return;
-    setSelectedNode(node);
+    if (!node || node.nodeType === "tag") return;
+    // Navigate directly to the node's URL
+    if (node.url) {
+      window.open(node.url, "_blank", "noopener,noreferrer");
+    }
   }, []);
 
-  const handleNodeHover = useCallback((node: GraphNode | null) => {
-    setHoveredNode(node);
-  }, []);
+  const handleNodeHover = useCallback(
+    (node: GraphNode | null, cursorPos?: { x: number; y: number }) => {
+      setHoveredNode(node);
+      if (cursorPos) {
+        setCursorPosition(cursorPos);
+      }
+    },
+    [],
+  );
 
   const toggleType = useCallback((type: SourceType) => {
     setFilterTypes((prev) => {
@@ -81,7 +98,7 @@ export default function GraphPageClient() {
     if (!graphData) return null;
 
     const nodes = graphData.nodes.filter((n) => {
-      if (filterLocale !== "all" && n.locale !== filterLocale) return false;
+      if (n.locale !== filterLocale) return false;
       if (!filterTypes.has(n.sourceType) && n.nodeType !== "tag") return false;
       if (!filterNodeTypes.has(n.nodeType)) return false;
       return true;
@@ -129,16 +146,12 @@ export default function GraphPageClient() {
     );
   }
 
-  // Node to show in preview (hovered takes priority, then selected)
-  const previewNode = hoveredNode || selectedNode;
-
   return (
     <div className="relative w-full h-[calc(100vh-4rem)]">
       <GraphCanvas
         data={filteredData}
         onNodeClick={handleNodeClick}
         onNodeHover={handleNodeHover}
-        selectedNodeId={selectedNode?.id}
       />
 
       {/* Controls - top right */}
@@ -149,21 +162,9 @@ export default function GraphPageClient() {
           edges
         </div>
 
-        {/* Locale filter */}
-        <div className="flex gap-1">
-          {(["all", "en", "zh-TW"] as const).map((loc) => (
-            <button
-              key={loc}
-              onClick={() => setFilterLocale(loc)}
-              className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border transition-colors ${
-                filterLocale === loc
-                  ? "border-accent text-accent bg-accent/10"
-                  : "border-border text-secondary hover:text-primary hover:border-primary/30"
-              }`}
-            >
-              {loc === "all" ? "All" : loc === "zh-TW" ? "ZH" : "EN"}
-            </button>
-          ))}
+        {/* Language switcher (syncs graph locale filter) */}
+        <div className="flex items-center">
+          <LanguageSwitcher />
         </div>
 
         {/* Source type filter */}
@@ -209,16 +210,13 @@ export default function GraphPageClient() {
         </div>
       </div>
 
-      {/* Preview card - bottom center (shows on hover or click) */}
+      {/* Cursor-following preview tooltip */}
       <AnimatePresence>
-        {previewNode && (
+        {hoveredNode && (
           <NodePreviewCard
-            key={previewNode.id}
-            node={previewNode}
-            onClose={() => {
-              setSelectedNode(null);
-              setHoveredNode(null);
-            }}
+            key={hoveredNode.id}
+            node={hoveredNode}
+            cursorPosition={cursorPosition}
           />
         )}
       </AnimatePresence>
