@@ -67,18 +67,23 @@ export default function GraphPageClient() {
       if (!node.url) return;
       try {
         const target = new URL(node.url, window.location.origin);
-        const isSameOrigin =
+        // Treat www.harrychang.me as internal (graph-data.json has absolute URLs)
+        const mainHost = window.location.hostname.replace(/^www\./, "");
+        const targetHost = target.hostname.replace(/^www\./, "");
+        const isMainDomain =
           target.origin === window.location.origin ||
-          (target.hostname.endsWith("harrychang.me") &&
-            target.hostname.replace(/^www\./, "") ===
-              window.location.hostname.replace(/^www\./, ""));
-        if (isSameOrigin) {
-          // Same host: use router for page transition
+          targetHost === mainHost ||
+          targetHost === "harrychang.me";
+        const isCrossSubdomain =
+          target.hostname.endsWith("harrychang.me") && !isMainDomain;
+
+        if (isMainDomain) {
+          // Same domain: use router for page transition
           startNavigation();
           setTimeout(() => {
             router.push(target.pathname + target.search + target.hash);
           }, 250);
-        } else if (target.hostname.endsWith("harrychang.me")) {
+        } else if (isCrossSubdomain) {
           // Different subdomain (e.g. lab.harrychang.me): same tab, full navigation
           startNavigation();
           setTimeout(() => {
@@ -105,8 +110,9 @@ export default function GraphPageClient() {
 
   const handleNodeHover = useCallback(
     (node: GraphNode | null, cursorPos?: { x: number; y: number }) => {
-      // Hub nodes don't show hover cards
-      setHoveredNode(node?.nodeType === "hub" ? null : node);
+      // Only show hover cards for files (posts/projects/gallery), images, and videos
+      const showCard = node?.nodeType === "file" || node?.nodeType === "image" || node?.nodeType === "video";
+      setHoveredNode(showCard ? node : null);
       if (cursorPos) {
         setCursorPosition(cursorPos);
       }

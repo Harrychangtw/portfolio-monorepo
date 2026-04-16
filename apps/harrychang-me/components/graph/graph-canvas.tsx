@@ -184,6 +184,7 @@ export default function GraphCanvas({
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const dragNodeRef = useRef<SimulationNode | null>(null);
   const isDraggingRef = useRef(false);
+  const wasDraggingRef = useRef(false);
   const needsRenderRef = useRef(true);
 
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
@@ -477,29 +478,29 @@ export default function GraphCanvas({
         if (isConnectedToHover || isConnectedToSelected) {
           ctx.strokeStyle = theme.foreground;
           ctx.globalAlpha = 0.9;
-          ctx.lineWidth = 1.5 / k;
+          ctx.lineWidth = 2.0 / k;
         } else if (hasHoverSpotlight) {
           ctx.strokeStyle = theme.secondary;
-          ctx.globalAlpha = 0.02;
-          ctx.lineWidth = 0.3 / k;
+          ctx.globalAlpha = 0.03;
+          ctx.lineWidth = 0.5 / k;
         } else {
           if (isParentMediaEdge) {
-            // Dashed grey for media parent edges — slightly more visible
+            // Dashed grey for media parent edges
             ctx.strokeStyle = mediaColor;
-            ctx.globalAlpha = 0.15;
-            ctx.lineWidth = 0.4 / k;
+            ctx.globalAlpha = 0.2;
+            ctx.lineWidth = 0.6 / k;
           } else if (edge.linkType === "structural") {
             const srcColor = src.nodeType === "tag" ? tagColor : (nodeColors[src.sourceType] || "#888");
             ctx.strokeStyle = srcColor;
-            ctx.globalAlpha = 0.06;
+            ctx.globalAlpha = 0.12;
           } else if (edge.linkType === "tag") {
             ctx.strokeStyle = tagColor;
-            ctx.globalAlpha = 0.05;
+            ctx.globalAlpha = 0.1;
           } else {
             ctx.strokeStyle = theme.secondary;
-            ctx.globalAlpha = 0.04 + edge.weight * 0.06;
+            ctx.globalAlpha = 0.06 + edge.weight * 0.1;
           }
-          ctx.lineWidth = 0.3 / k;
+          ctx.lineWidth = 0.6 / k;
         }
         ctx.stroke();
         ctx.setLineDash([]);
@@ -803,6 +804,7 @@ export default function GraphCanvas({
     const handleDown = (e: PointerEvent) => {
       // On mobile, don't start drag on node tap — reserve for pan
       if (isMobile) return;
+      wasDraggingRef.current = false;
       const node = findNodeAtPoint(e.clientX, e.clientY);
       if (node) {
         isDraggingRef.current = true;
@@ -821,6 +823,7 @@ export default function GraphCanvas({
         dragNodeRef.current.fx = null;
         dragNodeRef.current.fy = null;
         simulationRef.current?.alphaTarget(0);
+        wasDraggingRef.current = true;
         isDraggingRef.current = false;
         dragNodeRef.current = null;
         canvas.releasePointerCapture(e.pointerId);
@@ -829,7 +832,10 @@ export default function GraphCanvas({
     };
 
     const handleClick = (e: MouseEvent) => {
-      if (isDraggingRef.current) return;
+      if (wasDraggingRef.current) {
+        wasDraggingRef.current = false;
+        return;
+      }
       const node = findNodeAtPoint(e.clientX, e.clientY);
       if (isMobile && node) {
         // On mobile, tap selects the node (shows in bottom card) instead of navigating
