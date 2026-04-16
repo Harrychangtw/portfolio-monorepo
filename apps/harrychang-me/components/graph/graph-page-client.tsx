@@ -39,9 +39,7 @@ export default function GraphPageClient() {
   const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [centerNode, setCenterNode] = useState<GraphNode | null>(null);
-  const [focusNodeId, setFocusNodeId] = useState<string | null>(null);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
-  const visibleNodesRef = useRef<GraphNode[]>([]);
 
   // Sync locale filter with the global language switcher
   const filterLocale: "en" | "zh-TW" = language === "zh-TW" ? "zh-TW" : "en";
@@ -144,34 +142,10 @@ export default function GraphPageClient() {
     });
   }, []);
 
-  // Mobile: handle center node change
+  // Mobile: handle center node change (magnet effect updates this automatically)
   const handleCenterNodeChange = useCallback((node: GraphNode | null) => {
     setCenterNode(node);
   }, []);
-
-  // Mobile: handle swipe to cycle through nodes
-  const handleSwipe = useCallback(
-    (direction: "left" | "right") => {
-      const nodes = visibleNodesRef.current;
-      if (nodes.length === 0) return;
-      const activeNode = centerNode || hoveredNode;
-      const currentIdx = activeNode
-        ? nodes.findIndex((n) => n.id === activeNode.id)
-        : -1;
-      let nextIdx: number;
-      if (direction === "left") {
-        nextIdx = currentIdx < nodes.length - 1 ? currentIdx + 1 : 0;
-      } else {
-        nextIdx = currentIdx > 0 ? currentIdx - 1 : nodes.length - 1;
-      }
-      const nextNode = nodes[nextIdx];
-      if (nextNode) {
-        setFocusNodeId(nextNode.id);
-        setCenterNode(nextNode);
-      }
-    },
-    [centerNode, hoveredNode],
-  );
 
   // Filter graph data
   const filteredData: GraphData | null = useMemo(() => {
@@ -183,11 +157,6 @@ export default function GraphPageClient() {
       if (!filterNodeTypes.has(n.nodeType)) return false;
       return true;
     });
-
-    // Keep visible nodes ref in sync for swipe navigation
-    visibleNodesRef.current = nodes.filter(
-      (n) => n.nodeType === "file" || n.nodeType === "hub",
-    );
 
     const nodeIds = new Set(nodes.map((n) => n.id));
     const edges = graphData.edges.filter(
@@ -242,7 +211,6 @@ export default function GraphPageClient() {
         onNodeHover={handleNodeHover}
         isMobile={isMobile}
         onCenterNodeChange={isMobile ? handleCenterNodeChange : undefined}
-        focusNodeId={isMobile ? focusNodeId : undefined}
       />
 
       {/* Controls - top right */}
@@ -369,7 +337,6 @@ export default function GraphPageClient() {
       {isMobile && (
         <MobileNodeCard
           node={mobileActiveNode}
-          onSwipe={handleSwipe}
         />
       )}
     </div>

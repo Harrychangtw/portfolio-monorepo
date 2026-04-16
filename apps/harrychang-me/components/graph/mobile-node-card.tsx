@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ImageContainer } from "@portfolio/ui/image-container";
 import NavigationLink from "@portfolio/ui/navigation-link";
@@ -63,36 +62,11 @@ function toInternalPath(url: string): string {
 
 interface MobileNodeCardProps {
   node: GraphNode | null;
-  onSwipe: (direction: "left" | "right") => void;
 }
 
 export default function MobileNodeCard({
   node,
-  onSwipe,
 }: MobileNodeCardProps) {
-  const touchStartX = useRef(0);
-  const touchDeltaX = useRef(0);
-  const isSwiping = useRef(false);
-
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchDeltaX.current = 0;
-    isSwiping.current = false;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchDeltaX.current = e.touches[0].clientX - touchStartX.current;
-    if (Math.abs(touchDeltaX.current) > 20) {
-      isSwiping.current = true;
-    }
-  };
-
-  const handleTouchEnd = () => {
-    if (isSwiping.current && Math.abs(touchDeltaX.current) > 60) {
-      onSwipe(touchDeltaX.current > 0 ? "right" : "left");
-    }
-    isSwiping.current = false;
-  };
 
   const normalizePath = (p: string) =>
     p.startsWith("http") ? p : p.startsWith("/") ? p : `/${p}`;
@@ -115,6 +89,40 @@ export default function MobileNodeCard({
 
   const hasImage = !!imageSrc && !isTag && !isHub;
 
+  // Only show description for project / gallery / blog post file nodes
+  const isRichContent =
+    node?.nodeType === "file" &&
+    (node.sourceType === "project" ||
+      node.sourceType === "gallery" ||
+      node.sourceType === "post");
+
+  // Wrapper component that handles navigation for the entire card
+  const CardWrapper = ({ children }: { children: React.ReactNode }) => {
+    if (!node?.url || isTag) {
+      return <div className="mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg">{children}</div>;
+    }
+    
+    if (isInternalUrl(node.url)) {
+      return (
+        <NavigationLink
+          href={toInternalPath(node.url)}
+          className="mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg block active:scale-[0.98] transition-transform"
+        >
+          {children}
+        </NavigationLink>
+      );
+    }
+    
+    return (
+      <a
+        href={node.url}
+        className="mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg block active:scale-[0.98] transition-transform"
+      >
+        {children}
+      </a>
+    );
+  };
+
   return (
     <AnimatePresence>
       {node && (
@@ -125,112 +133,85 @@ export default function MobileNodeCard({
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
           className="fixed bottom-0 left-0 right-0 z-50 pb-[env(safe-area-inset-bottom)]"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
         >
-          <div className="mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg">
-            <div className="flex items-stretch">
-              {/* Image thumbnail (left side) */}
-              {hasImage && (
-                <div className="w-24 flex-shrink-0">
+          <CardWrapper>
+            {/* Layout: horizontal split when image exists, vertical otherwise */}
+            {hasImage ? (
+              <div className="flex h-28">
+                {/* Left: Image (50% width) */}
+                <div className="w-1/2 flex-shrink-0">
                   <ImageContainer
                     src={imageSrc}
                     alt={node.title}
-                    noInsetPadding={false}
+                    aspectRatio={1.5}
+                    noInsetPadding
                     quality={60}
-                    sizes="96px"
-                    imgClassName="object-cover"
                   />
                 </div>
-              )}
 
-              {/* Content (right side) */}
-              <div className="flex-1 p-3 min-w-0">
-                {/* Badges */}
-                <div className="flex items-center gap-2 flex-wrap mb-1.5">
-                  {!isTag && (
-                    <span
-                      className={`font-body text-xs px-2 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
-                    >
-                      {sourceLabels[node.sourceType]}
-                    </span>
-                  )}
-                  <span className="font-body text-xs px-2 py-0.5 rounded whitespace-nowrap bg-muted text-secondary">
-                    {nodeTypeLabels[node.nodeType]}
-                  </span>
+                {/* Right: Title top, tags bottom */}
+                <div className="w-1/2 flex">
+                  <div className="flex-1 p-3 min-w-0 flex flex-col">
+                    {/* Title — top */}
+                    <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-2 flex-1">
+                      {node.nodeType === "section" && node.heading
+                        ? node.heading
+                        : node.title}
+                    </h3>
+
+                    {/* Source badge + tags — bottom */}
+                    <div className="mt-auto flex items-center gap-1.5 flex-wrap">
+                      {!isTag && (
+                        <span
+                          className={`font-body text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
+                        >
+                          {sourceLabels[node.sourceType]}
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </div>
-
-                {/* Title */}
-                <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-1 mb-1">
-                  {node.nodeType === "section" && node.heading
-                    ? node.heading
-                    : node.title}
-                </h3>
-
-                {/* Description */}
-                {(node.description || node.snippet) && (
-                  <p className="text-xs text-secondary leading-relaxed line-clamp-1">
-                    {node.description || node.snippet}
-                  </p>
-                )}
               </div>
+            ) : (
+              /* No image: compact vertical layout */
+              <div className="flex items-stretch">
+                <div className="flex-1 p-3 min-w-0">
+                  {/* Badges */}
+                  <div className="flex items-center gap-2 flex-wrap mb-1.5">
+                    {!isTag && (
+                      <span
+                        className={`font-body text-xs px-2 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
+                      >
+                        {sourceLabels[node.sourceType]}
+                      </span>
+                    )}
+                    <span className="font-body text-xs px-2 py-0.5 rounded whitespace-nowrap bg-muted text-secondary">
+                      {nodeTypeLabels[node.nodeType]}
+                    </span>
+                    {!isRichContent && node.tags && node.tags.length > 0 && (
+                      <span className="font-mono text-[10px] text-secondary/70 truncate">
+                        {node.tags.slice(0, 3).join(" · ")}
+                      </span>
+                    )}
+                  </div>
 
-              {/* Navigate link */}
-              {node.url && !isTag && (
-                isInternalUrl(node.url) ? (
-                  <NavigationLink
-                    href={toInternalPath(node.url)}
-                    className="flex-shrink-0 flex items-center justify-center w-12 border-l border-border text-secondary hover:text-primary hover:bg-muted/50 transition-colors"
-                    aria-label="Open"
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      className="text-current"
-                    >
-                      <path
-                        d="M6 3L11 8L6 13"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </NavigationLink>
-                ) : (
-                  <a
-                    href={node.url}
-                    className="flex-shrink-0 flex items-center justify-center w-12 border-l border-border text-secondary hover:text-primary hover:bg-muted/50 transition-colors"
-                    aria-label="Open link"
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      className="text-current"
-                    >
-                      <path
-                        d="M6 3L11 8L6 13"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </a>
-                )
-              )}
-            </div>
+                  {/* Title */}
+                  <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-1 mb-1">
+                    {node.nodeType === "section" && node.heading
+                      ? node.heading
+                      : node.title}
+                  </h3>
 
-            {/* Swipe indicator */}
-            <div className="flex justify-center pb-2 pt-1">
-              <div className="w-8 h-1 rounded-full bg-muted" />
-            </div>
-          </div>
+                  {/* Description */}
+                  {isRichContent && (node.description || node.snippet) && (
+                    <p className="text-xs text-secondary leading-relaxed line-clamp-2">
+                      {node.description || node.snippet}
+                    </p>
+                  )}
+                </div>
+              </div>
+            )}
+          </CardWrapper>
         </motion.div>
       )}
     </AnimatePresence>

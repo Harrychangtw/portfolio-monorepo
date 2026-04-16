@@ -28,7 +28,6 @@ interface GraphCanvasProps {
   selectedNodeId?: string | null;
   isMobile?: boolean;
   onCenterNodeChange?: (node: GraphNode | null) => void;
-  focusNodeId?: string | null;
 }
 
 /* ─── Color helpers ────────────────────────────────────────────────────────── */
@@ -162,7 +161,6 @@ export default function GraphCanvas({
   selectedNodeId,
   isMobile,
   onCenterNodeChange,
-  focusNodeId,
 }: GraphCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -188,12 +186,16 @@ export default function GraphCanvas({
   const dragMovedRef = useRef(false);
   const dragStartClientRef = useRef({ x: 0, y: 0 });
   const needsRenderRef = useRef(true);
+  const gridCanvasRef = useRef<OffscreenCanvas | null>(null);
+  const lastGridParamsRef = useRef({ tx: 0, ty: 0, k: 1, w: 0, h: 0 });
 
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
   const neighborMap = useRef<Map<string, Set<string>>>(new Map());
   const parentEdgesRef = useRef<Set<string>>(new Set()); // "source|target" keys for structural parent edges to media nodes
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const zoomBehaviorRef = useRef<any>(null);
+  const magnetDebounceRef = useRef<number>(0);
+  const lastMagnetTimeRef = useRef<number>(0);
 
   // Initialize colors
   useEffect(() => {
@@ -349,7 +351,10 @@ export default function GraphCanvas({
       .alphaMin(0.001)
       .velocityDecay(0.6)
       .on("tick", () => {
-        needsRenderRef.current = true;
+        // Only request render if simulation is actively moving nodes
+        if (sim.alpha() > 0.001) {
+          needsRenderRef.current = true;
+        }
       })
       .on("end", () => {
         needsRenderRef.current = true;
@@ -486,24 +491,10 @@ export default function GraphCanvas({
           ctx.globalAlpha = 0.03;
           ctx.lineWidth = 0.5 / k;
         } else {
-          if (isParentMediaEdge) {
-            // Dashed grey for media parent edges
-            ctx.strokeStyle = mediaColor;
-            ctx.globalAlpha = 0.2;
-            ctx.lineWidth = 0.6 / k;
-          } else if (edge.linkType === "structural") {
-            const srcColor = src.nodeType === "tag" ? tagColor : (nodeColors[src.sourceType] || "#888");
-            ctx.strokeStyle = srcColor;
-            ctx.globalAlpha = 0.12;
-          } else if (edge.linkType === "tag") {
-            ctx.strokeStyle = tagColor;
-            ctx.globalAlpha = 0.1;
-          } else {
             ctx.strokeStyle = theme.secondary;
-            ctx.globalAlpha = 0.06 + edge.weight * 0.1;
+            ctx.globalAlpha = 0.3;
+            ctx.lineWidth = 0.6 / k;
           }
-          ctx.lineWidth = 0.6 / k;
-        }
         ctx.stroke();
         ctx.setLineDash([]);
       }
@@ -848,11 +839,18 @@ export default function GraphCanvas({
         return;
       }
       const node = findNodeAtPoint(e.clientX, e.clientY);
-      if (isMobile && node) {
-        // On mobile, tap selects the node (shows in bottom card) instead of navigating
-        hoveredRef.current = node;
-        needsRenderRef.current = true;
-        onNodeHover(node, { x: e.clientX, y: e.clientY });
+      if (isMobile) {
+        if (node) {
+          // On mobile, tap selects the node (shows in bottom card) instead of navigating
+          hoveredRef.current = node;
+          needsRenderRef.current = true;
+          onNodeHover(node, { x: e.clientX, y: e.clientY });
+        } else {
+          // Tap on empty area defocuses
+          hoveredRef.current = null;
+          needsRenderRef.current = true;
+          onNodeHover(null);
+        }
         return;
       }
       onNodeClick(node);
@@ -894,6 +892,51 @@ export default function GraphCanvas({
           k: event.transform.k,
         };
         needsRenderRef.current = true;
+
+        // Mobile magnet effect: after user stops panning, gently pull nearest node to center
+        if (isMobile && onCenterNodeChange) {
+          clearTimeout(magnetDebounceRef.current);
+          magnetDebounceRef.current = window.setTimeout(() => {
+            const now = Date.now();
+            // Throttle magnet animations to avoid jitter
+            if (now - lastMagnetTimeRef.current < 400) return;
+            lastMagnetTimeRef.current = now;
+
+            const nodes = nodesRef.current;
+            const { x: tx, y: ty, k } = transformRef.current;
+            const centerSimX = (width / 2 - tx) / k;
+            const centerSimY = (height / 2 - ty) / k;
+
+            // Find closest node to center
+            let closest: SimulationNode | null = null;
+            let closestDist = Infinity;
+            const magnetRadius = 80 / k; // Only magnet if within this sim-space radius
+
+            for (const node of nodes) {
+              const dx = node.x - centerSimX;
+              const dy = node.y - centerSimY;
+              const dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < closestDist && dist < magnetRadius) {
+                closest = node;
+                closestDist = dist;
+              }
+            }
+
+            if (closest && closestDist > 5 / k) {
+              // Animate pan to center the closest node
+              const targetTransform = zoomIdentity
+                .translate(width / 2, height / 2)
+                .scale(k)
+                .translate(-closest.x, -closest.y);
+
+              select(canvas)
+                .transition()
+                .duration(200)
+                .ease((t) => t * (2 - t)) // ease-out quad
+                .call(zoomBehavior.transform as any, targetTransform); // eslint-disable-line @typescript-eslint/no-explicit-any
+            }
+          }, 150);
+        }
       });
 
     zoomBehaviorRef.current = zoomBehavior;
@@ -932,26 +975,6 @@ export default function GraphCanvas({
       selection.on(".zoom", null);
     };
   }, [dimensions.width, dimensions.height]);
-
-  // Pan to focused node (mobile swipe navigation)
-  useEffect(() => {
-    if (!focusNodeId || !dimensions.width || !canvasRef.current) return;
-    const node = nodesRef.current.find((n) => n.id === focusNodeId);
-    if (!node) return;
-    const { width, height } = dimensions;
-    const k = transformRef.current.k;
-    const targetTransform = zoomIdentity
-      .translate(width / 2, height / 2)
-      .scale(k)
-      .translate(-node.x, -node.y);
-    const sel = select(canvasRef.current);
-    if (zoomBehaviorRef.current) {
-      sel
-        .transition()
-        .duration(300)
-        .call(zoomBehaviorRef.current.transform as any, targetTransform); // eslint-disable-line @typescript-eslint/no-explicit-any
-    }
-  }, [focusNodeId, dimensions]);
 
   return (
     <div ref={containerRef} className="w-full h-full">
