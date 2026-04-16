@@ -174,6 +174,29 @@ def extract_media_from_text(text: str) -> tuple[list[dict], list[dict]]:
     return images, videos
 
 
+def split_at_level(text: str, level: int) -> list[tuple]:
+    """Split markdown text at headings of *exactly* `level` hashes (no deeper).
+    Returns [(heading | None, body), ...]. The first tuple has heading=None when
+    content precedes the first heading of that level."""
+    hashes = "#" * level
+    # Lookahead: exactly `level` hashes + space, NOT immediately followed by another #
+    pattern = rf"\n(?={hashes} (?!#))"
+    heading_re = re.compile(rf"^{hashes}\s+(.+?)(?:\n|$)")
+    strip_re   = re.compile(rf"^{hashes}\s+.+?\n?")
+
+    parts = re.split(pattern, text)
+    result = []
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+        m = heading_re.match(part)
+        heading = m.group(1).strip() if m else None
+        body    = strip_re.sub("", part, count=1).strip() if heading else part
+        result.append((heading, body))
+    return result or [(None, text)]
+
+
 def chunk_markdown(item: dict) -> dict:
     """Chunk a markdown item into a hierarchy of nodes and edges.
     Returns {file_node, section_nodes, image_nodes, video_nodes, structural_edges}.
@@ -335,89 +358,214 @@ def chunk_markdown(item: dict) -> dict:
             )
     else:
         for i, section in enumerate(sections):
-            # Extract heading if present
-            heading_match = re.match(r"^##\s+(.+?)(?:\n|$)", section)
-            heading = heading_match.group(1).strip() if heading_match else None
-            section_body = (
-                re.sub(r"^##\s+.+?\n?", "", section).strip() if heading else section
+            # ── h2 node ──────────────────────────────────────────────────────
+            h2_match = re.match(r"^##\s+(.+?)(?:\n|$)", section)
+            h2_heading = h2_match.group(1).strip() if h2_match else None
+            h2_body = (
+                re.sub(r"^##\s+.+?\n?", "", section).strip() if h2_heading else section
             )
 
-            sec_id = f"{source_type}-{slug}-{locale}-sec-{i}"
-            text = f"{context_prefix}\n\nSection: {heading or 'Introduction'}\n\n{section_body}"
-            snippet = (
-                (section_body[:150] + "...")
-                if len(section_body) > 150
-                else section_body
-            )
+            h2_id      = f"{source_type}-{slug}-{locale}-sec-{i}"
+            h2_text    = f"{context_prefix}\n\nSection: {h2_heading or 'Introduction'}\n\n{h2_body[:400]}"
+            h2_snippet = (h2_body[:150] + "...") if len(h2_body) > 150 else h2_body
 
-            section_nodes.append(
-                {
-                    "id": sec_id,
-                    "text": text,
-                    "nodeType": "section",
-                    "title": f"{title}" if not heading else f"{title} - {heading}",
-                    "snippet": snippet.replace("\n", " ").strip(),
-                    "sourceType": source_type,
-                    "sourceSlug": slug,
-                    "locale": locale,
-                    "url": url,
-                    "date": str(date) if date else None,
-                    "tags": [str(t) for t in tags],
-                    "heading": heading,
-                    "imageUrl": image_url if image_url else None,
-                    "parentId": file_id,
-                    "mediaSource": None,
-                }
-            )
+            section_nodes.append({
+                "id": h2_id,
+                "text": h2_text,
+                "nodeType": "section",
+                "title": f"{title}" if not h2_heading else f"{title} - {h2_heading}",
+                "snippet": h2_snippet.replace("\n", " ").strip(),
+                "sourceType": source_type,
+                "sourceSlug": slug,
+                "locale": locale,
+                "url": url,
+                "date": str(date) if date else None,
+                "tags": [str(t) for t in tags],
+                "heading": h2_heading,
+                "imageUrl": image_url if image_url else None,
+                "parentId": file_id,
+                "mediaSource": None,
+            })
             structural_edges.append(
-                {"source": file_id, "target": sec_id, "weight": 1.0, "linkType": "structural"}
+                {"source": file_id, "target": h2_id, "weight": 1.0, "linkType": "structural"}
             )
 
-            # Extract media from this section
-            images, videos = extract_media_from_text(section)
-            for j, img in enumerate(images):
-                img_id = f"{source_type}-{slug}-{locale}-sec-{i}-img-{j}"
-                img_title = img["alt"].replace("framed:", "").strip() or Path(img["url"]).stem
-                image_nodes.append({
-                    "id": img_id,
-                    "nodeType": "image",
-                    "title": img_title[:60],
-                    "snippet": "",
-                    "sourceType": source_type,
-                    "sourceSlug": slug,
-                    "locale": locale,
-                    "url": url,
-                    "date": str(date) if date else None,
-                    "tags": [],
-                    "heading": heading,
-                    "imageUrl": img["url"],
-                    "parentId": sec_id,
-                    "mediaSource": img["url"],
-                })
-                structural_edges.append(
-                    {"source": sec_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
-                )
-            for j, vid in enumerate(videos):
-                vid_id = f"{source_type}-{slug}-{locale}-sec-{i}-vid-{j}"
-                video_nodes.append({
-                    "id": vid_id,
-                    "nodeType": "video",
-                    "title": vid["alt"][:60],
-                    "snippet": "",
-                    "sourceType": source_type,
-                    "sourceSlug": slug,
-                    "locale": locale,
-                    "url": url,
-                    "date": str(date) if date else None,
-                    "tags": [],
-                    "heading": heading,
-                    "imageUrl": None,
-                    "parentId": sec_id,
-                    "mediaSource": vid["url"],
-                })
-                structural_edges.append(
-                    {"source": sec_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
-                )
+            # ── h3 split ─────────────────────────────────────────────────────
+            h3_list = split_at_level(h2_body, 3)
+            has_h3  = len(h3_list) > 1 or h3_list[0][0] is not None
+
+            if not has_h3:
+                # No h3 — attach media directly to the h2 node
+                _imgs, _vids = extract_media_from_text(h2_body)
+                for j, img in enumerate(_imgs):
+                    img_id    = f"{h2_id}-img-{j}"
+                    img_title = img["alt"].replace("framed:", "").strip() or Path(img["url"]).stem
+                    image_nodes.append({
+                        "id": img_id, "nodeType": "image",
+                        "title": img_title[:60], "snippet": "",
+                        "sourceType": source_type, "sourceSlug": slug,
+                        "locale": locale, "url": url,
+                        "date": str(date) if date else None,
+                        "tags": [], "heading": h2_heading,
+                        "imageUrl": img["url"], "parentId": h2_id,
+                        "mediaSource": img["url"],
+                    })
+                    structural_edges.append(
+                        {"source": h2_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
+                    )
+                for j, vid in enumerate(_vids):
+                    vid_id = f"{h2_id}-vid-{j}"
+                    video_nodes.append({
+                        "id": vid_id, "nodeType": "video",
+                        "title": vid["alt"][:60], "snippet": "",
+                        "sourceType": source_type, "sourceSlug": slug,
+                        "locale": locale, "url": url,
+                        "date": str(date) if date else None,
+                        "tags": [], "heading": h2_heading,
+                        "imageUrl": None, "parentId": h2_id,
+                        "mediaSource": vid["url"],
+                    })
+                    structural_edges.append(
+                        {"source": h2_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
+                    )
+            else:
+                for j, (h3_heading, h3_body) in enumerate(h3_list):
+                    # ── h3 node ───────────────────────────────────────────────
+                    h3_id    = f"{h2_id}-{j}"
+                    h3_label = h3_heading or "Introduction"
+                    h3_title = (
+                        f"{title} - {h2_heading} › {h3_heading}"
+                        if h2_heading and h3_heading
+                        else (f"{title} - {h3_heading}" if h3_heading else f"{title} - {h2_heading}")
+                    )
+                    h3_text    = (
+                        f"{context_prefix}\n\nSection: {h2_heading or ''} › {h3_label}"
+                        f"\n\n{h3_body[:400]}"
+                    )
+                    h3_snippet = (h3_body[:150] + "...") if len(h3_body) > 150 else h3_body
+
+                    section_nodes.append({
+                        "id": h3_id,
+                        "text": h3_text,
+                        "nodeType": "section",
+                        "title": h3_title,
+                        "snippet": h3_snippet.replace("\n", " ").strip(),
+                        "sourceType": source_type, "sourceSlug": slug,
+                        "locale": locale, "url": url,
+                        "date": str(date) if date else None,
+                        "tags": [str(t) for t in tags],
+                        "heading": h3_heading,
+                        "imageUrl": image_url if image_url else None,
+                        "parentId": h2_id,
+                        "mediaSource": None,
+                    })
+                    structural_edges.append(
+                        {"source": h2_id, "target": h3_id, "weight": 1.0, "linkType": "structural"}
+                    )
+
+                    # ── h4 split ──────────────────────────────────────────────
+                    h4_list = split_at_level(h3_body, 4)
+                    has_h4  = len(h4_list) > 1 or h4_list[0][0] is not None
+
+                    if not has_h4:
+                        # No h4 — attach media directly to the h3 node
+                        _imgs, _vids = extract_media_from_text(h3_body)
+                        for k, img in enumerate(_imgs):
+                            img_id    = f"{h3_id}-img-{k}"
+                            img_title = img["alt"].replace("framed:", "").strip() or Path(img["url"]).stem
+                            image_nodes.append({
+                                "id": img_id, "nodeType": "image",
+                                "title": img_title[:60], "snippet": "",
+                                "sourceType": source_type, "sourceSlug": slug,
+                                "locale": locale, "url": url,
+                                "date": str(date) if date else None,
+                                "tags": [], "heading": h3_heading,
+                                "imageUrl": img["url"], "parentId": h3_id,
+                                "mediaSource": img["url"],
+                            })
+                            structural_edges.append(
+                                {"source": h3_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
+                            )
+                        for k, vid in enumerate(_vids):
+                            vid_id = f"{h3_id}-vid-{k}"
+                            video_nodes.append({
+                                "id": vid_id, "nodeType": "video",
+                                "title": vid["alt"][:60], "snippet": "",
+                                "sourceType": source_type, "sourceSlug": slug,
+                                "locale": locale, "url": url,
+                                "date": str(date) if date else None,
+                                "tags": [], "heading": h3_heading,
+                                "imageUrl": None, "parentId": h3_id,
+                                "mediaSource": vid["url"],
+                            })
+                            structural_edges.append(
+                                {"source": h3_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
+                            )
+                    else:
+                        for k, (h4_heading, h4_body) in enumerate(h4_list):
+                            # ── h4 node (leaf) ────────────────────────────────
+                            h4_id    = f"{h3_id}-{k}"
+                            h4_title = (
+                                f"{h3_title} › {h4_heading}" if h4_heading else h3_title
+                            )
+                            h4_text    = (
+                                f"{context_prefix}\n\nSection: {h3_label} › {h4_heading or 'Intro'}"
+                                f"\n\n{h4_body[:400]}"
+                            )
+                            h4_snippet = (h4_body[:150] + "...") if len(h4_body) > 150 else h4_body
+
+                            section_nodes.append({
+                                "id": h4_id,
+                                "text": h4_text,
+                                "nodeType": "section",
+                                "title": h4_title,
+                                "snippet": h4_snippet.replace("\n", " ").strip(),
+                                "sourceType": source_type, "sourceSlug": slug,
+                                "locale": locale, "url": url,
+                                "date": str(date) if date else None,
+                                "tags": [str(t) for t in tags],
+                                "heading": h4_heading,
+                                "imageUrl": image_url if image_url else None,
+                                "parentId": h3_id,
+                                "mediaSource": None,
+                            })
+                            structural_edges.append(
+                                {"source": h3_id, "target": h4_id, "weight": 1.0, "linkType": "structural"}
+                            )
+
+                            # Attach media to the h4 leaf node
+                            _imgs, _vids = extract_media_from_text(h4_body)
+                            for m_i, img in enumerate(_imgs):
+                                img_id    = f"{h4_id}-img-{m_i}"
+                                img_title = img["alt"].replace("framed:", "").strip() or Path(img["url"]).stem
+                                image_nodes.append({
+                                    "id": img_id, "nodeType": "image",
+                                    "title": img_title[:60], "snippet": "",
+                                    "sourceType": source_type, "sourceSlug": slug,
+                                    "locale": locale, "url": url,
+                                    "date": str(date) if date else None,
+                                    "tags": [], "heading": h4_heading,
+                                    "imageUrl": img["url"], "parentId": h4_id,
+                                    "mediaSource": img["url"],
+                                })
+                                structural_edges.append(
+                                    {"source": h4_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
+                                )
+                            for m_i, vid in enumerate(_vids):
+                                vid_id = f"{h4_id}-vid-{m_i}"
+                                video_nodes.append({
+                                    "id": vid_id, "nodeType": "video",
+                                    "title": vid["alt"][:60], "snippet": "",
+                                    "sourceType": source_type, "sourceSlug": slug,
+                                    "locale": locale, "url": url,
+                                    "date": str(date) if date else None,
+                                    "tags": [], "heading": h4_heading,
+                                    "imageUrl": None, "parentId": h4_id,
+                                    "mediaSource": vid["url"],
+                                })
+                                structural_edges.append(
+                                    {"source": h4_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
+                                )
 
     # === Cover image node (from frontmatter imageUrl) ===
     if image_url:
@@ -897,7 +1045,7 @@ def generate_descriptions(chunks: list[dict], cache: dict):
 def main():
     parser = argparse.ArgumentParser(description="Build knowledge graph data")
     parser.add_argument(
-        "--threshold", type=float, default=0.72, help="Cosine similarity threshold"
+        "--threshold", type=float, default=0.62, help="Cosine similarity threshold"
     )
     parser.add_argument(
         "--max-edges", type=int, default=8, help="Max edges per node (k-NN cap)"

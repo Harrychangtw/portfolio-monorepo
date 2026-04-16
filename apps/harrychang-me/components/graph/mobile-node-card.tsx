@@ -6,7 +6,7 @@ import NavigationLink from "@portfolio/ui/navigation-link";
 import type { GraphNode, SourceType, NodeType } from "./types";
 
 const sourceLabels: Record<SourceType, string> = {
-  post: "Blog Post",
+  post: "Blog",
   project: "Project",
   gallery: "Gallery",
   locale: "Info",
@@ -19,6 +19,15 @@ const nodeTypeLabels: Record<NodeType, string> = {
   image: "Image",
   video: "Video",
   tag: "Tag",
+};
+
+const nodeTypeColors: Record<NodeType, string> = {
+  hub: "bg-muted text-primary",
+  file: "bg-muted text-secondary",
+  section: "bg-muted text-secondary",
+  image: "bg-muted text-secondary",
+  video: "bg-muted text-secondary",
+  tag: "bg-[hsl(var(--graph-node-tag))]/20 text-[hsl(var(--graph-node-tag))]",
 };
 
 const sourceColors: Record<SourceType, string> = {
@@ -122,15 +131,20 @@ export default function MobileNodeCard({
                   : node.title}
               </h3>
 
-              {/* Source badge + tags — bottom */}
-              <div className="mt-auto flex items-center gap-1.5 flex-wrap">
-                {!isTag && (
+              {/* Source badge + node type — bottom */}
+              <div className="mt-auto flex items-center gap-1 flex-wrap">
+                {!isTag && !isHub && (
                   <span
                     className={`font-body text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
                   >
                     {sourceLabels[node.sourceType]}
                   </span>
                 )}
+                <span
+                  className={`font-body text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap ${nodeTypeColors[node.nodeType]}`}
+                >
+                  {nodeTypeLabels[node.nodeType]}
+                </span>
               </div>
             </div>
           </div>
@@ -140,15 +154,17 @@ export default function MobileNodeCard({
         <div className="flex items-stretch">
           <div className="flex-1 p-3 min-w-0">
             {/* Badges */}
-            <div className="flex items-center gap-2 flex-wrap mb-1.5">
-              {!isTag && (
+            <div className="flex items-center gap-1.5 flex-wrap mb-1.5">
+              {!isTag && !isHub && (
                 <span
-                  className={`font-body text-xs px-2 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
+                  className={`font-body text-[11px] px-1.5 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
                 >
                   {sourceLabels[node.sourceType]}
                 </span>
               )}
-              <span className="font-body text-xs px-2 py-0.5 rounded whitespace-nowrap bg-muted text-secondary">
+              <span
+                className={`font-body text-[11px] px-1.5 py-0.5 rounded whitespace-nowrap ${nodeTypeColors[node.nodeType]}`}
+                >
                 {nodeTypeLabels[node.nodeType]}
               </span>
             </div>
