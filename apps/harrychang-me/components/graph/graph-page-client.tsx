@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { AnimatePresence } from "motion/react";
 import GraphCanvas from "./graph-canvas";
 import NodePreviewCard from "./node-preview-card";
@@ -52,29 +52,26 @@ export default function GraphPageClient() {
   }, []);
 
   // Filter graph data
-  const filteredData: GraphData | null = graphData
-    ? {
-        ...graphData,
-        nodes: graphData.nodes.filter((n) => {
-          if (filterLocale !== "all" && n.locale !== filterLocale) return false;
-          if (!filterTypes.has(n.sourceType)) return false;
-          return true;
-        }),
-        edges: graphData.edges.filter((e) => {
-          const nodeIds = new Set(
-            graphData.nodes
-              .filter((n) => {
-                if (filterLocale !== "all" && n.locale !== filterLocale)
-                  return false;
-                if (!filterTypes.has(n.sourceType)) return false;
-                return true;
-              })
-              .map((n) => n.id),
-          );
-          return nodeIds.has(e.source) && nodeIds.has(e.target);
-        }),
-      }
-    : null;
+  const filteredData: GraphData | null = useMemo(() => {
+    if (!graphData) return null;
+
+    const nodes = graphData.nodes.filter((n) => {
+      if (filterLocale !== "all" && n.locale !== filterLocale) return false;
+      if (!filterTypes.has(n.sourceType)) return false;
+      return true;
+    });
+
+    const nodeIds = new Set(nodes.map((n) => n.id));
+    const edges = graphData.edges.filter(
+      (e) => nodeIds.has(e.source) && nodeIds.has(e.target),
+    );
+
+    return {
+      ...graphData,
+      nodes,
+      edges,
+    };
+  }, [graphData, filterLocale, filterTypes]);
 
   if (error) {
     return (

@@ -47,12 +47,10 @@ function getThemeColors() {
   const bg = style.getPropertyValue("--background").trim();
   const fg = style.getPropertyValue("--foreground").trim();
   const edge = style.getPropertyValue("--graph-edge").trim();
-  const border = style.getPropertyValue("--border").trim();
   return {
     background: bg ? `hsl(${bg})` : "#0a0a0a",
     foreground: fg ? `hsl(${fg})` : "#ffffff",
     edge: edge ? `hsl(${edge})` : "#333",
-    border: border ? `hsl(${border})` : "#262626",
   };
 }
 
@@ -74,6 +72,7 @@ export default function GraphCanvas({
   const simulationRef = useRef<any>(null);
   const nodesRef = useRef<SimulationNode[]>([]);
   const edgesRef = useRef<SimulationEdge[]>([]);
+  // d3-zoom transform: x,y include the center offset so zoom-to-point works correctly
   const transformRef = useRef({ x: 0, y: 0, k: 1 });
   const hoveredRef = useRef<SimulationNode | null>(null);
   const nodeColorsRef = useRef<Record<SourceType, string>>(
@@ -85,9 +84,12 @@ export default function GraphCanvas({
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const dragNodeRef = useRef<SimulationNode | null>(null);
   const isDraggingRef = useRef(false);
+  const needsRenderRef = useRef(true);
 
-  // Compute node radius based on connection count
+  // Connection count -> node radius
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
+  // Precomputed neighbor sets for hover highlighting
+  const neighborMap = useRef<Map<string, Set<string>>>(new Map());
 
   // Initialize colors
   useEffect(() => {
@@ -95,11 +97,11 @@ export default function GraphCanvas({
     themeColorsRef.current = getThemeColors();
     glowColorRef.current = getGlowColor();
 
-    // Watch for theme changes
     const observer = new MutationObserver(() => {
       nodeColorsRef.current = getNodeColors();
       themeColorsRef.current = getThemeColors();
       glowColorRef.current = getGlowColor();
+      needsRenderRef.current = true;
     });
     observer.observe(document.documentElement, {
       attributes: true,
@@ -129,8 +131,10 @@ export default function GraphCanvas({
 
     // Compute connection counts for radius
     const connectionCount = new Map<string, number>();
+    const neighbors = new Map<string, Set<string>>();
     for (const node of data.nodes) {
       connectionCount.set(node.id, 0);
+      neighbors.set(node.id, new Set());
     }
     for (const edge of data.edges) {
       connectionCount.set(
@@ -141,22 +145,29 @@ export default function GraphCanvas({
         edge.target,
         (connectionCount.get(edge.target) || 0) + 1,
       );
+      neighbors.get(edge.source)?.add(edge.target);
+      neighbors.get(edge.target)?.add(edge.source);
     }
+    neighborMap.current = neighbors;
 
     const maxConnections = Math.max(...connectionCount.values(), 1);
     for (const [id, count] of connectionCount) {
-      const r = 4 + (count / maxConnections) * 8;
+      const r = 3 + (count / maxConnections) * 5;
       nodeRadiusMap.current.set(id, r);
     }
 
-    // Create simulation nodes
-    const simNodes: SimulationNode[] = data.nodes.map((n) => ({
-      ...n,
-      x: (Math.random() - 0.5) * dimensions.width * 0.6,
-      y: (Math.random() - 0.5) * dimensions.height * 0.6,
-      vx: 0,
-      vy: 0,
-    }));
+    // Create simulation nodes — spread them out initially
+    const simNodes: SimulationNode[] = data.nodes.map((n, i) => {
+      const angle = (i / data.nodes.length) * Math.PI * 2;
+      const spread = Math.sqrt(data.nodes.length) * 12;
+      return {
+        ...n,
+        x: Math.cos(angle) * spread + (Math.random() - 0.5) * spread * 0.5,
+        y: Math.sin(angle) * spread + (Math.random() - 0.5) * spread * 0.5,
+        vx: 0,
+        vy: 0,
+      };
+    });
 
     const nodeMap = new Map(simNodes.map((n) => [n.id, n]));
     const simEdges: SimulationEdge[] = [];
@@ -176,19 +187,26 @@ export default function GraphCanvas({
         "link",
         forceLink(simEdges)
           .id((d: any) => d.id)
-          .distance((d: any) => 80 + (1 - d.weight) * 120)
-          .strength((d: any) => d.weight * 0.3),
+          .distance((d: any) => 40 + (1 - d.weight) * 80)
+          .strength((d: any) => d.weight * 0.4),
       )
-      .force("charge", forceManyBody().strength(-200).distanceMax(400))
-      .force("center", forceCenter(0, 0))
+      .force("charge", forceManyBody().strength(-80).distanceMax(300))
+      .force("center", forceCenter(0, 0).strength(0.05))
       .force(
         "collide",
         forceCollide<SimulationNode>()
-          .radius((d) => (nodeRadiusMap.current.get(d.id) || 6) + 2)
+          .radius((d) => (nodeRadiusMap.current.get(d.id) || 4) + 3)
           .strength(0.7),
       )
-      .alphaDecay(0.02)
-      .velocityDecay(0.3);
+      .alphaDecay(0.028)
+      .alphaMin(0.001)
+      .velocityDecay(0.4)
+      .on("tick", () => {
+        needsRenderRef.current = true;
+      })
+      .on("end", () => {
+        needsRenderRef.current = true;
+      });
 
     simulationRef.current = sim;
 
@@ -197,6 +215,22 @@ export default function GraphCanvas({
       simulationRef.current = null;
     };
   }, [data, dimensions.width, dimensions.height]);
+
+  // Convert screen (client) coords to simulation coords
+  const screenToSim = useCallback(
+    (clientX: number, clientY: number): { sx: number; sy: number } => {
+      const canvas = canvasRef.current;
+      if (!canvas) return { sx: 0, sy: 0 };
+      const rect = canvas.getBoundingClientRect();
+      const { x: tx, y: ty, k } = transformRef.current;
+      // d3-zoom transform already includes the center offset (initialized with translate(w/2,h/2))
+      // so screen-to-sim is: simX = (screenX - tx) / k
+      const sx = (clientX - rect.left - tx) / k;
+      const sy = (clientY - rect.top - ty) / k;
+      return { sx, sy };
+    },
+    [],
+  );
 
   // Render loop
   useEffect(() => {
@@ -210,9 +244,13 @@ export default function GraphCanvas({
     canvas.style.height = `${dimensions.height}px`;
 
     const ctx = canvas.getContext("2d")!;
-    ctx.scale(dpr, dpr);
 
     const render = () => {
+      animFrameRef.current = requestAnimationFrame(render);
+
+      if (!needsRenderRef.current) return;
+      needsRenderRef.current = false;
+
       const { width, height } = dimensions;
       const { x: tx, y: ty, k } = transformRef.current;
       const nodes = nodesRef.current;
@@ -222,51 +260,96 @@ export default function GraphCanvas({
       const hovered = hoveredRef.current;
       const glowColor = glowColorRef.current;
 
-      ctx.save();
+      // Build set of hovered-node neighbors for spotlight effect
+      const hoveredNeighbors = hovered
+        ? neighborMap.current.get(hovered.id)
+        : null;
+      const hasHoverSpotlight = !!hovered;
+
+      // Reset transform and clear
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, width, height);
 
-      // Apply zoom transform
-      ctx.translate(tx + width / 2, ty + height / 2);
+      // Apply zoom transform — tx,ty already include center offset from d3-zoom init
+      ctx.translate(tx, ty);
       ctx.scale(k, k);
 
       // Draw edges
       for (const edge of edges) {
         const src = edge.source;
         const tgt = edge.target;
-        const isHighlighted =
+        const isConnectedToHover =
           hovered && (src.id === hovered.id || tgt.id === hovered.id);
-        const isSelected =
+        const isConnectedToSelected =
           selectedNodeId &&
           (src.id === selectedNodeId || tgt.id === selectedNodeId);
 
         ctx.beginPath();
         ctx.moveTo(src.x, src.y);
         ctx.lineTo(tgt.x, tgt.y);
-        ctx.strokeStyle = isHighlighted || isSelected ? glowColor : theme.edge;
-        ctx.globalAlpha =
-          isHighlighted || isSelected ? 0.6 : 0.08 + edge.weight * 0.15;
-        ctx.lineWidth = isHighlighted || isSelected ? 1.5 / k : 0.5 / k;
+
+        if (isConnectedToHover || isConnectedToSelected) {
+          ctx.strokeStyle = glowColor;
+          ctx.globalAlpha = 0.9;
+          ctx.lineWidth = 1.8 / k;
+        } else if (hasHoverSpotlight) {
+          // Dim non-connected edges during hover
+          ctx.strokeStyle = theme.edge;
+          ctx.globalAlpha = 0.03;
+          ctx.lineWidth = 0.5 / k;
+        } else {
+          // Default edges — subtle so the graph doesn't look like a mesh
+          ctx.globalAlpha = 0.12 + edge.weight * 0.2;                                                                                   
+          ctx.lineWidth = (0.5 + edge.weight * 0.8) / k;  
+          ctx.lineWidth = 0.5 / k;
+        }
         ctx.stroke();
-        ctx.globalAlpha = 1;
       }
+      ctx.globalAlpha = 1;
 
       // Draw nodes
       for (const node of nodes) {
-        const r = (nodeRadiusMap.current.get(node.id) || 6) / k;
-        const actualR = r * k; // actual radius in screen space
+        const baseR = nodeRadiusMap.current.get(node.id) || 4;
+        // Ensure minimum screen-space radius so nodes are always visible when zoomed out
+        const screenR = baseR * k;
+        const minScreenR = 2.5;
+        const r = screenR < minScreenR ? minScreenR / k : baseR;
+
         const isHovered = hovered?.id === node.id;
         const isSelected = selectedNodeId === node.id;
+        const isNeighborOfHover =
+          hovered && hoveredNeighbors?.has(node.id);
         const color = nodeColors[node.sourceType] || "#888";
 
-        // Glow effect for hovered/selected
+        // Determine node opacity based on hover spotlight
+        let nodeAlpha = 0.85;
+        if (hasHoverSpotlight) {
+          if (isHovered || isSelected || isNeighborOfHover) {
+            nodeAlpha = 1;
+          } else {
+            nodeAlpha = 0.15;
+          }
+        }
+
+        // Glow effect for hovered/selected/neighbor
         if (isHovered || isSelected) {
           ctx.save();
           ctx.shadowColor = glowColor;
-          ctx.shadowBlur = 20 / k;
+          ctx.shadowBlur = 16 / k;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, r * 1.5, 0, Math.PI * 2);
+          ctx.arc(node.x, node.y, r * 1.8, 0, Math.PI * 2);
           ctx.fillStyle = color;
-          ctx.globalAlpha = 0.3;
+          ctx.globalAlpha = 0.25;
+          ctx.fill();
+          ctx.restore();
+        } else if (isNeighborOfHover) {
+          ctx.save();
+          ctx.shadowColor = color;
+          ctx.shadowBlur = 8 / k;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r * 1.3, 0, Math.PI * 2);
+          ctx.fillStyle = color;
+          ctx.globalAlpha = 0.2;
           ctx.fill();
           ctx.restore();
         }
@@ -275,38 +358,76 @@ export default function GraphCanvas({
         ctx.beginPath();
         ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
         ctx.fillStyle = color;
-        ctx.globalAlpha = isHovered || isSelected ? 1 : 0.8;
+        ctx.globalAlpha = nodeAlpha;
         ctx.fill();
-        ctx.globalAlpha = 1;
 
-        // Node border
+        // Node border for hovered/selected
         if (isHovered || isSelected) {
           ctx.strokeStyle = glowColor;
           ctx.lineWidth = 1.5 / k;
+          ctx.globalAlpha = 1;
           ctx.stroke();
         }
 
-        // Label (only show when zoomed in enough or for hovered/selected)
-        if (k > 0.8 || isHovered || isSelected) {
-          const fontSize = Math.max(10, 11 / k);
-          ctx.font = `${fontSize}px var(--font-body, sans-serif)`;
-          ctx.fillStyle = theme.foreground;
-          ctx.globalAlpha =
-            isHovered || isSelected ? 1 : Math.min(1, (k - 0.6) * 2);
-          ctx.textAlign = "center";
-          ctx.textBaseline = "top";
-          const label =
-            node.title.length > 30
-              ? node.title.slice(0, 28) + "..."
-              : node.title;
-          ctx.fillText(label, node.x, node.y + r + 3 / k);
-          ctx.globalAlpha = 1;
-        }
+        ctx.globalAlpha = 1;
       }
 
-      ctx.restore();
+      // Draw labels (separate pass so they're always on top)
+      for (const node of nodes) {
+        const baseR = nodeRadiusMap.current.get(node.id) || 4;
+        const screenR = baseR * k;
+        const minScreenR = 2.5;
+        const r = screenR < minScreenR ? minScreenR / k : baseR;
 
-      animFrameRef.current = requestAnimationFrame(render);
+        const isHovered = hovered?.id === node.id;
+        const isSelected = selectedNodeId === node.id;
+        const isNeighborOfHover =
+          hovered && hoveredNeighbors?.has(node.id);
+
+        // Label visibility
+        let labelAlpha: number;
+        let maxChars: number;
+
+        if (isHovered || isSelected) {
+          labelAlpha = 1;
+          maxChars = 50;
+        } else if (isNeighborOfHover) {
+          labelAlpha = 0.8;
+          maxChars = 30;
+        } else if (hasHoverSpotlight) {
+          // Dim labels during hover spotlight
+          labelAlpha = 0;
+          maxChars = 0;
+        } else {
+          // Normal state: labels hidden until zoomed in past threshold
+          // Fade in between k=1.2 and k=2.0
+          if (k < 1.2) {
+            labelAlpha = 0;
+            maxChars = 0;
+          } else {
+            labelAlpha = Math.min(0.7, (k - 1.2) * 0.9);
+            maxChars = k > 2 ? 35 : 20;
+          }
+        }
+
+        if (labelAlpha <= 0) continue;
+
+        const fontSize = Math.max(9, Math.min(12, 10 / k));
+        ctx.font = `${fontSize}px sans-serif`;
+        ctx.fillStyle = themeColorsRef.current.foreground;
+        ctx.globalAlpha = labelAlpha;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+
+        const label =
+          node.title.length > maxChars
+            ? node.title.slice(0, maxChars - 2) + "..."
+            : node.title;
+        ctx.fillText(label, node.x, node.y + r + 2 / k);
+      }
+
+      ctx.globalAlpha = 1;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
     };
 
     animFrameRef.current = requestAnimationFrame(render);
@@ -316,23 +437,15 @@ export default function GraphCanvas({
   // Hit testing
   const findNodeAtPoint = useCallback(
     (clientX: number, clientY: number): SimulationNode | null => {
-      const canvas = canvasRef.current;
-      if (!canvas) return null;
-
-      const rect = canvas.getBoundingClientRect();
-      const { x: tx, y: ty, k } = transformRef.current;
-      const { width, height } = dimensions;
-
-      // Convert screen coords to simulation coords
-      const mx = (clientX - rect.left - tx - width / 2) / k;
-      const my = (clientY - rect.top - ty - height / 2) / k;
+      const { sx: mx, sy: my } = screenToSim(clientX, clientY);
+      const k = transformRef.current.k;
 
       let closest: SimulationNode | null = null;
       let closestDist = Infinity;
 
       for (const node of nodesRef.current) {
-        const r = (nodeRadiusMap.current.get(node.id) || 6) / k;
-        const hitRadius = Math.max(r, 8 / k); // minimum hit target
+        const baseR = nodeRadiusMap.current.get(node.id) || 4;
+        const hitRadius = Math.max(baseR, 12 / k);
         const dx = node.x - mx;
         const dy = node.y - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -344,7 +457,7 @@ export default function GraphCanvas({
 
       return closest;
     },
-    [dimensions],
+    [screenToSim],
   );
 
   // Pointer events
@@ -354,20 +467,17 @@ export default function GraphCanvas({
 
     const handleMove = (e: PointerEvent) => {
       if (isDraggingRef.current && dragNodeRef.current) {
-        const { x: tx, y: ty, k } = transformRef.current;
-        const rect = canvas.getBoundingClientRect();
-        const { width, height } = dimensions;
-        const mx = (e.clientX - rect.left - tx - width / 2) / k;
-        const my = (e.clientY - rect.top - ty - height / 2) / k;
-        dragNodeRef.current.fx = mx;
-        dragNodeRef.current.fy = my;
-        simulationRef.current?.alpha(0.3).restart();
+        const { sx, sy } = screenToSim(e.clientX, e.clientY);
+        dragNodeRef.current.fx = sx;
+        dragNodeRef.current.fy = sy;
+        simulationRef.current?.alpha(0.05).restart();
         return;
       }
 
       const node = findNodeAtPoint(e.clientX, e.clientY);
       if (hoveredRef.current?.id !== node?.id) {
         hoveredRef.current = node;
+        needsRenderRef.current = true;
         canvas.style.cursor = node ? "pointer" : "grab";
         onNodeHover(node);
       }
@@ -378,12 +488,10 @@ export default function GraphCanvas({
       if (node) {
         isDraggingRef.current = true;
         dragNodeRef.current = node;
-        const { x: tx, y: ty, k } = transformRef.current;
-        const rect = canvas.getBoundingClientRect();
-        const { width, height } = dimensions;
-        node.fx = (e.clientX - rect.left - tx - width / 2) / k;
-        node.fy = (e.clientY - rect.top - ty - height / 2) / k;
-        simulationRef.current?.alphaTarget(0.3).restart();
+        const { sx, sy } = screenToSim(e.clientX, e.clientY);
+        node.fx = sx;
+        node.fy = sy;
+        simulationRef.current?.alphaTarget(0.05).restart();
         canvas.setPointerCapture(e.pointerId);
         e.stopPropagation();
       }
@@ -418,31 +526,66 @@ export default function GraphCanvas({
       canvas.removeEventListener("pointerup", handleUp);
       canvas.removeEventListener("click", handleClick);
     };
-  }, [findNodeAtPoint, onNodeClick, onNodeHover, dimensions]);
+  }, [findNodeAtPoint, onNodeClick, onNodeHover, screenToSim]);
 
-  // Zoom
+  // Zoom — d3-zoom with center offset baked into the initial transform
+  // This ensures zoom-to-point (scroll wheel) zooms toward the cursor position
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || !dimensions.width) return;
 
+    const { width, height } = dimensions;
+
     const zoomBehavior = d3Zoom<HTMLCanvasElement, unknown>()
-      .scaleExtent([0.1, 5])
+      .scaleExtent([0.05, 5])
+      .filter((event) => {
+        // Allow wheel zoom always; pan only when not dragging a node
+        if (event.type === "wheel") return true;
+        if (event.type === "mousedown" || event.type === "pointerdown") {
+          return !isDraggingRef.current;
+        }
+        return true;
+      })
       .on("zoom", (event) => {
         transformRef.current = {
           x: event.transform.x,
           y: event.transform.y,
           k: event.transform.k,
         };
+        needsRenderRef.current = true;
       });
 
     const selection = select(canvas);
     selection.call(zoomBehavior as any);
 
-    // Initial zoom to fit
-    const initialK = 0.7;
+    // Compute initial zoom scale to fit all nodes
+    const nodes = nodesRef.current;
+    let initialK = 0.6;
+    if (nodes.length > 0) {
+      let minX = Infinity,
+        maxX = -Infinity,
+        minY = Infinity,
+        maxY = -Infinity;
+      for (const n of nodes) {
+        if (n.x < minX) minX = n.x;
+        if (n.x > maxX) maxX = n.x;
+        if (n.y < minY) minY = n.y;
+        if (n.y > maxY) maxY = n.y;
+      }
+      const graphW = maxX - minX || 1;
+      const graphH = maxY - minY || 1;
+      const padding = 80;
+      const kx = (width - padding * 2) / graphW;
+      const ky = (height - padding * 2) / graphH;
+      initialK = Math.min(kx, ky, 1.5);
+      initialK = Math.max(initialK, 0.1);
+    }
+
+    // Bake width/2, height/2 into the initial translate so d3-zoom knows the true center.
+    // This makes zoom-to-point (wheel) work correctly relative to cursor position.
     selection.call(
       zoomBehavior.transform as any,
-      zoomIdentity.translate(0, 0).scale(initialK),
+      zoomIdentity.translate(width / 2, height / 2).scale(initialK),
     );
 
     return () => {
