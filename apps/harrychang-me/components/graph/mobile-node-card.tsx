@@ -96,32 +96,96 @@ export default function MobileNodeCard({
       node.sourceType === "gallery" ||
       node.sourceType === "post");
 
-  // Wrapper component that handles navigation for the entire card
-  const CardWrapper = ({ children }: { children: React.ReactNode }) => {
-    if (!node?.url || isTag) {
-      return <div className="mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg">{children}</div>;
-    }
-    
-    if (isInternalUrl(node.url)) {
-      return (
-        <NavigationLink
-          href={toInternalPath(node.url)}
-          className="mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg block active:scale-[0.98] transition-transform"
-        >
-          {children}
-        </NavigationLink>
-      );
-    }
-    
-    return (
-      <a
-        href={node.url}
-        className="mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg block active:scale-[0.98] transition-transform"
-      >
-        {children}
-      </a>
-    );
-  };
+  const cardContent = node ? (
+    <>
+      {/* Layout: horizontal split when image exists, vertical otherwise */}
+      {hasImage ? (
+        <div className="flex h-28">
+          {/* Left: Image (50% width) */}
+          <div className="w-1/2 flex-shrink-0">
+            <ImageContainer
+              src={imageSrc}
+              alt={node.title}
+              aspectRatio={1.5}
+              noInsetPadding
+              quality={60}
+            />
+          </div>
+
+          {/* Right: Title top, tags bottom */}
+          <div className="w-1/2 flex">
+            <div className="flex-1 p-3 min-w-0 flex flex-col">
+              {/* Title — top */}
+              <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-2 flex-1">
+                {node.nodeType === "section" && node.heading
+                  ? node.heading
+                  : node.title}
+              </h3>
+
+              {/* Source badge + tags — bottom */}
+              <div className="mt-auto flex items-center gap-1.5 flex-wrap">
+                {!isTag && (
+                  <span
+                    className={`font-body text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
+                  >
+                    {sourceLabels[node.sourceType]}
+                  </span>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        /* No image: compact vertical layout */
+        <div className="flex items-stretch">
+          <div className="flex-1 p-3 min-w-0">
+            {/* Badges */}
+            <div className="flex items-center gap-2 flex-wrap mb-1.5">
+              {!isTag && (
+                <span
+                  className={`font-body text-xs px-2 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
+                >
+                  {sourceLabels[node.sourceType]}
+                </span>
+              )}
+              <span className="font-body text-xs px-2 py-0.5 rounded whitespace-nowrap bg-muted text-secondary">
+                {nodeTypeLabels[node.nodeType]}
+              </span>
+            </div>
+
+            {/* Title */}
+            <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-1 mb-1">
+              {node.nodeType === "section" && node.heading
+                ? node.heading
+                : node.title}
+            </h3>
+
+            {/* Description */}
+            {isRichContent && (node.description || node.snippet) && (
+              <p className="text-xs text-secondary leading-relaxed line-clamp-2">
+                {node.description || node.snippet}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  ) : null;
+
+  const wrapperClassName = "mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg";
+  const clickableClassName = `${wrapperClassName} block active:scale-[0.98] transition-transform`;
+
+  const wrappedContent = !node ? null : (!node.url || isTag) ? (
+    <div className={wrapperClassName}>{cardContent}</div>
+  ) : isInternalUrl(node.url) ? (
+    <NavigationLink href={toInternalPath(node.url)} className={clickableClassName}>
+      {cardContent}
+    </NavigationLink>
+  ) : (
+    <a href={node.url} className={clickableClassName}>
+      {cardContent}
+    </a>
+  );
 
   return (
     <AnimatePresence mode="wait">
@@ -134,79 +198,7 @@ export default function MobileNodeCard({
           transition={{ duration: 0.15, ease: "easeOut" }}
           className="fixed bottom-0 left-0 right-0 z-50 pb-[env(safe-area-inset-bottom)]"
         >
-          <CardWrapper>
-            {/* Layout: horizontal split when image exists, vertical otherwise */}
-            {hasImage ? (
-              <div className="flex h-28">
-                {/* Left: Image (50% width) */}
-                <div className="w-1/2 flex-shrink-0">
-                  <ImageContainer
-                    src={imageSrc}
-                    alt={node.title}
-                    aspectRatio={1.5}
-                    noInsetPadding
-                    quality={60}
-                  />
-                </div>
-
-                {/* Right: Title top, tags bottom */}
-                <div className="w-1/2 flex">
-                  <div className="flex-1 p-3 min-w-0 flex flex-col">
-                    {/* Title — top */}
-                    <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-2 flex-1">
-                      {node.nodeType === "section" && node.heading
-                        ? node.heading
-                        : node.title}
-                    </h3>
-
-                    {/* Source badge + tags — bottom */}
-                    <div className="mt-auto flex items-center gap-1.5 flex-wrap">
-                      {!isTag && (
-                        <span
-                          className={`font-body text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
-                        >
-                          {sourceLabels[node.sourceType]}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              /* No image: compact vertical layout */
-              <div className="flex items-stretch">
-                <div className="flex-1 p-3 min-w-0">
-                  {/* Badges */}
-                  <div className="flex items-center gap-2 flex-wrap mb-1.5">
-                    {!isTag && (
-                      <span
-                        className={`font-body text-xs px-2 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
-                      >
-                        {sourceLabels[node.sourceType]}
-                      </span>
-                    )}
-                    <span className="font-body text-xs px-2 py-0.5 rounded whitespace-nowrap bg-muted text-secondary">
-                      {nodeTypeLabels[node.nodeType]}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-1 mb-1">
-                    {node.nodeType === "section" && node.heading
-                      ? node.heading
-                      : node.title}
-                  </h3>
-
-                  {/* Description */}
-                  {isRichContent && (node.description || node.snippet) && (
-                    <p className="text-xs text-secondary leading-relaxed line-clamp-2">
-                      {node.description || node.snippet}
-                    </p>
-                  )}
-                </div>
-              </div>
-            )}
-          </CardWrapper>
+          {wrappedContent}
         </motion.div>
       )}
     </AnimatePresence>

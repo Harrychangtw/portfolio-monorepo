@@ -5,6 +5,25 @@ import type { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 
+interface CvEntry {
+  title: string;
+  subtitle?: string;
+  meta?: string;
+  date: string;
+  bullets?: string[];
+}
+
+interface CvPublication {
+  title: string;
+  date: string;
+  description: string;
+}
+
+interface CvSkill {
+  category: string;
+  skills: string;
+}
+
 /* ================================================================
    CV Content — Swiss / Pentagram-style typographic résumé
    Grid pattern mirrors the FAQ section (12-col, numbered rows).
@@ -52,7 +71,6 @@ function Section({
 function Entry({
   title,
   subtitle,
-  meta,
   date,
   items,
 }: {
@@ -171,7 +189,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       {/* 02 — Education */}
       <Section index={2} title={t("sections.education.title", "cv")}>
         <div className="space-y-8">
-          {educationItems.map((item: any, i: number) => (
+          {educationItems.map((item: CvEntry, i: number) => (
             <Entry
               key={i}
               title={item.title}
@@ -187,7 +205,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       {/* 03 — Research & Development */}
       <Section index={3} title={t("sections.research.title", "cv")}>
         <div className="space-y-8">
-          {researchItems.map((item: any, i: number) => (
+          {researchItems.map((item: CvEntry, i: number) => (
             <Entry
               key={i}
               title={item.title}
@@ -203,7 +221,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       {/* 04 — Leadership & Design */}
       <Section index={4} title={t("sections.leadership.title", "cv")}>
         <div className="space-y-8">
-          {leadershipItems.map((item: any, i: number) => (
+          {leadershipItems.map((item: CvEntry, i: number) => (
             <Entry
               key={i}
               title={item.title}
@@ -219,7 +237,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       {/* 05 — Publications */}
       <Section index={5} title={t("sections.publications.title", "cv")}>
         <div className="space-y-7">
-          {publicationItems.map((item: any, i: number) => (
+          {publicationItems.map((item: CvPublication, i: number) => (
             <div key={i}>
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5 sm:gap-4 mb-0.5">
                 <h3 className="font-heading font-medium text-foreground leading-snug">
@@ -240,7 +258,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       {/* 06 — Selected Projects */}
       <Section index={6} title={t("sections.projects.title", "cv")}>
         <div className="space-y-8">
-          {projectItems.map((item: any, i: number) => (
+          {projectItems.map((item: CvEntry, i: number) => (
             <Entry
               key={i}
               title={item.title}
@@ -255,7 +273,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
       {/* 07 — Skills */}
       <Section index={7} title={t("sections.skills.title", "cv")}>
         <div className="space-y-4">
-          {skillItems.map((item: any, i: number) => (
+          {skillItems.map((item: CvSkill, i: number) => (
             <SkillRow key={i} category={item.category} items={item.skills} />
           ))}
         </div>

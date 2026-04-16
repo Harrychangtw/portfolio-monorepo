@@ -4,8 +4,6 @@ import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import AnimatedPaperList from "@/components/main/animated-paper-list";
 import PaginationControls from "@portfolio/ui/pagination-controls";
 import { Paper } from "@portfolio/lib/types/paper";
-import { motion } from "motion/react";
-
 interface PaperReadingPageClientProps {
   paginatedPapers: Paper[];
   hasNextPage: boolean;
@@ -17,7 +15,7 @@ export default function PaperReadingPageClient({
   hasNextPage,
   hasPrevPage,
 }: PaperReadingPageClientProps) {
-  const { t } = useLanguage();
+  useLanguage();
 
   return (
     <article className="container mt-24 md:mt-32 mb-24 md:mb-32 page-transition-enter">

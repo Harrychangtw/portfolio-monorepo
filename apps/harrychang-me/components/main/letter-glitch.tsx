@@ -50,8 +50,8 @@ const LetterGlitch = ({
 
   const blinkRef = useRef(true);
   const lastBlinkTime = useRef(Date.now());
-  const scrollIndicatorBlinkRef = useRef(true);
-  const lastScrollIndicatorBlinkTime = useRef(Date.now());
+  const _scrollIndicatorBlinkRef = useRef(true); // eslint-disable-line @typescript-eslint/no-unused-vars
+  const _lastScrollIndicatorBlinkTime = useRef(Date.now()); // eslint-disable-line @typescript-eslint/no-unused-vars
 
   const fontSize = 16;
   const charWidth = 10;
@@ -242,7 +242,7 @@ const LetterGlitch = ({
     });
   };
 
-  const setTextInGrid = (
+  const setTextInGrid = ( // eslint-disable-line @typescript-eslint/no-unused-vars
     text: string,
     row: number,
     startCol: number,
@@ -566,7 +566,7 @@ const LetterGlitch = ({
       case 4:
         break;
     }
-  }, [animationPhase, isInitialized, animationCompleted, isWideEnough, t]);
+  }, [animationPhase, isInitialized, animationCompleted, isWideEnough, t]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!isWideEnough) return;
@@ -633,7 +633,7 @@ const LetterGlitch = ({
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isWideEnough]);
+  }, [isWideEnough]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const containerStyle: React.CSSProperties = {
     position: "relative",

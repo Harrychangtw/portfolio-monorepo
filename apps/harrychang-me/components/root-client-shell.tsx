@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import { NavigationProvider } from "@portfolio/lib/contexts/navigation-context";
 import PageTransition from "@/components/main/page-transition";
 
@@ -13,7 +13,9 @@ import PageTransition from "@/components/main/page-transition";
 export default function RootClientShell({ children }: { children: ReactNode }) {
   return (
     <NavigationProvider>
-      <PageTransition>{children}</PageTransition>
+      <Suspense>
+        <PageTransition>{children}</PageTransition>
+      </Suspense>
     </NavigationProvider>
   );
 }

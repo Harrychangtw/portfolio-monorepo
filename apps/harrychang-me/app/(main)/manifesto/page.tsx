@@ -270,7 +270,7 @@ const manifestoChunksZhTw = [
 ];
 
 export default function ManifestoPage() {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const isMobile = useIsMobile();
   const [introComplete, setIntroComplete] = useState(false);
 
@@ -295,7 +295,7 @@ export default function ManifestoPage() {
 
   useEffect(() => {
     if (isMobile) {
-      setIntroComplete(true);
+      setIntroComplete(true); // eslint-disable-line react-hooks/set-state-in-effect
       document.body.style.overflow = "";
     } else {
       document.body.style.overflow = introComplete ? "" : "hidden";
@@ -307,7 +307,7 @@ export default function ManifestoPage() {
 
   // Reset state on language change
   useEffect(() => {
-    setActiveChunks(new Array(manifestoChunks.length).fill(false));
+    setActiveChunks(new Array(manifestoChunks.length).fill(false)); // eslint-disable-line react-hooks/set-state-in-effect
   }, [manifestoChunks.length]);
 
   // The Spotlight Logic

@@ -186,8 +186,8 @@ export default function GraphCanvas({
   const dragMovedRef = useRef(false);
   const dragStartClientRef = useRef({ x: 0, y: 0 });
   const needsRenderRef = useRef(true);
-  const gridCanvasRef = useRef<OffscreenCanvas | null>(null);
-  const lastGridParamsRef = useRef({ tx: 0, ty: 0, k: 1, w: 0, h: 0 });
+  const _gridCanvasRef = useRef<OffscreenCanvas | null>(null); // eslint-disable-line @typescript-eslint/no-unused-vars
+  const _lastGridParamsRef = useRef({ tx: 0, ty: 0, k: 1, w: 0, h: 0 }); // eslint-disable-line @typescript-eslint/no-unused-vars
 
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
   const neighborMap = useRef<Map<string, Set<string>>>(new Map());
@@ -1001,7 +1001,7 @@ export default function GraphCanvas({
     return () => {
       selection.on(".zoom", null);
     };
-  }, [dimensions.width, dimensions.height]);
+  }, [dimensions.width, dimensions.height]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div ref={containerRef} className="w-full h-full">

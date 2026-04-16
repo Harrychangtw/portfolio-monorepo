@@ -1,8 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "motion/react";
 
+function generateParticles() {
+  return Array.from({ length: 100 }, () => ({
+    duration: 1 + Math.random() * 10,
+    delay: Math.random() * 5,
+    width: Math.random() * 4 + 1,
+    height: Math.random() * 4 + 1,
+    top: Math.random() * 100,
+    left: Math.random() * 100,
+  }));
+}
+
 export default function MinimalistBackground() {
+  const [particles] = useState(generateParticles);
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {/* Base background - transitions smoothly */}
@@ -113,7 +126,7 @@ export default function MinimalistBackground() {
           delay: 0,
         }}
       >
-        {Array.from({ length: 100 }).map((_, i) => (
+        {particles.map((p, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-foreground"
@@ -126,16 +139,16 @@ export default function MinimalistBackground() {
               y: -100,
             }}
             transition={{
-              duration: 1 + Math.random() * 10,
+              duration: p.duration,
               repeat: Infinity,
-              delay: i * 0.2 + Math.random() * 5,
+              delay: i * 0.2 + p.delay,
               ease: "easeInOut",
             }}
             style={{
-              width: Math.random() * 4 + 1 + "px",
-              height: Math.random() * 4 + 1 + "px",
-              top: Math.random() * 100 + "%",
-              left: Math.random() * 100 + "%",
+              width: p.width + "px",
+              height: p.height + "px",
+              top: p.top + "%",
+              left: p.left + "%",
             }}
           />
         ))}

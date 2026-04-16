@@ -75,7 +75,7 @@ export function NotFoundContent() {
   >(null);
   const isMobile = useIsMobile();
 
-  const lastScrollTime = useRef(Date.now());
+  const lastScrollTime = useRef(0);
   const holdStartRef = useRef<number | null>(null);
 
   // Misalignment for split-image effect: fast = misaligned, slow = aligned
