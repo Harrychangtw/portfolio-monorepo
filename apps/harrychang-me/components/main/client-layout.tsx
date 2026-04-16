@@ -7,12 +7,14 @@ import { Analytics } from "@vercel/analytics/react";
 import ClickSpark from "@portfolio/ui/ui/click-spark";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { LanguageProvider } from "@portfolio/lib/contexts/language-context";
-import { NavigationProvider } from "@portfolio/lib/contexts/navigation-context";
+
+
 import { ThemeProvider } from "@portfolio/lib/contexts/theme-context";
 import VideoInitializer from "@portfolio/ui/video-initializer";
 import NotificationProvider from "@portfolio/ui/notification-provider";
 import { useStableAnchor } from "@portfolio/lib/hooks/use-stable-anchor";
-import PageTransition from "@/components/main/page-transition";
+
+
 
 export default function ClientLayout({
   children,
@@ -25,32 +27,28 @@ export default function ClientLayout({
 
   return (
     <ThemeProvider>
-      <NavigationProvider>
-        <LanguageProvider>
-          <PageTransition>
-            <Header />
-            {isMobile ? (
-              children
-            ) : (
-              <ClickSpark
-                sparkColor="hsl(var(--primary))"
-                sparkSize={8}
-                sparkRadius={15}
-                sparkCount={4}
-                duration={500}
-                extraScale={1}
-              >
-                {children}
-              </ClickSpark>
-            )}
-          </PageTransition>
-          <VideoInitializer />
-          <Suspense fallback={null}>
-            <NotificationProvider />
-          </Suspense>
-          <Analytics />
-        </LanguageProvider>
-      </NavigationProvider>
+      <LanguageProvider>
+        <Header />
+        {isMobile ? (
+          children
+        ) : (
+          <ClickSpark
+            sparkColor="hsl(var(--primary))"
+            sparkSize={8}
+            sparkRadius={15}
+            sparkCount={4}
+            duration={500}
+            extraScale={1}
+          >
+            {children}
+          </ClickSpark>
+        )}
+        <VideoInitializer />
+        <Suspense fallback={null}>
+          <NotificationProvider />
+        </Suspense>
+        <Analytics />
+      </LanguageProvider>
     </ThemeProvider>
   );
 }

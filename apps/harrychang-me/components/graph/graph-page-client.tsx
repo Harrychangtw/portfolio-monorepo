@@ -67,20 +67,29 @@ export default function GraphPageClient() {
       if (!node.url) return;
       try {
         const target = new URL(node.url, window.location.origin);
-        // Treat harrychang.me URLs as internal even on localhost
-        const isInternal =
+        const isSameOrigin =
           target.origin === window.location.origin ||
-          target.hostname.endsWith("harrychang.me");
-        if (isInternal) {
+          (target.hostname.endsWith("harrychang.me") &&
+            target.hostname.replace(/^www\./, "") ===
+              window.location.hostname.replace(/^www\./, ""));
+        if (isSameOrigin) {
+          // Same host: use router for page transition
           startNavigation();
           setTimeout(() => {
             router.push(target.pathname + target.search + target.hash);
           }, 250);
+        } else if (target.hostname.endsWith("harrychang.me")) {
+          // Different subdomain (e.g. lab.harrychang.me): same tab, full navigation
+          startNavigation();
+          setTimeout(() => {
+            window.location.href = node.url;
+          }, 250);
         } else {
-          window.open(node.url, "_blank", "noopener,noreferrer");
+          // Truly external: same tab
+          window.location.href = node.url;
         }
       } catch {
-        window.open(node.url, "_blank", "noopener,noreferrer");
+        window.location.href = node.url;
       }
     },
     [startNavigation, router],
@@ -96,7 +105,8 @@ export default function GraphPageClient() {
 
   const handleNodeHover = useCallback(
     (node: GraphNode | null, cursorPos?: { x: number; y: number }) => {
-      setHoveredNode(node);
+      // Hub nodes don't show hover cards
+      setHoveredNode(node?.nodeType === "hub" ? null : node);
       if (cursorPos) {
         setCursorPosition(cursorPos);
       }
@@ -163,7 +173,7 @@ export default function GraphPageClient() {
 
     const nodes = graphData.nodes.filter((n) => {
       if (n.locale !== filterLocale) return false;
-      if (!filterTypes.has(n.sourceType) && n.nodeType !== "tag") return false;
+      if (!filterTypes.has(n.sourceType) && n.nodeType !== "tag" && n.nodeType !== "hub") return false;
       if (!filterNodeTypes.has(n.nodeType)) return false;
       return true;
     });

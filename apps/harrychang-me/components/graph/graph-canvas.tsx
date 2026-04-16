@@ -102,12 +102,19 @@ const NODE_TYPE_MAX_BONUS: Record<NodeType, number> = {
   hub: 0,
 };
 
+/** Primary hub slugs get the full hub radius; secondary hubs are smaller */
+const PRIMARY_HUB_SLUGS = new Set(["root", "post", "project", "gallery"]);
+
 function computeNodeRadius(
   node: GraphNode,
   connectionCount: number,
   maxConnections: number,
 ): number {
-  const base = NODE_TYPE_BASE_RADIUS[node.nodeType] || 1.5;
+  let base = NODE_TYPE_BASE_RADIUS[node.nodeType] || 1.5;
+  // Secondary hubs (about, updates, uses, cv, reading, lab, linktree) are smaller
+  if (node.nodeType === "hub" && !PRIMARY_HUB_SLUGS.has(node.sourceSlug)) {
+    base = 3;
+  }
   const maxBonus = NODE_TYPE_MAX_BONUS[node.nodeType] || 0;
   const bonus = maxConnections > 0 ? (connectionCount / maxConnections) * maxBonus : 0;
   return base + bonus;

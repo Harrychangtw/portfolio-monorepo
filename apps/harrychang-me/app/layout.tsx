@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next"; // Added Viewport type
 import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { siteConfig } from "@/config/site";
+import RootClientShell from "@/components/root-client-shell";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -179,7 +180,7 @@ export default function RootLayout({
       <body
         className={`bg-background text-primary antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <RootClientShell>{children}</RootClientShell>
       </body>
     </html>
   );

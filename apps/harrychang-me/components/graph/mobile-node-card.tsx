@@ -36,11 +36,23 @@ function getYouTubeId(url: string): string | null {
   return match ? match[1] : null;
 }
 
+/** Check if a URL is internal (same host as www.harrychang.me) */
+function isInternalUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url, "https://www.harrychang.me");
+    const host = parsed.hostname.replace(/^www\./, "");
+    return host === "harrychang.me";
+  } catch {
+    return true;
+  }
+}
+
 /** Extract internal path from absolute harrychang.me URLs or relative paths */
 function toInternalPath(url: string): string {
   try {
     const parsed = new URL(url, "https://www.harrychang.me");
-    if (parsed.hostname.endsWith("harrychang.me")) {
+    const host = parsed.hostname.replace(/^www\./, "");
+    if (host === "harrychang.me") {
       return parsed.pathname + parsed.search + parsed.hash;
     }
   } catch {
@@ -166,27 +178,51 @@ export default function MobileNodeCard({
 
               {/* Navigate link */}
               {node.url && !isTag && (
-                <NavigationLink
-                  href={toInternalPath(node.url)}
-                  className="flex-shrink-0 flex items-center justify-center w-12 border-l border-border text-secondary hover:text-primary hover:bg-muted/50 transition-colors"
-                  aria-label="Open"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    className="text-current"
+                isInternalUrl(node.url) ? (
+                  <NavigationLink
+                    href={toInternalPath(node.url)}
+                    className="flex-shrink-0 flex items-center justify-center w-12 border-l border-border text-secondary hover:text-primary hover:bg-muted/50 transition-colors"
+                    aria-label="Open"
                   >
-                    <path
-                      d="M6 3L11 8L6 13"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </NavigationLink>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="text-current"
+                    >
+                      <path
+                        d="M6 3L11 8L6 13"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </NavigationLink>
+                ) : (
+                  <a
+                    href={node.url}
+                    className="flex-shrink-0 flex items-center justify-center w-12 border-l border-border text-secondary hover:text-primary hover:bg-muted/50 transition-colors"
+                    aria-label="Open link"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="text-current"
+                    >
+                      <path
+                        d="M6 3L11 8L6 13"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </a>
+                )
               )}
             </div>
 

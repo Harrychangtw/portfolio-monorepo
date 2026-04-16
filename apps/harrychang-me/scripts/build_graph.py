@@ -953,27 +953,60 @@ def main():
 
     # Step 3.5: Build hub (category) nodes
     print("\n[3.5/7] Building hub nodes...")
-    HUB_URL_MAP = {
+
+    # Load common.json translations for hub titles
+    _hub_translations: dict[str, dict[str, str]] = {}
+    for _loc in ("en", "zh-TW"):
+        _common_path = LOCALES_DIR / _loc / "common.json"
+        if _common_path.exists():
+            with open(_common_path, "r", encoding="utf-8") as f:
+                _common = json.load(f)
+            _header = _common.get("header", {})
+            _hub_translations[_loc] = {
+                "post": _header.get("blog", "Blog"),
+                "project": _header.get("projects", "Projects"),
+                "gallery": _header.get("gallery", "Gallery"),
+                "about": _header.get("about", "About"),
+                "updates": _header.get("updates", "Updates"),
+                "uses": _header.get("uses", "Setup"),
+                "cv": _header.get("cv", "Resume"),
+                "lab": _header.get("lab", "Icarus Lab"),
+                "linktree": _header.get("links", "Linktree"),
+                "reading": _common.get("readingList", {}).get("title", "Reading List")
+                    if isinstance(_common.get("readingList"), dict)
+                    else "Reading List",
+                "root": "首頁" if _loc == "zh-TW" else "Home",
+            }
+        else:
+            _hub_translations[_loc] = {}
+
+    def _hub_title(key: str, locale: str) -> str:
+        return _hub_translations.get(locale, {}).get(key, key.capitalize())
+
+    # --- Content-type hubs (Blog, Projects, Gallery) ---
+    CONTENT_HUB_URL = {
         "post": f"{BASE_URL}/blog",
         "project": f"{BASE_URL}/projects",
         "gallery": f"{BASE_URL}/gallery",
     }
-    HUB_TITLE_MAP = {"post": "Blog", "project": "Projects", "gallery": "Gallery"}
-
     hub_nodes = []
     hub_edges = []
+
+    content_hub_ids = {}  # (source_type, locale) -> hub_id
     for source_type in CONTENT_DIRS:
         for locale in ("en", "zh-TW"):
             hub_id = f"hub-{source_type}-{locale}"
+            title = _hub_title(source_type, locale)
+            content_hub_ids[(source_type, locale)] = hub_id
             hub_nodes.append({
                 "id": hub_id,
                 "nodeType": "hub",
-                "title": HUB_TITLE_MAP[source_type],
-                "snippet": f"All {HUB_TITLE_MAP[source_type].lower()} entries",
+                "title": title,
+                "snippet": title,
                 "sourceType": source_type,
                 "sourceSlug": source_type,
                 "locale": locale,
-                "url": HUB_URL_MAP[source_type],
+                "url": CONTENT_HUB_URL[source_type],
                 "date": None,
                 "tags": [],
                 "heading": None,
@@ -992,9 +1025,182 @@ def main():
                     })
                     fnode["parentId"] = hub_id
 
+    # --- Locale-based hubs (About, Updates, Uses/Setup, CV/Resume) ---
+    LOCALE_HUBS = [
+        {"key": "about",   "url": f"{BASE_URL}/",             "id_prefix": "locale-about"},
+        {"key": "updates", "url": f"{BASE_URL}/",             "id_prefix": "locale-updates"},
+        {"key": "uses",    "url": f"{BASE_URL}/uses",         "id_prefix": "locale-uses"},
+        {"key": "cv",      "url": f"{BASE_URL}/cv",           "id_prefix": "locale-cv"},
+    ]
+
+    locale_hub_ids = {}  # (key, locale) -> hub_id
+    for hub_def in LOCALE_HUBS:
+        for locale in ("en", "zh-TW"):
+            hub_id = f"hub-{hub_def['key']}-{locale}"
+            title = _hub_title(hub_def["key"], locale)
+            locale_hub_ids[(hub_def["key"], locale)] = hub_id
+            hub_nodes.append({
+                "id": hub_id,
+                "nodeType": "hub",
+                "title": title,
+                "snippet": title,
+                "sourceType": "locale",
+                "sourceSlug": hub_def["key"],
+                "locale": locale,
+                "url": hub_def["url"],
+                "date": None,
+                "tags": [],
+                "heading": None,
+                "imageUrl": None,
+                "parentId": None,
+                "mediaSource": None,
+            })
+            # Link hub -> matching locale section nodes
+            for lnode in locale_chunks:
+                if lnode["locale"] == locale and lnode["id"].startswith(hub_def["id_prefix"]):
+                    hub_edges.append({
+                        "source": hub_id,
+                        "target": lnode["id"],
+                        "weight": 1.0,
+                        "linkType": "structural",
+                    })
+                    lnode["parentId"] = hub_id
+
+    # --- Reading List hub (no existing locale nodes, standalone) ---
+    for locale in ("en", "zh-TW"):
+        hub_id = f"hub-reading-{locale}"
+        title = _hub_title("reading", locale)
+        hub_nodes.append({
+            "id": hub_id,
+            "nodeType": "hub",
+            "title": title,
+            "snippet": title,
+            "sourceType": "locale",
+            "sourceSlug": "reading",
+            "locale": locale,
+            "url": f"{BASE_URL}/paper-reading",
+            "date": None,
+            "tags": [],
+            "heading": None,
+            "imageUrl": None,
+            "parentId": None,
+            "mediaSource": None,
+        })
+
+    # --- Icarus Lab hub (external subdomain) ---
+    for locale in ("en", "zh-TW"):
+        hub_id = f"hub-lab-{locale}"
+        title = _hub_title("lab", locale)
+        hub_nodes.append({
+            "id": hub_id,
+            "nodeType": "hub",
+            "title": title,
+            "snippet": title,
+            "sourceType": "locale",
+            "sourceSlug": "lab",
+            "locale": locale,
+            "url": "https://lab.harrychang.me",
+            "date": None,
+            "tags": [],
+            "heading": None,
+            "imageUrl": None,
+            "parentId": None,
+            "mediaSource": None,
+        })
+
+    # --- Linktree hub + social link nodes ---
+    SOCIAL_LINKS = [
+        {"id": "email",      "title": "Email",              "url": f"{BASE_URL}/email"},
+        {"id": "discord",    "title": "Discord",            "url": f"{BASE_URL}/discord"},
+        {"id": "linkedin",   "title": "LinkedIn",           "url": f"{BASE_URL}/linkedin"},
+        {"id": "github",     "title": "GitHub",             "url": f"{BASE_URL}/github"},
+        {"id": "instagram",  "title": "Instagram",          "url": f"{BASE_URL}/instagram"},
+        {"id": "medium",     "title": "Medium",             "url": f"{BASE_URL}/medium"},
+        {"id": "calendar",   "title": "Schedule a Meeting", "url": f"{BASE_URL}/cal"},
+        {"id": "spotify",    "title": "Spotify",            "url": f"{BASE_URL}/spotify"},
+        {"id": "letterboxd", "title": "Letterboxd",         "url": f"{BASE_URL}/letterboxd"},
+    ]
+
+    social_link_nodes = []
+    for locale in ("en", "zh-TW"):
+        linktree_hub_id = f"hub-linktree-{locale}"
+        title = _hub_title("linktree", locale)
+        hub_nodes.append({
+            "id": linktree_hub_id,
+            "nodeType": "hub",
+            "title": title,
+            "snippet": title,
+            "sourceType": "locale",
+            "sourceSlug": "linktree",
+            "locale": locale,
+            "url": f"{BASE_URL}/linktree",
+            "date": None,
+            "tags": [],
+            "heading": None,
+            "imageUrl": None,
+            "parentId": None,
+            "mediaSource": None,
+        })
+        for link in SOCIAL_LINKS:
+            link_node_id = f"social-{link['id']}-{locale}"
+            social_link_nodes.append({
+                "id": link_node_id,
+                "nodeType": "section",
+                "title": link["title"],
+                "snippet": link["title"],
+                "sourceType": "locale",
+                "sourceSlug": f"social-{link['id']}",
+                "locale": locale,
+                "url": link["url"],
+                "date": None,
+                "tags": [],
+                "heading": None,
+                "imageUrl": None,
+                "parentId": linktree_hub_id,
+                "mediaSource": None,
+            })
+            hub_edges.append({
+                "source": linktree_hub_id,
+                "target": link_node_id,
+                "weight": 1.0,
+                "linkType": "structural",
+            })
+
+    # --- Root hub: connects to all other hubs ---
+    for locale in ("en", "zh-TW"):
+        root_id = f"hub-root-{locale}"
+        title = _hub_title("root", locale)
+        hub_nodes.append({
+            "id": root_id,
+            "nodeType": "hub",
+            "title": title,
+            "snippet": "harrychang.me",
+            "sourceType": "locale",
+            "sourceSlug": "root",
+            "locale": locale,
+            "url": f"{BASE_URL}/",
+            "date": None,
+            "tags": [],
+            "heading": None,
+            "imageUrl": None,
+            "parentId": None,
+            "mediaSource": None,
+        })
+        # Connect root to all other hubs of this locale
+        for hnode in hub_nodes:
+            if hnode["locale"] == locale and hnode["id"] != root_id:
+                hub_edges.append({
+                    "source": root_id,
+                    "target": hnode["id"],
+                    "weight": 1.0,
+                    "linkType": "structural",
+                })
+                hnode["parentId"] = root_id
+
     all_structural_edges.extend(hub_edges)
     print(f"  Hub nodes: {len(hub_nodes)}")
     print(f"  Hub edges: {len(hub_edges)}")
+    print(f"  Social link nodes: {len(social_link_nodes)}")
 
     # Step 4: Generate embeddings (only for file + section nodes)
     print("\n[4/7] Generating embeddings...")
@@ -1009,7 +1215,7 @@ def main():
 
     # Step 6: Optional LLM descriptions
     print("\n[6/7] LLM descriptions...")
-    all_chunks = all_file_nodes + all_section_nodes + locale_chunks + all_image_nodes + all_video_nodes + tag_nodes + hub_nodes
+    all_chunks = all_file_nodes + all_section_nodes + locale_chunks + all_image_nodes + all_video_nodes + tag_nodes + hub_nodes + social_link_nodes
     if not args.no_llm:
         generate_descriptions(all_chunks, cache)
     else:
