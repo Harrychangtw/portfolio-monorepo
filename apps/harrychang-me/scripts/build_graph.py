@@ -144,6 +144,13 @@ def chunk_markdown(item: dict) -> list[dict]:
     tags = meta.get("tags", []) or []
     technologies = meta.get("technologies", []) or []
     date = meta.get("date", "")
+    image_url = meta.get("imageUrl", "")
+
+    # Fallback: extract first image from markdown body if no frontmatter imageUrl
+    if not image_url:
+        img_match = re.search(r"!\[.*?\]\(([^)]+\.(?:webp|jpg|jpeg|png|gif))\)", body)
+        if img_match:
+            image_url = img_match.group(1)
 
     # Build URL
     url_map = {
@@ -198,6 +205,7 @@ def chunk_markdown(item: dict) -> list[dict]:
                 "date": str(date) if date else None,
                 "tags": [str(t) for t in tags],
                 "heading": None,
+                "imageUrl": image_url if image_url else None,
             }
         )
     else:
@@ -229,6 +237,7 @@ def chunk_markdown(item: dict) -> list[dict]:
                     "date": str(date) if date else None,
                     "tags": [str(t) for t in tags],
                     "heading": heading,
+                    "imageUrl": image_url if image_url else None,
                 }
             )
 
@@ -669,6 +678,8 @@ def main():
         }
         if "description" in chunk:
             node["description"] = chunk["description"]
+        if "imageUrl" in chunk and chunk["imageUrl"]:
+            node["imageUrl"] = chunk["imageUrl"]
         nodes.append(node)
 
     output = {

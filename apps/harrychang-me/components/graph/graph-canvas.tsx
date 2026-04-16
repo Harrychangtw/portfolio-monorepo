@@ -46,11 +46,11 @@ function getThemeColors() {
   const style = getComputedStyle(document.documentElement);
   const bg = style.getPropertyValue("--background").trim();
   const fg = style.getPropertyValue("--foreground").trim();
-  const edge = style.getPropertyValue("--graph-edge").trim();
+  const secondary = style.getPropertyValue("--secondary").trim();
   return {
     background: bg ? `hsl(${bg})` : "#0a0a0a",
     foreground: fg ? `hsl(${fg})` : "#ffffff",
-    edge: edge ? `hsl(${edge})` : "#333",
+    secondary: secondary ? `hsl(${secondary})` : "#888",
   };
 }
 
@@ -90,6 +90,31 @@ export default function GraphCanvas({
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
   // Precomputed neighbor sets for hover highlighting
   const neighborMap = useRef<Map<string, Set<string>>>(new Map());
+  // Loaded image cache for node thumbnails
+  const imageCache = useRef<Map<string, HTMLImageElement | null>>(new Map());
+
+  // Load images for nodes that have imageUrl
+  useEffect(() => {
+    for (const node of data.nodes) {
+      if (!node.imageUrl || imageCache.current.has(node.id)) continue;
+      // Mark as loading
+      imageCache.current.set(node.id, null);
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      // Ensure path starts with /
+      const src = node.imageUrl.startsWith("/")
+        ? node.imageUrl
+        : `/${node.imageUrl}`;
+      img.src = src;
+      img.onload = () => {
+        imageCache.current.set(node.id, img);
+        needsRenderRef.current = true;
+      };
+      img.onerror = () => {
+        // Leave as null — will render as colored circle
+      };
+    }
+  }, [data.nodes]);
 
   // Initialize colors
   useEffect(() => {
@@ -187,20 +212,20 @@ export default function GraphCanvas({
         "link",
         forceLink(simEdges)
           .id((d: any) => d.id)
-          .distance((d: any) => 40 + (1 - d.weight) * 80)
-          .strength((d: any) => d.weight * 0.4),
+          .distance((d: any) => 30 + (1 - d.weight) * 60)
+          .strength((d: any) => d.weight * 0.5),
       )
-      .force("charge", forceManyBody().strength(-80).distanceMax(300))
-      .force("center", forceCenter(0, 0).strength(0.05))
+      .force("charge", forceManyBody().strength(-50).distanceMax(250))
+      .force("center", forceCenter(0, 0).strength(0.15))
       .force(
         "collide",
         forceCollide<SimulationNode>()
-          .radius((d) => (nodeRadiusMap.current.get(d.id) || 4) + 3)
-          .strength(0.7),
+          .radius((d) => (nodeRadiusMap.current.get(d.id) || 4) + 2)
+          .strength(0.8),
       )
       .alphaDecay(0.028)
       .alphaMin(0.001)
-      .velocityDecay(0.4)
+      .velocityDecay(0.45)
       .on("tick", () => {
         needsRenderRef.current = true;
       })
@@ -223,8 +248,6 @@ export default function GraphCanvas({
       if (!canvas) return { sx: 0, sy: 0 };
       const rect = canvas.getBoundingClientRect();
       const { x: tx, y: ty, k } = transformRef.current;
-      // d3-zoom transform already includes the center offset (initialized with translate(w/2,h/2))
-      // so screen-to-sim is: simX = (screenX - tx) / k
       const sx = (clientX - rect.left - tx) / k;
       const sy = (clientY - rect.top - ty) / k;
       return { sx, sy };
@@ -274,7 +297,7 @@ export default function GraphCanvas({
       ctx.translate(tx, ty);
       ctx.scale(k, k);
 
-      // Draw edges
+      // Draw edges — using --secondary color
       for (const edge of edges) {
         const src = edge.source;
         const tgt = edge.target;
@@ -293,14 +316,12 @@ export default function GraphCanvas({
           ctx.globalAlpha = 0.9;
           ctx.lineWidth = 1.8 / k;
         } else if (hasHoverSpotlight) {
-          // Dim non-connected edges during hover
-          ctx.strokeStyle = theme.edge;
+          ctx.strokeStyle = theme.secondary;
           ctx.globalAlpha = 0.03;
           ctx.lineWidth = 0.5 / k;
         } else {
-          // Default edges — subtle so the graph doesn't look like a mesh
-          ctx.globalAlpha = 0.12 + edge.weight * 0.2;                                                                                   
-          ctx.lineWidth = (0.5 + edge.weight * 0.8) / k;  
+          ctx.strokeStyle = theme.secondary;
+          ctx.globalAlpha = 0.08 + edge.weight * 0.12;
           ctx.lineWidth = 0.5 / k;
         }
         ctx.stroke();
@@ -354,17 +375,44 @@ export default function GraphCanvas({
           ctx.restore();
         }
 
-        // Node circle
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
-        ctx.fillStyle = color;
-        ctx.globalAlpha = nodeAlpha;
-        ctx.fill();
+        // Node image or colored circle
+        const img = imageCache.current.get(node.id);
+        const showImage = img && screenR > 8; // Only show images when zoomed in enough
+
+        if (showImage) {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
+          ctx.closePath();
+          ctx.clip();
+          ctx.globalAlpha = nodeAlpha;
+          // Draw image centered and covering the circle
+          const size = r * 2;
+          ctx.drawImage(img, node.x - r, node.y - r, size, size);
+          ctx.restore();
+
+          // Border ring with source type color
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 1.5 / k;
+          ctx.globalAlpha = nodeAlpha;
+          ctx.stroke();
+        } else {
+          // Colored circle fallback
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
+          ctx.fillStyle = color;
+          ctx.globalAlpha = nodeAlpha;
+          ctx.fill();
+        }
 
         // Node border for hovered/selected
         if (isHovered || isSelected) {
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r + 1 / k, 0, Math.PI * 2);
           ctx.strokeStyle = glowColor;
-          ctx.lineWidth = 1.5 / k;
+          ctx.lineWidth = 2 / k;
           ctx.globalAlpha = 1;
           ctx.stroke();
         }
@@ -395,24 +443,22 @@ export default function GraphCanvas({
           labelAlpha = 0.8;
           maxChars = 30;
         } else if (hasHoverSpotlight) {
-          // Dim labels during hover spotlight
           labelAlpha = 0;
           maxChars = 0;
         } else {
-          // Normal state: labels hidden until zoomed in past threshold
-          // Fade in between k=1.2 and k=2.0
-          if (k < 1.2) {
+          // Labels hidden until zoomed in significantly (k > 1.8)
+          if (k < 1.8) {
             labelAlpha = 0;
             maxChars = 0;
           } else {
-            labelAlpha = Math.min(0.7, (k - 1.2) * 0.9);
-            maxChars = k > 2 ? 35 : 20;
+            labelAlpha = Math.min(0.6, (k - 1.8) * 0.8);
+            maxChars = k > 2.5 ? 35 : 18;
           }
         }
 
         if (labelAlpha <= 0) continue;
 
-        const fontSize = Math.max(9, Math.min(12, 10 / k));
+        const fontSize = Math.max(8, Math.min(11, 10 / k));
         ctx.font = `${fontSize}px sans-serif`;
         ctx.fillStyle = themeColorsRef.current.foreground;
         ctx.globalAlpha = labelAlpha;
@@ -529,7 +575,6 @@ export default function GraphCanvas({
   }, [findNodeAtPoint, onNodeClick, onNodeHover, screenToSim]);
 
   // Zoom — d3-zoom with center offset baked into the initial transform
-  // This ensures zoom-to-point (scroll wheel) zooms toward the cursor position
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || !dimensions.width) return;
@@ -539,7 +584,6 @@ export default function GraphCanvas({
     const zoomBehavior = d3Zoom<HTMLCanvasElement, unknown>()
       .scaleExtent([0.05, 5])
       .filter((event) => {
-        // Allow wheel zoom always; pan only when not dragging a node
         if (event.type === "wheel") return true;
         if (event.type === "mousedown" || event.type === "pointerdown") {
           return !isDraggingRef.current;
@@ -574,7 +618,7 @@ export default function GraphCanvas({
       }
       const graphW = maxX - minX || 1;
       const graphH = maxY - minY || 1;
-      const padding = 80;
+      const padding = 60;
       const kx = (width - padding * 2) / graphW;
       const ky = (height - padding * 2) / graphH;
       initialK = Math.min(kx, ky, 1.5);
@@ -582,7 +626,6 @@ export default function GraphCanvas({
     }
 
     // Bake width/2, height/2 into the initial translate so d3-zoom knows the true center.
-    // This makes zoom-to-point (wheel) work correctly relative to cursor position.
     selection.call(
       zoomBehavior.transform as any,
       zoomIdentity.translate(width / 2, height / 2).scale(initialK),

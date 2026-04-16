@@ -12,6 +12,7 @@ export interface GraphNode {
   date?: string | null;
   tags?: string[];
   heading?: string | null;
+  imageUrl?: string | null;
 }
 
 export interface GraphEdge {
