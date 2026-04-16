@@ -6,7 +6,7 @@ date: "2023-12-30"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8"
 location: "靜心, 台北"
-tags: ["街頭攝影"]
+tags: ["Street Photography"]
 featured: true
 pinned: 7
 locked: false

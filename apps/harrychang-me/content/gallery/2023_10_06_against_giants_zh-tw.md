@@ -6,7 +6,7 @@ date: "2023-10-06"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8"
 location: "桃園"
-tags: ["風光攝影"]
+tags: ["Landscape"]
 featured: true
 pinned: 5
 locked: false
