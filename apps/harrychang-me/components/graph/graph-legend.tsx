@@ -21,15 +21,16 @@ interface GraphLegendProps {
   edgeCount?: number;
 }
 
-export default function GraphLegend({ nodeCount, edgeCount }: GraphLegendProps) {
+export default function GraphLegend({
+  nodeCount,
+  edgeCount,
+}: GraphLegendProps) {
   return (
     <div className="absolute bottom-6 left-6 z-10 flex flex-col gap-3">
       <div className="flex flex-col gap-1.5">
         {legendItems.map((item) => (
           <div key={item.type} className="flex items-center gap-2">
-            <span
-              className={`w-2.5 h-2.5 shrink-0 ${dotColors[item.type]}`}
-            />
+            <span className={`w-2.5 h-2.5 shrink-0 ${dotColors[item.type]}`} />
             <span className="font-mono text-xs text-secondary uppercase tracking-wider">
               {item.label}
             </span>

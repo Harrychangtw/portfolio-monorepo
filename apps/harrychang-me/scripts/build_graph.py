@@ -527,8 +527,7 @@ def generate_descriptions(chunks: list[dict], cache: dict):
         print(f"  Generating descriptions for {len(uncached)} chunks via OpenRouter...")
 
     models = [
-        "google/gemini-2.5-flash-preview",
-        "google/gemini-2.0-flash-001",
+        "google/gemini-3-flash-preview"
     ]
 
     for i, chunk in enumerate(uncached):

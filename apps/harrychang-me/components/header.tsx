@@ -511,12 +511,15 @@ export default function Header() {
       )}
 
       {/* Reading progress indicator */}
-      {(isProjectDetailPage || isBlogDetailPage) && !isLab && !isGraph && !isNavigating && (
-        <div
-          className="absolute top-0 left-0 h-[2px] bg-accent"
-          style={{ width: `${readingProgress}%` }}
-        />
-      )}
+      {(isProjectDetailPage || isBlogDetailPage) &&
+        !isLab &&
+        !isGraph &&
+        !isNavigating && (
+          <div
+            className="absolute top-0 left-0 h-[2px] bg-accent"
+            style={{ width: `${readingProgress}%` }}
+          />
+        )}
 
       <div className="container flex justify-between items-center">
         <div
