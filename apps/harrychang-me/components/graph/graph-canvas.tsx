@@ -110,11 +110,11 @@ function computeNodeRadius(
 /* ─── Force strengths by node type ─────────────────────────────────────────── */
 
 const CHARGE_STRENGTH: Record<NodeType, number> = {
-  file: -120,
-  section: -80,
-  tag: -100,
-  image: -30,
-  video: -40,
+  file: -200,
+  section: -130,
+  tag: -160,
+  image: -40,
+  video: -50,
 };
 
 /* ─── Label priority (higher = drawn first = wins overlap) ─────────────────── */
@@ -289,14 +289,14 @@ export default function GraphCanvas({
         forceLink(simEdges)
           .id((d: any) => d.id) // eslint-disable-line @typescript-eslint/no-explicit-any
           .distance((d: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
-            if (d.linkType === "structural") return 15 + (1 - d.weight) * 20;
-            if (d.linkType === "tag") return 40;
-            return 30 + (1 - d.weight) * 60;
+            if (d.linkType === "structural") return 10 + (1 - d.weight) * 15;
+            if (d.linkType === "tag") return 30;
+            return 20 + (1 - d.weight) * 45;
           })
           .strength((d: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
-            if (d.linkType === "structural") return 0.8;
-            if (d.linkType === "tag") return 0.3;
-            return 0.2 + d.weight * 0.3;
+            if (d.linkType === "structural") return 1.0;
+            if (d.linkType === "tag") return 0.5;
+            return 0.3 + d.weight * 0.4;
           }),
       )
       .force(
@@ -305,14 +305,14 @@ export default function GraphCanvas({
           .strength((d) => CHARGE_STRENGTH[d.nodeType] || -60)
           .distanceMax(350),
       )
-      .force("center", forceCenter(0, 0).strength(0.5))
+      .force("center", forceCenter(0, 0).strength(0.6))
       .force(
         "radial",
         forceRadial<SimulationNode>(
-          Math.sqrt(data.nodes.length) * 8,
+          Math.sqrt(data.nodes.length) * 6,
           0,
           0,
-        ).strength(0.03),
+        ).strength(0.05),
       )
       .force(
         "collide",
@@ -474,8 +474,9 @@ export default function GraphCanvas({
             ? tagColor
             : nodeColors[node.sourceType] || "#888";
 
-        // Determine node opacity based on hover spotlight
-        let nodeAlpha = 0.85;
+        // Determine node opacity based on hover spotlight and hierarchy
+        const isSection = node.nodeType === "section";
+        let nodeAlpha = isMedia ? 0.5 : isSection ? 0.55 : 0.85;
         if (hasHoverSpotlight) {
           if (isHovered || isSelected || isNeighborOfHover) {
             nodeAlpha = 1;
