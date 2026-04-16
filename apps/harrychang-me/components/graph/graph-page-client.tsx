@@ -246,7 +246,7 @@ export default function GraphPageClient() {
       {/* Controls - top right */}
       {isMobile ? (
         /* Mobile: compact toggle for filters */
-        <div className="absolute top-4 right-4 z-10">
+        <div className="absolute top-4 right-4 z-10 flex flex-col items-end">
           <button
             onClick={() => setShowMobileFilters((v) => !v)}
             className="font-mono text-xs text-secondary bg-card/80 border border-border px-2 py-1"
@@ -256,10 +256,10 @@ export default function GraphPageClient() {
           <AnimatePresence>
             {showMobileFilters && (
               <motion.div
-                initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                initial={{ opacity: 0, y: -2, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -8, scale: 0.95 }}
-                transition={{ duration: 0.2, ease: easeOut }}
+                exit={{ opacity: 0, y: -2, scale: 0.95 }}
+                transition={{ duration: 0.1, ease: easeOut }}
                 className="mt-2 bg-card border border-border p-2 flex flex-col gap-2 max-h-[60vh] overflow-y-auto origin-top-right"
               >
               <div className="flex items-center gap-6 min-h-[28px]">
@@ -289,7 +289,7 @@ export default function GraphPageClient() {
                   </button>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-1 pt-1 border-t border-border/30">
+              <div className="flex flex-wrap gap-1">
                 {NODE_TYPES.map((type) => (
                   <button
                     key={type}
