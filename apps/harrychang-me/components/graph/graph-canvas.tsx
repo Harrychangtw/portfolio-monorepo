@@ -70,7 +70,8 @@ export default function GraphCanvas({
 }: GraphCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const simulationRef = useRef<ReturnType<typeof forceSimulation> | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const simulationRef = useRef<any>(null);
   const nodesRef = useRef<SimulationNode[]>([]);
   const edgesRef = useRef<SimulationEdge[]>([]);
   const transformRef = useRef({ x: 0, y: 0, k: 1 });
@@ -241,15 +242,10 @@ export default function GraphCanvas({
         ctx.beginPath();
         ctx.moveTo(src.x, src.y);
         ctx.lineTo(tgt.x, tgt.y);
-        ctx.strokeStyle = isHighlighted || isSelected
-          ? glowColor
-          : theme.edge;
-        ctx.globalAlpha = isHighlighted || isSelected
-          ? 0.6
-          : 0.08 + edge.weight * 0.15;
-        ctx.lineWidth = isHighlighted || isSelected
-          ? 1.5 / k
-          : 0.5 / k;
+        ctx.strokeStyle = isHighlighted || isSelected ? glowColor : theme.edge;
+        ctx.globalAlpha =
+          isHighlighted || isSelected ? 0.6 : 0.08 + edge.weight * 0.15;
+        ctx.lineWidth = isHighlighted || isSelected ? 1.5 / k : 0.5 / k;
         ctx.stroke();
         ctx.globalAlpha = 1;
       }
@@ -295,7 +291,8 @@ export default function GraphCanvas({
           const fontSize = Math.max(10, 11 / k);
           ctx.font = `${fontSize}px var(--font-body, sans-serif)`;
           ctx.fillStyle = theme.foreground;
-          ctx.globalAlpha = isHovered || isSelected ? 1 : Math.min(1, (k - 0.6) * 2);
+          ctx.globalAlpha =
+            isHovered || isSelected ? 1 : Math.min(1, (k - 0.6) * 2);
           ctx.textAlign = "center";
           ctx.textBaseline = "top";
           const label =
@@ -327,8 +324,8 @@ export default function GraphCanvas({
       const { width, height } = dimensions;
 
       // Convert screen coords to simulation coords
-      const mx = ((clientX - rect.left - tx - width / 2) / k);
-      const my = ((clientY - rect.top - ty - height / 2) / k);
+      const mx = (clientX - rect.left - tx - width / 2) / k;
+      const my = (clientY - rect.top - ty - height / 2) / k;
 
       let closest: SimulationNode | null = null;
       let closestDist = Infinity;
