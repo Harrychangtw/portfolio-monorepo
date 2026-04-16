@@ -1,0 +1,5 @@
+sentence-transformers>=3.0
+torch>=2.0
+numpy
+pyyaml
+requests

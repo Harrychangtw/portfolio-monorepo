@@ -12,7 +12,8 @@
     "lab": "Icarus Lab",
     "links": "Links",
     "design": "Design System",
-    "cv": "Résumé"
+    "cv": "Résumé",
+    "graph": "Knowledge Graph"
   },
   "footer": {
     "guestbook": "Guestbook",
@@ -21,8 +22,8 @@
     "siteNavigation": "Site Map",
     "languageSwitch": "Language",
     "themeSwitch": "Theme",
-    "motto1":"Building highways when lanes feel too narrow. Sometimes it's sharp, sometimes it's f/1.5 blur.",
-    "motto2":"Curious? So am I. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+    "motto1": "Building highways when lanes feel too narrow. Sometimes it's sharp, sometimes it's f/1.5 blur.",
+    "motto2": "Curious? So am I. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
   },
   "guestbook": {
     "placeholder1": "Did something connect? Or break? Leave a note.",
@@ -58,7 +59,7 @@
     "backToProjects": "Back to projects",
     "noProjectsFound": "No projects found.",
     "year": "Year",
-    "role": "Role", 
+    "role": "Role",
     "technologies": "Technologies",
     "client": "Client",
     "website": "Website",
@@ -182,10 +183,10 @@
     "publishedOn": "Published on"
   },
   "tooltips": {
-    "about":"Who I am, what I do, why it matters to me",
-    "updates":"Recent milestones and what I've been working on",
-    "projects":"Published research, keynotes, and the builds in between",
-    "gallery":"Moments captured, some planned, most stumbled upon",
+    "about": "Who I am, what I do, why it matters to me",
+    "updates": "Recent milestones and what I've been working on",
+    "projects": "Published research, keynotes, and the builds in between",
+    "gallery": "Moments captured, some planned, most stumbled upon",
     "gmail": "Always happy for a chat!",
     "discord": "Usually around, sometimes responsive, always curious",
     "calendar": "Book a time, let's chat!",
@@ -204,7 +205,6 @@
     "medium": "Syndicated stories, another home for my words",
     "source": "View the monorepo source code and README on GitHub"
   },
-  
   "letterGlitch": {
     "line1": "I was never taught to create—",
     "line2": "I was born curious enough to try.",

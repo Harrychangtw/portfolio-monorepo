@@ -84,6 +84,7 @@ export default function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLab, setIsLab] = useState(false);
+  const [isGraph, setIsGraph] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
   const isHomePage = pathname === "/";
   const [loadingStatus, setLoadingStatus] = useState<
@@ -173,6 +174,10 @@ export default function Header() {
       setIsLab(
         hostname.includes("lab.localhost") ||
           hostname.includes("lab.harrychang.me"),
+      );
+      setIsGraph(
+        hostname.includes("graph.localhost") ||
+          hostname.includes("graph.harrychang.me"),
       );
     }
   }, []);
@@ -322,6 +327,8 @@ export default function Header() {
 
   if (isLab) {
     activeTitleKey = "lab";
+  } else if (isGraph) {
+    activeTitleKey = "graph";
   } else if (currentSpecialPage) {
     activeTitleKey = currentSpecialPage.key;
   } else if (showStandardSectionTitle) {
@@ -336,7 +343,7 @@ export default function Header() {
     !isProjectDetailPage &&
     !isBlogDetailPage &&
     !activeTitleKey;
-  const shouldHideNav = isMobile || isLab || isNotFound;
+  const shouldHideNav = isMobile || isLab || isGraph || isNotFound;
 
   // Reusable Underline Component
   const Underline = () => (
@@ -379,7 +386,7 @@ export default function Header() {
   };
 
   // Determine when to show the staggered menu
-  const showStaggeredMenu = isMobile && !isLab;
+  const showStaggeredMenu = isMobile && !isLab && !isGraph;
 
   // Menu items for the staggered menu
   const menuItems = NAV_ITEMS.map((item) => ({
@@ -424,7 +431,7 @@ export default function Header() {
 
   // Track reading progress
   useEffect(() => {
-    if ((!isProjectDetailPage && !isBlogDetailPage) || isLab) return;
+    if ((!isProjectDetailPage && !isBlogDetailPage) || isLab || isGraph) return;
 
     let animationFrameId: number;
     let targetProgress = 0;
@@ -458,13 +465,15 @@ export default function Header() {
   }, [isProjectDetailPage, isBlogDetailPage, isLab]);
 
   const getHomeUrl = () => {
-    if (isLab) {
+    if (isLab || isGraph) {
       const protocol =
         (typeof window !== "undefined" && window.location.protocol) || "http:";
       const hostnameWithPort =
         (typeof window !== "undefined" && window.location.host) ||
         "localhost:3000";
-      const mainDomain = hostnameWithPort.replace("lab.", "");
+      const mainDomain = hostnameWithPort
+        .replace("lab.", "")
+        .replace("graph.", "");
       return `${protocol}//${mainDomain}`;
     }
     return "/";
@@ -502,7 +511,7 @@ export default function Header() {
       )}
 
       {/* Reading progress indicator */}
-      {(isProjectDetailPage || isBlogDetailPage) && !isLab && !isNavigating && (
+      {(isProjectDetailPage || isBlogDetailPage) && !isLab && !isGraph && !isNavigating && (
         <div
           className="absolute top-0 left-0 h-[2px] bg-accent"
           style={{ width: `${readingProgress}%` }}
@@ -514,7 +523,7 @@ export default function Header() {
           className={`flex items-center min-w-0 flex-1 ${showStaggeredMenu ? "mr-12" : "mr-4"}`}
         >
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            {isLab ? (
+            {isLab || isGraph ? (
               <a
                 href={getHomeUrl()}
                 className="font-heading text-xl font-semibold transition-colors hover:text-accent outline-none whitespace-nowrap"

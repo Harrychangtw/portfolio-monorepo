@@ -15,7 +15,9 @@
     "optimize-images": "node scripts/optimize-images.js",
     "generate-sitemap": "node scripts/generate-sitemap.mjs",
     "prepare-content": "npm run optimize-images",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "build:graph": "if [ -d .venv ]; then .venv/bin/python3 scripts/build_graph.py; else python3 scripts/build_graph.py; fi",
+    "dev:graph": "NEXT_PUBLIC_IS_GRAPH=true next dev -p 3002"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -30,6 +32,9 @@
     "class-variance-authority": "^0.7.1",
     "cmdk": "1.0.4",
     "critters": "^0.0.23",
+    "d3-force": "^3.0.0",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
     "date-fns": "4.1.0",
     "dotenv": "^17.4.2",
     "embla-carousel-react": "8.5.1",
@@ -63,6 +68,9 @@
   },
   "devDependencies": {
     "@prisma/client": "^6.19.3",
+    "@types/d3-force": "^3.0.10",
+    "@types/d3-selection": "^3.0.11",
+    "@types/d3-zoom": "^3.0.8",
     "@types/node": "^22.19.17",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

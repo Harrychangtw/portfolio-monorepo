@@ -12,7 +12,8 @@
     "lab": "Icarus Lab",
     "links": "連結",
     "design": "設計系統",
-    "cv": "履歷"
+    "cv": "履歷",
+    "graph": "知識圖譜"
   },
   "footer": {
     "guestbook": "匿名留言板",
@@ -21,8 +22,8 @@
     "siteNavigation": "網站導覽",
     "languageSwitch": "語言",
     "themeSwitch": "主題",
-    "motto1":"在既有的車道外另闢蹊徑。有時追求銳利，有時偏愛模糊。",
-    "motto2":"打聲招呼？ — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+    "motto1": "在既有的車道外另闢蹊徑。有時追求銳利，有時偏愛模糊。",
+    "motto2": "打聲招呼？ — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
   },
   "guestbook": {
     "placeholder1": "有什麼讓你產生共鳴，或發現什麼需要修正嗎？",
@@ -148,7 +149,7 @@
   },
   "social": {
     "gmail": "Email",
-    "discord": "Discord", 
+    "discord": "Discord",
     "github": "GitHub",
     "instagram": "Instagram",
     "letterboxd": "Letterboxd",
@@ -182,10 +183,10 @@
     "publishedOn": "發表於"
   },
   "tooltips": {
-    "about":"關於我是誰，在做什麼，為什麼做",
-    "updates":"最近在忙的事，值得記錄的瞬間",
-    "projects":"論文、演講、影像，以及之間的種種嘗試",
-    "gallery":"透過鏡頭捕捉的片刻與思考",
+    "about": "關於我是誰，在做什麼，為什麼做",
+    "updates": "最近在忙的事，值得記錄的瞬間",
+    "projects": "論文、演講、影像，以及之間的種種嘗試",
+    "gallery": "透過鏡頭捕捉的片刻與思考",
     "gmail": "隨時歡迎交流！",
     "discord": "常在線上，偶爾放空，隨時歡迎交流",
     "calendar": "預約時間來聊聊吧！",
@@ -203,15 +204,13 @@
     "blog": "關於電影、工具、生活的隨筆",
     "medium": "同步刊登的隨筆，文字另一處棲息地",
     "source": "在 GitHub 上探索本站的架構"
-
   },
   "letterGlitch": {
     "line1": "我 從 未 被 教 會 創 造 ——",
     "line2": "而 是 懵 懂 到 願 意 嘗 試 。",
     "line3": "讓 思 緒 歸 於 沉 寂，",
     "line4": "讓 指 尖 重 拾 ， 昔 日 那 份 天 真 。"
-  }, 
-
+  },
   "common": {
     "close": "關閉",
     "openMenu": "開啟選單",

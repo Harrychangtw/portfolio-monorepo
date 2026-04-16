@@ -85,6 +85,7 @@ export default function Footer() {
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [isClient, setIsClient] = useState(false);
   const [isLab, setIsLab] = useState(false);
+  const [isGraph, setIsGraph] = useState(false);
   const footerRef = useRef<HTMLElement | null>(null);
 
   const hoveringMusic = activeTooltipId === "music";
@@ -98,6 +99,7 @@ export default function Footer() {
     setIsClient(true);
     const hostname = window.location.hostname;
     setIsLab(hostname.startsWith("lab."));
+    setIsGraph(hostname.startsWith("graph."));
   }, []);
 
   const handleMouseEnter = (e: React.MouseEvent, id: string) => {
@@ -137,8 +139,8 @@ export default function Footer() {
       return `${protocol}//lab.${baseDomain}`;
     }
 
-    if (isLab && isInternalLink(href)) {
-      let mainDomain = hostname.replace(/^lab\./, "");
+    if ((isLab || isGraph) && isInternalLink(href)) {
+      let mainDomain = hostname.replace(/^lab\./, "").replace(/^graph\./, "");
       if (!mainDomain.includes("localhost") && !mainDomain.startsWith("www.")) {
         mainDomain = `www.${mainDomain}`;
       }
@@ -152,7 +154,7 @@ export default function Footer() {
     e: React.MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
-    if (isLab) return;
+    if (isLab || isGraph) return;
 
     if (isAnchorLink(href) && pathname === "/") {
       const id = href.split("#")[1];

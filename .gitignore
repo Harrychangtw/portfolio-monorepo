@@ -33,6 +33,16 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Python
+.venv
+__pycache__
+*.pyc
+
+# Knowledge Graph generated data
+apps/harrychang-me/public/graph-data.json
+apps/harrychang-me/content/generated/graph-embeddings-cache.json
+apps/harrychang-me/content/generated/graph-descriptions-cache.json
+
 # Misc
 .DS_Store
 *.pem
