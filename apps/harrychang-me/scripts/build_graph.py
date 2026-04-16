@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 Build script for the knowledge graph.
-Reads all markdown content + locale JSONs, chunks them, generates embeddings
-via sentence-transformers (MPS on Apple Silicon), computes similarity edges,
+Reads all markdown content + locale JSONs, chunks them into a hierarchy
+(file -> section -> image/video), generates embeddings via sentence-transformers
+(MPS on Apple Silicon), computes similarity edges, builds structural + tag edges,
 and outputs a static graph-data.json for the frontend visualization.
 
 Usage:
@@ -40,6 +41,18 @@ CONTENT_DIRS = {
     "gallery": CONTENT_DIR / "gallery",
 }
 
+# URL patterns for video detection
+YOUTUBE_PATTERN = re.compile(
+    r"!\[([^\]]*)\]\((https?://(?:www\.)?(?:youtube\.com/watch\?[^\s)]+|youtu\.be/[^\s)]+))\)"
+)
+DRIVE_PATTERN = re.compile(
+    r"!\[([^\]]*)\]\((https?://drive\.google\.com/[^\s)]+)\)"
+)
+# Image pattern in markdown body (excludes youtube/drive URLs)
+IMAGE_PATTERN = re.compile(
+    r"!\[([^\]]*)\]\(([^)]+\.(?:webp|jpg|jpeg|png|gif|svg|avif))\)"
+)
+
 # ─── Frontmatter parsing ────────────────────────────────────────────────────
 
 
@@ -57,6 +70,11 @@ def parse_frontmatter(text: str) -> tuple[dict, str]:
 
 def sha256(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def slugify_tag(tag: str) -> str:
+    """Convert a tag to a slug-safe string."""
+    return re.sub(r"[^a-z0-9\u4e00-\u9fff\u3400-\u4dbf-]", "-", tag.lower().strip()).strip("-")
 
 
 # ─── Content collection ─────────────────────────────────────────────────────
@@ -130,8 +148,36 @@ def collect_locale_files() -> list[dict]:
 # ─── Chunking ────────────────────────────────────────────────────────────────
 
 
-def chunk_markdown(item: dict) -> list[dict]:
-    """Chunk a markdown item into graph nodes."""
+def extract_media_from_text(text: str) -> tuple[list[dict], list[dict]]:
+    """Extract image and video references from markdown text.
+    Returns (images, videos) where each is a list of {alt, url}."""
+    images = []
+    videos = []
+
+    # Extract videos first (YouTube, Drive)
+    video_urls = set()
+    for match in YOUTUBE_PATTERN.finditer(text):
+        alt, url = match.group(1), match.group(2)
+        videos.append({"alt": alt or "YouTube Video", "url": url})
+        video_urls.add(url)
+    for match in DRIVE_PATTERN.finditer(text):
+        alt, url = match.group(1), match.group(2)
+        videos.append({"alt": alt or "Video", "url": url})
+        video_urls.add(url)
+
+    # Extract images (excluding video URLs)
+    for match in IMAGE_PATTERN.finditer(text):
+        alt, url = match.group(1), match.group(2)
+        if url not in video_urls:
+            images.append({"alt": alt or "", "url": url})
+
+    return images, videos
+
+
+def chunk_markdown(item: dict) -> dict:
+    """Chunk a markdown item into a hierarchy of nodes and edges.
+    Returns {file_node, section_nodes, image_nodes, video_nodes, structural_edges}.
+    Only file_node and section_nodes get a 'text' field for embedding."""
     meta = item["meta"]
     body = item["body"].strip()
     source_type = item["source_type"]
@@ -182,20 +228,48 @@ def chunk_markdown(item: dict) -> list[dict]:
 
     context_prefix = "\n".join(context_parts)
 
-    chunks = []
+    file_id = f"{source_type}-{slug}-{locale}-file"
 
-    # Split by H2 headings
+    # === File node ===
+    file_text = f"{context_prefix}\n\n{body[:500]}" if body else context_prefix
+    file_snippet = (description[:150] + "...") if len(description) > 150 else (description or (body[:150] + "..." if body else ""))
+    file_node = {
+        "id": file_id,
+        "text": file_text,
+        "nodeType": "file",
+        "title": title,
+        "snippet": file_snippet.replace("\n", " ").strip(),
+        "sourceType": source_type,
+        "sourceSlug": slug,
+        "locale": locale,
+        "url": url,
+        "date": str(date) if date else None,
+        "tags": [str(t) for t in tags],
+        "heading": None,
+        "imageUrl": image_url if image_url else None,
+        "parentId": None,
+        "mediaSource": None,
+    }
+
+    section_nodes = []
+    image_nodes = []
+    video_nodes = []
+    structural_edges = []
+
+    # === Section nodes ===
     sections = re.split(r"\n(?=## )", body)
     sections = [s.strip() for s in sections if s.strip()]
 
     if len(sections) <= 1:
-        # No H2 sections or just one - treat as single chunk
+        # Single chunk — treat as one section under the file
+        sec_id = f"{source_type}-{slug}-{locale}-sec-0"
         text = f"{context_prefix}\n\n{body}" if body else context_prefix
         snippet = (body[:150] + "...") if len(body) > 150 else (body or description)
-        chunks.append(
+        section_nodes.append(
             {
-                "id": f"{source_type}-{slug}-{locale}-0",
+                "id": sec_id,
                 "text": text,
+                "nodeType": "section",
                 "title": title,
                 "snippet": snippet.replace("\n", " ").strip(),
                 "sourceType": source_type,
@@ -206,8 +280,59 @@ def chunk_markdown(item: dict) -> list[dict]:
                 "tags": [str(t) for t in tags],
                 "heading": None,
                 "imageUrl": image_url if image_url else None,
+                "parentId": file_id,
+                "mediaSource": None,
             }
         )
+        structural_edges.append(
+            {"source": file_id, "target": sec_id, "weight": 1.0, "linkType": "structural"}
+        )
+
+        # Extract media from the entire body
+        images, videos = extract_media_from_text(body)
+        for j, img in enumerate(images):
+            img_id = f"{source_type}-{slug}-{locale}-sec-0-img-{j}"
+            img_title = img["alt"].replace("framed:", "").strip() or Path(img["url"]).stem
+            image_nodes.append({
+                "id": img_id,
+                "nodeType": "image",
+                "title": img_title[:60],
+                "snippet": "",
+                "sourceType": source_type,
+                "sourceSlug": slug,
+                "locale": locale,
+                "url": url,
+                "date": str(date) if date else None,
+                "tags": [],
+                "heading": None,
+                "imageUrl": img["url"],
+                "parentId": sec_id,
+                "mediaSource": img["url"],
+            })
+            structural_edges.append(
+                {"source": sec_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
+            )
+        for j, vid in enumerate(videos):
+            vid_id = f"{source_type}-{slug}-{locale}-sec-0-vid-{j}"
+            video_nodes.append({
+                "id": vid_id,
+                "nodeType": "video",
+                "title": vid["alt"][:60],
+                "snippet": "",
+                "sourceType": source_type,
+                "sourceSlug": slug,
+                "locale": locale,
+                "url": url,
+                "date": str(date) if date else None,
+                "tags": [],
+                "heading": None,
+                "imageUrl": None,
+                "parentId": sec_id,
+                "mediaSource": vid["url"],
+            })
+            structural_edges.append(
+                {"source": sec_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
+            )
     else:
         for i, section in enumerate(sections):
             # Extract heading if present
@@ -217,6 +342,7 @@ def chunk_markdown(item: dict) -> list[dict]:
                 re.sub(r"^##\s+.+?\n?", "", section).strip() if heading else section
             )
 
+            sec_id = f"{source_type}-{slug}-{locale}-sec-{i}"
             text = f"{context_prefix}\n\nSection: {heading or 'Introduction'}\n\n{section_body}"
             snippet = (
                 (section_body[:150] + "...")
@@ -224,10 +350,11 @@ def chunk_markdown(item: dict) -> list[dict]:
                 else section_body
             )
 
-            chunks.append(
+            section_nodes.append(
                 {
-                    "id": f"{source_type}-{slug}-{locale}-{i}",
+                    "id": sec_id,
                     "text": text,
+                    "nodeType": "section",
                     "title": f"{title}" if not heading else f"{title} - {heading}",
                     "snippet": snippet.replace("\n", " ").strip(),
                     "sourceType": source_type,
@@ -238,10 +365,121 @@ def chunk_markdown(item: dict) -> list[dict]:
                     "tags": [str(t) for t in tags],
                     "heading": heading,
                     "imageUrl": image_url if image_url else None,
+                    "parentId": file_id,
+                    "mediaSource": None,
                 }
             )
+            structural_edges.append(
+                {"source": file_id, "target": sec_id, "weight": 1.0, "linkType": "structural"}
+            )
 
-    return chunks
+            # Extract media from this section
+            images, videos = extract_media_from_text(section)
+            for j, img in enumerate(images):
+                img_id = f"{source_type}-{slug}-{locale}-sec-{i}-img-{j}"
+                img_title = img["alt"].replace("framed:", "").strip() or Path(img["url"]).stem
+                image_nodes.append({
+                    "id": img_id,
+                    "nodeType": "image",
+                    "title": img_title[:60],
+                    "snippet": "",
+                    "sourceType": source_type,
+                    "sourceSlug": slug,
+                    "locale": locale,
+                    "url": url,
+                    "date": str(date) if date else None,
+                    "tags": [],
+                    "heading": heading,
+                    "imageUrl": img["url"],
+                    "parentId": sec_id,
+                    "mediaSource": img["url"],
+                })
+                structural_edges.append(
+                    {"source": sec_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
+                )
+            for j, vid in enumerate(videos):
+                vid_id = f"{source_type}-{slug}-{locale}-sec-{i}-vid-{j}"
+                video_nodes.append({
+                    "id": vid_id,
+                    "nodeType": "video",
+                    "title": vid["alt"][:60],
+                    "snippet": "",
+                    "sourceType": source_type,
+                    "sourceSlug": slug,
+                    "locale": locale,
+                    "url": url,
+                    "date": str(date) if date else None,
+                    "tags": [],
+                    "heading": heading,
+                    "imageUrl": None,
+                    "parentId": sec_id,
+                    "mediaSource": vid["url"],
+                })
+                structural_edges.append(
+                    {"source": sec_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
+                )
+
+    # === Cover image node (from frontmatter imageUrl) ===
+    if image_url:
+        cover_id = f"{source_type}-{slug}-{locale}-img-cover"
+        cover_title = f"{title} (cover)"
+        image_nodes.append({
+            "id": cover_id,
+            "nodeType": "image",
+            "title": cover_title[:60],
+            "snippet": "",
+            "sourceType": source_type,
+            "sourceSlug": slug,
+            "locale": locale,
+            "url": url,
+            "date": str(date) if date else None,
+            "tags": [],
+            "heading": None,
+            "imageUrl": image_url,
+            "parentId": file_id,
+            "mediaSource": image_url,
+        })
+        structural_edges.append(
+            {"source": file_id, "target": cover_id, "weight": 0.8, "linkType": "structural"}
+        )
+
+    # === Gallery image nodes (from frontmatter gallery: array) ===
+    gallery_items = meta.get("gallery", []) or []
+    for j, gal_item in enumerate(gallery_items):
+        gal_url = gal_item.get("url", "") if isinstance(gal_item, dict) else str(gal_item)
+        if not gal_url:
+            continue
+        gal_id = f"{source_type}-{slug}-{locale}-img-gal-{j}"
+        gal_title = gal_item.get("caption", "") if isinstance(gal_item, dict) else ""
+        if not gal_title:
+            gal_title = Path(gal_url).stem
+        image_nodes.append({
+            "id": gal_id,
+            "nodeType": "image",
+            "title": gal_title[:60],
+            "snippet": "",
+            "sourceType": source_type,
+            "sourceSlug": slug,
+            "locale": locale,
+            "url": url,
+            "date": str(date) if date else None,
+            "tags": [],
+            "heading": None,
+            "imageUrl": gal_url,
+            "parentId": file_id,
+            "mediaSource": gal_url,
+        })
+        structural_edges.append(
+            {"source": file_id, "target": gal_id, "weight": 0.8, "linkType": "structural"}
+        )
+
+    return {
+        "file_node": file_node,
+        "section_nodes": section_nodes,
+        "image_nodes": image_nodes,
+        "video_nodes": video_nodes,
+        "structural_edges": structural_edges,
+    }
 
 
 def flatten_json_section(data, prefix: str = "") -> str:
@@ -264,13 +502,13 @@ def flatten_json_section(data, prefix: str = "") -> str:
 
 
 def chunk_locale(item: dict) -> list[dict]:
-    """Chunk a locale JSON file into graph nodes."""
+    """Chunk a locale JSON file into graph nodes.
+    Returns a flat list of section-level nodes (locale files don't have hierarchy)."""
     namespace = item["namespace"]
     locale = item["locale"]
     data = item["data"]
 
     # Skip common.json utility strings (header labels, button text, etc.)
-    # Only include substantive content
     skip_namespaces = {"common"}
     if namespace in skip_namespaces:
         return []
@@ -286,7 +524,6 @@ def chunk_locale(item: dict) -> list[dict]:
     chunks = []
 
     if namespace == "cv" and "sections" in data:
-        # CV: each section becomes a chunk
         for section_key, section_data in data["sections"].items():
             text = flatten_json_section(section_data)
             if not text.strip():
@@ -301,6 +538,7 @@ def chunk_locale(item: dict) -> list[dict]:
                 {
                     "id": f"locale-{namespace}-{section_key}-{locale}-0",
                     "text": f"CV Section: {title_val}\n\n{text}",
+                    "nodeType": "section",
                     "title": f"CV - {title_val}",
                     "snippet": snippet,
                     "sourceType": "locale",
@@ -310,10 +548,11 @@ def chunk_locale(item: dict) -> list[dict]:
                     "date": None,
                     "tags": ["cv", section_key],
                     "heading": title_val,
+                    "parentId": None,
+                    "mediaSource": None,
                 }
             )
     elif namespace == "about":
-        # About: concatenate all bio paragraphs + roles
         text_parts = []
         for key in ["bio1", "bio2", "bio3"]:
             if key in data:
@@ -330,6 +569,7 @@ def chunk_locale(item: dict) -> list[dict]:
                 {
                     "id": f"locale-{namespace}-{locale}-0",
                     "text": f"About Harry Chang\n\n{text}",
+                    "nodeType": "section",
                     "title": "About",
                     "snippet": text[:150].replace("\n", " ") + "...",
                     "sourceType": "locale",
@@ -339,14 +579,15 @@ def chunk_locale(item: dict) -> list[dict]:
                     "date": None,
                     "tags": ["about"],
                     "heading": None,
+                    "parentId": None,
+                    "mediaSource": None,
                 }
             )
     elif namespace == "updates":
-        # Updates: group entries
         entries = data.get("entries", [])
         if entries:
             text_parts = []
-            for entry in entries[:20]:  # cap at 20
+            for entry in entries[:20]:
                 if isinstance(entry, dict):
                     entry_text = re.sub(r"<[^>]+>", "", entry.get("text", ""))
                     text_parts.append(
@@ -358,6 +599,7 @@ def chunk_locale(item: dict) -> list[dict]:
                     {
                         "id": f"locale-{namespace}-{locale}-0",
                         "text": f"Recent Updates\n\n{text}",
+                        "nodeType": "section",
                         "title": "Updates",
                         "snippet": text[:150].replace("\n", " ") + "...",
                         "sourceType": "locale",
@@ -367,16 +609,18 @@ def chunk_locale(item: dict) -> list[dict]:
                         "date": None,
                         "tags": ["updates"],
                         "heading": None,
+                        "parentId": None,
+                        "mediaSource": None,
                     }
                 )
     elif namespace == "uses":
-        # Uses: each top-level category
         text = flatten_json_section(data)
         if text.strip():
             chunks.append(
                 {
                     "id": f"locale-{namespace}-{locale}-0",
                     "text": f"Uses / Setup\n\n{text}",
+                    "nodeType": "section",
                     "title": "Uses",
                     "snippet": text[:150].replace("\n", " ") + "...",
                     "sourceType": "locale",
@@ -386,10 +630,58 @@ def chunk_locale(item: dict) -> list[dict]:
                     "date": None,
                     "tags": ["uses", "setup"],
                     "heading": None,
+                    "parentId": None,
+                    "mediaSource": None,
                 }
             )
 
     return chunks
+
+
+def build_tag_nodes(all_file_nodes: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Build tag nodes and tag edges from file nodes.
+    Returns (tag_nodes, tag_edges)."""
+    tag_to_files = {}
+    for node in all_file_nodes:
+        for tag in (node.get("tags") or []):
+            tag_str = str(tag).strip()
+            if not tag_str:
+                continue
+            key = slugify_tag(tag_str)
+            if key not in tag_to_files:
+                tag_to_files[key] = {"label": tag_str, "file_ids": []}
+            tag_to_files[key]["file_ids"].append(node["id"])
+
+    tag_nodes = []
+    tag_edges = []
+
+    for key, info in tag_to_files.items():
+        tag_id = f"tag-{key}"
+        tag_nodes.append({
+            "id": tag_id,
+            "nodeType": "tag",
+            "title": info["label"],
+            "snippet": f"{len(info['file_ids'])} documents",
+            "sourceType": "locale",  # neutral color
+            "sourceSlug": key,
+            "locale": "en",
+            "url": "",
+            "date": None,
+            "tags": [],
+            "heading": None,
+            "imageUrl": None,
+            "parentId": None,
+            "mediaSource": None,
+        })
+        for file_id in info["file_ids"]:
+            tag_edges.append({
+                "source": tag_id,
+                "target": file_id,
+                "weight": 0.6,
+                "linkType": "tag",
+            })
+
+    return tag_nodes, tag_edges
 
 
 # ─── Embeddings ──────────────────────────────────────────────────────────────
@@ -412,7 +704,7 @@ def save_cache(cache: dict):
 
 
 def compute_embeddings(chunks: list[dict], cache: dict) -> np.ndarray:
-    """Compute embeddings for all chunks using sentence-transformers."""
+    """Compute embeddings for chunks that have a 'text' field."""
     import torch
     from sentence_transformers import SentenceTransformer
 
@@ -442,7 +734,6 @@ def compute_embeddings(chunks: list[dict], cache: dict) -> np.ndarray:
         model = SentenceTransformer(EMBEDDING_MODEL, device=device)
 
         uncached_texts = [texts[i] for i in uncached_indices]
-        # Batch encode
         embeddings = model.encode(
             uncached_texts,
             batch_size=32,
@@ -458,7 +749,6 @@ def compute_embeddings(chunks: list[dict], cache: dict) -> np.ndarray:
     else:
         print(f"  All {len(chunks)} chunks found in cache")
 
-    # Build the full embedding matrix from cache
     all_embeddings = np.array([cache[h] for h in hashes], dtype=np.float32)
     return all_embeddings
 
@@ -472,19 +762,12 @@ def compute_edges(
     threshold: float,
     max_edges: int,
 ) -> list[dict]:
-    """Compute similarity edges between chunks."""
+    """Compute semantic similarity edges between embeddable chunks."""
     n = len(chunks)
     print(f"  Computing {n * (n - 1) // 2} pairwise similarities...")
 
-    # Cosine similarity matrix (embeddings are already normalized)
     sim_matrix = embeddings @ embeddings.T
 
-    # Collect edges above threshold
-    edges = []
-    # Track per-node edge count for k-NN cap
-    node_edge_counts = {i: 0 for i in range(n)}
-
-    # Get all above-threshold pairs, sorted by similarity descending
     pairs = []
     for i in range(n):
         for j in range(i + 1, n):
@@ -494,6 +777,9 @@ def compute_edges(
 
     pairs.sort(key=lambda x: -x[2])
 
+    node_edge_counts = {i: 0 for i in range(n)}
+    edges = []
+
     for i, j, s in pairs:
         if node_edge_counts[i] < max_edges and node_edge_counts[j] < max_edges:
             edges.append(
@@ -501,6 +787,7 @@ def compute_edges(
                     "source": chunks[i]["id"],
                     "target": chunks[j]["id"],
                     "weight": round(s, 4),
+                    "linkType": "semantic",
                 }
             )
             node_edge_counts[i] += 1
@@ -529,9 +816,11 @@ def generate_descriptions(chunks: list[dict], cache: dict):
         except (json.JSONDecodeError, IOError):
             pass
 
-    uncached = [c for c in chunks if sha256(c["text"]) not in desc_cache]
+    # Only generate descriptions for file and section nodes that have text
+    embeddable = [c for c in chunks if "text" in c]
+    uncached = [c for c in embeddable if sha256(c["text"]) not in desc_cache]
     if not uncached:
-        print(f"  All {len(chunks)} descriptions found in cache")
+        print(f"  All {len(embeddable)} descriptions found in cache")
     else:
         print(f"  Generating descriptions for {len(uncached)} chunks via OpenRouter...")
 
@@ -541,7 +830,7 @@ def generate_descriptions(chunks: list[dict], cache: dict):
 
     for i, chunk in enumerate(uncached):
         text_hash = sha256(chunk["text"])
-        prompt_text = chunk["text"][:1000]  # Truncate for API
+        prompt_text = chunk["text"][:1000]
 
         for model in models:
             try:
@@ -583,25 +872,23 @@ def generate_descriptions(chunks: list[dict], cache: dict):
                 print(f"    Warning: {model} failed for chunk {i}: {e}")
                 continue
 
-        # Rate limit
         time.sleep(0.15)
 
         if (i + 1) % 20 == 0:
             print(f"    {i + 1}/{len(uncached)} done")
             desc_cache_path.write_text(json.dumps(desc_cache, ensure_ascii=False), encoding="utf-8")
 
-    # Save final cache
     desc_cache_path.write_text(json.dumps(desc_cache, ensure_ascii=False), encoding="utf-8")
 
-    # Apply descriptions to chunks
     applied = 0
     for chunk in chunks:
-        text_hash = sha256(chunk["text"])
-        if text_hash in desc_cache:
-            chunk["description"] = desc_cache[text_hash]
-            applied += 1
+        if "text" in chunk:
+            text_hash = sha256(chunk["text"])
+            if text_hash in desc_cache:
+                chunk["description"] = desc_cache[text_hash]
+                applied += 1
 
-    print(f"  Applied {applied}/{len(chunks)} descriptions")
+    print(f"  Applied {applied}/{len(embeddable)} descriptions")
 
 
 # ─── Main ────────────────────────────────────────────────────────────────────
@@ -624,74 +911,106 @@ def main():
     print("=== Knowledge Graph Build ===\n")
 
     # Step 1: Collect content
-    print("[1/5] Collecting content...")
+    print("[1/6] Collecting content...")
     md_items = collect_markdown_files()
     locale_items = collect_locale_files()
     print(
         f"  Found {len(md_items)} markdown files, {len(locale_items)} locale files"
     )
 
-    # Step 2: Chunk content
-    print("\n[2/5] Chunking content...")
-    chunks = []
+    # Step 2: Chunk content into hierarchy
+    print("\n[2/6] Chunking content into hierarchy...")
+    all_file_nodes = []
+    all_section_nodes = []
+    all_image_nodes = []
+    all_video_nodes = []
+    all_structural_edges = []
+
     for item in md_items:
-        chunks.extend(chunk_markdown(item))
+        result = chunk_markdown(item)
+        all_file_nodes.append(result["file_node"])
+        all_section_nodes.extend(result["section_nodes"])
+        all_image_nodes.extend(result["image_nodes"])
+        all_video_nodes.extend(result["video_nodes"])
+        all_structural_edges.extend(result["structural_edges"])
+
+    # Locale chunks (flat, no hierarchy)
+    locale_chunks = []
     for item in locale_items:
-        chunks.extend(chunk_locale(item))
-    print(f"  Generated {len(chunks)} chunks")
+        locale_chunks.extend(chunk_locale(item))
 
-    if not chunks:
-        print("  No chunks generated, exiting")
-        sys.exit(1)
+    print(f"  File nodes: {len(all_file_nodes)}")
+    print(f"  Section nodes: {len(all_section_nodes)} (+{len(locale_chunks)} locale)")
+    print(f"  Image nodes: {len(all_image_nodes)}")
+    print(f"  Video nodes: {len(all_video_nodes)}")
+    print(f"  Structural edges: {len(all_structural_edges)}")
 
-    # Step 3: Generate embeddings
-    print("\n[3/5] Generating embeddings...")
+    # Step 3: Build tag nodes
+    print("\n[3/6] Building tag nodes...")
+    tag_nodes, tag_edges = build_tag_nodes(all_file_nodes)
+    print(f"  Tag nodes: {len(tag_nodes)}")
+    print(f"  Tag edges: {len(tag_edges)}")
+
+    # Step 4: Generate embeddings (only for file + section nodes)
+    print("\n[4/6] Generating embeddings...")
+    embeddable_chunks = all_file_nodes + all_section_nodes + locale_chunks
     cache = load_cache()
-    embeddings = compute_embeddings(chunks, cache)
+    embeddings = compute_embeddings(embeddable_chunks, cache)
 
-    # Step 4: Compute similarity edges
-    print(f"\n[4/5] Computing edges (threshold={args.threshold}, max_edges={args.max_edges})...")
-    edges = compute_edges(embeddings, chunks, args.threshold, args.max_edges)
-    print(f"  Generated {len(edges)} edges")
+    # Step 5: Compute semantic similarity edges
+    print(f"\n[5/6] Computing semantic edges (threshold={args.threshold}, max_edges={args.max_edges})...")
+    semantic_edges = compute_edges(embeddings, embeddable_chunks, args.threshold, args.max_edges)
+    print(f"  Semantic edges: {len(semantic_edges)}")
 
-    # Step 5: Optional LLM descriptions
-    print("\n[5/5] LLM descriptions...")
+    # Step 6: Optional LLM descriptions
+    print("\n[6/6] LLM descriptions...")
+    all_chunks = all_file_nodes + all_section_nodes + locale_chunks + all_image_nodes + all_video_nodes + tag_nodes
     if not args.no_llm:
-        generate_descriptions(chunks, cache)
+        generate_descriptions(all_chunks, cache)
     else:
         print("  Skipped (--no-llm)")
 
+    # Combine all edges
+    all_edges = all_structural_edges + tag_edges + semantic_edges
+
     # Build output - strip embedding text from nodes
     nodes = []
-    for chunk in chunks:
+    node_type_counts = {"file": 0, "section": 0, "image": 0, "video": 0, "tag": 0}
+    for chunk in all_chunks:
         node = {
             "id": chunk["id"],
             "title": chunk["title"],
             "snippet": chunk["snippet"],
+            "nodeType": chunk["nodeType"],
             "sourceType": chunk["sourceType"],
             "sourceSlug": chunk["sourceSlug"],
             "locale": chunk["locale"],
             "url": chunk["url"],
             "date": chunk["date"],
-            "tags": chunk["tags"],
-            "heading": chunk["heading"],
+            "tags": chunk.get("tags", []),
+            "heading": chunk.get("heading"),
+            "parentId": chunk.get("parentId"),
         }
         if "description" in chunk:
             node["description"] = chunk["description"]
-        if "imageUrl" in chunk and chunk["imageUrl"]:
+        if chunk.get("imageUrl"):
             node["imageUrl"] = chunk["imageUrl"]
+        if chunk.get("mediaSource"):
+            node["mediaSource"] = chunk["mediaSource"]
         nodes.append(node)
+        node_type_counts[chunk["nodeType"]] += 1
 
     output = {
         "nodes": nodes,
-        "edges": edges,
+        "edges": all_edges,
         "metadata": {
             "generatedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "nodeCount": len(nodes),
-            "edgeCount": len(edges),
+            "edgeCount": len(all_edges),
             "threshold": args.threshold,
             "maxEdgesPerNode": args.max_edges,
             "model": EMBEDDING_MODEL,
+            "nodeTypeCounts": node_type_counts,
         },
     }
 
@@ -702,8 +1021,8 @@ def main():
 
     elapsed = time.time() - start_time
     print(f"\n=== Done in {elapsed:.1f}s ===")
-    print(f"  Nodes: {len(nodes)}")
-    print(f"  Edges: {len(edges)}")
+    print(f"  Nodes: {len(nodes)} ({', '.join(f'{k}={v}' for k, v in node_type_counts.items())})")
+    print(f"  Edges: {len(all_edges)} (structural={len(all_structural_edges)}, tag={len(tag_edges)}, semantic={len(semantic_edges)})")
     print(f"  Output: {OUTPUT_PATH}")
 
 

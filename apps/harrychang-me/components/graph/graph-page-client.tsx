@@ -4,21 +4,32 @@ import { useEffect, useState, useCallback, useMemo } from "react";
 import { AnimatePresence } from "motion/react";
 import GraphCanvas from "./graph-canvas";
 import NodePreviewCard from "./node-preview-card";
-import GraphLegend from "./graph-legend";
-import type { GraphData, GraphNode, SourceType } from "./types";
+import type { GraphData, GraphNode, SourceType, NodeType } from "./types";
 
 const SOURCE_TYPES: SourceType[] = ["post", "project", "gallery", "locale"];
+const NODE_TYPES: NodeType[] = ["file", "section", "image", "video", "tag"];
+
+const NODE_TYPE_LABELS: Record<NodeType, string> = {
+  file: "File",
+  section: "Section",
+  image: "Image",
+  video: "Video",
+  tag: "Tag",
+};
 
 export default function GraphPageClient() {
   const [graphData, setGraphData] = useState<GraphData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
-  const [, setHoveredNode] = useState<GraphNode | null>(null);
+  const [hoveredNode, setHoveredNode] = useState<GraphNode | null>(null);
   const [filterLocale, setFilterLocale] = useState<"all" | "en" | "zh-TW">(
     "all",
   );
   const [filterTypes, setFilterTypes] = useState<Set<SourceType>>(
     new Set(SOURCE_TYPES),
+  );
+  const [filterNodeTypes, setFilterNodeTypes] = useState<Set<NodeType>>(
+    new Set(["file", "section", "tag"]),
   );
 
   useEffect(() => {
@@ -32,6 +43,8 @@ export default function GraphPageClient() {
   }, []);
 
   const handleNodeClick = useCallback((node: GraphNode | null) => {
+    // Tag nodes are non-clickable
+    if (node && node.nodeType === "tag") return;
     setSelectedNode(node);
   }, []);
 
@@ -51,13 +64,26 @@ export default function GraphPageClient() {
     });
   }, []);
 
+  const toggleNodeType = useCallback((type: NodeType) => {
+    setFilterNodeTypes((prev) => {
+      const next = new Set(prev);
+      if (next.has(type)) {
+        if (next.size > 1) next.delete(type);
+      } else {
+        next.add(type);
+      }
+      return next;
+    });
+  }, []);
+
   // Filter graph data
   const filteredData: GraphData | null = useMemo(() => {
     if (!graphData) return null;
 
     const nodes = graphData.nodes.filter((n) => {
       if (filterLocale !== "all" && n.locale !== filterLocale) return false;
-      if (!filterTypes.has(n.sourceType)) return false;
+      if (!filterTypes.has(n.sourceType) && n.nodeType !== "tag") return false;
+      if (!filterNodeTypes.has(n.nodeType)) return false;
       return true;
     });
 
@@ -71,7 +97,7 @@ export default function GraphPageClient() {
       nodes,
       edges,
     };
-  }, [graphData, filterLocale, filterTypes]);
+  }, [graphData, filterLocale, filterTypes, filterNodeTypes]);
 
   if (error) {
     return (
@@ -103,6 +129,9 @@ export default function GraphPageClient() {
     );
   }
 
+  // Node to show in preview (hovered takes priority, then selected)
+  const previewNode = hoveredNode || selectedNode;
+
   return (
     <div className="relative w-full h-[calc(100vh-4rem)]">
       <GraphCanvas
@@ -114,6 +143,12 @@ export default function GraphPageClient() {
 
       {/* Controls - top right */}
       <div className="absolute top-4 right-4 z-10 flex flex-col gap-3">
+        {/* Stats */}
+        <div className="font-mono text-xs text-secondary/50">
+          {filteredData.nodes.length} nodes &middot; {filteredData.edges.length}{" "}
+          edges
+        </div>
+
         {/* Locale filter */}
         <div className="flex gap-1">
           {(["all", "en", "zh-TW"] as const).map((loc) => (
@@ -131,7 +166,7 @@ export default function GraphPageClient() {
           ))}
         </div>
 
-        {/* Type filter */}
+        {/* Source type filter */}
         <div className="flex flex-col gap-1">
           {SOURCE_TYPES.map((type) => (
             <button
@@ -155,21 +190,35 @@ export default function GraphPageClient() {
             </button>
           ))}
         </div>
+
+        {/* Node type filter */}
+        <div className="flex flex-col gap-1 pt-2 border-t border-border/30">
+          {NODE_TYPES.map((type) => (
+            <button
+              key={type}
+              onClick={() => toggleNodeType(type)}
+              className={`font-mono text-xs uppercase tracking-wider px-2 py-1 border text-left transition-colors ${
+                filterNodeTypes.has(type)
+                  ? "border-border text-primary"
+                  : "border-border/30 text-secondary/50"
+              }`}
+            >
+              {NODE_TYPE_LABELS[type]}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Legend - bottom left */}
-      <GraphLegend
-        nodeCount={filteredData.nodes.length}
-        edgeCount={filteredData.edges.length}
-      />
-
-      {/* Preview card - bottom center */}
+      {/* Preview card - bottom center (shows on hover or click) */}
       <AnimatePresence>
-        {selectedNode && (
+        {previewNode && (
           <NodePreviewCard
-            key={selectedNode.id}
-            node={selectedNode}
-            onClose={() => setSelectedNode(null)}
+            key={previewNode.id}
+            node={previewNode}
+            onClose={() => {
+              setSelectedNode(null);
+              setHoveredNode(null);
+            }}
           />
         )}
       </AnimatePresence>

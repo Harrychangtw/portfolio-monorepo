@@ -35,6 +35,7 @@
     --graph-node-project: 190 80% 55%;
     --graph-node-gallery: 35 90% 55%;
     --graph-node-locale: 0 0% 53%;
+    --graph-node-tag: 160 50% 45%;
     --graph-edge: 0 0% 25%;
   }
 
@@ -65,6 +66,7 @@
     --graph-node-project: 270 70% 55%;
     --graph-node-gallery: 25 90% 50%;
     --graph-node-locale: 0 0% 53%;
+    --graph-node-tag: 160 50% 40%;
     --graph-edge: 0 0% 80%;
   }
   

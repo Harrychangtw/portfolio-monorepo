@@ -7,12 +7,14 @@ import {
   forceManyBody,
   forceCenter,
   forceCollide,
+  forceRadial,
 } from "d3-force";
 import { zoom as d3Zoom, zoomIdentity } from "d3-zoom";
 import { select } from "d3-selection";
 import type {
   GraphData,
   GraphNode,
+  NodeType,
   SimulationNode,
   SimulationEdge,
   SourceType,
@@ -24,6 +26,8 @@ interface GraphCanvasProps {
   onNodeHover: (node: GraphNode | null) => void;
   selectedNodeId?: string | null;
 }
+
+/* ─── Color helpers ────────────────────────────────────────────────────────── */
 
 const SOURCE_TYPE_CSS_VAR: Record<SourceType, string> = {
   post: "--graph-node-post",
@@ -40,6 +44,12 @@ function getNodeColors(): Record<SourceType, string> {
     colors[type as SourceType] = hsl ? `hsl(${hsl})` : "#888";
   }
   return colors as Record<SourceType, string>;
+}
+
+function getTagColor(): string {
+  const style = getComputedStyle(document.documentElement);
+  const hsl = style.getPropertyValue("--graph-node-tag").trim();
+  return hsl ? `hsl(${hsl})` : "#3d9970";
 }
 
 function getThemeColors() {
@@ -60,6 +70,67 @@ function getGlowColor(): string {
   return accent ? `hsl(${accent})` : "#eaff4b";
 }
 
+/* ─── Node radius by type (minimal aesthetic) ──────────────────────────────── */
+
+const NODE_TYPE_BASE_RADIUS: Record<NodeType, number> = {
+  file: 3.0,
+  section: 1.8,
+  image: 1.0,
+  video: 1.2,
+  tag: 2.0,
+};
+
+const NODE_TYPE_MAX_BONUS: Record<NodeType, number> = {
+  file: 1.0,
+  section: 0.8,
+  image: 0,
+  video: 0,
+  tag: 0.5,
+};
+
+function computeNodeRadius(
+  node: GraphNode,
+  connectionCount: number,
+  maxConnections: number,
+): number {
+  const base = NODE_TYPE_BASE_RADIUS[node.nodeType] || 1.5;
+  const maxBonus = NODE_TYPE_MAX_BONUS[node.nodeType] || 0;
+  const bonus = maxConnections > 0 ? (connectionCount / maxConnections) * maxBonus : 0;
+  return base + bonus;
+}
+
+/* ─── Force strengths by node type ─────────────────────────────────────────── */
+
+const CHARGE_STRENGTH: Record<NodeType, number> = {
+  file: -120,
+  section: -80,
+  tag: -100,
+  image: -30,
+  video: -40,
+};
+
+/* ─── Label priority (higher = drawn first = wins overlap) ─────────────────── */
+
+const LABEL_PRIORITY: Record<NodeType, number> = {
+  file: 5,
+  tag: 4,
+  section: 3,
+  video: 2,
+  image: 1,
+};
+
+/* ─── Label zoom thresholds (k value where labels start appearing) ─────────── */
+
+const LABEL_ZOOM_THRESHOLD: Record<NodeType, number> = {
+  file: 0.8,
+  tag: 1.2,
+  section: 2.0,
+  image: 999, // only on hover
+  video: 999, // only on hover
+};
+
+/* ─── Component ────────────────────────────────────────────────────────────── */
+
 export default function GraphCanvas({
   data,
   onNodeClick,
@@ -72,12 +143,12 @@ export default function GraphCanvas({
   const simulationRef = useRef<any>(null);
   const nodesRef = useRef<SimulationNode[]>([]);
   const edgesRef = useRef<SimulationEdge[]>([]);
-  // d3-zoom transform: x,y include the center offset so zoom-to-point works correctly
   const transformRef = useRef({ x: 0, y: 0, k: 1 });
   const hoveredRef = useRef<SimulationNode | null>(null);
   const nodeColorsRef = useRef<Record<SourceType, string>>(
     {} as Record<SourceType, string>,
   );
+  const tagColorRef = useRef("#3d9970");
   const themeColorsRef = useRef(getThemeColors());
   const glowColorRef = useRef("#eaff4b");
   const animFrameRef = useRef<number>(0);
@@ -86,44 +157,19 @@ export default function GraphCanvas({
   const isDraggingRef = useRef(false);
   const needsRenderRef = useRef(true);
 
-  // Connection count -> node radius
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
-  // Precomputed neighbor sets for hover highlighting
   const neighborMap = useRef<Map<string, Set<string>>>(new Map());
-  // Loaded image cache for node thumbnails
-  const imageCache = useRef<Map<string, HTMLImageElement | null>>(new Map());
-
-  // Load images for nodes that have imageUrl
-  useEffect(() => {
-    for (const node of data.nodes) {
-      if (!node.imageUrl || imageCache.current.has(node.id)) continue;
-      // Mark as loading
-      imageCache.current.set(node.id, null);
-      const img = new Image();
-      img.crossOrigin = "anonymous";
-      // Ensure path starts with /
-      const src = node.imageUrl.startsWith("/")
-        ? node.imageUrl
-        : `/${node.imageUrl}`;
-      img.src = src;
-      img.onload = () => {
-        imageCache.current.set(node.id, img);
-        needsRenderRef.current = true;
-      };
-      img.onerror = () => {
-        // Leave as null — will render as colored circle
-      };
-    }
-  }, [data.nodes]);
 
   // Initialize colors
   useEffect(() => {
     nodeColorsRef.current = getNodeColors();
+    tagColorRef.current = getTagColor();
     themeColorsRef.current = getThemeColors();
     glowColorRef.current = getGlowColor();
 
     const observer = new MutationObserver(() => {
       nodeColorsRef.current = getNodeColors();
+      tagColorRef.current = getTagColor();
       themeColorsRef.current = getThemeColors();
       glowColorRef.current = getGlowColor();
       needsRenderRef.current = true;
@@ -176,19 +222,20 @@ export default function GraphCanvas({
     neighborMap.current = neighbors;
 
     const maxConnections = Math.max(...connectionCount.values(), 1);
-    for (const [id, count] of connectionCount) {
-      const r = 3 + (count / maxConnections) * 5;
-      nodeRadiusMap.current.set(id, r);
+    for (const node of data.nodes) {
+      const count = connectionCount.get(node.id) || 0;
+      const r = computeNodeRadius(node, count, maxConnections);
+      nodeRadiusMap.current.set(node.id, r);
     }
 
-    // Create simulation nodes — spread them out initially
+    // Create simulation nodes — spread them in a circle
     const simNodes: SimulationNode[] = data.nodes.map((n, i) => {
       const angle = (i / data.nodes.length) * Math.PI * 2;
-      const spread = Math.sqrt(data.nodes.length) * 12;
+      const spread = Math.sqrt(data.nodes.length) * 10;
       return {
         ...n,
-        x: Math.cos(angle) * spread + (Math.random() - 0.5) * spread * 0.5,
-        y: Math.sin(angle) * spread + (Math.random() - 0.5) * spread * 0.5,
+        x: Math.cos(angle) * spread + (Math.random() - 0.5) * spread * 0.3,
+        y: Math.sin(angle) * spread + (Math.random() - 0.5) * spread * 0.3,
         vx: 0,
         vy: 0,
       };
@@ -200,7 +247,7 @@ export default function GraphCanvas({
       const src = nodeMap.get(e.source);
       const tgt = nodeMap.get(e.target);
       if (src && tgt) {
-        simEdges.push({ source: src, target: tgt, weight: e.weight });
+        simEdges.push({ source: src, target: tgt, weight: e.weight, linkType: e.linkType });
       }
     }
 
@@ -211,21 +258,42 @@ export default function GraphCanvas({
       .force(
         "link",
         forceLink(simEdges)
-          .id((d: any) => d.id)
-          .distance((d: any) => 30 + (1 - d.weight) * 60)
-          .strength((d: any) => d.weight * 0.5),
+          .id((d: any) => d.id) // eslint-disable-line @typescript-eslint/no-explicit-any
+          .distance((d: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
+            if (d.linkType === "structural") return 15 + (1 - d.weight) * 20;
+            if (d.linkType === "tag") return 40;
+            return 30 + (1 - d.weight) * 60;
+          })
+          .strength((d: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
+            if (d.linkType === "structural") return 0.8;
+            if (d.linkType === "tag") return 0.3;
+            return 0.2 + d.weight * 0.3;
+          }),
       )
-      .force("charge", forceManyBody().strength(-50).distanceMax(250))
-      .force("center", forceCenter(0, 0).strength(0.15))
+      .force(
+        "charge",
+        forceManyBody<SimulationNode>()
+          .strength((d) => CHARGE_STRENGTH[d.nodeType] || -60)
+          .distanceMax(350),
+      )
+      .force("center", forceCenter(0, 0).strength(0.5))
+      .force(
+        "radial",
+        forceRadial<SimulationNode>(
+          Math.sqrt(data.nodes.length) * 8,
+          0,
+          0,
+        ).strength(0.03),
+      )
       .force(
         "collide",
         forceCollide<SimulationNode>()
-          .radius((d) => (nodeRadiusMap.current.get(d.id) || 4) + 2)
-          .strength(0.8),
+          .radius((d) => (nodeRadiusMap.current.get(d.id) || 1.5) + 0.5)
+          .strength(0.9),
       )
-      .alphaDecay(0.028)
+      .alphaDecay(0.032)
       .alphaMin(0.001)
-      .velocityDecay(0.45)
+      .velocityDecay(0.5)
       .on("tick", () => {
         needsRenderRef.current = true;
       })
@@ -280,6 +348,7 @@ export default function GraphCanvas({
       const edges = edgesRef.current;
       const theme = themeColorsRef.current;
       const nodeColors = nodeColorsRef.current;
+      const tagColor = tagColorRef.current;
       const hovered = hoveredRef.current;
       const glowColor = glowColorRef.current;
 
@@ -293,11 +362,11 @@ export default function GraphCanvas({
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, width, height);
 
-      // Apply zoom transform — tx,ty already include center offset from d3-zoom init
+      // Apply zoom transform
       ctx.translate(tx, ty);
       ctx.scale(k, k);
 
-      // Draw edges — using --secondary color
+      // ─── Draw edges ─────────────────────────────────────────────────────
       for (const edge of edges) {
         const src = edge.source;
         const tgt = edge.target;
@@ -314,33 +383,46 @@ export default function GraphCanvas({
         if (isConnectedToHover || isConnectedToSelected) {
           ctx.strokeStyle = glowColor;
           ctx.globalAlpha = 0.9;
-          ctx.lineWidth = 1.8 / k;
+          ctx.lineWidth = 1.5 / k;
         } else if (hasHoverSpotlight) {
           ctx.strokeStyle = theme.secondary;
-          ctx.globalAlpha = 0.03;
-          ctx.lineWidth = 0.5 / k;
+          ctx.globalAlpha = 0.02;
+          ctx.lineWidth = 0.3 / k;
         } else {
-          ctx.strokeStyle = theme.secondary;
-          ctx.globalAlpha = 0.08 + edge.weight * 0.12;
-          ctx.lineWidth = 0.5 / k;
+          // Subtle differentiation by linkType
+          if (edge.linkType === "structural") {
+            const srcColor = src.nodeType === "tag" ? tagColor : (nodeColors[src.sourceType] || "#888");
+            ctx.strokeStyle = srcColor;
+            ctx.globalAlpha = 0.06;
+          } else if (edge.linkType === "tag") {
+            ctx.strokeStyle = tagColor;
+            ctx.globalAlpha = 0.05;
+          } else {
+            ctx.strokeStyle = theme.secondary;
+            ctx.globalAlpha = 0.04 + edge.weight * 0.06;
+          }
+          ctx.lineWidth = 0.3 / k;
         }
         ctx.stroke();
       }
       ctx.globalAlpha = 1;
 
-      // Draw nodes
+      // ─── Draw nodes ─────────────────────────────────────────────────────
       for (const node of nodes) {
-        const baseR = nodeRadiusMap.current.get(node.id) || 4;
-        // Ensure minimum screen-space radius so nodes are always visible when zoomed out
+        const baseR = nodeRadiusMap.current.get(node.id) || 1.5;
+        // Ensure minimum screen-space radius so nodes remain visible
         const screenR = baseR * k;
-        const minScreenR = 2.5;
+        const minScreenR = 1.5;
         const r = screenR < minScreenR ? minScreenR / k : baseR;
 
         const isHovered = hovered?.id === node.id;
         const isSelected = selectedNodeId === node.id;
         const isNeighborOfHover =
           hovered && hoveredNeighbors?.has(node.id);
-        const color = nodeColors[node.sourceType] || "#888";
+        const color =
+          node.nodeType === "tag"
+            ? tagColor
+            : nodeColors[node.sourceType] || "#888";
 
         // Determine node opacity based on hover spotlight
         let nodeAlpha = 0.85;
@@ -348,71 +430,46 @@ export default function GraphCanvas({
           if (isHovered || isSelected || isNeighborOfHover) {
             nodeAlpha = 1;
           } else {
-            nodeAlpha = 0.15;
+            nodeAlpha = 0.12;
           }
         }
 
-        // Glow effect for hovered/selected/neighbor
+        // Glow effect for hovered/selected
         if (isHovered || isSelected) {
           ctx.save();
           ctx.shadowColor = glowColor;
-          ctx.shadowBlur = 16 / k;
+          ctx.shadowBlur = 12 / k;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, r * 1.8, 0, Math.PI * 2);
+          ctx.arc(node.x, node.y, r * 1.6, 0, Math.PI * 2);
           ctx.fillStyle = color;
-          ctx.globalAlpha = 0.25;
+          ctx.globalAlpha = 0.2;
           ctx.fill();
           ctx.restore();
         } else if (isNeighborOfHover) {
           ctx.save();
           ctx.shadowColor = color;
-          ctx.shadowBlur = 8 / k;
+          ctx.shadowBlur = 6 / k;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, r * 1.3, 0, Math.PI * 2);
+          ctx.arc(node.x, node.y, r * 1.2, 0, Math.PI * 2);
           ctx.fillStyle = color;
-          ctx.globalAlpha = 0.2;
+          ctx.globalAlpha = 0.15;
           ctx.fill();
           ctx.restore();
         }
 
-        // Node image or colored circle
-        const img = imageCache.current.get(node.id);
-        const showImage = img && screenR > 8; // Only show images when zoomed in enough
-
-        if (showImage) {
-          ctx.save();
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
-          ctx.closePath();
-          ctx.clip();
-          ctx.globalAlpha = nodeAlpha;
-          // Draw image centered and covering the circle
-          const size = r * 2;
-          ctx.drawImage(img, node.x - r, node.y - r, size, size);
-          ctx.restore();
-
-          // Border ring with source type color
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
-          ctx.strokeStyle = color;
-          ctx.lineWidth = 1.5 / k;
-          ctx.globalAlpha = nodeAlpha;
-          ctx.stroke();
-        } else {
-          // Colored circle fallback
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
-          ctx.fillStyle = color;
-          ctx.globalAlpha = nodeAlpha;
-          ctx.fill();
-        }
+        // Node circle
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.globalAlpha = nodeAlpha;
+        ctx.fill();
 
         // Node border for hovered/selected
         if (isHovered || isSelected) {
           ctx.beginPath();
-          ctx.arc(node.x, node.y, r + 1 / k, 0, Math.PI * 2);
+          ctx.arc(node.x, node.y, r + 0.8 / k, 0, Math.PI * 2);
           ctx.strokeStyle = glowColor;
-          ctx.lineWidth = 2 / k;
+          ctx.lineWidth = 1.5 / k;
           ctx.globalAlpha = 1;
           ctx.stroke();
         }
@@ -420,11 +477,50 @@ export default function GraphCanvas({
         ctx.globalAlpha = 1;
       }
 
-      // Draw labels (separate pass so they're always on top)
-      for (const node of nodes) {
-        const baseR = nodeRadiusMap.current.get(node.id) || 4;
+      // ─── Draw labels (anti-overlap, fixed screen size) ──────────────────
+      // Sort nodes by priority so important labels render first and claim space
+      const sortedNodes = [...nodes].sort((a, b) => {
+        const aHovered = hovered?.id === a.id ? 100 : 0;
+        const bHovered = hovered?.id === b.id ? 100 : 0;
+        const aSelected = selectedNodeId === a.id ? 90 : 0;
+        const bSelected = selectedNodeId === b.id ? 90 : 0;
+        const aNeighbor = hovered && hoveredNeighbors?.has(a.id) ? 80 : 0;
+        const bNeighbor = hovered && hoveredNeighbors?.has(b.id) ? 80 : 0;
+        const aPriority = aHovered + aSelected + aNeighbor + (LABEL_PRIORITY[a.nodeType] || 0);
+        const bPriority = bHovered + bSelected + bNeighbor + (LABEL_PRIORITY[b.nodeType] || 0);
+        return bPriority - aPriority;
+      });
+
+      // Occupancy grid for anti-overlap (screen-space coordinates)
+      const occupiedBoxes: Array<{ x: number; y: number; w: number; h: number }> = [];
+
+      function wouldOverlap(bx: number, by: number, bw: number, bh: number): boolean {
+        const pad = 2; // 2px padding between labels
+        for (const box of occupiedBoxes) {
+          if (
+            bx - pad < box.x + box.w &&
+            bx + bw + pad > box.x &&
+            by - pad < box.y + box.h &&
+            by + bh + pad > box.y
+          ) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      // Fixed screen-space font size (10px on screen regardless of zoom)
+      const screenFontSize = 10;
+      const simFontSize = screenFontSize / k;
+
+      ctx.font = `${simFontSize}px sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+
+      for (const node of sortedNodes) {
+        const baseR = nodeRadiusMap.current.get(node.id) || 1.5;
         const screenR = baseR * k;
-        const minScreenR = 2.5;
+        const minScreenR = 1.5;
         const r = screenR < minScreenR ? minScreenR / k : baseR;
 
         const isHovered = hovered?.id === node.id;
@@ -432,7 +528,7 @@ export default function GraphCanvas({
         const isNeighborOfHover =
           hovered && hoveredNeighbors?.has(node.id);
 
-        // Label visibility
+        // Determine label alpha based on state and zoom threshold
         let labelAlpha: number;
         let maxChars: number;
 
@@ -443,32 +539,53 @@ export default function GraphCanvas({
           labelAlpha = 0.8;
           maxChars = 30;
         } else if (hasHoverSpotlight) {
+          // During hover, only show labels for hovered + neighbors
           labelAlpha = 0;
           maxChars = 0;
         } else {
-          // Labels hidden until zoomed in significantly (k > 1.8)
-          if (k < 1.8) {
+          // Zoom-based visibility per node type
+          const threshold = LABEL_ZOOM_THRESHOLD[node.nodeType] || 2.0;
+          if (k < threshold) {
             labelAlpha = 0;
             maxChars = 0;
           } else {
-            labelAlpha = Math.min(0.6, (k - 1.8) * 0.8);
-            maxChars = k > 2.5 ? 35 : 18;
+            // Linear fade-in over 0.3k range
+            labelAlpha = Math.min(0.5, (k - threshold) / 0.3 * 0.5);
+            maxChars = node.nodeType === "file" ? 30 : 20;
           }
         }
 
         if (labelAlpha <= 0) continue;
 
-        const fontSize = Math.max(8, Math.min(11, 10 / k));
-        ctx.font = `${fontSize}px sans-serif`;
-        ctx.fillStyle = themeColorsRef.current.foreground;
-        ctx.globalAlpha = labelAlpha;
-        ctx.textAlign = "center";
-        ctx.textBaseline = "top";
-
         const label =
           node.title.length > maxChars
             ? node.title.slice(0, maxChars - 2) + "..."
             : node.title;
+
+        // Compute screen-space bounding box for overlap check
+        const labelWidth = ctx.measureText(label).width;
+        const screenLabelX = (node.x - labelWidth / 2) * k + tx;
+        const screenLabelY = (node.y + r + 2 / k) * k + ty;
+        const screenLabelW = labelWidth * k;
+        const screenLabelH = screenFontSize * 1.2;
+
+        // Skip if it would overlap (unless it's the hovered/selected node)
+        if (!isHovered && !isSelected) {
+          if (wouldOverlap(screenLabelX, screenLabelY, screenLabelW, screenLabelH)) {
+            continue;
+          }
+        }
+
+        // Register this label's bounding box
+        occupiedBoxes.push({
+          x: screenLabelX,
+          y: screenLabelY,
+          w: screenLabelW,
+          h: screenLabelH,
+        });
+
+        ctx.fillStyle = themeColorsRef.current.foreground;
+        ctx.globalAlpha = labelAlpha;
         ctx.fillText(label, node.x, node.y + r + 2 / k);
       }
 
@@ -490,8 +607,8 @@ export default function GraphCanvas({
       let closestDist = Infinity;
 
       for (const node of nodesRef.current) {
-        const baseR = nodeRadiusMap.current.get(node.id) || 4;
-        const hitRadius = Math.max(baseR, 12 / k);
+        const baseR = nodeRadiusMap.current.get(node.id) || 1.5;
+        const hitRadius = Math.max(baseR, 10 / k);
         const dx = node.x - mx;
         const dy = node.y - my;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -600,7 +717,7 @@ export default function GraphCanvas({
       });
 
     const selection = select(canvas);
-    selection.call(zoomBehavior as any);
+    selection.call(zoomBehavior as any); // eslint-disable-line @typescript-eslint/no-explicit-any
 
     // Compute initial zoom scale to fit all nodes
     const nodes = nodesRef.current;
@@ -625,9 +742,8 @@ export default function GraphCanvas({
       initialK = Math.max(initialK, 0.1);
     }
 
-    // Bake width/2, height/2 into the initial translate so d3-zoom knows the true center.
     selection.call(
-      zoomBehavior.transform as any,
+      zoomBehavior.transform as any, // eslint-disable-line @typescript-eslint/no-explicit-any
       zoomIdentity.translate(width / 2, height / 2).scale(initialK),
     );
 

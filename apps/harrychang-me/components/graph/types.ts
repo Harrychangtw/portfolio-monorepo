@@ -1,10 +1,13 @@
+export type NodeType = "file" | "section" | "image" | "video" | "tag";
 export type SourceType = "post" | "project" | "gallery" | "locale";
+export type LinkType = "semantic" | "structural" | "tag";
 
 export interface GraphNode {
   id: string;
   title: string;
   snippet: string;
   description?: string;
+  nodeType: NodeType;
   sourceType: SourceType;
   sourceSlug: string;
   locale: "en" | "zh-TW";
@@ -13,12 +16,15 @@ export interface GraphNode {
   tags?: string[];
   heading?: string | null;
   imageUrl?: string | null;
+  parentId?: string | null;
+  mediaSource?: string | null;
 }
 
 export interface GraphEdge {
   source: string;
   target: string;
   weight: number;
+  linkType: LinkType;
 }
 
 export interface GraphData {
@@ -31,6 +37,7 @@ export interface GraphData {
     threshold: number;
     maxEdgesPerNode: number;
     model: string;
+    nodeTypeCounts?: Record<NodeType, number>;
   };
 }
 
@@ -48,4 +55,5 @@ export interface SimulationEdge {
   source: SimulationNode;
   target: SimulationNode;
   weight: number;
+  linkType: LinkType;
 }
