@@ -125,7 +125,7 @@ export default function NodePreviewCard({
               </div>
 
               {/* Title */}
-              <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-4">
+              <h3 className="font-heading text-lg md:text-xl font-semibold text-primary leading-tight line-clamp-4 mb-1">
                 {node.nodeType === "section" && node.heading
                   ? node.heading
                   : node.title}
@@ -133,7 +133,7 @@ export default function NodePreviewCard({
 
               {/* TL;DR */}
               {node.tldr && (
-                <p className="text-xs font-body text-primary/70 italic leading-snug">
+                <p className="mt-auto text-sm text-secondary leading-relaxed line-clamp-2">
                   {node.tldr}
                 </p>
               )}

@@ -67,22 +67,6 @@ export default function NextUpCard({
           <h3 className="font-heading text-lg md:text-xl font-bold text-primary truncate pr-4">
             {title}
           </h3>
-          <p className="font-body text-sm text-secondary truncate mt-1 min-h-[1.25em]">
-            {category || "\u00A0"}
-          </p>
-
-          {tags && tags.length > 0 && (
-            <div className="flex flex-wrap gap-1 mt-2">
-              {tags.slice(0, 5).map((tag) => (
-                <span
-                  key={tag}
-                  className="font-mono text-[10px] px-1.5 py-0.5 bg-muted text-secondary rounded"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
         </div>
 
         {/* Right Image — omitted entirely when imageUrl is empty */}
@@ -92,7 +76,7 @@ export default function NextUpCard({
               src={fullImageUrl}
               alt={title}
               quality={50}
-              noInsetPadding={true}
+              noInsetPadding={basePath !== "gallery"}
               aspectRatio={1.5}
             />
           </div>

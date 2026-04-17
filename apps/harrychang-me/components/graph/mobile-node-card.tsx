@@ -94,6 +94,15 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
   const isVideo = node?.nodeType === "video";
   const isTag = node?.nodeType === "tag";
   const isHub = node?.nodeType === "hub";
+  const isPostOrSection =
+    (node?.nodeType === "file" &&
+      (node.sourceType === "post" || node.sourceType === "gallery")) ||
+    node?.nodeType === "section";
+
+  const postImageSrc =
+    isPostOrSection && node?.imageUrl
+      ? normalizeImageUrl(node.imageUrl)
+      : null;
 
   const youtubeId =
     isVideo && node?.mediaSource ? getYouTubeId(node.mediaSource) : null;
@@ -145,6 +154,50 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
                 </NavigationLink>
               ) : (
                 <div className={wrapperCls}>{mediaContent}</div>
+              );
+            })()
+          ) : isPostOrSection ? (
+            // ── post file / section: image-right, title + description layout ─
+            (() => {
+              const inner = (
+                <div className="flex">
+                  {/* Left: title top, description below */}
+                  <div className="flex-1 p-3 min-w-0 flex flex-col">
+                    <h3 className="font-heading text-lg md:text-xl font-semibold text-primary leading-tight line-clamp-2 mb-1">
+                      {node!.nodeType === "section" && node!.heading
+                        ? node!.heading
+                        : node!.title}
+                    </h3>
+                    {(node!.tldr || node!.description || node!.snippet) && (
+                      <p className="mt-auto text-sm text-secondary leading-relaxed line-clamp-2">
+                        {node!.tldr || node!.description || node!.snippet}
+                      </p>
+                    )}
+                  </div>
+                  {/* Right: image spans full card height */}
+                  {postImageSrc && (
+                    <div className="w-2/5 flex-shrink-0">
+                      <ImageContainer
+                        src={postImageSrc}
+                        alt={node!.title}
+                        aspectRatio={1.5}
+                        noInsetPadding={node?.sourceType !== "gallery"}
+                        quality={60}
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+
+              return node!.url && isInternalUrl(node!.url) ? (
+                <NavigationLink
+                  href={toInternalPath(node!.url)}
+                  className={`${wrapperCls} block active:scale-[0.98] transition-transform`}
+                >
+                  {inner}
+                </NavigationLink>
+              ) : (
+                <div className={wrapperCls}>{inner}</div>
               );
             })()
           ) : (
