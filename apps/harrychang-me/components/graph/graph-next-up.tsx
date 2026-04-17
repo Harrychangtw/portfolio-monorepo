@@ -9,7 +9,7 @@ import type { SelectedNodeInfo } from "./local-graph-view";
 
 interface NextUpItem {
   slug: string;
-  title: string;
+  title: string;t
   category: string;
   imageUrl: string;
   aspectRatio?: number;
