@@ -76,7 +76,7 @@ export default function NextUpCard({
               src={fullImageUrl}
               alt={title}
               quality={50}
-              noInsetPadding={basePath !== "gallery"}
+              noInsetPadding
               aspectRatio={1.5}
             />
           </div>
