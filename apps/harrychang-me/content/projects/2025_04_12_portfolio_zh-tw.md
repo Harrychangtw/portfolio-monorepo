@@ -2,7 +2,7 @@
 title: "個人網站"
 category: "網站開發"
 subcategory: "個人專案"
-description: "一個基於 Turborepo monorepo 架構的雙網域作品集，採用 Next.js 打造，並整合了檔案式 CMS 與共享元件庫。"
+description: "一個基於 Turborepo monorepo 架構的雙網域作品集，採用 Next.js 打造，並整合了檔案式 CMS、Obsidian 風格知識圖譜與共享元件庫。"
 imageUrl: "images/optimized/projects/2025_04_12_portfolio_design/titlecard.webp"
 year: "2025"
 date: "2025-04-12"
@@ -59,6 +59,16 @@ featured: true
 ![客戶端的語言切換器，讓使用者能在英文與繁體中文之間切換。](images/optimized/projects/2025_04_12_portfolio_design/clip-language-switcher.mp4)
 
 ![效能、無障礙、最佳實務與 SEO 皆獲得滿分的 Lighthouse 檢測報告](images/optimized/projects/2025_04_12_portfolio_design/lighthouse_benchmark.webp)
+
+### 知識圖譜
+
+受 Obsidian 的圖譜檢視啟發，網站內建了一個互動式知識圖譜，將所有內容——專案、部落格文章、攝影作品與論文——之間的關聯以視覺化方式呈現。以 D3.js 力導向模擬為基礎並透過 HTML5 Canvas 渲染，節點之間透過共同標籤、分類以及離線 Embedding 管線所生成的語意相似度進行連結。
+
+完整的圖譜可在 [`/graph`] 專屬頁面存取，支援分類篩選、行動裝置最佳化的節點卡片，以及跟隨游標的預覽提示框。精簡版的嵌入式圖譜則驅動了每個內容頁面中的「接下來」卡片，顯示局部鄰近子圖以呈現相關內容，鼓勵使用者進一步探索。
+
+![桌面版全頁面知識圖譜，支援分類篩選與互動式節點探索。](images/optimized/projects/2025_04_12_portfolio_design/clip-desktop-graph.mp4)
+
+![手機版嵌入式局部圖譜於「接下來」卡片中，連結相關內容。](images/optimized/projects/2025_04_12_portfolio_design/clip-mobile-graph-nextup.mp4)
 
 ### 內容與功能
 

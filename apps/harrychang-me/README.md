@@ -9,7 +9,7 @@
 [![Lighthouse CI](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml)
 [![Dependency Audit](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml)
 
-A modern, highly optimized portfolio website built with Next.js 15 and React 19, featuring a dual-domain architecture, custom cross-domain theme persistence, an interactive 404 experience, and a flawless 100 Real Experience Score (RES) under heavy traffic.
+A modern, highly optimized portfolio website built with Next.js 15 and React 19, featuring a dual-domain architecture, an Obsidian-style knowledge graph, custom cross-domain theme persistence, an interactive 404 experience, and a flawless 100 Real Experience Score (RES) under heavy traffic.
 
 ## ⚡ Performance: 100 RES
 
@@ -49,6 +49,18 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 - **Main site** (`harrychang.me`): Portfolio, projects, photo gallery, blog, links, design system, and manifesto.
 - **Lab subdomain** (`lab.harrychang.me`): Hub for consulting, strategy, and educational content.
 - Single codebase utilizing Next.js middleware routing. Shared components, APIs, and cross-subdomain cookie persistence (`.harrychang.me`) for theme preferences.
+
+### Obsidian-Style Knowledge Graph
+
+An interactive, force-directed knowledge graph that maps the relationships between all site content — projects, blog posts, gallery photos, and papers. Built with D3.js and rendered on HTML5 Canvas for smooth performance with hundreds of nodes.
+
+- **Full-page `/graph` route** with category filtering, cursor-following preview tooltips, and a mobile-optimized node card.
+- **Embedded local subgraph** in the "Next Up" card on every content page, surfacing related content via shared tags, categories, and semantic similarity.
+- **Offline embedding pipeline** (`scripts/build_graph.py`) generates node descriptions and cosine-similarity edges, cached as static JSON for zero-runtime cost.
+
+<p align="center">
+  <img src="public/images/optimized/projects/2025_04_12_portfolio_design/Screenshot 2026-04-17 at 12-36-27 Knowledge Graph Harry Chang.webp" alt="Knowledge Graph — full site graph view" width="1800" />
+</p>
 
 ### Advanced Design & Micro-Interactions
 
