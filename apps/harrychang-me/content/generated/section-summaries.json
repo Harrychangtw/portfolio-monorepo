@@ -1205,5 +1205,89 @@
     "locale": "zh-TW",
     "sections": {},
     "tldr": "機器學習、全端網頁、影片剪輯、雙語能力"
+  },
+  "locale/root/en": {
+    "title": "Home",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Portfolio hub — AI safety, photography, and design"
+  },
+  "locale/root/zh-TW": {
+    "title": "首頁",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "作品集首頁 — AI安全、攝影與設計"
+  },
+  "post/post/en": {
+    "title": "Blog",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Essays on photography, tech, film, and building things"
+  },
+  "post/post/zh-TW": {
+    "title": "部落格",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "關於攝影、科技、電影與創作的隨筆"
+  },
+  "project/project/en": {
+    "title": "Projects",
+    "locale": "en",
+    "sections": {},
+    "tldr": "AI research, web apps, video production, and robotics"
+  },
+  "project/project/zh-TW": {
+    "title": "精選專案",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "AI研究、網頁應用、影片製作與機器人"
+  },
+  "gallery/gallery/en": {
+    "title": "Gallery",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Street and travel photography from Taiwan, Japan, and Europe"
+  },
+  "gallery/gallery/zh-TW": {
+    "title": "攝影作品",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "台灣、日本與歐洲的街拍與旅行攝影"
+  },
+  "locale/cv/en": {
+    "title": "Résumé",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Education, research, publications, and technical skills"
+  },
+  "locale/cv/zh-TW": {
+    "title": "履歷",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "學歷、研究、論文發表與技術能力"
+  },
+  "locale/reading/en": {
+    "title": "Paper Reading List",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Curated ML and NLP paper annotations"
+  },
+  "locale/reading/zh-TW": {
+    "title": "論文閱讀清單",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "精選ML與NLP論文筆記"
+  },
+  "locale/linktree/en": {
+    "title": "Links",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Social profiles, email, and scheduling"
+  },
+  "locale/linktree/zh-TW": {
+    "title": "連結",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "社群帳號、電子郵件與預約會議"
   }
 }

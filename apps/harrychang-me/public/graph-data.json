@@ -19582,7 +19582,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "Essays on photography, tech, film, and building things"
     },
     {
       "id": "hub-post-zh-TW",
@@ -19596,7 +19597,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "關於攝影、科技、電影與創作的隨筆"
     },
     {
       "id": "hub-project-en",
@@ -19610,7 +19612,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "AI research, web apps, video production, and robotics"
     },
     {
       "id": "hub-project-zh-TW",
@@ -19624,7 +19627,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "AI研究、網頁應用、影片製作與機器人"
     },
     {
       "id": "hub-gallery-en",
@@ -19638,7 +19642,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "Street and travel photography from Taiwan, Japan, and Europe"
     },
     {
       "id": "hub-gallery-zh-TW",
@@ -19652,7 +19657,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "台灣、日本與歐洲的街拍與旅行攝影"
     },
     {
       "id": "hub-about-en",
@@ -19666,7 +19672,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "AI safety, screenless photography, and arguing both sides"
     },
     {
       "id": "hub-about-zh-TW",
@@ -19680,7 +19687,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "AI 安全、無螢幕攝影，以及為不全信的立場辯護"
     },
     {
       "id": "hub-updates-en",
@@ -19694,7 +19702,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "Recent talks, awards, and published research"
     },
     {
       "id": "hub-updates-zh-TW",
@@ -19708,7 +19717,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "近期演講、獲獎與發表研究"
     },
     {
       "id": "hub-uses-en",
@@ -19722,7 +19732,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "Hardware, software, and services for productivity and creativity"
     },
     {
       "id": "hub-uses-zh-TW",
@@ -19736,7 +19747,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "提升生產力與創造力的硬體、軟體與服務"
     },
     {
       "id": "hub-cv-en",
@@ -19750,7 +19762,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "Education, research, publications, and technical skills"
     },
     {
       "id": "hub-cv-zh-TW",
@@ -19764,7 +19777,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "學歷、研究、論文發表與技術能力"
     },
     {
       "id": "hub-reading-en",
@@ -19778,7 +19792,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "Curated ML and NLP paper annotations"
     },
     {
       "id": "hub-reading-zh-TW",
@@ -19792,7 +19807,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "精選ML與NLP論文筆記"
     },
     {
       "id": "hub-linktree-en",
@@ -19806,7 +19822,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-en"
+      "parentId": "hub-root-en",
+      "tldr": "Social profiles, email, and scheduling"
     },
     {
       "id": "hub-linktree-zh-TW",
@@ -19820,7 +19837,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": "hub-root-zh-TW"
+      "parentId": "hub-root-zh-TW",
+      "tldr": "社群帳號、電子郵件與預約會議"
     },
     {
       "id": "hub-root-en",
@@ -19834,7 +19852,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": null
+      "parentId": null,
+      "tldr": "Portfolio hub — AI safety, photography, and design"
     },
     {
       "id": "hub-root-zh-TW",
@@ -19848,7 +19867,8 @@
       "date": null,
       "tags": [],
       "heading": null,
-      "parentId": null
+      "parentId": null,
+      "tldr": "作品集首頁 — AI安全、攝影與設計"
     },
     {
       "id": "social-email-en",
@@ -41760,7 +41780,7 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-04-17T12:44:51Z",
+    "generatedAt": "2026-04-17T12:47:48Z",
     "nodeCount": 1202,
     "edgeCount": 3609,
     "threshold": 0.62,

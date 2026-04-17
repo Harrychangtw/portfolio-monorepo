@@ -210,9 +210,10 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
                     : node.title
                 }
                 category={
-                  node.nodeType === "hub"
+                  node.tldr ||
+                  (node.nodeType === "hub"
                     ? formatHubRoute(node)
-                    : node.tldr || node.description || node.snippet
+                    : node.description || node.snippet)
                 }
                 slug={node.sourceSlug}
                 imageUrl={isTag ? "" : normalizeImageUrl(node.imageUrl)}

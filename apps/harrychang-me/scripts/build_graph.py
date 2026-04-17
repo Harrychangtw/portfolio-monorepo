@@ -1371,7 +1371,7 @@ def main():
 
             entry = summaries[file_key]
 
-            if node_type == "file" and entry.get("tldr"):
+            if node_type in ("file", "hub") and entry.get("tldr"):
                 chunk["tldr"] = entry["tldr"]
                 tldr_applied += 1
             elif node_type == "section":
