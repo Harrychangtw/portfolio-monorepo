@@ -47,8 +47,8 @@ export default function NextUpCard({
               <h3 className="font-heading text-lg md:text-xl font-bold text-primary truncate pr-4">
                 {title}
               </h3>
-              <p className="font-body text-sm text-secondary truncate mt-1">
-                {category}
+              <p className="font-body text-sm text-secondary truncate mt-1 min-h-[1.25em]">
+                {category || "\u00A0"}
               </p>
             </div>
 

@@ -760,13 +760,9 @@ export default function GraphCanvas({
         ctx.lineWidth = 1.5;
         ctx.lineCap = "round";
         ctx.globalAlpha = 0.7 + 0.3 * progress;
-        // Dashed when unfocused, solid when focused
-        if (progress > 0.98) {
-          ctx.setLineDash([]);
-        } else {
-          const dashLen = 4;
-          ctx.setLineDash([dashLen, dashLen]);
-        }
+        // Always dashed as per design preference
+        const dashLen = 4;
+        ctx.setLineDash([dashLen, dashLen]);
 
         // Morphing square → rounded-rect → circle
         ctx.beginPath();

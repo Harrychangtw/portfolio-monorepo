@@ -176,14 +176,13 @@ export default function GraphNextUp({
 
   return (
     <div className="w-full mt-8 md:mt-12">
-      <p className="font-heading uppercase text-xs tracking-wider text-secondary mb-3">
-        {t("common.relatedGraph") || "Knowledge Graph"}
-      </p>
-
       {/* Single bordered container: 3:2 graph + NextUpCard stacked inside */}
       <div className="relative border border-border bg-card overflow-hidden">
         {/* Graph — strictly 3:2 */}
         <div className="relative w-full aspect-[3/2] overflow-hidden">
+          <div className="absolute top-2 left-2 z-10 px-2 py-1 text-[10px] font-heading uppercase tracking-wider text-secondary bg-card/80 backdrop-blur-sm border border-border pointer-events-none">
+            {t("common.relatedGraph") || "Knowledge Graph"}
+          </div>
           <NavigationLink
             href="/graph"
             className="absolute top-2 right-2 z-10 px-2 py-1 text-[10px] font-heading uppercase tracking-wider text-secondary hover:text-primary bg-card/80 backdrop-blur-sm border border-border transition-colors"
