@@ -9,7 +9,7 @@ date: "2025-03-08"
 role: "Designer & Speaker"
 technologies: ["Affinity Publisher", "Apple Keynote"]
 tooltip: "Delivered a 40-minute keynote on building a RAG chatbot at SITCON 2025."
-pinned: 12
+pinned: 13
 featured: true
 ---
 
