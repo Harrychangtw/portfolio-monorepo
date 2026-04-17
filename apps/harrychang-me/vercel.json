@@ -32,16 +32,6 @@
         }
       ],
       "destination": "/lab/:path*"
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "graph\\.harrychang\\.me"
-        }
-      ],
-      "destination": "/graph/:path*"
     }
   ],
   "cleanUrls": true,

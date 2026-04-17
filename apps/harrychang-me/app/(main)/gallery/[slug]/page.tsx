@@ -192,7 +192,6 @@ export default async function GalleryItemPage({
         nextItem={nextItem}
         localGraphSlot={
           <GraphNextUp
-            currentSlug={slug.replace(/_zh-tw|_zh-TW/i, "")}
             sourceType="gallery"
             basePath="gallery"
             nextItem={nextItem}

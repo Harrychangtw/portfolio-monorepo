@@ -203,7 +203,6 @@ export default async function ProjectPage({
         nextProject={nextProject}
         localGraphSlot={
           <GraphNextUp
-            currentSlug={slug.replace(/_zh-tw|_zh-TW/i, "")}
             sourceType="project"
             basePath="projects"
             nextItem={nextProject}

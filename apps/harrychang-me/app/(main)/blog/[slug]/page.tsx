@@ -173,7 +173,6 @@ export default async function BlogPostPage({
         nextPost={nextPost}
         localGraphSlot={
           <GraphNextUp
-            currentSlug={slug.replace(/_zh-tw|_zh-TW/i, "")}
             sourceType="post"
             basePath="blog"
             nextItem={nextPost}

@@ -20,7 +20,6 @@ interface NextUpItem {
 type BasePath = "blog" | "projects" | "gallery";
 
 interface GraphNextUpProps {
-  currentSlug: string;
   sourceType: "post" | "project" | "gallery";
   basePath: BasePath;
   nextItem?: NextUpItem | null;
@@ -45,7 +44,6 @@ function normalizeImageUrl(url: string | null | undefined): string {
  * temporarily updates the NextUpCard; leaving reverts to the selected node.
  */
 export default function GraphNextUp({
-  currentSlug,
   sourceType,
   basePath,
   nextItem,
@@ -54,7 +52,7 @@ export default function GraphNextUp({
 
   // "base" card = the default/selected node data (starts as nextItem)
   const [baseCard, setBaseCard] = useState<NextUpItem | null>(nextItem ?? null);
-  const [baseCardPath, setBaseCardPath] = useState<BasePath>(basePath);
+  const [baseCardPath] = useState<BasePath>(basePath);
 
   // "hover" card = temporary override while hovering a node
   const [hoverCard, setHoverCard] = useState<{
