@@ -12,6 +12,8 @@ interface NextUpCardProps {
   imageUrl: string;
   basePath: "projects" | "gallery" | "blog";
   aspectRatio?: number;
+  /** Optional direct href — overrides the default /{basePath}/{slug} link. */
+  href?: string;
 }
 
 export default function NextUpCard({
@@ -21,6 +23,7 @@ export default function NextUpCard({
   imageUrl,
   basePath,
   aspectRatio,
+  href,
 }: NextUpCardProps) {
   const { t } = useLanguage();
 
@@ -30,7 +33,7 @@ export default function NextUpCard({
 
   return (
     <div className="w-full">
-      <NavigationLink href={`/${basePath}/${slug}`} className="block group">
+      <NavigationLink href={href ?? `/${basePath}/${slug}`} className="block group">
         <motion.div
           className="relative overflow-hidden bg-card hover:bg-muted/60 transition-colors"
           transition={{ duration: 0.2 }}

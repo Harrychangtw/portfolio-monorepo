@@ -788,8 +788,54 @@ export default function GraphCanvas({
         }
         ctx.stroke();
         ctx.setLineDash([]);
-
         ctx.globalAlpha = 1;
+
+        // ── Label drawn on top of the crosshair ─────────────────────────
+        const labelTarget = lockedNode ?? (
+          centerNodeRef.current
+            ? nodes.find((n) => n.id === centerNodeRef.current) ?? null
+            : null
+        );
+        if (labelTarget) {
+          // Re-enter simulation space so coordinates align with the node
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          ctx.translate(tx, ty);
+          ctx.scale(k, k);
+
+          const baseR2 = nodeRadiusMap.current.get(labelTarget.id) || 1.5;
+          const r2 = baseR2 * k < 1.5 ? 1.5 / k : baseR2;
+
+          const fSize  = 10 / k;
+          const padH   = 3 / k;
+          const padV   = 1.5 / k;
+
+          ctx.font         = `${fSize}px sans-serif`;
+          ctx.textAlign    = "center";
+          ctx.textBaseline = "bottom";
+
+          const raw =
+            labelTarget.nodeType === "section" && labelTarget.heading
+              ? labelTarget.heading
+              : labelTarget.title;
+          const lbl = raw.length > 30 ? raw.slice(0, 28) + "…" : raw;
+
+          const lw = ctx.measureText(lbl).width;
+          const ly = labelTarget.y - r2 - 2 / k;
+
+          ctx.fillStyle  = themeColorsRef.current.card;
+          ctx.globalAlpha = 0.9;
+          ctx.fillRect(
+            labelTarget.x - lw / 2 - padH,
+            ly - fSize - padV,
+            lw + padH * 2,
+            fSize + padV * 2,
+          );
+
+          ctx.fillStyle   = themeColorsRef.current.foreground;
+          ctx.globalAlpha = 1;
+          ctx.fillText(lbl, labelTarget.x, ly);
+          ctx.globalAlpha = 1;
+        }
       }
 
       ctx.setTransform(1, 0, 0, 1, 0, 0);

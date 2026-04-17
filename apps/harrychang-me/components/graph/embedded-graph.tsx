@@ -14,7 +14,23 @@ export interface EmbeddedNodeInfo {
   url: string;
   imageUrl?: string | null;
   description?: string;
+  /** "file" | "hub" | etc. — lets consumers distinguish hubs from content nodes */
+  nodeType?: string;
 }
+
+/** OG images shown when hovering over a hub node in the embedded graph */
+const HUB_OG_IMAGES: Record<string, string> = {
+  root:     "/images/og-image.webp",
+  post:     "/images/og-image-blog.webp",
+  project:  "/images/og-image-projects.webp",
+  gallery:  "/images/og-image-gallery.webp",
+  about:    "/images/og-image.webp",
+  updates:  "/images/og-image.webp",
+  uses:     "/images/og-image-uses.webp",
+  linktree: "/images/og-image.webp",
+  cv:       "/images/og-image-resume.webp",
+  reading:  "/images/og-image-reading.webp",
+};
 
 interface EmbeddedGraphProps {
   /** Slug of the focal (next-up) file node to center & select */
@@ -43,13 +59,19 @@ async function loadGraphData(): Promise<GraphData | null> {
 }
 
 function toInfo(node: GraphNode): EmbeddedNodeInfo {
+  // Hub nodes don't carry content images — use pre-defined OG images instead.
+  const imageUrl =
+    node.nodeType === "hub"
+      ? (HUB_OG_IMAGES[node.sourceSlug] ?? node.imageUrl)
+      : node.imageUrl;
   return {
     title: node.title,
     slug: node.sourceSlug,
     sourceType: node.sourceType,
     url: node.url,
-    imageUrl: node.imageUrl,
-    description: node.description,
+    imageUrl,
+    description: node.description || node.snippet,
+    nodeType: node.nodeType,
   };
 }
 
@@ -121,7 +143,7 @@ export default function EmbeddedGraph({
   const handleNodeHover = useCallback(
     (node: GraphNode | null) => {
       if (!onNodeHover) return;
-      if (!node || node.nodeType !== "file") {
+      if (!node || (node.nodeType !== "file" && node.nodeType !== "hub")) {
         onNodeHover(null);
         return;
       }
@@ -133,7 +155,7 @@ export default function EmbeddedGraph({
   const handleCenterNodeChange = useCallback(
     (node: GraphNode | null) => {
       if (!onCenterNodeChange) return;
-      if (!node || node.nodeType !== "file") {
+      if (!node || (node.nodeType !== "file" && node.nodeType !== "hub")) {
         onCenterNodeChange(null);
         return;
       }

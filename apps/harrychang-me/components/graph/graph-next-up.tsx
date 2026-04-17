@@ -13,6 +13,8 @@ interface NextUpItem {
   category: string;
   imageUrl: string;
   aspectRatio?: number;
+  /** Direct href for hub nodes whose route doesn't fit /{basePath}/{slug}. */
+  href?: string;
 }
 
 type BasePath = "blog" | "projects" | "gallery";
@@ -139,12 +141,15 @@ export default function GraphNextUp({
       setHoverCard(null);
       return;
     }
+    const isHub = node.nodeType === "hub";
     setHoverCard({
       data: {
         slug: node.slug,
         title: node.title,
         category: node.description || "",
         imageUrl: normalizeImageUrl(node.imageUrl),
+        // Hub nodes link to their own route directly (e.g. /blog, /gallery)
+        href: isHub ? node.url : undefined,
       },
       basePath: sourceTypeToBasePath(node.sourceType),
     });
@@ -157,12 +162,14 @@ export default function GraphNextUp({
         setHoverCard(null);
         return;
       }
+      const isHub = node.nodeType === "hub";
       setHoverCard({
         data: {
           slug: node.slug,
           title: node.title,
           category: node.description || "",
           imageUrl: normalizeImageUrl(node.imageUrl),
+          href: isHub ? node.url : undefined,
         },
         basePath: sourceTypeToBasePath(node.sourceType),
       });
@@ -207,6 +214,7 @@ export default function GraphNextUp({
               imageUrl={displayCard.imageUrl}
               basePath={displayBasePath}
               aspectRatio={displayCard.aspectRatio}
+              href={displayCard.href}
             />
           </div>
         )}
