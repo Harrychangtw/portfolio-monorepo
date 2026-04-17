@@ -33,7 +33,10 @@ export default function NextUpCard({
 
   return (
     <div className="w-full">
-      <NavigationLink href={href ?? `/${basePath}/${slug}`} className="block group">
+      <NavigationLink
+        href={href ?? `/${basePath}/${slug}`}
+        className="block group"
+      >
         <motion.div
           className="relative overflow-hidden bg-card hover:bg-muted/60 transition-colors"
           transition={{ duration: 0.2 }}
