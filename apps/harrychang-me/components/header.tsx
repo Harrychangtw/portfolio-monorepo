@@ -337,7 +337,7 @@ export default function Header() {
     !isProjectDetailPage &&
     !isBlogDetailPage &&
     !activeTitleKey;
-  const shouldHideNav = isMobile || isLab || isGraph  || isNotFound;
+  const shouldHideNav = isMobile || isLab || isGraph || isNotFound;
 
   // Reusable Underline Component
   const Underline = () => (
