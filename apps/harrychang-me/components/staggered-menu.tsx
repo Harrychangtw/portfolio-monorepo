@@ -11,6 +11,7 @@ import { gsap } from "gsap";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import NavigationLink from "@portfolio/ui/navigation-link";
+import { usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import { ArrowUpRight } from "lucide-react";
 
@@ -58,7 +59,7 @@ export interface StaggeredMenuProps {
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = "right",
-  colors: _colors = ["hsl(var(--accent))", "#0A0A0A"], // eslint-disable-line @typescript-eslint/no-unused-vars
+  colors = ["hsl(var(--accent))", "#0A0A0A"],
   items = [],
   connectItems = [],
   exploreItems = [],
@@ -77,6 +78,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
   const { t } = useLanguage();
+  const pathname = usePathname();
 
   // Ensure menu is closed on mount
   useEffect(() => {
@@ -88,7 +90,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       const offscreen = position === "left" ? -100 : 100;
       gsap.set(panelRef.current, { xPercent: offscreen });
     }
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- Run only on mount
+  }, []); // Run only on mount
 
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
@@ -145,7 +147,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         panel.querySelectorAll(".sm-panel-list[data-numbering] .sm-panel-item"),
       ) as HTMLElement[];
       if (numberEls.length) {
-        gsap.set(numberEls, { ["--sm-num-opacity" as string]: 0 });
+        gsap.set(numberEls, { ["--sm-num-opacity" as any]: 0 });
       }
 
       gsap.set(plusH, { transformOrigin: "50% 50%", rotate: 0 });
@@ -185,7 +187,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     if (itemEls.length) gsap.set(itemEls, { yPercent: 140, rotate: 10 });
     if (numberEls.length)
-      gsap.set(numberEls, { ["--sm-num-opacity" as string]: 0 });
+      gsap.set(numberEls, { ["--sm-num-opacity" as any]: 0 });
 
     const tl = gsap.timeline({ paused: true });
 
@@ -238,7 +240,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           {
             duration: 0.6,
             ease: "power2.out",
-            ["--sm-num-opacity" as string]: 1,
+            ["--sm-num-opacity" as any]: 1,
             stagger: { each: 0.08, from: "start" },
           },
           itemsStart + 0.1,
@@ -248,7 +250,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     openTlRef.current = tl;
     return tl;
-  }, []);
+  }, [position]);
 
   const playOpen = useCallback(() => {
     if (busyRef.current) return;
@@ -295,7 +297,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           ),
         ) as HTMLElement[];
         if (numberEls.length)
-          gsap.set(numberEls, { ["--sm-num-opacity" as string]: 0 });
+          gsap.set(numberEls, { ["--sm-num-opacity" as any]: 0 });
 
         // Hide the panel only after the slide-out animation finishes
         setOpen(false);
@@ -356,6 +358,13 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       toggleBtnRef.current.style.color = targetColor;
     }
   }, [changeMenuColorOnOpen, menuButtonColor, openMenuButtonColor]);
+
+  const animateText = useCallback(
+    (opening: boolean) => {
+      // This function can be removed or left empty
+    },
+    [t],
+  );
 
   const toggleMenu = useCallback(() => {
     const target = !openRef.current;
@@ -463,9 +472,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         }
         style={
           accentColor
-            ? ({
-                ["--sm-accent" as string]: accentColor,
-              } as React.CSSProperties)
+            ? ({ ["--sm-accent" as any]: accentColor } as React.CSSProperties)
             : undefined
         }
         data-position={position}
@@ -597,7 +604,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                           className="list-none m-0 p-0 flex flex-col gap-3.5"
                           role="list"
                         >
-                          {/* eslint-disable-next-line react-hooks/refs -- toggleMenu is only passed as onClick, not called during render */}
                           {connectItems.map((item) =>
                             renderLinkItem(item, toggleMenu),
                           )}
@@ -614,7 +620,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                           className="list-none m-0 p-0 flex flex-col gap-3.5"
                           role="list"
                         >
-                          {/* eslint-disable-next-line react-hooks/refs -- toggleMenu is only passed as onClick, not called during render */}
                           {exploreItems.map((item) =>
                             renderLinkItem(item, toggleMenu),
                           )}

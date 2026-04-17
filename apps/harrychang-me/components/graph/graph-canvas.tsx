@@ -429,18 +429,13 @@ export default function GraphCanvas({
           selectedNodeId &&
           (src.id === selectedNodeId || tgt.id === selectedNodeId);
 
-        // Check if this is a parent-to-media edge (dashed)
-        const isParentMediaEdge =
-          parentEdgeKeys.has(`${src.id}|${tgt.id}`) ||
-          parentEdgeKeys.has(`${tgt.id}|${src.id}`);
-
         ctx.beginPath();
         if (
-          isParentMediaEdge &&
+          edge.linkType === "semantic" &&
           !isConnectedToHover &&
           !isConnectedToSelected
         ) {
-          // Dashed line for parent-to-media structural edges
+          // Dashed line for semantic (similarity) edges
           const dashLen = 3 / k;
           ctx.setLineDash([dashLen, dashLen]);
         } else {
@@ -811,7 +806,7 @@ export default function GraphCanvas({
           const baseR2 = nodeRadiusMap.current.get(labelTarget.id) || 1.5;
           const r2 = baseR2 * k < 1.5 ? 1.5 / k : baseR2;
 
-          const fSize = 10 / k;
+          const fSize = 12 / k;
           const padH = 3 / k;
           const padV = 1.5 / k;
 
