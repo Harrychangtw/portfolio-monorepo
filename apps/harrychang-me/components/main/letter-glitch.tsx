@@ -242,7 +242,8 @@ const LetterGlitch = ({
     });
   };
 
-  const setTextInGrid = ( // eslint-disable-line @typescript-eslint/no-unused-vars
+  const setTextInGrid = (
+    // eslint-disable-line @typescript-eslint/no-unused-vars
     text: string,
     row: number,
     startCol: number,

@@ -17,13 +17,19 @@ const LanguageSwitcher = dynamic(
   { ssr: false },
 );
 
-const ThemeSwitcher = dynamic(
-  () => import("@portfolio/ui/theme-switcher"),
-  { ssr: false },
-);
+const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), {
+  ssr: false,
+});
 
 const SOURCE_TYPES: SourceType[] = ["post", "project", "gallery", "locale"];
-const NODE_TYPES: NodeType[] = ["hub", "file", "section", "image", "video", "tag"];
+const NODE_TYPES: NodeType[] = [
+  "hub",
+  "file",
+  "section",
+  "image",
+  "video",
+  "tag",
+];
 
 const NODE_TYPE_LABELS: Record<NodeType, string> = {
   hub: "Hub",
@@ -45,7 +51,9 @@ export default function GraphPageClient() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [centerNode, setCenterNode] = useState<GraphNode | null>(null);
   const [showMobileFilters, setShowMobileFilters] = useState(false);
-  const centerNodeDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const centerNodeDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
   const lastCenterNodeRef = useRef<GraphNode | null>(null);
 
   // Sync locale filter with the global language switcher
@@ -116,7 +124,10 @@ export default function GraphPageClient() {
   const handleNodeHover = useCallback(
     (node: GraphNode | null, cursorPos?: { x: number; y: number }) => {
       // Only show hover cards for files (posts/projects/gallery), images, and videos
-      const showCard = node?.nodeType === "file" || node?.nodeType === "image" || node?.nodeType === "video";
+      const showCard =
+        node?.nodeType === "file" ||
+        node?.nodeType === "image" ||
+        node?.nodeType === "video";
       setHoveredNode(showCard ? node : null);
       if (cursorPos) {
         setCursorPosition(cursorPos);
@@ -155,19 +166,19 @@ export default function GraphPageClient() {
     if (centerNodeDebounceRef.current) {
       clearTimeout(centerNodeDebounceRef.current);
     }
-    
+
     // If node is the same, no need to update
     if (node?.id === lastCenterNodeRef.current?.id) {
       return;
     }
-    
+
     // Debounce the update to prevent rapid switching during pan
     centerNodeDebounceRef.current = setTimeout(() => {
       lastCenterNodeRef.current = node;
       setCenterNode(node);
     }, 300); // 300ms debounce for smoother experience
   }, []);
-  
+
   // Cleanup debounce on unmount
   useEffect(() => {
     return () => {
@@ -183,7 +194,12 @@ export default function GraphPageClient() {
 
     const nodes = graphData.nodes.filter((n) => {
       if (n.locale !== filterLocale) return false;
-      if (!filterTypes.has(n.sourceType) && n.nodeType !== "tag" && n.nodeType !== "hub") return false;
+      if (
+        !filterTypes.has(n.sourceType) &&
+        n.nodeType !== "tag" &&
+        n.nodeType !== "hub"
+      )
+        return false;
       if (!filterNodeTypes.has(n.nodeType)) return false;
       return true;
     });
@@ -262,50 +278,50 @@ export default function GraphPageClient() {
                 transition={{ duration: 0.1, ease: easeOut }}
                 className="mt-2 bg-card border border-border p-2 flex flex-col gap-2 max-h-[60vh] overflow-y-auto origin-top-right"
               >
-              <div className="flex items-center gap-6 min-h-[28px]">
-                <LanguageSwitcher />
-                <ThemeSwitcher />
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {SOURCE_TYPES.map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => toggleType(type)}
-                    className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors bg-background ${
-                      filterTypes.has(type)
-                        ? "border-border text-primary"
-                        : "border-border/30 text-secondary/50"
-                    }`}
-                  >
-                    <span
-                      className={`inline-block w-1.5 h-1.5 mr-1 ${
-                        filterTypes.has(type) ? "" : "opacity-30"
+                <div className="flex items-center gap-6 min-h-[28px]">
+                  <LanguageSwitcher />
+                  <ThemeSwitcher />
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  {SOURCE_TYPES.map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => toggleType(type)}
+                      className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors bg-background ${
+                        filterTypes.has(type)
+                          ? "border-border text-primary"
+                          : "border-border/30 text-secondary/50"
                       }`}
-                      style={{
-                        backgroundColor: `hsl(var(--graph-node-${type}))`,
-                      }}
-                    />
-                    {type}
-                  </button>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-1">
-                {NODE_TYPES.map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => toggleNodeType(type)}
-                    className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors bg-background ${
-                      filterNodeTypes.has(type)
-                        ? "border-border text-primary"
-                        : "border-border/30 text-secondary/50"
-                    }`}
-                  >
-                    {NODE_TYPE_LABELS[type]}
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          )}
+                    >
+                      <span
+                        className={`inline-block w-1.5 h-1.5 mr-1 ${
+                          filterTypes.has(type) ? "" : "opacity-30"
+                        }`}
+                        style={{
+                          backgroundColor: `hsl(var(--graph-node-${type}))`,
+                        }}
+                      />
+                      {type}
+                    </button>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  {NODE_TYPES.map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => toggleNodeType(type)}
+                      className={`font-mono text-[10px] uppercase tracking-wider px-1.5 py-0.5 border transition-colors bg-background ${
+                        filterNodeTypes.has(type)
+                          ? "border-border text-primary"
+                          : "border-border/30 text-secondary/50"
+                      }`}
+                    >
+                      {NODE_TYPE_LABELS[type]}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
           </AnimatePresence>
         </div>
       ) : (
@@ -374,11 +390,7 @@ export default function GraphPageClient() {
       )}
 
       {/* Mobile: sticky bottom card */}
-      {isMobile && (
-        <MobileNodeCard
-          node={mobileActiveNode}
-        />
-      )}
+      {isMobile && <MobileNodeCard node={mobileActiveNode} />}
     </div>
   );
 }

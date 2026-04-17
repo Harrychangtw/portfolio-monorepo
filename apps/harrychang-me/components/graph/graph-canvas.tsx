@@ -24,7 +24,10 @@ import type {
 interface GraphCanvasProps {
   data: GraphData;
   onNodeClick: (node: GraphNode | null) => void;
-  onNodeHover: (node: GraphNode | null, cursorPos?: { x: number; y: number }) => void;
+  onNodeHover: (
+    node: GraphNode | null,
+    cursorPos?: { x: number; y: number },
+  ) => void;
   selectedNodeId?: string | null;
   isMobile?: boolean;
   onCenterNodeChange?: (node: GraphNode | null) => void;
@@ -115,7 +118,8 @@ function computeNodeRadius(
     base = 3;
   }
   const maxBonus = NODE_TYPE_MAX_BONUS[node.nodeType] || 0;
-  const bonus = maxConnections > 0 ? (connectionCount / maxConnections) * maxBonus : 0;
+  const bonus =
+    maxConnections > 0 ? (connectionCount / maxConnections) * maxBonus : 0;
   return base + bonus;
 }
 
@@ -312,7 +316,12 @@ export default function GraphCanvas({
       const src = nodeMap.get(e.source);
       const tgt = nodeMap.get(e.target);
       if (src && tgt) {
-        simEdges.push({ source: src, target: tgt, weight: e.weight, linkType: e.linkType });
+        simEdges.push({
+          source: src,
+          target: tgt,
+          weight: e.weight,
+          linkType: e.linkType,
+        });
       }
     }
 
@@ -324,12 +333,14 @@ export default function GraphCanvas({
         "link",
         forceLink(simEdges)
           .id((d: any) => d.id) // eslint-disable-line @typescript-eslint/no-explicit-any
-          .distance((d: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
+          .distance((d: any) => {
+            // eslint-disable-line @typescript-eslint/no-explicit-any
             if (d.linkType === "structural") return 10 + (1 - d.weight) * 15;
             if (d.linkType === "tag") return 30;
             return 20 + (1 - d.weight) * 45;
           })
-          .strength((d: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
+          .strength((d: any) => {
+            // eslint-disable-line @typescript-eslint/no-explicit-any
             if (d.linkType === "structural") return 1.0;
             if (d.linkType === "tag") return 0.5;
             return 0.3 + d.weight * 0.4;
@@ -427,7 +438,7 @@ export default function GraphCanvas({
       // so its connections are highlighted even without an explicit tap.
       const mobileCenterNode =
         isMobile && centerNodeRef.current
-          ? nodes.find((n) => n.id === centerNodeRef.current) ?? null
+          ? (nodes.find((n) => n.id === centerNodeRef.current) ?? null)
           : null;
       const effectiveHover = hovered ?? mobileCenterNode;
       const hoveredNeighbors = effectiveHover
@@ -489,7 +500,11 @@ export default function GraphCanvas({
           parentEdgeKeys.has(`${tgt.id}|${src.id}`);
 
         ctx.beginPath();
-        if (isParentMediaEdge && !isConnectedToHover && !isConnectedToSelected) {
+        if (
+          isParentMediaEdge &&
+          !isConnectedToHover &&
+          !isConnectedToSelected
+        ) {
           // Dashed line for parent-to-media structural edges
           const dashLen = 3 / k;
           ctx.setLineDash([dashLen, dashLen]);
@@ -542,7 +557,7 @@ export default function GraphCanvas({
           if (isHovered || isSelected || isNeighborOfHover) {
             nodeAlpha = 1;
           } else {
-            nodeAlpha = 0.50;
+            nodeAlpha = 0.5;
           }
         }
 
@@ -608,15 +623,27 @@ export default function GraphCanvas({
         const bSelected = selectedNodeId === b.id ? 90 : 0;
         const aNeighbor = hovered && hoveredNeighbors?.has(a.id) ? 80 : 0;
         const bNeighbor = hovered && hoveredNeighbors?.has(b.id) ? 80 : 0;
-        const aPriority = aHovered + aSelected + aNeighbor + (LABEL_PRIORITY[a.nodeType] || 0);
-        const bPriority = bHovered + bSelected + bNeighbor + (LABEL_PRIORITY[b.nodeType] || 0);
+        const aPriority =
+          aHovered + aSelected + aNeighbor + (LABEL_PRIORITY[a.nodeType] || 0);
+        const bPriority =
+          bHovered + bSelected + bNeighbor + (LABEL_PRIORITY[b.nodeType] || 0);
         return bPriority - aPriority;
       });
 
       // Occupancy grid for anti-overlap (screen-space coordinates)
-      const occupiedBoxes: Array<{ x: number; y: number; w: number; h: number }> = [];
+      const occupiedBoxes: Array<{
+        x: number;
+        y: number;
+        w: number;
+        h: number;
+      }> = [];
 
-      function wouldOverlap(bx: number, by: number, bw: number, bh: number): boolean {
+      function wouldOverlap(
+        bx: number,
+        by: number,
+        bw: number,
+        bh: number,
+      ): boolean {
         const pad = 2; // 2px padding between labels
         for (const box of occupiedBoxes) {
           if (
@@ -671,7 +698,7 @@ export default function GraphCanvas({
             labelAlpha = 0;
             maxChars = 0;
           } else {
-            labelAlpha = Math.min(0.7, (k - threshold) / 0.3 * 0.7);
+            labelAlpha = Math.min(0.7, ((k - threshold) / 0.3) * 0.7);
             maxChars = node.nodeType === "file" ? 30 : 20;
           }
         }
@@ -679,9 +706,10 @@ export default function GraphCanvas({
         if (labelAlpha <= 0) continue;
 
         // Section nodes: prefer heading over title to avoid showing post title
-        const rawLabel = node.nodeType === "section" && node.heading
-          ? node.heading
-          : node.title;
+        const rawLabel =
+          node.nodeType === "section" && node.heading
+            ? node.heading
+            : node.title;
         const label =
           rawLabel.length > maxChars
             ? rawLabel.slice(0, maxChars - 2) + "..."
@@ -703,7 +731,9 @@ export default function GraphCanvas({
 
         // Skip if it would overlap (unless it's the hovered/selected node)
         if (!isHovered && !isSelected) {
-          if (wouldOverlap(screenLabelX, screenLabelY, screenLabelW, screenLabelH)) {
+          if (
+            wouldOverlap(screenLabelX, screenLabelY, screenLabelW, screenLabelH)
+          ) {
             continue;
           }
         }
@@ -765,8 +795,10 @@ export default function GraphCanvas({
           const nsy = lockedNode.y * k + ty;
           const rawDx = nsx - cx;
           const rawDy = nsy - cy;
-          targetDx = Math.max(-BOX_HALF, Math.min(BOX_HALF, rawDx)) * DRIFT_SCALE;
-          targetDy = Math.max(-BOX_HALF, Math.min(BOX_HALF, rawDy)) * DRIFT_SCALE;
+          targetDx =
+            Math.max(-BOX_HALF, Math.min(BOX_HALF, rawDx)) * DRIFT_SCALE;
+          targetDy =
+            Math.max(-BOX_HALF, Math.min(BOX_HALF, rawDy)) * DRIFT_SCALE;
         }
 
         // Smooth offset (also magnets back to 0,0 when unlocked)
@@ -955,7 +987,6 @@ export default function GraphCanvas({
         e.stopPropagation();
       }
     };
-
 
     const handleUp = (e: PointerEvent) => {
       if (isDraggingRef.current && dragNodeRef.current) {

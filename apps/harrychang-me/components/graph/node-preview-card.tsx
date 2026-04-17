@@ -54,13 +54,14 @@ export default function NodePreviewCard({
     p.startsWith("http") ? p : p.startsWith("/") ? p : `/${p}`;
 
   // Determine image source for the 3:2 preview
-  const imageSrc = isImage && node.mediaSource
-    ? normalizePath(node.mediaSource)
-    : isVideo && youtubeId
-      ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
-      : node.imageUrl
-        ? normalizePath(node.imageUrl)
-        : null;
+  const imageSrc =
+    isImage && node.mediaSource
+      ? normalizePath(node.mediaSource)
+      : isVideo && youtubeId
+        ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
+        : node.imageUrl
+          ? normalizePath(node.imageUrl)
+          : null;
 
   const hasImage = !!imageSrc && !isTag;
 

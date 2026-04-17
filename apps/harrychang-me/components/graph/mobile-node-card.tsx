@@ -73,10 +73,7 @@ interface MobileNodeCardProps {
   node: GraphNode | null;
 }
 
-export default function MobileNodeCard({
-  node,
-}: MobileNodeCardProps) {
-
+export default function MobileNodeCard({ node }: MobileNodeCardProps) {
   const normalizePath = (p: string) =>
     p.startsWith("http") ? p : p.startsWith("/") ? p : `/${p}`;
 
@@ -164,7 +161,7 @@ export default function MobileNodeCard({
               )}
               <span
                 className={`font-body text-[11px] px-1.5 py-0.5 rounded whitespace-nowrap ${nodeTypeColors[node.nodeType]}`}
-                >
+              >
                 {nodeTypeLabels[node.nodeType]}
               </span>
             </div>
@@ -188,13 +185,17 @@ export default function MobileNodeCard({
     </>
   ) : null;
 
-  const wrapperClassName = "mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg";
+  const wrapperClassName =
+    "mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg";
   const clickableClassName = `${wrapperClassName} block active:scale-[0.98] transition-transform`;
 
-  const wrappedContent = !node ? null : (!node.url || isTag) ? (
+  const wrappedContent = !node ? null : !node.url || isTag ? (
     <div className={wrapperClassName}>{cardContent}</div>
   ) : isInternalUrl(node.url) ? (
-    <NavigationLink href={toInternalPath(node.url)} className={clickableClassName}>
+    <NavigationLink
+      href={toInternalPath(node.url)}
+      className={clickableClassName}
+    >
       {cardContent}
     </NavigationLink>
   ) : (

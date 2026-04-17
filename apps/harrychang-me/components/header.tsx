@@ -166,7 +166,8 @@ export default function Header() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const hostname = window.location.hostname;
-      setIsLab( // eslint-disable-line react-hooks/set-state-in-effect
+      setIsLab(
+        // eslint-disable-line react-hooks/set-state-in-effect
         hostname.includes("lab.localhost") ||
           hostname.includes("lab.harrychang.me"),
       );

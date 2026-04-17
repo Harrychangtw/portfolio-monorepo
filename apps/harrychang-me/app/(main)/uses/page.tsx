@@ -173,18 +173,22 @@ export default function UsesPage() {
         {/* 02 — Office & Ergonomics */}
         <Section index={2} title={t("hardware.office.title", "uses")}>
           <div className="space-y-0">
-            {(hardware?.office?.items || []).map((item: UsesItem, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(hardware?.office?.items || []).map(
+              (item: UsesItem, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
 
         {/* 03 — Home Server */}
         <Section index={3} title={t("hardware.homeServer.title", "uses")}>
           <div className="space-y-0">
-            {(hardware?.homeServer?.items || []).map((item: UsesItem, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(hardware?.homeServer?.items || []).map(
+              (item: UsesItem, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
 
@@ -217,9 +221,11 @@ export default function UsesPage() {
         {/* 06 — Design & Creative */}
         <Section index={6} title={t("software.design.title", "uses")}>
           <div className="space-y-0">
-            {(software?.design?.items || []).map((item: UsesItem, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(software?.design?.items || []).map(
+              (item: UsesItem, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
 

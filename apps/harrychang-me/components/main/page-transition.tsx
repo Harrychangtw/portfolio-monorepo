@@ -133,7 +133,11 @@ export default function PageTransition({ children }: { children: ReactNode }) {
 
     // Fallback entering animation (browsers without View Transitions API)
     const el = contentRef.current;
-    if (el && !(document as unknown as { startViewTransition?: unknown }).startViewTransition) {
+    if (
+      el &&
+      !(document as unknown as { startViewTransition?: unknown })
+        .startViewTransition
+    ) {
       el.classList.remove("page-entering");
       void el.offsetWidth;
       el.classList.add("page-entering");

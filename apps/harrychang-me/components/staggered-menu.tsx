@@ -463,7 +463,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         }
         style={
           accentColor
-            ? ({ ["--sm-accent" as string]: accentColor } as React.CSSProperties)
+            ? ({
+                ["--sm-accent" as string]: accentColor,
+              } as React.CSSProperties)
             : undefined
         }
         data-position={position}
@@ -595,8 +597,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                           className="list-none m-0 p-0 flex flex-col gap-3.5"
                           role="list"
                         >
-                          {connectItems.map((item) => // eslint-disable-line react-hooks/refs
-                            renderLinkItem(item, toggleMenu),
+                          {connectItems.map(
+                            (
+                              item, // eslint-disable-line react-hooks/refs
+                            ) => renderLinkItem(item, toggleMenu),
                           )}
                         </ul>
                       </div>
@@ -611,8 +615,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                           className="list-none m-0 p-0 flex flex-col gap-3.5"
                           role="list"
                         >
-                          {exploreItems.map((item) => // eslint-disable-line react-hooks/refs
-                            renderLinkItem(item, toggleMenu),
+                          {exploreItems.map(
+                            (
+                              item, // eslint-disable-line react-hooks/refs
+                            ) => renderLinkItem(item, toggleMenu),
                           )}
                         </ul>
                       </div>
