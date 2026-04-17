@@ -21,16 +21,16 @@ export interface EmbeddedNodeInfo {
 
 /** OG images shown when hovering over a hub node in the embedded graph */
 const HUB_OG_IMAGES: Record<string, string> = {
-  root:     "/images/og-image.webp",
-  post:     "/images/og-image-blog.webp",
-  project:  "/images/og-image-projects.webp",
-  gallery:  "/images/og-image-gallery.webp",
-  about:    "/images/og-image.webp",
-  updates:  "/images/og-image.webp",
-  uses:     "/images/og-image-uses.webp",
+  root: "/images/og-image.webp",
+  post: "/images/og-image-blog.webp",
+  project: "/images/og-image-projects.webp",
+  gallery: "/images/og-image-gallery.webp",
+  about: "/images/og-image.webp",
+  updates: "/images/og-image.webp",
+  uses: "/images/og-image-uses.webp",
   linktree: "/images/og-image.webp",
-  cv:       "/images/og-image-resume.webp",
-  reading:  "/images/og-image-reading.webp",
+  cv: "/images/og-image-resume.webp",
+  reading: "/images/og-image-reading.webp",
 };
 
 interface EmbeddedGraphProps {

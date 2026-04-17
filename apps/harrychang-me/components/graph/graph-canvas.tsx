@@ -798,11 +798,11 @@ export default function GraphCanvas({
         ctx.globalAlpha = 1;
 
         // ── Label drawn on top of the crosshair ─────────────────────────
-        const labelTarget = lockedNode ?? (
-          centerNodeRef.current
-            ? nodes.find((n) => n.id === centerNodeRef.current) ?? null
-            : null
-        );
+        const labelTarget =
+          lockedNode ??
+          (centerNodeRef.current
+            ? (nodes.find((n) => n.id === centerNodeRef.current) ?? null)
+            : null);
         if (labelTarget) {
           // Re-enter simulation space so coordinates align with the node
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -812,12 +812,12 @@ export default function GraphCanvas({
           const baseR2 = nodeRadiusMap.current.get(labelTarget.id) || 1.5;
           const r2 = baseR2 * k < 1.5 ? 1.5 / k : baseR2;
 
-          const fSize  = 10 / k;
-          const padH   = 3 / k;
-          const padV   = 1.5 / k;
+          const fSize = 10 / k;
+          const padH = 3 / k;
+          const padV = 1.5 / k;
 
-          ctx.font         = `${fSize}px sans-serif`;
-          ctx.textAlign    = "center";
+          ctx.font = `${fSize}px sans-serif`;
+          ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
 
           const raw =
@@ -829,7 +829,7 @@ export default function GraphCanvas({
           const lw = ctx.measureText(lbl).width;
           const ly = labelTarget.y - r2 - 2 / k;
 
-          ctx.fillStyle  = themeColorsRef.current.card;
+          ctx.fillStyle = themeColorsRef.current.card;
           ctx.globalAlpha = 0.9;
           ctx.fillRect(
             labelTarget.x - lw / 2 - padH,
@@ -838,7 +838,7 @@ export default function GraphCanvas({
             fSize + padV * 2,
           );
 
-          ctx.fillStyle   = themeColorsRef.current.foreground;
+          ctx.fillStyle = themeColorsRef.current.foreground;
           ctx.globalAlpha = 1;
           ctx.fillText(lbl, labelTarget.x, ly);
           ctx.globalAlpha = 1;
