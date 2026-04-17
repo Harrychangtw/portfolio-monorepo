@@ -305,23 +305,11 @@ export default function ProjectPostClient({
                     },
                   })}
                 </div>
-                {/* Local Graph */}
-                {localGraphSlot && (
-                  <div className="w-full mt-8 md:mt-12 mb-4">
-                    <p className="font-heading uppercase text-xs tracking-wider text-secondary mb-3">
-                      {t("common.relatedGraph") || "Knowledge Graph"}
-                    </p>
-                    <div
-                      className="border border-border overflow-hidden"
-                      style={{ height: "240px" }}
-                    >
-                      {localGraphSlot}
-                    </div>
-                  </div>
-                )}
+                {/* Local Graph + Next Up Card (coupled) */}
+                {localGraphSlot}
 
-                {/* Next Up Card */}
-                {nextProjectData && (
+                {/* Standalone Next Up Card (fallback when no graph) */}
+                {!localGraphSlot && nextProjectData && (
                   <NextUpCard
                     title={nextProjectData.title}
                     category={nextProjectData.category}

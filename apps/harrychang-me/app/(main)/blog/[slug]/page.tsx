@@ -6,7 +6,7 @@ import {
   getNextPost,
 } from "@portfolio/lib/lib/markdown";
 import BlogPostClient from "@portfolio/ui/blog-post-client";
-import LocalGraphView from "@/components/graph/local-graph-dynamic";
+import GraphNextUp from "@/components/graph/graph-next-up";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -172,9 +172,11 @@ export default async function BlogPostPage({
         initialPost={post}
         nextPost={nextPost}
         localGraphSlot={
-          <LocalGraphView
+          <GraphNextUp
             currentSlug={slug.replace(/_zh-tw|_zh-TW/i, "")}
             sourceType="post"
+            basePath="blog"
+            nextItem={nextPost}
           />
         }
       />

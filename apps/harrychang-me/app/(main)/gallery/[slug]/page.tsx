@@ -6,7 +6,7 @@ import {
   getNextGalleryItem,
 } from "@portfolio/lib/lib/markdown";
 import GalleryPostClient from "@portfolio/ui/gallery-post-client";
-import LocalGraphView from "@/components/graph/local-graph-dynamic";
+import GraphNextUp from "@/components/graph/graph-next-up";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -191,9 +191,11 @@ export default async function GalleryItemPage({
         initialItem={item}
         nextItem={nextItem}
         localGraphSlot={
-          <LocalGraphView
+          <GraphNextUp
             currentSlug={slug.replace(/_zh-tw|_zh-TW/i, "")}
             sourceType="gallery"
+            basePath="gallery"
+            nextItem={nextItem}
           />
         }
       />

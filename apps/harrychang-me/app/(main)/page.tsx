@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import AboutSection from "@/components/main/about-section";
-import GraphSection from "@/components/main/graph-section";
 import UpdatesSection from "@/components/main/updates-section";
 import ProjectsSection from "@portfolio/ui/projects-section";
 import GallerySection from "@portfolio/ui/gallery-section";
@@ -66,7 +65,6 @@ export default function Home() {
   return (
     <>
       <AboutSection />
-      <GraphSection />
       <UpdatesSection />
       <ProjectsSection initialItems={projectsItems} limit={12} showSeeAll />
       <GallerySection initialItems={galleryItems} limit={15} showSeeAll />

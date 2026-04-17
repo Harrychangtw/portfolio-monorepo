@@ -7,7 +7,7 @@ interface SubgraphOptions {
   maxNodes?: number;
 }
 
-const EXCLUDED_TYPES: Set<NodeType> = new Set(["image", "video", "hub"]);
+const EXCLUDED_TYPES: Set<NodeType> = new Set(["image", "video", "hub", "section"]);
 
 /** Overview mode: returns all file + tag nodes and their edges (for homepage) */
 export function extractOverviewGraph(
@@ -46,7 +46,10 @@ export function extractSubgraph(
   if (!focalNode) return null;
 
   // Build adjacency map
-  const adjacency = new Map<string, Array<{ nodeId: string; edge: GraphEdge }>>();
+  const adjacency = new Map<
+    string,
+    Array<{ nodeId: string; edge: GraphEdge }>
+  >();
   for (const edge of data.edges) {
     if (!adjacency.has(edge.source)) adjacency.set(edge.source, []);
     if (!adjacency.has(edge.target)) adjacency.set(edge.target, []);
@@ -64,11 +67,8 @@ export function extractSubgraph(
   for (const { nodeId } of neighbors) {
     const node = nodeMap.get(nodeId);
     if (!node || EXCLUDED_TYPES.has(node.nodeType)) continue;
-    // Only include same-locale nodes for file/section types
-    if (
-      (node.nodeType === "file" || node.nodeType === "section") &&
-      node.locale !== locale
-    ) continue;
+    // Only include same-locale file nodes
+    if (node.nodeType === "file" && node.locale !== locale) continue;
     includedIds.add(nodeId);
     if (node.nodeType === "tag") hop1Tags.push(nodeId);
     else if (node.nodeType === "file") hop1Files.push(nodeId);

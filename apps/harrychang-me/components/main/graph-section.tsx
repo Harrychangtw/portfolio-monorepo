@@ -14,7 +14,7 @@ export default function GraphSection() {
         </h2>
         <div
           className="border border-border overflow-hidden"
-          style={{ height: "280px" }}
+          style={{ height: "360px" }}
         >
           <LocalGraphView currentSlug="" sourceType="post" />
         </div>

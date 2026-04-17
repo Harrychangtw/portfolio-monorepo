@@ -20,10 +20,25 @@ import {
   computeNodeRadius,
 } from "./graph-utils";
 
+export interface SelectedNodeInfo {
+  title: string;
+  slug: string;
+  sourceType: string;
+  url: string;
+  imageUrl?: string | null;
+  description?: string;
+}
+
 interface LocalGraphViewProps {
   currentSlug: string;
   sourceType: "post" | "project" | "gallery";
   className?: string;
+  /** Slug of the default selected node (e.g., the "next up" item) */
+  defaultSelectedSlug?: string;
+  /** Called when a node is selected (click) */
+  onNodeSelect?: (node: SelectedNodeInfo | null) => void;
+  /** Called when a node is hovered (desktop only), null on leave */
+  onNodeHover?: (node: SelectedNodeInfo | null) => void;
 }
 
 interface SettledNode extends GraphNode {
@@ -62,22 +77,27 @@ export default function LocalGraphView({
   currentSlug,
   sourceType,
   className,
+  defaultSelectedSlug,
+  onNodeSelect,
+  onNodeHover,
 }: LocalGraphViewProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [graphData, setGraphData] = useState<GraphData | null>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [hoveredNode, setHoveredNode] = useState<{
-    node: SettledNode;
-    x: number;
-    y: number;
-  } | null>(null);
+  const [hoveredNode, setHoveredNode] = useState<SettledNode | null>(null);
+  // selectedNode = the node whose info is shown in the NextUpCard below
+  const [selectedNode, setSelectedNode] = useState<SettledNode | null>(null);
   const settledNodesRef = useRef<SettledNode[]>([]);
   const settledEdgesRef = useRef<SettledEdge[]>([]);
   const focalIdRef = useRef<string>("");
   const router = useRouter();
   const { language } = useLanguage();
   const locale = language === "zh-TW" ? "zh-TW" : "en";
+
+  // Zoom state: { scale, panX, panY } stored in ref to avoid re-renders on every frame
+  const zoomRef = useRef({ scale: 1, panX: 0, panY: 0 });
+  const [zoomVersion, setZoomVersion] = useState(0); // bump to trigger re-render
 
   // Fetch graph data on mount
   useEffect(() => {
@@ -115,16 +135,30 @@ export default function LocalGraphView({
     const connectionCount = new Map<string, number>();
     for (const node of nodes) connectionCount.set(node.id, 0);
     for (const edge of edges) {
-      connectionCount.set(edge.source, (connectionCount.get(edge.source) || 0) + 1);
-      connectionCount.set(edge.target, (connectionCount.get(edge.target) || 0) + 1);
+      connectionCount.set(
+        edge.source,
+        (connectionCount.get(edge.source) || 0) + 1,
+      );
+      connectionCount.set(
+        edge.target,
+        (connectionCount.get(edge.target) || 0) + 1,
+      );
     }
     const maxConnections = Math.max(...connectionCount.values(), 1);
 
     // Create simulation nodes
-    const simNodes: Array<GraphNode & { x: number; y: number; vx: number; vy: number; fx?: number | null; fy?: number | null }> = nodes.map((n, i) => {
+    const simNodes: Array<
+      GraphNode & {
+        x: number;
+        y: number;
+        vx: number;
+        vy: number;
+        fx?: number | null;
+        fy?: number | null;
+      }
+    > = nodes.map((n, i) => {
       const angle = (i / nodes.length) * Math.PI * 2;
       const spread = Math.sqrt(nodes.length) * 8;
-      // Place focal node at center
       const isFocal = n.id === focalNodeId;
       return {
         ...n,
@@ -142,7 +176,12 @@ export default function LocalGraphView({
       const src = nodeMap.get(e.source);
       const tgt = nodeMap.get(e.target);
       if (src && tgt) {
-        simEdges.push({ source: src, target: tgt, weight: e.weight, linkType: e.linkType });
+        simEdges.push({
+          source: src,
+          target: tgt,
+          weight: e.weight,
+          linkType: e.linkType,
+        });
       }
     }
 
@@ -153,12 +192,10 @@ export default function LocalGraphView({
       focalSim.fy = 0;
     }
 
-    // Adjust forces for overview (many nodes) vs local (few nodes)
     const chargeStrength = isOverview ? -30 : -80;
     const chargeMax = isOverview ? 150 : 200;
     const linkDist = isOverview ? 20 : 40;
 
-    // Run simulation synchronously
     const sim = forceSimulation(simNodes)
       .force(
         "link",
@@ -171,35 +208,43 @@ export default function LocalGraphView({
           })
           .strength(0.8),
       )
-      .force("charge", forceManyBody().strength(chargeStrength).distanceMax(chargeMax))
+      .force(
+        "charge",
+        forceManyBody().strength(chargeStrength).distanceMax(chargeMax),
+      )
       .force("center", forceCenter(0, 0).strength(isOverview ? 0.5 : 0.8))
       .force(
         "collide",
         forceCollide()
           .radius((d: any) => { // eslint-disable-line @typescript-eslint/no-explicit-any
-            const r = computeNodeRadius(d, connectionCount.get(d.id) || 0, maxConnections);
+            const r = computeNodeRadius(
+              d,
+              connectionCount.get(d.id) || 0,
+              maxConnections,
+            );
             return r * (isOverview ? 1.2 : 2) + (isOverview ? 1 : 3);
           })
           .strength(0.9),
       )
       .stop();
 
-    // Tick synchronously
     const ticks = isOverview ? 200 : 150;
     for (let i = 0; i < ticks; i++) sim.tick();
 
-    // Release focal pin
     if (focalSim) {
       focalSim.fx = null;
       focalSim.fy = null;
     }
 
-    // Store settled positions
     settledNodesRef.current = simNodes.map((n) => ({
       ...n,
       x: n.x,
       y: n.y,
-      radius: computeNodeRadius(n, connectionCount.get(n.id) || 0, maxConnections),
+      radius: computeNodeRadius(
+        n,
+        connectionCount.get(n.id) || 0,
+        maxConnections,
+      ),
     }));
 
     const nodeRefMap = new Map(settledNodesRef.current.map((n) => [n.id, n]));
@@ -210,7 +255,56 @@ export default function LocalGraphView({
         linkType: e.linkType,
       }))
       .filter((e: SettledEdge) => e.source && e.target);
-  }, [subgraph]);
+
+    // Reset zoom when subgraph changes
+    zoomRef.current = { scale: 1, panX: 0, panY: 0 };
+
+    // Set default selected node if defaultSelectedSlug is provided
+    if (defaultSelectedSlug) {
+      const defaultNode = settledNodesRef.current.find(
+        (n) =>
+          n.sourceSlug === defaultSelectedSlug &&
+          n.nodeType === "file",
+      );
+      if (defaultNode) {
+        setSelectedNode(defaultNode);
+      }
+    }
+  }, [subgraph]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Emit selected node info to parent
+  useEffect(() => {
+    if (!onNodeSelect) return;
+    if (!selectedNode || selectedNode.nodeType === "tag") {
+      onNodeSelect(null);
+      return;
+    }
+    onNodeSelect({
+      title: selectedNode.title,
+      slug: selectedNode.sourceSlug,
+      sourceType: selectedNode.sourceType,
+      url: selectedNode.url,
+      imageUrl: selectedNode.imageUrl,
+      description: selectedNode.description,
+    });
+  }, [selectedNode, onNodeSelect]);
+
+  // Emit hovered node info to parent
+  useEffect(() => {
+    if (!onNodeHover) return;
+    if (!hoveredNode || hoveredNode.nodeType === "tag") {
+      onNodeHover(null);
+      return;
+    }
+    onNodeHover({
+      title: hoveredNode.title,
+      slug: hoveredNode.sourceSlug,
+      sourceType: hoveredNode.sourceType,
+      url: hoveredNode.url,
+      imageUrl: hoveredNode.imageUrl,
+      description: hoveredNode.description,
+    });
+  }, [hoveredNode, onNodeHover]);
 
   // Handle resize
   useEffect(() => {
@@ -227,10 +321,19 @@ export default function LocalGraphView({
   }, []);
 
   // Theme color refs
-  const nodeColorsRef = useRef<Record<SourceType, string>>({} as Record<SourceType, string>);
+  const nodeColorsRef = useRef<Record<SourceType, string>>(
+    {} as Record<SourceType, string>,
+  );
   const tagColorRef = useRef("#3d9970");
   const themeColorsRef = useRef(
-    typeof window !== "undefined" ? getThemeColors() : { background: "#0a0a0a", foreground: "#ffffff", secondary: "#888", card: "#111" },
+    typeof window !== "undefined"
+      ? getThemeColors()
+      : {
+          background: "#0a0a0a",
+          foreground: "#ffffff",
+          secondary: "#888",
+          card: "#111",
+        },
   );
   const glowColorRef = useRef("#ffffff");
 
@@ -266,6 +369,37 @@ export default function LocalGraphView({
     return map;
   }, [subgraph]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Compute the base (auto-fit) transform — shared between render and hit-test
+  const computeBaseTransform = useCallback(() => {
+    const nodes = settledNodesRef.current;
+    const { width, height } = dimensions;
+    if (nodes.length === 0 || !width || !height)
+      return { scale: 1, cx: 0, cy: 0, tx: width / 2, ty: height / 2 };
+
+    let minX = Infinity,
+      maxX = -Infinity,
+      minY = Infinity,
+      maxY = -Infinity;
+    for (const n of nodes) {
+      const r = n.radius * 2.5;
+      if (n.x - r < minX) minX = n.x - r;
+      if (n.x + r > maxX) maxX = n.x + r;
+      if (n.y - r < minY) minY = n.y - r;
+      if (n.y + r > maxY) maxY = n.y + r;
+    }
+    const graphW = maxX - minX || 1;
+    const graphH = maxY - minY || 1;
+    const padding = 40;
+    const scale = Math.min(
+      (width - padding * 2) / graphW,
+      (height - padding * 2) / graphH,
+      8,
+    );
+    const cx = (minX + maxX) / 2;
+    const cy = (minY + maxY) / 2;
+    return { scale, cx, cy, tx: width / 2, ty: height / 2 };
+  }, [dimensions]);
+
   // Render function
   const renderCanvas = useCallback(() => {
     const canvas = canvasRef.current;
@@ -288,63 +422,53 @@ export default function LocalGraphView({
     const tagColor = tagColorRef.current;
     const glowColor = glowColorRef.current;
     const focalId = focalIdRef.current;
-    const hovered = hoveredNode?.node ?? null;
+    const hovered = hoveredNode;
+    const selected = selectedNode;
     const hoveredNeighbors = hovered ? neighborMap.get(hovered.id) : null;
+    const selectedNeighbors = selected ? neighborMap.get(selected.id) : null;
 
-    // Compute auto-fit transform
-    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-    for (const n of nodes) {
-      const r = n.radius * 2.5;
-      if (n.x - r < minX) minX = n.x - r;
-      if (n.x + r > maxX) maxX = n.x + r;
-      if (n.y - r < minY) minY = n.y - r;
-      if (n.y + r > maxY) maxY = n.y + r;
-    }
-    const graphW = maxX - minX || 1;
-    const graphH = maxY - minY || 1;
-    const padding = 40;
-    const scale = Math.min(
-      (width - padding * 2) / graphW,
-      (height - padding * 2) / graphH,
-      8,
-    );
-    const cx = (minX + maxX) / 2;
-    const cy = (minY + maxY) / 2;
-    const tx = width / 2;
-    const ty = height / 2;
+    // The "active" node is hovered (takes priority) or selected
+    const activeNode = hovered || selected;
+    const activeNeighbors = hovered ? hoveredNeighbors : selectedNeighbors;
+
+    // Compute combined transform: base auto-fit × user zoom/pan
+    const base = computeBaseTransform();
+    const zoom = zoomRef.current;
+    const totalScale = base.scale * zoom.scale;
 
     // Clear
     ctx.clearRect(0, 0, width, height);
 
-    // Apply transform
+    // Apply transform: translate to center, apply zoom pan, then base transform
     ctx.save();
-    ctx.translate(tx, ty);
-    ctx.scale(scale, scale);
-    ctx.translate(-cx, -cy);
+    ctx.translate(base.tx + zoom.panX, base.ty + zoom.panY);
+    ctx.scale(totalScale, totalScale);
+    ctx.translate(-base.cx, -base.cy);
 
     // Draw edges
     for (const edge of edges) {
       const isConnectedToFocal =
         edge.source.id === focalId || edge.target.id === focalId;
-      const isConnectedToHover =
-        hovered && (edge.source.id === hovered.id || edge.target.id === hovered.id);
+      const isConnectedToActive =
+        activeNode &&
+        (edge.source.id === activeNode.id || edge.target.id === activeNode.id);
 
       ctx.beginPath();
       ctx.moveTo(edge.source.x, edge.source.y);
       ctx.lineTo(edge.target.x, edge.target.y);
 
-      if (isConnectedToHover) {
+      if (isConnectedToActive) {
         ctx.strokeStyle = theme.foreground;
         ctx.globalAlpha = 0.8;
-        ctx.lineWidth = 1.5 / scale;
+        ctx.lineWidth = 1.5 / totalScale;
       } else if (isConnectedToFocal) {
         ctx.strokeStyle = theme.foreground;
         ctx.globalAlpha = 0.4;
-        ctx.lineWidth = 1.0 / scale;
+        ctx.lineWidth = 1.0 / totalScale;
       } else {
         ctx.strokeStyle = theme.secondary;
         ctx.globalAlpha = 0.2;
-        ctx.lineWidth = 0.6 / scale;
+        ctx.lineWidth = 0.6 / totalScale;
       }
       ctx.stroke();
     }
@@ -353,8 +477,9 @@ export default function LocalGraphView({
     // Draw nodes
     for (const node of nodes) {
       const isFocal = node.id === focalId;
-      const isHovered = hovered?.id === node.id;
-      const isNeighborOfHover = hovered && hoveredNeighbors?.has(node.id);
+      const isActive = activeNode?.id === node.id;
+      const isNeighborOfActive = activeNode && activeNeighbors?.has(node.id);
+      const isSelected = selected?.id === node.id;
       const r = isFocal ? node.radius * 2.0 : node.radius * 1.5;
 
       const color =
@@ -362,20 +487,19 @@ export default function LocalGraphView({
           ? tagColor
           : nodeColors[node.sourceType] || "#888";
 
-      // Dim non-relevant nodes when hovering
-      let nodeAlpha = node.nodeType === "section" ? 0.5 : 0.85;
-      if (hovered) {
-        if (isHovered || isNeighborOfHover) nodeAlpha = 1;
+      let nodeAlpha = 0.85;
+      if (activeNode) {
+        if (isActive || isNeighborOfActive) nodeAlpha = 1;
         else if (isFocal) nodeAlpha = 0.7;
         else nodeAlpha = 0.2;
       }
-      if (isFocal && !hovered) nodeAlpha = 1;
+      if (isFocal && !activeNode) nodeAlpha = 1;
 
       // Glow for focal node
-      if (isFocal && !isHovered) {
+      if (isFocal && !isActive) {
         ctx.save();
         ctx.shadowColor = glowColor;
-        ctx.shadowBlur = 8 / scale;
+        ctx.shadowBlur = 8 / totalScale;
         ctx.beginPath();
         ctx.arc(node.x, node.y, r * 1.4, 0, Math.PI * 2);
         ctx.fillStyle = color;
@@ -384,15 +508,28 @@ export default function LocalGraphView({
         ctx.restore();
       }
 
-      // Glow for hovered
-      if (isHovered) {
+      // Glow for active node
+      if (isActive) {
         ctx.save();
         ctx.shadowColor = glowColor;
-        ctx.shadowBlur = 10 / scale;
+        ctx.shadowBlur = 10 / totalScale;
         ctx.beginPath();
         ctx.arc(node.x, node.y, r * 1.5, 0, Math.PI * 2);
         ctx.fillStyle = color;
         ctx.globalAlpha = 0.2;
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // Glow ring for selected (but not hovered) — subtle persistent highlight
+      if (isSelected && !hovered) {
+        ctx.save();
+        ctx.shadowColor = glowColor;
+        ctx.shadowBlur = 6 / totalScale;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, r * 1.3, 0, Math.PI * 2);
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.15;
         ctx.fill();
         ctx.restore();
       }
@@ -407,20 +544,30 @@ export default function LocalGraphView({
       // Ring for focal node
       if (isFocal) {
         ctx.beginPath();
-        ctx.arc(node.x, node.y, r + 1.2 / scale, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, r + 1.2 / totalScale, 0, Math.PI * 2);
         ctx.strokeStyle = glowColor;
-        ctx.lineWidth = 1.0 / scale;
+        ctx.lineWidth = 1.0 / totalScale;
         ctx.globalAlpha = 0.5;
         ctx.stroke();
       }
 
-      // Ring for hovered
-      if (isHovered) {
+      // Ring for active node
+      if (isActive) {
         ctx.beginPath();
-        ctx.arc(node.x, node.y, r + 0.8 / scale, 0, Math.PI * 2);
+        ctx.arc(node.x, node.y, r + 0.8 / totalScale, 0, Math.PI * 2);
         ctx.strokeStyle = glowColor;
-        ctx.lineWidth = 1.2 / scale;
+        ctx.lineWidth = 1.2 / totalScale;
         ctx.globalAlpha = 1;
+        ctx.stroke();
+      }
+
+      // Ring for selected (persistent, dimmer)
+      if (isSelected && !hovered) {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, r + 0.8 / totalScale, 0, Math.PI * 2);
+        ctx.strokeStyle = glowColor;
+        ctx.lineWidth = 0.8 / totalScale;
+        ctx.globalAlpha = 0.6;
         ctx.stroke();
       }
 
@@ -429,30 +576,41 @@ export default function LocalGraphView({
 
     // Draw labels
     const screenFontSize = 10;
-    const simFontSize = screenFontSize / scale;
+    const simFontSize = screenFontSize / totalScale;
     ctx.font = `${simFontSize}px sans-serif`;
     ctx.textAlign = "center";
     ctx.textBaseline = "bottom";
 
-    const labelPadH = 3 / scale;
-    const labelPadV = 1.5 / scale;
-    const occupiedBoxes: Array<{ x: number; y: number; w: number; h: number }> = [];
+    const labelPadH = 3 / totalScale;
+    const labelPadV = 1.5 / totalScale;
+    const occupiedBoxes: Array<{ x: number; y: number; w: number; h: number }> =
+      [];
 
-    function wouldOverlap(bx: number, by: number, bw: number, bh: number): boolean {
+    function wouldOverlap(
+      bx: number,
+      by: number,
+      bw: number,
+      bh: number,
+    ): boolean {
       for (const box of occupiedBoxes) {
-        if (bx < box.x + box.w && bx + bw > box.x && by < box.y + box.h && by + bh > box.y) {
+        if (
+          bx < box.x + box.w &&
+          bx + bw > box.x &&
+          by < box.y + box.h &&
+          by + bh > box.y
+        ) {
           return true;
         }
       }
       return false;
     }
 
-    // Sort: focal first, then hovered, then neighbors, then files, then rest
+    // Sort: focal first, then active, then neighbors, then files, then rest
     const sortedNodes = [...nodes].sort((a, b) => {
       const score = (n: SettledNode) => {
         if (n.id === focalId) return 100;
-        if (hovered?.id === n.id) return 90;
-        if (hovered && hoveredNeighbors?.has(n.id)) return 80;
+        if (activeNode?.id === n.id) return 90;
+        if (activeNode && activeNeighbors?.has(n.id)) return 80;
         if (n.nodeType === "file") return 50;
         if (n.nodeType === "tag") return 40;
         return 10;
@@ -462,21 +620,21 @@ export default function LocalGraphView({
 
     for (const node of sortedNodes) {
       const isFocal = node.id === focalId;
-      const isHovered = hovered?.id === node.id;
-      const isNeighborOfHover = hovered && hoveredNeighbors?.has(node.id);
+      const isActive = activeNode?.id === node.id;
+      const isNeighborOfActive =
+        activeNode && activeNeighbors?.has(node.id);
       const r = isFocal ? node.radius * 2.0 : node.radius * 1.5;
 
       let labelAlpha: number;
       if (isOverview) {
-        // In overview mode, only show labels on hover interaction
-        if (isHovered) labelAlpha = 1;
-        else if (isNeighborOfHover) labelAlpha = 0.7;
+        if (isActive) labelAlpha = 1;
+        else if (isNeighborOfActive) labelAlpha = 0.7;
         else labelAlpha = 0;
-      } else if (isFocal || isHovered) {
+      } else if (isFocal || isActive) {
         labelAlpha = 1;
-      } else if (isNeighborOfHover) {
+      } else if (isNeighborOfActive) {
         labelAlpha = 0.8;
-      } else if (hovered) {
+      } else if (activeNode) {
         labelAlpha = 0;
       } else if (node.nodeType === "file") {
         labelAlpha = 0.7;
@@ -488,30 +646,27 @@ export default function LocalGraphView({
 
       if (labelAlpha <= 0) continue;
 
-      const rawLabel =
-        node.nodeType === "section" && node.heading
-          ? node.heading
-          : node.title;
-      const maxChars = isFocal || isHovered ? 40 : 25;
+      const rawLabel = node.title;
+      const maxChars = isFocal || isActive ? 40 : 25;
       const label =
         rawLabel.length > maxChars
           ? rawLabel.slice(0, maxChars - 2) + "..."
           : rawLabel;
 
       const labelWidth = ctx.measureText(label).width;
-      const labelY = node.y - r - 2 / scale;
+      const labelY = node.y - r - 2 / totalScale;
       const bgX = node.x - labelWidth / 2 - labelPadH;
       const bgY = labelY - simFontSize - labelPadV;
       const bgW = labelWidth + labelPadH * 2;
       const bgH = simFontSize + labelPadV * 2;
 
       // Screen-space overlap check
-      const sX = (bgX - cx) * scale + tx;
-      const sY = (bgY - cy) * scale + ty;
-      const sW = bgW * scale;
-      const sH = bgH * scale;
+      const sX = (bgX - base.cx) * totalScale + base.tx + zoom.panX;
+      const sY = (bgY - base.cy) * totalScale + base.ty + zoom.panY;
+      const sW = bgW * totalScale;
+      const sH = bgH * totalScale;
 
-      if (!isFocal && !isHovered) {
+      if (!isFocal && !isActive) {
         if (wouldOverlap(sX, sY, sW, sH)) continue;
       }
       occupiedBoxes.push({ x: sX, y: sY, w: sW, h: sH });
@@ -527,14 +682,14 @@ export default function LocalGraphView({
 
     ctx.globalAlpha = 1;
     ctx.restore();
-  }, [dimensions, hoveredNode, neighborMap, subgraph, isOverview]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [dimensions, hoveredNode, selectedNode, neighborMap, subgraph, isOverview, computeBaseTransform, zoomVersion]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Render on state changes
   useEffect(() => {
     renderCanvas();
   }, [renderCanvas]);
 
-  // Hit testing
+  // Hit testing — convert screen coords to sim coords accounting for zoom
   const findNodeAt = useCallback(
     (clientX: number, clientY: number): SettledNode | null => {
       const canvas = canvasRef.current;
@@ -542,34 +697,16 @@ export default function LocalGraphView({
       if (!canvas || nodes.length === 0) return null;
 
       const rect = canvas.getBoundingClientRect();
-      const { width, height } = dimensions;
       const focalId = focalIdRef.current;
-
-      // Recompute transform (same as renderCanvas)
-      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-      for (const n of nodes) {
-        const r = n.radius * 2.5;
-        if (n.x - r < minX) minX = n.x - r;
-        if (n.x + r > maxX) maxX = n.x + r;
-        if (n.y - r < minY) minY = n.y - r;
-        if (n.y + r > maxY) maxY = n.y + r;
-      }
-      const graphW = maxX - minX || 1;
-      const graphH = maxY - minY || 1;
-      const padding = 40;
-      const scale = Math.min(
-        (width - padding * 2) / graphW,
-        (height - padding * 2) / graphH,
-        8,
-      );
-      const cx = (minX + maxX) / 2;
-      const cy = (minY + maxY) / 2;
-      const tx = width / 2;
-      const ty = height / 2;
+      const base = computeBaseTransform();
+      const zoom = zoomRef.current;
+      const totalScale = base.scale * zoom.scale;
 
       // Convert screen to sim coords
-      const sx = (clientX - rect.left - tx) / scale + cx;
-      const sy = (clientY - rect.top - ty) / scale + cy;
+      const sx =
+        (clientX - rect.left - base.tx - zoom.panX) / totalScale + base.cx;
+      const sy =
+        (clientY - rect.top - base.ty - zoom.panY) / totalScale + base.cy;
 
       let closest: SettledNode | null = null;
       let closestDist = Infinity;
@@ -577,7 +714,7 @@ export default function LocalGraphView({
       for (const node of nodes) {
         const isFocal = node.id === focalId;
         const r = isFocal ? node.radius * 2.0 : node.radius * 1.5;
-        const hitRadius = Math.max(r, 8 / scale);
+        const hitRadius = Math.max(r, 8 / totalScale);
         const dx = node.x - sx;
         const dy = node.y - sy;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -588,20 +725,19 @@ export default function LocalGraphView({
       }
       return closest;
     },
-    [dimensions],
+    [computeBaseTransform],
   );
 
-  // Pointer events
+  // Pointer events + zoom
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const handleMove = (e: PointerEvent) => {
-      // Skip hover on touch devices
       if (e.pointerType === "touch") return;
       const node = findNodeAt(e.clientX, e.clientY);
       if (node) {
-        setHoveredNode({ node, x: e.clientX, y: e.clientY });
+        setHoveredNode(node);
         canvas.style.cursor = "pointer";
       } else {
         setHoveredNode(null);
@@ -616,27 +752,70 @@ export default function LocalGraphView({
 
     const handleClick = (e: MouseEvent) => {
       const node = findNodeAt(e.clientX, e.clientY);
-      if (!node || !node.url || node.nodeType === "tag") return;
+      if (!node) return;
 
-      try {
-        const url = new URL(node.url);
-        const path = url.pathname;
-        router.push(path);
-      } catch {
-        // Invalid URL — ignore
+      // Select the node (updates NextUpCard)
+      if (node.nodeType === "file") {
+        setSelectedNode(node);
       }
+
+      // Navigate on click
+      if (node.url && node.nodeType !== "tag") {
+        try {
+          const url = new URL(node.url);
+          router.push(url.pathname);
+        } catch {
+          // Invalid URL — ignore
+        }
+      }
+    };
+
+    // Wheel zoom — only capture when user intends to zoom (cursor over canvas)
+    const handleWheel = (e: WheelEvent) => {
+      // Only intercept if the cursor is inside the canvas
+      const rect = canvas.getBoundingClientRect();
+      const inBounds =
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom;
+      if (!inBounds) return;
+
+      // Detect pinch gesture (ctrlKey is set for trackpad pinch)
+      // For regular scroll wheel, let the page scroll through
+      if (!e.ctrlKey) return;
+
+      e.preventDefault();
+
+      const zoom = zoomRef.current;
+      const zoomFactor = e.deltaY > 0 ? 0.92 : 1.08;
+      const newScale = Math.min(Math.max(zoom.scale * zoomFactor, 0.3), 5);
+
+      // Zoom toward cursor position
+      const cursorX = e.clientX - rect.left - dimensions.width / 2;
+      const cursorY = e.clientY - rect.top - dimensions.height / 2;
+
+      const scaleDiff = newScale / zoom.scale;
+      zoomRef.current = {
+        scale: newScale,
+        panX: cursorX - scaleDiff * (cursorX - zoom.panX),
+        panY: cursorY - scaleDiff * (cursorY - zoom.panY),
+      };
+      setZoomVersion((v) => v + 1);
     };
 
     canvas.addEventListener("pointermove", handleMove);
     canvas.addEventListener("pointerleave", handleLeave);
     canvas.addEventListener("click", handleClick);
+    canvas.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
       canvas.removeEventListener("pointermove", handleMove);
       canvas.removeEventListener("pointerleave", handleLeave);
       canvas.removeEventListener("click", handleClick);
+      canvas.removeEventListener("wheel", handleWheel);
     };
-  }, [findNodeAt, router]);
+  }, [findNodeAt, router, dimensions]);
 
   return (
     <div
@@ -644,27 +823,11 @@ export default function LocalGraphView({
       className={`relative w-full h-full ${className || ""}`}
     >
       {subgraph && (
-        <>
-          <canvas
-            ref={canvasRef}
-            className="w-full h-full"
-            style={{ touchAction: "auto" }}
-          />
-          {hoveredNode && (
-            <div
-              className="pointer-events-none fixed z-50 px-2.5 py-1.5 rounded text-xs bg-card border border-border shadow-lg max-w-[200px] truncate"
-              style={{
-                left: hoveredNode.x + 12,
-                top: hoveredNode.y - 8,
-              }}
-            >
-              <span className="text-foreground">{hoveredNode.node.title}</span>
-              {hoveredNode.node.nodeType === "tag" && (
-                <span className="ml-1.5 text-secondary text-[10px]">tag</span>
-              )}
-            </div>
-          )}
-        </>
+        <canvas
+          ref={canvasRef}
+          className="w-full h-full"
+          style={{ touchAction: "auto" }}
+        />
       )}
     </div>
   );
