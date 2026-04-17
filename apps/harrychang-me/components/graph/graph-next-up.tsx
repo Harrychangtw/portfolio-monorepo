@@ -4,8 +4,8 @@ import { useState, useCallback, useEffect, useRef } from "react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import NextUpCard from "@portfolio/ui/next-up-card";
 import NavigationLink from "@portfolio/ui/navigation-link";
-import LocalGraphView from "./local-graph-dynamic";
-import type { SelectedNodeInfo } from "./local-graph-view";
+import EmbeddedGraph from "./local-graph-dynamic";
+import type { EmbeddedNodeInfo } from "./embedded-graph";
 
 interface NextUpItem {
   slug: string;
@@ -134,28 +134,7 @@ export default function GraphNextUp({
     fetchLocalized();
   }, [language, nextItem, basePath]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleNodeSelect = useCallback(
-    (node: SelectedNodeInfo | null) => {
-      if (!node) {
-        // Revert to default
-        setBaseCard(localizedNextItem);
-        setBaseCardPath(basePath);
-        isDefaultRef.current = true;
-        return;
-      }
-      setBaseCard({
-        slug: node.slug,
-        title: node.title,
-        category: node.description || "",
-        imageUrl: normalizeImageUrl(node.imageUrl),
-      });
-      setBaseCardPath(sourceTypeToBasePath(node.sourceType));
-      isDefaultRef.current = false;
-    },
-    [localizedNextItem, basePath],
-  );
-
-  const handleNodeHover = useCallback((node: SelectedNodeInfo | null) => {
+  const handleNodeHover = useCallback((node: EmbeddedNodeInfo | null) => {
     if (!node) {
       setHoverCard(null);
       return;
@@ -170,6 +149,26 @@ export default function GraphNextUp({
       basePath: sourceTypeToBasePath(node.sourceType),
     });
   }, []);
+
+  // On mobile, the crosshair centre-node drives the NextUpCard (same as hover).
+  const handleCenterNodeChange = useCallback(
+    (node: EmbeddedNodeInfo | null) => {
+      if (!node) {
+        setHoverCard(null);
+        return;
+      }
+      setHoverCard({
+        data: {
+          slug: node.slug,
+          title: node.title,
+          category: node.description || "",
+          imageUrl: normalizeImageUrl(node.imageUrl),
+        },
+        basePath: sourceTypeToBasePath(node.sourceType),
+      });
+    },
+    [],
+  );
 
   // Show hover card if hovering, otherwise show base card
   const displayCard = hoverCard?.data ?? baseCard;
@@ -191,12 +190,11 @@ export default function GraphNextUp({
           >
             {t("common.fullGraph") || "Full Graph"} →
           </NavigationLink>
-          <LocalGraphView
-            currentSlug={currentSlug}
-            sourceType={sourceType}
-            defaultSelectedSlug={nextItem?.slug?.replace(/_zh-tw|_zh-TW/i, "")}
-            onNodeSelect={handleNodeSelect}
+          <EmbeddedGraph
+            focalSlug={nextItem?.slug?.replace(/_zh-tw|_zh-TW/i, "")}
+            focalSourceType={sourceType}
             onNodeHover={handleNodeHover}
+            onCenterNodeChange={handleCenterNodeChange}
           />
         </div>
 

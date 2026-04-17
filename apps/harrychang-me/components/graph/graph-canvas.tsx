@@ -39,6 +39,8 @@ interface GraphCanvasProps {
   selectedNodeId?: string | null;
   isMobile?: boolean;
   onCenterNodeChange?: (node: GraphNode | null) => void;
+  /** If set, this node is pinned at (0,0) so the viewport centers on it. */
+  focalNodeId?: string;
 }
 
 /* ─── Force strengths by node type ─────────────────────────────────────────── */
@@ -83,6 +85,7 @@ export default function GraphCanvas({
   selectedNodeId,
   isMobile,
   onCenterNodeChange,
+  focalNodeId,
 }: GraphCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -215,16 +218,24 @@ export default function GraphCanvas({
       nodeRadiusMap.current.set(node.id, r);
     }
 
-    // Create simulation nodes — spread them in a circle
+    // Create simulation nodes — spread them in a circle.
+    // If a focalNodeId is provided, pin that node at origin so the viewport
+    // (and the mobile crosshair) lands on it at the initial fit-zoom.
     const simNodes: SimulationNode[] = data.nodes.map((n, i) => {
       const angle = (i / data.nodes.length) * Math.PI * 2;
       const spread = Math.sqrt(data.nodes.length) * 10;
+      const isFocal = focalNodeId && n.id === focalNodeId;
       return {
         ...n,
-        x: Math.cos(angle) * spread + (Math.random() - 0.5) * spread * 0.3,
-        y: Math.sin(angle) * spread + (Math.random() - 0.5) * spread * 0.3,
+        x: isFocal
+          ? 0
+          : Math.cos(angle) * spread + (Math.random() - 0.5) * spread * 0.3,
+        y: isFocal
+          ? 0
+          : Math.sin(angle) * spread + (Math.random() - 0.5) * spread * 0.3,
         vx: 0,
         vy: 0,
+        ...(isFocal ? { fx: 0, fy: 0 } : {}),
       };
     });
 
@@ -304,7 +315,7 @@ export default function GraphCanvas({
       sim.stop();
       simulationRef.current = null;
     };
-  }, [data, dimensions.width, dimensions.height]);
+  }, [data, dimensions.width, dimensions.height, focalNodeId]);
 
   // Convert screen (client) coords to simulation coords
   const screenToSim = useCallback(
