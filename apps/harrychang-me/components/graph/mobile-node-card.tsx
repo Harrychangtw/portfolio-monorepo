@@ -25,7 +25,12 @@ function getYouTubeId(url: string): string | null {
 
 /** Derive a human-readable name from a URL (strip extension). */
 function getFilenameFromUrl(url: string): string {
-  return url.split("/").pop()?.replace(/\.[^.]+$/, "") || url;
+  return (
+    url
+      .split("/")
+      .pop()
+      ?.replace(/\.[^.]+$/, "") || url
+  );
 }
 
 /** Format a hub node's URL into a readable route string. */
@@ -119,9 +124,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
             (() => {
               const imgTitle =
                 node.title ||
-                (node.mediaSource
-                  ? getFilenameFromUrl(node.mediaSource)
-                  : "");
+                (node.mediaSource ? getFilenameFromUrl(node.mediaSource) : "");
 
               const mediaContent = mediaSrc ? (
                 <ImageContainer
