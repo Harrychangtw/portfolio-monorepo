@@ -117,7 +117,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
 
   return (
     <AnimatePresence mode="wait">
-      {node && (
+      {node && !isTag && (
         <motion.div
           key={node.id}
           initial={{ opacity: 0 }}

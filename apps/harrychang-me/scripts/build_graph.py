@@ -1379,6 +1379,10 @@ def main():
                 if heading and heading in entry.get("sections", {}):
                     chunk["tldr"] = entry["sections"][heading]
                     tldr_applied += 1
+                elif entry.get("tldr"):
+                    # Locale/single-section nodes: use file-level tldr
+                    chunk["tldr"] = entry["tldr"]
+                    tldr_applied += 1
     print(f"  Applied {tldr_applied} TL;DRs")
 
     # Combine all edges

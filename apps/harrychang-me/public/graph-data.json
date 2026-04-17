@@ -1579,6 +1579,7 @@
       ],
       "heading": null,
       "parentId": "post-10-lego-mount-en-sec-0",
+      "tldr": "LEGO fan mounts prove the value of DIY hardware for ML learning",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1778,6 +1779,7 @@
       ],
       "heading": null,
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
+      "tldr": "用樂高輪胎與積木為電腦零件DIY出高效風扇架",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -2337,6 +2339,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_12_blog_launch-en-sec-0",
+      "tldr": "Monthly blog sharing authentic, raw thoughts on technology, culture, and life",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2436,6 +2439,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_12_blog_launch-zh-TW-sec-0",
+      "tldr": "承諾每月分享技術與社會的真實思考",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2535,6 +2539,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_13_sisyphus-en-sec-0",
+      "tldr": "Embrace life’s meaningless struggle by persisting despite inevitable failure",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2654,6 +2659,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_13_sisyphus-zh-TW-sec-0",
+      "tldr": "擁抱荒謬的推石過程，讓思想在行動中重生",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2771,6 +2777,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_14_affinity-en-sec-0",
+      "tldr": "Affinity V3 is now free and unified, but corporate takeover fears remain",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2960,6 +2967,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
+      "tldr": "Affinity V3 雖免費好用，卻潛藏 Canva 商業轉型與訂閱隱憂",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -3151,6 +3159,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
+      "tldr": "Embracing the Fuji X-Pro1’s obsolete flaws for more intentional, human photography",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3330,6 +3339,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "tldr": "擁抱 X-Pro1 的缺陷，在限制中找回攝影初心",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3507,6 +3517,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
+      "tldr": "Both films explore loving family through intentional distance and inevitable absence",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3677,6 +3688,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
+      "tldr": "透過距離與缺席，探討愛中難以跨越的隔閡與父女傷口",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3829,6 +3841,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
+      "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3908,6 +3921,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
+      "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4147,6 +4161,7 @@
       ],
       "heading": null,
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
+      "tldr": "專注新興領域大型語言模型安全，以學術論文與實作力錄取臺大資工",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4344,6 +4359,7 @@
       ],
       "heading": null,
       "parentId": "post-2026_01_10_plushies-en-sec-0",
+      "tldr": "Personal collection of weirdly endearing, unhinged plushies and their sentimental backstories",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4495,6 +4511,7 @@
       ],
       "heading": null,
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
+      "tldr": "從醜萌玩偶的靈魂美，看見生命中的溫暖與混亂",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4646,6 +4663,7 @@
       ],
       "heading": null,
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
+      "tldr": "Truman exits his artificial world; Caden is consumed by his own construction",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4816,6 +4834,7 @@
       ],
       "heading": null,
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
+      "tldr": "楚門走出他人建構的舞台，卡登則受困於自我執念的廢墟",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -5452,6 +5471,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_08_19_classics_reimagined-en-sec-2",
+      "tldr": "Class 2026 won first place reinterpreting Ming-Qing history through musical drama",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5499,6 +5519,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_08_19_classics_reimagined-en-sec-2-2",
+      "tldr": "Class 2026 won first place reinterpreting Ming-Qing history through musical drama",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5658,6 +5679,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-sec-2",
+      "tldr": "十愛《亂世殘陽》奪冠，炫技影片完美紀錄演出幕後",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5705,6 +5727,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2",
+      "tldr": "十愛《亂世殘陽》奪冠，炫技影片完美紀錄演出幕後",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5848,6 +5871,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_09_23_chingshin_rag-en-sec-1",
+      "tldr": "Award-winning hybrid RAG school chatbot built with SQLite and FastAPI",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5943,6 +5967,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_09_23_chingshin_rag-en-sec-2",
+      "tldr": "Award-winning hybrid RAG school chatbot built with SQLite and FastAPI",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -6038,6 +6063,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-1",
+      "tldr": "自研 RAG 聊天機器人優化校務查詢，榮獲 GenAI Stars 特優",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -6133,6 +6159,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
+      "tldr": "自研 RAG 聊天機器人優化校務查詢，榮獲 GenAI Stars 特優",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -6228,6 +6255,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_10_04_proj_zephyr-en-sec-1",
+      "tldr": "Automated Tixcraft bot using Selenium and CNN to bypass CAPTCHAs fast",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -6323,6 +6351,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
+      "tldr": "結合 CNN 辨識驗證碼的拓元全自動搶票機器人",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -6418,6 +6447,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-sec-1",
+      "tldr": "Refining robotics engineering through iterative design and stabilizing autonomous programming failures",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6481,6 +6511,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-sec-2",
+      "tldr": "Refining robotics engineering through iterative design and stabilizing autonomous programming failures",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6592,6 +6623,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-1",
+      "tldr": "從初學基礎邁向 PROS 模組化開發與 PID 控制的成長歷程",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6655,6 +6687,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-2",
+      "tldr": "從初學基礎邁向 PROS 模組化開發與 PID 控制的成長歷程",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6766,6 +6799,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_01_03_powerplay-en-sec-1",
+      "tldr": "Student-led 11th-grade play exploring love through three train-themed moral dilemmas",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6861,6 +6895,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_01_03_powerplay-en-sec-2",
+      "tldr": "Student-led 11th-grade play exploring love through three train-themed moral dilemmas",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6924,6 +6959,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_01_03_powerplay-en-sec-2-3",
+      "tldr": "Student-led 11th-grade play exploring love through three train-themed moral dilemmas",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -7067,6 +7103,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-1",
+      "tldr": "學生主導英文劇，透過三段故事探討愛、信任與誠實",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -7162,6 +7199,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2",
+      "tldr": "學生主導英文劇，透過三段故事探討愛、信任與誠實",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -7225,6 +7263,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2-3",
+      "tldr": "學生主導英文劇，透過三段故事探討愛、信任與誠實",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -7784,6 +7823,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_04_12_portfolio-en-file",
+      "tldr": "Turborepo-powered Next.js monorepo serving multiple domains via a markdown-based system",
       "imageUrl": "images/optimized/projects/2025_04_12_portfolio_design/titlecard.webp"
     },
     {
@@ -7799,6 +7839,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_04_12_portfolio-zh-TW-file",
+      "tldr": "多網域 monorepo 架構，整合 Markdown 與自動化媒體優效能",
       "imageUrl": "images/optimized/projects/2025_04_12_portfolio_design/titlecard.webp"
     },
     {
@@ -7814,6 +7855,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_05_18_patch_dataset-en-file",
+      "tldr": "PATCH: First large-scale safety dataset for Traditional Chinese adversarial evaluation",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7829,6 +7871,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0",
+      "tldr": "PATCH: First large-scale safety dataset for Traditional Chinese adversarial evaluation",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7892,6 +7935,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0-3",
+      "tldr": "PATCH: First large-scale safety dataset for Traditional Chinese adversarial evaluation",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7987,6 +8031,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0-5",
+      "tldr": "PATCH: First large-scale safety dataset for Traditional Chinese adversarial evaluation",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -8082,6 +8127,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-file",
+      "tldr": "PATCH：首個大規模繁體中文對抗性安全評估資料集",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -8097,6 +8143,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
+      "tldr": "PATCH：首個大規模繁體中文對抗性安全評估資料集",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -8160,6 +8207,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0-3",
+      "tldr": "PATCH：首個大規模繁體中文對抗性安全評估資料集",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -8255,6 +8303,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0-5",
+      "tldr": "PATCH：首個大規模繁體中文對抗性安全評估資料集",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -8398,6 +8447,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_08_04_debate-en-sec-2",
+      "tldr": "Middle school start led to high school success and top national rankings",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8589,6 +8639,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_08_04_debate-zh-TW-sec-2",
+      "tldr": "從國中起步磨練，終以 FHDO 全勝冠軍圓滿收官",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8732,6 +8783,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_10_12_fortress-en-file",
+      "tldr": "Scalable, training-free LLM safety system using retrieval and dynamic perplexity analysis",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8747,6 +8799,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_10_12_fortress-en-sec-0",
+      "tldr": "Scalable, training-free LLM safety system using retrieval and dynamic perplexity analysis",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8810,6 +8863,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_10_12_fortress-en-sec-0-3",
+      "tldr": "Scalable, training-free LLM safety system using retrieval and dynamic perplexity analysis",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8889,6 +8943,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_10_12_fortress-en-sec-0-4",
+      "tldr": "Scalable, training-free LLM safety system using retrieval and dynamic perplexity analysis",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -9000,6 +9055,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_10_12_fortress-zh-TW-file",
+      "tldr": "無需訓練、可快速擴展的高效能 LLM 輸入安全過濾系統",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -9015,6 +9071,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0",
+      "tldr": "無需訓練、可快速擴展的高效能 LLM 輸入安全過濾系統",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -9078,6 +9135,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-3",
+      "tldr": "無需訓練、可快速擴展的高效能 LLM 輸入安全過濾系統",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -9157,6 +9215,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-4",
+      "tldr": "無需訓練、可快速擴展的高效能 LLM 輸入安全過濾系統",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -9300,6 +9359,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-sitcon-2026-en-sec-1",
+      "tldr": "Securing LLMs by monitoring internal Attention Heads to detect prompt injections",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -9427,6 +9487,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-sitcon-2026-zh-TW-sec-1",
+      "tldr": "SITCON 2026：深入模型注意力機制，防禦 Prompt Injection 注入攻擊",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -9524,6 +9585,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
+      "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow",
       "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
     },
     {
@@ -9541,6 +9603,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
+      "tldr": "以影像切片，拼湊東京的光影詩意",
       "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
     },
     {
@@ -9558,6 +9621,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-en-file",
+      "tldr": "Vibrant red details reveal profound beauty within ordinary urban moments",
       "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0234.webp"
     },
     {
@@ -9575,6 +9639,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-zh-TW-file",
+      "tldr": "頹圮日常中的一抹紅，是生命最誠實的出口",
       "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0234.webp"
     },
     {
@@ -9592,6 +9657,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_08_10_intersection-en-file",
+      "tldr": "Two silhouettes briefly converge on a bridge during a golden dusk",
       "imageUrl": "images/optimized/gallery/2023_08_10_intersection/DSCF0009.webp"
     },
     {
@@ -9609,6 +9675,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_08_10_intersection-zh-TW-file",
+      "tldr": "夕陽下巴士窗外的偶然相遇",
       "imageUrl": "images/optimized/gallery/2023_08_10_intersection/DSCF0009.webp"
     },
     {
@@ -9626,6 +9693,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
+      "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR",
       "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
     },
     {
@@ -9643,6 +9711,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
+      "tldr": "於城市明暗交疊處，瞥見平凡真實的風景",
       "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
     },
     {
@@ -9660,6 +9729,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-en-file",
+      "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature",
       "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
     },
     {
@@ -9677,6 +9747,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-zh-TW-file",
+      "tldr": "覺知自身如塵，於宏大中獲自由",
       "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
     },
     {
@@ -9695,6 +9766,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_10_06_guided_by_the_tides-en-file",
+      "tldr": "Love and shared moments guide children through life’s vast uncertainty",
       "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
     },
     {
@@ -9713,6 +9785,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
+      "tldr": "父愛如粼粼光影，在陪伴中指引孩子未來路途",
       "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
     },
     {
@@ -9730,6 +9803,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_10_12_lessons_from_the_light-en-file",
+      "tldr": "Students walk home as long shadows narrate their journey of growing up",
       "imageUrl": "images/optimized/gallery/2023_10_12_lessons_from_the_light/DSCF0004.webp"
     },
     {
@@ -9747,6 +9821,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
+      "tldr": "師徒影隨，伴餘暉共赴成長之旅",
       "imageUrl": "images/optimized/gallery/2023_10_12_lessons_from_the_light/DSCF0004.webp"
     },
     {
@@ -9765,6 +9840,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-en-file",
+      "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past",
       "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
     },
     {
@@ -9783,6 +9859,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
+      "tldr": "落日餘暉下對鏡花水月的追懷",
       "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
     },
     {
@@ -9801,6 +9878,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_12_30_against_the_unknown-en-file",
+      "tldr": "Lone fisherman's quiet defiance against the vast, indifferent ocean deep",
       "imageUrl": "images/optimized/gallery/2023_12_30_against_the_unknown/154BA3D2-BF8E-4723-B427-E4ACB33B14A1-8577-000006A57CC6F050.webp"
     },
     {
@@ -9819,6 +9897,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_12_30_against_the_unknown-zh-TW-file",
+      "tldr": "垂釣深淵，以孤獨的峙立證存在",
       "imageUrl": "images/optimized/gallery/2023_12_30_against_the_unknown/154BA3D2-BF8E-4723-B427-E4ACB33B14A1-8577-000006A57CC6F050.webp"
     },
     {
@@ -9837,6 +9916,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_12_30_sky_above-en-file",
+      "tldr": "Taipei's tower pierces amber clouds above a dreaming, glittering city",
       "imageUrl": "images/optimized/gallery/2023_12_30_sky_above/DSCF0191.webp"
     },
     {
@@ -9855,6 +9935,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2023_12_30_sky_above-zh-TW-file",
+      "tldr": "台北如雲端孤城，燈火宛若夢境",
       "imageUrl": "images/optimized/gallery/2023_12_30_sky_above/DSCF0191.webp"
     },
     {
@@ -9873,6 +9954,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_01_06_hehuanshan-en-file",
+      "tldr": "Journey through mountains to find personal peace and your own summit",
       "imageUrl": "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp"
     },
     {
@@ -9890,6 +9972,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_01_06_hehuanshan-zh-TW-file",
+      "tldr": "俯仰天地山路間，尋覓心靈歸宿",
       "imageUrl": "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp"
     },
     {
@@ -9907,6 +9990,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-en-file",
+      "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness",
       "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
     },
     {
@@ -9924,6 +10008,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
+      "tldr": "點燃凡塵願景，匯聚信仰星海",
       "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
     },
     {
@@ -9941,6 +10026,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
+      "tldr": "Finding life through moments captured in Tainan and Taichung landscapes",
       "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
     },
     {
@@ -9958,6 +10044,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
+      "tldr": "用攝影捕捉瞬間，活出心之所向",
       "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
     },
     {
@@ -9975,6 +10062,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
+      "tldr": "Fleeting urban memories dissolving like raindrops in the city grey",
       "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
     },
     {
@@ -9992,6 +10080,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "tldr": "雨中燈塔低語，港城承載如淚回憶",
       "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
     },
     {
@@ -10009,6 +10098,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "tldr": "Embrace intentional stillness and space to find meaning amidst life's noise",
       "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/Image0113.webp"
     },
     {
@@ -10026,6 +10116,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "tldr": "繁囂中為心靈留白，靜觀靈魂甦醒再行",
       "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/Image0113.webp"
     },
     {
@@ -10043,6 +10134,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2026-us-trip-en-file",
+      "tldr": "Accepting life’s unresolved contradictions and presence without needing coherence",
       "imageUrl": "images/optimized/gallery/2026-us-trip/L1001775.webp"
     },
     {
@@ -10060,6 +10152,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2026-us-trip-zh-TW-file",
+      "tldr": "擁抱生命矛盾，與未和解的自己共存",
       "imageUrl": "images/optimized/gallery/2026-us-trip/L1001775.webp"
     },
     {
@@ -10077,6 +10170,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_city-en-file",
+      "tldr": "Capturing fleeting, everyday intersections of modern life and ancient Italian history",
       "imageUrl": "images/optimized/gallery/2026-italy-city/L1000768.webp"
     },
     {
@@ -10094,6 +10188,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "tldr": "穿梭義大利古今，紀錄時光縫隙中的溫柔間奏",
       "imageUrl": "images/optimized/gallery/2026-italy-city/L1000768.webp"
     },
     {
@@ -10112,6 +10207,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_mountain-en-file",
+      "tldr": "A journey through unfinished winter tales focused on beginnings over endings",
       "imageUrl": "images/optimized/gallery/2026-italy-mountain/L1000213.webp"
     },
     {
@@ -10129,6 +10225,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "tldr": "雪中漫旅如斷篇小說，重起頭而不求終點",
       "imageUrl": "images/optimized/gallery/2026-italy-mountain/L1000213.webp"
     },
     {
@@ -10146,6 +10243,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_town-en-file",
+      "tldr": "Photographs capturing quiet, unscripted moments in the margins of travel",
       "imageUrl": "images/optimized/gallery/2026-italy-town/L1000419.webp"
     },
     {
@@ -10163,6 +10261,7 @@
       ],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "tldr": "旅程中的日常片羽，是點亮記憶的閒章",
       "imageUrl": "images/optimized/gallery/2026-italy-town/L1000419.webp"
     },
     {
@@ -10179,7 +10278,8 @@
         "about"
       ],
       "heading": null,
-      "parentId": "hub-about-zh-TW"
+      "parentId": "hub-about-zh-TW",
+      "tldr": "AI 安全、無螢幕攝影，以及為不全信的立場辯護"
     },
     {
       "id": "locale-cv-summary-zh-TW-0",
@@ -10196,7 +10296,8 @@
         "summary"
       ],
       "heading": "簡介",
-      "parentId": "hub-cv-zh-TW"
+      "parentId": "hub-cv-zh-TW",
+      "tldr": "AI 研究、軟體開發、第一作者期刊論文"
     },
     {
       "id": "locale-cv-education-zh-TW-0",
@@ -10213,7 +10314,8 @@
         "education"
       ],
       "heading": "學歷",
-      "parentId": "hub-cv-zh-TW"
+      "parentId": "hub-cv-zh-TW",
+      "tldr": "台大資工系，特殊選才入學"
     },
     {
       "id": "locale-cv-research-zh-TW-0",
@@ -10230,7 +10332,8 @@
         "research"
       ],
       "heading": "研究與開發",
-      "parentId": "hub-cv-zh-TW"
+      "parentId": "hub-cv-zh-TW",
+      "tldr": "奧義智慧實習，LLM 安全與對抗性研究"
     },
     {
       "id": "locale-cv-leadership-zh-TW-0",
@@ -10247,7 +10350,8 @@
         "leadership"
       ],
       "heading": "領導力與設計",
-      "parentId": "hub-cv-zh-TW"
+      "parentId": "hub-cv-zh-TW",
+      "tldr": "學生會副會長、SITCON 講者、影片製作"
     },
     {
       "id": "locale-cv-publications-zh-TW-0",
@@ -10264,7 +10368,8 @@
         "publications"
       ],
       "heading": "發表論文",
-      "parentId": "hub-cv-zh-TW"
+      "parentId": "hub-cv-zh-TW",
+      "tldr": "TMLR 與 EACL 發表 LLM 安全評估論文"
     },
     {
       "id": "locale-cv-projects-zh-TW-0",
@@ -10281,7 +10386,8 @@
         "projects"
       ],
       "heading": "精選專案",
-      "parentId": "hub-cv-zh-TW"
+      "parentId": "hub-cv-zh-TW",
+      "tldr": "個人作品集、辯論平台、RAG 聊天機器人"
     },
     {
       "id": "locale-cv-skills-zh-TW-0",
@@ -10298,7 +10404,8 @@
         "skills"
       ],
       "heading": "技能",
-      "parentId": "hub-cv-zh-TW"
+      "parentId": "hub-cv-zh-TW",
+      "tldr": "機器學習、全端網頁、影片剪輯、雙語能力"
     },
     {
       "id": "locale-updates-zh-TW-0",
@@ -10314,7 +10421,8 @@
         "updates"
       ],
       "heading": null,
-      "parentId": "hub-updates-zh-TW"
+      "parentId": "hub-updates-zh-TW",
+      "tldr": "近期演講、獲獎與發表研究"
     },
     {
       "id": "locale-uses-zh-TW-0",
@@ -10331,7 +10439,8 @@
         "setup"
       ],
       "heading": null,
-      "parentId": "hub-uses-zh-TW"
+      "parentId": "hub-uses-zh-TW",
+      "tldr": "提升生產力與創造力的硬體、軟體與服務"
     },
     {
       "id": "locale-about-en-0",
@@ -10347,7 +10456,8 @@
         "about"
       ],
       "heading": null,
-      "parentId": "hub-about-en"
+      "parentId": "hub-about-en",
+      "tldr": "AI safety, screenless photography, and arguing both sides"
     },
     {
       "id": "locale-cv-summary-en-0",
@@ -10364,7 +10474,8 @@
         "summary"
       ],
       "heading": "Summary",
-      "parentId": "hub-cv-en"
+      "parentId": "hub-cv-en",
+      "tldr": "AI research, software development, first-author publications"
     },
     {
       "id": "locale-cv-education-en-0",
@@ -10381,7 +10492,8 @@
         "education"
       ],
       "heading": "Education",
-      "parentId": "hub-cv-en"
+      "parentId": "hub-cv-en",
+      "tldr": "NTU Computer Science, admitted via special selection"
     },
     {
       "id": "locale-cv-research-en-0",
@@ -10398,7 +10510,8 @@
         "research"
       ],
       "heading": "Research & Development",
-      "parentId": "hub-cv-en"
+      "parentId": "hub-cv-en",
+      "tldr": "CyCraft intern, LLM safety and adversarial robustness"
     },
     {
       "id": "locale-cv-leadership-en-0",
@@ -10415,7 +10528,8 @@
         "leadership"
       ],
       "heading": "Leadership & Design",
-      "parentId": "hub-cv-en"
+      "parentId": "hub-cv-en",
+      "tldr": "Student council VP, SITCON speaker, video production"
     },
     {
       "id": "locale-cv-publications-en-0",
@@ -10432,7 +10546,8 @@
         "publications"
       ],
       "heading": "Publications",
-      "parentId": "hub-cv-en"
+      "parentId": "hub-cv-en",
+      "tldr": "TMLR and EACL papers on LLM safety evaluation"
     },
     {
       "id": "locale-cv-projects-en-0",
@@ -10449,7 +10564,8 @@
         "projects"
       ],
       "heading": "Selected Projects",
-      "parentId": "hub-cv-en"
+      "parentId": "hub-cv-en",
+      "tldr": "Portfolio site, debate platform, RAG chatbot"
     },
     {
       "id": "locale-cv-skills-en-0",
@@ -10466,7 +10582,8 @@
         "skills"
       ],
       "heading": "Skills",
-      "parentId": "hub-cv-en"
+      "parentId": "hub-cv-en",
+      "tldr": "ML, full-stack web, video editing, bilingual"
     },
     {
       "id": "locale-updates-en-0",
@@ -10482,7 +10599,8 @@
         "updates"
       ],
       "heading": null,
-      "parentId": "hub-updates-en"
+      "parentId": "hub-updates-en",
+      "tldr": "Recent talks, awards, and published research"
     },
     {
       "id": "locale-uses-en-0",
@@ -10499,7 +10617,8 @@
         "setup"
       ],
       "heading": null,
-      "parentId": "hub-uses-en"
+      "parentId": "hub-uses-en",
+      "tldr": "Hardware, software, and services for productivity and creativity"
     },
     {
       "id": "post-10-lego-mount-en-sec-0-4-img-0",
@@ -41641,7 +41760,7 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-04-17T11:13:00Z",
+    "generatedAt": "2026-04-17T12:44:51Z",
     "nodeCount": 1202,
     "edgeCount": 3609,
     "threshold": 0.62,

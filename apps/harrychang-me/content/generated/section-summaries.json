@@ -1085,5 +1085,125 @@
       "section-0": "巷弄微光與偶遇，是城市靈魂的閒章"
     },
     "tldr": "旅程中的日常片羽，是點亮記憶的閒章"
+  },
+  "locale/about/en": {
+    "title": "About",
+    "locale": "en",
+    "sections": {},
+    "tldr": "AI safety, screenless photography, and arguing both sides"
+  },
+  "locale/about/zh-TW": {
+    "title": "About",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "AI 安全、無螢幕攝影，以及為不全信的立場辯護"
+  },
+  "locale/updates/en": {
+    "title": "Updates",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Recent talks, awards, and published research"
+  },
+  "locale/updates/zh-TW": {
+    "title": "Updates",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "近期演講、獲獎與發表研究"
+  },
+  "locale/uses/en": {
+    "title": "Uses",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Hardware, software, and services for productivity and creativity"
+  },
+  "locale/uses/zh-TW": {
+    "title": "Uses",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "提升生產力與創造力的硬體、軟體與服務"
+  },
+  "locale/cv-summary/en": {
+    "title": "CV - Summary",
+    "locale": "en",
+    "sections": {},
+    "tldr": "AI research, software development, first-author publications"
+  },
+  "locale/cv-summary/zh-TW": {
+    "title": "CV - 簡介",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "AI 研究、軟體開發、第一作者期刊論文"
+  },
+  "locale/cv-education/en": {
+    "title": "CV - Education",
+    "locale": "en",
+    "sections": {},
+    "tldr": "NTU Computer Science, admitted via special selection"
+  },
+  "locale/cv-education/zh-TW": {
+    "title": "CV - 學歷",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "台大資工系，特殊選才入學"
+  },
+  "locale/cv-research/en": {
+    "title": "CV - Research & Development",
+    "locale": "en",
+    "sections": {},
+    "tldr": "CyCraft intern, LLM safety and adversarial robustness"
+  },
+  "locale/cv-research/zh-TW": {
+    "title": "CV - 研究與開發",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "奧義智慧實習，LLM 安全與對抗性研究"
+  },
+  "locale/cv-leadership/en": {
+    "title": "CV - Leadership & Design",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Student council VP, SITCON speaker, video production"
+  },
+  "locale/cv-leadership/zh-TW": {
+    "title": "CV - 領導力與設計",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "學生會副會長、SITCON 講者、影片製作"
+  },
+  "locale/cv-publications/en": {
+    "title": "CV - Publications",
+    "locale": "en",
+    "sections": {},
+    "tldr": "TMLR and EACL papers on LLM safety evaluation"
+  },
+  "locale/cv-publications/zh-TW": {
+    "title": "CV - 發表論文",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "TMLR 與 EACL 發表 LLM 安全評估論文"
+  },
+  "locale/cv-projects/en": {
+    "title": "CV - Selected Projects",
+    "locale": "en",
+    "sections": {},
+    "tldr": "Portfolio site, debate platform, RAG chatbot"
+  },
+  "locale/cv-projects/zh-TW": {
+    "title": "CV - 精選專案",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "個人作品集、辯論平台、RAG 聊天機器人"
+  },
+  "locale/cv-skills/en": {
+    "title": "CV - Skills",
+    "locale": "en",
+    "sections": {},
+    "tldr": "ML, full-stack web, video editing, bilingual"
+  },
+  "locale/cv-skills/zh-TW": {
+    "title": "CV - 技能",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "機器學習、全端網頁、影片剪輯、雙語能力"
   }
 }
