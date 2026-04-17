@@ -296,12 +296,17 @@ export default function GraphCanvas({
           .radius((d) => (nodeRadiusMap.current.get(d.id) || 1.5) + 0.5)
           .strength(0.9),
       )
-      .alphaDecay(0.018)
+      .alphaDecay(0.04)
       .alphaMin(0.001)
       .velocityDecay(0.6)
       .on("tick", () => {
-        // Only request render if simulation is actively moving nodes
-        if (sim.alpha() > 0.001) {
+        // Throttle renders during the hot settling phase:
+        // only paint every 3rd tick while alpha is high, every tick once calm.
+        if (sim.alpha() > 0.05) {
+          if (Math.round(sim.alpha() * 1000) % 3 === 0) {
+            needsRenderRef.current = true;
+          }
+        } else if (sim.alpha() > 0.001) {
           needsRenderRef.current = true;
         }
       })
@@ -309,8 +314,10 @@ export default function GraphCanvas({
         needsRenderRef.current = true;
       });
 
-    simulationRef.current = sim;
+    sim.tick(80);
+    needsRenderRef.current = true;
 
+    simulationRef.current = sim;
     return () => {
       sim.stop();
       simulationRef.current = null;

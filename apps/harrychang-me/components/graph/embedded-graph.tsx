@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import GraphCanvas from "./graph-canvas";
@@ -127,17 +128,33 @@ export default function EmbeddedGraph({
     )?.id;
   }, [filteredData, focalSlug, focalSourceType, locale]);
 
+  const { startNavigation } = useNavigation();
+
   const handleNodeClick = useCallback(
     (node: GraphNode | null) => {
       if (!node || node.nodeType === "tag" || !node.url) return;
       try {
         const target = new URL(node.url, window.location.origin);
-        router.push(target.pathname + target.search + target.hash);
+        const mainHost = window.location.hostname.replace(/^www\./, "");
+        const targetHost = target.hostname.replace(/^www\./, "");
+        const isInternal =
+          target.origin === window.location.origin ||
+          targetHost === mainHost ||
+          targetHost === "harrychang.me";
+
+        startNavigation();
+        setTimeout(() => {
+          if (isInternal) {
+            router.push(target.pathname + target.search + target.hash);
+          } else {
+            window.location.href = node.url;
+          }
+        }, 250);
       } catch {
         window.location.href = node.url;
       }
     },
-    [router],
+    [router, startNavigation],
   );
 
   const handleNodeHover = useCallback(
