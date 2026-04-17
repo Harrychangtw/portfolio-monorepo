@@ -29,11 +29,10 @@ export default function NextUpCard({
   const fullImageUrl = imageUrl?.replace("-thumb.webp", ".webp");
 
   return (
-    <div className="w-full mt-4 md:mt-6 pt-4">
+    <div className="w-full">
       <NavigationLink href={`/${basePath}/${slug}`} className="block group">
         <motion.div
-          className="relative overflow-hidden border border-border bg-card hover:bg-muted/60 transition-colors p-1"
-          whileHover={{ scale: 0.98 }}
+          className="relative overflow-hidden bg-card hover:bg-muted/60 transition-colors"
           transition={{ duration: 0.2 }}
         >
           <div className="flex items-center justify-between p-4 md:p-6 gap-6">

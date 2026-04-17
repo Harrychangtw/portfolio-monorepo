@@ -9,7 +9,7 @@ import type { SelectedNodeInfo } from "./local-graph-view";
 
 interface NextUpItem {
   slug: string;
-  title: string;t
+  title: string;
   category: string;
   imageUrl: string;
   aspectRatio?: number;
@@ -176,16 +176,15 @@ export default function GraphNextUp({
   const displayBasePath = hoverCard ? hoverCard.basePath : baseCardPath;
 
   return (
-    <div>
-      {/* Graph */}
-      <div className="w-full mt-8 md:mt-12 mb-0">
-        <p className="font-heading uppercase text-xs tracking-wider text-secondary mb-3">
-          {t("common.relatedGraph") || "Knowledge Graph"}
-        </p>
-        <div
-          className="relative border border-border overflow-hidden"
-          style={{ height: "360px" }}
-        >
+    <div className="w-full mt-8 md:mt-12">
+      <p className="font-heading uppercase text-xs tracking-wider text-secondary mb-3">
+        {t("common.relatedGraph") || "Knowledge Graph"}
+      </p>
+
+      {/* Single bordered container: 3:2 graph + NextUpCard stacked inside */}
+      <div className="relative border border-border bg-card overflow-hidden">
+        {/* Graph — strictly 3:2 */}
+        <div className="relative w-full aspect-[3/2] overflow-hidden">
           <NavigationLink
             href="/graph"
             className="absolute top-2 right-2 z-10 px-2 py-1 text-[10px] font-heading uppercase tracking-wider text-secondary hover:text-primary bg-card/80 backdrop-blur-sm border border-border transition-colors"
@@ -200,19 +199,21 @@ export default function GraphNextUp({
             onNodeHover={handleNodeHover}
           />
         </div>
-      </div>
 
-      {/* NextUpCard — driven by graph hover/selection */}
-      {displayCard && (
-        <NextUpCard
-          title={displayCard.title}
-          category={displayCard.category}
-          slug={displayCard.slug}
-          imageUrl={displayCard.imageUrl}
-          basePath={displayBasePath}
-          aspectRatio={displayCard.aspectRatio}
-        />
-      )}
+        {/* NextUpCard — inside the same container, below the graph */}
+        {displayCard && (
+          <div className="border-t border-border">
+            <NextUpCard
+              title={displayCard.title}
+              category={displayCard.category}
+              slug={displayCard.slug}
+              imageUrl={displayCard.imageUrl}
+              basePath={displayBasePath}
+              aspectRatio={displayCard.aspectRatio}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

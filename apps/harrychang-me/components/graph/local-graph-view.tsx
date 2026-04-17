@@ -270,6 +270,12 @@ export default function LocalGraphView({
         setSelectedNode(defaultNode);
       }
     }
+
+    // Kick a render on the next frame — covers the case where the canvas
+    // just mounted or dimensions settled in the same tick.
+    requestAnimationFrame(() => {
+      setZoomVersion((v) => v + 1);
+    });
   }, [subgraph]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Emit selected node info to parent
@@ -348,7 +354,9 @@ export default function LocalGraphView({
       tagColorRef.current = getTagColor();
       themeColorsRef.current = getThemeColors();
       glowColorRef.current = getGlowColor();
-      renderCanvas();
+      // Bump zoomVersion to trigger renderCanvas via its useEffect dependency
+      // (avoids calling renderCanvas before its const declaration — TDZ fix)
+      setZoomVersion((v) => v + 1);
     });
     observer.observe(document.documentElement, {
       attributes: true,
@@ -412,6 +420,8 @@ export default function LocalGraphView({
     const dpr = window.devicePixelRatio || 1;
     canvas.width = dimensions.width * dpr;
     canvas.height = dimensions.height * dpr;
+    canvas.style.width = `${dimensions.width}px`;
+    canvas.style.height = `${dimensions.height}px`;
 
     const ctx = canvas.getContext("2d")!;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -728,20 +738,128 @@ export default function LocalGraphView({
     [computeBaseTransform],
   );
 
-  // Pointer events + zoom
+  // Pointer events + zoom + pan (drag-to-explore)
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    // Track active pointers for pan + pinch
+    const activePointers = new Map<
+      number,
+      { x: number; y: number; startX: number; startY: number }
+    >();
+    let isPanning = false;
+    let didPan = false;
+    let lastPinchDist = 0;
+
+    const handleDown = (e: PointerEvent) => {
+      activePointers.set(e.pointerId, {
+        x: e.clientX,
+        y: e.clientY,
+        startX: e.clientX,
+        startY: e.clientY,
+      });
+      canvas.setPointerCapture(e.pointerId);
+      if (activePointers.size === 1) {
+        isPanning = true;
+        didPan = false;
+      } else if (activePointers.size === 2) {
+        const [p1, p2] = Array.from(activePointers.values());
+        lastPinchDist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+      }
+    };
+
     const handleMove = (e: PointerEvent) => {
-      if (e.pointerType === "touch") return;
-      const node = findNodeAt(e.clientX, e.clientY);
-      if (node) {
-        setHoveredNode(node);
-        canvas.style.cursor = "pointer";
-      } else {
-        setHoveredNode(null);
-        canvas.style.cursor = "default";
+      const tracked = activePointers.get(e.pointerId);
+
+      // Hover for mouse only (no active drag)
+      if (e.pointerType !== "touch" && !isPanning && activePointers.size === 0) {
+        const node = findNodeAt(e.clientX, e.clientY);
+        if (node) {
+          setHoveredNode(node);
+          canvas.style.cursor = "pointer";
+        } else {
+          setHoveredNode(null);
+          canvas.style.cursor = "default";
+        }
+        return;
+      }
+
+      if (!tracked) return;
+
+      if (activePointers.size === 2) {
+        // Pinch zoom
+        tracked.x = e.clientX;
+        tracked.y = e.clientY;
+        const [p1, p2] = Array.from(activePointers.values());
+        const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+        if (lastPinchDist > 0) {
+          const factor = dist / lastPinchDist;
+          const zoom = zoomRef.current;
+          const newScale = Math.min(Math.max(zoom.scale * factor, 0.3), 5);
+          const rect = canvas.getBoundingClientRect();
+          const cx = (p1.x + p2.x) / 2 - rect.left - dimensions.width / 2;
+          const cy = (p1.y + p2.y) / 2 - rect.top - dimensions.height / 2;
+          const scaleDiff = newScale / zoom.scale;
+          zoomRef.current = {
+            scale: newScale,
+            panX: cx - scaleDiff * (cx - zoom.panX),
+            panY: cy - scaleDiff * (cy - zoom.panY),
+          };
+          setZoomVersion((v) => v + 1);
+        }
+        lastPinchDist = dist;
+        didPan = true;
+        return;
+      }
+
+      // Single-pointer pan
+      const dx = e.clientX - tracked.x;
+      const dy = e.clientY - tracked.y;
+      tracked.x = e.clientX;
+      tracked.y = e.clientY;
+      const moved = Math.hypot(
+        e.clientX - tracked.startX,
+        e.clientY - tracked.startY,
+      );
+      if (moved > 3) didPan = true;
+      if (didPan) {
+        zoomRef.current = {
+          ...zoomRef.current,
+          panX: zoomRef.current.panX + dx,
+          panY: zoomRef.current.panY + dy,
+        };
+        setZoomVersion((v) => v + 1);
+      }
+    };
+
+    const handleUp = (e: PointerEvent) => {
+      const tracked = activePointers.get(e.pointerId);
+      activePointers.delete(e.pointerId);
+      try {
+        canvas.releasePointerCapture(e.pointerId);
+      } catch {}
+
+      if (activePointers.size < 2) lastPinchDist = 0;
+      if (activePointers.size === 0) isPanning = false;
+
+      // If it was a tap (no significant movement), treat as click/select
+      if (tracked && !didPan) {
+        const node = findNodeAt(e.clientX, e.clientY);
+        if (node) {
+          if (node.nodeType === "file") setSelectedNode(node);
+          if (e.pointerType === "touch") setHoveredNode(node);
+          if (node.url && node.nodeType !== "tag") {
+            try {
+              const url = new URL(node.url);
+              router.push(url.pathname);
+            } catch {
+              // ignore
+            }
+          }
+        } else if (e.pointerType === "touch") {
+          setHoveredNode(null);
+        }
       }
     };
 
@@ -750,29 +868,8 @@ export default function LocalGraphView({
       canvas.style.cursor = "default";
     };
 
-    const handleClick = (e: MouseEvent) => {
-      const node = findNodeAt(e.clientX, e.clientY);
-      if (!node) return;
-
-      // Select the node (updates NextUpCard)
-      if (node.nodeType === "file") {
-        setSelectedNode(node);
-      }
-
-      // Navigate on click
-      if (node.url && node.nodeType !== "tag") {
-        try {
-          const url = new URL(node.url);
-          router.push(url.pathname);
-        } catch {
-          // Invalid URL — ignore
-        }
-      }
-    };
-
-    // Wheel zoom — only capture when user intends to zoom (cursor over canvas)
+    // Wheel zoom — only pinch (ctrlKey) intercepts; regular scroll passes to page
     const handleWheel = (e: WheelEvent) => {
-      // Only intercept if the cursor is inside the canvas
       const rect = canvas.getBoundingClientRect();
       const inBounds =
         e.clientX >= rect.left &&
@@ -780,21 +877,14 @@ export default function LocalGraphView({
         e.clientY >= rect.top &&
         e.clientY <= rect.bottom;
       if (!inBounds) return;
-
-      // Detect pinch gesture (ctrlKey is set for trackpad pinch)
-      // For regular scroll wheel, let the page scroll through
-      if (!e.ctrlKey) return;
+      if (!e.ctrlKey) return; // let page scroll
 
       e.preventDefault();
-
       const zoom = zoomRef.current;
       const zoomFactor = e.deltaY > 0 ? 0.92 : 1.08;
       const newScale = Math.min(Math.max(zoom.scale * zoomFactor, 0.3), 5);
-
-      // Zoom toward cursor position
       const cursorX = e.clientX - rect.left - dimensions.width / 2;
       const cursorY = e.clientY - rect.top - dimensions.height / 2;
-
       const scaleDiff = newScale / zoom.scale;
       zoomRef.current = {
         scale: newScale,
@@ -804,15 +894,19 @@ export default function LocalGraphView({
       setZoomVersion((v) => v + 1);
     };
 
+    canvas.addEventListener("pointerdown", handleDown);
     canvas.addEventListener("pointermove", handleMove);
+    canvas.addEventListener("pointerup", handleUp);
+    canvas.addEventListener("pointercancel", handleUp);
     canvas.addEventListener("pointerleave", handleLeave);
-    canvas.addEventListener("click", handleClick);
     canvas.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
+      canvas.removeEventListener("pointerdown", handleDown);
       canvas.removeEventListener("pointermove", handleMove);
+      canvas.removeEventListener("pointerup", handleUp);
+      canvas.removeEventListener("pointercancel", handleUp);
       canvas.removeEventListener("pointerleave", handleLeave);
-      canvas.removeEventListener("click", handleClick);
       canvas.removeEventListener("wheel", handleWheel);
     };
   }, [findNodeAt, router, dimensions]);
@@ -822,13 +916,11 @@ export default function LocalGraphView({
       ref={containerRef}
       className={`relative w-full h-full ${className || ""}`}
     >
-      {subgraph && (
-        <canvas
-          ref={canvasRef}
-          className="w-full h-full"
-          style={{ touchAction: "auto" }}
-        />
-      )}
+      <canvas
+        ref={canvasRef}
+        className="w-full h-full block"
+        style={{ touchAction: "none" }}
+      />
     </div>
   );
 }
