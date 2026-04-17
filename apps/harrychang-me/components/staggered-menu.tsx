@@ -597,10 +597,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                           className="list-none m-0 p-0 flex flex-col gap-3.5"
                           role="list"
                         >
-                          {connectItems.map(
-                            (
-                              item, // eslint-disable-line react-hooks/refs
-                            ) => renderLinkItem(item, toggleMenu),
+                          {/* eslint-disable-next-line react-hooks/refs -- toggleMenu is only passed as onClick, not called during render */}
+                          {connectItems.map((item) =>
+                            renderLinkItem(item, toggleMenu),
                           )}
                         </ul>
                       </div>
@@ -615,10 +614,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                           className="list-none m-0 p-0 flex flex-col gap-3.5"
                           role="list"
                         >
-                          {exploreItems.map(
-                            (
-                              item, // eslint-disable-line react-hooks/refs
-                            ) => renderLinkItem(item, toggleMenu),
+                          {/* eslint-disable-next-line react-hooks/refs -- toggleMenu is only passed as onClick, not called during render */}
+                          {exploreItems.map((item) =>
+                            renderLinkItem(item, toggleMenu),
                           )}
                         </ul>
                       </div>

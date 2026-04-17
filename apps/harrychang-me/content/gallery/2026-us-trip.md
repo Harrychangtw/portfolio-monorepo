@@ -27,10 +27,10 @@ gallery:
   - url: "images/optimized/gallery/2026-us-trip/L1001936.webp"
 pinned: 7
 ---
-
+<!--
 Maybe coherence was never the point.
 
-<!-- New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five meters from stock exchanges. The city holds the finance bro and the homeless in a single frame, never trying to reconcile them. As if to say: contradiction is not failure, it is fidelity to what is actually here.
+ New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five meters from stock exchanges. The city holds the finance bro and the homeless in a single frame, never trying to reconcile them. As if to say: contradiction is not failure, it is fidelity to what is actually here.
 
 In Grand Central, a couple kisses. The world streams past them, dissolving into motion blur. I think of the film *Past Lives*, those ifs and possibilities witnessed but never resolved. The self who went to Stanford and the self who stayed in Taiwan exist at the same time. They do not resolve. They do not have to.
 

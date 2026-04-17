@@ -67,12 +67,14 @@ export default function GraphNextUp({
   const isDefaultRef = useRef(true);
 
   // Reset derived state when nextItem changes (e.g. client-side navigation)
+  /* eslint-disable react-hooks/set-state-in-effect -- synchronising derived state from prop change */
   useEffect(() => {
     setBaseCard(nextItem ?? null);
     setLocalizedNextItem(nextItem ?? null);
     setHoverCard(null);
     isDefaultRef.current = true;
   }, [nextItem]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
     if (!nextItem) return;

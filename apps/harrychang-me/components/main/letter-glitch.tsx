@@ -242,47 +242,6 @@ const LetterGlitch = ({
     });
   };
 
-  const setTextInGrid = (
-    // eslint-disable-line @typescript-eslint/no-unused-vars
-    text: string,
-    row: number,
-    startCol: number,
-    shouldAnimate = false,
-  ) => {
-    const { columns, rows: numRows } = grid.current;
-    [...text].forEach((char, i) => {
-      const col = startCol + i;
-      if (col >= 0 && col < columns && row >= 0 && row < numRows) {
-        const index = row * columns + col;
-        if (letters.current[index]) {
-          letters.current[index].originalChar = char;
-          if (shouldAnimate) {
-            letters.current[index].isAnimating = true;
-            setTimeout(
-              () => {
-                let flipCount = 0;
-                const flip = () => {
-                  if (flipCount < 2) {
-                    letters.current[index].char = getRandomChar();
-                    flipCount++;
-                    setTimeout(flip, 80);
-                  } else {
-                    letters.current[index].char = char;
-                    letters.current[index].isAnimating = false;
-                  }
-                };
-                flip();
-              },
-              500 + Math.random() * 500,
-            );
-          } else {
-            letters.current[index].char = char;
-          }
-        }
-      }
-    });
-  };
-
   const setAsciiInGrid = (shouldAnimate = false) => {
     const { columns, rows } = grid.current;
     const { startRow } = getAsciiPosition(columns, rows);

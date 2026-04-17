@@ -162,17 +162,15 @@ export default function Header() {
     }, 400);
     return () => clearInterval(interval);
   }, [isNavigating]);
-  // Detect if we're on the lab subdomain
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hostname = window.location.hostname;
-      setIsLab(
-        // eslint-disable-line react-hooks/set-state-in-effect
-        hostname.includes("lab.localhost") ||
-          hostname.includes("lab.harrychang.me"),
-      );
-    }
-  }, []);
+  // Detect if we're on the lab subdomain — derive during render to avoid
+  // an extra effect-driven setState cascade.
+  const isLabDetected =
+    typeof window !== "undefined" &&
+    (window.location.hostname.includes("lab.localhost") ||
+      window.location.hostname.includes("lab.harrychang.me"));
+  if (isLabDetected !== isLab) {
+    setIsLab(isLabDetected);
+  }
 
   // Use stable hash scroll hook for perfect alignment
   useStableHashScroll("header");

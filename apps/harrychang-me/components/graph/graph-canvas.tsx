@@ -261,15 +261,14 @@ export default function GraphCanvas({
       .force(
         "link",
         forceLink(simEdges)
-          .id((d: any) => d.id) // eslint-disable-line @typescript-eslint/no-explicit-any
-          .distance((d: any) => {
-            // eslint-disable-line @typescript-eslint/no-explicit-any
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any -- d3 generic inference loses our custom node/edge types
+          .id((d: any) => d.id)
+          .distance((d: SimulationEdge) => {
             if (d.linkType === "structural") return 10 + (1 - d.weight) * 15;
             if (d.linkType === "tag") return 30;
             return 20 + (1 - d.weight) * 45;
           })
-          .strength((d: any) => {
-            // eslint-disable-line @typescript-eslint/no-explicit-any
+          .strength((d: SimulationEdge) => {
             if (d.linkType === "structural") return 1.0;
             if (d.linkType === "tag") return 0.5;
             return 0.3 + d.weight * 0.4;
@@ -1031,7 +1030,7 @@ export default function GraphCanvas({
       canvas.removeEventListener("pointerup", handleUp);
       canvas.removeEventListener("click", handleClick);
     };
-  }, [findNodeAtPoint, onNodeClick, onNodeHover, screenToSim, isMobile]);
+  }, [findNodeAtPoint, onNodeClick, onNodeHover, onCenterNodeChange, screenToSim, isMobile]);
 
   // Zoom — d3-zoom with center offset baked into the initial transform
   useEffect(() => {

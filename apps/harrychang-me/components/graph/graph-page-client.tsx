@@ -189,8 +189,8 @@ export default function GraphPageClient() {
   }, []);
 
   // Filter graph data
-  const filteredData: GraphData | null = useMemo(() => {
-    if (!graphData) return null;
+  const { filteredData, filteredNodeIds } = useMemo(() => {
+    if (!graphData) return { filteredData: null, filteredNodeIds: null };
 
     const nodes = graphData.nodes.filter((n) => {
       if (n.locale !== filterLocale) return false;
@@ -209,16 +209,19 @@ export default function GraphPageClient() {
       (e) => nodeIds.has(e.source) && nodeIds.has(e.target),
     );
 
-    // Clear stale hover/center if the node was removed by filtering
-    if (hoveredNode && !nodeIds.has(hoveredNode.id)) setHoveredNode(null);
-    if (centerNode && !nodeIds.has(centerNode.id)) setCenterNode(null);
-
     return {
-      ...graphData,
-      nodes,
-      edges,
+      filteredData: { ...graphData, nodes, edges },
+      filteredNodeIds: nodeIds,
     };
-  }, [graphData, filterLocale, filterTypes, filterNodeTypes]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [graphData, filterLocale, filterTypes, filterNodeTypes]);
+
+  // Clear stale hover/center if the node was removed by filtering
+  if (hoveredNode && filteredNodeIds && !filteredNodeIds.has(hoveredNode.id)) {
+    setHoveredNode(null);
+  }
+  if (centerNode && filteredNodeIds && !filteredNodeIds.has(centerNode.id)) {
+    setCenterNode(null);
+  }
 
   if (error) {
     return (
