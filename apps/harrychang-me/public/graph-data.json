@@ -27690,20 +27690,8 @@
       "linkType": "tag"
     },
     {
-      "source": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_12_30_against_the_unknown-zh-TW-file",
-      "target": "gallery-2023_12_30_against_the_unknown-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -27732,6 +27720,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_12_30_against_the_unknown-zh-TW-file",
+      "target": "gallery-2023_12_30_against_the_unknown-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_12_30_sky_above-en-file",
+      "target": "gallery-2023_12_30_sky_above-en-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_04_06_city_of_tears-en-file",
       "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
       "weight": 1.0,
@@ -27744,8 +27744,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
+      "source": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -27756,20 +27762,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_12_30_sky_above-en-file",
-      "target": "gallery-2023_12_30_sky_above-en-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_07_07_splash_of_red-zh-TW-file",
       "target": "gallery-2023_07_07_splash_of_red-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -27786,38 +27792,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "source": "gallery-2023_08_10_intersection-zh-TW-file",
+      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
       "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_12_30_sky_above-zh-TW-file",
-      "target": "gallery-2023_12_30_sky_above-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_02_09_mortal_sparks-en-file",
-      "target": "gallery-2024_02_09_mortal_sparks-en-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -27830,6 +27818,18 @@
     {
       "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_09_mortal_sparks-en-file",
+      "target": "gallery-2024_02_09_mortal_sparks-en-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_12_30_sky_above-zh-TW-file",
+      "target": "gallery-2023_12_30_sky_above-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -28056,14 +28056,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_09_vrc_2813b_nova-en-sec-2",
-      "target": "project-2024_10_09_vrc_2813b_nova-en-sec-2-0",
+      "source": "post-2025_12_22_aftersun_paris_texas-en-file",
+      "target": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
       "weight": 0.9915,
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_22_aftersun_paris_texas-en-file",
-      "target": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
+      "source": "project-2024_10_09_vrc_2813b_nova-en-sec-2",
+      "target": "project-2024_10_09_vrc_2813b_nova-en-sec-2-0",
       "weight": 0.9915,
       "linkType": "semantic"
     },
@@ -30948,14 +30948,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-zh-TW-file",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-0",
+      "source": "project-2025_05_18_patch_dataset-en-file",
+      "target": "project-2025_05_18_patch_dataset-en-sec-0-2",
       "weight": 0.9511,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_05_18_patch_dataset-en-file",
-      "target": "project-2025_05_18_patch_dataset-en-sec-0-2",
+      "source": "project-2025_10_12_fortress-zh-TW-file",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-0",
       "weight": 0.9511,
       "linkType": "semantic"
     },
@@ -31370,7 +31370,7 @@
     {
       "source": "project-2024_10_04_proj_zephyr-en-file",
       "target": "project-2024_10_04_proj_zephyr-en-sec-1-1",
-      "weight": 0.9482,
+      "weight": 0.9483,
       "linkType": "semantic"
     },
     {
@@ -40069,13 +40069,13 @@
     },
     {
       "source": "gallery-2023_12_30_against_the_unknown-en-file",
-      "target": "gallery-2023_12_30_sky_above-en-sec-0",
+      "target": "gallery-2023_12_30_sky_above-en-file",
       "weight": 0.7258,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2023_12_30_against_the_unknown-en-file",
-      "target": "gallery-2023_12_30_sky_above-en-file",
+      "target": "gallery-2023_12_30_sky_above-en-sec-0",
       "weight": 0.7258,
       "linkType": "semantic"
     },
@@ -40428,14 +40428,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_11_18_dusk_impressions-en-sec-0",
-      "target": "gallery-2024_02_09_mortal_sparks-en-sec-0",
+      "source": "gallery-2024_02_09_mortal_sparks-en-file",
+      "target": "gallery-2023_11_18_dusk_impressions-en-sec-0",
       "weight": 0.7106,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_09_mortal_sparks-en-file",
-      "target": "gallery-2023_11_18_dusk_impressions-en-sec-0",
+      "source": "gallery-2023_11_18_dusk_impressions-en-sec-0",
+      "target": "gallery-2024_02_09_mortal_sparks-en-sec-0",
       "weight": 0.7106,
       "linkType": "semantic"
     },
@@ -41605,13 +41605,13 @@
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.6269,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "weight": 0.6269,
       "linkType": "semantic"
     },
@@ -41641,7 +41641,7 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-04-17T10:54:47Z",
+    "generatedAt": "2026-04-17T11:13:00Z",
     "nodeCount": 1202,
     "edgeCount": 3609,
     "threshold": 0.62,
