@@ -53,9 +53,13 @@ async function loadGraphData(): Promise<GraphData | null> {
     .then((r) => (r.ok ? (r.json() as Promise<GraphData>) : null))
     .then((d) => {
       cachedGraphData = d;
+      if (!d) fetchPromise = null; // allow retry on failure
       return d;
     })
-    .catch(() => null);
+    .catch(() => {
+      fetchPromise = null; // allow retry on failure
+      return null;
+    });
   return fetchPromise;
 }
 

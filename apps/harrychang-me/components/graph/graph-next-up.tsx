@@ -66,6 +66,14 @@ export default function GraphNextUp({
   );
   const isDefaultRef = useRef(true);
 
+  // Reset derived state when nextItem changes (e.g. client-side navigation)
+  useEffect(() => {
+    setBaseCard(nextItem ?? null);
+    setLocalizedNextItem(nextItem ?? null);
+    setHoverCard(null);
+    isDefaultRef.current = true;
+  }, [nextItem]);
+
   useEffect(() => {
     if (!nextItem) return;
 

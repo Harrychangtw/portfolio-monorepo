@@ -34,7 +34,7 @@ export default function NextUpCard({
   return (
     <div className="w-full">
       <NavigationLink
-        href={href ?? `/${basePath}/${slug}`}
+        href={href || `/${basePath}/${slug}`}
         className="block group"
       >
         <motion.div

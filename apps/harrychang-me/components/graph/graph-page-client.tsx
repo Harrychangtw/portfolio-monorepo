@@ -209,12 +209,16 @@ export default function GraphPageClient() {
       (e) => nodeIds.has(e.source) && nodeIds.has(e.target),
     );
 
+    // Clear stale hover/center if the node was removed by filtering
+    if (hoveredNode && !nodeIds.has(hoveredNode.id)) setHoveredNode(null);
+    if (centerNode && !nodeIds.has(centerNode.id)) setCenterNode(null);
+
     return {
       ...graphData,
       nodes,
       edges,
     };
-  }, [graphData, filterLocale, filterTypes, filterNodeTypes]);
+  }, [graphData, filterLocale, filterTypes, filterNodeTypes]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (error) {
     return (

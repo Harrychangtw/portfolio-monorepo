@@ -35,10 +35,18 @@ export function middleware(request: NextRequest) {
     hostname.includes("graph.localhost");
 
   if (isGraph) {
-    const newUrl = new URL(request.url);
-    newUrl.host = "www.harrychang.me";
-    newUrl.pathname = `/graph${url.pathname === "/" ? "" : url.pathname}`;
-    return NextResponse.redirect(newUrl, 308);
+    // In production, redirect to main domain /graph
+    if (hostname.includes("graph.harrychang.me")) {
+      const newUrl = new URL(request.url);
+      newUrl.host = "www.harrychang.me";
+      newUrl.pathname = `/graph${url.pathname === "/" ? "" : url.pathname}`;
+      return NextResponse.redirect(newUrl, 308);
+    }
+    // For localhost, rewrite to /graph routes without redirect
+    if (!url.pathname.startsWith("/graph")) {
+      url.pathname = `/graph${url.pathname}`;
+      return NextResponse.rewrite(url);
+    }
   }
 
   // Paths that should NOT be rewritten (shared resources)

@@ -308,7 +308,7 @@ export default function ManifestoPage() {
   // Reset state on language change
   useEffect(() => {
     setActiveChunks(new Array(manifestoChunks.length).fill(false)); // eslint-disable-line react-hooks/set-state-in-effect
-  }, [manifestoChunks.length]);
+  }, [language, manifestoChunks.length]);
 
   // The Spotlight Logic
   useEffect(() => {
