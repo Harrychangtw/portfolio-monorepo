@@ -89,6 +89,8 @@ interface MobileNodeCardProps {
 export default function MobileNodeCard({ node }: MobileNodeCardProps) {
   const wrapperCls =
     "mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden";
+  const imageWrapperCls =
+    "mx-3 mb-3 bg-white border border-border shadow-xl overflow-hidden";
 
   const isImage = node?.nodeType === "image";
   const isVideo = node?.nodeType === "video";
@@ -132,24 +134,26 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
                 (node.mediaSource ? getFilenameFromUrl(node.mediaSource) : "");
 
               const mediaContent = mediaSrc ? (
-                <ImageContainer
-                  src={mediaSrc}
-                  alt={imgTitle}
-                  aspectRatio={1.5}
-                  noInsetPadding={false}
-                  quality={60}
-                />
+                <div className="w-3/4 mx-auto">
+                  <ImageContainer
+                    src={mediaSrc}
+                    alt={imgTitle}
+                    aspectRatio={1.5}
+                    noInsetPadding={false}
+                    quality={60}
+                  />
+                </div>
               ) : null;
 
               return node.url && isInternalUrl(node.url) ? (
                 <NavigationLink
                   href={toInternalPath(node.url)}
-                  className={`${wrapperCls} block active:scale-[0.98] transition-transform`}
+                  className={`${imageWrapperCls} block active:scale-[0.98] transition-transform`}
                 >
                   {mediaContent}
                 </NavigationLink>
               ) : (
-                <div className={wrapperCls}>{mediaContent}</div>
+                <div className={imageWrapperCls}>{mediaContent}</div>
               );
             })()
           ) : isPostOrSection ? (
