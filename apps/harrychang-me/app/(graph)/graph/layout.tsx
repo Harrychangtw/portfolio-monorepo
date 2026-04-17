@@ -31,6 +31,14 @@ export const metadata: Metadata = {
       "An interactive knowledge graph mapping semantic connections across blog posts, projects, gallery items, and more.",
     url: "https://www.harrychang.me/graph",
     siteName: "Knowledge Graph",
+    images: [
+      {
+        url: "/images/og-image-graph.webp",
+        width: 1200,
+        height: 630,
+        alt: "Knowledge Graph | Harry Chang",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -39,6 +47,7 @@ export const metadata: Metadata = {
     title: "Knowledge Graph | Harry Chang",
     description:
       "An interactive knowledge graph mapping semantic connections across all content.",
+    images: ["/images/og-image-graph.webp"],
   },
 };
 

@@ -61,6 +61,7 @@ export function middleware(request: NextRequest) {
     "/images/og-image-blogs.webp",
     "/images/og-image-projects.webp",
     "/images/og-image-gallery.webp",
+    "/images/og-image-graph.webp",
     "/apple-icon.png",
     "/safari-pinned-tab.svg",
     "/favicon-lab.ico",
