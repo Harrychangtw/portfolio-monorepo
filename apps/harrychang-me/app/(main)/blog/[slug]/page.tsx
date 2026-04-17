@@ -172,11 +172,7 @@ export default async function BlogPostPage({
         initialPost={post}
         nextPost={nextPost}
         localGraphSlot={
-          <GraphNextUp
-            sourceType="post"
-            basePath="blog"
-            nextItem={nextPost}
-          />
+          <GraphNextUp sourceType="post" basePath="blog" nextItem={nextPost} />
         }
       />
     </>
