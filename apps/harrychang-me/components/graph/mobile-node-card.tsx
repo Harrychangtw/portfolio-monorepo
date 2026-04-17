@@ -115,7 +115,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
           className="fixed bottom-0 left-0 right-0 z-50 pb-[env(safe-area-inset-bottom)]"
         >
           {isImage || isVideo ? (
-            // ── Image / Video: show media prominently + name + tags ──────────
+            // ── Image / Video: show media only, no caption ──────────
             (() => {
               const imgTitle =
                 node.title ||
@@ -123,36 +123,15 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
                   ? getFilenameFromUrl(node.mediaSource)
                   : "");
 
-              const mediaContent = (
-                <>
-                  {mediaSrc && (
-                    <ImageContainer
-                      src={mediaSrc}
-                      alt={imgTitle}
-                      aspectRatio={1.5}
-                      noInsetPadding={false}
-                      quality={60}
-                    />
-                  )}
-                  <div className="p-3">
-                    <p className="font-body text-sm text-foreground truncate">
-                      {imgTitle}
-                    </p>
-                    {node.tags && node.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-1 mt-1.5">
-                        {node.tags.slice(0, 5).map((tag) => (
-                          <span
-                            key={tag}
-                            className="font-mono text-[10px] px-1.5 py-0.5 bg-muted text-secondary rounded"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </>
-              );
+              const mediaContent = mediaSrc ? (
+                <ImageContainer
+                  src={mediaSrc}
+                  alt={imgTitle}
+                  aspectRatio={1.5}
+                  noInsetPadding={false}
+                  quality={60}
+                />
+              ) : null;
 
               return node.url && isInternalUrl(node.url) ? (
                 <NavigationLink
@@ -177,7 +156,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
                 category={
                   node.nodeType === "hub"
                     ? formatHubRoute(node)
-                    : node.description || node.snippet
+                    : node.tldr || node.description || node.snippet
                 }
                 slug={node.sourceSlug}
                 imageUrl={isTag ? "" : normalizeImageUrl(node.imageUrl)}

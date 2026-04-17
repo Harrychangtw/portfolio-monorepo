@@ -79,23 +79,16 @@ export default function NodePreviewCard({
       }}
     >
       <div className="w-[280px] bg-card border border-border shadow-xl overflow-hidden">
-        {/* Image-only preview for image/video nodes */}
+        {/* Image-only preview for image/video nodes — no caption */}
         {(isImage || isVideo) && hasImage ? (
-          <>
-            <ImageContainer
-              src={imageSrc}
-              alt={node.title}
-              aspectRatio={1.5}
-              noInsetPadding={false}
-              quality={60}
-              sizes="280px"
-            />
-            <div className="px-3 py-1.5">
-              <p className="font-body text-sm text-foreground truncate">
-                {node.title}
-              </p>
-            </div>
-          </>
+          <ImageContainer
+            src={imageSrc}
+            alt={node.title}
+            aspectRatio={1.5}
+            noInsetPadding={false}
+            quality={60}
+            sizes="280px"
+          />
         ) : (
           <>
             {/* 3:2 image using ImageContainer */}
@@ -132,14 +125,21 @@ export default function NodePreviewCard({
               </div>
 
               {/* Title */}
-              <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-2">
+              <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-4">
                 {node.nodeType === "section" && node.heading
                   ? node.heading
                   : node.title}
               </h3>
 
+              {/* TL;DR */}
+              {node.tldr && (
+                <p className="text-xs font-body text-primary/70 italic leading-snug">
+                  {node.tldr}
+                </p>
+              )}
+
               {/* Description / Snippet */}
-              {(node.description || node.snippet) && (
+              {!node.tldr && (node.description || node.snippet) && (
                 <p className="text-xs text-secondary leading-relaxed line-clamp-2">
                   {node.description || node.snippet}
                 </p>

@@ -154,7 +154,7 @@ export default function GraphNextUp({
       data: {
         slug: node.slug,
         title: node.title,
-        category: node.description || "",
+        category: node.tldr || node.description || "",
         imageUrl: normalizeImageUrl(node.imageUrl),
         // Hub nodes link to their own route directly (e.g. /blog, /gallery)
         href: isHub ? node.url : undefined,
@@ -175,7 +175,7 @@ export default function GraphNextUp({
         data: {
           slug: node.slug,
           title: node.title,
-          category: node.description || "",
+          category: node.tldr || node.description || "",
           imageUrl: normalizeImageUrl(node.imageUrl),
           href: isHub ? node.url : undefined,
         },

@@ -873,6 +873,12 @@ export default function GraphCanvas({
           // Focus on the nearest node if it changed
           if (closest.id !== currentCenterId) {
             centerNodeRef.current = closest.id;
+            // If a node was previously tapped/focused, unfocus it when the
+            // crosshair locks onto a different node.
+            if (hoveredRef.current && hoveredRef.current.id !== closest.id) {
+              hoveredRef.current = null;
+              onNodeHover(null);
+            }
             onCenterNodeChange(closest);
             needsRenderRef.current = true;
           }

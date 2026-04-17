@@ -7,6 +7,7 @@ export interface GraphNode {
   title: string;
   snippet: string;
   description?: string;
+  tldr?: string;
   nodeType: NodeType;
   sourceType: SourceType;
   sourceSlug: string;

@@ -17,6 +17,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "LEGO fan mounts prove the value of DIY hardware for ML learning",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -36,6 +37,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "用樂高輪胎與積木為電腦零件DIY出高效風扇架",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -55,6 +57,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "Turning exclusion into creation by building a personal website through imitation",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -74,6 +77,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "因病錯失登山而架站，以模仿起步建構獨特網路角落",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -93,6 +97,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "Monthly blog sharing authentic, raw thoughts on technology, culture, and life",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -112,6 +117,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "承諾每月分享技術與社會的真實思考",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -131,6 +137,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "Embrace life’s meaningless struggle by persisting despite inevitable failure",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -150,6 +157,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "擁抱荒謬的推石過程，讓思想在行動中重生",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -168,6 +176,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "Affinity V3 is now free and unified, but corporate takeover fears remain",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -186,6 +195,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "Affinity V3 雖免費好用，卻潛藏 Canva 商業轉型與訂閱隱憂",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -205,6 +215,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "Embracing the Fuji X-Pro1’s obsolete flaws for more intentional, human photography",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -224,6 +235,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "擁抱 X-Pro1 的缺陷，在限制中找回攝影初心",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -242,6 +254,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "Both films explore loving family through intentional distance and inevitable absence",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -260,6 +273,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "透過距離與缺席，探討愛中難以跨越的隔閡與父女傷口",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -279,6 +293,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -298,6 +313,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "專注新興領域大型語言模型安全，以學術論文與實作力錄取臺大資工",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -316,6 +332,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "Personal collection of weirdly endearing, unhinged plushies and their sentimental backstories",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -334,6 +351,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "從醜萌玩偶的靈魂美，看見生命中的溫暖與混亂",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -352,6 +370,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "Truman exits his artificial world; Caden is consumed by his own construction",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -370,6 +389,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "楚門走出他人建構的舞台，卡登則受困於自我執念的廢墟",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -389,6 +409,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-en",
+      "tldr": "An unjustifiable, screenless Leica purchase prioritizing present experience over rational long-term investment",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -408,6 +429,7 @@
       ],
       "heading": null,
       "parentId": "hub-post-zh-TW",
+      "tldr": "捨棄規格與理性，以極致純粹擁抱在場的快門瞬間",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -423,6 +445,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Class 2026 won first place reinterpreting Ming-Qing history through musical drama",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -438,6 +461,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "十愛《亂世殘陽》奪冠，炫技影片完美紀錄演出幕後",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -453,6 +477,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Award-winning hybrid RAG school chatbot built with SQLite and FastAPI",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -468,6 +493,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "自研 RAG 聊天機器人優化校務查詢，榮獲 GenAI Stars 特優",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -483,6 +509,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Automated Tixcraft bot using Selenium and CNN to bypass CAPTCHAs fast",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -498,6 +525,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "結合 CNN 辨識驗證碼的拓元全自動搶票機器人",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -513,6 +541,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Refining robotics engineering through iterative design and stabilizing autonomous programming failures",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -528,6 +557,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "從初學基礎邁向 PROS 模組化開發與 PID 控制的成長歷程",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -543,6 +573,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Student-led 11th-grade play exploring love through three train-themed moral dilemmas",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -558,6 +589,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "學生主導英文劇，透過三段故事探討愛、信任與誠實",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -573,6 +605,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Short educational video explaining LLM jailbreak attacks and defense strategies",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -588,6 +621,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "製作 AAAI 獲獎短片，科普大語言模型攻防技術",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -603,6 +637,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Author details his experience designing a keynote on RAG for SITCON 2025",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -618,6 +653,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "作者在 SITCON 分享 RAG 概念與開發實務心得",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -633,6 +669,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Student-led \"Boundless Voices\" charity concert benefitting Mackay Memorial Hospital via musical theater",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -648,12 +685,13 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "透過設計與影像，傳達身障音樂家的生命力量",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
       "id": "project-2025_04_12_portfolio-en-file",
       "title": "Portfolio Website",
-      "snippet": "A dual-domain portfolio built on a Turborepo monorepo with Next.js, featuring a file-based CMS and shared UI components.",
+      "snippet": "A dual-domain portfolio built on a Turborepo monorepo with Next.js, featuring a file-based CMS, an Obsidian-style knowledge graph, and shared UI compo...",
       "nodeType": "file",
       "sourceType": "project",
       "sourceSlug": "2025_04_12_portfolio",
@@ -663,12 +701,13 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Turborepo-powered Next.js monorepo serving multiple domains via a markdown-based system",
       "imageUrl": "images/optimized/projects/2025_04_12_portfolio_design/titlecard.webp"
     },
     {
       "id": "project-2025_04_12_portfolio-zh-TW-file",
       "title": "個人網站",
-      "snippet": "一個基於 Turborepo monorepo 架構的雙網域作品集，採用 Next.js 打造，並整合了檔案式 CMS 與共享元件庫。",
+      "snippet": "一個基於 Turborepo monorepo 架構的雙網域作品集，採用 Next.js 打造，並整合了檔案式 CMS、Obsidian 風格知識圖譜與共享元件庫。",
       "nodeType": "file",
       "sourceType": "project",
       "sourceSlug": "2025_04_12_portfolio",
@@ -678,6 +717,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "多網域 monorepo 架構，整合 Markdown 與自動化媒體優效能",
       "imageUrl": "images/optimized/projects/2025_04_12_portfolio_design/titlecard.webp"
     },
     {
@@ -693,6 +733,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "PATCH: First large-scale safety dataset for Traditional Chinese adversarial evaluation",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -708,6 +749,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "PATCH：首個大規模繁體中文對抗性安全評估資料集",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -723,6 +765,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Middle school start led to high school success and top national rankings",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -738,6 +781,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "從國中起步磨練，終以 FHDO 全勝冠軍圓滿收官",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -753,6 +797,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Scalable, training-free LLM safety system using retrieval and dynamic perplexity analysis",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -768,6 +813,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "無需訓練、可快速擴展的高效能 LLM 輸入安全過濾系統",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -783,6 +829,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-en",
+      "tldr": "Securing LLMs by monitoring internal Attention Heads to detect prompt injections",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -798,6 +845,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
+      "tldr": "SITCON 2026：深入模型注意力機制，防禦 Prompt Injection 注入攻擊",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -815,6 +863,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow",
       "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
     },
     {
@@ -832,6 +881,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "以影像切片，拼湊東京的光影詩意",
       "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
     },
     {
@@ -849,6 +899,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Vibrant red details reveal profound beauty within ordinary urban moments",
       "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0234.webp"
     },
     {
@@ -866,6 +917,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "頹圮日常中的一抹紅，是生命最誠實的出口",
       "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0234.webp"
     },
     {
@@ -883,6 +935,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Two silhouettes briefly converge on a bridge during a golden dusk",
       "imageUrl": "images/optimized/gallery/2023_08_10_intersection/DSCF0009.webp"
     },
     {
@@ -900,6 +953,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "夕陽下巴士窗外的偶然相遇",
       "imageUrl": "images/optimized/gallery/2023_08_10_intersection/DSCF0009.webp"
     },
     {
@@ -917,6 +971,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR",
       "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
     },
     {
@@ -934,6 +989,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "於城市明暗交疊處，瞥見平凡真實的風景",
       "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
     },
     {
@@ -951,6 +1007,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature",
       "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
     },
     {
@@ -968,6 +1025,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "覺知自身如塵，於宏大中獲自由",
       "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
     },
     {
@@ -986,6 +1044,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Love and shared moments guide children through life’s vast uncertainty",
       "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
     },
     {
@@ -1004,6 +1063,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "父愛如粼粼光影，在陪伴中指引孩子未來路途",
       "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
     },
     {
@@ -1021,6 +1081,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Students walk home as long shadows narrate their journey of growing up",
       "imageUrl": "images/optimized/gallery/2023_10_12_lessons_from_the_light/DSCF0004.webp"
     },
     {
@@ -1038,6 +1099,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "師徒影隨，伴餘暉共赴成長之旅",
       "imageUrl": "images/optimized/gallery/2023_10_12_lessons_from_the_light/DSCF0004.webp"
     },
     {
@@ -1056,6 +1118,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past",
       "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
     },
     {
@@ -1074,6 +1137,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "落日餘暉下對鏡花水月的追懷",
       "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
     },
     {
@@ -1092,6 +1156,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Lone fisherman's quiet defiance against the vast, indifferent ocean deep",
       "imageUrl": "images/optimized/gallery/2023_12_30_against_the_unknown/154BA3D2-BF8E-4723-B427-E4ACB33B14A1-8577-000006A57CC6F050.webp"
     },
     {
@@ -1110,6 +1175,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "垂釣深淵，以孤獨的峙立證存在",
       "imageUrl": "images/optimized/gallery/2023_12_30_against_the_unknown/154BA3D2-BF8E-4723-B427-E4ACB33B14A1-8577-000006A57CC6F050.webp"
     },
     {
@@ -1128,6 +1194,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Taipei's tower pierces amber clouds above a dreaming, glittering city",
       "imageUrl": "images/optimized/gallery/2023_12_30_sky_above/DSCF0191.webp"
     },
     {
@@ -1146,6 +1213,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "台北如雲端孤城，燈火宛若夢境",
       "imageUrl": "images/optimized/gallery/2023_12_30_sky_above/DSCF0191.webp"
     },
     {
@@ -1164,6 +1232,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Journey through mountains to find personal peace and your own summit",
       "imageUrl": "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp"
     },
     {
@@ -1181,6 +1250,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "俯仰天地山路間，尋覓心靈歸宿",
       "imageUrl": "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp"
     },
     {
@@ -1198,6 +1268,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness",
       "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
     },
     {
@@ -1215,6 +1286,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "點燃凡塵願景，匯聚信仰星海",
       "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
     },
     {
@@ -1232,6 +1304,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Finding life through moments captured in Tainan and Taichung landscapes",
       "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
     },
     {
@@ -1249,6 +1322,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "用攝影捕捉瞬間，活出心之所向",
       "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
     },
     {
@@ -1266,6 +1340,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Fleeting urban memories dissolving like raindrops in the city grey",
       "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
     },
     {
@@ -1283,6 +1358,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "雨中燈塔低語，港城承載如淚回憶",
       "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
     },
     {
@@ -1300,6 +1376,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Embrace intentional stillness and space to find meaning amidst life's noise",
       "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/Image0113.webp"
     },
     {
@@ -1317,12 +1394,13 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "繁囂中為心靈留白，靜觀靈魂甦醒再行",
       "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/Image0113.webp"
     },
     {
       "id": "gallery-2026-us-trip-en-file",
       "title": "No Need to Cohere",
-      "snippet": "Maybe coherence was never the point.  <!-- New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five met...",
+      "snippet": "<!-- Maybe coherence was never the point.   New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five me...",
       "nodeType": "file",
       "sourceType": "gallery",
       "sourceSlug": "2026-us-trip",
@@ -1334,6 +1412,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Accepting life’s unresolved contradictions and presence without needing coherence",
       "imageUrl": "images/optimized/gallery/2026-us-trip/L1001775.webp"
     },
     {
@@ -1351,6 +1430,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "擁抱生命矛盾，與未和解的自己共存",
       "imageUrl": "images/optimized/gallery/2026-us-trip/L1001775.webp"
     },
     {
@@ -1368,6 +1448,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Capturing fleeting, everyday intersections of modern life and ancient Italian history",
       "imageUrl": "images/optimized/gallery/2026-italy-city/L1000768.webp"
     },
     {
@@ -1385,6 +1466,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "穿梭義大利古今，紀錄時光縫隙中的溫柔間奏",
       "imageUrl": "images/optimized/gallery/2026-italy-city/L1000768.webp"
     },
     {
@@ -1403,6 +1485,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "A journey through unfinished winter tales focused on beginnings over endings",
       "imageUrl": "images/optimized/gallery/2026-italy-mountain/L1000213.webp"
     },
     {
@@ -1420,6 +1503,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "雪中漫旅如斷篇小說，重起頭而不求終點",
       "imageUrl": "images/optimized/gallery/2026-italy-mountain/L1000213.webp"
     },
     {
@@ -1437,6 +1521,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-en",
+      "tldr": "Photographs capturing quiet, unscripted moments in the margins of travel",
       "imageUrl": "images/optimized/gallery/2026-italy-town/L1000419.webp"
     },
     {
@@ -1454,6 +1539,7 @@
       ],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
+      "tldr": "旅程中的日常片羽，是點亮記憶的閒章",
       "imageUrl": "images/optimized/gallery/2026-italy-town/L1000419.webp"
     },
     {
@@ -1473,6 +1559,7 @@
       ],
       "heading": "The Coincidence",
       "parentId": "post-10-lego-mount-en-file",
+      "tldr": "Lego baseplates serendipitously fit the FormD T1's thermal needs",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1511,6 +1598,7 @@
       ],
       "heading": "The Machine That Taught Me",
       "parentId": "post-10-lego-mount-en-sec-0",
+      "tldr": "Homegrown hardware turned an ML tool into a Linux playground",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1530,6 +1618,7 @@
       ],
       "heading": "Where Heat Goes to Stay",
       "parentId": "post-10-lego-mount-en-sec-0",
+      "tldr": "Poor ventilation in FormD T1 causes dangerous GPU heat buildup",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1549,6 +1638,7 @@
       ],
       "heading": "The Rubber Band Delusion",
       "parentId": "post-10-lego-mount-en-sec-0",
+      "tldr": "Rubber bands amplified fan vibration instead of damping it",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1568,6 +1658,7 @@
       ],
       "heading": "What Actually Worked",
       "parentId": "post-10-lego-mount-en-sec-0",
+      "tldr": "LEGO tires wedge between fans, dropping GPU temps by 19°C",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1587,6 +1678,7 @@
       ],
       "heading": "The Accidental Platform",
       "parentId": "post-10-lego-mount-en-sec-0",
+      "tldr": "LEGO fan mount evolved into router and watch charging station",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1606,6 +1698,7 @@
       ],
       "heading": "Other Bricks, Other Problems",
       "parentId": "post-10-lego-mount-en-sec-0",
+      "tldr": "Choosing LEGO’s visible construction over 3D printing’s clean finish",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1625,6 +1718,7 @@
       ],
       "heading": "One Millimeter",
       "parentId": "post-10-lego-mount-en-sec-0",
+      "tldr": "Lego is a valid, functional solution for adult engineering problems",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1644,6 +1738,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-10-lego-mount-en-file",
+      "tldr": "Credits for Chardin’s art, FormD T1, and Technic LEGO parts",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1663,6 +1758,7 @@
       ],
       "heading": "巧合",
       "parentId": "post-10-lego-mount-zh-TW-file",
+      "tldr": "用樂高輪胎與寬度巧合，打造高效散熱風扇架",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1701,6 +1797,7 @@
       ],
       "heading": "啟蒙我的那台機器",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
+      "tldr": "組裝伺服器讓硬體實踐超越工具成為遊樂場",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1720,6 +1817,7 @@
       ],
       "heading": "熱能滯留之處",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
+      "tldr": "FormD T1 底部積熱，線材與底板燙手",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1739,6 +1837,7 @@
       ],
       "heading": "橡皮筋妄想",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
+      "tldr": "用積木與橡皮筋避震失敗，反致共振噪音",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1758,6 +1857,7 @@
       ],
       "heading": "真正有效的方法",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
+      "tldr": "用樂高輪胎夾住風扇，讓顯卡降溫近 20 度",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1777,6 +1877,7 @@
       ],
       "heading": "意外的平台",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
+      "tldr": "樂高風扇架擴充成路由器與充電站",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1796,6 +1897,7 @@
       ],
       "heading": "其他積木，其他問題",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
+      "tldr": "不計較列印美學，單純享受積木組裝樂趣",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1815,6 +1917,7 @@
       ],
       "heading": "一毫米",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
+      "tldr": "用樂高解決成人問題，守住那一毫米的童心",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1834,6 +1937,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-10-lego-mount-zh-TW-file",
+      "tldr": "感謝封面積木男孩、極致機殼零件與樂高解法",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -1853,6 +1957,7 @@
       ],
       "heading": "The Mountain I Didn't Climb",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "Instead of climbing, a health-bound student built their first website",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -1872,6 +1977,7 @@
       ],
       "heading": "The Theft",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "Started by imitating Joseph’s site before building original features",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -1891,6 +1997,7 @@
       ],
       "heading": "What Changed, What Stayed",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "Technical layers and fonts evolved, but intentional design remains unfinished",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -1910,6 +2017,7 @@
       ],
       "heading": "Before I Joined the Conversation",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "His website builds credibility and identity before he introduces himself",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -1929,6 +2037,7 @@
       ],
       "heading": "The Quiet Rebellion",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "Redefining personal sites by rewarding attention over algorithmic trends",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -1948,6 +2057,7 @@
       ],
       "heading": "Why You Should Have One",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "Own your content to escape algorithms and platform tenancy",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -1967,6 +2077,7 @@
       ],
       "heading": "For Those Who Want to Try",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "Pick a tool, start naively, and learn by doing",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -1986,6 +2097,7 @@
       ],
       "heading": "The Gap That Remained",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "Traded a missed mountain trip for personal creative growth",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2005,6 +2117,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-11-portfolio-en-file",
+      "tldr": "Credits Spitzweg art, Zhang’s design, and open-source tech stack",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2024,6 +2137,7 @@
       ],
       "heading": "我沒爬的那座山",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "因病缺席登山，轉而埋頭自修建成網站",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2043,6 +2157,7 @@
       ],
       "heading": "偷竊",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "從借鑒模仿起步，在改良技術中長出原創意識",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2062,6 +2177,7 @@
       ],
       "heading": "改變與留下的",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "技術演進與設計留白，成就「未完成」的數位實體",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2081,6 +2197,7 @@
       ],
       "heading": "加入對話之前",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "網站先替我發聲，將面試轉化為對話",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2100,6 +2217,7 @@
       ],
       "heading": "靜靜的反叛",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "以篩選與留白，抵抗速食網路的自我實踐",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2119,6 +2237,7 @@
       ],
       "heading": "為什麼你該擁有一個",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "自有網站非租賃，掌握內容主權與心靈寧靜",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2138,6 +2257,7 @@
       ],
       "heading": "給想嘗試的人",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "工具次要，放下焦慮直接動手開始寫",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2157,6 +2277,7 @@
       ],
       "heading": "留下的空缺",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "錯過登山羈絆，卻在孤獨中築起自我天地",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2176,6 +2297,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-11-portfolio-zh-TW-file",
+      "tldr": "致謝封面名畫、版面設計靈感與技術工具",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
@@ -2195,6 +2317,7 @@
       ],
       "heading": "Finding the Signal in the Noise",
       "parentId": "post-2025_12_12_blog_launch-en-file",
+      "tldr": "Sharing authentic, monthly thoughts on tech, culture, and experience",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2233,6 +2356,7 @@
       ],
       "heading": "What You Can Expect",
       "parentId": "post-2025_12_12_blog_launch-en-sec-0",
+      "tldr": "Tech, AI, cultural critiques, retrospectives, and societal commentary",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2252,6 +2376,7 @@
       ],
       "heading": "My Commitment",
       "parentId": "post-2025_12_12_blog_launch-en-sec-0",
+      "tldr": "Authentic, monthly posts featuring original thoughts and zero AI filler",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2271,6 +2396,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_12_blog_launch-en-file",
+      "tldr": "Credits: Title image is Johannes Vermeer’s *The Astronomer*",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2290,6 +2416,7 @@
       ],
       "heading": "在雜音中尋找訊號",
       "parentId": "post-2025_12_12_blog_launch-zh-TW-file",
+      "tldr": "透過公開思考與原創紀實，沉澱雜音見真章",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2328,6 +2455,7 @@
       ],
       "heading": "你可以期待的主題",
       "parentId": "post-2025_12_12_blog_launch-zh-TW-sec-0",
+      "tldr": "科技AI、文藝評論、經驗反思與社會觀察",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2347,6 +2475,7 @@
       ],
       "heading": "我的承諾",
       "parentId": "post-2025_12_12_blog_launch-zh-TW-sec-0",
+      "tldr": "每月更新、堅持真實思考與原創內容",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2366,6 +2495,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-2025_12_12_blog_launch-zh-TW-file",
+      "tldr": "致謝封面照引用自維梅爾《天文學家》",
       "imageUrl": "images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp"
     },
     {
@@ -2385,6 +2515,7 @@
       ],
       "heading": "One Must Imagine Sisyphus Happy",
       "parentId": "post-2025_12_13_sisyphus-en-file",
+      "tldr": "Embrace the absurd struggle by finding meaning in persistence",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2423,6 +2554,7 @@
       ],
       "heading": "The Absurd, Revisited",
       "parentId": "post-2025_12_13_sisyphus-en-sec-0",
+      "tldr": "Defy meaninglessness by persisting consciously within the absurd tension",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2442,6 +2574,7 @@
       ],
       "heading": "Why This Book, Why Now",
       "parentId": "post-2025_12_13_sisyphus-en-sec-0",
+      "tldr": "Reading resists shortcuts, forcing meaningful presence over shallow summaries",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2461,6 +2594,7 @@
       ],
       "heading": "The Struggle Itself",
       "parentId": "post-2025_12_13_sisyphus-en-sec-0",
+      "tldr": "Finding fulfillment in the climb despite inevitable failure",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2480,6 +2614,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_13_sisyphus-en-file",
+      "tldr": "Credits Millet's *Man with a Hoe* for the title image",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2499,6 +2634,7 @@
       ],
       "heading": "我們必須想像薛西弗斯是快樂的",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-file",
+      "tldr": "正視荒謬並持續推石，在堅持中獲得心靈平實",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2537,6 +2673,7 @@
       ],
       "heading": "再訪荒謬",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-sec-0",
+      "tldr": "清醒活在生命的荒謬裂縫中",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2556,6 +2693,7 @@
       ],
       "heading": "為什麼是這本書，為什麼是現在",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-sec-0",
+      "tldr": "以閱讀對抗速食，重拾荒謬的體驗過程",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2575,6 +2713,7 @@
       ],
       "heading": "推石上山本身",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-sec-0",
+      "tldr": "推石奮鬥本身即能填滿心靈",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2594,6 +2733,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-file",
+      "tldr": "致謝封面選用米勒畫作《扶鋤者》",
       "imageUrl": "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
     },
     {
@@ -2612,6 +2752,7 @@
       ],
       "heading": "The Adobe Refugee's Dilemma",
       "parentId": "post-2025_12_14_affinity-en-file",
+      "tldr": "Affinity V3 is free, unified, and great—yet still unsettling",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2648,6 +2789,7 @@
       ],
       "heading": "Wait, What?",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
+      "tldr": "Affinity V3 is now free and merged, yet concerning",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2666,6 +2808,7 @@
       ],
       "heading": "The Good: 45 Days In",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
+      "tldr": "Fast, unified workflow with great new selection and glitch tools",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2684,6 +2827,7 @@
       ],
       "heading": "The Less Good: Performance and Polish",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
+      "tldr": "Frustrating lag and bugs weaken Affinity’s performance advantage",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2702,6 +2846,7 @@
       ],
       "heading": "The UI: A Minor Rant",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
+      "tldr": "Misses colorful V2 icons over new unified grey interface",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2720,6 +2865,7 @@
       ],
       "heading": "The Real Problem: Free Forever",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
+      "tldr": "Free forever\" is an unpredictable user-acquisition bait and switch",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2738,6 +2884,7 @@
       ],
       "heading": "What I Actually Want",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
+      "tldr": "Wants a $300 lifetime license over Canva's restrictive model",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2756,6 +2903,7 @@
       ],
       "heading": "The Climb Continues",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
+      "tldr": "Affinity works well but future subscription fears persist",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2774,6 +2922,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_14_affinity-en-file",
+      "tldr": "Credit for Tiepolo’s Trojan Horse title image",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2792,6 +2941,7 @@
       ],
       "heading": "Adobe 難民的兩難",
       "parentId": "post-2025_12_14_affinity-zh-TW-file",
+      "tldr": "不信任「永久免費」是最大的恐懼",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2828,6 +2978,7 @@
       ],
       "heading": "蛤，什麼？",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
+      "tldr": "Canva 推出永久免費的 Affinity V3",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2846,6 +2997,7 @@
       ],
       "heading": "優點：使用 45 天後",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
+      "tldr": "介面統一降摩擦，功能強大且上癮",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2864,6 +3016,7 @@
       ],
       "heading": "缺點：效能與細節",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
+      "tldr": "M1 Max 運行流暢度不佳，效能優勢逐漸消逝",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2882,6 +3035,7 @@
       ],
       "heading": "介面：一個小小的抱怨",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
+      "tldr": "偏好舊版色彩鮮明的介面，不愛新版單調灰色歸納",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2900,6 +3054,7 @@
       ],
       "heading": "真正的問題：永久免費",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
+      "tldr": "懷疑永久免費，憂心變質不可控",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2918,6 +3073,7 @@
       ],
       "heading": "我真正想要的",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
+      "tldr": "渴望終身授權，擔憂 Canva 控制條款",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2936,6 +3092,7 @@
       ],
       "heading": "攀登繼續",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
+      "tldr": "好用但難逃收費輪迴，保留舊版以防萬一",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2954,6 +3111,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-2025_12_14_affinity-zh-TW-file",
+      "tldr": "致謝封面圖 Tiepolo 的特洛伊木馬畫作",
       "imageUrl": "images/optimized/blogs/2025_12_14_affinity/titlecard.webp"
     },
     {
@@ -2973,6 +3131,7 @@
       ],
       "heading": "The Compulsive Purchase",
       "parentId": "post-2025_12_19_xpro1-en-file",
+      "tldr": "Influenced by GxAce, author buys flawed, \"human\" X-Pro1 over modern gear",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3011,6 +3170,7 @@
       ],
       "heading": "The Shackles I Dance In",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
+      "tldr": "Technical limitations demand intentionality and turn obstacles into creative mastery",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3030,6 +3190,7 @@
       ],
       "heading": "The Hybrid Viewfinder",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
+      "tldr": "The hybrid viewfinder prioritizes reality over processed digital previews",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3049,6 +3210,7 @@
       ],
       "heading": "The Colors",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
+      "tldr": "Original X-Trans sensor provides soulful, nostalgic, and organic colors",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3068,6 +3230,7 @@
       ],
       "heading": "The Slowness as Feature",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
+      "tldr": "Friction and deliberate slowness create more meaningful photographs",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3087,6 +3250,7 @@
       ],
       "heading": "Built to Last",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
+      "tldr": "Durable magnesium build outperforming modern cameras decade later",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3106,6 +3270,7 @@
       ],
       "heading": "The Point",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
+      "tldr": "Flaws and limitations spark creativity where technical perfection fails",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3125,6 +3290,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_19_xpro1-en-file",
+      "tldr": "Credits Gerard ter Borch art, GxAce's video, and Linscam Taipei",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3144,6 +3310,7 @@
       ],
       "heading": "衝動購物",
       "parentId": "post-2025_12_19_xpro1-zh-TW-file",
+      "tldr": "受影片推坑購入老機，在限制中重拾攝影純粹與慢活",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3182,6 +3349,7 @@
       ],
       "heading": "在枷鎖裡跳舞",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "tldr": "限制磨練技術，讓快門更有重量",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3201,6 +3369,7 @@
       ],
       "heading": "混合式觀景窗",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "tldr": "光學觀景窗連結現實與快門儀式感",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3220,6 +3389,7 @@
       ],
       "heading": "色彩",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "tldr": "初代底片模擬具通透生命力",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3239,6 +3409,7 @@
       ],
       "heading": "慢，是一種功能",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "tldr": "慢速產生的摩擦力，賦予影像意義",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3258,6 +3429,7 @@
       ],
       "heading": "為耐用而生",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "tldr": "日本製鎂合金機身，跨越時代的耐用經典",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3277,6 +3449,7 @@
       ],
       "heading": "重點",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "tldr": "用缺陷與限制，將記錄轉化為觀察",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3296,6 +3469,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-2025_12_19_xpro1-zh-TW-file",
+      "tldr": "致謝封面畫作、GxAce 啟發與林相相機",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
     },
     {
@@ -3314,6 +3488,7 @@
       ],
       "heading": "The Films That Won't Leave",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-file",
+      "tldr": "Haunting films exploring love, absence, and the distance between people",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3350,6 +3525,7 @@
       ],
       "heading": "The Shape of Absence",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
+      "tldr": "Love expressed through departure, distance, and inevitable absence",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3368,6 +3544,7 @@
       ],
       "heading": "The Mirror and the Camcorder",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
+      "tldr": "Barriers like glass and cameras enable impossible, mediated intimacy",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3386,6 +3563,7 @@
       ],
       "heading": "\"Sometimes, to love someone, you gotta be a stranger\"",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
+      "tldr": "Love requires protective distance or tragic, inevitable absence",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3404,6 +3582,7 @@
       ],
       "heading": "What the Children See",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
+      "tldr": "Children reconstruct fractured fathers through memories, media, and fragments",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3422,6 +3601,7 @@
       ],
       "heading": "The Weight of Being Seen",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
+      "tldr": "Fathers flee vulnerability to avoid being truly known",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3440,6 +3620,7 @@
       ],
       "heading": "Why These Films Stay",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
+      "tldr": "Tragic fathers, lingering love, and the beauty of inevitable loss",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3458,6 +3639,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-file",
+      "tldr": "Credits for Munch artwork, film stills, and cited directors",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3476,6 +3658,7 @@
       ],
       "heading": "那些不曾離去的電影",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-file",
+      "tldr": "用距離與缺席，側寫父愛中無法觸及的傷口",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3512,6 +3695,7 @@
       ],
       "heading": "缺席的形狀",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
+      "tldr": "深愛轉化為轉身離開的正視與缺席",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3530,6 +3714,7 @@
       ],
       "heading": "鏡子與攝影機",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
+      "tldr": "透過媒介與時空的隔閡，實現不可能的親密凝視",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3548,6 +3733,7 @@
       ],
       "heading": "「有時候，愛一個人，你得以陌生人的身份自居」",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
+      "tldr": "疏離是為了保護，以陌生之名成全愛",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3566,6 +3752,7 @@
       ],
       "heading": "孩子們看見了什麼",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
+      "tldr": "孩子透過影像與直覺，重構父親缺席的生命碎塊",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3584,6 +3771,7 @@
       ],
       "heading": "被看穿的重量",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
+      "tldr": "父輩難承脆弱，被看穿即是離別之時",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3602,6 +3790,7 @@
       ],
       "heading": "為何這些電影揮之不去",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
+      "tldr": "電影映照缺席的愛與溫柔遺憾",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3620,6 +3809,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-file",
+      "tldr": "致謝文章封面圖、劇照及引言出處",
       "imageUrl": "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
     },
     {
@@ -3658,6 +3848,7 @@
       ],
       "heading": "Finding the Signal in the Noise",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
+      "tldr": "Top scorer documents non-traditional NTU path to guide future applicants",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3677,6 +3868,7 @@
       ],
       "heading": "Finding Gaps at the Feet of Giants",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
+      "tldr": "Avoided crowded competitions by focusing on niche LLM security",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3696,6 +3888,7 @@
       ],
       "heading": "480 Seconds in DerTien Hall",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
+      "tldr": "AI safety researcher and intern details high-stakes NTU interview experience",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3734,6 +3927,7 @@
       ],
       "heading": "Two Minutes of Self-Definition",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
+      "tldr": "AI security researcher, TMLR author, and campus RAG developer",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3753,6 +3947,7 @@
       ],
       "heading": "Architectural Debate on FORTRESS",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
+      "tldr": "Retrieving known attacks while using perplexity for evolving threats",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3772,6 +3967,7 @@
       ],
       "heading": "The AAAI Video and a Stumble",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
+      "tldr": "Explained AAAI educational video on language model security attacks",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3791,6 +3987,7 @@
       ],
       "heading": "On Independence and Guidance",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
+      "tldr": "Self-studied under Professor Tsai’s guidance with increasing research independence",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3810,6 +4007,7 @@
       ],
       "heading": "Examining PATCH and Data Generation",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
+      "tldr": "Adversarial data generation and fine-tuning improved model safety generalization",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3829,6 +4027,7 @@
       ],
       "heading": "The Blueprint for Next Steps",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
+      "tldr": "Discussed granular security classification and future course recommendations",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3848,6 +4047,7 @@
       ],
       "heading": "Your Lane, Your Definition",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
+      "tldr": "Define your unique value by carving your own niche",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3867,6 +4067,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
+      "tldr": "Grateful to mentors, colleagues, and family for unconventional NTU admission",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3886,6 +4087,7 @@
       ],
       "heading": "在雜音中尋找訊號",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
+      "tldr": "資安特選正取經驗分享，為追夢者指引方向",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3905,6 +4107,7 @@
       ],
       "heading": "在巨人的腳邊找縫隙",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
+      "tldr": "避開紅海競爭，開拓 AI 安全新領域",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3924,6 +4127,7 @@
       ],
       "heading": "德田館的 480 秒",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
+      "tldr": "口試聚焦 AI 安全研究與獨立開發能力",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3962,6 +4166,7 @@
       ],
       "heading": "兩分鐘的自我定義",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
+      "tldr": "首位發表 LLM 安全論文的資安特選生",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -3981,6 +4186,7 @@
       ],
       "heading": "關於 FORTRESS 的架構辯證",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
+      "tldr": "結合檢索與困惑度防禦攻擊，並規劃朝多模態發展",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4000,6 +4206,7 @@
       ],
       "heading": "AAAI 影片與失誤",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
+      "tldr": "結合剪輯專長分享 LLM 資安影片",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4019,6 +4226,7 @@
       ],
       "heading": "關於獨立性與指導",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
+      "tldr": "從受指導轉為獨立發想與撰寫論文",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4038,6 +4246,7 @@
       ],
       "heading": "PATCH 與數據生成的檢視",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
+      "tldr": "詳述 PATCH 數據生成架構及微調提升成效",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4057,6 +4266,7 @@
       ],
       "heading": "下一步的藍圖",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
+      "tldr": "研究細緻的 AI 安全分類與入學修課規劃",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4076,6 +4286,7 @@
       ],
       "heading": "你的賽道，你的定義",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
+      "tldr": "不模仿他人，深耕自我熱情開闢獨特賽道",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4095,6 +4306,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
+      "tldr": "感謝恩師、前輩及家人的支持與啟蒙",
       "imageUrl": "images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp"
     },
     {
@@ -4113,6 +4325,7 @@
       ],
       "heading": "Against Conventional Cuteness",
       "parentId": "post-2026_01_10_plushies-en-file",
+      "tldr": "Embracing weird, unhinged plushies over traditional cute toys",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4149,6 +4362,7 @@
       ],
       "heading": "Bloody Mary: The One That Got Away (Twice)",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
+      "tldr": "Lost Sigikid fly plush reunited via eBay find",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4167,6 +4381,7 @@
       ],
       "heading": "GuluGulu: The Hospital Unicorn",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
+      "tldr": "Hospitalized man permanently adopts girlfriend’s deranged spiral-eyed unicorn",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4185,6 +4400,7 @@
       ],
       "heading": "Taco Tuesday: The International Import",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
+      "tldr": "Pricey German dog plush with chaotic, unhinged energy",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4203,6 +4419,7 @@
       ],
       "heading": "The Jellycat Trio: Organized Chaos",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
+      "tldr": "Bewitched Jellycats vibing through an existential crisis",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4221,6 +4438,7 @@
       ],
       "heading": "Why These?",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
+      "tldr": "Unique chaos offers more character and connection than generic cuteness",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4239,6 +4457,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-2026_01_10_plushies-en-file",
+      "tldr": "Thanks to specific plush brands, helpful friends, and Edward Hicks",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4257,6 +4476,7 @@
       ],
       "heading": "拒絕千篇一律的可愛",
       "parentId": "post-2026_01_10_plushies-zh-TW-file",
+      "tldr": "不落俗套的怪，才值得被看見",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4293,6 +4513,7 @@
       ],
       "heading": "飛飛 (Bloody Mary)：兩度失而復得的蒼蠅",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
+      "tldr": "兩度失而復得的詭異蒼蠅玩偶",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4311,6 +4532,7 @@
       ],
       "heading": "咕嚕咕嚕：醫院裡初見面的獨角獸",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
+      "tldr": "氣胸住院獲贈的崩壞獨角獸",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4329,6 +4551,7 @@
       ],
       "heading": "Taco Tuesday：國際進口的狗",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
+      "tldr": "跨海買下眼神迷離的狼狽德國名犬",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4347,6 +4570,7 @@
       ],
       "heading": "Jellycat 三人組：有秩序的混亂",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
+      "tldr": "荒誕可愛卻厭世的療癒組合",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4365,6 +4589,7 @@
       ],
       "heading": "為什麼是這些？",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
+      "tldr": "不完美卻獨一無二的靈魂伴侶",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4383,6 +4608,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-2026_01_10_plushies-zh-TW-file",
+      "tldr": "感謝來源品牌、母親友人的救援與懂玩偶的朋友",
       "imageUrl": "images/optimized/blogs/2026_01_10_plushies/titlecard.webp"
     },
     {
@@ -4401,6 +4627,7 @@
       ],
       "heading": "The Door and the Cue",
       "parentId": "post-2026_02_10_synecdoche_truman-en-file",
+      "tldr": "Truman exits his artificial world; Caden becomes his own construction",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4437,6 +4664,7 @@
       ],
       "heading": "The Architecture of Control",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
+      "tldr": "Truman’s prison is external; Caden’s is self-constructed recursion",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4455,6 +4683,7 @@
       ],
       "heading": "Christ-Off and Cotard",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
+      "tldr": "Christof controls from above; Cotard retreats from within",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4473,6 +4702,7 @@
       ],
       "heading": "Escaping vs. Becoming",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
+      "tldr": "Truman escapes his stage; Caden is consumed by his",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4491,6 +4721,7 @@
       ],
       "heading": "The Director and the Directed",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
+      "tldr": "Truman escapes his creator; Caden is consumed by his creation",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4509,6 +4740,7 @@
       ],
       "heading": "The Audience Problem",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
+      "tldr": "Truman’s audience liberates him; Caden’s self-obsession excludes everyone",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4527,6 +4759,7 @@
       ],
       "heading": "The Door You're Standing In Front Of",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
+      "tldr": "Truman’s cinematic escape versus Caden’s internal, tragic entrapment",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4545,6 +4778,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-2026_02_10_synecdoche_truman-en-file",
+      "tldr": "Credits for *Las Meninas*, FILMGRAB, Weir, and Kaufman",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4563,6 +4797,7 @@
       ],
       "heading": "門與提示詞",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-file",
+      "tldr": "楚門走出他人的囚籠，凱登陷進自造的迷宮",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4599,6 +4834,7 @@
       ],
       "heading": "控制的建築學",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
+      "tldr": "楚門受困於他人的穹頂，凱登陷於自我的遞迴",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4617,6 +4853,7 @@
       ],
       "heading": "「基督」的缺席與「科塔爾」的妄想",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
+      "tldr": "偽神外在掌控與自我崩壞妄想",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4635,6 +4872,7 @@
       ],
       "heading": "逃離 vs. 成為",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
+      "tldr": "楚門逃離虛構，凱登卻受困舞台而終",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4653,6 +4891,7 @@
       ],
       "heading": "導演與被導演者",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
+      "tldr": "外控的反抗與內耗的迷失",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4671,6 +4910,7 @@
       ],
       "heading": "觀眾的問題",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
+      "tldr": "楚門有觀眾共謀，卡登僅與自我的虛無對話",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4689,6 +4929,7 @@
       ],
       "heading": "你正站在哪扇門前",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
+      "tldr": "楚門追求逃脫，凱登受困自我，你選哪扇門",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4707,6 +4948,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-file",
+      "tldr": "致謝封面名畫與兩部電影劇照引用",
       "imageUrl": "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
     },
     {
@@ -4726,6 +4968,7 @@
       ],
       "heading": "The Unjustifiable",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "Logic fails; I chose expensive, screenless tactile soul over specs",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4745,6 +4988,7 @@
       ],
       "heading": "The Elephant, Briefly",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "Bought luxury camera with gifted money; prioritized presence over \"later",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4764,6 +5008,7 @@
       ],
       "heading": "Milan, January 22nd",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "Spontaneous Milan purchase of an M11-D and silver lens",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4783,6 +5028,7 @@
       ],
       "heading": "The Logical Terminal",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "Pure rangefinder focusing and no screen enforce creative presence",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4802,6 +5048,7 @@
       ],
       "heading": "Learning to Trust",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "Removing displays forces presence, turning photography from optimization into intuition",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4821,6 +5068,7 @@
       ],
       "heading": "What Presence Actually Looks Like",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "No screen means experiencing moments instead of reviewing them",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4840,6 +5088,7 @@
       ],
       "heading": "What the Sensor Sees",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "60MP precision meets technical quirks and intentional imperfection",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4859,6 +5108,7 @@
       ],
       "heading": "The Commitment",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "Choosing unoptimized tools to force presence despite an AI-optimized world",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4878,6 +5128,7 @@
       ],
       "heading": "The Question I Can't Answer",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "An unjustifiable purchase defining who I hope to become",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4897,6 +5148,7 @@
       ],
       "heading": "The Collections",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "Three curated Italy galleries: snow, city streets, and small towns",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4916,6 +5168,7 @@
       ],
       "heading": "Acknowledgments",
       "parentId": "post-9_m11d-en-file",
+      "tldr": "Credits Caillebotte’s art, Justin, and Charlie for feedback",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4935,6 +5188,7 @@
       ],
       "heading": "無法辯護的選擇",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "捨棄理性規格，只為追求純粹手感的感性投資",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4954,6 +5208,7 @@
       ],
       "heading": "房間裡的大象，先說在前",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "收下贈款不待以後，以此重擔及時對焦人生",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4973,6 +5228,7 @@
       ],
       "heading": "米蘭，一月二十二日",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "意外購入M11-D，銀鏡搭配成就完美驚喜",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -4992,6 +5248,7 @@
       ],
       "heading": "邏輯的終點",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "除去螢幕與科技枷鎖，回歸純粹聯動測距體驗",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5011,6 +5268,7 @@
       ],
       "heading": "學會信任",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "放棄即時回饋，以信任與在場取代攝影優化",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5030,6 +5288,7 @@
       ],
       "heading": "在場，究竟是什麼模樣",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "捨棄螢幕與重播，用快門換取慢速在場的練習",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5049,6 +5308,7 @@
       ],
       "heading": "感光元件看見什麼",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "硬核性能與手感怪癖，回歸攝影不完美的純粹",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5068,6 +5328,7 @@
       ],
       "heading": "那份承諾",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "拒絕優化，用手動相機承諾慢下來去生活",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5087,6 +5348,7 @@
       ],
       "heading": "我無法回答的問題",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "無法以規格辯護，僅為值得成為的自己買單",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5106,6 +5368,7 @@
       ],
       "heading": "影像輯錄",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "義大利旅拍影像集：雪山、城市與小鎮光影",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5125,6 +5388,7 @@
       ],
       "heading": "致謝",
       "parentId": "post-9_m11d-zh-TW-file",
+      "tldr": "致敬匠人精神，感佩好友審閱草稿",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5140,6 +5404,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2024_08_19_classics_reimagined-en-file",
+      "tldr": "Class 2026 won first with a musical Chinese classic retelling",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5155,6 +5420,7 @@
       "tags": [],
       "heading": "Synopsis",
       "parentId": "project-2024_08_19_classics_reimagined-en-file",
+      "tldr": "Dynastic collapse triggered by complex love, betrayal, and tragic fate",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5170,6 +5436,7 @@
       "tags": [],
       "heading": "Curtain Call Video Production",
       "parentId": "project-2024_08_19_classics_reimagined-en-file",
+      "tldr": "Produced a flashy, rhythm-driven curtain call video using DaVinci Resolve",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5200,6 +5467,7 @@
       "tags": [],
       "heading": "Production Equipment",
       "parentId": "project-2024_08_19_classics_reimagined-en-sec-2",
+      "tldr": "Fujifilm X-T5, DJI stabilizer, and DaVinci Resolve editing tools",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5215,6 +5483,7 @@
       "tags": [],
       "heading": "Creative Process",
       "parentId": "project-2024_08_19_classics_reimagined-en-sec-2",
+      "tldr": "Rhythm-based filming and complex post-production using DaVinci Resolve Fusion",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5245,6 +5514,7 @@
       "tags": [],
       "heading": "Pre-production and Filming",
       "parentId": "project-2024_08_19_classics_reimagined-en-sec-2-2",
+      "tldr": "Rhythm-based planning and filming using DaVinci Resolve analysis",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5260,6 +5530,7 @@
       "tags": [],
       "heading": "Post-production",
       "parentId": "project-2024_08_19_classics_reimagined-en-sec-2-2",
+      "tldr": "DaVinci Resolve editing with complex Fusion transitions and sound layering",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5275,6 +5546,7 @@
       "tags": [],
       "heading": "Polaroid Photoshoot",
       "parentId": "project-2024_08_19_classics_reimagined-en-sec-2",
+      "tldr": "Personalized Polaroid photos with student messages intro the video",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5290,6 +5562,7 @@
       "tags": [],
       "heading": "Stills",
       "parentId": "project-2024_08_19_classics_reimagined-en-file",
+      "tldr": "Production photography capturing the reimagined theatrical performance",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5305,6 +5578,7 @@
       "tags": [],
       "heading": "Reflection",
       "parentId": "project-2024_08_19_classics_reimagined-en-file",
+      "tldr": "Documenting collaborative teamwork made the audience's applause truly rewarding",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5320,6 +5594,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2024_08_19_classics_reimagined-en-file",
+      "tldr": "Thanks to cast, crew, and students for the performance",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5335,6 +5610,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-file",
+      "tldr": "十一愛班重新詮釋經典，榮獲戲劇比賽第一名",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5350,6 +5626,7 @@
       "tags": [],
       "heading": "劇本概覽",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-file",
+      "tldr": "亂世下吳李陳的命運交錯與紅顏悲歌",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5365,6 +5642,7 @@
       "tags": [],
       "heading": "謝幕影片製作",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-file",
+      "tldr": "以高規器材與炫技剪輯，打造快節奏謝幕影片",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5395,6 +5673,7 @@
       "tags": [],
       "heading": "製作設備",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-sec-2",
+      "tldr": "使用富士相機、DJI穩定器及達芬奇剪輯",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5410,6 +5689,7 @@
       "tags": [],
       "heading": "製作思路",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-sec-2",
+      "tldr": "精準對點剪輯，搭配動態轉場與精緻調色",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5440,6 +5720,7 @@
       "tags": [],
       "heading": "事前準備及拍攝",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2",
+      "tldr": "分析音樂、規劃鏡頭並確保拍攝品質",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5455,6 +5736,7 @@
       "tags": [],
       "heading": "後期剪輯",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2",
+      "tldr": "DaVinci 剪輯與複雜 Fusion 轉場特效",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5470,6 +5752,7 @@
       "tags": [],
       "heading": "拍立得拍攝",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-sec-2",
+      "tldr": "手寫拍立得融入片頭增添溫度",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5485,6 +5768,7 @@
       "tags": [],
       "heading": "劇照",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-file",
+      "tldr": "《古韻今唱》演出精彩劇照特輯",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5500,6 +5784,7 @@
       "tags": [],
       "heading": "心得",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-file",
+      "tldr": "記錄見證團隊齊心，成果豐碩值得",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5515,6 +5800,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-file",
+      "tldr": "致謝參與演出的兩位導演、編劇及幕後夥伴",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -5530,6 +5816,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2024_09_23_chingshin_rag-en-file",
+      "tldr": "Award-winning RAG chatbot streamlining Chingshin Academy’s administrative information access",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5545,6 +5832,7 @@
       "tags": [],
       "heading": "Implementation Details",
       "parentId": "project-2024_09_23_chingshin_rag-en-file",
+      "tldr": "SQLite bge-embeddings hybrid search FastAPI OpenAI and Svelte frontend",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5575,6 +5863,7 @@
       "tags": [],
       "heading": "Database",
       "parentId": "project-2024_09_23_chingshin_rag-en-sec-1",
+      "tldr": "SQLite database using bge-small-zh-v1.5 embeddings and BeautifulSoup crawling",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5590,6 +5879,7 @@
       "tags": [],
       "heading": "Search Engine",
       "parentId": "project-2024_09_23_chingshin_rag-en-sec-1",
+      "tldr": "Hybrid BM25 and semantic search optimized with HNSWlib and NER",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5605,6 +5895,7 @@
       "tags": [],
       "heading": "API Module",
       "parentId": "project-2024_09_23_chingshin_rag-en-sec-1",
+      "tldr": "FastAPI with OpenAI streaming for high-performance responses",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5620,6 +5911,7 @@
       "tags": [],
       "heading": "Front-end",
       "parentId": "project-2024_09_23_chingshin_rag-en-sec-1",
+      "tldr": "Efficient Svelte front-end featuring an interactive drop-down menu",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5635,6 +5927,7 @@
       "tags": [],
       "heading": "Project Promotion",
       "parentId": "project-2024_09_23_chingshin_rag-en-file",
+      "tldr": "Created bilingual visual assets and an introductory demo video",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5665,6 +5958,7 @@
       "tags": [],
       "heading": "Presentation Design",
       "parentId": "project-2024_09_23_chingshin_rag-en-sec-2",
+      "tldr": "Custom typography-driven slides in Chinese and SDG-aligned English versions",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5680,6 +5974,7 @@
       "tags": [],
       "heading": "Video Design",
       "parentId": "project-2024_09_23_chingshin_rag-en-sec-2",
+      "tldr": "Introductory video showcasing Chingshin RAGi features and design philosophy",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5695,6 +5990,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2024_09_23_chingshin_rag-en-file",
+      "tldr": "Thanks to team members Chaney, Raymond, and mentors for support",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5710,6 +6006,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-file",
+      "tldr": "手寫 RAG 助校務，獲國科會 GenAI 特優",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5725,6 +6022,7 @@
       "tags": [],
       "heading": "實作細節",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-file",
+      "tldr": "SQLite混合搜尋、OpenAI API與Svelte開發實作",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5755,6 +6053,7 @@
       "tags": [],
       "heading": "資料庫",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-1",
+      "tldr": "SQLite 儲存 JSON，改用 bge-small 提升檢索效能",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5770,6 +6069,7 @@
       "tags": [],
       "heading": "搜尋引擎",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-1",
+      "tldr": "混合式搜尋輔以 NER 意圖辨識",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5785,6 +6085,7 @@
       "tags": [],
       "heading": "API 模組",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-1",
+      "tldr": "FastAPI 構建，由 Gemini 遷至 OpenAI 並支援串流",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5800,6 +6101,7 @@
       "tags": [],
       "heading": "前端",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-1",
+      "tldr": "使用 Svelte 輕量開發並優化下拉選單互動",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5815,6 +6117,7 @@
       "tags": [],
       "heading": "專案宣傳工作",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-file",
+      "tldr": "一手包辦中英簡報視覺與宣傳影片製作",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5845,6 +6148,7 @@
       "tags": [],
       "heading": "簡報設計",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
+      "tldr": "自建中英視覺語言，平衡黑宋字體與SDGs連結",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5860,6 +6164,7 @@
       "tags": [],
       "heading": "影片設計",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
+      "tldr": "製作競賽特製介紹影片，展示設計理念與功能",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5875,6 +6180,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-file",
+      "tldr": "感謝團隊、指導者信任及素材提供者",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -5890,6 +6196,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2024_10_04_proj_zephyr-en-file",
+      "tldr": "Autonomous Tixcraft bot using Selenium and CNN captcha solving",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -5905,6 +6212,7 @@
       "tags": [],
       "heading": "Implementation Details",
       "parentId": "project-2024_10_04_proj_zephyr-en-file",
+      "tldr": "CNN-based CAPTCHA solver refined through synthetic data and fine-tuning",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -5935,6 +6243,7 @@
       "tags": [],
       "heading": "Model Training",
       "parentId": "project-2024_10_04_proj_zephyr-en-sec-1",
+      "tldr": "Iterative CNN training using scraped data and manual error fine-tuning",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -5950,6 +6259,7 @@
       "tags": [],
       "heading": "Execution Flow",
       "parentId": "project-2024_10_04_proj_zephyr-en-sec-1",
+      "tldr": "Automated ticket-grabbing with JSON configuration and stability-focused simulation mechanisms",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -5965,6 +6275,7 @@
       "tags": [],
       "heading": "Disclaimer",
       "parentId": "project-2024_10_04_proj_zephyr-en-file",
+      "tldr": "Academic research only; developer disclaims all liability and usage requests",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -5980,6 +6291,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-file",
+      "tldr": "Selenium 搭配 CNN 自動破解验证碼的拓元搶票機器人",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -5995,6 +6307,7 @@
       "tags": [],
       "heading": "實作細節",
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-file",
+      "tldr": "CNN 辨識驗證碼，串接多執行緒自動搶票流程",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -6025,6 +6338,7 @@
       "tags": [],
       "heading": "模型訓練",
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
+      "tldr": "CNN 結合合成數據與錯題優化，極速辨識驗證碼",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -6040,6 +6354,7 @@
       "tags": [],
       "heading": "運行流程",
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
+      "tldr": "JSON驅動設定，結合驗證碼辨識與模擬真人的自動搶票",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -6055,6 +6370,7 @@
       "tags": [],
       "heading": "聲明",
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-file",
+      "tldr": "學術研究用，不供源碼、禁非法用途",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -6070,6 +6386,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-file",
+      "tldr": "Lead programmer’s two-year journey of iterative VEX robotics engineering",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6085,6 +6402,7 @@
       "tags": [],
       "heading": "2023-2024 Season - Over Under",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-file",
+      "tldr": "Newcomers focused on fundamentals, pneumatics, and basic control systems",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6115,6 +6433,7 @@
       "tags": [],
       "heading": "Mechanical Design & Challenges",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-sec-1",
+      "tldr": "First VRC H-drive robot featured catapult and pneumatic hanging mechanism",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6130,6 +6449,7 @@
       "tags": [],
       "heading": "The Programming Hurdle",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-sec-1",
+      "tldr": "Basic dead-reckoning proved unreliable, necessitating feedback controllers and consistency",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6145,6 +6465,7 @@
       "tags": [],
       "heading": "2024-2025 Season - High Stakes",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-file",
+      "tldr": "Advanced software, PROS migration, and precision engineering for High Stakes",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6175,6 +6496,7 @@
       "tags": [],
       "heading": "A New Programming Paradigm",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-sec-2",
+      "tldr": "Migrated to PROS with OOP, LemLib odometry, and Git versioning",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6190,6 +6512,7 @@
       "tags": [],
       "heading": "Mechanical Evolution",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-sec-2",
+      "tldr": "6-motor tank drive, counter-roller intake, and PID-controlled four-bar arm",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6205,6 +6528,7 @@
       "tags": [],
       "heading": "Reflection",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-file",
+      "tldr": "Engineering growth through technical rigor and persistent team collaboration",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6220,6 +6544,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2024_10_09_vrc_2813b_nova-en-file",
+      "tldr": "Gratitude to NOVA teammates, mentors, and coaches for engineering growth",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6235,6 +6560,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-file",
+      "tldr": "兩賽季 VEX 機器人研發與成長回顧",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6250,6 +6576,7 @@
       "tags": [],
       "heading": "2023-2024 賽季 - Over Under",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-file",
+      "tldr": "首賽季精進基礎功能，從經驗中體認穩定性的重要",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6280,6 +6607,7 @@
       "tags": [],
       "heading": "機械設計與挑戰",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-1",
+      "tldr": "首用氣動系統整合 H 型底盤，挑戰漏氣與耐用度",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6295,6 +6623,7 @@
       "tags": [],
       "heading": "程式開發的瓶頸",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-1",
+      "tldr": "硬寫指令導致誤差，改選 PID 追求穩定性",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6310,6 +6639,7 @@
       "tags": [],
       "heading": "2024-2025 賽季 - High Stakes",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-file",
+      "tldr": "導入 PROS 與穩定機械結構，實現精準自動化控制",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6340,6 +6670,7 @@
       "tags": [],
       "heading": "全新的程式開發模式",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-2",
+      "tldr": "轉用 PROS、物件導向、LemLib 定位及 Git 版本控制",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6355,6 +6686,7 @@
       "tags": [],
       "heading": "機械結構的演進",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-2",
+      "tldr": "六馬達底盤、雙滾輪進氣與四連桿PID手臂",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6370,6 +6702,7 @@
       "tags": [],
       "heading": "心得",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-file",
+      "tldr": "工程成長與團隊協作，磨練問題解決思維",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6385,6 +6718,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2024_10_09_vrc_2813b_nova-zh-TW-file",
+      "tldr": "感謝隊員努力及導師指導，促進團隊與個人成長",
       "imageUrl": "images/optimized/projects/2024_10_09_vrc_2813b_nova/titlecard.webp"
     },
     {
@@ -6400,6 +6734,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2025_01_03_powerplay-en-file",
+      "tldr": "Student-led science class drama exploring diverse stories of love",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6415,6 +6750,7 @@
       "tags": [],
       "heading": "Synopsis",
       "parentId": "project-2025_01_03_powerplay-en-file",
+      "tldr": "Three train-linked tales exploring friendship, trust, and honesty in love",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6445,6 +6781,7 @@
       "tags": [],
       "heading": "Act I: Friendship First",
       "parentId": "project-2025_01_03_powerplay-en-sec-1",
+      "tldr": "Ethan chooses friendship over romance after Allie rejects him",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6460,6 +6797,7 @@
       "tags": [],
       "heading": "Act II: Trust Me",
       "parentId": "project-2025_01_03_powerplay-en-sec-1",
+      "tldr": "Tom’s unfounded cheating suspicions nearly ruin his long-distance relationship",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6475,6 +6813,7 @@
       "tags": [],
       "heading": "Act III: Lie for Love",
       "parentId": "project-2025_01_03_powerplay-en-sec-1",
+      "tldr": "Angie fakes pregnancy to gain family acceptance for Chaney",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6490,6 +6829,7 @@
       "tags": [],
       "heading": "Ending",
       "parentId": "project-2025_01_03_powerplay-en-sec-1",
+      "tldr": "Conductor defines love as connection and hope at final destination",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6505,6 +6845,7 @@
       "tags": [],
       "heading": "Curtain Call Video Production",
       "parentId": "project-2025_01_03_powerplay-en-file",
+      "tldr": "Produced one-minute curtain call video and mentored classmate's edit",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6535,6 +6876,7 @@
       "tags": [],
       "heading": "Production Equipment",
       "parentId": "project-2025_01_03_powerplay-en-sec-2",
+      "tldr": "Fujifilm X-T5, Sigma lens, DJI stabilizer, and DaVinci Resolve software",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6550,6 +6892,7 @@
       "tags": [],
       "heading": "Pre-production and Filming",
       "parentId": "project-2025_01_03_powerplay-en-sec-2",
+      "tldr": "Rhythm-based shot planning and stabilized filming for a minute-long narrative",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6565,6 +6908,7 @@
       "tags": [],
       "heading": "Post-production",
       "parentId": "project-2025_01_03_powerplay-en-sec-2",
+      "tldr": "Refined Fusion 3D tracking, transitions, and spatial depth layering",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6595,6 +6939,7 @@
       "tags": [],
       "heading": "Opening Screen Pull-out Transition",
       "parentId": "project-2025_01_03_powerplay-en-sec-2-3",
+      "tldr": "Complex screen pull-out using planar tracking and 3D cameras",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6610,6 +6955,7 @@
       "tags": [],
       "heading": "Mid-section Floating Polaroids",
       "parentId": "project-2025_01_03_powerplay-en-sec-2-3",
+      "tldr": "Synced 3D floating Polaroids using Fusion’s Camera Tracker",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6625,6 +6971,7 @@
       "tags": [],
       "heading": "Ending Sequence",
       "parentId": "project-2025_01_03_powerplay-en-sec-2-3",
+      "tldr": "Optimized transitions, spatial depth, and reverse pull-out ending design",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6640,6 +6987,7 @@
       "tags": [],
       "heading": "Stills",
       "parentId": "project-2025_01_03_powerplay-en-file",
+      "tldr": "High-resolution photography gallery showcasing 2025 POWERPLAY visual highlights",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6655,6 +7003,7 @@
       "tags": [],
       "heading": "Reflection",
       "parentId": "project-2025_01_03_powerplay-en-file",
+      "tldr": "Ambitious production featuring motorized props, dynamic backdrops, and Fusion techniques",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6670,6 +7019,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2025_01_03_powerplay-en-file",
+      "tldr": "Thanks to students for scriptwriting, acting, and creative production",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6685,6 +7035,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2025_01_03_powerplay-zh-TW-file",
+      "tldr": "高二理科生自製，三段故事探討 LOVE 劇作",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6700,6 +7051,7 @@
       "tags": [],
       "heading": "劇本概覽",
       "parentId": "project-2025_01_03_powerplay-zh-TW-file",
+      "tldr": "列車長串連三段愛情的考驗與成長",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6730,6 +7082,7 @@
       "tags": [],
       "heading": "第一幕：友情至上 (Friendship First)",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-1",
+      "tldr": "Ethan告白遭拒後，體悟友情可貴並與Allie和解",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6745,6 +7098,7 @@
       "tags": [],
       "heading": "第二幕：相信我 (Trust Me)",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-1",
+      "tldr": "遙距誘發猜忌，見面澄清後承諾溝通和解",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6760,6 +7114,7 @@
       "tags": [],
       "heading": "第三幕：為愛說謊 (Lie for Love)",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-1",
+      "tldr": "假懷孕謊言化解阿嬤控制慾，家人終和解",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6775,6 +7130,7 @@
       "tags": [],
       "heading": "結局",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-1",
+      "tldr": "愛是基於信任與陪伴的希望連結",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6790,6 +7146,7 @@
       "tags": [],
       "heading": "謝幕影片製作",
       "parentId": "project-2025_01_03_powerplay-zh-TW-file",
+      "tldr": "運用特效與3D空間，打造快節奏謝幕短片",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6820,6 +7177,7 @@
       "tags": [],
       "heading": "製作設備",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2",
+      "tldr": "使用 X-T5、RS3 Mini 及 DaVinci 製作",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6835,6 +7193,7 @@
       "tags": [],
       "heading": "事前準備及拍攝",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2",
+      "tldr": "音樂分析、鏡頭規劃及反覆實拍",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6850,6 +7209,7 @@
       "tags": [],
       "heading": "後期剪輯",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2",
+      "tldr": "精修 Fusion 3D 空間追蹤與複雜遮罩轉場",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6880,6 +7240,7 @@
       "tags": [],
       "heading": "開頭的螢幕拉出轉場",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2-3",
+      "tldr": "進階螢幕拉出轉場，以 3D 運鏡追蹤合成",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6895,6 +7256,7 @@
       "tags": [],
       "heading": "中段的漂浮拍立得",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2-3",
+      "tldr": "整合 Fusion 追蹤技術實現隨節點律動的 3D 拍立得",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6910,6 +7272,7 @@
       "tags": [],
       "heading": "結尾段落",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2-3",
+      "tldr": "透過遮罩與音效優化轉場，打造結尾空間細節",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6925,6 +7288,7 @@
       "tags": [],
       "heading": "劇照",
       "parentId": "project-2025_01_03_powerplay-zh-TW-file",
+      "tldr": "2025 POWERPLAY 活動現場精彩劇照回顧",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6940,6 +7304,7 @@
       "tags": [],
       "heading": "心得",
       "parentId": "project-2025_01_03_powerplay-zh-TW-file",
+      "tldr": "電動火車與動態背板超吸睛，影音製作收穫豐",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6955,6 +7320,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2025_01_03_powerplay-zh-TW-file",
+      "tldr": "感謝全體成員，特別是Raymond等道具功臣與幕後花絮製作團隊",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -6970,6 +7336,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2025_01_05_aaai_video-en-file",
+      "tldr": "Competition entry exploring language model safety for AAAI 2025",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -6985,6 +7352,7 @@
       "tags": [],
       "heading": "Video Content",
       "parentId": "project-2025_01_05_aaai_video-en-file",
+      "tldr": "Explaining LLM jailbreak attacks and defenses via simple analogies",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7000,6 +7368,7 @@
       "tags": [],
       "heading": "Video Production",
       "parentId": "project-2025_01_05_aaai_video-en-file",
+      "tldr": "Filmed A-roll and used DaVinci Fusion for Emoji-styled motion graphics",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7015,6 +7384,7 @@
       "tags": [],
       "heading": "Reflection",
       "parentId": "project-2025_01_05_aaai_video-en-file",
+      "tldr": "Grew research communication skills through professional-grade motion graphics production",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7030,6 +7400,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2025_01_05_aaai_video-en-file",
+      "tldr": "Thanks to AK and Micro Volume for script and assets",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7045,6 +7416,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2025_01_05_aaai_video-zh-TW-file",
+      "tldr": "製作 AAAI 2025 大會 LLM 資安教學影片",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7060,6 +7432,7 @@
       "tags": [],
       "heading": "影片內容",
       "parentId": "project-2025_01_05_aaai_video-zh-TW-file",
+      "tldr": "淺析大語言模型越獄攻防與未來挑戰",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7075,6 +7448,7 @@
       "tags": [],
       "heading": "影片製作",
       "parentId": "project-2025_01_05_aaai_video-zh-TW-file",
+      "tldr": "達芬奇後期剪輯，動態設計結合 Emoji 獲獎",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7090,6 +7464,7 @@
       "tags": [],
       "heading": "心得",
       "parentId": "project-2025_01_05_aaai_video-zh-TW-file",
+      "tldr": "融合視覺敘事與科技安全，探索創作無限可能",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7105,6 +7480,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2025_01_05_aaai_video-zh-TW-file",
+      "tldr": "感謝 AK 建議及 Micro Volume 封面素材",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -7120,6 +7496,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2025_03_08_sitcon_keynote-en-file",
+      "tldr": "Turning a student RAG project into a SITCON keynote",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -7135,6 +7512,7 @@
       "tags": [],
       "heading": "Content Planning",
       "parentId": "project-2025_03_08_sitcon_keynote-en-file",
+      "tldr": "Structured talk via academic paper on hallucinations, RAG, and implementation",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -7150,6 +7528,7 @@
       "tags": [],
       "heading": "Presentation Design",
       "parentId": "project-2025_03_08_sitcon_keynote-en-file",
+      "tldr": "Affinity-designed 4K slices animated manually in Apple Keynote",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -7165,6 +7544,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2025_03_08_sitcon_keynote-en-file",
+      "tldr": "Gratitude to SITCON 2025 team and rehearsal reviewers for support",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -7180,6 +7560,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2025_03_08_sitcon_keynote-zh-TW-file",
+      "tldr": "受邀於 SITCON 分享 Chingshin RAG 專案演講心路歷程",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -7195,6 +7576,7 @@
       "tags": [],
       "heading": "內容規劃",
       "parentId": "project-2025_03_08_sitcon_keynote-zh-TW-file",
+      "tldr": "結合學術論文，解析 RAG 架構與專案實戰經驗",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -7210,6 +7592,7 @@
       "tags": [],
       "heading": "簡報設計",
       "parentId": "project-2025_03_08_sitcon_keynote-zh-TW-file",
+      "tldr": "用 Affinity 設計後匯入 Keynote 手動動畫化",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -7225,6 +7608,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2025_03_08_sitcon_keynote-zh-TW-file",
+      "tldr": "感謝 SITCON 團隊與 AK、Danny 的試講建議與支持",
       "imageUrl": "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
     },
     {
@@ -7240,6 +7624,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2025_03_18_boundless_voices-en-file",
+      "tldr": "Charity concert showcasing disabled artists to fund hospital redevelopment",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7255,6 +7640,7 @@
       "tags": [],
       "heading": "Designing the Program",
       "parentId": "project-2025_03_18_boundless_voices-en-file",
+      "tldr": "Streamlining performer data and designing sky-themed program booklets",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7270,6 +7656,7 @@
       "tags": [],
       "heading": "Directing the Documentary",
       "parentId": "project-2025_03_18_boundless_voices-en-file",
+      "tldr": "Solo-produced documentary uses sound design and match cuts for impact",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7285,6 +7672,7 @@
       "tags": [],
       "heading": "Reflection",
       "parentId": "project-2025_03_18_boundless_voices-en-file",
+      "tldr": "Music transcends barriers, fostering resilience through heartfelt artistic collaboration",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7300,6 +7688,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2025_03_18_boundless_voices-en-file",
+      "tldr": "Thanks to Mr. Wu, performers, and staff for sharing hope",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7315,6 +7704,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2025_03_18_boundless_voices-zh-TW-file",
+      "tldr": "受視障音樂家啟發，辦慈善音樂劇募款",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7330,6 +7720,7 @@
       "tags": [],
       "heading": "節目冊設計",
       "parentId": "project-2025_03_18_boundless_voices-zh-TW-file",
+      "tldr": "藍天雲端融入飛揚音符，展現無界意象",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7345,6 +7736,7 @@
       "tags": [],
       "heading": "紀錄片執導",
       "parentId": "project-2025_03_18_boundless_voices-zh-TW-file",
+      "tldr": "一人包辦剪輯，以重度音效與匹配剪接強化敘事",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7360,6 +7752,7 @@
       "tags": [],
       "heading": "心得",
       "parentId": "project-2025_03_18_boundless_voices-zh-TW-file",
+      "tldr": "透過藝術傳遞希望，連結人心並成就自我提升",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7375,6 +7768,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2025_03_18_boundless_voices-zh-TW-file",
+      "tldr": "感謝演出團隊與吳柏毅，用音樂傳遞愛與希望",
       "imageUrl": "images/optimized/projects/2024_03_18_boundless_voices/titlecard.webp"
     },
     {
@@ -7450,6 +7844,7 @@
       "tags": [],
       "heading": "What is PATCH?",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0",
+      "tldr": "Traditional Chinese safety dataset with 820k prompts and MLCommons alignment",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7465,6 +7860,7 @@
       "tags": [],
       "heading": "The PATCH Advantage",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0",
+      "tldr": "Large-scale, diverse, adversarial, and culturally authentic Traditional Chinese safety data",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7480,6 +7876,7 @@
       "tags": [],
       "heading": "Dataset Construction: A Multi-Stage Pipeline",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0",
+      "tldr": "Automated harm generation, adversarial mutations, and adapted safe content",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7510,6 +7907,7 @@
       "tags": [],
       "heading": "Direct Harmful Prompt Generation (PATCH-GPT)",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0-3",
+      "tldr": "GPT-3.5/4 generated direct harmful prompts across 13 MLCommons categories",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7525,6 +7923,7 @@
       "tags": [],
       "heading": "Evasive Harmful Prompt Generation (PATCH-RT)",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0-3",
+      "tldr": "Adversarial framework generating sophisticated, regionally-contextualized harmful prompt evasions",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7540,6 +7939,7 @@
       "tags": [],
       "heading": "Safe Content Adaptation",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0-3",
+      "tldr": "Adapted ChatGPT corpus using Fanhuaji for regional TC authenticity",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7555,6 +7955,7 @@
       "tags": [],
       "heading": "Validating Real-World Vulnerability",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0",
+      "tldr": "LLMs show significant vulnerability to PATCH adversarial inputs",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7570,6 +7971,7 @@
       "tags": [],
       "heading": "Fine-Tuning Strategies: Finding the Efficient Path",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0",
+      "tldr": "LoRA matches full fine-tuning with superior efficiency and robustness",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7600,6 +8002,7 @@
       "tags": [],
       "heading": "Key Finding: LoRA Matches Full Fine-Tuning",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0-5",
+      "tldr": "LoRA matches full fine-tuning performance using significantly fewer resources",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7615,6 +8018,7 @@
       "tags": [],
       "heading": "Robustness on Human-Authored Data",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0-5",
+      "tldr": "Synthetic data training effectively secures high robustness on human-authored inputs",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7630,6 +8034,7 @@
       "tags": [],
       "heading": "A Surprising Bonus: Cross-Lingual Benefits",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0",
+      "tldr": "PATCH-tuned models show improved safety performance on English benchmarks",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7645,6 +8050,7 @@
       "tags": [],
       "heading": "Conclusion and Future Directions",
       "parentId": "project-2025_05_18_patch_dataset-en-sec-0",
+      "tldr": "PATCH enhances Traditional Chinese LLM safety via efficient fine-tuning",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7660,6 +8066,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2025_05_18_patch_dataset-en-file",
+      "tldr": "Thanks to co-author Chen, Prof. Tsai, and mentor AK",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7705,6 +8112,7 @@
       "tags": [],
       "heading": "什麼是 PATCH？",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
+      "tldr": "專為繁中安全分類設計的開源資料集",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7720,6 +8128,7 @@
       "tags": [],
       "heading": "PATCH 的優勢",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
+      "tldr": "大數據、對抗性強且深耕本土文化",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7735,6 +8144,7 @@
       "tags": [],
       "heading": "資料集建構：多階段流程",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
+      "tldr": "結合 GPT 生成與對抗性框架的繁中紅隊資料集",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7765,6 +8175,7 @@
       "tags": [],
       "heading": "直接有害 Prompt 生成 (PATCH-GPT)",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0-3",
+      "tldr": "利用 GPT 自動生成 13 類直接有害指令",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7780,6 +8191,7 @@
       "tags": [],
       "heading": "規避性有害 Prompt 生成 (PATCH-RT)",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0-3",
+      "tldr": "用 RT 框架生成具繁中特色的複雜規避攻擊指令",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7795,6 +8207,7 @@
       "tags": [],
       "heading": "安全內容調整",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0-3",
+      "tldr": "整合 ChatGPT 安全數據並繁化當地語法",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7810,6 +8223,7 @@
       "tags": [],
       "heading": "驗證真實世界的漏洞",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
+      "tldr": "實測證明多數 LLM 易受繁體中文漏洞攻擊",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7825,6 +8239,7 @@
       "tags": [],
       "heading": "微調策略：尋找高效路徑",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
+      "tldr": "LoRA 微調效能媲美 FFT 且更高效",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7855,6 +8270,7 @@
       "tags": [],
       "heading": "關鍵發現：LoRA 效能媲美 FFT",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0-5",
+      "tldr": "LoRA 效能媲美全參數微調且成本更低",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7870,6 +8286,7 @@
       "tags": [],
       "heading": "在人工編寫數據上的穩健性",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0-5",
+      "tldr": "合成數據微調顯著提升人工數據判別力",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7885,6 +8302,7 @@
       "tags": [],
       "heading": "意外的收穫：跨語言效益",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
+      "tldr": "繁中微調強化模型跨語言安全效益",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7900,6 +8318,7 @@
       "tags": [],
       "heading": "結論與未來方向",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
+      "tldr": "PATCH 優化安全對齊並推動未來開源研究",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7915,6 +8334,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-file",
+      "tldr": "感謝陳炯睿、蔡教授及學長 AK 的協助與指導",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -7930,6 +8350,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-2025_08_04_debate-en-file",
+      "tldr": "Reflecting on transformative growth through high school competitive WSDC debate",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -7945,6 +8366,7 @@
       "tags": [],
       "heading": "How It Started",
       "parentId": "project-2025_08_04_debate-en-file",
+      "tldr": "Swapping essays for debate, the author built skills through persistence",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -7960,6 +8382,7 @@
       "tags": [],
       "heading": "Competition Highlights",
       "parentId": "project-2025_08_04_debate-en-file",
+      "tldr": "Multiple semifinalist and high-ranking speaker in competitive Taiwanese tournaments",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -7990,6 +8413,7 @@
       "tags": [],
       "heading": "[TSDC 2023](https://tsdc2023.calicotab.com/tsdc2023/)",
       "parentId": "project-2025_08_04_debate-en-sec-2",
+      "tldr": "Reached TSDC 2023 semifinals and ranked 13th best speaker",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8005,6 +8429,7 @@
       "tags": [],
       "heading": "[FHDO 2023](https://fhdo.calicotab.com/fhdo2023/)",
       "parentId": "project-2025_08_04_debate-en-sec-2",
+      "tldr": "Highly competitive tournament; missed breaks despite winning 3/4 rounds",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8020,6 +8445,7 @@
       "tags": [],
       "heading": "[TEJT 2023](https://tejt.calicotab.com/tejt2023/)",
       "parentId": "project-2025_08_04_debate-en-sec-2",
+      "tldr": "Reached TEJT 2023 semifinals and ranked 12th best speaker",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8035,6 +8461,7 @@
       "tags": [],
       "heading": "[TSDC 2024](https://tsdc.calicotab.com/tsdc2024/)",
       "parentId": "project-2025_08_04_debate-en-sec-2",
+      "tldr": "Refined strategies led the same team to the 2024 semifinals",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8050,6 +8477,7 @@
       "tags": [],
       "heading": "FHDO 2024",
       "parentId": "project-2025_08_04_debate-en-sec-2",
+      "tldr": "Won 3 of 4 rounds but narrowly missed breaking again",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8065,6 +8493,7 @@
       "tags": [],
       "heading": "FHDO 2025",
       "parentId": "project-2025_08_04_debate-en-sec-2",
+      "tldr": "Won FHDO 2025 with undefeated record and 3rd speaker rank",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8080,6 +8509,7 @@
       "tags": [],
       "heading": "Reflection",
       "parentId": "project-2025_08_04_debate-en-file",
+      "tldr": "Debate fueled personal growth, lasting friendships, and communication skills",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8095,6 +8525,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2025_08_04_debate-en-file",
+      "tldr": "Thanks to teammates Morris, Sean and coaches Jeff, Johan",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8110,6 +8541,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2025_08_04_debate-zh-TW-file",
+      "tldr": "回顧中學至高中的辯論成長與蛻變之旅",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8125,6 +8557,7 @@
       "tags": [],
       "heading": "一切的開端",
       "parentId": "project-2025_08_04_debate-zh-TW-file",
+      "tldr": "避開作文愛上辯論，在挫折中奠定基礎",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8140,6 +8573,7 @@
       "tags": [],
       "heading": "參賽亮點",
       "parentId": "project-2025_08_04_debate-zh-TW-file",
+      "tldr": "多次晉級國內頂尖賽事，更獲 FHDO 全勝冠軍",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8170,6 +8604,7 @@
       "tags": [],
       "heading": "[TSDC 2023](https://tsdc2023.calicotab.com/tsdc2023/)",
       "parentId": "project-2025_08_04_debate-zh-TW-sec-2",
+      "tldr": "TSDC 2023 晉級四強，個人排名第 13",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8185,6 +8620,7 @@
       "tags": [],
       "heading": "[FHDO 2023](https://fhdo.calicotab.com/fhdo2023/)",
       "parentId": "project-2025_08_04_debate-zh-TW-sec-2",
+      "tldr": "FHDO競爭激烈，三勝一負仍因分數不足未晉級",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8200,6 +8636,7 @@
       "tags": [],
       "heading": "[TEJT 2023](https://tejt.calicotab.com/tejt2023/)",
       "parentId": "project-2025_08_04_debate-zh-TW-sec-2",
+      "tldr": "TEJT 2023 晉級四強，個人排名第 12",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8215,6 +8652,7 @@
       "tags": [],
       "heading": "[TSDC 2024](https://tsdc.calicotab.com/tsdc2024/)",
       "parentId": "project-2025_08_04_debate-zh-TW-sec-2",
+      "tldr": "原班人馬重返挑戰，惜止步 TSDC 四強",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8230,6 +8668,7 @@
       "tags": [],
       "heading": "FHDO 2024",
       "parentId": "project-2025_08_04_debate-zh-TW-sec-2",
+      "tldr": "2024年FHDO三勝一負，未晉級但激發鬥志",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8245,6 +8684,7 @@
       "tags": [],
       "heading": "FHDO 2025",
       "parentId": "project-2025_08_04_debate-zh-TW-sec-2",
+      "tldr": "2025 FHDO 勇奪全勝冠軍，個人演講全國第三",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8260,6 +8700,7 @@
       "tags": [],
       "heading": "心得",
       "parentId": "project-2025_08_04_debate-zh-TW-file",
+      "tldr": "辯論圓滿收場，成就自信與難忘回憶",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8275,6 +8716,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2025_08_04_debate-zh-TW-file",
+      "tldr": "感謝隊友 Morris、Sean 與教練 Jeff、Johan 協助",
       "imageUrl": "images/optimized/projects/2025_08_04_debate/titlecard.webp"
     },
     {
@@ -8320,6 +8762,7 @@
       "tags": [],
       "heading": "What is FORTRESS?",
       "parentId": "project-2025_10_12_fortress-en-sec-0",
+      "tldr": "Efficient, tuning-free LLM safety system unifying retrieval and perplexity",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8335,6 +8778,7 @@
       "tags": [],
       "heading": "The FORTRESS Advantage",
       "parentId": "project-2025_10_12_fortress-en-sec-0",
+      "tldr": "Training-free, scalable, and efficient classification with 91.6% F1 safety score",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8350,6 +8794,7 @@
       "tags": [],
       "heading": "How FORTRESS Works: An Architectural Deep Dive",
       "parentId": "project-2025_10_12_fortress-en-sec-0",
+      "tldr": "Two-stage pipeline ensembles semantic retrieval with dynamic perplexity analysis",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8380,6 +8825,7 @@
       "tags": [],
       "heading": "1. Primary Detector: Semantic Retrieval",
       "parentId": "project-2025_10_12_fortress-en-sec-0-3",
+      "tldr": "Semantic similarity search using LLM embeddings and vector retrieval",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8395,6 +8841,7 @@
       "tags": [],
       "heading": "2. Secondary Analyzer: Dynamic Perplexity Analysis",
       "parentId": "project-2025_10_12_fortress-en-sec-0-3",
+      "tldr": "Category-specific perplexity thresholds detect zero-day attacks via linguistic typicality",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8410,6 +8857,7 @@
       "tags": [],
       "heading": "3. Dynamic Ensemble Strategy",
       "parentId": "project-2025_10_12_fortress-en-sec-0-3",
+      "tldr": "Weights dynamically balance semantic signals and perplexity for consensus",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8425,6 +8873,7 @@
       "tags": [],
       "heading": "Putting it to the Test: Performance Breakdown",
       "parentId": "project-2025_10_12_fortress-en-sec-0",
+      "tldr": "FORTRESS outperforms baselines with 5x faster, data-scalable safety performance",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8455,6 +8904,7 @@
       "tags": [],
       "heading": "Head-to-Head Comparison",
       "parentId": "project-2025_10_12_fortress-en-sec-0-4",
+      "tldr": "FORTRESS outperforms GuardReasoner, achieving 91.6% F1 while 5x faster",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8470,6 +8920,7 @@
       "tags": [],
       "heading": "Scalability Through Data Ingestion",
       "parentId": "project-2025_10_12_fortress-en-sec-0-4",
+      "tldr": "Data ingestion boosts performance via vector scaling without added latency",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8485,6 +8936,7 @@
       "tags": [],
       "heading": "The Importance of Every Component: Ablation Study",
       "parentId": "project-2025_10_12_fortress-en-sec-0-4",
+      "tldr": "Dynamic, per-category thresholds are vital for high F1 scores",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8500,6 +8952,7 @@
       "tags": [],
       "heading": "Conclusion and Future Work",
       "parentId": "project-2025_10_12_fortress-en-sec-0",
+      "tldr": "Efficient training-free LLM security using retrieval and perplexity analysis",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8515,6 +8968,7 @@
       "tags": [],
       "heading": "Personal Reflection",
       "parentId": "project-2025_10_12_fortress-en-sec-0",
+      "tldr": "Courageously navigating uncertainty from a naive idea to TMLR acceptance",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8530,6 +8984,7 @@
       "tags": [],
       "heading": "Acknowledgments",
       "parentId": "project-2025_10_12_fortress-en-file",
+      "tldr": "Thanks to Prof. Tsai, AK, and TMLR reviewers",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8575,6 +9030,7 @@
       "tags": [],
       "heading": "什麼是 FORTRESS？",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0",
+      "tldr": "高效、免訓練的資料導向 LLM 防禦系統",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8590,6 +9046,7 @@
       "tags": [],
       "heading": "FORTRESS 的優勢",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0",
+      "tldr": "無需訓練、高效且效能領先的防禦系統",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8605,6 +9062,7 @@
       "tags": [],
       "heading": "FORTRESS 的運作原理：深入解析架構",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0",
+      "tldr": "結合向量檢索與動態 PPL 的加權防禦機制",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8635,6 +9093,7 @@
       "tags": [],
       "heading": "1. 主要偵測器：向量檢索",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-3",
+      "tldr": "LLM 提取向量並檢索資料庫判定安全性",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8650,6 +9109,7 @@
       "tags": [],
       "heading": "2. 次要分析器：動態 perplexity 分析",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-3",
+      "tldr": "動態類別閥值偵測新型攻擊",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8665,6 +9125,7 @@
       "tags": [],
       "heading": "3. 動態集成策略",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-3",
+      "tldr": "依一致性動態調整權重，結合向量與困惑度分析",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8680,6 +9141,7 @@
       "tags": [],
       "heading": "實戰測試：效能分析",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0",
+      "tldr": "FORTRESS 高效能、低延遲，且資料注入顯著提升準確率",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8710,6 +9172,7 @@
       "tags": [],
       "heading": "正面對決",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-4",
+      "tldr": "FORTRESS 效能領先且延遲縮減五倍",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8725,6 +9188,7 @@
       "tags": [],
       "heading": "透過資料注入實現可擴展性",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-4",
+      "tldr": "注入資料優化向量庫，高效提升性能並維持低延遲",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8740,6 +9204,7 @@
       "tags": [],
       "heading": "每個組件的重要性：消融研究",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-4",
+      "tldr": "動態臨界值為核心，顯著提升偵測精確度",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8755,6 +9220,7 @@
       "tags": [],
       "heading": "結論與未來研究方向",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0",
+      "tldr": "整合檢索與動態分析，強化開源 LLM 安全",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8770,6 +9236,7 @@
       "tags": [],
       "heading": "心得",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0",
+      "tldr": "從大膽設想到錄取TMLR，不畏黑暗勇於實踐",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8785,6 +9252,7 @@
       "tags": [],
       "heading": "致謝",
       "parentId": "project-2025_10_12_fortress-zh-TW-file",
+      "tldr": "感謝教授、AK 指導及 TMLR 審稿意見",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -8800,6 +9268,7 @@
       "tags": [],
       "heading": "Project Overview",
       "parentId": "project-sitcon-2026-en-file",
+      "tldr": "Securing LLMs against prompt injection after a CyCraft internship",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8815,6 +9284,7 @@
       "tags": [],
       "heading": "The Core Concept",
       "parentId": "project-sitcon-2026-en-file",
+      "tldr": "Securing LLMs via Attention Tracker monitoring and internal stress-testing",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8845,6 +9315,7 @@
       "tags": [],
       "heading": "1. Why do we need to \"open\" the LLM?",
       "parentId": "project-sitcon-2026-en-sec-1",
+      "tldr": "Internal monitoring fixes context confusion better than external scanners",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8860,6 +9331,7 @@
       "tags": [],
       "heading": "2. How do we use \"Attention\" to find the traitor?",
       "parentId": "project-sitcon-2026-en-sec-1",
+      "tldr": "Monitor attention heads to detect shifts from safety rules",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8875,6 +9347,7 @@
       "tags": [],
       "heading": "3. Is this defense truly perfect?",
       "parentId": "project-sitcon-2026-en-sec-1",
+      "tldr": "Experiments reveal context, language, and prefix vulnerabilities in defenses",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8890,6 +9363,7 @@
       "tags": [],
       "heading": "Presentation Design & Easter Eggs",
       "parentId": "project-sitcon-2026-en-file",
+      "tldr": "Viridis hacker aesthetic, Affinity-to-Keynote workflow, and hidden prompt injections",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8905,6 +9379,7 @@
       "tags": [],
       "heading": "Reflections & Acknowledgments",
       "parentId": "project-sitcon-2026-en-file",
+      "tldr": "Go beyond APIs by deconstructing systems; thanks to CyCraft mentors",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8920,6 +9395,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-sitcon-2026-zh-TW-file",
+      "tldr": "延續 RAG 演講，分享防範提示注入研究",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8935,6 +9411,7 @@
       "tags": [],
       "heading": "核心概念",
       "parentId": "project-sitcon-2026-zh-TW-file",
+      "tldr": "監控模型注意力，偵測並實測提示注入防禦機制",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8965,6 +9442,7 @@
       "tags": [],
       "heading": "1. 為什麼我們需要「打開」LLM？",
       "parentId": "project-sitcon-2026-zh-TW-sec-1",
+      "tldr": "透視模型內部以防範提示注入漏洞",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8980,6 +9458,7 @@
       "tags": [],
       "heading": "2. 如何利用「注意力」抓出內鬼？",
       "parentId": "project-sitcon-2026-zh-TW-sec-1",
+      "tldr": "監控注意力焦點分數抓出攻擊",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -8995,6 +9474,7 @@
       "tags": [],
       "heading": "3. 這種防禦真的完美無瑕嗎？",
       "parentId": "project-sitcon-2026-zh-TW-sec-1",
+      "tldr": "實測三種情境揭露防禦機制的極限與盲點",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -9010,6 +9490,7 @@
       "tags": [],
       "heading": "簡報設計與彩蛋",
       "parentId": "project-sitcon-2026-zh-TW-file",
+      "tldr": "深色理性設計，內藏海盜主題 Prompt Injection",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -9025,6 +9506,7 @@
       "tags": [],
       "heading": "反思與致謝",
       "parentId": "project-sitcon-2026-zh-TW-file",
+      "tldr": "探究原始碼本質，致謝導師與籌備團隊回饋",
       "imageUrl": "images/optimized/projects/sitcon-2026/titlecard.webp"
     },
     {
@@ -9549,7 +10031,7 @@
     {
       "id": "gallery-2026-us-trip-en-sec-0",
       "title": "No Need to Cohere",
-      "snippet": "Maybe coherence was never the point.  <!-- New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five met...",
+      "snippet": "<!-- Maybe coherence was never the point.   New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five me...",
       "nodeType": "section",
       "sourceType": "gallery",
       "sourceSlug": "2026-us-trip",
@@ -28150,12 +28632,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-zh-TW-file",
-      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
-      "weight": 0.973,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_13_sisyphus-en-sec-0-1",
       "target": "post-2025_12_13_sisyphus-en-sec-0-2",
       "weight": 0.973,
@@ -28284,6 +28760,12 @@
     {
       "source": "project-sitcon-2026-zh-TW-sec-1",
       "target": "project-sitcon-2026-zh-TW-sec-1-1",
+      "weight": 0.9708,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_04_12_portfolio-zh-TW-file",
+      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
       "weight": 0.9708,
       "linkType": "semantic"
     },
@@ -29080,6 +29562,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2025_04_12_portfolio-en-file",
+      "target": "project-2025_04_12_portfolio-en-sec-0",
+      "weight": 0.9607,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-en-sec-1",
       "target": "post-11-portfolio-en-sec-2",
       "weight": 0.9606,
@@ -29148,12 +29636,6 @@
     {
       "source": "post-9_m11d-en-sec-1",
       "target": "post-9_m11d-en-sec-2",
-      "weight": 0.9602,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_04_12_portfolio-en-file",
-      "target": "project-2025_04_12_portfolio-en-sec-0",
       "weight": 0.9602,
       "linkType": "semantic"
     },
@@ -38194,6 +38676,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2025_04_12_portfolio-zh-TW-file",
+      "target": "project-2025_04_12_portfolio-en-sec-0",
+      "weight": 0.8088,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_04_12_portfolio-en-sec-0",
+      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
+      "weight": 0.8078,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
       "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
       "weight": 0.8068,
@@ -38422,12 +38916,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-en-sec-0",
-      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
-      "weight": 0.7921,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_06_against_giants-en-file",
       "target": "gallery-2023_12_30_against_the_unknown-en-sec-0",
       "weight": 0.7918,
@@ -38437,12 +38925,6 @@
       "source": "project-2025_01_03_powerplay-en-sec-2-3-1",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1",
       "weight": 0.7914,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_04_12_portfolio-zh-TW-file",
-      "target": "project-2025_04_12_portfolio-en-sec-0",
-      "weight": 0.7903,
       "linkType": "semantic"
     },
     {
@@ -38550,7 +39032,7 @@
     {
       "source": "project-2025_04_12_portfolio-en-file",
       "target": "project-2025_04_12_portfolio-zh-TW-file",
-      "weight": 0.7815,
+      "weight": 0.7802,
       "linkType": "semantic"
     },
     {
@@ -38671,12 +39153,6 @@
       "source": "locale-about-zh-TW-0",
       "target": "locale-updates-zh-TW-0",
       "weight": 0.7747,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_04_12_portfolio-en-file",
-      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
-      "weight": 0.7737,
       "linkType": "semantic"
     },
     {
@@ -38857,6 +39333,12 @@
       "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
       "target": "gallery-2023_10_06_against_giants-zh-TW-sec-0",
       "weight": 0.7652,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_04_12_portfolio-en-file",
+      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
+      "weight": 0.7651,
       "linkType": "semantic"
     },
     {
@@ -39226,21 +39708,21 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-0",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-1",
+      "weight": 0.7419,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2026-us-trip-en-file",
       "target": "gallery-2026-us-trip-zh-TW-sec-0",
-      "weight": 0.7423,
+      "weight": 0.7417,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2026-us-trip-en-file",
       "target": "gallery-2026-us-trip-zh-TW-file",
-      "weight": 0.7423,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-0",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-1",
-      "weight": 0.7419,
+      "weight": 0.7417,
       "linkType": "semantic"
     },
     {
@@ -39304,18 +39786,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-sec-0",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
-      "weight": 0.738,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.738,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-1",
       "weight": 0.7378,
@@ -39349,6 +39819,18 @@
       "source": "project-2025_03_18_boundless_voices-en-file",
       "target": "project-2025_03_18_boundless_voices-zh-TW-sec-4",
       "weight": 0.7367,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.7363,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-sec-0",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "weight": 0.7363,
       "linkType": "semantic"
     },
     {
@@ -39646,6 +40128,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2025_04_12_portfolio-zh-TW-sec-0",
+      "target": "locale-cv-projects-zh-TW-0",
+      "weight": 0.7232,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-1",
       "weight": 0.723,
@@ -39667,12 +40155,6 @@
       "source": "post-9_m11d-en-sec-9",
       "target": "post-9_m11d-zh-TW-sec-9",
       "weight": 0.7217,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_04_12_portfolio-zh-TW-sec-0",
-      "target": "locale-cv-projects-zh-TW-0",
-      "weight": 0.7215,
       "linkType": "semantic"
     },
     {
@@ -39802,12 +40284,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-zh-TW-file",
-      "target": "post-11-portfolio-zh-TW-sec-2",
-      "weight": 0.7167,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_05_solitary_glow-en-file",
       "target": "gallery-2023_12_30_sky_above-en-file",
       "weight": 0.7165,
@@ -39822,7 +40298,7 @@
     {
       "source": "project-2025_04_12_portfolio-zh-TW-file",
       "target": "locale-cv-projects-zh-TW-0",
-      "weight": 0.7164,
+      "weight": 0.7163,
       "linkType": "semantic"
     },
     {
@@ -39841,6 +40317,12 @@
       "source": "gallery-2023_12_30_sky_above-zh-TW-file",
       "target": "gallery-2023_12_30_sky_above-en-sec-0",
       "weight": 0.7159,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_04_12_portfolio-zh-TW-file",
+      "target": "post-11-portfolio-zh-TW-sec-2",
+      "weight": 0.7156,
       "linkType": "semantic"
     },
     {
@@ -39877,12 +40359,6 @@
       "source": "locale-cv-education-zh-TW-0",
       "target": "locale-updates-zh-TW-0",
       "weight": 0.7135,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-11-portfolio-zh-TW-sec-2",
-      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
-      "weight": 0.7123,
       "linkType": "semantic"
     },
     {
@@ -39991,6 +40467,12 @@
       "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-0",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-1",
       "weight": 0.7071,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-11-portfolio-zh-TW-sec-2",
+      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
+      "weight": 0.7065,
       "linkType": "semantic"
     },
     {
@@ -40168,12 +40650,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-en-sec-0",
-      "target": "locale-cv-projects-en-0",
-      "weight": 0.698,
-      "linkType": "semantic"
-    },
-    {
       "source": "locale-cv-summary-en-0",
       "target": "locale-cv-publications-en-0",
       "weight": 0.6976,
@@ -40183,6 +40659,12 @@
       "source": "post-2025_12_12_blog_launch-zh-TW-file",
       "target": "post-2025_12_12_blog_launch-en-sec-0-2",
       "weight": 0.6973,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_04_12_portfolio-en-sec-0",
+      "target": "locale-cv-projects-en-0",
+      "weight": 0.6967,
       "linkType": "semantic"
     },
     {
@@ -40234,12 +40716,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-en-sec-0",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6951,
-      "linkType": "semantic"
-    },
-    {
       "source": "locale-cv-projects-en-0",
       "target": "locale-updates-en-0",
       "weight": 0.695,
@@ -40285,6 +40761,12 @@
       "source": "post-2025_12_12_blog_launch-en-sec-0-1",
       "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-1",
       "weight": 0.6915,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_against_giants-en-sec-0",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.6904,
       "linkType": "semantic"
     },
     {
@@ -40606,12 +41088,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-10",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6693,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_12_blog_launch-en-sec-0-2",
       "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-0",
       "weight": 0.6685,
@@ -40660,6 +41136,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "target": "post-9_m11d-en-sec-10",
+      "weight": 0.6677,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_10_12_fortress-zh-TW-sec-0-6",
       "target": "locale-cv-publications-zh-TW-0",
       "weight": 0.6675,
@@ -40672,9 +41154,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-en-file",
-      "target": "locale-cv-projects-en-0",
-      "weight": 0.666,
+      "source": "project-2025_04_12_portfolio-en-sec-0",
+      "target": "locale-cv-projects-zh-TW-0",
+      "weight": 0.6647,
       "linkType": "semantic"
     },
     {
@@ -40690,9 +41172,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-en-sec-0",
-      "target": "locale-cv-projects-zh-TW-0",
-      "weight": 0.6615,
+      "source": "project-2025_04_12_portfolio-en-file",
+      "target": "locale-cv-projects-en-0",
+      "weight": 0.6613,
       "linkType": "semantic"
     },
     {
@@ -40750,12 +41232,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
-      "weight": 0.6551,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
       "weight": 0.6551,
@@ -40783,12 +41259,6 @@
       "source": "post-2025_12_12_blog_launch-en-sec-0",
       "target": "post-2025_12_12_blog_launch-zh-TW-sec-0",
       "weight": 0.653,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_against_giants-en-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6527,
       "linkType": "semantic"
     },
     {
@@ -40912,21 +41382,27 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_06_against_giants-en-file",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.6479,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_12_blog_launch-en-sec-0",
       "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-2",
       "weight": 0.6471,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-zh-TW-file",
-      "target": "post-2025_12_12_blog_launch-zh-TW-sec-0",
-      "weight": 0.6469,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_12_blog_launch-en-file",
       "target": "post-2025_12_13_sisyphus-en-file",
       "weight": 0.6457,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_04_12_portfolio-zh-TW-file",
+      "target": "post-2025_12_12_blog_launch-zh-TW-sec-0",
+      "weight": 0.6455,
       "linkType": "semantic"
     },
     {
@@ -40974,13 +41450,7 @@
     {
       "source": "post-2025_12_12_blog_launch-en-file",
       "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6414,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-11-portfolio-en-sec-8",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6411,
+      "weight": 0.6415,
       "linkType": "semantic"
     },
     {
@@ -41008,6 +41478,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-11-portfolio-en-sec-8",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.6377,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6364,
@@ -41029,6 +41505,12 @@
       "source": "post-11-portfolio-en-sec-8",
       "target": "post-2025_12_12_blog_launch-en-sec-1",
       "weight": 0.6361,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_mountain-en-file",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.6358,
       "linkType": "semantic"
     },
     {
@@ -41098,6 +41580,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
+      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
+      "weight": 0.6311,
+      "linkType": "semantic"
+    },
+    {
       "source": "locale-cv-publications-en-0",
       "target": "locale-cv-skills-en-0",
       "weight": 0.6297,
@@ -41128,12 +41616,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-file",
-      "target": "gallery-2026_02_08_italy_mountain-en-file",
-      "weight": 0.6249,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_13_sisyphus-en-sec-0",
       "target": "post-2025_12_13_sisyphus-zh-TW-sec-0-1",
       "weight": 0.6232,
@@ -41159,7 +41641,7 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-04-17T02:50:18Z",
+    "generatedAt": "2026-04-17T10:54:47Z",
     "nodeCount": 1202,
     "edgeCount": 3609,
     "threshold": 0.62,

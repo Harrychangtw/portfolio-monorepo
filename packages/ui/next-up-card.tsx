@@ -91,10 +91,9 @@ export default function NextUpCard({
             <ImageContainer
               src={fullImageUrl}
               alt={title}
-              quality={60}
-              priority={false}
+              quality={50}
               noInsetPadding={true}
-              aspectRatio={aspectRatio}
+              aspectRatio={1.5}
             />
           </div>
         )}

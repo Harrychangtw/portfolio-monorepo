@@ -15,6 +15,7 @@ export interface EmbeddedNodeInfo {
   url: string;
   imageUrl?: string | null;
   description?: string;
+  tldr?: string;
   /** "file" | "hub" | etc. — lets consumers distinguish hubs from content nodes */
   nodeType?: string;
 }
@@ -76,6 +77,7 @@ function toInfo(node: GraphNode): EmbeddedNodeInfo {
     url: node.url,
     imageUrl,
     description: node.description || node.snippet,
+    tldr: node.tldr,
     nodeType: node.nodeType,
   };
 }

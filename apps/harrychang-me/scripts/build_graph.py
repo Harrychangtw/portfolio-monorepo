@@ -31,6 +31,7 @@ LOCALES_DIR = Path(__file__).parent.parent / "public" / "locales"
 OUTPUT_PATH = Path(__file__).parent.parent / "public" / "graph-data.json"
 CACHE_DIR = Path(__file__).parent.parent / "content" / "generated"
 CACHE_PATH = CACHE_DIR / "graph-embeddings-cache.json"
+SUMMARIES_PATH = CACHE_DIR / "section-summaries.json"
 
 EMBEDDING_MODEL = "BAAI/bge-large-zh-v1.5"
 BASE_URL = "https://www.harrychang.me"
@@ -1349,6 +1350,37 @@ def main():
     else:
         print("  Skipped (--no-llm)")
 
+    # Step 6.5: Apply TL;DRs from section-summaries.json
+    print("\n[6.5/7] Applying TL;DRs from section-summaries.json...")
+    tldr_applied = 0
+    if SUMMARIES_PATH.exists():
+        try:
+            summaries = json.loads(SUMMARIES_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, IOError):
+            summaries = {}
+
+        for chunk in all_chunks:
+            source_type = chunk.get("sourceType", "")
+            slug = chunk.get("sourceSlug", "")
+            locale = chunk.get("locale", "en")
+            node_type = chunk.get("nodeType", "")
+            file_key = f"{source_type}/{slug}/{locale}"
+
+            if file_key not in summaries:
+                continue
+
+            entry = summaries[file_key]
+
+            if node_type == "file" and entry.get("tldr"):
+                chunk["tldr"] = entry["tldr"]
+                tldr_applied += 1
+            elif node_type == "section":
+                heading = chunk.get("heading")
+                if heading and heading in entry.get("sections", {}):
+                    chunk["tldr"] = entry["sections"][heading]
+                    tldr_applied += 1
+    print(f"  Applied {tldr_applied} TL;DRs")
+
     # Combine all edges
     all_edges = all_structural_edges + tag_edges + semantic_edges
 
@@ -1372,6 +1404,8 @@ def main():
         }
         if "description" in chunk:
             node["description"] = chunk["description"]
+        if "tldr" in chunk:
+            node["tldr"] = chunk["tldr"]
         if chunk.get("imageUrl"):
             node["imageUrl"] = chunk["imageUrl"]
         if chunk.get("mediaSource"):

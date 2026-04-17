@@ -1,0 +1,1089 @@
+{
+  "post/10-lego-mount/en": {
+    "title": "17 Studs Wide: A LEGO Fan Mount and the Case Against Outgrowing",
+    "locale": "en",
+    "sections": {
+      "The Coincidence": "Lego baseplates serendipitously fit the FormD T1's thermal needs",
+      "The Machine That Taught Me": "Homegrown hardware turned an ML tool into a Linux playground",
+      "Where Heat Goes to Stay": "Poor ventilation in FormD T1 causes dangerous GPU heat buildup",
+      "The Rubber Band Delusion": "Rubber bands amplified fan vibration instead of damping it",
+      "What Actually Worked": "LEGO tires wedge between fans, dropping GPU temps by 19°C",
+      "The Accidental Platform": "LEGO fan mount evolved into router and watch charging station",
+      "Other Bricks, Other Problems": "Choosing LEGO’s visible construction over 3D printing’s clean finish",
+      "One Millimeter": "Lego is a valid, functional solution for adult engineering problems",
+      "Acknowledgments": "Credits for Chardin’s art, FormD T1, and Technic LEGO parts"
+    },
+    "tldr": "LEGO fan mounts prove the value of DIY hardware for ML learning"
+  },
+  "post/10-lego-mount/zh-TW": {
+    "title": "十七格寬：一個樂高風扇架，以及為何不需要「長大」",
+    "locale": "zh-TW",
+    "sections": {
+      "巧合": "用樂高輪胎與寬度巧合，打造高效散熱風扇架",
+      "啟蒙我的那台機器": "組裝伺服器讓硬體實踐超越工具成為遊樂場",
+      "熱能滯留之處": "FormD T1 底部積熱，線材與底板燙手",
+      "橡皮筋妄想": "用積木與橡皮筋避震失敗，反致共振噪音",
+      "真正有效的方法": "用樂高輪胎夾住風扇，讓顯卡降溫近 20 度",
+      "意外的平台": "樂高風扇架擴充成路由器與充電站",
+      "其他積木，其他問題": "不計較列印美學，單純享受積木組裝樂趣",
+      "一毫米": "用樂高解決成人問題，守住那一毫米的童心",
+      "致謝": "感謝封面積木男孩、極致機殼零件與樂高解法"
+    },
+    "tldr": "用樂高輪胎與積木為電腦零件DIY出高效風扇架"
+  },
+  "post/11-portfolio/en": {
+    "title": "365 with harrychang.me: On Whims, Rebellion, and Owning a Corner of the Internet",
+    "locale": "en",
+    "sections": {
+      "The Mountain I Didn't Climb": "Instead of climbing, a health-bound student built their first website",
+      "The Theft": "Started by imitating Joseph’s site before building original features",
+      "What Changed, What Stayed": "Technical layers and fonts evolved, but intentional design remains unfinished",
+      "Before I Joined the Conversation": "His website builds credibility and identity before he introduces himself",
+      "The Quiet Rebellion": "Redefining personal sites by rewarding attention over algorithmic trends",
+      "Why You Should Have One": "Own your content to escape algorithms and platform tenancy",
+      "For Those Who Want to Try": "Pick a tool, start naively, and learn by doing",
+      "The Gap That Remained": "Traded a missed mountain trip for personal creative growth",
+      "Acknowledgments": "Credits Spitzweg art, Zhang’s design, and open-source tech stack"
+    },
+    "tldr": "Turning exclusion into creation by building a personal website through imitation"
+  },
+  "post/11-portfolio/zh-TW": {
+    "title": "與 harrychang.me 的 365 天：關於心血來潮以及擁有網路的一角",
+    "locale": "zh-TW",
+    "sections": {
+      "我沒爬的那座山": "因病缺席登山，轉而埋頭自修建成網站",
+      "偷竊": "從借鑒模仿起步，在改良技術中長出原創意識",
+      "改變與留下的": "技術演進與設計留白，成就「未完成」的數位實體",
+      "加入對話之前": "網站先替我發聲，將面試轉化為對話",
+      "靜靜的反叛": "以篩選與留白，抵抗速食網路的自我實踐",
+      "為什麼你該擁有一個": "自有網站非租賃，掌握內容主權與心靈寧靜",
+      "給想嘗試的人": "工具次要，放下焦慮直接動手開始寫",
+      "留下的空缺": "錯過登山羈絆，卻在孤獨中築起自我天地",
+      "致謝": "致謝封面名畫、版面設計靈感與技術工具"
+    },
+    "tldr": "因病錯失登山而架站，以模仿起步建構獨特網路角落"
+  },
+  "post/12-us-trip/en": {
+    "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close",
+    "locale": "en",
+    "sections": {
+      "The Same Bus": "San Francisco's bus reflects jarring social and economic disparities",
+      "The Hollowed Center": "SF's hollow tech facade masks personal family histories",
+      "The City That Hit Different": "A chaotic, overwhelming, and sensory-heavy introduction to New York City",
+      "The Contradictions Emerge": "High costs, biting wind, and the art-context dilemma",
+      "Go Back to New Jersey": "An elitist confrontation over sidewalk pizza reveals NYC’s exclusionary nature",
+      "The Afternoon Alone": "Solitary walking and photography lead to a quiet, unarticulated belonging",
+      "Contradictions in Time": "Life and cities exist as unresolved, simultaneous contradictions",
+      "The Bus That Held Everything": "A melancholic bus departure reflecting on fleeting moments and goodbyes",
+      "The Exhale": "Disappointing ceremony salvaged by thrift store finds and lobster rolls",
+      "The Loop That Almost Closed": "Embracing unresolved loss and travel’s refusal to cohere",
+      "Acknowledgments": "Credits for artwork and family/friend support on the journey"
+    },
+    "tldr": "Contradictions of SF tech, urban decay, and hollow travel memories"
+  },
+  "post/12-us-trip/zh-TW": {
+    "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈",
+    "locale": "zh-TW",
+    "sections": {
+      "同一班公車": "舊金山公車上的社會階級縮影",
+      "被掏空的中心": "矽谷繁華卻空洞，如人造死寂場景",
+      "截然不同的城市": "初探紐約，沉浸於混亂與美好的感官震撼",
+      "矛盾浮現": "紐約美感徒具形式且缺乏靈魂",
+      "滾回紐澤西": "紐約排外言論引發矛盾思緒",
+      "獨處的午後": "紐約獨處漫遊，靜止中找尋自在感",
+      "時間裡的矛盾": "城市與自身的矛盾，是空間與時間的「如果」",
+      "承載一切的巴士": "在告別城市的夜巴，預演遺憾與回憶的循環",
+      "吐氣": "波士頓行：典禮平淡，挖寶吃龍蝦更爽",
+      "幾乎閉合的迴圈": "不再執著圓滿，接納旅程中的遺失與矛盾",
+      "致謝": "感謝封面藝術、家人及嚮導 Dominguez"
+    },
+    "tldr": "穿梭美西與紐約，在資本泡沫與混亂真實間尋找歸屬"
+  },
+  "post/2025_12_12_blog_launch/en": {
+    "title": "Introducing the Blog: A Commitment to Thinking Out Loud",
+    "locale": "en",
+    "sections": {
+      "Finding the Signal in the Noise": "Sharing authentic, monthly thoughts on tech, culture, and experience",
+      "What You Can Expect": "Tech, AI, cultural critiques, retrospectives, and societal commentary",
+      "My Commitment": "Authentic, monthly posts featuring original thoughts and zero AI filler",
+      "Acknowledgments": "Credits: Title image is Johannes Vermeer’s *The Astronomer*"
+    },
+    "tldr": "Monthly blog sharing authentic, raw thoughts on technology, culture, and life"
+  },
+  "post/2025_12_12_blog_launch/zh-TW": {
+    "title": "部落格上線：對於公開思考的承諾",
+    "locale": "zh-TW",
+    "sections": {
+      "在雜音中尋找訊號": "透過公開思考與原創紀實，沉澱雜音見真章",
+      "你可以期待的主題": "科技AI、文藝評論、經驗反思與社會觀察",
+      "我的承諾": "每月更新、堅持真實思考與原創內容",
+      "致謝": "致謝封面照引用自維梅爾《天文學家》"
+    },
+    "tldr": "承諾每月分享技術與社會的真實思考"
+  },
+  "post/2025_12_13_sisyphus/en": {
+    "title": "The Myth of Sisyphus: On Absurdity, Struggle, and Why Reading Still Matters",
+    "locale": "en",
+    "sections": {
+      "One Must Imagine Sisyphus Happy": "Embrace the absurd struggle by finding meaning in persistence",
+      "The Absurd, Revisited": "Defy meaninglessness by persisting consciously within the absurd tension",
+      "Why This Book, Why Now": "Reading resists shortcuts, forcing meaningful presence over shallow summaries",
+      "The Struggle Itself": "Finding fulfillment in the climb despite inevitable failure",
+      "Acknowledgments": "Credits Millet's *Man with a Hoe* for the title image"
+    },
+    "tldr": "Embrace life’s meaningless struggle by persisting despite inevitable failure"
+  },
+  "post/2025_12_13_sisyphus/zh-TW": {
+    "title": "薛西弗斯的神話：在荒謬與閱讀之間，為什麼我們仍要思考",
+    "locale": "zh-TW",
+    "sections": {
+      "我們必須想像薛西弗斯是快樂的": "正視荒謬並持續推石，在堅持中獲得心靈平實",
+      "再訪荒謬": "清醒活在生命的荒謬裂縫中",
+      "為什麼是這本書，為什麼是現在": "以閱讀對抗速食，重拾荒謬的體驗過程",
+      "推石上山本身": "推石奮鬥本身即能填滿心靈",
+      "致謝": "致謝封面選用米勒畫作《扶鋤者》"
+    },
+    "tldr": "擁抱荒謬的推石過程，讓思想在行動中重生"
+  },
+  "post/2025_12_14_affinity/en": {
+    "title": "Affinity V3 After 45 Days: Free Software, Familiar Fears",
+    "locale": "en",
+    "sections": {
+      "The Adobe Refugee's Dilemma": "Affinity V3 is free, unified, and great—yet still unsettling",
+      "Wait, What?": "Affinity V3 is now free and merged, yet concerning",
+      "The Good: 45 Days In": "Fast, unified workflow with great new selection and glitch tools",
+      "The Less Good: Performance and Polish": "Frustrating lag and bugs weaken Affinity’s performance advantage",
+      "The UI: A Minor Rant": "Misses colorful V2 icons over new unified grey interface",
+      "The Real Problem: Free Forever": "Free forever\" is an unpredictable user-acquisition bait and switch",
+      "What I Actually Want": "Wants a $300 lifetime license over Canva's restrictive model",
+      "The Climb Continues": "Affinity works well but future subscription fears persist",
+      "Acknowledgments": "Credit for Tiepolo’s Trojan Horse title image"
+    },
+    "tldr": "Affinity V3 is now free and unified, but corporate takeover fears remain"
+  },
+  "post/2025_12_14_affinity/zh-TW": {
+    "title": "Affinity V3 使用 45 天後：免費的軟體，熟悉的恐懼",
+    "locale": "zh-TW",
+    "sections": {
+      "Adobe 難民的兩難": "不信任「永久免費」是最大的恐懼",
+      "蛤，什麼？": "Canva 推出永久免費的 Affinity V3",
+      "優點：使用 45 天後": "介面統一降摩擦，功能強大且上癮",
+      "缺點：效能與細節": "M1 Max 運行流暢度不佳，效能優勢逐漸消逝",
+      "介面：一個小小的抱怨": "偏好舊版色彩鮮明的介面，不愛新版單調灰色歸納",
+      "真正的問題：永久免費": "懷疑永久免費，憂心變質不可控",
+      "我真正想要的": "渴望終身授權，擔憂 Canva 控制條款",
+      "攀登繼續": "好用但難逃收費輪迴，保留舊版以防萬一",
+      "致謝": "致謝封面圖 Tiepolo 的特洛伊木馬畫作"
+    },
+    "tldr": "Affinity V3 雖免費好用，卻潛藏 Canva 商業轉型與訂閱隱憂"
+  },
+  "post/2025_12_19_xpro1/en": {
+    "title": "The X-Pro1: On Imperfection, Slowness, and Dancing in Shackles",
+    "locale": "en",
+    "sections": {
+      "The Compulsive Purchase": "Influenced by GxAce, author buys flawed, \"human\" X-Pro1 over modern gear",
+      "The Shackles I Dance In": "Technical limitations demand intentionality and turn obstacles into creative mastery",
+      "The Hybrid Viewfinder": "The hybrid viewfinder prioritizes reality over processed digital previews",
+      "The Colors": "Original X-Trans sensor provides soulful, nostalgic, and organic colors",
+      "The Slowness as Feature": "Friction and deliberate slowness create more meaningful photographs",
+      "Built to Last": "Durable magnesium build outperforming modern cameras decade later",
+      "The Point": "Flaws and limitations spark creativity where technical perfection fails",
+      "Acknowledgments": "Credits Gerard ter Borch art, GxAce's video, and Linscam Taipei"
+    },
+    "tldr": "Embracing the Fuji X-Pro1’s obsolete flaws for more intentional, human photography"
+  },
+  "post/2025_12_19_xpro1/zh-TW": {
+    "title": "X-Pro1：不完美、緩慢，以及在枷鎖中跳舞",
+    "locale": "zh-TW",
+    "sections": {
+      "衝動購物": "受影片推坑購入老機，在限制中重拾攝影純粹與慢活",
+      "在枷鎖裡跳舞": "限制磨練技術，讓快門更有重量",
+      "混合式觀景窗": "光學觀景窗連結現實與快門儀式感",
+      "色彩": "初代底片模擬具通透生命力",
+      "慢，是一種功能": "慢速產生的摩擦力，賦予影像意義",
+      "為耐用而生": "日本製鎂合金機身，跨越時代的耐用經典",
+      "重點": "用缺陷與限制，將記錄轉化為觀察",
+      "致謝": "致謝封面畫作、GxAce 啟發與林相相機"
+    },
+    "tldr": "擁抱 X-Pro1 的缺陷，在限制中找回攝影初心"
+  },
+  "post/2025_12_22_aftersun_paris_texas/en": {
+    "title": "Being a Stranger, in the Name of Love: On Aftersun and Paris, Texas",
+    "locale": "en",
+    "sections": {
+      "The Films That Won't Leave": "Haunting films exploring love, absence, and the distance between people",
+      "The Shape of Absence": "Love expressed through departure, distance, and inevitable absence",
+      "The Mirror and the Camcorder": "Barriers like glass and cameras enable impossible, mediated intimacy",
+      "\"Sometimes, to love someone, you gotta be a stranger\"": "Love requires protective distance or tragic, inevitable absence",
+      "What the Children See": "Children reconstruct fractured fathers through memories, media, and fragments",
+      "The Weight of Being Seen": "Fathers flee vulnerability to avoid being truly known",
+      "Why These Films Stay": "Tragic fathers, lingering love, and the beauty of inevitable loss",
+      "Acknowledgments": "Credits for Munch artwork, film stills, and cited directors"
+    },
+    "tldr": "Both films explore loving family through intentional distance and inevitable absence"
+  },
+  "post/2025_12_22_aftersun_paris_texas/zh-TW": {
+    "title": "因愛，陌生：關於《日麗》與《巴黎，德州》",
+    "locale": "zh-TW",
+    "sections": {
+      "那些不曾離去的電影": "用距離與缺席，側寫父愛中無法觸及的傷口",
+      "缺席的形狀": "深愛轉化為轉身離開的正視與缺席",
+      "鏡子與攝影機": "透過媒介與時空的隔閡，實現不可能的親密凝視",
+      "「有時候，愛一個人，你得以陌生人的身份自居」": "疏離是為了保護，以陌生之名成全愛",
+      "孩子們看見了什麼": "孩子透過影像與直覺，重構父親缺席的生命碎塊",
+      "被看穿的重量": "父輩難承脆弱，被看穿即是離別之時",
+      "為何這些電影揮之不去": "電影映照缺席的愛與溫柔遺憾",
+      "致謝": "致謝文章封面圖、劇照及引言出處"
+    },
+    "tldr": "透過距離與缺席，探討愛中難以跨越的隔閡與父女傷口"
+  },
+  "post/2025_12_24_ntu_cs_special_admission/en": {
+    "title": "An Unconventional Path: Admitted to NTU CSIE via Special Talent Admission",
+    "locale": "en",
+    "sections": {
+      "section-0": "Read the original Traditional Chinese version for the best experience",
+      "Finding the Signal in the Noise": "Top scorer documents non-traditional NTU path to guide future applicants",
+      "Finding Gaps at the Feet of Giants": "Avoided crowded competitions by focusing on niche LLM security",
+      "480 Seconds in DerTien Hall": "AI safety researcher and intern details high-stakes NTU interview experience",
+      "Two Minutes of Self-Definition": "AI security researcher, TMLR author, and campus RAG developer",
+      "Architectural Debate on FORTRESS": "Retrieving known attacks while using perplexity for evolving threats",
+      "The AAAI Video and a Stumble": "Explained AAAI educational video on language model security attacks",
+      "On Independence and Guidance": "Self-studied under Professor Tsai’s guidance with increasing research independence",
+      "Examining PATCH and Data Generation": "Adversarial data generation and fine-tuning improved model safety generalization",
+      "The Blueprint for Next Steps": "Discussed granular security classification and future course recommendations",
+      "Your Lane, Your Definition": "Define your unique value by carving your own niche",
+      "Acknowledgments": "Grateful to mentors, colleagues, and family for unconventional NTU admission"
+    },
+    "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research"
+  },
+  "post/2025_12_24_ntu_cs_special_admission/zh-TW": {
+    "title": "一條非典型的路：115 臺大資工資安組特選正取經驗",
+    "locale": "zh-TW",
+    "sections": {
+      "在雜音中尋找訊號": "資安特選正取經驗分享，為追夢者指引方向",
+      "在巨人的腳邊找縫隙": "避開紅海競爭，開拓 AI 安全新領域",
+      "德田館的 480 秒": "口試聚焦 AI 安全研究與獨立開發能力",
+      "兩分鐘的自我定義": "首位發表 LLM 安全論文的資安特選生",
+      "關於 FORTRESS 的架構辯證": "結合檢索與困惑度防禦攻擊，並規劃朝多模態發展",
+      "AAAI 影片與失誤": "結合剪輯專長分享 LLM 資安影片",
+      "關於獨立性與指導": "從受指導轉為獨立發想與撰寫論文",
+      "PATCH 與數據生成的檢視": "詳述 PATCH 數據生成架構及微調提升成效",
+      "下一步的藍圖": "研究細緻的 AI 安全分類與入學修課規劃",
+      "你的賽道，你的定義": "不模仿他人，深耕自我熱情開闢獨特賽道",
+      "致謝": "感謝恩師、前輩及家人的支持與啟蒙"
+    },
+    "tldr": "專注新興領域大型語言模型安全，以學術論文與實作力錄取臺大資工"
+  },
+  "post/2026_01_10_plushies/en": {
+    "title": "The Case for Unhinged Plushies: A Collection of Chaos",
+    "locale": "en",
+    "sections": {
+      "Against Conventional Cuteness": "Embracing weird, unhinged plushies over traditional cute toys",
+      "Bloody Mary: The One That Got Away (Twice)": "Lost Sigikid fly plush reunited via eBay find",
+      "GuluGulu: The Hospital Unicorn": "Hospitalized man permanently adopts girlfriend’s deranged spiral-eyed unicorn",
+      "Taco Tuesday: The International Import": "Pricey German dog plush with chaotic, unhinged energy",
+      "The Jellycat Trio: Organized Chaos": "Bewitched Jellycats vibing through an existential crisis",
+      "Why These?": "Unique chaos offers more character and connection than generic cuteness",
+      "Acknowledgments": "Thanks to specific plush brands, helpful friends, and Edward Hicks"
+    },
+    "tldr": "Personal collection of weirdly endearing, unhinged plushies and their sentimental backstories"
+  },
+  "post/2026_01_10_plushies/zh-TW": {
+    "title": "為什麼我喜歡這些長得怪怪的絨毛玩偶？",
+    "locale": "zh-TW",
+    "sections": {
+      "拒絕千篇一律的可愛": "不落俗套的怪，才值得被看見",
+      "飛飛 (Bloody Mary)：兩度失而復得的蒼蠅": "兩度失而復得的詭異蒼蠅玩偶",
+      "咕嚕咕嚕：醫院裡初見面的獨角獸": "氣胸住院獲贈的崩壞獨角獸",
+      "Taco Tuesday：國際進口的狗": "跨海買下眼神迷離的狼狽德國名犬",
+      "Jellycat 三人組：有秩序的混亂": "荒誕可愛卻厭世的療癒組合",
+      "為什麼是這些？": "不完美卻獨一無二的靈魂伴侶",
+      "致謝": "感謝來源品牌、母親友人的救援與懂玩偶的朋友"
+    },
+    "tldr": "從醜萌玩偶的靈魂美，看見生命中的溫暖與混亂"
+  },
+  "post/2026_02_10_synecdoche_truman/en": {
+    "title": "The Stage and the Exit: On Synecdoche, New York and The Truman Show",
+    "locale": "en",
+    "sections": {
+      "The Door and the Cue": "Truman exits his artificial world; Caden becomes his own construction",
+      "The Architecture of Control": "Truman’s prison is external; Caden’s is self-constructed recursion",
+      "Christ-Off and Cotard": "Christof controls from above; Cotard retreats from within",
+      "Escaping vs. Becoming": "Truman escapes his stage; Caden is consumed by his",
+      "The Director and the Directed": "Truman escapes his creator; Caden is consumed by his creation",
+      "The Audience Problem": "Truman’s audience liberates him; Caden’s self-obsession excludes everyone",
+      "The Door You're Standing In Front Of": "Truman’s cinematic escape versus Caden’s internal, tragic entrapment",
+      "Acknowledgments": "Credits for *Las Meninas*, FILMGRAB, Weir, and Kaufman"
+    },
+    "tldr": "Truman exits his artificial world; Caden is consumed by his own construction"
+  },
+  "post/2026_02_10_synecdoche_truman/zh-TW": {
+    "title": "舞台與出口：關於《紐約浮世繪》與《楚門的世界》",
+    "locale": "zh-TW",
+    "sections": {
+      "門與提示詞": "楚門走出他人的囚籠，凱登陷進自造的迷宮",
+      "控制的建築學": "楚門受困於他人的穹頂，凱登陷於自我的遞迴",
+      "「基督」的缺席與「科塔爾」的妄想": "偽神外在掌控與自我崩壞妄想",
+      "逃離 vs. 成為": "楚門逃離虛構，凱登卻受困舞台而終",
+      "導演與被導演者": "外控的反抗與內耗的迷失",
+      "觀眾的問題": "楚門有觀眾共謀，卡登僅與自我的虛無對話",
+      "你正站在哪扇門前": "楚門追求逃脫，凱登受困自我，你選哪扇門",
+      "致謝": "致謝封面名畫與兩部電影劇照引用"
+    },
+    "tldr": "楚門走出他人建構的舞台，卡登則受困於自我執念的廢墟"
+  },
+  "post/9_m11d/en": {
+    "title": "Leica M11-D: On Privilege, Presence, and Why I Can't Defend This Purchase",
+    "locale": "en",
+    "sections": {
+      "The Unjustifiable": "Logic fails; I chose expensive, screenless tactile soul over specs",
+      "The Elephant, Briefly": "Bought luxury camera with gifted money; prioritized presence over \"later",
+      "Milan, January 22nd": "Spontaneous Milan purchase of an M11-D and silver lens",
+      "The Logical Terminal": "Pure rangefinder focusing and no screen enforce creative presence",
+      "Learning to Trust": "Removing displays forces presence, turning photography from optimization into intuition",
+      "What Presence Actually Looks Like": "No screen means experiencing moments instead of reviewing them",
+      "What the Sensor Sees": "60MP precision meets technical quirks and intentional imperfection",
+      "The Commitment": "Choosing unoptimized tools to force presence despite an AI-optimized world",
+      "The Question I Can't Answer": "An unjustifiable purchase defining who I hope to become",
+      "The Collections": "Three curated Italy galleries: snow, city streets, and small towns",
+      "Acknowledgments": "Credits Caillebotte’s art, Justin, and Charlie for feedback"
+    },
+    "tldr": "An unjustifiable, screenless Leica purchase prioritizing present experience over rational long-term investment"
+  },
+  "post/9_m11d/zh-TW": {
+    "title": "Leica M11-D：關於特權、在場，以及我無法為這筆消費辯護的種種",
+    "locale": "zh-TW",
+    "sections": {
+      "無法辯護的選擇": "捨棄理性規格，只為追求純粹手感的感性投資",
+      "房間裡的大象，先說在前": "收下贈款不待以後，以此重擔及時對焦人生",
+      "米蘭，一月二十二日": "意外購入M11-D，銀鏡搭配成就完美驚喜",
+      "邏輯的終點": "除去螢幕與科技枷鎖，回歸純粹聯動測距體驗",
+      "學會信任": "放棄即時回饋，以信任與在場取代攝影優化",
+      "在場，究竟是什麼模樣": "捨棄螢幕與重播，用快門換取慢速在場的練習",
+      "感光元件看見什麼": "硬核性能與手感怪癖，回歸攝影不完美的純粹",
+      "那份承諾": "拒絕優化，用手動相機承諾慢下來去生活",
+      "我無法回答的問題": "無法以規格辯護，僅為值得成為的自己買單",
+      "影像輯錄": "義大利旅拍影像集：雪山、城市與小鎮光影",
+      "致謝": "致敬匠人精神，感佩好友審閱草稿"
+    },
+    "tldr": "捨棄規格與理性，以極致純粹擁抱在場的快門瞬間"
+  },
+  "project/2024_08_19_classics_reimagined/en": {
+    "title": "Classics Reimagined: A Theatrical Performance",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Class 2026 won first with a musical Chinese classic retelling",
+      "Synopsis": "Dynastic collapse triggered by complex love, betrayal, and tragic fate",
+      "Curtain Call Video Production": "Produced a flashy, rhythm-driven curtain call video using DaVinci Resolve",
+      "Production Equipment": "Fujifilm X-T5, DJI stabilizer, and DaVinci Resolve editing tools",
+      "Creative Process": "Rhythm-based filming and complex post-production using DaVinci Resolve Fusion",
+      "Pre-production and Filming": "Rhythm-based planning and filming using DaVinci Resolve analysis",
+      "Post-production": "DaVinci Resolve editing with complex Fusion transitions and sound layering",
+      "Polaroid Photoshoot": "Personalized Polaroid photos with student messages intro the video",
+      "Stills": "Production photography capturing the reimagined theatrical performance",
+      "Reflection": "Documenting collaborative teamwork made the audience's applause truly rewarding",
+      "Acknowledgments": "Thanks to cast, crew, and students for the performance"
+    },
+    "tldr": "Class 2026 won first place reinterpreting Ming-Qing history through musical drama"
+  },
+  "project/2024_08_19_classics_reimagined/zh-TW": {
+    "title": "古韻今唱戲劇演出",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "十一愛班重新詮釋經典，榮獲戲劇比賽第一名",
+      "劇本概覽": "亂世下吳李陳的命運交錯與紅顏悲歌",
+      "謝幕影片製作": "以高規器材與炫技剪輯，打造快節奏謝幕影片",
+      "製作設備": "使用富士相機、DJI穩定器及達芬奇剪輯",
+      "製作思路": "精準對點剪輯，搭配動態轉場與精緻調色",
+      "事前準備及拍攝": "分析音樂、規劃鏡頭並確保拍攝品質",
+      "後期剪輯": "DaVinci 剪輯與複雜 Fusion 轉場特效",
+      "拍立得拍攝": "手寫拍立得融入片頭增添溫度",
+      "劇照": "《古韻今唱》演出精彩劇照特輯",
+      "心得": "記錄見證團隊齊心，成果豐碩值得",
+      "致謝": "致謝參與演出的兩位導演、編劇及幕後夥伴"
+    },
+    "tldr": "十愛《亂世殘陽》奪冠，炫技影片完美紀錄演出幕後"
+  },
+  "project/2024_09_23_chingshin_rag/en": {
+    "title": "Chingshin RAGi",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Award-winning RAG chatbot streamlining Chingshin Academy’s administrative information access",
+      "Implementation Details": "SQLite bge-embeddings hybrid search FastAPI OpenAI and Svelte frontend",
+      "Database": "SQLite database using bge-small-zh-v1.5 embeddings and BeautifulSoup crawling",
+      "Search Engine": "Hybrid BM25 and semantic search optimized with HNSWlib and NER",
+      "API Module": "FastAPI with OpenAI streaming for high-performance responses",
+      "Front-end": "Efficient Svelte front-end featuring an interactive drop-down menu",
+      "Project Promotion": "Created bilingual visual assets and an introductory demo video",
+      "Presentation Design": "Custom typography-driven slides in Chinese and SDG-aligned English versions",
+      "Video Design": "Introductory video showcasing Chingshin RAGi features and design philosophy",
+      "Acknowledgments": "Thanks to team members Chaney, Raymond, and mentors for support"
+    },
+    "tldr": "Award-winning hybrid RAG school chatbot built with SQLite and FastAPI"
+  },
+  "project/2024_09_23_chingshin_rag/zh-TW": {
+    "title": "靜心 RAGi",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "手寫 RAG 助校務，獲國科會 GenAI 特優",
+      "實作細節": "SQLite混合搜尋、OpenAI API與Svelte開發實作",
+      "資料庫": "SQLite 儲存 JSON，改用 bge-small 提升檢索效能",
+      "搜尋引擎": "混合式搜尋輔以 NER 意圖辨識",
+      "API 模組": "FastAPI 構建，由 Gemini 遷至 OpenAI 並支援串流",
+      "前端": "使用 Svelte 輕量開發並優化下拉選單互動",
+      "專案宣傳工作": "一手包辦中英簡報視覺與宣傳影片製作",
+      "簡報設計": "自建中英視覺語言，平衡黑宋字體與SDGs連結",
+      "影片設計": "製作競賽特製介紹影片，展示設計理念與功能",
+      "致謝": "感謝團隊、指導者信任及素材提供者"
+    },
+    "tldr": "自研 RAG 聊天機器人優化校務查詢，榮獲 GenAI Stars 特優"
+  },
+  "project/2024_10_04_proj_zephyr/en": {
+    "title": "Zephyr: Fully Automated Ticket-Grabbing Bot",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Autonomous Tixcraft bot using Selenium and CNN captcha solving",
+      "Implementation Details": "CNN-based CAPTCHA solver refined through synthetic data and fine-tuning",
+      "Model Training": "Iterative CNN training using scraped data and manual error fine-tuning",
+      "Execution Flow": "Automated ticket-grabbing with JSON configuration and stability-focused simulation mechanisms",
+      "Disclaimer": "Academic research only; developer disclaims all liability and usage requests"
+    },
+    "tldr": "Automated Tixcraft bot using Selenium and CNN to bypass CAPTCHAs fast"
+  },
+  "project/2024_10_04_proj_zephyr/zh-TW": {
+    "title": "Zephyr: 全自動搶票機器人",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "Selenium 搭配 CNN 自動破解验证碼的拓元搶票機器人",
+      "實作細節": "CNN 辨識驗證碼，串接多執行緒自動搶票流程",
+      "模型訓練": "CNN 結合合成數據與錯題優化，極速辨識驗證碼",
+      "運行流程": "JSON驅動設定，結合驗證碼辨識與模擬真人的自動搶票",
+      "聲明": "學術研究用，不供源碼、禁非法用途"
+    },
+    "tldr": "結合 CNN 辨識驗證碼的拓元全自動搶票機器人"
+  },
+  "project/2024_10_09_vrc_2813b_nova/en": {
+    "title": "VRC 2813B NOVA",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Lead programmer’s two-year journey of iterative VEX robotics engineering",
+      "2023-2024 Season - Over Under": "Newcomers focused on fundamentals, pneumatics, and basic control systems",
+      "Mechanical Design & Challenges": "First VRC H-drive robot featured catapult and pneumatic hanging mechanism",
+      "The Programming Hurdle": "Basic dead-reckoning proved unreliable, necessitating feedback controllers and consistency",
+      "2024-2025 Season - High Stakes": "Advanced software, PROS migration, and precision engineering for High Stakes",
+      "A New Programming Paradigm": "Migrated to PROS with OOP, LemLib odometry, and Git versioning",
+      "Mechanical Evolution": "6-motor tank drive, counter-roller intake, and PID-controlled four-bar arm",
+      "Reflection": "Engineering growth through technical rigor and persistent team collaboration",
+      "Acknowledgments": "Gratitude to NOVA teammates, mentors, and coaches for engineering growth"
+    },
+    "tldr": "Refining robotics engineering through iterative design and stabilizing autonomous programming failures"
+  },
+  "project/2024_10_09_vrc_2813b_nova/zh-TW": {
+    "title": "VRC 2813B NOVA",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "兩賽季 VEX 機器人研發與成長回顧",
+      "2023-2024 賽季 - Over Under": "首賽季精進基礎功能，從經驗中體認穩定性的重要",
+      "機械設計與挑戰": "首用氣動系統整合 H 型底盤，挑戰漏氣與耐用度",
+      "程式開發的瓶頸": "硬寫指令導致誤差，改選 PID 追求穩定性",
+      "2024-2025 賽季 - High Stakes": "導入 PROS 與穩定機械結構，實現精準自動化控制",
+      "全新的程式開發模式": "轉用 PROS、物件導向、LemLib 定位及 Git 版本控制",
+      "機械結構的演進": "六馬達底盤、雙滾輪進氣與四連桿PID手臂",
+      "心得": "工程成長與團隊協作，磨練問題解決思維",
+      "致謝": "感謝隊員努力及導師指導，促進團隊與個人成長"
+    },
+    "tldr": "從初學基礎邁向 PROS 模組化開發與 PID 控制的成長歷程"
+  },
+  "project/2025_01_03_powerplay/en": {
+    "title": "2025 POWERPLAY",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Student-led science class drama exploring diverse stories of love",
+      "Synopsis": "Three train-linked tales exploring friendship, trust, and honesty in love",
+      "Act I: Friendship First": "Ethan chooses friendship over romance after Allie rejects him",
+      "Act II: Trust Me": "Tom’s unfounded cheating suspicions nearly ruin his long-distance relationship",
+      "Act III: Lie for Love": "Angie fakes pregnancy to gain family acceptance for Chaney",
+      "Ending": "Conductor defines love as connection and hope at final destination",
+      "Curtain Call Video Production": "Produced one-minute curtain call video and mentored classmate's edit",
+      "Production Equipment": "Fujifilm X-T5, Sigma lens, DJI stabilizer, and DaVinci Resolve software",
+      "Pre-production and Filming": "Rhythm-based shot planning and stabilized filming for a minute-long narrative",
+      "Post-production": "Refined Fusion 3D tracking, transitions, and spatial depth layering",
+      "Opening Screen Pull-out Transition": "Complex screen pull-out using planar tracking and 3D cameras",
+      "Mid-section Floating Polaroids": "Synced 3D floating Polaroids using Fusion’s Camera Tracker",
+      "Ending Sequence": "Optimized transitions, spatial depth, and reverse pull-out ending design",
+      "Stills": "High-resolution photography gallery showcasing 2025 POWERPLAY visual highlights",
+      "Reflection": "Ambitious production featuring motorized props, dynamic backdrops, and Fusion techniques",
+      "Acknowledgments": "Thanks to students for scriptwriting, acting, and creative production"
+    },
+    "tldr": "Student-led 11th-grade play exploring love through three train-themed moral dilemmas"
+  },
+  "project/2025_01_03_powerplay/zh-TW": {
+    "title": "2025 POWERPLAY",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "高二理科生自製，三段故事探討 LOVE 劇作",
+      "劇本概覽": "列車長串連三段愛情的考驗與成長",
+      "第一幕：友情至上 (Friendship First)": "Ethan告白遭拒後，體悟友情可貴並與Allie和解",
+      "第二幕：相信我 (Trust Me)": "遙距誘發猜忌，見面澄清後承諾溝通和解",
+      "第三幕：為愛說謊 (Lie for Love)": "假懷孕謊言化解阿嬤控制慾，家人終和解",
+      "結局": "愛是基於信任與陪伴的希望連結",
+      "謝幕影片製作": "運用特效與3D空間，打造快節奏謝幕短片",
+      "製作設備": "使用 X-T5、RS3 Mini 及 DaVinci 製作",
+      "事前準備及拍攝": "音樂分析、鏡頭規劃及反覆實拍",
+      "後期剪輯": "精修 Fusion 3D 空間追蹤與複雜遮罩轉場",
+      "開頭的螢幕拉出轉場": "進階螢幕拉出轉場，以 3D 運鏡追蹤合成",
+      "中段的漂浮拍立得": "整合 Fusion 追蹤技術實現隨節點律動的 3D 拍立得",
+      "結尾段落": "透過遮罩與音效優化轉場，打造結尾空間細節",
+      "劇照": "2025 POWERPLAY 活動現場精彩劇照回顧",
+      "心得": "電動火車與動態背板超吸睛，影音製作收穫豐",
+      "致謝": "感謝全體成員，特別是Raymond等道具功臣與幕後花絮製作團隊"
+    },
+    "tldr": "學生主導英文劇，透過三段故事探討愛、信任與誠實"
+  },
+  "project/2025_01_05_aaai_video/en": {
+    "title": "AAAI 2025 Educational Video",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Competition entry exploring language model safety for AAAI 2025",
+      "Video Content": "Explaining LLM jailbreak attacks and defenses via simple analogies",
+      "Video Production": "Filmed A-roll and used DaVinci Fusion for Emoji-styled motion graphics",
+      "Reflection": "Grew research communication skills through professional-grade motion graphics production",
+      "Acknowledgments": "Thanks to AK and Micro Volume for script and assets"
+    },
+    "tldr": "Short educational video explaining LLM jailbreak attacks and defense strategies"
+  },
+  "project/2025_01_05_aaai_video/zh-TW": {
+    "title": "AAAI 2025 教育影片",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "製作 AAAI 2025 大會 LLM 資安教學影片",
+      "影片內容": "淺析大語言模型越獄攻防與未來挑戰",
+      "影片製作": "達芬奇後期剪輯，動態設計結合 Emoji 獲獎",
+      "心得": "融合視覺敘事與科技安全，探索創作無限可能",
+      "致謝": "感謝 AK 建議及 Micro Volume 封面素材"
+    },
+    "tldr": "製作 AAAI 獲獎短片，科普大語言模型攻防技術"
+  },
+  "project/2025_03_08_sitcon_keynote/en": {
+    "title": "SITCON 2025 Keynote",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Turning a student RAG project into a SITCON keynote",
+      "Content Planning": "Structured talk via academic paper on hallucinations, RAG, and implementation",
+      "Presentation Design": "Affinity-designed 4K slices animated manually in Apple Keynote",
+      "Acknowledgments": "Gratitude to SITCON 2025 team and rehearsal reviewers for support"
+    },
+    "tldr": "Author details his experience designing a keynote on RAG for SITCON 2025"
+  },
+  "project/2025_03_08_sitcon_keynote/zh-TW": {
+    "title": "SITCON 2025 議程",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "受邀於 SITCON 分享 Chingshin RAG 專案演講心路歷程",
+      "內容規劃": "結合學術論文，解析 RAG 架構與專案實戰經驗",
+      "簡報設計": "用 Affinity 設計後匯入 Keynote 手動動畫化",
+      "致謝": "感謝 SITCON 團隊與 AK、Danny 的試講建議與支持"
+    },
+    "tldr": "作者在 SITCON 分享 RAG 概念與開發實務心得"
+  },
+  "project/2025_03_18_boundless_voices/en": {
+    "title": "Boundless Voices Charity Concert",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Charity concert showcasing disabled artists to fund hospital redevelopment",
+      "Designing the Program": "Streamlining performer data and designing sky-themed program booklets",
+      "Directing the Documentary": "Solo-produced documentary uses sound design and match cuts for impact",
+      "Reflection": "Music transcends barriers, fostering resilience through heartfelt artistic collaboration",
+      "Acknowledgments": "Thanks to Mr. Wu, performers, and staff for sharing hope"
+    },
+    "tldr": "Student-led \"Boundless Voices\" charity concert benefitting Mackay Memorial Hospital via musical theater"
+  },
+  "project/2025_03_18_boundless_voices/zh-TW": {
+    "title": "無界之聲慈善音樂會",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "受視障音樂家啟發，辦慈善音樂劇募款",
+      "節目冊設計": "藍天雲端融入飛揚音符，展現無界意象",
+      "紀錄片執導": "一人包辦剪輯，以重度音效與匹配剪接強化敘事",
+      "心得": "透過藝術傳遞希望，連結人心並成就自我提升",
+      "致謝": "感謝演出團隊與吳柏毅，用音樂傳遞愛與希望"
+    },
+    "tldr": "透過設計與影像，傳達身障音樂家的生命力量"
+  },
+  "project/2025_04_12_portfolio/en": {
+    "title": "Portfolio Website",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Multi-domain Next.js Turborepo using Markdown-based static content architecture",
+      "A Content-First, Multi-Domain Architecture": "Next.js middleware routes subdomain requests to Markdown-processed content",
+      "Technical Highlights": "Optimized monorepo with SSG, custom plugins, and i18n support",
+      "Knowledge Graph": "Interactive D3.js graph visualizes linked content via shared tags",
+      "Content & Features": "Showcases projects, gallery, blog, manifesto, papers, and tools used"
+    },
+    "tldr": "Turborepo-powered Next.js monorepo serving multiple domains via a markdown-based system"
+  },
+  "project/2025_04_12_portfolio/zh-TW": {
+    "title": "個人網站",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "高效 Monorepo 架構，驅動多網域與 Markdown CMS",
+      "以內容為核心的多網域架構": "單一 Next.js 驅動多網域，Markdown 驅動內容分離",
+      "技術亮點": "Monorepo 架構、媒體優化與高效能 i18n 網站",
+      "知識圖譜": "以 D3.js 視覺化呈現內容關聯與語意推薦運算射",
+      "內容與功能": "展示專案、攝影、博文、理念與論文筆記"
+    },
+    "tldr": "多網域 monorepo 架構，整合 Markdown 與自動化媒體優效能"
+  },
+  "project/2025_05_18_patch_dataset/en": {
+    "title": "PATCH Dataset",
+    "locale": "en",
+    "sections": {
+      "section-0": "Ligne-scale adversarial safety dataset for Traditional Chinese LLM evaluation",
+      "What is PATCH?": "Traditional Chinese safety dataset with 820k prompts and MLCommons alignment",
+      "The PATCH Advantage": "Large-scale, diverse, adversarial, and culturally authentic Traditional Chinese safety data",
+      "Dataset Construction: A Multi-Stage Pipeline": "Automated harm generation, adversarial mutations, and adapted safe content",
+      "Direct Harmful Prompt Generation (PATCH-GPT)": "GPT-3.5/4 generated direct harmful prompts across 13 MLCommons categories",
+      "Evasive Harmful Prompt Generation (PATCH-RT)": "Adversarial framework generating sophisticated, regionally-contextualized harmful prompt evasions",
+      "Safe Content Adaptation": "Adapted ChatGPT corpus using Fanhuaji for regional TC authenticity",
+      "Validating Real-World Vulnerability": "LLMs show significant vulnerability to PATCH adversarial inputs",
+      "Fine-Tuning Strategies: Finding the Efficient Path": "LoRA matches full fine-tuning with superior efficiency and robustness",
+      "Key Finding: LoRA Matches Full Fine-Tuning": "LoRA matches full fine-tuning performance using significantly fewer resources",
+      "Robustness on Human-Authored Data": "Synthetic data training effectively secures high robustness on human-authored inputs",
+      "A Surprising Bonus: Cross-Lingual Benefits": "PATCH-tuned models show improved safety performance on English benchmarks",
+      "Conclusion and Future Directions": "PATCH enhances Traditional Chinese LLM safety via efficient fine-tuning",
+      "Acknowledgments": "Thanks to co-author Chen, Prof. Tsai, and mentor AK"
+    },
+    "tldr": "PATCH: First large-scale safety dataset for Traditional Chinese adversarial evaluation"
+  },
+  "project/2025_05_18_patch_dataset/zh-TW": {
+    "title": "PATCH 繁中資料集",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "首個大規模繁體中文對抗性安全評估資料集 PATCH",
+      "什麼是 PATCH？": "專為繁中安全分類設計的開源資料集",
+      "PATCH 的優勢": "大數據、對抗性強且深耕本土文化",
+      "資料集建構：多階段流程": "結合 GPT 生成與對抗性框架的繁中紅隊資料集",
+      "直接有害 Prompt 生成 (PATCH-GPT)": "利用 GPT 自動生成 13 類直接有害指令",
+      "規避性有害 Prompt 生成 (PATCH-RT)": "用 RT 框架生成具繁中特色的複雜規避攻擊指令",
+      "安全內容調整": "整合 ChatGPT 安全數據並繁化當地語法",
+      "驗證真實世界的漏洞": "實測證明多數 LLM 易受繁體中文漏洞攻擊",
+      "微調策略：尋找高效路徑": "LoRA 微調效能媲美 FFT 且更高效",
+      "關鍵發現：LoRA 效能媲美 FFT": "LoRA 效能媲美全參數微調且成本更低",
+      "在人工編寫數據上的穩健性": "合成數據微調顯著提升人工數據判別力",
+      "意外的收穫：跨語言效益": "繁中微調強化模型跨語言安全效益",
+      "結論與未來方向": "PATCH 優化安全對齊並推動未來開源研究",
+      "致謝": "感謝陳炯睿、蔡教授及學長 AK 的協助與指導"
+    },
+    "tldr": "PATCH：首個大規模繁體中文對抗性安全評估資料集"
+  },
+  "project/2025_08_04_debate/en": {
+    "title": "World School Debate Experience",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Reflecting on transformative growth through high school competitive WSDC debate",
+      "How It Started": "Swapping essays for debate, the author built skills through persistence",
+      "Competition Highlights": "Multiple semifinalist and high-ranking speaker in competitive Taiwanese tournaments",
+      "[TSDC 2023](https://tsdc2023.calicotab.com/tsdc2023/)": "Reached TSDC 2023 semifinals and ranked 13th best speaker",
+      "[FHDO 2023](https://fhdo.calicotab.com/fhdo2023/)": "Highly competitive tournament; missed breaks despite winning 3/4 rounds",
+      "[TEJT 2023](https://tejt.calicotab.com/tejt2023/)": "Reached TEJT 2023 semifinals and ranked 12th best speaker",
+      "[TSDC 2024](https://tsdc.calicotab.com/tsdc2024/)": "Refined strategies led the same team to the 2024 semifinals",
+      "FHDO 2024": "Won 3 of 4 rounds but narrowly missed breaking again",
+      "FHDO 2025": "Won FHDO 2025 with undefeated record and 3rd speaker rank",
+      "Reflection": "Debate fueled personal growth, lasting friendships, and communication skills",
+      "Acknowledgments": "Thanks to teammates Morris, Sean and coaches Jeff, Johan"
+    },
+    "tldr": "Middle school start led to high school success and top national rankings"
+  },
+  "project/2025_08_04_debate/zh-TW": {
+    "title": "WSDC 英文辯論經驗",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "回顧中學至高中的辯論成長與蛻變之旅",
+      "一切的開端": "避開作文愛上辯論，在挫折中奠定基礎",
+      "參賽亮點": "多次晉級國內頂尖賽事，更獲 FHDO 全勝冠軍",
+      "[TSDC 2023](https://tsdc2023.calicotab.com/tsdc2023/)": "TSDC 2023 晉級四強，個人排名第 13",
+      "[FHDO 2023](https://fhdo.calicotab.com/fhdo2023/)": "FHDO競爭激烈，三勝一負仍因分數不足未晉級",
+      "[TEJT 2023](https://tejt.calicotab.com/tejt2023/)": "TEJT 2023 晉級四強，個人排名第 12",
+      "[TSDC 2024](https://tsdc.calicotab.com/tsdc2024/)": "原班人馬重返挑戰，惜止步 TSDC 四強",
+      "FHDO 2024": "2024年FHDO三勝一負，未晉級但激發鬥志",
+      "FHDO 2025": "2025 FHDO 勇奪全勝冠軍，個人演講全國第三",
+      "心得": "辯論圓滿收場，成就自信與難忘回憶",
+      "致謝": "感謝隊友 Morris、Sean 與教練 Jeff、Johan 協助"
+    },
+    "tldr": "從國中起步磨練，終以 FHDO 全勝冠軍圓滿收官"
+  },
+  "project/2025_10_12_fortress/en": {
+    "title": "FORTRESS System",
+    "locale": "en",
+    "sections": {
+      "section-0": "Fast, training-free safety guard using retrieval and perplexity analysis",
+      "What is FORTRESS?": "Efficient, tuning-free LLM safety system unifying retrieval and perplexity",
+      "The FORTRESS Advantage": "Training-free, scalable, and efficient classification with 91.6% F1 safety score",
+      "How FORTRESS Works: An Architectural Deep Dive": "Two-stage pipeline ensembles semantic retrieval with dynamic perplexity analysis",
+      "1. Primary Detector: Semantic Retrieval": "Semantic similarity search using LLM embeddings and vector retrieval",
+      "2. Secondary Analyzer: Dynamic Perplexity Analysis": "Category-specific perplexity thresholds detect zero-day attacks via linguistic typicality",
+      "3. Dynamic Ensemble Strategy": "Weights dynamically balance semantic signals and perplexity for consensus",
+      "Putting it to the Test: Performance Breakdown": "FORTRESS outperforms baselines with 5x faster, data-scalable safety performance",
+      "Head-to-Head Comparison": "FORTRESS outperforms GuardReasoner, achieving 91.6% F1 while 5x faster",
+      "Scalability Through Data Ingestion": "Data ingestion boosts performance via vector scaling without added latency",
+      "The Importance of Every Component: Ablation Study": "Dynamic, per-category thresholds are vital for high F1 scores",
+      "Conclusion and Future Work": "Efficient training-free LLM security using retrieval and perplexity analysis",
+      "Personal Reflection": "Courageously navigating uncertainty from a naive idea to TMLR acceptance",
+      "Acknowledgments": "Thanks to Prof. Tsai, AK, and TMLR reviewers"
+    },
+    "tldr": "Scalable, training-free LLM safety system using retrieval and dynamic perplexity analysis"
+  },
+  "project/2025_10_12_fortress/zh-TW": {
+    "title": "FORTRESS 防禦系統",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "FORTRESS：免訓練、高速且動態整合的 LLM 安全防禦系統",
+      "什麼是 FORTRESS？": "高效、免訓練的資料導向 LLM 防禦系統",
+      "FORTRESS 的優勢": "無需訓練、高效且效能領先的防禦系統",
+      "FORTRESS 的運作原理：深入解析架構": "結合向量檢索與動態 PPL 的加權防禦機制",
+      "1. 主要偵測器：向量檢索": "LLM 提取向量並檢索資料庫判定安全性",
+      "2. 次要分析器：動態 perplexity 分析": "動態類別閥值偵測新型攻擊",
+      "3. 動態集成策略": "依一致性動態調整權重，結合向量與困惑度分析",
+      "實戰測試：效能分析": "FORTRESS 高效能、低延遲，且資料注入顯著提升準確率",
+      "正面對決": "FORTRESS 效能領先且延遲縮減五倍",
+      "透過資料注入實現可擴展性": "注入資料優化向量庫，高效提升性能並維持低延遲",
+      "每個組件的重要性：消融研究": "動態臨界值為核心，顯著提升偵測精確度",
+      "結論與未來研究方向": "整合檢索與動態分析，強化開源 LLM 安全",
+      "心得": "從大膽設想到錄取TMLR，不畏黑暗勇於實踐",
+      "致謝": "感謝教授、AK 指導及 TMLR 審稿意見"
+    },
+    "tldr": "無需訓練、可快速擴展的高效能 LLM 輸入安全過濾系統"
+  },
+  "project/sitcon-2026/en": {
+    "title": "SITCON 2026 Keynote",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Securing LLMs against prompt injection after a CyCraft internship",
+      "The Core Concept": "Securing LLMs via Attention Tracker monitoring and internal stress-testing",
+      "1. Why do we need to \"open\" the LLM?": "Internal monitoring fixes context confusion better than external scanners",
+      "2. How do we use \"Attention\" to find the traitor?": "Monitor attention heads to detect shifts from safety rules",
+      "3. Is this defense truly perfect?": "Experiments reveal context, language, and prefix vulnerabilities in defenses",
+      "Presentation Design & Easter Eggs": "Viridis hacker aesthetic, Affinity-to-Keynote workflow, and hidden prompt injections",
+      "Reflections & Acknowledgments": "Go beyond APIs by deconstructing systems; thanks to CyCraft mentors"
+    },
+    "tldr": "Securing LLMs by monitoring internal Attention Heads to detect prompt injections"
+  },
+  "project/sitcon-2026/zh-TW": {
+    "title": "SITCON 2026 議程",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "延續 RAG 演講，分享防範提示注入研究",
+      "核心概念": "監控模型注意力，偵測並實測提示注入防禦機制",
+      "1. 為什麼我們需要「打開」LLM？": "透視模型內部以防範提示注入漏洞",
+      "2. 如何利用「注意力」抓出內鬼？": "監控注意力焦點分數抓出攻擊",
+      "3. 這種防禦真的完美無瑕嗎？": "實測三種情境揭露防禦機制的極限與盲點",
+      "簡報設計與彩蛋": "深色理性設計，內藏海盜主題 Prompt Injection",
+      "反思與致謝": "探究原始碼本質，致謝導師與籌備團隊回饋"
+    },
+    "tldr": "SITCON 2026：深入模型注意力機制，防禦 Prompt Injection 注入攻擊"
+  },
+  "gallery/2023_06_30_city_stroll/en": {
+    "title": "Piece of Tokyo",
+    "locale": "en",
+    "sections": {
+      "section-0": "Capturing Tokyo’s poetic essence through light and fleeting silhouettes"
+    },
+    "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow"
+  },
+  "gallery/2023_06_30_city_stroll/zh-TW": {
+    "title": "城市切片",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "以影像蒐集東京的光影詩意切片"
+    },
+    "tldr": "以影像切片，拼湊東京的光影詩意"
+  },
+  "gallery/2023_07_07_splash_of_red/en": {
+    "title": "Splash of Red",
+    "locale": "en",
+    "sections": {
+      "section-0": "Vibrant moments found within the city's gray, everyday fragments"
+    },
+    "tldr": "Vibrant red details reveal profound beauty within ordinary urban moments"
+  },
+  "gallery/2023_07_07_splash_of_red/zh-TW": {
+    "title": "一抹紅",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "捕捉平凡日常中，那一抹靈魂的紅意"
+    },
+    "tldr": "頹圮日常中的一抹紅，是生命最誠實的出口"
+  },
+  "gallery/2023_08_10_intersection/en": {
+    "title": "Intersection",
+    "locale": "en",
+    "sections": {
+      "section-0": "Two silhouettes briefly converge on a bridge at dusk"
+    },
+    "tldr": "Two silhouettes briefly converge on a bridge during a golden dusk"
+  },
+  "gallery/2023_08_10_intersection/zh-TW": {
+    "title": "一期一會",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "夕陽下公車瞥見的短暫交會"
+    },
+    "tldr": "夕陽下巴士窗外的偶然相遇"
+  },
+  "gallery/2023_10_05_solitary_glow/en": {
+    "title": "Solitary Glow",
+    "locale": "en",
+    "sections": {
+      "section-0": "Urban silhouettes and brief, light-sculpted moments of solitary souls"
+    },
+    "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR"
+  },
+  "gallery/2023_10_05_solitary_glow/zh-TW": {
+    "title": "燈火闌珊之處",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "繁華光影交織出的城市獨白"
+    },
+    "tldr": "於城市明暗交疊處，瞥見平凡真實的風景"
+  },
+  "gallery/2023_10_06_against_giants/en": {
+    "title": "Against Giants",
+    "locale": "en",
+    "sections": {
+      "section-0": "Humanity’s fleeting scale against towering wind turbine colossi"
+    },
+    "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature"
+  },
+  "gallery/2023_10_06_against_giants/zh-TW": {
+    "title": "渺滄海之一粟",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "在宏大造物前，安於如塵埃般的自由"
+    },
+    "tldr": "覺知自身如塵，於宏大中獲自由"
+  },
+  "gallery/2023_10_06_guided_by_the_tides/en": {
+    "title": "Guided by the Tides",
+    "locale": "en",
+    "sections": {
+      "section-0": "Love guides children through life's vastness into cherished memory"
+    },
+    "tldr": "Love and shared moments guide children through life’s vast uncertainty"
+  },
+  "gallery/2023_10_06_guided_by_the_tides/zh-TW": {
+    "title": "粼粼之途",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "鹽田伴父子，愛與陪伴鋪就未來指引"
+    },
+    "tldr": "父愛如粼粼光影，在陪伴中指引孩子未來路途"
+  },
+  "gallery/2023_10_12_lessons_from_the_light/en": {
+    "title": "Lessons from the Light",
+    "locale": "en",
+    "sections": {
+      "section-0": "Sunset shadows guide students home, mapping the journey of growth"
+    },
+    "tldr": "Students walk home as long shadows narrate their journey of growing up"
+  },
+  "gallery/2023_10_12_lessons_from_the_light/zh-TW": {
+    "title": "光引",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "師生追隨光影，漫步成長之路"
+    },
+    "tldr": "師徒影隨，伴餘暉共赴成長之旅"
+  },
+  "gallery/2023_11_18_dusk_impressions/en": {
+    "title": "Dusk Impressions",
+    "locale": "en",
+    "sections": {
+      "section-0": "Golden dusk transforms city scenes into fleeting, cinematic memories"
+    },
+    "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past"
+  },
+  "gallery/2023_11_18_dusk_impressions/zh-TW": {
+    "title": "日暮印象",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "黃昏餘暉中，與舊日殘影無聲對話"
+    },
+    "tldr": "落日餘暉下對鏡花水月的追懷"
+  },
+  "gallery/2023_12_30_against_the_unknown/en": {
+    "title": "Against the Unknown",
+    "locale": "en",
+    "sections": {
+      "section-0": "Solitary defiance against the ocean's vast indifference"
+    },
+    "tldr": "Lone fisherman's quiet defiance against the vast, indifferent ocean deep"
+  },
+  "gallery/2023_12_30_against_the_unknown/zh-TW": {
+    "title": "峙",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "海邊垂釣，於深淵對峙中守護勇氣"
+    },
+    "tldr": "垂釣深淵，以孤獨的峙立證存在"
+  },
+  "gallery/2023_12_30_sky_above/en": {
+    "title": "Sky Above",
+    "locale": "en",
+    "sections": {
+      "section-0": "Taipei 101 rises above clouds over the dreaming city"
+    },
+    "tldr": "Taipei's tower pierces amber clouds above a dreaming, glittering city"
+  },
+  "gallery/2023_12_30_sky_above/zh-TW": {
+    "title": "雲端之城",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "暮色雲海中矗立的台北孤塔"
+    },
+    "tldr": "台北如雲端孤城，燈火宛若夢境"
+  },
+  "gallery/2024_01_06_hehuanshan/en": {
+    "title": "Find Your Peak...",
+    "locale": "en",
+    "sections": {
+      "section-0": "Journeying through mountain peaks to find your peaceful place"
+    },
+    "tldr": "Journey through mountains to find personal peace and your own summit"
+  },
+  "gallery/2024_01_06_hehuanshan/zh-TW": {
+    "title": "俯仰之間",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "於山海俯仰間，尋覓生命定位"
+    },
+    "tldr": "俯仰天地山路間，尋覓心靈歸宿"
+  },
+  "gallery/2024_02_09_mortal_sparks/en": {
+    "title": "Mortal Sparks",
+    "locale": "en",
+    "sections": {
+      "section-0": "We keep lighting temporary fires despite inevitable loss"
+    },
+    "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness"
+  },
+  "gallery/2024_02_09_mortal_sparks/zh-TW": {
+    "title": "人間煙火",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "煙火與信仰織就凡世詩篇"
+    },
+    "tldr": "點燃凡塵願景，匯聚信仰星海"
+  },
+  "gallery/2024_02_14_go_where_you_feel_most_alive/en": {
+    "title": "Go Where You Feel Most Alive",
+    "locale": "en",
+    "sections": {
+      "section-0": "Capturing moments in Tainan and Taichung to feel truly alive"
+    },
+    "tldr": "Finding life through moments captured in Tainan and Taichung landscapes"
+  },
+  "gallery/2024_02_14_go_where_you_feel_most_alive/zh-TW": {
+    "title": "心之所向",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "用快門記錄生活當下的心靈旅行"
+    },
+    "tldr": "用攝影捕捉瞬間，活出心之所向"
+  },
+  "gallery/2024_04_06_city_of_tears/en": {
+    "title": "Tears in Rain",
+    "locale": "en",
+    "sections": {
+      "section-0": "Fleeting urban memories dissolving like raindrops in the city"
+    },
+    "tldr": "Fleeting urban memories dissolving like raindrops in the city grey"
+  },
+  "gallery/2024_04_06_city_of_tears/zh-TW": {
+    "title": "淚都",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "雨絲織就孤寂，淚都默演離別與遺忘"
+    },
+    "tldr": "雨中燈塔低語，港城承載如淚回憶"
+  },
+  "gallery/2024_07_03_simple_in_a_complex_world/en": {
+    "title": "Simple in a Complex World",
+    "locale": "en",
+    "sections": {
+      "section-0": "Create room for being by embracing intentional stillness and space"
+    },
+    "tldr": "Embrace intentional stillness and space to find meaning amidst life's noise"
+  },
+  "gallery/2024_07_03_simple_in_a_complex_world/zh-TW": {
+    "title": "行至留白",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "在喧囂中留白，讓靈魂靜觀後前行"
+    },
+    "tldr": "繁囂中為心靈留白，靜觀靈魂甦醒再行"
+  },
+  "gallery/2026-us-trip/en": {
+    "title": "No Need to Cohere",
+    "locale": "en",
+    "sections": {
+      "section-0": "Embrace unresolved contradictions as the essence of presence"
+    },
+    "tldr": "Accepting life’s unresolved contradictions and presence without needing coherence"
+  },
+  "gallery/2026-us-trip/zh-TW": {
+    "title": "不必和解",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "擁抱生命矛盾，忠於當下的真實"
+    },
+    "tldr": "擁抱生命矛盾，與未和解的自己共存"
+  },
+  "gallery/2026_02_08_italy_city/en": {
+    "title": "Interlude",
+    "locale": "en",
+    "sections": {
+      "section-0": "Italy’s layered history captured in fleeting, everyday human moments"
+    },
+    "tldr": "Capturing fleeting, everyday intersections of modern life and ancient Italian history"
+  },
+  "gallery/2026_02_08_italy_city/zh-TW": {
+    "title": "間奏",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "影像捕捉穿梭古今石板路的溫柔間奏"
+    },
+    "tldr": "穿梭義大利古今，紀錄時光縫隙中的溫柔間奏"
+  },
+  "gallery/2026_02_08_italy_mountain/en": {
+    "title": "If on a winter's night a traveler... ",
+    "locale": "en",
+    "sections": {
+      "section-0": "Fragmented winter beginnings forming an endless, unfinished journey"
+    },
+    "tldr": "A journey through unfinished winter tales focused on beginnings over endings"
+  },
+  "gallery/2026_02_08_italy_mountain/zh-TW": {
+    "title": "如果在冬夜，一個旅人... ",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "冬山如散篇序言，旅途即永無終局的小說"
+    },
+    "tldr": "雪中漫旅如斷篇小說，重起頭而不求終點"
+  },
+  "gallery/2026_02_08_italy_town/en": {
+    "title": "Marginalia",
+    "locale": "en",
+    "sections": {
+      "section-0": "Fleeting, unscripted moments found in the margins of travel"
+    },
+    "tldr": "Photographs capturing quiet, unscripted moments in the margins of travel"
+  },
+  "gallery/2026_02_08_italy_town/zh-TW": {
+    "title": "閒章",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "巷弄微光與偶遇，是城市靈魂的閒章"
+    },
+    "tldr": "旅程中的日常片羽，是點亮記憶的閒章"
+  }
+}
