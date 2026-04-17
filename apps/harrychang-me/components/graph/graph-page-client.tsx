@@ -123,11 +123,13 @@ export default function GraphPageClient() {
 
   const handleNodeHover = useCallback(
     (node: GraphNode | null, cursorPos?: { x: number; y: number }) => {
-      // Only show hover cards for files (posts/projects/gallery), images, and videos
+      // Show hover cards for all content node types
       const showCard =
         node?.nodeType === "file" ||
+        node?.nodeType === "section" ||
         node?.nodeType === "image" ||
-        node?.nodeType === "video";
+        node?.nodeType === "video" ||
+        node?.nodeType === "tag";
       setHoveredNode(showCard ? node : null);
       if (cursorPos) {
         setCursorPosition(cursorPos);

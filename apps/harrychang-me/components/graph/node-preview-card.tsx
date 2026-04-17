@@ -91,7 +91,7 @@ export default function NodePreviewCard({
               sizes="280px"
             />
             <div className="px-3 py-1.5">
-              <p className="font-mono text-[10px] text-muted-foreground truncate">
+              <p className="font-body text-sm text-foreground truncate">
                 {node.title}
               </p>
             </div>

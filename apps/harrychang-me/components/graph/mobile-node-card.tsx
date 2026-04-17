@@ -3,39 +3,18 @@
 import { motion, AnimatePresence } from "motion/react";
 import { ImageContainer } from "@portfolio/ui/image-container";
 import NavigationLink from "@portfolio/ui/navigation-link";
-import type { GraphNode, SourceType, NodeType } from "./types";
+import NextUpCard from "@portfolio/ui/next-up-card";
+import type { GraphNode, SourceType } from "./types";
 
-const sourceLabels: Record<SourceType, string> = {
-  post: "Blog",
-  project: "Project",
-  gallery: "Gallery",
-  locale: "Info",
-};
+// ── Helpers ──────────────────────────────────────────────────────────────────
 
-const nodeTypeLabels: Record<NodeType, string> = {
-  hub: "Hub",
-  file: "File",
-  section: "Section",
-  image: "Image",
-  video: "Video",
-  tag: "Tag",
-};
-
-const nodeTypeColors: Record<NodeType, string> = {
-  hub: "bg-muted text-primary",
-  file: "bg-muted text-secondary",
-  section: "bg-muted text-secondary",
-  image: "bg-muted text-secondary",
-  video: "bg-muted text-secondary",
-  tag: "bg-[hsl(var(--graph-node-tag))]/20 text-[hsl(var(--graph-node-tag))]",
-};
-
-const sourceColors: Record<SourceType, string> = {
-  post: "bg-[hsl(var(--graph-node-post))]",
-  project: "bg-[hsl(var(--graph-node-project))]",
-  gallery: "bg-[hsl(var(--graph-node-gallery))]",
-  locale: "bg-[hsl(var(--graph-node-locale))]",
-};
+function sourceTypeToBasePath(
+  sourceType: SourceType,
+): "blog" | "projects" | "gallery" {
+  if (sourceType === "post") return "blog";
+  if (sourceType === "project") return "projects";
+  return "gallery";
+}
 
 function getYouTubeId(url: string): string | null {
   const match = url.match(
@@ -44,23 +23,50 @@ function getYouTubeId(url: string): string | null {
   return match ? match[1] : null;
 }
 
-/** Check if a URL is internal (same host as www.harrychang.me) */
+/** Derive a human-readable name from a URL (strip extension). */
+function getFilenameFromUrl(url: string): string {
+  return url.split("/").pop()?.replace(/\.[^.]+$/, "") || url;
+}
+
+/** Format a hub node's URL into a readable route string. */
+function formatHubRoute(node: GraphNode): string {
+  // Strip protocol + www.
+  let route = node.url.replace(/^https?:\/\/(?:www\.)?/, "");
+  // Remove trailing slash from non-root paths
+  if (route.endsWith("/") && route !== "harrychang.me/") {
+    route = route.slice(0, -1);
+  }
+  // Locale hub slugs that live as hash anchors on the homepage
+  const hashMap: Record<string, string> = {
+    about: "#about",
+    updates: "#updates",
+  };
+  if (node.sourceSlug in hashMap) {
+    return `harrychang.me/${hashMap[node.sourceSlug]}`;
+  }
+  return route;
+}
+
+/** Ensure image paths are root-relative or absolute — never bare relative. */
+function normalizeImageUrl(url: string | null | undefined): string {
+  if (!url) return "";
+  if (url.startsWith("http") || url.startsWith("/")) return url;
+  return `/${url}`;
+}
+
 function isInternalUrl(url: string): boolean {
   try {
     const parsed = new URL(url, "https://www.harrychang.me");
-    const host = parsed.hostname.replace(/^www\./, "");
-    return host === "harrychang.me";
+    return parsed.hostname.replace(/^www\./, "") === "harrychang.me";
   } catch {
     return true;
   }
 }
 
-/** Extract internal path from absolute harrychang.me URLs or relative paths */
 function toInternalPath(url: string): string {
   try {
     const parsed = new URL(url, "https://www.harrychang.me");
-    const host = parsed.hostname.replace(/^www\./, "");
-    if (host === "harrychang.me") {
+    if (parsed.hostname.replace(/^www\./, "") === "harrychang.me") {
       return parsed.pathname + parsed.search + parsed.hash;
     }
   } catch {
@@ -69,140 +75,33 @@ function toInternalPath(url: string): string {
   return url.startsWith("/") ? url : `/${url}`;
 }
 
+// ── Component ─────────────────────────────────────────────────────────────────
+
 interface MobileNodeCardProps {
   node: GraphNode | null;
 }
 
 export default function MobileNodeCard({ node }: MobileNodeCardProps) {
-  const normalizePath = (p: string) =>
-    p.startsWith("http") ? p : p.startsWith("/") ? p : `/${p}`;
+  const wrapperCls =
+    "mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden";
 
-  const isTag = node?.nodeType === "tag";
-  const isHub = node?.nodeType === "hub";
   const isImage = node?.nodeType === "image";
   const isVideo = node?.nodeType === "video";
+  const isTag = node?.nodeType === "tag";
+  const isHub = node?.nodeType === "hub";
+
   const youtubeId =
     isVideo && node?.mediaSource ? getYouTubeId(node.mediaSource) : null;
 
-  const imageSrc =
+  // Resolve the displayable media source for image / video nodes
+  const mediaSrc =
     isImage && node?.mediaSource
-      ? normalizePath(node.mediaSource)
+      ? node.mediaSource.startsWith("http") || node.mediaSource.startsWith("/")
+        ? node.mediaSource
+        : `/${node.mediaSource}`
       : isVideo && youtubeId
         ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
-        : node?.imageUrl
-          ? normalizePath(node.imageUrl)
-          : null;
-
-  const hasImage = !!imageSrc && !isTag && !isHub;
-
-  // Only show description for project / gallery / blog post file nodes
-  const isRichContent =
-    node?.nodeType === "file" &&
-    (node.sourceType === "project" ||
-      node.sourceType === "gallery" ||
-      node.sourceType === "post");
-
-  const cardContent = node ? (
-    <>
-      {/* Layout: horizontal split when image exists, vertical otherwise */}
-      {hasImage ? (
-        <div className="flex">
-          {/* Left: Image — strictly 3:2; width drives the card height */}
-          <div className="w-2/5 flex-shrink-0">
-            <ImageContainer
-              src={imageSrc}
-              alt={node.title}
-              aspectRatio={1.5}
-              noInsetPadding
-              quality={60}
-            />
-          </div>
-
-          {/* Right: Title top, tags bottom — stretches to match image height */}
-          <div className="flex-1 flex">
-            <div className="flex-1 p-3 min-w-0 flex flex-col">
-              {/* Title — top */}
-              <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-2 flex-1">
-                {node.nodeType === "section" && node.heading
-                  ? node.heading
-                  : node.title}
-              </h3>
-
-              {/* Source badge + node type — bottom */}
-              <div className="mt-auto flex items-center gap-1 flex-wrap">
-                {!isTag && !isHub && (
-                  <span
-                    className={`font-body text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
-                  >
-                    {sourceLabels[node.sourceType]}
-                  </span>
-                )}
-                <span
-                  className={`font-body text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap ${nodeTypeColors[node.nodeType]}`}
-                >
-                  {nodeTypeLabels[node.nodeType]}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* No image: compact vertical layout */
-        <div className="flex items-stretch">
-          <div className="flex-1 p-3 min-w-0">
-            {/* Badges */}
-            <div className="flex items-center gap-1.5 flex-wrap mb-1.5">
-              {!isTag && !isHub && (
-                <span
-                  className={`font-body text-[11px] px-1.5 py-0.5 rounded whitespace-nowrap text-background ${sourceColors[node.sourceType]}`}
-                >
-                  {sourceLabels[node.sourceType]}
-                </span>
-              )}
-              <span
-                className={`font-body text-[11px] px-1.5 py-0.5 rounded whitespace-nowrap ${nodeTypeColors[node.nodeType]}`}
-              >
-                {nodeTypeLabels[node.nodeType]}
-              </span>
-            </div>
-
-            {/* Title */}
-            <h3 className="font-heading text-sm font-semibold text-primary leading-tight line-clamp-1 mb-1">
-              {node.nodeType === "section" && node.heading
-                ? node.heading
-                : node.title}
-            </h3>
-
-            {/* Description */}
-            {isRichContent && (node.description || node.snippet) && (
-              <p className="text-xs text-secondary leading-relaxed line-clamp-2">
-                {node.description || node.snippet}
-              </p>
-            )}
-          </div>
-        </div>
-      )}
-    </>
-  ) : null;
-
-  const wrapperClassName =
-    "mx-3 mb-3 bg-card border border-border shadow-xl overflow-hidden rounded-lg";
-  const clickableClassName = `${wrapperClassName} block active:scale-[0.98] transition-transform`;
-
-  const wrappedContent = !node ? null : !node.url || isTag ? (
-    <div className={wrapperClassName}>{cardContent}</div>
-  ) : isInternalUrl(node.url) ? (
-    <NavigationLink
-      href={toInternalPath(node.url)}
-      className={clickableClassName}
-    >
-      {cardContent}
-    </NavigationLink>
-  ) : (
-    <a href={node.url} className={clickableClassName}>
-      {cardContent}
-    </a>
-  );
+        : null;
 
   return (
     <AnimatePresence mode="wait">
@@ -215,7 +114,86 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
           transition={{ duration: 0.15, ease: "easeOut" }}
           className="fixed bottom-0 left-0 right-0 z-50 pb-[env(safe-area-inset-bottom)]"
         >
-          {wrappedContent}
+          {isImage || isVideo ? (
+            // ── Image / Video: show media prominently + name + tags ──────────
+            (() => {
+              const imgTitle =
+                node.title ||
+                (node.mediaSource
+                  ? getFilenameFromUrl(node.mediaSource)
+                  : "");
+
+              const mediaContent = (
+                <>
+                  {mediaSrc && (
+                    <ImageContainer
+                      src={mediaSrc}
+                      alt={imgTitle}
+                      aspectRatio={1.5}
+                      noInsetPadding={false}
+                      quality={60}
+                    />
+                  )}
+                  <div className="p-3">
+                    <p className="font-body text-sm text-foreground truncate">
+                      {imgTitle}
+                    </p>
+                    {node.tags && node.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mt-1.5">
+                        {node.tags.slice(0, 5).map((tag) => (
+                          <span
+                            key={tag}
+                            className="font-mono text-[10px] px-1.5 py-0.5 bg-muted text-secondary rounded"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </>
+              );
+
+              return node.url && isInternalUrl(node.url) ? (
+                <NavigationLink
+                  href={toInternalPath(node.url)}
+                  className={`${wrapperCls} block active:scale-[0.98] transition-transform`}
+                >
+                  {mediaContent}
+                </NavigationLink>
+              ) : (
+                <div className={wrapperCls}>{mediaContent}</div>
+              );
+            })()
+          ) : (
+            // ── file | hub | section | tag: delegate to NextUpCard ───────────
+            <div className={wrapperCls}>
+              <NextUpCard
+                title={
+                  node.nodeType === "section" && node.heading
+                    ? node.heading
+                    : node.title
+                }
+                category={
+                  node.nodeType === "hub"
+                    ? formatHubRoute(node)
+                    : node.description || node.snippet
+                }
+                slug={node.sourceSlug}
+                imageUrl={isTag ? "" : normalizeImageUrl(node.imageUrl)}
+                basePath={sourceTypeToBasePath(node.sourceType as SourceType)}
+                label={null}
+                href={
+                  !isTag && node.url
+                    ? isInternalUrl(node.url)
+                      ? toInternalPath(node.url)
+                      : node.url
+                    : undefined
+                }
+                disableLink={isTag || !node.url}
+              />
+            </div>
+          )}
         </motion.div>
       )}
     </AnimatePresence>

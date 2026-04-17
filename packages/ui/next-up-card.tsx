@@ -14,6 +14,17 @@ interface NextUpCardProps {
   aspectRatio?: number;
   /** Optional direct href — overrides the default /{basePath}/{slug} link. */
   href?: string;
+  /**
+   * Label shown above the title.
+   * - `undefined` (default): shows the translated "Next Up" string.
+   * - `null`: hides the label row entirely.
+   * - `string`: shows a custom literal label.
+   */
+  label?: string | null;
+  /** Tag pills rendered below the category line. */
+  tags?: string[];
+  /** Render a plain div instead of NavigationLink (e.g. for non-navigable nodes). */
+  disableLink?: boolean;
 }
 
 export default function NextUpCard({
@@ -24,12 +35,76 @@ export default function NextUpCard({
   basePath,
   aspectRatio,
   href,
+  label,
+  tags,
+  disableLink = false,
 }: NextUpCardProps) {
   const { t } = useLanguage();
 
   // Ensure we pass the full resolution URL to ImageContainer
-  // It expects the full path and handles creating the -thumb path internally for the blur effect
   const fullImageUrl = imageUrl?.replace("-thumb.webp", ".webp");
+
+  // undefined → translated "Next Up" | null → hidden | string → literal
+  const resolvedLabel =
+    label === undefined ? t("common.nextUp") || "Next Up" : label;
+
+  const inner = (
+    <motion.div
+      className="relative overflow-hidden bg-card hover:bg-muted/60 transition-colors"
+      transition={{ duration: 0.2 }}
+    >
+      <div className="flex items-center justify-between p-4 md:p-6 gap-6">
+        {/* Left Content */}
+        <div className="flex-1 min-w-0 flex flex-col justify-center">
+          {resolvedLabel && (
+            <div className="flex items-center gap-2 text-muted-foreground mb-2">
+              <span className="text-xs font-heading uppercase tracking-wider">
+                {resolvedLabel}
+              </span>
+            </div>
+          )}
+
+          <h3 className="font-heading text-lg md:text-xl font-bold text-primary truncate pr-4">
+            {title}
+          </h3>
+          <p className="font-body text-sm text-secondary truncate mt-1 min-h-[1.25em]">
+            {category || "\u00A0"}
+          </p>
+
+          {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-1 mt-2">
+              {tags.slice(0, 5).map((tag) => (
+                <span
+                  key={tag}
+                  className="font-mono text-[10px] px-1.5 py-0.5 bg-muted text-secondary rounded"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Right Image — omitted entirely when imageUrl is empty */}
+        {fullImageUrl && (
+          <div className="relative shrink-0 w-24 md:w-36">
+            <ImageContainer
+              src={fullImageUrl}
+              alt={title}
+              quality={60}
+              priority={false}
+              noInsetPadding={true}
+              aspectRatio={aspectRatio}
+            />
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+
+  if (disableLink) {
+    return <div className="w-full">{inner}</div>;
+  }
 
   return (
     <div className="w-full">
@@ -37,44 +112,7 @@ export default function NextUpCard({
         href={href || `/${basePath}/${slug}`}
         className="block group"
       >
-        <motion.div
-          className="relative overflow-hidden bg-card hover:bg-muted/60 transition-colors"
-          transition={{ duration: 0.2 }}
-        >
-          <div className="flex items-center justify-between p-4 md:p-6 gap-6">
-            {/* Left Content */}
-            <div className="flex-1 min-w-0 flex flex-col justify-center">
-              <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                <span className="text-xs font-heading uppercase tracking-wider">
-                  {t("common.nextUp") || "Next Up"}
-                </span>
-              </div>
-
-              <h3 className="font-heading text-lg md:text-xl font-bold text-primary truncate pr-4">
-                {title}
-              </h3>
-              <p className="font-body text-sm text-secondary truncate mt-1 min-h-[1.25em]">
-                {category || "\u00A0"}
-              </p>
-            </div>
-
-            {/* Right Image Container - Width fixed, height adapts to aspect ratio */}
-            <div className="relative shrink-0 w-24 md:w-36">
-              {fullImageUrl ? (
-                <ImageContainer
-                  src={fullImageUrl}
-                  alt={title}
-                  quality={60}
-                  priority={false}
-                  noInsetPadding={true}
-                  aspectRatio={aspectRatio}
-                />
-              ) : (
-                <div className="w-full aspect-[3/2] bg-card" />
-              )}
-            </div>
-          </div>
-        </motion.div>
+        {inner}
       </NavigationLink>
     </div>
   );
