@@ -95,9 +95,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
   const isTag = node?.nodeType === "tag";
   const isHub = node?.nodeType === "hub";
   const isPostOrSection =
-    (node?.nodeType === "file" &&
-      (node.sourceType === "post" || node.sourceType === "gallery")) ||
-    node?.nodeType === "section";
+    node?.nodeType === "file" || node?.nodeType === "section";
 
   const postImageSrc =
     isPostOrSection && node?.imageUrl ? normalizeImageUrl(node.imageUrl) : null;
