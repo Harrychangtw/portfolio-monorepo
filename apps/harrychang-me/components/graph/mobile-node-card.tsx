@@ -100,9 +100,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
     node?.nodeType === "section";
 
   const postImageSrc =
-    isPostOrSection && node?.imageUrl
-      ? normalizeImageUrl(node.imageUrl)
-      : null;
+    isPostOrSection && node?.imageUrl ? normalizeImageUrl(node.imageUrl) : null;
 
   const youtubeId =
     isVideo && node?.mediaSource ? getYouTubeId(node.mediaSource) : null;
