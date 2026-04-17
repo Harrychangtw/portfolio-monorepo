@@ -6,7 +6,7 @@ date: "2024-01-06"
 camera: "FUJIFILM XT-5"
 lens: "VILTROX 75mm f/1.2"
 location: "合歡山"
-tags: ["風光攝影", "自然"]
+tags: ["Landscape"]
 featured: true
 pinned: 12
 locked: false

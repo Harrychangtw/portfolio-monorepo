@@ -96,9 +96,17 @@ export default function PageTransition({ children }: { children: ReactNode }) {
 
       minWaitRef.current = window.setTimeout(() => {
         stopTimer();
-        setPhase("in");
-        phaseRef.current = "in";
-        scheduleIdle(800);
+        // Double RAF ensures the new page content has actually painted
+        // before we start revealing. Without this, the backdrop becomes
+        // transparent while the browser is still painting the new content,
+        // causing a black flash (visible as --background color).
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setPhase("in");
+            phaseRef.current = "in";
+            scheduleIdle(800);
+          });
+        });
       }, remaining);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -125,7 +133,11 @@ export default function PageTransition({ children }: { children: ReactNode }) {
 
     // Fallback entering animation (browsers without View Transitions API)
     const el = contentRef.current;
-    if (el && !(document as any).startViewTransition) {
+    if (
+      el &&
+      !(document as unknown as { startViewTransition?: unknown })
+        .startViewTransition
+    ) {
       el.classList.remove("page-entering");
       void el.offsetWidth;
       el.classList.add("page-entering");

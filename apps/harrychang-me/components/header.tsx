@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, LayoutGroup } from "motion/react";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
@@ -10,10 +9,7 @@ import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
 import StaggeredMenu from "@/components/staggered-menu";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll";
-import {
-  scrollToSection as utilScrollToSection,
-  ensurePreciseAlign,
-} from "@portfolio/lib/lib/scrolling";
+import { scrollToSection as utilScrollToSection } from "@portfolio/lib/lib/scrolling";
 
 // Keep duration consistent with lib/scrolling.ts
 const SCROLL_ANIMATION_DURATION = 400; // ms
@@ -78,12 +74,12 @@ const EXTENDED_CYCLE_INTERVAL = 2000; // slower cycling for extended wait
 
 export default function Header() {
   const pathname = usePathname();
-  const router = useRouter();
   const { isNavigating } = useNavigation();
   const [activeSection, setActiveSection] = useState<string>("about");
   const [isScrolling, setIsScrolling] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLab, setIsLab] = useState(false);
+  const isGraph = pathname?.startsWith("/graph") ?? false;
   const [readingProgress, setReadingProgress] = useState(0);
   const isHomePage = pathname === "/";
   const [loadingStatus, setLoadingStatus] = useState<
@@ -110,7 +106,7 @@ export default function Header() {
     if (!isNavigating) {
       // Reset state when navigation ends
       navigationStartRef.current = null;
-      setIsExtendedWait(false);
+      setIsExtendedWait(false); // eslint-disable-line react-hooks/set-state-in-effect
       // Don't reset status string here to allow for smooth exit animation
       return;
     }
@@ -158,7 +154,7 @@ export default function Header() {
   // Cycle dots while navigating
   useEffect(() => {
     if (!isNavigating) {
-      setDots("");
+      setDots(""); // eslint-disable-line react-hooks/set-state-in-effect
       return;
     }
     const interval = setInterval(() => {
@@ -166,16 +162,15 @@ export default function Header() {
     }, 400);
     return () => clearInterval(interval);
   }, [isNavigating]);
-  // Detect if we're on the lab subdomain
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const hostname = window.location.hostname;
-      setIsLab(
-        hostname.includes("lab.localhost") ||
-          hostname.includes("lab.harrychang.me"),
-      );
-    }
-  }, []);
+  // Detect if we're on the lab subdomain — derive during render to avoid
+  // an extra effect-driven setState cascade.
+  const isLabDetected =
+    typeof window !== "undefined" &&
+    (window.location.hostname.includes("lab.localhost") ||
+      window.location.hostname.includes("lab.harrychang.me"));
+  if (isLabDetected !== isLab) {
+    setIsLab(isLabDetected);
+  }
 
   // Use stable hash scroll hook for perfect alignment
   useStableHashScroll("header");
@@ -222,7 +217,7 @@ export default function Header() {
   useEffect(() => {
     if (isHomePage && window.location.hash) {
       const id = window.location.hash.substring(1);
-      setActiveSection(id);
+      setActiveSection(id); // eslint-disable-line react-hooks/set-state-in-effect
     } else if (isHomePage && window.scrollY < 50) {
       setActiveSection("about");
     }
@@ -293,7 +288,7 @@ export default function Header() {
     if (!isHomePage) {
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
-        setIsScrolling(false);
+        setIsScrolling(false); // eslint-disable-line react-hooks/set-state-in-effect
       }
 
       if (isSpecialPage) {
@@ -322,6 +317,8 @@ export default function Header() {
 
   if (isLab) {
     activeTitleKey = "lab";
+  } else if (isGraph) {
+    activeTitleKey = "graph";
   } else if (currentSpecialPage) {
     activeTitleKey = currentSpecialPage.key;
   } else if (showStandardSectionTitle) {
@@ -336,7 +333,7 @@ export default function Header() {
     !isProjectDetailPage &&
     !isBlogDetailPage &&
     !activeTitleKey;
-  const shouldHideNav = isMobile || isLab || isNotFound;
+  const shouldHideNav = isMobile || isLab || isGraph || isNotFound;
 
   // Reusable Underline Component
   const Underline = () => (
@@ -379,7 +376,7 @@ export default function Header() {
   };
 
   // Determine when to show the staggered menu
-  const showStaggeredMenu = isMobile && !isLab;
+  const showStaggeredMenu = isMobile && !isLab && !isGraph;
 
   // Menu items for the staggered menu
   const menuItems = NAV_ITEMS.map((item) => ({
@@ -396,7 +393,7 @@ export default function Header() {
     const protocol = window.location.protocol;
     const port = window.location.port ? `:${window.location.port}` : "";
     if (hostname.includes("localhost")) {
-      setIcarusUrl(`${protocol}//lab.localhost${port}`);
+      setIcarusUrl(`${protocol}//lab.localhost${port}`); // eslint-disable-line react-hooks/set-state-in-effect
     } else {
       setIcarusUrl(`${protocol}//lab.${hostname.replace(/^www\./, "")}`);
     }
@@ -424,7 +421,7 @@ export default function Header() {
 
   // Track reading progress
   useEffect(() => {
-    if ((!isProjectDetailPage && !isBlogDetailPage) || isLab) return;
+    if ((!isProjectDetailPage && !isBlogDetailPage) || isLab || isGraph) return;
 
     let animationFrameId: number;
     let targetProgress = 0;
@@ -455,7 +452,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isProjectDetailPage, isBlogDetailPage, isLab]);
+  }, [isProjectDetailPage, isBlogDetailPage, isLab, isGraph]);
 
   const getHomeUrl = () => {
     if (isLab) {
@@ -502,12 +499,15 @@ export default function Header() {
       )}
 
       {/* Reading progress indicator */}
-      {(isProjectDetailPage || isBlogDetailPage) && !isLab && !isNavigating && (
-        <div
-          className="absolute top-0 left-0 h-[2px] bg-accent"
-          style={{ width: `${readingProgress}%` }}
-        />
-      )}
+      {(isProjectDetailPage || isBlogDetailPage) &&
+        !isLab &&
+        !isGraph &&
+        !isNavigating && (
+          <div
+            className="absolute top-0 left-0 h-[2px] bg-accent"
+            style={{ width: `${readingProgress}%` }}
+          />
+        )}
 
       <div className="container flex justify-between items-center">
         <div

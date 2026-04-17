@@ -29,6 +29,26 @@ export function middleware(request: NextRequest) {
     hostname.includes("lab.harrychang.me") ||
     hostname.includes("lab.localhost");
 
+  // Handle graph subdomain — redirect to main domain /graph
+  const isGraph =
+    hostname.includes("graph.harrychang.me") ||
+    hostname.includes("graph.localhost");
+
+  if (isGraph) {
+    // In production, redirect to main domain /graph
+    if (hostname.includes("graph.harrychang.me")) {
+      const newUrl = new URL(request.url);
+      newUrl.host = "www.harrychang.me";
+      newUrl.pathname = `/graph${url.pathname === "/" ? "" : url.pathname}`;
+      return NextResponse.redirect(newUrl, 308);
+    }
+    // For localhost, rewrite to /graph routes without redirect
+    if (!url.pathname.startsWith("/graph")) {
+      url.pathname = `/graph${url.pathname}`;
+      return NextResponse.rewrite(url);
+    }
+  }
+
   // Paths that should NOT be rewritten (shared resources)
   const sharedPaths = [
     "/api/", // API routes are shared
@@ -49,11 +69,13 @@ export function middleware(request: NextRequest) {
     "/images/og-image-blogs.webp",
     "/images/og-image-projects.webp",
     "/images/og-image-gallery.webp",
+    "/images/og-image-graph.webp",
     "/apple-icon.png",
     "/safari-pinned-tab.svg",
     "/favicon-lab.ico",
     "/apple-icon-lab.png",
     "/safari-pinned-tab-lab.svg",
+    "/graph-data.json",
   ];
 
   const isSharedPath = sharedPaths.some((path) =>

@@ -61,7 +61,7 @@ export default function UpdatesSection() {
 
   const currentEntries = updates
     .slice(startIndex, endIndex)
-    .map((entry: any) => ({
+    .map((entry: { text?: string; date?: string }) => ({
       ...entry,
       text: entry.text?.replace(/^\[.*?\]\s*/, "") || "",
     }));
@@ -72,7 +72,7 @@ export default function UpdatesSection() {
     // If we have updates, measure synchronously
     if (updates.length > 0) {
       const next = containerEl.scrollHeight;
-      setHeight(next);
+      setHeight(next); // eslint-disable-line react-hooks/set-state-in-effect
       if (!ready) {
         setReady(true);
         const id = requestAnimationFrame(() => setTransitionsOn(true));
@@ -96,7 +96,7 @@ export default function UpdatesSection() {
   const [reduceMotion, setReduceMotion] = useState(false);
   useEffect(() => {
     const m = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduceMotion(m.matches);
+    setReduceMotion(m.matches); // eslint-disable-line react-hooks/set-state-in-effect
     const handler = (e: MediaQueryListEvent) => setReduceMotion(e.matches);
     m.addEventListener?.("change", handler);
     return () => m.removeEventListener?.("change", handler);
@@ -173,19 +173,21 @@ export default function UpdatesSection() {
               transition={{ duration: reduceMotion ? 0 : 0.2, ease: "easeOut" }}
               onAnimationComplete={handleAnimationComplete}
             >
-              {currentEntries.map((entry: any, index: number) => (
-                <div
-                  key={index}
-                  className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 py-3 first:pt-0 border-b border-border/30 last:border-b-0"
-                >
-                  <p className="font-ibm-plex text-sm text-primary leading-relaxed">
-                    {parseHtmlToReact(entry.text || "")}
-                  </p>
-                  <span className="font-mono text-xs text-secondary/50 whitespace-nowrap shrink-0">
-                    {entry.date || ""}
-                  </span>
-                </div>
-              ))}
+              {currentEntries.map(
+                (entry: { text?: string; date?: string }, index: number) => (
+                  <div
+                    key={index}
+                    className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 py-3 first:pt-0 border-b border-border/30 last:border-b-0"
+                  >
+                    <p className="font-ibm-plex text-sm text-primary leading-relaxed">
+                      {parseHtmlToReact(entry.text || "")}
+                    </p>
+                    <span className="font-mono text-xs text-secondary/50 whitespace-nowrap shrink-0">
+                      {entry.date || ""}
+                    </span>
+                  </div>
+                ),
+              )}
             </motion.div>
           </AnimatePresence>
         </div>

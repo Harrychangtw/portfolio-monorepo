@@ -6,6 +6,7 @@ import {
   getNextGalleryItem,
 } from "@portfolio/lib/lib/markdown";
 import GalleryPostClient from "@portfolio/ui/gallery-post-client";
+import GraphNextUp from "@/components/graph/graph-next-up";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -186,7 +187,17 @@ export default async function GalleryItemPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <GalleryPostClient initialItem={item} nextItem={nextItem} />
+      <GalleryPostClient
+        initialItem={item}
+        nextItem={nextItem}
+        localGraphSlot={
+          <GraphNextUp
+            sourceType="gallery"
+            basePath="gallery"
+            nextItem={nextItem}
+          />
+        }
+      />
     </>
   );
 }

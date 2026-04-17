@@ -11,7 +11,7 @@ export async function GET(request: Request) {
         "Cache-Control": "public, max-age=0, s-maxage=31536000",
       },
     });
-  } catch (error) {
+  } catch {
     // console.error("Error fetching projects:", error)
     return NextResponse.json(
       { error: "Failed to fetch projects" },

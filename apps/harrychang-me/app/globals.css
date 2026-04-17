@@ -29,6 +29,14 @@
     --pixel-accent: hsl(var(--accent));
     --accent-color: hsl(var(--accent));
     --column-spacing: max(0.5rem, 0.2vw);
+
+    /* Knowledge graph node colors */
+    --graph-node-post: 68 100% 48%;
+    --graph-node-project: 190 80% 55%;
+    --graph-node-gallery: 35 90% 55%;
+    --graph-node-locale: 0 0% 95%;
+    --graph-node-tag: 160 50% 45%;
+    --graph-edge: 0 0% 25%;
   }
 
   .light {
@@ -52,6 +60,14 @@
     --border: 0 0% 88%;
     --input: 0 0% 88%;
     --ring: 0 0% 60%;
+
+    /* Knowledge graph node colors */
+    --graph-node-post: 223 100% 50%;
+    --graph-node-project: 270 70% 55%;
+    --graph-node-gallery: 25 90% 50%;
+    --graph-node-locale: 0 0% 15%;
+    --graph-node-tag: 160 50% 40%;
+    --graph-edge: 0 0% 80%;
   }
   
   * {
@@ -443,4 +459,3 @@ html.light .lab-logo {
 html.light .ai-logo {
   filter: invert(0);
 }
-

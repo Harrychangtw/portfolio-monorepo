@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.harrychang.me</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me"/>
@@ -11,7 +11,7 @@
   </url>
   <url>
     <loc>https://www.harrychang.me/projects</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/projects"/>
@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://www.harrychang.me/gallery</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery"/>
@@ -27,7 +27,7 @@
   </url>
   <url>
     <loc>https://www.harrychang.me/blog</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog"/>
@@ -482,6 +482,22 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2024_07_03_simple_in_a_complex_world_zh-tw"/>
   </url>
   <url>
+    <loc>https://www.harrychang.me/gallery/2026-us-trip</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2026-us-trip"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2026-us-trip_zh-tw"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/gallery/2026-us-trip_zh-tw</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/gallery/2026-us-trip"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/gallery/2026-us-trip_zh-tw"/>
+  </url>
+  <url>
     <loc>https://www.harrychang.me/gallery/2026_02_08_italy_city</loc>
     <lastmod>2026-02-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -567,6 +583,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog/12-us-trip"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/blog/12-us-trip_zh-tw"/>
+  </url>
+  <url>
+    <loc>https://www.harrychang.me/blog/12-us-trip_zh-tw</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.harrychang.me/blog/12-us-trip"/>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.harrychang.me/blog/12-us-trip_zh-tw"/>
   </url>
   <url>
     <loc>https://www.harrychang.me/blog/2025_12_12_blog_launch</loc>

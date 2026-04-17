@@ -28,11 +28,13 @@ interface ProjectPostClientProps {
     imageUrl: string;
     aspectRatio?: number;
   } | null;
+  localGraphSlot?: React.ReactNode;
 }
 
 export default function ProjectPostClient({
   initialProject,
   nextProject,
+  localGraphSlot,
 }: ProjectPostClientProps) {
   const { language, t } = useLanguage();
   const [project, setProject] = useState(initialProject);
@@ -303,8 +305,11 @@ export default function ProjectPostClient({
                     },
                   })}
                 </div>
-                {/* Next Up Card */}
-                {nextProjectData && (
+                {/* Local Graph + Next Up Card (coupled) */}
+                {localGraphSlot}
+
+                {/* Standalone Next Up Card (fallback when no graph) */}
+                {!localGraphSlot && nextProjectData && (
                   <NextUpCard
                     title={nextProjectData.title}
                     category={nextProjectData.category}

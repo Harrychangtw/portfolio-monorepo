@@ -1,5 +1,5 @@
 "use client";
-import { easeIn, easeInOut, easeOut, motion } from "motion/react";
+import { easeOut, motion } from "motion/react";
 
 export default function AnimatedIcarusIcon() {
   const iconParts = [

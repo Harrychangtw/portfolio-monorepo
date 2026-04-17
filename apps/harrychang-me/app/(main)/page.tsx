@@ -67,7 +67,7 @@ export default function Home() {
       <AboutSection />
       <UpdatesSection />
       <ProjectsSection initialItems={projectsItems} limit={12} showSeeAll />
-      <GallerySection initialItems={galleryItems} limit={15} showSeeAll />
+      <GallerySection initialItems={galleryItems} limit={16} showSeeAll />
       <BlogSection initialItems={blogPosts} limit={6} showSeeAll />
     </>
   );

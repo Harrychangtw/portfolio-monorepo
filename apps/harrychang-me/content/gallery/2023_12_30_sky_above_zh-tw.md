@@ -6,7 +6,7 @@ date: "2023-12-30"
 camera: "FUJIFILM XT-5"
 lens: "FUJINON 100-400mm f/4.5-5.6"
 location: "陽明山, 台北"
-tags: ["風光攝影", "日落"]
+tags: ["Landscape", "Sunset"]
 featured: true
 pinned: 14
 locked: false

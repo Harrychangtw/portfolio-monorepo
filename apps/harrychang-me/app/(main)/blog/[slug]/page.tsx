@@ -6,6 +6,7 @@ import {
   getNextPost,
 } from "@portfolio/lib/lib/markdown";
 import BlogPostClient from "@portfolio/ui/blog-post-client";
+import GraphNextUp from "@/components/graph/graph-next-up";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -167,7 +168,13 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <BlogPostClient initialPost={post} nextPost={nextPost} />
+      <BlogPostClient
+        initialPost={post}
+        nextPost={nextPost}
+        localGraphSlot={
+          <GraphNextUp sourceType="post" basePath="blog" nextItem={nextPost} />
+        }
+      />
     </>
   );
 }

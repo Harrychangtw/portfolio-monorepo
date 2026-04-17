@@ -26,11 +26,13 @@ interface GalleryPostClientProps {
     imageUrl: string;
     aspectRatio?: number;
   } | null;
+  localGraphSlot?: React.ReactNode;
 }
 
 export default function GalleryPostClient({
   initialItem,
   nextItem,
+  localGraphSlot,
 }: GalleryPostClientProps) {
   const { language, t } = useLanguage();
   const [item, setItem] = useState(initialItem);
@@ -332,8 +334,11 @@ export default function GalleryPostClient({
                   </div>
                 )}
 
-                {/* Next Up Card */}
-                {nextItemData && (
+                {/* Local Graph + Next Up Card (coupled) */}
+                {localGraphSlot}
+
+                {/* Standalone Next Up Card (fallback when no graph) */}
+                {!localGraphSlot && nextItemData && (
                   <NextUpCard
                     title={nextItemData.title}
                     category={nextItemData.category}

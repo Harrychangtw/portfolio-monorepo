@@ -28,7 +28,7 @@ export async function GET() {
       );
 
     return NextResponse.json(sortedPapers);
-  } catch (error) {
+  } catch {
     // console.error('Failed to fetch papers:', error)
     return NextResponse.json(
       { error: "Failed to fetch papers" },

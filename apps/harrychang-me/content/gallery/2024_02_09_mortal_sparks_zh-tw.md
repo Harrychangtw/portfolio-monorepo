@@ -6,7 +6,7 @@ date: "2024-02-09"
 camera: "FUJIFILM XT-5"
 lens: "VILTROX 75mm f/1.2"
 location: "台北"
-tags: ["街頭攝影"]
+tags: ["Street Photography"]
 featured: true
 pinned: 13
 locked: false

@@ -50,8 +50,8 @@ const LetterGlitch = ({
 
   const blinkRef = useRef(true);
   const lastBlinkTime = useRef(Date.now());
-  const scrollIndicatorBlinkRef = useRef(true);
-  const lastScrollIndicatorBlinkTime = useRef(Date.now());
+  const _scrollIndicatorBlinkRef = useRef(true); // eslint-disable-line @typescript-eslint/no-unused-vars
+  const _lastScrollIndicatorBlinkTime = useRef(Date.now()); // eslint-disable-line @typescript-eslint/no-unused-vars
 
   const fontSize = 16;
   const charWidth = 10;
@@ -234,46 +234,6 @@ const LetterGlitch = ({
               };
               flip();
             }, Math.random() * 500);
-          } else {
-            letters.current[index].char = char;
-          }
-        }
-      }
-    });
-  };
-
-  const setTextInGrid = (
-    text: string,
-    row: number,
-    startCol: number,
-    shouldAnimate = false,
-  ) => {
-    const { columns, rows: numRows } = grid.current;
-    [...text].forEach((char, i) => {
-      const col = startCol + i;
-      if (col >= 0 && col < columns && row >= 0 && row < numRows) {
-        const index = row * columns + col;
-        if (letters.current[index]) {
-          letters.current[index].originalChar = char;
-          if (shouldAnimate) {
-            letters.current[index].isAnimating = true;
-            setTimeout(
-              () => {
-                let flipCount = 0;
-                const flip = () => {
-                  if (flipCount < 2) {
-                    letters.current[index].char = getRandomChar();
-                    flipCount++;
-                    setTimeout(flip, 80);
-                  } else {
-                    letters.current[index].char = char;
-                    letters.current[index].isAnimating = false;
-                  }
-                };
-                flip();
-              },
-              500 + Math.random() * 500,
-            );
           } else {
             letters.current[index].char = char;
           }
@@ -566,7 +526,7 @@ const LetterGlitch = ({
       case 4:
         break;
     }
-  }, [animationPhase, isInitialized, animationCompleted, isWideEnough, t]);
+  }, [animationPhase, isInitialized, animationCompleted, isWideEnough, t]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!isWideEnough) return;
@@ -633,7 +593,7 @@ const LetterGlitch = ({
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isWideEnough]);
+  }, [isWideEnough]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const containerStyle: React.CSSProperties = {
     position: "relative",

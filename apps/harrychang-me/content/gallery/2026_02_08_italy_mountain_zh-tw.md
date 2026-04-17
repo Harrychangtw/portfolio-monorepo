@@ -6,7 +6,7 @@ date: "2026-02-08"
 camera: "LEICA M11-D"
 lens: "VOIGTLÄNDER 50mm f/1.5"
 location: "多洛米蒂山群"
-tags: ["風光攝影", "自然"]
+tags: ["Landscape"]
 featured: true
 pinned: 4
 locked: false

@@ -6,6 +6,7 @@ import {
   getNextProject,
 } from "@portfolio/lib/lib/markdown";
 import ProjectPostClient from "@portfolio/ui/project-post-client";
+import GraphNextUp from "@/components/graph/graph-next-up";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -197,7 +198,17 @@ export default async function ProjectPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <ProjectPostClient initialProject={project} nextProject={nextProject} />
+      <ProjectPostClient
+        initialProject={project}
+        nextProject={nextProject}
+        localGraphSlot={
+          <GraphNextUp
+            sourceType="project"
+            basePath="projects"
+            nextItem={nextProject}
+          />
+        }
+      />
     </>
   );
 }

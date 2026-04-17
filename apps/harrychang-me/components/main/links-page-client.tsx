@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { motion } from "motion/react";
 import GuestbookWidget from "@/components/guestbook-widget";
@@ -19,7 +18,6 @@ import {
   Film,
   Lightbulb,
   Wrench,
-  ArrowLeft,
   PenTool,
 } from "lucide-react";
 
@@ -55,7 +53,7 @@ const itemVariants = {
 };
 
 export default function LinksPageClient() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const links: LinkItem[] = [
     {

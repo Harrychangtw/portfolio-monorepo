@@ -6,7 +6,7 @@ date: "2023-07-07"
 camera: "FUJIFILM XT-5"
 lens: "TTARTISAN 50mm f/0.95"
 location: "台北"
-tags: ["街頭攝影"]
+tags: ["Street Photography"]
 featured: true
 pinned: 11
 locked: false

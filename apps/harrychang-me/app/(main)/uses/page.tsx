@@ -5,6 +5,13 @@ import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { ImageContainer } from "@portfolio/ui/image-container";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 
+interface UsesItem {
+  name: string;
+  key?: string;
+  value: string | string[];
+  list?: string | string[];
+}
+
 /* ── Section wrapper ────────────────────────────────────── */
 function Section({
   index,
@@ -156,7 +163,7 @@ export default function UsesPage() {
         <Section index={1} title={t("hardware.coreWorkstation.title", "uses")}>
           <div className="space-y-0">
             {(hardware?.coreWorkstation?.items || []).map(
-              (item: any, i: number) => (
+              (item: UsesItem, i: number) => (
                 <ItemRow key={i} label={item.name} value={item.value} />
               ),
             )}
@@ -166,18 +173,22 @@ export default function UsesPage() {
         {/* 02 — Office & Ergonomics */}
         <Section index={2} title={t("hardware.office.title", "uses")}>
           <div className="space-y-0">
-            {(hardware?.office?.items || []).map((item: any, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(hardware?.office?.items || []).map(
+              (item: UsesItem, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
 
         {/* 03 — Home Server */}
         <Section index={3} title={t("hardware.homeServer.title", "uses")}>
           <div className="space-y-0">
-            {(hardware?.homeServer?.items || []).map((item: any, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(hardware?.homeServer?.items || []).map(
+              (item: UsesItem, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
 
@@ -185,11 +196,11 @@ export default function UsesPage() {
         <Section index={4} title={t("hardware.photography.title", "uses")}>
           <div className="space-y-0">
             {(hardware?.photography?.items || []).map(
-              (item: any, i: number) => (
+              (item: UsesItem, i: number) => (
                 <ItemRow
                   key={i}
-                  label={item.name || item.key}
-                  value={item.list}
+                  label={item.name || item.key || ""}
+                  value={item.list || item.value}
                 />
               ),
             )}
@@ -200,7 +211,7 @@ export default function UsesPage() {
         <Section index={5} title={t("software.development.title", "uses")}>
           <div className="space-y-0">
             {(software?.development?.items || []).map(
-              (item: any, i: number) => (
+              (item: UsesItem, i: number) => (
                 <ItemRow key={i} label={item.name} value={item.value} />
               ),
             )}
@@ -210,9 +221,11 @@ export default function UsesPage() {
         {/* 06 — Design & Creative */}
         <Section index={6} title={t("software.design.title", "uses")}>
           <div className="space-y-0">
-            {(software?.design?.items || []).map((item: any, i: number) => (
-              <ItemRow key={i} label={item.name} value={item.value} />
-            ))}
+            {(software?.design?.items || []).map(
+              (item: UsesItem, i: number) => (
+                <ItemRow key={i} label={item.name} value={item.value} />
+              ),
+            )}
           </div>
         </Section>
 
@@ -220,7 +233,7 @@ export default function UsesPage() {
         <Section index={7} title={t("software.productivity.title", "uses")}>
           <div className="space-y-0">
             {(software?.productivity?.items || []).map(
-              (item: any, i: number) => (
+              (item: UsesItem, i: number) => (
                 <ItemRow key={i} label={item.name} value={item.value} />
               ),
             )}

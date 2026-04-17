@@ -2,7 +2,7 @@
 title: "Portfolio Website"
 category: "Web Development"
 subcategory: "Personal Project"
-description: "A dual-domain portfolio built on a Turborepo monorepo with Next.js, featuring a file-based CMS and shared UI components."
+description: "A dual-domain portfolio built on a Turborepo monorepo with Next.js, featuring a file-based CMS, an Obsidian-style knowledge graph, and shared UI components."
 imageUrl: "images/optimized/projects/2025_04_12_portfolio_design/titlecard.webp"
 year: "2025"
 date: "2025-04-12"
@@ -57,6 +57,16 @@ Performance, scalability, and advanced features were primary goals during develo
 **Internationalization (i18n):** The site supports English and Traditional Chinese through a custom, client-side React Context. Content is localized based on filename suffixes (`_zh-tw.md`), and the site gracefully falls back to English if a translation is unavailable.
 
 ![The client-side language switcher allows toggling between English and Traditional Chinese.](images/optimized/projects/2025_04_12_portfolio_design/clip-language-switcher.mp4)
+
+### Knowledge Graph
+
+Inspired by Obsidian's graph view, the site features an interactive knowledge graph that visualizes the relationships between all content—projects, blog posts, gallery items, and papers. Built with D3.js force-directed simulation and rendered on an HTML5 Canvas, nodes are linked by shared tags, categories, and contextual similarity generated through an offline embedding pipeline.
+
+The full graph is accessible at a dedicated `/graph` route with category filtering, a mobile-optimized node card, and cursor-following preview tooltips. A compact, embedded version also powers the "Next Up" card on every content page, showing a local neighborhood subgraph to surface related content and encourage exploration.
+
+![The full-page knowledge graph with category filtering and interactive node exploration on desktop.](images/optimized/projects/2025_04_12_portfolio_design/clip-desktop-graph.mp4)
+
+![The embedded local graph in the Next Up card on mobile, linking related content.](images/optimized/projects/2025_04_12_portfolio_design/clip-mobile-graph-nextup.mp4)
 
 ### Content & Features
 

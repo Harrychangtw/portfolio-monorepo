@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 import { scrollToSection } from "@portfolio/lib/lib/scrolling";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import GuestbookWidget from "@/components/guestbook-widget";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
@@ -55,9 +55,6 @@ const siteLinks = [
   { id: "source", name: "Source Code", href: "/readme" },
 ];
 
-// For tooltip lookups
-const allLinks = [...connectLinks, ...exploreLinks, ...siteLinks];
-
 // Helper to get translation key based on link type
 const getTranslationKey = (id: string) => {
   if (connectLinks.some((l) => l.id === id)) {
@@ -95,7 +92,7 @@ export default function Footer() {
   const isMusicTooltip = hoveringMusic && nowPlaying?.isPlaying;
 
   useEffect(() => {
-    setIsClient(true);
+    setIsClient(true); // eslint-disable-line react-hooks/set-state-in-effect -- client detection on mount
     const hostname = window.location.hostname;
     setIsLab(hostname.startsWith("lab."));
   }, []);

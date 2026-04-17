@@ -15,6 +15,11 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'localhost',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+        pathname: '/vi/**',   // optional but more restrictive/safer
+      },
     ],
   },
   async headers() {

@@ -9,7 +9,7 @@
 [![Lighthouse CI](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml)
 [![Dependency Audit](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml)
 
-A modern, highly optimized portfolio website built with Next.js 15 and React 19, featuring a dual-domain architecture, custom cross-domain theme persistence, an interactive 404 experience, and a flawless 100 Real Experience Score (RES) under heavy traffic.
+A modern, highly optimized portfolio website built with Next.js 15 and React 19, featuring a dual-domain architecture, an Obsidian-style knowledge graph, custom cross-domain theme persistence, an interactive 404 experience, and a flawless 100 Real Experience Score (RES) under heavy traffic.
 
 ## ⚡ Performance: 100 RES
 
@@ -24,21 +24,22 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 
 <!-- LIGHTHOUSE_RESULTS_START -->
 
-> 🕐 **Last audited:** Tue, 14 Apr 2026 17:28:07 GMT
+> 🕐 **Last audited:** Fri, 17 Apr 2026 05:21:26 GMT
 
-| Tested Route                         | Performance                                                                            | FCP   | LCP   | TBT   | CLS | Speed Index |
-| :----------------------------------- | :------------------------------------------------------------------------------------- | :---- | :---- | :---- | :-- | :---------- |
-| `/`                                  | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 1.0 s | 50 ms | 0   | 0.6 s       |
-| `/blog`                              | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms  | 0   | 0.6 s       |
-| `/blog/9_m11d`                       | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 10 ms | 0   | 0.9 s       |
-| `/cv`                                | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.8 s | 0 ms  | 0   | 0.5 s       |
-| `/design`                            | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square) | 0.3 s | 1.3 s | 0 ms  | 0   | 0.7 s       |
-| `/gallery`                           | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 10 ms | 0   | 0.7 s       |
-| `/gallery/2026_02_08_italy_mountain` | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square) | 0.3 s | 1.2 s | 0 ms  | 0   | 0.7 s       |
-| `/linktree`                          | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.8 s | 0 ms  | 0   | 0.6 s       |
-| `/projects`                          | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square) | 0.3 s | 0.9 s | 0 ms  | 0   | 0.7 s       |
-| `/projects/2025_04_12_portfolio`     | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square) | 0.3 s | 1.1 s | 30 ms | 0   | 1.1 s       |
-| `/uses`                              | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square) | 0.3 s | 1.2 s | 10 ms | 0   | 0.8 s       |
+| Tested Route                         | Performance                                                                              | FCP   | LCP   | TBT    | CLS | Speed Index |
+| :----------------------------------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :----- | :-- | :---------- |
+| `/`                                  | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 1.0 s | 50 ms  | 0   | 0.6 s       |
+| `/blog`                              | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 0.9 s | 0 ms   | 0   | 0.6 s       |
+| `/blog/9_m11d`                       | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.3 s | 1.7 s | 30 ms  | 0   | 1.1 s       |
+| `/cv`                                | ![Lighthouse 100](https://img.shields.io/badge/lighthouse-100-success?style=flat-square) | 0.3 s | 0.8 s | 0 ms   | 0   | 0.5 s       |
+| `/design`                            | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.3 s | 20 ms  | 0   | 0.8 s       |
+| `/gallery`                           | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 0.8 s | 10 ms  | 0   | 0.8 s       |
+| `/gallery/2026_02_08_italy_mountain` | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.3 s | 0 ms   | 0   | 0.7 s       |
+| `/graph`                             | ![Lighthouse 95](https://img.shields.io/badge/lighthouse-95-success?style=flat-square)   | 0.3 s | 0.7 s | 180 ms | 0   | 0.6 s       |
+| `/linktree`                          | ![Lighthouse 100](https://img.shields.io/badge/lighthouse-100-success?style=flat-square) | 0.3 s | 0.8 s | 0 ms   | 0   | 0.6 s       |
+| `/projects`                          | ![Lighthouse 99](https://img.shields.io/badge/lighthouse-99-success?style=flat-square)   | 0.3 s | 0.8 s | 0 ms   | 0   | 0.8 s       |
+| `/projects/2025_04_12_portfolio`     | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.2 s | 0 ms   | 0   | 1.2 s       |
+| `/uses`                              | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square)   | 0.3 s | 1.2 s | 30 ms  | 0   | 0.8 s       |
 
 <!-- LIGHTHOUSE_RESULTS_END -->
 
@@ -49,6 +50,18 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 - **Main site** (`harrychang.me`): Portfolio, projects, photo gallery, blog, links, design system, and manifesto.
 - **Lab subdomain** (`lab.harrychang.me`): Hub for consulting, strategy, and educational content.
 - Single codebase utilizing Next.js middleware routing. Shared components, APIs, and cross-subdomain cookie persistence (`.harrychang.me`) for theme preferences.
+
+### Obsidian-Style Knowledge Graph
+
+An interactive, force-directed knowledge graph that maps the relationships between all site content — projects, blog posts, gallery photos, and papers. Built with D3.js and rendered on HTML5 Canvas for smooth performance with hundreds of nodes.
+
+- **Full-page `/graph` route** with category filtering, cursor-following preview tooltips, and a mobile-optimized node card.
+- **Embedded local subgraph** in the "Next Up" card on every content page, surfacing related content via shared tags, categories, and semantic similarity.
+- **Offline embedding pipeline** (`scripts/build_graph.py`) generates node descriptions and cosine-similarity edges, cached as static JSON for zero-runtime cost.
+
+<p align="center">
+  <img src="public/images/optimized/projects/2025_04_12_portfolio_design/Screenshot 2026-04-17 at 12-36-27 Knowledge Graph Harry Chang.webp" alt="Knowledge Graph — full site graph view" width="1800" />
+</p>
 
 ### Advanced Design & Micro-Interactions
 

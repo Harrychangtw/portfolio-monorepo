@@ -6,7 +6,7 @@ date: "2023-07-03"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8, VILTROX 75mm f/1.2"
 location: "台灣"
-tags: ["街頭攝影"]
+tags: ["Street Photography"]
 featured: true
 pinned: 6
 locked: false

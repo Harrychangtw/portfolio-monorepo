@@ -11,7 +11,7 @@ export async function GET(request: Request) {
         "Cache-Control": "public, max-age=0, s-maxage=31536000",
       },
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Failed to fetch gallery items" },
       { status: 500 },

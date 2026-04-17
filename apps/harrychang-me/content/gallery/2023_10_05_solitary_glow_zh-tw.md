@@ -6,7 +6,7 @@ date: "2023-10-05"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8, TTARTISAN 50mm f/0.95"
 location: "台北"
-tags: ["街頭攝影"]
+tags: ["Street Photography"]
 featured: true
 pinned: 17
 locked: false

@@ -6,7 +6,7 @@ date: "2023-11-18"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8"
 location: "新北"
-tags: ["街頭攝影", "日落"]
+tags: ["Street Photography", "Sunset"]
 featured: true
 pinned: 15
 locked: false

@@ -1,15 +1,10 @@
 import "./globals.css";
 import type React from "react";
 import type { Metadata, Viewport } from "next"; // Added Viewport type
-import { Space_Grotesk, IBM_Plex_Sans } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { siteConfig } from "@/config/site";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
+import RootClientShell from "@/components/root-client-shell";
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -179,7 +174,7 @@ export default function RootLayout({
       <body
         className={`bg-background text-primary antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        <RootClientShell>{children}</RootClientShell>
       </body>
     </html>
   );

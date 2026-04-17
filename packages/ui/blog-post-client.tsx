@@ -27,11 +27,13 @@ interface BlogPostClientProps {
     imageUrl: string;
     aspectRatio?: number;
   } | null;
+  localGraphSlot?: React.ReactNode;
 }
 
 export default function BlogPostClient({
   initialPost,
   nextPost,
+  localGraphSlot,
 }: BlogPostClientProps) {
   const { language, t } = useLanguage();
   const [post, setPost] = useState(initialPost);
@@ -269,8 +271,11 @@ export default function BlogPostClient({
                 })}
               </div>
 
-              {/* Next Up Card */}
-              {nextPostData && (
+              {/* Local Graph + Next Up Card (coupled) */}
+              {localGraphSlot}
+
+              {/* Standalone Next Up Card (fallback when no graph) */}
+              {!localGraphSlot && nextPostData && (
                 <NextUpCard
                   title={nextPostData.title}
                   category={nextPostData.category}

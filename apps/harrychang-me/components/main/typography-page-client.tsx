@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import type { ReactNode } from "react";
-import { motion } from "motion/react";
 import { TypographySpecimen } from "./typography-specimen";
 import { getAllFontFamilies } from "@portfolio/lib/lib/typography";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
@@ -37,7 +36,7 @@ function ColorCard({ name, cssValue }: { name: string; cssValue: string }) {
     if (swatchRef.current) {
       const computed = window.getComputedStyle(swatchRef.current);
       const hex = rgbToHex(computed.backgroundColor);
-      setResolvedHex(hex.startsWith("#") ? hex : "");
+      setResolvedHex(hex.startsWith("#") ? hex : ""); // eslint-disable-line react-hooks/set-state-in-effect
     }
   }, [cssValue]);
 

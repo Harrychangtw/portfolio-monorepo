@@ -6,7 +6,7 @@ date: "2024-01-06"
 camera: "FUJIFILM XT-5"
 lens: "FUJINON 100-400mm f/4.5-5.6"
 location: "台南"
-tags: ["風光攝影", "海洋"]
+tags: ["Landscape", "Ocean"]
 featured: true
 pinned: 10
 locked: false
