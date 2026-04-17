@@ -1030,7 +1030,14 @@ export default function GraphCanvas({
       canvas.removeEventListener("pointerup", handleUp);
       canvas.removeEventListener("click", handleClick);
     };
-  }, [findNodeAtPoint, onNodeClick, onNodeHover, onCenterNodeChange, screenToSim, isMobile]);
+  }, [
+    findNodeAtPoint,
+    onNodeClick,
+    onNodeHover,
+    onCenterNodeChange,
+    screenToSim,
+    isMobile,
+  ]);
 
   // Zoom — d3-zoom with center offset baked into the initial transform
   useEffect(() => {

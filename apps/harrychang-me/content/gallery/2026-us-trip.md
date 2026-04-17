@@ -27,6 +27,7 @@ gallery:
   - url: "images/optimized/gallery/2026-us-trip/L1001936.webp"
 pinned: 7
 ---
+
 <!--
 Maybe coherence was never the point.
 
