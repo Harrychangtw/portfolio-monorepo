@@ -6,6 +6,7 @@ import {
   getNextProject,
 } from "@portfolio/lib/lib/markdown";
 import ProjectPostClient from "@portfolio/ui/project-post-client";
+import LocalGraphView from "@/components/graph/local-graph-dynamic";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -197,7 +198,16 @@ export default async function ProjectPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <ProjectPostClient initialProject={project} nextProject={nextProject} />
+      <ProjectPostClient
+        initialProject={project}
+        nextProject={nextProject}
+        localGraphSlot={
+          <LocalGraphView
+            currentSlug={slug.replace(/_zh-tw|_zh-TW/i, "")}
+            sourceType="project"
+          />
+        }
+      />
     </>
   );
 }

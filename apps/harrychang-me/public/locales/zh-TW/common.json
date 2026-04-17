@@ -214,7 +214,8 @@
   "common": {
     "close": "關閉",
     "openMenu": "開啟選單",
-    "closeMenu": "關閉選單"
+    "closeMenu": "關閉選單",
+    "relatedGraph": "知識圖譜"
   },
   "notification": {
     "pageNotFound": "頁面未找到，已重新導向至首頁。"

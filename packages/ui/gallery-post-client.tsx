@@ -26,11 +26,13 @@ interface GalleryPostClientProps {
     imageUrl: string;
     aspectRatio?: number;
   } | null;
+  localGraphSlot?: React.ReactNode;
 }
 
 export default function GalleryPostClient({
   initialItem,
   nextItem,
+  localGraphSlot,
 }: GalleryPostClientProps) {
   const { language, t } = useLanguage();
   const [item, setItem] = useState(initialItem);
@@ -329,6 +331,21 @@ export default function GalleryPostClient({
                         </div>
                       );
                     })}
+                  </div>
+                )}
+
+                {/* Local Graph */}
+                {localGraphSlot && (
+                  <div className="w-full mt-8 md:mt-12 mb-4">
+                    <p className="font-heading uppercase text-xs tracking-wider text-secondary mb-3">
+                      {t("common.relatedGraph") || "Knowledge Graph"}
+                    </p>
+                    <div
+                      className="border border-border overflow-hidden"
+                      style={{ height: "240px" }}
+                    >
+                      {localGraphSlot}
+                    </div>
                   </div>
                 )}
 

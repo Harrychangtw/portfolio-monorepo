@@ -6,6 +6,7 @@ import {
   getNextGalleryItem,
 } from "@portfolio/lib/lib/markdown";
 import GalleryPostClient from "@portfolio/ui/gallery-post-client";
+import LocalGraphView from "@/components/graph/local-graph-dynamic";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -186,7 +187,16 @@ export default async function GalleryItemPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <GalleryPostClient initialItem={item} nextItem={nextItem} />
+      <GalleryPostClient
+        initialItem={item}
+        nextItem={nextItem}
+        localGraphSlot={
+          <LocalGraphView
+            currentSlug={slug.replace(/_zh-tw|_zh-TW/i, "")}
+            sourceType="gallery"
+          />
+        }
+      />
     </>
   );
 }
