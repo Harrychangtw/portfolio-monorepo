@@ -323,6 +323,8 @@ export default function Header() {
 
   if (isLab) {
     activeTitleKey = "lab";
+  } else if (isGraph) {
+    activeTitleKey = "graph";
   } else if (currentSpecialPage) {
     activeTitleKey = currentSpecialPage.key;
   } else if (showStandardSectionTitle) {
@@ -425,7 +427,7 @@ export default function Header() {
 
   // Track reading progress
   useEffect(() => {
-    if ((!isProjectDetailPage && !isBlogDetailPage) || isLab) return;
+    if ((!isProjectDetailPage && !isBlogDetailPage) || isLab || isGraph) return;
 
     let animationFrameId: number;
     let targetProgress = 0;
@@ -456,7 +458,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [isProjectDetailPage, isBlogDetailPage, isLab]);
+  }, [isProjectDetailPage, isBlogDetailPage, isLab, isGraph]);
 
   const getHomeUrl = () => {
     if (isLab) {
@@ -503,12 +505,15 @@ export default function Header() {
       )}
 
       {/* Reading progress indicator */}
-      {(isProjectDetailPage || isBlogDetailPage) && !isLab && !isNavigating && (
-        <div
-          className="absolute top-0 left-0 h-[2px] bg-accent"
-          style={{ width: `${readingProgress}%` }}
-        />
-      )}
+      {(isProjectDetailPage || isBlogDetailPage) &&
+        !isLab &&
+        !isGraph &&
+        !isNavigating && (
+          <div
+            className="absolute top-0 left-0 h-[2px] bg-accent"
+            style={{ width: `${readingProgress}%` }}
+          />
+        )}
 
       <div className="container flex justify-between items-center">
         <div
