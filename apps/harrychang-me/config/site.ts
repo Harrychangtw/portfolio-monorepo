@@ -59,7 +59,7 @@ export const siteConfig = {
 
   // External Resources
   external: {
-    cv: "https://drive.google.com/file/d/1v87YexVszW3AS8oq_ch3q_oiGb-mGfFI/view?usp=sharing",
+    cv: "https://drive.google.com/file/d/1g2ihvylNZd2OObDFZikBdh84S-MZh2gl/view?usp=drive_link",
     calendar: "https://calendar.notion.so/meet/harry-chang/ybit2gkx",
   },
 

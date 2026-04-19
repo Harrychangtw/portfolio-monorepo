@@ -79,7 +79,7 @@
           "bullets": [
             "First-authored FORTRESS (TMLR) and PATCH Dataset (EACL 2026 SRW)",
             "Created educational AI video on LLM safety, selected for AAAI 2025",
-            "Delivered 40-minute keynote on RAG technology at SITCON 2025",
+            "Delivered 40-minute keynote on RAG technology at SITCON 2025 and 2026",
             "Built CNN CAPTCHA solver (100% accuracy) and Transformer trading model"
           ]
         },
@@ -221,7 +221,7 @@
     }
   },
   "footer": {
-    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 Feb",
+    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 April",
     "downloadPdf": "Download Full PDF"
   }
 }

@@ -79,7 +79,7 @@
           "bullets": [
             "以第一作者身分發表 FORTRESS (TMLR) 與 PATCH 資料集 (EACL 2026 SRW)",
             "製作 LLM 安全性教育影片，入選 AAAI 2025",
-            "於 SITCON 2025 發表 40 分鐘的 RAG 技術主題演講",
+            "於 SITCON 2025 與 2026 發表 40 分鐘主題演講",
             "開發 CNN 驗證碼破解器 (100% 準確率) 與 Transformer 交易模型"
           ]
         },
@@ -221,7 +221,7 @@
     }
   },
   "footer": {
-    "text": "張祺煒 · 履歷 · February 2026",
+    "text": "張祺煒 · 履歷 · April 2026",
     "downloadPdf": "下載完整 PDF"
   }
 }
