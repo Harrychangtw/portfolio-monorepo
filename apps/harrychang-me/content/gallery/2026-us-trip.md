@@ -1,5 +1,5 @@
 ---
-title: "No Need to Cohere"
+title: "The Version That Stayed"
 description: ""
 imageUrl: "images/optimized/gallery/2026-us-trip/L1001775.webp"
 location: "San Francisco, New York, Boston"
@@ -28,17 +28,8 @@ gallery:
 pinned: 7
 ---
 
-<!--
-Maybe coherence was never the point.
+Celine Song's film keeps circling back. Two people at a carousel in Brooklyn, half-aware that other versions of themselves exist elsewhere, living lives they'll never meet. Sixteen days across three cities and the same frame kept returning: strangers holding poses I might have held, doors opening onto skylines I'd never walk into.
 
- New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five meters from stock exchanges. The city holds the finance bro and the homeless in a single frame, never trying to reconcile them. As if to say: contradiction is not failure, it is fidelity to what is actually here.
+A pilgrim cast in bronze beneath blossoms he never lived to see. Two geese indifferent to the towers behind them. A couple at Grand Central kissing inside a long exposure, everyone else dissolved to streaks. A man at the Golden Gate taking the shot I had already failed. A child chasing a ball under the Chrysler, an afternoon that means nothing to her and too much to me.
 
-In Grand Central, a couple kisses. The world streams past them, dissolving into motion blur. I think of the film *Past Lives*, those ifs and possibilities witnessed but never resolved. The self who went to Stanford and the self who stayed in Taiwan exist at the same time. They do not resolve. They do not have to.
-
-Cherry blossoms bloom fuller than my ten year old Tokyo memories. A child chases a soccer ball under the Chrysler Building. The ferry window frames the Statue of Liberty, a reminder that all symbols require distance. Then Boston, the Charles River at dusk, the sky holding the faintest green, a palette that made me think of aurora. Fred Again in my earphones. I sat on the bench. Did not take a photo, or forgot to. Just heard everything.
-
-Maybe this is what presence feels like. Knowing you are in the moment that will become memory, and choosing to stay inside it anyway. Holding contradictions and keep moving forward is not giving up. It is honoring what is actually there.
-
-Contradictions are ifs in space. Ifs are contradictions in time.
-
-White Ferrari should not have been playing. But I put it on anyway. -->
+On the ferry back, the Statue of Liberty sat inside a window that also framed an empty seat. I didn't sit there. Someone already was.
