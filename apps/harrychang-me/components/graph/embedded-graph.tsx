@@ -204,6 +204,7 @@ export default function EmbeddedGraph({
       focalNodeId={focalNodeId}
       isMobile={isMobile}
       onCenterNodeChange={isMobile ? handleCenterNodeChange : undefined}
+      embeddedMode
     />
   );
 }

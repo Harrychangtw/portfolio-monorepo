@@ -41,6 +41,13 @@ interface GraphCanvasProps {
   onCenterNodeChange?: (node: GraphNode | null) => void;
   /** If set, this node is pinned at (0,0) so the viewport centers on it. */
   focalNodeId?: string;
+  /**
+   * When true, wheel events pass through to the page while the page is still
+   * scrolling (momentum check). Zoom only activates once the page has been
+   * at rest for ~250 ms. Use this for embedded/local graphs so they don't
+   * hijack normal page scrolling.
+   */
+  embeddedMode?: boolean;
 }
 
 /* ─── Force strengths by node type ─────────────────────────────────────────── */
@@ -86,6 +93,7 @@ export default function GraphCanvas({
   isMobile,
   onCenterNodeChange,
   focalNodeId,
+  embeddedMode,
 }: GraphCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -121,6 +129,7 @@ export default function GraphCanvas({
   const zoomBehaviorRef = useRef<any>(null);
   const magnetDebounceRef = useRef<number>(0);
   const lastMagnetTimeRef = useRef<number>(0);
+  const lastScrollTimeRef = useRef<number>(0);
   const dimensionsRef = useRef(dimensions);
   // Focus patch (mobile viewfinder): progress 0 = square/unlocked, 1 = circle/locked
   const focusProgressRef = useRef(0);
@@ -1047,10 +1056,28 @@ export default function GraphCanvas({
 
     const { width, height } = dimensions;
 
+    // In embedded mode, track window scroll to implement momentum passthrough
+    let cleanupScrollListener: (() => void) | undefined;
+    if (embeddedMode) {
+      const onWindowScroll = () => {
+        lastScrollTimeRef.current = Date.now();
+      };
+      window.addEventListener("scroll", onWindowScroll, { passive: true });
+      cleanupScrollListener = () =>
+        window.removeEventListener("scroll", onWindowScroll);
+    }
+
     const zoomBehavior = d3Zoom<HTMLCanvasElement, unknown>()
       .scaleExtent([0.05, 5])
       .filter((event) => {
-        if (event.type === "wheel") return true;
+        if (event.type === "wheel") {
+          // Embedded mode: pass wheel events through while the page is mid-scroll
+          // so the canvas doesn't hijack normal page scrolling.
+          if (embeddedMode && Date.now() - lastScrollTimeRef.current < 250) {
+            return false;
+          }
+          return true;
+        }
         if (event.type === "mousedown" || event.type === "pointerdown") {
           return !isDraggingRef.current;
         }
@@ -1144,6 +1171,7 @@ export default function GraphCanvas({
 
     return () => {
       selection.on(".zoom", null);
+      cleanupScrollListener?.();
     };
   }, [dimensions.width, dimensions.height]); // eslint-disable-line react-hooks/exhaustive-deps
 
