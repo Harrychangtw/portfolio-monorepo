@@ -2,12 +2,10 @@
 title: "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close"
 description: "16 days, three cities, and a trip that refused to cohere. On diversity that excludes, selves that don't exist, and why holding contradictions might be the point."
 imageUrl: "images/optimized/blogs/12-us-trip/titlecard.webp"
-date: "2026-04-20"
+date: "2026-04-21"
 author: "Harry Chang"
 tags: ["Travel", "Reflection"]
 pinned: -1
-locked: true
-hidden: true
 ---
 
 ## The Same Bus

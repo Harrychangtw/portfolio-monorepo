@@ -2,12 +2,10 @@
 title: "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈"
 description: "十六天，三座城市，一趟拒絕連貫的旅程。關於排斥他人的多元、不存在的自我，以及為什麼擁抱矛盾或許才是重點。"
 imageUrl: "images/optimized/blogs/12-us-trip/titlecard.webp"
-date: "2026-04-20"
+date: "2026-04-21"
 author: "Harry Chang"
 tags: ["Travel", "Reflection"]
 pinned: -1
-locked: true
-hidden: true
 ---
 
 ## 同一班公車
@@ -124,7 +122,7 @@ High Line 附近的美術館，宣傳冊上的字體很美。但我發現裡面�
 
 漫步穿過 SoHo。搭乘地鐵。看著熱狗攤和證券交易所在五公尺內並存。我不斷注意到：創造活力的密度，正是讓房租高不可攀的密度。擁抱所有人的多元，正是讓某人能夠對著吃披薩的陌生人大吼「滾回紐澤西」的多元。這些不是城市的失敗。這就只是這座城市，城市本來的樣子。
 
-曾有幾位朋友建議我出國念大學。普遍的共識是：美國是更大的舞台。我想得比我應該的還要多。各種「如果」不斷孳生。如果我一開始就把目標放在國外呢？我有沒有微乎其微的機會考上 Berkeley 或 Stanford，在那裡，身邊圍繞著充滿幹勁的學生，離新創圈更近，卻遠離了隨著我逐漸成長而日漸年邁的家人？
+曾有幾位朋友建議我出國念大學。普遍的共識是：美國是更大的舞台。我想得比我應該的還要多。各種「如果」不斷孳生。如果我一開始就把目標放在國外呢？我有沒有微乎其微的機會申請上國外頂大，在那裡，身邊圍繞著充滿幹勁的學生，離新創圈更近，卻遠離了隨著我逐漸成長而日漸年邁的家人？
 
 在飛往 Newark 的航班上，我看著另一名乘客在看《Past Lives》。Celine Song 那部關於我們不曾成為的自我、不曾活過的人生的電影。我們去了布魯克林的 Jane's Carousel，他們在那裡拍了一場戲：兩個角色站在一個承載著他們永遠無法相遇的另一個版本自己的地方。那些被目睹卻永遠無法被解開的如果與可能。
 
@@ -196,7 +194,7 @@ White Ferrari 響了；Demo 版本，字裡行間更加刺骨。_Which part of t
 
 ## 致謝
 
-- 封面照：_The Third-Class Carriage_ by [Honoré Daumier](https://en.wikipedia.org/wiki/en:Honoré_Daumier)，公有領域，[Link](https://commons.wikimedia.org/w/index.php?curid=30139434)。一位哺乳的母親、一位老婦人、一個熟睡的男孩，以及一車廂永遠無法融入成一個社群的陌生人。有些城市的運作方式，亦是如此。
+- 封面照：_The Third-Class Carriage_ by [Honoré Daumier](https://en.wikipedia.org/wiki/en:Honoré_Daumier)，Public Domain，[Link](https://commons.wikimedia.org/w/index.php?curid=30139434)。一位哺乳的母親、一位老婦人、一個熟睡的男孩，以及一車廂永遠無法融入成一個社群的陌生人。有些城市的運作方式，亦是如此。
 - 給我姐，一如往常地扛起了安排行程的重任，並找到了每一家值得被記住的餐廳。
 - 給我爸，謝謝你在 Blue Bottle 拋出的家族往事。
 - 給 Michael Dominguez，無論你在哪裡，謝謝你的歡迎與警告。
