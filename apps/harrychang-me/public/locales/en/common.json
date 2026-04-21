@@ -130,6 +130,10 @@
       "scroll": "Scroll",
       "scrollVal": "Stable hash-based anchor alignment"
     },
+    "knowledgeGraph": "Knowledge Graph",
+    "knowledgeGraphDesc1": "Every page on this site is a node. Every shared tag, category, or conceptual link is an edge. The graph is generated at build time from the content CMS, spanning projects, blog posts, gallery entries, and hub pages, then rendered via a force-directed physics simulation.",
+    "knowledgeGraphDesc2": "Nodes are sized by connection degree. Edges encode semantic similarity via vector embeddings. On mobile, a crosshair pans the canvas and surfaces the centre node. Click any node to navigate directly.",
+    "fullGraph": "Full Graph",
     "specimen1": "The Tower",
     "specimen2": "Audacity in Creation",
     "specimen3": "Every pixel is a decision, every whitespace a breath.",
@@ -152,6 +156,7 @@
     "gmail": "Email",
     "discord": "Discord",
     "github": "GitHub",
+    "telegram": "Telegram",
     "instagram": "Instagram",
     "letterboxd": "Letterboxd",
     "linkedin": "LinkedIn",
@@ -169,6 +174,7 @@
     "site": "Portfolio Site",
     "blog": "Blog",
     "design": "Design System",
+    "graph": "Knowledge Graph",
     "source": "Source Code"
   },
   "links": {
@@ -203,6 +209,8 @@
     "design": "The design choices behind this site",
     "blog": "Film essays, hardware reflections, and the things worth sitting with",
     "medium": "Syndicated stories, another home for my words",
+    "telegram": "Encrypted chats welcome — find me @harrychangtw",
+    "graph": "Explore this site as an interactive knowledge graph",
     "source": "View the monorepo source code and README on GitHub"
   },
   "letterGlitch": {

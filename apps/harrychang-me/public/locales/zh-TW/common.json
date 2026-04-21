@@ -130,6 +130,10 @@
       "scroll": "滾動",
       "scrollVal": "基於 Hash 的錨點對齊"
     },
+    "knowledgeGraph": "知識圖譜",
+    "knowledgeGraphDesc1": "本站每個頁面都是一個節點，每個共享的標籤、分類或概念關聯都是一條邊。圖譜在建置時由內容 CMS 自動生成，涵蓋專案、文章、攝影作品與樞紐頁面，並透過力導向物理模擬進行嵌入呈現。",
+    "knowledgeGraphDesc2": "節點大小依連結數量縮放，邊的強度透過向量嵌入編碼語意相似度。在行動裝置上，十字準星可平移畫布並顯示中心節點資訊。點擊任意節點即可直接導航至對應頁面。",
+    "fullGraph": "完整圖譜",
     "specimen1": "The Tower",
     "specimen2": "Audacity in Creation",
     "specimen3": "Every pixel is a decision, every whitespace a breath.",
@@ -151,6 +155,7 @@
     "gmail": "Email",
     "discord": "Discord",
     "github": "GitHub",
+    "telegram": "Telegram",
     "instagram": "Instagram",
     "letterboxd": "Letterboxd",
     "linkedin": "LinkedIn",
@@ -169,6 +174,7 @@
     "site": "作品集網站",
     "blog": "部落格",
     "design": "設計系統",
+    "graph": "知識圖譜",
     "source": "網站原始碼"
   },
   "links": {
@@ -203,6 +209,8 @@
     "design": "這個網站的設計理念與細節",
     "blog": "關於電影、工具、生活的隨筆",
     "medium": "同步刊登的隨筆，文字另一處棲息地",
+    "telegram": "加密訊息歡迎 — @harrychangtw",
+    "graph": "以互動知識圖譜的方式探索本站",
     "source": "在 GitHub 上探索本站的架構"
   },
   "letterGlitch": {

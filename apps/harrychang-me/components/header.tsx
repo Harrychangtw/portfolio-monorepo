@@ -410,6 +410,7 @@ export default function Header() {
     { label: t("social.discord"), link: "/discord" },
     { label: t("social.linkedin"), link: "/linkedin" },
     { label: t("social.github"), link: "/github" },
+    { label: t("social.telegram"), link: "/telegram" },
     { label: t("social.instagram"), link: "/instagram" },
     { label: t("social.medium"), link: "/medium" },
     { label: t("social.calendar"), link: "/cal" },
@@ -423,6 +424,7 @@ export default function Header() {
     { label: t("resources.uses"), link: "/uses" },
     { label: t("resources.reading"), link: "/paper-reading" },
     { label: t("resources.design"), link: "/design" },
+    { label: t("resources.graph"), link: "/graph" },
   ];
 
   // Track reading progress

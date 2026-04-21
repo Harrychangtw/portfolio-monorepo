@@ -7,6 +7,7 @@ import { getAllFontFamilies } from "@portfolio/lib/lib/typography";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { ImageContainer } from "@portfolio/ui/image-container";
 import NavigationLink from "@portfolio/ui/navigation-link";
+import EmbeddedGraph from "@/components/graph/local-graph-dynamic";
 
 /* ── Helpers ──────────────────────────────────────────────── */
 
@@ -193,6 +194,7 @@ export default function TypographyPageClient() {
   const fontStartIndex = 4;
   const spacingIndex = fontStartIndex + fonts.length;
   const motionIndex = spacingIndex + 1;
+  const graphIndex = motionIndex + 1;
 
   return (
     <article className="container mt-24 md:mt-32 mb-24 md:mb-32">
@@ -457,6 +459,32 @@ export default function TypographyPageClient() {
               </div>
             </div>
           ))}
+        </div>
+      </SectionSplit>
+      {/* N+2 — Knowledge Graph */}
+      <SectionSplit
+        index={graphIndex}
+        title={t("design.knowledgeGraph")}
+        description={
+          <div className="space-y-4">
+            <p>{t("design.knowledgeGraphDesc1")}</p>
+            <p>{t("design.knowledgeGraphDesc2")}</p>
+          </div>
+        }
+      >
+        <div className="relative border border-border bg-card overflow-hidden">
+          <div className="relative w-full aspect-[3/2] overflow-hidden">
+            <div className="absolute top-2 left-2 z-10 px-2 py-1 text-[10px] font-heading uppercase tracking-wider text-secondary bg-card/80 backdrop-blur-sm border border-border pointer-events-none">
+              {t("common.relatedGraph")}
+            </div>
+            <NavigationLink
+              href="/graph"
+              className="absolute top-2 right-2 z-10 px-2 py-1 text-[10px] font-heading uppercase tracking-wider text-secondary hover:text-primary bg-card/80 backdrop-blur-sm border border-border transition-colors"
+            >
+              {t("design.fullGraph")} →
+            </NavigationLink>
+            <EmbeddedGraph />
+          </div>
         </div>
       </SectionSplit>
     </article>

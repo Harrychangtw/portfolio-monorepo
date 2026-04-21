@@ -30,6 +30,7 @@ const connectLinks = [
   { id: "discord", name: "Discord", href: "/discord" },
   { id: "linkedin", name: "LinkedIn", href: "/linkedin" },
   { id: "github", name: "GitHub", href: "/github" },
+  { id: "telegram", name: "Telegram", href: "/telegram" },
   { id: "instagram", name: "Instagram", href: "/instagram" },
   { id: "medium", name: "Medium", href: "/medium" },
   { id: "calendar", name: "Schedule a Meeting", href: "/cal" },
@@ -43,6 +44,7 @@ const exploreLinks = [
   { id: "uses", name: "Uses", href: "/uses" },
   { id: "reading", name: "Paper Reading List", href: "/paper-reading" },
   { id: "design", name: "Design System", href: "/design" },
+  { id: "graph", name: "Knowledge Graph", href: "/graph" },
 ];
 
 const siteLinks = [

@@ -55,6 +55,7 @@ export const siteConfig = {
     letterboxd: "https://boxd.it/fSKuF",
     scholar: "https://scholar.google.com/citations?hl=en&user=SDpion0AAAAJ",
     medium: "https://medium.com/@chiwei_chang",
+    telegram: "https://t.me/harrychangtw",
   },
 
   // External Resources
