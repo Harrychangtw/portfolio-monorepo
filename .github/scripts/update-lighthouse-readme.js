@@ -4,69 +4,81 @@
 const fs   = require('fs');
 const path = require('path');
 
-const lhciDir = path.join(process.cwd(), '.lighthouseci');
+function readLhrDir(dir) {
+  const absDir = path.join(process.cwd(), dir);
+  if (!fs.existsSync(absDir)) return {};
 
-if (!fs.existsSync(lhciDir)) {
-  console.log('No .lighthouseci directory found — skipping README update.');
-  process.exit(0);
+  const lhrFiles = fs
+    .readdirSync(absDir)
+    .filter(f => f.startsWith('lhr-') && f.endsWith('.json'));
+
+  const data = {};
+  for (const file of lhrFiles) {
+    try {
+      const lhr = JSON.parse(fs.readFileSync(path.join(absDir, file), 'utf8'));
+      const urlPath   = new URL(lhr.requestedUrl).pathname || '/';
+      const perfScore = Math.round((lhr.categories?.performance?.score ?? 0) * 100);
+      const get = key => lhr.audits?.[key]?.displayValue ?? '-';
+
+      if (!data[urlPath] || perfScore > data[urlPath].perfScore) {
+        data[urlPath] = {
+          perfScore,
+          fcp: get('first-contentful-paint'),
+          lcp: get('largest-contentful-paint'),
+          tbt: get('total-blocking-time'),
+          cls: get('cumulative-layout-shift'),
+          si:  get('speed-index'),
+        };
+      }
+    } catch (err) {
+      console.warn(`Skipping ${file}: ${err.message}`);
+    }
+  }
+  return data;
 }
 
-const lhrFiles = fs
-  .readdirSync(lhciDir)
-  .filter(f => f.startsWith('lhr-') && f.endsWith('.json'));
+function buildRows(routeData) {
+  return Object.keys(routeData)
+    .sort()
+    .map(route => {
+      const d     = routeData[route];
+      const color = d.perfScore >= 90 ? 'success' : d.perfScore >= 50 ? 'important' : 'critical';
+      const badge = `![Lighthouse ${d.perfScore}](https://img.shields.io/badge/lighthouse-${d.perfScore}-${color}?style=flat-square)`;
+      return `| \`${route}\` | ${badge} | ${d.fcp} | ${d.lcp} | ${d.tbt} | ${d.cls} | ${d.si} |`;
+    })
+    .join('\n');
+}
 
-if (lhrFiles.length === 0) {
+const TABLE_HEADER = [
+  '| Tested Route | Performance | FCP | LCP | TBT | CLS | Speed Index |',
+  '|:---|:---|:---|:---|:---|:---|:---|',
+].join('\n');
+
+const desktopData = readLhrDir('.lighthouseci');
+const mobileData  = readLhrDir('.lighthouseci-mobile');
+
+const hasDesktop = Object.keys(desktopData).length > 0;
+const hasMobile  = Object.keys(mobileData).length > 0;
+
+if (!hasDesktop && !hasMobile) {
   console.log('No LHR JSON files found — skipping README update.');
   process.exit(0);
 }
 
-/** @type {Record<string, { perfScore: number; fcp: string; lcp: string; tbt: string; cls: string; si: string }>} */
-const routeData = {};
-
-for (const file of lhrFiles) {
-  try {
-    const lhr = JSON.parse(fs.readFileSync(path.join(lhciDir, file), 'utf8'));
-    const urlPath   = new URL(lhr.requestedUrl).pathname || '/';
-    const perfScore = Math.round((lhr.categories?.performance?.score ?? 0) * 100);
-
-    const get = key => lhr.audits?.[key]?.displayValue ?? '-';
-
-    if (!routeData[urlPath] || perfScore > routeData[urlPath].perfScore) {
-      routeData[urlPath] = {
-        perfScore,
-        fcp: get('first-contentful-paint'),
-        lcp: get('largest-contentful-paint'),
-        tbt: get('total-blocking-time'),
-        cls: get('cumulative-layout-shift'),
-        si:  get('speed-index'),
-      };
-    }
-  } catch (err) {
-    console.warn(`Skipping ${file}: ${err.message}`);
-  }
+const sections = [];
+if (hasDesktop) {
+  sections.push(`#### Desktop\n\n${TABLE_HEADER}\n${buildRows(desktopData)}`);
+}
+if (hasMobile) {
+  sections.push(`#### Mobile\n\n${TABLE_HEADER}\n${buildRows(mobileData)}`);
 }
 
-const timestamp = new Date().toUTCString(); // e.g. "Mon, 23 Mar 2026 08:00:00 GMT"
-
-const rows = Object.keys(routeData)
-  .sort()
-  .map(route => {
-    const d     = routeData[route];
-    const color = d.perfScore >= 90 ? 'success' : d.perfScore >= 50 ? 'important' : 'critical';
-    // Label-based badge: left side = "lighthouse" (gray), right side = score (colored)
-    // No &logo= param → eliminates the clashing red Lighthouse icon
-    const badge = `![Lighthouse ${d.perfScore}](https://img.shields.io/badge/lighthouse-${d.perfScore}-${color}?style=flat-square)`;
-    return `| \`${route}\` | ${badge} | ${d.fcp} | ${d.lcp} | ${d.tbt} | ${d.cls} | ${d.si} |`;
-  })
-  .join('\n');
-
+const timestamp = new Date().toUTCString();
 const block = [
   '<!-- LIGHTHOUSE_RESULTS_START -->',
   `> 🕐 **Last audited:** ${timestamp}`,
   '',
-  '| Tested Route | Performance | FCP | LCP | TBT | CLS | Speed Index |',
-  '|:---|:---|:---|:---|:---|:---|:---|',
-  rows,
+  sections.join('\n\n'),
   '<!-- LIGHTHOUSE_RESULTS_END -->',
 ].join('\n');
 
