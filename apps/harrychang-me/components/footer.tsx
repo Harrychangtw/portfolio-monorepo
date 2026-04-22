@@ -264,7 +264,7 @@ export default function Footer() {
             {/* Link Columns */}
             <div className="col-span-12 md:col-span-6 space-y-10">
               <div className="w-full">
-                <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
+                <h3 className="section-label mb-4">
                   {t("footer.guestbook")}
                 </h3>
                 <GuestbookWidget />
@@ -273,7 +273,7 @@ export default function Footer() {
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-10">
                 {/* Connect */}
                 <div className="col-span-1">
-                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
+                  <h3 className="section-label mb-4">
                     {t("footer.socialContact")}
                   </h3>
                   <ul className="space-y-3">
@@ -283,7 +283,7 @@ export default function Footer() {
 
                 {/* Explore */}
                 <div className="col-span-1">
-                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
+                  <h3 className="section-label mb-4">
                     {t("footer.personalResources")}
                   </h3>
                   <ul className="space-y-3">
@@ -293,7 +293,7 @@ export default function Footer() {
 
                 {/* Site - Hidden on mobile, shown on md+ */}
                 <div className="col-span-2 md:col-span-1 hidden md:block">
-                  <h3 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
+                  <h3 className="section-label mb-4">
                     {t("footer.siteNavigation")}
                   </h3>
                   <ul className="space-y-3">

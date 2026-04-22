@@ -73,7 +73,7 @@ function Section({
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
-        <span className="font-mono text-xs text-secondary">
+        <span className="label-mono">
           {String(index).padStart(2, "0")}
         </span>
       </div>
@@ -108,7 +108,7 @@ function SectionSplit({
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
-        <span className="font-mono text-xs text-secondary">
+        <span className="label-mono">
           {String(index).padStart(2, "0")}
         </span>
       </div>
@@ -121,7 +121,7 @@ function SectionSplit({
           </h2>
         </div>
         {description && (
-          <div className="mt-6 md:mt-auto font-body text-sm text-secondary leading-relaxed">
+          <div className="mt-6 md:mt-auto text-body-secondary leading-relaxed">
             {description}
           </div>
         )}
@@ -346,7 +346,7 @@ export default function TypographyPageClient() {
           {typeScale.map((level, i) => (
             <div
               key={i}
-              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 border-b border-border/30 last:border-b-0"
+              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 divider-subtle last:border-b-0"
             >
               <div className="order-2 md:order-1 min-w-0">
                 <p className={`${level.className} text-primary truncate`}>
@@ -354,7 +354,7 @@ export default function TypographyPageClient() {
                 </p>
               </div>
               <div className="order-1 md:order-2 shrink-0 md:text-right">
-                <span className="font-mono text-xs md:text-xs text-secondary uppercase tracking-wider">
+                <span className="label-mono md:text-xs uppercase tracking-wider">
                   {level.label}
                 </span>
               </div>
@@ -397,7 +397,7 @@ export default function TypographyPageClient() {
           ].map((item) => (
             <div
               key={item.label}
-              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 border-b border-border/30 last:border-b-0"
+              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 divider-subtle last:border-b-0"
             >
               <div className="order-2 md:order-1 min-w-0">
                 <span className="font-body text-sm md:text-base text-primary leading-relaxed">
@@ -405,7 +405,7 @@ export default function TypographyPageClient() {
                 </span>
               </div>
               <div className="order-1 md:order-2 shrink-0 md:text-right">
-                <span className="font-mono text-xs md:text-xs text-secondary uppercase tracking-wider">
+                <span className="label-mono md:text-xs uppercase tracking-wider">
                   {item.label}
                 </span>
               </div>
@@ -445,7 +445,7 @@ export default function TypographyPageClient() {
           ].map((item) => (
             <div
               key={item.label}
-              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 border-b border-border/30 last:border-b-0"
+              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 divider-subtle last:border-b-0"
             >
               <div className="order-2 md:order-1 min-w-0">
                 <span className="font-body text-sm md:text-base text-primary leading-relaxed">
@@ -453,7 +453,7 @@ export default function TypographyPageClient() {
                 </span>
               </div>
               <div className="order-1 md:order-2 shrink-0 md:text-right">
-                <span className="font-mono text-xs md:text-xs text-secondary uppercase tracking-wider">
+                <span className="label-mono md:text-xs uppercase tracking-wider">
                   {item.label}
                 </span>
               </div>

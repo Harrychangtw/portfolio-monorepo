@@ -26,14 +26,14 @@ function Section({
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
-        <span className="font-mono text-xs text-secondary">
+        <span className="label-mono">
           {String(index).padStart(2, "0")}
         </span>
       </div>
 
       {/* Label */}
       <div className="col-span-12 md:col-span-4 mb-4 md:mb-0">
-        <h2 className="font-heading text-lg text-secondary uppercase tracking-wider">
+        <h2 className="section-label">
           {title}
         </h2>
       </div>
@@ -53,7 +53,7 @@ function ItemRow({
   value: string | string[];
 }) {
   return (
-    <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 border-b border-border/30 last:border-b-0">
+    <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 divider-subtle last:border-b-0">
       {/* Actual Item (Value) - Left on desktop, Bottom on mobile */}
       <div className="order-2 md:order-1 min-w-0">
         {Array.isArray(value) ? (

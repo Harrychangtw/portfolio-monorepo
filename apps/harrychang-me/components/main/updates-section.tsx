@@ -117,7 +117,7 @@ export default function UpdatesSection() {
     <section id="updates" className="py-12 md:py-16 border-b border-border">
       <div className="container">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">
+          <h2 className="section-label">
             {t("updates.title")}
           </h2>
           <div className="flex space-x-4">
@@ -177,7 +177,7 @@ export default function UpdatesSection() {
                 (entry: { text?: string; date?: string }, index: number) => (
                   <div
                     key={index}
-                    className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 py-3 first:pt-0 border-b border-border/30 last:border-b-0"
+                    className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 py-3 first:pt-0 divider-subtle last:border-b-0"
                   >
                     <p className="font-ibm-plex text-sm text-primary leading-relaxed">
                       {parseHtmlToReact(entry.text || "")}

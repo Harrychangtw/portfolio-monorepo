@@ -21,7 +21,7 @@ export function TypographySpecimen({ font }: TypographySpecimenProps) {
           .map((weight) => (
             <div
               key={weight}
-              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 border-b border-border/30 last:border-b-0"
+              className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 md:gap-4 py-4 first:pt-0 divider-subtle last:border-b-0"
             >
               <div className="order-2 md:order-1 min-w-0">
                 <p
@@ -32,7 +32,7 @@ export function TypographySpecimen({ font }: TypographySpecimenProps) {
                 </p>
               </div>
               <div className="order-1 md:order-2 shrink-0 md:text-right">
-                <span className="font-mono text-xs md:text-xs text-secondary uppercase tracking-wider">
+                <span className="label-mono md:text-xs uppercase tracking-wider">
                   {t(`design.weightsLabel.${weight}`)} · {weight}
                 </span>
               </div>
