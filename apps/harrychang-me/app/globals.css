@@ -347,6 +347,26 @@
 }
 
 @layer components {
+  /* Section heading used across footer, about, updates, and shared UI sections */
+  .section-label {
+    @apply font-heading text-lg uppercase tracking-wider text-secondary;
+  }
+
+  /* Small monospace label — used for indices, tags, timestamps */
+  .label-mono {
+    @apply font-mono text-xs text-secondary;
+  }
+
+  /* Secondary body copy */
+  .text-body-secondary {
+    @apply text-sm text-secondary;
+  }
+
+  /* Subtle horizontal rule */
+  .divider-subtle {
+    @apply border-b border-border/30;
+  }
+
   .link-external {
     color: hsl(var(--primary));
     text-decoration: underline;

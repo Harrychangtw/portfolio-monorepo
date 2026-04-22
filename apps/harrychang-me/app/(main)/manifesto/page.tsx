@@ -397,7 +397,7 @@ export default function ManifestoPage() {
                 >
                   {/* Stanza number */}
                   <div className="col-span-1 hidden md:block">
-                    <span className="font-mono text-xs text-secondary">
+                    <span className="label-mono">
                       {String(chunkIndex + 1).padStart(2, "0")}
                     </span>
                   </div>

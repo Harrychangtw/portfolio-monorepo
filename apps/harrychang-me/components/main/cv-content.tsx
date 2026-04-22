@@ -48,16 +48,12 @@ function Section({
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
-        <span className="font-mono text-xs text-secondary">
-          {String(index).padStart(2, "0")}
-        </span>
+        <span className="label-mono">{String(index).padStart(2, "0")}</span>
       </div>
 
       {/* Label */}
       <div className="col-span-12 md:col-span-4 mb-4 md:mb-0">
-        <h2 className="font-heading text-lg text-secondary uppercase tracking-wider">
-          {title}
-        </h2>
+        <h2 className="section-label">{title}</h2>
       </div>
 
       {/* Content */}
@@ -90,15 +86,13 @@ function Entry({
           {date}
         </span>
       </div>
-      {subtitle && (
-        <p className="font-body text-sm text-secondary">{subtitle}</p>
-      )}
+      {subtitle && <p className="text-body-secondary">{subtitle}</p>}
       {items && items.length > 0 && (
         <ul className="mt-2.5 space-y-1">
           {items.map((item, i) => (
             <li
               key={i}
-              className="font-body text-sm text-secondary leading-relaxed flex items-start gap-2.5"
+              className="text-body-secondary leading-relaxed flex items-start gap-2.5"
             >
               <span className="shrink-0 mt-[9px] w-[3px] h-[3px] rounded-full bg-secondary/50" />
               <span>{item}</span>
@@ -118,9 +112,7 @@ function SkillRow({ category, items }: { category: string; items: string }) {
       <span className="font-heading font-medium text-foreground">
         {category}
       </span>
-      <span className="font-body text-sm text-secondary leading-relaxed">
-        {items}
-      </span>
+      <span className="text-body-secondary leading-relaxed">{items}</span>
     </div>
   );
 }
@@ -247,7 +239,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
                   {item.date}
                 </span>
               </div>
-              <p className="font-body text-sm text-secondary leading-snug">
+              <p className="text-body-secondary leading-snug">
                 {item.description}
               </p>
             </div>
@@ -281,7 +273,7 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
 
       {/* ── Footer ────────────────────────────────────────── */}
       <div className="border-t border-border pt-8 md:pt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <span className="font-mono text-xs uppercase text-secondary whitespace-nowrap overflow-hidden text-ellipsis">
+        <span className="label-mono uppercase whitespace-nowrap overflow-hidden text-ellipsis">
           {t("footer.text", "cv")}
         </span>
         <motion.div whileHover={{ y: -2, x: 4 }} transition={{ duration: 0.2 }}>

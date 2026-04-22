@@ -22,9 +22,7 @@ export default function AboutSection() {
           {/* About column - spans half the width on desktop */}
           <div className="col-span-12 md:col-span-6 pr-0 md:pr-12 flex flex-col">
             <div>
-              <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
-                {t("about.title")}
-              </h2>
+              <h2 className="section-label mb-4">{t("about.title")}</h2>
               <p
                 className="font-body text-primary lcp-bio"
                 style={{ contain: "paint" }}
@@ -56,14 +54,10 @@ export default function AboutSection() {
           <div className="col-span-12 md:col-span-6 mt-8 md:mt-0">
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-5">
-                <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
-                  {t("about.roles")}
-                </h2>
+                <h2 className="section-label mb-4">{t("about.roles")}</h2>
               </div>
               <div className="col-span-7">
-                <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
-                  {t("about.description")}
-                </h2>
+                <h2 className="section-label mb-4">{t("about.description")}</h2>
               </div>
             </div>
 
@@ -73,7 +67,7 @@ export default function AboutSection() {
                   <h3 className="font-heading font-medium">
                     {t("roles.llmResearcher.title", "about")}
                   </h3>
-                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">
+                  <p className="label-mono whitespace-nowrap shrink-0">
                     {t("roles.llmResearcher.period", "about")}
                   </p>
                 </div>
@@ -89,7 +83,7 @@ export default function AboutSection() {
                   <h3 className="font-heading font-medium">
                     {t("roles.speaker.title", "about")}
                   </h3>
-                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">
+                  <p className="label-mono whitespace-nowrap shrink-0">
                     {t("roles.speaker.period", "about")}
                   </p>
                 </div>
@@ -105,7 +99,7 @@ export default function AboutSection() {
                   <h3 className="font-heading font-medium">
                     {t("roles.designer.title", "about")}
                   </h3>
-                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">
+                  <p className="label-mono whitespace-nowrap shrink-0">
                     {t("roles.designer.period", "about")}
                   </p>
                 </div>
@@ -121,7 +115,7 @@ export default function AboutSection() {
                   <h3 className="font-heading font-medium">
                     {t("roles.developer.title", "about")}
                   </h3>
-                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">
+                  <p className="label-mono whitespace-nowrap shrink-0">
                     {t("roles.developer.period", "about")}
                   </p>
                 </div>
@@ -137,7 +131,7 @@ export default function AboutSection() {
                   <h3 className="font-heading font-medium">
                     {t("roles.photographer.title", "about")}
                   </h3>
-                  <p className="font-mono text-xs text-secondary whitespace-nowrap shrink-0">
+                  <p className="label-mono whitespace-nowrap shrink-0">
                     {t("roles.photographer.period", "about")}
                   </p>
                 </div>

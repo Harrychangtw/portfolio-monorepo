@@ -274,7 +274,7 @@ export default function GraphPageClient() {
         <div className="absolute top-4 right-4 z-10 flex flex-col items-end">
           <button
             onClick={() => setShowMobileFilters((v) => !v)}
-            className="font-mono text-xs text-secondary bg-card/80 border border-border px-2 py-1"
+            className="label-mono bg-card/80 border border-border px-2 py-1"
           >
             {filteredData.nodes.length}n &middot; {filteredData.edges.length}e
           </button>
