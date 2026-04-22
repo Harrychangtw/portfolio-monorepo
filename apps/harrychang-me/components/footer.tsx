@@ -264,9 +264,7 @@ export default function Footer() {
             {/* Link Columns */}
             <div className="col-span-12 md:col-span-6 space-y-10">
               <div className="w-full">
-                <h3 className="section-label mb-4">
-                  {t("footer.guestbook")}
-                </h3>
+                <h3 className="section-label mb-4">{t("footer.guestbook")}</h3>
                 <GuestbookWidget />
               </div>
 

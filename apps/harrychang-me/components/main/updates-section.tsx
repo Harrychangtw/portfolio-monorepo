@@ -117,9 +117,7 @@ export default function UpdatesSection() {
     <section id="updates" className="py-12 md:py-16 border-b border-border">
       <div className="container">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="section-label">
-            {t("updates.title")}
-          </h2>
+          <h2 className="section-label">{t("updates.title")}</h2>
           <div className="flex space-x-4">
             <motion.div
               whileHover={currentPage > 0 ? { y: -2 } : {}}

@@ -26,16 +26,12 @@ function Section({
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
-        <span className="label-mono">
-          {String(index).padStart(2, "0")}
-        </span>
+        <span className="label-mono">{String(index).padStart(2, "0")}</span>
       </div>
 
       {/* Label */}
       <div className="col-span-12 md:col-span-4 mb-4 md:mb-0">
-        <h2 className="section-label">
-          {title}
-        </h2>
+        <h2 className="section-label">{title}</h2>
       </div>
 
       {/* Content */}

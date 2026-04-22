@@ -48,16 +48,12 @@ function Section({
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
-        <span className="label-mono">
-          {String(index).padStart(2, "0")}
-        </span>
+        <span className="label-mono">{String(index).padStart(2, "0")}</span>
       </div>
 
       {/* Label */}
       <div className="col-span-12 md:col-span-4 mb-4 md:mb-0">
-        <h2 className="section-label">
-          {title}
-        </h2>
+        <h2 className="section-label">{title}</h2>
       </div>
 
       {/* Content */}
@@ -90,9 +86,7 @@ function Entry({
           {date}
         </span>
       </div>
-      {subtitle && (
-        <p className="text-body-secondary">{subtitle}</p>
-      )}
+      {subtitle && <p className="text-body-secondary">{subtitle}</p>}
       {items && items.length > 0 && (
         <ul className="mt-2.5 space-y-1">
           {items.map((item, i) => (
@@ -118,9 +112,7 @@ function SkillRow({ category, items }: { category: string; items: string }) {
       <span className="font-heading font-medium text-foreground">
         {category}
       </span>
-      <span className="text-body-secondary leading-relaxed">
-        {items}
-      </span>
+      <span className="text-body-secondary leading-relaxed">{items}</span>
     </div>
   );
 }

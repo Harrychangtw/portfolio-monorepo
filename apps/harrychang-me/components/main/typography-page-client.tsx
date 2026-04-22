@@ -73,9 +73,7 @@ function Section({
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
-        <span className="label-mono">
-          {String(index).padStart(2, "0")}
-        </span>
+        <span className="label-mono">{String(index).padStart(2, "0")}</span>
       </div>
 
       {/* Label */}
@@ -108,9 +106,7 @@ function SectionSplit({
     <div className="grid grid-cols-12 gap-4 md:gap-6 py-8 md:py-10 border-t border-border">
       {/* Index */}
       <div className="col-span-1 hidden md:block">
-        <span className="label-mono">
-          {String(index).padStart(2, "0")}
-        </span>
+        <span className="label-mono">{String(index).padStart(2, "0")}</span>
       </div>
 
       {/* Left Col: Title & Description */}
