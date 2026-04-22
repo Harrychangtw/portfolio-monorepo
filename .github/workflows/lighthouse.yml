@@ -95,6 +95,7 @@ jobs:
             http://localhost:3000/blog/2026_02_10_synecdoche_truman
             http://localhost:3000/graph
           configPath: apps/harrychang-me/.lighthouserc.json
+          artifactName: lighthouse-results-desktop
           uploadArtifacts: true
           temporaryPublicStorage: true
 
@@ -130,6 +131,7 @@ jobs:
             http://localhost:3000/graph
           configPath: apps/harrychang-me/.lighthouserc.mobile.json
           artifactsDirectory: .lighthouseci-mobile
+          artifactName: lighthouse-results-mobile
           uploadArtifacts: true
           temporaryPublicStorage: true
 
