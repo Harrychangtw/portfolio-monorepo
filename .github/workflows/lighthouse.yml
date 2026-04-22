@@ -64,41 +64,6 @@ jobs:
       - name: Wait for server to be ready
         run: npx wait-on http://localhost:3000 --timeout 60000
 
-      - name: Run Lighthouse CI (Desktop)
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          urls: |
-            http://localhost:3000/
-            http://localhost:3000/blog
-            http://localhost:3000/projects
-            http://localhost:3000/gallery
-            http://localhost:3000/uses
-            http://localhost:3000/cv
-            http://localhost:3000/linktree
-            http://localhost:3000/design
-            http://localhost:3000/paper-reading
-            http://localhost:3000/manifesto
-            http://localhost:3000/projects/2025_04_12_portfolio
-            http://localhost:3000/projects/2024_09_23_chingshin_rag
-            http://localhost:3000/projects/2025_03_08_sitcon_keynote
-            http://localhost:3000/projects/2025_08_04_debate
-            http://localhost:3000/projects/2024_08_19_classics_reimagined
-            http://localhost:3000/gallery/2026_02_08_italy_mountain
-            http://localhost:3000/gallery/2023_07_07_splash_of_red
-            http://localhost:3000/gallery/2023_10_06_against_giants
-            http://localhost:3000/gallery/2023_11_18_dusk_impressions
-            http://localhost:3000/gallery/2024_01_06_hehuanshan
-            http://localhost:3000/blog/9_m11d
-            http://localhost:3000/blog/2025_12_19_xpro1
-            http://localhost:3000/blog/2025_12_22_aftersun_paris_texas
-            http://localhost:3000/blog/2026_01_10_plushies
-            http://localhost:3000/blog/2026_02_10_synecdoche_truman
-            http://localhost:3000/graph
-          configPath: apps/harrychang-me/.lighthouserc.json
-          artifactName: lighthouse-results-desktop
-          uploadArtifacts: true
-          temporaryPublicStorage: true
-
       - name: Run Lighthouse CI (Mobile)
         uses: treosh/lighthouse-ci-action@v12
         with:
@@ -132,6 +97,41 @@ jobs:
           configPath: apps/harrychang-me/.lighthouserc.mobile.json
           artifactsDirectory: .lighthouseci-mobile
           artifactName: lighthouse-results-mobile
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Run Lighthouse CI (Desktop)
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            http://localhost:3000/
+            http://localhost:3000/blog
+            http://localhost:3000/projects
+            http://localhost:3000/gallery
+            http://localhost:3000/uses
+            http://localhost:3000/cv
+            http://localhost:3000/linktree
+            http://localhost:3000/design
+            http://localhost:3000/paper-reading
+            http://localhost:3000/manifesto
+            http://localhost:3000/projects/2025_04_12_portfolio
+            http://localhost:3000/projects/2024_09_23_chingshin_rag
+            http://localhost:3000/projects/2025_03_08_sitcon_keynote
+            http://localhost:3000/projects/2025_08_04_debate
+            http://localhost:3000/projects/2024_08_19_classics_reimagined
+            http://localhost:3000/gallery/2026_02_08_italy_mountain
+            http://localhost:3000/gallery/2023_07_07_splash_of_red
+            http://localhost:3000/gallery/2023_10_06_against_giants
+            http://localhost:3000/gallery/2023_11_18_dusk_impressions
+            http://localhost:3000/gallery/2024_01_06_hehuanshan
+            http://localhost:3000/blog/9_m11d
+            http://localhost:3000/blog/2025_12_19_xpro1
+            http://localhost:3000/blog/2025_12_22_aftersun_paris_texas
+            http://localhost:3000/blog/2026_01_10_plushies
+            http://localhost:3000/blog/2026_02_10_synecdoche_truman
+            http://localhost:3000/graph
+          configPath: apps/harrychang-me/.lighthouserc.json
+          artifactName: lighthouse-results-desktop
           uploadArtifacts: true
           temporaryPublicStorage: true
 
