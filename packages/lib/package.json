@@ -15,7 +15,7 @@
   "dependencies": {
     "@prisma/client": "^6.19.3",
     "clsx": "^2.1.1",
-    "fast-xml-parser": "^5.5.12",
+    "fast-xml-parser": "^5.7.1",
     "gray-matter": "latest",
     "i18next": "^25.10.10",
     "image-size": "^2.0.2",
