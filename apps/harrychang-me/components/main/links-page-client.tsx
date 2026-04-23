@@ -19,6 +19,11 @@ import {
   Lightbulb,
   Wrench,
   PenTool,
+  Send,
+  Share2,
+  Palette,
+  Scroll,
+  Newspaper,
 } from "lucide-react";
 
 interface LinkItem {
@@ -33,8 +38,8 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.2,
+      staggerChildren: 0.06,
+      delayChildren: 0.15,
     },
   },
 };
@@ -60,7 +65,6 @@ export default function LinksPageClient() {
       icon: <Lightbulb className="w-5 h-5" />,
       label: t("resources.site"),
       href: "/",
-      external: false,
     },
     {
       icon: <PenTool className="w-5 h-5" />,
@@ -68,9 +72,37 @@ export default function LinksPageClient() {
       href: "/blog",
     },
     {
+      icon: <FileText className="w-5 h-5" />,
+      label: t("resources.resume"),
+      href: "/cv",
+    },
+    {
+      icon: <Github className="w-5 h-5" />,
+      label: t("social.github"),
+      href: "/github",
+      external: true,
+    },
+    {
       icon: <Mail className="w-5 h-5" />,
       label: t("social.gmail"),
       href: "/email",
+      external: true,
+    },
+    {
+      icon: <Share2 className="w-5 h-5" />,
+      label: t("resources.graph"),
+      href: "/graph",
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      label: t("social.linkedin"),
+      href: "/linkedin",
+      external: true,
+    },
+    {
+      icon: <Send className="w-5 h-5" />,
+      label: t("social.telegram"),
+      href: "/telegram",
       external: true,
     },
     {
@@ -80,45 +112,15 @@ export default function LinksPageClient() {
       external: true,
     },
     {
-      icon: <Linkedin className="w-5 h-5" />,
-      label: t("social.linkedin"),
-      href: "/linkedin",
-      external: true,
-    },
-    {
-      icon: <Github className="w-5 h-5" />,
-      label: t("social.github"),
-      href: "/github",
-      external: true,
-    },
-    {
       icon: <MessageCircle className="w-5 h-5" />,
       label: t("social.discord"),
       href: "/discord",
       external: true,
     },
     {
-      icon: <Film className="w-5 h-5" />,
-      label: t("social.letterboxd"),
-      href: "/letterboxd",
-      external: true,
-    },
-    {
-      icon: <Music className="w-5 h-5" />,
-      label: t("resources.music"),
-      href: "/spotify",
-      external: true,
-    },
-    {
-      icon: <FileText className="w-5 h-5" />,
-      label: t("resources.resume"),
-      href: "/cv",
-    },
-    {
-      icon: <Calendar className="w-5 h-5" />,
-      label: t("resources.calendar"),
-      href: "/cal",
-      external: true,
+      icon: <Palette className="w-5 h-5" />,
+      label: t("resources.design"),
+      href: "/design",
     },
     {
       icon: <BookOpen className="w-5 h-5" />,
@@ -130,10 +132,34 @@ export default function LinksPageClient() {
       label: t("resources.uses"),
       href: "/uses",
     },
+    {
+      icon: <Calendar className="w-5 h-5" />,
+      label: t("resources.calendar"),
+      href: "/cal",
+      external: true,
+    },
+    {
+      icon: <Music className="w-5 h-5" />,
+      label: t("resources.music"),
+      href: "/spotify",
+      external: true,
+    },
+    {
+      icon: <Film className="w-5 h-5" />,
+      label: t("social.letterboxd"),
+      href: "/letterboxd",
+      external: true,
+    },
+    {
+      icon: <Newspaper className="w-5 h-5" />,
+      label: t("social.medium"),
+      href: "/medium",
+      external: true,
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center py-8   px-4 sm:px-6">
+    <div className="min-h-screen bg-background flex items-center justify-center py-8 px-4 sm:px-6">
       <div className="w-full max-w-2xl">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -195,19 +221,9 @@ export default function LinksPageClient() {
           >
             <GuestbookWidget />
           </motion.div>
-
-          {/* Bio
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-sm text-muted-foreground max-w-md mx-auto"
-          >
-            {t("links.bio")}
-          </motion.p> */}
         </motion.div>
 
-        {/* Links Grid */}
+        {/* ── Links ────────────────────────────────────────── */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -216,32 +232,24 @@ export default function LinksPageClient() {
         >
           {links.map((link, index) => (
             <motion.div key={index} variants={itemVariants}>
-              {link.external ? (
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block w-full"
-                >
-                  <LinkCard link={link} />
-                </a>
-              ) : (
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block w-full"
-                >
-                  <LinkCard link={link} />
-                </a>
-              )}
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block w-full"
+              >
+                <LinkCard link={link} />
+              </a>
             </motion.div>
           ))}
         </motion.div>
+
       </div>
     </div>
   );
 }
+
+/* ── Link Card ─────────────────────────────────────────── */
 
 function LinkCard({ link }: { link: LinkItem }) {
   return (
@@ -257,7 +265,7 @@ function LinkCard({ link }: { link: LinkItem }) {
 
         {/* Content */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-sm sm:text-base font-body font-semibold text-foreground group-hover:text-primary transition-colors">
+          <h3 className="text-sm sm:text-base font-heading font-semibold text-foreground group-hover:text-primary transition-colors">
             {link.label}
           </h3>
         </div>

@@ -125,6 +125,9 @@ export default function GraphCanvas({
   const nodeRadiusMap = useRef<Map<string, number>>(new Map());
   const neighborMap = useRef<Map<string, Set<string>>>(new Map());
   const parentEdgesRef = useRef<Set<string>>(new Set()); // "source|target" keys for structural parent edges to media nodes
+  // Progressive reveal: BFS wave index per node id, and the timestamp when reveal started
+  const nodeWaveRef = useRef<Map<string, number>>(new Map());
+  const revealStartRef = useRef<number>(0);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const zoomBehaviorRef = useRef<any>(null);
   const magnetDebounceRef = useRef<number>(0);
@@ -203,6 +206,37 @@ export default function GraphCanvas({
     }
     neighborMap.current = neighbors;
 
+    // BFS wave assignment from hub / focal node so nodes reveal center-out
+    {
+      const waveMap = new Map<string, number>();
+      // Pick the starting seed: focal node, first hub, or first node
+      const seed =
+        focalNodeId ??
+        data.nodes.find((n) => n.nodeType === "hub")?.id ??
+        data.nodes[0]?.id;
+      if (seed) {
+        const queue: string[] = [seed];
+        waveMap.set(seed, 0);
+        while (queue.length) {
+          const current = queue.shift()!;
+          const currentWave = waveMap.get(current)!;
+          for (const nbr of neighbors.get(current) ?? []) {
+            if (!waveMap.has(nbr)) {
+              waveMap.set(nbr, currentWave + 1);
+              queue.push(nbr);
+            }
+          }
+        }
+        // Assign a high wave to any disconnected nodes
+        const maxWave = Math.max(...waveMap.values(), 0);
+        for (const n of data.nodes) {
+          if (!waveMap.has(n.id)) waveMap.set(n.id, maxWave + 1);
+        }
+      }
+      nodeWaveRef.current = waveMap;
+      revealStartRef.current = performance.now();
+    }
+
     // Track structural edges to image/video nodes (for dashed rendering)
     const parentEdgeKeys = new Set<string>();
     const nodeTypeMap = new Map(data.nodes.map((n) => [n.id, n.nodeType]));
@@ -227,21 +261,19 @@ export default function GraphCanvas({
       nodeRadiusMap.current.set(node.id, r);
     }
 
-    // Create simulation nodes — spread them in a circle.
+    // Create simulation nodes — start clustered near origin so physics
+    // expands them outward (Obsidian-style). Nodes fade in wave-by-wave
+    // so the expansion feels deliberate, not chaotic.
     // If a focalNodeId is provided, pin that node at origin so the viewport
     // (and the mobile crosshair) lands on it at the initial fit-zoom.
-    const simNodes: SimulationNode[] = data.nodes.map((n, i) => {
-      const angle = (i / data.nodes.length) * Math.PI * 2;
-      const spread = Math.sqrt(data.nodes.length) * 10;
+    const simNodes: SimulationNode[] = data.nodes.map((n) => {
       const isFocal = focalNodeId && n.id === focalNodeId;
+      // Small jitter around origin — physics will push them apart
+      const jitter = 8;
       return {
         ...n,
-        x: isFocal
-          ? 0
-          : Math.cos(angle) * spread + (Math.random() - 0.5) * spread * 0.3,
-        y: isFocal
-          ? 0
-          : Math.sin(angle) * spread + (Math.random() - 0.5) * spread * 0.3,
+        x: isFocal ? 0 : (Math.random() - 0.5) * jitter,
+        y: isFocal ? 0 : (Math.random() - 0.5) * jitter,
         vx: 0,
         vy: 0,
         ...(isFocal ? { fx: 0, fy: 0 } : {}),
@@ -304,25 +336,18 @@ export default function GraphCanvas({
           .radius((d) => (nodeRadiusMap.current.get(d.id) || 1.5) + 0.5)
           .strength(0.9),
       )
-      .alphaDecay(0.04)
+      .alphaDecay(0.028)
       .alphaMin(0.001)
-      .velocityDecay(0.6)
+      .velocityDecay(0.3)
       .on("tick", () => {
-        // Throttle renders during the hot settling phase:
-        // only paint every 3rd tick while alpha is high, every tick once calm.
-        if (sim.alpha() > 0.05) {
-          if (Math.round(sim.alpha() * 1000) % 3 === 0) {
-            needsRenderRef.current = true;
-          }
-        } else if (sim.alpha() > 0.001) {
-          needsRenderRef.current = true;
-        }
+        // Always request a render — nodes are fading in during early settling,
+        // so we can't skip frames based on alpha alone.
+        needsRenderRef.current = true;
       })
       .on("end", () => {
         needsRenderRef.current = true;
       });
 
-    sim.tick(80);
     needsRenderRef.current = true;
 
     simulationRef.current = sim;
@@ -427,6 +452,16 @@ export default function GraphCanvas({
         ctx.globalAlpha = 1;
       }
 
+      // ─── Progressive reveal helpers ────────────────────────────────────
+      const WAVE_DELAY = 200; // ms between each BFS wave
+      const FADE_DURATION = 300; // ms to fade a wave from 0 → 1
+      const elapsed = performance.now() - revealStartRef.current;
+      const getNodeFade = (id: string): number => {
+        const wave = nodeWaveRef.current.get(id) ?? 0;
+        const revealTime = wave * WAVE_DELAY;
+        return Math.min(1, Math.max(0, (elapsed - revealTime) / FADE_DURATION));
+      };
+
       // ─── Draw edges ─────────────────────────────────────────────────────
       for (const edge of edges) {
         const src = edge.source;
@@ -437,6 +472,13 @@ export default function GraphCanvas({
         const isConnectedToSelected =
           selectedNodeId &&
           (src.id === selectedNodeId || tgt.id === selectedNodeId);
+
+        // Only draw edge when both endpoints have started fading in
+        const edgeFade = Math.min(
+          getNodeFade(src.id),
+          getNodeFade(tgt.id),
+        );
+        if (edgeFade <= 0) continue;
 
         ctx.beginPath();
         if (
@@ -455,11 +497,11 @@ export default function GraphCanvas({
 
         if (isConnectedToHover || isConnectedToSelected) {
           ctx.strokeStyle = theme.foreground;
-          ctx.globalAlpha = 0.9;
+          ctx.globalAlpha = 0.9 * edgeFade;
           ctx.lineWidth = 2.0 / k;
         } else {
           ctx.strokeStyle = theme.secondary;
-          ctx.globalAlpha = 0.3;
+          ctx.globalAlpha = 0.3 * edgeFade;
           ctx.lineWidth = 0.6 / k;
         }
         ctx.stroke();
@@ -469,6 +511,9 @@ export default function GraphCanvas({
 
       // ─── Draw nodes ─────────────────────────────────────────────────────
       for (const node of nodes) {
+        const nodeFade = getNodeFade(node.id);
+        if (nodeFade <= 0) continue;
+
         const baseR = nodeRadiusMap.current.get(node.id) || 1.5;
         // Ensure minimum screen-space radius so nodes remain visible
         const screenR = baseR * k;
@@ -499,6 +544,8 @@ export default function GraphCanvas({
             nodeAlpha = 0.5;
           }
         }
+        // Apply progressive reveal fade
+        nodeAlpha *= nodeFade;
 
         // Glow effect for hovered/selected
         if (isHovered || isSelected) {
@@ -508,7 +555,7 @@ export default function GraphCanvas({
           ctx.beginPath();
           ctx.arc(node.x, node.y, r * 1.6, 0, Math.PI * 2);
           ctx.fillStyle = color;
-          ctx.globalAlpha = 0.2;
+          ctx.globalAlpha = 0.2 * nodeFade;
           ctx.fill();
           ctx.restore();
         } else if (isNeighborOfHover) {
@@ -518,7 +565,7 @@ export default function GraphCanvas({
           ctx.beginPath();
           ctx.arc(node.x, node.y, r * 1.2, 0, Math.PI * 2);
           ctx.fillStyle = color;
-          ctx.globalAlpha = 0.15;
+          ctx.globalAlpha = 0.15 * nodeFade;
           ctx.fill();
           ctx.restore();
         }
@@ -642,6 +689,8 @@ export default function GraphCanvas({
           }
         }
 
+        // Also gate labels on progressive reveal
+        labelAlpha *= getNodeFade(node.id);
         if (labelAlpha <= 0) continue;
 
         // Section nodes: prefer heading over title to avoid showing post title
