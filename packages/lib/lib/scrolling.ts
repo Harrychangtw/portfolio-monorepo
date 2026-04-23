@@ -33,19 +33,22 @@ export const scrollToSection = (id: string, event?: React.MouseEvent) => {
     if (stopped) return;
     stopped = true;
     cancelAnimationFrame(rafId);
-    window.removeEventListener("wheel", stop as any);
-    window.removeEventListener("touchstart", stop as any);
-    window.removeEventListener("pointerdown", stop as any);
+    window.removeEventListener("wheel", stop as EventListener);
+    window.removeEventListener("touchstart", stop as EventListener);
+    window.removeEventListener("pointerdown", stop as EventListener);
   };
   activeScrollStop = stop;
 
   // Fully interruptible by user input
-  window.addEventListener("wheel", stop as any, { passive: true, once: true });
-  window.addEventListener("touchstart", stop as any, {
+  window.addEventListener("wheel", stop as EventListener, {
     passive: true,
     once: true,
   });
-  window.addEventListener("pointerdown", stop as any, {
+  window.addEventListener("touchstart", stop as EventListener, {
+    passive: true,
+    once: true,
+  });
+  window.addEventListener("pointerdown", stop as EventListener, {
     passive: true,
     once: true,
   });
@@ -96,14 +99,20 @@ export const ensurePreciseAlign = (id: string, duration = 1200) => {
 
   const cleanup = () => {
     cancelAnimationFrame(rafId);
-    window.removeEventListener("wheel", cleanup);
-    window.removeEventListener("touchstart", cleanup);
-    window.removeEventListener("pointerdown", cleanup as any);
+    window.removeEventListener("wheel", cleanup as EventListener);
+    window.removeEventListener("touchstart", cleanup as EventListener);
+    window.removeEventListener("pointerdown", cleanup as EventListener);
   };
 
-  window.addEventListener("wheel", cleanup, { once: true, passive: true });
-  window.addEventListener("touchstart", cleanup, { once: true, passive: true });
-  window.addEventListener("pointerdown", cleanup as any, {
+  window.addEventListener("wheel", cleanup as EventListener, {
+    once: true,
+    passive: true,
+  });
+  window.addEventListener("touchstart", cleanup as EventListener, {
+    once: true,
+    passive: true,
+  });
+  window.addEventListener("pointerdown", cleanup as EventListener, {
     once: true,
     passive: true,
   });
