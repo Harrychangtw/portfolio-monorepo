@@ -6,12 +6,11 @@ on:
       - "apps/harrychang-me/**"
       - "packages/**"
       - ".github/workflows/lighthouse.yml"
-  pull_request:
-    paths:
-      - "apps/harrychang-me/**"
-      - "packages/**"
-      - ".github/workflows/lighthouse.yml"
   workflow_dispatch:
+
+concurrency:
+  group: lighthouse-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   lighthouse:

@@ -7,6 +7,7 @@ import React, {
   useEffect,
   Suspense,
 } from "react";
+import { getCookie, setCookie } from "@portfolio/lib/lib/cookies";
 
 type Language = "en" | "zh-TW";
 
@@ -22,25 +23,6 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined,
 );
-
-// Helper: Get cookie value
-const getCookie = (name: string) => {
-  if (typeof document === "undefined") return null;
-  return (
-    document.cookie
-      .split("; ")
-      .find((row) => row.startsWith(name + "="))
-      ?.split("=")[1] || null
-  );
-};
-
-// Helper: Set cookie with root domain for cross-subdomain persistence
-const setCookie = (name: string, value: string) => {
-  const domain = window.location.hostname.includes("harrychang.me")
-    ? "; domain=.harrychang.me"
-    : "";
-  document.cookie = `${name}=${value}; path=/${domain}; max-age=31536000`; // 1 year
-};
 
 interface Translations {
   [namespace: string]: {
