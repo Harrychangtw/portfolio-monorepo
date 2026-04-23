@@ -243,7 +243,6 @@ export default function LinksPageClient() {
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </div>
   );

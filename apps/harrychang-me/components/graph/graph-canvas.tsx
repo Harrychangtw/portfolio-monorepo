@@ -127,7 +127,26 @@ export default function GraphCanvas({
   const parentEdgesRef = useRef<Set<string>>(new Set()); // "source|target" keys for structural parent edges to media nodes
   // Progressive reveal: BFS wave index per node id, and the timestamp when reveal started
   const nodeWaveRef = useRef<Map<string, number>>(new Map());
+  const maxWaveRef = useRef<number>(0);
   const revealStartRef = useRef<number>(0);
+  // Off-screen context used to measure label widths once per unique label
+  // at a 10px reference font. ctx.measureText() is a hot path in Firefox
+  // and re-measuring every frame at simFontSize burns serious time.
+  const measureCtxRef = useRef<CanvasRenderingContext2D | null>(null);
+  const labelWidthCacheRef = useRef<Map<string, number>>(new Map());
+  // Precomputed priority order for labels — avoids per-frame O(N log N)
+  // sort + array allocation when no spotlight is active (true during the
+  // entire initial reveal, which is where Firefox jitters most).
+  const nodesByPriorityRef = useRef<SimulationNode[]>([]);
+  // Reusable occupancy array for label anti-overlap; resetting length
+  // each frame avoids a per-frame allocation and the GC pressure it
+  // produces on Firefox.
+  const occupiedBoxesRef = useRef<
+    Array<{ x: number; y: number; w: number; h: number }>
+  >([]);
+  // id → SimulationNode lookup, replaces several O(N) .find() calls in
+  // the render loop.
+  const nodeByIdRef = useRef<Map<string, SimulationNode>>(new Map());
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const zoomBehaviorRef = useRef<any>(null);
   const magnetDebounceRef = useRef<number>(0);
@@ -164,6 +183,17 @@ export default function GraphCanvas({
       attributeFilter: ["class"],
     });
     return () => observer.disconnect();
+  }, []);
+
+  // Off-screen canvas for cached text measurement (see labelWidthCacheRef).
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const c = document.createElement("canvas");
+    const mctx = c.getContext("2d");
+    if (mctx) {
+      mctx.font = "10px sans-serif";
+      measureCtxRef.current = mctx;
+    }
   }, []);
 
   // Handle resize
@@ -234,7 +264,12 @@ export default function GraphCanvas({
         }
       }
       nodeWaveRef.current = waveMap;
+      // Cache the final max wave so the render loop can skip per-node fade
+      // math (and enter the batched fast path) once the reveal completes.
+      maxWaveRef.current = Math.max(...waveMap.values(), 0);
       revealStartRef.current = performance.now();
+      // Node set changed → dump the label width cache.
+      labelWidthCacheRef.current.clear();
     }
 
     // Track structural edges to image/video nodes (for dashed rendering)
@@ -297,6 +332,16 @@ export default function GraphCanvas({
 
     nodesRef.current = simNodes;
     edgesRef.current = simEdges;
+    nodeByIdRef.current = nodeMap;
+    // Precomputed baseline label ordering. When no hover/selection is
+    // active, the render loop reuses this array directly — no allocation,
+    // no sort. Spotlight frames still fall back to a full sort below.
+    nodesByPriorityRef.current = simNodes
+      .slice()
+      .sort(
+        (a, b) =>
+          (LABEL_PRIORITY[b.nodeType] || 0) - (LABEL_PRIORITY[a.nodeType] || 0),
+      );
 
     const sim = forceSimulation(simNodes)
       .force(
@@ -407,7 +452,7 @@ export default function GraphCanvas({
       // so its connections are highlighted even without an explicit tap.
       const mobileCenterNode =
         isMobile && centerNodeRef.current
-          ? (nodes.find((n) => n.id === centerNodeRef.current) ?? null)
+          ? (nodeByIdRef.current.get(centerNodeRef.current) ?? null)
           : null;
       const effectiveHover = hovered ?? mobileCenterNode;
       const hoveredNeighbors = effectiveHover
@@ -453,61 +498,115 @@ export default function GraphCanvas({
       }
 
       // ─── Progressive reveal helpers ────────────────────────────────────
-      const WAVE_DELAY = 200; // ms between each BFS wave
+      const WAVE_DELAY = 300; // ms between each BFS wave
       const FADE_DURATION = 300; // ms to fade a wave from 0 → 1
       const elapsed = performance.now() - revealStartRef.current;
-      const getNodeFade = (id: string): number => {
-        const wave = nodeWaveRef.current.get(id) ?? 0;
-        const revealTime = wave * WAVE_DELAY;
-        return Math.min(1, Math.max(0, (elapsed - revealTime) / FADE_DURATION));
-      };
+      // Once every wave has finished fading in, skip per-node fade math
+      // entirely — this unlocks the batched edge-drawing fast path below
+      // (the dominant win on Firefox).
+      const revealDone =
+        elapsed > maxWaveRef.current * WAVE_DELAY + FADE_DURATION;
+      const getNodeFade = revealDone
+        ? (_id: string) => 1
+        : (id: string) => {
+            const wave = nodeWaveRef.current.get(id) ?? 0;
+            const revealTime = wave * WAVE_DELAY;
+            return Math.min(
+              1,
+              Math.max(0, (elapsed - revealTime) / FADE_DURATION),
+            );
+          };
 
       // ─── Draw edges ─────────────────────────────────────────────────────
-      for (const edge of edges) {
-        const src = edge.source;
-        const tgt = edge.target;
-        const isConnectedToHover =
-          effectiveHover &&
-          (src.id === effectiveHover.id || tgt.id === effectiveHover.id);
-        const isConnectedToSelected =
-          selectedNodeId &&
-          (src.id === selectedNodeId || tgt.id === selectedNodeId);
+      // Batched into three passes (solid / dashed / highlighted). Firefox's
+      // Canvas2D is extremely sensitive to per-edge state churn — especially
+      // setLineDash() — so we collapse ~O(edges) stroke calls into at most 3
+      // and issue setLineDash at most twice per frame.
+      {
+        const hoveredId = effectiveHover?.id;
+        const selId = selectedNodeId;
+        const isSpotlit = (e: SimulationEdge): boolean => {
+          const sId = e.source.id;
+          const tId = e.target.id;
+          if (hoveredId && (sId === hoveredId || tId === hoveredId))
+            return true;
+          if (selId && (sId === selId || tId === selId)) return true;
+          return false;
+        };
 
-        // Only draw edge when both endpoints have started fading in
-        const edgeFade = Math.min(
-          getNodeFade(src.id),
-          getNodeFade(tgt.id),
-        );
-        if (edgeFade <= 0) continue;
+        // Unified batched path — 3 strokes per frame regardless of reveal
+        // state. The old `else` branch drew every visible edge as its own
+        // beginPath/stroke because each edge carried a unique alpha from
+        // per-node fade-in; Chrome's Skia absorbs that, Firefox/Zen can't,
+        // and that was the ~3s desktop reveal jitter (mobile viewports
+        // escaped simply by having ~5× fewer backing-buffer pixels). We
+        // now cull edges during reveal until both endpoints are ≥50%
+        // faded in — the BFS wave stagger hides the pop — and batch
+        // everything else. Nodes still fade smoothly; only edges snap.
+        const edgeHidden = revealDone
+          ? (_e: SimulationEdge) => false
+          : (e: SimulationEdge) =>
+              getNodeFade(e.source.id) < 0.5 || getNodeFade(e.target.id) < 0.5;
 
+        // Pass A: solid, non-highlighted
         ctx.beginPath();
-        if (
-          edge.linkType === "semantic" &&
-          !isConnectedToHover &&
-          !isConnectedToSelected
-        ) {
-          // Dashed line for semantic (similarity) edges
+        let hasSolid = false;
+        for (let i = 0; i < edges.length; i++) {
+          const e = edges[i];
+          if (e.linkType === "semantic" || isSpotlit(e) || edgeHidden(e))
+            continue;
+          ctx.moveTo(e.source.x, e.source.y);
+          ctx.lineTo(e.target.x, e.target.y);
+          hasSolid = true;
+        }
+        if (hasSolid) {
+          ctx.strokeStyle = theme.secondary;
+          ctx.globalAlpha = 0.3;
+          ctx.lineWidth = 0.6 / k;
+          ctx.stroke();
+        }
+
+        // Pass B: dashed (semantic), non-highlighted
+        ctx.beginPath();
+        let hasDashed = false;
+        for (let i = 0; i < edges.length; i++) {
+          const e = edges[i];
+          if (e.linkType !== "semantic" || isSpotlit(e) || edgeHidden(e))
+            continue;
+          ctx.moveTo(e.source.x, e.source.y);
+          ctx.lineTo(e.target.x, e.target.y);
+          hasDashed = true;
+        }
+        if (hasDashed) {
           const dashLen = 3 / k;
           ctx.setLineDash([dashLen, dashLen]);
-        } else {
+          ctx.strokeStyle = theme.secondary;
+          ctx.globalAlpha = 0.3;
+          ctx.lineWidth = 0.6 / k;
+          ctx.stroke();
           ctx.setLineDash([]);
         }
-        ctx.moveTo(src.x, src.y);
-        ctx.lineTo(tgt.x, tgt.y);
 
-        if (isConnectedToHover || isConnectedToSelected) {
-          ctx.strokeStyle = theme.foreground;
-          ctx.globalAlpha = 0.9 * edgeFade;
-          ctx.lineWidth = 2.0 / k;
-        } else {
-          ctx.strokeStyle = theme.secondary;
-          ctx.globalAlpha = 0.3 * edgeFade;
-          ctx.lineWidth = 0.6 / k;
+        // Pass C: spotlit (hovered or selected endpoint)
+        if (hoveredId || selId) {
+          ctx.beginPath();
+          let hasHl = false;
+          for (let i = 0; i < edges.length; i++) {
+            const e = edges[i];
+            if (!isSpotlit(e) || edgeHidden(e)) continue;
+            ctx.moveTo(e.source.x, e.source.y);
+            ctx.lineTo(e.target.x, e.target.y);
+            hasHl = true;
+          }
+          if (hasHl) {
+            ctx.strokeStyle = theme.foreground;
+            ctx.globalAlpha = 0.9;
+            ctx.lineWidth = 2.0 / k;
+            ctx.stroke();
+          }
         }
-        ctx.stroke();
-        ctx.setLineDash([]);
+        ctx.globalAlpha = 1;
       }
-      ctx.globalAlpha = 1;
 
       // ─── Draw nodes ─────────────────────────────────────────────────────
       for (const node of nodes) {
@@ -547,27 +646,36 @@ export default function GraphCanvas({
         // Apply progressive reveal fade
         nodeAlpha *= nodeFade;
 
-        // Glow effect for hovered/selected
+        // Halo effect — concentric alpha-blended fills approximate a blur
+        // at a tiny fraction of the cost of ctx.shadowBlur, which Firefox
+        // implements on the CPU. With a hub node hovered, the old shadowed
+        // fills scale as O(neighbors) per frame and were the primary
+        // cause of Firefox/Zen stutter. We also drop ctx.save()/restore()
+        // since there's no shadow state to isolate.
         if (isHovered || isSelected) {
-          ctx.save();
-          ctx.shadowColor = glowColor;
-          ctx.shadowBlur = 12 / k;
+          // Outer soft yellow halo (matches the old glowColor shadow)
+          ctx.fillStyle = glowColor;
           ctx.beginPath();
-          ctx.arc(node.x, node.y, r * 1.6, 0, Math.PI * 2);
-          ctx.fillStyle = color;
-          ctx.globalAlpha = 0.2 * nodeFade;
+          ctx.arc(node.x, node.y, r * 2.8, 0, Math.PI * 2);
+          ctx.globalAlpha = 0.06 * nodeFade;
           ctx.fill();
-          ctx.restore();
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r * 2.1, 0, Math.PI * 2);
+          ctx.globalAlpha = 0.12 * nodeFade;
+          ctx.fill();
+          // Inner type-colored halo (matches the old shadowed circle fill)
+          ctx.fillStyle = color;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r * 1.5, 0, Math.PI * 2);
+          ctx.globalAlpha = 0.22 * nodeFade;
+          ctx.fill();
         } else if (isNeighborOfHover) {
-          ctx.save();
-          ctx.shadowColor = color;
-          ctx.shadowBlur = 6 / k;
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, r * 1.2, 0, Math.PI * 2);
+          // Single-step halo — neighbours can be numerous, keep it cheap.
           ctx.fillStyle = color;
-          ctx.globalAlpha = 0.15 * nodeFade;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r * 1.5, 0, Math.PI * 2);
+          ctx.globalAlpha = 0.18 * nodeFade;
           ctx.fill();
-          ctx.restore();
         }
 
         // Node circle
@@ -601,28 +709,49 @@ export default function GraphCanvas({
       }
 
       // ─── Draw labels (anti-overlap, fixed screen size) ──────────────────
-      // Sort nodes by priority so important labels render first and claim space
-      const sortedNodes = [...nodes].sort((a, b) => {
-        const aHovered = effectiveHover?.id === a.id ? 100 : 0;
-        const bHovered = effectiveHover?.id === b.id ? 100 : 0;
-        const aSelected = selectedNodeId === a.id ? 90 : 0;
-        const bSelected = selectedNodeId === b.id ? 90 : 0;
-        const aNeighbor = hovered && hoveredNeighbors?.has(a.id) ? 80 : 0;
-        const bNeighbor = hovered && hoveredNeighbors?.has(b.id) ? 80 : 0;
-        const aPriority =
-          aHovered + aSelected + aNeighbor + (LABEL_PRIORITY[a.nodeType] || 0);
-        const bPriority =
-          bHovered + bSelected + bNeighbor + (LABEL_PRIORITY[b.nodeType] || 0);
-        return bPriority - aPriority;
-      });
+      // Short-circuit: during the initial reveal the viewport sits below
+      // every zoom threshold (hub=0.3 is the lowest) and there's no
+      // spotlight yet, so every label would be alpha=0. Skipping here
+      // avoids the per-frame sort AND the 500-node measure/overlap loop
+      // below — the dominant render cost during settling on Firefox.
+      const spotlightActive = !!effectiveHover || !!selectedNodeId;
+      const anyLabelsCanShow = k >= 0.3 || spotlightActive;
 
-      // Occupancy grid for anti-overlap (screen-space coordinates)
-      const occupiedBoxes: Array<{
-        x: number;
-        y: number;
-        w: number;
-        h: number;
-      }> = [];
+      // Pick label ordering strategy:
+      //  - nothing visible  → empty list (the per-node loop is a no-op)
+      //  - spotlight active → full sort so hovered/selected/neighbors win
+      //  - otherwise        → precomputed priority order (no allocation)
+      let sortedNodes: SimulationNode[];
+      if (!anyLabelsCanShow) {
+        sortedNodes = [];
+      } else if (spotlightActive) {
+        sortedNodes = nodesByPriorityRef.current.slice().sort((a, b) => {
+          const aHovered = effectiveHover?.id === a.id ? 100 : 0;
+          const bHovered = effectiveHover?.id === b.id ? 100 : 0;
+          const aSelected = selectedNodeId === a.id ? 90 : 0;
+          const bSelected = selectedNodeId === b.id ? 90 : 0;
+          const aNeighbor = hovered && hoveredNeighbors?.has(a.id) ? 80 : 0;
+          const bNeighbor = hovered && hoveredNeighbors?.has(b.id) ? 80 : 0;
+          const aPriority =
+            aHovered +
+            aSelected +
+            aNeighbor +
+            (LABEL_PRIORITY[a.nodeType] || 0);
+          const bPriority =
+            bHovered +
+            bSelected +
+            bNeighbor +
+            (LABEL_PRIORITY[b.nodeType] || 0);
+          return bPriority - aPriority;
+        });
+      } else {
+        sortedNodes = nodesByPriorityRef.current;
+      }
+
+      // Reusable occupancy array — resetting length avoids the per-frame
+      // allocation that was churning Firefox's GC.
+      const occupiedBoxes = occupiedBoxesRef.current;
+      occupiedBoxes.length = 0;
 
       function wouldOverlap(
         bx: number,
@@ -703,8 +832,22 @@ export default function GraphCanvas({
             ? rawLabel.slice(0, maxChars - 2) + "..."
             : rawLabel;
 
-        // Label positioned ABOVE the node
-        const labelWidth = ctx.measureText(label).width;
+        // Label positioned ABOVE the node.
+        // Cached at a fixed 10px reference size on an off-screen context so
+        // we only pay measureText() once per unique label string instead of
+        // every frame — measureText is a known hot path in Firefox.
+        let refWidth = labelWidthCacheRef.current.get(label);
+        if (refWidth === undefined) {
+          const mctx = measureCtxRef.current;
+          if (mctx) {
+            refWidth = mctx.measureText(label).width; // font is 10px
+          } else {
+            // Fallback: measure with live ctx and rescale to reference.
+            refWidth = ctx.measureText(label).width * (10 / simFontSize);
+          }
+          labelWidthCacheRef.current.set(label, refWidth);
+        }
+        const labelWidth = refWidth * (simFontSize / 10);
         const labelY = node.y - r - 2 / k; // above the node
         const bgX = node.x - labelWidth / 2 - labelPadH;
         const bgY = labelY - simFontSize - labelPadV;
@@ -757,7 +900,7 @@ export default function GraphCanvas({
         // Resolve locked node (if any)
         const lockedId = centerNodeRef.current;
         const lockedNode = lockedId
-          ? nodes.find((n) => n.id === lockedId) || null
+          ? (nodeByIdRef.current.get(lockedId) ?? null)
           : null;
 
         // Animate lock progress (0 → 1 when locked, 1 → 0 when unlocked)
@@ -853,7 +996,7 @@ export default function GraphCanvas({
         const labelTarget =
           lockedNode ??
           (centerNodeRef.current
-            ? (nodes.find((n) => n.id === centerNodeRef.current) ?? null)
+            ? (nodeByIdRef.current.get(centerNodeRef.current) ?? null)
             : null);
         if (labelTarget) {
           // Re-enter simulation space so coordinates align with the node
@@ -900,7 +1043,7 @@ export default function GraphCanvas({
       ctx.setTransform(1, 0, 0, 1, 0, 0);
 
       // ─── Mobile: find closest node to screen center ───────────────────
-      if (onCenterNodeChange) {
+      if (isMobile && onCenterNodeChange) {
         const centerSimX = (width / 2 - tx) / k;
         const centerSimY = (height / 2 - ty) / k;
         let closest: SimulationNode | null = null;
