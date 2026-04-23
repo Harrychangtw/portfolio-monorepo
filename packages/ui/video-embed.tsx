@@ -11,10 +11,20 @@ interface VideoEmbedProps {
   type: "youtube" | "googledrive";
 }
 
+const ALLOWED_SRC_PATTERNS = [
+  /^https:\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9_-]{11}$/,
+  /^https:\/\/drive\.google\.com\/file\/d\/[a-zA-Z0-9_-]+\/preview$/,
+];
+
+function isAllowedSrc(url: string): boolean {
+  return ALLOWED_SRC_PATTERNS.some((pattern) => pattern.test(url));
+}
+
 export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(type === "youtube");
+  const safeSrc = isAllowedSrc(src) ? src : null;
 
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -77,9 +87,9 @@ export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
                   </button>
                 </div>
               </div>
-            ) : (
+            ) : safeSrc ? (
               <iframe
-                src={src}
+                src={safeSrc}
                 className={`w-full h-full border-0 transition-opacity duration-300 ${
                   isLoaded ? "opacity-100" : "opacity-0"
                 }`}
@@ -93,6 +103,13 @@ export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
                 onLoad={handleLoad}
                 onError={handleError}
               />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center bg-muted">
+                <div className="flex flex-col items-center justify-center text-muted-foreground p-8 text-center">
+                  <AlertCircle className="w-8 h-8 mb-2 text-red-500" />
+                  <p className="text-sm">Invalid video source</p>
+                </div>
+              </div>
             )}
           </div>
         )}

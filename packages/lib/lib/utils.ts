@@ -70,6 +70,17 @@ export function createBalancedLayout(
     if (itemIndex >= 0 && itemIndex < items.length) {
       const { rowIndex, columnIndex } = position;
 
+      // Validate indices to prevent prototype pollution
+      if (
+        !Number.isInteger(columnIndex) ||
+        columnIndex < 0 ||
+        columnIndex > 2 ||
+        !Number.isInteger(rowIndex) ||
+        rowIndex < 0
+      ) {
+        return;
+      }
+
       // Ensure the column has enough rows
       while (columns[columnIndex].length <= rowIndex) {
         columns[columnIndex].push({

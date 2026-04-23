@@ -13,6 +13,9 @@ on:
       - ".github/workflows/typecheck.yml"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   typecheck:
     name: Type Check
