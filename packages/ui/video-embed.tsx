@@ -11,20 +11,33 @@ interface VideoEmbedProps {
   type: "youtube" | "googledrive";
 }
 
-const ALLOWED_SRC_PATTERNS = [
-  /^https:\/\/www\.youtube\.com\/embed\/[a-zA-Z0-9_-]{11}$/,
-  /^https:\/\/drive\.google\.com\/file\/d\/[a-zA-Z0-9_-]+\/preview$/,
-];
+/**
+ * Sanitize video src by extracting the ID and reconstructing a known-safe URL.
+ * This breaks the DOM-text taint chain that CodeQL tracks.
+ */
+function sanitizeSrc(url: string): string | null {
+  const youtubeMatch = url.match(
+    /^https:\/\/www\.youtube\.com\/embed\/([a-zA-Z0-9_-]{11})$/,
+  );
+  if (youtubeMatch) {
+    return `https://www.youtube.com/embed/${youtubeMatch[1]}`;
+  }
 
-function isAllowedSrc(url: string): boolean {
-  return ALLOWED_SRC_PATTERNS.some((pattern) => pattern.test(url));
+  const driveMatch = url.match(
+    /^https:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)\/preview$/,
+  );
+  if (driveMatch) {
+    return `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+  }
+
+  return null;
 }
 
 export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(type === "youtube");
-  const safeSrc = isAllowedSrc(src) ? src : null;
+  const safeSrc = sanitizeSrc(src);
 
   const { ref, inView } = useInView({
     threshold: 0.1,
