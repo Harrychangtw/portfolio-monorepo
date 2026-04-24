@@ -11,10 +11,33 @@ interface VideoEmbedProps {
   type: "youtube" | "googledrive";
 }
 
+/**
+ * Sanitize video src by extracting the ID and reconstructing a known-safe URL.
+ * This breaks the DOM-text taint chain that CodeQL tracks.
+ */
+function sanitizeSrc(url: string): string | null {
+  const youtubeMatch = url.match(
+    /^https:\/\/www\.youtube\.com\/embed\/([a-zA-Z0-9_-]{11})$/,
+  );
+  if (youtubeMatch) {
+    return `https://www.youtube.com/embed/${youtubeMatch[1]}`;
+  }
+
+  const driveMatch = url.match(
+    /^https:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)\/preview$/,
+  );
+  if (driveMatch) {
+    return `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+  }
+
+  return null;
+}
+
 export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(type === "youtube");
+  const safeSrc = sanitizeSrc(src);
 
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -77,9 +100,9 @@ export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
                   </button>
                 </div>
               </div>
-            ) : (
+            ) : safeSrc ? (
               <iframe
-                src={src}
+                src={safeSrc}
                 className={`w-full h-full border-0 transition-opacity duration-300 ${
                   isLoaded ? "opacity-100" : "opacity-0"
                 }`}
@@ -93,6 +116,13 @@ export const VideoEmbed: React.FC<VideoEmbedProps> = ({ src, title, type }) => {
                 onLoad={handleLoad}
                 onError={handleError}
               />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center bg-muted">
+                <div className="flex flex-col items-center justify-center text-muted-foreground p-8 text-center">
+                  <AlertCircle className="w-8 h-8 mb-2 text-red-500" />
+                  <p className="text-sm">Invalid video source</p>
+                </div>
+              </div>
             )}
           </div>
         )}
