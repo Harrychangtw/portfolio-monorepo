@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
 import { cva, type VariantProps } from "class-variance-authority";
+import { ANIMATION } from "@portfolio/config";
 
 const cardVariants = cva("", {
   variants: {
@@ -58,12 +59,12 @@ export default function SketchesCard({
       ? {
           scale: 1.02,
           zIndex: 11,
-          transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as any },
+          transition: { duration: 0.3, ease: ANIMATION.bezier.standard },
         }
       : {
           scale: 0.98,
           zIndex: 10,
-          transition: { duration: 0.3, ease: [0.4, 0, 0.6, 1] as any },
+          transition: { duration: 0.3, ease: ANIMATION.bezier.decelerate },
         };
 
   return (
