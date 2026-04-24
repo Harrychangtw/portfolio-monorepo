@@ -73,13 +73,19 @@ export function useStableAnchor(
         stopped = true;
         cancelAnimationFrame(raf);
         ro.disconnect();
-        window.removeEventListener("pointerdown", stop);
-        window.removeEventListener("wheel", stop as any);
-        window.removeEventListener("touchstart", stop as any);
+        window.removeEventListener("pointerdown", stop as EventListener);
+        window.removeEventListener("wheel", stop as EventListener);
+        window.removeEventListener("touchstart", stop as EventListener);
       };
-      window.addEventListener("pointerdown", stop, { once: true });
-      window.addEventListener("wheel", stop as any, { passive: true });
-      window.addEventListener("touchstart", stop as any, { passive: true });
+      window.addEventListener("pointerdown", stop as EventListener, {
+        once: true,
+      });
+      window.addEventListener("wheel", stop as EventListener, {
+        passive: true,
+      });
+      window.addEventListener("touchstart", stop as EventListener, {
+        passive: true,
+      });
     };
 
     // Initial mount (direct visit like /#projects or /#gallery)

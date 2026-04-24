@@ -398,6 +398,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@portfolio/config':
+        specifier: workspace:*
+        version: link:../config
       '@portfolio/lib':
         specifier: workspace:*
         version: link:../lib

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { LockIcon } from "lucide-react";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { cva, type VariantProps } from "class-variance-authority";
+import { ANIMATION } from "@portfolio/config";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { ImageContainer } from "@portfolio/ui/image-container";
 
@@ -74,11 +75,11 @@ export default function ProjectCard({
     hoverEffect === "gentle"
       ? {
           scale: 1.02,
-          transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as any },
+          transition: { duration: 0.3, ease: ANIMATION.bezier.standard },
         }
       : {
           scale: 0.98,
-          transition: { duration: 0.2, ease: [0.4, 0, 0.6, 1] as any },
+          transition: { duration: 0.2, ease: ANIMATION.bezier.decelerate },
         };
 
   const CardContent = (

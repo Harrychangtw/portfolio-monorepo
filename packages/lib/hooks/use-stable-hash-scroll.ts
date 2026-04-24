@@ -81,13 +81,17 @@ export function useStableHashScroll(headerSelector: string = "header") {
       cancelAnimationFrame(raf);
       ro?.disconnect();
       window.removeEventListener("load", onLoad);
-      window.removeEventListener("pointerdown", stop);
-      window.removeEventListener("wheel", stop, { passive: true } as any);
-      window.removeEventListener("touchstart", stop, { passive: true } as any);
+      window.removeEventListener("pointerdown", stop as EventListener);
+      window.removeEventListener("wheel", stop as EventListener);
+      window.removeEventListener("touchstart", stop as EventListener);
     };
-    window.addEventListener("pointerdown", stop, { once: true });
-    window.addEventListener("wheel", stop, { passive: true } as any);
-    window.addEventListener("touchstart", stop, { passive: true } as any);
+    window.addEventListener("pointerdown", stop as EventListener, {
+      once: true,
+    });
+    window.addEventListener("wheel", stop as EventListener, { passive: true });
+    window.addEventListener("touchstart", stop as EventListener, {
+      passive: true,
+    });
 
     return stop;
   }, [pathname, searchParams]);

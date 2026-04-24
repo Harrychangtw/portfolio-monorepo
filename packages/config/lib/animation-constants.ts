@@ -22,12 +22,18 @@ export const ANIMATION = {
     long: 0.5,
   },
 
-  // Easing functions
+  // Easing functions (named strings)
   easing: {
     easeOut: "easeOut",
     easeIn: "easeIn",
     easeInOut: "easeInOut",
     linear: "linear",
+  },
+
+  // Cubic bezier easing curves (for motion/framer-motion transitions)
+  bezier: {
+    standard: [0.4, 0, 0.2, 1] as [number, number, number, number],
+    decelerate: [0.4, 0, 0.6, 1] as [number, number, number, number],
   },
 
   // Common animation variants
