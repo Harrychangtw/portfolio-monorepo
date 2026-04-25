@@ -30,6 +30,7 @@ const destinations = [
   // Gallery
   { label: "Gallery", path: "/#gallery" },
   { label: "Intersection", path: "/gallery/2023_08_10_intersection" },
+  { label: "US Trip", path: "/gallery/2026-us-trip" },
   { label: "Against Giants", path: "/gallery/2023_10_06_against_giants" },
   {
     label: "Guided by the Tides",
@@ -43,6 +44,8 @@ const destinations = [
   { label: "City of Tears", path: "/gallery/2024_04_06_city_of_tears" },
   { label: "Dusk Impressions", path: "/gallery/2023_11_18_dusk_impressions" },
   { label: "Italy Mountain", path: "/gallery/2026_02_08_italy_mountain" },
+  { label: "Italy Town", path: "/gallery/2026_02_08_italy_town" },
+  { label: "Italy City", path: "/gallery/2026_02_08_italy_city" },
   {
     label: "Simple in Complexity",
     path: "/gallery/2024_07_03_simple_in_a_complex_world",
@@ -50,7 +53,8 @@ const destinations = [
 
   // Blog
   { label: "Blog", path: "/#blog" },
-  { label: "Site Anniversery", path: "/blog/10-lego-mount" },
+  { label: "US Trip", path: "/blog/12-us-trip" },
+  { label: "Site Anniversery", path: "/blog/11-portfolio" },
   { label: "Lego Fan Mount", path: "/blog/10-lego-mount" },
   { label: "Leica M11-D", path: "/blog/9_m11d" },
   { label: "The X-Pro1", path: "/blog/2025_12_19_xpro1" },

@@ -407,7 +407,7 @@ export default function Header() {
 
   const connectItems = [
     { label: t("social.gmail"), link: "/email" },
-    { label: t("social.discord"), link: "/discord" },
+    // { label: t("social.discord"), link: "/discord" },
     { label: t("social.linkedin"), link: "/linkedin" },
     { label: t("social.github"), link: "/github" },
     // { label: t("social.telegram"), link: "/telegram" },
@@ -421,7 +421,7 @@ export default function Header() {
     { label: t("social.music"), link: "/spotify" },
     { label: t("social.letterboxd"), link: "/letterboxd" },
     { label: t("resources.resume"), link: "/cv" },
-    { label: t("resources.uses"), link: "/uses" },
+    // { label: t("resources.uses"), link: "/uses" },
     // { label: t("resources.reading"), link: "/paper-reading" },
     { label: t("resources.design"), link: "/design" },
     { label: t("resources.graph"), link: "/graph" },

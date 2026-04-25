@@ -81,6 +81,44 @@
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
     },
     {
+      "id": "post-12-us-trip-en-file",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close",
+      "snippet": "16 days, three cities, and a trip that refused to cohere. On diversity that excludes, selves that don't exist, and why holding contradictions might be...",
+      "nodeType": "file",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": null,
+      "parentId": "hub-post-en",
+      "tldr": "Contradictions of SF tech, urban decay, and hollow travel memories",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-file",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈",
+      "snippet": "十六天，三座城市，一趟拒絕連貫的旅程。關於排斥他人的多元、不存在的自我，以及為什麼擁抱矛盾或許才是重點。",
+      "nodeType": "file",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": null,
+      "parentId": "hub-post-zh-TW",
+      "tldr": "穿梭美西與紐約，在資本泡沫與混亂真實間尋找歸屬",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
       "id": "post-2025_12_12_blog_launch-en-file",
       "title": "Introducing the Blog: A Commitment to Thinking Out Loud",
       "snippet": "## Finding the Signal in the Noise  We live in a world saturated with noise. In the rush of our daily lives, it's easy to fall into passive consumptio...",
@@ -1399,8 +1437,8 @@
     },
     {
       "id": "gallery-2026-us-trip-en-file",
-      "title": "No Need to Cohere",
-      "snippet": "<!-- Maybe coherence was never the point.   New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five me...",
+      "title": "The Version That Stayed",
+      "snippet": "Celine Song's film keeps circling back. Two people at a carousel in Brooklyn, half-aware that other versions of themselves exist elsewhere, living liv...",
       "nodeType": "file",
       "sourceType": "gallery",
       "sourceSlug": "2026-us-trip",
@@ -1417,8 +1455,8 @@
     },
     {
       "id": "gallery-2026-us-trip-zh-TW-file",
-      "title": "不必和解",
-      "snippet": "<!-- 也許一致性從來都不是重點。  紐約不道歉——億萬富翁與老鼠同乘一班地鐵，熱狗攤與證券交易所相距不過五公尺。這座城市把金融兄弟和無家者放在同一個畫框裡，從不試圖調和。就像《乘客們》那句：「在某些城市裡，你同時活過好幾輩子。」  中央車站那對新人在吻，世界從他們身後流過，化作光的殘影。我按下快...",
+      "title": "留下來的那個我",
+      "snippet": "Celine Song 的電影一次次繞回布魯克林那座旋轉木馬：兩個人並肩而立，隱約知道另外幾個版本的自己正在別處，過著此生不會相遇的日子。十六天，三座城市，同樣的畫面反覆浮現：陌生人以我也許擺過的姿勢站著，一扇扇門開向我不會走進的天際線。  青銅鑄成的清教徒，立於他生前未曾見過的櫻花之下。兩隻雁鴨，...",
       "nodeType": "file",
       "sourceType": "gallery",
       "sourceSlug": "2026-us-trip",
@@ -2301,6 +2339,424 @@
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "致謝封面名畫、版面設計靈感與技術工具",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-0",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - The Same Bus",
+      "snippet": "he Same Bus  On the same bus, a child is laughing with her parents, a person is struggling to hold onto the outer door while crawling inward, and anot...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "The Same Bus",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "San Francisco's bus reflects jarring social and economic disparities",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-1",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - The Hollowed Center",
+      "snippet": "he Hollowed Center  San Francisco was supposed to be the tech capital. It felt like a movie set.  Our Lyft driver from the airport was a Canton immigr...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "The Hollowed Center",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "SF's hollow tech facade masks personal family histories",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-2",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - The City That Hit Different",
+      "snippet": "he City That Hit Different  New York announced itself immediately.  The first night, we arrived at our apartment on the Upper West Side and went to Lo...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "The City That Hit Different",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "A chaotic, overwhelming, and sensory-heavy introduction to New York City",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-3",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - The Contradictions Emerge",
+      "snippet": "he Contradictions Emerge  The city started showing its other face.  The Highline after the Vessel: brutal, unrelenting wind that made four degrees fee...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "The Contradictions Emerge",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "High costs, biting wind, and the art-context dilemma",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-4",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - Go Back to New Jersey",
+      "snippet": "o Back to New Jersey  We stopped at a pretty good pizza shop. Hot honey made it unforgettable. We were eating across the street, my sister and I sitti...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "Go Back to New Jersey",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "An elitist confrontation over sidewalk pizza reveals NYC’s exclusionary nature",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-5",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - The Afternoon Alone",
+      "snippet": "he Afternoon Alone  Sister went to meet friends traveling through the city. I had the afternoon to myself.  No itinerary. After a carrot donut and a f...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "The Afternoon Alone",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "Solitary walking and photography lead to a quiet, unarticulated belonging",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-6",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - Contradictions in Time",
+      "snippet": "ontradictions in Time  NYC grew on me in a more natural sense. Beautiful and inspiring. But I became mindful of its darker side.  Walking through SoHo...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "Contradictions in Time",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "Life and cities exist as unresolved, simultaneous contradictions",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-7",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - The Bus That Held Everything",
+      "snippet": "he Bus That Held Everything  Writing on our overnight Greyhound to Boston. The type of liminal space that shows you glimpses of places you want to vis...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "The Bus That Held Everything",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "A melancholic bus departure reflecting on fleeting moments and goodbyes",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-8",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - The Exhale",
+      "snippet": "he Exhale  Boston felt reserved.  The ceremony, the reason we came, was anticlimactic. Low ceiling. Terrible lighting. Wrinkled flags. Is this what th...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "The Exhale",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "Disappointing ceremony salvaged by thrift store finds and lobster rolls",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-9",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - The Loop That Almost Closed",
+      "snippet": "he Loop That Almost Closed  Less than 48 hours before leaving. The coat fits. The flags were wrinkled. The city felt reserved.  I lost the black Swell...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "The Loop That Almost Closed",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "Embracing unresolved loss and travel’s refusal to cohere",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-10",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close - Acknowledgments",
+      "snippet": "cknowledgments  - Title image: _The Third-Class Carriage_ by [Honoré Daumier](https://en.wikipedia.org/wiki/en:Honoré_Daumier), Public Domain, [Link](...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "Acknowledgments",
+      "parentId": "post-12-us-trip-en-file",
+      "tldr": "Credits for artwork and family/friend support on the journey",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-0",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 同一班公車",
+      "snippet": "一班公車  同一班公車上，一個孩子正與父母嬉笑，一個人掙扎著抓住外門，艱難地往車廂內爬；另一個人身上氣味濃烈，褲子沒有完全拉好。這一切，都發生在一座資本如流水般奔騰、夕陽絕美的城市裡。  這是舊金山，從 Mission District 回程的公車。比我想像中好多了。  ![framed:](ima...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "同一班公車",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "舊金山公車上的社會階級縮影",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-1",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 被掏空的中心",
+      "snippet": "掏空的中心  舊金山本該是科技之都。但它感覺更像電影佈景。  從機場載我們的 Lyft 司機是廣州移民。BART 比我想像中乾淨。Powell Street 聞起來什麼味道都沒有，這本身就不對勁。我們在市中心遊蕩，總覺得少了什麼。建築物缺乏厚度。街道空蕩蕩的，那種空曠與其說是寧靜，不如說像是疏散後的...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "被掏空的中心",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "矽谷繁華卻空洞，如人造死寂場景",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-2",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 截然不同的城市",
+      "snippet": "然不同的城市  紐約從第一刻就宣告了自己的存在。  第一晚，我們抵達上西區的公寓，去了 Los Tacos。隊伍混亂到幾乎無法忍受，但動得飛快。金融圈的西裝男與那些看起來歷盡滄桑的人們，共享著同一節地鐵車廂。抵達幾分鐘內，我們就被一個叫 Michael Dominguez 的拳擊手攔下。他歡迎我們來...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "截然不同的城市",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "初探紐約，沉浸於混亂與美好的感官震撼",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-3",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 矛盾浮現",
+      "snippet": "盾浮現  這座城市開始展露它的另一面。  走過 Vessel 後的高架公園：強烈、無情的冷風讓攝氏四度感覺像零下四度。在一家據說很棒的店吃早餐：還行，三個人六十三美金的「還行」。  ![framed:](images/optimized/blogs/12-us-trip/L1001696.webp)...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "矛盾浮現",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "紐約美感徒具形式且缺乏靈魂",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-4",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 滾回紐澤西",
+      "snippet": "回紐澤西  我們在一家相當不錯的披薩店停下。辣蜂蜜讓它至今仍難忘。我們在對街吃著，我和我姐坐在行道樹的圍欄上，盤子平衡在腿上。相當克難的餐桌。面前是一棟據說挺高級的公寓。  一個遛狗的老人在門房為他開車門後走了下來。他筆直走向我們，還有隔壁那棵樹旁的人群。  「不行，你們不能坐在這裡吃披薩。」  我...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "滾回紐澤西",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "紐約排外言論引發矛盾思緒",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-5",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 獨處的午後",
+      "snippet": "處的午後  姐姐去見在紐約旅遊的朋友。我擁有了一個獨處的下午。  沒有行程。吃了一個紅蘿蔔甜甜圈、逛了幾家店後，我用自己的步調走著；快而緊湊。從中國城到小義大利，再到羅斯福公園，繞了兩圈尋找一間我始終沒找到的洗手間。最後，我坐在 Hunter's Point South Park 的櫻花樹下，等我爸...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "獨處的午後",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "紐約獨處漫遊，靜止中找尋自在感",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-6",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 時間裡的矛盾",
+      "snippet": "間裡的矛盾  紐約以一種更自然的方式在我心中生長。美麗而啟發人心。但我也開始留意它的陰暗面。  漫步穿過 SoHo。搭乘地鐵。看著熱狗攤和證券交易所在五公尺內並存。我不斷注意到：創造活力的密度，正是讓房租高不可攀的密度。擁抱所有人的多元，正是讓某人能夠對著吃披薩的陌生人大吼「滾回紐澤西」的多元。這些...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "時間裡的矛盾",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "城市與自身的矛盾，是空間與時間的「如果」",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-7",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 承載一切的巴士",
+      "snippet": "載一切的巴士  寫於開往波士頓的夜車上。這種類似過境空間的地方，讓你瞥見了那些你想去卻無法抵達的遠方。  用這種方式向匆匆七天所待的城市道別，是多麼特別。  也許這就是在場的感覺。深知你正處於即將成為回憶的當下。在地鐵上跟著 Born Sinner 搖擺。在幾乎空無一人的巴士上，週五藍調時刻的天空下...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "承載一切的巴士",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "在告別城市的夜巴，預演遺憾與回憶的循環",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-8",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 吐氣",
+      "snippet": "氣  波士頓感覺很內斂。  典禮，我們此行的目的，虎頭蛇尾。天花板很低、燈光慘不忍睹、旗幟皺巴巴的。這就是人們說「旅行能開拓視野」的意思嗎？因為在那個天花板低得荒謬的演講廳裡，我的視野絕對無法開拓。  ![framed:](images/optimized/blogs/12-us-trip/L100...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "吐氣",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "波士頓行：典禮平淡，挖寶吃龍蝦更爽",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-9",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 幾乎閉合的迴圈",
+      "snippet": "乎閉合的迴圈  離開前不到四十八小時。風衣很合身。旗子皺巴巴。這座城市感覺很內斂。  我在某個轉場把黑色 Swell 保溫瓶弄丟了。一到 Airbnb 就發現它不見了。我沒有想像中那麼在意。也許是因為我意識到黑色太容易刮花了。銀色款把磨損穿成了質感。黑色只是看起來舊。  也許失去有時是一種澄清。  ...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "幾乎閉合的迴圈",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "不再執著圓滿，接納旅程中的遺失與矛盾",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-10",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 - 致謝",
+      "snippet": "謝  - 封面照：_The Third-Class Carriage_ by [Honoré Daumier](https://en.wikipedia.org/wiki/en:Honoré_Daumier)，Public Domain，[Link](https://commons.wikimedi...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [
+        "Travel",
+        "Reflection"
+      ],
+      "heading": "致謝",
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "tldr": "感謝封面藝術、家人及嚮導 Dominguez",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
     },
     {
       "id": "post-2025_12_12_blog_launch-en-sec-0",
@@ -10121,8 +10577,8 @@
     },
     {
       "id": "gallery-2026-us-trip-en-sec-0",
-      "title": "No Need to Cohere",
-      "snippet": "<!-- Maybe coherence was never the point.   New York does not apologize. Billionaires and rats share the same subway car. Hot dog stands stand five me...",
+      "title": "The Version That Stayed",
+      "snippet": "Celine Song's film keeps circling back. Two people at a carousel in Brooklyn, half-aware that other versions of themselves exist elsewhere, living liv...",
       "nodeType": "section",
       "sourceType": "gallery",
       "sourceSlug": "2026-us-trip",
@@ -10139,8 +10595,8 @@
     },
     {
       "id": "gallery-2026-us-trip-zh-TW-sec-0",
-      "title": "不必和解",
-      "snippet": "<!-- 也許一致性從來都不是重點。  紐約不道歉——億萬富翁與老鼠同乘一班地鐵，熱狗攤與證券交易所相距不過五公尺。這座城市把金融兄弟和無家者放在同一個畫框裡，從不試圖調和。就像《乘客們》那句：「在某些城市裡，你同時活過好幾輩子。」  中央車站那對新人在吻，世界從他們身後流過，化作光的殘影。我按下快...",
+      "title": "留下來的那個我",
+      "snippet": "Celine Song 的電影一次次繞回布魯克林那座旋轉木馬：兩個人並肩而立，隱約知道另外幾個版本的自己正在別處，過著此生不會相遇的日子。十六天，三座城市，同樣的畫面反覆浮現：陌生人以我也許擺過的姿勢站著，一扇扇門開向我不會走進的天際線。  青銅鑄成的清教徒，立於他生前未曾見過的櫻花之下。兩隻雁鴨，...",
       "nodeType": "section",
       "sourceType": "gallery",
       "sourceSlug": "2026-us-trip",
@@ -10284,7 +10740,7 @@
     {
       "id": "locale-cv-summary-zh-TW-0",
       "title": "CV - 簡介",
-      "snippet": "title: 簡介 content: 充滿熱忱的高三學生，在 AI 研究、軟體開發與領導力方面具經驗。具備交付高影響力成果的能力，包含以第一作者身分於 TMLR、EACL 發表研究論文，以及開發屢獲殊榮的 RAG 系統。熱衷於運用科技解決複雜問題，並專注於大型語言模型安全性與人工智慧倫理。精通中文與...",
+      "snippet": "title: 簡介 content: 高三研究者，專注於大型語言模型安全，研究延伸至軟體開發與設計。以第一作者身分發表 FORTRESS（TMLR）與 PATCH 資料集（EACL 2026 SRW），並共同開發獲國科會肯定的 RAG 系統，於 SITCON 2025、2026 擔任講者。現為奧義智...",
       "nodeType": "section",
       "sourceType": "locale",
       "sourceSlug": "cv-summary",
@@ -10462,7 +10918,7 @@
     {
       "id": "locale-cv-summary-en-0",
       "title": "CV - Summary",
-      "snippet": "title: Summary content: Highly motivated 12th-grade student with deep experience in AI research, software development, and leadership. Proven ability ...",
+      "snippet": "title: Summary content: 12th-grade researcher in LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH data...",
       "nodeType": "section",
       "sourceType": "locale",
       "sourceSlug": "cv-summary",
@@ -10843,6 +11299,326 @@
       "parentId": "post-11-portfolio-zh-TW-file",
       "imageUrl": "images/optimized/blogs/11-portfolio/titlecard.webp",
       "mediaSource": "images/optimized/blogs/11-portfolio/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-0-img-0",
+      "title": "L1001562",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "The Same Bus",
+      "parentId": "post-12-us-trip-en-sec-0",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001562.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001562.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-1-img-0",
+      "title": "L1001460",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "The Hollowed Center",
+      "parentId": "post-12-us-trip-en-sec-1",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001460.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001460.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-2-img-0",
+      "title": "L1001615",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "The City That Hit Different",
+      "parentId": "post-12-us-trip-en-sec-2",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001615.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001615.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-2-img-1",
+      "title": "L1001656",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "The City That Hit Different",
+      "parentId": "post-12-us-trip-en-sec-2",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001656.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001656.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-2-img-2",
+      "title": "L1001677",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "The City That Hit Different",
+      "parentId": "post-12-us-trip-en-sec-2",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001677.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001677.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-3-img-0",
+      "title": "L1001696",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "The Contradictions Emerge",
+      "parentId": "post-12-us-trip-en-sec-3",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001696.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001696.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-6-img-0",
+      "title": "L1001861",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "Contradictions in Time",
+      "parentId": "post-12-us-trip-en-sec-6",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001861.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001861.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-8-img-0",
+      "title": "L1001897",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "The Exhale",
+      "parentId": "post-12-us-trip-en-sec-8",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001897.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001897.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-sec-8-img-1",
+      "title": "L1001936",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "The Exhale",
+      "parentId": "post-12-us-trip-en-sec-8",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001936.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001936.webp"
+    },
+    {
+      "id": "post-12-us-trip-en-img-cover",
+      "title": "Go Back to New Jersey: Contradictions, Ghosts, and the Loop ",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": null,
+      "parentId": "post-12-us-trip-en-file",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-0-img-0",
+      "title": "L1001562",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "同一班公車",
+      "parentId": "post-12-us-trip-zh-TW-sec-0",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001562.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001562.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-1-img-0",
+      "title": "L1001460",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "被掏空的中心",
+      "parentId": "post-12-us-trip-zh-TW-sec-1",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001460.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001460.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-2-img-0",
+      "title": "L1001615",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "截然不同的城市",
+      "parentId": "post-12-us-trip-zh-TW-sec-2",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001615.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001615.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-2-img-1",
+      "title": "L1001656",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "截然不同的城市",
+      "parentId": "post-12-us-trip-zh-TW-sec-2",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001656.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001656.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-2-img-2",
+      "title": "L1001677",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "截然不同的城市",
+      "parentId": "post-12-us-trip-zh-TW-sec-2",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001677.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001677.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-3-img-0",
+      "title": "L1001696",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "矛盾浮現",
+      "parentId": "post-12-us-trip-zh-TW-sec-3",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001696.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001696.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-6-img-0",
+      "title": "L1001861",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "時間裡的矛盾",
+      "parentId": "post-12-us-trip-zh-TW-sec-6",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001861.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001861.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-8-img-0",
+      "title": "L1001897",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "吐氣",
+      "parentId": "post-12-us-trip-zh-TW-sec-8",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001897.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001897.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-sec-8-img-1",
+      "title": "L1001936",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": "吐氣",
+      "parentId": "post-12-us-trip-zh-TW-sec-8",
+      "imageUrl": "images/optimized/blogs/12-us-trip/L1001936.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/L1001936.webp"
+    },
+    {
+      "id": "post-12-us-trip-zh-TW-img-cover",
+      "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈 (cover)",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "12-us-trip",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/12-us-trip",
+      "date": "2026-04-21",
+      "tags": [],
+      "heading": null,
+      "parentId": "post-12-us-trip-zh-TW-file",
+      "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp",
+      "mediaSource": "images/optimized/blogs/12-us-trip/titlecard.webp"
     },
     {
       "id": "post-2025_12_12_blog_launch-en-img-cover",
@@ -17454,7 +18230,7 @@
     },
     {
       "id": "gallery-2026-us-trip-en-img-cover",
-      "title": "No Need to Cohere (cover)",
+      "title": "The Version That Stayed (cover)",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17710,7 +18486,7 @@
     },
     {
       "id": "gallery-2026-us-trip-zh-TW-img-cover",
-      "title": "不必和解 (cover)",
+      "title": "留下來的那個我 (cover)",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -19321,7 +20097,7 @@
     {
       "id": "tag-reflection",
       "title": "Reflection",
-      "snippet": "18 documents",
+      "snippet": "20 documents",
       "nodeType": "tag",
       "sourceType": "locale",
       "sourceSlug": "reflection",
@@ -19339,6 +20115,20 @@
       "nodeType": "tag",
       "sourceType": "locale",
       "sourceSlug": "personal",
+      "locale": "en",
+      "url": "",
+      "date": null,
+      "tags": [],
+      "heading": null,
+      "parentId": null
+    },
+    {
+      "id": "tag-travel",
+      "title": "Travel",
+      "snippet": "2 documents",
+      "nodeType": "tag",
+      "sourceType": "locale",
+      "sourceSlug": "travel",
       "locale": "en",
       "url": "",
       "date": null,
@@ -20433,6 +21223,258 @@
     {
       "source": "post-11-portfolio-zh-TW-file",
       "target": "post-11-portfolio-zh-TW-img-cover",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-0",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-0",
+      "target": "post-12-us-trip-en-sec-0-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-1",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-1",
+      "target": "post-12-us-trip-en-sec-1-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-2",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-2",
+      "target": "post-12-us-trip-en-sec-2-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-2",
+      "target": "post-12-us-trip-en-sec-2-img-1",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-2",
+      "target": "post-12-us-trip-en-sec-2-img-2",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-3",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-3",
+      "target": "post-12-us-trip-en-sec-3-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-4",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-5",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-6",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-6",
+      "target": "post-12-us-trip-en-sec-6-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-7",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-8",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-8",
+      "target": "post-12-us-trip-en-sec-8-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-8",
+      "target": "post-12-us-trip-en-sec-8-img-1",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-10",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-img-cover",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-0",
+      "target": "post-12-us-trip-zh-TW-sec-0-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-1",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-1",
+      "target": "post-12-us-trip-zh-TW-sec-1-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-2",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-2-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-2-img-1",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-2-img-2",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-3",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-3",
+      "target": "post-12-us-trip-zh-TW-sec-3-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-4",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-5",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-6",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-6",
+      "target": "post-12-us-trip-zh-TW-sec-6-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-7",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-8",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-8",
+      "target": "post-12-us-trip-zh-TW-sec-8-img-0",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-8",
+      "target": "post-12-us-trip-zh-TW-sec-8-img-1",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-10",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-img-cover",
       "weight": 0.8,
       "linkType": "structural"
     },
@@ -26354,6 +27396,12 @@
     },
     {
       "source": "hub-post-en",
+      "target": "post-12-us-trip-en-file",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "hub-post-en",
       "target": "post-2025_12_12_blog_launch-en-file",
       "weight": 1.0,
       "linkType": "structural"
@@ -26415,6 +27463,12 @@
     {
       "source": "hub-post-zh-TW",
       "target": "post-11-portfolio-zh-TW-file",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "hub-post-zh-TW",
+      "target": "post-12-us-trip-zh-TW-file",
       "weight": 1.0,
       "linkType": "structural"
     },
@@ -27278,6 +28332,18 @@
     },
     {
       "source": "tag-reflection",
+      "target": "post-12-us-trip-en-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-reflection",
+      "target": "post-12-us-trip-zh-TW-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-reflection",
       "target": "post-2025_12_12_blog_launch-en-file",
       "weight": 0.6,
       "linkType": "tag"
@@ -27381,6 +28447,18 @@
     {
       "source": "tag-personal",
       "target": "post-11-portfolio-zh-TW-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-travel",
+      "target": "post-12-us-trip-en-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-travel",
+      "target": "post-12-us-trip-zh-TW-file",
       "weight": 0.6,
       "linkType": "tag"
     },
@@ -27877,6 +28955,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
       "target": "gallery-2024_01_06_hehuanshan-zh-TW-sec-0",
       "weight": 1.0,
@@ -27907,26 +28991,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2026-us-trip-zh-TW-file",
       "target": "gallery-2026-us-trip-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -28303,6 +29381,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-0",
+      "weight": 0.9874,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-10-lego-mount-en-file",
       "target": "post-10-lego-mount-en-sec-0",
       "weight": 0.9869,
@@ -28435,6 +29519,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2026-us-trip-en-file",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.9829,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_10_12_fortress-en-file",
       "target": "project-2025_10_12_fortress-en-sec-0",
       "weight": 0.9827,
@@ -28525,6 +29615,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-2",
+      "target": "post-12-us-trip-en-sec-4",
+      "weight": 0.9803,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_13_sisyphus-zh-TW-file",
       "target": "post-2025_12_13_sisyphus-zh-TW-sec-0-1",
       "weight": 0.9802,
@@ -28573,6 +29669,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-7",
+      "target": "post-12-us-trip-en-sec-8",
+      "weight": 0.9793,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-10-lego-mount-zh-TW-file",
       "target": "post-10-lego-mount-zh-TW-sec-0",
       "weight": 0.9791,
@@ -28582,6 +29684,18 @@
       "source": "project-2024_08_19_classics_reimagined-en-sec-2-2",
       "target": "project-2024_08_19_classics_reimagined-en-sec-2-2-1",
       "weight": 0.9791,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-4",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 0.9789,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-2",
+      "target": "post-12-us-trip-en-sec-7",
+      "weight": 0.9785,
       "linkType": "semantic"
     },
     {
@@ -28645,6 +29759,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-5",
+      "target": "post-12-us-trip-en-sec-7",
+      "weight": 0.9771,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-1",
+      "target": "post-12-us-trip-en-sec-2",
+      "weight": 0.9771,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-0",
       "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
       "weight": 0.9769,
@@ -28657,9 +29783,27 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-0",
+      "target": "post-12-us-trip-en-sec-7",
+      "weight": 0.9766,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_09_vrc_2813b_nova-en-sec-1",
       "target": "project-2024_10_09_vrc_2813b_nova-en-sec-4",
       "weight": 0.9765,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-2",
+      "target": "post-12-us-trip-en-sec-5",
+      "weight": 0.9764,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-2",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 0.9764,
       "linkType": "semantic"
     },
     {
@@ -28696,6 +29840,12 @@
       "source": "post-11-portfolio-zh-TW-file",
       "target": "post-11-portfolio-zh-TW-sec-0",
       "weight": 0.976,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-1",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 0.9758,
       "linkType": "semantic"
     },
     {
@@ -28741,15 +29891,39 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-4",
+      "target": "post-12-us-trip-en-sec-5",
+      "weight": 0.9747,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-7",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 0.9745,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2026_02_08_italy_town-en-file",
       "target": "gallery-2026_02_08_italy_town-en-sec-0",
       "weight": 0.9744,
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-0",
+      "target": "post-12-us-trip-en-sec-4",
+      "weight": 0.9743,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_13_sisyphus-en-sec-0",
       "target": "post-2025_12_13_sisyphus-en-sec-0-2",
       "weight": 0.9743,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-4",
+      "target": "post-12-us-trip-en-sec-7",
+      "weight": 0.9741,
       "linkType": "semantic"
     },
     {
@@ -28765,9 +29939,27 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-1",
+      "target": "post-12-us-trip-en-sec-4",
+      "weight": 0.9738,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_09_vrc_2813b_nova-en-sec-1-2",
       "target": "project-2024_10_09_vrc_2813b_nova-en-sec-2-1",
       "weight": 0.9738,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-0",
+      "target": "post-12-us-trip-en-sec-2",
+      "weight": 0.9735,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-1",
+      "target": "post-12-us-trip-en-sec-7",
+      "weight": 0.9733,
       "linkType": "semantic"
     },
     {
@@ -28825,6 +30017,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-1",
+      "target": "post-12-us-trip-en-sec-8",
+      "weight": 0.9721,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-5",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 0.9721,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-en-sec-3",
       "target": "post-11-portfolio-en-sec-4",
       "weight": 0.9721,
@@ -28873,6 +30077,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-8",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 0.9714,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-1",
       "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-1-1",
       "weight": 0.9714,
@@ -28893,6 +30103,12 @@
     {
       "source": "post-2025_12_22_aftersun_paris_texas-zh-TW-file",
       "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-1",
+      "weight": 0.9709,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-2",
       "weight": 0.9709,
       "linkType": "semantic"
     },
@@ -28945,6 +30161,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-7",
+      "weight": 0.9702,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-2",
+      "target": "post-12-us-trip-en-sec-8",
+      "weight": 0.9702,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_13_sisyphus-zh-TW-sec-0",
       "target": "post-2025_12_13_sisyphus-zh-TW-sec-0-0",
       "weight": 0.9702,
@@ -28981,6 +30209,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-4",
+      "weight": 0.9697,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-6",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 0.9696,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_09_vrc_2813b_nova-zh-TW-file",
       "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-1",
       "weight": 0.9696,
@@ -28989,6 +30229,12 @@
     {
       "source": "post-9_m11d-en-sec-4",
       "target": "post-9_m11d-en-sec-7",
+      "weight": 0.9696,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-0",
+      "target": "post-12-us-trip-en-sec-5",
       "weight": 0.9696,
       "linkType": "semantic"
     },
@@ -29047,9 +30293,21 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-0",
+      "target": "post-12-us-trip-en-sec-9",
+      "weight": 0.969,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_14_affinity-en-sec-0",
       "target": "post-2025_12_14_affinity-en-sec-0-1",
       "weight": 0.9689,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-4",
+      "target": "post-12-us-trip-en-sec-8",
+      "weight": 0.9688,
       "linkType": "semantic"
     },
     {
@@ -29061,6 +30319,12 @@
     {
       "source": "post-2025_12_13_sisyphus-en-sec-0-0",
       "target": "post-2025_12_13_sisyphus-en-sec-0-2",
+      "weight": 0.9688,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-1",
+      "target": "post-12-us-trip-en-sec-5",
       "weight": 0.9688,
       "linkType": "semantic"
     },
@@ -29221,6 +30485,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-5",
+      "target": "post-12-us-trip-en-sec-8",
+      "weight": 0.9665,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_08_04_debate-en-sec-3",
       "target": "project-2025_08_04_debate-en-sec-4",
       "weight": 0.9661,
@@ -29229,6 +30499,12 @@
     {
       "source": "project-2025_10_12_fortress-en-sec-0-3",
       "target": "project-2025_10_12_fortress-en-sec-0-3-2",
+      "weight": 0.9661,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-0",
+      "target": "post-12-us-trip-en-sec-1",
       "weight": 0.9661,
       "linkType": "semantic"
     },
@@ -29323,6 +30599,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-8",
+      "weight": 0.9648,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_09_23_chingshin_rag-zh-TW-file",
       "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-0",
       "weight": 0.9648,
@@ -29337,6 +30619,12 @@
     {
       "source": "post-9_m11d-en-sec-7",
       "target": "post-9_m11d-en-sec-8",
+      "weight": 0.9647,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-1",
+      "target": "post-12-us-trip-en-sec-6",
       "weight": 0.9647,
       "linkType": "semantic"
     },
@@ -29373,6 +30661,12 @@
     {
       "source": "project-2024_09_23_chingshin_rag-en-sec-1-0",
       "target": "project-2024_09_23_chingshin_rag-en-sec-1-4",
+      "weight": 0.9642,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-0",
+      "target": "post-12-us-trip-en-sec-3",
       "weight": 0.9642,
       "linkType": "semantic"
     },
@@ -29446,6 +30740,12 @@
       "source": "post-2025_12_14_affinity-en-sec-0-1",
       "target": "post-2025_12_14_affinity-en-sec-0-6",
       "weight": 0.9637,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-5",
+      "weight": 0.9634,
       "linkType": "semantic"
     },
     {
@@ -29548,6 +30848,12 @@
       "source": "post-2025_12_22_aftersun_paris_texas-en-sec-0-3",
       "target": "post-2025_12_22_aftersun_paris_texas-en-sec-0-5",
       "weight": 0.9628,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-6",
+      "target": "post-12-us-trip-en-sec-8",
+      "weight": 0.9627,
       "linkType": "semantic"
     },
     {
@@ -29673,12 +30979,6 @@
     {
       "source": "post-2025_12_14_affinity-en-sec-0",
       "target": "post-2025_12_14_affinity-en-sec-0-2",
-      "weight": 0.9608,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-en-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
       "weight": 0.9608,
       "linkType": "semantic"
     },
@@ -29965,6 +31265,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-6",
+      "weight": 0.9588,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-en-file",
       "target": "post-2025_12_24_ntu_cs_special_admission-en-sec-5",
       "weight": 0.9587,
@@ -29979,6 +31285,12 @@
     {
       "source": "project-2025_10_12_fortress-en-sec-0-6",
       "target": "project-2025_10_12_fortress-en-sec-1",
+      "weight": 0.9586,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-3",
       "weight": 0.9586,
       "linkType": "semantic"
     },
@@ -30646,6 +31958,12 @@
       "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-3",
       "target": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-4",
       "weight": 0.9544,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-3",
+      "target": "post-12-us-trip-en-sec-6",
+      "weight": 0.9543,
       "linkType": "semantic"
     },
     {
@@ -31666,6 +32984,12 @@
       "source": "post-2025_12_14_affinity-zh-TW-sec-0-1",
       "target": "post-2025_12_14_affinity-zh-TW-sec-0-6",
       "weight": 0.9468,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-0",
+      "weight": 0.9467,
       "linkType": "semantic"
     },
     {
@@ -34033,6 +35357,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-3",
+      "target": "post-12-us-trip-en-sec-10",
+      "weight": 0.9257,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-1-3",
       "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-2",
       "weight": 0.9257,
@@ -34891,6 +36221,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-6",
+      "target": "post-12-us-trip-en-sec-10",
+      "weight": 0.9162,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_03_powerplay-en-sec-3",
       "target": "project-2025_01_03_powerplay-en-sec-5",
       "weight": 0.9161,
@@ -35263,6 +36599,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-5",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 0.9112,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_05_aaai_video-zh-TW-file",
       "target": "project-2025_01_05_aaai_video-zh-TW-sec-2",
       "weight": 0.9112,
@@ -35536,6 +36878,12 @@
       "source": "project-2025_01_05_aaai_video-en-sec-2",
       "target": "project-2025_01_05_aaai_video-en-sec-4",
       "weight": 0.9067,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-4",
+      "target": "post-12-us-trip-zh-TW-sec-5",
+      "weight": 0.9066,
       "linkType": "semantic"
     },
     {
@@ -36247,12 +37595,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-research-zh-TW-0",
-      "target": "locale-cv-research-en-0",
-      "weight": 0.8974,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_01_03_powerplay-en-sec-1",
       "target": "project-2025_01_03_powerplay-en-sec-1-2",
       "weight": 0.8973,
@@ -36283,6 +37625,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-4",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 0.897,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-5",
+      "weight": 0.8969,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-zh-TW-sec-3",
       "target": "post-11-portfolio-zh-TW-sec-4",
       "weight": 0.8966,
@@ -36292,6 +37646,12 @@
       "source": "project-2025_03_08_sitcon_keynote-zh-TW-sec-0",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-2",
       "weight": 0.8964,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-7",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 0.8962,
       "linkType": "semantic"
     },
     {
@@ -36388,6 +37748,12 @@
       "source": "project-2025_01_03_powerplay-zh-TW-sec-0",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0",
       "weight": 0.8943,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-research-zh-TW-0",
+      "target": "locale-cv-research-en-0",
+      "weight": 0.8942,
       "linkType": "semantic"
     },
     {
@@ -36496,6 +37862,12 @@
       "source": "project-2025_05_18_patch_dataset-en-sec-0-3-3",
       "target": "project-2025_05_18_patch_dataset-en-sec-0-5-1",
       "weight": 0.8925,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-4",
+      "weight": 0.892,
       "linkType": "semantic"
     },
     {
@@ -36637,9 +38009,21 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-1",
+      "weight": 0.8893,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-1",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "weight": 0.8893,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 0.8892,
       "linkType": "semantic"
     },
     {
@@ -36825,6 +38209,12 @@
     {
       "source": "project-2025_08_04_debate-en-sec-1",
       "target": "project-2025_08_04_debate-en-sec-2-1",
+      "weight": 0.8854,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-4",
+      "target": "post-12-us-trip-zh-TW-sec-6",
       "weight": 0.8854,
       "linkType": "semantic"
     },
@@ -37051,6 +38441,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-6",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 0.8814,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-1",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2",
       "weight": 0.8814,
@@ -37089,6 +38485,12 @@
     {
       "source": "project-2025_01_03_powerplay-zh-TW-sec-2-1",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-4",
+      "weight": 0.8804,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-0",
+      "target": "post-12-us-trip-zh-TW-sec-4",
       "weight": 0.8804,
       "linkType": "semantic"
     },
@@ -37297,6 +38699,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-4",
+      "weight": 0.8761,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-0",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-4",
       "weight": 0.8761,
@@ -37323,6 +38731,18 @@
     {
       "source": "project-2025_01_03_powerplay-zh-TW-sec-2-1",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-3",
+      "weight": 0.875,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-0",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 0.875,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-0",
+      "target": "post-12-us-trip-zh-TW-sec-2",
       "weight": 0.875,
       "linkType": "semantic"
     },
@@ -37417,6 +38837,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-0",
+      "target": "post-12-us-trip-zh-TW-sec-5",
+      "weight": 0.8735,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_03_powerplay-zh-TW-sec-2-1",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3",
       "weight": 0.8731,
@@ -37489,8 +38915,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-3",
+      "target": "post-12-us-trip-zh-TW-sec-5",
+      "weight": 0.8703,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_03_powerplay-zh-TW-sec-2-0",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3",
+      "weight": 0.8703,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-2",
       "weight": 0.8703,
       "linkType": "semantic"
     },
@@ -37597,6 +39035,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 0.8674,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_08_04_debate-zh-TW-sec-1",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-1",
       "weight": 0.8673,
@@ -37648,6 +39092,12 @@
       "source": "post-9_m11d-zh-TW-sec-2",
       "target": "post-9_m11d-zh-TW-sec-3",
       "weight": 0.8661,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-0",
+      "target": "post-12-us-trip-zh-TW-sec-7",
+      "weight": 0.8657,
       "linkType": "semantic"
     },
     {
@@ -37711,6 +39161,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-8",
+      "target": "post-12-us-trip-zh-TW-sec-9",
+      "weight": 0.8633,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-zh-TW-sec-1",
       "target": "post-11-portfolio-zh-TW-sec-7",
       "weight": 0.8632,
@@ -37738,6 +39194,12 @@
       "source": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "target": "post-2025_12_19_xpro1-zh-TW-sec-0-4",
       "weight": 0.8627,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-5",
+      "weight": 0.8626,
       "linkType": "semantic"
     },
     {
@@ -37813,6 +39275,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-5",
+      "target": "post-12-us-trip-zh-TW-sec-6",
+      "weight": 0.8597,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-zh-TW-sec-0",
       "target": "post-11-portfolio-zh-TW-sec-8",
       "weight": 0.8596,
@@ -37867,6 +39335,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-7",
+      "target": "post-12-us-trip-zh-TW-sec-10",
+      "weight": 0.8581,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-zh-TW-sec-4",
       "target": "post-11-portfolio-zh-TW-sec-6",
       "weight": 0.8581,
@@ -37887,6 +39361,12 @@
     {
       "source": "project-2025_03_08_sitcon_keynote-en-sec-0",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-2",
+      "weight": 0.8578,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-4",
+      "target": "post-12-us-trip-zh-TW-sec-7",
       "weight": 0.8578,
       "linkType": "semantic"
     },
@@ -37942,6 +39422,12 @@
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-1",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3",
       "weight": 0.857,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-4",
+      "target": "post-12-us-trip-zh-TW-sec-8",
+      "weight": 0.8568,
       "linkType": "semantic"
     },
     {
@@ -38017,6 +39503,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-1",
+      "target": "post-12-us-trip-zh-TW-sec-5",
+      "weight": 0.8541,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_03_powerplay-en-sec-2-1",
       "target": "project-2025_01_03_powerplay-en-sec-2-3-2",
       "weight": 0.8538,
@@ -38059,6 +39551,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-6",
+      "target": "post-12-us-trip-zh-TW-sec-7",
+      "weight": 0.8522,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "weight": 0.852,
@@ -38089,14 +39587,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
       "weight": 0.8513,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-en-sec-0",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
       "weight": 0.8513,
       "linkType": "semantic"
     },
@@ -38116,6 +39614,12 @@
       "source": "project-2025_03_08_sitcon_keynote-en-sec-1",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-2",
       "weight": 0.8511,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-3",
+      "weight": 0.851,
       "linkType": "semantic"
     },
     {
@@ -38146,6 +39650,12 @@
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-2",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-5",
       "weight": 0.8494,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-6",
+      "weight": 0.8484,
       "linkType": "semantic"
     },
     {
@@ -38203,6 +39713,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-7",
+      "weight": 0.8462,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-2",
+      "target": "post-12-us-trip-zh-TW-sec-7",
+      "weight": 0.8459,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-sitcon-2026-en-sec-3",
       "target": "project-sitcon-2026-zh-TW-sec-3",
       "weight": 0.8456,
@@ -38218,6 +39740,12 @@
       "source": "project-sitcon-2026-zh-TW-sec-2",
       "target": "project-sitcon-2026-zh-TW-sec-3",
       "weight": 0.8451,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-0",
+      "target": "post-12-us-trip-zh-TW-sec-6",
+      "weight": 0.8449,
       "linkType": "semantic"
     },
     {
@@ -38251,8 +39779,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-0",
+      "target": "post-12-us-trip-zh-TW-sec-10",
+      "weight": 0.8438,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_09_vrc_2813b_nova-en-sec-1-0",
       "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-3",
+      "weight": 0.8424,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-1",
+      "target": "post-12-us-trip-zh-TW-sec-3",
       "weight": 0.8424,
       "linkType": "semantic"
     },
@@ -38323,6 +39863,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-3",
+      "target": "post-12-us-trip-zh-TW-sec-8",
+      "weight": 0.8398,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_09_23_chingshin_rag-en-file",
       "target": "project-2024_09_23_chingshin_rag-en-sec-1-3",
       "weight": 0.8395,
@@ -38368,6 +39914,12 @@
       "source": "project-2025_03_08_sitcon_keynote-en-sec-3",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-3",
       "weight": 0.8375,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-file",
+      "target": "post-12-us-trip-zh-TW-sec-6",
+      "weight": 0.8372,
       "linkType": "semantic"
     },
     {
@@ -38446,6 +39998,12 @@
       "source": "project-2025_03_08_sitcon_keynote-en-sec-3",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-0",
       "weight": 0.8348,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-3",
+      "target": "post-12-us-trip-zh-TW-sec-6",
+      "weight": 0.8346,
       "linkType": "semantic"
     },
     {
@@ -38530,6 +40088,12 @@
       "source": "project-2025_01_05_aaai_video-en-sec-1",
       "target": "project-2025_01_05_aaai_video-zh-TW-sec-1",
       "weight": 0.8298,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-3",
+      "target": "post-12-us-trip-zh-TW-sec-7",
+      "weight": 0.8295,
       "linkType": "semantic"
     },
     {
@@ -38626,6 +40190,12 @@
       "source": "post-2025_12_12_blog_launch-en-sec-0-1",
       "target": "post-2025_12_12_blog_launch-en-sec-1",
       "weight": 0.8248,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-summary-zh-TW-0",
+      "target": "locale-cv-research-zh-TW-0",
+      "weight": 0.8244,
       "linkType": "semantic"
     },
     {
@@ -38803,6 +40373,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-1",
+      "target": "post-12-us-trip-zh-TW-sec-8",
+      "weight": 0.8112,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-sitcon-2026-zh-TW-sec-1-3",
       "target": "project-sitcon-2026-zh-TW-sec-2",
       "weight": 0.8096,
@@ -38821,15 +40397,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-en-sec-0",
-      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
-      "weight": 0.8078,
+      "source": "post-12-us-trip-zh-TW-sec-3",
+      "target": "post-12-us-trip-zh-TW-sec-10",
+      "weight": 0.8083,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
-      "weight": 0.8068,
+      "source": "project-2025_04_12_portfolio-en-sec-0",
+      "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
+      "weight": 0.8078,
       "linkType": "semantic"
     },
     {
@@ -38847,6 +40423,12 @@
     {
       "source": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "weight": 0.8068,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
       "weight": 0.8068,
       "linkType": "semantic"
     },
@@ -38875,15 +40457,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2026_01_10_plushies-zh-TW-file",
-      "target": "post-2026_01_10_plushies-zh-TW-sec-0-2",
-      "weight": 0.8024,
+      "source": "locale-cv-research-zh-TW-0",
+      "target": "locale-updates-zh-TW-0",
+      "weight": 0.8031,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
-      "weight": 0.8023,
+      "source": "post-2026_01_10_plushies-zh-TW-file",
+      "target": "post-2026_01_10_plushies-zh-TW-sec-0-2",
+      "weight": 0.8024,
       "linkType": "semantic"
     },
     {
@@ -38901,6 +40483,12 @@
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "weight": 0.8023,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
       "weight": 0.8023,
       "linkType": "semantic"
     },
@@ -38950,12 +40538,6 @@
       "source": "project-2025_01_03_powerplay-zh-TW-sec-2-2",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-2",
       "weight": 0.801,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-cv-summary-zh-TW-0",
-      "target": "locale-cv-summary-en-0",
-      "weight": 0.8009,
       "linkType": "semantic"
     },
     {
@@ -39037,12 +40619,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-research-zh-TW-0",
-      "target": "locale-updates-zh-TW-0",
-      "weight": 0.7931,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_06_against_giants-en-file",
       "target": "gallery-2023_12_30_against_the_unknown-en-file",
       "weight": 0.7929,
@@ -39067,8 +40643,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-zh-TW-sec-1",
+      "target": "post-12-us-trip-zh-TW-sec-10",
+      "weight": 0.7911,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_12_blog_launch-zh-TW-file",
       "target": "post-2025_12_12_blog_launch-zh-TW-sec-1",
+      "weight": 0.7897,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-8",
+      "target": "post-12-us-trip-zh-TW-sec-10",
       "weight": 0.7897,
       "linkType": "semantic"
     },
@@ -39145,6 +40733,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "locale-about-zh-TW-0",
+      "target": "locale-cv-research-zh-TW-0",
+      "weight": 0.7838,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-0",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2",
       "weight": 0.7829,
@@ -39157,26 +40751,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-summary-en-0",
-      "target": "locale-cv-research-en-0",
-      "weight": 0.782,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-about-zh-TW-0",
-      "target": "locale-cv-research-zh-TW-0",
-      "weight": 0.7816,
+      "source": "project-2025_10_12_fortress-en-sec-0-3-3",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-3",
+      "weight": 0.7802,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_04_12_portfolio-en-file",
       "target": "project-2025_04_12_portfolio-zh-TW-file",
-      "weight": 0.7802,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_10_12_fortress-en-sec-0-3-3",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-3",
       "weight": 0.7802,
       "linkType": "semantic"
     },
@@ -39235,12 +40817,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-summary-zh-TW-0",
-      "target": "locale-cv-research-zh-TW-0",
-      "weight": 0.7769,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_12_blog_launch-en-sec-1",
       "target": "post-2025_12_12_blog_launch-zh-TW-sec-1",
       "weight": 0.776,
@@ -39265,14 +40841,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "source": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
       "weight": 0.7757,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-sec-0",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
+      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
       "weight": 0.7757,
       "linkType": "semantic"
     },
@@ -39283,8 +40859,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
-      "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
+      "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
       "weight": 0.7755,
       "linkType": "semantic"
     },
@@ -39313,12 +40889,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
-      "weight": 0.7717,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "weight": 0.7717,
@@ -39333,6 +40903,12 @@
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "weight": 0.7717,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
       "weight": 0.7717,
       "linkType": "semantic"
     },
@@ -39393,6 +40969,12 @@
     {
       "source": "gallery-2026_02_08_italy_city-en-sec-0",
       "target": "gallery-2026_02_08_italy_town-en-sec-0",
+      "weight": 0.7674,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-research-zh-TW-0",
+      "target": "locale-cv-leadership-zh-TW-0",
       "weight": 0.7674,
       "linkType": "semantic"
     },
@@ -39506,12 +41088,6 @@
     },
     {
       "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "weight": 0.7629,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
       "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.7629,
       "linkType": "semantic"
@@ -39519,6 +41095,12 @@
     {
       "source": "gallery-2026_02_08_italy_town-zh-TW-file",
       "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "weight": 0.7629,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
       "weight": 0.7629,
       "linkType": "semantic"
     },
@@ -39553,15 +41135,21 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_04_proj_zephyr-en-sec-1-1",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
-      "weight": 0.7608,
+      "source": "locale-about-en-0",
+      "target": "locale-cv-summary-en-0",
+      "weight": 0.7612,
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-research-zh-TW-0",
-      "target": "locale-cv-leadership-zh-TW-0",
-      "weight": 0.7602,
+      "source": "locale-cv-summary-en-0",
+      "target": "locale-cv-research-en-0",
+      "weight": 0.761,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-en-sec-1-1",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
+      "weight": 0.7608,
       "linkType": "semantic"
     },
     {
@@ -39601,6 +41189,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "locale-cv-research-en-0",
+      "target": "locale-cv-publications-en-0",
+      "weight": 0.7585,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_08_04_debate-en-sec-2-1",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-3",
       "weight": 0.7582,
@@ -39616,12 +41210,6 @@
       "source": "project-2025_10_12_fortress-en-sec-0-4-2",
       "target": "project-2025_10_12_fortress-zh-TW-sec-0-6",
       "weight": 0.7569,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-cv-research-en-0",
-      "target": "locale-cv-publications-en-0",
-      "weight": 0.756,
       "linkType": "semantic"
     },
     {
@@ -39645,19 +41233,25 @@
     {
       "source": "locale-cv-research-en-0",
       "target": "locale-cv-leadership-en-0",
-      "weight": 0.7542,
+      "weight": 0.7549,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-research-zh-TW-0",
+      "target": "locale-cv-skills-zh-TW-0",
+      "weight": 0.7541,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-publications-zh-TW-0",
+      "target": "locale-cv-research-en-0",
+      "weight": 0.7539,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_01_03_powerplay-en-sec-1-1",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-1-2",
       "weight": 0.7527,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-cv-publications-zh-TW-0",
-      "target": "locale-cv-research-en-0",
-      "weight": 0.7525,
       "linkType": "semantic"
     },
     {
@@ -39697,15 +41291,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1",
-      "weight": 0.7498,
+      "source": "locale-cv-summary-en-0",
+      "target": "locale-cv-publications-en-0",
+      "weight": 0.7512,
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-skills-zh-TW-0",
-      "target": "locale-cv-research-en-0",
-      "weight": 0.7497,
+      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1",
+      "weight": 0.7498,
       "linkType": "semantic"
     },
     {
@@ -39727,6 +41321,24 @@
       "linkType": "semantic"
     },
     {
+      "source": "locale-cv-research-zh-TW-0",
+      "target": "locale-cv-projects-zh-TW-0",
+      "weight": 0.7486,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-skills-zh-TW-0",
+      "target": "locale-cv-research-en-0",
+      "weight": 0.7485,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
+      "weight": 0.7484,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
       "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
       "weight": 0.7484,
@@ -39735,12 +41347,6 @@
     {
       "source": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
-      "weight": 0.7484,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
       "weight": 0.7484,
       "linkType": "semantic"
     },
@@ -39763,20 +41369,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-skills-zh-TW-0",
-      "target": "locale-cv-summary-en-0",
-      "weight": 0.7463,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-2",
       "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-2",
-      "weight": 0.7454,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-cv-research-zh-TW-0",
-      "target": "locale-cv-skills-zh-TW-0",
       "weight": 0.7454,
       "linkType": "semantic"
     },
@@ -39793,6 +41387,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "locale-updates-zh-TW-0",
+      "target": "locale-cv-research-en-0",
+      "weight": 0.7443,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_08_10_intersection-en-file",
       "target": "gallery-2023_10_05_solitary_glow-en-file",
       "weight": 0.7441,
@@ -39805,14 +41405,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
       "weight": 0.7438,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
       "weight": 0.7438,
       "linkType": "semantic"
     },
@@ -39829,18 +41429,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-research-zh-TW-0",
-      "target": "locale-cv-projects-zh-TW-0",
-      "weight": 0.7433,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-updates-zh-TW-0",
-      "target": "locale-cv-research-en-0",
-      "weight": 0.7424,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_01_03_powerplay-en-sec-2-3-1",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3",
       "weight": 0.7424,
@@ -39853,27 +41441,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
-      "weight": 0.7417,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-en-file",
-      "target": "gallery-2026-us-trip-zh-TW-file",
-      "weight": 0.7417,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2024_09_23_chingshin_rag-zh-TW-file",
       "target": "project-2024_09_23_chingshin_rag-en-sec-1-3",
       "weight": 0.7408,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-cv-summary-en-0",
-      "target": "locale-cv-skills-en-0",
-      "weight": 0.7406,
       "linkType": "semantic"
     },
     {
@@ -39961,18 +41531,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.7363,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-en-sec-0",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
-      "weight": 0.7363,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2024_09_23_chingshin_rag-zh-TW-file",
       "target": "project-2024_09_23_chingshin_rag-en-sec-1",
       "weight": 0.736,
@@ -39982,6 +41540,12 @@
       "source": "gallery-2023_10_06_guided_by_the_tides-en-file",
       "target": "gallery-2023_10_06_against_giants-en-sec-0",
       "weight": 0.7355,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-research-zh-TW-0",
+      "target": "locale-cv-leadership-en-0",
+      "weight": 0.7348,
       "linkType": "semantic"
     },
     {
@@ -40069,14 +41633,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
-      "target": "locale-cv-research-zh-TW-0",
-      "weight": 0.7322,
+      "source": "locale-about-en-0",
+      "target": "locale-cv-research-en-0",
+      "weight": 0.7318,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.7314,
       "linkType": "semantic"
     },
@@ -40084,12 +41648,6 @@
       "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
       "weight": 0.7314,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-cv-research-en-0",
-      "target": "locale-cv-skills-en-0",
-      "weight": 0.7309,
       "linkType": "semantic"
     },
     {
@@ -40111,14 +41669,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-en-sec-0",
-      "target": "gallery-2023_12_30_sky_above-en-sec-0",
+      "source": "gallery-2023_12_30_sky_above-en-file",
+      "target": "gallery-2023_10_05_solitary_glow-en-sec-0",
       "weight": 0.7286,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_12_30_sky_above-en-file",
-      "target": "gallery-2023_10_05_solitary_glow-en-sec-0",
+      "source": "gallery-2023_10_05_solitary_glow-en-sec-0",
+      "target": "gallery-2023_12_30_sky_above-en-sec-0",
       "weight": 0.7286,
       "linkType": "semantic"
     },
@@ -40179,12 +41737,6 @@
     {
       "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
       "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
-      "weight": 0.7264,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
-      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.7264,
       "linkType": "semantic"
     },
@@ -40279,14 +41831,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "weight": 0.7228,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
       "weight": 0.7228,
       "linkType": "semantic"
     },
@@ -40327,14 +41879,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
+      "source": "gallery-2023_08_10_intersection-zh-TW-file",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "weight": 0.7203,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
       "weight": 0.7203,
       "linkType": "semantic"
     },
@@ -40369,14 +41921,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_07_07_splash_of_red-en-sec-0",
-      "target": "gallery-2024_02_09_mortal_sparks-en-sec-0",
+      "source": "gallery-2024_02_09_mortal_sparks-en-file",
+      "target": "gallery-2023_07_07_splash_of_red-en-sec-0",
       "weight": 0.7188,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_09_mortal_sparks-en-file",
-      "target": "gallery-2023_07_07_splash_of_red-en-sec-0",
+      "source": "gallery-2023_07_07_splash_of_red-en-sec-0",
+      "target": "gallery-2024_02_09_mortal_sparks-en-sec-0",
       "weight": 0.7188,
       "linkType": "semantic"
     },
@@ -40465,9 +42017,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-summary-zh-TW-0",
-      "target": "locale-cv-skills-zh-TW-0",
-      "weight": 0.7155,
+      "source": "locale-cv-publications-zh-TW-0",
+      "target": "locale-cv-summary-en-0",
+      "weight": 0.7153,
       "linkType": "semantic"
     },
     {
@@ -40480,6 +42032,12 @@
       "source": "gallery-2023_10_06_against_giants-en-file",
       "target": "gallery-2023_10_06_guided_by_the_tides-en-file",
       "weight": 0.7143,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-summary-zh-TW-0",
+      "target": "locale-updates-zh-TW-0",
+      "weight": 0.7142,
       "linkType": "semantic"
     },
     {
@@ -40498,6 +42056,18 @@
       "source": "locale-cv-education-zh-TW-0",
       "target": "locale-updates-zh-TW-0",
       "weight": 0.7135,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-file",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "weight": 0.7117,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-file",
+      "target": "gallery-2026-us-trip-zh-TW-file",
+      "weight": 0.7117,
       "linkType": "semantic"
     },
     {
@@ -40549,12 +42119,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-skills-zh-TW-0",
-      "target": "locale-updates-zh-TW-0",
-      "weight": 0.7108,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_07_07_splash_of_red-en-file",
       "target": "gallery-2024_02_09_mortal_sparks-en-file",
       "weight": 0.7106,
@@ -40585,8 +42149,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "locale-cv-summary-zh-TW-0",
+      "target": "locale-cv-leadership-zh-TW-0",
+      "weight": 0.7098,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_10_12_fortress-zh-TW-sec-0-6",
       "target": "locale-about-zh-TW-0",
+      "weight": 0.7091,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_guided_by_the_tides-en-file",
+      "target": "post-12-us-trip-en-sec-10",
       "weight": 0.7091,
       "linkType": "semantic"
     },
@@ -40597,9 +42173,39 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-10",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.7084,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-9_m11d-en-sec-10",
       "target": "post-9_m11d-zh-TW-sec-9",
       "weight": 0.7078,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "weight": 0.7077,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "weight": 0.7077,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "weight": 0.7077,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-sec-0",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "weight": 0.7077,
       "linkType": "semantic"
     },
     {
@@ -40609,9 +42215,27 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-10",
+      "target": "gallery-2023_10_06_guided_by_the_tides-en-sec-0",
+      "weight": 0.7068,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_08_10_intersection-zh-TW-file",
+      "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
+      "weight": 0.7066,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-zh-TW-sec-2",
       "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
       "weight": 0.7065,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-about-zh-TW-0",
+      "target": "locale-cv-summary-zh-TW-0",
+      "weight": 0.7063,
       "linkType": "semantic"
     },
     {
@@ -40627,12 +42251,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-summary-zh-TW-0",
-      "target": "locale-cv-leadership-zh-TW-0",
-      "weight": 0.7059,
-      "linkType": "semantic"
-    },
-    {
       "source": "locale-cv-leadership-en-0",
       "target": "locale-cv-skills-en-0",
       "weight": 0.7052,
@@ -40641,6 +42259,12 @@
     {
       "source": "project-2025_03_18_boundless_voices-zh-TW-file",
       "target": "project-2025_03_18_boundless_voices-en-sec-4",
+      "weight": 0.7051,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_against_giants-en-sec-0",
+      "target": "gallery-2026-us-trip-en-sec-0",
       "weight": 0.7051,
       "linkType": "semantic"
     },
@@ -40669,6 +42293,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-10",
+      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "weight": 0.7028,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-11-portfolio-en-sec-8",
+      "target": "post-12-us-trip-en-sec-10",
+      "weight": 0.7026,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_07_07_splash_of_red-en-file",
       "target": "gallery-2024_04_06_city_of_tears-en-file",
       "weight": 0.7023,
@@ -40693,13 +42329,19 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_12_30_sky_above-en-file",
+      "source": "post-12-us-trip-en-sec-10",
+      "target": "post-12-us-trip-zh-TW-sec-10",
+      "weight": 0.7018,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_12_30_sky_above-en-sec-0",
       "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
       "weight": 0.7016,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_12_30_sky_above-en-sec-0",
+      "source": "gallery-2023_12_30_sky_above-en-file",
       "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
       "weight": 0.7016,
       "linkType": "semantic"
@@ -40741,6 +42383,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2026-us-trip-en-sec-0",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "weight": 0.7012,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.7012,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_12_30_against_the_unknown-zh-TW-file",
       "target": "gallery-2023_12_30_against_the_unknown-en-sec-0",
       "weight": 0.7006,
@@ -40753,15 +42407,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-about-en-0",
-      "target": "locale-cv-summary-en-0",
-      "weight": 0.7,
-      "linkType": "semantic"
-    },
-    {
       "source": "locale-cv-education-zh-TW-0",
       "target": "locale-cv-leadership-en-0",
       "weight": 0.6999,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-3",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.6998,
       "linkType": "semantic"
     },
     {
@@ -40786,12 +42440,6 @@
       "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
       "target": "gallery-2026_02_08_italy_city-en-file",
       "weight": 0.6981,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-cv-summary-en-0",
-      "target": "locale-cv-publications-en-0",
-      "weight": 0.6976,
       "linkType": "semantic"
     },
     {
@@ -40825,14 +42473,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_guided_by_the_tides-en-sec-0",
-      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
-      "weight": 0.6962,
+      "source": "post-12-us-trip-en-sec-3",
+      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "weight": 0.6963,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
-      "target": "gallery-2023_10_06_guided_by_the_tides-en-sec-0",
+      "source": "gallery-2023_10_06_guided_by_the_tides-en-sec-0",
+      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.6962,
       "linkType": "semantic"
     },
@@ -40849,9 +42497,21 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2026-us-trip-en-sec-0",
+      "target": "gallery-2026_02_08_italy_town-en-sec-0",
+      "weight": 0.6954,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_04_proj_zephyr-en-sec-1-2",
       "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-0",
       "weight": 0.6954,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-summary-en-0",
+      "target": "locale-updates-en-0",
+      "weight": 0.6951,
       "linkType": "semantic"
     },
     {
@@ -40885,27 +42545,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_guided_by_the_tides-en-file",
-      "target": "gallery-2026_02_08_italy_town-en-sec-0",
-      "weight": 0.6918,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_against_giants-en-sec-0",
-      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
-      "weight": 0.6917,
+      "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
+      "target": "locale-about-zh-TW-0",
+      "weight": 0.692,
       "linkType": "semantic"
     },
     {
       "source": "post-2025_12_12_blog_launch-en-sec-0-1",
       "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-1",
       "weight": 0.6915,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_against_giants-en-sec-0",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6904,
       "linkType": "semantic"
     },
     {
@@ -40933,19 +42581,7 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
-      "weight": 0.6898,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
-      "weight": 0.6898,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
       "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
       "weight": 0.6898,
       "linkType": "semantic"
@@ -40963,14 +42599,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-about-en-0",
-      "target": "locale-cv-leadership-en-0",
-      "weight": 0.6894,
+      "source": "gallery-2026-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-3",
+      "weight": 0.689,
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-9",
-      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "source": "locale-cv-summary-zh-TW-0",
+      "target": "locale-cv-summary-en-0",
       "weight": 0.6888,
       "linkType": "semantic"
     },
@@ -40981,15 +42617,33 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_12_blog_launch-en-sec-0-0",
-      "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-0",
+      "source": "post-12-us-trip-en-sec-6",
+      "target": "gallery-2026-us-trip-en-sec-0",
+      "weight": 0.6884,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-3",
+      "target": "gallery-2023_10_06_against_giants-en-sec-0",
+      "weight": 0.6884,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-file",
+      "target": "gallery-2026_02_08_italy_town-en-sec-0",
+      "weight": 0.6883,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-projects-zh-TW-0",
+      "target": "locale-cv-skills-zh-TW-0",
       "weight": 0.6878,
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-5",
-      "target": "locale-about-zh-TW-0",
-      "weight": 0.6877,
+      "source": "post-2025_12_12_blog_launch-en-sec-0-0",
+      "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-0",
+      "weight": 0.6878,
       "linkType": "semantic"
     },
     {
@@ -41005,21 +42659,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1",
-      "target": "locale-about-zh-TW-0",
-      "weight": 0.6868,
+      "source": "gallery-2026-us-trip-en-file",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
+      "weight": 0.6861,
       "linkType": "semantic"
     },
     {
       "source": "post-2025_12_22_aftersun_paris_texas-en-sec-1",
       "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-4",
       "weight": 0.6861,
-      "linkType": "semantic"
-    },
-    {
-      "source": "locale-updates-en-0",
-      "target": "locale-uses-en-0",
-      "weight": 0.6846,
       "linkType": "semantic"
     },
     {
@@ -41071,30 +42719,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
-      "weight": 0.6791,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2026-us-trip-zh-TW-file",
-      "weight": 0.6791,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
-      "weight": 0.6791,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
-      "weight": 0.6791,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_13_sisyphus-en-sec-1",
       "target": "post-2025_12_13_sisyphus-zh-TW-sec-0-3",
       "weight": 0.679,
@@ -41119,21 +42743,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
-      "weight": 0.6774,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
-      "weight": 0.6774,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-11-portfolio-en-sec-8",
       "target": "post-11-portfolio-zh-TW-sec-2",
       "weight": 0.6774,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_mountain-en-file",
+      "target": "post-9_m11d-en-sec-9",
+      "weight": 0.6771,
       "linkType": "semantic"
     },
     {
@@ -41143,9 +42761,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
-      "target": "gallery-2026_02_08_italy_town-en-sec-0",
-      "weight": 0.6745,
+      "source": "locale-cv-skills-zh-TW-0",
+      "target": "locale-cv-projects-en-0",
+      "weight": 0.6741,
       "linkType": "semantic"
     },
     {
@@ -41173,6 +42791,24 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "weight": 0.6727,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "weight": 0.6727,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
+      "target": "gallery-2026-us-trip-en-file",
+      "weight": 0.6727,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6727,
@@ -41185,15 +42821,21 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_12_blog_launch-en-sec-0",
-      "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-0",
-      "weight": 0.6721,
+      "source": "gallery-2026-us-trip-en-file",
+      "target": "post-12-us-trip-en-sec-6",
+      "weight": 0.6724,
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-publications-zh-TW-0",
-      "target": "locale-cv-summary-en-0",
-      "weight": 0.6716,
+      "source": "locale-cv-summary-zh-TW-0",
+      "target": "locale-cv-skills-zh-TW-0",
+      "weight": 0.6724,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_12_blog_launch-en-sec-0",
+      "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-0",
+      "weight": 0.6721,
       "linkType": "semantic"
     },
     {
@@ -41239,6 +42881,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1",
+      "target": "locale-cv-summary-zh-TW-0",
+      "weight": 0.6682,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-9_m11d-en-sec-10",
       "target": "post-9_m11d-zh-TW-sec-3",
       "weight": 0.6681,
@@ -41258,13 +42906,13 @@
     },
     {
       "source": "gallery-2026_02_08_italy_town-en-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "weight": 0.6677,
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "weight": 0.6678,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2026_02_08_italy_town-en-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
       "weight": 0.6677,
       "linkType": "semantic"
     },
@@ -41287,15 +42935,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_11_18_dusk_impressions-en-file",
-      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
-      "weight": 0.6661,
+      "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-2",
+      "target": "locale-cv-summary-en-0",
+      "weight": 0.6664,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_04_12_portfolio-en-sec-0",
-      "target": "locale-cv-projects-zh-TW-0",
-      "weight": 0.6647,
+      "source": "gallery-2023_11_18_dusk_impressions-en-file",
+      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "weight": 0.6661,
       "linkType": "semantic"
     },
     {
@@ -41323,6 +42971,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "weight": 0.6611,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "weight": 0.6611,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
       "weight": 0.6609,
@@ -41332,6 +42992,36 @@
       "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
       "weight": 0.6609,
+      "linkType": "semantic"
+    },
+    {
+      "source": "locale-cv-summary-zh-TW-0",
+      "target": "locale-cv-education-zh-TW-0",
+      "weight": 0.6601,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "weight": 0.6598,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-sec-0",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "weight": 0.6598,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "weight": 0.6598,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "weight": 0.6598,
       "linkType": "semantic"
     },
     {
@@ -41353,9 +43043,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-summary-zh-TW-0",
-      "target": "locale-cv-skills-en-0",
-      "weight": 0.6565,
+      "source": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "weight": 0.6552,
       "linkType": "semantic"
     },
     {
@@ -41437,30 +43127,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
-      "weight": 0.6508,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "weight": 0.6508,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
-      "weight": 0.6508,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-sec-0",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
-      "weight": 0.6508,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_06_against_giants-en-file",
       "target": "post-11-portfolio-en-sec-8",
       "weight": 0.6507,
@@ -41473,12 +43139,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "locale-cv-publications-en-0",
-      "target": "locale-cv-projects-en-0",
-      "weight": 0.6501,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "target": "gallery-2023_06_30_city_stroll-en-sec-0",
       "weight": 0.6501,
@@ -41488,12 +43148,6 @@
       "source": "post-11-portfolio-en-sec-8",
       "target": "post-2025_12_14_affinity-en-sec-1",
       "weight": 0.65,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "weight": 0.6496,
       "linkType": "semantic"
     },
     {
@@ -41521,9 +43175,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-en-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6479,
+      "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-5",
+      "target": "locale-cv-summary-en-0",
+      "weight": 0.6487,
       "linkType": "semantic"
     },
     {
@@ -41563,6 +43217,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_06_against_giants-en-file",
+      "target": "gallery-2026_02_08_italy_mountain-en-file",
+      "weight": 0.6439,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
       "target": "gallery-2026_02_08_italy_town-en-file",
       "weight": 0.6428,
@@ -41575,20 +43235,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-en-file",
-      "target": "gallery-2026_02_08_italy_mountain-en-file",
-      "weight": 0.6419,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-file",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2",
-      "weight": 0.6415,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_12_blog_launch-en-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
       "weight": 0.6415,
       "linkType": "semantic"
     },
@@ -41617,12 +43265,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-11-portfolio-en-sec-8",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6377,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6364,
@@ -41635,21 +43277,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
-      "weight": 0.6364,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-11-portfolio-en-sec-8",
       "target": "post-2025_12_12_blog_launch-en-sec-1",
       "weight": 0.6361,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_mountain-en-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.6358,
       "linkType": "semantic"
     },
     {
@@ -41707,6 +43337,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2025_12_12_blog_launch-en-file",
+      "target": "post-2025_12_13_sisyphus-en-sec-0",
+      "weight": 0.6326,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-5",
+      "target": "project-2025_05_18_patch_dataset-zh-TW-sec-0-5-1",
+      "weight": 0.6316,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
       "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.6311,
@@ -41715,6 +43357,12 @@
     {
       "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
       "target": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
+      "weight": 0.6311,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
+      "target": "gallery-2023_10_12_lessons_from_the_light-en-file",
       "weight": 0.6311,
       "linkType": "semantic"
     },
@@ -41749,18 +43397,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "weight": 0.6269,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_13_sisyphus-en-sec-0",
-      "target": "post-2025_12_13_sisyphus-zh-TW-sec-0-1",
-      "weight": 0.6232,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_19_xpro1-zh-TW-sec-1",
       "target": "post-9_m11d-zh-TW-sec-4",
       "weight": 0.6222,
@@ -41780,19 +43416,19 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-04-17T12:47:48Z",
-    "nodeCount": 1202,
-    "edgeCount": 3609,
+    "generatedAt": "2026-04-25T10:34:58Z",
+    "nodeCount": 1247,
+    "edgeCount": 3750,
     "threshold": 0.62,
     "maxEdgesPerNode": 8,
     "model": "BAAI/bge-large-zh-v1.5",
     "nodeTypeCounts": {
       "hub": 20,
-      "file": 86,
-      "section": 533,
-      "image": 527,
+      "file": 88,
+      "section": 555,
+      "image": 547,
       "video": 14,
-      "tag": 22
+      "tag": 23
     }
   }
 }
