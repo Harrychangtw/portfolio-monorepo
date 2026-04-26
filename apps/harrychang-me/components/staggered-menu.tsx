@@ -7,6 +7,7 @@ import React, {
   useState,
   useEffect,
 } from "react";
+import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
@@ -76,6 +77,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onHeaderBackgroundToggle,
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const openRef = useRef(false);
   const { t } = useLanguage();
   const pathname = usePathname();
@@ -84,6 +86,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   useEffect(() => {
     setOpen(false);
     openRef.current = false;
+    setMounted(true);
 
     // Ensure panel is off-screen initially
     if (panelRef.current) {
@@ -91,6 +94,19 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       gsap.set(panelRef.current, { xPercent: offscreen });
     }
   }, []); // Run only on mount
+
+  // Release any body scroll-lock if the component unmounts while the menu
+  // is open (e.g. user navigates across a route-group boundary like
+  // (main) ↔ (graph), which unmounts the Header and StaggeredMenu instance
+  // without going through `toggleMenu`'s close path).
+  useEffect(() => {
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
@@ -253,7 +269,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   }, [position]);
 
   const playOpen = useCallback(() => {
-    if (busyRef.current) return;
+    // Note: previously this returned early if `busyRef.current` was true,
+    // but that allowed a stuck state when a close animation was interrupted
+    // mid-flight (its onComplete never fired, so busyRef stayed true and
+    // every subsequent open became a no-op while the toggle's icon/state
+    // still flipped). `buildOpenTimeline` already kills any in-flight close,
+    // so it is safe to always proceed here.
     busyRef.current = true;
     const tl = buildOpenTimeline();
     if (tl) {
@@ -463,6 +484,115 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     );
   };
 
+  const accentStyle = accentColor
+    ? ({ ["--sm-accent" as any]: accentColor } as React.CSSProperties)
+    : undefined;
+
+  const panelMarkup = (
+    <aside
+      id="staggered-menu-panel"
+      ref={panelRef}
+      className="staggered-menu-panel fixed top-0 right-0 h-[100dvh] bg-background flex flex-col p-[3rem_2rem_2rem_2rem] md:p-[6em_2rem_2rem_2rem] overflow-y-auto z-[70]"
+      style={{
+        visibility: open ? "visible" : "hidden",
+      }}
+      aria-hidden={!open}
+    >
+      <div className="sm-panel-inner flex-1 flex flex-col gap-5">
+        <ul
+          className="sm-panel-list list-none m-0 p-0 flex flex-col gap-4"
+          role="list"
+          data-numbering={displayItemNumbering || undefined}
+        >
+          {items && items.length ? (
+            items.map((it, idx) => (
+              <li
+                className="sm-panel-itemWrap relative overflow-hidden leading-none"
+                key={it.label + idx}
+              >
+                <motion.div
+                  whileHover={{ y: -2 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <NavigationLink
+                    className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
+                    href={it.link}
+                    aria-label={it.ariaLabel}
+                    data-index={idx + 1}
+                    onClick={(e) => handleItemClick(it, e)}
+                  >
+                    <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform whitespace-nowrap">
+                      {it.label}
+                      <span className="sm-panel-superscript">
+                        {String(idx + 1)}
+                      </span>
+                    </span>
+                  </NavigationLink>
+                </motion.div>
+              </li>
+            ))
+          ) : (
+            <li
+              className="sm-panel-itemWrap relative overflow-hidden leading-none"
+              aria-hidden="true"
+            >
+              <span className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
+                <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
+                  No items
+                </span>
+              </span>
+            </li>
+          )}
+        </ul>
+
+        {/* Bottom Section: Socials & Switchers */}
+        <div className="mt-auto pt-8 pb-4 flex flex-col gap-8">
+          {displaySocials &&
+            (connectItems.length > 0 || exploreItems.length > 0) && (
+              <div className="sm-panel-socials grid grid-cols-2 gap-x-6 gap-y-8 w-full">
+                {connectItems.length > 0 && (
+                  <div className="col-span-1">
+                    <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
+                      {t("footer.socialContact") || "Social & Contact"}
+                    </h3>
+                    <ul
+                      className="list-none m-0 p-0 flex flex-col gap-3.5"
+                      role="list"
+                    >
+                      {connectItems.map((item) =>
+                        renderLinkItem(item, toggleMenu),
+                      )}
+                    </ul>
+                  </div>
+                )}
+
+                {exploreItems.length > 0 && (
+                  <div className="col-span-1">
+                    <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
+                      {t("footer.personalResources") || "Resources"}
+                    </h3>
+                    <ul
+                      className="list-none m-0 p-0 flex flex-col gap-3.5"
+                      role="list"
+                    >
+                      {exploreItems.map((item) =>
+                        renderLinkItem(item, toggleMenu),
+                      )}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
+          <div className="flex items-center gap-4 mt-2">
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </div>
+        </div>
+      </div>
+    </aside>
+  );
+
   return (
     <div className="sm-scope w-full h-full">
       <div
@@ -470,11 +600,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           (className ? className + " " : "") +
           "staggered-menu-wrapper relative w-full h-full z-40"
         }
-        style={
-          accentColor
-            ? ({ ["--sm-accent" as any]: accentColor } as React.CSSProperties)
-            : undefined
-        }
+        style={accentStyle}
         data-position={position}
         data-open={open || undefined}
       >
@@ -533,110 +659,31 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             </span>
           </motion.button>
         </div>
-
-        <aside
-          id="staggered-menu-panel"
-          ref={panelRef}
-          className="staggered-menu-panel fixed top-0 right-0 h-[100dvh] bg-background flex flex-col p-[3rem_2rem_2rem_2rem] md:p-[6em_2rem_2rem_2rem] overflow-y-auto z-10"
-          style={{
-            visibility: open ? "visible" : "hidden",
-          }}
-          aria-hidden={!open}
-        >
-          <div className="sm-panel-inner flex-1 flex flex-col gap-5">
-            <ul
-              className="sm-panel-list list-none m-0 p-0 flex flex-col gap-4"
-              role="list"
-              data-numbering={displayItemNumbering || undefined}
-            >
-              {items && items.length ? (
-                items.map((it, idx) => (
-                  <li
-                    className="sm-panel-itemWrap relative overflow-hidden leading-none"
-                    key={it.label + idx}
-                  >
-                    <motion.div
-                      whileHover={{ y: -2 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <NavigationLink
-                        className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
-                        href={it.link}
-                        aria-label={it.ariaLabel}
-                        data-index={idx + 1}
-                        onClick={(e) => handleItemClick(it, e)}
-                      >
-                        <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform whitespace-nowrap">
-                          {it.label}
-                          <span className="sm-panel-superscript">
-                            {String(idx + 1)}
-                          </span>
-                        </span>
-                      </NavigationLink>
-                    </motion.div>
-                  </li>
-                ))
-              ) : (
-                <li
-                  className="sm-panel-itemWrap relative overflow-hidden leading-none"
-                  aria-hidden="true"
-                >
-                  <span className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
-                    <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
-                      No items
-                    </span>
-                  </span>
-                </li>
-              )}
-            </ul>
-
-            {/* Bottom Section: Socials & Switchers */}
-            <div className="mt-auto pt-8 pb-4 flex flex-col gap-8">
-              {displaySocials &&
-                (connectItems.length > 0 || exploreItems.length > 0) && (
-                  <div className="sm-panel-socials grid grid-cols-2 gap-x-6 gap-y-8 w-full">
-                    {connectItems.length > 0 && (
-                      <div className="col-span-1">
-                        <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
-                          {t("footer.socialContact") || "Social & Contact"}
-                        </h3>
-                        <ul
-                          className="list-none m-0 p-0 flex flex-col gap-3.5"
-                          role="list"
-                        >
-                          {connectItems.map((item) =>
-                            renderLinkItem(item, toggleMenu),
-                          )}
-                        </ul>
-                      </div>
-                    )}
-
-                    {exploreItems.length > 0 && (
-                      <div className="col-span-1">
-                        <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
-                          {t("footer.personalResources") || "Resources"}
-                        </h3>
-                        <ul
-                          className="list-none m-0 p-0 flex flex-col gap-3.5"
-                          role="list"
-                        >
-                          {exploreItems.map((item) =>
-                            renderLinkItem(item, toggleMenu),
-                          )}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                )}
-
-              <div className="flex items-center gap-4 mt-2">
-                <LanguageSwitcher />
-                <ThemeSwitcher />
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
+
+      {/*
+        Render the panel as a portal directly under <body>, outside the
+        Header's nested fixed/z-index ancestors. The previous structure
+        (motion.header z-60 → fixed z-60 div → wrapper z-40 → panel z-10)
+        layered the panel inside a chain of stacking contexts. On mobile
+        Safari/Chrome that nesting fragilely interacts with sibling fixed
+        elements such as the graph route's MobileNodeCard (z-50): the panel's
+        slide-in could be visually hidden / clipped while still capturing
+        pointer events, leaving the toggle's icon flipped to "X" but the
+        screen unresponsive. Portaling escapes those ancestors entirely.
+      */}
+      {mounted &&
+        createPortal(
+          <div
+            className="sm-scope"
+            data-position={position}
+            data-open={open || undefined}
+            style={accentStyle}
+          >
+            {panelMarkup}
+          </div>,
+          document.body,
+        )}
 
       <style jsx>{`
         .sm-scope .staggered-menu-wrapper {
