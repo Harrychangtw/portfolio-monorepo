@@ -32,7 +32,7 @@ The heart of this project is its flexible architecture. Next.js middleware dynam
 - `gray-matter` parses YAML frontmatter from each file to provide metadata.
 - `remark` and `remark-html` convert the Markdown content into HTML for rendering.
 
-This structure cleanly separates content from presentation and allows for simple, Git-baㄇsed content updates.
+This structure cleanly separates content from presentation and allows for simple, Git-based content updates.
 
 ### Technical Highlights
 
@@ -77,6 +77,6 @@ The portfolio is designed to showcase a variety of work and thought, with key se
 - [**Blog Section:**](https://harrychang.me/#blog) A series of articles and posts on various topics, ranging from reviews to random musings.
 - [**Manifesto Page:**](https://harrychang.me/manifesto) A dedicated space to express the core principles and philosophies that drive my work.
 - [**Paper Reading Section:**](https://harrychang.me/paper-reading) A dynamic list of academic papers I have studied.
-- [**Uses**](https://harrychang.me/uses) A list of tools and technologies I use regularly.
+- [**Uses:**](https://harrychang.me/uses) A list of tools and technologies I use regularly.
 
 The source code for this site is available on [GitHub](https://github.com/Harrychangtw/portfolio-monorepo) under a CC BY-NC 4.0 license. All content, including text and images, is protected by copyright.
