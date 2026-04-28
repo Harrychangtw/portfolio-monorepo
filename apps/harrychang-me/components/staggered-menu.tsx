@@ -336,14 +336,12 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       colorTweenRef.current?.kill();
       if (changeMenuColorOnOpen) {
         const targetColor = opening ? openMenuButtonColor : menuButtonColor;
-        colorTweenRef.current = gsap.to(btn, {
-          color: targetColor,
-          delay: 0.18,
-          duration: 0.3,
-          ease: "power2.out",
-        });
+        // Use CSS transition instead of GSAP — GSAP cannot parse CSS var() syntax
+        // which causes a splitColor TypeError that crashes the ticker
+        btn.style.transition = "color 0.3s ease-out 0.18s";
+        btn.style.color = targetColor;
       } else {
-        gsap.set(btn, { color: menuButtonColor });
+        btn.style.color = menuButtonColor;
       }
     },
     [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen],
