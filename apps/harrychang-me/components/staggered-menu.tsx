@@ -341,6 +341,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         btn.style.transition = "color 0.3s ease-out 0.18s";
         btn.style.color = targetColor;
       } else {
+        btn.style.transition = "";
         btn.style.color = menuButtonColor;
       }
     },
