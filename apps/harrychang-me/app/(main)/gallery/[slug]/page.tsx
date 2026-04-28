@@ -7,6 +7,7 @@ import {
 } from "@portfolio/lib/lib/markdown";
 import GalleryPostClient from "@portfolio/ui/gallery-post-client";
 import GraphNextUp from "@/components/graph/graph-next-up";
+import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -187,6 +188,7 @@ export default async function GalleryItemPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <HashAnchorPulse />
       <GalleryPostClient
         initialItem={item}
         nextItem={nextItem}

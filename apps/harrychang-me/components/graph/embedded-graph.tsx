@@ -141,6 +141,12 @@ export default function EmbeddedGraph({
       if (!node || node.nodeType === "tag" || !node.url) return;
       try {
         const target = new URL(node.url, window.location.origin);
+        // Defensive: this embed currently filters to file/hub/tag (no
+        // anchorId-bearing nodes), but stays in lockstep with the full
+        // /graph handler so any future filter change still routes correctly.
+        if (node.anchorId && !target.hash) {
+          target.hash = node.anchorId;
+        }
         const mainHost = window.location.hostname.replace(/^www\./, "");
         const targetHost = target.hostname.replace(/^www\./, "");
         const isInternal =

@@ -7,6 +7,7 @@ import {
 } from "@portfolio/lib/lib/markdown";
 import BlogPostClient from "@portfolio/ui/blog-post-client";
 import GraphNextUp from "@/components/graph/graph-next-up";
+import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -168,6 +169,7 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <HashAnchorPulse />
       <BlogPostClient
         initialPost={post}
         nextPost={nextPost}
