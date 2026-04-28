@@ -64,18 +64,27 @@ function collectExpected(body) {
       used.add(id);
       headings.push({ level: e.level, text, id });
     } else {
+      // Mirror packages/lib/lib/markdown.ts transformMedia() exactly: drive →
+      // youtube → mp4 (no graph node) → regular image (any URL). The verifier
+      // is anchored to the renderer because the renderer is the source of
+      // truth for DOM ids — divergence from build_graph.py is what we want
+      // this script to catch.
       const url = e.url;
-      const isDrive = /https?:\/\/drive\.google\.com\/file\/d\//.test(url);
-      const isYouTube =
-        /(?:youtube\.com\/(?:.+v=|v\/|embed\/)|youtu\.be\/)/.test(url);
-      const isMp4 = /\.mp4(\?|$)/i.test(url);
-      const isImage = /\.(webp|jpg|jpeg|png|gif|svg|avif)(\?|$)/i.test(url);
-      if (isDrive || isYouTube) {
+      const driveRegex = /https?:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/;
+      const youtubeRegex =
+        /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})|(?:https?:\/\/)?(?:www\.)?youtube\.com\/.*[?&]v=([a-zA-Z0-9_-]{11})/;
+      const isDrive = driveRegex.test(url);
+      const isYouTube = youtubeRegex.test(url);
+      const isMp4 = url.toLowerCase().endsWith(".mp4");
+      if (isDrive) {
         media.push({ kind: "vid", src: url, anchorId: `vid-${vidIdx++}` });
-      } else if (isImage) {
-        media.push({ kind: "img", src: url, anchorId: `img-${imgIdx++}` });
+      } else if (isYouTube) {
+        media.push({ kind: "vid", src: url, anchorId: `vid-${vidIdx++}` });
       } else if (isMp4) {
-        // mp4 is rendered as video figure but not represented in graph
+        // mp4 figure is emitted with graph-anchor-target but no id, and not
+        // tracked in graph-data.json — counters do not advance.
+      } else {
+        media.push({ kind: "img", src: url, anchorId: `img-${imgIdx++}` });
       }
     }
   }
@@ -137,11 +146,14 @@ function compareForFile(graph, sourceType, slug, locale) {
   }
   for (const sec of sectionNodes) {
     const candidates = headingsByText.get(sec.heading) || [];
-    const found = candidates.find((c) => c.id === sec.anchorId);
-    if (!found) {
+    const idx = candidates.findIndex((c) => c.id === sec.anchorId);
+    if (idx === -1) {
       issues.push(
         `[${sourceType}/${slug}/${locale}] section heading="${sec.heading}" anchorId="${sec.anchorId}" not found in expected ${JSON.stringify(candidates.map((c) => c.id))}`,
       );
+    } else {
+      // Consume the candidate so duplicate headings can't re-match it.
+      candidates.splice(idx, 1);
     }
   }
 
@@ -171,6 +183,22 @@ function compareForFile(graph, sourceType, slug, locale) {
     if (!expectedImgIds.has(id))
       issues.push(
         `[${sourceType}/${slug}/${locale}] graph image anchor ${id} not expected`,
+      );
+  }
+
+  // Same set comparison for video anchors.
+  const graphVidIds = new Set(videoNodes.map((n) => n.anchorId));
+  const expectedVidIds = new Set(expectedVid.map((m) => m.anchorId));
+  for (const id of expectedVidIds) {
+    if (!graphVidIds.has(id))
+      issues.push(
+        `[${sourceType}/${slug}/${locale}] missing video anchor ${id} in graph`,
+      );
+  }
+  for (const id of graphVidIds) {
+    if (!expectedVidIds.has(id))
+      issues.push(
+        `[${sourceType}/${slug}/${locale}] graph video anchor ${id} not expected`,
       );
   }
 
