@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { motion } from "motion/react";
 import GuestbookWidget from "@/components/guestbook-widget";
+import NavigationLink from "@portfolio/ui/navigation-link";
 import {
   Mail,
   Github,
@@ -232,14 +233,20 @@ export default function LinksPageClient() {
         >
           {links.map((link, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block w-full"
-              >
-                <LinkCard link={link} />
-              </a>
+              {link.external ? (
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block w-full"
+                >
+                  <LinkCard link={link} />
+                </a>
+              ) : (
+                <NavigationLink href={link.href} className="group block w-full">
+                  <LinkCard link={link} />
+                </NavigationLink>
+              )}
             </motion.div>
           ))}
         </motion.div>
