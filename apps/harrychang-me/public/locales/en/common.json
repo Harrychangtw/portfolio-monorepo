@@ -132,7 +132,7 @@
     },
     "knowledgeGraph": "Knowledge Graph",
     "knowledgeGraphDesc1": "Every page on this site is a node. Every shared tag, category, or conceptual link is an edge. The graph is generated at build time from the content CMS, spanning projects, blog posts, gallery entries, and hub pages, then rendered via a force-directed physics simulation.",
-    "knowledgeGraphDesc2": "Nodes are sized by connection degree. Edges encode semantic similarity via vector embeddings. On mobile, a crosshair pans the canvas and surfaces the centre node. Click any node to navigate directly.",
+    "knowledgeGraphDesc2": "Nodes are sized by connection degree. Edges encode semantic similarity via vector embeddings. On mobile, a crosshair pans the canvas and surfaces the center node. Click any node to navigate directly.",
     "fullGraph": "Full Graph",
     "specimen1": "The Tower",
     "specimen2": "Audacity in Creation",
