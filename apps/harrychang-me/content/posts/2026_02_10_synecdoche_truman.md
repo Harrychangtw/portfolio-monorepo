@@ -81,7 +81,7 @@ In the film's last minutes, Caden finally has a revelation. He knows how to perf
 
 And he does.
 
-![framed:An aged Caden Cotard before in his final moments](images/optimized/blogs/2026_02_10_synecdoche_truman/synecdoche_3.webp)
+![framed:An aged Caden Cotard in his final moments](images/optimized/blogs/2026_02_10_synecdoche_truman/synecdoche_3.webp)
 
 Truman escaped his stage by recognizing it as artificial and choosing the unknown. Caden never escaped because his stage was indistinguishable from himself. How do you walk out of a construction you _are_?
 
@@ -143,7 +143,7 @@ Both endings are true. Both doors are real. The question is which one we're stan
 
 ## Acknowledgments
 
-- Title image: _Las Meninas_ by [Diego Velázquez](https://en.wikipedia.org/wiki/en:Diego_Vel%C3%A1zquez), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=22600614")
+- Title image: _Las Meninas_ by [Diego Velázquez](https://en.wikipedia.org/wiki/en:Diego_Vel%C3%A1zquez), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=22600614)
 - Still images from [FILMGRAB](https://film-grab.com/), courtesy of the respective filmmakers
 - _The Truman Show_ (1998), directed by Peter Weir
 - _Synecdoche, New York_ (2008), directed by Charlie Kaufman

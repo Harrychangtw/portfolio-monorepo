@@ -29,7 +29,7 @@ Seahaven 是個穹頂。字面意義的穹頂，從太空可見，裝著人造�
 
 ![framed:Christof 在一個大型螢幕上看著 Truman，畫面上覆蓋著臉部追蹤的圖形](images/optimized/blogs/2026_02_10_synecdoche_truman/truman_2.webp)
 
-他認識的每個人都是演員，他經歷的每件事都經過編排。天氣、交通、甚至父親「溺斃」——全由節目創作者 Christof 一手設計，他在人造月亮裡的控製室俯瞰一切。
+他認識的每個人都是演員，他經歷的每件事都經過編排。天氣、交通、甚至父親「溺斃」——全由節目創作者 Christof 一手設計，他在人造月亮裡的控制室俯瞰一切。
 
 這部電影的結構妙在它的直白。一旦你知道該往哪看，邊界便清晰可見。一盞舞台燈光從天而降；收音機意外接收到幕後人員的對話；大雨只跟著 Truman 一個人下。這個被建構的世界有著縫隙，而 Truman 在相信了三十年後，開始注意到它們。
 
@@ -77,7 +77,7 @@ Caden Cotard 的名字指涉「寇塔德妄想症」，患者會相信自己已�
 
 數十年過去，Caden 的劇作吞噬了他越來越多的人生，他也逐漸失去指導能力。一位名叫 Millicent Weems 的女演員接管了一切，給了他一個耳機，透過耳機對他發號施令。Caden，這位創造者，成了自己作品裡的角色。然後他的地位進一步被降級。他被誤認為清潔女工 Ellen，並接受了這個角色。他生命的最後幾年，都在擦洗他前妻公寓的複製品，遵循耳邊細語的指令。
 
-在電影的最後幾分鐘，Caden 終於頓悟。他知道該怎麼演這齣戲了。他有話要說。但在他能開口前，耳機裡的聲音傳來他最終指令：「去死。」
+在電影的最後幾分鐘，Caden 終於頓悟。他知道該怎麼演這齣戲了。他有話要說。但在他能開口前，耳機裡的聲音傳來他最終的指令：「去死。」
 
 然後他就死了。
 
@@ -109,7 +109,7 @@ Truman 的計畫是關於「他的」自由。Caden 的計畫是關於「所有�
 
 《紐約浮世繪》沒有觀眾。
 
-那齣上演了數十年的劇，從有任何人觀賞。倉庫不是劇院，是個封閉系統。Caden 為無人表演。他的演員為他表演，他為他們表演，他們為無人表演。這是一個意義製造的無限循環，對循環外的任何人皆無意義。
+那齣上演了數十年的劇，從沒有任何人觀賞。倉庫不是劇院，是個封閉系統。Caden 為無人表演。他的演員為他表演，他為他們表演，他們為無人表演。這是一個意義製造的無限循環，對循環外的任何人皆無意義。
 
 在電影最殘酷的一幕，Sammy（扮演 Caden 的演員）觀察了 Caden 二十年，痴迷地記錄他的人生。然後 Sammy 自殺了，死前吶喊道：「我看了你一輩子，Caden，但你從未真正看過除了你自己以外的任何人。」
 
@@ -143,7 +143,7 @@ Caden 聽見「去死」，然後再也無話可說。
 
 ## 致謝
 
-- 封面照：_Las Meninas_ by [Diego Velázquez](https://en.wikipedia.org/wiki/en:Diego_Vel%C3%A1zquez), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=22600614")
+- 封面照：_Las Meninas_ by [Diego Velázquez](https://en.wikipedia.org/wiki/en:Diego_Vel%C3%A1zquez), Public Domain, [Link](https://commons.wikimedia.org/w/index.php?curid=22600614)
 - 劇照來自 [FILMGRAB](https://film-grab.com/)，版權分屬各自的電影創作團隊
 - _The Truman Show_ (1998)，由 Peter Weir 執導
 - _Synecdoche, New York_ (2008)，由 Charlie Kaufman 執導

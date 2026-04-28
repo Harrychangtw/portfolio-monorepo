@@ -28,7 +28,7 @@ pinned: -1
 
 ![framed:Calum 在陽台欄杆上平衡](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Aftersun_44.webp)
 
-Calum 早已在離開的路上了。他早已在成為陌生人。只是 Sophie 曾蒙懂無知。
+Calum 早已在離開的路上了。他早已在成為陌生人。只是 Sophie 曾懵懂無知。
 
 ### 鏡子與攝影機
 

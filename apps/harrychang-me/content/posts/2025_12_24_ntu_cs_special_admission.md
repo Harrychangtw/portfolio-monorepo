@@ -109,7 +109,7 @@ These are my accumulations through high school so far. I sincerely hope to enter
 
 **Professor Center-Right:** (silent for a moment) Any questions you'd like to ask in the remaining time?
 
-**Me:** Professor, let’s say this interview goes well. What categories of courses would you recommend I take? (bell rings right then)
+**Me:** Professor, let's say this interview goes well. What categories of courses would you recommend I take? (bell rings right then)
 
 **Professor Center-Right:** I teach some AI security courses.
 
