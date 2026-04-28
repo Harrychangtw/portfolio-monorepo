@@ -19,6 +19,8 @@ export interface GraphNode {
   imageUrl?: string | null;
   parentId?: string | null;
   mediaSource?: string | null;
+  /** DOM id on the destination page for non-page nodes (section/image/video). */
+  anchorId?: string | null;
 }
 
 export interface GraphEdge {

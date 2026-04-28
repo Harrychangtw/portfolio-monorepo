@@ -1083,6 +1083,11 @@ export async function getNextPost(currentSlug: string) {
 
 function transformMedia() {
   return (tree: Root) => {
+    // Per-document counters mirrored in scripts/build_graph.py so graph
+    // image/video nodes can target the matching <figure> via #img-N / #vid-N.
+    let imgIdx = 0;
+    let vidIdx = 0;
+
     visit(tree, "image", (node: MdastImage, index, parent) => {
       if (!parent || index === undefined || index === null) return;
 
@@ -1111,11 +1116,12 @@ function transformMedia() {
       if (driveMatch) {
         const videoId = driveMatch[1];
         const embedUrl = `https://drive.google.com/file/d/${videoId}/preview`;
+        const anchorId = `vid-${vidIdx++}`;
 
         const videoNode: HTML = {
           type: "html",
           value: `
-            <figure class="my-6 w-full">
+            <figure id="${anchorId}" class="my-6 w-full graph-anchor-target">
               <div class="video-embed-container" data-type="googledrive" data-src="${embedUrl}">
                 <div class="video-placeholder">
                   <div class="video-placeholder-content">
@@ -1136,11 +1142,12 @@ function transformMedia() {
       } else if (youtubeMatch) {
         const videoId = youtubeMatch[1] || youtubeMatch[2]; // Handle both match groups
         const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+        const anchorId = `vid-${vidIdx++}`;
 
         const videoNode: HTML = {
           type: "html",
           value: `
-            <figure class="my-6 w-full">
+            <figure id="${anchorId}" class="my-6 w-full graph-anchor-target">
               <div class="video-embed-container" data-type="youtube" data-src="${embedUrl}">
                 <div class="video-placeholder">
                 </div>
@@ -1171,7 +1178,7 @@ function transformMedia() {
         const videoNode: HTML = {
           type: "html",
           value: `
-            <figure class="my-6 w-full">
+            <figure class="my-6 w-full graph-anchor-target">
               <div
                 class="markdown-image-placeholder"
                 data-src="${escapeAttr(videoUrl)}"
@@ -1207,10 +1214,11 @@ function transformMedia() {
             .replace(/</g, "&lt;")
             .replace(/>/g, "&gt;");
 
+        const anchorId = `img-${imgIdx++}`;
         const placeholderNode: HTML = {
           type: "html",
           value: `
-            <figure class="my-6 w-full">
+            <figure id="${anchorId}" class="my-6 w-full graph-anchor-target">
               <div
                 class="markdown-image-placeholder"
                 data-src="${escapeAttr(imageUrl)}"

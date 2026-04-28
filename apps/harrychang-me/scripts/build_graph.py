@@ -78,6 +78,49 @@ def slugify_tag(tag: str) -> str:
     return re.sub(r"[^a-z0-9\u4e00-\u9fff\u3400-\u4dbf-]", "-", tag.lower().strip()).strip("-")
 
 
+# Mirrors `slugify` in packages/lib/lib/markdown.ts. JS \w is ASCII-only, so we
+# use [^a-zA-Z0-9_\s-] explicitly here (Python \w would match Unicode).
+def slugify_heading(text: str) -> str:
+    s = text.lower()
+    s = re.sub(r"[^a-zA-Z0-9_\s-]", "", s)
+    s = re.sub(r"\s+", "-", s)
+    s = re.sub(r"--+", "-", s)
+    return s.strip()
+
+
+class AnchorAllocator:
+    """Per-document anchor id allocator with dedup matching the JS renderer."""
+
+    def __init__(self) -> None:
+        self.used: set[str] = set()
+        self.img_idx = 0
+        self.vid_idx = 0
+
+    def heading(self, text: str | None) -> str | None:
+        if not text or not text.strip():
+            return None
+        base = slugify_heading(text)
+        if not base:
+            return None
+        candidate = base
+        counter = 1
+        while candidate in self.used:
+            candidate = f"{base}-{counter}"
+            counter += 1
+        self.used.add(candidate)
+        return candidate
+
+    def next_image(self) -> str:
+        anchor = f"img-{self.img_idx}"
+        self.img_idx += 1
+        return anchor
+
+    def next_video(self) -> str:
+        anchor = f"vid-{self.vid_idx}"
+        self.vid_idx += 1
+        return anchor
+
+
 # ─── Content collection ─────────────────────────────────────────────────────
 
 
@@ -279,6 +322,7 @@ def chunk_markdown(item: dict) -> dict:
     image_nodes = []
     video_nodes = []
     structural_edges = []
+    anchors = AnchorAllocator()
 
     # === Section nodes ===
     sections = re.split(r"\n(?=## )", body)
@@ -306,6 +350,7 @@ def chunk_markdown(item: dict) -> dict:
                 "imageUrl": image_url if image_url else None,
                 "parentId": file_id,
                 "mediaSource": None,
+                "anchorId": None,
             }
         )
         structural_edges.append(
@@ -332,6 +377,7 @@ def chunk_markdown(item: dict) -> dict:
                 "imageUrl": img["url"],
                 "parentId": sec_id,
                 "mediaSource": img["url"],
+                "anchorId": anchors.next_image(),
             })
             structural_edges.append(
                 {"source": sec_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
@@ -353,6 +399,7 @@ def chunk_markdown(item: dict) -> dict:
                 "imageUrl": None,
                 "parentId": sec_id,
                 "mediaSource": vid["url"],
+                "anchorId": anchors.next_video(),
             })
             structural_edges.append(
                 {"source": sec_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
@@ -370,6 +417,7 @@ def chunk_markdown(item: dict) -> dict:
             h2_text    = f"{context_prefix}\n\nSection: {h2_heading or 'Introduction'}\n\n{h2_body[:400]}"
             h2_snippet = (h2_body[:150] + "...") if len(h2_body) > 150 else h2_body
 
+            h2_anchor = anchors.heading(h2_heading)
             section_nodes.append({
                 "id": h2_id,
                 "text": h2_text,
@@ -386,6 +434,7 @@ def chunk_markdown(item: dict) -> dict:
                 "imageUrl": image_url if image_url else None,
                 "parentId": file_id,
                 "mediaSource": None,
+                "anchorId": h2_anchor,
             })
             structural_edges.append(
                 {"source": file_id, "target": h2_id, "weight": 1.0, "linkType": "structural"}
@@ -410,6 +459,7 @@ def chunk_markdown(item: dict) -> dict:
                         "tags": [], "heading": h2_heading,
                         "imageUrl": img["url"], "parentId": h2_id,
                         "mediaSource": img["url"],
+                        "anchorId": anchors.next_image(),
                     })
                     structural_edges.append(
                         {"source": h2_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
@@ -425,6 +475,7 @@ def chunk_markdown(item: dict) -> dict:
                         "tags": [], "heading": h2_heading,
                         "imageUrl": None, "parentId": h2_id,
                         "mediaSource": vid["url"],
+                        "anchorId": anchors.next_video(),
                     })
                     structural_edges.append(
                         {"source": h2_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
@@ -445,6 +496,7 @@ def chunk_markdown(item: dict) -> dict:
                     )
                     h3_snippet = (h3_body[:150] + "...") if len(h3_body) > 150 else h3_body
 
+                    h3_anchor = anchors.heading(h3_heading)
                     section_nodes.append({
                         "id": h3_id,
                         "text": h3_text,
@@ -459,6 +511,7 @@ def chunk_markdown(item: dict) -> dict:
                         "imageUrl": image_url if image_url else None,
                         "parentId": h2_id,
                         "mediaSource": None,
+                        "anchorId": h3_anchor,
                     })
                     structural_edges.append(
                         {"source": h2_id, "target": h3_id, "weight": 1.0, "linkType": "structural"}
@@ -483,6 +536,7 @@ def chunk_markdown(item: dict) -> dict:
                                 "tags": [], "heading": h3_heading,
                                 "imageUrl": img["url"], "parentId": h3_id,
                                 "mediaSource": img["url"],
+                                "anchorId": anchors.next_image(),
                             })
                             structural_edges.append(
                                 {"source": h3_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
@@ -498,6 +552,7 @@ def chunk_markdown(item: dict) -> dict:
                                 "tags": [], "heading": h3_heading,
                                 "imageUrl": None, "parentId": h3_id,
                                 "mediaSource": vid["url"],
+                                "anchorId": anchors.next_video(),
                             })
                             structural_edges.append(
                                 {"source": h3_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
@@ -515,6 +570,7 @@ def chunk_markdown(item: dict) -> dict:
                             )
                             h4_snippet = (h4_body[:150] + "...") if len(h4_body) > 150 else h4_body
 
+                            h4_anchor = anchors.heading(h4_heading)
                             section_nodes.append({
                                 "id": h4_id,
                                 "text": h4_text,
@@ -529,6 +585,7 @@ def chunk_markdown(item: dict) -> dict:
                                 "imageUrl": image_url if image_url else None,
                                 "parentId": h3_id,
                                 "mediaSource": None,
+                                "anchorId": h4_anchor,
                             })
                             structural_edges.append(
                                 {"source": h3_id, "target": h4_id, "weight": 1.0, "linkType": "structural"}
@@ -548,6 +605,7 @@ def chunk_markdown(item: dict) -> dict:
                                     "tags": [], "heading": h4_heading,
                                     "imageUrl": img["url"], "parentId": h4_id,
                                     "mediaSource": img["url"],
+                                    "anchorId": anchors.next_image(),
                                 })
                                 structural_edges.append(
                                     {"source": h4_id, "target": img_id, "weight": 0.8, "linkType": "structural"}
@@ -563,6 +621,7 @@ def chunk_markdown(item: dict) -> dict:
                                     "tags": [], "heading": h4_heading,
                                     "imageUrl": None, "parentId": h4_id,
                                     "mediaSource": vid["url"],
+                                    "anchorId": anchors.next_video(),
                                 })
                                 structural_edges.append(
                                     {"source": h4_id, "target": vid_id, "weight": 0.8, "linkType": "structural"}
@@ -1414,6 +1473,8 @@ def main():
             node["imageUrl"] = chunk["imageUrl"]
         if chunk.get("mediaSource"):
             node["mediaSource"] = chunk["mediaSource"]
+        if chunk.get("anchorId"):
+            node["anchorId"] = chunk["anchorId"]
         nodes.append(node)
         node_type_counts[chunk["nodeType"]] += 1
 

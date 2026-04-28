@@ -7,6 +7,7 @@ import {
 } from "@portfolio/lib/lib/markdown";
 import ProjectPostClient from "@portfolio/ui/project-post-client";
 import GraphNextUp from "@/components/graph/graph-next-up";
+import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
 
 const baseUrl = "https://www.harrychang.me";
 
@@ -198,6 +199,7 @@ export default async function ProjectPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <HashAnchorPulse />
       <ProjectPostClient
         initialProject={project}
         nextProject={nextProject}

@@ -80,6 +80,11 @@ export default function GraphPageClient() {
       if (!node.url) return;
       try {
         const target = new URL(node.url, window.location.origin);
+        // Non-page nodes (section/image/video) carry an anchor id mapping to a
+        // DOM element on the parent slug page.
+        if (node.anchorId && !target.hash) {
+          target.hash = node.anchorId;
+        }
         // Treat www.harrychang.me as internal (graph-data.json has absolute URLs)
         const mainHost = window.location.hostname.replace(/^www\./, "");
         const targetHost = target.hostname.replace(/^www\./, "");

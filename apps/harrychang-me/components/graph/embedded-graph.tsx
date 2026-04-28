@@ -141,6 +141,9 @@ export default function EmbeddedGraph({
       if (!node || node.nodeType === "tag" || !node.url) return;
       try {
         const target = new URL(node.url, window.location.origin);
+        if (node.anchorId && !target.hash) {
+          target.hash = node.anchorId;
+        }
         const mainHost = window.location.hostname.replace(/^www\./, "");
         const targetHost = target.hostname.replace(/^www\./, "");
         const isInternal =
