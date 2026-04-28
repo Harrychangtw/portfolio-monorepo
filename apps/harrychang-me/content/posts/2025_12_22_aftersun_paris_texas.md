@@ -37,7 +37,7 @@ Both films weaponize barriers. In _Paris, Texas_, it's the one-way mirror in the
 
 In _Aftersun_, the barrier is time itself. Sophie watches her father through the mediation of a camcorder, through the distortion of memory, through the impossible gap between child-perception and adult understanding. She can see him now. But she's seeing a recording. She's seeing absence wearing her father's face.
 
-What strikes me is that both barriers enable a kind of intimacy that direct contact couldn't. Travis needed to be invisible to tell the truth. Sophie needed thirty years to see what was always there. Perheps, the clearest view comes through glass.
+What strikes me is that both barriers enable a kind of intimacy that direct contact couldn't. Travis needed to be invisible to tell the truth. Sophie needed thirty years to see what was always there. Perhaps the clearest view comes through glass.
 
 ### "Sometimes, to love someone, you gotta be a stranger"
 
@@ -57,7 +57,7 @@ Hunter remembers Travis from photographs. Sophie remembers Calum from MiniDV tap
 
 In one pivotal scene of _Aftersun_, Sophie asks Calum what he thought he'd be doing at her age. His answer reveals the void where his future should be:
 
-> Calum: I can't see myself at 40 to be honest. Surprised i made it to 30.
+> Calum: I can't see myself at 40, to be honest. Surprised I made it to 30.
 
 The question breaks something in him, and the camera lingers on his face long enough for us to see it. Sophie, 11, doesn't notice. Sophie, 40, watching the footage, notices everything.
 

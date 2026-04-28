@@ -60,7 +60,7 @@ The frame went back into the parts bin. The problem remained unsolved. The brace
 
 The solution came from the parts bin, not from planning.
 
-I was digging through old Technic sets looking for longer beams when I found a bag of rubber tires—the chunky ones from some vehicle set I’d forgotten about. I held one up to the T30 fan frame. The diameter was close. Too close to ignore. The current version uses those LEGO tires wedged between the T30 fan frames.
+I was digging through old Technic sets looking for longer beams when I found a bag of rubber tires—the chunky ones from some vehicle set I'd forgotten about. I held one up to the T30 fan frame. The diameter was close. Too close to ignore. The current version uses those LEGO tires wedged between the T30 fan frames.
 
 That's it. That's the entire mechanism.
 

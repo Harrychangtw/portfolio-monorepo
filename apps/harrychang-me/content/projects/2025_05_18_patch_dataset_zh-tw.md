@@ -74,7 +74,7 @@ PATCH 資料集是透過一個系統化的流程構建的，結合了自動化�
 
 ![在 PATCH 測試集上的繁體中文安全效能比較，對比了基準模型 Llama Guard 3 1B 與使用 FFT、LoRA 及 Chat-Vector 方法調整後的模型。](images/optimized/projects/2025_05_18_patch_dataset/patch_main_result.webp)
 
-Baseline 模型 Llama Guard 3 1B 在 zero-shot 設定下，其繁體中文內容審核能力有限，F1 分數僅為 0.781。相比之下， FFT 和 LoRA 均實現了近乎完美的分類，F1 分數超過 0.99。值得注意的是，經過 LoRA 微調的 Llama Guard 取得了 0.996 的 F1 分數和 0.999 的最高整體 recall，而運算成本卻大幅降低。
+Baseline 模型 Llama Guard 3 1B 在 zero-shot 設定下，其繁體中文內容審核能力有限，F1 分數僅為 0.781。相比之下，FFT 和 LoRA 均實現了近乎完美的分類，F1 分數超過 0.99。值得注意的是，經過 LoRA 微調的 Llama Guard 取得了 0.996 的 F1 分數和 0.999 的最高整體 recall，而運算成本卻大幅降低。
 
 試圖透過向量加減而非訓練來轉移能力的 Chat-Vector 方法，則被證明效果差得多，凸顯了數據驅動微調的價值。
 
@@ -94,7 +94,7 @@ Baseline 模型 Llama Guard 3 1B 在 zero-shot 設定下，其繁體中文內容
 
 ![在 PATCH 資料集上微調後模型的跨語言英文安全效能。](images/optimized/projects/2025_05_18_patch_dataset/patch_crosslingual.webp)
 
-經 LoRA 微調的 Llama Guard 3 1B 在英文數據上的表現明顯優於基準模型及其 FFT 的對應版本，F1 分數達到 0.950。定性分析顯示，這種改善源於糾正了特定類型的錯誤：LoRA 減少了對良性技術性 prompts 的 false positives，更減少了對使用角色扮演或混淆等手法的隱晦有害輸入的false negatives。
+經 LoRA 微調的 Llama Guard 3 1B 在英文數據上的表現明顯優於基準模型及其 FFT 的對應版本，F1 分數達到 0.950。定性分析顯示，這種改善源於糾正了特定類型的錯誤：LoRA 減少了對良性技術性 prompts 的 false positives，更減少了對使用角色扮演或混淆等手法的隱晦有害輸入的 false negatives。
 
 我們推測，LoRA 的更新使模型得以保留其廣泛的英語知識，同時從 PATCH 細膩的對抗性範例中學習更抽象的安全原則，從而增強了跨語言的穩健性。
 

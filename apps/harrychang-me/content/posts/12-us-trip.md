@@ -150,7 +150,7 @@ Places I've never been to and perhaps never will. The phrase kept circling. Gene
 
 Boston felt reserved.
 
-The ceremony, the reason we came, was anticlimactic. Low ceiling. Terrible lighting. Wrinkled flags. Is this what they mean when they say travelling expands your horizons? Because my horizon was surely not expanding under the absurdly low ceiling for a lecture hall.
+The ceremony, the reason we came, was anticlimactic. Low ceiling. Terrible lighting. Wrinkled flags. Is this what they mean when they say traveling expands your horizons? Because my horizon was surely not expanding under the absurdly low ceiling for a lecture hall.
 
 ![framed:](images/optimized/blogs/12-us-trip/L1001897.webp)
 
@@ -160,7 +160,7 @@ The morning before had been difficult. Late arrival, hunger, the small frustrati
 
 Then the highlight: 2nd Street thrift store.
 
-Thirty minutes inside. 140 dollars total. A 20-dollar trench coat that looked like way more and fit too well. My sister's eye found it. A 99-dollar Naga Gen 2 LEAF hoodie, rare, in dad's favorite army green color that he'd never admit he likes. 20-dollars for a Polo jacket for my sister.
+Thirty minutes inside. 140 dollars total. A 20-dollar trench coat that looked like way more and fit too well. My sister's eye found it. A 99-dollar Naga Gen 2 LEAF hoodie, rare, in dad's favorite army green color that he'd never admit he likes. 20 dollars for a Polo jacket for my sister.
 
 Dad spent forty on short pants but was definitely proud of our Asianness coming into play. If we had to choose between the ceremony and 2nd Street, the choice was obvious.
 

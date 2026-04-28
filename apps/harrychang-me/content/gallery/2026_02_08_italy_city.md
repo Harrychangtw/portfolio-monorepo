@@ -25,7 +25,7 @@ gallery:
   - url: "images/optimized/gallery/2026-italy-city/L1000735.webp"
 ---
 
-To walk through an Italian city is to trace a map of time itself. It is a place where the present is merely the latest layer of a story that began centuries ago. Here, history is not confined to museums. It echoes in the rain slicked cobblestones and breathes in the shadow of a forgotten statue.
+To walk through an Italian city is to trace a map of time itself. It is a place where the present is merely the latest layer of a story that began centuries ago. Here, history is not confined to museums. It echoes in the rain-slicked cobblestones and breathes in the shadow of a forgotten statue.
 
 This collection is not about monuments, but about the quiet conversations between then and now. A red umbrella, blurred into a stroke of pure color against the ancient stone, becomes a beautiful accident of light and motion. Beneath the vaulted ceiling of a gallery, the perfect form of David is seen for a fleeting moment before life outside pulls our gaze away. Each frame seeks the stories hidden in plain sight: the worker behind a gated door, the shared laugh in a lamplit silverware shop, the anonymous figures ascending a subway staircase into an unexpected stormy afternoon.
 

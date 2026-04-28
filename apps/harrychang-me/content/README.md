@@ -1,4 +1,4 @@
-pr# Markdown-Based Content Management System
+# Markdown-Based Content Management System
 
 This portfolio site uses a simple yet powerful markdown-based content management system. This document provides instructions for adding and editing content.
 

@@ -32,7 +32,7 @@ PATCH addresses critical limitations in existing TC safety resources through sev
 
 2. **Adversarial Sophistication:** The dataset incorporates two complementary generation strategies. PATCH-GPT provides baseline harmful prompts, while PATCH-RT employs an adapted [Rainbow Teaming](https://arxiv.org/abs/2402.16822) methodology to generate evasive, complex prompts that test classifier robustness against sophisticated attacks.
 
-3. **Cultural and Linguistic Authenticity:** Rather than simply translating English datasets, PATCH incorporates TC-specific adversarial tactics, including phonetic Zhuyin scripts, regional sociopolitical references, and culturally-informed attack vectors that would be missed by translation-based approaches.
+3. **Cultural and Linguistic Authenticity:** Rather than simply translating English datasets, PATCH incorporates TC-specific adversarial tactics, including phonetic Zhuyin scripts, regional sociopolitical references, and culturally informed attack vectors that would be missed by translation-based approaches.
 
 4. **Human Validation:** A carefully curated human-annotated subset (PATCH-H) provides gold-standard evaluation data, authored from scratch by native TC speakers with NLP expertise.
 
