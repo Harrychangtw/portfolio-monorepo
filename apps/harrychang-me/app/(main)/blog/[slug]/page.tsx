@@ -37,9 +37,7 @@ export async function generateMetadata({
     : `${baseUrl}${post.imageUrl.startsWith("/") ? "" : "/"}${post.imageUrl}`;
 
   return {
-    title: isChineseVersion
-      ? `${post.title} | 部落格`
-      : `${post.title} | Blog`,
+    title: isChineseVersion ? `${post.title} | 部落格` : `${post.title} | Blog`,
     description:
       post.description || `${post.title} — by ${post.author || "Harry Chang"}`,
     keywords: [

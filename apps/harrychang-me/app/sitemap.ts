@@ -77,7 +77,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const zhUrl = hasChineseVersion
       ? `${baseUrl}/projects/${slug}_zh-tw`
       : undefined;
-    const lastModified = projectData?.date ? new Date(projectData.date) : new Date();
+    const lastModified = projectData?.date
+      ? new Date(projectData.date)
+      : new Date();
 
     sitemap.push({
       url: enUrl,
@@ -112,7 +114,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const zhUrl = hasChineseVersion
       ? `${baseUrl}/gallery/${slug}_zh-tw`
       : undefined;
-    const lastModified = galleryData?.date ? new Date(galleryData.date) : new Date();
+    const lastModified = galleryData?.date
+      ? new Date(galleryData.date)
+      : new Date();
 
     sitemap.push({
       url: enUrl,
