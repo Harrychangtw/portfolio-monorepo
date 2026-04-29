@@ -37,6 +37,7 @@ const connectLinks = [
 ];
 
 const exploreLinks = [
+  { id: "icarus", name: "Icarus Lab", href: "/icarus" },
   { id: "music", name: "Music Playlists", href: "/spotify" },
   { id: "letterboxd", name: "Letterboxd", href: "/letterboxd" },
   { id: "resume", name: "Resume", href: "/cv" },
@@ -44,7 +45,6 @@ const exploreLinks = [
   { id: "reading", name: "Paper Reading List", href: "/paper-reading" },
   { id: "design", name: "Design System", href: "/design" },
   { id: "graph", name: "Knowledge Graph", href: "/graph" },
-  { id: "linktree", name: "Links", href: "/linktree" },
 ];
 
 const siteLinks = [
@@ -53,6 +53,7 @@ const siteLinks = [
   { id: "projects", name: "Projects", href: "/#projects" },
   { id: "gallery", name: "Gallery", href: "/#gallery" },
   { id: "blog", name: "Blog", href: "/blog" },
+  { id: "linktree", name: "Links", href: "/linktree" },
   { id: "manifesto", name: "Manifesto", href: "/manifesto" },
   { id: "source", name: "Source Code", href: "/readme" },
 ];
