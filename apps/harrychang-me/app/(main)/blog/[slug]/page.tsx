@@ -30,6 +30,10 @@ export async function generateMetadata({
 
   const isChineseVersion = slug.includes("_zh-tw") || slug.includes("_zh-TW");
   const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, "");
+  const allSlugs = new Set(
+    getAllPostSlugs().map(({ params }) => params.slug.toLowerCase()),
+  );
+  const hasChineseVersion = allSlugs.has(`${baseSlug}_zh-tw`.toLowerCase());
   const canonicalUrl = `${baseUrl}/blog/${slug}`;
 
   const imageUrl = post.imageUrl.startsWith("http")
@@ -53,7 +57,9 @@ export async function generateMetadata({
       languages: {
         "x-default": `${baseUrl}/blog/${baseSlug}`,
         en: `${baseUrl}/blog/${baseSlug}`,
-        "zh-TW": `${baseUrl}/blog/${baseSlug}_zh-tw`,
+        ...(hasChineseVersion
+          ? { "zh-TW": `${baseUrl}/blog/${baseSlug}_zh-tw` }
+          : {}),
       },
     },
     openGraph: {

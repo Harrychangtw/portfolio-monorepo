@@ -31,6 +31,10 @@ export async function generateMetadata({
   // Determine if this is a Chinese version
   const isChineseVersion = slug.includes("_zh-tw") || slug.includes("_zh-TW");
   const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, "");
+  const allSlugs = new Set(
+    getAllGallerySlugs().map(({ params }) => params.slug.toLowerCase()),
+  );
+  const hasChineseVersion = allSlugs.has(`${baseSlug}_zh-tw`.toLowerCase());
   const canonicalUrl = `${baseUrl}/gallery/${slug}`;
 
   // Get full URL for the image
@@ -58,7 +62,9 @@ export async function generateMetadata({
       languages: {
         "x-default": `${baseUrl}/gallery/${baseSlug}`,
         en: `${baseUrl}/gallery/${baseSlug}`,
-        "zh-TW": `${baseUrl}/gallery/${baseSlug}_zh-tw`,
+        ...(hasChineseVersion
+          ? { "zh-TW": `${baseUrl}/gallery/${baseSlug}_zh-tw` }
+          : {}),
       },
     },
     openGraph: {
