@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { motion } from "motion/react";
-import GuestbookWidget from "@/components/guestbook-widget";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import {
   Mail,
@@ -212,16 +211,6 @@ export default function LinksPageClient() {
           >
             {t("links.hero")}
           </motion.p>
-
-          {/* Guestbook Widget */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-xs mx-auto mt-6"
-          >
-            <GuestbookWidget />
-          </motion.div>
         </motion.div>
 
         {/* ── Links ────────────────────────────────────────── */}
