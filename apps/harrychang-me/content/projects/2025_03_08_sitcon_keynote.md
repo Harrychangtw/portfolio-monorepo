@@ -37,7 +37,7 @@ Ultimately, I structured my talk around three key points:
 
 Planning this part was particularly challenging because the implementations, classifications, and naming conventions for RAG found online are quite chaotic. To build my content on a solid foundation, I heavily referenced a [**very well-written academic paper**](https://arxiv.org/pdf/2312.10997), which became the central framework for my entire presentation.
 
-With these concepts laid out, sharing my experience of developing the **“Chingshin RAG”** project became a natural conclusion.
+With these concepts laid out, sharing my experience of developing the [**“Chingshin RAG”**](/projects/2024_09_23_chingshin_rag) project became a natural conclusion.
 
 ---
 

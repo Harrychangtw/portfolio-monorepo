@@ -47,9 +47,9 @@ Good afternoon, professors. I'm Chi-Wei Chang from Chingshin High School. My cor
 
 On the academic research front, I completed two papers on language model security as first author during high school.
 
-I first identified the gap in Traditional Chinese within AI safety, building the first large-scale Traditional Chinese safety dataset, PATCH, and discovered cross-lingual generalization capabilities when combined with LoRA. This paper just received a recommendation for acceptance from ARR Meta Review yesterday and is expected to appear in EACL Findings.
+I first identified the gap in Traditional Chinese within AI safety, building the first large-scale Traditional Chinese safety dataset, [PATCH](/projects/2025_05_18_patch_dataset), and discovered cross-lingual generalization capabilities when combined with LoRA. This paper just received a recommendation for acceptance from ARR Meta Review yesterday and is expected to appear in EACL Findings.
 
-Next, to address the high iteration costs of existing defense mechanisms, I proposed a tuning-free retrieval-based defense framework called FORTRESS, using a single instruction-tuned model to drive semantic retrieval and dynamic perplexity analysis. This paper has been published in TMLR.
+Next, to address the high iteration costs of existing defense mechanisms, I proposed a tuning-free retrieval-based defense framework called [FORTRESS](/projects/2025_10_12_fortress), using a single instruction-tuned model to drive semantic retrieval and dynamic perplexity analysis. This paper has been published in TMLR.
 
 Beyond research, I led the development of a fully customized campus RAG system without relying on monolithic frameworks like LangChain, which won the first prize at the National Science Council's GenAI Stars competition. It was precisely this development experience that made me aware of AI application security risks. Later, I shared this development journey at SITCON 2025. This talk caught the attention of CyCraft, who reached out and recruited me through a research scholarship. Currently, as their youngest research intern, I'm conducting automated attack taxonomy classification based on LLM attention heads.
 

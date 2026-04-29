@@ -114,7 +114,7 @@ No itinerary. After a carrot donut and a few shops, I walked at my own pace—fa
 
 I finally took a few good images. Not the light-scattered Chinatown I'd been chasing. A slow shutter in Grand Central: a couple kissing for their wedding photos while commuters moved behind them, blurred into streaks. The best shot came from standing still after a day of hunting.
 
-Even writing in my journal while waiting for laundry, I didn't feel particularly changed by the city. Not the way the Dolomites or the suburbs of Venice changed me months earlier. But I found myself more at home in the quiet parks, the empty tables, than the crowded streets. This place felt like home in a way I couldn't articulate then. I still can't.
+Even writing in my journal while waiting for laundry, I didn't feel particularly changed by the city. Not the way the [Dolomites](/gallery/2026_02_08_italy_mountain) or the suburbs of Venice changed me months earlier. But I found myself more at home in the quiet parks, the empty tables, than the crowded streets. This place felt like home in a way I couldn't articulate then. I still can't.
 
 ## Contradictions in Time
 
