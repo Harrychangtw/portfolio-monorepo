@@ -131,21 +131,12 @@
           ]
         },
         {
-          "title": "Core Team & Multimedia Lead",
-          "subtitle": "Boundless Voices Charity Concert",
-          "meta": "Taipei, Taiwan",
-          "date": "Jan – Aug 2023",
-          "bullets": [
-            "Contributed to scriptwriting, video production, and brochure design",
-            "Silver Award — Taipei City Service Learning Award"
-          ]
-        },
-        {
           "title": "Debater & Public Speaker",
           "subtitle": "Chingshin Academy & Various Platforms",
           "meta": "Taipei, Taiwan",
           "date": "Sep 2020 – Present",
           "bullets": [
+            "Open Semifinalist & 6th Overall Best Speaker, Taiwan International Debate Open (2026)",
             "Champion & Overall 3rd Best Speaker, Fushing Debate Open (2025)",
             "Semi-Finalist, Taiwan Schools Debating Championships (2023, 2024)",
             "National 5th Place, Young Diplomats Program (MOFA, 2023)",
@@ -177,19 +168,19 @@
         {
           "title": "Personal Portfolio Website",
           "meta": "",
-          "date": "2024",
+          "date": "2025 - Present",
           "bullets": [
-            "High-performance site with Markdown CMS and dual-domain architecture",
-            "Lighthouse 100 on both mobile and desktop; 100 RES under 4k+ visitors"
+            "Next.js 15 / React 19 Turborepo; force-directed knowledge graph (D3 + Canvas), Markdown CMS, and i18n",
+            "Sustained 100 Real Experience Score under 4,000+ single-day visitors; Lighthouse 93–100 across all 12 audited routes"
           ]
         },
         {
-          "title": "Robofest 2022 — Unknown Mission (VEX IQ)",
+          "title": "Kidstuff Operations Modernization",
           "meta": "",
-          "date": "2022",
+          "date": "2026 – Present",
           "bullets": [
-            "1st Place Worldwide; responsible for design, build, and programming",
-            "Invented a novel hook system for the robot climbing mechanism"
+            "Multi-phase modernization for a family-run e-commerce operation (NT$100M+ annual revenue, 110K-member community); led employee-side discovery, phased technical proposal, and ongoing solo delivery",
+            "Production automation POC validated at 198/200 unattended runs; quantified ~60 employee hrs/week in recoverable workload"
           ]
         }
       ]
