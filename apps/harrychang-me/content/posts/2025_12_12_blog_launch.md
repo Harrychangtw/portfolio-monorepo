@@ -12,7 +12,7 @@ pinned: -1
 
 We live in a world saturated with noise. In the rush of our daily lives, it's easy to fall into passive consumption, forgetting the value of active, deliberate thought. This blog is my attempt to carve out a space for the signal. Its purpose isn't to assert a presence, but to serve as a small beacon for those who happen to stumble across it.
 
-This post marks the beginning of a multi-year commitment to this medium. In contrast to the finished work on my [projects page](https://harrychang.me/projects), this blog will be a home for the process—the chain of thought, the raw ideas, and the reflections that are often lost in the race to the next deadline.
+This post marks the beginning of a multi-year commitment to this medium. In contrast to the finished work on my [projects page](/projects), this blog will be a home for the process—the chain of thought, the raw ideas, and the reflections that are often lost in the race to the next deadline.
 
 ### What You Can Expect
 

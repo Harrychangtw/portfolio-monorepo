@@ -44,7 +44,7 @@ featured: true
 
 ## 謝幕影片製作
 
-延續上次「[古韻今唱](https://www.harrychang.me/projects/2024_08_19_classics_reimagined_zh-tw)」的成功經驗，我再次擔綱一分鐘謝幕影片的拍攝與剪輯。這次也嘗試從旁協助對剪輯抱有熱忱的同學，最終由他獨立完成了長達八分鐘的幕後花絮影片。
+延續上次「[古韻今唱](/projects/2024_08_19_classics_reimagined_zh-tw)」的成功經驗，我再次擔綱一分鐘謝幕影片的拍攝與剪輯。這次也嘗試從旁協助對剪輯抱有熱忱的同學，最終由他獨立完成了長達八分鐘的幕後花絮影片。
 
 ![最後的成片](https://drive.google.com/file/d/1HUxfhr16vn-gAso3RF1Vz-ShMEpfnStO/view?usp=sharing)
 

@@ -44,7 +44,7 @@ The train arrives at its final destination. The conductor concludes that love is
 
 ## Curtain Call Video Production
 
-Building on the success of my last project, "[Classics Reimagined](https://www.harrychang.me/projects/2024_08_19_classics_reimagined)," I once again took on the role of shooting and editing the one-minute curtain call video. This time, I also tried to assist a classmate who was passionate about editing, and he independently completed an eight-minute behind-the-scenes featurette.
+Building on the success of my last project, "[Classics Reimagined](/projects/2024_08_19_classics_reimagined)," I once again took on the role of shooting and editing the one-minute curtain call video. This time, I also tried to assist a classmate who was passionate about editing, and he independently completed an eight-minute behind-the-scenes featurette.
 
 ![Final Video](https://drive.google.com/file/d/1HUxfhr16vn-gAso3RF1Vz-ShMEpfnStO/view?usp=sharing)
 
