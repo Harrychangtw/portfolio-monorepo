@@ -25,7 +25,7 @@ export const siteConfig = {
       default: "Harry Chang 張祺煒 | Portfolio",
     },
     description:
-      "Harry Chang (張祺煒) builds new worlds at the intersection of AI, code, and visual storytelling. Explore his portfolio of software development, photography, and design.",
+      "Harry Chang (張祺煒) — developer, researcher, and photographer. Building at the intersection of AI, code, and visual storytelling.",
     keywords: [
       "Harry Chang",
       "張祺煒",

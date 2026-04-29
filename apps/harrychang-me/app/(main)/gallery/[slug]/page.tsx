@@ -8,8 +8,9 @@ import {
 import GalleryPostClient from "@portfolio/ui/gallery-post-client";
 import GraphNextUp from "@/components/graph/graph-next-up";
 import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
+import { siteConfig } from "@/config/site";
 
-const baseUrl = "https://www.harrychang.me";
+const baseUrl = siteConfig.url;
 
 export async function generateMetadata({
   params,
@@ -30,6 +31,10 @@ export async function generateMetadata({
   // Determine if this is a Chinese version
   const isChineseVersion = slug.includes("_zh-tw") || slug.includes("_zh-TW");
   const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, "");
+  const allSlugs = new Set(
+    getAllGallerySlugs().map(({ params }) => params.slug.toLowerCase()),
+  );
+  const hasChineseVersion = allSlugs.has(`${baseSlug}_zh-tw`.toLowerCase());
   const canonicalUrl = `${baseUrl}/gallery/${slug}`;
 
   // Get full URL for the image
@@ -38,8 +43,10 @@ export async function generateMetadata({
     : `${baseUrl}${item.imageUrl.startsWith("/") ? "" : "/"}${item.imageUrl}`;
 
   return {
-    title: `${item.title} | Gallery`,
-    description: item.description,
+    title: isChineseVersion
+      ? `${item.title} | 影像`
+      : `${item.title} | Gallery`,
+    description: item.description || `${item.title} — by Harry Chang`,
     keywords: [
       item.title,
       "photography",
@@ -53,8 +60,11 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
+        "x-default": `${baseUrl}/gallery/${baseSlug}`,
         en: `${baseUrl}/gallery/${baseSlug}`,
-        "zh-TW": `${baseUrl}/gallery/${baseSlug}_zh-tw`,
+        ...(hasChineseVersion
+          ? { "zh-TW": `${baseUrl}/gallery/${baseSlug}_zh-tw` }
+          : {}),
       },
     },
     openGraph: {
@@ -162,7 +172,7 @@ export default async function GalleryItemPage({
           {
             "@type": "ListItem",
             position: 1,
-            name: "Home",
+            name: "Harry Chang",
             item: baseUrl,
           },
           {

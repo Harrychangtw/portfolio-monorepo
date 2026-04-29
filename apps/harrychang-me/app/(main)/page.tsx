@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 import AboutSection from "@/components/main/about-section";
 import UpdatesSection from "@/components/main/updates-section";
 import ProjectsSection from "@portfolio/ui/projects-section";
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     absolute: "Harry Chang 張祺煒 | Portfolio",
   },
   description:
-    "Harry Chang (張祺煒) builds at the intersection of AI, code, and visual storytelling. Curiosity that refuses to apologize — code, camera, and everything in between.",
+    "Harry Chang (張祺煒) — developer, researcher, and photographer. Building at the intersection of AI, code, and visual storytelling.",
   keywords: [
     "Harry Chang",
     "張祺煒",
@@ -39,10 +40,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Harry Chang", url: "https://www.harrychang.me" }],
   alternates: {
-    canonical: "https://www.harrychang.me/",
+    canonical: `${siteConfig.url}/`,
     languages: {
-      en: "https://www.harrychang.me/",
-      "zh-TW": "https://www.harrychang.me/?lang=zh-TW",
+      "x-default": `${siteConfig.url}/`,
+      en: `${siteConfig.url}/`,
     },
   },
   openGraph: {
@@ -62,8 +63,24 @@ export default function Home() {
   const projectsItems = getAllProjectsMetadata("en");
   const blogPosts = getAllPostsMetadata("en");
 
+  const profileSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${siteConfig.url}/#profilepage`,
+    url: `${siteConfig.url}/`,
+    name: `${siteConfig.author.name} ${siteConfig.author.alternateName} | Portfolio`,
+    inLanguage: "en-US",
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    mainEntity: { "@id": `${siteConfig.url}/#person` },
+    about: { "@id": `${siteConfig.url}/#person` },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }}
+      />
       <AboutSection />
       <UpdatesSection />
       <ProjectsSection initialItems={projectsItems} limit={12} showSeeAll />

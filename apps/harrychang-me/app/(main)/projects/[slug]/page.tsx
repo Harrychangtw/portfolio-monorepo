@@ -8,8 +8,9 @@ import {
 import ProjectPostClient from "@portfolio/ui/project-post-client";
 import GraphNextUp from "@/components/graph/graph-next-up";
 import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
+import { siteConfig } from "@/config/site";
 
-const baseUrl = "https://www.harrychang.me";
+const baseUrl = siteConfig.url;
 
 export async function generateMetadata({
   params,
@@ -30,6 +31,10 @@ export async function generateMetadata({
   // Determine if this is a Chinese version
   const isChineseVersion = slug.includes("_zh-tw") || slug.includes("_zh-TW");
   const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, "");
+  const allSlugs = new Set(
+    getAllProjectSlugs().map(({ params }) => params.slug.toLowerCase()),
+  );
+  const hasChineseVersion = allSlugs.has(`${baseSlug}_zh-tw`.toLowerCase());
 
   const canonicalUrl = `${baseUrl}/projects/${slug}`;
 
@@ -39,8 +44,10 @@ export async function generateMetadata({
     : `${baseUrl}${project.imageUrl.startsWith("/") ? "" : "/"}${project.imageUrl}`;
 
   return {
-    title: `${project.title} | Projects`,
-    description: project.description,
+    title: isChineseVersion
+      ? `${project.title} | 作品`
+      : `${project.title} | Projects`,
+    description: project.description || `${project.title} — by Harry Chang`,
     keywords: [
       project.title,
       project.category,
@@ -55,8 +62,11 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
+        "x-default": `${baseUrl}/projects/${baseSlug}`,
         en: `${baseUrl}/projects/${baseSlug}`,
-        "zh-TW": `${baseUrl}/projects/${baseSlug}_zh-tw`,
+        ...(hasChineseVersion
+          ? { "zh-TW": `${baseUrl}/projects/${baseSlug}_zh-tw` }
+          : {}),
       },
     },
     openGraph: {
@@ -173,7 +183,7 @@ export default async function ProjectPage({
           {
             "@type": "ListItem",
             position: 1,
-            name: "Home",
+            name: "Harry Chang",
             item: baseUrl,
           },
           {

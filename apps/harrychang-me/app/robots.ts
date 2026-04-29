@@ -32,7 +32,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/cal/"],
+        disallow: ["/api/"],
       },
     ],
     sitemap: "https://www.harrychang.me/sitemap.xml",

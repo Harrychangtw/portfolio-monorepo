@@ -8,8 +8,9 @@ import {
 import BlogPostClient from "@portfolio/ui/blog-post-client";
 import GraphNextUp from "@/components/graph/graph-next-up";
 import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
+import { siteConfig } from "@/config/site";
 
-const baseUrl = "https://www.harrychang.me";
+const baseUrl = siteConfig.url;
 
 export async function generateMetadata({
   params,
@@ -29,6 +30,10 @@ export async function generateMetadata({
 
   const isChineseVersion = slug.includes("_zh-tw") || slug.includes("_zh-TW");
   const baseSlug = slug.replace(/_zh-tw|_zh-TW/i, "");
+  const allSlugs = new Set(
+    getAllPostSlugs().map(({ params }) => params.slug.toLowerCase()),
+  );
+  const hasChineseVersion = allSlugs.has(`${baseSlug}_zh-tw`.toLowerCase());
   const canonicalUrl = `${baseUrl}/blog/${slug}`;
 
   const imageUrl = post.imageUrl.startsWith("http")
@@ -36,8 +41,9 @@ export async function generateMetadata({
     : `${baseUrl}${post.imageUrl.startsWith("/") ? "" : "/"}${post.imageUrl}`;
 
   return {
-    title: `${post.title} | Blog`,
-    description: post.description,
+    title: isChineseVersion ? `${post.title} | 部落格` : `${post.title} | Blog`,
+    description:
+      post.description || `${post.title} — by ${post.author || "Harry Chang"}`,
     keywords: [
       post.title,
       ...(post.tags || []),
@@ -49,8 +55,11 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
+        "x-default": `${baseUrl}/blog/${baseSlug}`,
         en: `${baseUrl}/blog/${baseSlug}`,
-        "zh-TW": `${baseUrl}/blog/${baseSlug}_zh-tw`,
+        ...(hasChineseVersion
+          ? { "zh-TW": `${baseUrl}/blog/${baseSlug}_zh-tw` }
+          : {}),
       },
     },
     openGraph: {
@@ -143,7 +152,7 @@ export default async function BlogPostPage({
           {
             "@type": "ListItem",
             position: 1,
-            name: "Home",
+            name: "Harry Chang",
             item: baseUrl,
           },
           {
