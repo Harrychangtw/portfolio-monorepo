@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LinksPageClient from "@/components/main/links-page-client";
 
 export const metadata: Metadata = {
-  title: "Links | Harry Chang 張祺煒",
+  title: { absolute: "Links | Harry Chang 張祺煒" },
   description: "Connect with Harry Chang - All my links in one place",
   keywords: ["Harry Chang", "張祺煒", "contact", "social media", "links"],
   alternates: {

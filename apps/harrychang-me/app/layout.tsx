@@ -103,8 +103,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
     languages: {
+      "x-default": siteConfig.url,
       en: siteConfig.url,
-      "zh-TW": `${siteConfig.url}?lang=zh-TW`,
     },
   },
   openGraph: {
@@ -157,6 +157,62 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        url: siteConfig.url,
+        name: siteConfig.metadata.siteName,
+        description: siteConfig.metadata.description,
+        inLanguage: ["en-US", "zh-TW"],
+        publisher: {
+          "@id": `${siteConfig.url}/#person`,
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": `${siteConfig.url}/#person`,
+        name: siteConfig.author.name,
+        alternateName: siteConfig.author.alternateName,
+        url: siteConfig.url,
+        image: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
+        sameAs: [
+          siteConfig.social.scholar,
+          siteConfig.social.github,
+          siteConfig.social.linkedin,
+          siteConfig.social.instagram,
+          siteConfig.social.letterboxd,
+          siteConfig.social.medium,
+          siteConfig.social.telegram,
+          siteConfig.social.discord,
+          siteConfig.social.spotify,
+          "https://x.com/harrychangtw",
+        ],
+        jobTitle: siteConfig.author.jobTitle,
+        description: siteConfig.author.description,
+        knowsAbout: siteConfig.skills,
+        knowsLanguage: [
+          {
+            "@type": "Language",
+            name: "English",
+            alternateName: "en",
+          },
+          {
+            "@type": "Language",
+            name: "Chinese (Traditional)",
+            alternateName: "zh-TW",
+          },
+        ],
+        alumniOf: {
+          "@type": "EducationalOrganization",
+          name: "Chingshin Academy",
+        },
+      },
+    ],
+  };
+
   return (
     <html
       lang="en"
@@ -174,6 +230,10 @@ export default function RootLayout({
       <body
         className={`bg-background text-primary antialiased min-h-screen flex flex-col`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <RootClientShell>{children}</RootClientShell>
       </body>
     </html>

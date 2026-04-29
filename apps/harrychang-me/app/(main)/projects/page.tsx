@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/projects",
     languages: {
+      "x-default": "/projects",
       en: "/projects",
-      "zh-TW": "/projects?lang=zh-TW",
     },
   },
   openGraph: {

@@ -8,8 +8,9 @@ import {
 import ProjectPostClient from "@portfolio/ui/project-post-client";
 import GraphNextUp from "@/components/graph/graph-next-up";
 import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
+import { siteConfig } from "@/config/site";
 
-const baseUrl = "https://www.harrychang.me";
+const baseUrl = siteConfig.url;
 
 export async function generateMetadata({
   params,
@@ -39,8 +40,10 @@ export async function generateMetadata({
     : `${baseUrl}${project.imageUrl.startsWith("/") ? "" : "/"}${project.imageUrl}`;
 
   return {
-    title: `${project.title} | Projects`,
-    description: project.description,
+    title: isChineseVersion
+      ? `${project.title} | 作品`
+      : `${project.title} | Projects`,
+    description: project.description || `${project.title} — by Harry Chang`,
     keywords: [
       project.title,
       project.category,
@@ -55,6 +58,7 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalUrl,
       languages: {
+        "x-default": `${baseUrl}/projects/${baseSlug}`,
         en: `${baseUrl}/projects/${baseSlug}`,
         "zh-TW": `${baseUrl}/projects/${baseSlug}_zh-tw`,
       },
@@ -173,7 +177,7 @@ export default async function ProjectPage({
           {
             "@type": "ListItem",
             position: 1,
-            name: "Home",
+            name: "Harry Chang",
             item: baseUrl,
           },
           {
