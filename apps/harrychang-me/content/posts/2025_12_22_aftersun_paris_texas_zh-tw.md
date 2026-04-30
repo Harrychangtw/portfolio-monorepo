@@ -4,7 +4,7 @@ description: "兩部關於親子、距離以及「被看見」那無法承受之
 imageUrl: "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
 date: "2025-12-22"
 author: "Harry Chang"
-tags: ["Film", "Reflection"]
+tags: ["Film", "Criticism"]
 pinned: -1
 ---
 

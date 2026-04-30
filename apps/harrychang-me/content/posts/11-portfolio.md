@@ -4,7 +4,7 @@ description: "365 days ago, I missed a mountain and built a website instead. On 
 imageUrl: "images/optimized/blogs/11-portfolio/titlecard.webp"
 date: "2026-04-12"
 author: "Harry Chang"
-tags: ["Web Development", "Reflection", "Personal"]
+tags: ["Web Development", "Retrospective", "Personal"]
 pinned: -1
 ---
 

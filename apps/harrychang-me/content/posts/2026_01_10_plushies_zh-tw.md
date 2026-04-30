@@ -4,7 +4,7 @@ description: 不是每隻絨毛玩具都得走可愛路線。有些就該一臉�
 imageUrl: images/optimized/blogs/2026_01_10_plushies/titlecard.webp
 date: "2026-01-10"
 author: Harry Chang
-tags: ["Collection", "Reflection"]
+tags: ["Collection", "Essay"]
 pinned: -1
 ---
 

@@ -4,7 +4,7 @@ description: "Two films about parenthood, distance, and the unbearable weight of
 imageUrl: "images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp"
 date: "2025-12-22"
 author: "Harry Chang"
-tags: ["Film", "Reflection"]
+tags: ["Film", "Criticism"]
 pinned: -1
 ---
 

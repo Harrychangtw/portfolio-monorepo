@@ -4,7 +4,7 @@ description: "兩部關於建構現實、以及我們在其中扮演的自我的
 imageUrl: "images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp"
 date: "2026-02-10"
 author: "Harry Chang"
-tags: ["Film", "Reflection"]
+tags: ["Film", "Criticism"]
 pinned: -1
 locked: false
 ---

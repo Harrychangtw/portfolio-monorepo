@@ -4,7 +4,7 @@ description: "十六天，三座城市，一趟拒絕連貫的旅程。關於排
 imageUrl: "images/optimized/blogs/12-us-trip/titlecard.webp"
 date: "2026-04-21"
 author: "Harry Chang"
-tags: ["Travel", "Reflection"]
+tags: ["Travel", "Memoir"]
 pinned: -1
 ---
 

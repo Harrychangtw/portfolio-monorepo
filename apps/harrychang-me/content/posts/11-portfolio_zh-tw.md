@@ -4,7 +4,7 @@ description: "365 天前，我錯過了一座山，卻建了一個網站。關�
 imageUrl: "images/optimized/blogs/11-portfolio/titlecard.webp"
 date: "2026-04-12"
 author: "Harry Chang"
-tags: ["Web Development", "Reflection", "Personal"]
+tags: ["Web Development", "Retrospective", "Personal"]
 pinned: -1
 ---
 

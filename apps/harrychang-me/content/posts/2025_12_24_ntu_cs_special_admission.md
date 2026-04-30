@@ -4,7 +4,7 @@ description: "When online resources are scarce and everyone around you is a CTF 
 imageUrl: images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp
 date: "2025-12-24"
 author: Harry Chang
-tags: ["Admission", "Experience", "Reflection"]
+tags: ["Admission", "Experience", "Memoir"]
 pinned: -1
 locked: false
 ---

@@ -4,7 +4,7 @@ description: "16 days, three cities, and a trip that refused to cohere. On diver
 imageUrl: "images/optimized/blogs/12-us-trip/titlecard.webp"
 date: "2026-04-21"
 author: "Harry Chang"
-tags: ["Travel", "Reflection"]
+tags: ["Travel", "Memoir"]
 pinned: -1
 ---
 

@@ -4,7 +4,7 @@ description: "一台我無法以任何理性指標辯護的相機。一個我會
 imageUrl: "images/optimized/blogs/9_m11d/titlecard.webp"
 date: "2026-02-19"
 author: "Harry Chang"
-tags: ["Photography", "Hardware", "Reflection"]
+tags: ["Photography", "Hardware", "Review"]
 pinned: -1
 ---
 

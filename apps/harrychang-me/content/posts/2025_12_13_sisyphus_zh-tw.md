@@ -4,7 +4,7 @@ description: "重讀卡繆的哲學散文，回顧荒謬與掙扎，以及閱讀
 imageUrl: "images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp"
 date: "2025-12-13"
 author: "Harry Chang"
-tags: ["Literature", "Philosophy", "Reflection"]
+tags: ["Literature", "Philosophy", "Review"]
 pinned: -1
 ---
 

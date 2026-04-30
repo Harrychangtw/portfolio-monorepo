@@ -4,7 +4,7 @@ description: 當網路上的心得屈指可數，當身邊全是 CTF 與資奧�
 imageUrl: images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp
 date: "2025-12-24"
 author: Harry Chang
-tags: ["Admission", "Experience", "Reflection"]
+tags: ["Admission", "Experience", "Memoir"]
 pinned: -1
 locked: false
 ---
