@@ -13,7 +13,7 @@ locked: false
 gallery:
   - url: "images/optimized/gallery/2023_11_18_at_dawn/DSCF0012 3 Edited.webp"
   - url: "images/optimized/gallery/2023_11_18_at_dawn/DSCF0052 54 Edited.webp"
-  - url: "images/optimized/gallery/2023_11_18_at_dawn/DSCF0199.webp"
+  - url: "images/optimized/gallery/2023_11_18_at_dawn/dscf0199.webp"
   - url: "images/optimized/gallery/2023_11_18_at_dawn/DSCF7421 5 Edited.webp"
 ---
 

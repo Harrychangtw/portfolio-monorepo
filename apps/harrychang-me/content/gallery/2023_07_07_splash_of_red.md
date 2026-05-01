@@ -1,7 +1,7 @@
 ---
 title: "Splash of Red"
 description: ""
-imageUrl: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0234.webp"
+imageUrl: "images/optimized/gallery/2023_07_07_splash_of_red/dscf0234.webp"
 date: "2023-07-07"
 camera: "FUJIFILM XT-5"
 lens: "TTARTISAN 50mm f/0.95"

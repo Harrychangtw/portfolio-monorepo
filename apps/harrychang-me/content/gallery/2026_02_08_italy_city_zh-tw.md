@@ -11,11 +11,11 @@ featured: true
 pinned: 3
 locked: false
 gallery:
-  - url: "images/optimized/gallery/2026-italy-city/L1000064.webp"
-  - url: "images/optimized/gallery/2026-italy-city/L1000121.webp"
+  - url: "images/optimized/gallery/2026-italy-city/l1000064.webp"
+  - url: "images/optimized/gallery/2026-italy-city/l1000121.webp"
   - url: "images/optimized/gallery/2026-italy-city/l1000758.webp"
-  - url: "images/optimized/gallery/2026-italy-city/L1000472.webp"
-  - url: "images/optimized/gallery/2026-italy-city/L1000474.webp"
+  - url: "images/optimized/gallery/2026-italy-city/l1000472.webp"
+  - url: "images/optimized/gallery/2026-italy-city/l1000474.webp"
   - url: "images/optimized/gallery/2026-italy-city/l1000480.webp"
   - url: "images/optimized/gallery/2026-italy-city/l1000486.webp"
   - url: "images/optimized/gallery/2026-italy-city/l1000492.webp"
