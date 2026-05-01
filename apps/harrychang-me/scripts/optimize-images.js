@@ -16,6 +16,25 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
+// Widths emitted as `<name>-<width>w.webp` siblings of the main file. Consumed
+// by the custom Next.js loader in packages/ui/image-container.tsx — must stay
+// in sync with RESPONSIVE_WIDTHS there.
+const RESPONSIVE_WIDTHS = [640, 828, 1080, 1920, 2560];
+
+async function generateResponsiveVariants(imagePath, outputFilename, quality, { rotate = false } = {}) {
+  const baseDir = path.dirname(outputFilename);
+  const baseName = path.basename(outputFilename, '.webp');
+  for (const width of RESPONSIVE_WIDTHS) {
+    const variantPath = path.join(baseDir, `${baseName}-${width}w.webp`);
+    let pipeline = sharp(imagePath);
+    if (rotate) pipeline = pipeline.rotate();
+    await pipeline
+      .resize({ width, fit: 'inside', withoutEnlargement: true })
+      .webp({ quality })
+      .toFile(variantPath);
+  }
+}
+
 // Configuration
 const config = {
   projects: {
@@ -220,7 +239,16 @@ async function processGalleryImages() {
             
           console.log(`  Optimized landscape: ${image} -> ${path.basename(outputFilename)}${replacementMsg}`);
         }
-        
+
+        const galleryMainQuality = isTitleImage
+          ? config.gallery.title.quality
+          : isFullscreen
+            ? config.gallery.fullscreen.quality
+            : isPortrait
+              ? config.gallery.portrait.quality
+              : config.gallery.landscape.quality;
+        await generateResponsiveVariants(imagePath, outputFilename, galleryMainQuality);
+
         // Generate thumbnail for blur-up loading
         if (!image.includes('thumb')) {
           const thumbFilename = path.join(outputPath, image.replace(/\.[^.]+$/, '-thumb.webp'));
@@ -324,12 +352,21 @@ async function processProjectImages() {
           
         console.log(`  Optimized landscape: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
       }
-      
+
+      const projectsMainQuality = isTitleCard
+        ? config.projects.title.quality
+        : isHero
+          ? config.projects.hero.quality
+          : isPortrait
+            ? config.projects.portrait.quality
+            : config.projects.landscape.quality;
+      await generateResponsiveVariants(imagePath, outputFilename, projectsMainQuality);
+
       // Generate thumbnail for blur-up loading
       if (!imagePath.includes('thumb')) {
         const thumbFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '-thumb.webp'));
         const thumbReplacementMsg = checkFileReplacement(thumbFilename);
-        
+
         await sharp(imagePath)
           .resize({
             width: config.projects.thumbnail.width,
@@ -431,12 +468,21 @@ async function processBlogImages() {
           
         console.log(`  Optimized landscape: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
       }
-      
+
+      const blogsMainQuality = isTitleCard
+        ? config.blogs.title.quality
+        : isHero
+          ? config.blogs.hero.quality
+          : isPortrait
+            ? config.blogs.portrait.quality
+            : config.blogs.landscape.quality;
+      await generateResponsiveVariants(imagePath, outputFilename, blogsMainQuality, { rotate: true });
+
       // Generate thumbnail for blur-up loading
       if (!imagePath.includes('thumb')) {
         const thumbFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '-thumb.webp'));
         const thumbReplacementMsg = checkFileReplacement(thumbFilename);
-        
+
         await pipeline.clone()
           .resize({
             width: config.blogs.thumbnail.width,
