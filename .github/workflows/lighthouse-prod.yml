@@ -43,25 +43,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Resolve deployment URL
-        id: url
-        run: |
-          DEPLOY_URL="${{ github.event.deployment_status.environment_url }}"
-          if [ -z "$DEPLOY_URL" ]; then
-            DEPLOY_URL="${{ github.event.deployment_status.target_url }}"
-          fi
-          if [ -z "$DEPLOY_URL" ]; then
-            echo "::error::No deployment URL on the deployment_status payload (environment_url and target_url both empty)."
-            exit 1
-          fi
-          DEPLOY_URL="${DEPLOY_URL%/}"
-          echo "deployment_url=$DEPLOY_URL" >> "$GITHUB_OUTPUT"
-          echo "Resolved deployment URL: $DEPLOY_URL"
-
+      # We audit the canonical public domain rather than the per-deployment
+      # vercel.app URL. The deployment_status trigger already gates on a
+      # successful Production deploy, and the canonical URL is what real
+      # users hit (custom domain + Vercel CDN edge), with no preview-auth
+      # or deployment-protection redirects.
       - name: Build URL list
         id: urls
         env:
-          DEPLOY_URL: ${{ steps.url.outputs.deployment_url }}
+          DEPLOY_URL: https://harrychang.me
         run: |
           PATHS=(
             "/"
@@ -111,7 +101,7 @@ jobs:
 
       - name: Update README with production Lighthouse badges
         env:
-          DEPLOYMENT_URL: ${{ steps.url.outputs.deployment_url }}
+          DEPLOYMENT_URL: https://harrychang.me
         run: node .github/scripts/update-lighthouse-readme.js --mode=prod
 
       - name: Format README with Prettier
