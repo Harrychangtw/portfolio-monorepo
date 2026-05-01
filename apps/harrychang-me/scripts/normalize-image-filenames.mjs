@@ -21,7 +21,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 
 const APPLY = process.argv.includes('--apply');
 const ROOT = process.cwd();
@@ -194,7 +194,9 @@ if (!APPLY) {
 // the new casing.
 function gitMv(from, to) {
   try {
-    execSync(`git mv -f -- ${JSON.stringify(from)} ${JSON.stringify(to)}`, { stdio: 'pipe' });
+    // execFileSync with an arg array — no shell parsing, so filenames containing
+    // spaces or shell metacharacters can never reshape the command.
+    execFileSync('git', ['mv', '-f', '--', from, to], { stdio: 'pipe' });
   } catch {
     fs.renameSync(from, to);
   }
