@@ -66,7 +66,7 @@ That's it. That's the entire mechanism.
 
 The tires compress just enough to grip the plastic frames without over-tightening. The weight of the case itself keeps everything stable. No adhesives. No permanent modifications. The fans exhaust air from the bottom of the T1, creating circulation where none existed before.
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001290.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001290.webp)
 
 GPU temperatures dropped from 80°C to an average of 61°C under load, maxing at 65°C. The aggressive fan curve I'd been running became unnecessary. The 8-pin connectors no longer felt like they were slowly cooking themselves.
 
@@ -78,11 +78,11 @@ The mount started as just a fan holder. It didn't stay that way.
 
 Behind my IKEA Alex drawers, there's a narrow gap. The LEGO frame, it turned out, fit perfectly. So I added an outer section that lets my router slide in, tucked away where it occupies almost no visible space. The router actually gets better airflow now. The bottom exhaust from the fans keeps the entire drawer area surprisingly cool.
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001286.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001286.webp)
 
 After getting an Apple Watch, I added a charger mount to the front. The cable routes through the bottom of the LEGO structure and plugs directly into the motherboard for power. Now I drop the watch there before showering and pick it up charged afterward. Effortless.
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001285.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001285.webp)
 
 None of this was planned. The fan mount became a router holder became a charging station. I stopped designing and started responding. The watch goes on before I shower. The router has better coverage than it did on the floor. The drawer stays cool.
 
@@ -90,9 +90,9 @@ None of this was planned. The fan mount became a router holder became a charging
 
 This isn't my only functional LEGO build. Speaker stands with rubber band feet. A diffuser tray. Nothing elaborate.
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001288.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001288.webp)
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001284.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001284.webp)
 
 People ask why I don't 3D print. The results would look cleaner. More "finished." But I like the visible studs. The obvious construction. Maybe that's rationalization. Maybe I just like building with bricks and everything else is justification I assembled afterward, stud by stud.
 

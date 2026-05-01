@@ -20,13 +20,13 @@ pinned: -1
 
 在《巴黎，德州》裡，Travis 在四年自我放逐後，從沙漠中走出。他一直在逃離，逃離他婚姻的殘局，逃離他的兒子 Hunter，逃離他自身愛意所導致的暴力。當他最終在窺視秀房間與 Jane 重逢，隔著單向鏡與她交談時，做了他唯一知道該怎麼做的事：他告訴她真相，然後再次消失。
 
-![framed:Walt 倚靠在綠色霓虹燈下的車上](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Paris_Texas_08.webp)
+![framed:Walt 倚靠在綠色霓虹燈下的車上](images/optimized/blogs/2025_12_22_aftersun_paris_texas/paris_texas_08.webp)
 
 他沒有留下。他也無法留下。電影的結尾，Travis 從遠處看著 Jane 與 Hunter 相擁，然後駛入再一片荒漠。他愛他們，愛到足以讓他們團聚。他也愛他們，愛到足以轉身離開。
 
 在《日麗》中，距離是不同的，但同樣令人心碎。十一歲的 Sophie 正與父親 Calum 度假，她不明白自己所見的一切。她不可能明白。鏡頭捕捉到 Calum 凝視彼方、獨自在陽台哭泣的片刻，他背負著一份沉重活著，而那份沉重，Sophie 要在數十年後才能洞察。整部電影以記憶的形式拼湊而成，像是成年後的 Sophie 不斷重看、檢視的家庭錄影帶，如今的她終於理解十一歲的自己無法理解的種種。
 
-![framed:Calum 在陽台欄杆上平衡](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Aftersun_44.webp)
+![framed:Calum 在陽台欄杆上平衡](images/optimized/blogs/2025_12_22_aftersun_paris_texas/aftersun_44.webp)
 
 Calum 早已在離開的路上了。他早已在成為陌生人。只是 Sophie 曾懵懂無知。
 
@@ -34,7 +34,7 @@ Calum 早已在離開的路上了。他早已在成為陌生人。只是 Sophie 
 
 兩部電影都將「隔閡」化為武器。在《巴黎，德州》，那是窺視秀包廂的單向鏡。Travis 看得見 Jane，Jane 看不見 Travis。他對著電話說話，敘述他們共同的過往，而她慢慢意識到電話另一頭是誰。那片玻璃使告解成為可能。若沒有它，對話將無從開始。
 
-![framed:倒映在窺視秀包廂的鏡子裡](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Paris_Texas_58.webp)
+![framed:倒映在窺視秀包廂的鏡子裡](images/optimized/blogs/2025_12_22_aftersun_paris_texas/paris_texas_58.webp)
 
 在《日麗》，隔閡是時間本身。Sophie 透過攝影機的媒介、透過記憶的扭曲、透過童年感知與成年理解之間那不可能的鴻溝，凝視著她的父親。她現在看得見他了。但她看的是一段錄影。她看見的是披著父親臉孔的缺席。
 
@@ -54,7 +54,7 @@ Calum 的版本則更模糊，更富悲劇性。我們從未明確知悉那次�
 
 Hunter 從照片中記得 Travis。Sophie 從 DV 中記得 Calum。兩個孩子都在從碎片中重構父親的形象，試圖理解那些無法解釋自己的男人。
 
-![framed:Calum 與 Sophie 的拍立得合影](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Aftersun_61.webp)
+![framed:Calum 與 Sophie 的拍立得合影](images/optimized/blogs/2025_12_22_aftersun_paris_texas/aftersun_61.webp)
 
 在《日麗》的一場景中，Sophie 問 Calum，他以為自己在她這個年紀時，未來會做什麼。他的回答揭幕了他未來中原應存在，實際上卻空無一物的洞。
 
@@ -76,7 +76,7 @@ Travis 躲在單向鏡後。他用第三人稱敘述自己的失敗，彷彿在�
 
 Calum 躲在扮演好爸爸的偽裝後。他安排活動，在度假村與 Sophie 跳舞，假裝一切安好。但裂縫清晰可見。
 
-![framed:Sophie 與 Calum 在海裡游泳](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Aftersun_12.webp)
+![framed:Sophie 與 Calum 在海裡游泳](images/optimized/blogs/2025_12_22_aftersun_paris_texas/aftersun_12.webp)
 
 攝影機捕捉到他臉龐試圖隱藏的情緒。當成年的 Sophie 觀看那些錄影時，她看見一個男人，在她曾經歡快暢泳的同一片海中掙扎，而她當時毫無察覺。
 
@@ -95,7 +95,7 @@ Calum 躲在扮演好爸爸的偽裝後。他安排活動，在度假村與 Soph
 他們不會。
 但我們還是會繼續看。
 
-![framed:Travis 孤身站在停車場](images/optimized/blogs/2025_12_22_aftersun_paris_texas/Paris_Texas_62.webp)
+![framed:Travis 孤身站在停車場](images/optimized/blogs/2025_12_22_aftersun_paris_texas/paris_texas_62.webp)
 
 ---
 

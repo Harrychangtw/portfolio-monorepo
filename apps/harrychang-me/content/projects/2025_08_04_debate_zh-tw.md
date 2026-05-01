@@ -35,40 +35,40 @@ featured: true
 
 台灣學校辯論挑戰賽（TSDC）是台灣最重要的辯論賽事之一，吸引了頂尖的學校和辯手，包括來自台灣辯論國家隊（TDU）的隊伍。在 2023 年，Morris、Sean 和我一同打進了半決賽。
 
-![TSDC 2023 團隊成績](images/optimized/projects/2025_08_04_debate/TSDC_2023_result.webp)
-![在 139 位參賽者中，我的個人辯員分數排名第 13](images/optimized/projects/2025_08_04_debate/TSDC_2023_speaker.webp)
+![TSDC 2023 團隊成績](images/optimized/projects/2025_08_04_debate/tsdc_2023_result.webp)
+![在 139 位參賽者中，我的個人辯員分數排名第 13](images/optimized/projects/2025_08_04_debate/tsdc_2023_speaker.webp)
 
 ### [FHDO 2023](https://fhdo.calicotab.com/fhdo2023/)
 
 復興高中辯論公開賽（FHDO）是一項吸引各高中參與的年度賽事。與許多學校主辦的活動不同，FHDO 以其高度競爭的氛圍而聞名，吸引了眾多 TDU 成員參加。在 2023 年，我與 Jenny 和 Julien 組隊參賽。儘管我們在四場預賽中贏了三場，但由於個人辯員分數較低，最終無緣晉級淘汰賽，正好顯示了比賽的競爭有多麼激烈。
 
-![FHDO 2023 團隊成績](images/optimized/projects/2025_08_04_debate/FHDO_2023_result.webp)
+![FHDO 2023 團隊成績](images/optimized/projects/2025_08_04_debate/fhdo_2023_result.webp)
 
 ### [TEJT 2023](https://tejt.calicotab.com/tejt2023/)
 
 由台北歐洲學校主辦的台北歐洲青少年錦標賽（TEJT），為青少年辯手提供了一個展示技能的平台。在 2023 年，我和我的隊友成功晉級半決賽。
 
-![TEJT 2023 團隊成績](images/optimized/projects/2025_08_04_debate/TEJT_result.webp)
-![在 67 位參賽者中，我的個人辯員分數排名第 12](images/optimized/projects/2025_08_04_debate/TEJT_SPEAKER.webp)
+![TEJT 2023 團隊成績](images/optimized/projects/2025_08_04_debate/tejt_result.webp)
+![在 67 位參賽者中，我的個人辯員分數排名第 12](images/optimized/projects/2025_08_04_debate/tejt_speaker.webp)
 
 ### [TSDC 2024](https://tsdc.calicotab.com/tsdc2024/)
 
 2024 年，我與原班人馬重返 TSDC，希望能更上一層樓。我們努力地完善策略、提升口說技巧。我們再次面臨強敵，最終在半決賽中被淘汰。
 
-![TSDC 2024 團隊成績](images/optimized/projects/2025_08_04_debate/TSDC_2024_result.webp)
+![TSDC 2024 團隊成績](images/optimized/projects/2025_08_04_debate/tsdc_2024_result.webp)
 
 ### FHDO 2024
 
 2024 年，我再次與隊友參加 FHDO，面臨了更激烈的競爭。儘管我們全力以赴，在四場比賽中贏了三場，卻再次未能晉級，這個結果更激發了我們隔年再戰的決心。
 
-![FHDO 2024 團隊成績](images/optimized/projects/2025_08_04_debate/FHDO_2024_result.webp)
+![FHDO 2024 團隊成績](images/optimized/projects/2025_08_04_debate/fhdo_2024_result.webp)
 
 ### FHDO 2025
 
 憑藉前兩年的經驗，我們帶著更強的策略感和團隊合作精神進入了 FHDO 2025。我們不但成功晉級淘汰賽，更一路過關斬將，最終以 6 勝 0 負的全勝戰績贏得冠軍。
 
-![FHDO 2025 團隊成績](images/optimized/projects/2025_08_04_debate/FHDO_2025_result.webp)
-![在 72 位參賽者中，我的個人辯員分數排名第 3](images/optimized/projects/2025_08_04_debate/FHDO_2025_speaker.webp)
+![FHDO 2025 團隊成績](images/optimized/projects/2025_08_04_debate/fhdo_2025_result.webp)
+![在 72 位參賽者中，我的個人辯員分數排名第 3](images/optimized/projects/2025_08_04_debate/fhdo_2025_speaker.webp)
 
 ---
 

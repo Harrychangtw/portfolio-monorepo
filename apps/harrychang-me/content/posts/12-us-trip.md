@@ -14,7 +14,7 @@ On the same bus, a child is laughing with her parents, a person is struggling to
 
 This was San Francisco, riding back from Mission District. The bus was better than I expected.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001562.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001562.webp)
 
 A week later, I'd be standing outside an upscale Manhattan apartment, pizza in hand, being told where I couldn't sit. But I'm getting ahead of myself.
 
@@ -32,7 +32,7 @@ Waymo, though. Waymo was insane. Thirty-five dollars for a fourteen-kilometer ci
 
 We drove to Stanford. Beautiful, obviously. The kind of beautiful that makes you feel small in ways both inspiring and uncomfortable.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001460.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001460.webp)
 
 Google's visitor center was stale and unmemorable, but even a random parking lot attendant was friendlier than the staff inside. Apple was gorgeous. I bought a matte black Swell bottle even though I already had a brushed silver one my cousin gave me, worn in over two and a half years of use. The black would scratch. The silver wore its scratches as patina. I didn't think about this until later.
 
@@ -54,7 +54,7 @@ I love this place. That was my first thought. I love the diversity, the sounds, 
 
 The first full day: 35,000 steps. A sudden peak cherry blossom bloom in Central Park, more impressive than my ten-year-old Tokyo memories, temporary against forecasted rain. Apollo Bagel kept me full until nine at night. We wandered Fifth Avenue, drank seven-dollar matchas, passed through Grand Central without stopping, found a vintage shop on the fourteenth floor of an unassuming building. The camera stayed mostly pocketed. The city moved too fast to frame.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001615.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001615.webp)
 
 MoMA Design Store was a threat to our wallet. I got dangerously close to buying an OP-1. The ice cream scoop was gorgeous even though I barely eat ice cream.
 
@@ -62,13 +62,13 @@ MoMA Design Store was a threat to our wallet. I got dangerously close to buying 
 
 We rushed the MET in three hours, which is criminal but unavoidable. Louder than the Vatican, bigger than the Uffizi, less organized than both. I loved "Dawn — Early Spring." I loved "Sunset on the Sea" from 1872, my favorite of the trip. I loved "Repast of the Lion." But the African section stole the show. Whimsical and goofy shapes. Endless creativity from similar textures. The Western canon expects you to be impressed by the Vermeers. I was impressed by the masks.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001656.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001656.webp)
 
 Then came Theodora, the highlight of the trip. Puffer fish ceviche. Bread with cream that walked a perfect line between sweet and savory. The waiter wore an Issey Miyake TO watch, minimal and metallic. Everything was exceptional. The afternoon tension, dad being grumpy, weather making the day difficult, resolved in the face of fusion between distinctively brilliant sauces and fresh ingredients. 250 for three before tax and tips. Worth it.
 
 I wrote in my journal that night, shoes wet from Brooklyn rain, stomach full, feeling grateful and beyond privileged.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001677.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001677.webp)
 
 ## The Contradictions Emerge
 
@@ -76,7 +76,7 @@ The city started showing its other face.
 
 The Highline after the Vessel: brutal, unrelenting wind that made four degrees feel like negative four. Breakfast at a supposedly good spot: fine, but not sixty-three dollars for three fine.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001696.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001696.webp)
 
 West Village and Pier 59: beautiful but uninspiring. "Creative shops" displaying things you see in premium mediocre Airbnb images. Pretty but personality-less.
 
@@ -128,7 +128,7 @@ On the flight to Newark, I watched another passenger watch Past Lives. Celine So
 
 I started thinking of it this way: contradictions are ifs in space. Ifs are contradictions in time. The city contains the finance bro and the homeless person simultaneously. They don't resolve into a single story about New York. I contain the self who stayed in Taiwan and the ghost who went abroad simultaneously. They don't resolve into a single story about me.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001861.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001861.webp)
 
 Maybe coherence is a story I tell about things that happened. Contradiction is what's actually happening.
 
@@ -152,7 +152,7 @@ Boston felt reserved.
 
 The ceremony, the reason we came, was anticlimactic. Low ceiling. Terrible lighting. Wrinkled flags. Is this what they mean when they say traveling expands your horizons? Because my horizon was surely not expanding under the absurdly low ceiling for a lecture hall.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001897.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001897.webp)
 
 Don't even mention the pre-ceremony rush to CVS for black socks because I'd worn white with a dark grey suit. Or the speed run through the art museum thinking we were late for a grand ceremony that delayed anyway.
 
@@ -166,7 +166,7 @@ Dad spent forty on short pants but was definitely proud of our Asianness coming 
 
 We walked through Harvard during golden and blue hour. I wore the new coat because it fit better with the suit underneath. We waited for Every Hour Oyster. The lobster roll was a gem.
 
-![framed:](images/optimized/blogs/12-us-trip/L1001936.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001936.webp)
 
 ## The Loop That Almost Closed
 

@@ -1,7 +1,7 @@
 ---
 title: "如果在冬夜，一個旅人... "
 description: ""
-imageUrl: "images/optimized/gallery/2026-italy-mountain/L1000213.webp"
+imageUrl: "images/optimized/gallery/2026-italy-mountain/l1000213.webp"
 date: "2026-02-08"
 camera: "LEICA M11-D"
 lens: "VOIGTLÄNDER 50mm f/1.5"
@@ -11,17 +11,17 @@ featured: true
 pinned: 4
 locked: false
 gallery:
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000164.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000165.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000192.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000217.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000226.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000274.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000279.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000288.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000296.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000300.webp"
-  - url: "images/optimized/gallery/2026-italy-mountain/L1000350.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000164.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000165.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000192.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000217.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000226.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000274.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000279.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000288.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000296.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000300.webp"
+  - url: "images/optimized/gallery/2026-italy-mountain/l1000350.webp"
 ---
 
 在這片被大雪覆蓋的土地上，我們都成了卡爾維諾筆下的旅人。每一次的轉彎，每一個新的山谷，都是一篇小說的開頭。

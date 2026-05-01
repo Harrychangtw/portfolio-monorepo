@@ -1,7 +1,7 @@
 ---
 title: "留下來的那個我"
 description: ""
-imageUrl: "images/optimized/gallery/2026-us-trip/L1001775.webp"
+imageUrl: "images/optimized/gallery/2026-us-trip/l1001775.webp"
 location: "San Francisco, New York, Boston"
 date: "2026-04-16"
 camera: "LEICA M11-D"
@@ -10,21 +10,21 @@ featured: true
 locked: false
 tags: ["Street Photography"]
 gallery:
-  - url: "images/optimized/gallery/2026-us-trip/L1001482.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001863.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001696.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001869.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001874.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001813.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001814.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001601.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001608.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001805.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001746.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001818.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001728.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001832.webp"
-  - url: "images/optimized/gallery/2026-us-trip/L1001936.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001482.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001863.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001696.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001869.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001874.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001813.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001814.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001601.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001608.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001805.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001746.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001818.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001728.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001832.webp"
+  - url: "images/optimized/gallery/2026-us-trip/l1001936.webp"
 
 pinned: 7
 ---
