@@ -200,6 +200,7 @@ export function ImageContainer({
                       } ${imgClassName || ""}`}
                       sizes={sizes}
                       quality={quality}
+                      unoptimized={fullSrc?.endsWith(".webp")}
                       onLoad={() => {
                         setBlurComplete(true);
                       }}

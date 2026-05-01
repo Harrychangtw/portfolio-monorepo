@@ -1,0 +1,125 @@
+name: Lighthouse Audit (Production)
+
+on:
+  deployment_status:
+
+concurrency:
+  group: lighthouse-prod
+  cancel-in-progress: true
+
+jobs:
+  lighthouse-prod:
+    name: Lighthouse CI (Production Deployment)
+    # Only run when a Vercel Production deployment finishes successfully.
+    # Vercel reports its env as "Production" via the GitHub Deployment API.
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      (startsWith(github.event.deployment.environment, 'Production') ||
+       startsWith(github.event.deployment.environment, 'production'))
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      deployments: read
+
+    steps:
+      # Check out main (not the deployment sha) so the README commit lands
+      # on the current tip of main without a non-fast-forward push.
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      # Install workspace deps so the README commit uses the repo's pinned
+      # Prettier version (matches the simulated CI's formatting exactly).
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Resolve deployment URL
+        id: url
+        run: |
+          DEPLOY_URL="${{ github.event.deployment_status.environment_url }}"
+          if [ -z "$DEPLOY_URL" ]; then
+            DEPLOY_URL="${{ github.event.deployment_status.target_url }}"
+          fi
+          if [ -z "$DEPLOY_URL" ]; then
+            echo "::error::No deployment URL on the deployment_status payload (environment_url and target_url both empty)."
+            exit 1
+          fi
+          DEPLOY_URL="${DEPLOY_URL%/}"
+          echo "deployment_url=$DEPLOY_URL" >> "$GITHUB_OUTPUT"
+          echo "Resolved deployment URL: $DEPLOY_URL"
+
+      - name: Build URL list
+        id: urls
+        env:
+          DEPLOY_URL: ${{ steps.url.outputs.deployment_url }}
+        run: |
+          PATHS=(
+            "/"
+            "/blog"
+            "/projects"
+            "/gallery"
+            "/uses"
+            "/cv"
+            "/linktree"
+            "/design"
+            "/paper-reading"
+            "/manifesto"
+            "/projects/2025_04_12_portfolio"
+            "/projects/2024_09_23_chingshin_rag"
+            "/projects/2025_03_08_sitcon_keynote"
+            "/projects/2025_08_04_debate"
+            "/projects/2024_08_19_classics_reimagined"
+            "/gallery/2026_02_08_italy_mountain"
+            "/gallery/2023_07_07_splash_of_red"
+            "/gallery/2023_10_06_against_giants"
+            "/gallery/2023_11_18_dusk_impressions"
+            "/gallery/2024_01_06_hehuanshan"
+            "/blog/9_m11d"
+            "/blog/2025_12_19_xpro1"
+            "/blog/2025_12_22_aftersun_paris_texas"
+            "/blog/2026_01_10_plushies"
+            "/blog/2026_02_10_synecdoche_truman"
+            "/graph"
+          )
+          {
+            echo "list<<EOF"
+            for p in "${PATHS[@]}"; do
+              echo "${DEPLOY_URL}${p}"
+            done
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Run Lighthouse CI (Desktop, against live deployment)
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: ${{ steps.urls.outputs.list }}
+          configPath: apps/harrychang-me/.lighthouserc.json
+          artifactsDirectory: .lighthouseci-prod
+          artifactName: lighthouse-results-prod-desktop
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Update README with production Lighthouse badges
+        env:
+          DEPLOYMENT_URL: ${{ steps.url.outputs.deployment_url }}
+        run: node .github/scripts/update-lighthouse-readme.js --mode=prod
+
+      - name: Format README with Prettier
+        run: npx prettier --write apps/harrychang-me/README.md
+
+      - name: Commit production Lighthouse changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update production lighthouse scores in README [skip ci]"
+          file_pattern: "apps/harrychang-me/README.md"
+          branch: main

@@ -59,6 +59,12 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 
 <!-- LIGHTHOUSE_RESULTS_END -->
 
+<!-- LIGHTHOUSE_PROD_RESULTS_START -->
+
+> 🕐 **Last audited:** _pending first production deployment audit_
+
+<!-- LIGHTHOUSE_PROD_RESULTS_END -->
+
 ## 🌟 Key Features
 
 ### Dual-Domain Architecture

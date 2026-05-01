@@ -54,6 +54,46 @@ const TABLE_HEADER = [
   '|:---|:---|:---|:---|:---|:---|:---|',
 ].join('\n');
 
+const mode = process.argv.includes('--mode=prod') ? 'prod' : 'simulated';
+
+const readmePath = path.join(process.cwd(), 'apps', 'harrychang-me', 'README.md');
+const readme     = fs.readFileSync(readmePath, 'utf8');
+const timestamp  = new Date().toUTCString();
+
+if (mode === 'prod') {
+  const desktopData = readLhrDir('.lighthouseci-prod');
+  if (Object.keys(desktopData).length === 0) {
+    console.log('No production LHR JSON files found — skipping README update.');
+    process.exit(0);
+  }
+
+  const deploymentUrl = process.env.DEPLOYMENT_URL || '';
+  const header = deploymentUrl
+    ? `> 🕐 **Last audited:** ${timestamp}  \n> 🌐 **Deployment:** ${deploymentUrl}`
+    : `> 🕐 **Last audited:** ${timestamp}`;
+
+  const block = [
+    '<!-- LIGHTHOUSE_PROD_RESULTS_START -->',
+    header,
+    '',
+    `#### Desktop (Production Deployment)\n\n${TABLE_HEADER}\n${buildRows(desktopData)}`,
+    '<!-- LIGHTHOUSE_PROD_RESULTS_END -->',
+  ].join('\n');
+
+  if (!/<!-- LIGHTHOUSE_PROD_RESULTS_START -->[\s\S]*?<!-- LIGHTHOUSE_PROD_RESULTS_END -->/.test(readme)) {
+    console.error('Production marker block not found in README. Add the markers first.');
+    process.exit(1);
+  }
+
+  const updated = readme.replace(
+    /<!-- LIGHTHOUSE_PROD_RESULTS_START -->[\s\S]*?<!-- LIGHTHOUSE_PROD_RESULTS_END -->/,
+    block,
+  );
+  fs.writeFileSync(readmePath, updated, 'utf8');
+  console.log('README production Lighthouse section updated successfully.');
+  process.exit(0);
+}
+
 const desktopData = readLhrDir('.lighthouseci');
 const mobileData  = readLhrDir('.lighthouseci-mobile');
 
@@ -73,7 +113,6 @@ if (hasMobile) {
   sections.push(`#### Mobile\n\n${TABLE_HEADER}\n${buildRows(mobileData)}`);
 }
 
-const timestamp = new Date().toUTCString();
 const block = [
   '<!-- LIGHTHOUSE_RESULTS_START -->',
   `> 🕐 **Last audited:** ${timestamp}`,
@@ -82,9 +121,7 @@ const block = [
   '<!-- LIGHTHOUSE_RESULTS_END -->',
 ].join('\n');
 
-const readmePath = path.join(process.cwd(), 'apps', 'harrychang-me', 'README.md');
-const readme     = fs.readFileSync(readmePath, 'utf8');
-const updated    = readme.replace(
+const updated = readme.replace(
   /<!-- LIGHTHOUSE_RESULTS_START -->[\s\S]*?<!-- LIGHTHOUSE_RESULTS_END -->/,
   block,
 );
