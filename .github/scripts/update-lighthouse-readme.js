@@ -61,7 +61,7 @@ const readme     = fs.readFileSync(readmePath, 'utf8');
 const timestamp  = new Date().toUTCString();
 
 if (mode === 'prod') {
-  const desktopData = readLhrDir('.lighthouseci-prod');
+  const desktopData = readLhrDir('.lighthouseci');
   if (Object.keys(desktopData).length === 0) {
     console.log('No production LHR JSON files found — skipping README update.');
     process.exit(0);

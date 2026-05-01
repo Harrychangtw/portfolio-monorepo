@@ -94,7 +94,6 @@ jobs:
         with:
           urls: ${{ steps.urls.outputs.list }}
           configPath: apps/harrychang-me/.lighthouserc.json
-          artifactsDirectory: .lighthouseci-prod
           artifactName: lighthouse-results-prod-desktop
           uploadArtifacts: true
           temporaryPublicStorage: true
