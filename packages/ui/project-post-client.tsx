@@ -152,7 +152,7 @@ export default function ProjectPostClient({
             <ImageContainer
               src={project.imageUrl}
               alt={project.title}
-              priority={false}
+              priority={true}
               quality={95}
               noInsetPadding={true}
               aspectRatio={1.5}

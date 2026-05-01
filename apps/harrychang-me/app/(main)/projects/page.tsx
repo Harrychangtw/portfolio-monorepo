@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ReactDOM from "react-dom";
 import ProjectsSection from "@portfolio/ui/projects-section";
 import { getAllProjectsMetadata } from "@portfolio/lib/lib/markdown";
 
@@ -43,5 +44,13 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   const projects = getAllProjectsMetadata("en");
+  const lcpImage = projects[0]?.imageUrl?.replace(/-thumb\.webp$/, ".webp");
+  if (lcpImage) {
+    ReactDOM.preload(lcpImage, {
+      as: "image",
+      fetchPriority: "high",
+      type: "image/webp",
+    });
+  }
   return <ProjectsSection initialItems={projects} />;
 }

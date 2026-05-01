@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import ReactDOM from "react-dom";
 import {
   getPostData,
   getAllPostSlugs,
@@ -107,6 +108,14 @@ export default async function BlogPostPage({
 
   if (!post) {
     notFound();
+  }
+
+  if (post.imageUrl) {
+    ReactDOM.preload(post.imageUrl, {
+      as: "image",
+      fetchPriority: "high",
+      type: "image/webp",
+    });
   }
 
   const isChineseVersion = slug.includes("_zh-tw") || slug.includes("_zh-TW");

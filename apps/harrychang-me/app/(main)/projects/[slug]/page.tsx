@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import ReactDOM from "react-dom";
 import {
   getProjectData,
   getAllProjectSlugs,
@@ -130,6 +131,14 @@ export default async function ProjectPage({
   if (!project || project.locked) {
     // Check if project exists and is not locked
     notFound();
+  }
+
+  if (project.imageUrl) {
+    ReactDOM.preload(project.imageUrl, {
+      as: "image",
+      fetchPriority: "high",
+      type: "image/webp",
+    });
   }
 
   // Determine if this is a Chinese version

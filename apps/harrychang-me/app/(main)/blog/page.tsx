@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ReactDOM from "react-dom";
 import BlogSection from "@portfolio/ui/blog-section";
 import { getAllPostsMetadata } from "@portfolio/lib/lib/markdown";
 
@@ -44,5 +45,13 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const blogPosts = getAllPostsMetadata("en");
+  const lcpImage = blogPosts[0]?.imageUrl?.replace(/-thumb\.webp$/, ".webp");
+  if (lcpImage) {
+    ReactDOM.preload(lcpImage, {
+      as: "image",
+      fetchPriority: "high",
+      type: "image/webp",
+    });
+  }
   return <BlogSection initialItems={blogPosts} />;
 }
