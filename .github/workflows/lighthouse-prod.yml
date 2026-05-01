@@ -29,10 +29,32 @@ jobs:
         with:
           ref: main
 
+      # Break the redeploy loop: if this deployment was triggered by our own
+      # README commit, skip. Vercel does not always honor [skip ci] for the
+      # deployment itself, and deployment_status events ignore [skip ci].
+      - name: Skip if deployment commit is the bot's README update
+        id: loop_guard
+        env:
+          DEPLOYMENT_SHA: ${{ github.event.deployment.sha }}
+        run: |
+          MSG=$(git log -1 --format=%s "$DEPLOYMENT_SHA" 2>/dev/null || echo "")
+          AUTHOR=$(git log -1 --format=%ae "$DEPLOYMENT_SHA" 2>/dev/null || echo "")
+          echo "Deployment commit: $DEPLOYMENT_SHA"
+          echo "Message: $MSG"
+          echo "Author: $AUTHOR"
+          if [[ "$MSG" == *"[skip ci]"* ]] || [[ "$MSG" == *"update production lighthouse scores"* ]]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Skipping — deployment is the bot's README commit."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup pnpm
+        if: steps.loop_guard.outputs.skip != 'true'
         uses: pnpm/action-setup@v4
 
       - name: Setup Node.js
+        if: steps.loop_guard.outputs.skip != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -41,6 +63,7 @@ jobs:
       # Install workspace deps so the README commit uses the repo's pinned
       # Prettier version (matches the simulated CI's formatting exactly).
       - name: Install dependencies
+        if: steps.loop_guard.outputs.skip != 'true'
         run: pnpm install --frozen-lockfile
 
       # We audit the canonical public domain rather than the per-deployment
@@ -49,6 +72,7 @@ jobs:
       # users hit (custom domain + Vercel CDN edge), with no preview-auth
       # or deployment-protection redirects.
       - name: Build URL list
+        if: steps.loop_guard.outputs.skip != 'true'
         id: urls
         env:
           DEPLOY_URL: https://harrychang.me
@@ -90,6 +114,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Run Lighthouse CI (Desktop, against live deployment)
+        if: steps.loop_guard.outputs.skip != 'true'
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: ${{ steps.urls.outputs.list }}
@@ -99,14 +124,27 @@ jobs:
           temporaryPublicStorage: true
 
       - name: Update README with production Lighthouse badges
+        if: steps.loop_guard.outputs.skip != 'true'
         env:
           DEPLOYMENT_URL: https://harrychang.me
         run: node .github/scripts/update-lighthouse-readme.js --mode=prod
 
       - name: Format README with Prettier
+        if: steps.loop_guard.outputs.skip != 'true'
         run: npx prettier --write apps/harrychang-me/README.md
 
+      # Rebase onto latest main before the auto-commit pushes, in case
+      # another job (e.g. lighthouse.yml) updated main during this run.
+      - name: Rebase README change onto latest main
+        if: steps.loop_guard.outputs.skip != 'true'
+        run: |
+          cp apps/harrychang-me/README.md /tmp/README.lh.md
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/README.lh.md apps/harrychang-me/README.md
+
       - name: Commit production Lighthouse changes
+        if: steps.loop_guard.outputs.skip != 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update production lighthouse scores in README [skip ci]"

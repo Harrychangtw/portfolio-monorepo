@@ -14,7 +14,7 @@ gallery:
   - url: "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0258 43 Edited.webp"
   - url: "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0045 45 Edited.webp"
   - url: "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0259 44 Edited.webp"
-  - url: "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0097.webp"
+  - url: "images/optimized/gallery/2023_10_05_solitary_glow/dscf0097.webp"
   - url: "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0102 50 Edited.webp"
   - url: "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0103 39 Edited.webp"
   - url: "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0104 40 Edited.webp"

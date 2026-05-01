@@ -1,7 +1,7 @@
 ---
 title: "Find Your Peak..."
 description: ""
-imageUrl: "/images/optimized/gallery/2024_01_06_hehuanshan/DSCF0206.webp"
+imageUrl: "/images/optimized/gallery/2024_01_06_hehuanshan/dscf0206.webp"
 date: "2024-01-06"
 camera: "FUJIFILM XT-5"
 lens: "VILTROX 75mm f/1.2"
@@ -11,10 +11,10 @@ featured: true
 pinned: 12
 locked: false
 gallery:
-  - url: "images/optimized/gallery/2024_01_06_hehuanshan/DSCF0038.webp"
-  - url: "images/optimized/gallery/2024_01_06_hehuanshan/DSCF0182.webp"
-  - url: "images/optimized/gallery/2024_01_06_hehuanshan/DSCF0037.webp"
-  - url: "images/optimized/gallery/2024_01_06_hehuanshan/DSCF0008.webp"
+  - url: "images/optimized/gallery/2024_01_06_hehuanshan/dscf0038.webp"
+  - url: "images/optimized/gallery/2024_01_06_hehuanshan/dscf0182.webp"
+  - url: "images/optimized/gallery/2024_01_06_hehuanshan/dscf0037.webp"
+  - url: "images/optimized/gallery/2024_01_06_hehuanshan/dscf0008.webp"
 ---
 
 This road unwinds like a ribbon through the ranges, a path laid between the sky and the earth. Up here, where the world unfolds in layers of blue and grey, one feels like a solitary traveler on a grand quest.

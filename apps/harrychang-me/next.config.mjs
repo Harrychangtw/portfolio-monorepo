@@ -77,6 +77,12 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  // Keep public/images/** out of serverless function bundles. The CDN serves
+  // these as static assets; runtime code reads dimensions from
+  // content/generated/image-dims.json instead of the binaries themselves.
+  outputFileTracingExcludes: {
+    '*': ['public/images/**'],
+  },
 }
 
 if (userConfig) {

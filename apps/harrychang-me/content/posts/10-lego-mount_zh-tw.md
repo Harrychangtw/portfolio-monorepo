@@ -67,7 +67,7 @@ FormD T1 很美。緊湊、極簡、沒有 RGB。我想要的一切。
 
 輪胎壓縮的程度剛好能夾住塑膠邊框，又不會過緊。機殼本身的重量讓一切保持穩固。沒有黏著劑，沒有任何永久性改裝。風扇從 T1 的底部抽出熱氣，在原本死寂的空間裡創造了空氣循環。
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001290.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001290.webp)
 
 顯示卡溫度從 80°C 降到滿載下平均 61°C，最高 65°C。我原本設定的激進風扇曲線變得毫無必要。那幾條 8-pin 線也不再像是在慢慢燉煮自己了。
 
@@ -79,11 +79,11 @@ FormD T1 很美。緊湊、極簡、沒有 RGB。我想要的一切。
 
 我的 IKEA Alex 抽屜後面有個空隙。這個樂高框架塞進去剛剛好。於是我加了一個外部區塊，讓路由器可以滑進去，藏在幾乎看不見的地方。路由器現在散熱反而更好。風扇從底部排出的氣流，讓整個抽屜區域保持著出人意料的涼爽。
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001286.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001286.webp)
 
 買了 Apple Watch 後，我在前面加了充電座。充電線穿過樂高結構的底部，直接插在主機板通電。現在我洗澡前把手錶丟在那裡，洗完後拿起充好電的手錶。優雅無比。
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001285.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001285.webp)
 
 這一切都不是計畫好的。風扇架變成路由器架，再變成充電站。我不再為了設計而設計。手錶在洗澡前放上去。路由器比放在地上時收訊更好。抽屜櫃保持涼爽。
 
@@ -91,9 +91,9 @@ FormD T1 很美。緊湊、極簡、沒有 RGB。我想要的一切。
 
 這不是我唯一實用的樂高組裝。用橡皮筋做腳墊的喇叭架。一個擴香器托盤。都不是什麼複雜的東西。
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001288.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001288.webp)
 
-![framed:](images/optimized/blogs/10-lego-mount/L1001284.webp)
+![framed:](images/optimized/blogs/10-lego-mount/l1001284.webp)
 
 有人問我為什麼不用 3D 列印。成品會看起來更乾淨、更「完整」。但我更喜歡看得見的接縫。顯而易見的構造。也許這是合理化。也許我只是單純喜歡用積木拼湊東西，而其他的一切，都只是我後來一格一格拼湊出的藉口。
 

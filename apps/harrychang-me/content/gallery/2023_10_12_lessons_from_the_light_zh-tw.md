@@ -1,7 +1,7 @@
 ---
 title: "光引"
 description: ""
-imageUrl: "images/optimized/gallery/2023_10_12_lessons_from_the_light/DSCF0004.webp"
+imageUrl: "images/optimized/gallery/2023_10_12_lessons_from_the_light/dscf0004.webp"
 date: "2023-12-30"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8"

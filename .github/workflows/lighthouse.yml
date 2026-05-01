@@ -140,6 +140,16 @@ jobs:
       - name: Format README with Prettier
         run: npx prettier --write apps/harrychang-me/README.md
 
+      # Lighthouse runs are long (~30+ min). Main may have moved during that
+      # window (e.g. lighthouse-prod committed). Rebase our README change onto
+      # the latest main so the auto-commit push is fast-forward.
+      - name: Rebase README change onto latest main
+        run: |
+          cp apps/harrychang-me/README.md /tmp/README.lh.md
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/README.lh.md apps/harrychang-me/README.md
+
       - name: Commit Lighthouse Changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
