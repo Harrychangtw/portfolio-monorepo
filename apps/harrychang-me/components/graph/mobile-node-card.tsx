@@ -80,6 +80,30 @@ function toInternalPath(url: string): string {
   return url.startsWith("/") ? url : `/${url}`;
 }
 
+/**
+ * Append a node's anchorId as a hash to its url when the url has no hash.
+ * Mirrors the desktop `navigateToNode` behaviour so section/image/video
+ * nodes scroll to the right element on the destination page.
+ */
+function withAnchor(url: string, anchorId?: string | null): string {
+  if (!anchorId) return url;
+  try {
+    const parsed = new URL(url, "https://www.harrychang.me");
+    if (!parsed.hash) {
+      parsed.hash = anchorId;
+      // Preserve original-form (absolute vs relative) by reusing the input
+      // host check: only swap on internal urls; external left untouched.
+      if (parsed.hostname.replace(/^www\./, "") === "harrychang.me") {
+        return parsed.pathname + parsed.search + parsed.hash;
+      }
+      return parsed.toString();
+    }
+  } catch {
+    // fall through
+  }
+  return url;
+}
+
 // ── Component ─────────────────────────────────────────────────────────────────
 
 interface MobileNodeCardProps {
@@ -147,7 +171,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
 
               return node.url && isInternalUrl(node.url) ? (
                 <NavigationLink
-                  href={toInternalPath(node.url)}
+                  href={toInternalPath(withAnchor(node.url, node.anchorId))}
                   className={`${imageWrapperCls} block active:scale-[0.98] transition-transform`}
                 >
                   {mediaContent}
@@ -191,7 +215,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
 
               return node!.url && isInternalUrl(node!.url) ? (
                 <NavigationLink
-                  href={toInternalPath(node!.url)}
+                  href={toInternalPath(withAnchor(node!.url, node!.anchorId))}
                   className={`${wrapperCls} block active:scale-[0.98] transition-transform`}
                 >
                   {inner}
@@ -222,7 +246,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
                 href={
                   !isTag && node.url
                     ? isInternalUrl(node.url)
-                      ? toInternalPath(node.url)
+                      ? toInternalPath(withAnchor(node.url, node.anchorId))
                       : node.url
                     : undefined
                 }

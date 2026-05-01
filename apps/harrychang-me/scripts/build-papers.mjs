@@ -14,21 +14,38 @@ function getArxivPaperIds() {
     const ids = [];
     for (const line of lines) {
         const trimmed = line.trim();
-        if (/^\d{4}\.\d{5}$/.test(trimmed)) ids.push(trimmed);
+        if (/^\d{4}\.\d{4,5}$/.test(trimmed)) ids.push(trimmed);
     }
     return ids;
 }
 
-async function fetchArxivPapers(ids) {
-    if (!ids.length) return [];
-    const query = ids.join(",");
-    const res = await fetch(`${ARXIV_API_URL}${query}&max_results=${ids.length}`, {
-        headers: {
-            "User-Agent": "portfolio-site (build step)"
+const BATCH_SIZE = 50;
+const BATCH_DELAY_MS = 5000;
+const MAX_RETRIES = 5;
+const RETRY_BASE_MS = 15000;
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function fetchArxivBatch(batch, parser) {
+    const query = batch.join(",");
+    const url = `${ARXIV_API_URL}${query}&max_results=${batch.length}`;
+    let xmlText = null;
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+        const res = await fetch(url, {
+            headers: { "User-Agent": "portfolio-site (build step)" }
+        });
+        if (res.ok) {
+            xmlText = await res.text();
+            break;
         }
-    });
-    const xmlText = await res.text();
-    const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@_" });
+        const backoff = RETRY_BASE_MS * attempt;
+        console.warn(`arXiv batch failed (${res.status}) for ${batch.length} ids — retry ${attempt}/${MAX_RETRIES} in ${backoff}ms`);
+        await sleep(backoff);
+    }
+    if (!xmlText) {
+        console.warn(`arXiv batch giving up after ${MAX_RETRIES} retries (${batch.length} ids)`);
+        return [];
+    }
     const result = parser.parse(xmlText);
     if (!result.feed || !result.feed.entry) return [];
     const entries = Array.isArray(result.feed.entry) ? result.feed.entry : [result.feed.entry];
@@ -39,6 +56,19 @@ async function fetchArxivPapers(ids) {
         url: entry.id,
         source: "arxiv"
     }));
+}
+
+async function fetchArxivPapers(ids) {
+    if (!ids.length) return [];
+    const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "@_" });
+    const all = [];
+    for (let i = 0; i < ids.length; i += BATCH_SIZE) {
+        const batch = ids.slice(i, i + BATCH_SIZE);
+        if (i > 0) await sleep(BATCH_DELAY_MS);
+        const papers = await fetchArxivBatch(batch, parser);
+        all.push(...papers);
+    }
+    return all;
 }
 
 async function getManualPapers() {
