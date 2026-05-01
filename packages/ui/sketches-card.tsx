@@ -95,6 +95,7 @@ export default function SketchesCard({
                       className={`transition-all duration-700 ease-in-out group-hover:brightness-95 object-cover object-center ${blurComplete ? "opacity-0" : "opacity-100"}`}
                       sizes={thumbnailSizes}
                       quality={20}
+                      unoptimized={thumbnailSrc?.endsWith(".webp")}
                     />
                   )}
 
@@ -106,6 +107,7 @@ export default function SketchesCard({
                     sizes={fullImageSizes}
                     priority={priority || index < 3}
                     quality={70}
+                    unoptimized={fullImageUrl?.endsWith(".webp")}
                     onLoad={() => setBlurComplete(true)}
                   />
                 </>

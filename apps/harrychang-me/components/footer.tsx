@@ -246,6 +246,7 @@ export default function Footer() {
                   height={120}
                   className="object-contain transition-opacity group-hover:opacity-80 footer-logo"
                   priority
+                  unoptimized
                   style={{ width: "auto", height: "48px" }}
                 />
                 <span className="sr-only">

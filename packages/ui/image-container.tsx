@@ -49,10 +49,10 @@ export function ImageContainer({
 
   // Reset pixelate animation when element leaves the viewport so it replays on re-entry
   useEffect(() => {
-    if (!isVisible && !priority) {
+    if (!isVisible) {
       setBlurComplete(false);
     }
-  }, [isVisible, priority]);
+  }, [isVisible]);
 
   // Derive thumbnail and full-resolution URLs for blur-up loading.
   let thumbnailSrc: string | undefined;
@@ -148,7 +148,7 @@ export function ImageContainer({
             )}
 
             {/* Blurred thumbnail placeholder — fades out once full image is ready */}
-            {!priority && !isVideo && thumbnailSrc && isVisible && (
+            {!isVideo && thumbnailSrc && (isVisible || priority) && (
               <div
                 className={`absolute inset-0 z-[5] pointer-events-none transition-opacity duration-500 ${
                   blurComplete ? "opacity-0" : "opacity-100"
@@ -171,7 +171,7 @@ export function ImageContainer({
             )}
 
             {/* Loading skeleton text overlay */}
-            <ImageLoadingSkeleton visible={!blurComplete && !priority} />
+            <ImageLoadingSkeleton visible={!blurComplete} />
 
             <div className="absolute inset-0 z-0">
               {(isVisible || priority) && (
@@ -195,8 +195,8 @@ export function ImageContainer({
                       src={fullSrc}
                       alt={alt}
                       fill
-                      className={`${noInsetPadding ? "object-cover" : "object-contain"} object-center ${priority ? "" : "transition-opacity duration-500"} ${
-                        blurComplete || priority ? "opacity-100" : "opacity-0"
+                      className={`${noInsetPadding ? "object-cover" : "object-contain"} object-center transition-opacity duration-500 ${
+                        blurComplete ? "opacity-100" : "opacity-0"
                       } ${imgClassName || ""}`}
                       sizes={sizes}
                       quality={quality}

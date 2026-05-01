@@ -189,6 +189,7 @@ export default function LinksPageClient() {
               height={128}
               className="relative rounded-full w-full h-full object-cover ring-2 ring-border"
               priority
+              unoptimized
             />
           </motion.div>
 
