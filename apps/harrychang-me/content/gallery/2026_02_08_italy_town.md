@@ -1,7 +1,7 @@
 ---
 title: "Marginalia"
 description: ""
-imageUrl: "images/optimized/gallery/2026-italy-town/L1000419.webp"
+imageUrl: "images/optimized/gallery/2026-italy-town/l1000419.webp"
 date: "2026-02-08"
 camera: "LEICA M11-D"
 lens: "VOIGTLÄNDER 50mm f/1.5"
@@ -11,14 +11,14 @@ featured: true
 pinned: 2
 locked: false
 gallery:
-  - url: "images/optimized/gallery/2026-italy-town/L1000317.webp"
-  - url: "images/optimized/gallery/2026-italy-town/L1000343.webp"
-  - url: "images/optimized/gallery/2026-italy-town/L1000337.webp"
-  - url: "images/optimized/gallery/2026-italy-town/L1000372.webp"
-  - url: "images/optimized/gallery/2026-italy-town/L1000365.webp"
-  - url: "images/optimized/gallery/2026-italy-town/L1000374.webp"
-  - url: "images/optimized/gallery/2026-italy-town/L1000403.webp"
-  - url: "images/optimized/gallery/2026-italy-town/L1000813.webp"
+  - url: "images/optimized/gallery/2026-italy-town/l1000317.webp"
+  - url: "images/optimized/gallery/2026-italy-town/l1000343.webp"
+  - url: "images/optimized/gallery/2026-italy-town/l1000337.webp"
+  - url: "images/optimized/gallery/2026-italy-town/l1000372.webp"
+  - url: "images/optimized/gallery/2026-italy-town/l1000365.webp"
+  - url: "images/optimized/gallery/2026-italy-town/l1000374.webp"
+  - url: "images/optimized/gallery/2026-italy-town/l1000403.webp"
+  - url: "images/optimized/gallery/2026-italy-town/l1000813.webp"
 ---
 
 Every journey is a book being written. These photographs are the notes I left in the margins.

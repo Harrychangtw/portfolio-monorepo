@@ -107,14 +107,14 @@ featured: true
 
 ## 劇照
 
-![](images/optimized/projects/2025_01_08_powerplay/DSCF2377.webp)
-![](images/optimized/projects/2025_01_08_powerplay/DSCF3700.webp)
-![](images/optimized/projects/2025_01_08_powerplay/DSCF3706.webp)
-![](images/optimized/projects/2025_01_08_powerplay/DSCF4045.webp)
-![](images/optimized/projects/2025_01_08_powerplay/DSCF4047.webp)
-![](images/optimized/projects/2025_01_08_powerplay/DSCF4048.webp)
-![](images/optimized/projects/2025_01_08_powerplay/DSCF4080.webp)
-![](images/optimized/projects/2025_01_08_powerplay/DSCF4089.webp)
+![](images/optimized/projects/2025_01_08_powerplay/dscf2377.webp)
+![](images/optimized/projects/2025_01_08_powerplay/dscf3700.webp)
+![](images/optimized/projects/2025_01_08_powerplay/dscf3706.webp)
+![](images/optimized/projects/2025_01_08_powerplay/dscf4045.webp)
+![](images/optimized/projects/2025_01_08_powerplay/dscf4047.webp)
+![](images/optimized/projects/2025_01_08_powerplay/dscf4048.webp)
+![](images/optimized/projects/2025_01_08_powerplay/dscf4080.webp)
+![](images/optimized/projects/2025_01_08_powerplay/dscf4089.webp)
 
 ---
 

@@ -18,7 +18,7 @@ pinned: -1
 
 ### 飛飛 (Bloody Mary)：兩度失而復得的蒼蠅
 
-![framed: 左為蒼蠅玩偶飛飛](images/optimized/blogs/2026_01_10_plushies/DSCF9999.webp)
+![framed: 左為蒼蠅玩偶飛飛](images/optimized/blogs/2026_01_10_plushies/dscf9999.webp)
 
 那年我十一歲，跟家人在羅騰堡閒晃，櫥窗裡一隻蒼蠅抓住了我。不是卡通蒼蠅、不是可愛版，是一隻像在酒吧混太久的蒼蠅——眼球突出、毛髮稀疏，渾身散發混沌能量。
 
@@ -30,7 +30,7 @@ pinned: -1
 
 ### 咕嚕咕嚕：醫院裡初見面的獨角獸
 
-![framed: 獨角獸咕嚕咕嚕在陪我去交大面試的路上](images/optimized/blogs/2026_01_10_plushies/DSCF9779.webp)
+![framed: 獨角獸咕嚕咕嚕在陪我去交大面試的路上](images/optimized/blogs/2026_01_10_plushies/dscf9779.webp)
 
 她原名叫 Fluffy。我改名為咕嚕咕嚕，因為「Fluffy」對一隻表情像是剛發現太空旅行的獨角獸來說，太沒想像力。
 
@@ -46,7 +46,7 @@ pinned: -1
 
 ### Taco Tuesday：國際進口的狗
 
-![framed: Taco Tuesday，那隻毛髮狂野的 Beasttown 狗](images/optimized/blogs/2026_01_10_plushies/DSCF9996.webp)
+![framed: Taco Tuesday，那隻毛髮狂野的 Beasttown 狗](images/optimized/blogs/2026_01_10_plushies/dscf9996.webp)
 
 透過飛飛的替代品重新發現 Beasttown 後，我掉進了兔子洞。他們的網站很危險：每隻玩偶都有人格，每個看起來都會對你的人生選擇有意見。
 
@@ -56,7 +56,7 @@ pinned: -1
 
 ### Jellycat 三人組：有秩序的混亂
 
-![framed: 一整排 Jellycat 收藏](images/optimized/blogs/2026_01_10_plushies/DSCF9998.webp)
+![framed: 一整排 Jellycat 收藏](images/optimized/blogs/2026_01_10_plushies/dscf9998.webp)
 
 Jellycat 在絨毛世界裡很特別。他們絕對是備受敬重的品牌，做的東西客觀上很可愛，但他們有些設計……有點「東西」。
 

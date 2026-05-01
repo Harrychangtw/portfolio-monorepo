@@ -83,13 +83,13 @@ In addition to the video production, to give the intro a warmer and more commemo
 
 ## Stills
 
-![](images/optimized/projects/2024_08_19_classics_reimagined/_DSF3005%2086%20Edited.webp)
-![](images/optimized/projects/2024_08_19_classics_reimagined/_DSF3072%2090%20Edited.webp)
-![](images/optimized/projects/2024_08_19_classics_reimagined/DSCF1949%206%20Edited.webp)
-![](images/optimized/projects/2024_08_19_classics_reimagined/DSCF2915%2024%20Edited.webp)
-![](images/optimized/projects/2024_08_19_classics_reimagined/DSCF2930%2029%20Edited.webp)
-![](images/optimized/projects/2024_08_19_classics_reimagined/DSCF4477%2018%20Edited.webp)
-![](images/optimized/projects/2024_08_19_classics_reimagined/DSCF4551%2022%20Edited.webp)
+![](images/optimized/projects/2024_08_19_classics_reimagined/_dsf3005-86-edited.webp)
+![](images/optimized/projects/2024_08_19_classics_reimagined/_dsf3072-90-edited.webp)
+![](images/optimized/projects/2024_08_19_classics_reimagined/dscf1949-6-edited.webp)
+![](images/optimized/projects/2024_08_19_classics_reimagined/dscf2915-24-edited.webp)
+![](images/optimized/projects/2024_08_19_classics_reimagined/dscf2930-29-edited.webp)
+![](images/optimized/projects/2024_08_19_classics_reimagined/dscf4477-18-edited.webp)
+![](images/optimized/projects/2024_08_19_classics_reimagined/dscf4551-22-edited.webp)
 
 ---
 

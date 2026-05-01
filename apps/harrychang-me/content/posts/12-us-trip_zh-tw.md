@@ -14,7 +14,7 @@ pinned: -1
 
 這是舊金山，從 Mission District 回程的公車。比我想像中好多了。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001562.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001562.webp)
 
 一週後，我會站在曼哈頓一棟高級公寓外，手裡拿著披薩，被告知哪裡不能坐。但我扯遠了。
 
@@ -32,7 +32,7 @@ In-N-Out 被嚴重高估。薯條軟爛到讓我懷疑加州人是否見過馬�
 
 我們開車去 Stanford。當然很美，那種讓你感到渺小的美。既令人振奮，又令人有些不自在。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001460.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001460.webp)
 
 Google 的訪客中心乏善可陳，但連一個停車場工作人員都比裡面的員工友善。Apple 園區美極了。我買了一個霧黑的 Swell 保溫瓶，即使我已經有一個表哥送的髮絲銀版本、用了兩年半，磨損出了歲月的痕跡。黑色會刮花。銀色把刮痕穿成了質感。這件事我後來才想到。
 
@@ -54,7 +54,7 @@ Google 的訪客中心乏善可陳，但連一個停車場工作人員都比裡�
 
 第一個完整的日子：三萬五千步。中央公園的櫻花突然盛開，比我十年前在東京的記憶更壯觀，在預報的雨陣前顯得轉瞬即逝。Apollo Bagel 讓我一路飽到晚上九點。我們漫步第五大道，喝著七鎂的抹茶，穿過中央車站卻未久留，在一棟不起眼建築的十四樓逛一家古著店。相機依然大多收在口袋裡。這座城市的步調太快，快得無法構圖。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001615.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001615.webp)
 
 MoMA Design Store 對錢包是巨大的威脅。我差一點點衝動買下一台 OP-1。那個冰淇淋勺美極了，即使我根本不怎麼吃冰淇淋。
 
@@ -62,13 +62,13 @@ MoMA Design Store 對錢包是巨大的威脅。我差一點點衝動買下一�
 
 我們用三小時暴走大都會博物館，這簡直是犯罪，但無可奈何。比梵蒂岡吵、比烏菲茲大、比兩者都混亂。我喜歡《Dawn — Early Spring》也喜歡《Repast of the Lion》。但非洲展區搶走了風頭。那些異想天開、古靈精怪的造型，從相似的質地中迸發無盡創意。西方經典期待你被拉斐爾震撼。我被那些面具震撼。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001656.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001656.webp)
 
 接著是 Theodora，這趟旅程的高光。河豚酸橘汁醃魚。擠著鮮奶油的麵包在甜與鹹之間取得了完美的平衡。服務生戴著一隻三宅一生的手錶，極簡、金屬感。一切都無可挑剔。整個下午的緊繃、我爸的略為煩躁、讓日子變得難熬的壞天氣，在獨特醬汁與新鮮食材的融合面前煙消雲散。稅與小費前兩百五。值得。
 
 那天晚上我在日誌寫下這些，鞋子因布魯克林的雨濕透，肚子很撐，心中充滿感激，深知自己何其幸運。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001677.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001677.webp)
 
 ## 矛盾浮現
 
@@ -76,7 +76,7 @@ MoMA Design Store 對錢包是巨大的威脅。我差一點點衝動買下一�
 
 走過 Vessel 後的高架公園：強烈、無情的冷風讓攝氏四度感覺像零下四度。在一家據說很棒的店吃早餐：還行，三個人六十三美金的「還行」。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001696.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001696.webp)
 
 西村和 Pier 59：很美但缺乏啟發性。「文創小店」裡陳列著你在那種高級平庸的 Airbnb 照片裡會看到的擺設。順眼，卻毫無個性。
 
@@ -128,7 +128,7 @@ High Line 附近的美術館，宣傳冊上的字體很美。但我發現裡面�
 
 我開始這樣想：矛盾是空間中的如果。如果是時間中的矛盾。這座城市同時容納了金融西裝男與無家可歸的人，他們不會被總結成一個關於紐約的單一故事；我同時容納留在台灣的自我和出國的幽靈，他們不會被調和成一個關於我的單一敘事。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001861.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001861.webp)
 
 也許，連貫性只是我為了講述往事而編造的故事。矛盾，才是真正在發生的事。
 
@@ -152,7 +152,7 @@ White Ferrari 響了；Demo 版本，字裡行間更加刺骨。_Which part of t
 
 典禮，我們此行的目的，虎頭蛇尾。天花板很低、燈光慘不忍睹、旗幟皺巴巴的。這就是人們說「旅行能開拓視野」的意思嗎？因為在那個天花板低得荒謬的演講廳裡，我的視野絕對無法開拓。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001897.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001897.webp)
 
 更別提典禮前衝去 CVS 買黑襪子，只因為我穿了深色的西裝卻拿了白襪。還有在美術館裡狂走，以為我們參加這場盛大典禮要遲到了。典禮延誤了。
 
@@ -166,7 +166,7 @@ White Ferrari 響了；Demo 版本，字裡行間更加刺骨。_Which part of t
 
 我們在魔幻時刻的餘暉中穿過哈佛校園。我套上了那件新風衣，因為它和裡面的西裝更搭。我們排隊等著 Every Hour Oyster。那龍蝦堡簡直是人間美味。
 
-![framed:](images/optimized/blogs/12-us-trip/L1001936.webp)
+![framed:](images/optimized/blogs/12-us-trip/l1001936.webp)
 
 ## 幾乎閉合的迴圈
 
