@@ -3,7 +3,6 @@
 import type { ReactNode } from "react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { ImageContainer } from "@portfolio/ui/image-container";
-import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 
 interface UsesItem {
   name: string;
@@ -82,7 +81,6 @@ function ItemRow({
 
 export default function UsesPage() {
   const { t, getTranslationData } = useLanguage();
-  const isMobile = useIsMobile();
 
   const hardware = getTranslationData("hardware", "uses");
   const software = getTranslationData("software", "uses");
@@ -125,32 +123,35 @@ export default function UsesPage() {
         <div className="grid grid-cols-12 gap-4 md:gap-6 pb-12 md:pb-16">
           <div className="col-span-12">
             <div className="w-full">
-              {isMobile ? (
-                // Mobile: Show only the center image, full width
+              {/* Mobile: center image only, full width. CSS-driven so SSR markup matches first paint.
+                  restrictPortraitWidth={false} prevents ImageContainer's portrait branch from
+                  initially rendering at ~53% width (when its internal useIsMobile() is still false),
+                  which would then double in height once isMobile resolved → CLS. */}
+              <div className="md:hidden">
                 <ImageContainer
                   src={images[1].src}
                   alt={images[1].alt}
                   aspectRatio={0.8}
                   noInsetPadding={true}
+                  restrictPortraitWidth={false}
                 />
-              ) : (
-                // Desktop: Show all three images in a grid, matching 12-col alignment
-                <div className="grid grid-cols-3 gap-[var(--column-spacing)]">
-                  {images.map((image) => (
-                    // This outer div clips the oversized child to prevent layout disruption
-                    <div key={image.src} className="overflow-hidden">
-                      <div style={desktopImageWrapperStyle}>
-                        <ImageContainer
-                          src={image.src}
-                          alt={image.alt}
-                          aspectRatio={0.8}
-                          noInsetPadding={true}
-                        />
-                      </div>
+              </div>
+              {/* Desktop: three images in a 12-col-aligned grid */}
+              <div className="hidden md:grid grid-cols-3 gap-[var(--column-spacing)]">
+                {images.map((image) => (
+                  // Outer div clips the oversized child to prevent layout disruption
+                  <div key={image.src} className="overflow-hidden">
+                    <div style={desktopImageWrapperStyle}>
+                      <ImageContainer
+                        src={image.src}
+                        alt={image.alt}
+                        aspectRatio={0.8}
+                        noInsetPadding={true}
+                      />
                     </div>
-                  ))}
-                </div>
-              )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
