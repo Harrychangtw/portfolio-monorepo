@@ -42,7 +42,8 @@ __pycache__
 *.pem
 combined.md
 apps/harrychang-me/content/content-tracker.md
-cxport_output.xmlSEO-AUDIT.md
+cxport_output.xml
+SEO-AUDIT.md
 
 # Local Lighthouse runs (apps/harrychang-me/scripts/lighthouse-local.sh)
 apps/harrychang-me/LIGHTHOUSE_LOCAL.md

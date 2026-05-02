@@ -31,7 +31,7 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 #### Desktop
 
 | Tested Route                               | Performance                                                                              | FCP   | LCP   | TBT   | CLS | Speed Index |
-| :----------------------------------------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :---- | :-- | :---------- | --- |
+| :----------------------------------------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :---- | :-- | :---------- |
 | `/`                                        | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square)   | 0.3 s | 1.1 s | 60 ms | 0   | 0.6 s       |
 | `/blog`                                    | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.2 s | 0 ms  | 0   | 0.7 s       |
 | `/blog/2025_12_19_xpro1`                   | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.2 s | 1.2 s | 20 ms | 0   | 1.1 s       |
@@ -56,7 +56,7 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 | `/projects/2024_09_23_chingshin_rag`       | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.2 s | 20 ms | 0   | 1.1 s       |
 | `/projects/2025_03_08_sitcon_keynote`      | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square)   | 0.3 s | 1.3 s | 0 ms  | 0   | 1.1 s       |
 | `/projects/2025_04_12_portfolio`           | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.2 s | 0 ms  | 0   | 1.1 s       |
-| `/projects/2025_08_04_debate`              | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.1 s | 0 ms  | 0   | 1.1 s       | n   |
+| `/projects/2025_08_04_debate`              | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.1 s | 0 ms  | 0   | 1.1 s       |
 | `/uses`                                    | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square)   | 0.3 s | 1.4 s | 0 ms  | 0   | 0.8 s       |
 
 <!-- LIGHTHOUSE_RESULTS_END -->

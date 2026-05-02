@@ -217,7 +217,7 @@
         "relation": "form",
         "confidence": "INFERRED",
         "confidence_score": 0.85,
-        "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin.md"
+        "source_file": "apps/harrychang-me/content/drafts/13-chingshin.md"
       },
       {
         "id": "hyper_us_trip_set",
@@ -230,7 +230,7 @@
         "relation": "form",
         "confidence": "INFERRED",
         "confidence_score": 0.8,
-        "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip.md"
+        "source_file": "apps/harrychang-me/content/drafts/12-us-trip.md"
       },
       {
         "id": "hyper_gallery_2023_10_06",
@@ -242,7 +242,7 @@
         "relation": "participate_in",
         "confidence": "INFERRED",
         "confidence_score": 0.75,
-        "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md"
+        "source_file": "apps/harrychang-me/content/gallery/2023_10_06_against_giants.md"
       },
       {
         "id": "hyper_italy_2026_series",
@@ -396,7 +396,7 @@
         "relation": "participate_in",
         "confidence": "INFERRED",
         "confidence_score": 0.8,
-        "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/optimize-images.js"
+        "source_file": "apps/harrychang-me/scripts/optimize-images.js"
       },
       {
         "id": "performance_audit_tools",
@@ -409,7 +409,7 @@
         "relation": "participate_in",
         "confidence": "INFERRED",
         "confidence_score": 0.8,
-        "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/audit-load-times.mjs"
+        "source_file": "apps/harrychang-me/scripts/audit-load-times.mjs"
       },
       {
         "id": "artific_font_family",
@@ -422,7 +422,7 @@
         "relation": "form",
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
-        "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Thin.html"
+        "source_file": "apps/harrychang-me/public/fonts/Artific/Artific-Thin.html"
       }
     ]
   },
@@ -6493,7 +6493,7 @@
     {
       "label": "Portfolio Site Specs (archive)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/11-portfolio-site-specs.md",
+      "source_file": "apps/harrychang-me/content/archive/11-portfolio-site-specs.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6506,7 +6506,7 @@
     {
       "label": "Portfolio Website (archive entry)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/11-portfolio-site.md",
+      "source_file": "apps/harrychang-me/content/archive/11-portfolio-site.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6519,7 +6519,7 @@
     {
       "label": "Portfolio Website (archive zh-tw)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/11-portfolio_azh-tw.md",
+      "source_file": "apps/harrychang-me/content/archive/11-portfolio_azh-tw.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6532,7 +6532,7 @@
     {
       "label": "US Trip v1 (archive)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/12-us-trip-v1.md",
+      "source_file": "apps/harrychang-me/content/archive/12-us-trip-v1.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6545,7 +6545,7 @@
     {
       "label": "ArXiv Paper IDs",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6558,7 +6558,7 @@
     {
       "label": "arXiv:1301.3781 (word2vec)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1301.3781",
       "captured_at": null,
@@ -6571,7 +6571,7 @@
     {
       "label": "arXiv:1406.1078 (RNN encoder-decoder)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1406.1078",
       "captured_at": null,
@@ -6584,7 +6584,7 @@
     {
       "label": "arXiv:1409.0575 (ImageNet)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1409.0575",
       "captured_at": null,
@@ -6597,7 +6597,7 @@
     {
       "label": "arXiv:1409.1556 (VGG)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1409.1556",
       "captured_at": null,
@@ -6610,7 +6610,7 @@
     {
       "label": "arXiv:1411.4038 (FCN)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1411.4038",
       "captured_at": null,
@@ -6623,7 +6623,7 @@
     {
       "label": "arXiv:1412.6980 (Adam)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1412.6980",
       "captured_at": null,
@@ -6636,7 +6636,7 @@
     {
       "label": "arXiv:1505.04597 (U-Net)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1505.04597",
       "captured_at": null,
@@ -6649,7 +6649,7 @@
     {
       "label": "arXiv:1512.03385 (ResNet)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1512.03385",
       "captured_at": null,
@@ -6662,7 +6662,7 @@
     {
       "label": "arXiv:1603.02754 (XGBoost)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1603.02754",
       "captured_at": null,
@@ -6675,7 +6675,7 @@
     {
       "label": "arXiv:1611.03530",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1611.03530",
       "captured_at": null,
@@ -6688,7 +6688,7 @@
     {
       "label": "arXiv:1704.05796",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1704.05796",
       "captured_at": null,
@@ -6701,7 +6701,7 @@
     {
       "label": "arXiv:1705.07321",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1705.07321",
       "captured_at": null,
@@ -6714,7 +6714,7 @@
     {
       "label": "arXiv:1706.03762 (Attention is All You Need)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1706.03762",
       "captured_at": null,
@@ -6727,7 +6727,7 @@
     {
       "label": "arXiv:1707.09316",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1707.09316",
       "captured_at": null,
@@ -6740,7 +6740,7 @@
     {
       "label": "arXiv:1802.03426 (UMAP)",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1802.03426",
       "captured_at": null,
@@ -6753,7 +6753,7 @@
     {
       "label": "arXiv:1806.10574",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1806.10574",
       "captured_at": null,
@@ -6766,7 +6766,7 @@
     {
       "label": "arXiv:1810.03023",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1810.03023",
       "captured_at": null,
@@ -6779,7 +6779,7 @@
     {
       "label": "arXiv:1911.11423",
       "file_type": "paper",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "source_url": "https://arxiv.org/abs/1911.11423",
       "captured_at": null,
@@ -6792,7 +6792,7 @@
     {
       "label": "Homeserver Specs (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/10-homeserver-specs.md",
+      "source_file": "apps/harrychang-me/content/drafts/10-homeserver-specs.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6805,7 +6805,7 @@
     {
       "label": "Homeserver (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/10_homeserver.md",
+      "source_file": "apps/harrychang-me/content/drafts/10_homeserver.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6818,7 +6818,7 @@
     {
       "label": "School (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-school.md",
+      "source_file": "apps/harrychang-me/content/drafts/12-school.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6831,7 +6831,7 @@
     {
       "label": "US Trip Specs v2 (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip-specs-v2.md",
+      "source_file": "apps/harrychang-me/content/drafts/12-us-trip-specs-v2.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6844,7 +6844,7 @@
     {
       "label": "US Trip Specs (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip-specs.md",
+      "source_file": "apps/harrychang-me/content/drafts/12-us-trip-specs.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6857,7 +6857,7 @@
     {
       "label": "US Trip 16-Day Journal (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip.md",
+      "source_file": "apps/harrychang-me/content/drafts/12-us-trip.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6870,7 +6870,7 @@
     {
       "label": "Chingshin Specs (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin-specs.md",
+      "source_file": "apps/harrychang-me/content/drafts/13-chingshin-specs.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6883,7 +6883,7 @@
     {
       "label": "Two Floors Down: Chingshin, May 2026",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin.md",
+      "source_file": "apps/harrychang-me/content/drafts/13-chingshin.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2026-05-01",
@@ -6896,7 +6896,7 @@
     {
       "label": "Chingshin (zh-tw alt)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin_zh-tw-alt.md",
+      "source_file": "apps/harrychang-me/content/drafts/13-chingshin_zh-tw-alt.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6909,7 +6909,7 @@
     {
       "label": "Chingshin (zh-tw)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/drafts/13-chingshin_zh-tw.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6922,7 +6922,7 @@
     {
       "label": "10 Years Later (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/99-10-years-later.md",
+      "source_file": "apps/harrychang-me/content/drafts/99-10-years-later.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6935,7 +6935,7 @@
     {
       "label": "Dishes (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/99-dishes.md",
+      "source_file": "apps/harrychang-me/content/drafts/99-dishes.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6948,7 +6948,7 @@
     {
       "label": "Garden (draft)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/99-garden.md",
+      "source_file": "apps/harrychang-me/content/drafts/99-garden.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -6961,7 +6961,7 @@
     {
       "label": "Piece of Tokyo (City Stroll)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_06_30_city_stroll.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_06_30_city_stroll.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-06-30",
@@ -6974,7 +6974,7 @@
     {
       "label": "Piece of Tokyo (zh-tw)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_06_30_city_stroll_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_06_30_city_stroll_zh-tw.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-06-30",
@@ -6987,7 +6987,7 @@
     {
       "label": "Splash of Red",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_07_07_splash_of_red.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_07_07_splash_of_red.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-07-07",
@@ -7000,7 +7000,7 @@
     {
       "label": "Splash of Red (zh-tw)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_07_07_splash_of_red_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_07_07_splash_of_red_zh-tw.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-07-07",
@@ -7013,7 +7013,7 @@
     {
       "label": "Intersection",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_08_10_intersection.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_08_10_intersection.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-08-10",
@@ -7026,7 +7026,7 @@
     {
       "label": "Intersection (zh-tw)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_08_10_intersection_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_08_10_intersection_zh-tw.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-08-10",
@@ -7039,7 +7039,7 @@
     {
       "label": "Solitary Glow",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_05_solitary_glow.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_05_solitary_glow.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-10-05",
@@ -7052,7 +7052,7 @@
     {
       "label": "Solitary Glow (zh-tw)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_05_solitary_glow_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_05_solitary_glow_zh-tw.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-10-05",
@@ -7065,7 +7065,7 @@
     {
       "label": "Against Giants",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_06_against_giants.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-10-06",
@@ -7078,7 +7078,7 @@
     {
       "label": "Against Giants (zh-tw)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-10-06",
@@ -7091,7 +7091,7 @@
     {
       "label": "Guided by the Tides",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_guided_by_the_tides.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_06_guided_by_the_tides.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-10-06",
@@ -7104,7 +7104,7 @@
     {
       "label": "Guided by the Tides (zh-tw)",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_guided_by_the_tides_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_06_guided_by_the_tides_zh-tw.md",
       "source_location": null,
       "source_url": null,
       "captured_at": "2023-10-06",
@@ -8898,7 +8898,7 @@
     {
       "label": "Artific-SuperLightOblique font specimen",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SuperLightOblique.html",
+      "source_file": "apps/harrychang-me/public/fonts/Artific/Artific-SuperLightOblique.html",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -8911,7 +8911,7 @@
     {
       "label": "Artific-Thin font specimen",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Thin.html",
+      "source_file": "apps/harrychang-me/public/fonts/Artific/Artific-Thin.html",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -8924,7 +8924,7 @@
     {
       "label": "Artific-ThinOblique font specimen",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-ThinOblique.html",
+      "source_file": "apps/harrychang-me/public/fonts/Artific/Artific-ThinOblique.html",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -8937,7 +8937,7 @@
     {
       "label": "Google site verification file",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/googleb0d95f7ad2ffc31f.html",
+      "source_file": "apps/harrychang-me/public/googleb0d95f7ad2ffc31f.html",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -8950,7 +8950,7 @@
     {
       "label": "robots.txt",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/robots.txt",
+      "source_file": "apps/harrychang-me/public/robots.txt",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -8963,7 +8963,7 @@
     {
       "label": "_bench-metadata.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/_bench-metadata.mjs",
+      "source_file": "apps/harrychang-me/scripts/_bench-metadata.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -8976,7 +8976,7 @@
     {
       "label": "audit-image-refs-strict.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/audit-image-refs-strict.mjs",
+      "source_file": "apps/harrychang-me/scripts/audit-image-refs-strict.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -8989,7 +8989,7 @@
     {
       "label": "audit-load-times.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/audit-load-times.mjs",
+      "source_file": "apps/harrychang-me/scripts/audit-load-times.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9002,7 +9002,7 @@
     {
       "label": "backfill_alt_and_tldr.py",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/backfill_alt_and_tldr.py",
+      "source_file": "apps/harrychang-me/scripts/backfill_alt_and_tldr.py",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9015,7 +9015,7 @@
     {
       "label": "build-image-dims.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build-image-dims.mjs",
+      "source_file": "apps/harrychang-me/scripts/build-image-dims.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9028,7 +9028,7 @@
     {
       "label": "build-papers.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build-papers.mjs",
+      "source_file": "apps/harrychang-me/scripts/build-papers.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9041,7 +9041,7 @@
     {
       "label": "build_graph.py",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build_graph.py",
+      "source_file": "apps/harrychang-me/scripts/build_graph.py",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9054,7 +9054,7 @@
     {
       "label": "check-image-refs.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/check-image-refs.mjs",
+      "source_file": "apps/harrychang-me/scripts/check-image-refs.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9067,7 +9067,7 @@
     {
       "label": "fetch-fonts.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/fetch-fonts.mjs",
+      "source_file": "apps/harrychang-me/scripts/fetch-fonts.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9080,7 +9080,7 @@
     {
       "label": "gallery-manager.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/gallery-manager.mjs",
+      "source_file": "apps/harrychang-me/scripts/gallery-manager.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9093,7 +9093,7 @@
     {
       "label": "generate-sitemap.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/generate-sitemap.mjs",
+      "source_file": "apps/harrychang-me/scripts/generate-sitemap.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9106,7 +9106,7 @@
     {
       "label": "lighthouse-local-paths.txt",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/lighthouse-local-paths.txt",
+      "source_file": "apps/harrychang-me/scripts/lighthouse-local-paths.txt",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9119,7 +9119,7 @@
     {
       "label": "lighthouse-local-report.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/lighthouse-local-report.mjs",
+      "source_file": "apps/harrychang-me/scripts/lighthouse-local-report.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9132,7 +9132,7 @@
     {
       "label": "normalize-image-filenames.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/normalize-image-filenames.mjs",
+      "source_file": "apps/harrychang-me/scripts/normalize-image-filenames.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9145,7 +9145,7 @@
     {
       "label": "optimize-images-from-webp.js",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/optimize-images-from-webp.js",
+      "source_file": "apps/harrychang-me/scripts/optimize-images-from-webp.js",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9158,7 +9158,7 @@
     {
       "label": "optimize-images.js",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/optimize-images.js",
+      "source_file": "apps/harrychang-me/scripts/optimize-images.js",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9171,7 +9171,7 @@
     {
       "label": "requirements-graph.txt",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/requirements-graph.txt",
+      "source_file": "apps/harrychang-me/scripts/requirements-graph.txt",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9184,7 +9184,7 @@
     {
       "label": "verify_anchor_parity.mjs",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/verify_anchor_parity.mjs",
+      "source_file": "apps/harrychang-me/scripts/verify_anchor_parity.mjs",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9197,7 +9197,7 @@
     {
       "label": "blog-combined snapshot",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/blog-combined.md",
+      "source_file": "apps/harrychang-me/snapshots/blog-combined.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9210,7 +9210,7 @@
     {
       "label": "current_high_cls_combined snapshot",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/current_high_cls_combined.md",
+      "source_file": "apps/harrychang-me/snapshots/current_high_cls_combined.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9223,7 +9223,7 @@
     {
       "label": "harrychang_content_export snapshot",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/harrychang_content_export.md",
+      "source_file": "apps/harrychang-me/snapshots/harrychang_content_export.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9236,7 +9236,7 @@
     {
       "label": "issue_template snapshot",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/issue_template.md",
+      "source_file": "apps/harrychang-me/snapshots/issue_template.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9249,7 +9249,7 @@
     {
       "label": "lcp_pending snapshot",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/lcp_pending.md",
+      "source_file": "apps/harrychang-me/snapshots/lcp_pending.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9262,7 +9262,7 @@
     {
       "label": "photographs_combined snapshot",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/photographs_combined.md",
+      "source_file": "apps/harrychang-me/snapshots/photographs_combined.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9275,7 +9275,7 @@
     {
       "label": "previous_combined / temp snapshot",
       "file_type": "document",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/previous_combined.md",
+      "source_file": "apps/harrychang-me/snapshots/previous_combined.md",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -9288,7 +9288,7 @@
     {
       "label": "tailwind.config.ts (harrychang-me)",
       "file_type": "code",
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/tailwind.config.ts",
+      "source_file": "apps/harrychang-me/tailwind.config.ts",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
@@ -17404,7 +17404,7 @@
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/11-portfolio-site-specs.md",
+      "source_file": "apps/harrychang-me/content/archive/11-portfolio-site-specs.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "archive_11_portfolio_site_specs",
@@ -17416,7 +17416,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/11-portfolio_azh-tw.md",
+      "source_file": "apps/harrychang-me/content/archive/11-portfolio_azh-tw.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "archive_11_portfolio_zhtw",
@@ -17428,7 +17428,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/12-us-trip-v1.md",
+      "source_file": "apps/harrychang-me/content/archive/12-us-trip-v1.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "archive_12_us_trip_v1",
@@ -17440,7 +17440,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17452,7 +17452,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17464,7 +17464,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17476,7 +17476,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17488,7 +17488,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17500,7 +17500,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17512,7 +17512,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17524,7 +17524,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17536,7 +17536,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17548,7 +17548,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17560,7 +17560,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17572,7 +17572,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17584,7 +17584,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17596,7 +17596,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17608,7 +17608,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17620,7 +17620,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17632,7 +17632,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17644,7 +17644,7 @@
       "relation": "cites",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md",
+      "source_file": "apps/harrychang-me/content/arxiv-papers.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "arxiv_papers_list",
@@ -17656,7 +17656,7 @@
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/10-homeserver-specs.md",
+      "source_file": "apps/harrychang-me/content/drafts/10-homeserver-specs.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "drafts_10_homeserver_specs",
@@ -17668,7 +17668,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-school.md",
+      "source_file": "apps/harrychang-me/content/drafts/12-school.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "drafts_12_school",
@@ -17680,7 +17680,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip-specs-v2.md",
+      "source_file": "apps/harrychang-me/content/drafts/12-us-trip-specs-v2.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "drafts_12_us_trip_specs_v2",
@@ -17692,7 +17692,7 @@
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip-specs.md",
+      "source_file": "apps/harrychang-me/content/drafts/12-us-trip-specs.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "drafts_12_us_trip_specs",
@@ -17704,7 +17704,7 @@
       "relation": "rationale_for",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin-specs.md",
+      "source_file": "apps/harrychang-me/content/drafts/13-chingshin-specs.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "drafts_13_chingshin_specs",
@@ -17716,7 +17716,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/drafts/13-chingshin_zh-tw.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "drafts_13_chingshin_zhtw",
@@ -17728,7 +17728,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin_zh-tw-alt.md",
+      "source_file": "apps/harrychang-me/content/drafts/13-chingshin_zh-tw-alt.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "drafts_13_chingshin_zhtw_alt",
@@ -17740,7 +17740,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_06_30_city_stroll_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_06_30_city_stroll_zh-tw.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "gallery_2023_06_30_city_stroll_zhtw",
@@ -17752,7 +17752,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_07_07_splash_of_red_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_07_07_splash_of_red_zh-tw.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "gallery_2023_07_07_splash_of_red_zhtw",
@@ -17764,7 +17764,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_08_10_intersection_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_08_10_intersection_zh-tw.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "gallery_2023_08_10_intersection_zhtw",
@@ -17776,7 +17776,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_05_solitary_glow_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_05_solitary_glow_zh-tw.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "gallery_2023_10_05_solitary_glow_zhtw",
@@ -17788,7 +17788,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "gallery_2023_10_06_against_giants_zhtw",
@@ -17800,7 +17800,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_06_against_giants.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "gallery_2023_10_06_against_giants",
@@ -17812,7 +17812,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_guided_by_the_tides_zh-tw.md",
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_06_guided_by_the_tides_zh-tw.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "gallery_2023_10_06_guided_by_the_tides_zhtw",
@@ -19156,7 +19156,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SuperLightOblique.html",
+      "source_file": "apps/harrychang-me/public/fonts/Artific/Artific-SuperLightOblique.html",
       "source_location": null,
       "weight": 1.0,
       "_src": "artific_superlightoblique_html",
@@ -19168,7 +19168,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.9,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Thin.html",
+      "source_file": "apps/harrychang-me/public/fonts/Artific/Artific-Thin.html",
       "source_location": null,
       "weight": 1.0,
       "_src": "artific_thin_html",
@@ -19180,7 +19180,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/fetch-fonts.mjs",
+      "source_file": "apps/harrychang-me/scripts/fetch-fonts.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "fetch_fonts_script",
@@ -19192,7 +19192,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/robots.txt",
+      "source_file": "apps/harrychang-me/public/robots.txt",
       "source_location": null,
       "weight": 1.0,
       "_src": "robots_txt",
@@ -19204,7 +19204,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.65,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/_bench-metadata.mjs",
+      "source_file": "apps/harrychang-me/scripts/_bench-metadata.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "bench_metadata_script",
@@ -19216,7 +19216,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/audit-image-refs-strict.mjs",
+      "source_file": "apps/harrychang-me/scripts/audit-image-refs-strict.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "audit_image_refs_strict",
@@ -19228,7 +19228,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/audit-load-times.mjs",
+      "source_file": "apps/harrychang-me/scripts/audit-load-times.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "audit_load_times",
@@ -19240,7 +19240,7 @@
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.6,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/backfill_alt_and_tldr.py",
+      "source_file": "apps/harrychang-me/scripts/backfill_alt_and_tldr.py",
       "source_location": null,
       "weight": 1.0,
       "_src": "backfill_alt_and_tldr",
@@ -19252,7 +19252,7 @@
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build-image-dims.mjs",
+      "source_file": "apps/harrychang-me/scripts/build-image-dims.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "build_image_dims",
@@ -19264,7 +19264,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.65,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build-papers.mjs",
+      "source_file": "apps/harrychang-me/scripts/build-papers.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "build_papers_script",
@@ -19276,7 +19276,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build_graph.py",
+      "source_file": "apps/harrychang-me/scripts/build_graph.py",
       "source_location": null,
       "weight": 1.0,
       "_src": "build_graph_py",
@@ -19288,7 +19288,7 @@
       "relation": "shares_data_with",
       "confidence": "INFERRED",
       "confidence_score": 0.6,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/gallery-manager.mjs",
+      "source_file": "apps/harrychang-me/scripts/gallery-manager.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "gallery_manager_script",
@@ -19300,7 +19300,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/lighthouse-local-report.mjs",
+      "source_file": "apps/harrychang-me/scripts/lighthouse-local-report.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "lighthouse_local_report",
@@ -19312,7 +19312,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/normalize-image-filenames.mjs",
+      "source_file": "apps/harrychang-me/scripts/normalize-image-filenames.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "normalize_image_filenames",
@@ -19324,7 +19324,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/optimize-images-from-webp.js",
+      "source_file": "apps/harrychang-me/scripts/optimize-images-from-webp.js",
       "source_location": null,
       "weight": 1.0,
       "_src": "optimize_images_from_webp",
@@ -19336,7 +19336,7 @@
       "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.6,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/verify_anchor_parity.mjs",
+      "source_file": "apps/harrychang-me/scripts/verify_anchor_parity.mjs",
       "source_location": null,
       "weight": 1.0,
       "_src": "verify_anchor_parity",
@@ -19348,7 +19348,7 @@
       "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/photographs_combined.md",
+      "source_file": "apps/harrychang-me/snapshots/photographs_combined.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "snapshot_photographs_combined",
@@ -19360,7 +19360,7 @@
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.7,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/current_high_cls_combined.md",
+      "source_file": "apps/harrychang-me/snapshots/current_high_cls_combined.md",
       "source_location": null,
       "weight": 1.0,
       "_src": "snapshot_high_cls",
@@ -19584,7 +19584,7 @@
       "relation": "form",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin.md"
+      "source_file": "apps/harrychang-me/content/drafts/13-chingshin.md"
     },
     {
       "id": "hyper_us_trip_set",
@@ -19597,7 +19597,7 @@
       "relation": "form",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip.md"
+      "source_file": "apps/harrychang-me/content/drafts/12-us-trip.md"
     },
     {
       "id": "hyper_gallery_2023_10_06",
@@ -19609,7 +19609,7 @@
       "relation": "participate_in",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md"
+      "source_file": "apps/harrychang-me/content/gallery/2023_10_06_against_giants.md"
     },
     {
       "id": "hyper_italy_2026_series",
@@ -19763,7 +19763,7 @@
       "relation": "participate_in",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/optimize-images.js"
+      "source_file": "apps/harrychang-me/scripts/optimize-images.js"
     },
     {
       "id": "performance_audit_tools",
@@ -19776,7 +19776,7 @@
       "relation": "participate_in",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/audit-load-times.mjs"
+      "source_file": "apps/harrychang-me/scripts/audit-load-times.mjs"
     },
     {
       "id": "artific_font_family",
@@ -19789,7 +19789,7 @@
       "relation": "form",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Thin.html"
+      "source_file": "apps/harrychang-me/public/fonts/Artific/Artific-Thin.html"
     }
   ]
 }

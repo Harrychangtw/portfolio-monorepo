@@ -1,15 +1,18 @@
-# Graph Report - /Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps  (2026-05-02)
+# Graph Report - apps (2026-05-02)
 
 ## Corpus Check
+
 - 302 files · ~274,152 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
+
 - 815 nodes · 839 edges · 109 communities detected
 - Extraction: 83% EXTRACTED · 17% INFERRED · 0% AMBIGUOUS · INFERRED: 143 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
+
 - [[_COMMUNITY_External Libs & API Surface|External Libs & API Surface]]
 - [[_COMMUNITY_Harryscope CLI|Harryscope CLI]]
 - [[_COMMUNITY_Combined Snapshot Builder|Combined Snapshot Builder]]
@@ -121,6 +124,7 @@
 - [[_COMMUNITY_Community 201|Community 201]]
 
 ## God Nodes (most connected - your core abstractions)
+
 1. `HarryScope` - 19 edges
 2. `ArXiv Paper IDs` - 18 edges
 3. `section()` - 11 edges
@@ -133,18 +137,20 @@
 10. `stat_line()` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Emily robots.txt` --semantically_similar_to--> `Lab robots.ts`  [INFERRED] [semantically similar]
+
+- `Emily robots.txt` --semantically_similar_to--> `Lab robots.ts` [INFERRED] [semantically similar]
   apps/emilychang-me/public/robots.txt → apps/harrychang-me/app/(lab)/lab/robots.ts
-- `ProjectPage (project slug)` --references--> `Botanical Branding (project)`  [INFERRED]
+- `ProjectPage (project slug)` --references--> `Botanical Branding (project)` [INFERRED]
   apps/emilychang-me/app/(main)/projects/[slug]/page.tsx → apps/emilychang-me/content/projects/botanical-branding.md
-- `ProjectPage (project slug)` --references--> `Ceramic Collection (project)`  [INFERRED]
+- `ProjectPage (project slug)` --references--> `Ceramic Collection (project)` [INFERRED]
   apps/emilychang-me/app/(main)/projects/[slug]/page.tsx → apps/emilychang-me/content/projects/ceramic-collection.md
-- `GET()` --calls--> `getAllProjectsMetadata()`  [INFERRED]
-  emilychang-me/app/api/projects/route.ts → harrychang-me/scripts/_bench-metadata.mjs
-- `CanvasItemPage (gallery slug)` --references--> `Urban Sketches (gallery)`  [INFERRED]
+- `GET()` --calls--> `getAllProjectsMetadata()` [INFERRED]
+  emilychang-me/app/api/projects/route.ts → harrychang-me/scripts/\_bench-metadata.mjs
+- `CanvasItemPage (gallery slug)` --references--> `Urban Sketches (gallery)` [INFERRED]
   apps/emilychang-me/app/(main)/canvas/[slug]/page.tsx → apps/emilychang-me/content/gallery/urban-sketches.md
 
 ## Hyperedges (group relationships)
+
 - **Short-link redirect pages routed through siteConfig** — beli_redirect, email_redirect, ig_main_redirect, ig_art_redirect, spotify_redirect, site_config [EXTRACTED 1.00]
 - **Home page composes About + Projects + Canvas + Sketches sections** — main_home_page, about_section, canvas_page, projects_page [INFERRED 0.80]
 - **Linktree page funnels users through redirect short URLs** — emily_links_page_client, email_redirect, ig_main_redirect, ig_art_redirect, beli_redirect, spotify_redirect [EXTRACTED 1.00]
@@ -181,446 +187,557 @@
 ## Communities
 
 ### Community 0 - "External Libs & API Surface"
+
 Cohesion: 0.07
 Nodes (46): /api/guestbook, /api/waitlist, gsap, lucide-react, motion/react, @vercel/analytics, EmbeddedGraph (local-graph-dynamic), MobileNodeCard (+38 more)
 
 ### Community 1 - "Harryscope CLI"
+
 Cohesion: 0.12
 Nodes (23): banner(), bar_chart(), C, chinese_char_count(), coleman_liau_index(), count_syllables(), detect_language(), extract_frontmatter() (+15 more)
 
 ### Community 2 - "Combined Snapshot Builder"
+
 Cohesion: 0.08
 Nodes (35): AnchorAllocator, build_tag_nodes(), chunk_locale(), chunk_markdown(), collect_locale_files(), collect_markdown_files(), compute_edges(), compute_embeddings() (+27 more)
 
 ### Community 3 - "Section Components"
+
 Cohesion: 0.1
 Nodes (25): EmilyAboutSection, AboutSection, API GET /api/sketches, Blog Index Page, Blog Slug Page, Gallery Index Page, Gallery Slug Page, GraphNextUp Component (+17 more)
 
 ### Community 4 - "Page Routes & Layouts"
+
 Cohesion: 0.11
 Nodes (25): API: Guestbook Route, API: Lab Waitlist Route, API: Spotify Now Playing, App Error Boundary, Rangefinder 404 Page, App Root Layout, BeliRedirect page, ClientLayout (Emily) (+17 more)
 
 ### Community 5 - "Image Alt/TLDR Backfill"
+
 Cohesion: 0.15
-Nodes (22): backfill_inline_images(), _build_alt_prompt(), _build_tldr_prompt(), call_llm(), clean_llm_text(), find_images_needing_alt(), generate_all_tldrs(), image_to_base64_payload() (+14 more)
+Nodes (22): backfill_inline_images(), \_build_alt_prompt(), \_build_tldr_prompt(), call_llm(), clean_llm_text(), find_images_needing_alt(), generate_all_tldrs(), image_to_base64_payload() (+14 more)
 
 ### Community 6 - "Detail Page Routes"
+
 Cohesion: 0.11
 Nodes (14): BlogPage(), Home(), GET(), ProjectsPage(), GET(), bench(), fmt(), getAllPostsMetadata() (+6 more)
 
 ### Community 7 - "Content API Routes"
+
 Cohesion: 0.14
 Nodes (19): API GET /api/gallery, API GET /api/gallery/[slug], API: Posts Route, API: Post Item Route, API GET /api/projects, API GET /api/projects/[slug], Sitemap Generator, Botanical Branding (project) (+11 more)
 
 ### Community 8 - "ArXiv Paper Citations"
+
 Cohesion: 0.11
 Nodes (19): ArXiv Paper IDs, arXiv:1301.3781 (word2vec), arXiv:1406.1078 (RNN encoder-decoder), arXiv:1409.0575 (ImageNet), arXiv:1409.1556 (VGG), arXiv:1411.4038 (FCN), arXiv:1412.6980 (Adam), arXiv:1505.04597 (U-Net) (+11 more)
 
 ### Community 9 - "Photography Gallery"
+
 Cohesion: 0.16
 Nodes (15): Street Photography, Dusk Impressions, Dusk Impressions (zh-tw), Italy City, Italy City (zh-tw), Italy Mountain, Italy Mountain (zh-tw), Italy Town (+7 more)
 
 ### Community 10 - "Hardware & Gear"
+
 Cohesion: 0.15
 Nodes (13): FormD T1 SFF Case, Fujifilm X-Pro1, Fujifilm X-T5, Homeserver / Homelab, Leica M11-D, NVIDIA RTX 3090, Voigtlander Nokton 50mm f/1.5, 17 Studs Wide: A LEGO Fan Mount and the Case Against Outgrowing (+5 more)
 
 ### Community 11 - "Research Projects"
+
 Cohesion: 0.17
 Nodes (13): AAAI 2025 Educational Video, AAAI 2025 Educational Video (zh-tw), FORTRESS System, FORTRESS System (zh-tw), PATCH Dataset, PATCH Dataset (zh-tw), SITCON 2025 Keynote, SITCON 2025 Keynote (zh-tw) (+5 more)
 
 ### Community 12 - "Detail Page Templates"
+
 Cohesion: 0.29
 Nodes (2): generateMetadata(), generateStaticParams()
 
 ### Community 13 - "Image Optimization Pipeline"
+
 Cohesion: 0.6
 Nodes (8): checkFileReplacement(), generateResponsiveVariants(), main(), processBlogImages(), processDirectory(), processGalleryImages(), processProjectImages(), processSketchesImages()
 
 ### Community 14 - "Navigation Link Helpers"
+
 Cohesion: 0.28
 Nodes (4): getHref(), handleNavClick(), isAnchorLink(), isInternalLink()
 
 ### Community 15 - "Graph Canvas Rendering"
+
 Cohesion: 0.22
 Nodes (2): GraphCanvas(), getThemeColors()
 
 ### Community 17 - "Sitemap Generation"
+
 Cohesion: 0.47
 Nodes (8): formatDate(), generateLabSitemap(), generateMainSitemap(), generateRobotsTxt(), generateSitemapIndex(), generateSitemapXML(), getMarkdownFiles(), main()
 
 ### Community 18 - "Paper Reading Builder"
+
 Cohesion: 0.44
 Nodes (7): PaperReadingPage(), fetchArxivBatch(), fetchArxivPapers(), getArxivPaperIds(), getManualPapers(), main(), sleep()
 
 ### Community 19 - "Scroll & Section Tracking"
+
 Cohesion: 0.25
 Nodes (2): getLinkProps(), isActive()
 
 ### Community 20 - "Subdomain Middleware & Redirects"
+
 Cohesion: 0.28
 Nodes (9): Graph subdomain rewrite/redirect, Lab subdomain rewrite, Next.js middleware (subdomain + redirects), SOCIAL_REDIRECTS map, Apex to www 308 redirect, Next.js config (images, headers, tracing), next-i18next config, PostCSS config (+1 more)
 
 ### Community 22 - "Lab Graph Components"
+
 Cohesion: 0.25
 Nodes (8): Graph Canvas, Graph Client Layout, Embedded Graph Component, Hash Anchor Pulse, Local Graph Dynamic Loader, Graph Next-Up Component, Graph Page Client, Graph Utilities
 
 ### Community 23 - "Film & Existentialism Essays"
+
 Cohesion: 0.25
 Nodes (8): Aftersun (film), Paris, Texas (film), Synecdoche, New York (film), The Truman Show (film), Being a Stranger, in the Name of Love: On Aftersun and Paris, Texas, Aftersun and Paris, Texas (zh-tw), The Stage and the Exit: On Synecdoche, New York and The Truman Show, Synecdoche / Truman Show (zh-tw)
 
 ### Community 24 - "Education & Admissions"
+
 Cohesion: 0.29
 Nodes (8): GenAI Stars Competition (Grand Award), NTU CSIE Special Talent Admission, Retrieval-Augmented Generation (RAG), An Unconventional Path: Admitted to NTU CSIE via Special Talent Admission, NTU CSIE Special Admission (zh-tw), Chingshin RAGi, Chingshin RAGi (zh-tw), Qwen3Guard Technical Report
 
 ### Community 25 - "Image Filename Normalization"
+
 Cohesion: 0.33
 Nodes (2): recordStem(), toKebab()
 
 ### Community 26 - "Misc Route Handlers"
+
 Cohesion: 0.33
 Nodes (1): GET()
 
 ### Community 28 - "Anchor Parity Verifier"
+
 Cohesion: 0.6
 Nodes (5): collectExpected(), compareForFile(), main(), readMarkdown(), slugify()
 
 ### Community 29 - "Gallery Manager CLI"
+
 Cohesion: 0.53
 Nodes (5): handleInput(), loadItems(), main(), render(), saveItems()
 
 ### Community 31 - "Lab Waitlist Form"
+
 Cohesion: 0.5
 Nodes (2): handleSubmit(), validate()
 
 ### Community 32 - "Lighthouse Local Reports"
+
 Cohesion: 0.7
 Nodes (4): readLhrDir(), rows(), section(), summary()
 
 ### Community 34 - "Chingshin School Drafts"
+
 Cohesion: 0.4
 Nodes (5): School (draft), Two Floors Down: Chingshin, May 2026, Chingshin Specs (draft), Chingshin (zh-tw), Chingshin (zh-tw alt)
 
 ### Community 35 - "AI Alignment Reading"
+
 Cohesion: 0.5
 Nodes (5): AI Alignment, Mechanistic Interpretability, On the Biology of a Large Language Model, Circuit Tracing: Revealing Computational Graphs in Language Models, Natural Emergent Misalignment from Reward Hacking in Production RL
 
 ### Community 36 - "Sisyphus / Camus Essays"
+
 Cohesion: 0.4
 Nodes (5): The Myth of Sisyphus (Camus), Introducing the Blog: A Commitment to Thinking Out Loud, Introducing the Blog (zh-tw), The Myth of Sisyphus: On Absurdity, Struggle, and Why Reading Still Matters, The Myth of Sisyphus (zh-tw)
 
 ### Community 37 - "Prisma Schema & Migrations"
+
 Cohesion: 0.4
 Nodes (5): EmailCampaign table, WaitlistEntry table, Prisma config, Migration: add background/challenges, Initial migration (WaitlistEntry, EmailCampaign)
 
 ### Community 38 - "Guestbook Rate Limiting"
+
 Cohesion: 0.83
 Nodes (3): getClientIp(), POST(), pruneRateLimitMap()
 
 ### Community 39 - "Waitlist Rate Limiting"
+
 Cohesion: 0.83
 Nodes (3): getClientIp(), POST(), pruneRateLimitMap()
 
 ### Community 44 - "Community 44"
+
 Cohesion: 0.5
 Nodes (4): LanguageContext, LetterGlitch Component, Manifesto Page, useIsMobile Hook
 
 ### Community 45 - "Community 45"
+
 Cohesion: 0.5
 Nodes (4): Emily robots.txt, Lab robots.ts, Lab sitemap.ts, lab.harrychang.me subdomain
 
 ### Community 46 - "Community 46"
+
 Cohesion: 0.5
 Nodes (4): US Trip v1 (archive), US Trip 16-Day Journal (draft), US Trip Specs (draft), US Trip Specs v2 (draft)
 
 ### Community 47 - "Community 47"
+
 Cohesion: 0.5
 Nodes (4): Against Giants, Against Giants (zh-tw), Guided by the Tides, Guided by the Tides (zh-tw)
 
 ### Community 48 - "Community 48"
+
 Cohesion: 0.5
 Nodes (4): NLTK optional dependency, Harryscope NLP analyzer, THEME_LEXICONS (theme tagging), Title artwork selection prompt
 
 ### Community 49 - "Community 49"
+
 Cohesion: 0.5
 Nodes (3): Artific-SuperLightOblique font specimen, Artific-Thin font specimen, Artific-ThinOblique font specimen
 
 ### Community 51 - "Community 51"
+
 Cohesion: 0.5
 Nodes (2): blog-combined snapshot, photographs_combined snapshot
 
 ### Community 53 - "Community 53"
+
 Cohesion: 1.0
 Nodes (2): buildAlternates(), sitemap()
 
 ### Community 54 - "Community 54"
+
 Cohesion: 0.67
 Nodes (1): RootLayout()
 
 ### Community 55 - "Community 55"
+
 Cohesion: 0.67
 Nodes (1): GET()
 
 ### Community 56 - "Community 56"
+
 Cohesion: 0.67
 Nodes (1): MainLayout()
 
 ### Community 58 - "Community 58"
+
 Cohesion: 1.0
 Nodes (2): getYouTubeId(), NodePreviewCard()
 
 ### Community 59 - "Community 59"
+
 Cohesion: 1.0
 Nodes (2): downloadFile(), main()
 
 ### Community 61 - "Community 61"
+
 Cohesion: 0.67
 Nodes (3): Emily optimize-images Script, Emily Sketches Readme, sharp (image library)
 
 ### Community 62 - "Community 62"
+
 Cohesion: 0.67
 Nodes (3): Icarus Lab (concept), LabClientLayout Component, Lab Route Layout
 
 ### Community 63 - "Community 63"
+
 Cohesion: 0.67
 Nodes (3): API: Papers Route, Paper Reading Layout, Paper Reading Page
 
 ### Community 64 - "Community 64"
+
 Cohesion: 0.67
 Nodes (3): Portfolio Website (archive entry), Portfolio Site Specs (archive), Portfolio Website (archive zh-tw)
 
 ### Community 65 - "Community 65"
+
 Cohesion: 0.67
 Nodes (3): Joseph Zhang portfolio (inspiration), 365 with harrychang.me, 365 with harrychang.me (zh-tw)
 
 ### Community 66 - "Community 66"
+
 Cohesion: 0.67
 Nodes (3): Affinity V3 (Canva), Affinity V3 After 45 Days, Affinity V3 After 45 Days (zh-tw)
 
 ### Community 67 - "Community 67"
+
 Cohesion: 0.67
 Nodes (3): Sigikid Beasttown plush brand, The Case for Unhinged Plushies: A Collection of Chaos, Unhinged Plushies (zh-tw)
 
 ### Community 68 - "Community 68"
+
 Cohesion: 0.67
 Nodes (3): CNN CAPTCHA solver, Selenium automation, Zephyr: Fully Automated Ticket-Grabbing Bot
 
 ### Community 69 - "Community 69"
+
 Cohesion: 0.67
 Nodes (3): Gallery Template, Sample Gallery, Gallery Post Generator
 
 ### Community 70 - "Community 70"
+
 Cohesion: 0.67
 Nodes (3): Blog Content Scaffold (Spec Sheet), Blog Style Guide, English-Chinese Conversion Workflow
 
 ### Community 118 - "Community 118"
+
 Cohesion: 1.0
 Nodes (2): Emily Global Type Declarations, meshline (3D library)
 
 ### Community 119 - "Community 119"
+
 Cohesion: 1.0
 Nodes (2): Emily Tailwind Config, Shared Tailwind Preset (@portfolio/config)
 
 ### Community 120 - "Community 120"
+
 Cohesion: 1.0
 Nodes (2): GraphClientLayout Component, Graph Route Layout
 
 ### Community 121 - "Community 121"
+
 Cohesion: 1.0
 Nodes (2): Lab Landing Page (Icarus Lab), LabPageClient Component
 
 ### Community 122 - "Community 122"
+
 Cohesion: 1.0
 Nodes (2): Design System Page, TypographyPageClient
 
 ### Community 123 - "Community 123"
+
 Cohesion: 1.0
 Nodes (2): Uses Layout, Uses Page
 
 ### Community 124 - "Community 124"
+
 Cohesion: 1.0
 Nodes (2): siteConfig, Content CMS README
 
 ### Community 125 - "Community 125"
+
 Cohesion: 1.0
 Nodes (2): Homeserver (draft), Homeserver Specs (draft)
 
 ### Community 126 - "Community 126"
+
 Cohesion: 1.0
 Nodes (2): Piece of Tokyo (City Stroll), Piece of Tokyo (zh-tw)
 
 ### Community 127 - "Community 127"
+
 Cohesion: 1.0
 Nodes (2): Splash of Red, Splash of Red (zh-tw)
 
 ### Community 128 - "Community 128"
+
 Cohesion: 1.0
 Nodes (2): Intersection, Intersection (zh-tw)
 
 ### Community 129 - "Community 129"
+
 Cohesion: 1.0
 Nodes (2): Solitary Glow, Solitary Glow (zh-tw)
 
 ### Community 130 - "Community 130"
+
 Cohesion: 1.0
 Nodes (2): Against the Unknown, Against the Unknown (zh-tw)
 
 ### Community 131 - "Community 131"
+
 Cohesion: 1.0
 Nodes (2): Sky Above, Sky Above (zh-tw)
 
 ### Community 132 - "Community 132"
+
 Cohesion: 1.0
 Nodes (2): Hehuanshan, Hehuanshan (zh-tw)
 
 ### Community 133 - "Community 133"
+
 Cohesion: 1.0
 Nodes (2): Mortal Sparks, Mortal Sparks (zh-tw)
 
 ### Community 134 - "Community 134"
+
 Cohesion: 1.0
 Nodes (2): Go Where You Feel Most Alive, Go Where You Feel Most Alive (zh-tw)
 
 ### Community 135 - "Community 135"
+
 Cohesion: 1.0
 Nodes (2): City of Tears, City of Tears (zh-tw)
 
 ### Community 136 - "Community 136"
+
 Cohesion: 1.0
 Nodes (2): Go Back to New Jersey: US Trip, Go Back to New Jersey (zh-tw)
 
 ### Community 137 - "Community 137"
+
 Cohesion: 1.0
 Nodes (2): Classics Reimagined: A Theatrical Performance, Classics Reimagined (zh-tw)
 
 ### Community 138 - "Community 138"
+
 Cohesion: 1.0
 Nodes (2): VRC 2813B NOVA, VRC 2813B NOVA (zh-tw)
 
 ### Community 139 - "Community 139"
+
 Cohesion: 1.0
 Nodes (2): 2025 POWERPLAY, 2025 POWERPLAY (zh-tw)
 
 ### Community 140 - "Community 140"
+
 Cohesion: 1.0
 Nodes (2): Boundless Voices Charity Concert, Boundless Voices (zh-tw)
 
 ### Community 141 - "Community 141"
+
 Cohesion: 2.0
 Nodes (2): Portfolio Website, Portfolio Website (zh-tw)
 
 ### Community 142 - "Community 142"
+
 Cohesion: 1.0
 Nodes (2): World School Debate Experience, World School Debate (zh-tw)
 
 ### Community 143 - "Community 143"
+
 Cohesion: 1.0
 Nodes (2): Blog Content Tracker, Blog Promotion (IG Stories)
 
 ### Community 144 - "Community 144"
+
 Cohesion: 1.0
 Nodes (2): ESLint flat config, Next.js env type declarations
 
 ### Community 147 - "Community 147"
+
 Cohesion: 1.0
 Nodes (1): harrychang_content_export snapshot
 
 ### Community 148 - "Community 148"
+
 Cohesion: 1.0
 Nodes (2): current_high_cls_combined snapshot, lcp_pending snapshot
 
 ### Community 180 - "Community 180"
+
 Cohesion: 1.0
 Nodes (1): Emily Chang App README
 
 ### Community 181 - "Community 181"
+
 Cohesion: 1.0
 Nodes (1): siteConfig.social redirect targets
 
 ### Community 182 - "Community 182"
+
 Cohesion: 1.0
 Nodes (1): Editorial Layout (Emily project)
 
 ### Community 183 - "Community 183"
+
 Cohesion: 1.0
 Nodes (1): Emily ESLint Config
 
 ### Community 184 - "Community 184"
+
 Cohesion: 1.0
 Nodes (1): Emily next-env.d.ts
 
 ### Community 185 - "Community 185"
+
 Cohesion: 1.0
 Nodes (1): Emily Next Config
 
 ### Community 186 - "Community 186"
+
 Cohesion: 1.0
 Nodes (1): Emily PostCSS Config
 
 ### Community 187 - "Community 187"
+
 Cohesion: 1.0
 Nodes (1): Lab Error Boundary
 
 ### Community 188 - "Community 188"
+
 Cohesion: 1.0
 Nodes (1): Manifesto Layout
 
 ### Community 189 - "Community 189"
+
 Cohesion: 1.0
 Nodes (1): robots.txt Generator
 
 ### Community 190 - "Community 190"
+
 Cohesion: 1.0
 Nodes (1): load-time-distribution
 
 ### Community 191 - "Community 191"
+
 Cohesion: 1.0
 Nodes (1): 10 Years Later (draft)
 
 ### Community 192 - "Community 192"
+
 Cohesion: 1.0
 Nodes (1): Dishes (draft)
 
 ### Community 193 - "Community 193"
+
 Cohesion: 1.0
 Nodes (1): Garden (draft)
 
 ### Community 194 - "Community 194"
+
 Cohesion: 1.0
 Nodes (1): Defeating Nondeterminism in LLM Inference
 
 ### Community 195 - "Community 195"
+
 Cohesion: 1.0
 Nodes (1): Zephyr: Automated Ticketing Bot
 
 ### Community 196 - "Community 196"
+
 Cohesion: 1.0
 Nodes (1): Project Template
 
 ### Community 197 - "Community 197"
+
 Cohesion: 1.0
 Nodes (1): Artific font family (preview HTML pages)
 
 ### Community 198 - "Community 198"
+
 Cohesion: 1.0
 Nodes (1): Google site verification file
 
 ### Community 199 - "Community 199"
+
 Cohesion: 1.0
 Nodes (1): issue_template snapshot
 
 ### Community 200 - "Community 200"
+
 Cohesion: 1.0
 Nodes (1): previous_combined / temp snapshot
 
 ### Community 201 - "Community 201"
+
 Cohesion: 1.0
 Nodes (1): tailwind.config.ts (harrychang-me)
 
 ## Ambiguous Edges - Review These
-- `Portfolio Website` → `Portfolio Website`  [AMBIGUOUS]
+
+- `Portfolio Website` → `Portfolio Website` [AMBIGUOUS]
   apps/harrychang-me/content/projects/2025_04_12_portfolio.md · relation: references
 
 ## Knowledge Gaps
+
 - **234 isolated node(s):** `ANSI color codes. Falls back to empty strings if piped.`, `Extract YAML frontmatter as a dict-ish structure.`, `Remove markdown syntax, frontmatter, code blocks, images, HTML.`, `Load OPENROUTER_API_KEY from .env.local.`, `Parse YAML frontmatter. Returns (meta, body, raw_frontmatter_block).` (+229 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **Thin community `Detail Page Templates`** (10 nodes): `page.tsx`, `page.tsx`, `page.tsx`, `page.tsx`, `page.tsx`, `BlogPostPage()`, `CanvasItemPage()`, `generateMetadata()`, `generateStaticParams()`, `ProjectPage()`
@@ -753,6 +870,7 @@ Nodes (1): tailwind.config.ts (harrychang-me)
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
+
 _Questions this graph is uniquely positioned to answer:_
 
 - **What is the exact relationship between `Portfolio Website` and `Portfolio Website`?**
