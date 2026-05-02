@@ -134,16 +134,22 @@ jobs:
           uploadArtifacts: true
           temporaryPublicStorage: true
 
+      # README commit is only meaningful on main. On PR branches we still run
+      # lighthouse for visibility, but skip writing — the rebase-onto-main
+      # trick rewrites local history and would cause a non-fast-forward push.
       - name: Update README with Lighthouse Badges
+        if: github.ref == 'refs/heads/main'
         run: node .github/scripts/update-lighthouse-readme.js
 
       - name: Format README with Prettier
+        if: github.ref == 'refs/heads/main'
         run: npx prettier --write apps/harrychang-me/README.md
 
       # Lighthouse runs are long (~30+ min). Main may have moved during that
       # window (e.g. lighthouse-prod committed). Rebase our README change onto
       # the latest main so the auto-commit push is fast-forward.
       - name: Rebase README change onto latest main
+        if: github.ref == 'refs/heads/main'
         run: |
           cp apps/harrychang-me/README.md /tmp/README.lh.md
           git fetch origin main
@@ -151,7 +157,9 @@ jobs:
           cp /tmp/README.lh.md apps/harrychang-me/README.md
 
       - name: Commit Lighthouse Changes
+        if: github.ref == 'refs/heads/main'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update lighthouse scores in README [skip ci]"
           file_pattern: "apps/harrychang-me/README.md"
+          branch: main

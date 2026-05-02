@@ -243,6 +243,44 @@
   opacity: 0;
 }
 
+/* Load-time distribution — fixed at viewport bottom, fades with overlay */
+.reveal-distribution {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.reveal-distribution-bar {
+  --bar-strength: 0;
+  position: relative;
+  width: 2px;
+  border-radius: 1px;
+  background: hsl(var(--primary) / 0.18);
+  overflow: hidden;
+}
+
+.reveal-distribution-bar-fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: hsl(var(--primary));
+  transform-origin: bottom;
+  transform: scaleY(var(--bar-strength));
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.page-transition-overlay-center[data-phase="in"] .reveal-distribution {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
 /* Corners fly outward via transform (CLS-free — transforms never affect layout position).
    They are positioned in the fixed-size .reveal-decorations box (8rem × 6rem centred at
    50vw/50vh). The translate values move each corner to the matching viewport corner:

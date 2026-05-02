@@ -9,6 +9,10 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import {
+  LOAD_TIME_HISTOGRAM,
+  bucketIndexFor,
+} from "@/config/load-time-distribution";
 
 /**
  * Global page transition — zoom-out / zoom-in with a centred count-up timer.
@@ -199,6 +203,29 @@ export default function PageTransition({ children }: { children: ReactNode }) {
           <span className="reveal-timer absolute inset-0 z-10 flex items-center justify-center font-mono text-[12px] tracking-[0.25em] text-secondary tabular-nums">
             {fmt(elapsed)}
           </span>
+        </div>
+
+        {/* Load-time distribution — vertical bars at the viewport bottom.
+            The active bucket and a fading left-tail switch to the gradient. */}
+        <div className="reveal-distribution" aria-hidden="true">
+          {LOAD_TIME_HISTOGRAM.map((density, i) => {
+            const activeIdx = bucketIndexFor(elapsed);
+            const dist = activeIdx - i;
+            const strength = dist < 0 || dist > 5 ? 0 : 1 - dist / 5;
+            const height = Math.max(2, Math.round(density * 14));
+            return (
+              <span
+                key={i}
+                className="reveal-distribution-bar"
+                style={{
+                  height: `${height}px`,
+                  ["--bar-strength" as string]: strength.toFixed(3),
+                }}
+              >
+                <span className="reveal-distribution-bar-fill" />
+              </span>
+            );
+          })}
         </div>
       </div>
     </div>
