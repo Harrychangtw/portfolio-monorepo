@@ -1,0 +1,1210 @@
+{
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/middleware.ts": {
+    "mtime": 1777716276.2976658,
+    "hash": "84eb65e2721571188220152983bd9d02"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/next-i18next.config.js": {
+    "mtime": 1756364930.9019268,
+    "hash": "b08c14e2ec654a084ed198d80cd497fe"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/postcss.config.mjs": {
+    "mtime": 1763337357.5249147,
+    "hash": "6ffb7dae5678ba299bfa0dffd859b379"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/next.config.mjs": {
+    "mtime": 1777656345.43455,
+    "hash": "4849a4ccb615ac7755f6b4664abf6c5a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/prisma.config.ts": {
+    "mtime": 1776296254.5226758,
+    "hash": "eaadd99a70d5159a52a0ee360d4750e7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/next-env.d.ts": {
+    "mtime": 1762184069.3697033,
+    "hash": "ba64ff7d54714a8f64db89b1003207d8"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/tailwind.config.ts": {
+    "mtime": 1776296254.5323882,
+    "hash": "d2a6291bfcc34b1cf6030bc5c585eb90"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/eslint.config.mjs": {
+    "mtime": 1776296254.5219467,
+    "hash": "4247e833d39ab623ef8a83b4c627e12b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/robots.ts": {
+    "mtime": 1777455125.2009814,
+    "hash": "280ab62dbdc093fd2c7c5863c97dfc5a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/sitemap.ts": {
+    "mtime": 1777455125.2011817,
+    "hash": "cff5e5dfcdad413f3d5df107bf49f573"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/layout.tsx": {
+    "mtime": 1777697763.5585742,
+    "hash": "eb1d73957723a7905844a373f0c9eb4f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/error.tsx": {
+    "mtime": 1776296254.5006242,
+    "hash": "f02d67dfbd5a42e7c21799b2e6740077"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/not-found.tsx": {
+    "mtime": 1777113980.2305267,
+    "hash": "d045fe6bcd5b735f66cc9c245a20c930"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(graph)/graph/layout.tsx": {
+    "mtime": 1776412499.3916302,
+    "hash": "c26e6047e6beef71a48c2fa988778217"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(graph)/graph/page.tsx": {
+    "mtime": 1776412499.3918,
+    "hash": "52801bd4d4306fa78f255ccdf207c811"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/posts/route.ts": {
+    "mtime": 1776296254.4999735,
+    "hash": "77904f4cd0aa6d9c691264e6a4901c31"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/posts/[slug]/route.ts": {
+    "mtime": 1776296254.499816,
+    "hash": "4d5656b0c89735fe7adc0df34db2886c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/papers/route.ts": {
+    "mtime": 1776412499.3948212,
+    "hash": "90f3b34fc52989664f3e52274f1c5f50"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/gallery/route.ts": {
+    "mtime": 1776412499.3945215,
+    "hash": "3241f7db913e088ebb75ba8c153f7abc"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/gallery/[slug]/route.ts": {
+    "mtime": 1776412499.3941054,
+    "hash": "8068a1276ecb04b307c2affb9fb30a8f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/projects/route.ts": {
+    "mtime": 1776412499.3953257,
+    "hash": "3727b5fe96dc9bfee58a1196e71b92b0"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/projects/[slug]/route.ts": {
+    "mtime": 1776412499.3950658,
+    "hash": "3adb75702f5e65e79a0e411e4d98ac0b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/spotify/now-playing/route.ts": {
+    "mtime": 1776296254.5004933,
+    "hash": "1e7ac430d9e9d2f61c7c86e84822777b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/lab/waitlist/route.ts": {
+    "mtime": 1776296254.4995267,
+    "hash": "fa98724c462436f75b39d70e7b2424ef"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/api/guestbook/route.ts": {
+    "mtime": 1776296254.4993663,
+    "hash": "f66d4022d90fd1b6725663a77610c330"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(lab)/lab/robots.ts": {
+    "mtime": 1776296254.4949548,
+    "hash": "6ec98703d84f2e53f3c2f0788835fd51"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(lab)/lab/sitemap.ts": {
+    "mtime": 1776296254.4951153,
+    "hash": "ec26c50bf56012fa917d9c1fae592f2a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(lab)/lab/layout.tsx": {
+    "mtime": 1777455125.1979797,
+    "hash": "9e6236d0ed9eadf064db41a761350873"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(lab)/lab/error.tsx": {
+    "mtime": 1776296254.4944768,
+    "hash": "61f13c2664dd1b83b0bf63546f579fde"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(lab)/lab/page.tsx": {
+    "mtime": 1776296254.4947937,
+    "hash": "9c041eefb40a56860aeb5cc7f66ea9f9"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/layout.tsx": {
+    "mtime": 1777455125.1991897,
+    "hash": "e8ed3a256f75f69197cb283da4a3c73d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/page.tsx": {
+    "mtime": 1777455125.1997397,
+    "hash": "47b5928fb9085b7ee5b2d60243e44333"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/not-found.tsx": {
+    "mtime": 1777113745.1404955,
+    "hash": "1a0d35e0d4c58cf502167b1f7d1e7235"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/paper-reading/layout.tsx": {
+    "mtime": 1776412499.3933473,
+    "hash": "43b4c52f7d88dc8c8d68449456f87f55"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/paper-reading/page.tsx": {
+    "mtime": 1777455125.199942,
+    "hash": "787b50a69e86d2f5bd58880fbacfa5c3"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/design/page.tsx": {
+    "mtime": 1777455125.1985984,
+    "hash": "668db0230666280baebc2136ca75a91e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/gallery/page.tsx": {
+    "mtime": 1777455125.1990054,
+    "hash": "60706e79422a0747a2483dc30f3f330e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/gallery/[slug]/page.tsx": {
+    "mtime": 1777455125.1988215,
+    "hash": "62a49ed9eceb7d763c5c837529c66642"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/projects/page.tsx": {
+    "mtime": 1777689486.4465084,
+    "hash": "c23dbd5ce488cbdc98e14560bae7d1ff"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/projects/[slug]/page.tsx": {
+    "mtime": 1777689486.446161,
+    "hash": "e895838390a623f46124a5633026980a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/linktree/page.tsx": {
+    "mtime": 1777455125.199376,
+    "hash": "d1e8ee181ee0d726a1d773be68b09c1d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/uses/layout.tsx": {
+    "mtime": 1777455125.2005928,
+    "hash": "b822e9fd64a0eb65bee18d5147d672fa"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/uses/page.tsx": {
+    "mtime": 1776832528.6128633,
+    "hash": "60cca3fd349b15e4f00b48a39f9929e8"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/blog/page.tsx": {
+    "mtime": 1777689486.4457676,
+    "hash": "b17b3fff9552618e07a39ef74ece3234"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/blog/[slug]/page.tsx": {
+    "mtime": 1777689486.4452953,
+    "hash": "c7d538325acb4a858285d1ead7fab471"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/cv/page.tsx": {
+    "mtime": 1776296254.4957042,
+    "hash": "0f07e3f2d260e11c49da04582353d59f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/manifesto/layout.tsx": {
+    "mtime": 1777455125.1995547,
+    "hash": "1fc777906108bba830db46f37efa1d4c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/app/(main)/manifesto/page.tsx": {
+    "mtime": 1776832528.6126533,
+    "hash": "62138130216431eb77dca37e72d2cba9"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/config/load-time-distribution.ts": {
+    "mtime": 1777699032.376608,
+    "hash": "6aa70d7a92669be69265856f9ef459ef"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/config/site.ts": {
+    "mtime": 1777455125.2017193,
+    "hash": "0c8e607bdd98b8a92ea189b1ae03fb10"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/prisma/migrations/20251103031532_init/migration.sql": {
+    "mtime": 1762227147.6074717,
+    "hash": "067d6de5a509c0ec7737c6b6714153a6"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/prisma/migrations/20260302065220_add_background_challenges/migration.sql": {
+    "mtime": 1772440238.4674144,
+    "hash": "d4059980188865e9646e6c79cf2e1bc4"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/workflows/harryscope.py": {
+    "mtime": 1773558165.3124065,
+    "hash": "643fb3202ec436dcb398981798324398"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/root-client-shell.tsx": {
+    "mtime": 1776412499.4019425,
+    "hash": "db92025dc91aec4ab1f2e00a96a398e7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/guestbook-widget.tsx": {
+    "mtime": 1776296254.501702,
+    "hash": "5588cc23769e08094840135deb9a8e9a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/footer.tsx": {
+    "mtime": 1777647792.6483176,
+    "hash": "70fc8e36bc45d96c0a4f5b8ed36192d2"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/header.tsx": {
+    "mtime": 1777113769.1404545,
+    "hash": "dc3534b303060d42c2109438f5c3de62"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/staggered-menu.tsx": {
+    "mtime": 1777372289.7299654,
+    "hash": "ea997784b17a4b7aa7706b87ab9c706f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/lab/client-layout.tsx": {
+    "mtime": 1776412499.3995767,
+    "hash": "fb765a30fbd587cb455364402fa20a74"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/lab/faq-section.tsx": {
+    "mtime": 1774271190.8659308,
+    "hash": "7af04b752003c2291de149fbc5f0d167"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/lab/waitlist-form.tsx": {
+    "mtime": 1776296254.5029798,
+    "hash": "f6a8f59727b069cb0d7fa45c8007dbd2"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/lab/animated-icon.tsx": {
+    "mtime": 1776412499.399353,
+    "hash": "1438395e9f7564da2e16e35c2c31c7ae"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/lab/lab-page-client.tsx": {
+    "mtime": 1776296254.5025885,
+    "hash": "64bea89e1045a950f4cfa9ec1d10f108"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/lab/minimalist-background.tsx": {
+    "mtime": 1776412499.3998177,
+    "hash": "5d25f01079af294f37bd2693365da47b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/client-layout.tsx": {
+    "mtime": 1776412499.3967083,
+    "hash": "a8429bcd478d5db5f2fd4308358ece0c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/graph-utils.ts": {
+    "mtime": 1776412499.397931,
+    "hash": "06df787f4a66f160ba2fa6c6fbac930c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/graph-next-up.tsx": {
+    "mtime": 1776428931.1027994,
+    "hash": "e4552492088da9342dd06e796ed1086a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/node-preview-card.tsx": {
+    "mtime": 1776426579.074157,
+    "hash": "3c53455a53fe3d7c79de1cbe8d733e4c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/hash-anchor-pulse.tsx": {
+    "mtime": 1777423748.7385054,
+    "hash": "352553bc3096183224fc38a8efc2f48c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/types.ts": {
+    "mtime": 1777423748.7387118,
+    "hash": "50c4d5654192520efc38da3c77282dda"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/graph-canvas.tsx": {
+    "mtime": 1777614531.4453359,
+    "hash": "bc25ba8101242df3b041bcbac4698526"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/embedded-graph.tsx": {
+    "mtime": 1777423748.7380695,
+    "hash": "8f0eae05edeb542f25158a3f55f2aebc"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/mobile-node-card.tsx": {
+    "mtime": 1777647327.3992043,
+    "hash": "ad2a5f81c181129223443d8375d52046"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/local-graph-dynamic.tsx": {
+    "mtime": 1776412499.3981695,
+    "hash": "0bf9f5dc4e6a17cc106b5661c6cf6bb7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/graph/graph-page-client.tsx": {
+    "mtime": 1777423748.7383542,
+    "hash": "eadfb1f0dce55105191538ef164a7e5d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/updates-section.tsx": {
+    "mtime": 1776832528.6145651,
+    "hash": "c77275e0a2fc5559c8d3d8322feec973"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/about-section.tsx": {
+    "mtime": 1776832528.6136575,
+    "hash": "56a6965f9445ecc15443c7d12649f500"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/client-layout.tsx": {
+    "mtime": 1776412499.4000247,
+    "hash": "6c868a712b9c3379bbcd8a3b403732bf"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/cv-content.tsx": {
+    "mtime": 1776832528.613844,
+    "hash": "376b1b5f0eba02f1ca0eae847bf99a26"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/paper-card.tsx": {
+    "mtime": 1776832528.6140168,
+    "hash": "52d923cca1da92254f79574f05baee4d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/typography-specimen.tsx": {
+    "mtime": 1776832528.614394,
+    "hash": "b85b3ac82cfbfb1d01f4b369f9df9d95"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/letter-glitch.tsx": {
+    "mtime": 1776412499.4005055,
+    "hash": "0b9c5b260169db0726845b8c46d20f6d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/links-page-client.tsx": {
+    "mtime": 1777647792.6487548,
+    "hash": "dc1d2afa9991c5c53791ef2cae6a25a9"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/typography-page-client.tsx": {
+    "mtime": 1776832528.6142082,
+    "hash": "4e4561e4b86cf196771fd483473fdd3c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/paper-reading-page-client.tsx": {
+    "mtime": 1776412499.401218,
+    "hash": "6a5a5d0a539d1e2679d77ee781d0923a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/animated-paper-list.tsx": {
+    "mtime": 1776296254.5033553,
+    "hash": "b0e1ca05f1922a8e620839c3df0b6ecb"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/main/page-transition.tsx": {
+    "mtime": 1777698088.7103221,
+    "hash": "cb725173a6af2372228a9d7ceb3678f6"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/_bench-metadata.mjs": {
+    "mtime": 1777656345.9869015,
+    "hash": "0e6f08c5baf35569699d79118a8178f4"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/check-image-refs.mjs": {
+    "mtime": 1777690754.249948,
+    "hash": "756ba16c024783d9fa2cbe0fc98bbb6e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/backfill_alt_and_tldr.py": {
+    "mtime": 1776426579.1231968,
+    "hash": "e107103d12caabba8076e6caaf956158"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/verify_anchor_parity.mjs": {
+    "mtime": 1777423748.7789836,
+    "hash": "1d1b643a2c35dfaabbf7c2600ac0593a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/optimize-images.js": {
+    "mtime": 1777656345.9883907,
+    "hash": "0065a2792196f9bdad8b9f631ee8cec1"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/audit-image-refs-strict.mjs": {
+    "mtime": 1777690754.2497976,
+    "hash": "b6ff463342e40b90164f2f853c128d85"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/audit-load-times.mjs": {
+    "mtime": 1777695625.181527,
+    "hash": "dddb09d76a5d92118a7cca18013c376f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/lighthouse-local-report.mjs": {
+    "mtime": 1777656345.987625,
+    "hash": "845a279d8a33ab7dbc9dde06ad57cbc2"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/gallery-manager.mjs": {
+    "mtime": 1771307818.695138,
+    "hash": "46805b0ad63a173133ff8caeee94e9ab"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build_graph.py": {
+    "mtime": 1777423748.7787173,
+    "hash": "9d34edc0a85644010bcf7247a0b13f50"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/generate-sitemap.mjs": {
+    "mtime": 1771420087.6938715,
+    "hash": "aece5b150aa23d06cc325c17ca66bf68"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/normalize-image-filenames.mjs": {
+    "mtime": 1777656345.9879694,
+    "hash": "acd7efbf19f75914ce35dd66aeadf6b6"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build-papers.mjs": {
+    "mtime": 1777647327.4002047,
+    "hash": "180728b71d99315f44e3cb7bac45d60d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/optimize-images-from-webp.js": {
+    "mtime": 1777656345.9881191,
+    "hash": "f1821ff1b3217304152f57c659bf372b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/build-image-dims.mjs": {
+    "mtime": 1777656345.9872882,
+    "hash": "b94ab7d1ddc6d95a175ec3838e972008"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/fetch-fonts.mjs": {
+    "mtime": 1771307818.694193,
+    "hash": "960f29d29fbb8be52ecc7c62af53c4e7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/postcss.config.mjs": {
+    "mtime": 1763448459.6133606,
+    "hash": "ad906c9a56f5a784501fd7dfaad6bdc1"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/next-env.d.ts": {
+    "mtime": 1763339891.588287,
+    "hash": "ba64ff7d54714a8f64db89b1003207d8"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/tailwind.config.ts": {
+    "mtime": 1776296254.4933767,
+    "hash": "de88db489d1b958d5490a1871000584f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/global.d.ts": {
+    "mtime": 1776296254.4928684,
+    "hash": "cf6820f2e17fa922d7aaf46a5c47771b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/eslint.config.mjs": {
+    "mtime": 1763307320.2321374,
+    "hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/next.config.ts": {
+    "mtime": 1776296254.4930165,
+    "hash": "d73d62c16559f4e5b85756f01dbe76d6"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/layout.tsx": {
+    "mtime": 1776296254.4908526,
+    "hash": "013914567f2b4f0d91d1770643df0881"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/api/sketches/route.ts": {
+    "mtime": 1776296254.4906764,
+    "hash": "1c12aa77dbaacacde852abe166145324"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/api/gallery/route.ts": {
+    "mtime": 1776296254.4902117,
+    "hash": "be725d0e48a0f4a8f3143fc2397704db"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/api/gallery/[slug]/route.ts": {
+    "mtime": 1776296254.490061,
+    "hash": "33026c596b9700d9c9069e7ce02d4503"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/api/projects/route.ts": {
+    "mtime": 1776296254.4905272,
+    "hash": "1fc7643e95af8bded36d282cd61916f3"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/api/projects/[slug]/route.ts": {
+    "mtime": 1776296254.4903717,
+    "hash": "6182a09891a6621e9d182f1868b4b626"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/layout.tsx": {
+    "mtime": 1776296254.4889798,
+    "hash": "6089340c60e715174e80d10825c70722"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/page.tsx": {
+    "mtime": 1776296254.4893215,
+    "hash": "4516d0a7fd494498788cd1b25df0d5f6"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/ig_main/page.tsx": {
+    "mtime": 1776296254.4887702,
+    "hash": "55a7e0df2f4be17721f759f4629b3538"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/beli/page.tsx": {
+    "mtime": 1776296254.4875407,
+    "hash": "f0e1b82298647345d05dd432510d5c43"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/ig_art/page.tsx": {
+    "mtime": 1776296254.4885702,
+    "hash": "c1446a783ada7043a81f846827a7d48d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/projects/page.tsx": {
+    "mtime": 1776296254.4896984,
+    "hash": "68d733361f88baf13a371e7be214e173"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/projects/[slug]/page.tsx": {
+    "mtime": 1776296254.489515,
+    "hash": "181a109020a73ac53a11ebc89c80f29a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/spotify/page.tsx": {
+    "mtime": 1776296254.4898934,
+    "hash": "163ee2508dcac1ed26c588bccfcae82e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/linktree/page.tsx": {
+    "mtime": 1776296254.489155,
+    "hash": "b31b04d6241f30305e05e363b1f4f52e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/canvas/page.tsx": {
+    "mtime": 1776296254.4880602,
+    "hash": "b8d6aee7aa35205f89adf91f02e509b1"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/canvas/[slug]/page.tsx": {
+    "mtime": 1776296254.487708,
+    "hash": "aa3f79b2629f3422a39d9ed11c8b7ad5"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/app/(main)/email/page.tsx": {
+    "mtime": 1776296254.48831,
+    "hash": "bb01013662e63ddcd92f3d7134a19d9a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/config/site.ts": {
+    "mtime": 1776296254.4926946,
+    "hash": "dfe139d37485296c9a8b8d44a68e04f7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/components/about-section.tsx": {
+    "mtime": 1776296254.491084,
+    "hash": "f796c1b5ac935e4e6a65c493ddeb23ac"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/components/client-layout.tsx": {
+    "mtime": 1776296254.4913237,
+    "hash": "c035ff8e485bffab7f42a2b5ab80d468"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/components/emily-header.tsx": {
+    "mtime": 1776296254.4920602,
+    "hash": "3848a4baf77572f70b1699744cb927bd"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/components/emily-footer.tsx": {
+    "mtime": 1776296254.4916368,
+    "hash": "3bbb8c7d1f176e6f6b278480885d468a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/components/emily-staggered-menu.tsx": {
+    "mtime": 1776296254.4924839,
+    "hash": "13a7e18f740115123a83bc97ed3fe245"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/components/emily-links-page-client.tsx": {
+    "mtime": 1776296254.4922483,
+    "hash": "e027fb3ffd806caf7a66903b6da5352b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/scripts/optimize-images.js": {
+    "mtime": 1763470167.7532706,
+    "hash": "1c8069f0680c4b0530a02265e24cf0c7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/README.md": {
+    "mtime": 1777716766.199703,
+    "hash": "66f22aac58be31a418fd434d16d65427"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/temp.md": {
+    "mtime": 1776588676.8081276,
+    "hash": "5d03fe40d7a5da4c3f73d6c7e3098f36"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/previous_combined.md": {
+    "mtime": 1774856774.9867458,
+    "hash": "de9cfded7495e0b8d53da795b9656f42"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/issue_template.md": {
+    "mtime": 1774856755.819009,
+    "hash": "581e590cb31e47b2ba421959c1614653"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/harrychang_content_export.md": {
+    "mtime": 1774856755.810093,
+    "hash": "c9c4447cb1373f35d3dcd8ce5743140a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/photographs_combined.md": {
+    "mtime": 1774856755.9903247,
+    "hash": "cf609d332859de37ca657e11951fb3d2"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/blog-combined.md": {
+    "mtime": 1777637552.9042635,
+    "hash": "f59cf5eec5b4de185ded2cbff1accb75"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/lcp_pending.md": {
+    "mtime": 1774856774.872858,
+    "hash": "d79c01b5feae789260055091eee01c35"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/snapshots/current_high_cls_combined.md": {
+    "mtime": 1774856774.2004638,
+    "hash": "9f7eecd4497d947fc8e9bc632f746cec"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/README.md": {
+    "mtime": 1777372289.7302403,
+    "hash": "60649953944ac5c02733fc447f59a803"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/arxiv-papers.md": {
+    "mtime": 1777647327.3994536,
+    "hash": "4fa07c6d5e03b1c9cc8d364d3306d805"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_19_xpro1.md": {
+    "mtime": 1777656345.4310672,
+    "hash": "dccfc525c2b92a97e3f2039f23e84ba4"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_12_blog_launch_zh-tw.md": {
+    "mtime": 1777552933.3112369,
+    "hash": "620ee282f00b2b87dd0d6be95d21f5b1"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/12-us-trip.md": {
+    "mtime": 1777656345.430599,
+    "hash": "6c3127d8db17da0694f6ab74f1977fe8"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/9_m11d_zh-tw.md": {
+    "mtime": 1777656345.4327085,
+    "hash": "096a8ecea406d748ab2c048caf8e41e0"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_22_aftersun_paris_texas_zh-tw.md": {
+    "mtime": 1777656345.431779,
+    "hash": "394c83bcc17b820f1eeeaef6e9637f17"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_13_sisyphus_zh-tw.md": {
+    "mtime": 1777552939.7362058,
+    "hash": "a9c4a7e260b824108779f52c323f0013"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2026_02_10_synecdoche_truman_zh-tw.md": {
+    "mtime": 1777552976.0283885,
+    "hash": "17e686d49398522d4ccb0ea17f766154"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2026_01_10_plushies.md": {
+    "mtime": 1777656345.4319987,
+    "hash": "9e6f3f753b609751749355c5e8310ae8"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/10-lego-mount_zh-tw.md": {
+    "mtime": 1777656345.4303658,
+    "hash": "673d4f7da3cb3a26999b584606791d44"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_24_ntu_cs_special_admission_zh-tw.md": {
+    "mtime": 1777552960.7722647,
+    "hash": "1793a580158ccf8e6820a73940ce82b1"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/11-portfolio.md": {
+    "mtime": 1777552904.2483652,
+    "hash": "bec812c37a0709abf91e8915395009d8"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/9_m11d.md": {
+    "mtime": 1777656345.4324799,
+    "hash": "ac73deb3e84012fd72485c1bea8f0231"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/10-lego-mount.md": {
+    "mtime": 1777656345.4301362,
+    "hash": "5e8695fd030be01ffad4d84cb574524a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2026_02_10_synecdoche_truman.md": {
+    "mtime": 1777552972.6336207,
+    "hash": "764f20571c674d8d6fb4bb3f9ae7cf10"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_22_aftersun_paris_texas.md": {
+    "mtime": 1777656345.4315476,
+    "hash": "3afa05297dc2e1c3d8632d97ef1a43b1"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_19_xpro1_zh-tw.md": {
+    "mtime": 1777656345.4313042,
+    "hash": "84d8a627dd4b1bf11a927e05cdb57b90"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_24_ntu_cs_special_admission.md": {
+    "mtime": 1777552956.9771605,
+    "hash": "d863fa320cd5450cbb68afc56304b6dc"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/11-portfolio_zh-tw.md": {
+    "mtime": 1777552907.898334,
+    "hash": "81976a41838d3188ba9582d8f70b654e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_12_blog_launch.md": {
+    "mtime": 1777552929.793585,
+    "hash": "298eb2b064c856314c07470c291e3095"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_13_sisyphus.md": {
+    "mtime": 1777552936.4494486,
+    "hash": "aebd19c73d56ec7e3206b09118bc2826"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/12-us-trip_zh-tw.md": {
+    "mtime": 1777656345.430831,
+    "hash": "9e4efa71e0a5dc51084be649761ad9d0"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2026_01_10_plushies_zh-tw.md": {
+    "mtime": 1777656345.4322205,
+    "hash": "bcc823ab672897de22177cb754176920"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_14_affinity_zh-tw.md": {
+    "mtime": 1777372289.768428,
+    "hash": "fe5a15ba6d1bd36bb1ea3fccdbfa064b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/posts/2025_12_14_affinity.md": {
+    "mtime": 1777372289.76817,
+    "hash": "1d4ba694dd947d254594fd7338995e98"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/11-portfolio_azh-tw.md": {
+    "mtime": 1774856754.0595336,
+    "hash": "25519e390b74e823986469510400bc84"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/12-us-trip-v1.md": {
+    "mtime": 1776134866.346452,
+    "hash": "d3245c28aa4c367c623c3a87611e6002"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/11-portfolio-site.md": {
+    "mtime": 1774856754.0833263,
+    "hash": "37017f0771f582deb8b13ce06e29204e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/archive/11-portfolio-site-specs.md": {
+    "mtime": 1774856754.0750542,
+    "hash": "6a8af3130027414d368fb73f1cde41fc"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/papers/qwen3guard_technical_report.md": {
+    "mtime": 1758804305.1342573,
+    "hash": "e8bf37b27869adbd88fbe4edce773126"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/papers/on_the_biology_of_a_large_language_model.md": {
+    "mtime": 1776296254.5121124,
+    "hash": "f608f3c34522c1901e4077e1bddaddda"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/papers/circuit_tracing_revealing_computational_graphs_in_language_models.md": {
+    "mtime": 1776296254.5116024,
+    "hash": "d2dba50907aac0d8fc386edb8b74c29f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/papers/defeating_nondeterminism_in_llm_inference.md": {
+    "mtime": 1776296254.511858,
+    "hash": "aa981fc57a570d5d8571feb756b9d23a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/papers/natural_emergent_misalignment_from_reward_hacking_in_production_rl.md": {
+    "mtime": 1776296254.5119882,
+    "hash": "2a87f7dca68d5e223f4126d4a71f3116"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin.md": {
+    "mtime": 1777637552.0304656,
+    "hash": "11217ed0d61cfaa927a1ba381e761d2b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/10_homeserver.md": {
+    "mtime": 1774856754.0070965,
+    "hash": "039fcef646ea36e828833b8ea18e780b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin_zh-tw.md": {
+    "mtime": 1777637552.0194395,
+    "hash": "46961048d74a68f6fa64cd6ef2e2e662"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip-specs-v2.md": {
+    "mtime": 1776134866.4505048,
+    "hash": "97f799b7e600d8a7075c71fc64f707ad"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip.md": {
+    "mtime": 1776134866.5209303,
+    "hash": "f09b16700a17f700661b3a38c808373a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin-specs.md": {
+    "mtime": 1777637551.6702724,
+    "hash": "c451b021acc90f36b725a5d1546229f9"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-us-trip-specs.md": {
+    "mtime": 1776134866.5095463,
+    "hash": "f3f5faebce07778a6539b33628fe6658"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/12-school.md": {
+    "mtime": 1774856754.0892208,
+    "hash": "12c6ef4aaf19f4b85431172562e977f7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/13-chingshin_zh-tw-alt.md": {
+    "mtime": 1777637552.0058022,
+    "hash": "3bd8eadb8d832cd080617506ba0acfd1"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/99-garden.md": {
+    "mtime": 1774856753.9979534,
+    "hash": "6c6f2db7d6cf72bff5b04b50a2ca0653"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/99-10-years-later.md": {
+    "mtime": 1774856754.0302951,
+    "hash": "f1449fccc7ee39db56f3ca93c3820acc"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/10-homeserver-specs.md": {
+    "mtime": 1774856754.0268934,
+    "hash": "a97b9d4aec60b46c008f119e210597c5"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/drafts/99-dishes.md": {
+    "mtime": 1774856754.0951457,
+    "hash": "aeec5c0d3ae3c2a124cd4b33855aceff"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2026_02_08_italy_city_zh-tw.md": {
+    "mtime": 1777656345.3812585,
+    "hash": "f698e7558133770f98a8a3019780a871"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_02_09_mortal_sparks.md": {
+    "mtime": 1777689441.6369932,
+    "hash": "d235d24436938f1317bc714baecf674b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_08_10_intersection_zh-tw.md": {
+    "mtime": 1777656345.3769135,
+    "hash": "29b205d94067ae8f77a2b5d1026a4fc5"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_06_30_city_stroll.md": {
+    "mtime": 1777689441.6337783,
+    "hash": "8c89bdfac15d41fe695d8ece6c3e2333"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_07_03_simple_in_a_complex_world.md": {
+    "mtime": 1777689441.637942,
+    "hash": "81f9c92a42856e1f9e66ebe56759175f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2026_02_08_italy_town_zh-tw.md": {
+    "mtime": 1777656345.382228,
+    "hash": "d17e31f74791aa614d16766cb88f559d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_04_06_city_of_tears.md": {
+    "mtime": 1777689441.637683,
+    "hash": "6d1c40e23326769576437e566341711f"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_07_07_splash_of_red.md": {
+    "mtime": 1777689441.635264,
+    "hash": "f9294b66c3196de064cc020d25449646"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_05_solitary_glow_zh-tw.md": {
+    "mtime": 1777689441.6356738,
+    "hash": "4074204967d1a42f830c865e17061141"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2026_02_08_italy_town.md": {
+    "mtime": 1777656345.381999,
+    "hash": "f9639e3af8f35c098ddf042ff79b657e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_11_18_dusk_impressions_zh-tw.md": {
+    "mtime": 1777689441.636447,
+    "hash": "e9275a087a3c0ad312696e8b46518df6"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_12_30_sky_above.md": {
+    "mtime": 1777656345.3790743,
+    "hash": "c36987afd386bbaf19072675149559b7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_11_18_dusk_impressions.md": {
+    "mtime": 1777689441.636338,
+    "hash": "4aad80b2d2634f98ce63b484a7258c31"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_guided_by_the_tides.md": {
+    "mtime": 1777689441.6360161,
+    "hash": "e662d46e1bcbfe9bdb7bd66b29f8dbdc"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_04_06_city_of_tears_zh-tw.md": {
+    "mtime": 1777689441.6378233,
+    "hash": "76d6393caf174321824e6300fe4e2aec"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_07_03_simple_in_a_complex_world_zh-tw.md": {
+    "mtime": 1777689441.6380541,
+    "hash": "2ba3115a1c7657d7028583ee2217ccf3"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_12_lessons_from_the_light.md": {
+    "mtime": 1777656345.3776238,
+    "hash": "42ddf40a74f131b8c63103b640e3adc7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2026_02_08_italy_mountain_zh-tw.md": {
+    "mtime": 1777656345.381733,
+    "hash": "acb814575c93c16bfe8591bc8ff64ef9"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_12_30_against_the_unknown.md": {
+    "mtime": 1777656345.3785863,
+    "hash": "e44cd39b73eadeb1eb88203806d7405e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2026-us-trip.md": {
+    "mtime": 1777656345.3805127,
+    "hash": "e6e7a7f2fde8b59274142ae4b79a6458"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_02_14_go_where_you_feel_most_alive.md": {
+    "mtime": 1777689441.6372979,
+    "hash": "9bba087a5528b655338bc012385f92cf"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2026-us-trip_zh-tw.md": {
+    "mtime": 1777656345.3807504,
+    "hash": "6fbc0c49fa1bade1d027b8f3173e1145"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2026_02_08_italy_city.md": {
+    "mtime": 1777656345.3809998,
+    "hash": "a4d2fc834bf8b478fe04574fe57b0228"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_01_06_hehuanshan_zh-tw.md": {
+    "mtime": 1777656345.3797944,
+    "hash": "cbccee56ab5f9fd4503fa80c657dda42"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_07_07_splash_of_red_zh-tw.md": {
+    "mtime": 1777689441.6353884,
+    "hash": "746b56f2d8822dadb6f465c7ecb0ac20"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_guided_by_the_tides_zh-tw.md": {
+    "mtime": 1777689441.6361217,
+    "hash": "0cc3d6051c10455f7c90198d74e889e0"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_02_09_mortal_sparks_zh-tw.md": {
+    "mtime": 1777689441.6371427,
+    "hash": "497f9f334fa964821cabf52cbe3411fa"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_01_06_hehuanshan.md": {
+    "mtime": 1777656345.379552,
+    "hash": "ec6986dbc41a9efe708023197c074255"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_06_30_city_stroll_zh-tw.md": {
+    "mtime": 1777689441.6351023,
+    "hash": "2baf5a4d7b3473b0d5c3043536feacdf"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_05_solitary_glow.md": {
+    "mtime": 1777689441.6355555,
+    "hash": "672da975581218b4cb612ccdb2bd3558"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_12_30_sky_above_zh-tw.md": {
+    "mtime": 1777656345.379321,
+    "hash": "31704fd379dd8397eb7be0a0068fe3f4"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2026_02_08_italy_mountain.md": {
+    "mtime": 1777656345.3814988,
+    "hash": "584b2544ca69ba1a633112dca09ac890"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2024_02_14_go_where_you_feel_most_alive_zh-tw.md": {
+    "mtime": 1777689441.637494,
+    "hash": "e77601fd68c082a7e886790c14da0bd0"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_against_giants.md": {
+    "mtime": 1777689441.6357956,
+    "hash": "3133bbd07cfd089af0c4e32bdfd5ea89"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_12_30_against_the_unknown_zh-tw.md": {
+    "mtime": 1777656345.3788247,
+    "hash": "c72364098b8d75fb1ecfd9206e5a8e55"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_12_lessons_from_the_light_zh-tw.md": {
+    "mtime": 1777656345.3778868,
+    "hash": "b4f97da5df1e96faf7010209e9cf7a80"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_10_06_against_giants_zh-tw.md": {
+    "mtime": 1777689441.6359112,
+    "hash": "e4b700ae204bcb95817cea28691378b2"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/gallery/2023_08_10_intersection.md": {
+    "mtime": 1777656345.3766744,
+    "hash": "4e7bdcf9380664c10b0f2743cceae878"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2024_10_09_vrc_2813b_nova_zh-tw.md": {
+    "mtime": 1776296254.5177045,
+    "hash": "58aa0241a198102303a3b46fdd167114"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2024_09_23_chingshin_rag.md": {
+    "mtime": 1776296254.5168965,
+    "hash": "a59fd41e4b73d4a5704150b750a00b16"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_05_18_patch_dataset.md": {
+    "mtime": 1777372289.7732394,
+    "hash": "ce3438e2905cbec650c545f2b08b6fcf"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/sitcon-2026_zh-tw.md": {
+    "mtime": 1777372289.7742975,
+    "hash": "cd23b6f0d79f61bcf383c5c646309275"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2024_09_23_chingshin_rag_zh-tw.md": {
+    "mtime": 1776296254.5170684,
+    "hash": "ae854f8506b48a0e5b91f5eef03d7b2e"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2024_10_04_proj_zephyr_zh-tw.md": {
+    "mtime": 1776296254.517382,
+    "hash": "e64e9f61ed8993bd28dcafcc0bc946a1"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_01_03_powerplay.md": {
+    "mtime": 1777656345.433431,
+    "hash": "b432a58326823f21cdd72fb70ed72e30"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_05_18_patch_dataset_zh-tw.md": {
+    "mtime": 1777372289.7734375,
+    "hash": "c74d2adcaf8c4695d1fcff203f7c9c1d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_08_04_debate_zh-tw.md": {
+    "mtime": 1777656345.4341261,
+    "hash": "6b600db89ccf2c4cba19c26cff5d50fd"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_03_18_boundless_voices_zh-tw.md": {
+    "mtime": 1776296254.5189083,
+    "hash": "9f9cdf828b368bbbb10562417dfd2751"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_03_08_sitcon_keynote_zh-tw.md": {
+    "mtime": 1777423748.775958,
+    "hash": "71973045bfd4703afc1f25cb5ce00e8b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2024_08_19_classics_reimagined.md": {
+    "mtime": 1777656345.432942,
+    "hash": "d0cbd1e864f3217bf36a8d53ebb8399b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2024_10_04_proj_zephyr.md": {
+    "mtime": 1776296254.5172262,
+    "hash": "94122a51d28be93889d10686ce66418d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_01_05_aaai_video_zh-tw.md": {
+    "mtime": 1777372289.7724257,
+    "hash": "106989b1c2f53ed9d7d680e0a2ef0c87"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2024_08_19_classics_reimagined_zh-tw.md": {
+    "mtime": 1777656345.4331706,
+    "hash": "b3a5f0b7fc8ff89613cdd5222080f438"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2024_10_09_vrc_2813b_nova.md": {
+    "mtime": 1776296254.5175421,
+    "hash": "ba3edad0b8e0502cca2ddfb9050bad5b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_10_12_fortress_zh-tw.md": {
+    "mtime": 1777372289.7740932,
+    "hash": "b31854092ffe9d1d9c37db3e7bec054b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/sitcon-2026.md": {
+    "mtime": 1776296254.5209894,
+    "hash": "3df8e1ed01ac8ff72d6624cb8def0518"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_04_12_portfolio_zh-tw.md": {
+    "mtime": 1777455125.2034616,
+    "hash": "eef44d7db92b1dc2a472090bcc5427fa"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_03_08_sitcon_keynote.md": {
+    "mtime": 1777423748.7757385,
+    "hash": "ef9bd41f98ce90c7cb4cb7209c938ff0"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_04_12_portfolio.md": {
+    "mtime": 1777455125.203229,
+    "hash": "c9707881a9aeab33a805f5dcb8060ad6"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_10_12_fortress.md": {
+    "mtime": 1777372289.7738903,
+    "hash": "0e63fe8eab4c78696ecf2db78cff0b0a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_03_18_boundless_voices.md": {
+    "mtime": 1776296254.5187633,
+    "hash": "61349f90a10de2e065b2cb043dd2a64c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_01_03_powerplay_zh-tw.md": {
+    "mtime": 1777656345.4336948,
+    "hash": "f0832c614c1a50c9315334859ad52969"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_08_04_debate.md": {
+    "mtime": 1777656345.43391,
+    "hash": "42b4fb29bece9a9944844e4dd62452a7"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/workflows/english-chinese-conversion.md": {
+    "mtime": 1774856754.860804,
+    "hash": "27e7d70ba2f92a5796c8566675b0090a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/workflows/gallery-post-generator.md": {
+    "mtime": 1776831600.18882,
+    "hash": "034d1439e9af0fd20166710b85aa62a0"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/workflows/title-artwork-selection.md": {
+    "mtime": 1776383621.4321628,
+    "hash": "f50ec8752dba91823968a8dc8f9c20c8"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/workflows/blog-promotion.md": {
+    "mtime": 1776134867.4449558,
+    "hash": "4bd238373334357ed5a2a69372ef0387"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/workflows/blog-content-scaffold.md": {
+    "mtime": 1776134867.4330528,
+    "hash": "b4c0fd56183d8399348493b7e5e11292"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/workflows/blog-style-guide.md": {
+    "mtime": 1777514697.5855477,
+    "hash": "b8a22cea67671bcb6bb0c0442da88c12"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/workflows/blog-content-tracker.md": {
+    "mtime": 1776134867.4404855,
+    "hash": "f9780cd189160c66ff401ff17fc429de"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/templates/gallery-template.md": {
+    "mtime": 1776296254.521435,
+    "hash": "f35089597b13e92540cac9b5d392e53b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/templates/sample-gallery.md": {
+    "mtime": 1777656345.4343274,
+    "hash": "171ad2f765aff272c290758ae9bbbca2"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/templates/project-template.md": {
+    "mtime": 1776296254.5216105,
+    "hash": "a0d271932495fdaf51d69f6d5f734c2c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/lab/email-templates/waitlist-confirmation-zh-tw.html": {
+    "mtime": 1772431039.2396424,
+    "hash": "03620105e13318fb58f41655f175f40b"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/components/lab/email-templates/waitlist-confirmation-en.html": {
+    "mtime": 1772431039.2393308,
+    "hash": "0e1105746988ff71273d6ca809611111"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/googleb0d95f7ad2ffc31f.html": {
+    "mtime": 1760581237.3176231,
+    "hash": "e145440f2b78509aed9aaddc1ba11860"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/robots.txt": {
+    "mtime": 1777706088.8645992,
+    "hash": "a4809fc3fefb9552cc1dbf8b305bd7d5"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-BoldOblique.html": {
+    "mtime": 1721711876.0,
+    "hash": "0c41030fd0725b4058602d8b3dc970b4"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SuperBold.html": {
+    "mtime": 1721711877.0,
+    "hash": "2db51b9461fe505c2ddc3f05281ee2fe"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Medium.html": {
+    "mtime": 1721711868.0,
+    "hash": "0c2ec873082f38e62c944ea59cf0aa89"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-BlackOblique.html": {
+    "mtime": 1721711881.0,
+    "hash": "d98a832ef7aa6fb462157b5a2ac8c17c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SemiBold.html": {
+    "mtime": 1721711871.0,
+    "hash": "7e50981551c9b2d9ddc8401cdd433131"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-ThinOblique.html": {
+    "mtime": 1721711858.0,
+    "hash": "0be292cf771e7c289fd0ade1e9a48486"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SuperLightOblique.html": {
+    "mtime": 1721711861.0,
+    "hash": "cbd32634ce3d93a7bb9d218c12889964"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-BlackOblique(1).html": {
+    "mtime": 1721711881.0,
+    "hash": "d98a832ef7aa6fb462157b5a2ac8c17c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-BoldOblique(1).html": {
+    "mtime": 1721711876.0,
+    "hash": "0c41030fd0725b4058602d8b3dc970b4"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Black.html": {
+    "mtime": 1721711880.0,
+    "hash": "d24ac37988fe1f098a2c6af4e6f62709"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Thin.html": {
+    "mtime": 1721711856.0,
+    "hash": "f427034552cc51f10d2877cad6327ac2"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-LightOblique.html": {
+    "mtime": 1721711864.0,
+    "hash": "67e36ddda2addde25b195767c5e27612"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-RegularOblique.html": {
+    "mtime": 1721711867.0,
+    "hash": "35f287c875c7511781da15bcbb4e7398"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SuperLight.html": {
+    "mtime": 1721711859.0,
+    "hash": "fb5cc104fa92f42e575832a17891297c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-MediumOblique.html": {
+    "mtime": 1721711869.0,
+    "hash": "a92f3e50f259d0a67f8d666c36515790"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SuperBold(1).html": {
+    "mtime": 1721711877.0,
+    "hash": "2db51b9461fe505c2ddc3f05281ee2fe"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SemiBoldOblique.html": {
+    "mtime": 1721711873.0,
+    "hash": "fdcf1291ea2659263b99f347b79fa900"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Bold.html": {
+    "mtime": 1721711874.0,
+    "hash": "df18595c55f483ff79c6cc670a4cbcfe"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Light.html": {
+    "mtime": 1721711862.0,
+    "hash": "f2bb3fd3f1bb43f919374c56a78081f0"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-SuperBoldOblique.html": {
+    "mtime": 1721711878.0,
+    "hash": "d524b40c1bca95884f29eb7e21659f84"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Medium(1).html": {
+    "mtime": 1721711868.0,
+    "hash": "0c2ec873082f38e62c944ea59cf0aa89"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/public/fonts/Artific/Artific-Regular.html": {
+    "mtime": 1721711865.0,
+    "hash": "78d0d5464f39f040e3af6bad5c475933"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/requirements-graph.txt": {
+    "mtime": 1776412499.4708343,
+    "hash": "6994828dfe7831b2cb67254f6768a784"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/scripts/lighthouse-local-paths.txt": {
+    "mtime": 1777656345.987458,
+    "hash": "abb750575f00a92071e641662f65b932"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/README.md": {
+    "mtime": 1763307320.2321143,
+    "hash": "f15aaa42d5d299d091b1171097ea56ad"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/content/gallery/urban-sketches.md": {
+    "mtime": 1763457385.0806096,
+    "hash": "6408c83393fca7549031289ff54687d4"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/content/gallery/watercolor-studies.md": {
+    "mtime": 1763448459.6111426,
+    "hash": "b01d5340e12ebf495b14d690b5e91adc"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/content/projects/editorial-layout.md": {
+    "mtime": 1763448459.611974,
+    "hash": "9e325d5c12d22b8519a0d63603987cc5"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/content/projects/ceramic-collection.md": {
+    "mtime": 1763448459.6117904,
+    "hash": "2cb2e653deef6a58b83a46dc559c9259"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/content/projects/botanical-branding.md": {
+    "mtime": 1763470167.7431087,
+    "hash": "bdfd63c349bd507dc8e83cce9013634a"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/public/robots.txt": {
+    "mtime": 1763448459.6399236,
+    "hash": "f71d20196d4caf35b6a670db8c70b03d"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/emilychang-me/public/images/sketches/README.md": {
+    "mtime": 1774856753.472929,
+    "hash": "4abe0083d3bef7330a9418377c8b7c6c"
+  },
+  "/Users/zhangqiwei/Documents/01_dev-project/portfolio-monorepo/apps/harrychang-me/content/projects/2025_01_05_aaai_video.md": {
+    "mtime": 1776296254.5182114,
+    "hash": "81d2aa2803b47c254c9b2c117f1bcaca"
+  }
+}
