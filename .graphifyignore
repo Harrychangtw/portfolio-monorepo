@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # Dependencies
 node_modules
 .pnp
@@ -53,6 +51,3 @@ apps/harrychang-me/LIGHTHOUSE_LOCAL.md
 apps/harrychang-me/.lighthouseci-local-desktop/
 apps/harrychang-me/.lighthouseci-local-mobile/
 apps/harrychang-me/.lighthouseci-prod-desktop/
-apps/graphify-out/cache
-apps/graphify-out/.graphify_python
-apps/graphify-out/.graphify_root

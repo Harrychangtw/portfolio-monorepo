@@ -14,6 +14,7 @@
 #   LH_SKIP_LOCAL=1 …  # only prod
 #   LH_SKIP_PROD=1  …  # only simulated
 #   LH_SKIP_BUILD=1 …  # reuse existing .next build
+#   LH_MOBILE_ONLY=1 … # skip both desktop passes (implies --preset mobile only)
 #   LH_PROD_URL=https://harrychang.me …
 
 set -euo pipefail
@@ -121,8 +122,12 @@ if [[ -z "${LH_SKIP_LOCAL:-}" ]]; then
   echo "▶ waiting for http://localhost:3000…"
   npx --yes wait-on http://localhost:3000 --timeout 60000
 
-  echo "▶ Lighthouse simulated · desktop (runs=$LH_RUNS)"
-  run_collect desktop "$LOCAL_DESKTOP_DIR" "http://localhost:3000"
+  if [[ -z "${LH_MOBILE_ONLY:-}" ]]; then
+    echo "▶ Lighthouse simulated · desktop (runs=$LH_RUNS)"
+    run_collect desktop "$LOCAL_DESKTOP_DIR" "http://localhost:3000"
+  else
+    echo "▶ LH_MOBILE_ONLY=1 — skipping simulated desktop pass"
+  fi
 
   echo "▶ Lighthouse simulated · mobile  (runs=$LH_RUNS)"
   run_collect mobile  "$LOCAL_MOBILE_DIR" "http://localhost:3000"
@@ -133,9 +138,11 @@ else
   echo "▶ LH_SKIP_LOCAL=1 — skipping simulated pass"
 fi
 
-if [[ -z "${LH_SKIP_PROD:-}" ]]; then
+if [[ -z "${LH_SKIP_PROD:-}" && -z "${LH_MOBILE_ONLY:-}" ]]; then
   echo "▶ Lighthouse production · desktop ($LH_PROD_URL, runs=$LH_RUNS)"
   run_collect desktop "$PROD_DESKTOP_DIR" "$LH_PROD_URL"
+elif [[ -n "${LH_MOBILE_ONLY:-}" ]]; then
+  echo "▶ LH_MOBILE_ONLY=1 — skipping production desktop pass"
 else
   echo "▶ LH_SKIP_PROD=1 — skipping production pass"
 fi
