@@ -1,7 +1,7 @@
 ---
 title: "日暮印象"
 description: ""
-imageUrl: "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
+imageUrl: "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp"
 date: "2023-11-18"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8"
@@ -11,10 +11,10 @@ featured: true
 pinned: 15
 locked: false
 gallery:
-  - url: "images/optimized/gallery/2023_11_18_at_dawn/DSCF0012 3 Edited.webp"
-  - url: "images/optimized/gallery/2023_11_18_at_dawn/DSCF0052 54 Edited.webp"
+  - url: "images/optimized/gallery/2023_11_18_at_dawn/dscf0012-3-edited.webp"
+  - url: "images/optimized/gallery/2023_11_18_at_dawn/dscf0052-54-edited.webp"
   - url: "images/optimized/gallery/2023_11_18_at_dawn/dscf0199.webp"
-  - url: "images/optimized/gallery/2023_11_18_at_dawn/DSCF7421 5 Edited.webp"
+  - url: "images/optimized/gallery/2023_11_18_at_dawn/dscf7421-5-edited.webp"
 ---
 
 「那些消失了的歲月，彷彿隔著一塊積著灰塵的玻璃，看得到，抓不著。」王家衛的電影台詞，或許是對黃昏最好的註解。

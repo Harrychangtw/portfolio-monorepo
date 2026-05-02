@@ -13,11 +13,11 @@ locked: false
 gallery:
   - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1516.raf.webp"
   - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0036edited.webp"
-  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0091 3 Edited.webp"
-  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1423 4 Edited.webp"
-  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0007 14 Edited.webp"
-  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1474 5 Edited.webp"
-  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0105 1 Edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0091-3-edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1423-4-edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0007-14-edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1474-5-edited.webp"
+  - url: "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0105-1-edited.webp"
 ---
 
 > 「行到水窮處，坐看雲起時。」

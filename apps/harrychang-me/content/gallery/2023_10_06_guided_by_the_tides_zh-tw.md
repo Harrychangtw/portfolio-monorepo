@@ -1,7 +1,7 @@
 ---
 title: "粼粼之途"
 description: ""
-imageUrl: "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
+imageUrl: "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp"
 date: "2024-01-06"
 camera: "FUJIFILM XT-5"
 lens: "FUJINON 100-400mm f/4.5-5.6"

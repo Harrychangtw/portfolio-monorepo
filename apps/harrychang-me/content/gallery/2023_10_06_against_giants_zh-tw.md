@@ -1,7 +1,7 @@
 ---
 title: "渺滄海之一粟"
 description: ""
-imageUrl: "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
+imageUrl: "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp"
 date: "2023-10-06"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8"
@@ -11,10 +11,10 @@ featured: true
 pinned: 5
 locked: false
 gallery:
-  - url: "images/optimized/gallery/2023_10_07_dune/DSCF7304 1 Edited.webp"
-  - url: "images/optimized/gallery/2023_10_07_dune/DSCF7337 2 Edited.webp"
-  - url: "images/optimized/gallery/2023_10_07_dune/DSCF7400 3 Edited.webp"
-  - url: "images/optimized/gallery/2023_10_07_dune/DSCF7403 4 Edited.webp"
+  - url: "images/optimized/gallery/2023_10_07_dune/dscf7304-1-edited.webp"
+  - url: "images/optimized/gallery/2023_10_07_dune/dscf7337-2-edited.webp"
+  - url: "images/optimized/gallery/2023_10_07_dune/dscf7400-3-edited.webp"
+  - url: "images/optimized/gallery/2023_10_07_dune/dscf7403-4-edited.webp"
 ---
 
 > 寄蜉蝣於天地，渺滄海之一粟。

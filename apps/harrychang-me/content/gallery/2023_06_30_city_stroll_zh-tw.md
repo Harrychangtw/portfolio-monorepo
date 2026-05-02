@@ -1,7 +1,7 @@
 ---
 title: "城市切片"
 description: ""
-imageUrl: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
+imageUrl: "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp"
 date: "2023-06-30"
 camera: "FUJIFILM XT-5"
 lens: "SIGMA 18-50mm f/2.8, TTARTISAN 50mm f/0.95"
@@ -11,17 +11,17 @@ featured: true
 pinned: 16
 locked: false
 gallery:
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0007 12 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0018 1 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0025 2 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0031 12 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0053 6 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0054 16 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0071 18 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0101 13 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0059 7 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 14 Edited.webp"
-  - url: "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 19 Edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0007-12-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0018-1-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0025-2-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0031-12-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0053-6-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0054-16-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0071-18-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0101-13-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0059-7-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-14-edited.webp"
+  - url: "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-19-edited.webp"
 ---
 
 在東京，我成為一個貪婪的收集者。

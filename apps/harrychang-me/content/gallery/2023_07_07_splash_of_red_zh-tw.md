@@ -11,12 +11,12 @@ featured: true
 pinned: 11
 locked: false
 gallery:
-  - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0007 32 Edited.webp"
-  - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0009 25 Edited.webp"
-  - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0010 26 Edited.webp"
-  - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0016 27 Edited.webp"
-  - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0018 52 Edited.webp"
-  - url: "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0050 28 Edited.webp"
+  - url: "images/optimized/gallery/2023_07_07_splash_of_red/dscf0007-32-edited.webp"
+  - url: "images/optimized/gallery/2023_07_07_splash_of_red/dscf0009-25-edited.webp"
+  - url: "images/optimized/gallery/2023_07_07_splash_of_red/dscf0010-26-edited.webp"
+  - url: "images/optimized/gallery/2023_07_07_splash_of_red/dscf0016-27-edited.webp"
+  - url: "images/optimized/gallery/2023_07_07_splash_of_red/dscf0018-52-edited.webp"
+  - url: "images/optimized/gallery/2023_07_07_splash_of_red/dscf0050-28-edited.webp"
 ---
 
 > 「我心裡有過你…… 我不怕說出來，我心裡有過你。」
