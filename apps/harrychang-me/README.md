@@ -56,13 +56,12 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 | `/projects/2024_09_23_chingshin_rag`       | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square)   | 0.3 s | 1.3 s | 20 ms | 0   | 1.3 s       |
 | `/projects/2025_03_08_sitcon_keynote`      | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.2 s | 0 ms  | 0   | 1.1 s       |
 | `/projects/2025_04_12_portfolio`           | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square)   | 0.3 s | 1.2 s | 20 ms | 0   | 1.3 s       |
-| `/projects/2025_08_04_debate`              | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.1 s | 0 ms  | 0   | 1.3 s       |
+| `/projects/2025_08_04_debate`              | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.3 s | 1.1 s | 0 ms  | 0   | 1.3 s       |n
 | `/uses`                                    | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square)   | 0.3 s | 1.4 s | 0 ms  | 0   | 0.8 s       |
 
 <!-- LIGHTHOUSE_RESULTS_END -->
 
 <!-- LIGHTHOUSE_PROD_RESULTS_START -->
-
 > 🕐 **Last audited:** Sat, 02 May 2026 07:09:37 GMT  
 > 🌐 **Deployment:** https://harrychang.me
 
@@ -116,7 +115,7 @@ An interactive, force-directed knowledge graph that maps the relationships betwe
 - **Offline embedding pipeline** (`scripts/build_graph.py`) generates node descriptions and cosine-similarity edges, cached as static JSON for zero-runtime cost.
 
 <p align="center">
-  <img src="/public/images/optimized/projects/2025_04_12_portfolio_design/screenshot-2026-04-17-at-12-36-27-knowledge-graph-harry-chang.webp" alt="Knowledge Graph — full site graph view" width="1800" />
+  <img src="public/images/optimized/projects/2025_04_12_portfolio_design/screenshot-2026-04-17-at-12-36-27-knowledge-graph-harry-chang.webp" alt="Knowledge Graph — full site graph view" width="1800" />
 </p>
 
 ### Advanced Design & Micro-Interactions
