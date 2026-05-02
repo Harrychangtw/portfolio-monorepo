@@ -95,7 +95,10 @@ function walk(dir) {
   return out;
 }
 const mdFiles = walk(path.join(ROOT, 'content')).filter((f) => f.endsWith('.md'));
-const REF_RE = /(images\/(?:optimized\/)?(?:projects|gallery|blogs)\/[^\s"')\]]+?\.(?:webp|jpg|jpeg|png))/gi;
+// Don't exclude whitespace: gallery YAML strings contain legacy refs with
+// spaces (e.g. "DSCF0292 21 Edited.webp") — exactly the refs that 404 on Linux.
+// Stopping the regex at \s would silently skip them.
+const REF_RE = /(images\/(?:optimized\/)?(?:projects|gallery|blogs)\/[^"')\]\n]+?\.(?:webp|jpg|jpeg|png))/gi;
 
 const refsByFile = new Map(); // file → Set<ref>
 for (const mdFile of mdFiles) {
