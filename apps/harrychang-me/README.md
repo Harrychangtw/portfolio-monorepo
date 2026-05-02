@@ -116,7 +116,7 @@ An interactive, force-directed knowledge graph that maps the relationships betwe
 - **Offline embedding pipeline** (`scripts/build_graph.py`) generates node descriptions and cosine-similarity edges, cached as static JSON for zero-runtime cost.
 
 <p align="center">
-  <img src="public/images/optimized/projects/2025_04_12_portfolio_design/Screenshot 2026-04-17 at 12-36-27 Knowledge Graph Harry Chang.webp" alt="Knowledge Graph — full site graph view" width="1800" />
+  <img src="public/images/optimized/projects/2025_04_12_portfolio_design/screenshot-2026-04-17-at-12-36-27-knowledge-graph-harry-chang.webp" alt="Knowledge Graph — full site graph view" width="1800" />
 </p>
 
 ### Advanced Design & Micro-Interactions
