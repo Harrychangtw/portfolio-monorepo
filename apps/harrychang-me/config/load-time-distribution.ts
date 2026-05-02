@@ -14,8 +14,8 @@ export const LOAD_TIME_BUCKET_MS = 200;
 // 16 buckets × 200ms = 0..3200ms range. Right-skewed, peak near 900ms.
 // Last bucket absorbs anything ≥ (length − 1) × bucket width.
 export const LOAD_TIME_HISTOGRAM: readonly number[] = [
-  0.035, 0.187, 0.525, 0.869, 1.0, 0.929, 0.702, 0.465,
-  0.303, 0.202, 0.136, 0.091, 0.066, 0.045, 0.028, 0.018,
+  0.035, 0.187, 0.525, 0.869, 1.0, 0.929, 0.702, 0.465, 0.303, 0.202, 0.136,
+  0.091, 0.066, 0.045, 0.028, 0.018,
 ];
 
 export function bucketIndexFor(ms: number): number {
