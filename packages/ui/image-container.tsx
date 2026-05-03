@@ -209,6 +209,7 @@ export function ImageContainer({
                       src={fullSrc}
                       alt={alt}
                       fill
+                      priority={priority}
                       className={`${noInsetPadding ? "object-cover" : "object-contain"} object-center transition-opacity duration-500 ${
                         blurComplete ? "opacity-100" : "opacity-0"
                       } ${imgClassName || ""}`}
