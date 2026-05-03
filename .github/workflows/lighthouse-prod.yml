@@ -119,13 +119,13 @@ jobs:
         with:
           urls: ${{ steps.urls.outputs.list }}
           configPath: apps/harrychang-me/.lighthouserc.mobile.json
-          artifactsDirectory: .lighthouseci-mobile
           artifactName: lighthouse-results-prod-mobile
           uploadArtifacts: true
           temporaryPublicStorage: true
 
-      # lhci writes to .lighthouseci/ regardless of artifactsDirectory.
-      # Move mobile LHRs aside so the desktop run doesn't clobber them.
+      # lhci writes to .lighthouseci/; treosh/lighthouse-ci-action@v12 has no
+      # input to redirect that. Move mobile LHRs aside so the desktop run
+      # doesn't clobber them.
       - name: Move mobile LHRs out of .lighthouseci
         if: steps.loop_guard.outputs.skip != 'true'
         run: |
