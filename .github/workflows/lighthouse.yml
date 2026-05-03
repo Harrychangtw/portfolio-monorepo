@@ -99,6 +99,17 @@ jobs:
           uploadArtifacts: true
           temporaryPublicStorage: true
 
+      # lhci writes LHRs to .lighthouseci/ regardless of the action's
+      # artifactsDirectory input (which only controls upload). Move them so
+      # the desktop run below doesn't clobber the mobile JSONs and the
+      # README script can read them from .lighthouseci-mobile/.
+      - name: Move mobile LHRs out of .lighthouseci
+        run: |
+          if [ -d .lighthouseci ]; then
+            rm -rf .lighthouseci-mobile
+            mv .lighthouseci .lighthouseci-mobile
+          fi
+
       - name: Run Lighthouse CI (Desktop)
         uses: treosh/lighthouse-ci-action@v12
         with:

@@ -62,7 +62,12 @@ const timestamp  = new Date().toUTCString();
 
 if (mode === 'prod') {
   const desktopData = readLhrDir('.lighthouseci');
-  if (Object.keys(desktopData).length === 0) {
+  const mobileData  = readLhrDir('.lighthouseci-mobile');
+
+  const hasDesktop = Object.keys(desktopData).length > 0;
+  const hasMobile  = Object.keys(mobileData).length > 0;
+
+  if (!hasDesktop && !hasMobile) {
     console.log('No production LHR JSON files found — skipping README update.');
     process.exit(0);
   }
@@ -72,11 +77,19 @@ if (mode === 'prod') {
     ? `> 🕐 **Last audited:** ${timestamp}  \n> 🌐 **Deployment:** ${deploymentUrl}`
     : `> 🕐 **Last audited:** ${timestamp}`;
 
+  const sections = [];
+  if (hasDesktop) {
+    sections.push(`#### Desktop (Production Deployment)\n\n${TABLE_HEADER}\n${buildRows(desktopData)}`);
+  }
+  if (hasMobile) {
+    sections.push(`#### Mobile (Production Deployment)\n\n${TABLE_HEADER}\n${buildRows(mobileData)}`);
+  }
+
   const block = [
     '<!-- LIGHTHOUSE_PROD_RESULTS_START -->',
     header,
     '',
-    `#### Desktop (Production Deployment)\n\n${TABLE_HEADER}\n${buildRows(desktopData)}`,
+    sections.join('\n\n'),
     '<!-- LIGHTHOUSE_PROD_RESULTS_END -->',
   ].join('\n');
 

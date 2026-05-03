@@ -113,6 +113,27 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
+      - name: Run Lighthouse CI (Mobile, against live deployment)
+        if: steps.loop_guard.outputs.skip != 'true'
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: ${{ steps.urls.outputs.list }}
+          configPath: apps/harrychang-me/.lighthouserc.mobile.json
+          artifactsDirectory: .lighthouseci-mobile
+          artifactName: lighthouse-results-prod-mobile
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      # lhci writes to .lighthouseci/ regardless of artifactsDirectory.
+      # Move mobile LHRs aside so the desktop run doesn't clobber them.
+      - name: Move mobile LHRs out of .lighthouseci
+        if: steps.loop_guard.outputs.skip != 'true'
+        run: |
+          if [ -d .lighthouseci ]; then
+            rm -rf .lighthouseci-mobile
+            mv .lighthouseci .lighthouseci-mobile
+          fi
+
       - name: Run Lighthouse CI (Desktop, against live deployment)
         if: steps.loop_guard.outputs.skip != 'true'
         uses: treosh/lighthouse-ci-action@v12

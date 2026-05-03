@@ -24,6 +24,12 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 
 ### Lighthouse CI Results
 
+> **Reading the numbers.** Three different measurements appear on this page and they don't always agree:
+>
+> - **Real Experience Score (RES) — 100.** Field data from real visitors via Vercel Analytics. The bullets above (FCP ~1.55s, LCP ~1.66s, INP 80ms, CLS 0.01) are p75 across actual sessions on real networks and devices.
+> - **Lighthouse Desktop — 90+ across all routes.** Lab data: a single emulated desktop pageload over an unthrottled local connection.
+> - **Lighthouse Mobile — typically lower.** Lab data: emulated mid-tier phone with Slow 4G + 4× CPU throttling. This synthetic profile penalizes initial-render-heavy routes (RSC streaming + hydration) more aggressively than real mid-range devices on real networks; CrUX field LCP for the same routes sits in the 90+ percentile. The mobile lab number is reported here for transparency, not as a regression alarm.
+
 <!-- LIGHTHOUSE_RESULTS_START -->
 
 > 🕐 **Last audited:** Sat, 02 May 2026 14:03:03 GMT
