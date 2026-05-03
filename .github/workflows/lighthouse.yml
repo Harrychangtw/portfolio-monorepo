@@ -94,10 +94,21 @@ jobs:
             http://localhost:3000/blog/2026_02_10_synecdoche_truman
             http://localhost:3000/graph
           configPath: apps/harrychang-me/.lighthouserc.mobile.json
-          artifactsDirectory: .lighthouseci-mobile
           artifactName: lighthouse-results-mobile
           uploadArtifacts: true
           temporaryPublicStorage: true
+
+      # lhci writes LHRs to .lighthouseci/ and treosh/lighthouse-ci-action@v12
+      # has no input for redirecting that — only artifactName (upload) is in
+      # the action's schema. Move them so the desktop run below doesn't
+      # clobber the mobile JSONs and the README script can read them from
+      # .lighthouseci-mobile/.
+      - name: Move mobile LHRs out of .lighthouseci
+        run: |
+          if [ -d .lighthouseci ]; then
+            rm -rf .lighthouseci-mobile
+            mv .lighthouseci .lighthouseci-mobile
+          fi
 
       - name: Run Lighthouse CI (Desktop)
         uses: treosh/lighthouse-ci-action@v12
