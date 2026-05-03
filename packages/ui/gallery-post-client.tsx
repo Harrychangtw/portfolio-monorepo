@@ -155,7 +155,7 @@ export default function GalleryPostClient({
             <ImageContainer
               src={fullImageUrl}
               alt={item.title}
-              priority={false}
+              priority={true}
               quality={90}
               aspectRatio={item.aspectRatio}
               noInsetPadding={true}
