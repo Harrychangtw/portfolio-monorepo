@@ -18,6 +18,10 @@ interface LanguageContextType {
   tHtml: (key: string, namespace?: string) => React.ReactNode;
   getTranslationData: (key: string, namespace?: string) => any;
   isLoading: boolean;
+  // Increments once per user-initiated language switch, after new translations
+  // have loaded. Consumers (e.g. <SplitFlap>) use this as a single trigger so
+  // every text node animates from the same event rather than each prop change.
+  transitionTick: number;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -115,6 +119,8 @@ export function LanguageProvider({
   const [isLoading, setIsLoading] = useState(true);
   // Track if we've completed the first load
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
+  const [transitionTick, setTransitionTick] = useState(0);
+  const pendingTransitionRef = React.useRef(false);
 
   // Load translations for a specific language
   const loadTranslations = async (lang: Language) => {
@@ -148,6 +154,11 @@ export function LanguageProvider({
 
       setTranslations(newTranslations);
       setHasLoadedOnce(true); // First load finished
+      // Only fire the flap transition for explicit switches, not the initial load.
+      if (pendingTransitionRef.current) {
+        pendingTransitionRef.current = false;
+        setTransitionTick((n) => n + 1);
+      }
     } catch (error) {
       console.error("Failed to load translations:", error);
       // Even on error, mark as loaded to prevent infinite hidden state
@@ -223,6 +234,7 @@ export function LanguageProvider({
       // In English-only mode, prevent language changes
       return;
     }
+    if (lang !== language) pendingTransitionRef.current = true;
     setLanguageState(lang);
     setCookie("language", lang);
   };
@@ -237,6 +249,7 @@ export function LanguageProvider({
         tHtml,
         getTranslationData,
         isLoading,
+        transitionTick,
       }}
     >
       {!hasLoadedOnce ? (

@@ -5,6 +5,7 @@ import SketchesCard from "./sketches-card";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { motion, AnimatePresence } from "framer-motion";
+import { SplitFlap } from "@portfolio/ui/split-flap";
 
 interface SketchMetadata {
   slug: string;
@@ -134,7 +135,7 @@ export default function SketchesSection({
     <section ref={sectionRef} id={sectionId} className="py-12 md:py-16">
       <div className="container">
         <h2 className="font-heading text-lg uppercase tracking-wider text-secondary mb-4">
-          {t("sections.sketches")}
+          <SplitFlap text={t("sections.sketches")} />
         </h2>
         <div
           className={`w-full ${isLoading ? "min-h-[1200px] md:min-h-[400px]" : ""}`}

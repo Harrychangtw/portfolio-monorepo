@@ -8,6 +8,7 @@ import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-o
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { motion } from "framer-motion";
 import NavigationLink from "@portfolio/ui/navigation-link";
+import { SplitFlap } from "@portfolio/ui/split-flap";
 interface GallerySectionProps {
   section?: string;
   title?: string;
@@ -193,7 +194,7 @@ export default function GallerySection({
       <div className="container">
         <div className="flex items-baseline justify-between mb-4">
           <h2 className="font-heading text-lg uppercase tracking-wider text-secondary">
-            {title || t("gallery.title")}
+            <SplitFlap text={title || t("gallery.title")} />
           </h2>
           {showSeeAll && (
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
@@ -202,7 +203,7 @@ export default function GallerySection({
                 className="group flex items-center gap-2"
               >
                 <span className="font-body text-sg text-secondary group-hover:text-accent transition-colors">
-                  {t("gallery.seeAll")}
+                  <SplitFlap text={t("gallery.seeAll")} />
                 </span>
                 <span className="font-heading text-xl text-secondary group-hover:text-accent transition-colors">
                   →
