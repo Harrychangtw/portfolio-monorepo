@@ -26,8 +26,15 @@ export default function BlogSection({
   showSeeAll = false,
 }: BlogSectionProps = {}) {
   const { language, t } = useLanguage();
-  const [posts, setPosts] = useState<PostMetadata[]>(initialItems);
-  const [isLoading, setIsLoading] = useState(initialItems.length === 0);
+  // initialItems is server-rendered English markdown; trust it only when the
+  // client language matches. Non-English renders skeletons until the locale
+  // fetch resolves to avoid an EN→zh-TW title flash on /#blog.
+  const [posts, setPosts] = useState<PostMetadata[]>(
+    language === "en" ? initialItems : [],
+  );
+  const [isLoading, setIsLoading] = useState(
+    language !== "en" || initialItems.length === 0,
+  );
   const [forceLoad, setForceLoad] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const hasFetchedRef = useRef(false); // Track if we've already fetched
