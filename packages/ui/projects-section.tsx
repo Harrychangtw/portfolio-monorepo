@@ -28,8 +28,15 @@ export default function ProjectsSection({
   showSeeAll = false,
 }: ProjectsSectionProps = {}) {
   const { language, t } = useLanguage();
-  const [projects, setProjects] = useState<ProjectMetadata[]>(initialItems);
-  const [isLoading, setIsLoading] = useState(initialItems.length === 0);
+  // initialItems is server-rendered English markdown; trust it only when the
+  // client language matches. Non-English renders skeletons until the locale
+  // fetch resolves to avoid an EN→zh-TW title flash.
+  const [projects, setProjects] = useState<ProjectMetadata[]>(
+    language === "en" ? initialItems : [],
+  );
+  const [isLoading, setIsLoading] = useState(
+    language !== "en" || initialItems.length === 0,
+  );
   const [forceLoad, setForceLoad] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const hasFetchedRef = useRef(false); // Track if we've already fetched

@@ -32,9 +32,15 @@ export default function GallerySection({
   showSeeAll = false,
 }: GallerySectionProps = {}) {
   const { language, t } = useLanguage();
-  const [galleryItems, setGalleryItems] =
-    useState<GalleryItemMetadata[]>(initialItems);
-  const [isLoading, setIsLoading] = useState(initialItems.length === 0); // Only loading if no initial data
+  // initialItems is server-rendered English markdown; trust it only when the
+  // client language matches. Non-English renders skeletons until the locale
+  // fetch resolves to avoid an EN→zh-TW title flash.
+  const [galleryItems, setGalleryItems] = useState<GalleryItemMetadata[]>(
+    language === "en" ? initialItems : [],
+  );
+  const [isLoading, setIsLoading] = useState(
+    language !== "en" || initialItems.length === 0,
+  );
   const [forceLoad, setForceLoad] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const hasFetchedRef = useRef(false); // Track if we've already fetched
