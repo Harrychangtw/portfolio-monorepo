@@ -119,6 +119,44 @@
       "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
     },
     {
+      "id": "post-13-chingshin-en-file",
+      "title": "Two Floors Down: Chingshin, May 2026",
+      "snippet": "A building keeps doing what it does. You just start hearing it differently when you're almost not there anymore.",
+      "nodeType": "file",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": null,
+      "parentId": "hub-post-en",
+      "tldr": "A graduating student observes Chingshin’s cycles, rising toast prices, and fading echoes",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-zh-TW-file",
+      "title": "往下兩層樓：靜心，2026 五月",
+      "snippet": "一棟建築只是持續做著它該做的事。你只是在幾乎要離開時，才開始聽見不一樣的聲音。",
+      "nodeType": "file",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": null,
+      "parentId": "hub-post-zh-TW",
+      "tldr": "校園光影依舊，人在即將離別之際聽見建築的記憶",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp"
+    },
+    {
       "id": "post-2025_12_12_blog_launch-en-file",
       "title": "Introducing the Blog: A Commitment to Thinking Out Loud",
       "snippet": "## Finding the Signal in the Noise  We live in a world saturated with noise. In the rush of our daily lives, it's easy to fall into passive consumptio...",
@@ -531,7 +569,7 @@
       "tags": [],
       "heading": null,
       "parentId": "hub-project-zh-TW",
-      "tldr": "自研 RAG 聊天機器人優化校務查詢，榮獲 GenAI Stars 特優",
+      "tldr": "自研 RAG 聊天機器人最佳化校務查詢，榮獲 GenAI Stars 特優",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -902,7 +940,7 @@
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-file",
@@ -920,7 +958,7 @@
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "以影像切片，拼湊東京的光影詩意",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-file",
@@ -1010,7 +1048,7 @@
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0131-42-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-file",
@@ -1028,7 +1066,7 @@
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "於城市明暗交疊處，瞥見平凡真實的風景",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0131-42-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-en-file",
@@ -1046,7 +1084,7 @@
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-zh-TW-file",
@@ -1064,7 +1102,7 @@
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "覺知自身如塵，於宏大中獲自由",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_guided_by_the_tides-en-file",
@@ -1083,7 +1121,7 @@
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Love and shared moments guide children through life’s vast uncertainty",
-      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
@@ -1102,7 +1140,7 @@
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "父愛如粼粼光影，在陪伴中指引孩子未來路途",
-      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp"
     },
     {
       "id": "gallery-2023_10_12_lessons_from_the_light-en-file",
@@ -1157,7 +1195,7 @@
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
@@ -1176,7 +1214,7 @@
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "落日餘暉下對鏡花水月的追懷",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp"
     },
     {
       "id": "gallery-2023_12_30_against_the_unknown-en-file",
@@ -1307,7 +1345,7 @@
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0040-4-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
@@ -1325,7 +1363,7 @@
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "點燃凡塵願景，匯聚信仰星海",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0040-4-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
@@ -1343,7 +1381,7 @@
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Finding life through moments captured in Tainan and Taichung landscapes",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0013-10-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
@@ -1361,7 +1399,7 @@
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "用攝影捕捉瞬間，活出心之所向",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0013-10-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-file",
@@ -1379,7 +1417,7 @@
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Fleeting urban memories dissolving like raindrops in the city grey",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1482-7-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-file",
@@ -1397,7 +1435,7 @@
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "雨中燈塔低語，港城承載如淚回憶",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1482-7-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
@@ -1906,7 +1944,7 @@
       ],
       "heading": "真正有效的方法",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
-      "tldr": "用樂高輪胎夾住風扇，讓顯卡降溫近 20 度",
+      "tldr": "用樂高輪胎夾住風扇，讓顯示卡降溫近 20 度",
       "imageUrl": "images/optimized/blogs/10-lego-mount/titlecard.webp"
     },
     {
@@ -2786,6 +2824,240 @@
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "感謝封面藝術、家人及嚮導 Dominguez",
       "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-en-sec-0",
+      "title": "Two Floors Down: Chingshin, May 2026 - The Voice Through Concrete",
+      "snippet": "he Voice Through Concrete  I was standing in the 6th floor open-space when I heard her.  Two floors down, through poured concrete and terrazzo worn sm...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "The Voice Through Concrete",
+      "parentId": "post-13-chingshin-en-file",
+      "tldr": "Familiar teacher's voice echoes through floors, marking time's passage",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp",
+      "anchorId": "the-voice-through-concrete"
+    },
+    {
+      "id": "post-13-chingshin-en-sec-1",
+      "title": "Two Floors Down: Chingshin, May 2026 - Twenty-Five for a Chocolate Thick-Toast",
+      "snippet": "wenty-Five for a Chocolate Thick-Toast  The B1 school store sells a chocolate thick-toast for 25 NTD.  When I first bought one in 7th grade, it was 15...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "Twenty-Five for a Chocolate Thick-Toast",
+      "parentId": "post-13-chingshin-en-file",
+      "tldr": "Inflation raised toast prices while weird memes filled shelves",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp",
+      "anchorId": "twenty-five-for-a-chocolate-thick-toast"
+    },
+    {
+      "id": "post-13-chingshin-en-sec-2",
+      "title": "Two Floors Down: Chingshin, May 2026 - 5pm, West Side",
+      "snippet": "pm, West Side  There's a window in the late afternoon, shifting with the month, when the school field turns into something else. Earlier in winter. Pa...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "5pm, West Side",
+      "parentId": "post-13-chingshin-en-file",
+      "tldr": "Golden hour light transforms familiar school routines before departure",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp",
+      "anchorId": "5pm-west-side"
+    },
+    {
+      "id": "post-13-chingshin-en-sec-3",
+      "title": "Two Floors Down: Chingshin, May 2026 - The Net",
+      "snippet": "he Net  The 6th floor corridor is beautiful in the morning. One side of the building opens outward with no wall, and the light enters at an angle that...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "The Net",
+      "parentId": "post-13-chingshin-en-file",
+      "tldr": "A beautiful sixth-floor corridor hides a silent suicide net",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp",
+      "anchorId": "the-net"
+    },
+    {
+      "id": "post-13-chingshin-en-sec-4",
+      "title": "Two Floors Down: Chingshin, May 2026 - The Arms Race",
+      "snippet": "he Arms Race  The elementary wing runs on different rules.  I pass through it every day, taking the southwest elevator to the 5th floor, walking the r...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "The Arms Race",
+      "parentId": "post-13-chingshin-en-file",
+      "tldr": "Elementary classrooms compete via elaborate decorations and lively youthful energy",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp",
+      "anchorId": "the-arms-race"
+    },
+    {
+      "id": "post-13-chingshin-en-sec-5",
+      "title": "Two Floors Down: Chingshin, May 2026 - Acknowledgments",
+      "snippet": "cknowledgments  - Title image: _L'Atelier du peintre_ by [Gustave Courbet](https://en.wikipedia.org/wiki/en:Gustave_Courbet), Public Domain, [Link](ht...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "Acknowledgments",
+      "parentId": "post-13-chingshin-en-file",
+      "tldr": "Image credits Courbet's allegory as inspiration for the building's history",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp",
+      "anchorId": "acknowledgments"
+    },
+    {
+      "id": "post-13-chingshin-zh-TW-sec-0",
+      "title": "往下兩層樓：靜心，2026 五月 - 穿透水泥的聲音",
+      "snippet": "透水泥的聲音  我站在六樓的開放空間時，聽見了她。  往下兩層樓，穿過灌注的水泥與被六年人潮磨得平滑的磨石子地，我國中的班導正做著她一如既往的事。那陣斥責聲如同每個春天那樣傳來。尖銳、有節奏，那是一位老師正引導四十幾個國三生做最後會考衝刺的獨特韻律。我不需要看；我不需要思考。六年來，這聲音穿透各種厚...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "穿透水泥的聲音",
+      "parentId": "post-13-chingshin-zh-TW-file",
+      "tldr": "穿透樓層的班導斥責聲，連結新舊學子記憶",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-zh-TW-sec-1",
+      "title": "往下兩層樓：靜心，2026 五月 - 二十五元的巧克力厚片",
+      "snippet": "十五元的巧克力厚片  B1 的福利社賣巧克力厚片，一份二十五元。  國一第一次買的時候是十五塊。國三漲到二十。現在二十五。六年漲了十塊錢。厚片本身沒變。一樣的厚度，一樣不均勻的巧克力醬、一樣溫度參差不齊的吐司。你還是邊走樓梯邊吃，因為從來沒地方坐。  櫃檯前現在擺滿了 Italian brainro...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "二十五元的巧克力厚片",
+      "parentId": "post-13-chingshin-zh-TW-file",
+      "tldr": "厚片漲價環境依舊，校園亂象始終如一",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-zh-TW-sec-2",
+      "title": "往下兩層樓：靜心，2026 五月 - 下午五點，操場",
+      "snippet": "午五點，操場  在傍晚時分有一段短暫的空檔，隨著月份推移，操場會變成截然不同的模樣。冬天早一些。五月則過了五點。  光線從西邊低低地灑進來，以攝影師願意等上幾個小時的角度，捕捉著一切。穿越操場的學生們，不知道自己正走過它。他們往補習班、捷運或漫無目的的方向走去，他們身後的看台，泛著那種足以讓香港電影...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "下午五點，操場",
+      "parentId": "post-13-chingshin-zh-TW-file",
+      "tldr": "離校前夕，驚覺操場琥珀餘暉之美",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-zh-TW-sec-3",
+      "title": "往下兩層樓：靜心，2026 五月 - 那張網",
+      "snippet": "張網  六樓的走廊在早晨很美。建築的一側沒有牆，光線從開口灑進來，那角度讓整個空間感覺比實際上更高挑。  開口拉著一張網。它在那裡夠久了，久到大多數人已經視而不見。官方說法是防止物品掉落。或是防鳥。每個人都知道它真正的用途。沒有人談論它。上課途中你從它底下經過，目光略過它的方式，一如略過滅火器與逃生...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "那張網",
+      "parentId": "post-13-chingshin-zh-TW-file",
+      "tldr": "網在光影中，沉默防守無言的墜落",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-zh-TW-sec-4",
+      "title": "往下兩層樓：靜心，2026 五月 - 軍備競賽",
+      "snippet": "備競賽  小學部遵循著不同的規則運作。  我每天都會穿過那邊，搭西南側的電梯到五樓，再走到六樓。那裡的光線比較溫暖。不是國高中部那種冰冷的日光燈，而是更接近蜂蜜的色澤，那種讓一切看起來都慈祥一些的光暈。  十月時會有巨大的蜘蛛從天花板垂下。充氣聖誕老人守衛著校門。窗貼隨著季節變換。那些教室裡正上演著...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "軍備競賽",
+      "parentId": "post-13-chingshin-zh-TW-file",
+      "tldr": "小學部教室裝飾比拚下的校園隔離與傳承",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-zh-TW-sec-5",
+      "title": "往下兩層樓：靜心，2026 五月 - 致謝",
+      "snippet": "謝  - 封面照：_L'Atelier du peintre_ by [Gustave Courbet](https://en.wikipedia.org/wiki/en:Gustave_Courbet), Public Domain, [Link](https://commons.wikimedi...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [
+        "Memoir",
+        "Personal"
+      ],
+      "heading": "致謝",
+      "parentId": "post-13-chingshin-zh-TW-file",
+      "tldr": "致謝封面圖庫爾貝，總結六年靜心時光",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp"
     },
     {
       "id": "post-2025_12_12_blog_launch-en-sec-0",
@@ -5833,7 +6105,7 @@
       ],
       "heading": "邏輯的終點",
       "parentId": "post-9_m11d-zh-TW-file",
-      "tldr": "除去螢幕與科技枷鎖，回歸純粹聯動測距體驗",
+      "tldr": "除去螢幕與科技枷鎖，回歸純粹同步測距體驗",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5853,7 +6125,7 @@
       ],
       "heading": "學會信任",
       "parentId": "post-9_m11d-zh-TW-file",
-      "tldr": "放棄即時回饋，以信任與在場取代攝影優化",
+      "tldr": "放棄即時回饋，以信任與在場取代攝影最佳化",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -5913,7 +6185,7 @@
       ],
       "heading": "那份承諾",
       "parentId": "post-9_m11d-zh-TW-file",
-      "tldr": "拒絕優化，用手動相機承諾慢下來去生活",
+      "tldr": "拒絕最佳化，用手動相機承諾慢下來去生活",
       "imageUrl": "images/optimized/blogs/9_m11d/titlecard.webp"
     },
     {
@@ -6272,7 +6544,7 @@
       "tags": [],
       "heading": "製作設備",
       "parentId": "project-2024_08_19_classics_reimagined-zh-TW-sec-2",
-      "tldr": "使用富士相機、DJI穩定器及達芬奇剪輯",
+      "tldr": "使用富士相機、DJI穩定器及達文西剪輯",
       "imageUrl": "images/optimized/projects/2024_08_19_classics_reimagined/titlecard.webp"
     },
     {
@@ -6650,7 +6922,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-1",
-      "tldr": "自研 RAG 聊天機器人優化校務查詢，榮獲 GenAI Stars 特優",
+      "tldr": "自研 RAG 聊天機器人最佳化校務查詢，榮獲 GenAI Stars 特優",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -6715,7 +6987,7 @@
       "tags": [],
       "heading": "前端",
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-1",
-      "tldr": "使用 Svelte 輕量開發並優化下拉選單互動",
+      "tldr": "使用 Svelte 輕量開發並最佳化下拉選單互動",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -6747,7 +7019,7 @@
       "tags": [],
       "heading": null,
       "parentId": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
-      "tldr": "自研 RAG 聊天機器人優化校務查詢，榮獲 GenAI Stars 特優",
+      "tldr": "自研 RAG 聊天機器人最佳化校務查詢，榮獲 GenAI Stars 特優",
       "imageUrl": "images/optimized/projects/2024_09_23_chingshing_ragi/titlecard.webp"
     },
     {
@@ -6912,7 +7184,7 @@
       "tags": [],
       "heading": "專案概覽",
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-file",
-      "tldr": "Selenium 搭配 CNN 自動破解验证碼的拓元搶票機器人",
+      "tldr": "Selenium 搭配 CNN 自動破解驗證碼的拓元搶票機器人",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -6960,7 +7232,7 @@
       "tags": [],
       "heading": "模型訓練",
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
-      "tldr": "CNN 結合合成數據與錯題優化，極速辨識驗證碼",
+      "tldr": "CNN 結合合成數據與錯題最佳化，極速辨識驗證碼",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -6992,7 +7264,7 @@
       "tags": [],
       "heading": "聲明",
       "parentId": "project-2024_10_04_proj_zephyr-zh-TW-file",
-      "tldr": "學術研究用，不供源碼、禁非法用途",
+      "tldr": "學術研究用，不供原始碼、禁非法用途",
       "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp"
     },
     {
@@ -7934,7 +8206,7 @@
       "tags": [],
       "heading": "結尾段落",
       "parentId": "project-2025_01_03_powerplay-zh-TW-sec-2-3",
-      "tldr": "透過遮罩與音效優化轉場，打造結尾空間細節",
+      "tldr": "透過遮罩與音效最佳化轉場，打造結尾空間細節",
       "imageUrl": "images/optimized/projects/2025_01_08_powerplay/titlecard.webp"
     },
     {
@@ -8115,7 +8387,7 @@
       "tags": [],
       "heading": "影片製作",
       "parentId": "project-2025_01_05_aaai_video-zh-TW-file",
-      "tldr": "達芬奇後期剪輯，動態設計結合 Emoji 獲獎",
+      "tldr": "達文西後期剪輯，動態設計結合 Emoji 獲獎",
       "imageUrl": "images/optimized/projects/2025_01_05_aaai_video/titlecard.webp"
     },
     {
@@ -9022,7 +9294,7 @@
       "tags": [],
       "heading": "結論與未來方向",
       "parentId": "project-2025_05_18_patch_dataset-zh-TW-sec-0",
-      "tldr": "PATCH 優化安全對齊並推動未來開源研究",
+      "tldr": "PATCH 最佳化安全對齊並推動未來開源研究",
       "imageUrl": "images/optimized/projects/2025_05_18_patch_dataset/titlecard.webp"
     },
     {
@@ -9856,7 +10128,7 @@
       "tags": [],
       "heading": "2. 次要分析器：動態 perplexity 分析",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-3",
-      "tldr": "動態類別閥值偵測新型攻擊",
+      "tldr": "動態類別閾值偵測新型攻擊",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp",
       "anchorId": "2-perplexity-"
     },
@@ -9938,7 +10210,7 @@
       "tags": [],
       "heading": "透過資料注入實現可擴展性",
       "parentId": "project-2025_10_12_fortress-zh-TW-sec-0-4",
-      "tldr": "注入資料優化向量庫，高效提升性能並維持低延遲",
+      "tldr": "注入資料最佳化向量庫，高效提升性能並維持低延遲",
       "imageUrl": "images/optimized/projects/2025_07_04_fortress_system/titlecard.webp"
     },
     {
@@ -10287,7 +10559,7 @@
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
       "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
@@ -10305,7 +10577,7 @@
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
       "tldr": "以影像切片，拼湊東京的光影詩意",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-sec-0",
@@ -10395,7 +10667,7 @@
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
       "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0131-42-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
@@ -10413,7 +10685,7 @@
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
       "tldr": "於城市明暗交疊處，瞥見平凡真實的風景",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0131-42-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-en-sec-0",
@@ -10431,7 +10703,7 @@
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-en-file",
       "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-zh-TW-sec-0",
@@ -10449,7 +10721,7 @@
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-zh-TW-file",
       "tldr": "覺知自身如塵，於宏大中獲自由",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_guided_by_the_tides-en-sec-0",
@@ -10468,7 +10740,7 @@
       "heading": null,
       "parentId": "gallery-2023_10_06_guided_by_the_tides-en-file",
       "tldr": "Love and shared moments guide children through life’s vast uncertainty",
-      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
@@ -10487,7 +10759,7 @@
       "heading": null,
       "parentId": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
       "tldr": "父愛如粼粼光影，在陪伴中指引孩子未來路途",
-      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp"
     },
     {
       "id": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
@@ -10542,7 +10814,7 @@
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-en-file",
       "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
@@ -10561,7 +10833,7 @@
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
       "tldr": "落日餘暉下對鏡花水月的追懷",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp"
     },
     {
       "id": "gallery-2023_12_30_against_the_unknown-en-sec-0",
@@ -10692,7 +10964,7 @@
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-en-file",
       "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0040-4-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
@@ -10710,7 +10982,7 @@
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "tldr": "點燃凡塵願景，匯聚信仰星海",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0040-4-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
@@ -10728,7 +11000,7 @@
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
       "tldr": "Finding life through moments captured in Tainan and Taichung landscapes",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0013-10-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
@@ -10746,7 +11018,7 @@
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "tldr": "用攝影捕捉瞬間，活出心之所向",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0013-10-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-sec-0",
@@ -10764,7 +11036,7 @@
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
       "tldr": "Fleeting urban memories dissolving like raindrops in the city grey",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1482-7-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
@@ -10782,7 +11054,7 @@
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "tldr": "雨中燈塔低語，港城承載如淚回憶",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1482-7-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
@@ -11892,6 +12164,38 @@
       "parentId": "post-12-us-trip-zh-TW-file",
       "imageUrl": "images/optimized/blogs/12-us-trip/titlecard.webp",
       "mediaSource": "images/optimized/blogs/12-us-trip/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-en-img-cover",
+      "title": "Two Floors Down: Chingshin, May 2026 (cover)",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [],
+      "heading": null,
+      "parentId": "post-13-chingshin-en-file",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp",
+      "mediaSource": "images/optimized/blogs/13-chingshin/titlecard.webp"
+    },
+    {
+      "id": "post-13-chingshin-zh-TW-img-cover",
+      "title": "往下兩層樓：靜心，2026 五月 (cover)",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "13-chingshin",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/13-chingshin",
+      "date": "2026-05-05",
+      "tags": [],
+      "heading": null,
+      "parentId": "post-13-chingshin-zh-TW-file",
+      "imageUrl": "images/optimized/blogs/13-chingshin/titlecard.webp",
+      "mediaSource": "images/optimized/blogs/13-chingshin/titlecard.webp"
     },
     {
       "id": "post-2025_12_12_blog_launch-en-img-cover",
@@ -16231,12 +16535,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-0",
-      "title": "DSCF0007 12 Edited",
+      "title": "dscf0007-12-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16247,12 +16551,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0007 12 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0007 12 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0007-12-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0007-12-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-1",
-      "title": "DSCF0018 1 Edited",
+      "title": "dscf0018-1-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16263,12 +16567,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0018 1 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0018 1 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0018-1-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0018-1-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-2",
-      "title": "DSCF0025 2 Edited",
+      "title": "dscf0025-2-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16279,12 +16583,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0025 2 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0025 2 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0025-2-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0025-2-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-3",
-      "title": "DSCF0031 12 Edited",
+      "title": "dscf0031-12-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16295,12 +16599,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0031 12 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0031 12 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0031-12-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0031-12-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-4",
-      "title": "DSCF0053 6 Edited",
+      "title": "dscf0053-6-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16311,12 +16615,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0053 6 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0053 6 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0053-6-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0053-6-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-5",
-      "title": "DSCF0054 16 Edited",
+      "title": "dscf0054-16-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16327,12 +16631,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0054 16 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0054 16 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0054-16-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0054-16-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-6",
-      "title": "DSCF0071 18 Edited",
+      "title": "dscf0071-18-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16343,12 +16647,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0071 18 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0071 18 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0071-18-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0071-18-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-7",
-      "title": "DSCF0101 13 Edited",
+      "title": "dscf0101-13-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16359,12 +16663,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0101 13 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0101 13 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0101-13-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0101-13-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-8",
-      "title": "DSCF0059 7 Edited",
+      "title": "dscf0059-7-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16375,12 +16679,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0059 7 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0059 7 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0059-7-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0059-7-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-9",
-      "title": "DSCF0104 14 Edited",
+      "title": "dscf0104-14-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16391,12 +16695,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 14 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 14 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-14-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-14-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-en-img-gal-10",
-      "title": "DSCF0104 19 Edited",
+      "title": "dscf0104-19-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16407,8 +16711,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 19 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 19 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-19-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-19-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-cover",
@@ -16423,12 +16727,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0292 21 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0292-21-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-0",
-      "title": "DSCF0007 12 Edited",
+      "title": "dscf0007-12-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16439,12 +16743,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0007 12 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0007 12 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0007-12-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0007-12-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-1",
-      "title": "DSCF0018 1 Edited",
+      "title": "dscf0018-1-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16455,12 +16759,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0018 1 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0018 1 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0018-1-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0018-1-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-2",
-      "title": "DSCF0025 2 Edited",
+      "title": "dscf0025-2-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16471,12 +16775,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0025 2 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0025 2 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0025-2-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0025-2-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-3",
-      "title": "DSCF0031 12 Edited",
+      "title": "dscf0031-12-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16487,12 +16791,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0031 12 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0031 12 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0031-12-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0031-12-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-4",
-      "title": "DSCF0053 6 Edited",
+      "title": "dscf0053-6-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16503,12 +16807,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0053 6 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0053 6 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0053-6-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0053-6-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-5",
-      "title": "DSCF0054 16 Edited",
+      "title": "dscf0054-16-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16519,12 +16823,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0054 16 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0054 16 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0054-16-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0054-16-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-6",
-      "title": "DSCF0071 18 Edited",
+      "title": "dscf0071-18-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16535,12 +16839,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0071 18 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0071 18 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0071-18-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0071-18-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-7",
-      "title": "DSCF0101 13 Edited",
+      "title": "dscf0101-13-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16551,12 +16855,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0101 13 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0101 13 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0101-13-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0101-13-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-8",
-      "title": "DSCF0059 7 Edited",
+      "title": "dscf0059-7-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16567,12 +16871,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0059 7 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0059 7 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0059-7-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0059-7-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-9",
-      "title": "DSCF0104 14 Edited",
+      "title": "dscf0104-14-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16583,12 +16887,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 14 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 14 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-14-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-14-edited.webp"
     },
     {
       "id": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-10",
-      "title": "DSCF0104 19 Edited",
+      "title": "dscf0104-19-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16599,8 +16903,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 19 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/DSCF0104 19 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-19-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_06_30_city_stroll/dscf0104-19-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-img-cover",
@@ -16620,7 +16924,7 @@
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-img-gal-0",
-      "title": "DSCF0007 32 Edited",
+      "title": "dscf0007-32-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16631,12 +16935,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-en-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0007 32 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0007 32 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0007-32-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0007-32-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-img-gal-1",
-      "title": "DSCF0009 25 Edited",
+      "title": "dscf0009-25-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16647,12 +16951,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-en-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0009 25 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0009 25 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0009-25-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0009-25-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-img-gal-2",
-      "title": "DSCF0010 26 Edited",
+      "title": "dscf0010-26-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16663,12 +16967,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-en-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0010 26 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0010 26 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0010-26-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0010-26-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-img-gal-3",
-      "title": "DSCF0016 27 Edited",
+      "title": "dscf0016-27-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16679,12 +16983,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-en-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0016 27 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0016 27 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0016-27-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0016-27-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-img-gal-4",
-      "title": "DSCF0018 52 Edited",
+      "title": "dscf0018-52-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16695,12 +16999,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-en-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0018 52 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0018 52 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0018-52-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0018-52-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-en-img-gal-5",
-      "title": "DSCF0050 28 Edited",
+      "title": "dscf0050-28-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16711,8 +17015,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-en-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0050 28 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0050 28 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0050-28-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0050-28-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-zh-TW-img-cover",
@@ -16732,7 +17036,7 @@
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-0",
-      "title": "DSCF0007 32 Edited",
+      "title": "dscf0007-32-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16743,12 +17047,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0007 32 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0007 32 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0007-32-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0007-32-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-1",
-      "title": "DSCF0009 25 Edited",
+      "title": "dscf0009-25-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16759,12 +17063,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0009 25 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0009 25 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0009-25-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0009-25-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-2",
-      "title": "DSCF0010 26 Edited",
+      "title": "dscf0010-26-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16775,12 +17079,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0010 26 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0010 26 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0010-26-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0010-26-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-3",
-      "title": "DSCF0016 27 Edited",
+      "title": "dscf0016-27-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16791,12 +17095,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0016 27 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0016 27 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0016-27-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0016-27-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-4",
-      "title": "DSCF0018 52 Edited",
+      "title": "dscf0018-52-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16807,12 +17111,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0018 52 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0018 52 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0018-52-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0018-52-edited.webp"
     },
     {
       "id": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-5",
-      "title": "DSCF0050 28 Edited",
+      "title": "dscf0050-28-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16823,8 +17127,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0050 28 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/DSCF0050 28 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0050-28-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_07_07_splash_of_red/dscf0050-28-edited.webp"
     },
     {
       "id": "gallery-2023_08_10_intersection-en-img-cover",
@@ -16871,12 +17175,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0131-42-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0131-42-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-en-img-gal-0",
-      "title": "DSCF0258 43 Edited",
+      "title": "dscf0258-43-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16887,12 +17191,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0258 43 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0258 43 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0258-43-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0258-43-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-en-img-gal-1",
-      "title": "DSCF0045 45 Edited",
+      "title": "dscf0045-45-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16903,12 +17207,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0045 45 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0045 45 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0045-45-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0045-45-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-en-img-gal-2",
-      "title": "DSCF0259 44 Edited",
+      "title": "dscf0259-44-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16919,8 +17223,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0259 44 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0259 44 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0259-44-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0259-44-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-en-img-gal-3",
@@ -16940,7 +17244,7 @@
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-en-img-gal-4",
-      "title": "DSCF0102 50 Edited",
+      "title": "dscf0102-50-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16951,12 +17255,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0102 50 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0102 50 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0102-50-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0102-50-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-en-img-gal-5",
-      "title": "DSCF0103 39 Edited",
+      "title": "dscf0103-39-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16967,12 +17271,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0103 39 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0103 39 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0103-39-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0103-39-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-en-img-gal-6",
-      "title": "DSCF0104 40 Edited",
+      "title": "dscf0104-40-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -16983,8 +17287,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0104 40 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0104 40 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0104-40-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0104-40-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-img-cover",
@@ -16999,12 +17303,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0131 42 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0131-42-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0131-42-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-0",
-      "title": "DSCF0258 43 Edited",
+      "title": "dscf0258-43-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17015,12 +17319,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0258 43 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0258 43 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0258-43-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0258-43-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-1",
-      "title": "DSCF0045 45 Edited",
+      "title": "dscf0045-45-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17031,12 +17335,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0045 45 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0045 45 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0045-45-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0045-45-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-2",
-      "title": "DSCF0259 44 Edited",
+      "title": "dscf0259-44-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17047,8 +17351,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0259 44 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0259 44 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0259-44-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0259-44-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-3",
@@ -17068,7 +17372,7 @@
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-4",
-      "title": "DSCF0102 50 Edited",
+      "title": "dscf0102-50-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17079,12 +17383,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0102 50 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0102 50 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0102-50-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0102-50-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-5",
-      "title": "DSCF0103 39 Edited",
+      "title": "dscf0103-39-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17095,12 +17399,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0103 39 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0103 39 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0103-39-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0103-39-edited.webp"
     },
     {
       "id": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-6",
-      "title": "DSCF0104 40 Edited",
+      "title": "dscf0104-40-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17111,8 +17415,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0104 40 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/DSCF0104 40 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0104-40-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_05_solitary_glow/dscf0104-40-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-en-img-cover",
@@ -17127,12 +17431,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-en-img-gal-0",
-      "title": "DSCF7304 1 Edited",
+      "title": "dscf7304-1-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17143,12 +17447,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/DSCF7304 1 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/DSCF7304 1 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/dscf7304-1-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/dscf7304-1-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-en-img-gal-1",
-      "title": "DSCF7337 2 Edited",
+      "title": "dscf7337-2-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17159,12 +17463,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/DSCF7337 2 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/DSCF7337 2 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/dscf7337-2-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/dscf7337-2-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-en-img-gal-2",
-      "title": "DSCF7400 3 Edited",
+      "title": "dscf7400-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17175,12 +17479,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/DSCF7400 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/DSCF7400 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/dscf7400-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/dscf7400-3-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-en-img-gal-3",
-      "title": "DSCF7403 4 Edited",
+      "title": "dscf7403-4-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17191,8 +17495,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-en-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/DSCF7403 4 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/DSCF7403 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/dscf7403-4-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/dscf7403-4-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
@@ -17207,12 +17511,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/4F1F0890-CDE0-45B9-A935-205B7496D539-19416-000010A5E5C7F07E Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/4f1f0890-cde0-45b9-a935-205b7496d539-19416-000010a5e5c7f07e-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-zh-TW-img-gal-0",
-      "title": "DSCF7304 1 Edited",
+      "title": "dscf7304-1-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17223,12 +17527,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/DSCF7304 1 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/DSCF7304 1 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/dscf7304-1-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/dscf7304-1-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-zh-TW-img-gal-1",
-      "title": "DSCF7337 2 Edited",
+      "title": "dscf7337-2-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17239,12 +17543,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/DSCF7337 2 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/DSCF7337 2 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/dscf7337-2-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/dscf7337-2-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-zh-TW-img-gal-2",
-      "title": "DSCF7400 3 Edited",
+      "title": "dscf7400-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17255,12 +17559,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/DSCF7400 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/DSCF7400 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/dscf7400-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/dscf7400-3-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_against_giants-zh-TW-img-gal-3",
-      "title": "DSCF7403 4 Edited",
+      "title": "dscf7403-4-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17271,8 +17575,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_10_07_dune/DSCF7403 4 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_10_07_dune/DSCF7403 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_10_07_dune/dscf7403-4-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_10_07_dune/dscf7403-4-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_guided_by_the_tides-en-img-cover",
@@ -17287,8 +17591,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_guided_by_the_tides-en-file",
-      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp"
     },
     {
       "id": "gallery-2023_10_06_guided_by_the_tides-zh-TW-img-cover",
@@ -17303,8 +17607,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/DSCF0022 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_03_03_simple_in_a_complex_world/dscf0022-edited.webp"
     },
     {
       "id": "gallery-2023_10_12_lessons_from_the_light-en-img-cover",
@@ -17351,12 +17655,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-en-file",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-en-img-gal-0",
-      "title": "DSCF0012 3 Edited",
+      "title": "dscf0012-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17367,12 +17671,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-en-file",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0012 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0012 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0012-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/dscf0012-3-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-en-img-gal-1",
-      "title": "DSCF0052 54 Edited",
+      "title": "dscf0052-54-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17383,8 +17687,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-en-file",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0052 54 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0052 54 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0052-54-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/dscf0052-54-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-en-img-gal-2",
@@ -17404,7 +17708,7 @@
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-en-img-gal-3",
-      "title": "DSCF7421 5 Edited",
+      "title": "dscf7421-5-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17415,8 +17719,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-en-file",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF7421 5 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/DSCF7421 5 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf7421-5-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/dscf7421-5-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-zh-TW-img-cover",
@@ -17431,12 +17735,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0053 56 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/dscf0053-56-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-0",
-      "title": "DSCF0012 3 Edited",
+      "title": "dscf0012-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17447,12 +17751,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0012 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0012 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0012-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/dscf0012-3-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-1",
-      "title": "DSCF0052 54 Edited",
+      "title": "dscf0052-54-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17463,8 +17767,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0052 54 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/DSCF0052 54 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf0052-54-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/dscf0052-54-edited.webp"
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-2",
@@ -17484,7 +17788,7 @@
     },
     {
       "id": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-3",
-      "title": "DSCF7421 5 Edited",
+      "title": "dscf7421-5-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17495,8 +17799,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/DSCF7421 5 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/DSCF7421 5 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2023_11_18_at_dawn/dscf7421-5-edited.webp",
+      "mediaSource": "images/optimized/gallery/2023_11_18_at_dawn/dscf7421-5-edited.webp"
     },
     {
       "id": "gallery-2023_12_30_against_the_unknown-en-img-cover",
@@ -17735,12 +18039,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0040-4-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0040-4-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-en-img-gal-0",
-      "title": "DSCF0004 1 Edited",
+      "title": "dscf0004-1-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17751,12 +18055,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0004 1 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0004 1 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0004-1-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0004-1-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-en-img-gal-1",
-      "title": "DSCF0032 2 Edited",
+      "title": "dscf0032-2-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17767,12 +18071,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0032 2 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0032 2 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0032-2-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0032-2-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-en-img-gal-2",
-      "title": "DSCF0036 3 Edited",
+      "title": "dscf0036-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17783,12 +18087,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0036 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0036 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0036-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0036-3-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-en-img-gal-3",
-      "title": "DSCF0045 5 Edited",
+      "title": "dscf0045-5-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17799,8 +18103,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0045 5 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0045 5 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0045-5-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0045-5-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-zh-TW-img-cover",
@@ -17815,12 +18119,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0040 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0040-4-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0040-4-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-zh-TW-img-gal-0",
-      "title": "DSCF0004 1 Edited",
+      "title": "dscf0004-1-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17831,12 +18135,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0004 1 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0004 1 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0004-1-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0004-1-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-zh-TW-img-gal-1",
-      "title": "DSCF0032 2 Edited",
+      "title": "dscf0032-2-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17847,12 +18151,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0032 2 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0032 2 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0032-2-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0032-2-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-zh-TW-img-gal-2",
-      "title": "DSCF0036 3 Edited",
+      "title": "dscf0036-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17863,12 +18167,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0036 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0036 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0036-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0036-3-edited.webp"
     },
     {
       "id": "gallery-2024_02_09_mortal_sparks-zh-TW-img-gal-3",
-      "title": "DSCF0045 5 Edited",
+      "title": "dscf0045-5-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17879,8 +18183,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0045 5 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/DSCF0045 5 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0045-5-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_09_mortal_sparks/dscf0045-5-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-cover",
@@ -17895,12 +18199,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0013-10-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0013-10-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-0",
-      "title": "DSCF0035 18 Edited-thumb",
+      "title": "dscf0035-18-edited-thumb",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17911,12 +18215,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 18 Edited-thumb.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 18 Edited-thumb.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0035-18-edited-thumb.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0035-18-edited-thumb.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-1",
-      "title": "DSCF0016 2 Edited",
+      "title": "dscf0016-2-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17927,12 +18231,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0016 2 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0016 2 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0016-2-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0016-2-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-2",
-      "title": "DSCF0036 19 Edited",
+      "title": "dscf0036-19-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17943,12 +18247,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0036 19 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0036 19 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0036-19-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0036-19-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-3",
-      "title": "DSCF0048 5 Edited",
+      "title": "dscf0048-5-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17959,12 +18263,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0048 5 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0048 5 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0048-5-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0048-5-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-4",
-      "title": "DSCF0042 3 Edited",
+      "title": "dscf0042-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17975,12 +18279,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0042 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0042 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0042-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0042-3-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-5",
-      "title": "DSCF0047 4 Edited",
+      "title": "dscf0047-4-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -17991,12 +18295,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0047 4 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0047 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0047-4-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0047-4-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-6",
-      "title": "DSCF0035 11 Edited",
+      "title": "dscf0035-11-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18007,12 +18311,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 11 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 11 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0035-11-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0035-11-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-7",
-      "title": "DSCF0367 20 Edited",
+      "title": "dscf0367-20-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18023,8 +18327,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0367 20 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0367 20 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0367-20-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0367-20-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-cover",
@@ -18039,12 +18343,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0013 10 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0013-10-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0013-10-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-0",
-      "title": "DSCF0035 18 Edited-thumb",
+      "title": "dscf0035-18-edited-thumb",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18055,12 +18359,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 18 Edited-thumb.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 18 Edited-thumb.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0035-18-edited-thumb.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0035-18-edited-thumb.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-1",
-      "title": "DSCF0016 2 Edited",
+      "title": "dscf0016-2-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18071,12 +18375,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0016 2 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0016 2 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0016-2-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0016-2-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-2",
-      "title": "DSCF0036 19 Edited",
+      "title": "dscf0036-19-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18087,12 +18391,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0036 19 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0036 19 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0036-19-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0036-19-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-3",
-      "title": "DSCF0048 5 Edited",
+      "title": "dscf0048-5-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18103,12 +18407,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0048 5 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0048 5 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0048-5-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0048-5-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-4",
-      "title": "DSCF0042 3 Edited",
+      "title": "dscf0042-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18119,12 +18423,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0042 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0042 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0042-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0042-3-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-5",
-      "title": "DSCF0047 4 Edited",
+      "title": "dscf0047-4-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18135,12 +18439,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0047 4 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0047 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0047-4-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0047-4-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-6",
-      "title": "DSCF0035 11 Edited",
+      "title": "dscf0035-11-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18151,12 +18455,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 11 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0035 11 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0035-11-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0035-11-edited.webp"
     },
     {
       "id": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-7",
-      "title": "DSCF0367 20 Edited",
+      "title": "dscf0367-20-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18167,8 +18471,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0367 20 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/DSCF0367 20 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0367-20-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_02_14_go_where_you_feel_most_alive/dscf0367-20-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-cover",
@@ -18183,12 +18487,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1482-7-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1482-7-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-gal-0",
-      "title": "DSCF0420 13 Edited",
+      "title": "dscf0420-13-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18199,12 +18503,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0420 13 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0420 13 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0420-13-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0420-13-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-gal-1",
-      "title": "DSCF3385 15 Edited",
+      "title": "dscf3385-15-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18215,12 +18519,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF3385 15 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF3385 15 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf3385-15-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf3385-15-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-gal-2",
-      "title": "DSCF0441 15 Edited",
+      "title": "dscf0441-15-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18231,12 +18535,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0441 15 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0441 15 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0441-15-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0441-15-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-gal-3",
-      "title": "DSCF0429 14 Edited",
+      "title": "dscf0429-14-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18247,12 +18551,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0429 14 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0429 14 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0429-14-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0429-14-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-gal-4",
-      "title": "DSCF0520 Edited",
+      "title": "dscf0520-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18263,12 +18567,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0520 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0520 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0520-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0520-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-gal-5",
-      "title": "DSCF1522 8 Edited",
+      "title": "dscf1522-8-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18279,12 +18583,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1522 8 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1522 8 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1522-8-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1522-8-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-gal-6",
-      "title": "DSCF1538 10 Edited",
+      "title": "dscf1538-10-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18295,12 +18599,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1538 10 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1538 10 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1538-10-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1538-10-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-en-img-gal-7",
-      "title": "DSCF1564 11 Edited",
+      "title": "dscf1564-11-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18311,8 +18615,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1564 11 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1564 11 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1564-11-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1564-11-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-cover",
@@ -18327,12 +18631,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1482 7 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1482-7-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1482-7-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-0",
-      "title": "DSCF0420 13 Edited",
+      "title": "dscf0420-13-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18343,12 +18647,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0420 13 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0420 13 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0420-13-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0420-13-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-1",
-      "title": "DSCF3385 15 Edited",
+      "title": "dscf3385-15-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18359,12 +18663,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF3385 15 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF3385 15 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf3385-15-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf3385-15-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-2",
-      "title": "DSCF0441 15 Edited",
+      "title": "dscf0441-15-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18375,12 +18679,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0441 15 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0441 15 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0441-15-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0441-15-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-3",
-      "title": "DSCF0429 14 Edited",
+      "title": "dscf0429-14-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18391,12 +18695,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0429 14 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0429 14 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0429-14-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0429-14-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-4",
-      "title": "DSCF0520 Edited",
+      "title": "dscf0520-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18407,12 +18711,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0520 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF0520 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0520-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf0520-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-5",
-      "title": "DSCF1522 8 Edited",
+      "title": "dscf1522-8-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18423,12 +18727,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1522 8 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1522 8 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1522-8-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1522-8-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-6",
-      "title": "DSCF1538 10 Edited",
+      "title": "dscf1538-10-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18439,12 +18743,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1538 10 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1538 10 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1538-10-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1538-10-edited.webp"
     },
     {
       "id": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-7",
-      "title": "DSCF1564 11 Edited",
+      "title": "dscf1564-11-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18455,8 +18759,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1564 11 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/DSCF1564 11 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1564-11-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_04_06_city_of_tears/dscf1564-11-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-en-img-cover",
@@ -18508,7 +18812,7 @@
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-2",
-      "title": "DSCF0091 3 Edited",
+      "title": "dscf0091-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18519,12 +18823,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0091 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0091 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0091-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0091-3-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-3",
-      "title": "DSCF1423 4 Edited",
+      "title": "dscf1423-4-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18535,12 +18839,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1423 4 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1423 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1423-4-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1423-4-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-4",
-      "title": "DSCF0007 14 Edited",
+      "title": "dscf0007-14-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18551,12 +18855,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0007 14 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0007 14 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0007-14-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0007-14-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-5",
-      "title": "DSCF1474 5 Edited",
+      "title": "dscf1474-5-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18567,12 +18871,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1474 5 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1474 5 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1474-5-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1474-5-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-6",
-      "title": "DSCF0105 1 Edited",
+      "title": "dscf0105-1-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18583,8 +18887,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0105 1 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0105 1 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0105-1-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0105-1-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-cover",
@@ -18636,7 +18940,7 @@
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-2",
-      "title": "DSCF0091 3 Edited",
+      "title": "dscf0091-3-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18647,12 +18951,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0091 3 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0091 3 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0091-3-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0091-3-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-3",
-      "title": "DSCF1423 4 Edited",
+      "title": "dscf1423-4-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18663,12 +18967,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1423 4 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1423 4 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1423-4-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1423-4-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-4",
-      "title": "DSCF0007 14 Edited",
+      "title": "dscf0007-14-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18679,12 +18983,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0007 14 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0007 14 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0007-14-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0007-14-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-5",
-      "title": "DSCF1474 5 Edited",
+      "title": "dscf1474-5-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18695,12 +18999,12 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1474 5 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF1474 5 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1474-5-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf1474-5-edited.webp"
     },
     {
       "id": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-6",
-      "title": "DSCF0105 1 Edited",
+      "title": "dscf0105-1-edited",
       "snippet": "",
       "nodeType": "image",
       "sourceType": "gallery",
@@ -18711,8 +19015,8 @@
       "tags": [],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0105 1 Edited.webp",
-      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/DSCF0105 1 Edited.webp"
+      "imageUrl": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0105-1-edited.webp",
+      "mediaSource": "images/optimized/gallery/2024_07_03_simple_in_a_complex_word/dscf0105-1-edited.webp"
     },
     {
       "id": "gallery-2026-us-trip-en-img-cover",
@@ -20611,7 +20915,7 @@
     {
       "id": "tag-personal",
       "title": "Personal",
-      "snippet": "2 documents",
+      "snippet": "4 documents",
       "nodeType": "tag",
       "sourceType": "locale",
       "sourceSlug": "personal",
@@ -20639,7 +20943,7 @@
     {
       "id": "tag-memoir",
       "title": "Memoir",
-      "snippet": "4 documents",
+      "snippet": "6 documents",
       "nodeType": "tag",
       "sourceType": "locale",
       "sourceSlug": "memoir",
@@ -22045,6 +22349,90 @@
     {
       "source": "post-12-us-trip-zh-TW-file",
       "target": "post-12-us-trip-zh-TW-img-cover",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-0",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-1",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-2",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-3",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-4",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-5",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-img-cover",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-1",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-2",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-3",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-4",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-5",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-img-cover",
       "weight": 0.8,
       "linkType": "structural"
     },
@@ -27972,6 +28360,12 @@
     },
     {
       "source": "hub-post-en",
+      "target": "post-13-chingshin-en-file",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "hub-post-en",
       "target": "post-2025_12_12_blog_launch-en-file",
       "weight": 1.0,
       "linkType": "structural"
@@ -28039,6 +28433,12 @@
     {
       "source": "hub-post-zh-TW",
       "target": "post-12-us-trip-zh-TW-file",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "hub-post-zh-TW",
+      "target": "post-13-chingshin-zh-TW-file",
       "weight": 1.0,
       "linkType": "structural"
     },
@@ -28913,6 +29313,18 @@
       "linkType": "tag"
     },
     {
+      "source": "tag-personal",
+      "target": "post-13-chingshin-en-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-personal",
+      "target": "post-13-chingshin-zh-TW-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
       "source": "tag-travel",
       "target": "post-12-us-trip-en-file",
       "weight": 0.6,
@@ -28933,6 +29345,18 @@
     {
       "source": "tag-memoir",
       "target": "post-12-us-trip-zh-TW-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-memoir",
+      "target": "post-13-chingshin-en-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-memoir",
+      "target": "post-13-chingshin-zh-TW-file",
       "weight": 0.6,
       "linkType": "tag"
     },
@@ -29477,12 +29901,6 @@
       "linkType": "tag"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
       "target": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
       "weight": 1.0,
@@ -29519,14 +29937,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-sec-0",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -29539,6 +29957,18 @@
     {
       "source": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -29561,20 +29991,14 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
       "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30301,6 +30725,12 @@
     {
       "source": "project-2024_10_09_vrc_2813b_nova-en-sec-2",
       "target": "project-2024_10_09_vrc_2813b_nova-en-sec-2-2",
+      "weight": 0.9777,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-0",
       "weight": 0.9777,
       "linkType": "semantic"
     },
@@ -32669,14 +33099,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-0",
-      "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-2-0",
+      "source": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-1",
+      "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-6",
       "weight": 0.9533,
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-1",
-      "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-6",
+      "source": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-0",
+      "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-2-0",
       "weight": 0.9533,
       "linkType": "semantic"
     },
@@ -33569,6 +33999,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-2",
+      "target": "post-13-chingshin-en-sec-4",
+      "weight": 0.9468,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_03_08_sitcon_keynote-en-sec-0",
       "target": "project-2025_03_08_sitcon_keynote-en-sec-2",
       "weight": 0.9467,
@@ -34262,6 +34698,12 @@
       "source": "post-10-lego-mount-en-file",
       "target": "post-10-lego-mount-en-sec-0-6",
       "weight": 0.9416,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-0",
+      "target": "post-13-chingshin-en-sec-4",
+      "weight": 0.9415,
       "linkType": "semantic"
     },
     {
@@ -35084,6 +35526,12 @@
       "source": "project-2025_10_12_fortress-en-sec-0-1",
       "target": "project-2025_10_12_fortress-en-sec-0-3",
       "weight": 0.9349,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-4",
+      "weight": 0.9347,
       "linkType": "semantic"
     },
     {
@@ -35933,6 +36381,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-0",
+      "target": "post-13-chingshin-en-sec-2",
+      "weight": 0.926,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_14_affinity-en-sec-0-4",
       "target": "post-2025_12_14_affinity-en-sec-0-5",
       "weight": 0.9259,
@@ -36341,6 +36795,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-2",
+      "weight": 0.9215,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_14_affinity-zh-TW-sec-0-2",
       "target": "post-2025_12_14_affinity-zh-TW-sec-0-7",
       "weight": 0.9214,
@@ -36653,6 +37113,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-3",
+      "target": "post-13-chingshin-en-sec-4",
+      "weight": 0.9181,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_19_xpro1-zh-TW-sec-0-1",
       "target": "post-2025_12_19_xpro1-zh-TW-sec-0-5",
       "weight": 0.9179,
@@ -36715,6 +37181,12 @@
     {
       "source": "project-2024_09_23_chingshin_rag-en-sec-1",
       "target": "project-2024_09_23_chingshin_rag-en-sec-1-2",
+      "weight": 0.9175,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-0",
       "weight": 0.9175,
       "linkType": "semantic"
     },
@@ -37541,6 +38013,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-2",
+      "target": "post-13-chingshin-en-sec-3",
+      "weight": 0.9061,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_04_proj_zephyr-en-sec-1-2",
       "target": "project-2024_10_04_proj_zephyr-en-sec-2",
       "weight": 0.9059,
@@ -38129,6 +38607,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-3",
+      "weight": 0.8986,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-sitcon-2026-en-sec-1-1",
       "target": "project-sitcon-2026-en-sec-1-2",
       "weight": 0.8986,
@@ -38425,6 +38909,12 @@
     {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-1",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
+      "weight": 0.8928,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-0",
+      "target": "post-13-chingshin-en-sec-3",
       "weight": 0.8928,
       "linkType": "semantic"
     },
@@ -39175,7 +39665,7 @@
     {
       "source": "project-sitcon-2026-zh-TW-sec-1",
       "target": "project-sitcon-2026-zh-TW-sec-1-3",
-      "weight": 0.878,
+      "weight": 0.8781,
       "linkType": "semantic"
     },
     {
@@ -39815,6 +40305,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-3",
+      "target": "post-13-chingshin-en-sec-5",
+      "weight": 0.8614,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-3",
       "weight": 0.8612,
@@ -40055,6 +40551,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-4",
+      "target": "post-13-chingshin-en-sec-5",
+      "weight": 0.8539,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_03_powerplay-en-sec-2-1",
       "target": "project-2025_01_03_powerplay-en-sec-2-3-2",
       "weight": 0.8538,
@@ -40121,14 +40623,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-en-sec-0",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
       "weight": 0.8513,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
       "weight": 0.8513,
       "linkType": "semantic"
     },
@@ -40148,6 +40650,12 @@
       "source": "post-11-portfolio-zh-TW-sec-1",
       "target": "post-11-portfolio-zh-TW-sec-5",
       "weight": 0.8509,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-5",
+      "weight": 0.8508,
       "linkType": "semantic"
     },
     {
@@ -40178,6 +40686,12 @@
       "source": "project-2025_03_08_sitcon_keynote-en-sec-1",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-2",
       "weight": 0.8502,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-0",
+      "target": "post-13-chingshin-zh-TW-sec-4",
+      "weight": 0.8497,
       "linkType": "semantic"
     },
     {
@@ -40343,9 +40857,21 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-4",
+      "weight": 0.8431,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_09_vrc_2813b_nova-en-sec-1-0",
       "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-3",
       "weight": 0.8424,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-2",
+      "target": "post-13-chingshin-en-sec-5",
+      "weight": 0.842,
       "linkType": "semantic"
     },
     {
@@ -40451,6 +40977,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-0",
+      "target": "post-13-chingshin-en-sec-5",
+      "weight": 0.8389,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-3",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-5",
       "weight": 0.8388,
@@ -40490,6 +41022,12 @@
       "source": "project-sitcon-2026-zh-TW-sec-1-0",
       "target": "project-sitcon-2026-zh-TW-sec-2",
       "weight": 0.8375,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-0",
+      "target": "post-13-chingshin-zh-TW-sec-5",
+      "weight": 0.8374,
       "linkType": "semantic"
     },
     {
@@ -40574,6 +41112,12 @@
       "source": "project-2025_01_05_aaai_video-zh-TW-file",
       "target": "project-2025_01_05_aaai_video-en-sec-0",
       "weight": 0.8337,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-1",
+      "weight": 0.8335,
       "linkType": "semantic"
     },
     {
@@ -40679,6 +41223,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-en-sec-1",
+      "weight": 0.8283,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-sitcon-2026-zh-TW-file",
       "target": "project-sitcon-2026-zh-TW-sec-2",
       "weight": 0.8281,
@@ -40688,6 +41238,18 @@
       "source": "project-2025_03_18_boundless_voices-zh-TW-sec-2",
       "target": "project-2025_03_18_boundless_voices-zh-TW-sec-4",
       "weight": 0.8273,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-1",
+      "target": "post-13-chingshin-en-sec-4",
+      "weight": 0.827,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-1",
+      "target": "post-13-chingshin-en-sec-2",
+      "weight": 0.8265,
       "linkType": "semantic"
     },
     {
@@ -40748,6 +41310,12 @@
       "source": "project-2025_01_03_powerplay-zh-TW-sec-0",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-2-0",
       "weight": 0.8248,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-0",
+      "target": "post-13-chingshin-en-sec-1",
+      "weight": 0.8244,
       "linkType": "semantic"
     },
     {
@@ -40859,6 +41427,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-sec-3",
+      "target": "post-13-chingshin-zh-TW-sec-5",
+      "weight": 0.816,
+      "linkType": "semantic"
+    },
+    {
       "source": "locale-updates-zh-TW-0",
       "target": "locale-updates-en-0",
       "weight": 0.8159,
@@ -40949,6 +41523,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-sec-2",
+      "target": "post-13-chingshin-zh-TW-sec-4",
+      "weight": 0.8082,
+      "linkType": "semantic"
+    },
+    {
       "source": "locale-cv-education-en-0",
       "target": "locale-cv-leadership-en-0",
       "weight": 0.8081,
@@ -40958,6 +41538,12 @@
       "source": "project-2025_04_12_portfolio-en-sec-0",
       "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
       "weight": 0.8078,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
+      "weight": 0.8068,
       "linkType": "semantic"
     },
     {
@@ -40975,12 +41561,6 @@
     {
       "source": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
-      "weight": 0.8068,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
       "weight": 0.8068,
       "linkType": "semantic"
     },
@@ -41021,6 +41601,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
+      "weight": 0.8023,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_10_05_solitary_glow-zh-TW-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "weight": 0.8023,
@@ -41039,12 +41625,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
-      "weight": 0.8023,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_08_10_intersection-en-file",
       "target": "gallery-2026_02_08_italy_city-en-file",
       "weight": 0.8018,
@@ -41054,6 +41634,12 @@
       "source": "gallery-2023_11_18_dusk_impressions-en-file",
       "target": "gallery-2023_08_10_intersection-en-sec-0",
       "weight": 0.8016,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-0",
+      "target": "post-13-chingshin-zh-TW-sec-2",
+      "weight": 0.8015,
       "linkType": "semantic"
     },
     {
@@ -41087,9 +41673,21 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-sec-4",
+      "target": "post-13-chingshin-zh-TW-sec-5",
+      "weight": 0.7999,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-zh-TW-sec-0",
       "target": "post-11-portfolio-zh-TW-sec-2",
       "weight": 0.7996,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-0",
+      "target": "post-13-chingshin-zh-TW-sec-3",
+      "weight": 0.7975,
       "linkType": "semantic"
     },
     {
@@ -41165,6 +41763,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-1",
+      "target": "post-13-chingshin-en-sec-3",
+      "weight": 0.7926,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-2",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-4",
       "weight": 0.7923,
@@ -41201,9 +41805,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "weight": 0.7897,
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-2",
+      "weight": 0.7905,
       "linkType": "semantic"
     },
     {
@@ -41215,6 +41819,12 @@
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
+      "weight": 0.7897,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "weight": 0.7897,
       "linkType": "semantic"
     },
@@ -41257,6 +41867,12 @@
     {
       "source": "locale-cv-projects-zh-TW-0",
       "target": "locale-cv-projects-en-0",
+      "weight": 0.7871,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-3",
+      "target": "post-13-chingshin-zh-TW-sec-4",
       "weight": 0.7871,
       "linkType": "semantic"
     },
@@ -41312,6 +41928,12 @@
       "source": "project-2025_03_08_sitcon_keynote-zh-TW-file",
       "target": "project-2025_03_08_sitcon_keynote-en-sec-3",
       "weight": 0.7822,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-5",
+      "weight": 0.7815,
       "linkType": "semantic"
     },
     {
@@ -41417,14 +42039,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
+      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
       "weight": 0.7755,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
-      "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "source": "gallery-2023_10_05_solitary_glow-zh-TW-file",
+      "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
       "weight": 0.7755,
       "linkType": "semantic"
     },
@@ -41432,6 +42054,18 @@
       "source": "project-2024_10_04_proj_zephyr-en-sec-2",
       "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
       "weight": 0.7736,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-2",
+      "target": "post-13-chingshin-zh-TW-sec-3",
+      "weight": 0.772,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
+      "weight": 0.7717,
       "linkType": "semantic"
     },
     {
@@ -41453,12 +42087,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
-      "weight": 0.7717,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_06_30_city_stroll-en-file",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-file",
       "weight": 0.7715,
@@ -41474,6 +42102,12 @@
       "source": "project-2025_01_03_powerplay-en-sec-1-2",
       "target": "project-2025_01_03_powerplay-en-sec-2-3-1",
       "weight": 0.7713,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-5",
+      "target": "post-13-chingshin-zh-TW-sec-5",
+      "weight": 0.7701,
       "linkType": "semantic"
     },
     {
@@ -41519,12 +42153,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-en-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
-      "weight": 0.7673,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
       "weight": 0.7673,
@@ -41533,6 +42161,12 @@
     {
       "source": "gallery-2024_04_06_city_of_tears-en-file",
       "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "weight": 0.7673,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_04_06_city_of_tears-en-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.7673,
       "linkType": "semantic"
     },
@@ -41628,6 +42262,12 @@
     },
     {
       "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "weight": 0.7629,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
       "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.7629,
       "linkType": "semantic"
@@ -41635,12 +42275,6 @@
     {
       "source": "gallery-2026_02_08_italy_town-zh-TW-file",
       "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
-      "weight": 0.7629,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
       "weight": 0.7629,
       "linkType": "semantic"
     },
@@ -41756,6 +42390,12 @@
       "source": "project-2025_08_04_debate-en-sec-2-1",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-3",
       "weight": 0.7582,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-zh-TW-sec-3",
+      "weight": 0.7574,
       "linkType": "semantic"
     },
     {
@@ -41915,6 +42555,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-sec-2",
+      "target": "post-13-chingshin-zh-TW-sec-5",
+      "weight": 0.7468,
+      "linkType": "semantic"
+    },
+    {
       "source": "locale-cv-research-en-0",
       "target": "locale-updates-en-0",
       "weight": 0.7451,
@@ -41927,20 +42573,26 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-1",
+      "target": "post-13-chingshin-en-sec-5",
+      "weight": 0.7441,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_08_10_intersection-en-sec-0",
       "target": "gallery-2023_10_05_solitary_glow-en-sec-0",
       "weight": 0.7439,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
       "weight": 0.7438,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
       "weight": 0.7438,
       "linkType": "semantic"
     },
@@ -42059,14 +42711,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-en-sec-0",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-en-sec-0",
       "weight": 0.7377,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-en-sec-0",
+      "source": "gallery-2026_02_08_italy_city-en-sec-0",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
       "weight": 0.7377,
       "linkType": "semantic"
     },
@@ -42215,14 +42867,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
       "weight": 0.7314,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
+      "source": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "weight": 0.7314,
       "linkType": "semantic"
     },
@@ -42245,14 +42897,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_12_30_sky_above-en-file",
-      "target": "gallery-2023_10_05_solitary_glow-en-sec-0",
+      "source": "gallery-2023_10_05_solitary_glow-en-sec-0",
+      "target": "gallery-2023_12_30_sky_above-en-sec-0",
       "weight": 0.7292,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-en-sec-0",
-      "target": "gallery-2023_12_30_sky_above-en-sec-0",
+      "source": "gallery-2023_12_30_sky_above-en-file",
+      "target": "gallery-2023_10_05_solitary_glow-en-sec-0",
       "weight": 0.7292,
       "linkType": "semantic"
     },
@@ -42331,6 +42983,12 @@
     {
       "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
       "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
+      "weight": 0.7264,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
+      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.7264,
       "linkType": "semantic"
     },
@@ -42420,13 +43078,13 @@
     },
     {
       "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.7228,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.7228,
       "linkType": "semantic"
     },
@@ -42479,14 +43137,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
+      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
       "weight": 0.7203,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "weight": 0.7203,
       "linkType": "semantic"
     },
@@ -42611,8 +43269,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-en-file",
-      "target": "gallery-2023_07_07_splash_of_red-en-sec-0",
+      "source": "gallery-2023_07_07_splash_of_red-en-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
       "weight": 0.7166,
       "linkType": "semantic"
     },
@@ -42644,6 +43302,12 @@
       "source": "post-2025_12_12_blog_launch-en-sec-0-1",
       "target": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-6",
       "weight": 0.7148,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-en-sec-10",
+      "target": "post-13-chingshin-en-sec-4",
+      "weight": 0.7147,
       "linkType": "semantic"
     },
     {
@@ -42702,13 +43366,13 @@
     },
     {
       "source": "gallery-2026-us-trip-en-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "target": "gallery-2026-us-trip-zh-TW-file",
       "weight": 0.7117,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2026-us-trip-en-file",
-      "target": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
       "weight": 0.7117,
       "linkType": "semantic"
     },
@@ -42767,12 +43431,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-12-us-trip-en-sec-10",
-      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
-      "weight": 0.7103,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_03_18_boundless_voices-en-sec-0",
       "target": "project-2025_03_18_boundless_voices-zh-TW-sec-4",
       "weight": 0.7101,
@@ -42815,6 +43473,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-3",
+      "target": "post-13-chingshin-zh-TW-sec-3",
+      "weight": 0.7082,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-2",
       "target": "locale-about-zh-TW-0",
       "weight": 0.708,
@@ -42824,6 +43488,12 @@
       "source": "post-12-us-trip-en-sec-3",
       "target": "gallery-2026-us-trip-en-sec-0",
       "weight": 0.7078,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "weight": 0.7077,
       "linkType": "semantic"
     },
     {
@@ -42839,21 +43509,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "weight": 0.7077,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2026-us-trip-zh-TW-sec-0",
       "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
       "weight": 0.7077,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
-      "weight": 0.7066,
+      "source": "post-13-chingshin-en-sec-0",
+      "target": "post-13-chingshin-zh-TW-sec-0",
+      "weight": 0.7076,
       "linkType": "semantic"
     },
     {
@@ -42918,8 +43582,8 @@
     },
     {
       "source": "post-12-us-trip-en-sec-3",
-      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
-      "weight": 0.704,
+      "target": "post-13-chingshin-en-sec-4",
+      "weight": 0.7043,
       "linkType": "semantic"
     },
     {
@@ -43007,14 +43671,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-sec-0",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026-us-trip-en-sec-0",
       "weight": 0.7012,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
+      "source": "gallery-2026-us-trip-en-sec-0",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
       "weight": 0.7012,
       "linkType": "semantic"
     },
@@ -43073,8 +43737,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
+      "source": "post-11-portfolio-en-sec-8",
+      "target": "post-13-chingshin-en-sec-3",
+      "weight": 0.6982,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "target": "gallery-2026_02_08_italy_city-en-file",
       "weight": 0.6972,
       "linkType": "semantic"
     },
@@ -43091,8 +43761,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
+      "source": "gallery-2024_04_06_city_of_tears-en-file",
+      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
       "weight": 0.6963,
       "linkType": "semantic"
     },
@@ -43112,6 +43782,12 @@
       "source": "project-2025_03_18_boundless_voices-en-sec-3",
       "target": "project-2025_03_18_boundless_voices-zh-TW-sec-0",
       "weight": 0.696,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-13-chingshin-zh-TW-sec-0",
+      "weight": 0.6959,
       "linkType": "semantic"
     },
     {
@@ -43157,20 +43833,26 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-10",
-      "target": "gallery-2023_10_06_against_giants-en-sec-0",
-      "weight": 0.691,
+      "source": "post-13-chingshin-zh-TW-sec-1",
+      "target": "post-13-chingshin-zh-TW-sec-4",
+      "weight": 0.6934,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-zh-TW-sec-0",
+      "source": "gallery-2023_10_06_against_giants-en-sec-0",
+      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "weight": 0.6917,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_against_giants-zh-TW-file",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6902,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "source": "gallery-2023_10_06_against_giants-zh-TW-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6902,
       "linkType": "semantic"
     },
@@ -43223,6 +43905,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-en-sec-0",
+      "weight": 0.687,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-9_m11d-en-sec-9",
+      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "weight": 0.6866,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-9_m11d-en-sec-9",
       "target": "post-9_m11d-zh-TW-sec-4",
       "weight": 0.6863,
@@ -43271,6 +43965,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-file",
+      "target": "post-11-portfolio-en-sec-8",
+      "weight": 0.6809,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_01_06_hehuanshan-en-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
       "weight": 0.6807,
@@ -43295,6 +43995,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-11-portfolio-en-sec-8",
+      "target": "post-13-chingshin-en-sec-5",
+      "weight": 0.679,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_04_12_portfolio-en-file",
       "target": "locale-cv-projects-en-0",
       "weight": 0.6782,
@@ -43316,6 +44022,12 @@
       "source": "locale-cv-projects-en-0",
       "target": "locale-uses-en-0",
       "weight": 0.6763,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-2",
+      "target": "post-13-chingshin-zh-TW-sec-2",
+      "weight": 0.6759,
       "linkType": "semantic"
     },
     {
@@ -43355,8 +44067,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_08_10_intersection-zh-TW-file",
+      "target": "gallery-2026-us-trip-zh-TW-file",
+      "weight": 0.6727,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2026-us-trip-zh-TW-file",
       "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "weight": 0.6727,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_08_10_intersection-zh-TW-file",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
       "weight": 0.6727,
       "linkType": "semantic"
     },
@@ -43374,13 +44098,13 @@
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "weight": 0.6727,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6727,
       "linkType": "semantic"
     },
@@ -43427,6 +44151,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-9_m11d-en-sec-10",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
+      "weight": 0.6694,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-2",
       "target": "locale-cv-summary-en-0",
       "weight": 0.669,
@@ -43451,14 +44181,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_town-en-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
-      "weight": 0.6678,
+      "source": "post-13-chingshin-en-sec-2",
+      "target": "post-13-chingshin-zh-TW-sec-4",
+      "weight": 0.6681,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2026_02_08_italy_town-en-file",
       "target": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "weight": 0.6677,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_town-en-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.6677,
       "linkType": "semantic"
     },
@@ -43475,20 +44211,32 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-file",
+      "target": "post-13-chingshin-en-sec-1",
+      "weight": 0.6669,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-en-sec-1",
+      "target": "post-13-chingshin-zh-TW-sec-1",
+      "weight": 0.6631,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2026_02_08_italy_mountain-en-file",
       "target": "gallery-2026_02_08_italy_town-en-file",
       "weight": 0.6611,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6611,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
       "weight": 0.6611,
       "linkType": "semantic"
     },
@@ -43502,6 +44250,12 @@
       "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
       "weight": 0.6609,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-0",
+      "target": "post-13-chingshin-zh-TW-sec-1",
+      "weight": 0.6604,
       "linkType": "semantic"
     },
     {
@@ -43519,18 +44273,6 @@
     {
       "source": "gallery-2026-us-trip-zh-TW-file",
       "target": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "weight": 0.6598,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-sec-0",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
-      "weight": 0.6598,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.6598,
       "linkType": "semantic"
     },
@@ -43565,32 +44307,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
-      "weight": 0.6552,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-10-lego-mount-en-sec-1",
       "target": "post-11-portfolio-en-sec-8",
       "weight": 0.6551,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.6551,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
-      "weight": 0.6551,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.6551,
       "linkType": "semantic"
     },
@@ -43625,12 +44355,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-11-portfolio-en-sec-8",
-      "target": "post-2025_12_14_affinity-en-sec-1",
-      "weight": 0.6527,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
       "target": "gallery-2023_12_30_against_the_unknown-zh-TW-sec-0",
       "weight": 0.6523,
@@ -43640,12 +44364,6 @@
       "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
       "target": "gallery-2023_12_30_against_the_unknown-zh-TW-file",
       "weight": 0.6523,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-9_m11d-en-sec-9",
-      "target": "post-9_m11d-zh-TW-sec-3",
-      "weight": 0.6515,
       "linkType": "semantic"
     },
     {
@@ -43661,12 +44379,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-en-file",
-      "target": "post-11-portfolio-en-sec-8",
-      "weight": 0.6506,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_13_sisyphus-en-file",
       "target": "post-2025_12_13_sisyphus-zh-TW-file",
       "weight": 0.6505,
@@ -43679,14 +44391,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "source": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.6501,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
       "weight": 0.6501,
       "linkType": "semantic"
     },
@@ -43694,6 +44406,12 @@
       "source": "post-2025_12_13_sisyphus-en-sec-0-1",
       "target": "post-2025_12_13_sisyphus-zh-TW-sec-0-0",
       "weight": 0.6497,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "weight": 0.6496,
       "linkType": "semantic"
     },
     {
@@ -43710,6 +44428,18 @@
     },
     {
       "source": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "weight": 0.6496,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "weight": 0.6496,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.6496,
       "linkType": "semantic"
@@ -43763,9 +44493,21 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-sec-1",
+      "target": "post-13-chingshin-zh-TW-sec-5",
+      "weight": 0.6423,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-5",
       "target": "project-2025_05_18_patch_dataset-zh-TW-sec-0-5-2",
       "weight": 0.6422,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-1",
+      "target": "post-13-chingshin-zh-TW-sec-2",
+      "weight": 0.6417,
       "linkType": "semantic"
     },
     {
@@ -43799,6 +44541,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-zh-TW-sec-1",
+      "target": "post-13-chingshin-zh-TW-sec-3",
+      "weight": 0.6382,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-5",
       "target": "project-2025_05_18_patch_dataset-zh-TW-sec-0-6",
       "weight": 0.6382,
@@ -43808,18 +44556,6 @@
       "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-5",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-5",
       "weight": 0.6365,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
-      "weight": 0.6364,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
-      "weight": 0.6364,
       "linkType": "semantic"
     },
     {
@@ -43860,6 +44596,12 @@
     },
     {
       "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
+      "target": "gallery-2023_10_12_lessons_from_the_light-en-file",
+      "weight": 0.6311,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
       "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.6311,
       "linkType": "semantic"
@@ -43867,18 +44609,6 @@
     {
       "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
       "target": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
-      "weight": 0.6311,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
-      "target": "gallery-2023_10_12_lessons_from_the_light-en-file",
-      "weight": 0.6311,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
-      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.6311,
       "linkType": "semantic"
     },
@@ -43908,12 +44638,6 @@
     },
     {
       "source": "gallery-2024_01_06_hehuanshan-en-file",
-      "target": "post-11-portfolio-en-sec-8",
-      "weight": 0.6288,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_01_06_hehuanshan-en-file",
       "target": "gallery-2026_02_08_italy_mountain-zh-TW-file",
       "weight": 0.6271,
       "linkType": "semantic"
@@ -43925,14 +44649,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
-      "weight": 0.6269,
+      "source": "gallery-2023_10_06_against_giants-en-file",
+      "target": "project-2024_08_19_classics_reimagined-en-sec-1",
+      "weight": 0.627,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
       "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "weight": 0.6269,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.6269,
       "linkType": "semantic"
     },
@@ -43968,17 +44698,17 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-05-01T17:15:18Z",
-    "nodeCount": 1252,
-    "edgeCount": 3747,
+    "generatedAt": "2026-05-05T10:45:28Z",
+    "nodeCount": 1268,
+    "edgeCount": 3818,
     "threshold": 0.62,
     "maxEdgesPerNode": 8,
     "model": "BAAI/bge-large-zh-v1.5",
     "nodeTypeCounts": {
       "hub": 20,
-      "file": 88,
-      "section": 555,
-      "image": 547,
+      "file": 90,
+      "section": 567,
+      "image": 549,
       "video": 14,
       "tag": 28
     }
