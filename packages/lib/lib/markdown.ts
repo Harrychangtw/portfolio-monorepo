@@ -569,12 +569,25 @@ export function getAllGalleryMetadata(
   }
 }
 
-// Get all sketches metadata - scans optimized images folder directly
+// Get all sketches metadata. Prefers a build-time manifest at
+// content/generated/sketches.json (bundled into the Vercel lambda via the
+// content/** trace include) and falls back to scanning the optimized images
+// folder for local dev.
 export function getAllSketchesMetadata(
   locale: string = "en",
 ): SketchMetadata[] {
   try {
-    // Look in the optimized sketches directory
+    const manifestPath = path.join(
+      getContentRoot(),
+      "content/generated/sketches.json",
+    );
+    if (fs.existsSync(manifestPath)) {
+      const raw = fs.readFileSync(manifestPath, "utf-8");
+      const entries = JSON.parse(raw) as SketchMetadata[];
+      return entries;
+    }
+
+    // Dev fallback: scan the optimized sketches directory
     const optimizedSketchesDir = path.join(
       getContentRoot(),
       "public",
