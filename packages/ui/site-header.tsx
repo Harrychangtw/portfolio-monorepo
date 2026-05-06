@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback, ReactNode } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, LayoutGroup } from "motion/react";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
@@ -126,7 +126,6 @@ export default function SiteHeader({
   hideAtPageBottom = false,
 }: SiteHeaderProps) {
   const pathname = usePathname();
-  const router = useRouter();
   const navigationCtx = useNavigation();
   const isNavigating = showLoadingStatus
     ? !!navigationCtx?.isNavigating
@@ -217,7 +216,9 @@ export default function SiteHeader({
     if (!enableLabDomain) return;
     if (typeof window === "undefined") return;
     const hostname = window.location.hostname;
-    setIsLab(labHostnames.some((h) => hostname.includes(h)));
+    setIsLab(
+      labHostnames.some((h) => hostname === h || hostname.endsWith(`.${h}`)),
+    );
   }, [enableLabDomain, labHostnames]);
 
   useStableHashScroll("header");
@@ -367,12 +368,12 @@ export default function SiteHeader({
 
   const getLinkProps = (sectionId: string, pagePath: string) => {
     const active = isActive(sectionId);
-    const baseClasses =
-      navLinkClassName ??
-      `relative font-heading ${active ? "text-primary" : "text-secondary hover:text-accent"} transition-colors duration-200 outline-none`;
+    const activeStateClasses = active
+      ? "text-primary"
+      : "text-secondary hover:text-accent";
     const className = navLinkClassName
-      ? `${navLinkClassName} ${active ? "text-primary" : "text-secondary hover:text-accent"}`
-      : baseClasses;
+      ? `${navLinkClassName} ${activeStateClasses}`
+      : `relative font-heading ${activeStateClasses} transition-colors duration-200 outline-none`;
     const href = isHomePage
       ? `/#${sectionId}`
       : pagePath === "/"
@@ -454,7 +455,7 @@ export default function SiteHeader({
     const hostnameWithPort =
       (typeof window !== "undefined" && window.location.host) ||
       "localhost:3000";
-    const mainDomain = hostnameWithPort.replace("lab.", "");
+    const mainDomain = hostnameWithPort.replace(/^lab\./, "");
     return `${protocol}//${mainDomain}`;
   };
 

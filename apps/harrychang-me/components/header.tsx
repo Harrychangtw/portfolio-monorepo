@@ -21,6 +21,14 @@ const NAV_ITEMS = [
   { id: "blog", path: "/#blog" },
 ];
 
+const LAB_HOSTNAMES = (() => {
+  try {
+    return ["lab.localhost", new URL(siteConfig.labUrl).hostname];
+  } catch {
+    return ["lab.localhost"];
+  }
+})();
+
 const SPECIAL_PAGES = [
   { prefix: "/paper-reading", key: "paperReading" },
   { prefix: "/manifesto", key: "manifesto" },
@@ -57,7 +65,7 @@ export default function Header() {
       navItems={NAV_ITEMS}
       showLoadingStatus
       enableLabDomain
-      labHostnames={["lab.localhost", new URL(siteConfig.labUrl).hostname]}
+      labHostnames={LAB_HOSTNAMES}
       specialPages={SPECIAL_PAGES}
       readingProgressMatchers={[/^\/projects\/[^/]+$/, /^\/blog\/[^/]+$/]}
       staggeredMenu={{

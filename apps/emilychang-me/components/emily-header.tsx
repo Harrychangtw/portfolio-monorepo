@@ -1,5 +1,3 @@
-"use client";
-
 import SiteHeader from "@portfolio/ui/site-header";
 
 const NAV_ITEMS = [
