@@ -6160,6 +6160,23 @@
     },
     {
       "id": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "title": "Zephyr: Fully Automated Ticket-Grabbing Bot - Update: Zephyr Assist",
+      "snippet": "pdate: Zephyr Assist  The end-to-end automated approach worked under testing but proved brittle in practice. Any UI change broke the flow, and session...",
+      "nodeType": "section",
+      "sourceType": "project",
+      "sourceSlug": "2024_10_04_proj_zephyr",
+      "locale": "en",
+      "url": "https://www.harrychang.me/projects/2024_10_04_proj_zephyr",
+      "date": "2024-10-04",
+      "tags": [],
+      "heading": "Update: Zephyr Assist",
+      "parentId": "project-2024_10_04_proj_zephyr-en-file",
+      "tldr": "Automated Tixcraft bot using Selenium and CNN to bypass CAPTCHAs fast",
+      "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp",
+      "anchorId": "update-zephyr-assist"
+    },
+    {
+      "id": "project-2024_10_04_proj_zephyr-en-sec-3",
       "title": "Zephyr: Fully Automated Ticket-Grabbing Bot - Disclaimer",
       "snippet": "isclaimer  This project, \"Zephyr,\" is intended for personal learning and technical research only. It aims to explore the integrated application of web...",
       "nodeType": "section",
@@ -6257,6 +6274,23 @@
     },
     {
       "id": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "title": "Zephyr: 全自動搶票機器人 - 後續更新：Zephyr Assist",
+      "snippet": "續更新：Zephyr Assist  端到端的全自動方案在測試環境下運作良好，但在部署中相當脆弱。網站任何 UI 變更都會讓流程中斷，而 session 管理也略為彆扭，還會提高被偵測為機器人的風險。  Zephyr 後續演進為 **Zephyr Assist**，一個 Chrome 擴充功能，沿用...",
+      "nodeType": "section",
+      "sourceType": "project",
+      "sourceSlug": "2024_10_04_proj_zephyr",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/projects/2024_10_04_proj_zephyr",
+      "date": "2024-10-04",
+      "tags": [],
+      "heading": "後續更新：Zephyr Assist",
+      "parentId": "project-2024_10_04_proj_zephyr-zh-TW-file",
+      "tldr": "結合 CNN 辨識驗證碼的拓元全自動搶票機器人",
+      "imageUrl": "images/optimized/projects/2024_10_04_zephyr/titlecard.webp",
+      "anchorId": "zephyr-assist"
+    },
+    {
+      "id": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "title": "Zephyr: 全自動搶票機器人 - 聲明",
       "snippet": "明  本專案「Zephyr」僅為個人學習與技術研究之用，旨在探索網頁自動化、電腦視覺與機器學習領域的整合應用。開發此專案的目的純粹是為了學術探討和提升個人開發能力。  專案中展示的任何成功結果（例如票券截圖），皆為功能性測試與概念驗證的一部分，並非用於實際商業或個人牟利。所有展示圖片中的敏感資訊皆經...",
       "nodeType": "section",
@@ -23454,6 +23488,12 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-en-file",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-3",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-en-file",
       "target": "project-2024_10_04_proj_zephyr-en-img-cover",
       "weight": 0.8,
       "linkType": "structural"
@@ -23503,6 +23543,12 @@
     {
       "source": "project-2024_10_04_proj_zephyr-zh-TW-file",
       "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-zh-TW-file",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "weight": 1.0,
       "linkType": "structural"
     },
@@ -28763,6 +28809,12 @@
       "linkType": "tag"
     },
     {
+      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
       "target": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
       "weight": 1.0,
@@ -28799,14 +28851,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -28819,18 +28871,6 @@
     {
       "source": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -28853,14 +28893,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -29634,7 +29680,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-0",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "weight": 0.9769,
       "linkType": "semantic"
     },
@@ -30930,7 +30976,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-en-sec-0",
-      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-3",
       "weight": 0.9603,
       "linkType": "semantic"
     },
@@ -31404,7 +31450,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-0",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "weight": 0.9571,
       "linkType": "semantic"
     },
@@ -31416,7 +31462,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-2",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "weight": 0.9571,
       "linkType": "semantic"
     },
@@ -31566,7 +31612,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-en-file",
-      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-3",
       "weight": 0.9561,
       "linkType": "semantic"
     },
@@ -31674,7 +31720,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-en-sec-1-0",
-      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-3",
       "weight": 0.9554,
       "linkType": "semantic"
     },
@@ -31704,7 +31750,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-zh-TW-file",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "weight": 0.9552,
       "linkType": "semantic"
     },
@@ -31895,6 +31941,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-0",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "weight": 0.9538,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_03_powerplay-zh-TW-sec-2",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-2-0",
       "weight": 0.9537,
@@ -32077,6 +32129,12 @@
     {
       "source": "post-11-portfolio-en-sec-0",
       "target": "post-11-portfolio-en-sec-3",
+      "weight": 0.9528,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-en-sec-0",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
       "weight": 0.9528,
       "linkType": "semantic"
     },
@@ -32270,6 +32328,12 @@
       "source": "post-11-portfolio-en-sec-1",
       "target": "post-11-portfolio-en-sec-7",
       "weight": 0.9518,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
+      "weight": 0.9517,
       "linkType": "semantic"
     },
     {
@@ -32765,14 +32829,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-zh-TW-sec-0",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-2",
+      "source": "project-2025_05_18_patch_dataset-en-sec-0-1",
+      "target": "project-2025_05_18_patch_dataset-en-sec-0-3-1",
       "weight": 0.9477,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_05_18_patch_dataset-en-sec-0-1",
-      "target": "project-2025_05_18_patch_dataset-en-sec-0-3-1",
+      "source": "project-2025_10_12_fortress-zh-TW-sec-0",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-2",
       "weight": 0.9477,
       "linkType": "semantic"
     },
@@ -33013,12 +33077,18 @@
     {
       "source": "project-2025_01_03_powerplay-en-sec-2",
       "target": "project-2025_01_03_powerplay-en-sec-2-2",
-      "weight": 0.9457,
+      "weight": 0.9456,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_01_03_powerplay-en-sec-0",
       "target": "project-2025_01_03_powerplay-en-sec-5",
+      "weight": 0.9456,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-en-file",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
       "weight": 0.9456,
       "linkType": "semantic"
     },
@@ -33551,6 +33621,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "weight": 0.9416,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_09_23_chingshin_rag-en-sec-1-4",
       "target": "project-2024_09_23_chingshin_rag-en-sec-2-2",
       "weight": 0.9416,
@@ -33607,6 +33683,12 @@
     {
       "source": "project-2025_10_12_fortress-zh-TW-sec-0-4",
       "target": "project-2025_10_12_fortress-zh-TW-sec-0-5",
+      "weight": 0.9412,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-zh-TW-file",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
       "weight": 0.9412,
       "linkType": "semantic"
     },
@@ -33895,6 +33977,12 @@
     {
       "source": "project-2025_05_18_patch_dataset-en-sec-0-2",
       "target": "project-2025_05_18_patch_dataset-en-sec-0-4",
+      "weight": 0.9388,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-en-sec-1-0",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
       "weight": 0.9388,
       "linkType": "semantic"
     },
@@ -34481,6 +34569,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_10_04_proj_zephyr-en-sec-1-2",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "weight": 0.9342,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_22_aftersun_paris_texas-zh-TW-file",
       "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-2",
       "weight": 0.9342,
@@ -34802,6 +34896,12 @@
       "source": "post-2026_02_10_synecdoche_truman-en-sec-0-1",
       "target": "post-2026_02_10_synecdoche_truman-en-sec-0-3",
       "weight": 0.9308,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-3",
+      "weight": 0.9306,
       "linkType": "semantic"
     },
     {
@@ -35184,7 +35284,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-1",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "weight": 0.927,
       "linkType": "semantic"
     },
@@ -35490,7 +35590,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "weight": 0.9232,
       "linkType": "semantic"
     },
@@ -35520,7 +35620,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-en-sec-1",
-      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-3",
       "weight": 0.9231,
       "linkType": "semantic"
     },
@@ -36263,6 +36363,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_10_04_proj_zephyr-en-sec-1",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "weight": 0.9151,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-10-lego-mount-zh-TW-sec-0-6",
       "target": "post-10-lego-mount-zh-TW-sec-1",
       "weight": 0.9149,
@@ -36397,6 +36503,12 @@
     {
       "source": "project-2024_09_23_chingshin_rag-en-sec-1-2",
       "target": "project-2024_09_23_chingshin_rag-en-sec-2",
+      "weight": 0.9134,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-0",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
       "weight": 0.9134,
       "linkType": "semantic"
     },
@@ -36546,7 +36658,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-en-sec-1-1",
-      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-3",
       "weight": 0.911,
       "linkType": "semantic"
     },
@@ -36731,14 +36843,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-0",
-      "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
+      "source": "project-2025_10_12_fortress-en-sec-0-3-3",
+      "target": "project-2025_10_12_fortress-en-sec-0-4-2",
       "weight": 0.9083,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-en-sec-0-3-3",
-      "target": "project-2025_10_12_fortress-en-sec-0-4-2",
+      "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-0",
+      "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2",
       "weight": 0.9083,
       "linkType": "semantic"
     },
@@ -36882,7 +36994,7 @@
     },
     {
       "source": "project-2024_10_04_proj_zephyr-en-sec-1-2",
-      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-3",
       "weight": 0.9059,
       "linkType": "semantic"
     },
@@ -37153,6 +37265,12 @@
     {
       "source": "post-11-portfolio-zh-TW-file",
       "target": "post-11-portfolio-zh-TW-sec-4",
+      "weight": 0.9032,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-en-sec-1-1",
+      "target": "project-2024_10_04_proj_zephyr-en-sec-2",
       "weight": 0.9032,
       "linkType": "semantic"
     },
@@ -37643,6 +37761,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-1",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "weight": 0.8951,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_05_aaai_video-zh-TW-sec-0",
       "target": "project-2025_01_05_aaai_video-zh-TW-sec-1",
       "weight": 0.8951,
@@ -37670,6 +37794,12 @@
       "source": "post-10-lego-mount-zh-TW-sec-0-0",
       "target": "post-10-lego-mount-zh-TW-sec-0-7",
       "weight": 0.8946,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "weight": 0.8944,
       "linkType": "semantic"
     },
     {
@@ -38527,7 +38657,7 @@
     {
       "source": "project-sitcon-2026-zh-TW-sec-1",
       "target": "project-sitcon-2026-zh-TW-sec-1-3",
-      "weight": 0.8781,
+      "weight": 0.878,
       "linkType": "semantic"
     },
     {
@@ -39485,14 +39615,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-en-sec-0",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
       "weight": 0.8513,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-en-sec-0",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_mountain-en-sec-0",
       "weight": 0.8513,
       "linkType": "semantic"
     },
@@ -40463,12 +40593,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
-      "weight": 0.8023,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_05_solitary_glow-zh-TW-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "weight": 0.8023,
@@ -40483,6 +40607,12 @@
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "weight": 0.8023,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
       "weight": 0.8023,
       "linkType": "semantic"
     },
@@ -40685,14 +40815,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
       "weight": 0.7897,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-sec-0",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
+      "source": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "weight": 0.7897,
       "linkType": "semantic"
     },
@@ -40883,12 +41013,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_04_proj_zephyr-en-file",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-file",
-      "weight": 0.7759,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_06_30_city_stroll-en-sec-0",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
       "weight": 0.7757,
@@ -40913,8 +41037,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_04_proj_zephyr-en-sec-2",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "source": "project-2024_10_04_proj_zephyr-en-sec-3",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-3",
       "weight": 0.7736,
       "linkType": "semantic"
     },
@@ -40922,12 +41046,6 @@
       "source": "post-13-chingshin-zh-TW-sec-2",
       "target": "post-13-chingshin-zh-TW-sec-3",
       "weight": 0.772,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
-      "weight": 0.7717,
       "linkType": "semantic"
     },
     {
@@ -40945,6 +41063,12 @@
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "weight": 0.7717,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
       "weight": 0.7717,
       "linkType": "semantic"
     },
@@ -40973,12 +41097,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_04_proj_zephyr-en-sec-0",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-2",
-      "weight": 0.7695,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2026_02_08_italy_city-en-sec-0",
       "target": "gallery-2026_02_08_italy_town-en-sec-0",
       "weight": 0.7692,
@@ -41003,15 +41121,15 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_04_proj_zephyr-en-sec-2",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-0",
-      "weight": 0.7688,
-      "linkType": "semantic"
-    },
-    {
       "source": "locale-cv-research-zh-TW-0",
       "target": "locale-cv-leadership-zh-TW-0",
       "weight": 0.7684,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_04_06_city_of_tears-en-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "weight": 0.7673,
       "linkType": "semantic"
     },
     {
@@ -41023,12 +41141,6 @@
     {
       "source": "gallery-2024_04_06_city_of_tears-en-file",
       "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "weight": 0.7673,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_04_06_city_of_tears-en-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.7673,
       "linkType": "semantic"
     },
@@ -41124,12 +41236,6 @@
     },
     {
       "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "weight": 0.7629,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
       "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.7629,
       "linkType": "semantic"
@@ -41137,6 +41243,12 @@
     {
       "source": "gallery-2026_02_08_italy_town-zh-TW-file",
       "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "weight": 0.7629,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
       "weight": 0.7629,
       "linkType": "semantic"
     },
@@ -41192,12 +41304,6 @@
       "source": "locale-cv-summary-en-0",
       "target": "locale-cv-research-en-0",
       "weight": 0.761,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_10_04_proj_zephyr-en-sec-1-1",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
-      "weight": 0.7608,
       "linkType": "semantic"
     },
     {
@@ -41276,12 +41382,6 @@
       "source": "project-2024_10_04_proj_zephyr-en-sec-1",
       "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-1",
       "weight": 0.755,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_10_04_proj_zephyr-en-sec-1",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-1",
-      "weight": 0.7549,
       "linkType": "semantic"
     },
     {
@@ -41420,6 +41520,12 @@
       "source": "post-13-chingshin-zh-TW-sec-2",
       "target": "post-13-chingshin-zh-TW-sec-5",
       "weight": 0.7468,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_10_04_proj_zephyr-en-sec-2",
+      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
+      "weight": 0.7461,
       "linkType": "semantic"
     },
     {
@@ -41573,14 +41679,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-en-sec-0",
+      "source": "gallery-2026_02_08_italy_city-en-sec-0",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
       "weight": 0.7377,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-en-sec-0",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-en-sec-0",
       "weight": 0.7377,
       "linkType": "semantic"
     },
@@ -41729,14 +41835,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
+      "source": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.7314,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-sec-0",
       "weight": 0.7314,
       "linkType": "semantic"
     },
@@ -41940,13 +42046,13 @@
     },
     {
       "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "weight": 0.7228,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
       "weight": 0.7228,
       "linkType": "semantic"
     },
@@ -42020,12 +42126,6 @@
       "source": "project-2025_03_18_boundless_voices-en-sec-1",
       "target": "project-2025_03_18_boundless_voices-zh-TW-sec-1",
       "weight": 0.7197,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_10_04_proj_zephyr-en-sec-1-0",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-2",
-      "weight": 0.7194,
       "linkType": "semantic"
     },
     {
@@ -42131,8 +42231,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_07_07_splash_of_red-en-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
+      "source": "gallery-2024_04_06_city_of_tears-en-file",
+      "target": "gallery-2023_07_07_splash_of_red-en-sec-0",
       "weight": 0.7166,
       "linkType": "semantic"
     },
@@ -42228,13 +42328,13 @@
     },
     {
       "source": "gallery-2026-us-trip-en-file",
-      "target": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
       "weight": 0.7117,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2026-us-trip-en-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "target": "gallery-2026-us-trip-zh-TW-file",
       "weight": 0.7117,
       "linkType": "semantic"
     },
@@ -42354,12 +42454,6 @@
     },
     {
       "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "weight": 0.7077,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-zh-TW-file",
       "target": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
       "weight": 0.7077,
       "linkType": "semantic"
@@ -42367,6 +42461,12 @@
     {
       "source": "gallery-2026_02_08_italy_city-zh-TW-file",
       "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "weight": 0.7077,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-file",
       "weight": 0.7077,
       "linkType": "semantic"
     },
@@ -42515,12 +42615,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_09_mortal_sparks-en-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
-      "weight": 0.7013,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_02_09_mortal_sparks-en-file",
       "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
       "weight": 0.7013,
@@ -42533,14 +42627,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2026-us-trip-en-sec-0",
-      "weight": 0.7012,
+      "source": "gallery-2024_02_09_mortal_sparks-en-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
+      "weight": 0.7013,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2026-us-trip-en-sec-0",
       "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "weight": 0.7012,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2026-us-trip-en-sec-0",
       "weight": 0.7012,
       "linkType": "semantic"
     },
@@ -42605,8 +42705,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
-      "target": "gallery-2026_02_08_italy_city-en-file",
+      "source": "gallery-2026_02_08_italy_city-en-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
       "weight": 0.6972,
       "linkType": "semantic"
     },
@@ -42623,8 +42723,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-en-file",
-      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "source": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
       "weight": 0.6963,
       "linkType": "semantic"
     },
@@ -42708,13 +42808,13 @@
     },
     {
       "source": "gallery-2023_10_06_against_giants-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "weight": 0.6902,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-zh-TW-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2023_10_06_against_giants-zh-TW-sec-0",
       "weight": 0.6902,
       "linkType": "semantic"
     },
@@ -42923,26 +43023,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_04_proj_zephyr-en-sec-1-2",
-      "target": "project-2024_10_04_proj_zephyr-zh-TW-sec-1-0",
-      "weight": 0.6731,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_08_10_intersection-zh-TW-file",
       "target": "gallery-2026-us-trip-zh-TW-file",
       "weight": 0.6727,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-zh-TW-file",
-      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "source": "gallery-2023_08_10_intersection-zh-TW-file",
+      "target": "gallery-2026-us-trip-zh-TW-sec-0",
       "weight": 0.6727,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "source": "gallery-2026-us-trip-zh-TW-file",
+      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
       "weight": 0.6727,
       "linkType": "semantic"
     },
@@ -42960,13 +43054,13 @@
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6727,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "weight": 0.6727,
       "linkType": "semantic"
     },
@@ -42983,14 +43077,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
       "weight": 0.6711,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6711,
       "linkType": "semantic"
     },
@@ -43050,13 +43144,13 @@
     },
     {
       "source": "gallery-2026_02_08_italy_town-en-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "weight": 0.6677,
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "weight": 0.6678,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2026_02_08_italy_town-en-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
       "weight": 0.6677,
       "linkType": "semantic"
     },
@@ -43091,26 +43185,26 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
-      "weight": 0.6611,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
       "weight": 0.6611,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
-      "weight": 0.6609,
+      "source": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "weight": 0.6611,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
+      "weight": 0.6609,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
       "weight": 0.6609,
       "linkType": "semantic"
     },
@@ -43139,8 +43233,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "target": "gallery-2026-us-trip-zh-TW-sec-0",
+      "source": "gallery-2026-us-trip-zh-TW-sec-0",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.6598,
       "linkType": "semantic"
     },
@@ -43175,6 +43269,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
+      "weight": 0.6551,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
       "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.6551,
@@ -43182,13 +43282,7 @@
     },
     {
       "source": "gallery-2023_10_12_lessons_from_the_light-en-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
-      "weight": 0.6551,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
       "weight": 0.6551,
       "linkType": "semantic"
     },
@@ -43253,14 +43347,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
       "weight": 0.6501,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "target": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "source": "gallery-2023_06_30_city_stroll-en-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.6501,
       "linkType": "semantic"
     },
@@ -43268,12 +43362,6 @@
       "source": "post-2025_12_13_sisyphus-en-sec-0-1",
       "target": "post-2025_12_13_sisyphus-zh-TW-sec-0-0",
       "weight": 0.6497,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "weight": 0.6496,
       "linkType": "semantic"
     },
     {
@@ -43289,13 +43377,13 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
       "weight": 0.6496,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
       "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.6496,
       "linkType": "semantic"
@@ -43303,6 +43391,12 @@
     {
       "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "weight": 0.6496,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.6496,
       "linkType": "semantic"
     },
@@ -43475,6 +43569,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
+      "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
+      "weight": 0.6311,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_13_sisyphus-en-sec-0-0",
       "target": "post-2025_12_13_sisyphus-zh-TW-sec-0",
       "weight": 0.6311,
@@ -43518,13 +43618,13 @@
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.6269,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "weight": 0.6269,
       "linkType": "semantic"
     },
@@ -43560,16 +43660,16 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-05-06T01:47:10Z",
-    "nodeCount": 1268,
-    "edgeCount": 3818,
+    "generatedAt": "2026-05-06T02:31:18Z",
+    "nodeCount": 1270,
+    "edgeCount": 3829,
     "threshold": 0.62,
     "maxEdgesPerNode": 8,
     "model": "BAAI/bge-large-zh-v1.5",
     "nodeTypeCounts": {
       "hub": 20,
       "file": 90,
-      "section": 567,
+      "section": 569,
       "image": 549,
       "video": 14,
       "tag": 28

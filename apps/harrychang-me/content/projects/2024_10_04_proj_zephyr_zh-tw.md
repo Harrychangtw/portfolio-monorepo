@@ -72,6 +72,18 @@ Zephyr 的自動化流程經過精心設計，以確保穩定性與效率。
 
 ---
 
+## 後續更新：Zephyr Assist
+
+端到端的全自動方案在測試環境下運作良好，但在部署中相當脆弱。網站任何 UI 變更都會讓流程中斷，而 session 管理也略為彆扭，還會提高被偵測為機器人的風險。
+
+Zephyr 後續演進為 **Zephyr Assist**，一個 Chrome 擴充功能，沿用了相同的 `v17` CNN 模型，但只在真正需要自動化的環節介入：辨識 CAPTCHA、選擇票數，以及送出表單。其餘容易出錯的部分仍由使用者處理，包括初始進入流程、任何隨機問答題，以及區域選擇。
+
+擴充功能直接在瀏覽器內監聽 DOM，將 CAPTCHA 圖片串流至本地的 FastAPI 伺服器執行 PyTorch 模型，回傳結果後立即填入。
+
+![Zephyr Assist 在登入狀態下成功搶得 Daniel Caesar 門票](images/optimized/projects/2024_10_04_zephyr/spectre-daniel-ceasar-demo.mp4)
+
+---
+
 ## 聲明
 
 本專案「Zephyr」僅為個人學習與技術研究之用，旨在探索網頁自動化、電腦視覺與機器學習領域的整合應用。開發此專案的目的純粹是為了學術探討和提升個人開發能力。

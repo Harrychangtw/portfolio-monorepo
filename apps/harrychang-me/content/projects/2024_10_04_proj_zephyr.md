@@ -72,6 +72,18 @@ Rather than purely pursuing speed, Zephyr prioritizes stability in a real-world 
 
 ---
 
+## Update: Zephyr Assist
+
+The end-to-end automated approach worked under testing but proved brittle in practice. Any UI change broke the flow, and session management was awkward and increased the risk of being flagged as a bot.
+
+Zephyr has since evolved into **Zephyr Assist**, a Chrome extension that reuses the same `v17` CNN model but only intervenes where automation actually adds value: solving the CAPTCHA, selecting the ticket number, and submitting the form. For the same ethical reasons as the original Zephyr, the source is not public. The human still handles the parts that previously caused failures, namely the initial entry, any multiple-choice quiz, and area selection.
+
+The extension observes the DOM natively, streams the CAPTCHA image to a local FastAPI server running the PyTorch model, and fills in the answer the moment it returns.
+
+![Zephyr Assist securing a Daniel Caesar ticket while logged in](images/optimized/projects/2024_10_04_zephyr/spectre-daniel-ceasar-demo.mp4)
+
+---
+
 ## Disclaimer
 
 This project, "Zephyr," is intended for personal learning and technical research only. It aims to explore the integrated application of web automation, computer vision, and machine learning. The purpose of developing this project is purely for academic exploration and to enhance personal development skills.
