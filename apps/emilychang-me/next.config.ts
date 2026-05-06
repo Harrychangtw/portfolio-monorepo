@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/api/**/*": ["./content/**/*"],
   },
+  // Keep public/images/** out of serverless function bundles. The CDN serves
+  // these as static assets; the responsive variants emitted by
+  // scripts/optimize-images.js would otherwise push the function size past
+  // Vercel's 300MB limit.
   outputFileTracingExcludes: {
     "*": ["public/images/**"],
   },
