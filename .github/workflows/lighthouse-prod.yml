@@ -3,8 +3,16 @@ name: Lighthouse Audit (harrychang.me)
 on:
   deployment_status:
 
+# Include the deployment environment in the concurrency key. `on: deployment_status`
+# fires this workflow for *every* Vercel deployment in the repo (harry and emily),
+# and the job-level `if:` only filters whether the job runs — the workflow run still
+# claims the concurrency slot. With a flat group, a "phantom" run triggered by an
+# emily deployment_status (job skips on env mismatch) would cancel a live harry
+# audit via cancel-in-progress. Keying on the environment isolates phantom runs
+# into their own group so they cannot preempt the real audit, while still allowing
+# a newer real harry deployment to cancel an older one.
 concurrency:
-  group: lighthouse-prod
+  group: lighthouse-prod-${{ github.event.deployment.environment }}
   cancel-in-progress: true
 
 jobs:
