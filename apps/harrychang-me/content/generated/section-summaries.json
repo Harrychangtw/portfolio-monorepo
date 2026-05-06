@@ -13,7 +13,8 @@
       "One Millimeter": "Lego is a valid, functional solution for adult engineering problems",
       "Acknowledgments": "Credits for Chardin’s art, FormD T1, and Technic LEGO parts"
     },
-    "tldr": "LEGO fan mounts prove the value of DIY hardware for ML learning"
+    "tldr": "LEGO fan mounts prove the value of DIY hardware for ML learning",
+    "shortName": "Lego Fan Mount"
   },
   "post/10-lego-mount/zh-TW": {
     "title": "十七格寬：一個樂高風扇架，以及為何不需要「長大」",
@@ -45,7 +46,8 @@
       "The Gap That Remained": "Traded a missed mountain trip for personal creative growth",
       "Acknowledgments": "Credits Spitzweg art, Zhang’s design, and open-source tech stack"
     },
-    "tldr": "Turning exclusion into creation by building a personal website through imitation"
+    "tldr": "Turning exclusion into creation by building a personal website through imitation",
+    "shortName": "Mountain Stay Behind"
   },
   "post/11-portfolio/zh-TW": {
     "title": "與 harrychang.me 的 365 天：關於心血來潮以及擁有網路的一角",
@@ -79,7 +81,8 @@
       "The Loop That Almost Closed": "Embracing unresolved loss and travel’s refusal to cohere",
       "Acknowledgments": "Credits for artwork and family/friend support on the journey"
     },
-    "tldr": "Contradictions of SF tech, urban decay, and hollow travel memories"
+    "tldr": "Contradictions of SF tech, urban decay, and hollow travel memories",
+    "shortName": "Ghosts of SF"
   },
   "post/12-us-trip/zh-TW": {
     "title": "滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈",
@@ -108,7 +111,8 @@
       "My Commitment": "Authentic, monthly posts featuring original thoughts and zero AI filler",
       "Acknowledgments": "Credits: Title image is Johannes Vermeer’s *The Astronomer*"
     },
-    "tldr": "Monthly blog sharing authentic, raw thoughts on technology, culture, and life"
+    "tldr": "Monthly blog sharing authentic, raw thoughts on technology, culture, and life",
+    "shortName": "Thinking Out Loud"
   },
   "post/2025_12_12_blog_launch/zh-TW": {
     "title": "部落格上線：對於公開思考的承諾",
@@ -131,7 +135,8 @@
       "The Struggle Itself": "Finding fulfillment in the climb despite inevitable failure",
       "Acknowledgments": "Credits Millet's *Man with a Hoe* for the title image"
     },
-    "tldr": "Embrace life’s meaningless struggle by persisting despite inevitable failure"
+    "tldr": "Embrace life’s meaningless struggle by persisting despite inevitable failure",
+    "shortName": "Sisyphus & Absurdity"
   },
   "post/2025_12_13_sisyphus/zh-TW": {
     "title": "薛西弗斯的神話：在荒謬與閱讀之間，為什麼我們仍要思考",
@@ -159,7 +164,8 @@
       "The Climb Continues": "Affinity works well but future subscription fears persist",
       "Acknowledgments": "Credit for Tiepolo’s Trojan Horse title image"
     },
-    "tldr": "Affinity V3 is now free and unified, but corporate takeover fears remain"
+    "tldr": "Affinity V3 is now free and unified, but corporate takeover fears remain",
+    "shortName": "Affinity V3 Review"
   },
   "post/2025_12_14_affinity/zh-TW": {
     "title": "Affinity V3 使用 45 天後：免費的軟體，熟悉的恐懼",
@@ -190,7 +196,8 @@
       "The Point": "Flaws and limitations spark creativity where technical perfection fails",
       "Acknowledgments": "Credits Gerard ter Borch art, GxAce's video, and Linscam Taipei"
     },
-    "tldr": "Embracing the Fuji X-Pro1’s obsolete flaws for more intentional, human photography"
+    "tldr": "Embracing the Fuji X-Pro1’s obsolete flaws for more intentional, human photography",
+    "shortName": "Fujifilm X-Pro1"
   },
   "post/2025_12_19_xpro1/zh-TW": {
     "title": "X-Pro1：不完美、緩慢，以及在枷鎖中跳舞",
@@ -220,7 +227,8 @@
       "Why These Films Stay": "Tragic fathers, lingering love, and the beauty of inevitable loss",
       "Acknowledgments": "Credits for Munch artwork, film stills, and cited directors"
     },
-    "tldr": "Both films explore loving family through intentional distance and inevitable absence"
+    "tldr": "Both films explore loving family through intentional distance and inevitable absence",
+    "shortName": "Aftersun & Paris Texas"
   },
   "post/2025_12_22_aftersun_paris_texas/zh-TW": {
     "title": "因愛，陌生：關於《日麗》與《巴黎，德州》",
@@ -254,7 +262,8 @@
       "Your Lane, Your Definition": "Define your unique value by carving your own niche",
       "Acknowledgments": "Grateful to mentors, colleagues, and family for unconventional NTU admission"
     },
-    "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research"
+    "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research",
+    "shortName": "NTU Special Admission"
   },
   "post/2025_12_24_ntu_cs_special_admission/zh-TW": {
     "title": "一條非典型的路：115 臺大資工資安組特選正取經驗",
@@ -286,7 +295,8 @@
       "Why These?": "Unique chaos offers more character and connection than generic cuteness",
       "Acknowledgments": "Thanks to specific plush brands, helpful friends, and Edward Hicks"
     },
-    "tldr": "Personal collection of weirdly endearing, unhinged plushies and their sentimental backstories"
+    "tldr": "Personal collection of weirdly endearing, unhinged plushies and their sentimental backstories",
+    "shortName": "Unhinged Plushies"
   },
   "post/2026_01_10_plushies/zh-TW": {
     "title": "為什麼我喜歡這些長得怪怪的絨毛玩偶？",
@@ -315,7 +325,8 @@
       "The Door You're Standing In Front Of": "Truman’s cinematic escape versus Caden’s internal, tragic entrapment",
       "Acknowledgments": "Credits for *Las Meninas*, FILMGRAB, Weir, and Kaufman"
     },
-    "tldr": "Truman exits his artificial world; Caden is consumed by his own construction"
+    "tldr": "Truman exits his artificial world; Caden is consumed by his own construction",
+    "shortName": "Truman & Synecdoche"
   },
   "post/2026_02_10_synecdoche_truman/zh-TW": {
     "title": "舞台與出口：關於《紐約浮世繪》與《楚門的世界》",
@@ -348,7 +359,8 @@
       "The Collections": "Three curated Italy galleries: snow, city streets, and small towns",
       "Acknowledgments": "Credits Caillebotte’s art, Justin, and Charlie for feedback"
     },
-    "tldr": "An unjustifiable, screenless Leica purchase prioritizing present experience over rational long-term investment"
+    "tldr": "An unjustifiable, screenless Leica purchase prioritizing present experience over rational long-term investment",
+    "shortName": "Defending Leica M11-D"
   },
   "post/9_m11d/zh-TW": {
     "title": "Leica M11-D：關於特權、在場，以及我無法為這筆消費辯護的種種",
@@ -384,7 +396,8 @@
       "Reflection": "Documenting collaborative teamwork made the audience's applause truly rewarding",
       "Acknowledgments": "Thanks to cast, crew, and students for the performance"
     },
-    "tldr": "Class 2026 won first place reinterpreting Ming-Qing history through musical drama"
+    "tldr": "Class 2026 won first place reinterpreting Ming-Qing history through musical drama",
+    "shortName": "Tumultuous Sun Play"
   },
   "project/2024_08_19_classics_reimagined/zh-TW": {
     "title": "古韻今唱戲劇演出",
@@ -419,7 +432,8 @@
       "Video Design": "Introductory video showcasing Chingshin RAGi features and design philosophy",
       "Acknowledgments": "Thanks to team members Chaney, Raymond, and mentors for support"
     },
-    "tldr": "Award-winning hybrid RAG school chatbot built with SQLite and FastAPI"
+    "tldr": "Award-winning hybrid RAG school chatbot built with SQLite and FastAPI",
+    "shortName": "Chingshin RAG Bot"
   },
   "project/2024_09_23_chingshin_rag/zh-TW": {
     "title": "靜心 RAGi",
@@ -448,7 +462,8 @@
       "Execution Flow": "Automated ticket-grabbing with JSON configuration and stability-focused simulation mechanisms",
       "Disclaimer": "Academic research only; developer disclaims all liability and usage requests"
     },
-    "tldr": "Automated Tixcraft bot using Selenium and CNN to bypass CAPTCHAs fast"
+    "tldr": "Automated Tixcraft bot using Selenium and CNN to bypass CAPTCHAs fast",
+    "shortName": "Zephyr Ticket Bot"
   },
   "project/2024_10_04_proj_zephyr/zh-TW": {
     "title": "Zephyr: 全自動搶票機器人",
@@ -476,7 +491,8 @@
       "Reflection": "Engineering growth through technical rigor and persistent team collaboration",
       "Acknowledgments": "Gratitude to NOVA teammates, mentors, and coaches for engineering growth"
     },
-    "tldr": "Refining robotics engineering through iterative design and stabilizing autonomous programming failures"
+    "tldr": "Refining robotics engineering through iterative design and stabilizing autonomous programming failures",
+    "shortName": "VRC Team Nova"
   },
   "project/2024_10_09_vrc_2813b_nova/zh-TW": {
     "title": "VRC 2813B NOVA",
@@ -515,7 +531,8 @@
       "Reflection": "Ambitious production featuring motorized props, dynamic backdrops, and Fusion techniques",
       "Acknowledgments": "Thanks to students for scriptwriting, acting, and creative production"
     },
-    "tldr": "Student-led 11th-grade play exploring love through three train-themed moral dilemmas"
+    "tldr": "Student-led 11th-grade play exploring love through three train-themed moral dilemmas",
+    "shortName": "Powerplay Drama 2025"
   },
   "project/2025_01_03_powerplay/zh-TW": {
     "title": "2025 POWERPLAY",
@@ -550,7 +567,8 @@
       "Reflection": "Grew research communication skills through professional-grade motion graphics production",
       "Acknowledgments": "Thanks to AK and Micro Volume for script and assets"
     },
-    "tldr": "Short educational video explaining LLM jailbreak attacks and defense strategies"
+    "tldr": "Short educational video explaining LLM jailbreak attacks and defense strategies",
+    "shortName": "LLM Jailbreak Video"
   },
   "project/2025_01_05_aaai_video/zh-TW": {
     "title": "AAAI 2025 教育影片",
@@ -573,7 +591,8 @@
       "Presentation Design": "Affinity-designed 4K slices animated manually in Apple Keynote",
       "Acknowledgments": "Gratitude to SITCON 2025 team and rehearsal reviewers for support"
     },
-    "tldr": "Author details his experience designing a keynote on RAG for SITCON 2025"
+    "tldr": "Author details his experience designing a keynote on RAG for SITCON 2025",
+    "shortName": "Chingshin RAG Keynote"
   },
   "project/2025_03_08_sitcon_keynote/zh-TW": {
     "title": "SITCON 2025 議程",
@@ -596,7 +615,8 @@
       "Reflection": "Music transcends barriers, fostering resilience through heartfelt artistic collaboration",
       "Acknowledgments": "Thanks to Mr. Wu, performers, and staff for sharing hope"
     },
-    "tldr": "Student-led \"Boundless Voices\" charity concert benefitting Mackay Memorial Hospital via musical theater"
+    "tldr": "Student-led \"Boundless Voices\" charity concert benefitting Mackay Memorial Hospital via musical theater",
+    "shortName": "Boundless Voices Concert"
   },
   "project/2025_03_18_boundless_voices/zh-TW": {
     "title": "無界之聲慈善音樂會",
@@ -620,7 +640,8 @@
       "Knowledge Graph": "Interactive D3.js graph visualizes linked content via shared tags",
       "Content & Features": "Showcases projects, gallery, blog, manifesto, papers, and tools used"
     },
-    "tldr": "Turborepo-powered Next.js monorepo serving multiple domains via a markdown-based system"
+    "tldr": "Turborepo-powered Next.js monorepo serving multiple domains via a markdown-based system",
+    "shortName": "Turborepo Monorepo"
   },
   "project/2025_04_12_portfolio/zh-TW": {
     "title": "個人網站",
@@ -653,7 +674,8 @@
       "Conclusion and Future Directions": "PATCH enhances Traditional Chinese LLM safety via efficient fine-tuning",
       "Acknowledgments": "Thanks to co-author Chen, Prof. Tsai, and mentor AK"
     },
-    "tldr": "PATCH: First large-scale safety dataset for Traditional Chinese adversarial evaluation"
+    "tldr": "PATCH: First large-scale safety dataset for Traditional Chinese adversarial evaluation",
+    "shortName": "TC Safety Dataset"
   },
   "project/2025_05_18_patch_dataset/zh-TW": {
     "title": "PATCH 繁中資料集",
@@ -692,7 +714,8 @@
       "Reflection": "Debate fueled personal growth, lasting friendships, and communication skills",
       "Acknowledgments": "Thanks to teammates Morris, Sean and coaches Jeff, Johan"
     },
-    "tldr": "Middle school start led to high school success and top national rankings"
+    "tldr": "Middle school start led to high school success and top national rankings",
+    "shortName": "WSDC Debating Journey"
   },
   "project/2025_08_04_debate/zh-TW": {
     "title": "WSDC 英文辯論經驗",
@@ -731,7 +754,8 @@
       "Personal Reflection": "Courageously navigating uncertainty from a naive idea to TMLR acceptance",
       "Acknowledgments": "Thanks to Prof. Tsai, AK, and TMLR reviewers"
     },
-    "tldr": "Scalable, training-free LLM safety system using retrieval and dynamic perplexity analysis"
+    "tldr": "Scalable, training-free LLM safety system using retrieval and dynamic perplexity analysis",
+    "shortName": "LLM Safety System"
   },
   "project/2025_10_12_fortress/zh-TW": {
     "title": "FORTRESS 防禦系統",
@@ -766,7 +790,8 @@
       "Presentation Design & Easter Eggs": "Viridis hacker aesthetic, Affinity-to-Keynote workflow, and hidden prompt injections",
       "Reflections & Acknowledgments": "Go beyond APIs by deconstructing systems; thanks to CyCraft mentors"
     },
-    "tldr": "Securing LLMs by monitoring internal Attention Heads to detect prompt injections"
+    "tldr": "Securing LLMs by monitoring internal Attention Heads to detect prompt injections",
+    "shortName": "Securing LLM Brains"
   },
   "project/sitcon-2026/zh-TW": {
     "title": "SITCON 2026 議程",
@@ -788,7 +813,8 @@
     "sections": {
       "section-0": "Capturing Tokyo’s poetic essence through light and fleeting silhouettes"
     },
-    "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow"
+    "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow",
+    "shortName": "Tokyo Street Fragments"
   },
   "gallery/2023_06_30_city_stroll/zh-TW": {
     "title": "城市切片",
@@ -804,7 +830,8 @@
     "sections": {
       "section-0": "Vibrant moments found within the city's gray, everyday fragments"
     },
-    "tldr": "Vibrant red details reveal profound beauty within ordinary urban moments"
+    "tldr": "Vibrant red details reveal profound beauty within ordinary urban moments",
+    "shortName": "Red Umbrella Pulse"
   },
   "gallery/2023_07_07_splash_of_red/zh-TW": {
     "title": "一抹紅",
@@ -820,7 +847,8 @@
     "sections": {
       "section-0": "Two silhouettes briefly converge on a bridge at dusk"
     },
-    "tldr": "Two silhouettes briefly converge on a bridge during a golden dusk"
+    "tldr": "Two silhouettes briefly converge on a bridge during a golden dusk",
+    "shortName": "Bridge Convergence"
   },
   "gallery/2023_08_10_intersection/zh-TW": {
     "title": "一期一會",
@@ -836,7 +864,8 @@
     "sections": {
       "section-0": "Urban silhouettes and brief, light-sculpted moments of solitary souls"
     },
-    "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR"
+    "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR",
+    "shortName": "Urban Shadow Poetry"
   },
   "gallery/2023_10_05_solitary_glow/zh-TW": {
     "title": "燈火闌珊之處",
@@ -852,7 +881,8 @@
     "sections": {
       "section-0": "Humanity’s fleeting scale against towering wind turbine colossi"
     },
-    "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature"
+    "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature",
+    "shortName": "Wind Turbine Giants"
   },
   "gallery/2023_10_06_against_giants/zh-TW": {
     "title": "渺滄海之一粟",
@@ -868,7 +898,8 @@
     "sections": {
       "section-0": "Love guides children through life's vastness into cherished memory"
     },
-    "tldr": "Love and shared moments guide children through life’s vast uncertainty"
+    "tldr": "Love and shared moments guide children through life’s vast uncertainty",
+    "shortName": "Tides of Memory"
   },
   "gallery/2023_10_06_guided_by_the_tides/zh-TW": {
     "title": "粼粼之途",
@@ -884,7 +915,8 @@
     "sections": {
       "section-0": "Sunset shadows guide students home, mapping the journey of growth"
     },
-    "tldr": "Students walk home as long shadows narrate their journey of growing up"
+    "tldr": "Students walk home as long shadows narrate their journey of growing up",
+    "shortName": "Golden Hour Lessons"
   },
   "gallery/2023_10_12_lessons_from_the_light/zh-TW": {
     "title": "光引",
@@ -900,7 +932,8 @@
     "sections": {
       "section-0": "Golden dusk transforms city scenes into fleeting, cinematic memories"
     },
-    "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past"
+    "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past",
+    "shortName": "Golden Hour Shadows"
   },
   "gallery/2023_11_18_dusk_impressions/zh-TW": {
     "title": "日暮印象",
@@ -916,7 +949,8 @@
     "sections": {
       "section-0": "Solitary defiance against the ocean's vast indifference"
     },
-    "tldr": "Lone fisherman's quiet defiance against the vast, indifferent ocean deep"
+    "tldr": "Lone fisherman's quiet defiance against the vast, indifferent ocean deep",
+    "shortName": "Solitary Sea Defiance"
   },
   "gallery/2023_12_30_against_the_unknown/zh-TW": {
     "title": "峙",
@@ -932,7 +966,8 @@
     "sections": {
       "section-0": "Taipei 101 rises above clouds over the dreaming city"
     },
-    "tldr": "Taipei's tower pierces amber clouds above a dreaming, glittering city"
+    "tldr": "Taipei's tower pierces amber clouds above a dreaming, glittering city",
+    "shortName": "Taipei Twilight"
   },
   "gallery/2023_12_30_sky_above/zh-TW": {
     "title": "雲端之城",
@@ -948,7 +983,8 @@
     "sections": {
       "section-0": "Journeying through mountain peaks to find your peaceful place"
     },
-    "tldr": "Journey through mountains to find personal peace and your own summit"
+    "tldr": "Journey through mountains to find personal peace and your own summit",
+    "shortName": "Path To Peace"
   },
   "gallery/2024_01_06_hehuanshan/zh-TW": {
     "title": "俯仰之間",
@@ -964,7 +1000,8 @@
     "sections": {
       "section-0": "We keep lighting temporary fires despite inevitable loss"
     },
-    "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness"
+    "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness",
+    "shortName": "Temporary Flames"
   },
   "gallery/2024_02_09_mortal_sparks/zh-TW": {
     "title": "人間煙火",
@@ -980,7 +1017,8 @@
     "sections": {
       "section-0": "Capturing moments in Tainan and Taichung to feel truly alive"
     },
-    "tldr": "Finding life through moments captured in Tainan and Taichung landscapes"
+    "tldr": "Finding life through moments captured in Tainan and Taichung landscapes",
+    "shortName": "Tainan & Taichung Poses"
   },
   "gallery/2024_02_14_go_where_you_feel_most_alive/zh-TW": {
     "title": "心之所向",
@@ -996,7 +1034,8 @@
     "sections": {
       "section-0": "Fleeting urban memories dissolving like raindrops in the city"
     },
-    "tldr": "Fleeting urban memories dissolving like raindrops in the city grey"
+    "tldr": "Fleeting urban memories dissolving like raindrops in the city grey",
+    "shortName": "Rainy Urban Tales"
   },
   "gallery/2024_04_06_city_of_tears/zh-TW": {
     "title": "淚都",
@@ -1012,7 +1051,8 @@
     "sections": {
       "section-0": "Create room for being by embracing intentional stillness and space"
     },
-    "tldr": "Embrace intentional stillness and space to find meaning amidst life's noise"
+    "tldr": "Embrace intentional stillness and space to find meaning amidst life's noise",
+    "shortName": "Art Of Space"
   },
   "gallery/2024_07_03_simple_in_a_complex_world/zh-TW": {
     "title": "行至留白",
@@ -1028,7 +1068,8 @@
     "sections": {
       "section-0": "Embrace unresolved contradictions as the essence of presence"
     },
-    "tldr": "Accepting life’s unresolved contradictions and presence without needing coherence"
+    "tldr": "Accepting life’s unresolved contradictions and presence without needing coherence",
+    "shortName": "Past Lives Travelogue"
   },
   "gallery/2026-us-trip/zh-TW": {
     "title": "不必和解",
@@ -1044,7 +1085,8 @@
     "sections": {
       "section-0": "Italy’s layered history captured in fleeting, everyday human moments"
     },
-    "tldr": "Capturing fleeting, everyday intersections of modern life and ancient Italian history"
+    "tldr": "Capturing fleeting, everyday intersections of modern life and ancient Italian history",
+    "shortName": "Italian City Fragments"
   },
   "gallery/2026_02_08_italy_city/zh-TW": {
     "title": "間奏",
@@ -1060,7 +1102,8 @@
     "sections": {
       "section-0": "Fragmented winter beginnings forming an endless, unfinished journey"
     },
-    "tldr": "A journey through unfinished winter tales focused on beginnings over endings"
+    "tldr": "A journey through unfinished winter tales focused on beginnings over endings",
+    "shortName": "Winter Beginnings"
   },
   "gallery/2026_02_08_italy_mountain/zh-TW": {
     "title": "如果在冬夜，一個旅人... ",
@@ -1076,7 +1119,8 @@
     "sections": {
       "section-0": "Fleeting, unscripted moments found in the margins of travel"
     },
-    "tldr": "Photographs capturing quiet, unscripted moments in the margins of travel"
+    "tldr": "Photographs capturing quiet, unscripted moments in the margins of travel",
+    "shortName": "Life In Margins"
   },
   "gallery/2026_02_08_italy_town/zh-TW": {
     "title": "閒章",
@@ -1301,7 +1345,8 @@
       "The Arms Race": "Elementary classrooms compete via elaborate decorations and lively youthful energy",
       "Acknowledgments": "Image credits Courbet's allegory as inspiration for the building's history"
     },
-    "tldr": "A graduating student observes Chingshin’s cycles, rising toast prices, and fading echoes"
+    "tldr": "A graduating student observes Chingshin’s cycles, rising toast prices, and fading echoes",
+    "shortName": "Two Floors Down"
   },
   "post/13-chingshin/zh-TW": {
     "title": "往下兩層樓：靜心，2026 五月",

@@ -267,6 +267,20 @@ async def backfill_inline_images(session, api_key, sem, dry_run=False):
 # ─── Task 2: TL;DR generation ──────────────────────────────────────────────
 
 
+def _build_shortname_prompt(text, title, locale):
+    """Prompt for a 1-3 word human-feeling label for the rangefinder 404 page."""
+    lang = "Chinese (Traditional)" if locale == "zh-TW" else "English"
+    prompt = (
+        f"Suggest a SHORT label (1-3 words, max 22 characters) for this article \"{title}\". "
+        f"Used in a navigation menu — should feel human and specific, not generic. "
+        f"Examples of good labels: \"Lego Fan Mount\", \"Aftersun & Paris\", \"NTU CS Admission\", "
+        f"\"Unhinged Plushies\", \"US Trip\". "
+        f"Use Title Case in {lang}. Skip leading articles (The/A). No quotes, no period. "
+        f"Return ONLY the label.\n\nContent excerpt:\n{text[:1500]}"
+    )
+    return [{"role": "user", "content": prompt}]
+
+
 def _build_tldr_prompt(text, title, locale, is_section=False, heading=None):
     lang = "Chinese (Traditional)" if locale == "zh-TW" else "English"
     max_w = 10 if is_section else 12
@@ -314,7 +328,30 @@ async def generate_all_tldrs(session, api_key, sem, dry_run=False):
             base_slug = re.sub(r"_zh-tw$", "", slug, flags=re.IGNORECASE)
             file_key = f"{source_type}/{base_slug}/{locale}"
 
-            if file_key in summaries:
+            existing = summaries.get(file_key)
+            needs_tldr = existing is None
+            # shortName only generated for English entries (used by /not-found rangefinder)
+            needs_shortname = locale == "en" and (existing is None or not existing.get("shortName"))
+            if not needs_tldr and not needs_shortname:
+                continue
+
+            # Fast path: existing entry that only needs a shortName backfill
+            if not needs_tldr and needs_shortname:
+                raw = await call_llm(
+                    session, api_key,
+                    _build_shortname_prompt(body, title, locale),
+                    max_tokens=20, semaphore=sem,
+                )
+                short = clean_llm_text(raw)
+                if short:
+                    existing["shortName"] = short
+                    logger.info(f"  {md_file.name} shortName → \"{short}\"")
+                    total += 1
+                files_done += 1
+                if files_done % 5 == 0 and not dry_run:
+                    GENERATED_DIR.mkdir(parents=True, exist_ok=True)
+                    SUMMARIES_PATH.write_text(
+                        json.dumps(summaries, ensure_ascii=False, indent=2), encoding="utf-8")
                 continue
 
             # Extract sections (h2, h3, h4)
@@ -358,9 +395,15 @@ async def generate_all_tldrs(session, api_key, sem, dry_run=False):
                         if h4_body and len(h4_body) >= 50:
                             sections.append({"heading": h4_heading, "body": h4_body, "index": f"{i}-{j}-{k}"})
 
-            # Build all tasks: 1 file-level + N section-level
+            # Build all tasks: 1 file-level + (1 shortName for en) + N section-level
             coros = [call_llm(session, api_key,
                               _build_tldr_prompt(body, title, locale), max_tokens=30, semaphore=sem)]
+            if needs_shortname:
+                coros.append(call_llm(
+                    session, api_key,
+                    _build_shortname_prompt(body, title, locale),
+                    max_tokens=20, semaphore=sem,
+                ))
             for sec in sections:
                 coros.append(call_llm(
                     session, api_key,
@@ -369,6 +412,7 @@ async def generate_all_tldrs(session, api_key, sem, dry_run=False):
                 ))
 
             results = await asyncio.gather(*coros)
+            section_results_offset = 2 if needs_shortname else 1
 
             file_entry = {"title": title, "locale": locale, "sections": {}}
 
@@ -379,8 +423,16 @@ async def generate_all_tldrs(session, api_key, sem, dry_run=False):
                 logger.info(f"  {md_file.name} → \"{file_tldr}\"")
                 total += 1
 
+            # shortName (English only)
+            if needs_shortname:
+                short = clean_llm_text(results[1])
+                if short:
+                    file_entry["shortName"] = short
+                    logger.info(f"  {md_file.name} shortName → \"{short}\"")
+                    total += 1
+
             # Section-level
-            for sec, raw in zip(sections, results[1:]):
+            for sec, raw in zip(sections, results[section_results_offset:]):
                 sec_tldr = clean_llm_text(raw)
                 if sec_tldr:
                     key = sec["heading"] or f"section-{sec['index']}"

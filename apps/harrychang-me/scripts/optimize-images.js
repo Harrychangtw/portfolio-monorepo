@@ -1,516 +1,602 @@
 #!/usr/bin/env node
 /**
  * Image Optimization Script
- * 
- * This script optimizes images for the portfolio website according to the guidelines.
- * It processes images in the public/images/projects and public/images/gallery folders.
- * 
- * Usage:
- *   node scripts/optimize-images.js
- * 
- * Requirements:
- *   - sharp: npm install sharp
+ *
+ * Processes images in public/images/{projects,gallery,blogs} into responsive
+ * WebP variants under public/images/optimized.
+ *
+ * Behaviors:
+ *   - Skips images whose outputs are all newer than the source.
+ *   - Runs main + responsive variants + thumbnail in parallel per image.
+ *   - Processes multiple images concurrently (pool sized to CPU count, capped 8).
+ *   - Colorful pnpm-style logging.
  */
 
-const fs = require('fs');
-const path = require('path');
-const sharp = require('sharp');
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
+const sharp = require("sharp");
 
-// Widths emitted as `<name>-<width>w.webp` siblings of the main file. Consumed
-// by the custom Next.js loader in packages/ui/image-container.tsx — must stay
-// in sync with RESPONSIVE_WIDTHS there.
-const RESPONSIVE_WIDTHS = [640, 828, 1080, 1920, 2560];
+// ─── Output formatting ─────────────────────────────────────────────────────
 
-async function generateResponsiveVariants(imagePath, outputFilename, quality, { rotate = false } = {}) {
-  const baseDir = path.dirname(outputFilename);
-  const baseName = path.basename(outputFilename, '.webp');
-  for (const width of RESPONSIVE_WIDTHS) {
-    const variantPath = path.join(baseDir, `${baseName}-${width}w.webp`);
-    let pipeline = sharp(imagePath);
-    if (rotate) pipeline = pipeline.rotate();
-    await pipeline
-      .resize({ width, fit: 'inside', withoutEnlargement: true })
-      .webp({ quality })
-      .toFile(variantPath);
-  }
+const useColor = process.stdout.isTTY && !process.env.NO_COLOR;
+const c = (code) => (s) => (useColor ? `\x1b[${code}m${s}\x1b[0m` : s);
+const dim = c("2");
+const bold = c("1");
+const cyan = c("36");
+const green = c("32");
+const yellow = c("33");
+const red = c("31");
+const magenta = c("35");
+
+const startedAt = Date.now();
+function elapsed(ms = Date.now() - startedAt) {
+  if (ms < 1000) return `${ms}ms`;
+  return `${(ms / 1000).toFixed(1)}s`;
 }
 
-// Configuration
+// ─── Config (unchanged) ────────────────────────────────────────────────────
+
+const RESPONSIVE_WIDTHS = [640, 828, 1080, 1920, 2560];
+
 const config = {
   projects: {
-    landscape: {
-      width: 2000,
-      height: 1200,
-      quality: 90,
-    },
-    portrait: {
-      width: 1200,
-      height: 1800,
-      quality: 90,
-    },
-    hero: {
-      width: 2560,
-      quality: 95,
-    },
-    // Higher quality for title images (titlecard or first image in folder)
-    title: {
-      width: 3200,
-      quality: 98,
-    },
-    thumbnail: {
-      width: 10,  // Tiny blur placeholder - dimensions come from full-res at build time
-      quality: 60,
-    }
+    landscape: { width: 2000, height: 1200, quality: 90 },
+    portrait: { width: 1200, height: 1800, quality: 90 },
+    hero: { width: 2560, quality: 95 },
+    title: { width: 3200, quality: 98 },
+    thumbnail: { width: 10, quality: 60 },
   },
   gallery: {
-    landscape: {
-      width: 2560,
-      height: 1440,
-      quality: 90,
-    },
-    portrait: {
-      width: 1440,
-      height: 2160,
-      quality: 90,
-    },
-    fullscreen: {
-      width: 3200,
-      quality: 95,
-    },
-    // Higher quality for gallery title images (first image or main display)
-    title: {
-      width: 3840,  // 4K width for crisp display
-      quality: 98,
-    },
-    thumbnail: {
-      width: 10,
-      quality: 60,
-    }
+    landscape: { width: 2560, height: 1440, quality: 90 },
+    portrait: { width: 1440, height: 2160, quality: 90 },
+    fullscreen: { width: 3200, quality: 95 },
+    title: { width: 3840, quality: 98 },
+    thumbnail: { width: 10, quality: 60 },
   },
-    blogs: {
-    landscape: {
-      width: 2000,
-      height: 1200,
-      quality: 90,
-    },
-    portrait: {
-      width: 1200,
-      height: 1800,
-      quality: 90,
-    },
-    hero: {
-      width: 2560,
-      quality: 95,
-    },
-    title: {
-      width: 3200,
-      quality: 98,
-    },
-    thumbnail: {
-      width: 10,
-      quality: 60,
-    }
+  blogs: {
+    landscape: { width: 2000, height: 1200, quality: 90 },
+    portrait: { width: 1200, height: 1800, quality: 90 },
+    hero: { width: 2560, quality: 95 },
+    title: { width: 3200, quality: 98 },
+    thumbnail: { width: 10, quality: 60 },
   },
   directories: {
-    projectsSource: path.join(process.cwd(), 'public', 'images', 'projects'),
-    gallerySource: path.join(process.cwd(), 'public', 'images', 'gallery'),
-    blogsSource: path.join(process.cwd(), 'public', 'images', 'blogs'),
-    optimized: path.join(process.cwd(), 'public', 'images', 'optimized'),
-  }
+    projectsSource: path.join(process.cwd(), "public", "images", "projects"),
+    gallerySource: path.join(process.cwd(), "public", "images", "gallery"),
+    blogsSource: path.join(process.cwd(), "public", "images", "blogs"),
+    optimized: path.join(process.cwd(), "public", "images", "optimized"),
+  },
 };
 
-// Ensure output directories exist
 if (!fs.existsSync(config.directories.optimized)) {
   fs.mkdirSync(config.directories.optimized, { recursive: true });
 }
 
-// Helper to check if file exists and return replacement message
-function checkFileReplacement(filePath) {
-  return fs.existsSync(filePath) ? ' (replaced)' : ' (new)';
+// ─── Helpers ───────────────────────────────────────────────────────────────
+
+function walkImages(dir) {
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...walkImages(full));
+    else if (/\.(jpg|jpeg|png)$/i.test(entry.name)) out.push(full);
+  }
+  return out;
 }
 
-// Helper to process a directory recursively
-async function processDirectory(dir) {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  const files = [];
-  
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      files.push(...await processDirectory(fullPath));
-    } else if (/\.(jpg|jpeg|png)$/i.test(entry.name)) {
-      files.push(fullPath);
-    }
-  }
-  
-  return files;
+function srcMtime(p) {
+  return fs.statSync(p).mtimeMs;
+}
+function isFresh(outPath, srcTime) {
+  return fs.existsSync(outPath) && fs.statSync(outPath).mtimeMs >= srcTime;
 }
 
-// Process gallery images
-async function processGalleryImages() {
-  console.log('Processing gallery images...');
-  
-  if (!fs.existsSync(config.directories.gallerySource)) {
-    console.log('Gallery directory does not exist. Skipping.');
-    return;
-  }
+function expectedOutputs(outputFilename) {
+  const baseDir = path.dirname(outputFilename);
+  const baseName = path.basename(outputFilename, ".webp");
+  return [
+    outputFilename,
+    path.join(baseDir, `${baseName}-thumb.webp`),
+    ...RESPONSIVE_WIDTHS.map((w) =>
+      path.join(baseDir, `${baseName}-${w}w.webp`),
+    ),
+  ];
+}
 
-  const galleryFolders = fs.readdirSync(config.directories.gallerySource);
-  
-  for (const galleryFolder of galleryFolders) {
-    const galleryPath = path.join(config.directories.gallerySource, galleryFolder);
-    
-    if (!fs.lstatSync(galleryPath).isDirectory()) {
-      continue;
-    }
-    
-    console.log(`Processing gallery: ${galleryFolder}`);
-    
-    const images = fs.readdirSync(galleryPath).filter(file => 
-      /\.(jpg|jpeg|png)$/i.test(file)
+// ─── Per-image worker ──────────────────────────────────────────────────────
+
+/**
+ * Process one image: emits main + thumbnail + responsive variants.
+ * Returns { status: 'optimized' | 'skipped' | 'error', kind, ms, ... }.
+ */
+async function processOne({
+  imagePath,
+  outputFilename,
+  category,
+  variant,
+  mainResize,
+  mainQuality,
+  thumbnailQuality,
+  thumbnailWidth,
+  rotate = false,
+  displayPath,
+}) {
+  const t0 = Date.now();
+  const srcTime = srcMtime(imagePath);
+
+  const baseDir = path.dirname(outputFilename);
+  const baseName = path.basename(outputFilename, ".webp");
+  const thumbFilename = path.join(baseDir, `${baseName}-thumb.webp`);
+  const variantPaths = RESPONSIVE_WIDTHS.map((w) => ({
+    width: w,
+    out: path.join(baseDir, `${baseName}-${w}w.webp`),
+  }));
+
+  const allOutputs = [
+    outputFilename,
+    thumbFilename,
+    ...variantPaths.map((v) => v.out),
+  ];
+  const inputBytes = fs.statSync(imagePath).size;
+  if (allOutputs.every((p) => isFresh(p, srcTime))) {
+    const outputBytes = allOutputs.reduce(
+      (sum, p) => sum + (fs.existsSync(p) ? fs.statSync(p).size : 0),
+      0,
     );
-    
-    for (let i = 0; i < images.length; i++) {
-      const image = images[i];
-      const imagePath = path.join(galleryPath, image);
-      const outputPath = path.join(config.directories.optimized, 'gallery', galleryFolder);
-      
-      if (!fs.existsSync(outputPath)) {
-        fs.mkdirSync(outputPath, { recursive: true });
+    return {
+      status: "skipped",
+      category,
+      variant,
+      displayPath,
+      ms: Date.now() - t0,
+      inputBytes,
+      outputBytes,
+    };
+  }
+
+  fs.mkdirSync(baseDir, { recursive: true });
+
+  const baseInput = () => {
+    const p = sharp(imagePath);
+    return rotate ? p.rotate() : p;
+  };
+
+  const tasks = [];
+
+  // Main
+  tasks.push(
+    baseInput()
+      .resize({ ...mainResize, fit: "inside", withoutEnlargement: true })
+      .webp({ quality: mainQuality })
+      .toFile(outputFilename),
+  );
+
+  // Responsive variants
+  for (const v of variantPaths) {
+    tasks.push(
+      baseInput()
+        .resize({ width: v.width, fit: "inside", withoutEnlargement: true })
+        .webp({ quality: mainQuality })
+        .toFile(v.out),
+    );
+  }
+
+  // Thumbnail (skip if filename already contains 'thumb')
+  if (!imagePath.includes("thumb")) {
+    tasks.push(
+      baseInput()
+        .resize({
+          width: thumbnailWidth,
+          fit: "inside",
+          withoutEnlargement: true,
+        })
+        .blur(2)
+        .webp({ quality: thumbnailQuality })
+        .toFile(thumbFilename),
+    );
+  }
+
+  await Promise.all(tasks);
+  const outputBytes = allOutputs.reduce(
+    (sum, p) => sum + (fs.existsSync(p) ? fs.statSync(p).size : 0),
+    0,
+  );
+  return {
+    status: "optimized",
+    category,
+    variant,
+    displayPath,
+    ms: Date.now() - t0,
+    inputBytes,
+    outputBytes,
+  };
+}
+
+// ─── Per-image planner ─────────────────────────────────────────────────────
+
+async function planGallery(imagePath, galleryFolder, indexInFolder) {
+  const fileName = path.basename(imagePath);
+  const outputDir = path.join(
+    config.directories.optimized,
+    "gallery",
+    galleryFolder,
+  );
+  const outputFilename = path.join(
+    outputDir,
+    fileName.replace(/\.[^.]+$/, ".webp"),
+  );
+  const meta = await sharp(imagePath).metadata();
+  const isPortrait = meta.height > meta.width;
+  const isFullscreen =
+    fileName.includes("fullscreen") || fileName.includes("hero");
+  const isTitle = indexInFolder === 0;
+
+  let variant, settings;
+  if (isTitle) ((variant = "title"), (settings = config.gallery.title));
+  else if (isFullscreen)
+    ((variant = "fullscreen"), (settings = config.gallery.fullscreen));
+  else if (isPortrait)
+    ((variant = "portrait"), (settings = config.gallery.portrait));
+  else ((variant = "landscape"), (settings = config.gallery.landscape));
+
+  return {
+    imagePath,
+    outputFilename,
+    category: "gallery",
+    variant,
+    mainResize: { width: settings.width, height: settings.height },
+    mainQuality: settings.quality,
+    thumbnailQuality: config.gallery.thumbnail.quality,
+    thumbnailWidth: config.gallery.thumbnail.width,
+    displayPath: `${galleryFolder}/${fileName}`,
+  };
+}
+
+async function planFlat(
+  imagePath,
+  sourceRoot,
+  outputSub,
+  kindConfig,
+  { rotate = false } = {},
+) {
+  const relativePath = path.relative(sourceRoot, imagePath);
+  const outputDir = path.join(
+    config.directories.optimized,
+    outputSub,
+    path.dirname(relativePath),
+  );
+  const outputFilename = path.join(
+    outputDir,
+    path.basename(imagePath).replace(/\.[^.]+$/, ".webp"),
+  );
+  const lower = imagePath.toLowerCase();
+  const baseName = path.basename(imagePath).toLowerCase();
+  const isTitleCard = lower.includes("titlecard") || baseName.includes("title");
+  const isHero = lower.includes("hero") || baseName.startsWith("hero");
+
+  const meta = await (
+    rotate ? sharp(imagePath).rotate() : sharp(imagePath)
+  ).metadata();
+  const isPortrait = meta.height > meta.width;
+
+  let variant, settings;
+  if (isTitleCard) ((variant = "title"), (settings = kindConfig.title));
+  else if (isHero) ((variant = "hero"), (settings = kindConfig.hero));
+  else if (isPortrait)
+    ((variant = "portrait"), (settings = kindConfig.portrait));
+  else ((variant = "landscape"), (settings = kindConfig.landscape));
+
+  return {
+    imagePath,
+    outputFilename,
+    category: outputSub,
+    variant,
+    mainResize: { width: settings.width, height: settings.height },
+    mainQuality: settings.quality,
+    thumbnailQuality: kindConfig.thumbnail.quality,
+    thumbnailWidth: kindConfig.thumbnail.width,
+    rotate,
+    displayPath: relativePath,
+  };
+}
+
+// ─── Concurrency pool ──────────────────────────────────────────────────────
+
+async function pool(items, worker, concurrency) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  const runners = Array.from(
+    { length: Math.min(concurrency, items.length) },
+    async () => {
+      while (true) {
+        const i = cursor++;
+        if (i >= items.length) return;
+        results[i] = await worker(items[i], i);
       }
-      
-      const isFullscreen = image.includes('fullscreen') || image.includes('hero');
-      // First image in the gallery is typically the title image
-      const isTitleImage = i === 0;
-      const outputFilename = path.join(outputPath, image.replace(/\.[^.]+$/, '.webp'));
-      const replacementMsg = checkFileReplacement(outputFilename);
-      
-      try {
-        // Get image metadata
-        const metadata = await sharp(imagePath).metadata();
-        const isPortrait = metadata.height > metadata.width;
-        
-        // Generate optimized full-size image
-        if (isTitleImage) {
-          // Use higher quality settings for title images
-          await sharp(imagePath)
-            .resize({
-              width: config.gallery.title.width,
-              fit: 'inside',
-              withoutEnlargement: true
-            })
-            .webp({ quality: config.gallery.title.quality })
-            .toFile(outputFilename);
-            
-          console.log(`  Optimized title image (high quality): ${image} -> ${path.basename(outputFilename)}${replacementMsg}`);
-        } else if (isFullscreen) {
-          await sharp(imagePath)
-            .resize({
-              width: config.gallery.fullscreen.width,
-              fit: 'inside',
-              withoutEnlargement: true
-            })
-            .webp({ quality: config.gallery.fullscreen.quality })
-            .toFile(outputFilename);
-            
-          console.log(`  Optimized fullscreen: ${image} -> ${path.basename(outputFilename)}${replacementMsg}`);
-        } else if (isPortrait) {
-          await sharp(imagePath)
-            .resize({
-              width: config.gallery.portrait.width,
-              height: config.gallery.portrait.height,
-              fit: 'inside',
-              withoutEnlargement: true
-            })
-            .webp({ quality: config.gallery.portrait.quality })
-            .toFile(outputFilename);
-            
-          console.log(`  Optimized portrait: ${image} -> ${path.basename(outputFilename)}${replacementMsg}`);
-        } else {
-          await sharp(imagePath)
-            .resize({
-              width: config.gallery.landscape.width,
-              height: config.gallery.landscape.height,
-              fit: 'inside',
-              withoutEnlargement: true
-            })
-            .webp({ quality: config.gallery.landscape.quality })
-            .toFile(outputFilename);
-            
-          console.log(`  Optimized landscape: ${image} -> ${path.basename(outputFilename)}${replacementMsg}`);
+    },
+  );
+  await Promise.all(runners);
+  return results;
+}
+
+// ─── Variant → color ───────────────────────────────────────────────────────
+
+const variantColor = {
+  title: magenta,
+  hero: yellow,
+  fullscreen: yellow,
+  portrait: cyan,
+  landscape: cyan,
+};
+
+// ─── Bytes formatting ──────────────────────────────────────────────────────
+
+function fmtBytes(n) {
+  if (n < 1024) return `${n}B`;
+  if (n < 1024 * 1024) return `${(n / 1024).toFixed(1)}KB`;
+  if (n < 1024 * 1024 * 1024) return `${(n / (1024 * 1024)).toFixed(1)}MB`;
+  return `${(n / (1024 * 1024 * 1024)).toFixed(2)}GB`;
+}
+
+// ─── tqdm-style progress renderer ──────────────────────────────────────────
+
+function makeRenderer(total) {
+  const isTTY = process.stdout.isTTY && !process.env.NO_COLOR;
+  const inFlight = new Map(); // plan → startedAt
+  let counter = 0;
+  let optimized = 0;
+  let skipped = 0;
+  let errors = 0;
+  let totalIn = 0;
+  let totalOut = 0;
+  const startWall = Date.now();
+  let lastRender = 0;
+  let rafTimer = null;
+
+  function bar(done, tot, width = 22) {
+    const filled = Math.min(width, Math.round((done / tot) * width));
+    return cyan("█".repeat(filled)) + dim("░".repeat(width - filled));
+  }
+
+  function render(force = false) {
+    if (!isTTY) return;
+    const now = Date.now();
+    if (!force && now - lastRender < 80) return;
+    lastRender = now;
+
+    let current = "...";
+    let currentVariant = "";
+    if (inFlight.size > 0) {
+      // Show most-recently-started image.
+      let latest = null;
+      let latestT = 0;
+      for (const [plan, t] of inFlight) {
+        if (t > latestT) {
+          latestT = t;
+          latest = plan;
         }
+      }
+      if (latest) {
+        current = latest.displayPath;
+        const colorFn = variantColor[latest.variant] || cyan;
+        currentVariant = colorFn(latest.variant);
+      }
+    }
 
-        const galleryMainQuality = isTitleImage
-          ? config.gallery.title.quality
-          : isFullscreen
-            ? config.gallery.fullscreen.quality
-            : isPortrait
-              ? config.gallery.portrait.quality
-              : config.gallery.landscape.quality;
-        await generateResponsiveVariants(imagePath, outputFilename, galleryMainQuality);
+    const pct = String(Math.round((counter / total) * 100)).padStart(3);
+    const cnt = `${String(counter).padStart(String(total).length)}/${total}`;
+    const elapsedS = ((now - startWall) / 1000).toFixed(1) + "s";
+    const rate =
+      counter > 0
+        ? `${(counter / ((now - startWall) / 1000)).toFixed(1)}/s`
+        : "—";
+    const inFlightTag = inFlight.size > 1 ? dim(`+${inFlight.size - 1}`) : "";
 
-        // Generate thumbnail for blur-up loading
-        if (!image.includes('thumb')) {
-          const thumbFilename = path.join(outputPath, image.replace(/\.[^.]+$/, '-thumb.webp'));
-          const thumbReplacementMsg = checkFileReplacement(thumbFilename);
-          
-          await sharp(imagePath)
-            .resize({
-              width: config.gallery.thumbnail.width,
-              withoutEnlargement: true,
-              fit: 'inside',
-            })
-            .blur(2)
-            .webp({ quality: config.gallery.thumbnail.quality })
-            .toFile(thumbFilename);
-            
-          console.log(`  Generated thumbnail: ${image} -> ${path.basename(thumbFilename)}${thumbReplacementMsg}`);
+    // Truncate path so the line fits ~120 cols
+    const cols = process.stdout.columns || 120;
+    const meta = `${bar(counter, total)} ${bold(`${pct}%`)} ${dim(cnt)} ${dim("·")} ${dim(elapsedS)} ${dim("·")} ${dim(rate)}`;
+    const prefix = `  ${meta} ${dim("▸")} ${currentVariant} `;
+    // Estimate visible length by stripping ANSI
+    const visible = prefix.replace(/\x1b\[[0-9;]*m/g, "").length;
+    const room = Math.max(10, cols - visible - 6);
+    const shownPath =
+      current.length > room
+        ? "…" + current.slice(current.length - room + 1)
+        : current;
+    const line = `${prefix}${shownPath} ${inFlightTag}`;
+
+    process.stdout.write("\r\x1b[2K" + line);
+  }
+
+  function scheduleRender() {
+    if (!isTTY) return;
+    if (rafTimer) return;
+    rafTimer = setTimeout(() => {
+      rafTimer = null;
+      render();
+    }, 80);
+  }
+
+  function clearLine() {
+    if (isTTY) process.stdout.write("\r\x1b[2K");
+  }
+
+  return {
+    start(plan) {
+      inFlight.set(plan, Date.now());
+      if (!isTTY) {
+        // CI/non-TTY: print a one-line start marker.
+        const colorFn = variantColor[plan.variant] || cyan;
+        console.log(
+          `  ${dim("▸")} ${plan.displayPath} ${dim("·")} ${colorFn(plan.variant)}`,
+        );
+      }
+      scheduleRender();
+    },
+    complete(plan, result) {
+      inFlight.delete(plan);
+      counter++;
+      if (result.status === "optimized") optimized++;
+      else if (result.status === "skipped") skipped++;
+      else errors++;
+      totalIn += result.inputBytes || 0;
+      totalOut += result.outputBytes || 0;
+      if (!isTTY) {
+        const tag =
+          result.status === "optimized"
+            ? green("✓")
+            : result.status === "skipped"
+              ? dim("∙")
+              : red("✗");
+        const colorFn = variantColor[result.variant] || cyan;
+        const sizes =
+          result.inputBytes && result.outputBytes
+            ? ` ${dim(`${fmtBytes(result.inputBytes)} → ${fmtBytes(result.outputBytes)}`)}`
+            : "";
+        console.log(
+          `    ${tag} ${result.displayPath} ${dim("·")} ${colorFn(result.variant)}${sizes} ${dim(`(${elapsed(result.ms)})`)}`,
+        );
+      }
+      scheduleRender();
+    },
+    error(plan, err) {
+      inFlight.delete(plan);
+      counter++;
+      errors++;
+      clearLine();
+      console.log(
+        `  ${red("✗")} ${plan.displayPath} ${dim("·")} ${red(err.message)}`,
+      );
+      scheduleRender();
+    },
+    finalize() {
+      if (rafTimer) {
+        clearTimeout(rafTimer);
+        rafTimer = null;
+      }
+      clearLine();
+      const ratio = totalIn > 0 ? Math.round((totalOut / totalIn) * 100) : 0;
+      const saved = Math.max(0, totalIn - totalOut);
+      const sizeReport =
+        totalIn > 0
+          ? ` ${dim("·")} ${green(fmtBytes(totalIn))} ${dim("→")} ${green(fmtBytes(totalOut))} ${dim(`(${ratio}%, saved ${fmtBytes(saved)})`)}`
+          : "";
+      console.log(
+        `${bold(green("✔"))} ${bold("Done")} ${dim("·")} ${green(`${optimized} optimized`)}, ${dim(`${skipped} skipped`)}${errors ? `, ${red(`${errors} errors`)}` : ""}${sizeReport} ${dim(`· ${elapsed()}`)}`,
+      );
+      return { optimized, skipped, errors };
+    },
+  };
+}
+
+async function buildPlans() {
+  const plans = [];
+
+  // Gallery: ordered per folder so isTitle = first image is deterministic.
+  if (fs.existsSync(config.directories.gallerySource)) {
+    const folders = fs
+      .readdirSync(config.directories.gallerySource)
+      .filter((f) => {
+        try {
+          return fs
+            .statSync(path.join(config.directories.gallerySource, f))
+            .isDirectory();
+        } catch {
+          return false;
         }
-      } catch (error) {
-        console.error(`  Error processing ${image}:`, error);
+      });
+    for (const folder of folders) {
+      const folderPath = path.join(config.directories.gallerySource, folder);
+      const images = fs
+        .readdirSync(folderPath)
+        .filter((f) => /\.(jpg|jpeg|png)$/i.test(f))
+        .sort();
+      for (let i = 0; i < images.length; i++) {
+        plans.push(
+          await planGallery(path.join(folderPath, images[i]), folder, i),
+        );
       }
     }
   }
+
+  // Projects
+  for (const img of walkImages(config.directories.projectsSource)) {
+    plans.push(
+      await planFlat(
+        img,
+        config.directories.projectsSource,
+        "projects",
+        config.projects,
+      ),
+    );
+  }
+
+  // Blogs
+  for (const img of walkImages(config.directories.blogsSource)) {
+    plans.push(
+      await planFlat(
+        img,
+        config.directories.blogsSource,
+        "blogs",
+        config.blogs,
+        {
+          rotate: true,
+        },
+      ),
+    );
+  }
+
+  return plans;
 }
 
-// Process project images
-async function processProjectImages() {
-  console.log('Processing project images...');
-  
-  if (!fs.existsSync(config.directories.projectsSource)) {
-    console.log('Projects directory does not exist. Skipping.');
-    return;
-  }
-
-  const images = await processDirectory(config.directories.projectsSource);
-
-  for (const imagePath of images) {
-    // Maintain the directory structure in the output
-    const relativePath = path.relative(config.directories.projectsSource, imagePath);
-    const outputPath = path.join(config.directories.optimized, 'projects', path.dirname(relativePath));
-    
-    if (!fs.existsSync(outputPath)) {
-      fs.mkdirSync(outputPath, { recursive: true });
-    }
-    
-    const outputFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '.webp'));
-    const replacementMsg = checkFileReplacement(outputFilename);
-    
-    try {
-      // Get image metadata
-      const metadata = await sharp(imagePath).metadata();
-      const isPortrait = metadata.height > metadata.width;
-      const isHero = imagePath.toLowerCase().includes('hero') || path.basename(imagePath).startsWith('hero');
-      const isTitleCard = imagePath.toLowerCase().includes('titlecard') || path.basename(imagePath).toLowerCase().includes('title');
-      
-      // Generate optimized full-size image
-      if (isTitleCard) {
-        // Use highest quality settings for title cards
-        await sharp(imagePath)
-          .resize({
-            width: config.projects.title.width,
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .webp({ quality: config.projects.title.quality })
-          .toFile(outputFilename);
-          
-        console.log(`  Optimized title card (high quality): ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
-      } else if (isHero) {
-        await sharp(imagePath)
-          .resize({
-            width: config.projects.hero.width,
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .webp({ quality: config.projects.hero.quality })
-          .toFile(outputFilename);
-          
-        console.log(`  Optimized hero: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
-      } else if (isPortrait) {
-        await sharp(imagePath)
-          .resize({
-            width: config.projects.portrait.width,
-            height: config.projects.portrait.height,
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .webp({ quality: config.projects.portrait.quality })
-          .toFile(outputFilename);
-          
-        console.log(`  Optimized portrait: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
-      } else {
-        await sharp(imagePath)
-          .resize({
-            width: config.projects.landscape.width,
-            height: config.projects.landscape.height,
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .webp({ quality: config.projects.landscape.quality })
-          .toFile(outputFilename);
-          
-        console.log(`  Optimized landscape: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
-      }
-
-      const projectsMainQuality = isTitleCard
-        ? config.projects.title.quality
-        : isHero
-          ? config.projects.hero.quality
-          : isPortrait
-            ? config.projects.portrait.quality
-            : config.projects.landscape.quality;
-      await generateResponsiveVariants(imagePath, outputFilename, projectsMainQuality);
-
-      // Generate thumbnail for blur-up loading
-      if (!imagePath.includes('thumb')) {
-        const thumbFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '-thumb.webp'));
-        const thumbReplacementMsg = checkFileReplacement(thumbFilename);
-
-        await sharp(imagePath)
-          .resize({
-            width: config.projects.thumbnail.width,
-            withoutEnlargement: true,
-            fit: 'inside',
-          })
-          .blur(2)
-          .webp({ quality: config.projects.thumbnail.quality })
-          .toFile(thumbFilename);
-          
-        console.log(`  Generated thumbnail: ${relativePath} -> ${path.basename(thumbFilename)}${thumbReplacementMsg}`);
-      }
-    } catch (error) {
-      console.error(`  Error processing ${relativePath}:`, error);
-    }
-  }
-}
-
-
-
- 
-// Process blog images
-async function processBlogImages() {
-  console.log('Processing blog images...');
-  
-  if (!fs.existsSync(config.directories.blogsSource)) {
-    console.log('Blogs directory does not exist. Skipping.');
-    return;
-  }
-
-  const images = await processDirectory(config.directories.blogsSource);
-
-  for (const imagePath of images) {
-    // Maintain the directory structure in the output
-    const relativePath = path.relative(config.directories.blogsSource, imagePath);
-    const outputPath = path.join(config.directories.optimized, 'blogs', path.dirname(relativePath));
-    
-    if (!fs.existsSync(outputPath)) {
-      fs.mkdirSync(outputPath, { recursive: true });
-    }
-    
-    const outputFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '.webp'));
-    const replacementMsg = checkFileReplacement(outputFilename);
-    
-    try {
-      // Get image metadata
-      const pipeline = sharp(imagePath).rotate();
-      const metadata = await pipeline.metadata();
-      const isPortrait = metadata.height > metadata.width;
-      const isHero = imagePath.toLowerCase().includes('hero') || path.basename(imagePath).startsWith('hero');
-      const isTitleCard = imagePath.toLowerCase().includes('titlecard') || path.basename(imagePath).toLowerCase().includes('title');
-      
-      // Generate optimized full-size image
-      if (isTitleCard) {
-        // Use highest quality settings for title cards
-        await pipeline.clone()
-          .resize({
-            width: config.blogs.title.width,
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .webp({ quality: config.blogs.title.quality })
-          .toFile(outputFilename);
-          
-        console.log(`  Optimized title card (high quality): ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
-      } else if (isHero) {
-        await pipeline.clone()
-          .resize({
-            width: config.blogs.hero.width,
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .webp({ quality: config.blogs.hero.quality })
-          .toFile(outputFilename);
-          
-        console.log(`  Optimized hero: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
-      } else if (isPortrait) {
-        await pipeline.clone()
-          .resize({
-            width: config.blogs.portrait.width,
-            height: config.blogs.portrait.height,
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .webp({ quality: config.blogs.portrait.quality })
-          .toFile(outputFilename);
-          
-        console.log(`  Optimized portrait: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
-      } else {
-        await pipeline.clone()
-          .resize({
-            width: config.blogs.landscape.width,
-            height: config.blogs.landscape.height,
-            fit: 'inside',
-            withoutEnlargement: true
-          })
-          .webp({ quality: config.blogs.landscape.quality })
-          .toFile(outputFilename);
-          
-        console.log(`  Optimized landscape: ${relativePath} -> ${path.basename(outputFilename)}${replacementMsg}`);
-      }
-
-      const blogsMainQuality = isTitleCard
-        ? config.blogs.title.quality
-        : isHero
-          ? config.blogs.hero.quality
-          : isPortrait
-            ? config.blogs.portrait.quality
-            : config.blogs.landscape.quality;
-      await generateResponsiveVariants(imagePath, outputFilename, blogsMainQuality, { rotate: true });
-
-      // Generate thumbnail for blur-up loading
-      if (!imagePath.includes('thumb')) {
-        const thumbFilename = path.join(outputPath, path.basename(imagePath).replace(/\.[^.]+$/, '-thumb.webp'));
-        const thumbReplacementMsg = checkFileReplacement(thumbFilename);
-
-        await pipeline.clone()
-          .resize({
-            width: config.blogs.thumbnail.width,
-            withoutEnlargement: true,
-            fit: 'inside',
-          })
-          .blur(2)
-          .webp({ quality: config.blogs.thumbnail.quality })
-          .toFile(thumbFilename);
-          
-        console.log(`  Generated thumbnail: ${relativePath} -> ${path.basename(thumbFilename)}${thumbReplacementMsg}`);
-      }
-    } catch (error) {
-      console.error(`  Error processing ${relativePath}:`, error);
-    }
-  }
-}
-
-
-
-
-// Run the optimization
 async function main() {
-  console.log('Starting image optimization...');
-  await processGalleryImages();
-  await processProjectImages();
-  await processBlogImages();
-  console.log('Image optimization complete!');
+  const concurrency = Math.min(8, Math.max(2, os.cpus().length));
+  console.log(
+    `${bold(cyan("◆"))} ${bold("Optimizing images")} ${dim(`· concurrency=${concurrency}`)}`,
+  );
+
+  const planStart = Date.now();
+  const plans = await buildPlans();
+  const galleryN = plans.filter((p) => p.category === "gallery").length;
+  const projectsN = plans.filter((p) => p.category === "projects").length;
+  const blogsN = plans.filter((p) => p.category === "blogs").length;
+  console.log(
+    dim(
+      `  ${plans.length} images planned in ${elapsed(Date.now() - planStart)} ` +
+        `(${galleryN} gallery, ${projectsN} projects, ${blogsN} blogs)`,
+    ),
+  );
+
+  if (plans.length === 0) {
+    console.log(`${green("✔")} Nothing to do.`);
+    return;
+  }
+
+  const renderer = makeRenderer(plans.length);
+
+  await pool(
+    plans,
+    async (plan) => {
+      renderer.start(plan);
+      try {
+        const r = await processOne(plan);
+        renderer.complete(plan, r);
+        return r;
+      } catch (err) {
+        renderer.error(plan, err);
+        return { status: "error", ...plan, error: err.message };
+      }
+    },
+    concurrency,
+  );
+
+  const { errors } = renderer.finalize();
+  if (errors > 0) process.exitCode = 1;
 }
 
-main().catch(console.error);
+main().catch((err) => {
+  console.error(red("✗ optimize-images failed:"), err);
+  process.exit(1);
+});

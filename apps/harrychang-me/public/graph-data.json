@@ -10,11 +10,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "LEGO fan mounts prove the value of DIY hardware for ML learning",
@@ -30,11 +26,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "用樂高輪胎與積木為電腦零件DIY出高效風扇架",
@@ -50,11 +42,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Turning exclusion into creation by building a personal website through imitation",
@@ -70,11 +58,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "因病錯失登山而架站，以模仿起步建構獨特網路角落",
@@ -90,10 +74,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Contradictions of SF tech, urban decay, and hollow travel memories",
@@ -109,10 +90,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "穿梭美西與紐約，在資本泡沫與混亂真實間尋找歸屬",
@@ -128,10 +106,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "A graduating student observes Chingshin’s cycles, rising toast prices, and fading echoes",
@@ -147,10 +122,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "校園光影依舊，人在即將離別之際聽見建築的記憶",
@@ -166,11 +138,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Monthly blog sharing authentic, raw thoughts on technology, culture, and life",
@@ -186,11 +154,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "承諾每月分享技術與社會的真實思考",
@@ -206,11 +170,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Embrace life’s meaningless struggle by persisting despite inevitable failure",
@@ -226,11 +186,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "擁抱荒謬的推石過程，讓思想在行動中重生",
@@ -246,10 +202,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Affinity V3 is now free and unified, but corporate takeover fears remain",
@@ -265,10 +218,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "Affinity V3 雖免費好用，卻潛藏 Canva 商業轉型與訂閱隱憂",
@@ -284,11 +234,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Embracing the Fuji X-Pro1’s obsolete flaws for more intentional, human photography",
@@ -304,11 +250,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "擁抱 X-Pro1 的缺陷，在限制中找回攝影初心",
@@ -324,10 +266,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Both films explore loving family through intentional distance and inevitable absence",
@@ -343,10 +282,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "透過距離與缺席，探討愛中難以跨越的隔閡與父女傷口",
@@ -362,11 +298,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research",
@@ -382,11 +314,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "專注新興領域大型語言模型安全，以學術論文與實作力錄取臺大資工",
@@ -402,10 +330,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Personal collection of weirdly endearing, unhinged plushies and their sentimental backstories",
@@ -421,10 +346,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "從醜萌玩偶的靈魂美，看見生命中的溫暖與混亂",
@@ -440,10 +362,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "Truman exits his artificial world; Caden is consumed by his own construction",
@@ -459,10 +378,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "楚門走出他人建構的舞台，卡登則受困於自我執念的廢墟",
@@ -478,11 +394,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": null,
       "parentId": "hub-post-en",
       "tldr": "An unjustifiable, screenless Leica purchase prioritizing present experience over rational long-term investment",
@@ -498,11 +410,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": null,
       "parentId": "hub-post-zh-TW",
       "tldr": "捨棄規格與理性，以極致純粹擁抱在場的快門瞬間",
@@ -934,9 +842,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_06_30_city_stroll",
       "date": "2023-06-30",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow",
@@ -952,9 +858,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_06_30_city_stroll",
       "date": "2023-06-30",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "以影像切片，拼湊東京的光影詩意",
@@ -970,9 +874,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_07_07_splash_of_red",
       "date": "2023-07-07",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Vibrant red details reveal profound beauty within ordinary urban moments",
@@ -988,9 +890,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_07_07_splash_of_red",
       "date": "2023-07-07",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "頹圮日常中的一抹紅，是生命最誠實的出口",
@@ -1006,9 +906,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_08_10_intersection",
       "date": "2024-01-06",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Two silhouettes briefly converge on a bridge during a golden dusk",
@@ -1024,9 +922,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_08_10_intersection",
       "date": "2024-01-06",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "夕陽下巴士窗外的偶然相遇",
@@ -1042,9 +938,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_10_05_solitary_glow",
       "date": "2023-10-05",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR",
@@ -1060,9 +954,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_10_05_solitary_glow",
       "date": "2023-10-05",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "於城市明暗交疊處，瞥見平凡真實的風景",
@@ -1078,9 +970,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_10_06_against_giants",
       "date": "2023-10-06",
-      "tags": [
-        "Landscape"
-      ],
+      "tags": ["Landscape"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature",
@@ -1096,9 +986,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_10_06_against_giants",
       "date": "2023-10-06",
-      "tags": [
-        "Landscape"
-      ],
+      "tags": ["Landscape"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "覺知自身如塵，於宏大中獲自由",
@@ -1114,10 +1002,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_10_06_guided_by_the_tides",
       "date": "2024-01-06",
-      "tags": [
-        "Landscape",
-        "Ocean"
-      ],
+      "tags": ["Landscape", "Ocean"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Love and shared moments guide children through life’s vast uncertainty",
@@ -1133,10 +1018,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_10_06_guided_by_the_tides",
       "date": "2024-01-06",
-      "tags": [
-        "Landscape",
-        "Ocean"
-      ],
+      "tags": ["Landscape", "Ocean"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "父愛如粼粼光影，在陪伴中指引孩子未來路途",
@@ -1152,9 +1034,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_10_12_lessons_from_the_light",
       "date": "2023-12-30",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Students walk home as long shadows narrate their journey of growing up",
@@ -1170,9 +1050,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_10_12_lessons_from_the_light",
       "date": "2023-12-30",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "師徒影隨，伴餘暉共赴成長之旅",
@@ -1188,10 +1066,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_11_18_dusk_impressions",
       "date": "2023-11-18",
-      "tags": [
-        "Street Photography",
-        "Sunset"
-      ],
+      "tags": ["Street Photography", "Sunset"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past",
@@ -1207,10 +1082,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_11_18_dusk_impressions",
       "date": "2023-11-18",
-      "tags": [
-        "Street Photography",
-        "Sunset"
-      ],
+      "tags": ["Street Photography", "Sunset"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "落日餘暉下對鏡花水月的追懷",
@@ -1226,10 +1098,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_12_30_against_the_unknown",
       "date": "2023-12-30",
-      "tags": [
-        "Landscape",
-        "Ocean"
-      ],
+      "tags": ["Landscape", "Ocean"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Lone fisherman's quiet defiance against the vast, indifferent ocean deep",
@@ -1245,10 +1114,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_12_30_against_the_unknown",
       "date": "2023-12-30",
-      "tags": [
-        "Landscape",
-        "Ocean"
-      ],
+      "tags": ["Landscape", "Ocean"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "垂釣深淵，以孤獨的峙立證存在",
@@ -1264,10 +1130,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_12_30_sky_above",
       "date": "2023-12-30",
-      "tags": [
-        "Landscape",
-        "Sunset"
-      ],
+      "tags": ["Landscape", "Sunset"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Taipei's tower pierces amber clouds above a dreaming, glittering city",
@@ -1283,10 +1146,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_12_30_sky_above",
       "date": "2023-12-30",
-      "tags": [
-        "Landscape",
-        "Sunset"
-      ],
+      "tags": ["Landscape", "Sunset"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "台北如雲端孤城，燈火宛若夢境",
@@ -1302,10 +1162,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_01_06_hehuanshan",
       "date": "2024-01-06",
-      "tags": [
-        "Landscape",
-        "Nature"
-      ],
+      "tags": ["Landscape", "Nature"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Journey through mountains to find personal peace and your own summit",
@@ -1321,9 +1178,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_01_06_hehuanshan",
       "date": "2024-01-06",
-      "tags": [
-        "Landscape"
-      ],
+      "tags": ["Landscape"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "俯仰天地山路間，尋覓心靈歸宿",
@@ -1339,9 +1194,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_02_09_mortal_sparks",
       "date": "2024-02-09",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness",
@@ -1357,9 +1210,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_02_09_mortal_sparks",
       "date": "2024-02-09",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "點燃凡塵願景，匯聚信仰星海",
@@ -1375,9 +1226,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_02_14_go_where_you_feel_most_alive",
       "date": "2024-02-14",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Finding life through moments captured in Tainan and Taichung landscapes",
@@ -1393,9 +1242,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_02_14_go_where_you_feel_most_alive",
       "date": "2024-02-14",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "用攝影捕捉瞬間，活出心之所向",
@@ -1411,9 +1258,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_04_06_city_of_tears",
       "date": "2024-04-06",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Fleeting urban memories dissolving like raindrops in the city grey",
@@ -1429,9 +1274,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_04_06_city_of_tears",
       "date": "2024-04-06",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "雨中燈塔低語，港城承載如淚回憶",
@@ -1447,9 +1290,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_07_03_simple_in_a_complex_world",
       "date": "2023-07-03",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Embrace intentional stillness and space to find meaning amidst life's noise",
@@ -1465,9 +1306,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_07_03_simple_in_a_complex_world",
       "date": "2023-07-03",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "繁囂中為心靈留白，靜觀靈魂甦醒再行",
@@ -1483,9 +1322,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2026-us-trip",
       "date": "2026-04-16",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Accepting life’s unresolved contradictions and presence without needing coherence",
@@ -1501,9 +1338,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2026-us-trip",
       "date": "2026-04-16",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "擁抱生命矛盾，與未和解的自己共存",
@@ -1519,9 +1354,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_city",
       "date": "2026-02-08",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Capturing fleeting, everyday intersections of modern life and ancient Italian history",
@@ -1537,9 +1370,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_city",
       "date": "2026-02-08",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "穿梭義大利古今，紀錄時光縫隙中的溫柔間奏",
@@ -1555,10 +1386,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_mountain",
       "date": "2026-02-08",
-      "tags": [
-        "Landscape",
-        "Nature"
-      ],
+      "tags": ["Landscape", "Nature"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "A journey through unfinished winter tales focused on beginnings over endings",
@@ -1574,9 +1402,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_mountain",
       "date": "2026-02-08",
-      "tags": [
-        "Landscape"
-      ],
+      "tags": ["Landscape"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "雪中漫旅如斷篇小說，重起頭而不求終點",
@@ -1592,9 +1418,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_town",
       "date": "2026-02-08",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-en",
       "tldr": "Photographs capturing quiet, unscripted moments in the margins of travel",
@@ -1610,9 +1434,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_town",
       "date": "2026-02-08",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "hub-gallery-zh-TW",
       "tldr": "旅程中的日常片羽，是點亮記憶的閒章",
@@ -1628,11 +1450,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "The Coincidence",
       "parentId": "post-10-lego-mount-en-file",
       "tldr": "Lego baseplates serendipitously fit the FormD T1's thermal needs",
@@ -1649,11 +1467,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": null,
       "parentId": "post-10-lego-mount-en-sec-0",
       "tldr": "LEGO fan mounts prove the value of DIY hardware for ML learning",
@@ -1669,11 +1483,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "The Machine That Taught Me",
       "parentId": "post-10-lego-mount-en-sec-0",
       "tldr": "Homegrown hardware turned an ML tool into a Linux playground",
@@ -1690,11 +1500,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "Where Heat Goes to Stay",
       "parentId": "post-10-lego-mount-en-sec-0",
       "tldr": "Poor ventilation in FormD T1 causes dangerous GPU heat buildup",
@@ -1711,11 +1517,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "The Rubber Band Delusion",
       "parentId": "post-10-lego-mount-en-sec-0",
       "tldr": "Rubber bands amplified fan vibration instead of damping it",
@@ -1732,11 +1534,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "What Actually Worked",
       "parentId": "post-10-lego-mount-en-sec-0",
       "tldr": "LEGO tires wedge between fans, dropping GPU temps by 19°C",
@@ -1753,11 +1551,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "The Accidental Platform",
       "parentId": "post-10-lego-mount-en-sec-0",
       "tldr": "LEGO fan mount evolved into router and watch charging station",
@@ -1774,11 +1568,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "Other Bricks, Other Problems",
       "parentId": "post-10-lego-mount-en-sec-0",
       "tldr": "Choosing LEGO’s visible construction over 3D printing’s clean finish",
@@ -1795,11 +1585,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "One Millimeter",
       "parentId": "post-10-lego-mount-en-sec-0",
       "tldr": "Lego is a valid, functional solution for adult engineering problems",
@@ -1816,11 +1602,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "Acknowledgments",
       "parentId": "post-10-lego-mount-en-file",
       "tldr": "Credits for Chardin’s art, FormD T1, and Technic LEGO parts",
@@ -1837,11 +1619,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "巧合",
       "parentId": "post-10-lego-mount-zh-TW-file",
       "tldr": "用樂高輪胎與寬度巧合，打造高效散熱風扇架",
@@ -1857,11 +1635,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": null,
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
       "tldr": "用樂高輪胎與積木為電腦零件DIY出高效風扇架",
@@ -1877,11 +1651,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "啟蒙我的那台機器",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
       "tldr": "組裝伺服器讓硬體實踐超越工具成為遊樂場",
@@ -1897,11 +1667,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "熱能滯留之處",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
       "tldr": "FormD T1 底部積熱，線材與底板燙手",
@@ -1917,11 +1683,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "橡皮筋妄想",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
       "tldr": "用積木與橡皮筋避震失敗，反致共振噪音",
@@ -1937,11 +1699,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "真正有效的方法",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
       "tldr": "用樂高輪胎夾住風扇，讓顯示卡降溫近 20 度",
@@ -1957,11 +1715,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "意外的平台",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
       "tldr": "樂高風扇架擴充成路由器與充電站",
@@ -1977,11 +1731,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "其他積木，其他問題",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
       "tldr": "不計較列印美學，單純享受積木組裝樂趣",
@@ -1997,11 +1747,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "一毫米",
       "parentId": "post-10-lego-mount-zh-TW-sec-0",
       "tldr": "用樂高解決成人問題，守住那一毫米的童心",
@@ -2017,11 +1763,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/10-lego-mount",
       "date": "2026-03-09",
-      "tags": [
-        "Hardware",
-        "Homelab",
-        "DIY"
-      ],
+      "tags": ["Hardware", "Homelab", "DIY"],
       "heading": "致謝",
       "parentId": "post-10-lego-mount-zh-TW-file",
       "tldr": "感謝封面積木男孩、極致機殼零件與樂高解法",
@@ -2037,11 +1779,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "The Mountain I Didn't Climb",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "Instead of climbing, a health-bound student built their first website",
@@ -2058,11 +1796,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "The Theft",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "Started by imitating Joseph’s site before building original features",
@@ -2079,11 +1813,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "What Changed, What Stayed",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "Technical layers and fonts evolved, but intentional design remains unfinished",
@@ -2100,11 +1830,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "Before I Joined the Conversation",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "His website builds credibility and identity before he introduces himself",
@@ -2121,11 +1847,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "The Quiet Rebellion",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "Redefining personal sites by rewarding attention over algorithmic trends",
@@ -2142,11 +1864,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "Why You Should Have One",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "Own your content to escape algorithms and platform tenancy",
@@ -2163,11 +1881,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "For Those Who Want to Try",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "Pick a tool, start naively, and learn by doing",
@@ -2184,11 +1898,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "The Gap That Remained",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "Traded a missed mountain trip for personal creative growth",
@@ -2205,11 +1915,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "Acknowledgments",
       "parentId": "post-11-portfolio-en-file",
       "tldr": "Credits Spitzweg art, Zhang’s design, and open-source tech stack",
@@ -2226,11 +1932,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "我沒爬的那座山",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "因病缺席登山，轉而埋頭自修建成網站",
@@ -2246,11 +1948,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "偷竊",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "從借鑒模仿起步，在改良技術中長出原創意識",
@@ -2266,11 +1964,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "改變與留下的",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "技術演進與設計留白，成就「未完成」的數位實體",
@@ -2286,11 +1980,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "加入對話之前",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "網站先替我發聲，將面試轉化為對話",
@@ -2306,11 +1996,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "靜靜的反叛",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "以篩選與留白，抵抗速食網路的自我實踐",
@@ -2326,11 +2012,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "為什麼你該擁有一個",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "自有網站非租賃，掌握內容主權與心靈寧靜",
@@ -2346,11 +2028,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "給想嘗試的人",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "工具次要，放下焦慮直接動手開始寫",
@@ -2366,11 +2044,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "留下的空缺",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "錯過登山羈絆，卻在孤獨中築起自我天地",
@@ -2386,11 +2060,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/11-portfolio",
       "date": "2026-04-12",
-      "tags": [
-        "Web Development",
-        "Retrospective",
-        "Personal"
-      ],
+      "tags": ["Web Development", "Retrospective", "Personal"],
       "heading": "致謝",
       "parentId": "post-11-portfolio-zh-TW-file",
       "tldr": "致謝封面名畫、版面設計靈感與技術工具",
@@ -2406,10 +2076,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "The Same Bus",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "San Francisco's bus reflects jarring social and economic disparities",
@@ -2426,10 +2093,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "The Hollowed Center",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "SF's hollow tech facade masks personal family histories",
@@ -2446,10 +2110,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "The City That Hit Different",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "A chaotic, overwhelming, and sensory-heavy introduction to New York City",
@@ -2466,10 +2127,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "The Contradictions Emerge",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "High costs, biting wind, and the art-context dilemma",
@@ -2486,10 +2144,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "Go Back to New Jersey",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "An elitist confrontation over sidewalk pizza reveals NYC’s exclusionary nature",
@@ -2506,10 +2161,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "The Afternoon Alone",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "Solitary walking and photography lead to a quiet, unarticulated belonging",
@@ -2526,10 +2178,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "Contradictions in Time",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "Life and cities exist as unresolved, simultaneous contradictions",
@@ -2546,10 +2195,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "The Bus That Held Everything",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "A melancholic bus departure reflecting on fleeting moments and goodbyes",
@@ -2566,10 +2212,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "The Exhale",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "Disappointing ceremony salvaged by thrift store finds and lobster rolls",
@@ -2586,10 +2229,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "The Loop That Almost Closed",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "Embracing unresolved loss and travel’s refusal to cohere",
@@ -2606,10 +2246,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "Acknowledgments",
       "parentId": "post-12-us-trip-en-file",
       "tldr": "Credits for artwork and family/friend support on the journey",
@@ -2626,10 +2263,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "同一班公車",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "舊金山公車上的社會階級縮影",
@@ -2645,10 +2279,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "被掏空的中心",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "矽谷繁華卻空洞，如人造死寂場景",
@@ -2664,10 +2295,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "截然不同的城市",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "初探紐約，沉浸於混亂與美好的感官震撼",
@@ -2683,10 +2311,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "矛盾浮現",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "紐約美感徒具形式且缺乏靈魂",
@@ -2702,10 +2327,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "滾回紐澤西",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "紐約排外言論引發矛盾思緒",
@@ -2721,10 +2343,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "獨處的午後",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "紐約獨處漫遊，靜止中找尋自在感",
@@ -2740,10 +2359,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "時間裡的矛盾",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "城市與自身的矛盾，是空間與時間的「如果」",
@@ -2759,10 +2375,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "承載一切的巴士",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "在告別城市的夜巴，預演遺憾與回憶的循環",
@@ -2778,10 +2391,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "吐氣",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "波士頓行：典禮平淡，挖寶吃龍蝦更爽",
@@ -2797,10 +2407,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "幾乎閉合的迴圈",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "不再執著圓滿，接納旅程中的遺失與矛盾",
@@ -2816,10 +2423,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/12-us-trip",
       "date": "2026-04-21",
-      "tags": [
-        "Travel",
-        "Memoir"
-      ],
+      "tags": ["Travel", "Memoir"],
       "heading": "致謝",
       "parentId": "post-12-us-trip-zh-TW-file",
       "tldr": "感謝封面藝術、家人及嚮導 Dominguez",
@@ -2835,10 +2439,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "The Voice Through Concrete",
       "parentId": "post-13-chingshin-en-file",
       "tldr": "Familiar teacher's voice echoes through floors, marking time's passage",
@@ -2855,10 +2456,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "Twenty-Five for a Chocolate Thick-Toast",
       "parentId": "post-13-chingshin-en-file",
       "tldr": "Inflation raised toast prices while weird memes filled shelves",
@@ -2875,10 +2473,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "5pm, West Side",
       "parentId": "post-13-chingshin-en-file",
       "tldr": "Golden hour light transforms familiar school routines before departure",
@@ -2895,10 +2490,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "The Net",
       "parentId": "post-13-chingshin-en-file",
       "tldr": "A beautiful sixth-floor corridor hides a silent suicide net",
@@ -2915,10 +2507,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "The Arms Race",
       "parentId": "post-13-chingshin-en-file",
       "tldr": "Elementary classrooms compete via elaborate decorations and lively youthful energy",
@@ -2935,10 +2524,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "Acknowledgments",
       "parentId": "post-13-chingshin-en-file",
       "tldr": "Image credits Courbet's allegory as inspiration for the building's history",
@@ -2955,10 +2541,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "穿透水泥的聲音",
       "parentId": "post-13-chingshin-zh-TW-file",
       "tldr": "穿透樓層的班導斥責聲，連結新舊學子記憶",
@@ -2974,10 +2557,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "二十五元的巧克力厚片",
       "parentId": "post-13-chingshin-zh-TW-file",
       "tldr": "厚片漲價環境依舊，校園亂象始終如一",
@@ -2993,10 +2573,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "下午五點，操場",
       "parentId": "post-13-chingshin-zh-TW-file",
       "tldr": "離校前夕，驚覺操場琥珀餘暉之美",
@@ -3012,10 +2589,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "那張網",
       "parentId": "post-13-chingshin-zh-TW-file",
       "tldr": "網在光影中，沉默防守無言的墜落",
@@ -3031,10 +2605,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "軍備競賽",
       "parentId": "post-13-chingshin-zh-TW-file",
       "tldr": "小學部教室裝飾比拚下的校園隔離與傳承",
@@ -3050,10 +2621,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/13-chingshin",
       "date": "2026-05-05",
-      "tags": [
-        "Memoir",
-        "Personal"
-      ],
+      "tags": ["Memoir", "Personal"],
       "heading": "致謝",
       "parentId": "post-13-chingshin-zh-TW-file",
       "tldr": "致謝封面圖庫爾貝，總結六年靜心時光",
@@ -3069,11 +2637,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": "Finding the Signal in the Noise",
       "parentId": "post-2025_12_12_blog_launch-en-file",
       "tldr": "Sharing authentic, monthly thoughts on tech, culture, and experience",
@@ -3090,11 +2654,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": null,
       "parentId": "post-2025_12_12_blog_launch-en-sec-0",
       "tldr": "Monthly blog sharing authentic, raw thoughts on technology, culture, and life",
@@ -3110,11 +2670,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": "What You Can Expect",
       "parentId": "post-2025_12_12_blog_launch-en-sec-0",
       "tldr": "Tech, AI, cultural critiques, retrospectives, and societal commentary",
@@ -3131,11 +2687,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": "My Commitment",
       "parentId": "post-2025_12_12_blog_launch-en-sec-0",
       "tldr": "Authentic, monthly posts featuring original thoughts and zero AI filler",
@@ -3152,11 +2704,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_12_blog_launch-en-file",
       "tldr": "Credits: Title image is Johannes Vermeer’s *The Astronomer*",
@@ -3173,11 +2721,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": "在雜音中尋找訊號",
       "parentId": "post-2025_12_12_blog_launch-zh-TW-file",
       "tldr": "透過公開思考與原創紀實，沉澱雜音見真章",
@@ -3193,11 +2737,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": null,
       "parentId": "post-2025_12_12_blog_launch-zh-TW-sec-0",
       "tldr": "承諾每月分享技術與社會的真實思考",
@@ -3213,11 +2753,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": "你可以期待的主題",
       "parentId": "post-2025_12_12_blog_launch-zh-TW-sec-0",
       "tldr": "科技AI、文藝評論、經驗反思與社會觀察",
@@ -3233,11 +2769,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": "我的承諾",
       "parentId": "post-2025_12_12_blog_launch-zh-TW-sec-0",
       "tldr": "每月更新、堅持真實思考與原創內容",
@@ -3253,11 +2785,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_12_blog_launch",
       "date": "2025-12-12",
-      "tags": [
-        "Introduction",
-        "Writing",
-        "Meta"
-      ],
+      "tags": ["Introduction", "Writing", "Meta"],
       "heading": "致謝",
       "parentId": "post-2025_12_12_blog_launch-zh-TW-file",
       "tldr": "致謝封面照引用自維梅爾《天文學家》",
@@ -3273,11 +2801,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "One Must Imagine Sisyphus Happy",
       "parentId": "post-2025_12_13_sisyphus-en-file",
       "tldr": "Embrace the absurd struggle by finding meaning in persistence",
@@ -3294,11 +2818,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": null,
       "parentId": "post-2025_12_13_sisyphus-en-sec-0",
       "tldr": "Embrace life’s meaningless struggle by persisting despite inevitable failure",
@@ -3314,11 +2834,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "The Absurd, Revisited",
       "parentId": "post-2025_12_13_sisyphus-en-sec-0",
       "tldr": "Defy meaninglessness by persisting consciously within the absurd tension",
@@ -3335,11 +2851,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "Why This Book, Why Now",
       "parentId": "post-2025_12_13_sisyphus-en-sec-0",
       "tldr": "Reading resists shortcuts, forcing meaningful presence over shallow summaries",
@@ -3356,11 +2868,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "The Struggle Itself",
       "parentId": "post-2025_12_13_sisyphus-en-sec-0",
       "tldr": "Finding fulfillment in the climb despite inevitable failure",
@@ -3377,11 +2885,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_13_sisyphus-en-file",
       "tldr": "Credits Millet's *Man with a Hoe* for the title image",
@@ -3398,11 +2902,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "我們必須想像薛西弗斯是快樂的",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-file",
       "tldr": "正視荒謬並持續推石，在堅持中獲得心靈平實",
@@ -3418,11 +2918,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": null,
       "parentId": "post-2025_12_13_sisyphus-zh-TW-sec-0",
       "tldr": "擁抱荒謬的推石過程，讓思想在行動中重生",
@@ -3438,11 +2934,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "再訪荒謬",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-sec-0",
       "tldr": "清醒活在生命的荒謬裂縫中",
@@ -3458,11 +2950,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "為什麼是這本書，為什麼是現在",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-sec-0",
       "tldr": "以閱讀對抗速食，重拾荒謬的體驗過程",
@@ -3478,11 +2966,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "推石上山本身",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-sec-0",
       "tldr": "推石奮鬥本身即能填滿心靈",
@@ -3498,11 +2982,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_13_sisyphus",
       "date": "2025-12-13",
-      "tags": [
-        "Literature",
-        "Philosophy",
-        "Review"
-      ],
+      "tags": ["Literature", "Philosophy", "Review"],
       "heading": "致謝",
       "parentId": "post-2025_12_13_sisyphus-zh-TW-file",
       "tldr": "致謝封面選用米勒畫作《扶鋤者》",
@@ -3518,10 +2998,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "The Adobe Refugee's Dilemma",
       "parentId": "post-2025_12_14_affinity-en-file",
       "tldr": "Affinity V3 is free, unified, and great—yet still unsettling",
@@ -3538,10 +3015,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": null,
       "parentId": "post-2025_12_14_affinity-en-sec-0",
       "tldr": "Affinity V3 is now free and unified, but corporate takeover fears remain",
@@ -3557,10 +3031,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "Wait, What?",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
       "tldr": "Affinity V3 is now free and merged, yet concerning",
@@ -3577,10 +3048,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "The Good: 45 Days In",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
       "tldr": "Fast, unified workflow with great new selection and glitch tools",
@@ -3597,10 +3065,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "The Less Good: Performance and Polish",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
       "tldr": "Frustrating lag and bugs weaken Affinity’s performance advantage",
@@ -3617,10 +3082,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "The UI: A Minor Rant",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
       "tldr": "Misses colorful V2 icons over new unified grey interface",
@@ -3637,10 +3099,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "The Real Problem: Free Forever",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
       "tldr": "Free forever\" is an unpredictable user-acquisition bait and switch",
@@ -3657,10 +3116,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "What I Actually Want",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
       "tldr": "Wants a $300 lifetime license over Canva's restrictive model",
@@ -3677,10 +3133,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "The Climb Continues",
       "parentId": "post-2025_12_14_affinity-en-sec-0",
       "tldr": "Affinity works well but future subscription fears persist",
@@ -3697,10 +3150,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_14_affinity-en-file",
       "tldr": "Credit for Tiepolo’s Trojan Horse title image",
@@ -3717,10 +3167,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "Adobe 難民的兩難",
       "parentId": "post-2025_12_14_affinity-zh-TW-file",
       "tldr": "不信任「永久免費」是最大的恐懼",
@@ -3737,10 +3184,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": null,
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
       "tldr": "Affinity V3 雖免費好用，卻潛藏 Canva 商業轉型與訂閱隱憂",
@@ -3756,10 +3200,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "蛤，什麼？",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
       "tldr": "Canva 推出永久免費的 Affinity V3",
@@ -3775,10 +3216,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "優點：使用 45 天後",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
       "tldr": "介面統一降摩擦，功能強大且上癮",
@@ -3795,10 +3233,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "缺點：效能與細節",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
       "tldr": "M1 Max 運行流暢度不佳，效能優勢逐漸消逝",
@@ -3814,10 +3249,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "介面：一個小小的抱怨",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
       "tldr": "偏好舊版色彩鮮明的介面，不愛新版單調灰色歸納",
@@ -3833,10 +3265,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "真正的問題：永久免費",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
       "tldr": "懷疑永久免費，憂心變質不可控",
@@ -3852,10 +3281,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "我真正想要的",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
       "tldr": "渴望終身授權，擔憂 Canva 控制條款",
@@ -3871,10 +3297,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "攀登繼續",
       "parentId": "post-2025_12_14_affinity-zh-TW-sec-0",
       "tldr": "好用但難逃收費輪迴，保留舊版以防萬一",
@@ -3890,10 +3313,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_14_affinity",
       "date": "2025-12-14",
-      "tags": [
-        "Design",
-        "Software"
-      ],
+      "tags": ["Design", "Software"],
       "heading": "致謝",
       "parentId": "post-2025_12_14_affinity-zh-TW-file",
       "tldr": "致謝封面圖 Tiepolo 的特洛伊木馬畫作",
@@ -3909,11 +3329,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Compulsive Purchase",
       "parentId": "post-2025_12_19_xpro1-en-file",
       "tldr": "Influenced by GxAce, author buys flawed, \"human\" X-Pro1 over modern gear",
@@ -3930,11 +3346,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": null,
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
       "tldr": "Embracing the Fuji X-Pro1’s obsolete flaws for more intentional, human photography",
@@ -3950,11 +3362,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Shackles I Dance In",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
       "tldr": "Technical limitations demand intentionality and turn obstacles into creative mastery",
@@ -3971,11 +3379,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Hybrid Viewfinder",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
       "tldr": "The hybrid viewfinder prioritizes reality over processed digital previews",
@@ -3992,11 +3396,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Colors",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
       "tldr": "Original X-Trans sensor provides soulful, nostalgic, and organic colors",
@@ -4013,11 +3413,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Slowness as Feature",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
       "tldr": "Friction and deliberate slowness create more meaningful photographs",
@@ -4034,11 +3430,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "Built to Last",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
       "tldr": "Durable magnesium build outperforming modern cameras decade later",
@@ -4055,11 +3447,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Point",
       "parentId": "post-2025_12_19_xpro1-en-sec-0",
       "tldr": "Flaws and limitations spark creativity where technical perfection fails",
@@ -4076,11 +3464,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_19_xpro1-en-file",
       "tldr": "Credits Gerard ter Borch art, GxAce's video, and Linscam Taipei",
@@ -4097,11 +3481,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "衝動購物",
       "parentId": "post-2025_12_19_xpro1-zh-TW-file",
       "tldr": "受影片推坑購入老機，在限制中重拾攝影純粹與慢活",
@@ -4117,11 +3497,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": null,
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "tldr": "擁抱 X-Pro1 的缺陷，在限制中找回攝影初心",
@@ -4137,11 +3513,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "在枷鎖裡跳舞",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "tldr": "限制磨練技術，讓快門更有重量",
@@ -4157,11 +3529,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "混合式觀景窗",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "tldr": "光學觀景窗連結現實與快門儀式感",
@@ -4177,11 +3545,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "色彩",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "tldr": "初代底片模擬具通透生命力",
@@ -4197,11 +3561,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "慢，是一種功能",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "tldr": "慢速產生的摩擦力，賦予影像意義",
@@ -4217,11 +3577,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "為耐用而生",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "tldr": "日本製鎂合金機身，跨越時代的耐用經典",
@@ -4237,11 +3593,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "重點",
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "tldr": "用缺陷與限制，將記錄轉化為觀察",
@@ -4257,11 +3609,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
       "date": "2025-12-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "致謝",
       "parentId": "post-2025_12_19_xpro1-zh-TW-file",
       "tldr": "致謝封面畫作、GxAce 啟發與林相相機",
@@ -4277,10 +3625,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Films That Won't Leave",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-file",
       "tldr": "Haunting films exploring love, absence, and the distance between people",
@@ -4297,10 +3642,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": null,
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
       "tldr": "Both films explore loving family through intentional distance and inevitable absence",
@@ -4316,10 +3658,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Shape of Absence",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
       "tldr": "Love expressed through departure, distance, and inevitable absence",
@@ -4336,10 +3675,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Mirror and the Camcorder",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
       "tldr": "Barriers like glass and cameras enable impossible, mediated intimacy",
@@ -4356,10 +3692,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "\"Sometimes, to love someone, you gotta be a stranger\"",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
       "tldr": "Love requires protective distance or tragic, inevitable absence",
@@ -4376,10 +3709,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "What the Children See",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
       "tldr": "Children reconstruct fractured fathers through memories, media, and fragments",
@@ -4396,10 +3726,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Weight of Being Seen",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
       "tldr": "Fathers flee vulnerability to avoid being truly known",
@@ -4416,10 +3743,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "Why These Films Stay",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-sec-0",
       "tldr": "Tragic fathers, lingering love, and the beauty of inevitable loss",
@@ -4436,10 +3760,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_22_aftersun_paris_texas-en-file",
       "tldr": "Credits for Munch artwork, film stills, and cited directors",
@@ -4456,10 +3777,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "那些不曾離去的電影",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-file",
       "tldr": "用距離與缺席，側寫父愛中無法觸及的傷口",
@@ -4475,10 +3793,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": null,
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
       "tldr": "透過距離與缺席，探討愛中難以跨越的隔閡與父女傷口",
@@ -4494,10 +3809,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "缺席的形狀",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
       "tldr": "深愛轉化為轉身離開的正視與缺席",
@@ -4513,10 +3825,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "鏡子與攝影機",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
       "tldr": "透過媒介與時空的隔閡，實現不可能的親密凝視",
@@ -4532,10 +3841,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "「有時候，愛一個人，你得以陌生人的身份自居」",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
       "tldr": "疏離是為了保護，以陌生之名成全愛",
@@ -4551,10 +3857,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "孩子們看見了什麼",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
       "tldr": "孩子透過影像與直覺，重構父親缺席的生命碎塊",
@@ -4570,10 +3873,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "被看穿的重量",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
       "tldr": "父輩難承脆弱，被看穿即是離別之時",
@@ -4589,10 +3889,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "為何這些電影揮之不去",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0",
       "tldr": "電影映照缺席的愛與溫柔遺憾",
@@ -4608,10 +3905,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas",
       "date": "2025-12-22",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "致謝",
       "parentId": "post-2025_12_22_aftersun_paris_texas-zh-TW-file",
       "tldr": "致謝文章封面圖、劇照及引言出處",
@@ -4627,11 +3921,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": null,
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
       "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research",
@@ -4647,11 +3937,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "Finding the Signal in the Noise",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
       "tldr": "Top scorer documents non-traditional NTU path to guide future applicants",
@@ -4668,11 +3954,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "Finding Gaps at the Feet of Giants",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
       "tldr": "Avoided crowded competitions by focusing on niche LLM security",
@@ -4689,11 +3971,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "480 Seconds in DerTien Hall",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
       "tldr": "AI safety researcher and intern details high-stakes NTU interview experience",
@@ -4710,11 +3988,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": null,
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
       "tldr": "A non-traditional applicant's journey into NTU CSIE via LLM security research",
@@ -4730,11 +4004,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "Two Minutes of Self-Definition",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
       "tldr": "AI security researcher, TMLR author, and campus RAG developer",
@@ -4751,11 +4021,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "Architectural Debate on FORTRESS",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
       "tldr": "Retrieving known attacks while using perplexity for evolving threats",
@@ -4772,11 +4038,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "The AAAI Video and a Stumble",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
       "tldr": "Explained AAAI educational video on language model security attacks",
@@ -4793,11 +4055,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "On Independence and Guidance",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
       "tldr": "Self-studied under Professor Tsai’s guidance with increasing research independence",
@@ -4814,11 +4072,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "Examining PATCH and Data Generation",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
       "tldr": "Adversarial data generation and fine-tuning improved model safety generalization",
@@ -4835,11 +4089,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "The Blueprint for Next Steps",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-sec-3",
       "tldr": "Discussed granular security classification and future course recommendations",
@@ -4856,11 +4106,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "Your Lane, Your Definition",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
       "tldr": "Define your unique value by carving your own niche",
@@ -4877,11 +4123,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "Acknowledgments",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-en-file",
       "tldr": "Grateful to mentors, colleagues, and family for unconventional NTU admission",
@@ -4898,11 +4140,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "在雜音中尋找訊號",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
       "tldr": "資安特選正取經驗分享，為追夢者指引方向",
@@ -4918,11 +4156,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "在巨人的腳邊找縫隙",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
       "tldr": "避開紅海競爭，開拓 AI 安全新領域",
@@ -4938,11 +4172,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "德田館的 480 秒",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
       "tldr": "口試聚焦 AI 安全研究與獨立開發能力",
@@ -4959,11 +4189,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": null,
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "tldr": "專注新興領域大型語言模型安全，以學術論文與實作力錄取臺大資工",
@@ -4979,11 +4205,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "兩分鐘的自我定義",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "tldr": "首位發表 LLM 安全論文的資安特選生",
@@ -4999,11 +4221,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "關於 FORTRESS 的架構辯證",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "tldr": "結合檢索與困惑度防禦攻擊，並規劃朝多模態發展",
@@ -5020,11 +4238,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "AAAI 影片與失誤",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "tldr": "結合剪輯專長分享 LLM 資安影片",
@@ -5041,11 +4255,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "關於獨立性與指導",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "tldr": "從受指導轉為獨立發想與撰寫論文",
@@ -5061,11 +4271,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "PATCH 與數據生成的檢視",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "tldr": "詳述 PATCH 數據生成架構及微調提升成效",
@@ -5082,11 +4288,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "下一步的藍圖",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2",
       "tldr": "研究細緻的 AI 安全分類與入學修課規劃",
@@ -5102,11 +4304,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "你的賽道，你的定義",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
       "tldr": "不模仿他人，深耕自我熱情開闢獨特賽道",
@@ -5122,11 +4320,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission",
       "date": "2025-12-24",
-      "tags": [
-        "Admission",
-        "Experience",
-        "Memoir"
-      ],
+      "tags": ["Admission", "Experience", "Memoir"],
       "heading": "致謝",
       "parentId": "post-2025_12_24_ntu_cs_special_admission-zh-TW-file",
       "tldr": "感謝恩師、前輩及家人的支持與啟蒙",
@@ -5142,10 +4336,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "Against Conventional Cuteness",
       "parentId": "post-2026_01_10_plushies-en-file",
       "tldr": "Embracing weird, unhinged plushies over traditional cute toys",
@@ -5162,10 +4353,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": null,
       "parentId": "post-2026_01_10_plushies-en-sec-0",
       "tldr": "Personal collection of weirdly endearing, unhinged plushies and their sentimental backstories",
@@ -5181,10 +4369,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "Bloody Mary: The One That Got Away (Twice)",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
       "tldr": "Lost Sigikid fly plush reunited via eBay find",
@@ -5201,10 +4386,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "GuluGulu: The Hospital Unicorn",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
       "tldr": "Hospitalized man permanently adopts girlfriend’s deranged spiral-eyed unicorn",
@@ -5221,10 +4403,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "Taco Tuesday: The International Import",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
       "tldr": "Pricey German dog plush with chaotic, unhinged energy",
@@ -5241,10 +4420,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "The Jellycat Trio: Organized Chaos",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
       "tldr": "Bewitched Jellycats vibing through an existential crisis",
@@ -5261,10 +4437,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "Why These?",
       "parentId": "post-2026_01_10_plushies-en-sec-0",
       "tldr": "Unique chaos offers more character and connection than generic cuteness",
@@ -5281,10 +4454,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "Acknowledgments",
       "parentId": "post-2026_01_10_plushies-en-file",
       "tldr": "Thanks to specific plush brands, helpful friends, and Edward Hicks",
@@ -5301,10 +4471,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "拒絕千篇一律的可愛",
       "parentId": "post-2026_01_10_plushies-zh-TW-file",
       "tldr": "不落俗套的怪，才值得被看見",
@@ -5320,10 +4487,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": null,
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
       "tldr": "從醜萌玩偶的靈魂美，看見生命中的溫暖與混亂",
@@ -5339,10 +4503,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "飛飛 (Bloody Mary)：兩度失而復得的蒼蠅",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
       "tldr": "兩度失而復得的詭異蒼蠅玩偶",
@@ -5359,10 +4520,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "咕嚕咕嚕：醫院裡初見面的獨角獸",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
       "tldr": "氣胸住院獲贈的崩壞獨角獸",
@@ -5378,10 +4536,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "Taco Tuesday：國際進口的狗",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
       "tldr": "跨海買下眼神迷離的狼狽德國名犬",
@@ -5398,10 +4553,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "Jellycat 三人組：有秩序的混亂",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
       "tldr": "荒誕可愛卻厭世的療癒組合",
@@ -5418,10 +4570,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "為什麼是這些？",
       "parentId": "post-2026_01_10_plushies-zh-TW-sec-0",
       "tldr": "不完美卻獨一無二的靈魂伴侶",
@@ -5437,10 +4586,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_01_10_plushies",
       "date": "2026-01-10",
-      "tags": [
-        "Collection",
-        "Essay"
-      ],
+      "tags": ["Collection", "Essay"],
       "heading": "致謝",
       "parentId": "post-2026_01_10_plushies-zh-TW-file",
       "tldr": "感謝來源品牌、母親友人的救援與懂玩偶的朋友",
@@ -5456,10 +4602,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Door and the Cue",
       "parentId": "post-2026_02_10_synecdoche_truman-en-file",
       "tldr": "Truman exits his artificial world; Caden becomes his own construction",
@@ -5476,10 +4619,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": null,
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
       "tldr": "Truman exits his artificial world; Caden is consumed by his own construction",
@@ -5495,10 +4635,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Architecture of Control",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
       "tldr": "Truman’s prison is external; Caden’s is self-constructed recursion",
@@ -5515,10 +4652,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "Christ-Off and Cotard",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
       "tldr": "Christof controls from above; Cotard retreats from within",
@@ -5535,10 +4669,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "Escaping vs. Becoming",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
       "tldr": "Truman escapes his stage; Caden is consumed by his",
@@ -5555,10 +4686,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Director and the Directed",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
       "tldr": "Truman escapes his creator; Caden is consumed by his creation",
@@ -5575,10 +4703,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Audience Problem",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
       "tldr": "Truman’s audience liberates him; Caden’s self-obsession excludes everyone",
@@ -5595,10 +4720,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "The Door You're Standing In Front Of",
       "parentId": "post-2026_02_10_synecdoche_truman-en-sec-0",
       "tldr": "Truman’s cinematic escape versus Caden’s internal, tragic entrapment",
@@ -5615,10 +4737,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "Acknowledgments",
       "parentId": "post-2026_02_10_synecdoche_truman-en-file",
       "tldr": "Credits for *Las Meninas*, FILMGRAB, Weir, and Kaufman",
@@ -5635,10 +4754,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "門與提示詞",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-file",
       "tldr": "楚門走出他人的囚籠，凱登陷進自造的迷宮",
@@ -5654,10 +4770,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": null,
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
       "tldr": "楚門走出他人建構的舞台，卡登則受困於自我執念的廢墟",
@@ -5673,10 +4786,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "控制的建築學",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
       "tldr": "楚門受困於他人的穹頂，凱登陷於自我的遞迴",
@@ -5692,10 +4802,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "「基督」的缺席與「科塔爾」的妄想",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
       "tldr": "偽神外在掌控與自我崩壞妄想",
@@ -5711,10 +4818,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "逃離 vs. 成為",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
       "tldr": "楚門逃離虛構，凱登卻受困舞台而終",
@@ -5731,10 +4835,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "導演與被導演者",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
       "tldr": "外控的反抗與內耗的迷失",
@@ -5750,10 +4851,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "觀眾的問題",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
       "tldr": "楚門有觀眾共謀，卡登僅與自我的虛無對話",
@@ -5769,10 +4867,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "你正站在哪扇門前",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0",
       "tldr": "楚門追求逃脫，凱登受困自我，你選哪扇門",
@@ -5788,10 +4883,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/2026_02_10_synecdoche_truman",
       "date": "2026-02-10",
-      "tags": [
-        "Film",
-        "Criticism"
-      ],
+      "tags": ["Film", "Criticism"],
       "heading": "致謝",
       "parentId": "post-2026_02_10_synecdoche_truman-zh-TW-file",
       "tldr": "致謝封面名畫與兩部電影劇照引用",
@@ -5807,11 +4899,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Unjustifiable",
       "parentId": "post-9_m11d-en-file",
       "tldr": "Logic fails; I chose expensive, screenless tactile soul over specs",
@@ -5828,11 +4916,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Elephant, Briefly",
       "parentId": "post-9_m11d-en-file",
       "tldr": "Bought luxury camera with gifted money; prioritized presence over \"later",
@@ -5849,11 +4933,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "Milan, January 22nd",
       "parentId": "post-9_m11d-en-file",
       "tldr": "Spontaneous Milan purchase of an M11-D and silver lens",
@@ -5870,11 +4950,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Logical Terminal",
       "parentId": "post-9_m11d-en-file",
       "tldr": "Pure rangefinder focusing and no screen enforce creative presence",
@@ -5891,11 +4967,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "Learning to Trust",
       "parentId": "post-9_m11d-en-file",
       "tldr": "Removing displays forces presence, turning photography from optimization into intuition",
@@ -5912,11 +4984,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "What Presence Actually Looks Like",
       "parentId": "post-9_m11d-en-file",
       "tldr": "No screen means experiencing moments instead of reviewing them",
@@ -5933,11 +5001,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "What the Sensor Sees",
       "parentId": "post-9_m11d-en-file",
       "tldr": "60MP precision meets technical quirks and intentional imperfection",
@@ -5954,11 +5018,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Commitment",
       "parentId": "post-9_m11d-en-file",
       "tldr": "Choosing unoptimized tools to force presence despite an AI-optimized world",
@@ -5975,11 +5035,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Question I Can't Answer",
       "parentId": "post-9_m11d-en-file",
       "tldr": "An unjustifiable purchase defining who I hope to become",
@@ -5996,11 +5052,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "The Collections",
       "parentId": "post-9_m11d-en-file",
       "tldr": "Three curated Italy galleries: snow, city streets, and small towns",
@@ -6017,11 +5069,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "Acknowledgments",
       "parentId": "post-9_m11d-en-file",
       "tldr": "Credits Caillebotte’s art, Justin, and Charlie for feedback",
@@ -6038,11 +5086,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "無法辯護的選擇",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "捨棄理性規格，只為追求純粹手感的感性投資",
@@ -6058,11 +5102,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "房間裡的大象，先說在前",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "收下贈款不待以後，以此重擔及時對焦人生",
@@ -6078,11 +5118,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "米蘭，一月二十二日",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "意外購入M11-D，銀鏡搭配成就完美驚喜",
@@ -6098,11 +5134,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "邏輯的終點",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "除去螢幕與科技枷鎖，回歸純粹同步測距體驗",
@@ -6118,11 +5150,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "學會信任",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "放棄即時回饋，以信任與在場取代攝影最佳化",
@@ -6138,11 +5166,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "在場，究竟是什麼模樣",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "捨棄螢幕與重播，用快門換取慢速在場的練習",
@@ -6158,11 +5182,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "感光元件看見什麼",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "硬核性能與手感怪癖，回歸攝影不完美的純粹",
@@ -6178,11 +5198,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "那份承諾",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "拒絕最佳化，用手動相機承諾慢下來去生活",
@@ -6198,11 +5214,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "我無法回答的問題",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "無法以規格辯護，僅為值得成為的自己買單",
@@ -6218,11 +5230,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "影像輯錄",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "義大利旅拍影像集：雪山、城市與小鎮光影",
@@ -6238,11 +5246,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/blog/9_m11d",
       "date": "2026-02-19",
-      "tags": [
-        "Photography",
-        "Hardware",
-        "Review"
-      ],
+      "tags": ["Photography", "Hardware", "Review"],
       "heading": "致謝",
       "parentId": "post-9_m11d-zh-TW-file",
       "tldr": "致敬匠人精神，感佩好友審閱草稿",
@@ -10553,9 +9557,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_06_30_city_stroll",
       "date": "2023-06-30",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-en-file",
       "tldr": "Capturing Tokyo's poetic essence through fragmented photos of light and shadow",
@@ -10571,9 +9573,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_06_30_city_stroll",
       "date": "2023-06-30",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_06_30_city_stroll-zh-TW-file",
       "tldr": "以影像切片，拼湊東京的光影詩意",
@@ -10589,9 +9589,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_07_07_splash_of_red",
       "date": "2023-07-07",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-en-file",
       "tldr": "Vibrant red details reveal profound beauty within ordinary urban moments",
@@ -10607,9 +9605,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_07_07_splash_of_red",
       "date": "2023-07-07",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_07_07_splash_of_red-zh-TW-file",
       "tldr": "頹圮日常中的一抹紅，是生命最誠實的出口",
@@ -10625,9 +9621,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_08_10_intersection",
       "date": "2024-01-06",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_08_10_intersection-en-file",
       "tldr": "Two silhouettes briefly converge on a bridge during a golden dusk",
@@ -10643,9 +9637,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_08_10_intersection",
       "date": "2024-01-06",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_08_10_intersection-zh-TW-file",
       "tldr": "夕陽下巴士窗外的偶然相遇",
@@ -10661,9 +9653,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_10_05_solitary_glow",
       "date": "2023-10-05",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-en-file",
       "tldr": "Urban silhouettes and solitary figures captured through light and shadow TL;DR",
@@ -10679,9 +9669,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_10_05_solitary_glow",
       "date": "2023-10-05",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_10_05_solitary_glow-zh-TW-file",
       "tldr": "於城市明暗交疊處，瞥見平凡真實的風景",
@@ -10697,9 +9685,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_10_06_against_giants",
       "date": "2023-10-06",
-      "tags": [
-        "Landscape"
-      ],
+      "tags": ["Landscape"],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-en-file",
       "tldr": "Humanity’s fleeting presence measured against monumental wind turbines and nature",
@@ -10715,9 +9701,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_10_06_against_giants",
       "date": "2023-10-06",
-      "tags": [
-        "Landscape"
-      ],
+      "tags": ["Landscape"],
       "heading": null,
       "parentId": "gallery-2023_10_06_against_giants-zh-TW-file",
       "tldr": "覺知自身如塵，於宏大中獲自由",
@@ -10733,10 +9717,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_10_06_guided_by_the_tides",
       "date": "2024-01-06",
-      "tags": [
-        "Landscape",
-        "Ocean"
-      ],
+      "tags": ["Landscape", "Ocean"],
       "heading": null,
       "parentId": "gallery-2023_10_06_guided_by_the_tides-en-file",
       "tldr": "Love and shared moments guide children through life’s vast uncertainty",
@@ -10752,10 +9733,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_10_06_guided_by_the_tides",
       "date": "2024-01-06",
-      "tags": [
-        "Landscape",
-        "Ocean"
-      ],
+      "tags": ["Landscape", "Ocean"],
       "heading": null,
       "parentId": "gallery-2023_10_06_guided_by_the_tides-zh-TW-file",
       "tldr": "父愛如粼粼光影，在陪伴中指引孩子未來路途",
@@ -10771,9 +9749,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_10_12_lessons_from_the_light",
       "date": "2023-12-30",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_10_12_lessons_from_the_light-en-file",
       "tldr": "Students walk home as long shadows narrate their journey of growing up",
@@ -10789,9 +9765,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_10_12_lessons_from_the_light",
       "date": "2023-12-30",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2023_10_12_lessons_from_the_light-zh-TW-file",
       "tldr": "師徒影隨，伴餘暉共赴成長之旅",
@@ -10807,10 +9781,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_11_18_dusk_impressions",
       "date": "2023-11-18",
-      "tags": [
-        "Street Photography",
-        "Sunset"
-      ],
+      "tags": ["Street Photography", "Sunset"],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-en-file",
       "tldr": "Golden dusk transforms ordinary moments into cinematic reflections of the past",
@@ -10826,10 +9797,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_11_18_dusk_impressions",
       "date": "2023-11-18",
-      "tags": [
-        "Street Photography",
-        "Sunset"
-      ],
+      "tags": ["Street Photography", "Sunset"],
       "heading": null,
       "parentId": "gallery-2023_11_18_dusk_impressions-zh-TW-file",
       "tldr": "落日餘暉下對鏡花水月的追懷",
@@ -10845,10 +9813,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_12_30_against_the_unknown",
       "date": "2023-12-30",
-      "tags": [
-        "Landscape",
-        "Ocean"
-      ],
+      "tags": ["Landscape", "Ocean"],
       "heading": null,
       "parentId": "gallery-2023_12_30_against_the_unknown-en-file",
       "tldr": "Lone fisherman's quiet defiance against the vast, indifferent ocean deep",
@@ -10864,10 +9829,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_12_30_against_the_unknown",
       "date": "2023-12-30",
-      "tags": [
-        "Landscape",
-        "Ocean"
-      ],
+      "tags": ["Landscape", "Ocean"],
       "heading": null,
       "parentId": "gallery-2023_12_30_against_the_unknown-zh-TW-file",
       "tldr": "垂釣深淵，以孤獨的峙立證存在",
@@ -10883,10 +9845,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2023_12_30_sky_above",
       "date": "2023-12-30",
-      "tags": [
-        "Landscape",
-        "Sunset"
-      ],
+      "tags": ["Landscape", "Sunset"],
       "heading": null,
       "parentId": "gallery-2023_12_30_sky_above-en-file",
       "tldr": "Taipei's tower pierces amber clouds above a dreaming, glittering city",
@@ -10902,10 +9861,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2023_12_30_sky_above",
       "date": "2023-12-30",
-      "tags": [
-        "Landscape",
-        "Sunset"
-      ],
+      "tags": ["Landscape", "Sunset"],
       "heading": null,
       "parentId": "gallery-2023_12_30_sky_above-zh-TW-file",
       "tldr": "台北如雲端孤城，燈火宛若夢境",
@@ -10921,10 +9877,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_01_06_hehuanshan",
       "date": "2024-01-06",
-      "tags": [
-        "Landscape",
-        "Nature"
-      ],
+      "tags": ["Landscape", "Nature"],
       "heading": null,
       "parentId": "gallery-2024_01_06_hehuanshan-en-file",
       "tldr": "Journey through mountains to find personal peace and your own summit",
@@ -10940,9 +9893,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_01_06_hehuanshan",
       "date": "2024-01-06",
-      "tags": [
-        "Landscape"
-      ],
+      "tags": ["Landscape"],
       "heading": null,
       "parentId": "gallery-2024_01_06_hehuanshan-zh-TW-file",
       "tldr": "俯仰天地山路間，尋覓心靈歸宿",
@@ -10958,9 +9909,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_02_09_mortal_sparks",
       "date": "2024-02-09",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-en-file",
       "tldr": "We kindle fleeting lights to celebrate life against inevitable darkness",
@@ -10976,9 +9925,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_02_09_mortal_sparks",
       "date": "2024-02-09",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "tldr": "點燃凡塵願景，匯聚信仰星海",
@@ -10994,9 +9941,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_02_14_go_where_you_feel_most_alive",
       "date": "2024-02-14",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
       "tldr": "Finding life through moments captured in Tainan and Taichung landscapes",
@@ -11012,9 +9957,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_02_14_go_where_you_feel_most_alive",
       "date": "2024-02-14",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "tldr": "用攝影捕捉瞬間，活出心之所向",
@@ -11030,9 +9973,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_04_06_city_of_tears",
       "date": "2024-04-06",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-en-file",
       "tldr": "Fleeting urban memories dissolving like raindrops in the city grey",
@@ -11048,9 +9989,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_04_06_city_of_tears",
       "date": "2024-04-06",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2024_04_06_city_of_tears-zh-TW-file",
       "tldr": "雨中燈塔低語，港城承載如淚回憶",
@@ -11066,9 +10005,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2024_07_03_simple_in_a_complex_world",
       "date": "2023-07-03",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-en-file",
       "tldr": "Embrace intentional stillness and space to find meaning amidst life's noise",
@@ -11084,9 +10021,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2024_07_03_simple_in_a_complex_world",
       "date": "2023-07-03",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "tldr": "繁囂中為心靈留白，靜觀靈魂甦醒再行",
@@ -11102,9 +10037,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2026-us-trip",
       "date": "2026-04-16",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2026-us-trip-en-file",
       "tldr": "Accepting life’s unresolved contradictions and presence without needing coherence",
@@ -11120,9 +10053,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2026-us-trip",
       "date": "2026-04-16",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2026-us-trip-zh-TW-file",
       "tldr": "擁抱生命矛盾，與未和解的自己共存",
@@ -11138,9 +10069,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_city",
       "date": "2026-02-08",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_city-en-file",
       "tldr": "Capturing fleeting, everyday intersections of modern life and ancient Italian history",
@@ -11156,9 +10085,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_city",
       "date": "2026-02-08",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_city-zh-TW-file",
       "tldr": "穿梭義大利古今，紀錄時光縫隙中的溫柔間奏",
@@ -11174,10 +10101,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_mountain",
       "date": "2026-02-08",
-      "tags": [
-        "Landscape",
-        "Nature"
-      ],
+      "tags": ["Landscape", "Nature"],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_mountain-en-file",
       "tldr": "A journey through unfinished winter tales focused on beginnings over endings",
@@ -11193,9 +10117,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_mountain",
       "date": "2026-02-08",
-      "tags": [
-        "Landscape"
-      ],
+      "tags": ["Landscape"],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_mountain-zh-TW-file",
       "tldr": "雪中漫旅如斷篇小說，重起頭而不求終點",
@@ -11211,9 +10133,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_town",
       "date": "2026-02-08",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_town-en-file",
       "tldr": "Photographs capturing quiet, unscripted moments in the margins of travel",
@@ -11229,9 +10149,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/gallery/2026_02_08_italy_town",
       "date": "2026-02-08",
-      "tags": [
-        "Street Photography"
-      ],
+      "tags": ["Street Photography"],
       "heading": null,
       "parentId": "gallery-2026_02_08_italy_town-zh-TW-file",
       "tldr": "旅程中的日常片羽，是點亮記憶的閒章",
@@ -11247,9 +10165,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/",
       "date": null,
-      "tags": [
-        "about"
-      ],
+      "tags": ["about"],
       "heading": null,
       "parentId": "hub-about-zh-TW",
       "tldr": "AI 安全、無螢幕攝影，以及為不全信的立場辯護"
@@ -11264,10 +10180,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "summary"
-      ],
+      "tags": ["cv", "summary"],
       "heading": "簡介",
       "parentId": "hub-cv-zh-TW",
       "tldr": "AI 研究、軟體開發、第一作者期刊論文"
@@ -11282,10 +10195,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "education"
-      ],
+      "tags": ["cv", "education"],
       "heading": "學歷",
       "parentId": "hub-cv-zh-TW",
       "tldr": "台大資工系，特殊選才入學"
@@ -11300,10 +10210,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "research"
-      ],
+      "tags": ["cv", "research"],
       "heading": "研究與開發",
       "parentId": "hub-cv-zh-TW",
       "tldr": "奧義智慧實習，LLM 安全與對抗性研究"
@@ -11318,10 +10225,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "leadership"
-      ],
+      "tags": ["cv", "leadership"],
       "heading": "領導力與設計",
       "parentId": "hub-cv-zh-TW",
       "tldr": "學生會副會長、SITCON 講者、影片製作"
@@ -11336,10 +10240,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "publications"
-      ],
+      "tags": ["cv", "publications"],
       "heading": "發表論文",
       "parentId": "hub-cv-zh-TW",
       "tldr": "TMLR 與 EACL 發表 LLM 安全評估論文"
@@ -11354,10 +10255,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "projects"
-      ],
+      "tags": ["cv", "projects"],
       "heading": "精選專案",
       "parentId": "hub-cv-zh-TW",
       "tldr": "個人作品集、辯論平台、RAG 聊天機器人"
@@ -11372,10 +10270,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "skills"
-      ],
+      "tags": ["cv", "skills"],
       "heading": "技能",
       "parentId": "hub-cv-zh-TW",
       "tldr": "機器學習、全端網頁、影片剪輯、雙語能力"
@@ -11390,9 +10285,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/",
       "date": null,
-      "tags": [
-        "updates"
-      ],
+      "tags": ["updates"],
       "heading": null,
       "parentId": "hub-updates-zh-TW",
       "tldr": "近期演講、獲獎與發表研究"
@@ -11407,10 +10300,7 @@
       "locale": "zh-TW",
       "url": "https://www.harrychang.me/uses",
       "date": null,
-      "tags": [
-        "uses",
-        "setup"
-      ],
+      "tags": ["uses", "setup"],
       "heading": null,
       "parentId": "hub-uses-zh-TW",
       "tldr": "提升生產力與創造力的硬體、軟體與服務"
@@ -11425,9 +10315,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/",
       "date": null,
-      "tags": [
-        "about"
-      ],
+      "tags": ["about"],
       "heading": null,
       "parentId": "hub-about-en",
       "tldr": "AI safety, screenless photography, and arguing both sides"
@@ -11442,10 +10330,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "summary"
-      ],
+      "tags": ["cv", "summary"],
       "heading": "Summary",
       "parentId": "hub-cv-en",
       "tldr": "AI research, software development, first-author publications"
@@ -11460,10 +10345,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "education"
-      ],
+      "tags": ["cv", "education"],
       "heading": "Education",
       "parentId": "hub-cv-en",
       "tldr": "NTU Computer Science, admitted via special selection"
@@ -11478,10 +10360,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "research"
-      ],
+      "tags": ["cv", "research"],
       "heading": "Research & Development",
       "parentId": "hub-cv-en",
       "tldr": "CyCraft intern, LLM safety and adversarial robustness"
@@ -11496,10 +10375,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "leadership"
-      ],
+      "tags": ["cv", "leadership"],
       "heading": "Leadership & Design",
       "parentId": "hub-cv-en",
       "tldr": "Student council VP, SITCON speaker, video production"
@@ -11514,10 +10390,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "publications"
-      ],
+      "tags": ["cv", "publications"],
       "heading": "Publications",
       "parentId": "hub-cv-en",
       "tldr": "TMLR and EACL papers on LLM safety evaluation"
@@ -11532,10 +10405,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "projects"
-      ],
+      "tags": ["cv", "projects"],
       "heading": "Selected Projects",
       "parentId": "hub-cv-en",
       "tldr": "Portfolio site, debate platform, RAG chatbot"
@@ -11550,10 +10420,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/cv",
       "date": null,
-      "tags": [
-        "cv",
-        "skills"
-      ],
+      "tags": ["cv", "skills"],
       "heading": "Skills",
       "parentId": "hub-cv-en",
       "tldr": "ML, full-stack web, video editing, bilingual"
@@ -11568,9 +10435,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/",
       "date": null,
-      "tags": [
-        "updates"
-      ],
+      "tags": ["updates"],
       "heading": null,
       "parentId": "hub-updates-en",
       "tldr": "Recent talks, awards, and published research"
@@ -11585,10 +10450,7 @@
       "locale": "en",
       "url": "https://www.harrychang.me/uses",
       "date": null,
-      "tags": [
-        "uses",
-        "setup"
-      ],
+      "tags": ["uses", "setup"],
       "heading": null,
       "parentId": "hub-uses-en",
       "tldr": "Hardware, software, and services for productivity and creativity"
@@ -44698,7 +43560,7 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-05-05T10:45:28Z",
+    "generatedAt": "2026-05-06T01:47:10Z",
     "nodeCount": 1268,
     "edgeCount": 3818,
     "threshold": 0.62,

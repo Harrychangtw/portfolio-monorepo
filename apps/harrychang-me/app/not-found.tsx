@@ -37,6 +37,10 @@ const destinations = [
     path: "/projects/2024_08_19_classics_reimagined",
   },
   { label: "Boundless Voices", path: "/projects/2025_03_18_boundless_voices" },
+  { label: "VRC Team Nova", path: "/projects/2024_10_09_vrc_2813b_nova" },
+  { label: "Powerplay Drama 2025", path: "/projects/2025_01_03_powerplay" },
+  { label: "AAAI Video", path: "/projects/2025_01_05_aaai_video" },
+  { label: "WSDC Journey", path: "/projects/2025_08_04_debate" },
 
   // Gallery
   { label: "Gallery", path: "/#gallery" },
@@ -61,6 +65,19 @@ const destinations = [
     label: "Simple in Complexity",
     path: "/gallery/2024_07_03_simple_in_a_complex_world",
   },
+  { label: "Tokyo Street Fragments", path: "/gallery/2023_06_30_city_stroll" },
+  { label: "Red Umbrella Pulse", path: "/gallery/2023_07_07_splash_of_red" },
+  { label: "Urban Glow", path: "/gallery/2023_10_05_solitary_glow" },
+  {
+    label: "Solitary Sea Defiance",
+    path: "/gallery/2023_12_30_against_the_unknown",
+  },
+  { label: "Taipei Twilight", path: "/gallery/2023_12_30_sky_above" },
+  { label: "Path To Peace", path: "/gallery/2024_01_06_hehuanshan" },
+  {
+    label: "Tainan & Taichung",
+    path: "/gallery/2024_02_14_go_where_you_feel_most_alive",
+  },
 
   // Blog
   { label: "Blog", path: "/#blog" },
@@ -78,6 +95,8 @@ const destinations = [
   { label: "Unhinged Plushies", path: "/blog/2026_01_10_plushies" },
   { label: "Synecdoche & Truman", path: "/blog/2026_02_10_synecdoche_truman" },
   { label: "Affinity V3", path: "/blog/2025_12_14_affinity" },
+  { label: "Blog Launch", path: "/blog/2025_12_12_blog_launch" },
+  { label: "Sisyphus & Absurdity", path: "/blog/2025_12_13_sisyphus" },
 ];
 
 export function NotFoundContent() {
