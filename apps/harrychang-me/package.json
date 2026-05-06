@@ -16,6 +16,7 @@
     "generate-sitemap": "node scripts/generate-sitemap.mjs",
     "prepare-content": "npm run optimize-images",
     "check-types": "tsc --noEmit",
+    "check-links": "node scripts/check-links.mjs",
     "build:graph": "if [ -d .venv ]; then .venv/bin/python3 scripts/build_graph.py; else python3 scripts/build_graph.py; fi",
     "dev:graph": "NEXT_PUBLIC_IS_GRAPH=true next dev -p 3002"
   },

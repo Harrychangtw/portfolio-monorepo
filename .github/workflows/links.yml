@@ -1,0 +1,42 @@
+name: Links
+
+on:
+  push:
+    paths:
+      - "apps/harrychang-me/content/**"
+      - "apps/harrychang-me/app/**"
+      - "apps/harrychang-me/components/**"
+      - "apps/harrychang-me/lib/**"
+      - "apps/harrychang-me/scripts/check-links.mjs"
+      - "apps/harrychang-me/public/images/**"
+      - ".github/workflows/links.yml"
+  pull_request:
+    paths:
+      - "apps/harrychang-me/content/**"
+      - "apps/harrychang-me/app/**"
+      - "apps/harrychang-me/components/**"
+      - "apps/harrychang-me/lib/**"
+      - "apps/harrychang-me/scripts/check-links.mjs"
+      - "apps/harrychang-me/public/images/**"
+      - ".github/workflows/links.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Internal link check (case-exact)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check internal links
+        working-directory: apps/harrychang-me
+        run: node scripts/check-links.mjs
