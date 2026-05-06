@@ -6,6 +6,14 @@
   "types": "./index.ts",
   "exports": {
     ".": "./index.ts",
+    "./image-pipeline": {
+      "types": "./image-pipeline/index.d.ts",
+      "default": "./image-pipeline/index.js"
+    },
+    "./image-pipeline/constants": {
+      "types": "./image-pipeline/constants.d.ts",
+      "default": "./image-pipeline/constants.js"
+    },
     "./*": "./*.ts"
   },
   "scripts": {
@@ -41,6 +49,12 @@
   },
   "peerDependencies": {
     "next": "^15.5.15",
-    "react": "^18.0.0 || >=19.2.1"
+    "react": "^18.0.0 || >=19.2.1",
+    "sharp": "^0.33.0 || ^0.34.0"
+  },
+  "peerDependenciesMeta": {
+    "sharp": {
+      "optional": true
+    }
   }
 }

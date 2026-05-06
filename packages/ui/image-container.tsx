@@ -1,21 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Image, { type ImageLoaderProps } from "next/image";
-
-// Widths emitted by scripts/optimize-images.js as `<name>-<width>w.webp`.
-// Must stay in sync with RESPONSIVE_WIDTHS in that script.
-const RESPONSIVE_WIDTHS = [640, 828, 1080, 1920, 2560] as const;
-
-// Custom loader: returns a static URL pointing at the pre-generated variant.
-// Using a custom loader bypasses Next's /_next/image optimizer entirely while
-// still letting <Image> emit a proper responsive srcSet.
-const webpLoader = ({ src, width }: ImageLoaderProps) => {
-  const target =
-    RESPONSIVE_WIDTHS.find((w) => w >= width) ??
-    RESPONSIVE_WIDTHS[RESPONSIVE_WIDTHS.length - 1];
-  return src.replace(/\.webp$/, `-${target}w.webp`);
-};
+import Image from "next/image";
+import { webpLoader } from "@portfolio/lib/image-loader";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { ImageLoadingSkeleton } from "./image-loading-skeleton";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";

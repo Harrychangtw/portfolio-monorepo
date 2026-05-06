@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
+import { webpLoader } from "@portfolio/lib/image-loader";
 import { cva, type VariantProps } from "class-variance-authority";
 import { ANIMATION } from "@portfolio/config";
 
@@ -107,7 +108,9 @@ export default function SketchesCard({
                     sizes={fullImageSizes}
                     priority={priority || index < 3}
                     quality={70}
-                    unoptimized={fullImageUrl?.endsWith(".webp")}
+                    {...(fullImageUrl?.endsWith(".webp")
+                      ? { loader: webpLoader }
+                      : {})}
                     onLoad={() => setBlurComplete(true)}
                   />
                 </>

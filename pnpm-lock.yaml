@@ -371,6 +371,9 @@ importers:
       resend:
         specifier: ^6.11.0
         version: 6.11.0
+      sharp:
+        specifier: ^0.33.0 || ^0.34.0
+        version: 0.34.5
       tailwind-merge:
         specifier: ^2.6.1
         version: 2.6.1
