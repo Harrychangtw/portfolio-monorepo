@@ -1,97 +1,82 @@
-# Portfolio Monorepo (harrychang.me, emilychang.me)
+# harrychang-platform
 
-> A Turborepo monorepo powering [harrychang.me](https://harrychang.me) and related portfolio sites.
-> For the full feature overview, performance benchmarks, and public-facing quick start guide, see
-> [`apps/harrychang-me/README.md`](apps/harrychang-me/README.md).
+The Turborepo workspace powering [harrychang.me](https://harrychang.me) and [lab.harrychang.me](https://lab.harrychang.me), plus the shared Next.js infrastructure (UI, hooks, config, image pipeline, Prisma client) that additional portfolio apps can build on.
+
+[![Lint & Format](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lint.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lint.yml)
+[![Typecheck](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/typecheck.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/typecheck.yml)
+[![Lighthouse CI](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml)
+[![Lighthouse (Production)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml)
+[![Bundle Size](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/bundle-size.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/bundle-size.yml)
+[![Dependency Audit](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml)
+[![Links](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/links.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/links.yml)
 
 ## Apps
 
-| App             | README                                   | Description                                    |
-| :-------------- | :--------------------------------------- | :--------------------------------------------- |
-| `harrychang-me` | [→ README](apps/harrychang-me/README.md) | Main portfolio + `lab.harrychang.me` subdomain |
-| `emilychang-me` | —                                        | Secondary portfolio                            |
+| App                                    | Status            | Description                                                                                                                                                                                                                            |
+| :------------------------------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`harrychang-me`](apps/harrychang-me/) | Production        | The primary tenant. Serves both `harrychang.me` and `lab.harrychang.me` from a single Next.js 15 codebase via subdomain middleware. See its [README](apps/harrychang-me/README.md) for features, performance numbers, and quick start. |
+| [`emilychang-me`](apps/emilychang-me/) | Scaffold (paused) | A second Next.js app stubbed out in the workspace. Not currently deployed. Kept in the repo to validate that shared packages stay genuinely portable across tenants.                                                                   |
 
-## Architecture Overview
+The `harrychang-me` README is where the full feature writeup lives (Obsidian-style knowledge graph, Rangefinder 404, cross-domain theme engine, automated asset pipelines, Lighthouse CI tables for every route). This file stays focused on the workspace itself.
 
-- **Turbo monorepo**: Multiple Next.js 15 apps managed using Turborepo (`apps/`)
-- **Dual-domain, single codebase**: `harrychang.me` (main) and `lab.harrychang.me` (lab) served from one Next.js app using middleware
-- **File-based CMS**: Markdown in `content/` with YAML frontmatter, auto-localized by filename suffix (`_zh-tw.md`)
-- **Custom i18n**: Client-only React Context, dynamic JSON loading from `/public/locales/`
-- **Image optimization**: Build-time WebP/thumbnail generation, runtime path transforms
-- **Prisma/Postgres**: DB for lab features (not required for main portfolio)
+## Shared packages
 
-## Key Patterns & Conventions
+| Package           | Purpose                                                                                            |
+| :---------------- | :------------------------------------------------------------------------------------------------- |
+| `packages/ui`     | Shared React components (header, footer, gallery card, blog card, theme switcher, and more).       |
+| `packages/lib`    | Shared hooks (`useStableHashScroll`, `useNowPlaying`), Theme/Language contexts, and Prisma client. |
+| `packages/config` | Shared Tailwind and TypeScript configurations.                                                     |
 
-- **Routing**:
-  - Main: `app/(main)/[route]/`
-  - Lab: `app/(lab)/lab/[route]/`
-  - Shared API: `app/api/`
-  - Middleware (`middleware.ts`) rewrites/redirects based on subdomain
-- **Content**:
-  - Projects: `content/projects/[slug].md` (+ `_zh-tw.md` for Chinese)
-  - Gallery: `content/gallery/[slug].md`
-  - Images: Place originals in `public/images/[type]/[slug]/`, always run `node scripts/optimize-images.js` after adding
-- **i18n**:
-  - Use `useLanguage()` hook, `t(key, ns)` for translations
-  - Add new keys to both `en` and `zh-TW` JSON files in `/public/locales/`
-- **Components**:
-  - Server components by default. Use `"use client"` only for interactivity, hooks, or context
-  - Framer Motion for animation (client only)
-  - Custom hooks in `packages/lib/hooks/`
-- **Styling**:
-  - Tailwind CSS, dark mode only, custom HSL variables in `app/globals.css`
-  - Radix UI for complex UI
-- **API**:
-  - Locale-aware: always accept `?locale=` param, call markdown fetchers with locale
-  - Return JSON via `NextResponse.json()`
+Anything that should be reusable across apps belongs in a package. Anything tenant-specific (content, routes, app-level styling) lives inside that app.
 
-## Developer Workflows
+## Workspace commands
 
-- **Install**: `pnpm install`
-- **Dev main**: `pnpm dev` (http://localhost:3000)
-- **Content update**: Add markdown/images, run `node scripts/optimize-images.js`, commit
-- **Build**: `pnpm build` (runs prebuild hooks), `pnpm start` (prod)
-- **DB**: Local: `npx prisma migrate dev`. Deploy: `prisma migrate deploy` (in prebuild)
+Run from the repository root:
 
-## Key Files & Directories
+```bash
+pnpm install      # installs everything; postinstall runs `prisma generate`
+pnpm dev          # turbo dev across all apps
+pnpm build        # turbo build across all apps and packages
+pnpm lint         # turbo lint
+pnpm format       # prettier across the whole workspace
+pnpm check-types  # turbo type-checking
+pnpm check-links  # link audit (delegates to harrychang-me)
+```
 
-- `apps/harrychang-me/middleware.ts` — Dual-domain routing logic
-- `apps/harrychang-me/lib/markdown.ts` — Content/image/locale logic
-- `apps/harrychang-me/contexts/LanguageContext.tsx` — i18n system
-- `apps/harrychang-me/scripts/optimize-images.js` — Image pipeline
-- `apps/harrychang-me/scripts/build-papers.mjs` — arXiv paper fetch
-- `apps/harrychang-me/app/(main)/layout.tsx` — Main layout
-- `apps/harrychang-me/app/(lab)/lab/layout.tsx` — Lab layout
-- `packages/ui/` — Shared UI components
-- `packages/lib/` — Shared hooks, logic
+App-specific scripts run via pnpm filters:
 
-## Project-Specific Gotchas
+```bash
+pnpm --filter harry-chang-portfolio dev           # main site on :3000
+pnpm --filter harry-chang-portfolio dev:lab       # lab subdomain on :3001
+pnpm --filter harry-chang-portfolio build         # production build
+pnpm --filter harry-chang-portfolio optimize-images
+```
 
-- **Never use server-side i18n** — All translation is client-only
-- **Image paths** — Always reference `/images/projects/...` in markdown; system rewrites to optimized WebP
-- **Locale suffix** — Must be `_zh-tw.md` (not `_zh-TW.md`)
-- **Pinned sorting** — Use numeric `pinned: 1` (highest), not boolean
-- **Middleware** — All non-shared routes are affected; see `sharedPaths` in `middleware.ts`
-- **LanguageProvider** — Must wrap client components, not server components
-- **Video embeds** — Only specific markdown image syntax is auto-transformed
+For database, fonts, content authoring, environment variables, and the rest of the operational detail, see [`apps/harrychang-me/README.md`](apps/harrychang-me/README.md).
 
-## Example: Adding a Project
+## Tech stack
 
-1. Add `content/projects/my-project.md` with YAML frontmatter (fields: `title`, `date`, `description`, `tags`, `pinned`, `locked`, `featured`)
-2. Add images to `public/images/projects/my-project/`
-3. Run `node scripts/optimize-images.js`
-4. Commit and push
+Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Radix UI, Motion (`motion/react`), Prisma, PostgreSQL, pnpm, Turborepo.
+
+## Repository layout
+
+```
+apps/
+  harrychang-me/   production app, dual-domain (main + lab)
+  emilychang-me/   second tenant, scaffolded, paused
+packages/
+  ui/              shared React components
+  lib/             shared hooks, contexts, Prisma client
+  config/          shared Tailwind + TS configs
+```
 
 ## License
 
-Code: [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
-Content: All Rights Reserved (see `/content/`, `/public/`)
+This project uses a dual-licensing model.
 
-## Acknowledgments
+- **Code:** [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) (see `LICENSE-CODE`).
+- **Content:** All Rights Reserved (see `LICENSE-CONTENT`). The creative material under each app's `content/` and `public/` directories may not be reproduced without prior written permission.
 
-- [Next.js](https://nextjs.org/)
-- [Radix UI](https://www.radix-ui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Motion](https://motion.dev/)
-- [Prisma](https://www.prisma.io/)
-- [React Bits](https://github.com/DavidHDev/react-bits)
+## Contributing
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).

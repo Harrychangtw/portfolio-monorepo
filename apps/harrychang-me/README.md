@@ -183,6 +183,7 @@ An interactive, force-directed knowledge graph that maps the relationships betwe
 - **Full-page `/graph` route** with category filtering, cursor-following preview tooltips, and a mobile-optimized node card.
 - **Embedded local subgraph** in the "Next Up" card on every content page, surfacing related content via shared tags, categories, and semantic similarity.
 - **Offline embedding pipeline** (`scripts/build_graph.py`) generates node descriptions and cosine-similarity edges, cached as static JSON for zero-runtime cost.
+- **Multimodal semantic edges** via Gemini Embedding 2 (1536-dim, OpenRouter): text _and_ images are embedded into the same vector space, so a blog post can semantically link to a gallery photograph or a project screenshot.
 
 <p align="center">
   <img src="public/images/optimized/projects/2025_04_12_portfolio_design/screenshot-2026-04-17-at-12-36-27-knowledge-graph-harry-chang.webp" alt="Knowledge Graph — full site graph view" width="1800" />
