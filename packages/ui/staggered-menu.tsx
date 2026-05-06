@@ -102,14 +102,14 @@ const resolveColor = (color: string): string => {
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = "right",
-  colors = ["hsl(var(--accent))", "#0A0A0A"],
+  colors = ["hsl(var(--accent))", "hsl(var(--background))"],
   items = [],
   socialGroups = [],
   displaySocials = false,
   displayItemNumbering = false,
   className,
-  menuButtonColor = "#fff",
-  openMenuButtonColor = "#fff",
+  menuButtonColor = "hsl(var(--foreground))",
+  openMenuButtonColor = "hsl(var(--foreground))",
   changeMenuColorOnOpen = true,
   accentColor = "hsl(var(--accent))",
   itemVariant = "uppercase",
@@ -687,7 +687,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           overflow: visible;
         }
         .sm-scope .sm-toggle:focus-visible {
-          outline: 2px solid #ffffffaa;
+          outline: 2px solid hsl(var(--ring));
           outline-offset: 4px;
           border-radius: 4px;
         }

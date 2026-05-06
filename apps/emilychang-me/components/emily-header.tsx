@@ -28,8 +28,8 @@ export default function EmilyHeader() {
       staggeredMenu={{
         colors: ["hsl(var(--accent))", "hsl(var(--background))"],
         accentColor: "hsl(var(--accent))",
-        menuButtonColor: "#000000",
-        openMenuButtonColor: "#000000",
+        menuButtonColor: "hsl(var(--foreground))",
+        openMenuButtonColor: "hsl(var(--foreground))",
         changeMenuColorOnOpen: false,
         itemVariant: "italic",
         toggleVariant: "body",
