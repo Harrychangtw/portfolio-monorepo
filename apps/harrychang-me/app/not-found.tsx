@@ -6,6 +6,17 @@ import { motion, AnimatePresence } from "motion/react";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
 import ClientLayout from "@/components/main/client-layout";
+import { siteConfig } from "@/config/site";
+
+function resolveDestinationUrl(path: string): string {
+  if (typeof window === "undefined") return path;
+  const host = window.location.hostname;
+  const isLab =
+    host.includes("lab.harrychang.me") || host.includes("lab.localhost");
+  if (!isLab) return path;
+  // Lab subdomain only serves /lab routes; send the user to the main domain.
+  return `${siteConfig.url}${path}`;
+}
 
 const destinations = [
   { label: "Manifesto", path: "/manifesto" },
@@ -17,7 +28,7 @@ const destinations = [
   { label: "FORTRESS", path: "/projects/2025_10_12_fortress" },
   { label: "PATCH Dataset", path: "/projects/2025_05_18_patch_dataset" },
   { label: "SITCON 2025", path: "/projects/2025_03_08_sitcon_keynote" },
-  { label: "SITCON 2026", path: "/projects/siton-2026" },
+  { label: "SITCON 2026", path: "/projects/sitcon-2026" },
   { label: "Portfolio", path: "/projects/2025_04_12_portfolio" },
   { label: "Chingshin RAG", path: "/projects/2024_09_23_chingshin_rag" },
   { label: "Project Zephyr", path: "/projects/2024_10_04_proj_zephyr" },
@@ -53,6 +64,7 @@ const destinations = [
 
   // Blog
   { label: "Blog", path: "/#blog" },
+  { label: "Chingshin", path: "/blog/13-chingshin" },
   { label: "US Trip", path: "/blog/12-us-trip" },
   { label: "Site Anniversery", path: "/blog/11-portfolio" },
   { label: "Lego Fan Mount", path: "/blog/10-lego-mount" },
@@ -89,7 +101,12 @@ export function NotFoundContent() {
   // Mobile detection and redirect
   useEffect(() => {
     if (isMobile) {
-      router.replace("/?from404=true");
+      const target = resolveDestinationUrl("/?from404=true");
+      if (target.startsWith("http")) {
+        window.location.replace(target);
+      } else {
+        router.replace(target);
+      }
     }
   }, [isMobile, router]);
 
@@ -124,7 +141,12 @@ export function NotFoundContent() {
         setTimeout(() => {
           startNavigation();
           setTimeout(() => {
-            router.push(dest.path);
+            const target = resolveDestinationUrl(dest.path);
+            if (target.startsWith("http")) {
+              window.location.assign(target);
+            } else {
+              router.push(target);
+            }
           }, 250);
         }, 950);
       }
