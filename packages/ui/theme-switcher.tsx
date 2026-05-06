@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useTheme, useLanguage } from "@portfolio/lib";
 import { Sun, Moon } from "lucide-react";
 import { useState } from "react";

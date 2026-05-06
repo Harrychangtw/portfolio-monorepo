@@ -4,13 +4,14 @@ on:
   pull_request:
     paths:
       - "apps/harrychang-me/**"
+      - "apps/emilychang-me/**"
       - "packages/**"
       - ".github/workflows/bundle-size.yml"
   workflow_dispatch:
 
 jobs:
   bundle-size:
-    name: Bundle Size Report
+    name: Bundle Size Report (harry)
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -94,4 +95,73 @@ jobs:
             apps/harrychang-me/.next/build-manifest.json
             apps/harrychang-me/.next/package.json
             bundle-report.md
+          retention-days: 14
+
+  bundle-size-emily:
+    name: Bundle Size Report (emily)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build emilychang-me
+        run: pnpm --filter emilychang-me build
+
+      - name: Generate bundle size report
+        run: |
+          echo "## Bundle Size Report (emily)" > bundle-report-emily.md
+          echo "" >> bundle-report-emily.md
+          echo "### Page Sizes" >> bundle-report-emily.md
+          echo '```' >> bundle-report-emily.md
+          node -e "
+            const fs = require('fs');
+            const manifest = JSON.parse(
+              fs.readFileSync('apps/emilychang-me/.next/build-manifest.json', 'utf8')
+            );
+            const pages = Object.keys(manifest.pages).sort();
+            console.log('Route                                          JS Files');
+            console.log('─'.repeat(70));
+            for (const page of pages) {
+              const files = manifest.pages[page];
+              const totalSize = files.reduce((sum, f) => {
+                try {
+                  const stat = fs.statSync('apps/emilychang-me/.next/' + f);
+                  return sum + stat.size;
+                } catch { return sum; }
+              }, 0);
+              const kb = (totalSize / 1024).toFixed(1);
+              console.log(page.padEnd(47) + kb + ' kB (' + files.length + ' files)');
+            }
+          " >> bundle-report-emily.md
+          echo '```' >> bundle-report-emily.md
+          echo "" >> bundle-report-emily.md
+          echo "### Total .next Size" >> bundle-report-emily.md
+          echo '```' >> bundle-report-emily.md
+          du -sh apps/emilychang-me/.next >> bundle-report-emily.md
+          echo '```' >> bundle-report-emily.md
+          cat bundle-report-emily.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-build-output-emily
+          path: |
+            apps/emilychang-me/.next/build-manifest.json
+            apps/emilychang-me/.next/package.json
+            bundle-report-emily.md
           retention-days: 14

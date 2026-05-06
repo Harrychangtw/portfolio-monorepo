@@ -9,19 +9,10 @@ import React, {
 } from "react";
 import { gsap } from "gsap";
 import { motion, AnimatePresence } from "motion/react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import NavigationLink from "@portfolio/ui/navigation-link";
-import { usePathname } from "next/navigation";
-import dynamic from "next/dynamic";
 import { ArrowUpRight } from "lucide-react";
-
-const LanguageSwitcher = dynamic(
-  () => import("@portfolio/ui/language-switcher"),
-  { ssr: false },
-);
-const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), {
-  ssr: false,
-});
 
 export interface StaggeredMenuItem {
   label: string;
@@ -35,12 +26,44 @@ export interface SocialItem {
   link: string;
 }
 
+export interface SocialGroup {
+  /** i18n key for header (e.g. "footer.socialContact"); fallback used if t() returns "" */
+  titleKey: string;
+  fallbackTitle?: string;
+  items: SocialItem[];
+}
+
+const itemLabelVariants = cva(
+  "sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]",
+  {
+    variants: {
+      variant: {
+        italic: "italic tracking-tight",
+        uppercase: "uppercase tracking-[-2px]",
+      },
+    },
+    defaultVariants: { variant: "uppercase" },
+  },
+);
+
+const toggleVariants = cva(
+  "sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-white font-medium leading-none overflow-visible p-2 hover:scale-105 transition-transform duration-200",
+  {
+    variants: {
+      variant: {
+        body: "font-body",
+        heading: "font-heading",
+      },
+    },
+    defaultVariants: { variant: "heading" },
+  },
+);
+
 export interface StaggeredMenuProps {
   position?: "left" | "right";
   colors?: string[];
   items?: StaggeredMenuItem[];
-  connectItems?: SocialItem[];
-  exploreItems?: SocialItem[];
+  socialGroups?: SocialGroup[];
   displaySocials?: boolean;
   displayItemNumbering?: boolean;
   className?: string;
@@ -48,6 +71,10 @@ export interface StaggeredMenuProps {
   openMenuButtonColor?: string;
   accentColor?: string;
   changeMenuColorOnOpen?: boolean;
+  itemVariant?: VariantProps<typeof itemLabelVariants>["variant"];
+  toggleVariant?: VariantProps<typeof toggleVariants>["variant"];
+  /** Render slot under socials (e.g. <LanguageSwitcher/><ThemeSwitcher/>). */
+  bottomSlot?: React.ReactNode;
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
   onSectionClick?: (
@@ -57,19 +84,37 @@ export interface StaggeredMenuProps {
   onHeaderBackgroundToggle?: (isMenuOpen: boolean) => void;
 }
 
+// Helper: resolve `hsl(var(--x))` style strings to concrete colors for GSAP.
+const resolveColor = (color: string): string => {
+  if (typeof window === "undefined") return color;
+  const match = color.match(/var\(([^)]+)\)/);
+  if (!match) return color;
+  const varName = match[1];
+  const varValue = getComputedStyle(document.documentElement)
+    .getPropertyValue(varName)
+    .trim();
+  if (!varValue) return color;
+  if (color.startsWith("hsl(")) {
+    return color.replace(/var\([^)]+\)/, varValue);
+  }
+  return `hsl(${varValue})`;
+};
+
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = "right",
-  colors = ["hsl(var(--accent))", "#0A0A0A"],
+  colors = ["hsl(var(--accent))", "hsl(var(--background))"],
   items = [],
-  connectItems = [],
-  exploreItems = [],
+  socialGroups = [],
   displaySocials = false,
   displayItemNumbering = false,
   className,
-  menuButtonColor = "#fff",
-  openMenuButtonColor = "#fff",
+  menuButtonColor = "hsl(var(--foreground))",
+  openMenuButtonColor = "hsl(var(--foreground))",
   changeMenuColorOnOpen = true,
   accentColor = "hsl(var(--accent))",
+  itemVariant = "uppercase",
+  toggleVariant = "heading",
+  bottomSlot,
   onMenuOpen,
   onMenuClose,
   onSectionClick,
@@ -78,19 +123,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
   const { t } = useLanguage();
-  const pathname = usePathname();
-
-  // Ensure menu is closed on mount
-  useEffect(() => {
-    setOpen(false);
-    openRef.current = false;
-
-    // Ensure panel is off-screen initially
-    if (panelRef.current) {
-      const offscreen = position === "left" ? -100 : 100;
-      gsap.set(panelRef.current, { xPercent: offscreen });
-    }
-  }, []); // Run only on mount
 
   const panelRef = useRef<HTMLDivElement | null>(null);
   const preLayersRef = useRef<HTMLDivElement | null>(null);
@@ -109,6 +141,16 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const busyRef = useRef(false);
 
   const itemEntranceTweenRef = useRef<gsap.core.Tween | null>(null);
+
+  // Ensure menu is closed on mount
+  useEffect(() => {
+    setOpen(false);
+    openRef.current = false;
+    if (panelRef.current) {
+      const offscreen = position === "left" ? -100 : 100;
+      gsap.set(panelRef.current, { xPercent: offscreen });
+    }
+  }, [position]);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -130,12 +172,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       preLayerElsRef.current = preLayers;
 
       const offscreen = position === "left" ? -100 : 100;
-      gsap.set([panel, ...preLayers], {
-        xPercent: offscreen,
-        immediateRender: true,
-      });
+      gsap.set(panel, { xPercent: offscreen, immediateRender: true });
+      if (preLayers.length > 0) {
+        gsap.set(preLayers, { xPercent: offscreen, immediateRender: true });
+      }
 
-      // Ensure menu items are initially hidden
       const itemEls = Array.from(
         panel.querySelectorAll(".sm-panel-itemLabel"),
       ) as HTMLElement[];
@@ -155,14 +196,14 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       gsap.set(icon, { rotate: 0, transformOrigin: "50% 50%" });
 
       if (toggleBtnRef.current)
-        toggleBtnRef.current.style.color = menuButtonColor;
+        toggleBtnRef.current.style.color = resolveColor(menuButtonColor);
     });
     return () => ctx.revert();
   }, [menuButtonColor, position]);
 
   const buildOpenTimeline = useCallback(() => {
     const panel = panelRef.current;
-    const layers = preLayerElsRef.current;
+    const layers = preLayerElsRef.current || [];
     if (!panel) return null;
 
     openTlRef.current?.kill();
@@ -179,10 +220,13 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       panel.querySelectorAll(".sm-panel-list[data-numbering] .sm-panel-item"),
     ) as HTMLElement[];
 
-    const layerStates = layers.map((el) => ({
-      el,
-      start: Number(gsap.getProperty(el, "xPercent")),
-    }));
+    const layerStates =
+      layers.length > 0
+        ? layers.map((el) => ({
+            el,
+            start: Number(gsap.getProperty(el, "xPercent")),
+          }))
+        : [];
     const panelStart = Number(gsap.getProperty(panel, "xPercent"));
 
     if (itemEls.length) gsap.set(itemEls, { yPercent: 140, rotate: 10 });
@@ -191,24 +235,25 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     const tl = gsap.timeline({ paused: true });
 
-    layerStates.forEach((ls, i) => {
-      // First layer (accent) starts immediately, others are staggered
-      const delay = i === 0 ? 0 : i * 0.15;
-      tl.fromTo(
-        ls.el,
-        { xPercent: ls.start },
-        {
-          xPercent: 0,
-          duration: i === 0 ? 0.6 : 0.5, // Longer duration for accent to be more visible
-          ease: "power4.out",
-        },
-        delay,
-      );
-    });
+    if (layerStates.length > 0) {
+      layerStates.forEach((ls, i) => {
+        const delay = i === 0 ? 0 : i * 0.15;
+        tl.fromTo(
+          ls.el,
+          { xPercent: ls.start },
+          {
+            xPercent: 0,
+            duration: i === 0 ? 0.6 : 0.5,
+            ease: "power4.out",
+          },
+          delay,
+        );
+      });
+    }
 
-    // Calculate the correct last time based on actual delays used
-    const lastTime = layerStates.length ? (layerStates.length - 1) * 0.05 : 0;
-    const panelInsertTime = lastTime + 0.1; // Longer delay so accent is fully visible before panel
+    const lastTime =
+      layerStates.length > 0 ? (layerStates.length - 1) * 0.05 : 0;
+    const panelInsertTime = lastTime + 0.1;
     const panelDuration = 0.5;
 
     tl.fromTo(
@@ -250,7 +295,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     openTlRef.current = tl;
     return tl;
-  }, [position]);
+  }, []);
 
   const playOpen = useCallback(() => {
     if (busyRef.current) return;
@@ -272,10 +317,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     itemEntranceTweenRef.current?.kill();
 
     const panel = panelRef.current;
-    const layers = preLayerElsRef.current;
+    const layers = preLayerElsRef.current || [];
     if (!panel) return;
 
-    const all: HTMLElement[] = [...layers, panel];
+    const all: HTMLElement[] = layers.length > 0 ? [...layers, panel] : [panel];
     closeTweenRef.current?.kill();
 
     const offscreen = position === "left" ? -100 : 100;
@@ -299,7 +344,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         if (numberEls.length)
           gsap.set(numberEls, { ["--sm-num-opacity" as any]: 0 });
 
-        // Hide the panel only after the slide-out animation finishes
         setOpen(false);
         busyRef.current = false;
       },
@@ -335,43 +379,36 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       if (!btn) return;
       colorTweenRef.current?.kill();
       if (changeMenuColorOnOpen) {
-        const targetColor = opening ? openMenuButtonColor : menuButtonColor;
+        const targetColor = resolveColor(
+          opening ? openMenuButtonColor : menuButtonColor,
+        );
         // Use CSS transition instead of GSAP — GSAP cannot parse CSS var() syntax
         // which causes a splitColor TypeError that crashes the ticker
         btn.style.transition = "color 0.3s ease-out 0.18s";
         btn.style.color = targetColor;
       } else {
         btn.style.transition = "";
-        btn.style.color = menuButtonColor;
+        btn.style.color = resolveColor(menuButtonColor);
       }
     },
     [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen],
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (toggleBtnRef.current) {
       const targetColor =
         changeMenuColorOnOpen && openRef.current
           ? openMenuButtonColor
           : menuButtonColor;
-      toggleBtnRef.current.style.color = targetColor;
+      toggleBtnRef.current.style.color = resolveColor(targetColor);
     }
   }, [changeMenuColorOnOpen, menuButtonColor, openMenuButtonColor]);
-
-  const animateText = useCallback(
-    (opening: boolean) => {
-      // This function can be removed or left empty
-    },
-    [t],
-  );
 
   const toggleMenu = useCallback(() => {
     const target = !openRef.current;
     openRef.current = target;
 
-    // Control body scroll - Lock/unlock scrolling
     if (target) {
-      // Store current scroll position to prevent jump on unlock
       const scrollY = window.scrollY;
       document.body.style.position = "fixed";
       document.body.style.top = `-${scrollY}px`;
@@ -379,11 +416,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       document.body.style.overflow = "hidden";
       onMenuOpen?.();
       onHeaderBackgroundToggle?.(true);
-      // Make panel visible before playing the open animation
       setOpen(true);
       playOpen();
     } else {
-      // Restore scroll position
       const scrollY = document.body.style.top;
       document.body.style.position = "";
       document.body.style.top = "";
@@ -462,6 +497,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     );
   };
 
+  const visibleSocialGroups = (socialGroups || []).filter(
+    (g) => g.items && g.items.length > 0,
+  );
+  const showSocials = displaySocials && visibleSocialGroups.length > 0;
+
   return (
     <div className="sm-scope w-full h-full">
       <div
@@ -480,7 +520,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <div className="staggered-menu-toggle-container absolute top-0 right-0 z-20 pointer-events-auto">
           <motion.button
             ref={toggleBtnRef}
-            className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-white font-heading font-medium leading-none overflow-visible p-2 hover:scale-105 transition-transform duration-200"
+            className={toggleVariants({ variant: toggleVariant })}
             aria-label={
               open
                 ? t("common.closeMenu") || "Close menu"
@@ -559,7 +599,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                       transition={{ duration: 0.2 }}
                     >
                       <NavigationLink
-                        className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] hover:text-[var(--sm-accent)]"
+                        className={itemLabelVariants({ variant: itemVariant })}
                         href={it.link}
                         aria-label={it.ariaLabel}
                         data-index={idx + 1}
@@ -580,7 +620,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                   className="sm-panel-itemWrap relative overflow-hidden leading-none"
                   aria-hidden="true"
                 >
-                  <span className="sm-panel-item relative text-foreground font-heading font-semibold text-[3rem] md:text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
+                  <span className={itemLabelVariants({ variant: itemVariant })}>
                     <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                       No items
                     </span>
@@ -589,49 +629,39 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               )}
             </ul>
 
-            {/* Bottom Section: Socials & Switchers */}
+            {/* Bottom Section: Socials & extras */}
             <div className="mt-auto pt-8 pb-4 flex flex-col gap-8">
-              {displaySocials &&
-                (connectItems.length > 0 || exploreItems.length > 0) && (
-                  <div className="sm-panel-socials grid grid-cols-2 gap-x-6 gap-y-8 w-full">
-                    {connectItems.length > 0 && (
-                      <div className="col-span-1">
-                        <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
-                          {t("footer.socialContact") || "Social & Contact"}
-                        </h3>
-                        <ul
-                          className="list-none m-0 p-0 flex flex-col gap-3.5"
-                          role="list"
-                        >
-                          {connectItems.map((item) =>
-                            renderLinkItem(item, toggleMenu),
-                          )}
-                        </ul>
-                      </div>
-                    )}
+              {showSocials && (
+                <div
+                  className={`sm-panel-socials grid gap-x-6 gap-y-8 w-full ${
+                    visibleSocialGroups.length > 1
+                      ? "grid-cols-2"
+                      : "grid-cols-1"
+                  }`}
+                >
+                  {visibleSocialGroups.map((group) => (
+                    <div className="col-span-1" key={group.titleKey}>
+                      <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
+                        {t(group.titleKey) ||
+                          group.fallbackTitle ||
+                          group.titleKey}
+                      </h3>
+                      <ul
+                        className="list-none m-0 p-0 flex flex-col gap-3.5"
+                        role="list"
+                      >
+                        {group.items.map((item) =>
+                          renderLinkItem(item, toggleMenu),
+                        )}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
 
-                    {exploreItems.length > 0 && (
-                      <div className="col-span-1">
-                        <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
-                          {t("footer.personalResources") || "Resources"}
-                        </h3>
-                        <ul
-                          className="list-none m-0 p-0 flex flex-col gap-3.5"
-                          role="list"
-                        >
-                          {exploreItems.map((item) =>
-                            renderLinkItem(item, toggleMenu),
-                          )}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                )}
-
-              <div className="flex items-center gap-4 mt-2">
-                <LanguageSwitcher />
-                <ThemeSwitcher />
-              </div>
+              {bottomSlot && (
+                <div className="flex items-center gap-4 mt-2">{bottomSlot}</div>
+              )}
             </div>
           </div>
         </aside>
@@ -657,7 +687,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           overflow: visible;
         }
         .sm-scope .sm-toggle:focus-visible {
-          outline: 2px solid #ffffffaa;
+          outline: 2px solid hsl(var(--ring));
           outline-offset: 4px;
           border-radius: 4px;
         }

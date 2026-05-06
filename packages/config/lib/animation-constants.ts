@@ -30,7 +30,7 @@ export const ANIMATION = {
     linear: "linear",
   },
 
-  // Cubic bezier easing curves (for motion/framer-motion transitions)
+  // Cubic bezier easing curves (for motion/react transitions)
   bezier: {
     standard: [0.4, 0, 0.2, 1] as [number, number, number, number],
     decelerate: [0.4, 0, 0.6, 1] as [number, number, number, number],

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { LockIcon } from "lucide-react";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { cva, type VariantProps } from "class-variance-authority";
