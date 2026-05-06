@@ -249,16 +249,18 @@ export function getPaperMetadata(data: any): Paper | null {
   }
 }
 
-// Ensure content directories exist
+// Ensure content directories exist (dev convenience). On serverless runtimes
+// the working tree is read-only and missing dirs are expected — silently
+// ignore errors; readers below already guard with existsSync().
 function ensureDirectoriesExist() {
-  if (!fs.existsSync(projectsDir())) {
-    fs.mkdirSync(projectsDir(), { recursive: true });
-  }
-  if (!fs.existsSync(galleryDir())) {
-    fs.mkdirSync(galleryDir(), { recursive: true });
-  }
-  if (!fs.existsSync(postsDir())) {
-    fs.mkdirSync(postsDir(), { recursive: true });
+  for (const dir of [projectsDir(), galleryDir(), postsDir()]) {
+    try {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+    } catch {
+      // ignored — read-only fs (e.g. Vercel lambda)
+    }
   }
 }
 
