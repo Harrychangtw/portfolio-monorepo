@@ -85,6 +85,7 @@ export interface SiteHeaderProps {
   staggeredMenu: StaggeredMenuConfig;
   showLoadingStatus?: boolean;
   enableLabDomain?: boolean;
+  labHostnames?: string[];
   specialPages?: SpecialPage[];
   readingProgressMatchers?: RegExp[];
   hideAtPageBottom?: boolean;
@@ -119,6 +120,7 @@ export default function SiteHeader({
   staggeredMenu,
   showLoadingStatus = false,
   enableLabDomain = false,
+  labHostnames = ["lab.localhost"],
   specialPages,
   readingProgressMatchers,
   hideAtPageBottom = false,
@@ -215,11 +217,8 @@ export default function SiteHeader({
     if (!enableLabDomain) return;
     if (typeof window === "undefined") return;
     const hostname = window.location.hostname;
-    setIsLab(
-      hostname.includes("lab.localhost") ||
-        hostname.includes("lab.harrychang.me"),
-    );
-  }, [enableLabDomain]);
+    setIsLab(labHostnames.some((h) => hostname.includes(h)));
+  }, [enableLabDomain, labHostnames]);
 
   useStableHashScroll("header");
 

@@ -5,16 +5,18 @@ import { motion, AnimatePresence } from "motion/react";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 
-export default function AskAi() {
+export interface AskAiProps {
+  fallbackQuery?: string;
+}
+
+export default function AskAi({ fallbackQuery = "" }: AskAiProps) {
   const isMobile = useIsMobile();
   const { t } = useLanguage();
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [loadedImages, setLoadedImages] = useState(0);
 
-  const query = encodeURIComponent(
-    t("askAi.query") || "Who is Harry Chang (harrychang.me)?",
-  );
+  const query = encodeURIComponent(t("askAi.query") || fallbackQuery);
 
   const aiLinks = [
     {

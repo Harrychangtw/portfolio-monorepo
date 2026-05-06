@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import SiteHeader from "@portfolio/ui/site-header";
+import { siteConfig } from "@/config/site";
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
@@ -56,6 +57,7 @@ export default function Header() {
       navItems={NAV_ITEMS}
       showLoadingStatus
       enableLabDomain
+      labHostnames={["lab.localhost", new URL(siteConfig.labUrl).hostname]}
       specialPages={SPECIAL_PAGES}
       readingProgressMatchers={[/^\/projects\/[^/]+$/, /^\/blog\/[^/]+$/]}
       staggeredMenu={{
