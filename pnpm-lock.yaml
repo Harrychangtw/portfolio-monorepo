@@ -537,6 +537,9 @@ importers:
       meshline:
         specifier: ^3.3.1
         version: 3.3.1(three@0.181.2)
+      motion:
+        specifier: ^12.38.0
+        version: 12.38.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next:
         specifier: 15.5.15
         version: 15.5.15(@playwright/test@1.57.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)

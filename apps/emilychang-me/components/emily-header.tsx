@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
-import EmilyStaggeredMenu from "@/components/emily-staggered-menu";
+import StaggeredMenu from "@portfolio/ui/staggered-menu";
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll";
 import { scrollToSection as utilScrollToSection } from "@portfolio/lib/lib/scrolling";
 
@@ -291,13 +291,22 @@ export default function EmilyHeader() {
         <div className="fixed top-0 left-0 right-0 z-[60] pointer-events-none">
           <div className="container relative h-[64px] pointer-events-none">
             <div className="absolute top-4 right-4 pointer-events-auto">
-              <EmilyStaggeredMenu
+              <StaggeredMenu
                 items={menuItems}
-                socialItems={socialItems}
+                socialGroups={[
+                  {
+                    titleKey: "footer.socialContact",
+                    fallbackTitle: "Social & Contact",
+                    items: socialItems,
+                  },
+                ]}
                 colors={["hsl(var(--accent))", "hsl(var(--background))"]}
                 accentColor="hsl(var(--accent))"
                 menuButtonColor="#000000"
                 openMenuButtonColor="#000000"
+                changeMenuColorOnOpen={false}
+                itemVariant="italic"
+                toggleVariant="body"
                 displaySocials={true}
                 displayItemNumbering={false}
                 onMenuOpen={() => setIsMenuOpen(true)}

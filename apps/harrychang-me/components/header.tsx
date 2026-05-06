@@ -7,7 +7,16 @@ import { motion, AnimatePresence, LayoutGroup } from "motion/react";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
-import StaggeredMenu from "@/components/staggered-menu";
+import StaggeredMenu from "@portfolio/ui/staggered-menu";
+import dynamic from "next/dynamic";
+
+const LanguageSwitcher = dynamic(
+  () => import("@portfolio/ui/language-switcher"),
+  { ssr: false },
+);
+const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), {
+  ssr: false,
+});
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll";
 import {
@@ -627,8 +636,24 @@ export default function Header() {
             <div className="absolute top-4 right-4 pointer-events-auto">
               <StaggeredMenu
                 items={menuItems}
-                connectItems={connectItems}
-                exploreItems={exploreItems}
+                socialGroups={[
+                  {
+                    titleKey: "footer.socialContact",
+                    fallbackTitle: "Social & Contact",
+                    items: connectItems,
+                  },
+                  {
+                    titleKey: "footer.personalResources",
+                    fallbackTitle: "Resources",
+                    items: exploreItems,
+                  },
+                ]}
+                bottomSlot={
+                  <>
+                    <LanguageSwitcher />
+                    <ThemeSwitcher />
+                  </>
+                }
                 accentColor="hsl(var(--accent))"
                 menuButtonColor="hsl(var(--foreground))"
                 openMenuButtonColor="hsl(var(--foreground))"
