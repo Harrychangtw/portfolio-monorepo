@@ -1,4 +1,4 @@
-name: Lighthouse Audit
+name: Lighthouse Audit (synthetic)
 
 on:
   push:
@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   lighthouse:
-    name: Lighthouse CI
+    name: Lighthouse CI (synthetic, harry localhost build)
     runs-on: ubuntu-latest
     permissions:
       contents: write

@@ -4,7 +4,7 @@ The Turborepo workspace powering [harrychang.me](https://harrychang.me) and [lab
 
 [![Lint & Format](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lint.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lint.yml)
 [![Typecheck](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/typecheck.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/typecheck.yml)
-[![Lighthouse CI](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml)
+[![Lighthouse Audit (synthetic)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml)
 [![Lighthouse Audit (harrychang.me)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml)
 [![Lighthouse Audit (emilychang.me)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod-emily.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod-emily.yml)
 [![Bundle Size](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/bundle-size.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/bundle-size.yml)
@@ -19,7 +19,7 @@ The Turborepo workspace powering [harrychang.me](https://harrychang.me) and [lab
 | [`harrychang-me`](apps/harrychang-me/) | Production                 | The primary tenant. Serves both `harrychang.me` and `lab.harrychang.me` from a single Next.js 15 codebase via subdomain middleware. See its [README](apps/harrychang-me/README.md) for features, performance numbers, and quick start. |
 | [`emilychang-me`](apps/emilychang-me/) | Deployed (content pending) | A second Next.js app deployed at `emilychang.me`. The shell is live; content is being authored and will land later this summer. Doubles as a check that shared packages stay genuinely portable across tenants.                        |
 
-The `harrychang-me` README is where the full feature writeup lives (Obsidian-style knowledge graph, Rangefinder 404, cross-domain theme engine, automated asset pipelines, Lighthouse CI tables for every route). This file stays focused on the workspace itself.
+The `harrychang-me` README is where the full feature writeup lives (Obsidian-style knowledge graph, Rangefinder 404, cross-domain theme engine, automated asset pipelines, Lighthouse CI tables for most route). This file stays focused on the workspace itself.
 
 ## Shared packages
 
