@@ -77,12 +77,16 @@ const parseHtmlToReact = (htmlString: string): React.ReactNode => {
   return parts.length > 0 ? <>{parts}</> : htmlString;
 };
 
+const DEFAULT_NAMESPACES = ["common", "about", "updates", "uses", "cv"];
+
 export function LanguageProvider({
   children,
   englishOnly = false,
+  namespaces = DEFAULT_NAMESPACES,
 }: {
   children: React.ReactNode;
   englishOnly?: boolean;
+  namespaces?: string[];
 }) {
   // Initialize language state with a function to read from localStorage synchronously
   const [language, setLanguageState] = useState<Language>(() => {
@@ -120,7 +124,6 @@ export function LanguageProvider({
   const loadTranslations = async (lang: Language) => {
     setIsLoading(true);
     try {
-      const namespaces = ["common", "about", "updates", "uses", "cv"];
       const translationPromises = namespaces.map(async (namespace) => {
         // In dev: Add timestamp to URL to force fresh fetch
         // In prod: Clean URL allows standard caching
