@@ -45,7 +45,11 @@ jobs:
           echo "Deployment commit: $DEPLOYMENT_SHA"
           echo "Message: $MSG"
           echo "Author: $AUTHOR"
-          if [[ "$MSG" == *"[skip ci]"* ]] || [[ "$MSG" == *"update emily production lighthouse scores"* ]]; then
+          # Match only the bot's distinctive commit phrase. Do NOT also match
+          # "[skip ci]" — humans add that tag to unrelated fix/chore commits
+          # (e.g. README/badge tweaks), and matching it here would skip every
+          # legitimate production audit that follows such a commit.
+          if [[ "$MSG" == *"update emily production lighthouse scores"* ]]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "::notice::Skipping — deployment is the bot's README commit."
           else
