@@ -1,9 +1,22 @@
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 let userConfig = undefined
 
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Pin file-tracing root to the monorepo so Next bundles content/** into
+  // the serverless function regardless of workspace auto-detection.
+  outputFileTracingRoot: path.join(__dirname, '../..'),
+  outputFileTracingIncludes: {
+    '/projects/**': ['./content/**/*'],
+    '/gallery/**': ['./content/**/*'],
+    '/blog/**': ['./content/**/*'],
+    '/api/**/*': ['./content/**/*'],
+  },
   images: {
     contentDispositionType: 'attachment',
     remotePatterns: [
