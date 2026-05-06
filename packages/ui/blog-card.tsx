@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { ImageContainer } from "@portfolio/ui/image-container";
 

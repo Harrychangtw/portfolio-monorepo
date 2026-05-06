@@ -6,7 +6,7 @@ import { GalleryItemMetadata } from "@portfolio/lib/lib/markdown";
 import { createBalancedLayout } from "@portfolio/lib/lib/utils";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import NavigationLink from "@portfolio/ui/navigation-link";
 interface GallerySectionProps {
   section?: string;

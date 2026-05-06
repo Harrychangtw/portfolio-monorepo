@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
 import { cva, type VariantProps } from "class-variance-authority";
 import { ANIMATION } from "@portfolio/config";

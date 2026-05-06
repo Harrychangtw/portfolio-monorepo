@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { LockIcon } from "lucide-react";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
 import { cva, type VariantProps } from "class-variance-authority";

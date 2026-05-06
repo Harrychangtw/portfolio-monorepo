@@ -6,7 +6,7 @@ import { PostMetadata } from "@portfolio/lib/lib/markdown";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import NavigationLink from "@portfolio/ui/navigation-link";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface BlogSectionProps {
   section?: string;
