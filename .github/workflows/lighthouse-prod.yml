@@ -1,4 +1,4 @@
-name: Lighthouse Audit (Production)
+name: Lighthouse Audit (harrychang.me)
 
 on:
   deployment_status:
@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   lighthouse-prod:
-    name: Lighthouse CI (Production Deployment)
+    name: Lighthouse CI (harrychang.me Production Deployment)
     # Only run when the harrychang-me Vercel Production deployment finishes.
     # Vercel sets `environment` to "Production – <project-name>"; this repo
     # hosts two Vercel projects (`portfolio` for harrychang-me and

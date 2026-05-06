@@ -1,4 +1,4 @@
-name: Lighthouse Audit (Production, Emily)
+name: Lighthouse Audit (emilychang.me)
 
 on:
   deployment_status:
@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   lighthouse-prod-emily:
-    name: Lighthouse CI (Emily Production Deployment)
+    name: Lighthouse CI (emilychang.me Production Deployment)
     # Only run when the emilychang-me Vercel Production deployment finishes.
     # Vercel sets `environment` to "Production – <project-name>"; the emily
     # project name is `portfolio-monorepo-emilychang-me`. Matching the exact

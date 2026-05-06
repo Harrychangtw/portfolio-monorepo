@@ -5,17 +5,19 @@ The Turborepo workspace powering [harrychang.me](https://harrychang.me) and [lab
 [![Lint & Format](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lint.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lint.yml)
 [![Typecheck](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/typecheck.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/typecheck.yml)
 [![Lighthouse CI](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse.yml)
-[![Lighthouse (Production)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml)
+[![Lighthouse Audit (harrychang.me)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml)
+[![Lighthouse Audit (emilychang.me)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod-emily.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod-emily.yml)
 [![Bundle Size](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/bundle-size.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/bundle-size.yml)
 [![Dependency Audit](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml)
 [![Links](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/links.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/links.yml)
+[![Image Refs](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/image-refs.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/image-refs.yml)
 
 ## Apps
 
-| App                                    | Status            | Description                                                                                                                                                                                                                            |
-| :------------------------------------- | :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`harrychang-me`](apps/harrychang-me/) | Production        | The primary tenant. Serves both `harrychang.me` and `lab.harrychang.me` from a single Next.js 15 codebase via subdomain middleware. See its [README](apps/harrychang-me/README.md) for features, performance numbers, and quick start. |
-| [`emilychang-me`](apps/emilychang-me/) | Scaffold (paused) | A second Next.js app stubbed out in the workspace. Not currently deployed. Kept in the repo to validate that shared packages stay genuinely portable across tenants.                                                                   |
+| App                                    | Status                     | Description                                                                                                                                                                                                                            |
+| :------------------------------------- | :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`harrychang-me`](apps/harrychang-me/) | Production                 | The primary tenant. Serves both `harrychang.me` and `lab.harrychang.me` from a single Next.js 15 codebase via subdomain middleware. See its [README](apps/harrychang-me/README.md) for features, performance numbers, and quick start. |
+| [`emilychang-me`](apps/emilychang-me/) | Deployed (content pending) | A second Next.js app deployed at `emilychang.me`. The shell is live; content is being authored and will land later this summer. Doubles as a check that shared packages stay genuinely portable across tenants.                        |
 
 The `harrychang-me` README is where the full feature writeup lives (Obsidian-style knowledge graph, Rangefinder 404, cross-domain theme engine, automated asset pipelines, Lighthouse CI tables for every route). This file stays focused on the workspace itself.
 
@@ -63,7 +65,7 @@ Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS, Radix UI, Motion (`
 ```
 apps/
   harrychang-me/   production app, dual-domain (main + lab)
-  emilychang-me/   second tenant, scaffolded, paused
+  emilychang-me/   second tenant, deployed, content landing later this summer
 packages/
   ui/              shared React components
   lib/             shared hooks, contexts, Prisma client
