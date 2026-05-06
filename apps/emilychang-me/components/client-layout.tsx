@@ -23,7 +23,7 @@ export default function ClientLayout({
 
   return (
     <NavigationProvider>
-      <LanguageProvider englishOnly>
+      <LanguageProvider englishOnly namespaces={["common", "about", "uses"]}>
         <EmilyHeader />
         {isMobile ? (
           children

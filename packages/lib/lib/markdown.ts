@@ -17,7 +17,7 @@ function loadImageDims(): Record<string, ImageDim> {
   if (cachedImageDims) return cachedImageDims;
   try {
     const dimsPath = path.join(
-      process.cwd(),
+      getContentRoot(),
       "content/generated/image-dims.json",
     );
     cachedImageDims = JSON.parse(fs.readFileSync(dimsPath, "utf-8"));
@@ -30,10 +30,23 @@ function loadImageDims(): Record<string, ImageDim> {
 // Re-export Paper type for convenience
 export type { Paper } from "@portfolio/lib/types/paper";
 
-// Define the directories
-const projectsDirectory = path.join(process.cwd(), "content/projects");
-const galleryDirectory = path.join(process.cwd(), "content/gallery");
-const postsDirectory = path.join(process.cwd(), "content/posts");
+// Content root resolution. On Vercel's serverless runtime in a Turborepo
+// monorepo, process.cwd() does not reliably resolve to the app root, so we
+// allow each app to register its own absolute root via setContentRoot()
+// (typically called from a per-app shim using path.resolve(__dirname, "..")).
+let contentRootOverride: string | null = null;
+
+export function setContentRoot(absoluteAppRoot: string): void {
+  contentRootOverride = absoluteAppRoot;
+}
+
+function getContentRoot(): string {
+  return contentRootOverride ?? process.cwd();
+}
+
+const projectsDir = () => path.join(getContentRoot(), "content/projects");
+const galleryDir = () => path.join(getContentRoot(), "content/gallery");
+const postsDir = () => path.join(getContentRoot(), "content/posts");
 
 // Helper to generate slug from text
 function slugify(text: string): string {
@@ -238,14 +251,14 @@ export function getPaperMetadata(data: any): Paper | null {
 
 // Ensure content directories exist
 function ensureDirectoriesExist() {
-  if (!fs.existsSync(projectsDirectory)) {
-    fs.mkdirSync(projectsDirectory, { recursive: true });
+  if (!fs.existsSync(projectsDir())) {
+    fs.mkdirSync(projectsDir(), { recursive: true });
   }
-  if (!fs.existsSync(galleryDirectory)) {
-    fs.mkdirSync(galleryDirectory, { recursive: true });
+  if (!fs.existsSync(galleryDir())) {
+    fs.mkdirSync(galleryDir(), { recursive: true });
   }
-  if (!fs.existsSync(postsDirectory)) {
-    fs.mkdirSync(postsDirectory, { recursive: true });
+  if (!fs.existsSync(postsDir())) {
+    fs.mkdirSync(postsDir(), { recursive: true });
   }
 }
 
@@ -253,11 +266,11 @@ function ensureDirectoriesExist() {
 export function getAllProjectSlugs() {
   ensureDirectoriesExist();
   try {
-    if (!fs.existsSync(projectsDirectory)) {
+    if (!fs.existsSync(projectsDir())) {
       return [];
     }
 
-    const fileNames = fs.readdirSync(projectsDirectory);
+    const fileNames = fs.readdirSync(projectsDir());
     return fileNames
       .filter((fileName) => fileName.endsWith(".md"))
       .map((fileName) => {
@@ -277,11 +290,11 @@ export function getAllProjectSlugs() {
 export function getAllGallerySlugs() {
   ensureDirectoriesExist();
   try {
-    if (!fs.existsSync(galleryDirectory)) {
+    if (!fs.existsSync(galleryDir())) {
       return [];
     }
 
-    const fileNames = fs.readdirSync(galleryDirectory);
+    const fileNames = fs.readdirSync(galleryDir());
     return fileNames
       .filter((fileName) => fileName.endsWith(".md"))
       .map((fileName) => {
@@ -301,11 +314,11 @@ export function getAllGallerySlugs() {
 export function getAllPostSlugs() {
   ensureDirectoriesExist();
   try {
-    if (!fs.existsSync(postsDirectory)) {
+    if (!fs.existsSync(postsDir())) {
       return [];
     }
 
-    const fileNames = fs.readdirSync(postsDirectory);
+    const fileNames = fs.readdirSync(postsDir());
     return fileNames
       .filter((fileName) => fileName.endsWith(".md"))
       .map((fileName) => {
@@ -328,11 +341,11 @@ export function getAllProjectsMetadata(
 ): ProjectMetadata[] {
   ensureDirectoriesExist();
   try {
-    if (!fs.existsSync(projectsDirectory)) {
+    if (!fs.existsSync(projectsDir())) {
       return [];
     }
 
-    let fileNames = fs.readdirSync(projectsDirectory);
+    let fileNames = fs.readdirSync(projectsDir());
 
     // Filter files based on locale to show only one version
     fileNames = fileNames.filter((fileName) => {
@@ -345,7 +358,7 @@ export function getAllProjectsMetadata(
         const baseName = fileName.replace(".md", "");
         const chineseVersion = `${baseName}_zh-tw.md`;
         return (
-          !fs.existsSync(path.join(projectsDirectory, chineseVersion)) &&
+          !fs.existsSync(path.join(projectsDir(), chineseVersion)) &&
           !fileName.includes("_")
         );
       } else {
@@ -360,7 +373,7 @@ export function getAllProjectsMetadata(
         const slug = fileName.replace(/\.md$/, "");
 
         // Read markdown file as string
-        const fullPath = path.join(projectsDirectory, fileName);
+        const fullPath = path.join(projectsDir(), fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
 
         // Use gray-matter to parse the post metadata section
@@ -443,11 +456,11 @@ export function getAllGalleryMetadata(
 ): GalleryItemMetadata[] {
   ensureDirectoriesExist();
   try {
-    if (!fs.existsSync(galleryDirectory)) {
+    if (!fs.existsSync(galleryDir())) {
       return [];
     }
 
-    let fileNames = fs.readdirSync(galleryDirectory);
+    let fileNames = fs.readdirSync(galleryDir());
 
     // Filter files based on locale to show only one version
     fileNames = fileNames.filter((fileName) => {
@@ -460,7 +473,7 @@ export function getAllGalleryMetadata(
         const baseName = fileName.replace(".md", "");
         const chineseVersion = `${baseName}_zh-tw.md`;
         return (
-          !fs.existsSync(path.join(galleryDirectory, chineseVersion)) &&
+          !fs.existsSync(path.join(galleryDir(), chineseVersion)) &&
           !fileName.includes("_")
         );
       } else {
@@ -475,7 +488,7 @@ export function getAllGalleryMetadata(
         const slug = fileName.replace(/\.md$/, "");
 
         // Read markdown file as string
-        const fullPath = path.join(galleryDirectory, fileName);
+        const fullPath = path.join(galleryDir(), fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
 
         // Use gray-matter to parse the post metadata section
@@ -561,7 +574,7 @@ export function getAllSketchesMetadata(
   try {
     // Look in the optimized sketches directory
     const optimizedSketchesDir = path.join(
-      process.cwd(),
+      getContentRoot(),
       "public",
       "images",
       "optimized",
@@ -609,11 +622,11 @@ export function getAllSketchesMetadata(
 export function getAllPostsMetadata(locale: string = "en"): PostMetadata[] {
   ensureDirectoriesExist();
   try {
-    if (!fs.existsSync(postsDirectory)) {
+    if (!fs.existsSync(postsDir())) {
       return [];
     }
 
-    let fileNames = fs.readdirSync(postsDirectory);
+    let fileNames = fs.readdirSync(postsDir());
 
     // Filter files based on locale to show only one version
     fileNames = fileNames.filter((fileName) => {
@@ -624,7 +637,7 @@ export function getAllPostsMetadata(locale: string = "en"): PostMetadata[] {
         const baseName = fileName.replace(".md", "");
         const chineseVersion = `${baseName}_zh-tw.md`;
         return (
-          !fs.existsSync(path.join(postsDirectory, chineseVersion)) &&
+          !fs.existsSync(path.join(postsDir(), chineseVersion)) &&
           !fileName.includes("_")
         );
       } else {
@@ -636,7 +649,7 @@ export function getAllPostsMetadata(locale: string = "en"): PostMetadata[] {
       .filter((fileName) => fileName.endsWith(".md"))
       .map((fileName) => {
         const slug = fileName.replace(/\.md$/, "");
-        const fullPath = path.join(postsDirectory, fileName);
+        const fullPath = path.join(postsDir(), fileName);
         const fileContents = fs.readFileSync(fullPath, "utf8");
         const matterResult = matter(fileContents);
 
@@ -714,7 +727,7 @@ export async function getProjectData(slug: string) {
   // by skipping checks on `hidden` or `locked` here.
   ensureDirectoriesExist();
   try {
-    const fullPath = path.join(projectsDirectory, `${slug}.md`);
+    const fullPath = path.join(projectsDir(), `${slug}.md`);
 
     if (!fs.existsSync(fullPath)) {
       return null;
@@ -766,7 +779,7 @@ export async function getGalleryItemData(slug: string) {
   // by skipping checks on `hidden` or `locked` here.
   ensureDirectoriesExist();
   try {
-    const fullPath = path.join(galleryDirectory, `${slug}.md`);
+    const fullPath = path.join(galleryDir(), `${slug}.md`);
 
     if (!fs.existsSync(fullPath)) {
       return null;
@@ -877,7 +890,7 @@ export async function getPostData(slug: string) {
   // by skipping checks on `hidden` or `locked` here.
   ensureDirectoriesExist();
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    const fullPath = path.join(postsDir(), `${slug}.md`);
 
     if (!fs.existsSync(fullPath)) {
       return null;
@@ -924,7 +937,7 @@ export function saveProject(
 ) {
   ensureDirectoriesExist();
   try {
-    const fullPath = path.join(projectsDirectory, `${slug}.md`);
+    const fullPath = path.join(projectsDir(), `${slug}.md`);
     const fileContent = matter.stringify(content, data);
     fs.writeFileSync(fullPath, fileContent);
     return true;
@@ -942,7 +955,7 @@ export function saveGalleryItem(
 ) {
   ensureDirectoriesExist();
   try {
-    const fullPath = path.join(galleryDirectory, `${slug}.md`);
+    const fullPath = path.join(galleryDir(), `${slug}.md`);
     const fileContent = matter.stringify(content, data);
     fs.writeFileSync(fullPath, fileContent);
     return true;
@@ -960,7 +973,7 @@ export function savePost(
 ) {
   ensureDirectoriesExist();
   try {
-    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    const fullPath = path.join(postsDir(), `${slug}.md`);
     const fileContent = matter.stringify(content, data);
     fs.writeFileSync(fullPath, fileContent);
     return true;
