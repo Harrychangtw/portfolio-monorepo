@@ -1,6 +1,17 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Pin file-tracing root to the monorepo so Next bundles content/** into
+  // the serverless function regardless of workspace auto-detection.
+  outputFileTracingRoot: path.join(__dirname, "../.."),
+  outputFileTracingIncludes: {
+    "/api/**/*": ["./content/**/*"],
+  },
+  outputFileTracingExcludes: {
+    "*": ["public/images/**"],
+  },
+
   // Image optimization configuration
   images: {
     unoptimized: true,
