@@ -3,3 +3,4 @@ torch>=2.0
 numpy
 pyyaml
 requests
+aiohttp

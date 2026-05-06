@@ -10,6 +10,7 @@
 [![Lighthouse (Production)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/lighthouse-prod.yml)
 [![Bundle Size](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/bundle-size.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/bundle-size.yml)
 [![Dependency Audit](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/audit.yml)
+[![Links](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/links.yml/badge.svg)](https://github.com/Harrychangtw/portfolio-monorepo/actions/workflows/links.yml)
 
 A modern, highly optimized portfolio website built with Next.js 15 and React 19, featuring a dual-domain architecture, an Obsidian-style knowledge graph, custom cross-domain theme persistence, an interactive 404 experience, and a flawless 100 Real Experience Score (RES) under heavy traffic.
 

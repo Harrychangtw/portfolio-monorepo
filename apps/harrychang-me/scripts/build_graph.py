@@ -13,6 +13,8 @@ Requires: pip install -r scripts/requirements-graph.txt
 """
 
 import argparse
+import asyncio
+import base64
 import hashlib
 import json
 import os
@@ -31,9 +33,15 @@ LOCALES_DIR = Path(__file__).parent.parent / "public" / "locales"
 OUTPUT_PATH = Path(__file__).parent.parent / "public" / "graph-data.json"
 CACHE_DIR = Path(__file__).parent.parent / "content" / "generated"
 CACHE_PATH = CACHE_DIR / "graph-embeddings-cache.json"
+MULTIMODAL_CACHE_PATH = CACHE_DIR / "graph-multimodal-cache.json"
+PUBLIC_DIR = Path(__file__).parent.parent / "public"
 SUMMARIES_PATH = CACHE_DIR / "section-summaries.json"
 
 EMBEDDING_MODEL = "BAAI/bge-large-zh-v1.5"
+MULTIMODAL_MODEL = "google/gemini-embedding-2-preview"
+MULTIMODAL_DIM = 1536
+MULTIMODAL_API_URL = "https://openrouter.ai/api/v1/embeddings"
+DEFAULT_CONCURRENCY = 15
 BASE_URL = "https://www.harrychang.me"
 
 CONTENT_DIRS = {
@@ -961,6 +969,197 @@ def compute_embeddings(chunks: list[dict], cache: dict) -> np.ndarray:
     return all_embeddings
 
 
+# ─── Multimodal embeddings (OpenRouter) ─────────────────────────────────────
+
+
+def load_multimodal_cache() -> dict:
+    if MULTIMODAL_CACHE_PATH.exists():
+        try:
+            return json.loads(MULTIMODAL_CACHE_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, IOError):
+            pass
+    return {}
+
+
+def save_multimodal_cache(cache: dict):
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    MULTIMODAL_CACHE_PATH.write_text(json.dumps(cache), encoding="utf-8")
+
+
+_MIME_BY_EXT = {
+    ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+    ".webp": "image/webp", ".gif": "image/gif", ".avif": "image/avif",
+    ".svg": "image/svg+xml",
+}
+
+
+def resolve_local_image(media: str) -> tuple[bytes, str] | None:
+    """Resolve a markdown image path to (bytes, mime). Returns None if remote/missing."""
+    if not media or media.startswith(("http://", "https://", "data:")):
+        return None
+    rel = media.lstrip("/")
+    candidate = PUBLIC_DIR / rel
+    if not candidate.exists():
+        return None
+    mime = _MIME_BY_EXT.get(candidate.suffix.lower())
+    if not mime or mime == "image/svg+xml":
+        return None
+    return candidate.read_bytes(), mime
+
+
+async def _embed_one(
+    session,
+    api_key: str,
+    payload_input,
+    dim: int,
+    semaphore,
+    label: str = "",
+    max_retries: int = 4,
+) -> list[float] | None:
+    """Embed a single input (string or content-array dict). Bounded by semaphore. Retries on 429/5xx."""
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    body = {
+        "model": MULTIMODAL_MODEL,
+        "input": [payload_input],
+        "encoding_format": "float",
+        "dimensions": dim,
+    }
+    async with semaphore:
+        for attempt in range(max_retries):
+            try:
+                async with session.post(MULTIMODAL_API_URL, headers=headers, json=body) as resp:
+                    if resp.status == 429:
+                        wait = int(resp.headers.get("Retry-After", 2 ** (attempt + 1)))
+                        print(f"    rate-limited ({label}), waiting {wait}s")
+                        await asyncio.sleep(wait)
+                        continue
+                    if resp.status >= 500:
+                        await asyncio.sleep(2 ** attempt)
+                        continue
+                    resp.raise_for_status()
+                    data = await resp.json()
+                    return data["data"][0]["embedding"]
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    await asyncio.sleep(2 ** attempt)
+                else:
+                    print(f"    failed ({label}): {e}")
+        return None
+
+
+async def _embed_job(session, api_key, key, payload, label, dim, semaphore):
+    """Wrapper that returns (key, embedding) so as_completed preserves identity."""
+    emb = await _embed_one(session, api_key, payload, dim, semaphore, label)
+    return key, emb
+
+
+async def _run_embeddings(
+    api_key: str,
+    jobs: list[tuple[str, object, str]],
+    cache: dict,
+    concurrency: int,
+    dim: int,
+    progress_label: str,
+):
+    if not jobs:
+        return
+    import aiohttp
+    sem = asyncio.Semaphore(concurrency)
+    timeout = aiohttp.ClientTimeout(total=180)
+    save_every = max(10, concurrency)
+    completed = 0
+
+    async with aiohttp.ClientSession(timeout=timeout) as session:
+        coros = [_embed_job(session, api_key, k, p, lbl, dim, sem) for k, p, lbl in jobs]
+        for fut in asyncio.as_completed(coros):
+            key, emb = await fut
+            completed += 1
+            if emb is not None:
+                cache[key] = emb
+            if completed % save_every == 0 or completed == len(jobs):
+                save_multimodal_cache(cache)
+                print(f"    {progress_label} {completed}/{len(jobs)}")
+
+
+async def compute_multimodal_embeddings_async(
+    text_chunks: list[dict],
+    image_chunks: list[dict],
+    cache: dict,
+    concurrency: int,
+    dim: int = MULTIMODAL_DIM,
+) -> tuple[np.ndarray, list[dict], np.ndarray]:
+    """Embed text + resolvable images via OpenRouter Gemini Embedding 2 concurrently.
+    Returns (text_embeddings, embeddable_image_chunks, image_embeddings)."""
+    api_key = os.environ["OPENROUTER_API_KEY"]
+
+    # --- Text jobs ---
+    text_keys, text_jobs = [], []
+    for c in text_chunks:
+        prefixed = f"title: {c.get('title', '')} | text: {c['text']}"
+        key = f"text:{dim}:{sha256(prefixed)}"
+        text_keys.append(key)
+        if key not in cache:
+            text_jobs.append((key, prefixed, c.get("id", "")))
+
+    cached_text = len(text_keys) - len(text_jobs)
+    if text_jobs:
+        print(f"  Embedding {len(text_jobs)} text chunks via OpenRouter ({cached_text} cached, concurrency={concurrency})")
+        await _run_embeddings(api_key, text_jobs, cache, concurrency, dim, "text")
+    else:
+        print(f"  All {len(text_keys)} text chunks found in cache")
+
+    # --- Image jobs ---
+    embeddable_imgs, img_keys, img_jobs = [], [], []
+    for c in image_chunks:
+        media = c.get("mediaSource") or c.get("imageUrl")
+        resolved = resolve_local_image(media) if media else None
+        if not resolved:
+            continue
+        img_bytes, mime = resolved
+        key = f"image:{dim}:{hashlib.sha256(img_bytes).hexdigest()}"
+        embeddable_imgs.append(c)
+        img_keys.append(key)
+        if key not in cache:
+            data_uri = f"data:{mime};base64,{base64.b64encode(img_bytes).decode('ascii')}"
+            payload = {"content": [{"type": "image_url", "image_url": {"url": data_uri}}]}
+            img_jobs.append((key, payload, c.get("id", "")))
+
+    cached_img = len(img_keys) - len(img_jobs)
+    if img_jobs:
+        print(f"  Embedding {len(img_jobs)} images via OpenRouter ({cached_img} cached, concurrency={concurrency})")
+        await _run_embeddings(api_key, img_jobs, cache, concurrency, dim, "image")
+    elif embeddable_imgs:
+        print(f"  All {len(img_keys)} images found in cache")
+    else:
+        print("  No locally-resolvable images to embed")
+
+    save_multimodal_cache(cache)
+
+    # Drop entries whose embedding never landed in cache (persistent failures).
+    text_embeddings = np.array(
+        [cache[k] for k in text_keys if k in cache], dtype=np.float32
+    )
+    if len(text_embeddings) != len(text_keys):
+        missing = len(text_keys) - len(text_embeddings)
+        sys.exit(f"ERROR: {missing} text embeddings failed and were not cached. Re-run to retry.")
+
+    final_imgs, final_keys = [], []
+    for c, k in zip(embeddable_imgs, img_keys):
+        if k in cache:
+            final_imgs.append(c)
+            final_keys.append(k)
+
+    img_embeddings = (
+        np.array([cache[k] for k in final_keys], dtype=np.float32)
+        if final_keys
+        else np.zeros((0, dim), dtype=np.float32)
+    )
+    dropped = len(embeddable_imgs) - len(final_imgs)
+    if dropped:
+        print(f"  Warning: {dropped} image embeddings failed and were dropped from the graph")
+    return text_embeddings, final_imgs, img_embeddings
+
+
 # ─── Similarity ──────────────────────────────────────────────────────────────
 
 
@@ -1007,7 +1206,7 @@ def compute_edges(
 # ─── Optional LLM descriptions ──────────────────────────────────────────────
 
 
-def generate_descriptions(chunks: list[dict], cache: dict):
+def generate_descriptions(chunks: list[dict]):
     """Generate LLM descriptions via OpenRouter if API key is set."""
     import requests as req
 
@@ -1024,9 +1223,15 @@ def generate_descriptions(chunks: list[dict], cache: dict):
         except (json.JSONDecodeError, IOError):
             pass
 
-    # Only generate descriptions for file and section nodes that have text
-    embeddable = [c for c in chunks if "text" in c]
+    # Only generate descriptions for chunks that have text AND no TL;DR from section-summaries.json
+    embeddable = [c for c in chunks if "text" in c and not c.get("tldr")]
+    skipped_tldr = sum(1 for c in chunks if "text" in c and c.get("tldr"))
+    if skipped_tldr:
+        print(f"  Skipping {skipped_tldr} chunks with TL;DR from section-summaries.json")
     uncached = [c for c in embeddable if sha256(c["text"]) not in desc_cache]
+    if not embeddable:
+        print("  All chunks covered by TL;DRs — nothing to generate")
+        return
     if not uncached:
         print(f"  All {len(embeddable)} descriptions found in cache")
     else:
@@ -1105,13 +1310,24 @@ def generate_descriptions(chunks: list[dict], cache: dict):
 def main():
     parser = argparse.ArgumentParser(description="Build knowledge graph data")
     parser.add_argument(
-        "--threshold", type=float, default=0.62, help="Cosine similarity threshold"
+        "--threshold", type=float, default=0.75, help="Cosine similarity threshold"
     )
     parser.add_argument(
         "--max-edges", type=int, default=8, help="Max edges per node (k-NN cap)"
     )
     parser.add_argument(
         "--no-llm", action="store_true", help="Skip LLM description generation"
+    )
+    parser.add_argument(
+        "--no-multimodal",
+        action="store_true",
+        help="Force local sentence-transformers even when OPENROUTER_API_KEY is set (text-only)",
+    )
+    parser.add_argument(
+        "--concurrency",
+        type=int,
+        default=DEFAULT_CONCURRENCY,
+        help=f"Max concurrent OpenRouter embedding requests (default {DEFAULT_CONCURRENCY})",
     )
     args = parser.parse_args()
 
@@ -1390,27 +1606,40 @@ def main():
     print(f"  Hub edges: {len(hub_edges)}")
     print(f"  Social link nodes: {len(social_link_nodes)}")
 
-    # Step 4: Generate embeddings (only for file + section nodes)
-    print("\n[4/7] Generating embeddings...")
-    embeddable_chunks = all_file_nodes + all_section_nodes + locale_chunks
-    cache = load_cache()
-    embeddings = compute_embeddings(embeddable_chunks, cache)
+    # Step 4: Generate embeddings — Gemini Embedding 2 (multimodal) is the default
+    text_chunks = all_file_nodes + all_section_nodes + locale_chunks
+
+    if args.no_multimodal:
+        print("\n[4/7] Generating embeddings (local sentence-transformers, text-only)...")
+        embeddable_chunks = text_chunks
+        cache = load_cache()
+        embeddings = compute_embeddings(embeddable_chunks, cache)
+        active_model = EMBEDDING_MODEL
+    else:
+        if not os.environ.get("OPENROUTER_API_KEY"):
+            sys.exit("ERROR: OPENROUTER_API_KEY not set. Export it, or pass --no-multimodal to use the local text-only model.")
+        print(f"\n[4/7] Generating multimodal embeddings via {MULTIMODAL_MODEL} (dim={MULTIMODAL_DIM})...")
+        mm_cache = load_multimodal_cache()
+        text_embeddings, embedded_image_chunks, image_embeddings = asyncio.run(
+            compute_multimodal_embeddings_async(
+                text_chunks, all_image_nodes, mm_cache,
+                concurrency=args.concurrency, dim=MULTIMODAL_DIM,
+            )
+        )
+        embeddable_chunks = text_chunks + embedded_image_chunks
+        embeddings = np.vstack([text_embeddings, image_embeddings]) if image_embeddings.size else text_embeddings
+        active_model = MULTIMODAL_MODEL
+        print(f"  Embedded {len(text_chunks)} text + {len(embedded_image_chunks)} image nodes")
 
     # Step 5: Compute semantic similarity edges
     print(f"\n[5/7] Computing semantic edges (threshold={args.threshold}, max_edges={args.max_edges})...")
     semantic_edges = compute_edges(embeddings, embeddable_chunks, args.threshold, args.max_edges)
     print(f"  Semantic edges: {len(semantic_edges)}")
 
-    # Step 6: Optional LLM descriptions
-    print("\n[6/7] LLM descriptions...")
     all_chunks = all_file_nodes + all_section_nodes + locale_chunks + all_image_nodes + all_video_nodes + tag_nodes + hub_nodes + social_link_nodes
-    if not args.no_llm:
-        generate_descriptions(all_chunks, cache)
-    else:
-        print("  Skipped (--no-llm)")
 
-    # Step 6.5: Apply TL;DRs from section-summaries.json
-    print("\n[6.5/7] Applying TL;DRs from section-summaries.json...")
+    # Step 6: Apply TL;DRs from section-summaries.json (authoritative source for tooltips)
+    print("\n[6/7] Applying TL;DRs from section-summaries.json...")
     tldr_applied = 0
     if SUMMARIES_PATH.exists():
         try:
@@ -1443,6 +1672,13 @@ def main():
                     chunk["tldr"] = entry["tldr"]
                     tldr_applied += 1
     print(f"  Applied {tldr_applied} TL;DRs")
+
+    # Step 6.5: LLM descriptions for chunks NOT covered by section-summaries.json
+    print("\n[6.5/7] LLM descriptions (residual only)...")
+    if not args.no_llm:
+        generate_descriptions(all_chunks)
+    else:
+        print("  Skipped (--no-llm)")
 
     # Combine all edges
     all_edges = all_structural_edges + tag_edges + semantic_edges
@@ -1487,7 +1723,7 @@ def main():
             "edgeCount": len(all_edges),
             "threshold": args.threshold,
             "maxEdgesPerNode": args.max_edges,
-            "model": EMBEDDING_MODEL,
+            "model": active_model,
             "nodeTypeCounts": node_type_counts,
         },
     }
