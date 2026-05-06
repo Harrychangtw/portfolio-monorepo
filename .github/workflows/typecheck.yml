@@ -4,11 +4,13 @@ on:
   push:
     paths:
       - "apps/harrychang-me/**"
+      - "apps/emilychang-me/**"
       - "packages/**"
       - ".github/workflows/typecheck.yml"
   pull_request:
     paths:
       - "apps/harrychang-me/**"
+      - "apps/emilychang-me/**"
       - "packages/**"
       - ".github/workflows/typecheck.yml"
   workflow_dispatch:
@@ -18,7 +20,7 @@ permissions:
 
 jobs:
   typecheck:
-    name: Type Check
+    name: Type Check (harry)
     runs-on: ubuntu-latest
 
     env:
@@ -42,3 +44,26 @@ jobs:
 
       - name: Type check
         run: pnpm --filter harry-chang-portfolio exec tsc --noEmit
+
+  typecheck-emily:
+    name: Type Check (emily)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm --filter emilychang-me exec tsc --noEmit
