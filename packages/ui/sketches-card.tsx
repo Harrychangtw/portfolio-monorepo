@@ -107,7 +107,6 @@ export default function SketchesCard({
                     className={`transition-all duration-700 ease-in-out group-hover:brightness-95 object-cover object-center ${blurComplete ? "opacity-100" : "opacity-0"}`}
                     sizes={fullImageSizes}
                     priority={priority || index < 3}
-                    quality={70}
                     {...(fullImageUrl?.endsWith(".webp")
                       ? { loader: webpLoader }
                       : {})}

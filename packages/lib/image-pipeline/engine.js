@@ -49,7 +49,7 @@ async function processOne(plan) {
     out: path.join(baseDir, `${baseName}-${w}w.webp`),
   }));
 
-  const wantThumb = !imagePath.includes("thumb");
+  const wantThumb = !path.basename(imagePath).includes("thumb");
   const allOutputs = [
     outputFilename,
     ...(wantThumb ? [thumbFilename] : []),

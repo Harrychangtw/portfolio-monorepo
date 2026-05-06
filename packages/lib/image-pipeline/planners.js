@@ -126,7 +126,7 @@ async function planSquare(
   optimizedRoot,
   opts,
 ) {
-  const { config: kindConfig, responsiveWidths = [] } = opts;
+  const { config: kindConfig, rotate = false, responsiveWidths = [] } = opts;
   const relativePath = path.relative(sourceRoot, imagePath);
   const outputDir = path.join(
     optimizedRoot,
@@ -154,6 +154,7 @@ async function planSquare(
     thumbnailFit: "cover",
     thumbnailPosition: "center",
     responsiveWidths,
+    rotate,
     displayPath: relativePath,
   };
 }
@@ -206,6 +207,7 @@ async function buildPlansForCategory(name, spec, directories) {
       plans.push(
         await planSquare(img, source, name, optimizedRoot, {
           config,
+          rotate,
           responsiveWidths,
         }),
       );
