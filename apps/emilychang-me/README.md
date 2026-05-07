@@ -17,21 +17,21 @@ Production deploy.
 
 <!-- LIGHTHOUSE_PROD_RESULTS_START -->
 
-> 🕐 **Last audited:** Thu, 07 May 2026 02:21:51 GMT  
+> 🕐 **Last audited:** Thu, 07 May 2026 03:16:39 GMT  
 > 🌐 **Deployment:** https://emilychang.me
 
 #### Desktop (Production Deployment)
 
 | Tested Route | Performance                                                                              | FCP   | LCP   | TBT      | CLS | Speed Index |
 | :----------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :------- | :-- | :---------- |
-| `/`          | ![Lighthouse 59](https://img.shields.io/badge/lighthouse-59-important?style=flat-square) | 0.5 s | 1.6 s | 3,570 ms | 0   | 2.3 s       |
-| `/linktree`  | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.8 s | 30 ms    | 0   | 0.5 s       |
+| `/`          | ![Lighthouse 58](https://img.shields.io/badge/lighthouse-58-important?style=flat-square) | 0.5 s | 1.7 s | 7,300 ms | 0   | 2.4 s       |
+| `/linktree`  | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.7 s | 40 ms    | 0   | 0.5 s       |
 
 #### Mobile (Production Deployment)
 
 | Tested Route | Performance                                                                              | FCP   | LCP   | TBT        | CLS | Speed Index |
 | :----------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :--------- | :-- | :---------- |
-| `/`          | ![Lighthouse 43](https://img.shields.io/badge/lighthouse-43-critical?style=flat-square)  | 1.7 s | 9.0 s | 143,280 ms | 0   | 3.7 s       |
-| `/linktree`  | ![Lighthouse 64](https://img.shields.io/badge/lighthouse-64-important?style=flat-square) | 1.7 s | 9.3 s | 430 ms     | 0   | 1.9 s       |
+| `/`          | ![Lighthouse 42](https://img.shields.io/badge/lighthouse-42-critical?style=flat-square)  | 1.7 s | 9.3 s | 144,930 ms | 0   | 4.5 s       |
+| `/linktree`  | ![Lighthouse 65](https://img.shields.io/badge/lighthouse-65-important?style=flat-square) | 1.7 s | 9.2 s | 380 ms     | 0   | 1.7 s       |
 
 <!-- LIGHTHOUSE_PROD_RESULTS_END -->
