@@ -1,23 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { siteConfig } from "@/config/site";
 
-// Edge-resolved 308 redirects for outbound social/profile links.
-// Lives in middleware (not /app pages) so they never render — keeps these
-// throwaway hops out of Vercel RES samples and shaves the LCP/font cost.
-const SOCIAL_REDIRECTS: Record<string, string> = {
-  "/github": siteConfig.social.github,
-  "/readme": siteConfig.social.readme,
-  "/linkedin": siteConfig.social.linkedin,
-  "/instagram": siteConfig.social.instagram,
-  "/spotify": siteConfig.social.spotify,
-  "/discord": siteConfig.social.discord,
-  "/letterboxd": siteConfig.social.letterboxd,
-  "/medium": siteConfig.social.medium,
-  "/telegram": siteConfig.social.telegram,
-  "/cal": siteConfig.external.calendar,
-  "/email": `mailto:${siteConfig.author.email}`,
-};
+// Note: outbound social/profile redirects (/github, /linkedin, /instagram,
+// /spotify, /discord, /letterboxd, /medium, /telegram, /cal, /email, /readme)
+// are handled by next.config.mjs `redirects()` so they're served at the CDN
+// edge as 308s without invoking the middleware function.
 
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
@@ -104,15 +91,6 @@ export function middleware(request: NextRequest) {
     // Rewrite to lab routes (only for page routes)
     url.pathname = `/lab${url.pathname}`;
     return NextResponse.rewrite(url);
-  }
-
-  // Outbound social/profile redirects on the main domain. Skipped on lab so
-  // /lab/<path> routing is unaffected.
-  if (!isLab) {
-    const target = SOCIAL_REDIRECTS[url.pathname];
-    if (target) {
-      return NextResponse.redirect(new URL(target), 308);
-    }
   }
 
   // Prevent accessing lab routes from main domain in production

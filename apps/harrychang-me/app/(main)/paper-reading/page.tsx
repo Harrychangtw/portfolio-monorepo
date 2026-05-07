@@ -27,11 +27,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PaperReadingPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
+// No `searchParams` access here — pagination is handled client-side from
+// `useSearchParams()` so this page can prerender as fully static HTML and
+// be served from the CDN edge cache (avoiding per-request server work).
+export default async function PaperReadingPage() {
   // Try prebuilt cache first (build-time fetch)
   let allPapers: Paper[] = getPrebuiltPapers();
 
@@ -47,24 +46,5 @@ export default async function PaperReadingPage({
     );
   }
 
-  const pageParam = await searchParams;
-  const page = pageParam["page"] ?? "1";
-  const currentPage = Number(page);
-  const papersPerPage = 15;
-
-  const paginatedPapers = allPapers.slice(
-    (currentPage - 1) * papersPerPage,
-    currentPage * papersPerPage,
-  );
-
-  const hasPrevPage = currentPage > 1;
-  const hasNextPage = allPapers.length > currentPage * papersPerPage;
-
-  return (
-    <PaperReadingPageClient
-      paginatedPapers={paginatedPapers}
-      hasNextPage={hasNextPage}
-      hasPrevPage={hasPrevPage}
-    />
-  );
+  return <PaperReadingPageClient papers={allPapers} />;
 }

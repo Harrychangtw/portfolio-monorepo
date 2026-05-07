@@ -62,8 +62,9 @@ function initPostHog() {
     ui_host: "https://us.posthog.com",
     person_profiles: "identified_only",
     capture_pageview: false,
-    capture_pageleave: true,
+    capture_pageleave: false,
     autocapture: false,
+    advanced_disable_decide: true,
     loaded: (ph) => {
       ph.register(entrySignals);
       setAnalyticsInstance(ph);
