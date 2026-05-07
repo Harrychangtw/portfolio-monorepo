@@ -7,7 +7,7 @@ type UseNowPlayingOptions = {
 };
 
 export function useNowPlaying(
-  pollIntervalMs = 20000,
+  pollIntervalMs = 60000,
   opts?: UseNowPlayingOptions,
 ) {
   const fresh = Boolean(opts?.fresh);
@@ -27,7 +27,6 @@ export function useNowPlaying(
           ? "/api/spotify/now-playing?fresh=1"
           : "/api/spotify/now-playing";
         const res = await fetch(url, {
-          cache: "no-store",
           signal: controller.signal,
         });
         const json = await res.json();
@@ -41,12 +40,43 @@ export function useNowPlaying(
       }
     };
 
-    load();
-    timer = window.setInterval(load, pollIntervalMs);
+    const startTimer = () => {
+      if (timer !== undefined) return;
+      timer = window.setInterval(load, pollIntervalMs);
+    };
+    const stopTimer = () => {
+      if (timer !== undefined) {
+        window.clearInterval(timer);
+        timer = undefined;
+      }
+    };
+    const onVisibility = () => {
+      if (document.hidden) {
+        stopTimer();
+      } else {
+        load();
+        startTimer();
+      }
+    };
+
+    if (typeof document !== "undefined") {
+      document.addEventListener("visibilitychange", onVisibility);
+      // Tabs opened in the background should not poll until focused.
+      if (!document.hidden) {
+        load();
+        startTimer();
+      }
+    } else {
+      load();
+      startTimer();
+    }
 
     return () => {
       canceled = true;
-      if (timer) window.clearInterval(timer);
+      stopTimer();
+      if (typeof document !== "undefined") {
+        document.removeEventListener("visibilitychange", onVisibility);
+      }
       controller?.abort();
     };
   }, [pollIntervalMs, fresh]);

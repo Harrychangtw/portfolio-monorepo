@@ -3,6 +3,24 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
+// Outbound social/profile redirects, kept in sync with config/site.ts.
+// Defined here (not in middleware) so Vercel serves them as 308s straight
+// from the CDN edge — no function invocation, no middleware traversal.
+// TODO: codegen from config/site.ts to prevent drift
+const SOCIAL_REDIRECTS = [
+  ['/github', 'https://github.com/Harrychangtw'],
+  ['/readme', 'https://github.com/Harrychangtw/portfolio-monorepo/tree/main/apps/harrychang-me'],
+  ['/linkedin', 'https://www.linkedin.com/in/chi-wei-chang-928408375/'],
+  ['/instagram', 'https://www.instagram.com/pomelo_chang_08/'],
+  ['/spotify', 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3'],
+  ['/discord', 'https://discord.com/users/836567989209661481'],
+  ['/letterboxd', 'https://boxd.it/fSKuF'],
+  ['/medium', 'https://medium.com/@chiwei_chang'],
+  ['/telegram', 'https://t.me/harrychangtw'],
+  ['/cal', 'https://calendar.notion.so/meet/harry-chang/ybit2gkx'],
+  ['/email', 'mailto:chiwei@harrychang.me'],
+]
+
 let userConfig = undefined
 
 
@@ -83,7 +101,43 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Pre-built optimized images at fixed paths. URL must change if
+        // contents change (e.g. rename the file or add a version suffix)
+        // since `immutable` tells browsers never to revalidate.
+        source: '/images/optimized/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      // Favicon/icon/manifest assets: stable filenames, rarely change.
+      // Browser-cache aggressively to keep returning-visitor traffic off
+      // the Edge Request meter. Bump filenames to bust if ever swapped.
+      ...[
+        '/favicon.ico',
+        '/apple-icon.png',
+        '/chinese_name_icon.png',
+        '/site.webmanifest',
+      ].map((source) => ({
+        source,
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      })),
     ]
+  },
+  async redirects() {
+    return SOCIAL_REDIRECTS.map(([source, destination]) => ({
+      source,
+      destination,
+      permanent: true,
+    }))
   },
   experimental: {
     webpackBuildWorker: true,
