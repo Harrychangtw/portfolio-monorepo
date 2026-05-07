@@ -101,70 +101,70 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 
 <!-- LIGHTHOUSE_PROD_RESULTS_START -->
 
-> 🕐 **Last audited:** Thu, 07 May 2026 05:59:20 GMT  
+> 🕐 **Last audited:** Thu, 07 May 2026 06:54:31 GMT  
 > 🌐 **Deployment:** https://harrychang.me
 
 #### Desktop (Production Deployment)
 
 | Tested Route                               | Performance                                                                              | FCP   | LCP   | TBT   | CLS | Speed Index |
 | :----------------------------------------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :---- | :-- | :---------- |
-| `/`                                        | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square)   | 0.5 s | 1.6 s | 30 ms | 0   | 1.3 s       |
-| `/blog`                                    | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square)   | 0.5 s | 1.6 s | 0 ms  | 0   | 1.1 s       |
-| `/blog/2025_12_19_xpro1`                   | ![Lighthouse 90](https://img.shields.io/badge/lighthouse-90-success?style=flat-square)   | 0.5 s | 1.9 s | 30 ms | 0   | 1.6 s       |
-| `/blog/2025_12_22_aftersun_paris_texas`    | ![Lighthouse 90](https://img.shields.io/badge/lighthouse-90-success?style=flat-square)   | 0.5 s | 1.8 s | 10 ms | 0   | 1.6 s       |
-| `/blog/2026_01_10_plushies`                | ![Lighthouse 88](https://img.shields.io/badge/lighthouse-88-important?style=flat-square) | 0.5 s | 2.2 s | 20 ms | 0   | 1.5 s       |
-| `/blog/2026_02_10_synecdoche_truman`       | ![Lighthouse 91](https://img.shields.io/badge/lighthouse-91-success?style=flat-square)   | 0.5 s | 1.7 s | 50 ms | 0   | 1.6 s       |
-| `/blog/9_m11d`                             | ![Lighthouse 90](https://img.shields.io/badge/lighthouse-90-success?style=flat-square)   | 0.5 s | 1.8 s | 60 ms | 0   | 1.7 s       |
-| `/cv`                                      | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square)   | 0.5 s | 1.1 s | 30 ms | 0   | 0.8 s       |
-| `/design`                                  | ![Lighthouse 89](https://img.shields.io/badge/lighthouse-89-important?style=flat-square) | 0.5 s | 2.0 s | 10 ms | 0   | 1.3 s       |
-| `/gallery`                                 | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.7 s | 0 ms  | 0   | 1.2 s       |
-| `/gallery/2023_07_07_splash_of_red`        | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.6 s | 0 ms  | 0   | 1.4 s       |
-| `/gallery/2023_10_06_against_giants`       | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.6 s | 20 ms | 0   | 1.3 s       |
-| `/gallery/2023_11_18_dusk_impressions`     | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.6 s | 20 ms | 0   | 1.4 s       |
-| `/gallery/2024_01_06_hehuanshan`           | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square)   | 0.5 s | 1.5 s | 20 ms | 0   | 1.3 s       |
-| `/gallery/2026_02_08_italy_mountain`       | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.7 s | 10 ms | 0   | 1.4 s       |
-| `/graph`                                   | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.5 s | 1.2 s | 0 ms  | 0   | 1.3 s       |
-| `/linktree`                                | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square)   | 0.5 s | 1.4 s | 20 ms | 0   | 0.9 s       |
-| `/manifesto`                               | ![Lighthouse 98](https://img.shields.io/badge/lighthouse-98-success?style=flat-square)   | 0.5 s | 1.1 s | 20 ms | 0   | 0.9 s       |
-| `/paper-reading`                           | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square)   | 0.5 s | 1.3 s | 10 ms | 0   | 1.0 s       |
-| `/projects`                                | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.6 s | 10 ms | 0   | 1.2 s       |
-| `/projects/2024_08_19_classics_reimagined` | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.6 s | 40 ms | 0   | 1.7 s       |
-| `/projects/2024_09_23_chingshin_rag`       | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.6 s | 10 ms | 0   | 1.6 s       |
-| `/projects/2025_03_08_sitcon_keynote`      | ![Lighthouse 91](https://img.shields.io/badge/lighthouse-91-success?style=flat-square)   | 0.5 s | 1.8 s | 10 ms | 0   | 1.6 s       |
-| `/projects/2025_04_12_portfolio`           | ![Lighthouse 91](https://img.shields.io/badge/lighthouse-91-success?style=flat-square)   | 0.5 s | 1.7 s | 40 ms | 0   | 1.7 s       |
-| `/projects/2025_08_04_debate`              | ![Lighthouse 91](https://img.shields.io/badge/lighthouse-91-success?style=flat-square)   | 0.5 s | 1.6 s | 0 ms  | 0   | 1.7 s       |
-| `/uses`                                    | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.7 s | 10 ms | 0   | 1.3 s       |
+| `/`                                        | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.6 s | 70 ms | 0   | 1.2 s       |
+| `/blog`                                    | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square)   | 0.5 s | 1.6 s | 60 ms | 0   | 1.1 s       |
+| `/blog/2025_12_19_xpro1`                   | ![Lighthouse 90](https://img.shields.io/badge/lighthouse-90-success?style=flat-square)   | 0.5 s | 1.8 s | 60 ms | 0   | 1.7 s       |
+| `/blog/2025_12_22_aftersun_paris_texas`    | ![Lighthouse 90](https://img.shields.io/badge/lighthouse-90-success?style=flat-square)   | 0.5 s | 1.8 s | 40 ms | 0   | 1.6 s       |
+| `/blog/2026_01_10_plushies`                | ![Lighthouse 88](https://img.shields.io/badge/lighthouse-88-important?style=flat-square) | 0.5 s | 2.1 s | 10 ms | 0   | 1.6 s       |
+| `/blog/2026_02_10_synecdoche_truman`       | ![Lighthouse 91](https://img.shields.io/badge/lighthouse-91-success?style=flat-square)   | 0.5 s | 1.8 s | 60 ms | 0   | 1.6 s       |
+| `/blog/9_m11d`                             | ![Lighthouse 89](https://img.shields.io/badge/lighthouse-89-important?style=flat-square) | 0.5 s | 2.0 s | 20 ms | 0   | 1.7 s       |
+| `/cv`                                      | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.5 s | 1.2 s | 20 ms | 0   | 0.8 s       |
+| `/design`                                  | ![Lighthouse 89](https://img.shields.io/badge/lighthouse-89-important?style=flat-square) | 0.5 s | 2.1 s | 40 ms | 0   | 1.3 s       |
+| `/gallery`                                 | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.7 s | 50 ms | 0   | 1.2 s       |
+| `/gallery/2023_07_07_splash_of_red`        | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.6 s | 20 ms | 0   | 1.5 s       |
+| `/gallery/2023_10_06_against_giants`       | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.6 s | 50 ms | 0   | 1.4 s       |
+| `/gallery/2023_11_18_dusk_impressions`     | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.6 s | 10 ms | 0   | 1.4 s       |
+| `/gallery/2024_01_06_hehuanshan`           | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square)   | 0.5 s | 1.5 s | 10 ms | 0   | 1.3 s       |
+| `/gallery/2026_02_08_italy_mountain`       | ![Lighthouse 91](https://img.shields.io/badge/lighthouse-91-success?style=flat-square)   | 0.5 s | 1.8 s | 10 ms | 0   | 1.4 s       |
+| `/graph`                                   | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.5 s | 1.1 s | 0 ms  | 0   | 1.3 s       |
+| `/linktree`                                | ![Lighthouse 96](https://img.shields.io/badge/lighthouse-96-success?style=flat-square)   | 0.5 s | 1.4 s | 40 ms | 0   | 1.0 s       |
+| `/manifesto`                               | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.5 s | 1.3 s | 20 ms | 0   | 1.1 s       |
+| `/paper-reading`                           | ![Lighthouse 97](https://img.shields.io/badge/lighthouse-97-success?style=flat-square)   | 0.5 s | 1.3 s | 30 ms | 0   | 0.9 s       |
+| `/projects`                                | ![Lighthouse 94](https://img.shields.io/badge/lighthouse-94-success?style=flat-square)   | 0.5 s | 1.6 s | 40 ms | 0   | 1.2 s       |
+| `/projects/2024_08_19_classics_reimagined` | ![Lighthouse 90](https://img.shields.io/badge/lighthouse-90-success?style=flat-square)   | 0.5 s | 1.8 s | 50 ms | 0   | 1.7 s       |
+| `/projects/2024_09_23_chingshin_rag`       | ![Lighthouse 91](https://img.shields.io/badge/lighthouse-91-success?style=flat-square)   | 0.5 s | 1.6 s | 20 ms | 0   | 1.7 s       |
+| `/projects/2025_03_08_sitcon_keynote`      | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.6 s | 40 ms | 0   | 1.6 s       |
+| `/projects/2025_04_12_portfolio`           | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.6 s | 30 ms | 0   | 1.7 s       |
+| `/projects/2025_08_04_debate`              | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.5 s | 0 ms  | 0   | 1.7 s       |
+| `/uses`                                    | ![Lighthouse 92](https://img.shields.io/badge/lighthouse-92-success?style=flat-square)   | 0.5 s | 1.8 s | 20 ms | 0   | 1.3 s       |
 
 #### Mobile (Production Deployment)
 
-| Tested Route                               | Performance                                                                              | FCP   | LCP   | TBT      | CLS   | Speed Index |
-| :----------------------------------------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :------- | :---- | :---------- |
-| `/`                                        | ![Lighthouse 55](https://img.shields.io/badge/lighthouse-55-important?style=flat-square) | 1.7 s | 8.6 s | 660 ms   | 0     | 4.4 s       |
-| `/blog`                                    | ![Lighthouse 60](https://img.shields.io/badge/lighthouse-60-important?style=flat-square) | 1.7 s | 8.5 s | 530 ms   | 0     | 3.5 s       |
-| `/blog/2025_12_19_xpro1`                   | ![Lighthouse 54](https://img.shields.io/badge/lighthouse-54-important?style=flat-square) | 1.7 s | 8.8 s | 810 ms   | 0     | 3.6 s       |
-| `/blog/2025_12_22_aftersun_paris_texas`    | ![Lighthouse 46](https://img.shields.io/badge/lighthouse-46-critical?style=flat-square)  | 3.6 s | 8.9 s | 680 ms   | 0     | 6.1 s       |
-| `/blog/2026_01_10_plushies`                | ![Lighthouse 58](https://img.shields.io/badge/lighthouse-58-important?style=flat-square) | 1.7 s | 8.8 s | 600 ms   | 0     | 3.4 s       |
-| `/blog/2026_02_10_synecdoche_truman`       | ![Lighthouse 47](https://img.shields.io/badge/lighthouse-47-critical?style=flat-square)  | 3.7 s | 9.5 s | 600 ms   | 0     | 6.4 s       |
-| `/blog/9_m11d`                             | ![Lighthouse 53](https://img.shields.io/badge/lighthouse-53-important?style=flat-square) | 1.7 s | 8.9 s | 850 ms   | 0     | 3.4 s       |
-| `/cv`                                      | ![Lighthouse 70](https://img.shields.io/badge/lighthouse-70-important?style=flat-square) | 1.7 s | 5.7 s | 340 ms   | 0     | 2.9 s       |
-| `/design`                                  | ![Lighthouse 58](https://img.shields.io/badge/lighthouse-58-important?style=flat-square) | 1.7 s | 9.2 s | 610 ms   | 0     | 3.5 s       |
-| `/gallery`                                 | ![Lighthouse 58](https://img.shields.io/badge/lighthouse-58-important?style=flat-square) | 1.7 s | 8.5 s | 630 ms   | 0.003 | 3.3 s       |
-| `/gallery/2023_07_07_splash_of_red`        | ![Lighthouse 56](https://img.shields.io/badge/lighthouse-56-important?style=flat-square) | 1.7 s | 8.7 s | 690 ms   | 0     | 3.3 s       |
-| `/gallery/2023_10_06_against_giants`       | ![Lighthouse 56](https://img.shields.io/badge/lighthouse-56-important?style=flat-square) | 1.7 s | 8.6 s | 710 ms   | 0     | 3.3 s       |
-| `/gallery/2023_11_18_dusk_impressions`     | ![Lighthouse 58](https://img.shields.io/badge/lighthouse-58-important?style=flat-square) | 1.7 s | 8.8 s | 630 ms   | 0     | 3.2 s       |
-| `/gallery/2024_01_06_hehuanshan`           | ![Lighthouse 56](https://img.shields.io/badge/lighthouse-56-important?style=flat-square) | 1.7 s | 8.7 s | 710 ms   | 0     | 3.3 s       |
-| `/gallery/2026_02_08_italy_mountain`       | ![Lighthouse 55](https://img.shields.io/badge/lighthouse-55-important?style=flat-square) | 1.7 s | 9.9 s | 670 ms   | 0     | 4.1 s       |
-| `/graph`                                   | ![Lighthouse 46](https://img.shields.io/badge/lighthouse-46-critical?style=flat-square)  | 1.7 s | 5.8 s | 2,560 ms | 0     | 4.9 s       |
-| `/linktree`                                | ![Lighthouse 60](https://img.shields.io/badge/lighthouse-60-important?style=flat-square) | 1.7 s | 8.1 s | 550 ms   | 0     | 3.4 s       |
-| `/manifesto`                               | ![Lighthouse 60](https://img.shields.io/badge/lighthouse-60-important?style=flat-square) | 1.7 s | 7.4 s | 570 ms   | 0     | 3.0 s       |
-| `/paper-reading`                           | ![Lighthouse 64](https://img.shields.io/badge/lighthouse-64-important?style=flat-square) | 1.7 s | 7.8 s | 430 ms   | 0     | 3.0 s       |
-| `/projects`                                | ![Lighthouse 61](https://img.shields.io/badge/lighthouse-61-important?style=flat-square) | 1.7 s | 8.5 s | 480 ms   | 0     | 3.4 s       |
-| `/projects/2024_08_19_classics_reimagined` | ![Lighthouse 58](https://img.shields.io/badge/lighthouse-58-important?style=flat-square) | 1.7 s | 7.8 s | 610 ms   | 0     | 3.7 s       |
-| `/projects/2024_09_23_chingshin_rag`       | ![Lighthouse 56](https://img.shields.io/badge/lighthouse-56-important?style=flat-square) | 1.7 s | 8.6 s | 710 ms   | 0     | 3.4 s       |
-| `/projects/2025_03_08_sitcon_keynote`      | ![Lighthouse 55](https://img.shields.io/badge/lighthouse-55-important?style=flat-square) | 1.8 s | 9.2 s | 610 ms   | 0     | 5.0 s       |
-| `/projects/2025_04_12_portfolio`           | ![Lighthouse 56](https://img.shields.io/badge/lighthouse-56-important?style=flat-square) | 1.8 s | 8.9 s | 690 ms   | 0     | 3.4 s       |
-| `/projects/2025_08_04_debate`              | ![Lighthouse 56](https://img.shields.io/badge/lighthouse-56-important?style=flat-square) | 1.7 s | 8.6 s | 690 ms   | 0     | 3.3 s       |
-| `/uses`                                    | ![Lighthouse 54](https://img.shields.io/badge/lighthouse-54-important?style=flat-square) | 3.4 s | 7.6 s | 400 ms   | 0     | 6.2 s       |
+| Tested Route                               | Performance                                                                              | FCP   | LCP   | TBT      | CLS | Speed Index |
+| :----------------------------------------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :------- | :-- | :---------- |
+| `/`                                        | ![Lighthouse 54](https://img.shields.io/badge/lighthouse-54-important?style=flat-square) | 1.7 s | 8.7 s | 820 ms   | 0   | 3.5 s       |
+| `/blog`                                    | ![Lighthouse 58](https://img.shields.io/badge/lighthouse-58-important?style=flat-square) | 1.7 s | 8.7 s | 590 ms   | 0   | 3.6 s       |
+| `/blog/2025_12_19_xpro1`                   | ![Lighthouse 54](https://img.shields.io/badge/lighthouse-54-important?style=flat-square) | 1.7 s | 8.9 s | 840 ms   | 0   | 3.4 s       |
+| `/blog/2025_12_22_aftersun_paris_texas`    | ![Lighthouse 55](https://img.shields.io/badge/lighthouse-55-important?style=flat-square) | 1.7 s | 8.7 s | 760 ms   | 0   | 3.4 s       |
+| `/blog/2026_01_10_plushies`                | ![Lighthouse 57](https://img.shields.io/badge/lighthouse-57-important?style=flat-square) | 1.7 s | 8.0 s | 680 ms   | 0   | 3.2 s       |
+| `/blog/2026_02_10_synecdoche_truman`       | ![Lighthouse 47](https://img.shields.io/badge/lighthouse-47-critical?style=flat-square)  | 3.4 s | 9.1 s | 650 ms   | 0   | 6.3 s       |
+| `/blog/9_m11d`                             | ![Lighthouse 53](https://img.shields.io/badge/lighthouse-53-important?style=flat-square) | 1.7 s | 9.5 s | 810 ms   | 0   | 3.7 s       |
+| `/cv`                                      | ![Lighthouse 65](https://img.shields.io/badge/lighthouse-65-important?style=flat-square) | 1.7 s | 5.7 s | 500 ms   | 0   | 2.7 s       |
+| `/design`                                  | ![Lighthouse 56](https://img.shields.io/badge/lighthouse-56-important?style=flat-square) | 1.7 s | 9.0 s | 710 ms   | 0   | 3.4 s       |
+| `/gallery`                                 | ![Lighthouse 47](https://img.shields.io/badge/lighthouse-47-critical?style=flat-square)  | 3.4 s | 8.8 s | 630 ms   | 0   | 6.1 s       |
+| `/gallery/2023_07_07_splash_of_red`        | ![Lighthouse 58](https://img.shields.io/badge/lighthouse-58-important?style=flat-square) | 1.7 s | 8.9 s | 620 ms   | 0   | 3.3 s       |
+| `/gallery/2023_10_06_against_giants`       | ![Lighthouse 57](https://img.shields.io/badge/lighthouse-57-important?style=flat-square) | 1.7 s | 8.5 s | 670 ms   | 0   | 3.2 s       |
+| `/gallery/2023_11_18_dusk_impressions`     | ![Lighthouse 57](https://img.shields.io/badge/lighthouse-57-important?style=flat-square) | 1.7 s | 8.6 s | 640 ms   | 0   | 3.2 s       |
+| `/gallery/2024_01_06_hehuanshan`           | ![Lighthouse 49](https://img.shields.io/badge/lighthouse-49-critical?style=flat-square)  | 3.7 s | 9.4 s | 530 ms   | 0   | 6.4 s       |
+| `/gallery/2026_02_08_italy_mountain`       | ![Lighthouse 55](https://img.shields.io/badge/lighthouse-55-important?style=flat-square) | 1.7 s | 8.8 s | 720 ms   | 0   | 4.0 s       |
+| `/graph`                                   | ![Lighthouse 49](https://img.shields.io/badge/lighthouse-49-critical?style=flat-square)  | 1.7 s | 5.4 s | 2,650 ms | 0   | 3.9 s       |
+| `/linktree`                                | ![Lighthouse 59](https://img.shields.io/badge/lighthouse-59-important?style=flat-square) | 1.7 s | 8.0 s | 540 ms   | 0   | 3.9 s       |
+| `/manifesto`                               | ![Lighthouse 59](https://img.shields.io/badge/lighthouse-59-important?style=flat-square) | 1.7 s | 7.5 s | 600 ms   | 0   | 3.0 s       |
+| `/paper-reading`                           | ![Lighthouse 60](https://img.shields.io/badge/lighthouse-60-important?style=flat-square) | 1.7 s | 7.6 s | 580 ms   | 0   | 3.2 s       |
+| `/projects`                                | ![Lighthouse 59](https://img.shields.io/badge/lighthouse-59-important?style=flat-square) | 1.7 s | 8.8 s | 550 ms   | 0   | 3.6 s       |
+| `/projects/2024_08_19_classics_reimagined` | ![Lighthouse 46](https://img.shields.io/badge/lighthouse-46-critical?style=flat-square)  | 3.8 s | 9.4 s | 680 ms   | 0   | 6.2 s       |
+| `/projects/2024_09_23_chingshin_rag`       | ![Lighthouse 47](https://img.shields.io/badge/lighthouse-47-critical?style=flat-square)  | 3.8 s | 9.2 s | 610 ms   | 0   | 6.2 s       |
+| `/projects/2025_03_08_sitcon_keynote`      | ![Lighthouse 55](https://img.shields.io/badge/lighthouse-55-important?style=flat-square) | 1.7 s | 7.9 s | 770 ms   | 0   | 3.5 s       |
+| `/projects/2025_04_12_portfolio`           | ![Lighthouse 47](https://img.shields.io/badge/lighthouse-47-critical?style=flat-square)  | 3.8 s | 9.3 s | 620 ms   | 0   | 6.3 s       |
+| `/projects/2025_08_04_debate`              | ![Lighthouse 55](https://img.shields.io/badge/lighthouse-55-important?style=flat-square) | 1.7 s | 8.6 s | 770 ms   | 0   | 3.5 s       |
+| `/uses`                                    | ![Lighthouse 59](https://img.shields.io/badge/lighthouse-59-important?style=flat-square) | 1.7 s | 7.4 s | 630 ms   | 0   | 3.1 s       |
 
 <!-- LIGHTHOUSE_PROD_RESULTS_END -->
 
