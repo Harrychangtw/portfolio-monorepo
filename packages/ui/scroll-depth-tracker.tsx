@@ -23,22 +23,32 @@ export default function ScrollDepthTracker({
     fired.current = new Set();
     const milestones = [25, 50, 75, 100];
 
+    const fire = (depth: number) => {
+      if (fired.current.has(depth)) return;
+      fired.current.add(depth);
+      track(events.SCROLL_DEPTH_REACHED, {
+        depth_percent: depth,
+        content_type: contentType,
+        slug: slug ?? null,
+      });
+    };
+
     const onScroll = () => {
       const scrollTop =
         window.scrollY || document.documentElement.scrollTop || 0;
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight <= 0) return;
-      const pct = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+      // Pages shorter than the viewport are 100% read by virtue of being
+      // visible — emit the completion milestone once and bail.
+      if (docHeight <= 0) {
+        fire(100);
+        return;
+      }
+      // Floor (not round) so a milestone only fires after the user actually
+      // crosses it — Math.round(24.6) would emit 25% prematurely.
+      const pct = Math.min(100, Math.floor((scrollTop / docHeight) * 100));
       for (const m of milestones) {
-        if (pct >= m && !fired.current.has(m)) {
-          fired.current.add(m);
-          track(events.SCROLL_DEPTH_REACHED, {
-            depth_percent: m,
-            content_type: contentType,
-            slug: slug ?? null,
-          });
-        }
+        if (pct >= m) fire(m);
       }
     };
 

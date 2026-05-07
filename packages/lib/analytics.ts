@@ -1,9 +1,22 @@
 "use client";
 
-import posthog from "posthog-js";
+// Avoid a static import of `posthog-js` here so apps that never initialize
+// PostHog (e.g. emilychang-me) don't pull the SDK into their bundle just
+// because they share UI components from @portfolio/ui. The PostHog provider
+// in the harrychang-me app calls `setAnalyticsInstance` after init.
+type AnalyticsInstance = {
+  capture: (event: string, properties?: Record<string, unknown>) => void;
+  __loaded?: boolean;
+};
+
+let instance: AnalyticsInstance | null = null;
+
+export function setAnalyticsInstance(ph: AnalyticsInstance | null): void {
+  instance = ph;
+}
 
 /**
- * Thin wrapper around posthog.capture. No-ops if PostHog isn't loaded yet
+ * Thin wrapper around posthog.capture. No-ops if PostHog isn't initialized
  * (init lives in apps/harrychang-me/components/posthog-provider.tsx). Never
  * include sensitive user content in `properties` — guestbook text, form
  * values, email addresses, etc.
@@ -13,8 +26,8 @@ export function track(
   properties?: Record<string, unknown>,
 ): void {
   if (typeof window === "undefined") return;
-  if (!posthog.__loaded) return;
-  posthog.capture(event, properties);
+  if (!instance || !instance.__loaded) return;
+  instance.capture(event, properties);
   if (process.env.NODE_ENV !== "production") {
     // Surface tracked events in the dev console so the network-tab payload
     // (which is gzipped) doesn't have to be reverse-engineered to confirm
@@ -47,7 +60,6 @@ export const events = {
   RANGEFINDER_LOCKED: "rangefinder_locked",
   RANGEFINDER_REDIRECTED: "rangefinder_redirected",
   SPOTIFY_WIDGET_CLICKED: "spotify_widget_clicked",
-  EMAIL_COPIED: "email_copied",
   CV_DOWNLOAD_CLICKED: "cv_download_clicked",
   MANIFESTO_REVEALED: "manifesto_revealed",
 

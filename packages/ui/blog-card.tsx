@@ -109,7 +109,7 @@ export default function BlogCard({
           track(events.BLOG_CARD_OPENED, {
             slug,
             title,
-            locked: !!locked,
+            locked: isEffectivelyLocked,
           }),
       };
 

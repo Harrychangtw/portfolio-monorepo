@@ -207,9 +207,6 @@ export default function Footer() {
                     music_playing: !!nowPlaying?.isPlaying,
                   });
                 }
-                if (link.id === "gmail") {
-                  track(events.EMAIL_COPIED, {});
-                }
                 if (link.id === "resume") {
                   track(events.CV_DOWNLOAD_CLICKED, { source: "footer" });
                 }

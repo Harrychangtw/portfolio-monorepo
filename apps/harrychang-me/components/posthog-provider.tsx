@@ -4,6 +4,7 @@ import { Suspense, useEffect, useRef, type ReactNode } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
 import { getCookie, setCookie } from "@portfolio/lib/lib/cookies";
+import { setAnalyticsInstance } from "@portfolio/lib/analytics";
 
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 const LAST_VISIT_COOKIE = "hc_last_visit";
@@ -31,11 +32,19 @@ function computeEntrySignals() {
   const entryType =
     entryPath === "/" ? "homepage" : referrer ? "deep_link" : "direct";
 
+  // Read theme/locale from the same cookies the contexts use so the cold-load
+  // $pageview already carries them — avoids attribution drift for returning
+  // visitors whose preferences differ from defaults.
+  const theme = getCookie("theme") || "dark";
+  const locale = getCookie("language") || "en";
+
   return {
     subdomain,
     is_returning_visitor: isReturning,
     days_since_last_visit: daysSinceLastVisit,
     entry_type: entryType,
+    theme,
+    locale,
   };
 }
 
@@ -57,6 +66,7 @@ function initPostHog() {
     autocapture: false,
     loaded: (ph) => {
       ph.register(entrySignals);
+      setAnalyticsInstance(ph);
 
       // Seed the cold-load $pageview here. PostHogPageviewInner skips its
       // first mount so we don't double-fire; route changes after init flow
