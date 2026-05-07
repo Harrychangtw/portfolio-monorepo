@@ -20371,6 +20371,34 @@
       "tldr": "精選ML與NLP論文筆記"
     },
     {
+      "id": "hub-design-en",
+      "title": "Design System",
+      "snippet": "Design System",
+      "nodeType": "hub",
+      "sourceType": "locale",
+      "sourceSlug": "design",
+      "locale": "en",
+      "url": "https://www.harrychang.me/design",
+      "date": null,
+      "tags": [],
+      "heading": null,
+      "parentId": "hub-root-en"
+    },
+    {
+      "id": "hub-design-zh-TW",
+      "title": "設計系統",
+      "snippet": "設計系統",
+      "nodeType": "hub",
+      "sourceType": "locale",
+      "sourceSlug": "design",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/design",
+      "date": null,
+      "tags": [],
+      "heading": null,
+      "parentId": "hub-root-zh-TW"
+    },
+    {
       "id": "hub-linktree-en",
       "title": "Links",
       "snippet": "Links",
@@ -28066,6 +28094,12 @@
     },
     {
       "source": "hub-root-en",
+      "target": "hub-design-en",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "hub-root-en",
       "target": "hub-linktree-en",
       "weight": 1.0,
       "linkType": "structural"
@@ -28115,6 +28149,12 @@
     {
       "source": "hub-root-zh-TW",
       "target": "hub-reading-zh-TW",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "hub-root-zh-TW",
+      "target": "hub-design-zh-TW",
       "weight": 1.0,
       "linkType": "structural"
     },
@@ -47740,14 +47780,14 @@
     }
   ],
   "metadata": {
-    "generatedAt": "2026-05-06T04:49:58Z",
-    "nodeCount": 1270,
-    "edgeCount": 4509,
+    "generatedAt": "2026-05-07T04:25:04Z",
+    "nodeCount": 1272,
+    "edgeCount": 4511,
     "threshold": 0.75,
     "maxEdgesPerNode": 8,
     "model": "google/gemini-embedding-2-preview",
     "nodeTypeCounts": {
-      "hub": 20,
+      "hub": 22,
       "file": 90,
       "section": 569,
       "image": 549,
