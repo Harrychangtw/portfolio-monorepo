@@ -14,6 +14,7 @@ import { scrollToSection } from "@portfolio/lib/lib/scrolling";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import GuestbookWidget from "@/components/guestbook-widget";
 import { ArrowUpRight } from "lucide-react";
+import { track, events } from "@portfolio/lib/analytics";
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
@@ -195,11 +196,22 @@ export default function Footer() {
             <NavigationLink
               href={href}
               className={linkClassName}
-              onClick={
-                isAnchorLink(link.href)
-                  ? (e) => handleNavClick(e, link.href)
-                  : undefined
-              }
+              onClick={(e) => {
+                track(events.FOOTER_LINK_CLICK, {
+                  link_id: link.id,
+                  link_type: "internal",
+                  href: link.href,
+                });
+                if (link.id === "music") {
+                  track(events.SPOTIFY_WIDGET_CLICKED, {
+                    music_playing: !!nowPlaying?.isPlaying,
+                  });
+                }
+                if (link.id === "resume") {
+                  track(events.CV_DOWNLOAD_CLICKED, { source: "footer" });
+                }
+                if (isAnchorLink(link.href)) handleNavClick(e, link.href);
+              }}
               onMouseEnter={(e) => handleMouseEnter(e, link.id)}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
@@ -212,6 +224,13 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className={linkClassName}
+              onClick={() =>
+                track(events.FOOTER_LINK_CLICK, {
+                  link_id: link.id,
+                  link_type: "external",
+                  href,
+                })
+              }
               onMouseEnter={(e) => handleMouseEnter(e, link.id)}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}

@@ -11,6 +11,7 @@ import GraphCanvas from "./graph-canvas";
 import NodePreviewCard from "./node-preview-card";
 import MobileNodeCard from "./mobile-node-card";
 import type { GraphData, GraphNode, SourceType, NodeType } from "./types";
+import { track, events } from "@portfolio/lib/analytics";
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
@@ -121,6 +122,14 @@ export default function GraphPageClient() {
   const handleNodeClick = useCallback(
     (node: GraphNode | null) => {
       if (!node || node.nodeType === "tag") return;
+      track(events.GRAPH_NODE_CLICKED, {
+        node_id: node.id,
+        node_category: node.nodeType,
+        node_source_type: node.sourceType ?? null,
+        surface: "full_graph",
+        source_path:
+          typeof window !== "undefined" ? window.location.pathname : null,
+      });
       navigateToNode(node);
     },
     [navigateToNode],

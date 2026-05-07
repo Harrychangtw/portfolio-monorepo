@@ -17,6 +17,7 @@ import type { PostMetadata } from "@portfolio/lib/lib/markdown";
 import NextUpCard from "@portfolio/ui/next-up-card";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { TableOfContents } from "@portfolio/ui/table-of-contents";
+import ScrollDepthTracker from "@portfolio/ui/scroll-depth-tracker";
 
 interface BlogPostClientProps {
   initialPost: PostMetadata & { contentHtml: string };
@@ -145,6 +146,8 @@ export default function BlogPostClient({
 
   return (
     <div className="page-transition-enter">
+      {/* Blog-only scroll-depth: 25/50/75/100 thresholds need a fresh look before extending to project/gallery. */}
+      <ScrollDepthTracker contentType="blog" slug={post.slug} />
       <div className="pb-12 pt-24 md:pt-32">
         <div className="container">
           {/* Header Section: Title (Left 2 cols) & Metadata (Right 1 col) */}

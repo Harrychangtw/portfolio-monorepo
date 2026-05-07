@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { useTheme, useLanguage } from "@portfolio/lib";
+import { track, events } from "@portfolio/lib/analytics";
 import { Sun, Moon } from "lucide-react";
 import { useState } from "react";
 
@@ -19,7 +20,10 @@ export default function ThemeSwitcher() {
       className="flex"
     >
       <motion.button
-        onClick={toggleTheme}
+        onClick={() => {
+          track(events.THEME_TOGGLED, { new_theme: isDark ? "light" : "dark" });
+          toggleTheme();
+        }}
         className="flex items-center gap-1.5 font-heading text-sm font-medium select-none"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}

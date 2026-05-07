@@ -8,6 +8,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ANIMATION } from "@portfolio/config";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { ImageContainer } from "@portfolio/ui/image-container";
+import { track, events } from "@portfolio/lib/analytics";
 
 const cardVariants = cva("", {
   variants: {
@@ -131,7 +132,18 @@ export default function ProjectCard({
       {locked ? (
         <div className="block cursor-not-allowed">{CardContent}</div>
       ) : (
-        <NavigationLink href={`/projects/${slug}`} className="block">
+        <NavigationLink
+          href={`/projects/${slug}`}
+          className="block"
+          onClick={() =>
+            track(events.PROJECT_CARD_CLICKED, {
+              slug,
+              title,
+              pinned: pinned ?? null,
+              locked: !!locked,
+            })
+          }
+        >
           {CardContent}
         </NavigationLink>
       )}

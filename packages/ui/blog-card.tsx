@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { ImageContainer } from "@portfolio/ui/image-container";
+import { track, events } from "@portfolio/lib/analytics";
 
 interface BlogCardProps {
   title: string;
@@ -101,7 +102,16 @@ export default function BlogCard({
   ) as React.ElementType;
   const wrapperProps = isEffectivelyLocked
     ? { className: "block flex flex-col h-full cursor-default" }
-    : { href: `/blog/${slug}`, className: "block flex flex-col h-full" };
+    : {
+        href: `/blog/${slug}`,
+        className: "block flex flex-col h-full",
+        onClick: () =>
+          track(events.BLOG_CARD_OPENED, {
+            slug,
+            title,
+            locked: isEffectivelyLocked,
+          }),
+      };
 
   return (
     <div

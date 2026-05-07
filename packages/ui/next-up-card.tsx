@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { ImageContainer } from "@portfolio/ui/image-container";
 import NavigationLink from "@portfolio/ui/navigation-link";
+import { track, events } from "@portfolio/lib/analytics";
 
 interface NextUpCardProps {
   title: string;
@@ -89,11 +90,21 @@ export default function NextUpCard({
     return <div className="w-full">{inner}</div>;
   }
 
+  const resolvedHref = href || `/${basePath}/${slug}`;
+
   return (
     <div className="w-full">
       <NavigationLink
-        href={href || `/${basePath}/${slug}`}
+        href={resolvedHref}
         className="block group"
+        onClick={() =>
+          track(events.NEXT_UP_CARD_CLICKED, {
+            slug,
+            base_path: basePath,
+            title,
+            href: resolvedHref,
+          })
+        }
       >
         {inner}
       </NavigationLink>

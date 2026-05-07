@@ -12,6 +12,7 @@ import { ThemeProvider } from "@portfolio/lib/contexts/theme-context";
 import VideoInitializer from "@portfolio/ui/video-initializer";
 import NotificationProvider from "@portfolio/ui/notification-provider";
 import { useStableAnchor } from "@portfolio/lib/hooks/use-stable-anchor";
+import PostHogSuperProperties from "@/components/posthog-super-properties";
 
 export default function ClientLayout({
   children,
@@ -25,6 +26,7 @@ export default function ClientLayout({
   return (
     <ThemeProvider>
       <LanguageProvider>
+        <PostHogSuperProperties />
         <Header />
         {isMobile ? (
           children

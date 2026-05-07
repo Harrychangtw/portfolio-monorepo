@@ -3,6 +3,7 @@
 import { Suspense, type ReactNode } from "react";
 import { NavigationProvider } from "@portfolio/lib/contexts/navigation-context";
 import PageTransition from "@/components/main/page-transition";
+import PostHogProvider from "@/components/posthog-provider";
 
 /**
  * Thin client shell at the root layout level.
@@ -12,10 +13,12 @@ import PageTransition from "@/components/main/page-transition";
  */
 export default function RootClientShell({ children }: { children: ReactNode }) {
   return (
-    <NavigationProvider>
-      <Suspense>
-        <PageTransition>{children}</PageTransition>
-      </Suspense>
-    </NavigationProvider>
+    <PostHogProvider>
+      <NavigationProvider>
+        <Suspense>
+          <PageTransition>{children}</PageTransition>
+        </Suspense>
+      </NavigationProvider>
+    </PostHogProvider>
   );
 }
