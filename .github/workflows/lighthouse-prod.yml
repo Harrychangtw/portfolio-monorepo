@@ -1,76 +1,33 @@
+# Runs daily at 04:00 UTC. Previously triggered on every production deploy via
+# deployment_status, which created a feedback loop: each audit committed README
+# scores → triggered a new deploy → triggered another audit. Switched to cron
+# to decouple from deploy frequency.
 name: Lighthouse Audit (harrychang.me)
 
 on:
-  deployment_status:
-
-# Include the deployment environment in the concurrency key. `on: deployment_status`
-# fires this workflow for *every* Vercel deployment in the repo (harry and emily),
-# and the job-level `if:` only filters whether the job runs — the workflow run still
-# claims the concurrency slot. With a flat group, a "phantom" run triggered by an
-# emily deployment_status (job skips on env mismatch) would cancel a live harry
-# audit via cancel-in-progress. Keying on the environment isolates phantom runs
-# into their own group so they cannot preempt the real audit, while still allowing
-# a newer real harry deployment to cancel an older one.
-concurrency:
-  group: lighthouse-prod-${{ github.event.deployment.environment }}
-  cancel-in-progress: true
+  schedule:
+    - cron: "0 4 * * *"
 
 jobs:
   lighthouse-prod:
     name: Lighthouse CI (harrychang.me Production Deployment)
-    # Only run when the harrychang-me Vercel Production deployment finishes.
-    # Vercel sets `environment` to "Production – <project-name>"; this repo
-    # hosts two Vercel projects (`portfolio` for harrychang-me and
-    # `portfolio-monorepo-emilychang-me` for emilychang-me), so we match the
-    # harry-specific suffix to avoid auditing the wrong site when the emily
-    # project deploys. NOTE: the dash below is U+2013 (en-dash), not ASCII —
-    # Vercel emits the en-dash literally; do not "normalize" it.
-    if: >-
-      github.event.deployment_status.state == 'success' &&
-      github.event.deployment.environment == 'Production – portfolio'
     runs-on: ubuntu-latest
     permissions:
       contents: write
       deployments: read
 
     steps:
-      # Check out main (not the deployment sha) so the README commit lands
-      # on the current tip of main without a non-fast-forward push.
+      # Check out main so the README commit lands on the current tip of main
+      # without a non-fast-forward push.
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: main
 
-      # Break the redeploy loop: if this deployment was triggered by our own
-      # README commit, skip. Vercel does not always honor [skip ci] for the
-      # deployment itself, and deployment_status events ignore [skip ci].
-      - name: Skip if deployment commit is the bot's README update
-        id: loop_guard
-        env:
-          DEPLOYMENT_SHA: ${{ github.event.deployment.sha }}
-        run: |
-          MSG=$(git log -1 --format=%s "$DEPLOYMENT_SHA" 2>/dev/null || echo "")
-          AUTHOR=$(git log -1 --format=%ae "$DEPLOYMENT_SHA" 2>/dev/null || echo "")
-          echo "Deployment commit: $DEPLOYMENT_SHA"
-          echo "Message: $MSG"
-          echo "Author: $AUTHOR"
-          # Match only the bot's distinctive commit phrase. Do NOT also match
-          # "[skip ci]" — humans add that tag to unrelated fix/chore commits
-          # (e.g. README/badge tweaks), and matching it here would skip every
-          # legitimate production audit that follows such a commit.
-          if [[ "$MSG" == *"update production lighthouse scores"* ]]; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "::notice::Skipping — deployment is the bot's README commit."
-          else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Setup pnpm
-        if: steps.loop_guard.outputs.skip != 'true'
         uses: pnpm/action-setup@v4
 
       - name: Setup Node.js
-        if: steps.loop_guard.outputs.skip != 'true'
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -79,16 +36,12 @@ jobs:
       # Install workspace deps so the README commit uses the repo's pinned
       # Prettier version (matches the simulated CI's formatting exactly).
       - name: Install dependencies
-        if: steps.loop_guard.outputs.skip != 'true'
         run: pnpm install --frozen-lockfile
 
-      # We audit the canonical public domain rather than the per-deployment
-      # vercel.app URL. The deployment_status trigger already gates on a
-      # successful Production deploy, and the canonical URL is what real
-      # users hit (custom domain + Vercel CDN edge), with no preview-auth
-      # or deployment-protection redirects.
+      # Audit the canonical public domain — the URL real users hit (custom
+      # domain + Vercel CDN edge), with no preview-auth or deployment-protection
+      # redirects.
       - name: Build URL list
-        if: steps.loop_guard.outputs.skip != 'true'
         id: urls
         env:
           DEPLOY_URL: https://harrychang.me
@@ -130,7 +83,6 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Run Lighthouse CI (Mobile, against live deployment)
-        if: steps.loop_guard.outputs.skip != 'true'
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: ${{ steps.urls.outputs.list }}
@@ -143,7 +95,6 @@ jobs:
       # input to redirect that. Move mobile LHRs aside so the desktop run
       # doesn't clobber them.
       - name: Move mobile LHRs out of .lighthouseci
-        if: steps.loop_guard.outputs.skip != 'true'
         run: |
           if [ -d .lighthouseci ]; then
             rm -rf .lighthouseci-mobile
@@ -151,7 +102,6 @@ jobs:
           fi
 
       - name: Run Lighthouse CI (Desktop, against live deployment)
-        if: steps.loop_guard.outputs.skip != 'true'
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: ${{ steps.urls.outputs.list }}
@@ -161,19 +111,16 @@ jobs:
           temporaryPublicStorage: true
 
       - name: Update README with production Lighthouse badges
-        if: steps.loop_guard.outputs.skip != 'true'
         env:
           DEPLOYMENT_URL: https://harrychang.me
         run: node .github/scripts/update-lighthouse-readme.js --mode=prod
 
       - name: Format README with Prettier
-        if: steps.loop_guard.outputs.skip != 'true'
         run: npx prettier --write apps/harrychang-me/README.md
 
       # Rebase onto latest main before the auto-commit pushes, in case
       # another job (e.g. lighthouse.yml) updated main during this run.
       - name: Rebase README change onto latest main
-        if: steps.loop_guard.outputs.skip != 'true'
         run: |
           cp apps/harrychang-me/README.md /tmp/README.lh.md
           git fetch origin main
@@ -181,9 +128,8 @@ jobs:
           cp /tmp/README.lh.md apps/harrychang-me/README.md
 
       - name: Commit production Lighthouse changes
-        if: steps.loop_guard.outputs.skip != 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update production lighthouse scores in README [skip ci]"
+          commit_message: "chore(ci): daily lighthouse audit — update README scores [skip ci]"
           file_pattern: "apps/harrychang-me/README.md"
           branch: main
