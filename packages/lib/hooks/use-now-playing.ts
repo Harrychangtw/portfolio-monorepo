@@ -59,10 +59,16 @@ export function useNowPlaying(
       }
     };
 
-    load();
-    startTimer();
     if (typeof document !== "undefined") {
       document.addEventListener("visibilitychange", onVisibility);
+      // Tabs opened in the background should not poll until focused.
+      if (!document.hidden) {
+        load();
+        startTimer();
+      }
+    } else {
+      load();
+      startTimer();
     }
 
     return () => {

@@ -113,18 +113,23 @@ const nextConfig = {
           },
         ],
       },
-      {
-        // Favicon/icon/manifest assets: stable filenames, rarely change.
-        // Browser-cache aggressively to keep returning-visitor traffic off
-        // the Edge Request meter. Bump filenames to bust if ever swapped.
-        source: '/(favicon.ico|apple-icon.png|chinese_name_icon.png|site.webmanifest)',
+      // Favicon/icon/manifest assets: stable filenames, rarely change.
+      // Browser-cache aggressively to keep returning-visitor traffic off
+      // the Edge Request meter. Bump filenames to bust if ever swapped.
+      ...[
+        '/favicon.ico',
+        '/apple-icon.png',
+        '/chinese_name_icon.png',
+        '/site.webmanifest',
+      ].map((source) => ({
+        source,
         headers: [
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
         ],
-      },
+      })),
     ]
   },
   async redirects() {

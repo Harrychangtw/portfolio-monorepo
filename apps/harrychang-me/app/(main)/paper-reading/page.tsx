@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import {
   fetchArxivPapers,
   getManualPapers,
@@ -46,5 +47,12 @@ export default async function PaperReadingPage() {
     );
   }
 
-  return <PaperReadingPageClient papers={allPapers} />;
+  // Suspense boundary required because PaperReadingPageClient reads
+  // useSearchParams(); without it, Next 15 would deopt the route out of
+  // static rendering and the cache-rate fix would not land.
+  return (
+    <Suspense fallback={null}>
+      <PaperReadingPageClient papers={allPapers} />
+    </Suspense>
+  );
 }
