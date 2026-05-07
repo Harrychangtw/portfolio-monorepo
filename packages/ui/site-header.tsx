@@ -9,6 +9,7 @@ import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll";
 import { scrollToSection as utilScrollToSection } from "@portfolio/lib/lib/scrolling";
+import { track, events } from "@portfolio/lib/analytics";
 import StaggeredMenu, { type SocialGroup } from "@portfolio/ui/staggered-menu";
 
 const SCROLL_ANIMATION_DURATION = 400;
@@ -379,10 +380,14 @@ export default function SiteHeader({
       : pagePath === "/"
         ? `/#${sectionId}`
         : pagePath;
-    const onClick = isHomePage
-      ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>
-          scrollToSection(sectionId, e)
-      : undefined;
+    const onClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      track(events.HEADER_NAV_LINK_CLICK, {
+        section_id: sectionId,
+        path: pagePath,
+        is_home_page: isHomePage,
+      });
+      if (isHomePage) scrollToSection(sectionId, e);
+    };
     const scroll = !isHomePage;
     return { className, href, onClick, scroll };
   };

@@ -7,6 +7,7 @@ import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import GraphCanvas from "./graph-canvas";
 import type { GraphData, GraphNode } from "./types";
+import { track, events } from "@portfolio/lib/analytics";
 
 export interface EmbeddedNodeInfo {
   title: string;
@@ -139,6 +140,14 @@ export default function EmbeddedGraph({
   const handleNodeClick = useCallback(
     (node: GraphNode | null) => {
       if (!node || node.nodeType === "tag" || !node.url) return;
+      track(events.GRAPH_NODE_CLICKED, {
+        node_id: node.id,
+        node_category: node.nodeType,
+        node_source_type: node.sourceType ?? null,
+        surface: "next_up_subgraph",
+        source_path:
+          typeof window !== "undefined" ? window.location.pathname : null,
+      });
       try {
         const target = new URL(node.url, window.location.origin);
         // Defensive: this embed currently filters to file/hub/tag (no

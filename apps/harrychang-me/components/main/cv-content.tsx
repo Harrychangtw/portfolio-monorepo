@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import type { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import { track, events } from "@portfolio/lib/analytics";
 
 interface CvEntry {
   title: string;
@@ -160,6 +161,9 @@ export default function CvContent({ pdfUrl }: CvContentProps) {
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              track(events.CV_DOWNLOAD_CLICKED, { source: "cv_page" })
+            }
             className="font-ibm-plex text-primary hover:text-accent transition-colors flex items-center gap-1.5 group shrink-0"
           >
             <span>{t("header.viewPdf", "cv")}</span>

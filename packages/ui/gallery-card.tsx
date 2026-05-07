@@ -8,6 +8,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { ANIMATION } from "@portfolio/config";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { ImageContainer } from "@portfolio/ui/image-container";
+import { track, events } from "@portfolio/lib/analytics";
 
 const cardVariants = cva("", {
   variants: {
@@ -122,7 +123,19 @@ export default function GalleryCard({
       className={`group relative ${!locked && hoverEffect === "gentle" ? "hover:shadow-xl" : ""}`}
       whileHover={!locked ? hoverAnimation : {}}
     >
-      <NavigationLink href={`/${basePath}/${slug}`} className="block">
+      <NavigationLink
+        href={`/${basePath}/${slug}`}
+        className="block"
+        onClick={() =>
+          track(events.GALLERY_CARD_OPENED, {
+            slug,
+            title,
+            base_path: basePath,
+            pinned: pinned ?? null,
+            locked: !!locked,
+          })
+        }
+      >
         <div className="relative overflow-hidden bg-white">
           {/* 
              Using ImageContainer:

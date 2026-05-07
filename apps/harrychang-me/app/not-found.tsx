@@ -7,6 +7,7 @@ import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
 import ClientLayout from "@/components/main/client-layout";
 import { siteConfig } from "@/config/site";
+import { track, events } from "@portfolio/lib/analytics";
 
 function resolveDestinationUrl(path: string): string {
   if (typeof window === "undefined") return path;
@@ -154,6 +155,14 @@ export function NotFoundContent() {
     const checkLock = setInterval(() => {
       if (holdStartRef.current && Date.now() - holdStartRef.current > 500) {
         const dest = destinations[currentIndex];
+        const timeToLock = holdStartRef.current
+          ? Date.now() - holdStartRef.current
+          : null;
+        track(events.RANGEFINDER_LOCKED, {
+          destination: dest.label,
+          path: dest.path,
+          time_to_lock_ms: timeToLock,
+        });
         setIsLocked(true);
         setLockedDestination(dest);
 
@@ -161,6 +170,11 @@ export function NotFoundContent() {
           startNavigation();
           setTimeout(() => {
             const target = resolveDestinationUrl(dest.path);
+            track(events.RANGEFINDER_REDIRECTED, {
+              destination: dest.label,
+              path: dest.path,
+              target,
+            });
             if (target.startsWith("http")) {
               window.location.assign(target);
             } else {

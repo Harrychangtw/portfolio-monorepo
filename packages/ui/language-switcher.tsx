@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import { track, events } from "@portfolio/lib/analytics";
 import { useState } from "react";
 
 export default function LanguageSwitcher() {
@@ -17,7 +18,11 @@ export default function LanguageSwitcher() {
       className="flex"
     >
       <motion.button
-        onClick={() => setLanguage(isEn ? "zh-TW" : "en")}
+        onClick={() => {
+          const next = isEn ? "zh-TW" : "en";
+          track(events.LANGUAGE_SWITCHED, { new_language: next.toLowerCase() });
+          setLanguage(next);
+        }}
         className="flex items-center gap-1.5 font-heading text-sm font-medium select-none"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
