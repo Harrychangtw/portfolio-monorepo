@@ -3,6 +3,7 @@
 import type React from "react";
 import { Suspense } from "react";
 import Header from "@/components/header";
+import { Analytics } from "@vercel/analytics/react";
 import ClickSpark from "@portfolio/ui/ui/click-spark";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { LanguageProvider } from "@portfolio/lib/contexts/language-context";
@@ -45,6 +46,7 @@ export default function ClientLayout({
         <Suspense fallback={null}>
           <NotificationProvider />
         </Suspense>
+        <Analytics />
       </LanguageProvider>
     </ThemeProvider>
   );
