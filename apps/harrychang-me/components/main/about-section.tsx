@@ -44,7 +44,7 @@ export default function AboutSection() {
                 <ThemeSwitcher />
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="hidden md:flex items-center gap-3">
                 <AskAi />
               </div>
             </div>
