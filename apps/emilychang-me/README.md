@@ -17,21 +17,21 @@ Production deploy.
 
 <!-- LIGHTHOUSE_PROD_RESULTS_START -->
 
-> 🕐 **Last audited:** Mon, 11 May 2026 07:45:59 GMT  
+> 🕐 **Last audited:** Tue, 12 May 2026 06:42:06 GMT  
 > 🌐 **Deployment:** https://emilychang.me
 
 #### Desktop (Production Deployment)
 
 | Tested Route | Performance                                                                              | FCP   | LCP   | TBT      | CLS | Speed Index |
 | :----------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :------- | :-- | :---------- |
-| `/`          | ![Lighthouse 57](https://img.shields.io/badge/lighthouse-57-important?style=flat-square) | 0.5 s | 1.7 s | 7,430 ms | 0   | 2.6 s       |
+| `/`          | ![Lighthouse 57](https://img.shields.io/badge/lighthouse-57-important?style=flat-square) | 0.5 s | 1.7 s | 7,360 ms | 0   | 2.6 s       |
 | `/linktree`  | ![Lighthouse 93](https://img.shields.io/badge/lighthouse-93-success?style=flat-square)   | 0.5 s | 1.7 s | 30 ms    | 0   | 0.5 s       |
 
 #### Mobile (Production Deployment)
 
 | Tested Route | Performance                                                                              | FCP   | LCP   | TBT        | CLS | Speed Index |
 | :----------- | :--------------------------------------------------------------------------------------- | :---- | :---- | :--------- | :-- | :---------- |
-| `/`          | ![Lighthouse 37](https://img.shields.io/badge/lighthouse-37-critical?style=flat-square)  | 2.1 s | 9.4 s | 141,240 ms | 0   | 6.5 s       |
-| `/linktree`  | ![Lighthouse 61](https://img.shields.io/badge/lighthouse-61-important?style=flat-square) | 1.7 s | 9.3 s | 530 ms     | 0   | 2.3 s       |
+| `/`          | ![Lighthouse 39](https://img.shields.io/badge/lighthouse-39-critical?style=flat-square)  | 1.8 s | 9.3 s | 143,280 ms | 0   | 6.2 s       |
+| `/linktree`  | ![Lighthouse 65](https://img.shields.io/badge/lighthouse-65-important?style=flat-square) | 1.7 s | 9.3 s | 380 ms     | 0   | 1.9 s       |
 
 <!-- LIGHTHOUSE_PROD_RESULTS_END -->
