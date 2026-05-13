@@ -233,6 +233,7 @@ export default function TypographyPageClient() {
               alt="Harry Chang Portfolio Identity — The Tower of Babel"
               aspectRatio={1.5}
               noInsetPadding={true}
+              sizes="(min-width: 768px) 50vw, 100vw"
             />
           </NavigationLink>
           <div className="grid grid-cols-2 gap-2">
@@ -245,6 +246,7 @@ export default function TypographyPageClient() {
                 alt="Blog: The Astronomer"
                 aspectRatio={1200 / 630}
                 noInsetPadding={true}
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             </NavigationLink>
             <NavigationLink
@@ -256,6 +258,7 @@ export default function TypographyPageClient() {
                 alt="Gallery: The Art of Painting"
                 aspectRatio={1200 / 630}
                 noInsetPadding={true}
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             </NavigationLink>
             <a
@@ -269,6 +272,7 @@ export default function TypographyPageClient() {
                 alt="Lab: The Fall of Icarus"
                 aspectRatio={1200 / 630}
                 noInsetPadding={true}
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             </a>
             <NavigationLink
@@ -280,6 +284,7 @@ export default function TypographyPageClient() {
                 alt="Projects: The Forge of Vulcan"
                 aspectRatio={1200 / 630}
                 noInsetPadding={true}
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             </NavigationLink>
             <NavigationLink
@@ -291,6 +296,7 @@ export default function TypographyPageClient() {
                 alt="Design System"
                 aspectRatio={1200 / 630}
                 noInsetPadding={true}
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             </NavigationLink>
             <NavigationLink
@@ -302,6 +308,7 @@ export default function TypographyPageClient() {
                 alt="Manifesto"
                 aspectRatio={1200 / 630}
                 noInsetPadding={true}
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             </NavigationLink>
             <NavigationLink
@@ -313,6 +320,7 @@ export default function TypographyPageClient() {
                 alt="Paper Reading"
                 aspectRatio={1200 / 630}
                 noInsetPadding={true}
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             </NavigationLink>
             <NavigationLink
@@ -324,6 +332,7 @@ export default function TypographyPageClient() {
                 alt="Uses & Setup"
                 aspectRatio={1200 / 630}
                 noInsetPadding={true}
+                sizes="(min-width: 768px) 25vw, 50vw"
               />
             </NavigationLink>
           </div>

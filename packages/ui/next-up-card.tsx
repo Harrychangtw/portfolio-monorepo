@@ -83,6 +83,7 @@ export default function NextUpCard({
               noInsetPadding
               aspectRatio={1.5}
               rawImage={rawImage}
+              sizes="(min-width: 768px) 144px, 96px"
             />
           </div>
         )}
