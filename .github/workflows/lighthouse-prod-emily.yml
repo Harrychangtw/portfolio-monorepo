@@ -7,6 +7,7 @@ name: Lighthouse Audit (emilychang.me)
 on:
   schedule:
     - cron: "0 4 * * *"
+  workflow_dispatch:
 
 jobs:
   lighthouse-prod-emily:
