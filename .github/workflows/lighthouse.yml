@@ -93,6 +93,32 @@ jobs:
             http://localhost:3000/blog/2026_01_10_plushies
             http://localhost:3000/blog/2026_02_10_synecdoche_truman
             http://localhost:3000/graph
+            http://localhost:3000/?lang=zh-tw
+            http://localhost:3000/blog?lang=zh-tw
+            http://localhost:3000/projects?lang=zh-tw
+            http://localhost:3000/gallery?lang=zh-tw
+            http://localhost:3000/uses?lang=zh-tw
+            http://localhost:3000/cv?lang=zh-tw
+            http://localhost:3000/linktree?lang=zh-tw
+            http://localhost:3000/design?lang=zh-tw
+            http://localhost:3000/paper-reading?lang=zh-tw
+            http://localhost:3000/manifesto?lang=zh-tw
+            http://localhost:3000/projects/2025_04_12_portfolio?lang=zh-tw
+            http://localhost:3000/projects/2024_09_23_chingshin_rag?lang=zh-tw
+            http://localhost:3000/projects/2025_03_08_sitcon_keynote?lang=zh-tw
+            http://localhost:3000/projects/2025_08_04_debate?lang=zh-tw
+            http://localhost:3000/projects/2024_08_19_classics_reimagined?lang=zh-tw
+            http://localhost:3000/gallery/2026_02_08_italy_mountain?lang=zh-tw
+            http://localhost:3000/gallery/2023_07_07_splash_of_red?lang=zh-tw
+            http://localhost:3000/gallery/2023_10_06_against_giants?lang=zh-tw
+            http://localhost:3000/gallery/2023_11_18_dusk_impressions?lang=zh-tw
+            http://localhost:3000/gallery/2024_01_06_hehuanshan?lang=zh-tw
+            http://localhost:3000/blog/9_m11d?lang=zh-tw
+            http://localhost:3000/blog/2025_12_19_xpro1?lang=zh-tw
+            http://localhost:3000/blog/2025_12_22_aftersun_paris_texas?lang=zh-tw
+            http://localhost:3000/blog/2026_01_10_plushies?lang=zh-tw
+            http://localhost:3000/blog/2026_02_10_synecdoche_truman?lang=zh-tw
+            http://localhost:3000/graph?lang=zh-tw
           configPath: apps/harrychang-me/.lighthouserc.mobile.json
           artifactName: lighthouse-results-mobile
           uploadArtifacts: true
@@ -140,6 +166,32 @@ jobs:
             http://localhost:3000/blog/2026_01_10_plushies
             http://localhost:3000/blog/2026_02_10_synecdoche_truman
             http://localhost:3000/graph
+            http://localhost:3000/?lang=zh-tw
+            http://localhost:3000/blog?lang=zh-tw
+            http://localhost:3000/projects?lang=zh-tw
+            http://localhost:3000/gallery?lang=zh-tw
+            http://localhost:3000/uses?lang=zh-tw
+            http://localhost:3000/cv?lang=zh-tw
+            http://localhost:3000/linktree?lang=zh-tw
+            http://localhost:3000/design?lang=zh-tw
+            http://localhost:3000/paper-reading?lang=zh-tw
+            http://localhost:3000/manifesto?lang=zh-tw
+            http://localhost:3000/projects/2025_04_12_portfolio?lang=zh-tw
+            http://localhost:3000/projects/2024_09_23_chingshin_rag?lang=zh-tw
+            http://localhost:3000/projects/2025_03_08_sitcon_keynote?lang=zh-tw
+            http://localhost:3000/projects/2025_08_04_debate?lang=zh-tw
+            http://localhost:3000/projects/2024_08_19_classics_reimagined?lang=zh-tw
+            http://localhost:3000/gallery/2026_02_08_italy_mountain?lang=zh-tw
+            http://localhost:3000/gallery/2023_07_07_splash_of_red?lang=zh-tw
+            http://localhost:3000/gallery/2023_10_06_against_giants?lang=zh-tw
+            http://localhost:3000/gallery/2023_11_18_dusk_impressions?lang=zh-tw
+            http://localhost:3000/gallery/2024_01_06_hehuanshan?lang=zh-tw
+            http://localhost:3000/blog/9_m11d?lang=zh-tw
+            http://localhost:3000/blog/2025_12_19_xpro1?lang=zh-tw
+            http://localhost:3000/blog/2025_12_22_aftersun_paris_texas?lang=zh-tw
+            http://localhost:3000/blog/2026_01_10_plushies?lang=zh-tw
+            http://localhost:3000/blog/2026_02_10_synecdoche_truman?lang=zh-tw
+            http://localhost:3000/graph?lang=zh-tw
           configPath: apps/harrychang-me/.lighthouserc.json
           artifactName: lighthouse-results-desktop
           uploadArtifacts: true

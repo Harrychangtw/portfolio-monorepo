@@ -16,14 +16,22 @@ function readLhrDir(dir) {
   for (const file of lhrFiles) {
     try {
       const lhr = JSON.parse(fs.readFileSync(path.join(absDir, file), "utf8"));
-      const urlPath = new URL(lhr.requestedUrl).pathname || "/";
+      const url = new URL(lhr.requestedUrl);
+      const urlPath = url.pathname || "/";
+      const locale =
+        url.searchParams.get("lang")?.toLowerCase() === "zh-tw"
+          ? "ZH-TW"
+          : "EN";
+      const key = `${urlPath}|${locale}`;
       const perfScore = Math.round(
         (lhr.categories?.performance?.score ?? 0) * 100,
       );
-      const get = (key) => lhr.audits?.[key]?.displayValue ?? "-";
+      const get = (k) => lhr.audits?.[k]?.displayValue ?? "-";
 
-      if (!data[urlPath] || perfScore > data[urlPath].perfScore) {
-        data[urlPath] = {
+      if (!data[key] || perfScore > data[key].perfScore) {
+        data[key] = {
+          route: urlPath,
+          locale,
           perfScore,
           fcp: get("first-contentful-paint"),
           lcp: get("largest-contentful-paint"),
@@ -39,33 +47,57 @@ function readLhrDir(dir) {
   return data;
 }
 
-function buildRows(routeData) {
-  return Object.keys(routeData)
-    .sort()
-    .map((route) => {
-      const d = routeData[route];
-      const color =
-        d.perfScore >= 90
-          ? "success"
-          : d.perfScore >= 50
-            ? "important"
-            : "critical";
-      const badge = `![Lighthouse ${d.perfScore}](https://img.shields.io/badge/lighthouse-${d.perfScore}-${color}?style=flat-square)`;
-      return `| \`${route}\` | ${badge} | ${d.fcp} | ${d.lcp} | ${d.tbt} | ${d.cls} | ${d.si} |`;
-    })
-    .join("\n");
+function badge(score) {
+  const color =
+    score >= 90 ? "success" : score >= 50 ? "important" : "critical";
+  return `![${score}](https://img.shields.io/badge/${score}-${color}?style=flat-square)`;
 }
 
-const TABLE_HEADER = [
-  "| Tested Route | Performance | FCP | LCP | TBT | CLS | Speed Index |",
-  "|:---|:---|:---|:---|:---|:---|:---|",
-].join("\n");
+function metricsCell(d) {
+  if (!d) return "- | - | - | - | - | -";
+  return `${badge(d.perfScore)} | ${d.fcp} | ${d.lcp} | ${d.tbt} | ${d.cls} | ${d.si}`;
+}
+
+function buildMergedTable(desktopData, mobileData) {
+  const allKeys = new Set([
+    ...Object.keys(desktopData),
+    ...Object.keys(mobileData),
+  ]);
+
+  const rows = [];
+  for (const key of allKeys) {
+    const entry = desktopData[key] || mobileData[key];
+    rows.push({
+      route: entry.route,
+      locale: entry.locale,
+      desktop: desktopData[key] || null,
+      mobile: mobileData[key] || null,
+    });
+  }
+
+  rows.sort((a, b) => {
+    const r = a.route.localeCompare(b.route);
+    if (r !== 0) return r;
+    return a.locale.localeCompare(b.locale);
+  });
+
+  const header = [
+    "| Route | Locale | Desktop Perf | Desktop FCP | Desktop LCP | Desktop TBT | Desktop CLS | Desktop SI | Mobile Perf | Mobile FCP | Mobile LCP | Mobile TBT | Mobile CLS | Mobile SI |",
+    "|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|",
+  ].join("\n");
+
+  const body = rows
+    .map(
+      (r) =>
+        `| \`${r.route}\` | ${r.locale} | ${metricsCell(r.desktop)} | ${metricsCell(r.mobile)} |`,
+    )
+    .join("\n");
+
+  return `${header}\n${body}`;
+}
 
 const mode = process.argv.includes("--mode=prod") ? "prod" : "simulated";
 
-// `--readme=<relative-path>` lets a workflow target a different app's README
-// (e.g. apps/emilychang-me/README.md). Defaults to harrychang-me to preserve
-// existing behavior.
 const readmeArg = process.argv.find((a) => a.startsWith("--readme="));
 const readmeRel = readmeArg
   ? readmeArg.slice("--readme=".length)
@@ -91,23 +123,11 @@ if (mode === "prod") {
     ? `> 🕐 **Last audited:** ${timestamp}  \n> 🌐 **Deployment:** ${deploymentUrl}`
     : `> 🕐 **Last audited:** ${timestamp}`;
 
-  const sections = [];
-  if (hasDesktop) {
-    sections.push(
-      `#### Desktop (Production Deployment)\n\n${TABLE_HEADER}\n${buildRows(desktopData)}`,
-    );
-  }
-  if (hasMobile) {
-    sections.push(
-      `#### Mobile (Production Deployment)\n\n${TABLE_HEADER}\n${buildRows(mobileData)}`,
-    );
-  }
-
   const block = [
     "<!-- LIGHTHOUSE_PROD_RESULTS_START -->",
     header,
     "",
-    sections.join("\n\n"),
+    buildMergedTable(desktopData, mobileData),
     "<!-- LIGHTHOUSE_PROD_RESULTS_END -->",
   ].join("\n");
 
@@ -142,19 +162,11 @@ if (!hasDesktop && !hasMobile) {
   process.exit(0);
 }
 
-const sections = [];
-if (hasDesktop) {
-  sections.push(`#### Desktop\n\n${TABLE_HEADER}\n${buildRows(desktopData)}`);
-}
-if (hasMobile) {
-  sections.push(`#### Mobile\n\n${TABLE_HEADER}\n${buildRows(mobileData)}`);
-}
-
 const block = [
   "<!-- LIGHTHOUSE_RESULTS_START -->",
   `> 🕐 **Last audited:** ${timestamp}`,
   "",
-  sections.join("\n\n"),
+  buildMergedTable(desktopData, mobileData),
   "<!-- LIGHTHOUSE_RESULTS_END -->",
 ].join("\n");
 
