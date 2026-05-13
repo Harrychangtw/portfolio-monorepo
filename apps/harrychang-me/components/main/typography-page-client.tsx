@@ -7,7 +7,7 @@ import { getAllFontFamilies } from "@portfolio/lib/lib/typography";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { ImageContainer } from "@portfolio/ui/image-container";
 import NavigationLink from "@portfolio/ui/navigation-link";
-import EmbeddedGraph from "@/components/graph/local-graph-dynamic";
+import GraphNextUp from "@/components/graph/graph-next-up";
 
 /* ── Helpers ──────────────────────────────────────────────── */
 
@@ -136,6 +136,13 @@ function SectionSplit({
 export default function TypographyPageClient() {
   const { t } = useLanguage();
   const fonts = getAllFontFamilies();
+
+  /* ── Font descriptions ──────────────────────────────────── */
+
+  const fontDescriptions: Record<string, string | undefined> = {
+    "IBM Plex Sans": t("design.fontDescIbmPlex"),
+    Artific: t("design.fontDescArtific"),
+  };
 
   /* ── Color palette data ─────────────────────────────────── */
 
@@ -324,7 +331,11 @@ export default function TypographyPageClient() {
       </SectionSplit>
 
       {/* 02 — Color Palette */}
-      <Section index={2} title={t("design.colorPalette")}>
+      <SectionSplit
+        index={2}
+        title={t("design.colorPalette")}
+        description={<p>{t("design.colorPaletteDesc")}</p>}
+      >
         <div className="grid grid-cols-4 gap-2">
           {colorPalette.map((color) => (
             <ColorCard
@@ -334,10 +345,14 @@ export default function TypographyPageClient() {
             />
           ))}
         </div>
-      </Section>
+      </SectionSplit>
 
       {/* 03 — Type Scale */}
-      <Section index={3} title={t("design.typeScale")}>
+      <SectionSplit
+        index={3}
+        title={t("design.typeScale")}
+        description={<p>{t("design.typeScaleDesc")}</p>}
+      >
         <div className="space-y-0">
           {typeScale.map((level, i) => (
             <div
@@ -357,17 +372,30 @@ export default function TypographyPageClient() {
             </div>
           ))}
         </div>
-      </Section>
+      </SectionSplit>
 
       {/* 04+ — Font Specimens */}
       {fonts.map((font, i) => (
-        <Section key={font.name} index={fontStartIndex + i} title={font.name}>
+        <SectionSplit
+          key={font.name}
+          index={fontStartIndex + i}
+          title={font.name}
+          description={
+            fontDescriptions[font.name] ? (
+              <p>{fontDescriptions[font.name]}</p>
+            ) : undefined
+          }
+        >
           <TypographySpecimen font={font} index={i} />
-        </Section>
+        </SectionSplit>
       ))}
 
       {/* N — Spacing & Layout */}
-      <SectionSplit index={spacingIndex} title={t("design.spacingGrid")}>
+      <SectionSplit
+        index={spacingIndex}
+        title={t("design.spacingGrid")}
+        description={<p>{t("design.spacingDesc")}</p>}
+      >
         <div className="space-y-0">
           {[
             {
@@ -411,7 +439,12 @@ export default function TypographyPageClient() {
       </SectionSplit>
 
       {/* N+1 — Motion & Interaction */}
-      <SectionSplit index={motionIndex} title={t("design.motionInteraction")}>
+      <SectionSplit
+        index={motionIndex}
+        title={t("design.motionInteraction")}
+        description={<p>{t("design.motionDesc")}</p>}
+      >
+        {" "}
         <div className="space-y-0">
           {[
             {
@@ -468,20 +501,18 @@ export default function TypographyPageClient() {
           </div>
         }
       >
-        <div className="relative border border-border bg-card overflow-hidden">
-          <div className="relative w-full aspect-[3/2] overflow-hidden">
-            <div className="absolute top-2 left-2 z-10 px-2 py-1 text-[10px] font-heading uppercase tracking-wider text-secondary bg-card/80 backdrop-blur-sm border border-border pointer-events-none">
-              {t("common.relatedGraph")}
-            </div>
-            <NavigationLink
-              href="/graph"
-              className="absolute top-2 right-2 z-10 px-2 py-1 text-[10px] font-heading uppercase tracking-wider text-secondary hover:text-primary bg-card/80 backdrop-blur-sm border border-border transition-colors"
-            >
-              {t("design.fullGraph")} →
-            </NavigationLink>
-            <EmbeddedGraph />
-          </div>
-        </div>
+        <GraphNextUp
+          defaultHubSlug="root"
+          defaultHubCard={{
+            slug: "root",
+            title: "Harry Chang",
+            category: "harrychang.me",
+            imageUrl: "/images/og-image.webp",
+            href: "/",
+            rawImage: true,
+          }}
+          className="w-full"
+        />
       </SectionSplit>
     </article>
   );

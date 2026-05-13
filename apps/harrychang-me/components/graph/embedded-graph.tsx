@@ -7,6 +7,7 @@ import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import GraphCanvas from "./graph-canvas";
 import type { GraphData, GraphNode } from "./types";
+import { resolveHubImageUrl } from "./graph-utils";
 import { track, events } from "@portfolio/lib/analytics";
 
 export interface EmbeddedNodeInfo {
@@ -21,24 +22,12 @@ export interface EmbeddedNodeInfo {
   nodeType?: string;
 }
 
-/** OG images shown when hovering over a hub node in the embedded graph */
-const HUB_OG_IMAGES: Record<string, string> = {
-  root: "/images/og-image.webp",
-  post: "/images/og-image-blog.webp",
-  project: "/images/og-image-projects.webp",
-  gallery: "/images/og-image-gallery.webp",
-  about: "/images/og-image.webp",
-  updates: "/images/og-image.webp",
-  uses: "/images/og-image-uses.webp",
-  linktree: "/images/og-image.webp",
-  cv: "/images/og-image-resume.webp",
-  reading: "/images/og-image-reading.webp",
-};
-
 interface EmbeddedGraphProps {
   /** Slug of the focal (next-up) file node to center & select */
   focalSlug?: string;
   focalSourceType?: "post" | "project" | "gallery";
+  /** Slug of a hub node to center & select (used on non-content pages like /design) */
+  focalHubSlug?: string;
   onNodeHover?: (node: EmbeddedNodeInfo | null) => void;
   /** Mobile crosshair centre-node callback */
   onCenterNodeChange?: (node: EmbeddedNodeInfo | null) => void;
@@ -66,17 +55,12 @@ async function loadGraphData(): Promise<GraphData | null> {
 }
 
 function toInfo(node: GraphNode): EmbeddedNodeInfo {
-  // Hub nodes don't carry content images — use pre-defined OG images instead.
-  const imageUrl =
-    node.nodeType === "hub"
-      ? (HUB_OG_IMAGES[node.sourceSlug] ?? node.imageUrl)
-      : node.imageUrl;
   return {
     title: node.title,
     slug: node.sourceSlug,
     sourceType: node.sourceType,
     url: node.url,
-    imageUrl,
+    imageUrl: resolveHubImageUrl(node),
     description: node.description || node.snippet,
     tldr: node.tldr,
     nodeType: node.nodeType,
@@ -91,6 +75,7 @@ function toInfo(node: GraphNode): EmbeddedNodeInfo {
 export default function EmbeddedGraph({
   focalSlug,
   focalSourceType,
+  focalHubSlug,
   onNodeHover,
   onCenterNodeChange,
 }: EmbeddedGraphProps) {
@@ -125,7 +110,17 @@ export default function EmbeddedGraph({
 
   // Resolve focal node id in the filtered set.
   const focalNodeId = useMemo(() => {
-    if (!filteredData || !focalSlug || !focalSourceType) return undefined;
+    if (!filteredData) return undefined;
+    // Hub focal takes precedence when set (used on non-content pages)
+    if (focalHubSlug) {
+      return filteredData.nodes.find(
+        (n) =>
+          n.nodeType === "hub" &&
+          n.sourceSlug === focalHubSlug &&
+          n.locale === locale,
+      )?.id;
+    }
+    if (!focalSlug || !focalSourceType) return undefined;
     return filteredData.nodes.find(
       (n) =>
         n.nodeType === "file" &&
@@ -133,7 +128,7 @@ export default function EmbeddedGraph({
         n.sourceType === focalSourceType &&
         n.locale === locale,
     )?.id;
-  }, [filteredData, focalSlug, focalSourceType, locale]);
+  }, [filteredData, focalSlug, focalSourceType, focalHubSlug, locale]);
 
   const { startNavigation } = useNavigation();
 

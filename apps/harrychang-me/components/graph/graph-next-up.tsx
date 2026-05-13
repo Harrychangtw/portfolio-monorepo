@@ -15,14 +15,22 @@ interface NextUpItem {
   aspectRatio?: number;
   /** Direct href for hub nodes whose route doesn't fit /{basePath}/{slug}. */
   href?: string;
+  /** Image is not in the optimization pipeline (e.g. OG images for hub nodes). */
+  rawImage?: boolean;
 }
 
 type BasePath = "blog" | "projects" | "gallery";
 
 interface GraphNextUpProps {
-  sourceType: "post" | "project" | "gallery";
-  basePath: BasePath;
+  sourceType?: "post" | "project" | "gallery";
+  basePath?: BasePath;
   nextItem?: NextUpItem | null;
+  /** Hub slug to center on and show as the default card (for non-content pages). */
+  defaultHubSlug?: string;
+  /** Default card to display synchronously when using defaultHubSlug (avoids CLS). */
+  defaultHubCard?: NextUpItem;
+  /** Override the outer wrapper className (default includes top margin). */
+  className?: string;
 }
 
 function sourceTypeToBasePath(st: string): BasePath {
@@ -42,17 +50,25 @@ function normalizeImageUrl(url: string | null | undefined): string {
  * Combined graph + NextUpCard component.
  * The graph default-selects the next item's node. Hovering a file node
  * temporarily updates the NextUpCard; leaving reverts to the selected node.
+ *
+ * For non-content pages (e.g. /design), pass `defaultHubSlug` and
+ * `defaultHubCard` to center the graph on a hub node and show a default card.
  */
 export default function GraphNextUp({
   sourceType,
   basePath,
   nextItem,
+  defaultHubSlug,
+  defaultHubCard,
+  className,
 }: GraphNextUpProps) {
   const { language, t } = useLanguage();
 
-  // "base" card = the default/selected node data (starts as nextItem)
-  const [baseCard, setBaseCard] = useState<NextUpItem | null>(nextItem ?? null);
-  const [baseCardPath] = useState<BasePath>(basePath);
+  const initialCard = nextItem ?? defaultHubCard ?? null;
+
+  // "base" card = the default/selected node data (starts as nextItem or hub default)
+  const [baseCard, setBaseCard] = useState<NextUpItem | null>(initialCard);
+  const [baseCardPath] = useState<BasePath>(basePath ?? "blog");
 
   // "hover" card = temporary override while hovering a node
   const [hoverCard, setHoverCard] = useState<{
@@ -69,15 +85,15 @@ export default function GraphNextUp({
   // Reset derived state when nextItem changes (e.g. client-side navigation)
   /* eslint-disable react-hooks/set-state-in-effect -- synchronising derived state from prop change */
   useEffect(() => {
-    setBaseCard(nextItem ?? null);
+    setBaseCard(nextItem ?? defaultHubCard ?? null);
     setLocalizedNextItem(nextItem ?? null);
     setHoverCard(null);
     isDefaultRef.current = true;
-  }, [nextItem]);
+  }, [nextItem, defaultHubCard]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
-    if (!nextItem) return;
+    if (!nextItem || !basePath) return;
 
     async function fetchLocalized() {
       const baseSlug = nextItem!.slug.replace("_zh-tw", "");
@@ -156,8 +172,8 @@ export default function GraphNextUp({
         title: node.title,
         category: node.tldr || node.description || "",
         imageUrl: normalizeImageUrl(node.imageUrl),
-        // Hub nodes link to their own route directly (e.g. /blog, /gallery)
         href: isHub ? node.url : undefined,
+        rawImage: isHub,
       },
       basePath: sourceTypeToBasePath(node.sourceType),
     });
@@ -178,6 +194,7 @@ export default function GraphNextUp({
           category: node.tldr || node.description || "",
           imageUrl: normalizeImageUrl(node.imageUrl),
           href: isHub ? node.url : undefined,
+          rawImage: isHub,
         },
         basePath: sourceTypeToBasePath(node.sourceType),
       });
@@ -190,7 +207,7 @@ export default function GraphNextUp({
   const displayBasePath = hoverCard ? hoverCard.basePath : baseCardPath;
 
   return (
-    <div className="w-full mt-8 md:mt-12">
+    <div className={className ?? "w-full mt-8 md:mt-12"}>
       {/* Single bordered container: 3:2 graph + NextUpCard stacked inside */}
       <div className="relative border border-border bg-card overflow-hidden">
         {/* Graph — strictly 3:2 */}
@@ -207,14 +224,15 @@ export default function GraphNextUp({
           <EmbeddedGraph
             focalSlug={nextItem?.slug?.replace(/_zh-tw|_zh-TW/i, "")}
             focalSourceType={sourceType}
+            focalHubSlug={defaultHubSlug}
             onNodeHover={handleNodeHover}
             onCenterNodeChange={handleCenterNodeChange}
           />
         </div>
 
-        {/* NextUpCard — inside the same container, below the graph */}
-        {displayCard && (
-          <div className="border-t border-border">
+        {/* NextUpCard — always rendered to avoid CLS; content swaps on hover */}
+        <div className="border-t border-border">
+          {displayCard ? (
             <NextUpCard
               title={displayCard.title}
               category={displayCard.category}
@@ -223,9 +241,14 @@ export default function GraphNextUp({
               basePath={displayBasePath}
               aspectRatio={displayCard.aspectRatio}
               href={displayCard.href}
+              rawImage={displayCard.rawImage}
             />
-          </div>
-        )}
+          ) : (
+            <div className="p-4 md:p-6">
+              <div className="h-5 w-24 bg-muted/40 rounded animate-pulse" />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

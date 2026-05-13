@@ -5,6 +5,7 @@ import { ImageContainer } from "@portfolio/ui/image-container";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import NextUpCard from "@portfolio/ui/next-up-card";
 import type { GraphNode, SourceType } from "./types";
+import { resolveHubImageUrl } from "./graph-utils";
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -240,7 +241,9 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
                     : node.description || node.snippet)
                 }
                 slug={node.sourceSlug}
-                imageUrl={isTag ? "" : normalizeImageUrl(node.imageUrl)}
+                imageUrl={
+                  isTag ? "" : normalizeImageUrl(resolveHubImageUrl(node))
+                }
                 basePath={sourceTypeToBasePath(node.sourceType as SourceType)}
                 label={null}
                 href={
@@ -251,6 +254,7 @@ export default function MobileNodeCard({ node }: MobileNodeCardProps) {
                     : undefined
                 }
                 disableLink={isTag || !node.url}
+                rawImage={isHub}
               />
             </div>
           )}

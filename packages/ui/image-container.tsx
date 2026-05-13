@@ -18,6 +18,8 @@ interface ImageContainerProps {
   sizes?: string; // Optional sizes attribute for responsive layouts
   imgClassName?: string; // Added: Pass classes to the inner Image component
   restrictPortraitWidth?: boolean; // Added: Toggle desktop portrait centering (default true)
+  /** Skip the custom webpLoader and responsive-variant thumbnail derivation (for images not in the optimization pipeline). */
+  rawImage?: boolean;
 }
 
 export function ImageContainer({
@@ -31,6 +33,7 @@ export function ImageContainer({
   sizes = "100vw",
   imgClassName,
   restrictPortraitWidth = true,
+  rawImage = false,
 }: ImageContainerProps) {
   const containerRef = useRef<HTMLElement>(null);
   const isVisible = useIntersectionObserver({
@@ -59,20 +62,19 @@ export function ImageContainer({
   let thumbnailSrc: string | undefined;
   let fullSrc = src;
 
-  if (isVideo) {
-    // Videos don't have generated thumbnails in this pipeline
-    // We rely on the skeleton until the video data loads
+  if (rawImage) {
+    thumbnailSrc = undefined;
+    fullSrc = src;
+  } else if (isVideo) {
     thumbnailSrc = undefined;
     fullSrc = src;
   } else if (src?.endsWith("-thumb.webp")) {
-    // Card / preview URLs already point at the thumbnail
     thumbnailSrc = src;
     fullSrc = src.replace("-thumb.webp", ".webp");
   } else if (src?.endsWith(".webp")) {
     thumbnailSrc = src.replace(".webp", "-thumb.webp");
     fullSrc = src;
   } else if (src) {
-    // Non-webp fallback – just use the same URL for both
     thumbnailSrc = src;
     fullSrc = src;
   }
@@ -202,7 +204,7 @@ export function ImageContainer({
                       } ${imgClassName || ""}`}
                       sizes={sizes}
                       quality={quality}
-                      {...(fullSrc?.endsWith(".webp")
+                      {...(!rawImage && fullSrc?.endsWith(".webp")
                         ? { loader: webpLoader }
                         : {})}
                       onLoad={() => {

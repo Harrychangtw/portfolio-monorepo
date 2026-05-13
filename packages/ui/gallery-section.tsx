@@ -169,6 +169,13 @@ export default function GallerySection({
     ? null
     : createBalancedLayout(displayedItems, getPinnedItemsMap(displayedItems));
 
+  // Pre-compute layout from initialItems for skeleton sizing (dims are locale-independent)
+  const skeletonItems = limit ? initialItems.slice(0, limit) : initialItems;
+  const skeletonLayout =
+    isLoading && skeletonItems.length > 0
+      ? createBalancedLayout(skeletonItems, getPinnedItemsMap(skeletonItems))
+      : null;
+
   // Helper function to create a placeholder with a specific aspect ratio
   const renderPlaceholderCard = (aspectRatio: string, index: number) => (
     <div key={index} className="mb-2 md:mb-4">
@@ -228,22 +235,59 @@ export default function GallerySection({
           style={{ transition: "min-height 0.3s ease-out" }}
         >
           {isLoading ? (
-            <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]">
-              <div className="flex-1 space-y-[var(--column-spacing)]">
-                {renderPlaceholderCard("100%", 1)}
-                {renderPlaceholderCard("100%", 2)}
+            skeletonLayout ? (
+              <>
+                {/* Mobile skeleton */}
+                <div className="flex flex-col w-full gap-[var(--column-spacing)] md:hidden">
+                  {skeletonItems.map((item, index) => {
+                    const w = item.width;
+                    const h = item.height;
+                    const raw = w && h ? w / h : 1;
+                    const clamped = raw < 0.8 ? 0.8 : raw > 1.25 ? 1.25 : raw;
+                    return renderPlaceholderCard(
+                      `${(1 / clamped) * 100}%`,
+                      index,
+                    );
+                  })}
+                </div>
+                {/* Desktop skeleton */}
+                <div className="hidden md:flex flex-row w-full gap-[var(--column-spacing)]">
+                  {skeletonLayout.columns.map((column, colIndex) => (
+                    <div
+                      key={colIndex}
+                      className="flex-1 space-y-[var(--column-spacing)]"
+                    >
+                      {column.map((layoutItem) => {
+                        const w = layoutItem.item.width;
+                        const h = layoutItem.item.height;
+                        const raw = w && h ? w / h : 1;
+                        const clamped =
+                          raw < 0.8 ? 0.8 : raw > 1.25 ? 1.25 : raw;
+                        return renderPlaceholderCard(
+                          `${(1 / clamped) * 100}%`,
+                          layoutItem.itemIndex,
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <div className="flex flex-col md:flex-row w-full gap-[var(--column-spacing)]">
+                <div className="flex-1 space-y-[var(--column-spacing)]">
+                  {renderPlaceholderCard("100%", 1)}
+                  {renderPlaceholderCard("100%", 2)}
+                </div>
+                <div className="flex-1 space-y-[var(--column-spacing)]">
+                  {renderPlaceholderCard("100%", 3)}
+                  {renderPlaceholderCard("100%", 4)}
+                </div>
+                <div className="flex-1 space-y-[var(--column-spacing)]">
+                  {renderPlaceholderCard("100%", 5)}
+                  {renderPlaceholderCard("100%", 6)}
+                </div>
               </div>
-
-              <div className="flex-1 space-y-[var(--column-spacing)]">
-                {renderPlaceholderCard("100%", 3)}
-                {renderPlaceholderCard("100%", 4)}
-              </div>
-
-              <div className="flex-1 space-y-[var(--column-spacing)]">
-                {renderPlaceholderCard("100%", 5)}
-                {renderPlaceholderCard("100%", 6)}
-              </div>
-            </div>
+            )
           ) : (
             <>
               {/* Mobile View: Linear Stack */}
