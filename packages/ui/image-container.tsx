@@ -148,31 +148,35 @@ export function ImageContainer({
               ></div>
             )}
 
-            {/* Blurred thumbnail placeholder — fades out once full image is ready */}
-            {!isVideo && thumbnailSrc && (isVisible || priority) && (
-              <div
-                className={`absolute inset-0 z-[5] pointer-events-none transition-opacity duration-500 ${
-                  blurComplete ? "opacity-0" : "opacity-100"
-                }`}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={thumbnailSrc}
-                  alt=""
-                  className={`w-full h-full ${
-                    noInsetPadding ? "object-cover" : "object-contain"
-                  } object-center`}
-                  style={
-                    noInsetPadding
-                      ? { filter: "blur(20px)", transform: "scale(1.5)" }
-                      : undefined
-                  }
-                />
-              </div>
-            )}
+            {!priority && (
+              <>
+                {/* Blurred thumbnail placeholder — fades out once full image is ready */}
+                {!isVideo && thumbnailSrc && isVisible && (
+                  <div
+                    className={`absolute inset-0 z-[5] pointer-events-none transition-opacity duration-500 ${
+                      blurComplete ? "opacity-0" : "opacity-100"
+                    }`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={thumbnailSrc}
+                      alt=""
+                      className={`w-full h-full ${
+                        noInsetPadding ? "object-cover" : "object-contain"
+                      } object-center`}
+                      style={
+                        noInsetPadding
+                          ? { filter: "blur(20px)", transform: "scale(1.5)" }
+                          : undefined
+                      }
+                    />
+                  </div>
+                )}
 
-            {/* Loading skeleton text overlay */}
-            <ImageLoadingSkeleton visible={!blurComplete} />
+                {/* Loading skeleton text overlay */}
+                <ImageLoadingSkeleton visible={!blurComplete} />
+              </>
+            )}
 
             <div className="absolute inset-0 z-0">
               {(isVisible || priority) && (
@@ -197,8 +201,8 @@ export function ImageContainer({
                       alt={alt}
                       fill
                       priority={priority}
-                      className={`${noInsetPadding ? "object-cover" : "object-contain"} object-center transition-opacity duration-500 ${
-                        blurComplete ? "opacity-100" : "opacity-0"
+                      className={`${noInsetPadding ? "object-cover" : "object-contain"} object-center ${priority ? "" : "transition-opacity duration-500"} ${
+                        blurComplete || priority ? "opacity-100" : "opacity-0"
                       } ${imgClassName || ""}`}
                       sizes={sizes}
                       quality={quality}
