@@ -1,0 +1,527 @@
+{
+  "timestamp": "Wed, 13 May 2026 12:59:21 GMT",
+  "desktop": {
+    "/|EN": {
+      "route": "/",
+      "locale": "EN",
+      "perfScore": 96
+    },
+    "/blog|EN": {
+      "route": "/blog",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/projects|EN": {
+      "route": "/projects",
+      "locale": "EN",
+      "perfScore": 96
+    },
+    "/gallery|EN": {
+      "route": "/gallery",
+      "locale": "EN",
+      "perfScore": 96
+    },
+    "/uses|EN": {
+      "route": "/uses",
+      "locale": "EN",
+      "perfScore": 96
+    },
+    "/cv|EN": {
+      "route": "/cv",
+      "locale": "EN",
+      "perfScore": 100
+    },
+    "/linktree|EN": {
+      "route": "/linktree",
+      "locale": "EN",
+      "perfScore": 98
+    },
+    "/design|EN": {
+      "route": "/design",
+      "locale": "EN",
+      "perfScore": 96
+    },
+    "/paper-reading|EN": {
+      "route": "/paper-reading",
+      "locale": "EN",
+      "perfScore": 99
+    },
+    "/manifesto|EN": {
+      "route": "/manifesto",
+      "locale": "EN",
+      "perfScore": 100
+    },
+    "/projects/2025_04_12_portfolio|EN": {
+      "route": "/projects/2025_04_12_portfolio",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/projects/2024_09_23_chingshin_rag|EN": {
+      "route": "/projects/2024_09_23_chingshin_rag",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/projects/2025_03_08_sitcon_keynote|EN": {
+      "route": "/projects/2025_03_08_sitcon_keynote",
+      "locale": "EN",
+      "perfScore": 96
+    },
+    "/projects/2025_08_04_debate|EN": {
+      "route": "/projects/2025_08_04_debate",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/projects/2024_08_19_classics_reimagined|EN": {
+      "route": "/projects/2024_08_19_classics_reimagined",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/gallery/2026_02_08_italy_mountain|EN": {
+      "route": "/gallery/2026_02_08_italy_mountain",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/gallery/2023_07_07_splash_of_red|EN": {
+      "route": "/gallery/2023_07_07_splash_of_red",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/gallery/2023_10_06_against_giants|EN": {
+      "route": "/gallery/2023_10_06_against_giants",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/gallery/2023_11_18_dusk_impressions|EN": {
+      "route": "/gallery/2023_11_18_dusk_impressions",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/gallery/2024_01_06_hehuanshan|EN": {
+      "route": "/gallery/2024_01_06_hehuanshan",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/blog/9_m11d|EN": {
+      "route": "/blog/9_m11d",
+      "locale": "EN",
+      "perfScore": 96
+    },
+    "/blog/2025_12_19_xpro1|EN": {
+      "route": "/blog/2025_12_19_xpro1",
+      "locale": "EN",
+      "perfScore": 96
+    },
+    "/blog/2025_12_22_aftersun_paris_texas|EN": {
+      "route": "/blog/2025_12_22_aftersun_paris_texas",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/blog/2026_01_10_plushies|EN": {
+      "route": "/blog/2026_01_10_plushies",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/blog/2026_02_10_synecdoche_truman|EN": {
+      "route": "/blog/2026_02_10_synecdoche_truman",
+      "locale": "EN",
+      "perfScore": 97
+    },
+    "/graph|EN": {
+      "route": "/graph",
+      "locale": "EN",
+      "perfScore": 99
+    },
+    "/|繁中": {
+      "route": "/",
+      "locale": "繁中",
+      "perfScore": 99
+    },
+    "/blog|繁中": {
+      "route": "/blog",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/projects|繁中": {
+      "route": "/projects",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/gallery|繁中": {
+      "route": "/gallery",
+      "locale": "繁中",
+      "perfScore": 98
+    },
+    "/uses|繁中": {
+      "route": "/uses",
+      "locale": "繁中",
+      "perfScore": 95
+    },
+    "/cv|繁中": {
+      "route": "/cv",
+      "locale": "繁中",
+      "perfScore": 99
+    },
+    "/linktree|繁中": {
+      "route": "/linktree",
+      "locale": "繁中",
+      "perfScore": 98
+    },
+    "/design|繁中": {
+      "route": "/design",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/paper-reading|繁中": {
+      "route": "/paper-reading",
+      "locale": "繁中",
+      "perfScore": 99
+    },
+    "/manifesto|繁中": {
+      "route": "/manifesto",
+      "locale": "繁中",
+      "perfScore": 99
+    },
+    "/projects/2025_04_12_portfolio|繁中": {
+      "route": "/projects/2025_04_12_portfolio",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/projects/2024_09_23_chingshin_rag|繁中": {
+      "route": "/projects/2024_09_23_chingshin_rag",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/projects/2025_03_08_sitcon_keynote|繁中": {
+      "route": "/projects/2025_03_08_sitcon_keynote",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/projects/2025_08_04_debate|繁中": {
+      "route": "/projects/2025_08_04_debate",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/projects/2024_08_19_classics_reimagined|繁中": {
+      "route": "/projects/2024_08_19_classics_reimagined",
+      "locale": "繁中",
+      "perfScore": 95
+    },
+    "/gallery/2026_02_08_italy_mountain|繁中": {
+      "route": "/gallery/2026_02_08_italy_mountain",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/gallery/2023_07_07_splash_of_red|繁中": {
+      "route": "/gallery/2023_07_07_splash_of_red",
+      "locale": "繁中",
+      "perfScore": 97
+    },
+    "/gallery/2023_10_06_against_giants|繁中": {
+      "route": "/gallery/2023_10_06_against_giants",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/gallery/2023_11_18_dusk_impressions|繁中": {
+      "route": "/gallery/2023_11_18_dusk_impressions",
+      "locale": "繁中",
+      "perfScore": 97
+    },
+    "/gallery/2024_01_06_hehuanshan|繁中": {
+      "route": "/gallery/2024_01_06_hehuanshan",
+      "locale": "繁中",
+      "perfScore": 97
+    },
+    "/blog/9_m11d|繁中": {
+      "route": "/blog/9_m11d",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/blog/2025_12_19_xpro1|繁中": {
+      "route": "/blog/2025_12_19_xpro1",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/blog/2025_12_22_aftersun_paris_texas|繁中": {
+      "route": "/blog/2025_12_22_aftersun_paris_texas",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/blog/2026_01_10_plushies|繁中": {
+      "route": "/blog/2026_01_10_plushies",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/blog/2026_02_10_synecdoche_truman|繁中": {
+      "route": "/blog/2026_02_10_synecdoche_truman",
+      "locale": "繁中",
+      "perfScore": 96
+    },
+    "/graph|繁中": {
+      "route": "/graph",
+      "locale": "繁中",
+      "perfScore": 99
+    }
+  },
+  "mobile": {
+    "/|EN": {
+      "route": "/",
+      "locale": "EN",
+      "perfScore": 51
+    },
+    "/blog|EN": {
+      "route": "/blog",
+      "locale": "EN",
+      "perfScore": 65
+    },
+    "/projects|EN": {
+      "route": "/projects",
+      "locale": "EN",
+      "perfScore": 65
+    },
+    "/gallery|EN": {
+      "route": "/gallery",
+      "locale": "EN",
+      "perfScore": 64
+    },
+    "/uses|EN": {
+      "route": "/uses",
+      "locale": "EN",
+      "perfScore": 69
+    },
+    "/cv|EN": {
+      "route": "/cv",
+      "locale": "EN",
+      "perfScore": 81
+    },
+    "/linktree|EN": {
+      "route": "/linktree",
+      "locale": "EN",
+      "perfScore": 66
+    },
+    "/design|EN": {
+      "route": "/design",
+      "locale": "EN",
+      "perfScore": 64
+    },
+    "/paper-reading|EN": {
+      "route": "/paper-reading",
+      "locale": "EN",
+      "perfScore": 68
+    },
+    "/manifesto|EN": {
+      "route": "/manifesto",
+      "locale": "EN",
+      "perfScore": 74
+    },
+    "/projects/2025_04_12_portfolio|EN": {
+      "route": "/projects/2025_04_12_portfolio",
+      "locale": "EN",
+      "perfScore": 66
+    },
+    "/projects/2024_09_23_chingshin_rag|EN": {
+      "route": "/projects/2024_09_23_chingshin_rag",
+      "locale": "EN",
+      "perfScore": 66
+    },
+    "/projects/2025_03_08_sitcon_keynote|EN": {
+      "route": "/projects/2025_03_08_sitcon_keynote",
+      "locale": "EN",
+      "perfScore": 66
+    },
+    "/projects/2025_08_04_debate|EN": {
+      "route": "/projects/2025_08_04_debate",
+      "locale": "EN",
+      "perfScore": 65
+    },
+    "/projects/2024_08_19_classics_reimagined|EN": {
+      "route": "/projects/2024_08_19_classics_reimagined",
+      "locale": "EN",
+      "perfScore": 63
+    },
+    "/gallery/2026_02_08_italy_mountain|EN": {
+      "route": "/gallery/2026_02_08_italy_mountain",
+      "locale": "EN",
+      "perfScore": 64
+    },
+    "/gallery/2023_07_07_splash_of_red|EN": {
+      "route": "/gallery/2023_07_07_splash_of_red",
+      "locale": "EN",
+      "perfScore": 65
+    },
+    "/gallery/2023_10_06_against_giants|EN": {
+      "route": "/gallery/2023_10_06_against_giants",
+      "locale": "EN",
+      "perfScore": 67
+    },
+    "/gallery/2023_11_18_dusk_impressions|EN": {
+      "route": "/gallery/2023_11_18_dusk_impressions",
+      "locale": "EN",
+      "perfScore": 64
+    },
+    "/gallery/2024_01_06_hehuanshan|EN": {
+      "route": "/gallery/2024_01_06_hehuanshan",
+      "locale": "EN",
+      "perfScore": 65
+    },
+    "/blog/9_m11d|EN": {
+      "route": "/blog/9_m11d",
+      "locale": "EN",
+      "perfScore": 63
+    },
+    "/blog/2025_12_19_xpro1|EN": {
+      "route": "/blog/2025_12_19_xpro1",
+      "locale": "EN",
+      "perfScore": 64
+    },
+    "/blog/2025_12_22_aftersun_paris_texas|EN": {
+      "route": "/blog/2025_12_22_aftersun_paris_texas",
+      "locale": "EN",
+      "perfScore": 64
+    },
+    "/blog/2026_01_10_plushies|EN": {
+      "route": "/blog/2026_01_10_plushies",
+      "locale": "EN",
+      "perfScore": 64
+    },
+    "/blog/2026_02_10_synecdoche_truman|EN": {
+      "route": "/blog/2026_02_10_synecdoche_truman",
+      "locale": "EN",
+      "perfScore": 64
+    },
+    "/graph|EN": {
+      "route": "/graph",
+      "locale": "EN",
+      "perfScore": 47
+    },
+    "/|繁中": {
+      "route": "/",
+      "locale": "繁中",
+      "perfScore": 68
+    },
+    "/blog|繁中": {
+      "route": "/blog",
+      "locale": "繁中",
+      "perfScore": 69
+    },
+    "/projects|繁中": {
+      "route": "/projects",
+      "locale": "繁中",
+      "perfScore": 68
+    },
+    "/gallery|繁中": {
+      "route": "/gallery",
+      "locale": "繁中",
+      "perfScore": 63
+    },
+    "/uses|繁中": {
+      "route": "/uses",
+      "locale": "繁中",
+      "perfScore": 69
+    },
+    "/cv|繁中": {
+      "route": "/cv",
+      "locale": "繁中",
+      "perfScore": 78
+    },
+    "/linktree|繁中": {
+      "route": "/linktree",
+      "locale": "繁中",
+      "perfScore": 64
+    },
+    "/design|繁中": {
+      "route": "/design",
+      "locale": "繁中",
+      "perfScore": 59
+    },
+    "/paper-reading|繁中": {
+      "route": "/paper-reading",
+      "locale": "繁中",
+      "perfScore": 68
+    },
+    "/manifesto|繁中": {
+      "route": "/manifesto",
+      "locale": "繁中",
+      "perfScore": 71
+    },
+    "/projects/2025_04_12_portfolio|繁中": {
+      "route": "/projects/2025_04_12_portfolio",
+      "locale": "繁中",
+      "perfScore": 58
+    },
+    "/projects/2024_09_23_chingshin_rag|繁中": {
+      "route": "/projects/2024_09_23_chingshin_rag",
+      "locale": "繁中",
+      "perfScore": 60
+    },
+    "/projects/2025_03_08_sitcon_keynote|繁中": {
+      "route": "/projects/2025_03_08_sitcon_keynote",
+      "locale": "繁中",
+      "perfScore": 61
+    },
+    "/projects/2025_08_04_debate|繁中": {
+      "route": "/projects/2025_08_04_debate",
+      "locale": "繁中",
+      "perfScore": 60
+    },
+    "/projects/2024_08_19_classics_reimagined|繁中": {
+      "route": "/projects/2024_08_19_classics_reimagined",
+      "locale": "繁中",
+      "perfScore": 58
+    },
+    "/gallery/2026_02_08_italy_mountain|繁中": {
+      "route": "/gallery/2026_02_08_italy_mountain",
+      "locale": "繁中",
+      "perfScore": 61
+    },
+    "/gallery/2023_07_07_splash_of_red|繁中": {
+      "route": "/gallery/2023_07_07_splash_of_red",
+      "locale": "繁中",
+      "perfScore": 64
+    },
+    "/gallery/2023_10_06_against_giants|繁中": {
+      "route": "/gallery/2023_10_06_against_giants",
+      "locale": "繁中",
+      "perfScore": 63
+    },
+    "/gallery/2023_11_18_dusk_impressions|繁中": {
+      "route": "/gallery/2023_11_18_dusk_impressions",
+      "locale": "繁中",
+      "perfScore": 62
+    },
+    "/gallery/2024_01_06_hehuanshan|繁中": {
+      "route": "/gallery/2024_01_06_hehuanshan",
+      "locale": "繁中",
+      "perfScore": 62
+    },
+    "/blog/9_m11d|繁中": {
+      "route": "/blog/9_m11d",
+      "locale": "繁中",
+      "perfScore": 60
+    },
+    "/blog/2025_12_19_xpro1|繁中": {
+      "route": "/blog/2025_12_19_xpro1",
+      "locale": "繁中",
+      "perfScore": 60
+    },
+    "/blog/2025_12_22_aftersun_paris_texas|繁中": {
+      "route": "/blog/2025_12_22_aftersun_paris_texas",
+      "locale": "繁中",
+      "perfScore": 61
+    },
+    "/blog/2026_01_10_plushies|繁中": {
+      "route": "/blog/2026_01_10_plushies",
+      "locale": "繁中",
+      "perfScore": 59
+    },
+    "/blog/2026_02_10_synecdoche_truman|繁中": {
+      "route": "/blog/2026_02_10_synecdoche_truman",
+      "locale": "繁中",
+      "perfScore": 60
+    },
+    "/graph|繁中": {
+      "route": "/graph",
+      "locale": "繁中",
+      "perfScore": 60
+    }
+  }
+}

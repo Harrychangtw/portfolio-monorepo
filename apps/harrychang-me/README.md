@@ -33,11 +33,62 @@ This site is engineered for uncompromising performance. Verified by Vercel Analy
 
 <!-- LIGHTHOUSE_RESULTS_START -->
 
-> 🕐 **Last audited:** _Scores will be auto-populated by the next CI run._
+> 🕐 **Last audited:** Lab: Wed, 13 May 2026 12:59:21 GMT
 
-| Route     | Locale | Lab 🖥️ | Lab 📱 | Prod 🖥️ | Prod 📱 |
-| :-------- | :----- | :----- | :----- | :------ | :------ |
-| _pending_ | —      | —      | —      | —       | —       |
+| Route                                      | Locale | Lab 🖥️                                                             | Lab 📱                                                             | Prod 🖥️ | Prod 📱 |
+| :----------------------------------------- | :----- | :----------------------------------------------------------------- | :----------------------------------------------------------------- | :------ | :------ |
+| `/`                                        | EN     | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![51](https://img.shields.io/badge/51-important?style=flat-square) | -       | -       |
+| `/`                                        | 繁中   | ![99](https://img.shields.io/badge/99-success?style=flat-square)   | ![68](https://img.shields.io/badge/68-important?style=flat-square) | -       | -       |
+| `/blog`                                    | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![65](https://img.shields.io/badge/65-important?style=flat-square) | -       | -       |
+| `/blog`                                    | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![69](https://img.shields.io/badge/69-important?style=flat-square) | -       | -       |
+| `/blog/2025_12_19_xpro1`                   | EN     | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/blog/2025_12_19_xpro1`                   | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![60](https://img.shields.io/badge/60-important?style=flat-square) | -       | -       |
+| `/blog/2025_12_22_aftersun_paris_texas`    | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/blog/2025_12_22_aftersun_paris_texas`    | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![61](https://img.shields.io/badge/61-important?style=flat-square) | -       | -       |
+| `/blog/2026_01_10_plushies`                | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/blog/2026_01_10_plushies`                | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![59](https://img.shields.io/badge/59-important?style=flat-square) | -       | -       |
+| `/blog/2026_02_10_synecdoche_truman`       | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/blog/2026_02_10_synecdoche_truman`       | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![60](https://img.shields.io/badge/60-important?style=flat-square) | -       | -       |
+| `/blog/9_m11d`                             | EN     | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![63](https://img.shields.io/badge/63-important?style=flat-square) | -       | -       |
+| `/blog/9_m11d`                             | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![60](https://img.shields.io/badge/60-important?style=flat-square) | -       | -       |
+| `/cv`                                      | EN     | ![100](https://img.shields.io/badge/100-success?style=flat-square) | ![81](https://img.shields.io/badge/81-important?style=flat-square) | -       | -       |
+| `/cv`                                      | 繁中   | ![99](https://img.shields.io/badge/99-success?style=flat-square)   | ![78](https://img.shields.io/badge/78-important?style=flat-square) | -       | -       |
+| `/design`                                  | EN     | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/design`                                  | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![59](https://img.shields.io/badge/59-important?style=flat-square) | -       | -       |
+| `/gallery`                                 | EN     | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/gallery`                                 | 繁中   | ![98](https://img.shields.io/badge/98-success?style=flat-square)   | ![63](https://img.shields.io/badge/63-important?style=flat-square) | -       | -       |
+| `/gallery/2023_07_07_splash_of_red`        | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![65](https://img.shields.io/badge/65-important?style=flat-square) | -       | -       |
+| `/gallery/2023_07_07_splash_of_red`        | 繁中   | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/gallery/2023_10_06_against_giants`       | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![67](https://img.shields.io/badge/67-important?style=flat-square) | -       | -       |
+| `/gallery/2023_10_06_against_giants`       | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![63](https://img.shields.io/badge/63-important?style=flat-square) | -       | -       |
+| `/gallery/2023_11_18_dusk_impressions`     | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/gallery/2023_11_18_dusk_impressions`     | 繁中   | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![62](https://img.shields.io/badge/62-important?style=flat-square) | -       | -       |
+| `/gallery/2024_01_06_hehuanshan`           | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![65](https://img.shields.io/badge/65-important?style=flat-square) | -       | -       |
+| `/gallery/2024_01_06_hehuanshan`           | 繁中   | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![62](https://img.shields.io/badge/62-important?style=flat-square) | -       | -       |
+| `/gallery/2026_02_08_italy_mountain`       | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/gallery/2026_02_08_italy_mountain`       | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![61](https://img.shields.io/badge/61-important?style=flat-square) | -       | -       |
+| `/graph`                                   | EN     | ![99](https://img.shields.io/badge/99-success?style=flat-square)   | ![47](https://img.shields.io/badge/47-critical?style=flat-square)  | -       | -       |
+| `/graph`                                   | 繁中   | ![99](https://img.shields.io/badge/99-success?style=flat-square)   | ![60](https://img.shields.io/badge/60-important?style=flat-square) | -       | -       |
+| `/linktree`                                | EN     | ![98](https://img.shields.io/badge/98-success?style=flat-square)   | ![66](https://img.shields.io/badge/66-important?style=flat-square) | -       | -       |
+| `/linktree`                                | 繁中   | ![98](https://img.shields.io/badge/98-success?style=flat-square)   | ![64](https://img.shields.io/badge/64-important?style=flat-square) | -       | -       |
+| `/manifesto`                               | EN     | ![100](https://img.shields.io/badge/100-success?style=flat-square) | ![74](https://img.shields.io/badge/74-important?style=flat-square) | -       | -       |
+| `/manifesto`                               | 繁中   | ![99](https://img.shields.io/badge/99-success?style=flat-square)   | ![71](https://img.shields.io/badge/71-important?style=flat-square) | -       | -       |
+| `/paper-reading`                           | EN     | ![99](https://img.shields.io/badge/99-success?style=flat-square)   | ![68](https://img.shields.io/badge/68-important?style=flat-square) | -       | -       |
+| `/paper-reading`                           | 繁中   | ![99](https://img.shields.io/badge/99-success?style=flat-square)   | ![68](https://img.shields.io/badge/68-important?style=flat-square) | -       | -       |
+| `/projects`                                | EN     | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![65](https://img.shields.io/badge/65-important?style=flat-square) | -       | -       |
+| `/projects`                                | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![68](https://img.shields.io/badge/68-important?style=flat-square) | -       | -       |
+| `/projects/2024_08_19_classics_reimagined` | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![63](https://img.shields.io/badge/63-important?style=flat-square) | -       | -       |
+| `/projects/2024_08_19_classics_reimagined` | 繁中   | ![95](https://img.shields.io/badge/95-success?style=flat-square)   | ![58](https://img.shields.io/badge/58-important?style=flat-square) | -       | -       |
+| `/projects/2024_09_23_chingshin_rag`       | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![66](https://img.shields.io/badge/66-important?style=flat-square) | -       | -       |
+| `/projects/2024_09_23_chingshin_rag`       | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![60](https://img.shields.io/badge/60-important?style=flat-square) | -       | -       |
+| `/projects/2025_03_08_sitcon_keynote`      | EN     | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![66](https://img.shields.io/badge/66-important?style=flat-square) | -       | -       |
+| `/projects/2025_03_08_sitcon_keynote`      | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![61](https://img.shields.io/badge/61-important?style=flat-square) | -       | -       |
+| `/projects/2025_04_12_portfolio`           | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![66](https://img.shields.io/badge/66-important?style=flat-square) | -       | -       |
+| `/projects/2025_04_12_portfolio`           | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![58](https://img.shields.io/badge/58-important?style=flat-square) | -       | -       |
+| `/projects/2025_08_04_debate`              | EN     | ![97](https://img.shields.io/badge/97-success?style=flat-square)   | ![65](https://img.shields.io/badge/65-important?style=flat-square) | -       | -       |
+| `/projects/2025_08_04_debate`              | 繁中   | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![60](https://img.shields.io/badge/60-important?style=flat-square) | -       | -       |
+| `/uses`                                    | EN     | ![96](https://img.shields.io/badge/96-success?style=flat-square)   | ![69](https://img.shields.io/badge/69-important?style=flat-square) | -       | -       |
+| `/uses`                                    | 繁中   | ![95](https://img.shields.io/badge/95-success?style=flat-square)   | ![69](https://img.shields.io/badge/69-important?style=flat-square) | -       | -       |
 
 <!-- LIGHTHOUSE_RESULTS_END -->
 
