@@ -26,6 +26,8 @@ interface NextUpCardProps {
   tags?: string[];
   /** Render a plain div instead of NavigationLink (e.g. for non-navigable nodes). */
   disableLink?: boolean;
+  /** Skip the image optimization pipeline (for OG images / non-optimized assets). */
+  rawImage?: boolean;
 }
 
 export default function NextUpCard({
@@ -39,6 +41,7 @@ export default function NextUpCard({
   label,
   tags,
   disableLink = false,
+  rawImage = false,
 }: NextUpCardProps) {
   const { t } = useLanguage();
 
@@ -79,6 +82,8 @@ export default function NextUpCard({
               quality={50}
               noInsetPadding
               aspectRatio={1.5}
+              rawImage={rawImage}
+              sizes="(min-width: 768px) 144px, 96px"
             />
           </div>
         )}

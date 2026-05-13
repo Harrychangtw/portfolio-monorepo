@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ImageContainer } from "@portfolio/ui/image-container";
 import type { GraphNode, SourceType, NodeType } from "./types";
+import { resolveHubImageUrl } from "./graph-utils";
 
 const sourceLabels: Record<SourceType, string> = {
   post: "Blog Post",
@@ -54,13 +55,14 @@ export default function NodePreviewCard({
     p.startsWith("http") ? p : p.startsWith("/") ? p : `/${p}`;
 
   // Determine image source for the 3:2 preview
+  const resolvedImageUrl = resolveHubImageUrl(node);
   const imageSrc =
     isImage && node.mediaSource
       ? normalizePath(node.mediaSource)
       : isVideo && youtubeId
         ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
-        : node.imageUrl
-          ? normalizePath(node.imageUrl)
+        : resolvedImageUrl
+          ? normalizePath(resolvedImageUrl)
           : null;
 
   const hasImage = !!imageSrc && !isTag;
@@ -101,6 +103,7 @@ export default function NodePreviewCard({
                 quality={60}
                 sizes="280px"
                 imgClassName="object-cover"
+                rawImage={node.nodeType === "hub"}
               />
             )}
 

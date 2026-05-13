@@ -1,5 +1,28 @@
 import type { GraphNode, NodeType, SourceType } from "./types";
 
+/* ─── Hub OG images (shared across embedded graph, preview cards, etc.) ──── */
+
+export const HUB_OG_IMAGES: Record<string, string> = {
+  root: "/images/og-image.webp",
+  post: "/images/og-image-blog.webp",
+  project: "/images/og-image-projects.webp",
+  gallery: "/images/og-image-gallery.webp",
+  about: "/images/og-image.webp",
+  updates: "/images/og-image.webp",
+  uses: "/images/og-image-uses.webp",
+  linktree: "/images/og-image.webp",
+  cv: "/images/og-image-resume.webp",
+  reading: "/images/og-image-reading.webp",
+  design: "/images/og-image-design.webp",
+};
+
+export function resolveHubImageUrl(node: GraphNode): string | null {
+  if (node.nodeType === "hub") {
+    return HUB_OG_IMAGES[node.sourceSlug] ?? node.imageUrl ?? null;
+  }
+  return node.imageUrl ?? null;
+}
+
 /* ─── Color helpers ────────────────────────────────────────────────────────── */
 
 export const SOURCE_TYPE_CSS_VAR: Record<SourceType, string> = {
