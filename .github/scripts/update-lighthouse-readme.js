@@ -9,6 +9,15 @@ const DATA_DIR = path.join(process.cwd(), ".github/lighthouse-data");
 const LAB_FILE = path.join(DATA_DIR, "harry-lab.json");
 const PROD_FILE = path.join(DATA_DIR, "harry-prod.json");
 
+const METRICS = ["fcp", "lcp", "tbt", "cls", "si"];
+const METRIC_KEYS = {
+  fcp: "first-contentful-paint",
+  lcp: "largest-contentful-paint",
+  tbt: "total-blocking-time",
+  cls: "cumulative-layout-shift",
+  si: "speed-index",
+};
+
 function readLhrDir(dir) {
   const absDir = path.join(process.cwd(), dir);
   if (!fs.existsSync(absDir)) return {};
@@ -29,9 +38,19 @@ function readLhrDir(dir) {
       const perfScore = Math.round(
         (lhr.categories?.performance?.score ?? 0) * 100,
       );
+      const get = (k) => lhr.audits?.[k]?.displayValue ?? "-";
 
       if (!data[key] || perfScore > data[key].perfScore) {
-        data[key] = { route: urlPath, locale, perfScore };
+        data[key] = {
+          route: urlPath,
+          locale,
+          perfScore,
+          fcp: get(METRIC_KEYS.fcp),
+          lcp: get(METRIC_KEYS.lcp),
+          tbt: get(METRIC_KEYS.tbt),
+          cls: get(METRIC_KEYS.cls),
+          si: get(METRIC_KEYS.si),
+        };
       }
     } catch (err) {
       console.warn(`Skipping ${file}: ${err.message}`);
@@ -62,13 +81,14 @@ function badge(score) {
   return `![${score}](https://img.shields.io/badge/${score}-${color}?style=flat-square)`;
 }
 
+function metricsCells(d) {
+  if (!d) return "- | - | - | - | - | -";
+  return `${badge(d.perfScore)} | ${d.fcp} | ${d.lcp} | ${d.tbt} | ${d.cls} | ${d.si}`;
+}
+
 function buildUnifiedTable(lab, prod) {
-  const allKeys = new Set([
-    ...Object.keys(lab.desktop || {}),
-    ...Object.keys(lab.mobile || {}),
-    ...Object.keys(prod.desktop || {}),
-    ...Object.keys(prod.mobile || {}),
-  ]);
+  const sources = [lab.desktop, lab.mobile, prod.desktop, prod.mobile];
+  const allKeys = new Set(sources.flatMap((s) => Object.keys(s || {})));
 
   const rows = [];
   for (const key of allKeys) {
@@ -76,10 +96,10 @@ function buildUnifiedTable(lab, prod) {
     rows.push({
       route,
       locale,
-      labDesktop: lab.desktop?.[key]?.perfScore ?? null,
-      labMobile: lab.mobile?.[key]?.perfScore ?? null,
-      prodDesktop: prod.desktop?.[key]?.perfScore ?? null,
-      prodMobile: prod.mobile?.[key]?.perfScore ?? null,
+      labDesktop: lab.desktop?.[key] ?? null,
+      labMobile: lab.mobile?.[key] ?? null,
+      prodDesktop: prod.desktop?.[key] ?? null,
+      prodMobile: prod.mobile?.[key] ?? null,
     });
   }
 
@@ -90,14 +110,14 @@ function buildUnifiedTable(lab, prod) {
   });
 
   const header = [
-    "| Route | Locale | Lab 🖥️ | Lab 📱 | Prod 🖥️ | Prod 📱 |",
-    "| :--- | :--- | :--- | :--- | :--- | :--- |",
+    "| Route | Locale | Lab 🖥️ Perf | Lab 🖥️ FCP | Lab 🖥️ LCP | Lab 🖥️ TBT | Lab 🖥️ CLS | Lab 🖥️ SI | Lab 📱 Perf | Lab 📱 FCP | Lab 📱 LCP | Lab 📱 TBT | Lab 📱 CLS | Lab 📱 SI | Prod 🖥️ Perf | Prod 🖥️ FCP | Prod 🖥️ LCP | Prod 🖥️ TBT | Prod 🖥️ CLS | Prod 🖥️ SI | Prod 📱 Perf | Prod 📱 FCP | Prod 📱 LCP | Prod 📱 TBT | Prod 📱 CLS | Prod 📱 SI |",
+    "| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |",
   ].join("\n");
 
   const body = rows
     .map(
       (r) =>
-        `| \`${r.route}\` | ${r.locale} | ${badge(r.labDesktop)} | ${badge(r.labMobile)} | ${badge(r.prodDesktop)} | ${badge(r.prodMobile)} |`,
+        `| \`${r.route}\` | ${r.locale} | ${metricsCells(r.labDesktop)} | ${metricsCells(r.labMobile)} | ${metricsCells(r.prodDesktop)} | ${metricsCells(r.prodMobile)} |`,
     )
     .join("\n");
 
