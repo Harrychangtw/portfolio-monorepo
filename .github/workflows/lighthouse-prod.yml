@@ -79,6 +79,7 @@ jobs:
             echo "list<<EOF"
             for p in "${PATHS[@]}"; do
               echo "${DEPLOY_URL}${p}"
+              echo "${DEPLOY_URL}${p}?lang=zh-tw"
             done
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
@@ -124,13 +125,16 @@ jobs:
       - name: Rebase README change onto latest main
         run: |
           cp apps/harrychang-me/README.md /tmp/README.lh.md
+          cp .github/lighthouse-data/harry-prod.json /tmp/harry-prod.json
           git fetch origin main
           git reset --hard origin/main
           cp /tmp/README.lh.md apps/harrychang-me/README.md
+          mkdir -p .github/lighthouse-data
+          cp /tmp/harry-prod.json .github/lighthouse-data/harry-prod.json
 
       - name: Commit production Lighthouse changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(ci): daily lighthouse audit — update README scores [skip ci]"
-          file_pattern: "apps/harrychang-me/README.md"
+          file_pattern: "apps/harrychang-me/README.md .github/lighthouse-data/harry-prod.json"
           branch: main

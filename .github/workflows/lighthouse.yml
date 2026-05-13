@@ -215,14 +215,17 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           cp apps/harrychang-me/README.md /tmp/README.lh.md
+          cp .github/lighthouse-data/harry-lab.json /tmp/harry-lab.json
           git fetch origin main
           git reset --hard origin/main
           cp /tmp/README.lh.md apps/harrychang-me/README.md
+          mkdir -p .github/lighthouse-data
+          cp /tmp/harry-lab.json .github/lighthouse-data/harry-lab.json
 
       - name: Commit Lighthouse Changes
         if: github.ref == 'refs/heads/main'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update lighthouse scores in README [skip ci]"
-          file_pattern: "apps/harrychang-me/README.md"
+          file_pattern: "apps/harrychang-me/README.md .github/lighthouse-data/harry-lab.json"
           branch: main
