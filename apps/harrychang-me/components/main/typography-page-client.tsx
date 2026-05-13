@@ -453,7 +453,6 @@ export default function TypographyPageClient() {
         title={t("design.motionInteraction")}
         description={<p>{t("design.motionDesc")}</p>}
       >
-        {" "}
         <div className="space-y-0">
           {[
             {

@@ -68,7 +68,8 @@ export default function GraphNextUp({
 
   // "base" card = the default/selected node data (starts as nextItem or hub default)
   const [baseCard, setBaseCard] = useState<NextUpItem | null>(initialCard);
-  const [baseCardPath] = useState<BasePath>(basePath ?? "blog");
+  const baseCardPath: BasePath =
+    basePath ?? (sourceType ? sourceTypeToBasePath(sourceType) : "blog");
 
   // "hover" card = temporary override while hovering a node
   const [hoverCard, setHoverCard] = useState<{
