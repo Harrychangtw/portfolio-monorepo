@@ -2,6 +2,7 @@
 
 import type React from "react";
 import { LanguageProvider } from "@portfolio/lib/contexts/language-context";
+import NavigationLink from "@portfolio/ui/navigation-link";
 import { ThemeProvider } from "@portfolio/lib/contexts/theme-context";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -18,7 +19,7 @@ export default function LabClientLayout({
 }>) {
   return (
     <ThemeProvider>
-      <LanguageProvider>
+      <LanguageProvider internalLinkComponent={NavigationLink}>
         <PostHogSuperProperties />
         <div className="min-h-screen flex flex-col">
           <Header />

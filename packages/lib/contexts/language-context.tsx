@@ -31,7 +31,14 @@ interface Translations {
 }
 
 // Helper function to parse HTML strings and convert to React elements
-const parseHtmlToReact = (htmlString: string): React.ReactNode => {
+const parseHtmlToReact = (
+  htmlString: string,
+  InternalLink?: React.ComponentType<{
+    href: string;
+    className?: string;
+    children: React.ReactNode;
+  }>,
+): React.ReactNode => {
   const linkRegex = /<a\s+href="([^"]*)"[^>]*>([^<]*)<\/a>/g;
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;
@@ -47,20 +54,42 @@ const parseHtmlToReact = (htmlString: string): React.ReactNode => {
       }
     }
 
-    // Add the link with proper React props
     const href = match[1];
     const linkText = match[2];
-    parts.push(
-      <a
-        key={`link-${key++}`}
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="link-external"
-      >
-        {linkText}
-      </a>,
-    );
+    const isExternal = /^https?:\/\//.test(href);
+    const isHash = href.startsWith("#");
+
+    if (isExternal || isHash) {
+      parts.push(
+        <a
+          key={`link-${key++}`}
+          href={href}
+          {...(isExternal
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+          className="link-external"
+        >
+          {linkText}
+        </a>,
+      );
+    } else if (InternalLink) {
+      const resolvedHref = href.startsWith("/") ? href : `/${href}`;
+      parts.push(
+        <InternalLink
+          key={`link-${key++}`}
+          href={resolvedHref}
+          className="link-external"
+        >
+          {linkText}
+        </InternalLink>,
+      );
+    } else {
+      parts.push(
+        <a key={`link-${key++}`} href={href} className="link-external">
+          {linkText}
+        </a>,
+      );
+    }
 
     lastIndex = linkRegex.lastIndex;
   }
@@ -83,10 +112,16 @@ export function LanguageProvider({
   children,
   englishOnly = false,
   namespaces = DEFAULT_NAMESPACES,
+  internalLinkComponent,
 }: {
   children: React.ReactNode;
   englishOnly?: boolean;
   namespaces?: string[];
+  internalLinkComponent?: React.ComponentType<{
+    href: string;
+    className?: string;
+    children: React.ReactNode;
+  }>;
 }) {
   // Initialize language state with a function to read from localStorage synchronously
   const [language, setLanguageState] = useState<Language>(() => {
@@ -191,7 +226,7 @@ export function LanguageProvider({
     namespace: string = "common",
   ): React.ReactNode => {
     const translatedText = t(key, namespace);
-    return parseHtmlToReact(translatedText);
+    return parseHtmlToReact(translatedText, internalLinkComponent);
   };
 
   // Function to get translation data (including arrays and objects)

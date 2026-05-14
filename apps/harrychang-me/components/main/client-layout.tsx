@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import ClickSpark from "@portfolio/ui/ui/click-spark";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { LanguageProvider } from "@portfolio/lib/contexts/language-context";
-
+import NavigationLink from "@portfolio/ui/navigation-link";
 import { ThemeProvider } from "@portfolio/lib/contexts/theme-context";
 import VideoInitializer from "@portfolio/ui/video-initializer";
 import NotificationProvider from "@portfolio/ui/notification-provider";
@@ -25,7 +25,7 @@ export default function ClientLayout({
 
   return (
     <ThemeProvider>
-      <LanguageProvider>
+      <LanguageProvider internalLinkComponent={NavigationLink}>
         <PostHogSuperProperties />
         <Header />
         {isMobile ? (
