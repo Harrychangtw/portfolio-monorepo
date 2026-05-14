@@ -15,14 +15,8 @@ The `lint`, `typecheck`, and `bundle-size` workflows each fan out into separate 
 Audited automatically against the live deployment after every successful Vercel
 Production deploy.
 
-<!-- LIGHTHOUSE_PROD_RESULTS_START -->
+<!-- LIGHTHOUSE_RESULTS_START -->
 
-> 🕐 **Last audited:** Wed, 13 May 2026 09:39:39 GMT  
-> 🌐 **Deployment:** https://emilychang.me
+> 🕐 **Last audited:** _Scores will be auto-populated by the next CI run._
 
-| Route       | Locale | Desktop Perf                                                       | Desktop FCP | Desktop LCP | Desktop TBT | Desktop CLS | Desktop SI | Mobile Perf                                                        | Mobile FCP | Mobile LCP | Mobile TBT | Mobile CLS | Mobile SI |
-| :---------- | :----- | :----------------------------------------------------------------- | :---------- | :---------- | :---------- | :---------- | :--------- | :----------------------------------------------------------------- | :--------- | :--------- | :--------- | :--------- | :-------- |
-| `/`         | EN     | ![58](https://img.shields.io/badge/58-important?style=flat-square) | 0.5 s       | 1.7 s       | 3,460 ms    | 0           | 2.4 s      | ![39](https://img.shields.io/badge/39-critical?style=flat-square)  | 2.0 s      | 9.3 s      | 142,550 ms | 0          | 5.6 s     |
-| `/linktree` | EN     | ![93](https://img.shields.io/badge/93-success?style=flat-square)   | 0.5 s       | 1.7 s       | 30 ms       | 0           | 0.5 s      | ![56](https://img.shields.io/badge/56-important?style=flat-square) | 2.6 s      | 9.4 s      | 500 ms     | 0          | 4.9 s     |
-
-<!-- LIGHTHOUSE_PROD_RESULTS_END -->
+<!-- LIGHTHOUSE_RESULTS_END -->

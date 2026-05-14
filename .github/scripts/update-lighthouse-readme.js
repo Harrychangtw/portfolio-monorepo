@@ -6,8 +6,11 @@ const path = require("path");
 
 const LOCALE_LABEL = { en: "EN", "zh-tw": "繁中" };
 const DATA_DIR = path.join(process.cwd(), ".github/lighthouse-data");
-const LAB_FILE = path.join(DATA_DIR, "harry-lab.json");
-const PROD_FILE = path.join(DATA_DIR, "harry-prod.json");
+
+const siteArg = process.argv.find((a) => a.startsWith("--site="));
+const site = siteArg ? siteArg.slice("--site=".length) : "harry";
+const LAB_FILE = path.join(DATA_DIR, `${site}-lab.json`);
+const PROD_FILE = path.join(DATA_DIR, `${site}-prod.json`);
 
 const METRICS = ["fcp", "lcp", "tbt", "cls", "si"];
 const METRIC_KEYS = {

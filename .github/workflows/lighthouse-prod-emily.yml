@@ -89,7 +89,7 @@ jobs:
       - name: Update README with production Lighthouse badges
         env:
           DEPLOYMENT_URL: https://emilychang.me
-        run: node .github/scripts/update-lighthouse-readme.js --mode=prod --readme=apps/emilychang-me/README.md
+        run: node .github/scripts/update-lighthouse-readme.js --mode=prod --site=emily --readme=apps/emilychang-me/README.md
 
       - name: Format README with Prettier
         run: npx prettier --write apps/emilychang-me/README.md
@@ -100,13 +100,16 @@ jobs:
       - name: Rebase README change onto latest main
         run: |
           cp apps/emilychang-me/README.md /tmp/README.lh-emily.md
+          cp .github/lighthouse-data/emily-prod.json /tmp/emily-prod.json
           git fetch origin main
           git reset --hard origin/main
           cp /tmp/README.lh-emily.md apps/emilychang-me/README.md
+          mkdir -p .github/lighthouse-data
+          cp /tmp/emily-prod.json .github/lighthouse-data/emily-prod.json
 
       - name: Commit production Lighthouse changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(ci): daily emily lighthouse audit — update README scores [skip ci]"
-          file_pattern: "apps/emilychang-me/README.md"
+          file_pattern: "apps/emilychang-me/README.md .github/lighthouse-data/emily-prod.json"
           branch: main

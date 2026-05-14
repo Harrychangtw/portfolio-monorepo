@@ -115,7 +115,7 @@ jobs:
       - name: Update README with production Lighthouse badges
         env:
           DEPLOYMENT_URL: https://harrychang.me
-        run: node .github/scripts/update-lighthouse-readme.js --mode=prod
+        run: node .github/scripts/update-lighthouse-readme.js --mode=prod --site=harry
 
       - name: Format README with Prettier
         run: npx prettier --write apps/harrychang-me/README.md
