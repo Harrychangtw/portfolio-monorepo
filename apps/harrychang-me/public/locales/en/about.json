@@ -1,9 +1,8 @@
 {
   "bio1": "I'm Harry Chang. I build safety systems for language models, take photographs on cameras without screens, and argue for positions I'm not sure I believe in. The tools keep changing. The questions stay the same.",
   "bio2": "Admitted to <a href=\"blog/2025_12_24_ntu_cs_special_admission/\">NTU CSIE through Special Admission</a> and graduating Chingshin Academy this July. I work across <a href=\"projects/2025_10_12_fortress/\">research</a>, <a href=\"#gallery\">photography</a>, <a href=\"projects/2025_08_04_debate\">debate</a>, and <a href=\"projects/2025_01_05_aaai_video\">film</a>, convinced each medium will teach me what the last one couldn't.",
-  "bio3": "From LEGO bricks to language models, the urge to take things apart never quite left. Got an idea? <a href=\"mailto:chiwei@harrychang.me\">Let's talk</a>.",
+  "bio3": "From LEGO bricks to language models, the urge to take things apart never quite left. Curious how it all connects? <a href=\"/graph\">Explore the map</a>.",
   "roles": {
-    
     "llmResearcher": {
       "title": "LLM Researcher",
       "period": "2023 - Present",

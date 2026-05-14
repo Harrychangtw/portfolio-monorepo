@@ -1,7 +1,7 @@
 {
   "bio1": "我是張祺煒。我打造語言模型安全系統、用無螢幕的相機攝影，也為自己不全然相信的立場辯護。工具不斷更迭，提問始終如一。",
   "bio2": "<a href=\"blog/2025_12_24_ntu_cs_special_admission/\">特殊選才錄取臺大資工</a>，今年六月將於靜心高中畢業。我穿梭於<a href=\"projects/2025_10_12_fortress/\">研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate\">辯論</a>與<a href=\"projects/2025_01_05_aaai_video\">影片創作</a>之間，深信每種新媒介，都能教會我上一個媒介無法傳遞的事。",
-  "bio3": "從樂高積木到語言模型，那份想把事物拆解的衝動從未離開。有什麼好點子？<a href=\"mailto:chiwei@harrychang.me\">歡迎聊聊！</a>",
+  "bio3": "從樂高積木到語言模型，那份想把事物拆解的衝動從未離開。好奇這些怎麼串在一起？<a href=\"/graph\">探索全站圖譜</a>",
   "roles": {
     "llmResearcher": {
       "title": "LLM 研究員",
