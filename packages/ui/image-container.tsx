@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import { webpLoader } from "@portfolio/lib/image-loader";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
@@ -50,13 +50,6 @@ export function ImageContainer({
 
   const [blurComplete, setBlurComplete] = useState(false);
   const isMobile = useIsMobile();
-
-  // Reset pixelate animation when element leaves the viewport so it replays on re-entry
-  useEffect(() => {
-    if (!isVisible) {
-      setBlurComplete(false);
-    }
-  }, [isVisible]);
 
   // Derive thumbnail and full-resolution URLs for blur-up loading.
   let thumbnailSrc: string | undefined;
