@@ -1,27 +1,27 @@
 {
   "bio1": "我是張祺煒。我打造語言模型安全系統、用無螢幕的相機攝影，也為自己不全然相信的立場辯護。工具不斷更迭，提問始終如一。",
-  "bio2": "<a href=\"blog/2025_12_24_ntu_cs_special_admission/\">特殊選才錄取臺大資工</a>，今年六月將於靜心高中畢業。我穿梭於<a href=\"projects/2025_10_12_fortress/\">研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate\">辯論</a>與<a href=\"projects/2025_01_05_aaai_video\">影片創作</a>之間，深信每種新媒介，都能教會我上一個媒介無法傳遞的事。",
+  "bio2": "今秋入學<a href=\"blog/2025_12_24_ntu_cs_special_admission/\">臺大資工</a>。我穿梭於<a href=\"projects/2025_10_12_fortress/\">研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate\">辯論</a>與<a href=\"projects/2025_01_05_aaai_video\">影片創作</a>之間，深信每種新媒介，都能教會我上一個媒介無法傳遞的事。",
   "bio3": "從樂高積木到語言模型，那份想把事物拆解的衝動從未離開。好奇這些怎麼串在一起？<a href=\"/graph\">探索全站圖譜</a>",
   "roles": {
     "llmResearcher": {
       "title": "LLM 研究員",
       "period": "2023 - Present",
-      "description": "透過內部表徵分析建構自動化安全分類學。論文發表於 <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> 與 <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL SRW</a>，現於 <a href=\"https://cycraft.com\">CyCraft</a> 擔任研究實習生。"
+      "description": "於 <a href=\"https://cycraft.com\">CyCraft</a> 研究語言模型安全表徵，研究發表於 <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> 與 <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL SRW</a>。"
     },
     "speaker": {
-      "title": "講者 – AI WAVE SHOW, SITCON",
+      "title": "講者 – SITCON, AI WAVE SHOW",
       "period": "2024 - 2026",
-      "description": "在 <a href=\"https://www.technice.com.tw/issues/ai/185561/\">AI WAVE SHOW</a> 開幕式致詞並於 <a href=\"https://www.youtube.com/watch?v=ujxlUTXlC04\">SITCON 2025</a> 與 <a href=\"https://www.youtube.com/watch?v=GHC2oRj7TS4\">2026</a> 發表主題議程。"
-    },
-    "designer": {
-      "title": "美宣長 & 副會長 – 學生會",
-      "period": "2023 - 2024",
-      "description": "領導第五屆學生會美宣組，設計學校周年紀念服裝系列、校慶主視覺和品牌塑造材料。"
+      "description": "於 SITCON 發表 <a href=\"https://www.youtube.com/watch?v=ujxlUTXlC04\">RAG 系統</a> 與<a href=\"https://www.youtube.com/watch?v=GHC2oRj7TS4\">提示注入防禦</a> 相關議程，亦於 <a href=\"https://www.technice.com.tw/issues/ai/185561/\">AI WAVE SHOW 2025</a> 開幕致詞。"
     },
     "developer": {
-      "title": "開發者 - 靜心 RAG 客服",
-      "period": "2023 - 2024",
-      "description": "深度參與靜心 RAG 聊天機器人的開發。在國科會 <a href=\"https://genaistars.org.tw/2024/award/hackathon/28\">GenAI Stars 競賽</a>中獲得特優。"
+      "title": "開發者",
+      "period": "2023 - Present",
+      "description": "從國科會<a href=\"https://genaistars.org.tw/2024/award/hackathon/28\">特優 RAG 系統</a>到<a href=\"projects/2025_04_12_portfolio\">個人網站</a>與企業營運現代化專案。"
+    },
+    "debater": {
+      "title": "辯手",
+      "period": "2020 - Present",
+      "description": "2026 台灣國際辯論公開賽四強暨第六最佳辯士。2025 復興盃冠軍暨第三最佳辯士。"
     },
     "photographer": {
       "title": "攝影師 & 影片剪輯師",

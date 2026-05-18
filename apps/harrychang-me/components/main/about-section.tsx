@@ -97,22 +97,6 @@ export default function AboutSection() {
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-5">
                   <h3 className="font-heading font-medium">
-                    {t("roles.designer.title", "about")}
-                  </h3>
-                  <p className="label-mono whitespace-nowrap shrink-0">
-                    {t("roles.designer.period", "about")}
-                  </p>
-                </div>
-                <div className="col-span-7">
-                  <p className="font-body text-primary">
-                    {t("roles.designer.description", "about")}
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-5">
-                  <h3 className="font-heading font-medium">
                     {t("roles.developer.title", "about")}
                   </h3>
                   <p className="label-mono whitespace-nowrap shrink-0">
@@ -122,6 +106,22 @@ export default function AboutSection() {
                 <div className="col-span-7">
                   <p className="font-body text-primary">
                     {tHtml("roles.developer.description", "about")}
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-5">
+                  <h3 className="font-heading font-medium">
+                    {t("roles.debater.title", "about")}
+                  </h3>
+                  <p className="label-mono whitespace-nowrap shrink-0">
+                    {t("roles.debater.period", "about")}
+                  </p>
+                </div>
+                <div className="col-span-7">
+                  <p className="font-body text-primary">
+                    {t("roles.debater.description", "about")}
                   </p>
                 </div>
               </div>
