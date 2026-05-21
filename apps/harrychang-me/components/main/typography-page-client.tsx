@@ -233,6 +233,7 @@ export default function TypographyPageClient() {
               alt="Harry Chang Portfolio Identity — The Tower of Babel"
               aspectRatio={1.5}
               noInsetPadding={true}
+              priority
               sizes="(min-width: 768px) 50vw, 100vw"
             />
           </NavigationLink>

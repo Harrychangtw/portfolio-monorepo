@@ -2,7 +2,6 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { webpLoader } from "@portfolio/lib/image-loader";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { ImageLoadingSkeleton } from "./image-loading-skeleton";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
@@ -18,7 +17,7 @@ interface ImageContainerProps {
   sizes?: string; // Optional sizes attribute for responsive layouts
   imgClassName?: string; // Added: Pass classes to the inner Image component
   restrictPortraitWidth?: boolean; // Added: Toggle desktop portrait centering (default true)
-  /** Skip the custom webpLoader and responsive-variant thumbnail derivation (for images not in the optimization pipeline). */
+  /** Skip responsive-variant thumbnail derivation (for images not in the optimization pipeline). */
   rawImage?: boolean;
 }
 
@@ -197,9 +196,6 @@ export function ImageContainer({
                       } ${imgClassName || ""}`}
                       sizes={sizes}
                       quality={quality}
-                      {...(!rawImage && fullSrc?.endsWith(".webp")
-                        ? { loader: webpLoader }
-                        : {})}
                       onLoad={() => {
                         setBlurComplete(true);
                       }}
