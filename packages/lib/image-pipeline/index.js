@@ -7,8 +7,6 @@ const { processOne, pool } = require("./engine");
 const { buildPlansForCategory } = require("./planners");
 const { makeRenderer } = require("./renderer");
 const { dim, bold, cyan, green, red, elapsed } = require("./format");
-const { RESPONSIVE_WIDTHS } = require("./constants");
-
 /**
  * Run the image-optimization pipeline.
  *
@@ -19,7 +17,6 @@ const { RESPONSIVE_WIDTHS } = require("./constants");
  *   source: string,
  *   config: object,
  *   rotate?: boolean,
- *   responsiveWidths?: number[],
  * }>} opts.categories - Per-category specs keyed by output subdirectory name.
  * @param {number} [opts.concurrency]
  */
@@ -81,4 +78,4 @@ async function runOptimize({ directories, categories, concurrency }) {
   return result;
 }
 
-module.exports = { runOptimize, RESPONSIVE_WIDTHS };
+module.exports = { runOptimize };

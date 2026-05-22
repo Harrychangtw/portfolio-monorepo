@@ -31,7 +31,6 @@ async function processOne(plan) {
     thumbnailWidth,
     thumbnailFit = "inside",
     thumbnailPosition,
-    responsiveWidths = [],
     rotate = false,
     category,
     variant,
@@ -44,17 +43,9 @@ async function processOne(plan) {
   const baseDir = path.dirname(outputFilename);
   const baseName = path.basename(outputFilename, ".webp");
   const thumbFilename = path.join(baseDir, `${baseName}-thumb.webp`);
-  const variantPaths = responsiveWidths.map((w) => ({
-    width: w,
-    out: path.join(baseDir, `${baseName}-${w}w.webp`),
-  }));
 
   const wantThumb = !path.basename(imagePath).includes("thumb");
-  const allOutputs = [
-    outputFilename,
-    ...(wantThumb ? [thumbFilename] : []),
-    ...variantPaths.map((v) => v.out),
-  ];
+  const allOutputs = [outputFilename, ...(wantThumb ? [thumbFilename] : [])];
 
   const inputBytes = fs.statSync(imagePath).size;
 
@@ -97,25 +88,6 @@ async function processOne(plan) {
       .webp({ quality: mainQuality })
       .toFile(outputFilename),
   );
-
-  const variantResize =
-    mainFit === "cover" || mainFit === "contain"
-      ? (w) => ({
-          width: w,
-          height: w,
-          fit: mainFit,
-          position: mainPosition || "center",
-        })
-      : (w) => ({ width: w, fit: "inside", withoutEnlargement: true });
-
-  for (const v of variantPaths) {
-    tasks.push(
-      baseInput()
-        .resize(variantResize(v.width))
-        .webp({ quality: mainQuality })
-        .toFile(v.out),
-    );
-  }
 
   if (wantThumb) {
     const thumbResize = {
