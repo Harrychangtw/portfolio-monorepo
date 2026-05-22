@@ -24,7 +24,6 @@ export interface CategorySpec {
   source: string;
   config: CategoryConfig;
   rotate?: boolean;
-  responsiveWidths?: readonly number[];
 }
 
 export interface RunOptimizeOptions {
@@ -42,5 +41,3 @@ export interface RunOptimizeResult {
 export function runOptimize(
   options: RunOptimizeOptions,
 ): Promise<RunOptimizeResult>;
-
-export const RESPONSIVE_WIDTHS: readonly number[];

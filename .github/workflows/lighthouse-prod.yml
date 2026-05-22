@@ -1,12 +1,12 @@
-# Runs daily at 04:00 UTC. Previously triggered on every production deploy via
-# deployment_status, which created a feedback loop: each audit committed README
-# scores → triggered a new deploy → triggered another audit. Switched to cron
-# to decouple from deploy frequency.
+# Runs every 3 days at 04:00 UTC. Previously triggered on every production
+# deploy via deployment_status, which created a feedback loop: each audit
+# committed README scores → triggered a new deploy → triggered another audit.
+# Switched to cron to decouple from deploy frequency.
 name: Lighthouse Audit (harrychang.me)
 
 on:
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "0 4 */3 * *"
   workflow_dispatch:
 
 jobs:
@@ -135,6 +135,6 @@ jobs:
       - name: Commit production Lighthouse changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(ci): daily lighthouse audit — update README scores [skip ci]"
+          commit_message: "chore: update lighthouse scores in README [skip ci]"
           file_pattern: "apps/harrychang-me/README.md .github/lighthouse-data/harry-prod.json"
           branch: main

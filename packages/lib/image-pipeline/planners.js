@@ -19,7 +19,7 @@ function pickFlatVariant(imagePath, kindConfig) {
 }
 
 async function planFlat(imagePath, sourceRoot, outputSub, optimizedRoot, opts) {
-  const { config: kindConfig, rotate = false, responsiveWidths = [] } = opts;
+  const { config: kindConfig, rotate = false } = opts;
   const relativePath = path.relative(sourceRoot, imagePath);
   const outputDir = path.join(
     optimizedRoot,
@@ -62,7 +62,6 @@ async function planFlat(imagePath, sourceRoot, outputSub, optimizedRoot, opts) {
     mainQuality: settings.quality,
     thumbnailQuality: kindConfig.thumbnail.quality,
     thumbnailWidth: kindConfig.thumbnail.width,
-    responsiveWidths,
     rotate,
     displayPath: relativePath,
   };
@@ -75,7 +74,7 @@ async function planGallery(
   optimizedRoot,
   opts,
 ) {
-  const { config: kindConfig, responsiveWidths = [] } = opts;
+  const { config: kindConfig } = opts;
   const fileName = path.basename(imagePath);
   const outputDir = path.join(optimizedRoot, "gallery", galleryFolder);
   const outputFilename = path.join(
@@ -114,7 +113,6 @@ async function planGallery(
     mainQuality: settings.quality,
     thumbnailQuality: kindConfig.thumbnail.quality,
     thumbnailWidth: kindConfig.thumbnail.width,
-    responsiveWidths,
     displayPath: `${galleryFolder}/${fileName}`,
   };
 }
@@ -126,7 +124,7 @@ async function planSquare(
   optimizedRoot,
   opts,
 ) {
-  const { config: kindConfig, rotate = false, responsiveWidths = [] } = opts;
+  const { config: kindConfig, rotate = false } = opts;
   const relativePath = path.relative(sourceRoot, imagePath);
   const outputDir = path.join(
     optimizedRoot,
@@ -153,14 +151,13 @@ async function planSquare(
     thumbnailWidth: kindConfig.thumbnail.width,
     thumbnailFit: "cover",
     thumbnailPosition: "center",
-    responsiveWidths,
     rotate,
     displayPath: relativePath,
   };
 }
 
 async function buildPlansForCategory(name, spec, directories) {
-  const { mode, source, config, rotate, responsiveWidths } = spec;
+  const { mode, source, config, rotate } = spec;
   const optimizedRoot = directories.optimized;
   const plans = [];
 
@@ -187,7 +184,7 @@ async function buildPlansForCategory(name, spec, directories) {
             folder,
             i,
             optimizedRoot,
-            { config, responsiveWidths },
+            { config },
           ),
         );
       }
@@ -198,7 +195,6 @@ async function buildPlansForCategory(name, spec, directories) {
         await planFlat(img, source, name, optimizedRoot, {
           config,
           rotate,
-          responsiveWidths,
         }),
       );
     }
@@ -208,7 +204,6 @@ async function buildPlansForCategory(name, spec, directories) {
         await planSquare(img, source, name, optimizedRoot, {
           config,
           rotate,
-          responsiveWidths,
         }),
       );
     }
