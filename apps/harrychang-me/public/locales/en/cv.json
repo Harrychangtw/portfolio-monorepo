@@ -7,7 +7,7 @@
   "sections": {
     "summary": {
       "title": "Summary",
-      "content": "12th-grade researcher in LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH dataset (EACL 2026 SRW), built an award-winning RAG system recognized by Taiwan's NSTC, and keynoted SITCON (2025, 2026). Currently the youngest research intern at CyCraft Technology, working on attention-based attack taxonomies. Admitted Rank 1 to NTU CSIE via Special Talent Selection. IELTS 8.5; fluent Mandarin and English."
+      "content": "12th-grade researcher in LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH dataset (EACL 2026 SRW), built an award-winning RAG system recognized by Taiwan's NSTC, and spoke at SITCON (2025, 2026). Currently the youngest research intern at CyCraft Technology, working on attention-based attack taxonomies. Admitted Rank 1 to NTU CSIE via Special Talent Selection. IELTS 8.5; fluent Mandarin and English."
     },
     "education": {
       "title": "Education",
@@ -79,7 +79,7 @@
           "bullets": [
             "First-authored FORTRESS (TMLR) and PATCH Dataset (EACL 2026 SRW)",
             "Created educational AI video on LLM safety, selected for AAAI 2025",
-            "Delivered 40-minute keynote on RAG technology at SITCON 2025 and 2026",
+            "Delivered 40-minute talk on RAG technology at SITCON 2025 and 2026",
             "Built CNN CAPTCHA solver (100% accuracy) and Transformer trading model"
           ]
         },

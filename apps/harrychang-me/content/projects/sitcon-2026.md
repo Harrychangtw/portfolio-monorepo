@@ -1,5 +1,5 @@
 ---
-title: "SITCON 2026 Keynote"
+title: "SITCON 2026 Talk"
 category: "Talks"
 subcategory: "Conferences"
 description: "A deep dive into LLM safety and mechanistic interpretability at SITCON 2026. I shared how to detect prompt injection attacks by literally looking inside the model's attention mechanisms."
@@ -8,18 +8,18 @@ year: "2026"
 date: "2026-03-28"
 role: "Researcher, Designer & Speaker"
 technologies: ["Affinity", "Apple Keynote"]
-tooltip: "Delivered a keynote on defending against prompt injections via attention mechanisms at SITCON 2026."
+tooltip: "Delivered a talk on defending against prompt injections via attention mechanisms at SITCON 2026."
 pinned: 2
 featured: true
 ---
 
 ## Project Overview
 
-Returning to the SITCON stage in 2026 felt like a major milestone. Exactly one year ago, [my presentation on building a RAG chatbot](./2025_03_08_sitcon_keynote) opened an unexpected door and landed me an internship at CyCraft. This year, I wanted to treat the keynote as a checkpoint to share the research and experiments I conducted during my time there.
+Returning to the SITCON stage in 2026 felt like a major milestone. Exactly one year ago, [my presentation on building a RAG chatbot](./2025_03_08_sitcon_keynote) opened an unexpected door and landed me an internship at CyCraft. This year, I wanted to treat the talk as a checkpoint to share the research and experiments I conducted during my time there.
 
 While last year was all about _building_ with LLMs, this year was about _securing_ them. Specifically, I wanted to tackle a fundamental and dangerous vulnerability known as Prompt Injection.
 
-![Official recording of the keynote](https://www.youtube.com/watch?v=GHC2oRj7TS4)
+![Official recording of the talk](https://www.youtube.com/watch?v=GHC2oRj7TS4)
 
 ---
 
@@ -65,4 +65,4 @@ Workflow-wise, I stuck to my favorite tool. Even though Canva recently acquired 
 
 The biggest takeaway I wanted to leave with the student developers at SITCON was simple. Do not just be a user who calls an API. Take the system apart, question it, and see through it.
 
-This keynote was the culmination of months of research, and I am incredibly grateful to everyone who helped shape it. A huge thank you to my mentors at CyCraft for guiding my research, the SITCON 2026 organizing team for the platform, and everyone who attended my rehearsal sessions to give blunt and necessary feedback. Your support made this journey possible.
+This talk was the culmination of months of research, and I am incredibly grateful to everyone who helped shape it. A huge thank you to my mentors at CyCraft for guiding my research, the SITCON 2026 organizing team for the platform, and everyone who attended my rehearsal sessions to give blunt and necessary feedback. Your support made this journey possible.

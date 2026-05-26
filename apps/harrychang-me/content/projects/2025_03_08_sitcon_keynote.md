@@ -1,25 +1,25 @@
 ---
-title: "SITCON 2025 Keynote"
+title: "SITCON 2025 Talk"
 category: "Talks"
 subcategory: "Conferences"
-description: "A 40-minute keynote at SITCON 2025, where I shared insights on Retrieval-Augmented Generation (RAG) and my experience building the Chingshin RAG project."
+description: "A 40-minute talk at SITCON 2025, where I shared insights on Retrieval-Augmented Generation (RAG) and my experience building the Chingshin RAG project."
 imageUrl: "images/optimized/projects/2025_03_08_sitcon_keynote/titlecard.webp"
 year: "2025"
 date: "2025-03-08"
 role: "Designer & Speaker"
 technologies: ["Affinity Publisher", "Apple Keynote"]
-tooltip: "Delivered a 40-minute keynote on building a RAG chatbot at SITCON 2025."
+tooltip: "Delivered a 40-minute talk on building a RAG chatbot at SITCON 2025."
 pinned: 13
 featured: true
 ---
 
 ## Project Overview
 
-SITCON is one of, if not the largest student developer conference in Taiwan. I was first introduced to this community by Andrew Kuo, who had previously given an excellent [talk on LLMs](https://www.youtube.com/watch?v=JGgZTngrJB4) there. He was the one who encouraged me to develop my **“Chingshin RAG”** project into a full-length keynote.
+SITCON is one of, if not the largest student developer conference in Taiwan. I was first introduced to this community by Andrew Kuo, who had previously given an excellent [talk on LLMs](https://www.youtube.com/watch?v=JGgZTngrJB4) there. He was the one who encouraged me to develop my **”Chingshin RAG”** project into a full-length talk.
 
 To be honest, I was hesitant at first. The thought of delivering a 40-minute talk at a conference I had never attended was daunting. But looking back, the decision was not just a memorable experience—it was perspective-changing.
 
-![Official recording of the keynote](https://www.youtube.com/watch?v=ujxlUTXlC04)
+![Official recording of the talk](https://www.youtube.com/watch?v=ujxlUTXlC04)
 
 ---
 
@@ -43,7 +43,7 @@ With these concepts laid out, sharing my experience of developing the [**“Chin
 
 ## Presentation Design
 
-The visual style for this keynote was an extension of the **project proposal slides** I had previously designed for **GenAI Stars**.
+The visual style for this talk was an extension of the **project proposal slides** I had previously designed for **GenAI Stars**.
 
 To enrich the style, I used a mix of different fonts and layouts:
 
@@ -60,6 +60,6 @@ All the slides were designed in **Affinity Publisher 2**. I love this software; 
 
 ## Acknowledgments
 
-The most unforgettable part of the entire SITCON journey was the people. I met a group of passionate and helpful individuals. This was especially evident during the **rehearsal**, where I could feel everyone's dedication to the event. The organizing team gave me a lot of practical and constructive feedback, and this keynote wouldn't have been the same without them.
+The most unforgettable part of the entire SITCON journey was the people. I met a group of passionate and helpful individuals. This was especially evident during the **rehearsal**, where I could feel everyone's dedication to the event. The organizing team gave me a lot of practical and constructive feedback, and this talk wouldn't have been the same without them.
 
 I want to extend my sincere gratitude to the SITCON 2025 organizing team, especially AK, Danny, and everyone who provided feedback during the rehearsal. This talk would not have been possible without your support and encouragement. Thank you to everyone who helped me along the way; you made this journey meaningful and truly unforgettable.
