@@ -1,22 +1,22 @@
 {
-  "timestamp": "Mon, 25 May 2026 08:26:15 GMT",
+  "timestamp": "Thu, 28 May 2026 08:03:35 GMT",
   "desktop": {
     "/|EN": {
       "route": "/",
       "locale": "EN",
-      "perfScore": 57,
+      "perfScore": 63,
       "fcp": "0.5 s",
-      "lcp": "1.6 s",
-      "tbt": "7,170 ms",
-      "cls": "0",
-      "si": "2.9 s"
+      "lcp": "0.8 s",
+      "tbt": "21,910 ms",
+      "cls": "0.006",
+      "si": "2.8 s"
     },
     "/linktree|EN": {
       "route": "/linktree",
       "locale": "EN",
       "perfScore": 93,
       "fcp": "0.5 s",
-      "lcp": "1.8 s",
+      "lcp": "1.7 s",
       "tbt": "30 ms",
       "cls": "0",
       "si": "0.6 s"
@@ -26,22 +26,22 @@
     "/|EN": {
       "route": "/",
       "locale": "EN",
-      "perfScore": 38,
-      "fcp": "1.9 s",
-      "lcp": "9.2 s",
-      "tbt": "143,500 ms",
-      "cls": "0",
-      "si": "6.6 s"
+      "perfScore": 42,
+      "fcp": "2.2 s",
+      "lcp": "5.1 s",
+      "tbt": "143,900 ms",
+      "cls": "0.01",
+      "si": "7.1 s"
     },
     "/linktree|EN": {
       "route": "/linktree",
       "locale": "EN",
       "perfScore": 63,
       "fcp": "1.7 s",
-      "lcp": "9.3 s",
-      "tbt": "460 ms",
+      "lcp": "9.2 s",
+      "tbt": "450 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "1.9 s"
     }
   }
 }
