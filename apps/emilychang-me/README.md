@@ -17,12 +17,12 @@ Production deploy.
 
 <!-- LIGHTHOUSE_RESULTS_START -->
 
-> 🕐 **Last audited:** Prod: Sun, 31 May 2026 07:50:50 GMT  
+> 🕐 **Last audited:** Prod: Mon, 01 Jun 2026 09:31:03 GMT  
 > 🌐 **Deployment:** https://emilychang.me
 
 | Route       | Locale | Lab 🖥️ Perf | Lab 🖥️ FCP | Lab 🖥️ LCP | Lab 🖥️ TBT | Lab 🖥️ CLS | Lab 🖥️ SI | Lab 📱 Perf | Lab 📱 FCP | Lab 📱 LCP | Lab 📱 TBT | Lab 📱 CLS | Lab 📱 SI | Prod 🖥️ Perf                                                       | Prod 🖥️ FCP | Prod 🖥️ LCP | Prod 🖥️ TBT | Prod 🖥️ CLS | Prod 🖥️ SI | Prod 📱 Perf                                                       | Prod 📱 FCP | Prod 📱 LCP | Prod 📱 TBT | Prod 📱 CLS | Prod 📱 SI |
 | :---------- | :----- | :---------- | :--------- | :--------- | :--------- | :--------- | :-------- | :---------- | :--------- | :--------- | :--------- | :--------- | :-------- | :----------------------------------------------------------------- | :---------- | :---------- | :---------- | :---------- | :--------- | :----------------------------------------------------------------- | :---------- | :---------- | :---------- | :---------- | :--------- |
-| `/`         | EN     | -           | -          | -          | -          | -          | -         | -           | -          | -          | -          | -          | -         | ![63](https://img.shields.io/badge/63-important?style=flat-square) | 0.5 s       | 0.7 s       | 20,050 ms   | 0.006       | 2.8 s      | ![46](https://img.shields.io/badge/46-critical?style=flat-square)  | 1.7 s       | 4.8 s       | 141,770 ms  | 0.01        | 6.4 s      |
-| `/linktree` | EN     | -           | -          | -          | -          | -          | -         | -           | -          | -          | -          | -          | -         | ![93](https://img.shields.io/badge/93-success?style=flat-square)   | 0.5 s       | 1.8 s       | 30 ms       | 0           | 0.6 s      | ![63](https://img.shields.io/badge/63-important?style=flat-square) | 1.7 s       | 9.2 s       | 450 ms      | 0           | 2.4 s      |
+| `/`         | EN     | -           | -          | -          | -          | -          | -         | -           | -          | -          | -          | -          | -         | ![55](https://img.shields.io/badge/55-important?style=flat-square) | 0.5 s       | 1.7 s       | 12,450 ms   | 0           | 3.2 s      | ![37](https://img.shields.io/badge/37-critical?style=flat-square)  | 1.8 s       | 8.9 s       | 144,040 ms  | 0           | 7.3 s      |
+| `/linktree` | EN     | -           | -          | -          | -          | -          | -         | -           | -          | -          | -          | -          | -         | ![92](https://img.shields.io/badge/92-success?style=flat-square)   | 0.5 s       | 1.8 s       | 30 ms       | 0           | 0.6 s      | ![64](https://img.shields.io/badge/64-important?style=flat-square) | 1.7 s       | 9.3 s       | 440 ms      | 0           | 2.3 s      |
 
 <!-- LIGHTHOUSE_RESULTS_END -->
