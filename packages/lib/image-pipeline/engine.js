@@ -9,7 +9,8 @@ function walkImages(dir) {
   const out = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...walkImages(full));
+    if (entry.isDirectory() && entry.name !== "raw")
+      out.push(...walkImages(full));
     else if (/\.(jpg|jpeg|png)$/i.test(entry.name)) out.push(full);
   }
   return out;

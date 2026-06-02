@@ -13,6 +13,7 @@ const ThemeSwitcher = dynamic(() => import("@portfolio/ui/theme-switcher"), {
   ssr: false,
 });
 import { ImageContainer } from "@portfolio/ui/image-container";
+import { CompareSlider } from "@portfolio/ui/compare-slider";
 import NextUpCard from "@portfolio/ui/next-up-card";
 import type { GalleryItemMetadata } from "@portfolio/lib/lib/markdown";
 import NavigationLink from "@portfolio/ui/navigation-link";
@@ -271,6 +272,31 @@ export default function GalleryPostClient({
                 <div className="prose prose-lg max-w-none dark:prose-invert mb-16 md:mb-24">
                   {parse(item.contentHtml, {
                     replace: (domNode) => {
+                      if (
+                        domNode instanceof Element &&
+                        domNode.attribs &&
+                        domNode.attribs.class === "markdown-compare-placeholder"
+                      ) {
+                        const {
+                          "data-left-src": leftSrc,
+                          "data-right-src": rightSrc,
+                          "data-alt": alt,
+                          "data-aspect-ratio": aspectRatio,
+                          "data-framed": framed,
+                        } = domNode.attribs;
+                        return (
+                          <CompareSlider
+                            leftSrc={leftSrc}
+                            rightSrc={rightSrc}
+                            alt={alt || ""}
+                            aspectRatio={
+                              aspectRatio ? parseFloat(aspectRatio) : undefined
+                            }
+                            noInsetPadding={framed !== "true"}
+                            quality={95}
+                          />
+                        );
+                      }
                       if (
                         domNode instanceof Element &&
                         domNode.attribs &&
