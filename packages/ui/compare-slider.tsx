@@ -98,7 +98,12 @@ export function CompareSlider({
           >
             {!noInsetPadding && (
               <div
-                className={`absolute inset-0 z-20 pointer-events-none border-l-[${borderThickness}] border-r-[${borderThickness}] border-white`}
+                className="absolute inset-0 z-20 pointer-events-none border-white"
+                style={{
+                  borderLeftWidth: borderThickness,
+                  borderRightWidth: borderThickness,
+                  boxSizing: "border-box",
+                }}
               />
             )}
 
