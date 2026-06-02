@@ -7,7 +7,7 @@
   "sections": {
     "summary": {
       "title": "Summary",
-      "content": "12th-grade researcher in LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH dataset (EACL 2026 SRW), built an award-winning RAG system recognized by Taiwan's NSTC, and spoke at SITCON (2025, 2026). Currently the youngest research intern at CyCraft Technology, working on attention-based attack taxonomies. Admitted Rank 1 to NTU CSIE via Special Talent Selection. IELTS 8.5; fluent Mandarin and English."
+      "content": "Incoming NTU CSIE student researching LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH dataset (EACL 2026 SRW), built an award-winning RAG system recognized by Taiwan's NSTC, and spoke at SITCON (2025, 2026). Currently the youngest research intern at CyCraft Technology, working on attention-based attack taxonomies. IELTS 8.5; fluent Mandarin and English."
     },
     "education": {
       "title": "Education",
@@ -212,7 +212,7 @@
     }
   },
   "footer": {
-    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 April",
+    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 June",
     "downloadPdf": "Download Full PDF"
   }
 }
