@@ -165,6 +165,7 @@ async function buildPlansForCategory(name, spec, directories) {
 
   if (mode === "gallery") {
     const folders = fs.readdirSync(source).filter((f) => {
+      if (f === "raw") return false;
       try {
         return fs.statSync(path.join(source, f)).isDirectory();
       } catch {

@@ -1137,6 +1137,56 @@ function transformMedia() {
         alt = alt.replace(/\s*:framed$/i, "");
       }
 
+      // Check for compare: prefix (before or after framed: stripping)
+      let isCompare = false;
+      if (alt.toLowerCase().startsWith("compare:")) {
+        isCompare = true;
+        alt = alt.replace(/^compare:\s*/i, "");
+      }
+
+      // Handle compare slider: ![compare:Caption](left.webp|right.webp)
+      if (isCompare && url.includes("|")) {
+        const [leftRaw, rightRaw] = url.split("|").map((s) => s.trim());
+        const leftUrl = getFullResolutionPath(leftRaw);
+        const rightUrl = getFullResolutionPath(rightRaw);
+        const dims = getDimsFromWebPath(leftUrl);
+        const aspectRatio =
+          dims && dims.width && dims.height
+            ? (dims.width / dims.height).toFixed(4)
+            : "";
+
+        const escapeAttr = (value: string) =>
+          value
+            .replace(/&/g, "&amp;")
+            .replace(/"/g, "&quot;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+
+        const anchorId = `img-${imgIdx++}`;
+        const compareNode: HTML = {
+          type: "html",
+          value: `
+            <figure id="${anchorId}" class="my-6 w-full graph-anchor-target">
+              <div
+                class="markdown-compare-placeholder"
+                data-left-src="${escapeAttr(leftUrl)}"
+                data-right-src="${escapeAttr(rightUrl)}"
+                data-aspect-ratio="${aspectRatio}"
+                data-framed="${isFramed}"
+                data-alt="${escapeAttr(alt)}"
+              ></div>
+              ${
+                alt
+                  ? `<figcaption class="mt-2 text-sm text-left" style="color: hsl(var(--secondary)); font-family: var(--font-body);">${alt}</figcaption>`
+                  : ""
+              }
+            </figure>
+          `,
+        };
+        parent.children.splice(index, 1, compareNode);
+        return;
+      }
+
       // Check if it's a Google Drive video link
       const driveRegex =
         /https?:\/\/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/;
