@@ -168,24 +168,33 @@ export function CompareSlider({
                 style={{ left: `${position}%`, transform: "translateX(-50%)" }}
               >
                 <div
-                  className="w-px h-full bg-white/80 mx-auto"
-                  style={{ boxShadow: "0 0 4px rgba(0,0,0,0.4)" }}
+                  className="w-px h-full mx-auto"
+                  style={{
+                    background: "rgba(255,255,255,0.85)",
+                    boxShadow:
+                      "0 0 4px rgba(0,0,0,0.5), 0 0 1px rgba(0,0,0,0.8)",
+                  }}
                 />
                 <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 border border-white/50 flex items-center justify-center pointer-events-auto cursor-ew-resize"
-                  style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.3)" }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center pointer-events-auto cursor-ew-resize"
+                  style={{
+                    background: "rgba(255,255,255,0.92)",
+                    border: "1.5px solid rgba(0,0,0,0.15)",
+                    boxShadow:
+                      "0 1px 4px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.3)",
+                  }}
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path
                       d="M4.5 3L1.5 7L4.5 11"
-                      stroke="currentColor"
+                      stroke="rgba(0,0,0,0.7)"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M9.5 3L12.5 7L9.5 11"
-                      stroke="currentColor"
+                      stroke="rgba(0,0,0,0.7)"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
