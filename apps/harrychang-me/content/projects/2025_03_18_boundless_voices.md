@@ -9,7 +9,7 @@ date: "2024-03-18"
 role: "Designer & Director"
 technologies: ["DaVinci Resolve", "Affinity Designer"]
 tooltip: "Directed a documentary for a student-led charity concert."
-pinned: 10
+pinned: 13
 featured: true
 ---
 

@@ -9,7 +9,7 @@ date: "2024-10-04"
 role: "獨立開發者"
 technologies: ["PyTorch", "Selenium"]
 tooltip: "獨立開發的搶票機器人，能用 CNN 自動破解 CAPTCHA。"
-pinned: 11
+pinned: 10
 featured: true
 ---
 

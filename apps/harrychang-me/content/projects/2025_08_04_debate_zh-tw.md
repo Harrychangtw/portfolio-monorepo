@@ -9,7 +9,7 @@ date: "2025-08-04"
 role: "辯士"
 technologies: ["公開演講", "批判性思維", "茶和咖啡"]
 tooltip: "回顧我五年來的 WSDC 英文辯論生涯，從新手到贏得冠軍。"
-pinned: 13
+pinned: 12
 featured: true
 ---
 
