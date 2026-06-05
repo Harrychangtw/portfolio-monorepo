@@ -1,6 +1,6 @@
 {
   "bio1": "我是張祺煒。我打造語言模型安全系統、用無螢幕的相機攝影，也為自己不全然相信的立場辯護。工具不斷更迭，提問始終如一。",
-  "bio2": "今秋入學<a href=\"blog/2025_12_24_ntu_cs_special_admission/\">臺大資工</a>。我穿梭於<a href=\"projects/2025_10_12_fortress/\">研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate\">辯論</a>與<a href=\"projects/2025_01_05_aaai_video\">影片創作</a>之間，深信每種新媒介，都能教會我上一個媒介無法傳遞的事。",
+  "bio2": "今秋入學<a href=\"blog/2025_12_24_ntu_cs_special_admission_zh-tw/\">臺大資工</a>。我穿梭於<a href=\"projects/2025_10_12_fortress_zh-tw/\">研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate_zh-tw\">辯論</a>與<a href=\"projects/menghua-graduation-mv_zh-tw\">影片創作</a>之間，深信每種新媒介，都能教會我上一個媒介無法傳遞的事。",
   "bio3": "從樂高積木到語言模型，那份想把事物拆解的衝動從未離開。好奇這些怎麼串在一起？<a href=\"/graph\">探索全站圖譜</a>",
   "roles": {
     "llmResearcher": {
@@ -26,7 +26,7 @@
     "photographer": {
       "title": "攝影師 & 影片剪輯師",
       "period": "2022 - Present",
-      "description": "專精於 DaVinci Resolve，經驗範圍從各式學校影片到為 <a href=\"https://www.youtube.com/watch?v=eSuEhZpHesU&t=2s\">AAAI</a> 製作教育影片。"
+      "description": "專精於 DaVinci Resolve，經驗範圍從<a href=\"projects/2025_01_03_powerplay_zh-tw\">各式活動影片</a>、從為 <a href=\"projects/2025_01_05_aaai_video_zh-tw\">AAAI</a> 製作教育影片到<a href=\"projects/menghua-graduation-mv_zh-tw\">畢業歌 MV</a>。"
     }
   }
 }
