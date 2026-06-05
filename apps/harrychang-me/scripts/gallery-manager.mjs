@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * PORTFOLIO GALLERY MANAGER
- * 
- * An interactive CLI to rearrange gallery items and update frontmatter.
- * 
- * Usage: node scripts/gallery-manager.mjs
+ * PORTFOLIO CONTENT MANAGER
+ *
+ * An interactive CLI to rearrange gallery or project items and update frontmatter.
+ *
+ * Usage: node scripts/gallery-manager.mjs [gallery|projects]
  * dependencies: gray-matter (already in project)
  */
 
@@ -15,7 +15,21 @@ import readline from 'node:readline';
 import { fileURLToPath } from 'node:url';
 
 // --- Configuration ---
-const CONTENT_DIR = path.join(process.cwd(), 'content/gallery');
+const CONTENT_TYPES = {
+  gallery: {
+    label: 'Gallery',
+    dir: path.join(process.cwd(), 'content/gallery'),
+    subtitle: (item) => item.date,
+  },
+  projects: {
+    label: 'Projects',
+    dir: path.join(process.cwd(), 'content/projects'),
+    subtitle: (item) => `${item.category ? item.category + ' · ' : ''}${item.date}`,
+  },
+};
+
+let contentType = null;
+let CONTENT_DIR = null;
 const PINNED_KEY = 'pinned';
 
 // --- Colors & formatting helpers ---
@@ -35,8 +49,8 @@ const C = {
 // --- State Management ---
 const state = {
   // Lists
-  pinned: [], // { slug, title, date, pinned, paths: [] }
-  pool: [],   // { slug, title, date, pinned, paths: [] }
+  pinned: [], // { slug, title, date, category, pinned, paths: [] }
+  pool: [],   // { slug, title, date, category, pinned, paths: [] }
   
   // UI State
   mode: 'PINNED', // 'PINNED' | 'POOL'
@@ -84,18 +98,20 @@ async function loadItems() {
         slug: canonicalSlug,
         title: data.title || canonicalSlug,
         date: data.date || 'No Date',
+        category: data.category || '',
         pinned: typeof data.pinned === 'number' ? data.pinned : -1,
         paths: []
       });
     }
-    
+
     const item = itemsMap.get(canonicalSlug);
     item.paths.push(fullPath);
-    
+
     // specific logic: if English version exists, prefer its title/data for display
     if (!isZh) {
       item.title = data.title || item.title;
       item.date = data.date || item.date;
+      item.category = data.category || item.category;
       item.pinned = typeof data.pinned === 'number' ? data.pinned : item.pinned;
     }
   }
@@ -167,7 +183,8 @@ function render() {
   process.stdout.write('\x1b[0f');
 
   // Header
-  console.log(`${C.bgBlue}${C.bright}  PORTFOLIO GALLERY MANAGER  ${C.reset}`);
+  const typeLabel = CONTENT_TYPES[contentType].label.toUpperCase();
+  console.log(`${C.bgBlue}${C.bright}  PORTFOLIO ${typeLabel} MANAGER  ${C.reset}`);
   console.log(`${C.dim}  ${CONTENT_DIR}${C.reset}\n`);
 
   const activeList = state.mode === 'PINNED' ? state.pinned : state.pool;
@@ -186,8 +203,9 @@ function render() {
       if (isSelected) prefix = isDragging ? ` ${C.green}MOVE${C.reset} ` : ` ${C.cyan}➜${C.reset}  `;
       
       const title = item.title.length > 50 ? item.title.substring(0, 47) + '...' : item.title;
-      const line = `${prefix}${isDragging ? C.green : ''}${title}${C.reset} ${C.dim}(${item.date})${C.reset}`;
-      
+      const sub = CONTENT_TYPES[contentType].subtitle(item);
+      const line = `${prefix}${isDragging ? C.green : ''}${title}${C.reset} ${C.dim}(${sub})${C.reset}`;
+
       console.log(line);
     });
   }
@@ -211,7 +229,8 @@ function render() {
     if (isSelected) prefix = ` ${C.cyan}➜${C.reset}  `;
     
     const title = item.title.length > 50 ? item.title.substring(0, 47) + '...' : item.title;
-    console.log(`${prefix}${title} ${C.dim}(${item.date})${C.reset}`);
+    const sub = CONTENT_TYPES[contentType].subtitle(item);
+    console.log(`${prefix}${title} ${C.dim}(${sub})${C.reset}`);
   });
 
   if (poolEnd < state.pool.length) console.log(C.dim + '   ... ' + C.reset);
@@ -333,11 +352,57 @@ function handleInput(key) {
 
 // --- Init ---
 
-async function main() {
-  await loadItems();
-  
+function initKeypress() {
   readline.emitKeypressEvents(process.stdin);
   if (process.stdin.isTTY) process.stdin.setRawMode(true);
+}
+
+function selectContentType() {
+  return new Promise((resolve) => {
+    const arg = process.argv[2];
+    if (arg && CONTENT_TYPES[arg]) {
+      resolve(arg);
+      return;
+    }
+
+    const types = Object.keys(CONTENT_TYPES);
+    let cursor = 0;
+
+    const draw = () => {
+      process.stdout.write('\x1b[2J\x1b[0f');
+      console.log(`${C.bgBlue}${C.bright}  PORTFOLIO CONTENT MANAGER  ${C.reset}\n`);
+      console.log(`${C.bright}Select content type:${C.reset}\n`);
+      types.forEach((key, idx) => {
+        const prefix = idx === cursor ? ` ${C.cyan}➜${C.reset}  ` : '    ';
+        console.log(`${prefix}${CONTENT_TYPES[key].label}`);
+      });
+      console.log(`\n${C.dim}↑/↓: Navigate • Enter: Select • q: Quit${C.reset}`);
+    };
+
+    const onKey = (str, key) => {
+      if (key.name === 'q' || (key.name === 'c' && key.ctrl)) process.exit();
+      if (key.name === 'up') cursor = Math.max(0, cursor - 1);
+      if (key.name === 'down') cursor = Math.min(types.length - 1, cursor + 1);
+      if (key.name === 'return') {
+        process.stdin.removeListener('keypress', onKey);
+        resolve(types[cursor]);
+        return;
+      }
+      draw();
+    };
+
+    process.stdin.on('keypress', onKey);
+    draw();
+  });
+}
+
+async function main() {
+  initKeypress();
+
+  contentType = await selectContentType();
+  CONTENT_DIR = CONTENT_TYPES[contentType].dir;
+
+  await loadItems();
 
   process.stdin.on('keypress', (str, key) => {
     handleInput(key);
