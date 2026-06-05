@@ -1360,5 +1360,32 @@
       "致謝": "致謝封面圖庫爾貝，總結六年靜心時光"
     },
     "tldr": "校園光影依舊，人在即將離別之際聽見建築的記憶"
+  },
+  "project/menghua-graduation-mv/en": {
+    "title": "夢華: Graduation Song MV",
+    "locale": "en",
+    "sections": {
+      "section-0": "Nostalgic song and video celebrating the Class of 2026 graduation",
+      "Project Overview": "One-month solo cinematography/editing for Chingshin's 2026 graduation music video",
+      "Concept & Why It Was Tractable": "Memory-based MV made fast via pre-written script and invested leads",
+      "Production Process": "Adaptive scheduling, concurrent editing, dual-grade aesthetics, and hand-keyed compositing",
+      "Closing": "Filming a floral tribute to school before graduating and receiving flowers",
+      "Acknowledgments": "Cast and crew credits for vocals, production, and calligraphy"
+    },
+    "tldr": "Cinematographer-editor reflects on filming Chingshin’s 2026 graduation music video in one month",
+    "shortName": "夢華 Graduation MV"
+  },
+  "project/menghua-graduation-mv/zh-TW": {
+    "title": "夢華：畢業歌 MV",
+    "locale": "zh-TW",
+    "sections": {
+      "section-0": "第五屆畢業典禮首播的紀念歌曲 MV",
+      "專案概述": "一個月內獨立完成靜心高中畢業歌 MV 攝製",
+      "概念，以及為什麼這件事做得起來": "劇本現成、後期簡化、主演投入",
+      "製作過程": "看天換場、邊拍邊剪，靠調色與合成特效克服克難環境",
+      "結語": "以影送花告別校園，最終收穫贈花圓滿",
+      "致謝": "幕前幕後核心團隊與書法協力"
+    },
+    "tldr": "作者一個月內完成靜心畢業歌 MV 攝影、剪輯與後期"
   }
 }
