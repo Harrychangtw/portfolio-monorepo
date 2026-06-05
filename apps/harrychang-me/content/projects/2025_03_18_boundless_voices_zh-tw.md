@@ -9,7 +9,7 @@ date: "2024-03-18"
 role: "設計師與導演"
 technologies: ["DaVinci Resolve", "Affinity Designer"]
 tooltip: "為「無界之聲」慈善音樂會執導紀錄片並設計宣傳品。"
-pinned: 9
+pinned: 10
 featured: true
 ---
 
