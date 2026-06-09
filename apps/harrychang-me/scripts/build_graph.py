@@ -1399,6 +1399,7 @@ def main():
                     if isinstance(_common.get("readingList"), dict)
                     else "Reading List",
                 "design": _header.get("design", "Design System"),
+                "privacy": _header.get("privacy", "Privacy"),
                 "root": "首頁" if _loc == "zh-TW" else "Home",
             }
         else:
@@ -1524,6 +1525,27 @@ def main():
             "sourceSlug": "design",
             "locale": locale,
             "url": f"{BASE_URL}/design",
+            "date": None,
+            "tags": [],
+            "heading": None,
+            "imageUrl": None,
+            "parentId": None,
+            "mediaSource": None,
+        })
+
+    # --- Privacy hub (no existing locale nodes, standalone) ---
+    for locale in ("en", "zh-TW"):
+        hub_id = f"hub-privacy-{locale}"
+        title = _hub_title("privacy", locale)
+        hub_nodes.append({
+            "id": hub_id,
+            "nodeType": "hub",
+            "title": title,
+            "snippet": title,
+            "sourceType": "locale",
+            "sourceSlug": "privacy",
+            "locale": locale,
+            "url": f"{BASE_URL}/privacy",
             "date": None,
             "tags": [],
             "heading": None,

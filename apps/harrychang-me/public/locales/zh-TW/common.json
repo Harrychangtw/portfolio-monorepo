@@ -13,7 +13,8 @@
     "links": "連結",
     "design": "設計系統",
     "cv": "履歷",
-    "graph": "網站圖譜"
+    "graph": "網站圖譜",
+    "privacy": "隱私權政策"
   },
   "footer": {
     "guestbook": "匿名留言板",
@@ -176,7 +177,8 @@
     "design": "設計系統",
     "graph": "知識圖譜",
     "linktree": "連結",
-    "source": "網站原始碼"
+    "source": "網站原始碼",
+    "privacy": "隱私權政策"
   },
   "links": {
     "hero": "Code. Camera. Curiosity."
@@ -213,7 +215,8 @@
     "telegram": "加密訊息歡迎 — @harrychangtw",
     "graph": "以互動知識圖譜的方式探索本站",
     "source": "在 GitHub 上探索本站的架構",
-    "linktree": "所有連結，集中於此"
+    "linktree": "所有連結，集中於此",
+    "privacy": "本站如何處理你的資料"
   },
   "letterGlitch": {
     "line1": "我 從 未 被 教 會 創 造 ——",
@@ -229,6 +232,33 @@
   },
   "notification": {
     "pageNotFound": "頁面未找到，已重新導向至首頁。"
+  },
+  "privacy": {
+    "title": "隱私權政策",
+    "overview": {
+      "title": "概述",
+      "body": "這是一個個人作品集網站，不會銷售資料、投放廣告或要求建立帳號。資料蒐集極少，僅用於改善瀏覽體驗。"
+    },
+    "cookies": {
+      "title": "Cookie",
+      "body": "本站設定少量功能性 Cookie。<strong>主題</strong> Cookie 儲存你的淺色/深色模式偏好，在主站與 Lab 子網域間同步。<strong>語言</strong> Cookie 記住你在英文與繁體中文之間的選擇。不會在未告知的情況下設定追蹤 Cookie。"
+    },
+    "analytics": {
+      "title": "分析工具",
+      "body": "<strong>PostHog</strong> 蒐集匿名頁面瀏覽、工作階段時長及一般裝置資訊，不儲存 IP 位址。<strong>Vercel Analytics</strong> 測量 Core Web Vitals 以監控效能，無 Cookie，無個人資料。兩者皆不蒐集個人可識別資訊。"
+    },
+    "guestbook": {
+      "title": "留言板",
+      "body": "透過留言板提交的訊息會轉發至私人 <strong>Discord webhook</strong> 供審閱，不會公開顯示。不需要帳號或個人資訊，所有提交皆為匿名。"
+    },
+    "thirdParty": {
+      "title": "第三方服務",
+      "body": "<strong>正在播放</strong>小工具從 Spotify API 取得目前播放的曲目，不會將訪客資料傳送至 Spotify。字型在建置時取得後於本地提供。除上述分析服務外，不會載入任何第三方追蹤腳本。完整原始碼皆為<strong>開源</strong>，可於 GitHub 上查閱。"
+    },
+    "rights": {
+      "title": "你的權利",
+      "body": "你可以隨時透過瀏覽器設定清除所有 Cookie。如有關於資料的疑問或希望刪除留言板訊息，請聯繫 <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>。"
+    }
   },
   "lab": {
     "capsule": "開放申請中 · 九月前限定",

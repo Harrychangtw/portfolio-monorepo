@@ -50,6 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/uses",
     "/design",
     "/linktree",
+    "/privacy",
   ];
 
   staticPages.forEach((page) => {

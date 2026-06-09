@@ -36,6 +36,7 @@ const SPECIAL_PAGES = [
   { prefix: "/linktree", key: "links" },
   { prefix: "/design", key: "design" },
   { prefix: "/cv", key: "cv" },
+  { prefix: "/privacy", key: "privacy" },
 ];
 
 export default function Header() {

@@ -1387,5 +1387,17 @@
       "致謝": "幕前幕後核心團隊與書法協力"
     },
     "tldr": "作者一個月內完成靜心畢業歌 MV 攝影、剪輯與後期"
+  },
+  "locale/privacy/en": {
+    "title": "Privacy",
+    "locale": "en",
+    "sections": {},
+    "tldr": "How this site handles cookies, analytics, and your data"
+  },
+  "locale/privacy/zh-TW": {
+    "title": "隱私權政策",
+    "locale": "zh-TW",
+    "sections": {},
+    "tldr": "本站如何處理 Cookie、分析工具與你的資料"
   }
 }

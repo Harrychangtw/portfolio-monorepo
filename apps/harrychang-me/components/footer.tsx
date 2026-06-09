@@ -54,7 +54,8 @@ const siteLinks = [
   { id: "projects", name: "Projects", href: "/#projects" },
   { id: "gallery", name: "Gallery", href: "/#gallery" },
   { id: "blog", name: "Blog", href: "/blog" },
-  { id: "linktree", name: "Links", href: "/linktree" },
+  { id: "privacy", name: "Privacy", href: "/privacy" },
+  // { id: "linktree", name: "Links", href: "/linktree" },
   { id: "manifesto", name: "Manifesto", href: "/manifesto" },
   { id: "source", name: "Source Code", href: "/readme" },
 ];
