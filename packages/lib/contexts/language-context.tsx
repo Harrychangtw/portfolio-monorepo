@@ -39,14 +39,14 @@ const parseHtmlToReact = (
     children: React.ReactNode;
   }>,
 ): React.ReactNode => {
-  const linkRegex = /<a\s+href="([^"]*)"[^>]*>([^<]*)<\/a>/g;
+  const tagRegex =
+    /<a\s+href="([^"]*)"[^>]*>([^<]*)<\/a>|<strong>([^<]*)<\/strong>/g;
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;
   let match;
   let key = 0;
 
-  while ((match = linkRegex.exec(htmlString)) !== null) {
-    // Add text before the link
+  while ((match = tagRegex.exec(htmlString)) !== null) {
     if (match.index > lastIndex) {
       const textBefore = htmlString.substring(lastIndex, match.index);
       if (textBefore) {
@@ -54,47 +54,54 @@ const parseHtmlToReact = (
       }
     }
 
-    const href = match[1];
-    const linkText = match[2];
-    const isExternal = /^https?:\/\//.test(href);
-    const isHash = href.startsWith("#");
-
-    if (isExternal || isHash) {
+    if (match[3] !== undefined) {
       parts.push(
-        <a
-          key={`link-${key++}`}
-          href={href}
-          {...(isExternal
-            ? { target: "_blank", rel: "noopener noreferrer" }
-            : {})}
-          className="link-external"
-        >
-          {linkText}
-        </a>,
-      );
-    } else if (InternalLink) {
-      const resolvedHref = href.startsWith("/") ? href : `/${href}`;
-      parts.push(
-        <InternalLink
-          key={`link-${key++}`}
-          href={resolvedHref}
-          className="link-external"
-        >
-          {linkText}
-        </InternalLink>,
+        <strong key={`strong-${key++}`} className="font-medium">
+          {match[3]}
+        </strong>,
       );
     } else {
-      parts.push(
-        <a key={`link-${key++}`} href={href} className="link-external">
-          {linkText}
-        </a>,
-      );
+      const href = match[1];
+      const linkText = match[2];
+      const isExternal = /^https?:\/\//.test(href);
+      const isHash = href.startsWith("#");
+
+      if (isExternal || isHash) {
+        parts.push(
+          <a
+            key={`link-${key++}`}
+            href={href}
+            {...(isExternal
+              ? { target: "_blank", rel: "noopener noreferrer" }
+              : {})}
+            className="link-external"
+          >
+            {linkText}
+          </a>,
+        );
+      } else if (InternalLink) {
+        const resolvedHref = href.startsWith("/") ? href : `/${href}`;
+        parts.push(
+          <InternalLink
+            key={`link-${key++}`}
+            href={resolvedHref}
+            className="link-external"
+          >
+            {linkText}
+          </InternalLink>,
+        );
+      } else {
+        parts.push(
+          <a key={`link-${key++}`} href={href} className="link-external">
+            {linkText}
+          </a>,
+        );
+      }
     }
 
-    lastIndex = linkRegex.lastIndex;
+    lastIndex = tagRegex.lastIndex;
   }
 
-  // Add remaining text after the last link
   if (lastIndex < htmlString.length) {
     const remainingText = htmlString.substring(lastIndex);
     if (remainingText) {
@@ -102,7 +109,6 @@ const parseHtmlToReact = (
     }
   }
 
-  // If no links were found, return the original string
   return parts.length > 0 ? <>{parts}</> : htmlString;
 };
 

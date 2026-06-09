@@ -13,7 +13,8 @@
     "links": "Links",
     "design": "Design System",
     "cv": "Résumé",
-    "graph": "Site Graph"
+    "graph": "Site Graph",
+    "privacy": "Privacy"
   },
   "footer": {
     "guestbook": "Guestbook",
@@ -176,7 +177,8 @@
     "design": "Design System",
     "graph": "Knowledge Graph",
     "linktree": "Links",
-    "source": "Source Code"
+    "source": "Source Code",
+    "privacy": "Privacy"
   },
   "links": {
     "hero": "Code. Camera. Curiosity."
@@ -213,7 +215,8 @@
     "telegram": "Encrypted chats welcome — find me @harrychangtw",
     "graph": "Explore this site as an interactive knowledge graph",
     "source": "View the monorepo source code and README on GitHub",
-    "linktree": "All my links, gathered in one place"
+    "linktree": "All my links, gathered in one place",
+    "privacy": "How this site handles your data"
   },
   "letterGlitch": {
     "line1": "I was never taught to create—",
@@ -229,6 +232,33 @@
   },
   "notification": {
     "pageNotFound": "Page not found. Redirected to home."
+  },
+  "privacy": {
+    "title": "Privacy",
+    "overview": {
+      "title": "Overview",
+      "body": "This is a personal portfolio site. It does not sell data, serve ads, or require an account. Data collection is minimal and exists solely to improve the browsing experience."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "body": "This site sets a small number of functional cookies. A <strong>theme</strong> cookie persists your light/dark preference across the main site and lab subdomain. A <strong>language</strong> cookie remembers your selection between English and Traditional Chinese. No tracking cookies are set without your knowledge."
+    },
+    "analytics": {
+      "title": "Analytics",
+      "body": "<strong>PostHog</strong> collects anonymous page views, session duration, and general device info. No IP addresses are stored. <strong>Vercel Analytics</strong> measures Core Web Vitals for performance monitoring. No cookies, no personal data. Neither service collects personally identifiable information."
+    },
+    "guestbook": {
+      "title": "Guestbook",
+      "body": "Messages submitted through the guestbook are forwarded to a private <strong>Discord webhook</strong> for review. They are not displayed publicly. No account or personal information is required. All submissions are anonymous."
+    },
+    "thirdParty": {
+      "title": "Third-Party Services",
+      "body": "The <strong>Now Playing</strong> widget fetches the current track from Spotify's API. No visitor data is sent to Spotify. Fonts are fetched at build time and served locally. No third-party tracking scripts beyond the analytics listed above are loaded. The entire source code is <strong>open-source</strong> and available for inspection on GitHub."
+    },
+    "rights": {
+      "title": "Your Rights",
+      "body": "You can clear all cookies at any time through your browser settings. For questions about your data or to request removal of a guestbook message, contact <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>."
+    }
   },
   "lab": {
     "capsule": "Open · Closing September 2026",

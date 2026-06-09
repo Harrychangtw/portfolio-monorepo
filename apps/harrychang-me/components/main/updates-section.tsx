@@ -4,32 +4,41 @@ import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 
 const parseHtmlToReact = (htmlString: string): React.ReactNode => {
-  const linkRegex = /<a\s+href="([^"]*)"[^>]*>([^<]*)<\/a>/g;
+  const tagRegex =
+    /<a\s+href="([^"]*)"[^>]*>([^<]*)<\/a>|<strong>([^<]*)<\/strong>/g;
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;
   let match;
   let key = 0;
 
-  while ((match = linkRegex.exec(htmlString)) !== null) {
+  while ((match = tagRegex.exec(htmlString)) !== null) {
     if (match.index > lastIndex) {
       const textBefore = htmlString.substring(lastIndex, match.index);
       if (textBefore)
         parts.push(<span key={`text-${key++}`}>{textBefore}</span>);
     }
-    const href = match[1];
-    const linkText = match[2];
-    parts.push(
-      <a
-        key={`link-${key++}`}
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="link-external"
-      >
-        {linkText}
-      </a>,
-    );
-    lastIndex = linkRegex.lastIndex;
+    if (match[3] !== undefined) {
+      parts.push(
+        <strong key={`strong-${key++}`} className="font-medium">
+          {match[3]}
+        </strong>,
+      );
+    } else {
+      const href = match[1];
+      const linkText = match[2];
+      parts.push(
+        <a
+          key={`link-${key++}`}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-external"
+        >
+          {linkText}
+        </a>,
+      );
+    }
+    lastIndex = tagRegex.lastIndex;
   }
   if (lastIndex < htmlString.length) {
     const remainingText = htmlString.substring(lastIndex);
