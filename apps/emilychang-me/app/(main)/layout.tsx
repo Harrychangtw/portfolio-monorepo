@@ -70,23 +70,8 @@ export default function MainLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: siteConfig.author.name,
-    url: siteConfig.url,
-    image: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
-    jobTitle: siteConfig.author.jobTitle,
-    description: siteConfig.author.description,
-    knowsAbout: siteConfig.skills,
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
       <ClientLayout>
         <div className="flex-1 pt-16">{children}</div>
         <EmilyFooter />

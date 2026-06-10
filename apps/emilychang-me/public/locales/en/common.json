@@ -14,8 +14,8 @@
     "personalResources": "Resources",
     "siteNavigation": "Site Map",
     "languageSwitch": "Language",
-    "motto1":"They said pick a lane. I built a highway, launched it uninvited, and shot the chaos at f/0.95.",
-    "motto2":"Curious? So am I. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+    "motto1": "They said pick a lane. I built a highway, launched it uninvited, and shot the chaos at f/0.95.",
+    "motto2": "Curious? So am I. — <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
   },
   "about": {
     "title": "About",
@@ -39,10 +39,11 @@
     "backToProjects": "Back to projects",
     "noProjectsFound": "No projects found.",
     "year": "Year",
-    "role": "Role", 
+    "role": "Role",
     "technologies": "Technologies",
     "client": "Client",
-    "website": "Website"
+    "website": "Website",
+    "intro": "Explore my creative projects across design and creation."
   },
   "gallery": {
     "title": "Gallery",
@@ -51,7 +52,8 @@
     "camera": "Camera",
     "lens": "Lens",
     "location": "Location",
-    "tags": "Tags"
+    "tags": "Tags",
+    "canvasIntro": "View my artistic works and visual creations."
   },
   "design": {
     "title": "Design System",
@@ -115,7 +117,6 @@
     "personal_instagram": "My civilian identity",
     "art_instagram": "Archive"
   },
-  
   "letterGlitch": {
     "line1": "I was never taught to create—",
     "line2": "I was born remembering how.",

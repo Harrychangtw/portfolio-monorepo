@@ -22,10 +22,55 @@ const playfairDisplay = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.author.name,
-    template: `%s | ${siteConfig.author.name}`,
+    default: siteConfig.metadata.title.default,
+    template: siteConfig.metadata.title.template,
   },
-  description: `Portfolio of ${siteConfig.author.name}`,
+  description: siteConfig.metadata.description,
+  keywords: siteConfig.metadata.keywords,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
+  creator: siteConfig.author.name,
+  publisher: siteConfig.author.name,
+  applicationName: siteConfig.metadata.siteName,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: siteConfig.url,
+    languages: {
+      "x-default": siteConfig.url,
+      en: siteConfig.url,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    siteName: siteConfig.metadata.siteName,
+    title: siteConfig.metadata.title.default,
+    description: siteConfig.metadata.description,
+    images: [
+      {
+        url: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
+        width: siteConfig.media.ogImage.width,
+        height: siteConfig.media.ogImage.height,
+        alt: siteConfig.media.ogImage.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.metadata.title.default,
+    description: siteConfig.metadata.description,
+    images: [`${siteConfig.url}${siteConfig.media.ogImage.url}`],
+  },
   icons: {
     icon: "/favicon.png",
     apple: "/apple-icon.png",
@@ -36,30 +81,10 @@ export const metadata: Metadata = {
       },
     ],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  openGraph: {
-    title: siteConfig.author.name,
-    description: `Portfolio of ${siteConfig.author.name}`,
-    url: siteConfig.url,
-    siteName: siteConfig.author.name,
-    images: [
-      {
-        url: `${siteConfig.url}/og-image.webp`,
-        width: 1200,
-        height: 630,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.author.name,
-    description: `Portfolio of ${siteConfig.author.name}`,
-    images: [`${siteConfig.url}/og-image.webp`],
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: siteConfig.metadata.siteName,
   },
 };
 
@@ -68,6 +93,51 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        url: siteConfig.url,
+        name: siteConfig.metadata.siteName,
+        description: siteConfig.metadata.description,
+        inLanguage: "en-US",
+        publisher: {
+          "@id": `${siteConfig.url}/#person`,
+        },
+      },
+      {
+        "@type": "Person",
+        "@id": `${siteConfig.url}/#person`,
+        name: siteConfig.author.name,
+        url: siteConfig.url,
+        image: `${siteConfig.url}${siteConfig.media.ogImage.url}`,
+        sameAs: [
+          siteConfig.social.artInstagram.url,
+          siteConfig.social.personalInstagram.url,
+          siteConfig.social.spotify.url,
+          siteConfig.social.beli,
+        ],
+        jobTitle: siteConfig.author.jobTitle,
+        description: siteConfig.author.description,
+        knowsAbout: siteConfig.skills,
+        knowsLanguage: [
+          {
+            "@type": "Language",
+            name: "English",
+            alternateName: "en",
+          },
+          {
+            "@type": "Language",
+            name: "Chinese (Traditional)",
+            alternateName: "zh-TW",
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <html
       lang="en"
@@ -80,6 +150,10 @@ export default function RootLayout({
       }
     >
       <body className="bg-background text-primary antialiased min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         {children}
       </body>
     </html>
