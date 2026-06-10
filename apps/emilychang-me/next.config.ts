@@ -32,6 +32,73 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value:
+              "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+          },
+        ],
+      },
+      {
+        // Ensure robots.txt and sitemap.xml are properly served
+        source: "/robots.txt",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/plain",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, must-revalidate",
+          },
+        ],
+      },
+      {
+        source: "/sitemap.xml",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "application/xml",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, must-revalidate",
+          },
+        ],
+      },
+      {
+        // Pre-built optimized images at fixed paths. URL must change if
+        // contents change (e.g. rename the file or add a version suffix)
+        // since `immutable` tells browsers never to revalidate.
+        source: "/images/optimized/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      // Favicon/icon assets: stable filenames, rarely change. Bump filenames
+      // to bust if ever swapped.
+      ...["/favicon.png", "/apple-icon.png", "/safari-pinned-tab.svg"].map(
+        (source) => ({
+          source,
+          headers: [
+            {
+              key: "Cache-Control",
+              value: "public, max-age=31536000, immutable",
+            },
+          ],
+        }),
+      ),
+    ];
+  },
+
   // Webpack configuration for 3D models
   webpack: (config) => {
     config.module.rules.push({

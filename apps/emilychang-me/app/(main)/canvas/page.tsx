@@ -1,27 +1,45 @@
-"use client";
+import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import CanvasClient from "./page-client";
 
-import GallerySection from "@portfolio/ui/gallery-section";
-import { useLanguage } from "@portfolio/lib/contexts/language-context";
+export const metadata: Metadata = {
+  title: "Canvas",
+  description:
+    "Sketches, artworks, and the stories behind them. Emily Chang's canvas of visual creations, from quick studies to finished pieces and write-ups.",
+  keywords: [
+    "canvas",
+    "art",
+    "sketches",
+    "illustration",
+    "visual arts",
+    "Emily Chang",
+  ],
+  alternates: {
+    canonical: "/canvas",
+    languages: {
+      "x-default": "/canvas",
+      en: "/canvas",
+    },
+  },
+  openGraph: {
+    title: "Canvas | Emily Chang",
+    description:
+      "Sketches, artworks, and the stories behind them — Emily Chang's canvas of visual creations.",
+    url: `${siteConfig.url}/canvas`,
+    siteName: siteConfig.metadata.siteName,
+    type: "website",
+    locale: "en_US",
+    alternateLocale: ["zh_TW"],
+    images: [siteConfig.media.ogImage.url],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Canvas | Emily Chang",
+    description:
+      "Sketches, artworks, and the stories behind them — Emily Chang's canvas of visual creations.",
+  },
+};
 
 export default function CanvasPage() {
-  const { t } = useLanguage();
-
-  return (
-    <div className="min-h-screen">
-      <div className="container py-12 md:py-16">
-        <h1 className="font-heading italic text-3xl md:text-4xl text-primary mb-4">
-          {t("sections.canvas")}
-        </h1>
-        <p className="font-body text-secondary mb-8">
-          View my artistic works and visual creations.
-        </p>
-      </div>
-      <GallerySection
-        source="gallery"
-        sectionId="canvas"
-        basePath="canvas"
-        hoverEffect="gentle"
-      />
-    </div>
-  );
+  return <CanvasClient />;
 }

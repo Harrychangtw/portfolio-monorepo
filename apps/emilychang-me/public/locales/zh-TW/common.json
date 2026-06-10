@@ -1,0 +1,166 @@
+{
+  "header": {
+    "name": "Emily Chang",
+    "about": "關於我",
+    "projects": "精選專案",
+    "canvas": "畫布",
+    "sketches": "速寫",
+    "uses": "工具與設定",
+    "links": "連結",
+    "design": "設計系統"
+  },
+  "footer": {
+    "socialContact": "社交與聯繫",
+    "personalResources": "探索與資源",
+    "siteNavigation": "網站導覽",
+    "languageSwitch": "語言",
+    "motto1": "他們說選一條車道就好。我築了一條高速公路，不請自來地啟程，並以 f/0.95 拍下沿途的混沌。",
+    "motto2": "感到好奇？我也是。— <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>"
+  },
+  "about": {
+    "title": "關於我",
+    "roles": "角色",
+    "description": "描述"
+  },
+  "updates": {
+    "title": "最新動態"
+  },
+  "sections": {
+    "about": "關於我",
+    "projects": "精選專案",
+    "canvas": "畫布",
+    "sketches": "速寫",
+    "design": "設計",
+    "creation": "創作",
+    "art": "藝術"
+  },
+  "projects": {
+    "title": "精選專案",
+    "backToProjects": "回到專案",
+    "noProjectsFound": "未找到專案。",
+    "year": "年份",
+    "role": "角色",
+    "technologies": "技術",
+    "client": "客戶",
+    "website": "網站"
+  },
+  "gallery": {
+    "title": "藝廊",
+    "backToGallery": "回到藝廊",
+    "noGalleryFound": "未找到藝廊項目。",
+    "camera": "相機",
+    "lens": "鏡頭",
+    "location": "位置",
+    "tags": "標籤"
+  },
+  "design": {
+    "title": "設計系統",
+    "identity": "核心精神",
+    "identityText1": "世人視巴別塔為傲慢的警示，我卻視其為人類好奇心的終極試煉。我們築塔，非為挑戰神祇，只為丈量自身與蒼穹的距離。這是一場以語言、系統與敘事為磚石的攀登，意在架起腳下大地與心中理想之間的橋梁。",
+    "identityText2": "重力從不寬貸，但我仍選擇攀登。寫程式、按下快門、動手創作，都是為了一次突破而甘冒壯麗失敗的風險。我寧可在追逐烈陽中灼傷雙翼，也不願從未離開地面，因為攀升途中所見的風景，值得那場墜落。",
+    "colorPalette": "色彩系統",
+    "typeScale": "字型級距",
+    "weights": "字重",
+    "characterSet": "字元集",
+    "uppercase": "大寫字母",
+    "lowercase": "小寫字母",
+    "numbers": "數字",
+    "special": "特殊符號",
+    "display": "展示標題",
+    "largeBody": "大號正文",
+    "body": "正文",
+    "small": "小號",
+    "caption": "說明文字"
+  },
+  "social": {
+    "calendar": "預約會議",
+    "gmail": "Email",
+    "discord": "Discord",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "letterboxd": "Letterboxd",
+    "linkedin": "LinkedIn",
+    "music": "Spotify"
+  },
+  "resources": {
+    "calendar": "預約會議",
+    "resume": "履歷",
+    "manifesto": "理念",
+    "icarus": "Icarus Lab",
+    "music": "Spotify",
+    "reading": "論文閱讀清單",
+    "uses": "工具與設定",
+    "site": "作品集網站",
+    "design": "風格指南"
+  },
+  "links": {
+    "hero": "Code, camera, curiosity.",
+    "bio": "於奧義智慧進行研究的高中生"
+  },
+  "readingList": {
+    "title": "論文閱讀清單",
+    "previous": "上一頁",
+    "next": "下一頁",
+    "page": "",
+    "authors": "作者",
+    "publishedOn": "發表於"
+  },
+  "tooltips": {
+    "gmail": "隨時歡迎交流！",
+    "about": "快速了解我是誰",
+    "projects": "我做過的東西",
+    "canvas": "混亂發生的地方",
+    "music": "我的音樂調色盤",
+    "sketches": "沒那麼粗糙的那一面",
+    "personal_instagram": "我的日常身分",
+    "art_instagram": "作品檔案庫"
+  },
+
+  "letterGlitch": {
+    "line1": "我 從 未 被 教 會 創 造 ——",
+    "line2": "我 生 來 便 記 得 如 何 創 造 。",
+    "line3": "我 讓 認 知 的 喧 囂 歸 於 沉 寂 ，",
+    "line4": "讓 雙 手 想 起 昔 日 的 那 個 孩 子 。"
+  },
+  "common": {
+    "close": "關閉",
+    "openMenu": "開啟選單",
+    "closeMenu": "關閉選單"
+  },
+  "notification": {
+    "pageNotFound": "頁面未找到，已重新導向至首頁。"
+  },
+  "lab": {
+    "capsule": "2026 第二季 · 限量推出",
+    "heroLine1": "領航明日的能力。",
+    "heroLine2": "創造今日的工具。",
+    "tagline": "為年輕創作者打造的高階能力——演講、研究、敘事設計。並為準備更進一步的你，提供專屬諮詢。",
+    "heroEmailPlaceholder": "your@email.com",
+    "applyNow": "加入候補名單",
+    "formTitle": "預留你的席位",
+    "formSubtitle": "2026 年第二季啟動。搶先取得早鳥資格。",
+    "firstName": "名字",
+    "lastName": "姓氏",
+    "emailRequired": "電子郵件 *",
+    "whatInterests": "你最感興趣的是？",
+    "preferredTier": "偏好的形式",
+    "processing": "提交中...",
+    "joinWaitlist": "加入候補名單",
+    "privacyNote": "絕不濫用你的資料，隱私至上。",
+    "successTitle": "你已成功加入！",
+    "successMessage": "你是候補名單上的第 #{position} 位。請查看電子郵件中的確認信。",
+    "errorGeneric": "發生錯誤",
+    "errorNetwork": "連線失敗，請再試一次。",
+    "close": "關閉",
+    "interests": {
+      "frameworks": "研究與思維框架",
+      "speaking": "公開演講與辯論",
+      "narrative": "內容與敘事設計"
+    },
+    "tiers": {
+      "async": "自學課程",
+      "cohort": "即時共學班",
+      "consulting": "一對一諮詢"
+    }
+  }
+}

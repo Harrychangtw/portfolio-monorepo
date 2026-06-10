@@ -7,6 +7,7 @@ const { processOne, pool } = require("./engine");
 const { buildPlansForCategory } = require("./planners");
 const { makeRenderer } = require("./renderer");
 const { dim, bold, cyan, green, red, elapsed } = require("./format");
+const { buildImageDims } = require("./build-image-dims");
 /**
  * Run the image-optimization pipeline.
  *
@@ -78,4 +79,4 @@ async function runOptimize({ directories, categories, concurrency }) {
   return result;
 }
 
-module.exports = { runOptimize };
+module.exports = { runOptimize, buildImageDims };

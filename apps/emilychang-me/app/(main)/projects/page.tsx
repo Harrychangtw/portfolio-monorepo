@@ -1,26 +1,45 @@
-"use client";
+import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
+import ProjectsClient from "./page-client";
 
-import ProjectsSection from "@portfolio/ui/projects-section";
-import { useLanguage } from "@portfolio/lib/contexts/language-context";
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Design work and the ideas behind it. A collection of Emily Chang's projects across design, illustration, and creative direction.",
+  keywords: [
+    "projects",
+    "portfolio",
+    "design",
+    "illustration",
+    "creative direction",
+    "Emily Chang",
+  ],
+  alternates: {
+    canonical: "/projects",
+    languages: {
+      "x-default": "/projects",
+      en: "/projects",
+    },
+  },
+  openGraph: {
+    title: "Projects | Emily Chang",
+    description:
+      "Design work and the ideas behind it — Emily Chang's projects across design, illustration, and creative direction.",
+    url: `${siteConfig.url}/projects`,
+    siteName: siteConfig.metadata.siteName,
+    type: "website",
+    locale: "en_US",
+    alternateLocale: ["zh_TW"],
+    images: [siteConfig.media.ogImage.url],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects | Emily Chang",
+    description:
+      "Design work and the ideas behind it — Emily Chang's projects across design, illustration, and creative direction.",
+  },
+};
 
 export default function ProjectsPage() {
-  const { t } = useLanguage();
-
-  return (
-    <div className="min-h-screen">
-      <div className="container py-12 md:py-16">
-        <h1 className="font-heading italic text-3xl md:text-4xl text-primary mb-4">
-          {t("sections.projects")}
-        </h1>
-        <p className="font-body text-secondary mb-8">
-          Explore my creative projects across design and creation.
-        </p>
-      </div>
-      <ProjectsSection
-        section="Projects"
-        sectionId="projects"
-        hoverEffect="gentle"
-      />
-    </div>
-  );
+  return <ProjectsClient />;
 }

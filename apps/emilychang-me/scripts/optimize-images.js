@@ -4,15 +4,10 @@
  * @portfolio/lib/image-pipeline; this file only declares per-category specs.
  *
  * Outputs go to public/images/optimized/{projects,gallery,sketches}/...
- * Responsive variants (-{640,828,1080,1920,2560}w.webp) are consumed by the
- * shared <ImageContainer> via a custom Next loader.
  */
 
 const path = require("path");
-const {
-  runOptimize,
-  RESPONSIVE_WIDTHS,
-} = require("@portfolio/lib/image-pipeline");
+const { runOptimize } = require("@portfolio/lib/image-pipeline");
 
 const cwd = process.cwd();
 const sourcesRoot = path.join(cwd, "public", "images");
@@ -47,19 +42,16 @@ runOptimize({
       mode: "flat",
       source: path.join(sourcesRoot, "projects"),
       config: projects,
-      responsiveWidths: RESPONSIVE_WIDTHS,
     },
     gallery: {
       mode: "gallery",
       source: path.join(sourcesRoot, "gallery"),
       config: gallery,
-      responsiveWidths: RESPONSIVE_WIDTHS,
     },
     sketches: {
       mode: "square",
       source: path.join(sourcesRoot, "sketches"),
       config: sketches,
-      responsiveWidths: RESPONSIVE_WIDTHS,
     },
   },
 }).catch((err) => {

@@ -35,7 +35,10 @@ if (!fs.existsSync(SKETCHES_DIR)) {
 
 const fileNames = fs.readdirSync(SKETCHES_DIR);
 const sketchFiles = fileNames
-  .filter((f) => f.endsWith(".webp") && !f.includes("-thumb"))
+  .filter(
+    (f) =>
+      f.endsWith(".webp") && !f.includes("-thumb") && !/-\d+w\.webp$/.test(f),
+  )
   .sort();
 
 const entries = [];
