@@ -53,6 +53,3 @@ apps/harrychang-me/LIGHTHOUSE_LOCAL.md
 apps/harrychang-me/.lighthouseci-local-desktop/
 apps/harrychang-me/.lighthouseci-local-mobile/
 apps/harrychang-me/.lighthouseci-prod-desktop/
-apps/graphify-out/cache
-apps/graphify-out/.graphify_python
-apps/graphify-out/.graphify_root
