@@ -62,7 +62,9 @@ function buildImageDims({ appRoot, optimizedDir, outputFile }) {
   }
 
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
-  fs.writeFileSync(outFile, JSON.stringify(dims, null, 0) + "\n");
+  // 2-space indent matches the repo's prettier pre-commit hook, so the
+  // committed file and prebuild-regenerated output stay byte-identical.
+  fs.writeFileSync(outFile, JSON.stringify(dims, null, 2) + "\n");
   console.log(
     `✓ wrote ${count} entries to ${path.relative(appRoot, outFile)} (skipped ${skipped} variants/thumbs)`,
   );

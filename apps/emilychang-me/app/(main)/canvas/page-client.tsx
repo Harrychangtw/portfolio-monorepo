@@ -13,7 +13,7 @@ export default function CanvasClient() {
           {t("sections.canvas")}
         </h1>
         <p className="font-body text-secondary mb-8">
-          View my artistic works and visual creations.
+          {t("gallery.canvasIntro")}
         </p>
       </div>
       <GallerySection

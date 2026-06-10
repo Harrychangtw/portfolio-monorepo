@@ -52,7 +52,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    alternateLocale: ["zh_TW"],
     url: siteConfig.url,
     siteName: siteConfig.metadata.siteName,
     title: siteConfig.metadata.title.default,
@@ -103,7 +102,7 @@ export default function RootLayout({
         url: siteConfig.url,
         name: siteConfig.metadata.siteName,
         description: siteConfig.metadata.description,
-        inLanguage: ["en-US", "zh-TW"],
+        inLanguage: "en-US",
         publisher: {
           "@id": `${siteConfig.url}/#person`,
         },

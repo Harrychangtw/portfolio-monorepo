@@ -64,7 +64,9 @@ for (const fileName of sketchFiles) {
 }
 
 fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
-fs.writeFileSync(OUTPUT_FILE, JSON.stringify(entries, null, 0) + "\n");
+// 2-space indent matches the repo's prettier pre-commit hook, so the
+// committed file and prebuild-regenerated output stay byte-identical.
+fs.writeFileSync(OUTPUT_FILE, JSON.stringify(entries, null, 2) + "\n");
 console.log(
   `✓ wrote ${entries.length} sketches to ${path.relative(APP_ROOT, OUTPUT_FILE)}`,
 );

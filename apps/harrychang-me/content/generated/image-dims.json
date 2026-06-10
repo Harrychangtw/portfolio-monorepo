@@ -247,7 +247,10 @@
     "width": 1018,
     "height": 576
   },
-  "/images/optimized/blogs/9_m11d/back.webp": { "width": 1800, "height": 1200 },
+  "/images/optimized/blogs/9_m11d/back.webp": {
+    "width": 1800,
+    "height": 1200
+  },
   "/images/optimized/blogs/9_m11d/front.webp": {
     "width": 1800,
     "height": 1200

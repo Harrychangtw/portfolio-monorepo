@@ -15,7 +15,7 @@
       "default": "./image-pipeline/constants.js"
     },
     "./image-pipeline/build-image-dims": {
-      "types": "./image-pipeline/index.d.ts",
+      "types": "./image-pipeline/build-image-dims.d.ts",
       "default": "./image-pipeline/build-image-dims.js"
     },
     "./sitemap": {

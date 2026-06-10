@@ -54,10 +54,8 @@ function main() {
         lastmod: today,
         changefreq: "weekly",
         priority,
-        alternates: {
-          en: `${DOMAIN}${pagePath}`,
-          "zh-TW": `${DOMAIN}${pagePath}?lang=zh-TW`,
-        },
+        // No zh-TW alternates while the app runs with `englishOnly`;
+        // add `?lang=zh-TW` alternates when bilingual mode launches.
       });
     });
 

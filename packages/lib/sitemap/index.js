@@ -70,10 +70,10 @@ function buildLocalizedContentUrls({
   entries.forEach(({ slug, date }) => {
     if (isZhSlug(slug)) return;
 
-    const chineseSlug = `${slug}_zh-tw`;
     const chineseEntry = entries.find(
-      (e) => e.slug === chineseSlug || e.slug === `${slug}_zh-TW`,
+      (e) => e.slug === `${slug}_zh-tw` || e.slug === `${slug}_zh-TW`,
     );
+    const chineseSlug = chineseEntry?.slug;
 
     const alternates = { en: `${domain}${basePath}/${slug}` };
     if (chineseEntry) {
@@ -105,17 +105,28 @@ function buildLocalizedContentUrls({
   return urls;
 }
 
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
 // Serialize URL records to sitemap XML (with xhtml hreflang alternates).
 function buildSitemapXML(urls) {
   const urlElements = urls
     .map(({ loc, lastmod, changefreq, priority, alternates }) => {
-      let urlXML = `  <url>\n    <loc>${loc}</loc>\n`;
-      if (lastmod) urlXML += `    <lastmod>${lastmod}</lastmod>\n`;
-      if (changefreq) urlXML += `    <changefreq>${changefreq}</changefreq>\n`;
-      if (priority) urlXML += `    <priority>${priority}</priority>\n`;
+      let urlXML = `  <url>\n    <loc>${escapeXml(loc)}</loc>\n`;
+      if (lastmod) urlXML += `    <lastmod>${escapeXml(lastmod)}</lastmod>\n`;
+      if (changefreq)
+        urlXML += `    <changefreq>${escapeXml(changefreq)}</changefreq>\n`;
+      if (priority !== undefined && priority !== null)
+        urlXML += `    <priority>${escapeXml(priority)}</priority>\n`;
       if (alternates) {
         for (const [lang, href] of Object.entries(alternates)) {
-          urlXML += `    <xhtml:link rel="alternate" hreflang="${lang}" href="${href}"/>\n`;
+          urlXML += `    <xhtml:link rel="alternate" hreflang="${escapeXml(lang)}" href="${escapeXml(href)}"/>\n`;
         }
       }
       urlXML += `  </url>`;

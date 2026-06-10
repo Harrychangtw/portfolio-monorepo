@@ -42,7 +42,8 @@
     "role": "角色",
     "technologies": "技術",
     "client": "客戶",
-    "website": "網站"
+    "website": "網站",
+    "intro": "探索我在設計與創作領域的專案。"
   },
   "gallery": {
     "title": "藝廊",
@@ -51,7 +52,8 @@
     "camera": "相機",
     "lens": "鏡頭",
     "location": "位置",
-    "tags": "標籤"
+    "tags": "標籤",
+    "canvasIntro": "欣賞我的藝術作品與視覺創作。"
   },
   "design": {
     "title": "設計系統",
@@ -115,7 +117,6 @@
     "personal_instagram": "我的日常身分",
     "art_instagram": "作品檔案庫"
   },
-
   "letterGlitch": {
     "line1": "我 從 未 被 教 會 創 造 ——",
     "line2": "我 生 來 便 記 得 如 何 創 造 。",

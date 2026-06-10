@@ -36,7 +36,6 @@ export const metadata: Metadata = {
     siteName: siteConfig.metadata.siteName,
     type: "website",
     locale: "en_US",
-    alternateLocale: ["zh_TW"],
     images: [siteConfig.media.ogImage.url],
   },
   twitter: {
