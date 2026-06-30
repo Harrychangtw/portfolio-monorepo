@@ -1,12 +1,12 @@
 {
-  "timestamp": "Tue, 23 Jun 2026 06:52:03 GMT",
+  "timestamp": "Tue, 30 Jun 2026 10:29:40 GMT",
   "desktop": {
     "/|EN": {
       "route": "/",
       "locale": "EN",
-      "perfScore": 99,
+      "perfScore": 98,
       "fcp": "0.3 s",
-      "lcp": "1.0 s",
+      "lcp": "1.2 s",
       "tbt": "60 ms",
       "cls": "0",
       "si": "0.7 s"
@@ -29,7 +29,7 @@
       "lcp": "1.3 s",
       "tbt": "0 ms",
       "cls": "0",
-      "si": "1.0 s"
+      "si": "0.9 s"
     },
     "/gallery|EN": {
       "route": "/gallery",
@@ -37,7 +37,7 @@
       "perfScore": 98,
       "fcp": "0.3 s",
       "lcp": "1.1 s",
-      "tbt": "20 ms",
+      "tbt": "10 ms",
       "cls": "0",
       "si": "0.8 s"
     },
@@ -54,7 +54,7 @@
     "/cv|EN": {
       "route": "/cv",
       "locale": "EN",
-      "perfScore": 100,
+      "perfScore": 99,
       "fcp": "0.3 s",
       "lcp": "0.8 s",
       "tbt": "0 ms",
@@ -79,7 +79,7 @@
       "lcp": "1.3 s",
       "tbt": "0 ms",
       "cls": "0",
-      "si": "0.6 s"
+      "si": "0.7 s"
     },
     "/paper-reading|EN": {
       "route": "/paper-reading",
@@ -94,7 +94,7 @@
     "/manifesto|EN": {
       "route": "/manifesto",
       "locale": "EN",
-      "perfScore": 100,
+      "perfScore": 99,
       "fcp": "0.3 s",
       "lcp": "0.8 s",
       "tbt": "0 ms",
@@ -107,9 +107,9 @@
       "perfScore": 96,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "20 ms",
+      "tbt": "40 ms",
       "cls": "0",
-      "si": "1.2 s"
+      "si": "1.1 s"
     },
     "/projects/2024_09_23_chingshin_rag|EN": {
       "route": "/projects/2024_09_23_chingshin_rag",
@@ -136,8 +136,8 @@
       "locale": "EN",
       "perfScore": 95,
       "fcp": "0.3 s",
-      "lcp": "1.3 s",
-      "tbt": "60 ms",
+      "lcp": "1.4 s",
+      "tbt": "20 ms",
       "cls": "0",
       "si": "1.2 s"
     },
@@ -147,7 +147,7 @@
       "perfScore": 95,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "70 ms",
+      "tbt": "100 ms",
       "cls": "0",
       "si": "1.3 s"
     },
@@ -156,8 +156,8 @@
       "locale": "EN",
       "perfScore": 95,
       "fcp": "0.3 s",
-      "lcp": "1.4 s",
-      "tbt": "20 ms",
+      "lcp": "1.5 s",
+      "tbt": "30 ms",
       "cls": "0",
       "si": "0.8 s"
     },
@@ -169,7 +169,7 @@
       "lcp": "1.3 s",
       "tbt": "10 ms",
       "cls": "0",
-      "si": "0.9 s"
+      "si": "1.0 s"
     },
     "/gallery/2023_10_06_against_giants|EN": {
       "route": "/gallery/2023_10_06_against_giants",
@@ -177,7 +177,7 @@
       "perfScore": 96,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "10 ms",
+      "tbt": "20 ms",
       "cls": "0",
       "si": "1.0 s"
     },
@@ -207,7 +207,7 @@
       "perfScore": 91,
       "fcp": "0.3 s",
       "lcp": "1.8 s",
-      "tbt": "100 ms",
+      "tbt": "90 ms",
       "cls": "0",
       "si": "1.2 s"
     },
@@ -217,7 +217,7 @@
       "perfScore": 91,
       "fcp": "0.3 s",
       "lcp": "1.8 s",
-      "tbt": "90 ms",
+      "tbt": "100 ms",
       "cls": "0",
       "si": "1.3 s"
     },
@@ -237,7 +237,7 @@
       "perfScore": 90,
       "fcp": "0.3 s",
       "lcp": "2.0 s",
-      "tbt": "30 ms",
+      "tbt": "20 ms",
       "cls": "0",
       "si": "1.0 s"
     },
@@ -247,9 +247,9 @@
       "perfScore": 93,
       "fcp": "0.3 s",
       "lcp": "1.7 s",
-      "tbt": "40 ms",
+      "tbt": "90 ms",
       "cls": "0",
-      "si": "1.1 s"
+      "si": "1.2 s"
     },
     "/graph|EN": {
       "route": "/graph",
@@ -267,7 +267,7 @@
       "perfScore": 99,
       "fcp": "0.3 s",
       "lcp": "1.0 s",
-      "tbt": "30 ms",
+      "tbt": "40 ms",
       "cls": "0",
       "si": "0.6 s"
     },
@@ -276,20 +276,20 @@
       "locale": "繁中",
       "perfScore": 97,
       "fcp": "0.3 s",
-      "lcp": "1.3 s",
+      "lcp": "1.2 s",
       "tbt": "0 ms",
       "cls": "0",
-      "si": "0.8 s"
+      "si": "0.7 s"
     },
     "/projects|繁中": {
       "route": "/projects",
       "locale": "繁中",
-      "perfScore": 97,
+      "perfScore": 96,
       "fcp": "0.3 s",
-      "lcp": "1.2 s",
+      "lcp": "1.3 s",
       "tbt": "0 ms",
       "cls": "0",
-      "si": "1.0 s"
+      "si": "0.9 s"
     },
     "/gallery|繁中": {
       "route": "/gallery",
@@ -299,17 +299,17 @@
       "lcp": "1.2 s",
       "tbt": "0 ms",
       "cls": "0",
-      "si": "0.8 s"
+      "si": "0.9 s"
     },
     "/uses|繁中": {
       "route": "/uses",
       "locale": "繁中",
       "perfScore": 97,
       "fcp": "0.3 s",
-      "lcp": "1.2 s",
+      "lcp": "1.3 s",
       "tbt": "0 ms",
       "cls": "0",
-      "si": "0.8 s"
+      "si": "0.9 s"
     },
     "/cv|繁中": {
       "route": "/cv",
@@ -329,7 +329,7 @@
       "lcp": "1.1 s",
       "tbt": "0 ms",
       "cls": "0",
-      "si": "0.6 s"
+      "si": "0.7 s"
     },
     "/design|繁中": {
       "route": "/design",
@@ -337,9 +337,9 @@
       "perfScore": 97,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "0 ms",
+      "tbt": "30 ms",
       "cls": "0",
-      "si": "0.6 s"
+      "si": "0.7 s"
     },
     "/paper-reading|繁中": {
       "route": "/paper-reading",
@@ -367,7 +367,7 @@
       "perfScore": 96,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "20 ms",
+      "tbt": "40 ms",
       "cls": "0",
       "si": "1.1 s"
     },
@@ -387,19 +387,19 @@
       "perfScore": 96,
       "fcp": "0.3 s",
       "lcp": "1.4 s",
-      "tbt": "0 ms",
+      "tbt": "10 ms",
       "cls": "0",
       "si": "1.1 s"
     },
     "/projects/2025_08_04_debate|繁中": {
       "route": "/projects/2025_08_04_debate",
       "locale": "繁中",
-      "perfScore": 96,
+      "perfScore": 95,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "10 ms",
+      "tbt": "40 ms",
       "cls": "0",
-      "si": "1.1 s"
+      "si": "1.2 s"
     },
     "/projects/2024_08_19_classics_reimagined|繁中": {
       "route": "/projects/2024_08_19_classics_reimagined",
@@ -407,24 +407,24 @@
       "perfScore": 96,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "30 ms",
+      "tbt": "60 ms",
       "cls": "0",
       "si": "1.2 s"
     },
     "/gallery/2026_02_08_italy_mountain|繁中": {
       "route": "/gallery/2026_02_08_italy_mountain",
       "locale": "繁中",
-      "perfScore": 97,
+      "perfScore": 96,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "10 ms",
+      "tbt": "20 ms",
       "cls": "0",
       "si": "0.8 s"
     },
     "/gallery/2023_07_07_splash_of_red|繁中": {
       "route": "/gallery/2023_07_07_splash_of_red",
       "locale": "繁中",
-      "perfScore": 97,
+      "perfScore": 96,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
       "tbt": "0 ms",
@@ -437,9 +437,9 @@
       "perfScore": 97,
       "fcp": "0.3 s",
       "lcp": "1.3 s",
-      "tbt": "10 ms",
+      "tbt": "0 ms",
       "cls": "0",
-      "si": "0.9 s"
+      "si": "1.0 s"
     },
     "/gallery/2023_11_18_dusk_impressions|繁中": {
       "route": "/gallery/2023_11_18_dusk_impressions",
@@ -467,7 +467,7 @@
       "perfScore": 95,
       "fcp": "0.3 s",
       "lcp": "1.4 s",
-      "tbt": "60 ms",
+      "tbt": "100 ms",
       "cls": "0",
       "si": "1.1 s"
     },
@@ -477,7 +477,7 @@
       "perfScore": 95,
       "fcp": "0.3 s",
       "lcp": "1.4 s",
-      "tbt": "60 ms",
+      "tbt": "80 ms",
       "cls": "0",
       "si": "1.1 s"
     },
@@ -486,7 +486,7 @@
       "locale": "繁中",
       "perfScore": 96,
       "fcp": "0.3 s",
-      "lcp": "1.3 s",
+      "lcp": "1.4 s",
       "tbt": "30 ms",
       "cls": "0",
       "si": "0.9 s"
@@ -496,8 +496,8 @@
       "locale": "繁中",
       "perfScore": 96,
       "fcp": "0.3 s",
-      "lcp": "1.4 s",
-      "tbt": "0 ms",
+      "lcp": "1.3 s",
+      "tbt": "10 ms",
       "cls": "0",
       "si": "0.9 s"
     },
@@ -507,7 +507,7 @@
       "perfScore": 96,
       "fcp": "0.3 s",
       "lcp": "1.4 s",
-      "tbt": "60 ms",
+      "tbt": "70 ms",
       "cls": "0",
       "si": "1.0 s"
     },
@@ -526,12 +526,12 @@
     "/|EN": {
       "route": "/",
       "locale": "EN",
-      "perfScore": 56,
+      "perfScore": 50,
       "fcp": "0.9 s",
-      "lcp": "5.1 s",
-      "tbt": "1,290 ms",
+      "lcp": "5.5 s",
+      "tbt": "2,370 ms",
       "cls": "0",
-      "si": "2.7 s"
+      "si": "3.0 s"
     },
     "/blog|EN": {
       "route": "/blog",
@@ -539,39 +539,39 @@
       "perfScore": 67,
       "fcp": "0.9 s",
       "lcp": "5.8 s",
-      "tbt": "480 ms",
+      "tbt": "470 ms",
       "cls": "0",
-      "si": "2.0 s"
+      "si": "2.1 s"
     },
     "/projects|EN": {
       "route": "/projects",
       "locale": "EN",
-      "perfScore": 66,
+      "perfScore": 65,
       "fcp": "0.9 s",
-      "lcp": "6.0 s",
-      "tbt": "500 ms",
+      "lcp": "6.1 s",
+      "tbt": "520 ms",
       "cls": "0",
       "si": "2.2 s"
     },
     "/gallery|EN": {
       "route": "/gallery",
       "locale": "EN",
-      "perfScore": 63,
+      "perfScore": 62,
       "fcp": "0.9 s",
       "lcp": "5.9 s",
-      "tbt": "630 ms",
+      "tbt": "660 ms",
       "cls": "0",
-      "si": "2.3 s"
+      "si": "2.4 s"
     },
     "/uses|EN": {
       "route": "/uses",
       "locale": "EN",
-      "perfScore": 72,
+      "perfScore": 71,
       "fcp": "0.9 s",
-      "lcp": "5.1 s",
-      "tbt": "380 ms",
+      "lcp": "5.2 s",
+      "tbt": "400 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "2.1 s"
     },
     "/cv|EN": {
       "route": "/cv",
@@ -579,66 +579,66 @@
       "perfScore": 78,
       "fcp": "0.9 s",
       "lcp": "4.0 s",
-      "tbt": "400 ms",
+      "tbt": "380 ms",
       "cls": "0",
       "si": "1.6 s"
     },
     "/linktree|EN": {
       "route": "/linktree",
       "locale": "EN",
-      "perfScore": 66,
+      "perfScore": 65,
       "fcp": "0.9 s",
       "lcp": "6.2 s",
-      "tbt": "450 ms",
+      "tbt": "490 ms",
       "cls": "0",
-      "si": "2.4 s"
+      "si": "2.3 s"
     },
     "/design|EN": {
       "route": "/design",
       "locale": "EN",
-      "perfScore": 63,
+      "perfScore": 60,
       "fcp": "0.9 s",
       "lcp": "6.7 s",
-      "tbt": "540 ms",
+      "tbt": "660 ms",
       "cls": "0",
       "si": "2.1 s"
     },
     "/paper-reading|EN": {
       "route": "/paper-reading",
       "locale": "EN",
-      "perfScore": 71,
-      "fcp": "1.2 s",
+      "perfScore": 68,
+      "fcp": "1.7 s",
       "lcp": "5.5 s",
-      "tbt": "370 ms",
+      "tbt": "440 ms",
       "cls": "0",
-      "si": "1.9 s"
+      "si": "2.0 s"
     },
     "/manifesto|EN": {
       "route": "/manifesto",
       "locale": "EN",
-      "perfScore": 75,
+      "perfScore": 73,
       "fcp": "0.9 s",
       "lcp": "5.1 s",
-      "tbt": "300 ms",
+      "tbt": "350 ms",
       "cls": "0",
-      "si": "1.8 s"
+      "si": "1.9 s"
     },
     "/projects/2025_04_12_portfolio|EN": {
       "route": "/projects/2025_04_12_portfolio",
       "locale": "EN",
-      "perfScore": 63,
+      "perfScore": 62,
       "fcp": "0.9 s",
-      "lcp": "6.6 s",
-      "tbt": "550 ms",
+      "lcp": "6.5 s",
+      "tbt": "590 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "2.3 s"
     },
     "/projects/2024_09_23_chingshin_rag|EN": {
       "route": "/projects/2024_09_23_chingshin_rag",
       "locale": "EN",
       "perfScore": 65,
       "fcp": "0.9 s",
-      "lcp": "6.7 s",
+      "lcp": "6.6 s",
       "tbt": "480 ms",
       "cls": "0",
       "si": "2.2 s"
@@ -648,8 +648,8 @@
       "locale": "EN",
       "perfScore": 62,
       "fcp": "0.9 s",
-      "lcp": "6.9 s",
-      "tbt": "580 ms",
+      "lcp": "6.8 s",
+      "tbt": "570 ms",
       "cls": "0",
       "si": "2.2 s"
     },
@@ -659,57 +659,57 @@
       "perfScore": 63,
       "fcp": "0.9 s",
       "lcp": "6.6 s",
-      "tbt": "550 ms",
+      "tbt": "560 ms",
       "cls": "0",
       "si": "2.3 s"
     },
     "/projects/2024_08_19_classics_reimagined|EN": {
       "route": "/projects/2024_08_19_classics_reimagined",
       "locale": "EN",
-      "perfScore": 63,
+      "perfScore": 64,
       "fcp": "0.9 s",
-      "lcp": "6.6 s",
-      "tbt": "570 ms",
+      "lcp": "6.7 s",
+      "tbt": "530 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "2.1 s"
     },
     "/gallery/2026_02_08_italy_mountain|EN": {
       "route": "/gallery/2026_02_08_italy_mountain",
       "locale": "EN",
-      "perfScore": 60,
+      "perfScore": 63,
       "fcp": "0.9 s",
-      "lcp": "7.2 s",
-      "tbt": "620 ms",
+      "lcp": "7.1 s",
+      "tbt": "530 ms",
       "cls": "0",
-      "si": "2.5 s"
+      "si": "2.6 s"
     },
     "/gallery/2023_07_07_splash_of_red|EN": {
       "route": "/gallery/2023_07_07_splash_of_red",
       "locale": "EN",
-      "perfScore": 66,
+      "perfScore": 64,
       "fcp": "0.9 s",
       "lcp": "6.6 s",
-      "tbt": "450 ms",
+      "tbt": "510 ms",
       "cls": "0",
       "si": "2.1 s"
     },
     "/gallery/2023_10_06_against_giants|EN": {
       "route": "/gallery/2023_10_06_against_giants",
       "locale": "EN",
-      "perfScore": 65,
+      "perfScore": 66,
       "fcp": "0.9 s",
       "lcp": "6.5 s",
-      "tbt": "500 ms",
+      "tbt": "440 ms",
       "cls": "0",
-      "si": "2.1 s"
+      "si": "2.0 s"
     },
     "/gallery/2023_11_18_dusk_impressions|EN": {
       "route": "/gallery/2023_11_18_dusk_impressions",
       "locale": "EN",
-      "perfScore": 67,
+      "perfScore": 65,
       "fcp": "0.9 s",
       "lcp": "6.5 s",
-      "tbt": "410 ms",
+      "tbt": "470 ms",
       "cls": "0",
       "si": "2.0 s"
     },
@@ -719,219 +719,219 @@
       "perfScore": 66,
       "fcp": "0.9 s",
       "lcp": "6.6 s",
-      "tbt": "430 ms",
+      "tbt": "420 ms",
       "cls": "0",
-      "si": "2.1 s"
+      "si": "2.0 s"
     },
     "/blog/9_m11d|EN": {
       "route": "/blog/9_m11d",
       "locale": "EN",
-      "perfScore": 61,
+      "perfScore": 62,
       "fcp": "0.9 s",
       "lcp": "7.1 s",
-      "tbt": "590 ms",
+      "tbt": "550 ms",
       "cls": "0",
       "si": "2.2 s"
     },
     "/blog/2025_12_19_xpro1|EN": {
       "route": "/blog/2025_12_19_xpro1",
       "locale": "EN",
-      "perfScore": 62,
+      "perfScore": 60,
       "fcp": "0.9 s",
       "lcp": "6.9 s",
-      "tbt": "570 ms",
+      "tbt": "630 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "2.3 s"
     },
     "/blog/2025_12_22_aftersun_paris_texas|EN": {
       "route": "/blog/2025_12_22_aftersun_paris_texas",
       "locale": "EN",
-      "perfScore": 63,
+      "perfScore": 62,
       "fcp": "0.9 s",
       "lcp": "7.1 s",
-      "tbt": "520 ms",
+      "tbt": "550 ms",
       "cls": "0",
-      "si": "2.3 s"
+      "si": "2.2 s"
     },
     "/blog/2026_01_10_plushies|EN": {
       "route": "/blog/2026_01_10_plushies",
       "locale": "EN",
-      "perfScore": 64,
+      "perfScore": 61,
       "fcp": "0.9 s",
       "lcp": "7.3 s",
-      "tbt": "500 ms",
+      "tbt": "620 ms",
       "cls": "0",
       "si": "2.3 s"
     },
     "/blog/2026_02_10_synecdoche_truman|EN": {
       "route": "/blog/2026_02_10_synecdoche_truman",
       "locale": "EN",
-      "perfScore": 63,
+      "perfScore": 61,
       "fcp": "0.9 s",
       "lcp": "7.0 s",
-      "tbt": "510 ms",
+      "tbt": "630 ms",
       "cls": "0",
-      "si": "2.1 s"
+      "si": "2.2 s"
     },
     "/graph|EN": {
       "route": "/graph",
       "locale": "EN",
-      "perfScore": 50,
+      "perfScore": 61,
       "fcp": "0.9 s",
-      "lcp": "6.4 s",
-      "tbt": "1,520 ms",
+      "lcp": "3.8 s",
+      "tbt": "1,540 ms",
       "cls": "0",
-      "si": "4.0 s"
+      "si": "3.7 s"
     },
     "/|繁中": {
       "route": "/",
       "locale": "繁中",
-      "perfScore": 71,
+      "perfScore": 70,
       "fcp": "0.9 s",
-      "lcp": "4.6 s",
-      "tbt": "500 ms",
+      "lcp": "4.7 s",
+      "tbt": "530 ms",
       "cls": "0",
       "si": "1.9 s"
     },
     "/blog|繁中": {
       "route": "/blog",
       "locale": "繁中",
-      "perfScore": 71,
+      "perfScore": 70,
       "fcp": "0.9 s",
       "lcp": "5.7 s",
-      "tbt": "350 ms",
+      "tbt": "380 ms",
       "cls": "0",
       "si": "2.2 s"
     },
     "/projects|繁中": {
       "route": "/projects",
       "locale": "繁中",
-      "perfScore": 71,
+      "perfScore": 69,
       "fcp": "0.9 s",
-      "lcp": "5.6 s",
-      "tbt": "350 ms",
+      "lcp": "5.7 s",
+      "tbt": "410 ms",
       "cls": "0",
-      "si": "2.4 s"
+      "si": "2.3 s"
     },
     "/gallery|繁中": {
       "route": "/gallery",
       "locale": "繁中",
-      "perfScore": 67,
+      "perfScore": 65,
       "fcp": "0.9 s",
-      "lcp": "5.7 s",
-      "tbt": "490 ms",
+      "lcp": "5.6 s",
+      "tbt": "550 ms",
       "cls": "0.003",
-      "si": "2.3 s"
+      "si": "2.5 s"
     },
     "/uses|繁中": {
       "route": "/uses",
       "locale": "繁中",
       "perfScore": 71,
       "fcp": "0.9 s",
-      "lcp": "5.2 s",
-      "tbt": "390 ms",
+      "lcp": "5.0 s",
+      "tbt": "440 ms",
       "cls": "0",
-      "si": "2.1 s"
+      "si": "2.0 s"
     },
     "/cv|繁中": {
       "route": "/cv",
       "locale": "繁中",
-      "perfScore": 78,
+      "perfScore": 75,
       "fcp": "0.9 s",
-      "lcp": "4.1 s",
-      "tbt": "380 ms",
+      "lcp": "4.0 s",
+      "tbt": "480 ms",
       "cls": "0",
       "si": "1.5 s"
     },
     "/linktree|繁中": {
       "route": "/linktree",
       "locale": "繁中",
-      "perfScore": 67,
+      "perfScore": 65,
       "fcp": "0.9 s",
-      "lcp": "6.1 s",
-      "tbt": "440 ms",
+      "lcp": "6.2 s",
+      "tbt": "510 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "2.3 s"
     },
     "/design|繁中": {
       "route": "/design",
       "locale": "繁中",
-      "perfScore": 65,
+      "perfScore": 64,
       "fcp": "0.9 s",
-      "lcp": "7.0 s",
-      "tbt": "450 ms",
+      "lcp": "7.1 s",
+      "tbt": "490 ms",
       "cls": "0",
-      "si": "2.1 s"
+      "si": "2.2 s"
     },
     "/paper-reading|繁中": {
       "route": "/paper-reading",
       "locale": "繁中",
-      "perfScore": 71,
-      "fcp": "1.2 s",
-      "lcp": "5.6 s",
-      "tbt": "360 ms",
+      "perfScore": 68,
+      "fcp": "1.7 s",
+      "lcp": "5.5 s",
+      "tbt": "420 ms",
       "cls": "0",
-      "si": "1.9 s"
+      "si": "2.0 s"
     },
     "/manifesto|繁中": {
       "route": "/manifesto",
       "locale": "繁中",
-      "perfScore": 74,
+      "perfScore": 70,
       "fcp": "0.9 s",
-      "lcp": "5.1 s",
-      "tbt": "330 ms",
+      "lcp": "5.4 s",
+      "tbt": "400 ms",
       "cls": "0",
       "si": "1.8 s"
     },
     "/projects/2025_04_12_portfolio|繁中": {
       "route": "/projects/2025_04_12_portfolio",
       "locale": "繁中",
-      "perfScore": 62,
+      "perfScore": 59,
       "fcp": "0.9 s",
       "lcp": "6.6 s",
-      "tbt": "580 ms",
+      "tbt": "740 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "2.3 s"
     },
     "/projects/2024_09_23_chingshin_rag|繁中": {
       "route": "/projects/2024_09_23_chingshin_rag",
       "locale": "繁中",
-      "perfScore": 63,
+      "perfScore": 60,
       "fcp": "0.9 s",
-      "lcp": "6.7 s",
-      "tbt": "540 ms",
+      "lcp": "6.6 s",
+      "tbt": "660 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "2.4 s"
     },
     "/projects/2025_03_08_sitcon_keynote|繁中": {
       "route": "/projects/2025_03_08_sitcon_keynote",
       "locale": "繁中",
-      "perfScore": 62,
+      "perfScore": 61,
       "fcp": "0.9 s",
       "lcp": "6.9 s",
-      "tbt": "550 ms",
+      "tbt": "590 ms",
       "cls": "0",
       "si": "2.2 s"
     },
     "/projects/2025_08_04_debate|繁中": {
       "route": "/projects/2025_08_04_debate",
       "locale": "繁中",
-      "perfScore": 62,
+      "perfScore": 60,
       "fcp": "0.9 s",
       "lcp": "6.6 s",
-      "tbt": "580 ms",
+      "tbt": "680 ms",
       "cls": "0",
       "si": "2.2 s"
     },
     "/projects/2024_08_19_classics_reimagined|繁中": {
       "route": "/projects/2024_08_19_classics_reimagined",
       "locale": "繁中",
-      "perfScore": 62,
+      "perfScore": 60,
       "fcp": "0.9 s",
       "lcp": "6.8 s",
-      "tbt": "600 ms",
+      "tbt": "690 ms",
       "cls": "0.013",
-      "si": "2.1 s"
+      "si": "2.2 s"
     },
     "/gallery/2026_02_08_italy_mountain|繁中": {
       "route": "/gallery/2026_02_08_italy_mountain",
@@ -939,7 +939,7 @@
       "perfScore": 64,
       "fcp": "0.9 s",
       "lcp": "6.8 s",
-      "tbt": "490 ms",
+      "tbt": "500 ms",
       "cls": "0.002",
       "si": "2.5 s"
     },
@@ -948,10 +948,10 @@
       "locale": "繁中",
       "perfScore": 65,
       "fcp": "0.9 s",
-      "lcp": "6.7 s",
-      "tbt": "480 ms",
+      "lcp": "6.6 s",
+      "tbt": "470 ms",
       "cls": "0",
-      "si": "2.1 s"
+      "si": "2.0 s"
     },
     "/gallery/2023_10_06_against_giants|繁中": {
       "route": "/gallery/2023_10_06_against_giants",
@@ -959,17 +959,17 @@
       "perfScore": 66,
       "fcp": "0.9 s",
       "lcp": "6.5 s",
-      "tbt": "450 ms",
+      "tbt": "440 ms",
       "cls": "0",
       "si": "2.1 s"
     },
     "/gallery/2023_11_18_dusk_impressions|繁中": {
       "route": "/gallery/2023_11_18_dusk_impressions",
       "locale": "繁中",
-      "perfScore": 66,
+      "perfScore": 65,
       "fcp": "0.9 s",
       "lcp": "6.5 s",
-      "tbt": "440 ms",
+      "tbt": "490 ms",
       "cls": "0",
       "si": "2.1 s"
     },
@@ -979,69 +979,69 @@
       "perfScore": 65,
       "fcp": "0.9 s",
       "lcp": "6.5 s",
-      "tbt": "460 ms",
+      "tbt": "470 ms",
       "cls": "0",
-      "si": "2.2 s"
+      "si": "2.1 s"
     },
     "/blog/9_m11d|繁中": {
       "route": "/blog/9_m11d",
       "locale": "繁中",
-      "perfScore": 61,
+      "perfScore": 57,
       "fcp": "0.9 s",
       "lcp": "7.1 s",
-      "tbt": "610 ms",
+      "tbt": "800 ms",
       "cls": "0.004",
-      "si": "2.2 s"
+      "si": "2.3 s"
     },
     "/blog/2025_12_19_xpro1|繁中": {
       "route": "/blog/2025_12_19_xpro1",
       "locale": "繁中",
-      "perfScore": 60,
+      "perfScore": 61,
       "fcp": "0.9 s",
       "lcp": "6.9 s",
-      "tbt": "650 ms",
+      "tbt": "630 ms",
       "cls": "0.004",
-      "si": "2.3 s"
+      "si": "2.2 s"
     },
     "/blog/2025_12_22_aftersun_paris_texas|繁中": {
       "route": "/blog/2025_12_22_aftersun_paris_texas",
       "locale": "繁中",
-      "perfScore": 62,
+      "perfScore": 61,
       "fcp": "0.9 s",
-      "lcp": "7.1 s",
-      "tbt": "570 ms",
+      "lcp": "7.0 s",
+      "tbt": "620 ms",
       "cls": "0.004",
-      "si": "2.2 s"
+      "si": "2.3 s"
     },
     "/blog/2026_01_10_plushies|繁中": {
       "route": "/blog/2026_01_10_plushies",
       "locale": "繁中",
-      "perfScore": 62,
+      "perfScore": 61,
       "fcp": "0.9 s",
       "lcp": "7.1 s",
-      "tbt": "570 ms",
+      "tbt": "600 ms",
       "cls": "0.004",
-      "si": "2.1 s"
+      "si": "2.2 s"
     },
     "/blog/2026_02_10_synecdoche_truman|繁中": {
       "route": "/blog/2026_02_10_synecdoche_truman",
       "locale": "繁中",
       "perfScore": 61,
       "fcp": "0.9 s",
-      "lcp": "6.9 s",
-      "tbt": "590 ms",
+      "lcp": "6.8 s",
+      "tbt": "620 ms",
       "cls": "0.004",
       "si": "2.2 s"
     },
     "/graph|繁中": {
       "route": "/graph",
       "locale": "繁中",
-      "perfScore": 50,
+      "perfScore": 60,
       "fcp": "0.9 s",
-      "lcp": "5.9 s",
-      "tbt": "2,270 ms",
+      "lcp": "3.8 s",
+      "tbt": "2,290 ms",
       "cls": "0",
-      "si": "3.1 s"
+      "si": "2.7 s"
     }
   }
 }
