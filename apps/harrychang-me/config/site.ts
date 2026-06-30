@@ -60,7 +60,7 @@ export const siteConfig = {
 
   // External Resources
   external: {
-    cv: "https://drive.google.com/file/d/1g2ihvylNZd2OObDFZikBdh84S-MZh2gl/view?usp=drive_link",
+    cv: "https://drive.google.com/file/d/1eJCfe6NA7RqypEj5RqdqUwR3SQbH0pEv/view?usp=sharing",
     calendar: "https://calendar.notion.so/meet/harry-chang/ybit2gkx",
   },
 
