@@ -153,6 +153,17 @@ const nextConfig = {
   skipTrailingSlashRedirect: true,
   async rewrites() {
     return [
+      // Marp slide decks: pretty URL -> the static bundle's index.html. Asset
+      // refs inside the bundle are absolute (built with --base), so trailing
+      // slash doesn't matter. See slides/marp in the sitcon-camp-2026-ml repo.
+      {
+        source: '/slides/sitcon-camp-26-ml-course2',
+        destination: '/slides/sitcon-camp-26-ml-course2/index.html',
+      },
+      {
+        source: '/slides/sitcon-camp-26-ml-course2/',
+        destination: '/slides/sitcon-camp-26-ml-course2/index.html',
+      },
       {
         source: '/ingest/static/:path*',
         destination: 'https://us-assets.i.posthog.com/static/:path*',
