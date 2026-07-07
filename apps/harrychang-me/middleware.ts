@@ -6,17 +6,6 @@ import type { NextRequest } from "next/server";
 // are handled by next.config.mjs `redirects()` so they're served at the CDN
 // edge as 308s without invoking the middleware function.
 
-// camp.harrychang.me — a short, phone-typeable front door for the SITCON Camp
-// 2026 ML Course 2 live stations. Every path is forwarded verbatim to the
-// GPU box's Tailscale Funnel, so students type `camp.harrychang.me/tokenizer`
-// instead of the unmemorable `.ts.net` hostname off a slide.
-//
-// SINGLE SOURCE OF TRUTH: if the Funnel address changes (it is not stable
-// across `tailscale funnel` restarts), update ONLY this constant, then
-// redeploy. No per-path edits. No trailing slash.
-const CAMP_STATION_BASE_URL =
-  "https://sitconcamp-gpu-v100x4.boreray-hippocampus.ts.net";
-
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
   const hostname = request.headers.get("host") || "";
@@ -29,21 +18,6 @@ export function middleware(request: NextRequest) {
   // https://your-project-git-branch-username.vercel.app/lab
   if (isVercelPreview) {
     return NextResponse.next();
-  }
-
-  // Handle camp subdomain — forward every path to the live station Funnel.
-  // Uses 307 (Temporary) on purpose: the Funnel target is not permanent, so
-  // browsers/caches must not pin these redirects the way a 308 would.
-  const isCamp =
-    hostname.includes("camp.harrychang.me") ||
-    hostname.includes("camp.localhost");
-
-  if (isCamp) {
-    // Every path (root included) and its query string → the Funnel, unchanged.
-    const target = new URL(CAMP_STATION_BASE_URL);
-    target.pathname = url.pathname;
-    target.search = url.search;
-    return NextResponse.redirect(target, 307);
   }
 
   // Handle non-www to www redirect for main domain
