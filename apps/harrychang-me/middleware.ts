@@ -17,11 +17,6 @@ import type { NextRequest } from "next/server";
 const CAMP_STATION_BASE_URL =
   "https://sitconcamp-gpu-v100x4.boreray-hippocampus.ts.net";
 
-// Where the camp root (`camp.harrychang.me/`) sends people who don't type a
-// station path — the hosted Course 2 deck on the main site.
-const CAMP_ROOT_DESTINATION =
-  "https://www.harrychang.me/slides/sitcon-camp-26-ml-course2";
-
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
   const hostname = request.headers.get("host") || "";
@@ -44,11 +39,7 @@ export function middleware(request: NextRequest) {
     hostname.includes("camp.localhost");
 
   if (isCamp) {
-    // Bare host → the hosted deck rather than a naked directory listing.
-    if (url.pathname === "/") {
-      return NextResponse.redirect(CAMP_ROOT_DESTINATION, 307);
-    }
-    // Any station path (and its query string) → the tunnel, unchanged.
+    // Every path (root included) and its query string → the Funnel, unchanged.
     const target = new URL(CAMP_STATION_BASE_URL);
     target.pathname = url.pathname;
     target.search = url.search;
