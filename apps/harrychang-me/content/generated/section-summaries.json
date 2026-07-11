@@ -1399,5 +1399,34 @@
     "locale": "zh-TW",
     "sections": {},
     "tldr": "本站如何處理 Cookie、分析工具與你的資料"
+  },
+  "post/14-pho/en": {
+    "title": "Table 2: Of Sundays and Pho",
+    "locale": "en",
+    "sections": {
+      "Two in the Morning": "Insomniac catalogues a Sunday pho ritual from memory",
+      "The Route": "A familiar Sunday drive and walk to Hanoi Pho",
+      "Outside the Door": "Protocols and patience define the wait for elite broth",
+      "Inside": "A specific ritual of comfort, specific condiments, and cheap phở",
+      "Shamelessly": "Admitting a love for unauthentic, local Taipei-style pho",
+      "Across the Street": "Early pho lunch, errands, and observing a neighborhood balloon man",
+      "Acknowledgments": "Image credit: Millet’s *L'Angélus* representing ritual and broth"
+    },
+    "tldr": "An insomniac catalogs their Sunday morning ritual of visiting a favorite pho shop",
+    "shortName": "Sundays & Pho"
+  },
+  "post/14-pho/zh-TW": {
+    "title": "二桌：關於週日及河粉",
+    "locale": "zh-TW",
+    "sections": {
+      "凌晨兩點": "失眠時憑記憶盤點河粉店儀式",
+      "路線": "週日早起排隊吃河內河粉",
+      "門外": "慢悠悠的開店日常與排隊默契",
+      "店內": "偏好二桌，極簡裝潢中的河粉儀式與日常",
+      "無恥": "縱使最不道地，我仍無恥深愛",
+      "對街": "提早抵店看氣球人並享用河粉",
+      "致謝": "致敬米勒畫作與如儀式般的湯麵"
+    },
+    "tldr": "失眠凌晨預演，週日與母親回味河內河粉的日常儀式"
   }
 }
