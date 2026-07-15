@@ -82,6 +82,7 @@ const destinations = [
 
   // Blog
   { label: "Blog", path: "/#blog" },
+  { label: "Pho", path: "/blog/14-pho" },
   { label: "Chingshin", path: "/blog/13-chingshin" },
   { label: "US Trip", path: "/blog/12-us-trip" },
   { label: "Site Anniversery", path: "/blog/11-portfolio" },
