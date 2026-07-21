@@ -42,6 +42,8 @@ PATCH addresses critical limitations in existing TC safety resources through sev
 
 The PATCH dataset was constructed through a systematic pipeline combining automated generation with rigorous quality control.
 
+![Overview of the PATCH data pipeline, spanning synthetic generation (Safe Content, PATCH-GPT, PATCH-RT) and human curation of the PATCH-H benchmark.](images/optimized/projects/2025_05_18_patch_dataset/data_pipeline.webp)
+
 ![Distribution of unsafe samples within the PATCH dataset across 13 MLCommons harm categories and the two generation methods (PATCH-RT and PATCH-GPT).](images/optimized/projects/2025_05_18_patch_dataset/patch_distribution.webp)
 
 #### Direct Harmful Prompt Generation (PATCH-GPT)

@@ -38,6 +38,8 @@ PATCH 透過幾項關鍵創新，解決了現有繁體中文安全資源的限�
 
 PATCH 資料集是透過一個系統化的流程構建的，結合了自動化生成與嚴謹的品質控制。
 
+![framed:PATCH 資料流程總覽，涵蓋合成生成階段（Safe Content、PATCH-GPT、PATCH-RT）以及 PATCH-H 基準的人工策展階段。](images/optimized/projects/2025_05_18_patch_dataset/data_pipeline.webp)
+
 ![PATCH 資料集中不安全樣本在 13 個 MLCommons 危害類別以及兩種生成方法（PATCH-RT 和 PATCH-GPT）中的分佈情況。](images/optimized/projects/2025_05_18_patch_dataset/patch_distribution.webp)
 
 #### 直接有害 Prompt 生成 (PATCH-GPT)

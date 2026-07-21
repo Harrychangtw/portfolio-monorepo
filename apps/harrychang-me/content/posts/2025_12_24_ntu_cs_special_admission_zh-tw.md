@@ -137,7 +137,7 @@ locked: false
 - 感謝**我的朋友們**，特別是在面試前，忍受我無數次的自我介紹轟炸。
 - 最後，也最重要的，感謝 [**毛哥 EM**](https://emtech.cc/p/srecruit-ntu/) 與 [**Grasping631**](https://hackmd.io/@Grasping631/Hy_PmOzPT) 的經驗分享。
 
-希望我這篇粗淺的紀錄，也能成為未來某位探索者的微光。
+希望我這篇粗淺的紀錄，也能成為未來某位探索者的微光。如果有關於備審、面試的問題都歡迎透過 [email](mailto:chiwei@harrychang.me) 或其他方式找我聊聊～
 
 ---
 
