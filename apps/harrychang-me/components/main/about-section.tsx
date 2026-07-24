@@ -31,9 +31,13 @@ export default function AboutSection() {
                 <br />
                 <br />
                 {tHtml("bio2", "about")}
-                <br />
-                <br />
-                {tHtml("bio3", "about")}
+                {t("bio3", "about") && (
+                  <>
+                    <br />
+                    <br />
+                    {tHtml("bio3", "about")}
+                  </>
+                )}
               </p>
             </div>
             {/* Visible on mobile (mt-8), kept at bottom on desktop (mt-auto) */}

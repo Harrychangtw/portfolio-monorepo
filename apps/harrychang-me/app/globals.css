@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     /* Dark mode colors (default) */
@@ -49,7 +48,7 @@
     --popover-foreground: 0 0% 10%;
     --primary: 0 0% 10%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 53%;
+    --secondary: 0 0% 48%;
     --secondary-foreground: 0 0% 10%;
     --muted: 0 0% 92%;
     --muted-foreground: 0 0% 45%;
@@ -69,18 +68,16 @@
     --graph-node-tag: 160 50% 40%;
     --graph-edge: 0 0% 80%;
   }
-  
+
   * {
     border-color: hsl(var(--border));
   }
-  
+
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
 }
-
-
 
 /* App-specific overrides and additions */
 .container {
@@ -101,13 +98,21 @@
 
 /* View transitions */
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes slide-up {
@@ -130,7 +135,6 @@
 }
 
 /* Native View Transitions API — page enter */
-
 
 /* React-driven fallback: .page-entering class applied on route change */
 .page-entering {
@@ -156,7 +160,12 @@
   --reveal-duration: 1000ms;
   --reveal-half: 500ms; /* Duration for each expansion phase (width, then height) */
   --reveal-ease-horizontal: cubic-bezier(0, 0.85, 0.15, 1);
-  --reveal-ease-vertical: cubic-bezier(0.90, 0.0, 0.10, 1); /* Cinematic ease-in-out */
+  --reveal-ease-vertical: cubic-bezier(
+    0.9,
+    0,
+    0.1,
+    1
+  ); /* Cinematic ease-in-out */
 }
 
 .page-transition-overlay-center {
@@ -204,8 +213,9 @@
   width: 8rem;
   height: 6rem;
   /* Expands horizontally first, then vertically */
-  transition: width var(--reveal-half) var(--reveal-ease-horizontal),
-              height var(--reveal-half) var(--reveal-ease-vertical) 150ms;
+  transition:
+    width var(--reveal-half) var(--reveal-ease-horizontal),
+    height var(--reveal-half) var(--reveal-ease-vertical) 150ms;
 }
 
 .page-transition-overlay-center[data-phase="in"] .reveal-frame {
@@ -367,9 +377,15 @@
 }
 
 @keyframes pixel-pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Reduced motion */
@@ -416,14 +432,14 @@
     position: relative;
     white-space: nowrap;
   }
-  
+
   .link-external:hover {
     color: hsl(var(--primary));
     text-decoration-color: hsl(var(--accent));
   }
-  
+
   .link-external::after {
-    content: '*';
+    content: "*";
     display: inline;
     vertical-align: super;
     margin-left: 0.1em;
@@ -433,22 +449,26 @@
     font-weight: 800;
   }
 
-  
-
   /* Ensure prose content uses correct fonts */
-  .prose :where(p):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+  .prose :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     font-family: var(--font-body);
   }
-  
-  .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+
+  .prose
+    :where(h1, h2, h3, h4, h5, h6):not(
+      :where([class~="not-prose"], [class~="not-prose"] *)
+    ) {
     font-family: var(--font-heading);
   }
-  
-  .prose :where(li):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+
+  .prose :where(li):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     font-family: var(--font-body);
   }
-  
-  .prose :where(blockquote):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+
+  .prose
+    :where(blockquote):not(
+      :where([class~="not-prose"], [class~="not-prose"] *)
+    ) {
     font-family: var(--font-body);
   }
 }
@@ -463,17 +483,39 @@
 
 :root {
   /* Dark mode gradient (Neon Yellow/Green/Blue) */
-  --gradient-primary: linear-gradient(60deg, #eaff4b, #eaff4b, #3affa3, #5cd2ef, #3affa3, #eaff4b, #eaff4b);
+  --gradient-primary: linear-gradient(
+    60deg,
+    #eaff4b,
+    #eaff4b,
+    #3affa3,
+    #5cd2ef,
+    #3affa3,
+    #eaff4b,
+    #eaff4b
+  );
 }
 
 html.light {
   /* Light mode gradient (Blue/Cyan/Purple) - Darker for contrast against white */
-  --gradient-primary: linear-gradient(60deg, #2563eb, #2563eb, #C700FF, #FF6700, #C700FF, #2563eb, #2563eb);
+  --gradient-primary: linear-gradient(
+    60deg,
+    #2563eb,
+    #2563eb,
+    #c700ff,
+    #ff6700,
+    #c700ff,
+    #2563eb,
+    #2563eb
+  );
 }
 
 @keyframes gradient-loop {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 .loading-gradient {

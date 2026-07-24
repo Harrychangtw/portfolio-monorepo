@@ -7,7 +7,7 @@
   "sections": {
     "summary": {
       "title": "Summary",
-      "content": "Incoming NTU CSIE student researching LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH dataset (EACL 2026 SRW), built an award-winning RAG system recognized by Taiwan's NSTC, and spoke at SITCON (2025, 2026). Currently the youngest research intern at CyCraft Technology, working on attention-based attack taxonomies. IELTS 8.5; fluent Mandarin and English."
+      "content": "Incoming NTU CSIE student researching LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH dataset (EACL 2026 SRW), built an award-winning RAG system recognized by Taiwan's NSTC, spoke at SITCON (2025, 2026), and taught at AIS3 and SITCON Camp 2026. Currently the youngest research intern at CyCraft Technology, working on attention-based attack taxonomies. IELTS 8.5; fluent Mandarin and English."
     },
     "education": {
       "title": "Education",
@@ -80,6 +80,8 @@
             "First-authored FORTRESS (TMLR) and PATCH Dataset (EACL 2026 SRW)",
             "Created educational AI video on LLM safety, selected for AAAI 2025",
             "Delivered 40-minute talk on RAG technology at SITCON 2025 and 2026",
+            "Designed and taught a hands-on LLM jailbreak attack & defense lab at AIS3 2026",
+            "Taught ML course at SITCON Camp 2026 on interactive stations (in-browser ONNX, GPU-served Qwen)",
             "Built CNN CAPTCHA solver (100% accuracy) and Transformer trading model"
           ]
         },
@@ -180,7 +182,8 @@
           "date": "2026 – Present",
           "bullets": [
             "Multi-phase modernization for a family-run e-commerce operation (110K-member community); led employee-side discovery, phased technical proposal, and ongoing solo delivery",
-            "Production automation POC validated at 198/200 unattended runs; quantified ~60 employee hrs/week in recoverable workload"
+            "Shipped 6 automation workflows to production: 200 audited runs, 5,400+ records processed, 151 unattended hours — est. 446 staff-hours freed per month",
+            "Built a live telemetry dashboard and an ERP data-sync pipeline covering 410K+ records"
           ]
         }
       ]
@@ -212,7 +215,7 @@
     }
   },
   "footer": {
-    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 June",
+    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 July",
     "downloadPdf": "Download Full PDF"
   }
 }

@@ -1,7 +1,7 @@
 {
-  "bio1": "我是張祺煒。我打造語言模型安全系統、用無螢幕的相機攝影，也為自己不全然相信的立場辯護。工具不斷更迭，提問始終如一。",
-  "bio2": "今秋入學<a href=\"blog/2025_12_24_ntu_cs_special_admission_zh-tw/\">臺大資工</a>。我穿梭於<a href=\"projects/2025_10_12_fortress_zh-tw/\">研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate_zh-tw\">辯論</a>與<a href=\"projects/menghua-graduation-mv_zh-tw\">影片創作</a>之間，深信每種新媒介，都能教會我上一個媒介無法傳遞的事。",
-  "bio3": "從樂高積木到語言模型，那份想把事物拆解的衝動從未離開。好奇這些怎麼串在一起？<a href=\"/graph\">探索全站圖譜</a>",
+  "bio1": "我是張祺煒。我打造語言模型安全系統、用一台沒有螢幕的相機攝影，也為自己不全然相信的立場辯護。工具不斷更迭，好奇心始終如一。",
+  "bio2": "今秋入學<a href=\"blog/2025_12_24_ntu_cs_special_admission_zh-tw/\">臺大資工</a>。我在<a href=\"projects/2025_10_12_fortress_zh-tw/\">研究</a>、<a href=\"#gallery\">攝影</a>、<a href=\"projects/2025_08_04_debate_zh-tw\">辯論</a>與偶爾的<a href=\"projects/menghua-graduation-mv_zh-tw\">影片創作</a>之間穿梭——看似涇渭分明，實則頁頁相連。想一眼看盡全貌，<a href=\"/graph\">這裡有張圖譜</a>。",
+  "bio3": "",
   "roles": {
     "llmResearcher": {
       "title": "LLM 研究員",
@@ -9,9 +9,9 @@
       "description": "於 <a href=\"https://cycraft.com\">CyCraft</a> 研究語言模型安全表徵，研究發表於 <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> 與 <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL SRW</a>。"
     },
     "speaker": {
-      "title": "講者 – SITCON, AI WAVE SHOW",
-      "period": "2024 - 2026",
-      "description": "於 SITCON 發表 <a href=\"https://www.youtube.com/watch?v=ujxlUTXlC04\">RAG 系統</a> 與<a href=\"https://www.youtube.com/watch?v=GHC2oRj7TS4\">提示注入防禦</a> 相關議程，亦於 <a href=\"https://www.technice.com.tw/issues/ai/185561/\">AI WAVE SHOW 2025</a> 開幕致詞。"
+      "title": "講者與講師 – SITCON, AIS3",
+      "period": "2024 - Present",
+      "description": "於 SITCON 發表 <a href=\"https://www.youtube.com/watch?v=ujxlUTXlC04\">RAG 系統</a> 與<a href=\"https://www.youtube.com/watch?v=GHC2oRj7TS4\">提示注入防禦</a> 相關議程；於 <a href=\"https://github.com/Harrychangtw/ais3-2026-llm-jailbreak-lab\">AIS3 教授越獄攻防</a>、於 <a href=\"https://github.com/Harrychangtw/sitcon-camp-2026-ml-pt2\">SITCON Camp 教授機器學習</a>。"
     },
     "developer": {
       "title": "開發者",
