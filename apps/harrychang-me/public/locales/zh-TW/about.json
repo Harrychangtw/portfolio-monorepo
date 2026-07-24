@@ -9,7 +9,7 @@
       "description": "於 <a href=\"https://cycraft.com\">CyCraft</a> 研究語言模型安全表徵，研究發表於 <a href=\"https://openreview.net/pdf?id=lCn7RT9DGq\">TMLR</a> 與 <a href=\"https://2026.eacl.org/program/srw-accepted/#:~:text=PATCH%20Dataset:%20Empowering%20Traditional%20Chinese%20Safety%20Classifiers%20for%20Lightweight%20LLM\">EACL SRW</a>。"
     },
     "speaker": {
-      "title": "講者與講師 – SITCON, AIS3",
+      "title": "講者與講師",
       "period": "2024 - Present",
       "description": "於 SITCON 發表 <a href=\"https://www.youtube.com/watch?v=ujxlUTXlC04\">RAG 系統</a> 與<a href=\"https://www.youtube.com/watch?v=GHC2oRj7TS4\">提示注入防禦</a> 相關議程；於 <a href=\"https://github.com/Harrychangtw/ais3-2026-llm-jailbreak-lab\">AIS3 教授越獄攻防</a>、於 <a href=\"https://github.com/Harrychangtw/sitcon-camp-2026-ml-pt2\">SITCON Camp 教授機器學習</a>。"
     },
