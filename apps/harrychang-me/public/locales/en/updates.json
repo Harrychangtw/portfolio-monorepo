@@ -1,6 +1,10 @@
 {
   "entries": [
     {
+      "date": "2026-07-30",
+      "text": "[Activity] Gave an alumni talk at the AIGO program showcase at <a href=\"https://ai-wave.tw/\">AI WAVE SHOW 2026</a>"
+    },
+    {
       "date": "2026-07-23",
       "text": "[Activity] Taught a hands-on <a href=\"https://github.com/Harrychangtw/ais3-2026-llm-jailbreak-lab\">LLM jailbreak attack & defense lab</a> at AIS3 2026 (<a href=\"/slides/ais3-26/\">slides</a>)"
     },
