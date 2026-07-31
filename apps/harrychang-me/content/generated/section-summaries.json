@@ -452,31 +452,6 @@
     },
     "tldr": "自研 RAG 聊天機器人最佳化校務查詢，榮獲 GenAI Stars 特優"
   },
-  "project/2024_10_04_proj_zephyr/en": {
-    "title": "Zephyr: Fully Automated Ticket-Grabbing Bot",
-    "locale": "en",
-    "sections": {
-      "Project Overview": "Autonomous Tixcraft bot using Selenium and CNN captcha solving",
-      "Implementation Details": "CNN-based CAPTCHA solver refined through synthetic data and fine-tuning",
-      "Model Training": "Iterative CNN training using scraped data and manual error fine-tuning",
-      "Execution Flow": "Automated ticket-grabbing with JSON configuration and stability-focused simulation mechanisms",
-      "Disclaimer": "Academic research only; developer disclaims all liability and usage requests"
-    },
-    "tldr": "Automated Tixcraft bot using Selenium and CNN to bypass CAPTCHAs fast",
-    "shortName": "Zephyr Ticket Bot"
-  },
-  "project/2024_10_04_proj_zephyr/zh-TW": {
-    "title": "Zephyr: 全自動搶票機器人",
-    "locale": "zh-TW",
-    "sections": {
-      "專案概覽": "Selenium 搭配 CNN 自動破解驗證碼的拓元搶票機器人",
-      "實作細節": "CNN 辨識驗證碼，串接多執行緒自動搶票流程",
-      "模型訓練": "CNN 結合合成數據與錯題最佳化，極速辨識驗證碼",
-      "運行流程": "JSON驅動設定，結合驗證碼辨識與模擬真人的自動搶票",
-      "聲明": "學術研究用，不供原始碼、禁非法用途"
-    },
-    "tldr": "結合 CNN 辨識驗證碼的拓元全自動搶票機器人"
-  },
   "project/2024_10_09_vrc_2813b_nova/en": {
     "title": "VRC 2813B NOVA",
     "locale": "en",
@@ -819,9 +794,7 @@
   "gallery/2023_06_30_city_stroll/zh-TW": {
     "title": "城市切片",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "以影像蒐集東京的光影詩意切片"
-    },
+    "sections": { "section-0": "以影像蒐集東京的光影詩意切片" },
     "tldr": "以影像切片，拼湊東京的光影詩意"
   },
   "gallery/2023_07_07_splash_of_red/en": {
@@ -836,9 +809,7 @@
   "gallery/2023_07_07_splash_of_red/zh-TW": {
     "title": "一抹紅",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "捕捉平凡日常中，那一抹靈魂的紅意"
-    },
+    "sections": { "section-0": "捕捉平凡日常中，那一抹靈魂的紅意" },
     "tldr": "頹圮日常中的一抹紅，是生命最誠實的出口"
   },
   "gallery/2023_08_10_intersection/en": {
@@ -853,9 +824,7 @@
   "gallery/2023_08_10_intersection/zh-TW": {
     "title": "一期一會",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "夕陽下公車瞥見的短暫交會"
-    },
+    "sections": { "section-0": "夕陽下公車瞥見的短暫交會" },
     "tldr": "夕陽下巴士窗外的偶然相遇"
   },
   "gallery/2023_10_05_solitary_glow/en": {
@@ -870,9 +839,7 @@
   "gallery/2023_10_05_solitary_glow/zh-TW": {
     "title": "燈火闌珊之處",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "繁華光影交織出的城市獨白"
-    },
+    "sections": { "section-0": "繁華光影交織出的城市獨白" },
     "tldr": "於城市明暗交疊處，瞥見平凡真實的風景"
   },
   "gallery/2023_10_06_against_giants/en": {
@@ -887,9 +854,7 @@
   "gallery/2023_10_06_against_giants/zh-TW": {
     "title": "渺滄海之一粟",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "在宏大造物前，安於如塵埃般的自由"
-    },
+    "sections": { "section-0": "在宏大造物前，安於如塵埃般的自由" },
     "tldr": "覺知自身如塵，於宏大中獲自由"
   },
   "gallery/2023_10_06_guided_by_the_tides/en": {
@@ -904,9 +869,7 @@
   "gallery/2023_10_06_guided_by_the_tides/zh-TW": {
     "title": "粼粼之途",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "鹽田伴父子，愛與陪伴鋪就未來指引"
-    },
+    "sections": { "section-0": "鹽田伴父子，愛與陪伴鋪就未來指引" },
     "tldr": "父愛如粼粼光影，在陪伴中指引孩子未來路途"
   },
   "gallery/2023_10_12_lessons_from_the_light/en": {
@@ -921,9 +884,7 @@
   "gallery/2023_10_12_lessons_from_the_light/zh-TW": {
     "title": "光引",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "師生追隨光影，漫步成長之路"
-    },
+    "sections": { "section-0": "師生追隨光影，漫步成長之路" },
     "tldr": "師徒影隨，伴餘暉共赴成長之旅"
   },
   "gallery/2023_11_18_dusk_impressions/en": {
@@ -938,9 +899,7 @@
   "gallery/2023_11_18_dusk_impressions/zh-TW": {
     "title": "日暮印象",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "黃昏餘暉中，與舊日殘影無聲對話"
-    },
+    "sections": { "section-0": "黃昏餘暉中，與舊日殘影無聲對話" },
     "tldr": "落日餘暉下對鏡花水月的追懷"
   },
   "gallery/2023_12_30_against_the_unknown/en": {
@@ -955,9 +914,7 @@
   "gallery/2023_12_30_against_the_unknown/zh-TW": {
     "title": "峙",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "海邊垂釣，於深淵對峙中守護勇氣"
-    },
+    "sections": { "section-0": "海邊垂釣，於深淵對峙中守護勇氣" },
     "tldr": "垂釣深淵，以孤獨的峙立證存在"
   },
   "gallery/2023_12_30_sky_above/en": {
@@ -972,9 +929,7 @@
   "gallery/2023_12_30_sky_above/zh-TW": {
     "title": "雲端之城",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "暮色雲海中矗立的台北孤塔"
-    },
+    "sections": { "section-0": "暮色雲海中矗立的台北孤塔" },
     "tldr": "台北如雲端孤城，燈火宛若夢境"
   },
   "gallery/2024_01_06_hehuanshan/en": {
@@ -989,9 +944,7 @@
   "gallery/2024_01_06_hehuanshan/zh-TW": {
     "title": "俯仰之間",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "於山海俯仰間，尋覓生命定位"
-    },
+    "sections": { "section-0": "於山海俯仰間，尋覓生命定位" },
     "tldr": "俯仰天地山路間，尋覓心靈歸宿"
   },
   "gallery/2024_02_09_mortal_sparks/en": {
@@ -1006,9 +959,7 @@
   "gallery/2024_02_09_mortal_sparks/zh-TW": {
     "title": "人間煙火",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "煙火與信仰織就凡世詩篇"
-    },
+    "sections": { "section-0": "煙火與信仰織就凡世詩篇" },
     "tldr": "點燃凡塵願景，匯聚信仰星海"
   },
   "gallery/2024_02_14_go_where_you_feel_most_alive/en": {
@@ -1023,9 +974,7 @@
   "gallery/2024_02_14_go_where_you_feel_most_alive/zh-TW": {
     "title": "心之所向",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "用快門記錄生活當下的心靈旅行"
-    },
+    "sections": { "section-0": "用快門記錄生活當下的心靈旅行" },
     "tldr": "用攝影捕捉瞬間，活出心之所向"
   },
   "gallery/2024_04_06_city_of_tears/en": {
@@ -1040,9 +989,7 @@
   "gallery/2024_04_06_city_of_tears/zh-TW": {
     "title": "淚都",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "雨絲織就孤寂，淚都默演離別與遺忘"
-    },
+    "sections": { "section-0": "雨絲織就孤寂，淚都默演離別與遺忘" },
     "tldr": "雨中燈塔低語，港城承載如淚回憶"
   },
   "gallery/2024_07_03_simple_in_a_complex_world/en": {
@@ -1057,9 +1004,7 @@
   "gallery/2024_07_03_simple_in_a_complex_world/zh-TW": {
     "title": "行至留白",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "在喧囂中留白，讓靈魂靜觀後前行"
-    },
+    "sections": { "section-0": "在喧囂中留白，讓靈魂靜觀後前行" },
     "tldr": "繁囂中為心靈留白，靜觀靈魂甦醒再行"
   },
   "gallery/2026-us-trip/en": {
@@ -1074,9 +1019,7 @@
   "gallery/2026-us-trip/zh-TW": {
     "title": "不必和解",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "擁抱生命矛盾，忠於當下的真實"
-    },
+    "sections": { "section-0": "擁抱生命矛盾，忠於當下的真實" },
     "tldr": "擁抱生命矛盾，與未和解的自己共存"
   },
   "gallery/2026_02_08_italy_city/en": {
@@ -1091,9 +1034,7 @@
   "gallery/2026_02_08_italy_city/zh-TW": {
     "title": "間奏",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "影像捕捉穿梭古今石板路的溫柔間奏"
-    },
+    "sections": { "section-0": "影像捕捉穿梭古今石板路的溫柔間奏" },
     "tldr": "穿梭義大利古今，紀錄時光縫隙中的溫柔間奏"
   },
   "gallery/2026_02_08_italy_mountain/en": {
@@ -1108,9 +1049,7 @@
   "gallery/2026_02_08_italy_mountain/zh-TW": {
     "title": "如果在冬夜，一個旅人... ",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "冬山如散篇序言，旅途即永無終局的小說"
-    },
+    "sections": { "section-0": "冬山如散篇序言，旅途即永無終局的小說" },
     "tldr": "雪中漫旅如斷篇小說，重起頭而不求終點"
   },
   "gallery/2026_02_08_italy_town/en": {
@@ -1125,9 +1064,7 @@
   "gallery/2026_02_08_italy_town/zh-TW": {
     "title": "閒章",
     "locale": "zh-TW",
-    "sections": {
-      "section-0": "巷弄微光與偶遇，是城市靈魂的閒章"
-    },
+    "sections": { "section-0": "巷弄微光與偶遇，是城市靈魂的閒章" },
     "tldr": "旅程中的日常片羽，是點亮記憶的閒章"
   },
   "locale/about/en": {

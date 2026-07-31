@@ -17,7 +17,8 @@
     "prepare-content": "npm run optimize-images",
     "check-types": "tsc --noEmit",
     "check-links": "node scripts/check-links.mjs",
-    "build:graph": "if [ -d .venv ]; then .venv/bin/python3 scripts/build_graph.py; else python3 scripts/build_graph.py; fi",
+    "build:graph": "if [ -d .venv ]; then .venv/bin/python3 scripts/build_graph.py; else python3 scripts/build_graph.py; fi && npm run format:generated",
+    "format:generated": "prettier --write content/generated/graph-embeddings-cache.json content/generated/graph-multimodal-cache.json content/generated/graph-descriptions-cache.json content/generated/section-summaries.json",
     "dev:graph": "NEXT_PUBLIC_IS_GRAPH=true next dev -p 3002",
     "publish-content": "node scripts/publish-content.mjs"
   },

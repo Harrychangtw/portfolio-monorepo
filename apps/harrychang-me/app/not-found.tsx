@@ -32,7 +32,6 @@ const destinations = [
   { label: "SITCON 2026", path: "/projects/sitcon-2026" },
   { label: "Portfolio", path: "/projects/2025_04_12_portfolio" },
   { label: "Chingshin RAG", path: "/projects/2024_09_23_chingshin_rag" },
-  { label: "Project Zephyr", path: "/projects/2024_10_04_proj_zephyr" },
   {
     label: "Classics Reimagined",
     path: "/projects/2024_08_19_classics_reimagined",

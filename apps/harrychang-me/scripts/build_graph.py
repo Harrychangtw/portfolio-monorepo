@@ -32,6 +32,12 @@ CONTENT_DIR = Path(__file__).parent.parent / "content"
 LOCALES_DIR = Path(__file__).parent.parent / "public" / "locales"
 OUTPUT_PATH = Path(__file__).parent.parent / "public" / "graph-data.json"
 CACHE_DIR = Path(__file__).parent.parent / "content" / "generated"
+# The caches under CACHE_DIR are written minified and then pretty-printed by
+# `npm run format:generated`, which build:graph chains after this script. Don't
+# switch these writes to indent=2: Prettier packs several floats per line, while
+# indent=2 puts each on its own, which turns the 1.5M-float multimodal cache into
+# a multi-million-line file and an unreviewable diff. OUTPUT_PATH is the
+# exception — it stays on Python's indent=2 and Prettier never touches it.
 CACHE_PATH = CACHE_DIR / "graph-embeddings-cache.json"
 MULTIMODAL_CACHE_PATH = CACHE_DIR / "graph-multimodal-cache.json"
 PUBLIC_DIR = Path(__file__).parent.parent / "public"
