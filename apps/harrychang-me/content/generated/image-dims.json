@@ -1175,6 +1175,10 @@
     "width": 2000,
     "height": 1125
   },
+  "/images/optimized/projects/menghua/260510144157.webp": {
+    "width": 1200,
+    "height": 1200
+  },
   "/images/optimized/projects/menghua/lyrics-affinity-comp.webp": {
     "width": 1911,
     "height": 1200
@@ -1248,6 +1252,30 @@
     "height": 2000
   },
   "/images/optimized/projects/sitcon-2026/titlecard.webp": {
+    "width": 3000,
+    "height": 2000
+  },
+  "/images/optimized/projects/sitcon-camp-2026/station-embedding.webp": {
+    "width": 1922,
+    "height": 1200
+  },
+  "/images/optimized/projects/sitcon-camp-2026/station-next-token.webp": {
+    "width": 1922,
+    "height": 1200
+  },
+  "/images/optimized/projects/sitcon-camp-2026/station-pixel-shuffle.webp": {
+    "width": 1922,
+    "height": 1200
+  },
+  "/images/optimized/projects/sitcon-camp-2026/station-tokenizer.webp": {
+    "width": 1922,
+    "height": 1200
+  },
+  "/images/optimized/projects/sitcon-camp-2026/station-transformer.webp": {
+    "width": 1922,
+    "height": 1200
+  },
+  "/images/optimized/projects/sitcon-camp-2026/titlecard.webp": {
     "width": 3000,
     "height": 2000
   },

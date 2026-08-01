@@ -9,7 +9,7 @@ date: "2025-04-12"
 role: "Designer & Developer"
 technologies: ["Next.js", "React", "TypeScript", "TailwindCSS"]
 tooltip: "My personal portfolio, built with Next.js, Turborepo, and a file-based CMS."
-pinned: 4
+pinned: 6
 featured: true
 ---
 

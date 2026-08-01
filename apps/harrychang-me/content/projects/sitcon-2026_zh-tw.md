@@ -9,7 +9,7 @@ date: "2026-03-28"
 role: "研究員、設計師與講者"
 technologies: ["Affinity", "Apple Keynote"]
 tooltip: "在 SITCON 2026 發表了關於透過注意力機制防禦提示注入的議程。"
-pinned: 2
+pinned: 4
 featured: true
 ---
 

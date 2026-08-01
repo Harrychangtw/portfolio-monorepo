@@ -9,7 +9,7 @@ date: "2026-03-28"
 role: "Researcher, Designer & Speaker"
 technologies: ["Affinity", "Apple Keynote"]
 tooltip: "Delivered a talk on defending against prompt injections via attention mechanisms at SITCON 2026."
-pinned: 2
+pinned: 4
 featured: true
 ---
 

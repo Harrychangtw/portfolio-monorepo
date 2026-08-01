@@ -9,7 +9,7 @@ date: "2026-06-02"
 role: "攝影／後期製作"
 technologies: ["DaVinci Resolve", "Affinity"]
 tooltip: "獨力拍攝、剪輯第五屆畢業歌 MV，一個月內完成。"
-pinned: 7
+pinned: 5
 featured: true
 ---
 

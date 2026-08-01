@@ -9,7 +9,7 @@ date: "2024-09-23"
 role: "設計師與開發者"
 technologies: ["Svelte", "PyTorch", "FastAPI"]
 tooltip: "為校園從零打造 RAG 聊天機器人，並榮獲競賽特優。"
-pinned: 5
+pinned: 12
 featured: true
 ---
 

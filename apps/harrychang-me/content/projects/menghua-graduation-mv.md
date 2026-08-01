@@ -9,7 +9,7 @@ date: "2026-06-02"
 role: "Cinematographer & Editor"
 technologies: ["DaVinci Resolve", "Affinity"]
 tooltip: "Shot and cut the Class of 2026 graduation song MV solo, in under a month."
-pinned: 7
+pinned: 5
 featured: true
 ---
 

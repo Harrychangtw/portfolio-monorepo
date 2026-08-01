@@ -1365,5 +1365,32 @@
       "致謝": "致敬米勒畫作與如儀式般的湯麵"
     },
     "tldr": "失眠凌晨預演，週日與母親回味河內河粉的日常儀式"
+  },
+  "project/sitcon-camp-2026/en": {
+    "title": "SITCON Camp 2026 ML Course",
+    "locale": "en",
+    "sections": {
+      "Project Overview": "Interactive six-station ML course exploring evolution from MLP to Transformers",
+      "Teaching Design: Make Them Hit the Wall First": "Introduce concepts by breaking current models to motivate new architectures",
+      "The Deck": "Markdown Marp slides with Python-generated figures for rapid updates",
+      "How It's Built": "Precomputed artifacts with Python/FastAPI backend and fail-safe offline fallback",
+      "How It Went": "Stable infrastructure, hurried Pixel Shuffle, but successful student-led Transformer discovery",
+      "Acknowledgments": "Thanks to Andrew Kuo, organizers, testers, and Jie-Ying Lee"
+    },
+    "tldr": "Interactive, slide-free machine learning course teaching MLP to Transformers through browser-based stations",
+    "shortName": "SITCON ML Track"
+  },
+  "project/sitcon-camp-2026/zh-TW": {
+    "title": "SITCON Camp 2026 ML 課程",
+    "locale": "zh-TW",
+    "sections": {
+      "專案概覽": "17 天打造的互動式 ML 實作課程",
+      "教學設計：先讓他們撞牆": "以「撞牆」實作引導，由問題驅動模型架構學習",
+      "簡報": "以 Marp 自動化編譯簡報，快速同步視覺與數據",
+      "技術架構": "預運算產物為主，後端支援即時推論與負載平衡",
+      "現場成效": "基建穩健，互動優於示範，實作深度超乎預期",
+      "致謝": "致謝 AK、籌備團隊、壓測夥伴與李杰穎"
+    },
+    "tldr": "透過互動式關卡，從動手實作中掌握 Transformer 演進"
   }
 }
