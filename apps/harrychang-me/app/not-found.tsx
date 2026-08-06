@@ -113,10 +113,16 @@ export function NotFoundContent() {
 
   const lastScrollTime = useRef(0);
   const holdStartRef = useRef<number | null>(null);
+  const lockingRef = useRef(false);
+  const speedRef = useRef(speed);
 
   // Misalignment for split-image effect: fast = misaligned, slow = aligned
   const isAligned = speed > 420;
   const misalignment = isAligned ? 0 : Math.max(0, (420 - speed) / 6);
+
+  useEffect(() => {
+    speedRef.current = speed;
+  }, [speed]);
 
   // Mobile detection and redirect
   useEffect(() => {
@@ -130,16 +136,21 @@ export function NotFoundContent() {
     }
   }, [isMobile, router]);
 
-  // Flickering animation
+  // Flickering animation. Freezes once aligned so the label the user focused on
+  // is the one that gets locked in - otherwise the cycle keeps advancing during
+  // the 500ms hold and the destination changes out from under them.
+  // Self-scheduling so `speed` changes don't restart (and effectively stall) the
+  // cycle on every decay tick.
   useEffect(() => {
-    if (isLocked || isMobile) return;
+    if (isLocked || isMobile || isAligned) return;
 
-    const interval = setInterval(() => {
+    let timeoutId = setTimeout(function tick() {
       setCurrentIndex((prev) => (prev + 1) % destinations.length);
-    }, speed);
+      timeoutId = setTimeout(tick, speedRef.current);
+    }, speedRef.current);
 
-    return () => clearInterval(interval);
-  }, [speed, isLocked, isMobile]);
+    return () => clearTimeout(timeoutId);
+  }, [isLocked, isMobile, isAligned]);
 
   // Lock detection when aligned long enough
   useEffect(() => {
@@ -153,7 +164,12 @@ export function NotFoundContent() {
     }
 
     const checkLock = setInterval(() => {
+      // The interval can still fire for a frame after setIsLocked (passive
+      // effect cleanup runs post-paint) - don't queue a second navigation.
+      if (lockingRef.current) return;
+
       if (holdStartRef.current && Date.now() - holdStartRef.current > 500) {
+        lockingRef.current = true;
         const dest = destinations[currentIndex];
         const timeToLock = holdStartRef.current
           ? Date.now() - holdStartRef.current
@@ -276,7 +292,10 @@ export function NotFoundContent() {
           <div className="relative h-full w-full flex items-center justify-center overflow-hidden">
             <AnimatePresence mode="popLayout">
               <motion.div
-                key={isLocked ? "locked" : currentIndex}
+                // Key on the destination itself: locking now resolves to the
+                // label already on screen, so there is no exit/enter remount
+                // (and no text flash) when the lock fires.
+                key={currentDestination?.path ?? "empty"}
                 className="absolute inset-0 flex flex-col items-center justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
