@@ -1392,5 +1392,32 @@
       "致謝": "致謝 AK、籌備團隊、壓測夥伴與李杰穎"
     },
     "tldr": "透過互動式關卡，從動手實作中掌握 Transformer 演進"
+  },
+  "post/15-rain/en": {
+    "title": "The Longest Possible Route: On Walking Into the Rain",
+    "locale": "en",
+    "sections": {
+      "The Register at 290": "A Hong Kong 7-Eleven bet, soaked walkers, dry custard buns",
+      "It's Only Logical": "Errands work as permits for absurdly long rain walks",
+      "The Elective Storms": "Gear buys commitment, not dryness; Rome, Brooklyn, Hong Kong",
+      "Day Five": "A typhoon red-teams SITCON Camp and improves fireside chats",
+      "The Clearing": "Skies clear, staff talk till 3am, inverting Blade Runner",
+      "Acknowledgments": "Credits Rousseau's Tiger in a Tropical Storm cover"
+    },
+    "tldr": "Rain walks as licensed disobedience, and the typhoon that fixed camp",
+    "shortName": "Walking Into Rain"
+  },
+  "post/15-rain/zh-TW": {
+    "title": "最長的那條路：關於走進雨中",
+    "locale": "zh-TW",
+    "sections": {
+      "停在 290 的收銀機": "香港便利商店的賭局，人濕了，奶黃包沒濕",
+      "這只是合乎邏輯": "雜事是通行證，讓淋雨的路能拉到最長",
+      "選修的風暴": "裝備不為乾爽，而是讓你不退縮：羅馬、布魯克林、香港",
+      "第五天": "颱風打亂營隊，卻讓寢室裡的爐邊夜談變好",
+      "放晴": "天晴後的凌晨長談，翻轉雨中淚水的悲劇敘事",
+      "致謝": "致謝盧梭〈熱帶暴風雨中的老虎〉封面"
+    },
+    "tldr": "以雜事為許可的淋雨習慣，與一場替營隊除錯的颱風"
   }
 }

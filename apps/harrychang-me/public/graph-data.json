@@ -161,6 +161,38 @@
       "imageUrl": "images/optimized/blogs/14-pho/titlecard.webp"
     },
     {
+      "id": "post-15-rain-en-file",
+      "title": "The Longest Possible Route: On Walking Into the Rain",
+      "snippet": "Five cities, one typhoon, and an honest accounting of a habit. On errands as license, gear that keeps you committed instead of dry, and the storm you ...",
+      "nodeType": "file",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": null,
+      "parentId": "hub-post-en",
+      "tldr": "Rain walks as licensed disobedience, and the typhoon that fixed camp",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp"
+    },
+    {
+      "id": "post-15-rain-zh-TW-file",
+      "title": "最長的那條路：關於走進雨中",
+      "snippet": "五座城市、一場颱風，以及對一個習慣的誠實盤點。關於作為許可證的雜事、讓你堅持而非乾爽的裝備，還有那場你不會想念、卻會記得的風暴。",
+      "nodeType": "file",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": null,
+      "parentId": "hub-post-zh-TW",
+      "tldr": "以雜事為許可的淋雨習慣，與一場替營隊除錯的颱風",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp"
+    },
+    {
       "id": "post-2025_12_12_blog_launch-en-file",
       "title": "Introducing the Blog: A Commitment to Thinking Out Loud",
       "snippet": "## Finding the Signal in the Noise  We live in a world saturated with noise. In the rush of our daily lives, it's easy to fall into passive consumptio...",
@@ -2923,6 +2955,205 @@
       "imageUrl": "images/optimized/blogs/14-pho/titlecard.webp"
     },
     {
+      "id": "post-15-rain-en-sec-0",
+      "title": "The Longest Possible Route: On Walking Into the Rain - The Register at 290",
+      "snippet": "he Register at 290  It was morning, the way mornings work on the second half of a trip, which is to say it was almost lunch. We had just woken up. Out...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "The Register at 290",
+      "parentId": "post-15-rain-en-file",
+      "tldr": "A Hong Kong 7-Eleven bet, soaked walkers, dry custard buns",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "anchorId": "the-register-at-290"
+    },
+    {
+      "id": "post-15-rain-en-sec-1",
+      "title": "The Longest Possible Route: On Walking Into the Rain - It's Only Logical",
+      "snippet": "t's Only Logical  Before any of this gets romantic, two confessions.  First: it's cooler. Taipei in summer is unbearable, and rain fixes it, so it's o...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "It's Only Logical",
+      "parentId": "post-15-rain-en-file",
+      "tldr": "Errands work as permits for absurdly long rain walks",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "anchorId": "its-only-logical"
+    },
+    {
+      "id": "post-15-rain-en-sec-2",
+      "title": "The Longest Possible Route: On Walking Into the Rain - The Elective Storms",
+      "snippet": "he Elective Storms  The jacket was bought for a mountain trip I couldn't join. That's the whole backstory, and it stays a jacket: an Arc'teryx shell, ...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "The Elective Storms",
+      "parentId": "post-15-rain-en-file",
+      "tldr": "Gear buys commitment, not dryness; Rome, Brooklyn, Hong Kong",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "anchorId": "the-elective-storms"
+    },
+    {
+      "id": "post-15-rain-en-sec-3",
+      "title": "The Longest Possible Route: On Walking Into the Rain - Day Five",
+      "snippet": "ay Five  Now scale up. From thunderstorm to typhoon, from shorts on a slide to a hundred people.  This July I spent seven days at NYCU for SITCON Camp...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "Day Five",
+      "parentId": "post-15-rain-en-file",
+      "tldr": "A typhoon red-teams SITCON Camp and improves fireside chats",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "anchorId": "day-five"
+    },
+    {
+      "id": "post-15-rain-en-sec-4",
+      "title": "The Longest Possible Route: On Walking Into the Rain - The Clearing",
+      "snippet": "he Clearing  The weather cleared the day before the last day, and the campus did what campuses do, which is fill back up with reasons. Courses returne...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "The Clearing",
+      "parentId": "post-15-rain-en-file",
+      "tldr": "Skies clear, staff talk till 3am, inverting Blade Runner",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "anchorId": "the-clearing"
+    },
+    {
+      "id": "post-15-rain-en-sec-5",
+      "title": "The Longest Possible Route: On Walking Into the Rain - Acknowledgments",
+      "snippet": "cknowledgments  - Title image: _Tiger in a Tropical Storm_ by [Henri Rousseau](https://en.wikipedia.org/wiki/Henri_Rousseau), Public Domain, [Link](ht...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "Acknowledgments",
+      "parentId": "post-15-rain-en-file",
+      "tldr": "Credits Rousseau's Tiger in a Tropical Storm cover",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "anchorId": "acknowledgments"
+    },
+    {
+      "id": "post-15-rain-zh-TW-sec-0",
+      "title": "最長的那條路：關於走進雨中 - 停在 290 的收銀機",
+      "snippet": "在 290 的收銀機  那是個早晨，或者說是旅行後半段的那種早晨，也就是說，其實快中午了。我們剛醒。窗外，香港正繼續做著它這幾天一直在做的事：肆無忌憚地下著大雨。  我們的傘不夠。只有一把，外加一把沒人想認領的破傘。但我有那件外套，所以我和一個朋友走那趟五分鐘的路去 7-Eleven。  我們走進去...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "停在 290 的收銀機",
+      "parentId": "post-15-rain-zh-TW-file",
+      "tldr": "香港便利商店的賭局，人濕了，奶黃包沒濕",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "anchorId": "-290-"
+    },
+    {
+      "id": "post-15-rain-zh-TW-sec-1",
+      "title": "最長的那條路：關於走進雨中 - 這只是合乎邏輯",
+      "snippet": "只是合乎邏輯  在把這一切說得太過浪漫之前，我要先承認兩件事。  第一：下雨比較涼快。台北的夏天熱得難以忍受，而下雨能解決這件事，所以出門再合理不過。這就是全部的論證。我抱持著這個理由好久了，它從來不需要第二句話。  第二，我實在有點不太想承認：我幾乎從不漫無目的去淋雨。毫無計畫的散步總是自己草草收...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "這只是合乎邏輯",
+      "parentId": "post-15-rain-zh-TW-file",
+      "tldr": "雜事是通行證，讓淋雨的路能拉到最長",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp"
+    },
+    {
+      "id": "post-15-rain-zh-TW-sec-2",
+      "title": "最長的那條路：關於走進雨中 - 選修的風暴",
+      "snippet": "修的風暴  那件外套是為了一趟我沒能參與的登山之旅買的。這就是全部的來歷，而它就只是件外套：一件始祖鳥的雨衣，我在攝氏二十度以下的預設選項，裡面一件白 T，穿過整個義大利與大半個美國，直到它與其說是一件衣服，不如說是一種原則。  不過，這是對裝備最誠實的盤點。風衣有用。帽子有用。那雙 On 大概是因...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "選修的風暴",
+      "parentId": "post-15-rain-zh-TW-file",
+      "tldr": "裝備不為乾爽，而是讓你不退縮：羅馬、布魯克林、香港",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp"
+    },
+    {
+      "id": "post-15-rain-zh-TW-sec-3",
+      "title": "最長的那條路：關於走進雨中 - 第五天",
+      "snippet": "五天  現在把尺度拉大。從雷陣雨變成颱風，從溜滑梯上的短褲變成近百個人。  這個七月，我在交大待了七天參與 SITCON Camp，教機器學習課程並負責爐邊夜談，我們的夜間活動，任何人都可以開一桌、聊任何主題。第五天，颱風來了。我們撤退進宿舍整整兩天。  先從身為工人的一面來看，因為這筆帳並不好看。...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "第五天",
+      "parentId": "post-15-rain-zh-TW-file",
+      "tldr": "颱風打亂營隊，卻讓寢室裡的爐邊夜談變好",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp"
+    },
+    {
+      "id": "post-15-rain-zh-TW-sec-4",
+      "title": "最長的那條路：關於走進雨中 - 放晴",
+      "snippet": "晴  倒數第二天，天氣放晴了，校園回復了它的本分，也就是重新塞滿各種行程。課程回到教室。操場重新浮出水面。一百個人想起自己有腿。  那天晚上，雖然我們隔天還有一整天的營隊，但工人們還是三三兩兩地晃到了女宿附近 7-Eleven 外的開放用餐區。那地方打烊後很暗，也沒有冷氣，所以我用唯一可行的方式解決...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "放晴",
+      "parentId": "post-15-rain-zh-TW-file",
+      "tldr": "天晴後的凌晨長談，翻轉雨中淚水的悲劇敘事",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp"
+    },
+    {
+      "id": "post-15-rain-zh-TW-sec-5",
+      "title": "最長的那條路：關於走進雨中 - 致謝",
+      "snippet": "謝  - 封面照：_Tiger in a Tropical Storm_ by [Henri Rousseau](https://en.wikipedia.org/wiki/Henri_Rousseau)，Public Domain，[Link](https://commons.wikimedia....",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": ["Personal", "Travel"],
+      "heading": "致謝",
+      "parentId": "post-15-rain-zh-TW-file",
+      "tldr": "致謝盧梭〈熱帶暴風雨中的老虎〉封面",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp"
+    },
+    {
       "id": "post-2025_12_12_blog_launch-en-sec-0",
       "title": "Introducing the Blog: A Commitment to Thinking Out Loud - Finding the Signal in the Noise",
       "snippet": "inding the Signal in the Noise  We live in a world saturated with noise. In the rush of our daily lives, it's easy to fall into passive consumption, f...",
@@ -3751,6 +3982,23 @@
     },
     {
       "id": "post-2025_12_19_xpro1-en-sec-1",
+      "title": "The X-Pro1: On Imperfection, Slowness, and Dancing in Shackles - Postscript, Summer 2026",
+      "snippet": "ostscript, Summer 2026  It's not on my desk anymore.  I gave it to a friend earlier this year, someone who'd been circling the idea of shooting for a ...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "2025_12_19_xpro1",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
+      "date": "2025-12-19",
+      "tags": ["Photography", "Hardware", "Review"],
+      "heading": "Postscript, Summer 2026",
+      "parentId": "post-2025_12_19_xpro1-en-file",
+      "tldr": "Embracing the Fuji X-Pro1’s obsolete flaws for more intentional, human photography",
+      "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp",
+      "anchorId": "postscript-summer-2026"
+    },
+    {
+      "id": "post-2025_12_19_xpro1-en-sec-2",
       "title": "The X-Pro1: On Imperfection, Slowness, and Dancing in Shackles - Acknowledgments",
       "snippet": "cknowledgments  - Title image: _Woman Sewing beside a Cradle_ by [Gerard ter Borch](https://commons.wikimedia.org/wiki/File:Gerard_ter_Borch_-_Woman_S...",
       "nodeType": "section",
@@ -3893,6 +4141,23 @@
       "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
       "tldr": "用缺陷與限制，將記錄轉化為觀察",
       "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp"
+    },
+    {
+      "id": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
+      "title": "X-Pro1：不完美、緩慢，以及在枷鎖中跳舞 - 衝動購物 › 後記，2026 年 8 月",
+      "snippet": "記，2026 年 8 月  它已經不在我的桌上了。  今年稍早，我把它送給了一位朋友——一個一直想嘗試攝影，而且我猜想會比自己預期的更喜歡這份枷鎖的人。機身、那顆 TTArtisan 鏡頭、貴得離譜的遮光罩。全部都給了他。  我想確切地說明原因，因為「我升級了」並非真正的理由。徠卡沒有讓這台相機變差...",
+      "nodeType": "section",
+      "sourceType": "post",
+      "sourceSlug": "2025_12_19_xpro1",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/2025_12_19_xpro1",
+      "date": "2025-12-19",
+      "tags": ["Photography", "Hardware", "Review"],
+      "heading": "後記，2026 年 8 月",
+      "parentId": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "tldr": "擁抱 X-Pro1 的缺陷，在限制中找回攝影初心",
+      "imageUrl": "images/optimized/blogs/2025_12_19_xpro1/titlecard.webp",
+      "anchorId": "2026-8-"
     },
     {
       "id": "post-2025_12_19_xpro1-zh-TW-sec-1",
@@ -11583,6 +11848,38 @@
       "parentId": "post-14-pho-zh-TW-file",
       "imageUrl": "images/optimized/blogs/14-pho/titlecard.webp",
       "mediaSource": "images/optimized/blogs/14-pho/titlecard.webp"
+    },
+    {
+      "id": "post-15-rain-en-img-cover",
+      "title": "The Longest Possible Route: On Walking Into the Rain (cover)",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "en",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": [],
+      "heading": null,
+      "parentId": "post-15-rain-en-file",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "mediaSource": "images/optimized/blogs/15-rain/titlecard.webp"
+    },
+    {
+      "id": "post-15-rain-zh-TW-img-cover",
+      "title": "最長的那條路：關於走進雨中 (cover)",
+      "snippet": "",
+      "nodeType": "image",
+      "sourceType": "post",
+      "sourceSlug": "15-rain",
+      "locale": "zh-TW",
+      "url": "https://www.harrychang.me/blog/15-rain",
+      "date": "2026-08-07",
+      "tags": [],
+      "heading": null,
+      "parentId": "post-15-rain-zh-TW-file",
+      "imageUrl": "images/optimized/blogs/15-rain/titlecard.webp",
+      "mediaSource": "images/optimized/blogs/15-rain/titlecard.webp"
     },
     {
       "id": "post-2025_12_12_blog_launch-en-img-cover",
@@ -20570,7 +20867,7 @@
     {
       "id": "tag-personal",
       "title": "Personal",
-      "snippet": "6 documents",
+      "snippet": "8 documents",
       "nodeType": "tag",
       "sourceType": "locale",
       "sourceSlug": "personal",
@@ -20584,7 +20881,7 @@
     {
       "id": "tag-travel",
       "title": "Travel",
-      "snippet": "2 documents",
+      "snippet": "4 documents",
       "nodeType": "tag",
       "sourceType": "locale",
       "sourceSlug": "travel",
@@ -22260,6 +22557,90 @@
       "linkType": "structural"
     },
     {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-0",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-1",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-2",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-3",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-4",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-5",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-img-cover",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-1",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-2",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-3",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-4",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-5",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-img-cover",
+      "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
       "source": "post-2025_12_12_blog_launch-en-file",
       "target": "post-2025_12_12_blog_launch-en-sec-0",
       "weight": 1.0,
@@ -22711,6 +23092,12 @@
     },
     {
       "source": "post-2025_12_19_xpro1-en-file",
+      "target": "post-2025_12_19_xpro1-en-sec-2",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-file",
       "target": "post-2025_12_19_xpro1-en-img-cover",
       "weight": 0.8,
       "linkType": "structural"
@@ -22845,6 +23232,12 @@
       "source": "post-2025_12_19_xpro1-zh-TW-sec-0-6",
       "target": "post-2025_12_19_xpro1-zh-TW-sec-0-6-img-1",
       "weight": 0.8,
+      "linkType": "structural"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-zh-TW-sec-0",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
+      "weight": 1.0,
       "linkType": "structural"
     },
     {
@@ -28363,6 +28756,12 @@
     },
     {
       "source": "hub-post-en",
+      "target": "post-15-rain-en-file",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "hub-post-en",
       "target": "post-2025_12_12_blog_launch-en-file",
       "weight": 1.0,
       "linkType": "structural"
@@ -28442,6 +28841,12 @@
     {
       "source": "hub-post-zh-TW",
       "target": "post-14-pho-zh-TW-file",
+      "weight": 1.0,
+      "linkType": "structural"
+    },
+    {
+      "source": "hub-post-zh-TW",
+      "target": "post-15-rain-zh-TW-file",
       "weight": 1.0,
       "linkType": "structural"
     },
@@ -29376,6 +29781,18 @@
       "linkType": "tag"
     },
     {
+      "source": "tag-personal",
+      "target": "post-15-rain-en-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-personal",
+      "target": "post-15-rain-zh-TW-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
       "source": "tag-travel",
       "target": "post-12-us-trip-en-file",
       "weight": 0.6,
@@ -29384,6 +29801,18 @@
     {
       "source": "tag-travel",
       "target": "post-12-us-trip-zh-TW-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-travel",
+      "target": "post-15-rain-en-file",
+      "weight": 0.6,
+      "linkType": "tag"
+    },
+    {
+      "source": "tag-travel",
+      "target": "post-15-rain-zh-TW-file",
       "weight": 0.6,
       "linkType": "tag"
     },
@@ -29964,8 +30393,32 @@
       "linkType": "tag"
     },
     {
+      "source": "gallery-2023_10_05_solitary_glow-en-img-gal-1",
+      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_city-en-img-gal-5",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-5",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2026_02_08_italy_town-en-img-gal-2",
       "target": "gallery-2026_02_08_italy_town-zh-TW-img-gal-2",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-2",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-2",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-1",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -29976,26 +30429,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-en-img-gal-2",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-gal-2",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-sitcon-2026-en-img-cover",
       "target": "project-sitcon-2026-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-en-img-gal-1",
-      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_mountain-en-img-gal-1",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-gal-1",
+      "source": "gallery-2026_02_08_italy_mountain-en-img-gal-2",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-gal-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30012,12 +30453,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-3-img-5",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-5",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_03_08_sitcon_keynote-en-img-cover",
       "target": "project-2025_03_08_sitcon_keynote-zh-TW-img-cover",
       "weight": 1.0,
@@ -30030,20 +30465,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-1",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2024_09_23_chingshin_rag-en-sec-2-1-img-1",
       "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-en-sec-2-6-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30054,26 +30477,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-1",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_city-en-img-gal-5",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-5",
+      "source": "gallery-2026_02_08_italy_mountain-en-img-gal-1",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-gal-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "post-10-lego-mount-en-sec-0-5-img-1",
       "target": "post-10-lego-mount-zh-TW-sec-0-5-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-9_m11d-en-sec-6-img-0",
-      "target": "post-9_m11d-zh-TW-sec-6-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30086,12 +30497,6 @@
     {
       "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-4",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-4",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-en-img-gal-10",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-10",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30114,20 +30519,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2026_02_10_synecdoche_truman-en-sec-0-1-img-1",
-      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-1-img-1",
+      "source": "post-2026_02_10_synecdoche_truman-en-sec-0-0-img-0",
+      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-0-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "project-2024_10_09_vrc_2813b_nova-en-img-cover",
       "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-0-img-0",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30144,18 +30543,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-0",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-2",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-2",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_06_30_city_stroll-en-img-gal-5",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-5",
       "weight": 1.0,
@@ -30164,12 +30551,6 @@
     {
       "source": "gallery-2023_07_07_splash_of_red-en-img-gal-5",
       "target": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-5",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_city-en-img-gal-11",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-11",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30186,20 +30567,26 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-img-cover",
+      "target": "post-15-rain-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_13_sisyphus-en-img-cover",
       "target": "post-2025_12_13_sisyphus-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_03_08_sitcon_keynote-en-sec-2-img-0",
-      "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-2-img-0",
+      "source": "post-2025_12_19_xpro1-en-sec-0-4-img-0",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-4-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-sitcon-camp-2026-en-sec-1-img-1",
-      "target": "project-sitcon-camp-2026-zh-TW-sec-1-img-1",
+      "source": "project-2025_03_08_sitcon_keynote-en-sec-2-img-0",
+      "target": "project-2025_03_08_sitcon_keynote-zh-TW-sec-2-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30212,12 +30599,6 @@
     {
       "source": "gallery-2024_02_09_mortal_sparks-en-img-cover",
       "target": "gallery-2024_02_09_mortal_sparks-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_mountain-en-img-cover",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30246,12 +30627,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-4-img-0",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-4-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_22_aftersun_paris_texas-en-sec-0-1-img-0",
       "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-1-img-0",
       "weight": 1.0,
@@ -30264,20 +30639,38 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-3-img-6",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-6",
+      "source": "post-9_m11d-en-sec-5-img-2",
+      "target": "post-9_m11d-zh-TW-sec-5-img-2",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-9_m11d-en-sec-6-img-0",
+      "target": "post-9_m11d-zh-TW-sec-6-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-4",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-4",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-0-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-3-img-2",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_01_03_powerplay-en-sec-3-img-7",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-7",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_01_05_aaai_video-en-sec-2-img-2",
-      "target": "project-2025_01_05_aaai_video-zh-TW-sec-2-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30294,14 +30687,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_05_18_patch_dataset-en-img-cover",
-      "target": "project-2025_05_18_patch_dataset-zh-TW-img-cover",
+      "source": "project-2025_10_12_fortress-en-sec-0-4-1-img-0",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-1-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-en-sec-0-4-1-img-0",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-1-img-0",
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-0",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-10",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-10",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30318,14 +30717,38 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_06_against_giants-en-img-gal-0",
+      "target": "gallery-2023_10_06_against_giants-zh-TW-img-gal-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_01_06_hehuanshan-en-img-cover",
       "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-3",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-3",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_02_09_mortal_sparks-en-img-gal-1",
       "target": "gallery-2024_02_09_mortal_sparks-zh-TW-img-gal-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-img-gal-0",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-img-gal-10",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-10",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30354,92 +30777,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-img-cover",
-      "target": "post-2025_12_19_xpro1-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-9_m11d-en-sec-4-img-0",
-      "target": "post-9_m11d-zh-TW-sec-4-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-sitcon-camp-2026-en-sec-1-img-0",
-      "target": "project-sitcon-camp-2026-zh-TW-sec-1-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-10",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-10",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_04_06_city_of_tears-en-img-cover",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-en-img-gal-8",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-8",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_14_affinity-en-sec-0-2-img-1",
-      "target": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_22_aftersun_paris_texas-en-sec-0-2-img-0",
-      "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-2-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_22_aftersun_paris_texas-en-sec-0-6-img-0",
-      "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-6-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-9_m11d-en-img-cover",
-      "target": "post-9_m11d-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-4",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-4",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_01_03_powerplay-en-sec-3-img-2",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-2",
+      "source": "post-2026_02_10_synecdoche_truman-en-sec-0-1-img-1",
+      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-1-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30450,14 +30789,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_05_18_patch_dataset-en-sec-0-3-0-img-1",
-      "target": "project-2025_05_18_patch_dataset-zh-TW-sec-0-3-0-img-1",
+      "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-5-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
+      "source": "project-2025_08_04_debate-en-sec-2-6-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30474,8 +30813,68 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-en-img-cover",
-      "target": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
+      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-2",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-2",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_04_06_city_of_tears-en-img-cover",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_14_affinity-en-sec-0-2-img-1",
+      "target": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-sec-0-3-img-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-3-img-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_22_aftersun_paris_texas-en-sec-0-2-img-0",
+      "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-2-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_22_aftersun_paris_texas-en-sec-0-6-img-0",
+      "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-6-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-9_m11d-en-sec-0-img-0",
+      "target": "post-9_m11d-zh-TW-sec-0-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_08_19_classics_reimagined-en-sec-2-3-img-0",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-3-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-1",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_05_18_patch_dataset-en-sec-0-3-0-img-1",
+      "target": "project-2025_05_18_patch_dataset-zh-TW-sec-0-3-0-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30504,12 +30903,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-3",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-3",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-5",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-5",
       "weight": 1.0,
@@ -30522,8 +30915,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-0",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-0",
+      "source": "gallery-2026-us-trip-en-img-gal-8",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-8",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30546,12 +30939,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-en-img-gal-9",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-9",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2026_02_08_italy_mountain-en-img-gal-10",
       "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-gal-10",
       "weight": 1.0,
@@ -30570,32 +30957,26 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2026_02_10_synecdoche_truman-en-sec-0-0-img-0",
-      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-0-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-9_m11d-en-sec-2-img-0",
-      "target": "post-9_m11d-zh-TW-sec-2-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-9_m11d-en-sec-5-img-1",
       "target": "post-9_m11d-zh-TW-sec-5-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-3-img-2",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3-img-2",
+      "source": "post-9_m11d-en-sec-5-img-4",
+      "target": "post-9_m11d-zh-TW-sec-5-img-4",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-3-img-0",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-0",
+      "source": "project-2024_08_19_classics_reimagined-en-sec-2-2-2-img-0",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-2",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30606,8 +30987,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-7",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-7",
+      "source": "project-sitcon-camp-2026-en-sec-1-img-1",
+      "target": "project-sitcon-camp-2026-zh-TW-sec-1-img-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_11_18_dusk_impressions-en-img-gal-2",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30618,20 +31005,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-2",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-2",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-cover",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-5",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-5",
+      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-1",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30642,14 +31017,26 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-3",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-3",
+      "source": "gallery-2026-us-trip-en-img-gal-1",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-img-gal-4",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-4",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2026-us-trip-en-img-gal-14",
       "target": "gallery-2026-us-trip-zh-TW-img-gal-14",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026_02_08_italy_mountain-en-img-gal-0",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-gal-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30678,20 +31065,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-2-3-img-0",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-3-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-2",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-2",
+      "source": "post-9_m11d-en-sec-5-img-3",
+      "target": "post-9_m11d-zh-TW-sec-5-img-3",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "project-2024_10_09_vrc_2813b_nova-en-sec-2-2-img-1",
       "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-2-2-img-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-en-sec-3-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30708,8 +31095,26 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2025_08_04_debate-en-sec-2-6-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-sitcon-camp-2026-en-img-cover",
       "target": "project-sitcon-camp-2026-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-8",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-8",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_07_07_splash_of_red-en-img-gal-0",
+      "target": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30750,14 +31155,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-1",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-1",
+      "source": "gallery-2026_02_08_italy_city-en-img-gal-3",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-3",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-en-img-gal-8",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-8",
+      "source": "gallery-2026_02_08_italy_mountain-en-img-cover",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30774,14 +31179,32 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-3-img-1",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-3-img-1",
+      "source": "post-2025_12_19_xpro1-en-sec-0-2-img-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-2-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-7-img-0",
-      "target": "post-9_m11d-zh-TW-sec-7-img-0",
+      "source": "post-9_m11d-en-sec-2-img-0",
+      "target": "post-9_m11d-zh-TW-sec-2-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-9_m11d-en-img-cover",
+      "target": "post-9_m11d-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-0",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-en-sec-3-img-6",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-6",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30798,14 +31221,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-sitcon-camp-2026-en-sec-1-img-0",
+      "target": "project-sitcon-camp-2026-zh-TW-sec-1-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_06_30_city_stroll-en-img-gal-3",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-3",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-en-img-gal-0",
-      "target": "gallery-2023_10_06_against_giants-zh-TW-img-gal-0",
+      "source": "gallery-2023_07_07_splash_of_red-en-img-cover",
+      "target": "gallery-2023_07_07_splash_of_red-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30816,20 +31245,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-4",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-4",
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-9",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-9",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026_02_08_italy_city-en-img-gal-3",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-3",
+      "source": "gallery-2026_02_08_italy_city-en-img-gal-9",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-9",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30858,14 +31281,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-12-us-trip-en-img-cover",
-      "target": "post-12-us-trip-zh-TW-img-cover",
+      "source": "post-12-us-trip-en-sec-8-img-1",
+      "target": "post-12-us-trip-zh-TW-sec-8-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "post-13-chingshin-en-img-cover",
       "target": "post-13-chingshin-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-img-cover",
+      "target": "post-2025_12_19_xpro1-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30882,32 +31311,26 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-7-img-1",
-      "target": "post-9_m11d-zh-TW-sec-7-img-1",
+      "source": "project-2025_01_03_powerplay-en-sec-3-img-2",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-2-2-2-img-0",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-2-2-2-img-1",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_01_05_aaai_video-en-img-cover",
-      "target": "project-2025_01_05_aaai_video-zh-TW-img-cover",
+      "source": "project-2025_01_05_aaai_video-en-sec-2-img-2",
+      "target": "project-2025_01_05_aaai_video-zh-TW-sec-2-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_05_18_patch_dataset-en-sec-0-6-img-0",
       "target": "project-2025_05_18_patch_dataset-zh-TW-sec-0-6-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_05_18_patch_dataset-en-img-cover",
+      "target": "project-2025_05_18_patch_dataset-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30924,8 +31347,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_07_07_splash_of_red-en-img-cover",
-      "target": "gallery-2023_07_07_splash_of_red-zh-TW-img-cover",
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-cover",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30942,20 +31365,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-cover",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2026_02_08_italy_city-en-img-gal-2",
       "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-en-img-gal-0",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-img-gal-0",
+      "source": "gallery-2026_02_08_italy_city-en-img-gal-8",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-8",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -30978,32 +31395,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-3-img-1",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-1",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-12-us-trip-en-sec-8-img-1",
-      "target": "post-12-us-trip-zh-TW-sec-8-img-1",
+      "source": "gallery-2026_02_08_italy_city-en-img-gal-4",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-4",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "post-2025_12_12_blog_launch-en-img-cover",
       "target": "post-2025_12_12_blog_launch-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_19_xpro1-en-sec-0-3-img-2",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-3-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31026,12 +31425,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-1-img-0",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_04_12_portfolio-en-sec-0-img-1",
       "target": "project-2025_04_12_portfolio-zh-TW-sec-0-img-1",
       "weight": 1.0,
@@ -31044,14 +31437,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-sitcon-camp-2026-en-sec-1-img-2",
-      "target": "project-sitcon-camp-2026-zh-TW-sec-1-img-2",
+      "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_07_07_splash_of_red-en-img-gal-0",
-      "target": "gallery-2023_07_07_splash_of_red-zh-TW-img-gal-0",
+      "source": "project-sitcon-camp-2026-en-sec-1-img-2",
+      "target": "project-sitcon-camp-2026-zh-TW-sec-1-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31068,38 +31461,32 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_11_18_dusk_impressions-en-img-gal-2",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-2",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_04_06_city_of_tears-en-img-gal-2",
       "target": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-11",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-11",
+      "source": "gallery-2026-us-trip-en-img-gal-2",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-en-img-gal-4",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-4",
+      "source": "post-2025_12_19_xpro1-en-sec-0-0-img-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-0-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-5-img-2",
-      "target": "post-9_m11d-zh-TW-sec-5-img-2",
+      "source": "post-9_m11d-en-sec-4-img-0",
+      "target": "post-9_m11d-zh-TW-sec-4-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-5-img-4",
-      "target": "post-9_m11d-zh-TW-sec-5-img-4",
+      "source": "project-2025_08_04_debate-en-sec-2-5-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31110,20 +31497,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-5",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-5",
+      "source": "gallery-2026_02_08_italy_city-en-img-gal-11",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-11",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "post-12-us-trip-en-sec-2-img-0",
       "target": "post-12-us-trip-zh-TW-sec-2-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_19_xpro1-en-sec-0-2-img-1",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-2-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31140,8 +31521,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2026_02_10_synecdoche_truman-en-sec-0-1-img-0",
+      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-1-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2026_02_10_synecdoche_truman-en-sec-0-2-img-1",
       "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-2-img-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-en-sec-2-4-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31158,14 +31551,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-0",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-cover",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-2",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-2",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31194,8 +31587,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-4-img-2",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-4-img-2",
+      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-3",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31212,20 +31605,38 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_05_solitary_glow-en-img-cover",
+      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_05_solitary_glow-en-img-gal-2",
+      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-2",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-img-gal-6",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-6",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-12-us-trip-en-sec-0-img-0",
       "target": "post-12-us-trip-zh-TW-sec-0-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-5",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
+      "source": "post-9_m11d-en-sec-7-img-1",
+      "target": "post-9_m11d-zh-TW-sec-7-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-6",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
+      "source": "project-2025_01_03_powerplay-en-sec-3-img-5",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-5",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31236,14 +31647,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-en-img-cover",
-      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-cover",
+      "source": "project-2025_08_04_debate-en-img-cover",
+      "target": "project-2025_08_04_debate-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-2",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-2",
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-5",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-5",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31260,20 +31671,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-5-img-3",
-      "target": "post-9_m11d-zh-TW-sec-5-img-3",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_01_03_powerplay-en-img-cover",
-      "target": "project-2025_01_03_powerplay-zh-TW-img-cover",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_06_30_city_stroll-en-img-cover",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-img-gal-9",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-9",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31290,18 +31695,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-0-img-1",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-0-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_19_xpro1-en-sec-0-1-img-0",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-1-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_22_aftersun_paris_texas-en-sec-0-4-img-0",
       "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-0-4-img-0",
       "weight": 1.0,
@@ -31314,26 +31707,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-0",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-0",
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-1-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-9",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-9",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_05_solitary_glow-en-img-gal-3",
-      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-3",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_11_18_dusk_impressions-en-img-gal-1",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-1",
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-3-img-1",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31368,32 +31749,74 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-en-img-gal-7",
-      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-7",
+      "source": "gallery-2026-us-trip-en-img-gal-5",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-5",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-5-img-0",
-      "target": "post-9_m11d-zh-TW-sec-5-img-0",
+      "source": "gallery-2026-us-trip-en-img-gal-12",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-12",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-6-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
+      "source": "post-2025_12_19_xpro1-en-sec-0-3-img-2",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-3-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-0",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-0",
+      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-5",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-6",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-en-sec-3-img-3",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-3",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-en-img-cover",
+      "target": "project-2025_01_03_powerplay-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_05_aaai_video-en-img-cover",
+      "target": "project-2025_01_05_aaai_video-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-7",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-7",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-3",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-3",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-6",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-6",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2026-us-trip-en-img-gal-3",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-3",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31434,14 +31857,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-3",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
+      "source": "project-2024_08_19_classics_reimagined-en-img-cover",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-img-cover",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-img-cover",
+      "source": "project-2024_09_23_chingshin_rag-en-sec-2-1-img-0",
+      "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31458,26 +31881,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-en-sec-0-4-2-img-2",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-2-img-2",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_05_solitary_glow-en-img-gal-0",
-      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_05_solitary_glow-en-img-gal-2",
-      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-2",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2026-us-trip-en-img-gal-6",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-6",
+      "source": "gallery-2026-us-trip-en-img-gal-11",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-11",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31488,26 +31893,26 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-en-sec-0-img-0",
-      "target": "post-9_m11d-zh-TW-sec-0-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_01_05_aaai_video-en-sec-2-img-0",
       "target": "project-2025_01_05_aaai_video-zh-TW-sec-2-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_11_18_dusk_impressions-en-img-cover",
-      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-img-cover",
+      "source": "gallery-2023_10_05_solitary_glow-en-img-gal-0",
+      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-12",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-12",
+      "source": "gallery-2023_10_06_against_giants-en-img-cover",
+      "target": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_11_18_dusk_impressions-en-img-cover",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31524,14 +31929,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-4-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
+      "source": "post-2025_12_19_xpro1-en-sec-0-4-img-2",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-4-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-8",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-8",
+      "source": "post-9_m11d-en-sec-8-img-0",
+      "target": "post-9_m11d-zh-TW-sec-8-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31554,32 +31959,26 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_07_03_simple_in_a_complex_world-en-img-gal-6",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-img-gal-6",
+      "source": "project-2025_01_03_powerplay-en-sec-3-img-1",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-1-img-1",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-1-img-1",
+      "source": "gallery-2023_10_05_solitary_glow-en-img-gal-3",
+      "target": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-3",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-3-img-0",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-3-img-0",
+      "source": "post-12-us-trip-en-img-cover",
+      "target": "post-12-us-trip-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-4-img-1",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-4-img-1",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-9_m11d-en-sec-8-img-0",
-      "target": "post-9_m11d-zh-TW-sec-8-img-0",
+      "source": "project-2024_08_19_classics_reimagined-en-sec-2-2-2-img-1",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31590,8 +31989,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026-us-trip-en-img-gal-7",
-      "target": "gallery-2026-us-trip-zh-TW-img-gal-7",
+      "source": "gallery-2023_11_18_dusk_impressions-en-img-gal-1",
+      "target": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31602,14 +32001,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_09_23_chingshin_rag-en-sec-2-1-img-0",
-      "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-1",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-1",
+      "source": "gallery-2026_02_08_italy_city-en-img-gal-7",
+      "target": "gallery-2026_02_08_italy_city-zh-TW-img-gal-7",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31620,8 +32013,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-0-img-0",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-0-img-0",
+      "source": "post-9_m11d-en-sec-7-img-0",
+      "target": "post-9_m11d-zh-TW-sec-7-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-1",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-1",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-9",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-9",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31638,14 +32043,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2025_12_19_xpro1-en-sec-0-1-img-0",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-1-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-en-img-cover",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-img-cover",
-      "target": "project-2025_08_04_debate-zh-TW-img-cover",
+      "source": "post-9_m11d-en-sec-5-img-0",
+      "target": "post-9_m11d-zh-TW-sec-5-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31668,14 +32079,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-3-img-3",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-3",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-6",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-6",
+      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-0",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31704,32 +32109,26 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2026_02_10_synecdoche_truman-en-sec-0-1-img-0",
-      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-1-img-0",
-      "weight": 1.0,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2024_10_09_vrc_2813b_nova-en-sec-1-1-img-0",
       "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-1-1-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-4",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-4",
+      "source": "project-2025_10_12_fortress-en-sec-0-4-2-img-2",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-2-img-2",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-2-img-0",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-2-img-0",
+      "source": "post-2025_12_19_xpro1-en-sec-0-1-img-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-1-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-3-img-1",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-1",
+      "source": "post-2025_12_19_xpro1-en-sec-0-3-img-0",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-3-img-0",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31740,14 +32139,20 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-0",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-0",
+      "source": "post-10-lego-mount-en-img-cover",
+      "target": "post-10-lego-mount-zh-TW-img-cover",
       "weight": 1.0,
       "linkType": "semantic"
     },
     {
-      "source": "project-menghua-graduation-mv-en-img-cover",
-      "target": "project-menghua-graduation-mv-zh-TW-img-cover",
+      "source": "post-2025_12_19_xpro1-en-sec-0-2-img-0",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-2-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-sec-0-4-img-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-4-img-1",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31758,8 +32163,32 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-10-lego-mount-en-img-cover",
-      "target": "post-10-lego-mount-zh-TW-img-cover",
+      "source": "gallery-2026-us-trip-en-img-gal-7",
+      "target": "gallery-2026-us-trip-zh-TW-img-gal-7",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-menghua-graduation-mv-en-img-cover",
+      "target": "project-menghua-graduation-mv-zh-TW-img-cover",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-sec-0-0-img-0",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-0-img-0",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-img-gal-2",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-img-gal-2",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-4",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-4",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -31778,6 +32207,12 @@
     {
       "source": "gallery-2023_11_18_dusk_impressions-en-img-gal-3",
       "target": "gallery-2023_11_18_dusk_impressions-zh-TW-img-gal-3",
+      "weight": 1.0,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-6",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-6",
       "weight": 1.0,
       "linkType": "semantic"
     },
@@ -32532,6 +32967,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-0",
+      "weight": 0.9725,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_05_18_patch_dataset-en-sec-0-5-2-img-0",
       "target": "project-2025_05_18_patch_dataset-en-sec-0-6-img-0",
       "weight": 0.9721,
@@ -32661,6 +33102,12 @@
       "source": "project-2024_10_09_vrc_2813b_nova-en-sec-2-0",
       "target": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-2-0",
       "weight": 0.9693,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-0",
+      "weight": 0.9692,
       "linkType": "semantic"
     },
     {
@@ -34248,14 +34695,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-2",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-2",
+      "source": "project-2024_10_09_vrc_2813b_nova-en-sec-0",
+      "target": "project-2024_10_09_vrc_2813b_nova-en-sec-3",
       "weight": 0.9485,
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_09_vrc_2813b_nova-en-sec-0",
-      "target": "project-2024_10_09_vrc_2813b_nova-en-sec-3",
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-2",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-2",
       "weight": 0.9485,
       "linkType": "semantic"
     },
@@ -34308,7 +34755,7 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-1",
+      "source": "post-2025_12_19_xpro1-en-sec-2",
       "target": "post-2025_12_19_xpro1-zh-TW-sec-1",
       "weight": 0.9477,
       "linkType": "semantic"
@@ -34710,14 +35157,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-0",
-      "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-1",
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-3",
       "weight": 0.9451,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-3",
+      "source": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-0",
+      "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-1",
       "weight": 0.9451,
       "linkType": "semantic"
     },
@@ -35634,6 +36081,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-3",
+      "target": "post-15-rain-zh-TW-sec-3",
+      "weight": 0.9389,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-9_m11d-zh-TW-sec-7",
       "target": "post-9_m11d-zh-TW-sec-8",
       "weight": 0.9389,
@@ -35994,6 +36447,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2025_12_19_xpro1-en-sec-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
+      "weight": 0.9365,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-10-lego-mount-en-sec-0-0",
       "target": "post-10-lego-mount-en-sec-0-5",
       "weight": 0.9365,
@@ -36168,14 +36627,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-zh-TW-file",
-      "target": "gallery-2023_08_10_intersection-en-sec-0",
+      "source": "gallery-2023_08_10_intersection-en-sec-0",
+      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
       "weight": 0.9356,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_08_10_intersection-en-sec-0",
-      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "source": "gallery-2023_08_10_intersection-zh-TW-file",
+      "target": "gallery-2023_08_10_intersection-en-sec-0",
       "weight": 0.9356,
       "linkType": "semantic"
     },
@@ -36858,6 +37317,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-5",
+      "target": "post-15-rain-zh-TW-sec-5",
+      "weight": 0.9309,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-12-us-trip-en-sec-0",
       "target": "post-12-us-trip-zh-TW-sec-0",
       "weight": 0.9309,
@@ -37070,6 +37535,12 @@
     {
       "source": "project-2025_08_04_debate-en-sec-2",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-0",
+      "weight": 0.9292,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-1",
+      "target": "post-15-rain-zh-TW-sec-1",
       "weight": 0.9292,
       "linkType": "semantic"
     },
@@ -37855,6 +38326,12 @@
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-5-img-0",
+      "target": "project-2025_08_04_debate-en-sec-2-6-img-0",
+      "weight": 0.9243,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-en-sec-2-5-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
       "weight": 0.9243,
       "linkType": "semantic"
@@ -37862,12 +38339,6 @@
     {
       "source": "project-2025_08_04_debate-en-sec-2-6-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
-      "weight": 0.9243,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-en-sec-2-5-img-0",
-      "target": "project-2025_08_04_debate-en-sec-2-6-img-0",
       "weight": 0.9243,
       "linkType": "semantic"
     },
@@ -38124,14 +38595,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_10_09_vrc_2813b_nova-en-sec-1-1",
-      "target": "project-2024_10_09_vrc_2813b_nova-en-sec-2-2",
+      "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-2",
+      "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-2",
       "weight": 0.9224,
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-2",
-      "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-2",
+      "source": "project-2024_10_09_vrc_2813b_nova-en-sec-1-1",
+      "target": "project-2024_10_09_vrc_2813b_nova-en-sec-2-2",
       "weight": 0.9224,
       "linkType": "semantic"
     },
@@ -38244,14 +38715,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-4-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-0",
+      "source": "project-2025_08_04_debate-en-sec-2-1-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
       "weight": 0.9217,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-1-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
+      "source": "project-2025_08_04_debate-en-sec-2-4-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-0",
       "weight": 0.9217,
       "linkType": "semantic"
     },
@@ -38397,6 +38868,18 @@
       "source": "project-sitcon-camp-2026-zh-TW-file",
       "target": "project-sitcon-camp-2026-zh-TW-sec-4",
       "weight": 0.9206,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-zh-TW-file",
+      "weight": 0.9206,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-file",
+      "target": "post-2025_12_19_xpro1-en-sec-1",
+      "weight": 0.9205,
       "linkType": "semantic"
     },
     {
@@ -38730,14 +39213,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_town-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-en-sec-0",
+      "source": "gallery-2026_02_08_italy_town-en-sec-0",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.9187,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_town-en-sec-0",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-en-sec-0",
       "weight": 0.9187,
       "linkType": "semantic"
     },
@@ -38964,6 +39447,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2025_12_19_xpro1-zh-TW-sec-0-5",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
+      "weight": 0.9169,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-menghua-graduation-mv-zh-TW-sec-0",
       "target": "project-menghua-graduation-mv-zh-TW-sec-2",
       "weight": 0.9169,
@@ -39003,12 +39492,6 @@
       "source": "project-menghua-graduation-mv-en-file",
       "target": "project-menghua-graduation-mv-zh-TW-sec-1",
       "weight": 0.9167,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_19_xpro1-en-file",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-5",
-      "weight": 0.9166,
       "linkType": "semantic"
     },
     {
@@ -39201,6 +39684,12 @@
       "source": "project-sitcon-camp-2026-zh-TW-file",
       "target": "project-sitcon-camp-2026-zh-TW-sec-2",
       "weight": 0.9153,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-2",
+      "weight": 0.9152,
       "linkType": "semantic"
     },
     {
@@ -39776,7 +40265,7 @@
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-0",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-3",
-      "weight": 0.9105,
+      "weight": 0.9106,
       "linkType": "semantic"
     },
     {
@@ -39800,6 +40289,12 @@
     {
       "source": "post-2026_01_10_plushies-zh-TW-sec-0-0",
       "target": "post-2026_01_10_plushies-zh-TW-sec-0-1",
+      "weight": 0.9105,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-zh-TW-sec-0-2",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
       "weight": 0.9105,
       "linkType": "semantic"
     },
@@ -39927,6 +40422,12 @@
       "source": "post-12-us-trip-en-sec-2",
       "target": "post-12-us-trip-en-sec-6",
       "weight": 0.9098,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-1",
+      "weight": 0.9097,
       "linkType": "semantic"
     },
     {
@@ -40322,6 +40823,12 @@
     {
       "source": "post-2025_12_12_blog_launch-en-file",
       "target": "post-2025_12_12_blog_launch-zh-TW-sec-0-0",
+      "weight": 0.9074,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-2",
+      "target": "post-15-rain-zh-TW-sec-2",
       "weight": 0.9074,
       "linkType": "semantic"
     },
@@ -40728,6 +41235,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-en-sec-0",
+      "weight": 0.9043,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-12-us-trip-zh-TW-file",
       "target": "post-12-us-trip-zh-TW-sec-4",
       "weight": 0.9041,
@@ -40980,6 +41493,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-0",
+      "target": "post-15-rain-en-sec-1",
+      "weight": 0.9022,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2026_01_10_plushies-en-file",
       "target": "post-2026_01_10_plushies-en-sec-0-2",
       "weight": 0.9022,
@@ -40994,6 +41513,12 @@
     {
       "source": "post-2026_01_10_plushies-zh-TW-sec-0-3",
       "target": "post-2026_01_10_plushies-zh-TW-sec-0-5",
+      "weight": 0.9021,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-0",
+      "target": "post-15-rain-en-sec-2",
       "weight": 0.9021,
       "linkType": "semantic"
     },
@@ -41173,13 +41698,13 @@
     },
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-0",
-      "target": "project-2025_01_03_powerplay-en-sec-2-3-0-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0-img-0",
       "weight": 0.9003,
       "linkType": "semantic"
     },
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-0",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0-img-0",
+      "target": "project-2025_01_03_powerplay-en-sec-2-3-0-img-0",
       "weight": 0.9003,
       "linkType": "semantic"
     },
@@ -41364,6 +41889,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-1",
+      "weight": 0.899,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-12-us-trip-en-file",
       "target": "post-12-us-trip-en-sec-3",
       "weight": 0.8989,
@@ -41466,14 +41997,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
       "weight": 0.8978,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-zh-TW-file",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-file",
+      "source": "gallery-2026_02_08_italy_city-zh-TW-sec-0",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.8978,
       "linkType": "semantic"
     },
@@ -41498,6 +42029,12 @@
     {
       "source": "project-2025_03_18_boundless_voices-en-file",
       "target": "project-2025_03_18_boundless_voices-zh-TW-sec-3",
+      "weight": 0.8977,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-zh-TW-sec-3",
+      "target": "post-15-rain-zh-TW-sec-4",
       "weight": 0.8977,
       "linkType": "semantic"
     },
@@ -41654,6 +42191,12 @@
     {
       "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-1-4",
       "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-0",
+      "weight": 0.8966,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-1",
+      "target": "post-15-rain-en-sec-2",
       "weight": 0.8966,
       "linkType": "semantic"
     },
@@ -41856,6 +42399,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-sec-1",
+      "target": "post-15-rain-zh-TW-sec-2",
+      "weight": 0.8947,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_05_aaai_video-en-file",
       "target": "project-2025_01_05_aaai_video-zh-TW-sec-3",
       "weight": 0.8946,
@@ -42054,14 +42603,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-4-img-0",
-      "target": "project-2025_08_04_debate-en-sec-2-6-img-0",
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-2",
       "weight": 0.8932,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
+      "source": "project-2025_08_04_debate-en-sec-2-4-img-0",
+      "target": "project-2025_08_04_debate-en-sec-2-6-img-0",
       "weight": 0.8932,
       "linkType": "semantic"
     },
@@ -42074,6 +42623,12 @@
     {
       "source": "project-2025_08_04_debate-en-sec-2-6-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
+      "weight": 0.8932,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
       "weight": 0.8932,
       "linkType": "semantic"
     },
@@ -42186,6 +42741,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-0",
+      "target": "post-15-rain-zh-TW-sec-0",
+      "weight": 0.8919,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-1",
       "target": "project-2025_01_03_powerplay-en-sec-2-1",
       "weight": 0.8919,
@@ -42270,6 +42831,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-4",
+      "weight": 0.8912,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-12-us-trip-zh-TW-sec-3",
       "target": "post-12-us-trip-zh-TW-sec-9",
       "weight": 0.8912,
@@ -42285,6 +42852,12 @@
       "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-4",
       "target": "post-2025_12_24_ntu_cs_special_admission-en-sec-5",
       "weight": 0.891,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-4",
+      "target": "post-15-rain-zh-TW-sec-4",
+      "weight": 0.8909,
       "linkType": "semantic"
     },
     {
@@ -42355,25 +42928,25 @@
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-1-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
-      "weight": 0.8904,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
+      "target": "project-2025_08_04_debate-en-sec-2-6-img-0",
       "weight": 0.8904,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-1-img-0",
-      "target": "project-2025_08_04_debate-en-sec-2-6-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
       "weight": 0.8904,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-6-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-0",
+      "weight": 0.8904,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
       "weight": 0.8904,
       "linkType": "semantic"
     },
@@ -42456,12 +43029,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
-      "weight": 0.8896,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_08_04_debate-en-sec-2-4-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
       "weight": 0.8896,
@@ -42470,6 +43037,12 @@
     {
       "source": "project-2025_08_04_debate-en-sec-2-5-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
+      "weight": 0.8896,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
       "weight": 0.8896,
       "linkType": "semantic"
     },
@@ -42540,14 +43113,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-0",
+      "source": "project-2025_08_04_debate-en-sec-2-1-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
       "weight": 0.8889,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-1-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
+      "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-0",
       "weight": 0.8889,
       "linkType": "semantic"
     },
@@ -42654,6 +43227,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-zh-TW-sec-0",
+      "weight": 0.8883,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-menghua-graduation-mv-zh-TW-sec-2",
       "target": "project-menghua-graduation-mv-zh-TW-sec-5",
       "weight": 0.8883,
@@ -42703,12 +43282,6 @@
     },
     {
       "source": "gallery-2023_06_30_city_stroll-en-img-gal-3",
-      "target": "gallery-2023_06_30_city_stroll-en-img-gal-10",
-      "weight": 0.8875,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-en-img-gal-3",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-10",
       "weight": 0.8875,
       "linkType": "semantic"
@@ -42716,6 +43289,12 @@
     {
       "source": "gallery-2023_06_30_city_stroll-en-img-gal-10",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-3",
+      "weight": 0.8875,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-en-img-gal-3",
+      "target": "gallery-2023_06_30_city_stroll-en-img-gal-10",
       "weight": 0.8875,
       "linkType": "semantic"
     },
@@ -42738,18 +43317,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_06_against_giants-en-img-gal-2",
-      "target": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
-      "weight": 0.8874,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
-      "target": "gallery-2023_10_06_against_giants-zh-TW-img-gal-2",
-      "weight": 0.8874,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_06_against_giants-en-img-cover",
       "target": "gallery-2023_10_06_against_giants-en-img-gal-2",
       "weight": 0.8874,
@@ -42762,25 +43329,43 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-0-img-0",
+      "source": "gallery-2023_10_06_against_giants-en-img-gal-2",
+      "target": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
+      "weight": 0.8874,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
+      "target": "gallery-2023_10_06_against_giants-zh-TW-img-gal-2",
+      "weight": 0.8874,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-4",
+      "weight": 0.8874,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0-img-0",
       "target": "project-2025_01_05_aaai_video-en-sec-2-img-0",
       "weight": 0.8873,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-0-img-0",
+      "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0-img-0",
       "target": "project-2025_01_05_aaai_video-zh-TW-sec-2-img-0",
       "weight": 0.8873,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0-img-0",
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-0-img-0",
       "target": "project-2025_01_05_aaai_video-en-sec-2-img-0",
       "weight": 0.8873,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-0-img-0",
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-0-img-0",
       "target": "project-2025_01_05_aaai_video-zh-TW-sec-2-img-0",
       "weight": 0.8873,
       "linkType": "semantic"
@@ -42879,6 +43464,12 @@
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
       "weight": 0.8862,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-0",
+      "target": "post-15-rain-en-sec-4",
+      "weight": 0.8861,
       "linkType": "semantic"
     },
     {
@@ -43141,13 +43732,13 @@
     },
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
-      "target": "project-2025_01_03_powerplay-en-sec-2-3-2-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-2-img-0",
       "weight": 0.8839,
       "linkType": "semantic"
     },
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-2-img-0",
+      "target": "project-2025_01_03_powerplay-en-sec-2-3-2-img-0",
       "weight": 0.8839,
       "linkType": "semantic"
     },
@@ -43350,6 +43941,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-zh-TW-sec-3",
+      "weight": 0.8814,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-13-chingshin-zh-TW-file",
       "target": "post-13-chingshin-zh-TW-sec-3",
       "weight": 0.8814,
@@ -43446,6 +44043,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2025_12_19_xpro1-en-sec-0-2",
+      "target": "post-2025_12_19_xpro1-en-sec-1",
+      "weight": 0.8803,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_09_23_chingshin_rag-en-sec-1-0",
       "target": "project-2024_09_23_chingshin_rag-en-sec-1-1",
       "weight": 0.8803,
@@ -43500,18 +44103,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_09_23_chingshin_rag-en-sec-2-1-img-1",
-      "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-0",
-      "weight": 0.8797,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-0",
-      "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-1",
-      "weight": 0.8797,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2024_09_23_chingshin_rag-en-sec-2-1-img-0",
       "target": "project-2024_09_23_chingshin_rag-en-sec-2-1-img-1",
       "weight": 0.8797,
@@ -43519,6 +44110,18 @@
     },
     {
       "source": "project-2024_09_23_chingshin_rag-en-sec-2-1-img-0",
+      "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-1",
+      "weight": 0.8797,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_09_23_chingshin_rag-en-sec-2-1-img-1",
+      "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-0",
+      "weight": 0.8797,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-0",
       "target": "project-2024_09_23_chingshin_rag-zh-TW-sec-2-1-img-1",
       "weight": 0.8797,
       "linkType": "semantic"
@@ -43557,6 +44160,12 @@
       "source": "post-2026_01_10_plushies-en-sec-0-1",
       "target": "post-2026_01_10_plushies-en-sec-0-5",
       "weight": 0.8794,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-sec-0-4",
+      "target": "post-2025_12_19_xpro1-en-sec-1",
+      "weight": 0.8793,
       "linkType": "semantic"
     },
     {
@@ -43650,12 +44259,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_09_mortal_sparks-en-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
-      "weight": 0.8779,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_02_09_mortal_sparks-en-file",
       "target": "gallery-2024_04_06_city_of_tears-en-file",
       "weight": 0.8779,
@@ -43670,6 +44273,12 @@
     {
       "source": "gallery-2024_04_06_city_of_tears-en-file",
       "target": "gallery-2024_02_09_mortal_sparks-en-sec-0",
+      "weight": 0.8779,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_09_mortal_sparks-en-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-en-sec-0",
       "weight": 0.8779,
       "linkType": "semantic"
     },
@@ -43711,13 +44320,13 @@
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
+      "target": "project-2025_08_04_debate-en-sec-2-6-img-0",
       "weight": 0.8774,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-6-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
+      "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-0",
       "weight": 0.8774,
       "linkType": "semantic"
     },
@@ -43770,8 +44379,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-2-img-0",
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-2-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
       "weight": 0.8769,
       "linkType": "semantic"
     },
@@ -43782,8 +44391,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-2-img-0",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
+      "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-2-img-0",
       "weight": 0.8769,
       "linkType": "semantic"
     },
@@ -43808,6 +44417,12 @@
     {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3",
       "target": "project-2024_08_19_classics_reimagined-en-sec-5",
+      "weight": 0.8765,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-sec-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-5",
       "weight": 0.8765,
       "linkType": "semantic"
     },
@@ -43956,6 +44571,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-3",
+      "target": "post-15-rain-en-sec-4",
+      "weight": 0.8747,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_08_04_debate-en-sec-0",
       "target": "project-2025_08_04_debate-en-sec-2-5",
       "weight": 0.8746,
@@ -44028,6 +44649,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-en-sec-3",
+      "weight": 0.8736,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_03_powerplay-en-sec-1-4",
       "target": "project-2025_01_03_powerplay-en-sec-3",
       "weight": 0.8735,
@@ -44094,6 +44721,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "weight": 0.8728,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
       "target": "gallery-2023_10_05_solitary_glow-zh-TW-file",
       "weight": 0.8728,
@@ -44108,12 +44741,6 @@
     {
       "source": "gallery-2023_10_05_solitary_glow-zh-TW-file",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
-      "weight": 0.8728,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
-      "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
       "weight": 0.8728,
       "linkType": "semantic"
     },
@@ -44136,8 +44763,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-4",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-2",
+      "source": "post-15-rain-en-sec-2",
+      "target": "post-15-rain-en-sec-4",
       "weight": 0.8723,
       "linkType": "semantic"
     },
@@ -44168,12 +44795,6 @@
     {
       "source": "post-2025_12_14_affinity-en-sec-0-4",
       "target": "post-2025_12_14_affinity-en-sec-0-6",
-      "weight": 0.872,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_19_xpro1-en-sec-0-2",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-5",
       "weight": 0.872,
       "linkType": "semantic"
     },
@@ -44275,25 +44896,25 @@
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
-      "weight": 0.8708,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
+      "target": "project-2025_08_04_debate-en-sec-2-6-img-1",
       "weight": 0.8708,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-en-sec-2-6-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
       "weight": 0.8708,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-6-img-1",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
+      "weight": 0.8708,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
       "weight": 0.8708,
       "linkType": "semantic"
     },
@@ -44394,6 +45015,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-sec-0",
+      "target": "post-15-rain-zh-TW-sec-4",
+      "weight": 0.8695,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2026_01_10_plushies-en-sec-0-1",
       "target": "post-2026_01_10_plushies-en-sec-0-4",
       "weight": 0.8694,
@@ -44402,7 +45029,7 @@
     {
       "source": "project-2025_08_04_debate-en-sec-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-3",
-      "weight": 0.8693,
+      "weight": 0.8692,
       "linkType": "semantic"
     },
     {
@@ -44430,6 +45057,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-1",
+      "target": "post-15-rain-en-sec-3",
+      "weight": 0.8689,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-12-us-trip-zh-TW-sec-0",
       "target": "post-12-us-trip-zh-TW-sec-9",
       "weight": 0.8688,
@@ -44448,6 +45081,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-file",
+      "target": "post-15-rain-zh-TW-sec-1",
+      "weight": 0.8686,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-9_m11d-en-sec-5",
       "target": "post-9_m11d-en-sec-9",
       "weight": 0.8685,
@@ -44460,7 +45099,7 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
+      "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-4-img-0",
       "weight": 0.8684,
       "linkType": "semantic"
@@ -44479,25 +45118,25 @@
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
-      "weight": 0.8677,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
+      "target": "project-2025_08_04_debate-en-sec-2-3-img-1",
       "weight": 0.8677,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-en-sec-2-3-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
       "weight": 0.8677,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-3-img-1",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
+      "weight": 0.8677,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
       "weight": 0.8677,
       "linkType": "semantic"
     },
@@ -44514,14 +45153,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2026_02_10_synecdoche_truman-en-sec-0-3-img-0",
-      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-0-img-0",
-      "weight": 0.8668,
+      "source": "post-15-rain-zh-TW-sec-1",
+      "target": "post-15-rain-zh-TW-sec-3",
+      "weight": 0.867,
       "linkType": "semantic"
     },
     {
-      "source": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-0-img-0",
-      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-3-img-0",
+      "source": "post-2025_12_19_xpro1-en-sec-0-3",
+      "target": "post-2025_12_19_xpro1-en-sec-1",
       "weight": 0.8668,
       "linkType": "semantic"
     },
@@ -44533,6 +45172,18 @@
     },
     {
       "source": "post-2026_02_10_synecdoche_truman-en-sec-0-0-img-0",
+      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-3-img-0",
+      "weight": 0.8668,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2026_02_10_synecdoche_truman-en-sec-0-3-img-0",
+      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-0-img-0",
+      "weight": 0.8668,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-0-img-0",
       "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-0-3-img-0",
       "weight": 0.8668,
       "linkType": "semantic"
@@ -44564,6 +45215,12 @@
     {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
+      "weight": 0.8665,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-zh-TW-sec-2",
+      "target": "post-15-rain-zh-TW-sec-3",
       "weight": 0.8665,
       "linkType": "semantic"
     },
@@ -44616,6 +45273,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-5",
+      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-6",
+      "weight": 0.8662,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_06_30_city_stroll-en-img-gal-5",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-6",
       "weight": 0.8662,
@@ -44624,12 +45287,6 @@
     {
       "source": "gallery-2023_06_30_city_stroll-en-img-gal-6",
       "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-5",
-      "weight": 0.8662,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-5",
-      "target": "gallery-2023_06_30_city_stroll-zh-TW-img-gal-6",
       "weight": 0.8662,
       "linkType": "semantic"
     },
@@ -44661,6 +45318,18 @@
       "source": "project-2025_10_12_fortress-en-sec-0-5",
       "target": "project-2025_10_12_fortress-en-sec-1",
       "weight": 0.8659,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-1",
+      "target": "post-15-rain-en-sec-4",
+      "weight": 0.8657,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-zh-TW-sec-0",
+      "target": "post-15-rain-zh-TW-sec-1",
+      "weight": 0.8657,
       "linkType": "semantic"
     },
     {
@@ -44706,20 +45375,32 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_10_05_solitary_glow-zh-TW-file",
-      "target": "gallery-2023_11_18_dusk_impressions-en-file",
-      "weight": 0.865,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_11_18_dusk_impressions-en-file",
       "target": "gallery-2023_10_05_solitary_glow-zh-TW-sec-0",
       "weight": 0.865,
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_05_solitary_glow-zh-TW-file",
+      "target": "gallery-2023_11_18_dusk_impressions-en-file",
+      "weight": 0.865,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-1",
+      "target": "post-15-rain-zh-TW-sec-2",
+      "weight": 0.865,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-file",
       "target": "project-2024_08_19_classics_reimagined-en-sec-1",
+      "weight": 0.8649,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-zh-TW-sec-2",
+      "target": "post-15-rain-zh-TW-sec-4",
       "weight": 0.8649,
       "linkType": "semantic"
     },
@@ -44738,6 +45419,12 @@
     {
       "source": "project-2025_10_12_fortress-en-sec-0-6",
       "target": "project-2025_10_12_fortress-zh-TW-sec-1",
+      "weight": 0.8647,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-zh-TW-sec-0",
+      "target": "post-15-rain-zh-TW-sec-2",
       "weight": 0.8647,
       "linkType": "semantic"
     },
@@ -44832,12 +45519,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
-      "weight": 0.864,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.864,
@@ -44846,6 +45527,12 @@
     {
       "source": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
+      "weight": 0.864,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.864,
       "linkType": "semantic"
     },
@@ -44964,20 +45651,38 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-sec-1",
+      "target": "post-15-rain-zh-TW-sec-4",
+      "weight": 0.8621,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_09_23_chingshin_rag-en-file",
       "target": "project-2024_09_23_chingshin_rag-en-sec-2-2",
       "weight": 0.8619,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
+      "source": "post-2025_12_19_xpro1-en-sec-0-4",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
+      "weight": 0.8618,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-0",
+      "target": "post-15-rain-en-sec-3",
+      "weight": 0.8618,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
       "weight": 0.8614,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
-      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-sec-0",
+      "target": "gallery-2024_02_14_go_where_you_feel_most_alive-zh-TW-file",
       "weight": 0.8614,
       "linkType": "semantic"
     },
@@ -45024,6 +45729,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
+      "target": "project-2025_01_03_powerplay-en-sec-2-3-1-img-0",
+      "weight": 0.8611,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-en-sec-2-2-2-img-1",
       "target": "project-2025_01_03_powerplay-en-sec-2-3-1-img-0",
       "weight": 0.8611,
@@ -45037,14 +45748,14 @@
     },
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
-      "target": "project-2025_01_03_powerplay-en-sec-2-3-1-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
       "weight": 0.8611,
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
-      "weight": 0.8611,
+      "source": "post-15-rain-en-sec-0",
+      "target": "post-15-rain-zh-TW-sec-1",
+      "weight": 0.8609,
       "linkType": "semantic"
     },
     {
@@ -45075,6 +45786,12 @@
       "source": "post-12-us-trip-en-sec-3",
       "target": "post-12-us-trip-en-sec-4",
       "weight": 0.8604,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-3",
+      "target": "post-15-rain-zh-TW-sec-4",
+      "weight": 0.8602,
       "linkType": "semantic"
     },
     {
@@ -45138,14 +45855,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_city-en-sec-0",
-      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
+      "source": "project-2024_08_19_classics_reimagined-en-sec-2-2-2",
+      "target": "project-2024_08_19_classics_reimagined-en-sec-2-3",
       "weight": 0.8596,
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-2-2-2",
-      "target": "project-2024_08_19_classics_reimagined-en-sec-2-3",
+      "source": "gallery-2026_02_08_italy_city-en-sec-0",
+      "target": "gallery-2026_02_08_italy_town-zh-TW-sec-0",
       "weight": 0.8596,
       "linkType": "semantic"
     },
@@ -45336,12 +46053,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
-      "weight": 0.8573,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-2025_12_14_affinity-en-sec-0-3",
       "target": "post-2025_12_14_affinity-en-sec-0-6",
       "weight": 0.8573,
@@ -45390,8 +46101,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3-img-0",
+      "source": "project-2025_01_03_powerplay-en-sec-2-3-3-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
       "weight": 0.8559,
       "linkType": "semantic"
     },
@@ -45402,8 +46113,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-en-sec-2-3-3-img-0",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
+      "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3-img-0",
       "weight": 0.8559,
       "linkType": "semantic"
     },
@@ -45571,13 +46282,13 @@
     },
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
-      "target": "project-2025_01_03_powerplay-en-sec-2-3-3-img-0",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3-img-0",
       "weight": 0.854,
       "linkType": "semantic"
     },
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-2-2-2-img-1",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-2-3-3-img-0",
+      "target": "project-2025_01_03_powerplay-en-sec-2-3-3-img-0",
       "weight": 0.854,
       "linkType": "semantic"
     },
@@ -45726,7 +46437,7 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_06_30_city_stroll-zh-TW-sec-0",
+      "source": "gallery-2023_06_30_city_stroll-zh-TW-file",
       "target": "gallery-2023_10_05_solitary_glow-en-sec-0",
       "weight": 0.8517,
       "linkType": "semantic"
@@ -45765,6 +46476,12 @@
       "source": "project-2024_09_23_chingshin_rag-en-sec-1-1",
       "target": "project-2024_09_23_chingshin_rag-en-sec-1-2",
       "weight": 0.851,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-zh-TW-file",
+      "target": "post-15-rain-en-sec-1",
+      "weight": 0.8509,
       "linkType": "semantic"
     },
     {
@@ -45870,6 +46587,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-sec-0",
+      "target": "post-15-rain-zh-TW-sec-3",
+      "weight": 0.8489,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_01_03_powerplay-en-sec-2-1",
       "target": "project-2025_01_03_powerplay-en-sec-4",
       "weight": 0.8488,
@@ -45942,6 +46665,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2025_12_19_xpro1-en-sec-0-3",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
+      "weight": 0.8478,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-11-portfolio-en-sec-6",
       "target": "post-11-portfolio-en-sec-8",
       "weight": 0.8473,
@@ -45997,25 +46726,25 @@
     },
     {
       "source": "gallery-2024_01_06_hehuanshan-en-img-cover",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-0",
-      "weight": 0.8465,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2024_01_06_hehuanshan-zh-TW-img-cover",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-0",
+      "target": "gallery-2024_01_06_hehuanshan-en-img-gal-0",
       "weight": 0.8465,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_01_06_hehuanshan-en-img-cover",
-      "target": "gallery-2024_01_06_hehuanshan-en-img-gal-0",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-0",
       "weight": 0.8465,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_01_06_hehuanshan-en-img-gal-0",
       "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-cover",
+      "weight": 0.8465,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2024_01_06_hehuanshan-zh-TW-img-cover",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-0",
       "weight": 0.8465,
       "linkType": "semantic"
     },
@@ -46068,26 +46797,26 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-2",
+      "target": "post-15-rain-en-sec-3",
+      "weight": 0.8454,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_08_04_debate-en-sec-3",
       "target": "project-2025_08_04_debate-zh-TW-sec-4",
       "weight": 0.8453,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-en-sec-2-3-img-0",
-      "target": "project-2025_08_04_debate-en-sec-2-3-img-1",
+      "source": "project-2025_08_04_debate-en-sec-2-3-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
       "weight": 0.8449,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
-      "weight": 0.8449,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-en-sec-2-3-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
       "weight": 0.8449,
       "linkType": "semantic"
     },
@@ -46164,7 +46893,7 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-1",
+      "source": "post-2025_12_19_xpro1-en-sec-2",
       "target": "post-9_m11d-en-sec-10",
       "weight": 0.8425,
       "linkType": "semantic"
@@ -46176,14 +46905,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-en-sec-0-4-2-img-0",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-3-img-0",
+      "source": "project-2025_10_12_fortress-en-sec-0-4-3-img-0",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-2-img-0",
       "weight": 0.8425,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-en-sec-0-4-3-img-0",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-2-img-0",
+      "source": "project-2025_10_12_fortress-en-sec-0-4-2-img-0",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-3-img-0",
       "weight": 0.8425,
       "linkType": "semantic"
     },
@@ -46206,6 +46935,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_07_07_splash_of_red-zh-TW-sec-0",
+      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
+      "weight": 0.8418,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_07_07_splash_of_red-zh-TW-file",
       "target": "gallery-2023_08_10_intersection-zh-TW-file",
       "weight": 0.8418,
@@ -46220,12 +46955,6 @@
     {
       "source": "gallery-2023_08_10_intersection-zh-TW-file",
       "target": "gallery-2023_07_07_splash_of_red-zh-TW-sec-0",
-      "weight": 0.8418,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_07_07_splash_of_red-zh-TW-sec-0",
-      "target": "gallery-2023_08_10_intersection-zh-TW-sec-0",
       "weight": 0.8418,
       "linkType": "semantic"
     },
@@ -46256,6 +46985,12 @@
     {
       "source": "project-2024_08_19_classics_reimagined-zh-TW-file",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3",
+      "weight": 0.8408,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-1",
       "weight": 0.8408,
       "linkType": "semantic"
     },
@@ -46326,6 +47061,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-4",
+      "target": "post-15-rain-zh-TW-sec-3",
+      "weight": 0.8392,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-sitcon-2026-zh-TW-sec-1-3",
       "target": "project-sitcon-2026-zh-TW-sec-3",
       "weight": 0.8391,
@@ -46374,6 +47115,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_07_07_splash_of_red-zh-TW-sec-0",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
+      "weight": 0.8376,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2023_07_07_splash_of_red-zh-TW-file",
       "target": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "weight": 0.8376,
@@ -46382,12 +47129,6 @@
     {
       "source": "gallery-2024_02_09_mortal_sparks-zh-TW-file",
       "target": "gallery-2023_07_07_splash_of_red-zh-TW-sec-0",
-      "weight": 0.8376,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_07_07_splash_of_red-zh-TW-sec-0",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
       "weight": 0.8376,
       "linkType": "semantic"
     },
@@ -46506,6 +47247,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2025_12_19_xpro1-en-sec-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-1",
+      "weight": 0.8349,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2026-us-trip-en-file",
       "target": "gallery-2026_02_08_italy_town-en-file",
       "weight": 0.8343,
@@ -46554,14 +47301,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-zh-TW-sec-0",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
+      "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
       "weight": 0.8327,
       "linkType": "semantic"
     },
     {
       "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
-      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-file",
+      "target": "gallery-2024_07_03_simple_in_a_complex_world-zh-TW-sec-0",
       "weight": 0.8327,
       "linkType": "semantic"
     },
@@ -46596,6 +47343,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-3",
+      "target": "post-15-rain-zh-TW-sec-2",
+      "weight": 0.8319,
+      "linkType": "semantic"
+    },
+    {
       "source": "gallery-2024_02_14_go_where_you_feel_most_alive-en-file",
       "target": "gallery-2024_07_03_simple_in_a_complex_world-en-sec-0",
       "weight": 0.8317,
@@ -46617,6 +47370,12 @@
       "source": "post-14-pho-en-sec-4",
       "target": "post-14-pho-en-sec-6",
       "weight": 0.8308,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-5",
+      "target": "post-15-rain-zh-TW-sec-5",
+      "weight": 0.8307,
       "linkType": "semantic"
     },
     {
@@ -46698,6 +47457,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2025_08_04_debate-en-sec-2-2-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
+      "weight": 0.8283,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_08_04_debate-zh-TW-sec-2-2-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-5-img-0",
       "weight": 0.8283,
@@ -46707,6 +47472,12 @@
       "source": "post-13-chingshin-en-sec-4",
       "target": "post-13-chingshin-zh-TW-sec-2",
       "weight": 0.8281,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-sec-1",
+      "target": "post-2025_12_19_xpro1-en-sec-2",
+      "weight": 0.8274,
       "linkType": "semantic"
     },
     {
@@ -46747,7 +47518,7 @@
     },
     {
       "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-1-img-0",
-      "target": "project-2025_01_05_aaai_video-en-sec-2-img-2",
+      "target": "project-2025_01_05_aaai_video-zh-TW-sec-2-img-2",
       "weight": 0.8267,
       "linkType": "semantic"
     },
@@ -46824,6 +47595,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-2",
+      "target": "post-15-rain-en-sec-5",
+      "weight": 0.8244,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_24_ntu_cs_special_admission-en-sec-3-2",
       "target": "post-2025_12_24_ntu_cs_special_admission-zh-TW-sec-2-5",
       "weight": 0.8243,
@@ -46866,6 +47643,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
+      "weight": 0.8236,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-5",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
       "weight": 0.8236,
@@ -46874,12 +47657,6 @@
     {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-6",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
-      "weight": 0.8236,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
       "weight": 0.8236,
       "linkType": "semantic"
     },
@@ -46909,7 +47686,7 @@
     },
     {
       "source": "project-2025_01_03_powerplay-zh-TW-sec-2-3-2-img-0",
-      "target": "project-2025_01_05_aaai_video-en-sec-2-img-2",
+      "target": "project-2025_01_05_aaai_video-zh-TW-sec-2-img-2",
       "weight": 0.8231,
       "linkType": "semantic"
     },
@@ -47004,8 +47781,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-en-sec-4",
+      "target": "post-15-rain-zh-TW-sec-0",
+      "weight": 0.8212,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-3",
       "target": "project-2024_08_19_classics_reimagined-en-sec-3-img-4",
+      "weight": 0.821,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-4",
       "weight": 0.821,
       "linkType": "semantic"
     },
@@ -47018,12 +47807,6 @@
     {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-4",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
-      "weight": 0.821,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-4",
       "weight": 0.821,
       "linkType": "semantic"
     },
@@ -47052,12 +47835,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-2-img-0",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
-      "weight": 0.8201,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_08_04_debate-en-sec-2-2-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
       "weight": 0.8201,
@@ -47066,6 +47843,12 @@
     {
       "source": "project-2025_08_04_debate-en-sec-2-6-img-1",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-2-img-0",
+      "weight": 0.8201,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-2-img-0",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
       "weight": 0.8201,
       "linkType": "semantic"
     },
@@ -47100,14 +47883,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
-      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
+      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
+      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
       "weight": 0.8196,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_04_06_city_of_tears-zh-TW-file",
-      "target": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
+      "source": "gallery-2024_02_09_mortal_sparks-zh-TW-sec-0",
+      "target": "gallery-2024_04_06_city_of_tears-zh-TW-sec-0",
       "weight": 0.8196,
       "linkType": "semantic"
     },
@@ -47136,6 +47919,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-12-us-trip-en-sec-10",
+      "target": "post-15-rain-en-sec-5",
+      "weight": 0.8185,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_12_blog_launch-zh-TW-sec-1",
       "target": "post-2025_12_13_sisyphus-zh-TW-sec-1",
       "weight": 0.8184,
@@ -47151,6 +47940,18 @@
       "source": "gallery-2023_10_06_guided_by_the_tides-en-sec-0",
       "target": "gallery-2023_10_12_lessons_from_the_light-en-sec-0",
       "weight": 0.8182,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-14-pho-en-sec-6",
+      "target": "post-15-rain-en-sec-5",
+      "weight": 0.8178,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-12-us-trip-zh-TW-sec-10",
+      "target": "post-15-rain-zh-TW-sec-5",
+      "weight": 0.8175,
       "linkType": "semantic"
     },
     {
@@ -47244,14 +48045,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
-      "target": "post-9_m11d-zh-TW-sec-9",
+      "source": "post-9_m11d-zh-TW-sec-9",
+      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
       "weight": 0.8137,
       "linkType": "semantic"
     },
     {
-      "source": "post-9_m11d-zh-TW-sec-9",
-      "target": "gallery-2026_02_08_italy_mountain-zh-TW-sec-0",
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "post-9_m11d-zh-TW-sec-9",
       "weight": 0.8137,
       "linkType": "semantic"
     },
@@ -47268,9 +48069,21 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-13-chingshin-en-sec-5",
+      "target": "post-15-rain-en-sec-5",
+      "weight": 0.8127,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-12-us-trip-en-sec-10",
       "target": "post-13-chingshin-en-sec-5",
       "weight": 0.8127,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-15-rain-en-sec-2",
+      "target": "post-15-rain-zh-TW-sec-3",
+      "weight": 0.8126,
       "linkType": "semantic"
     },
     {
@@ -47317,20 +48130,8 @@
     },
     {
       "source": "post-2025_12_12_blog_launch-en-sec-1",
-      "target": "post-2025_12_19_xpro1-en-sec-1",
+      "target": "post-2025_12_19_xpro1-en-sec-2",
       "weight": 0.8111,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-2-img-0",
-      "weight": 0.811,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-2-img-0",
-      "weight": 0.811,
       "linkType": "semantic"
     },
     {
@@ -47340,8 +48141,20 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-2-img-0",
+      "weight": 0.811,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_08_04_debate-en-sec-2-2-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
+      "weight": 0.811,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-2-img-0",
       "weight": 0.811,
       "linkType": "semantic"
     },
@@ -47442,7 +48255,19 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-1",
+      "source": "post-15-rain-zh-TW-sec-5",
+      "target": "post-2025_12_12_blog_launch-zh-TW-sec-1",
+      "weight": 0.8084,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-14-pho-zh-TW-sec-6",
+      "target": "post-15-rain-zh-TW-sec-5",
+      "weight": 0.8082,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_19_xpro1-en-sec-2",
       "target": "post-9_m11d-zh-TW-sec-10",
       "weight": 0.8081,
       "linkType": "semantic"
@@ -47496,12 +48321,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
-      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
-      "weight": 0.8065,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_08_04_debate-en-sec-2-3-img-1",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
       "weight": 0.8065,
@@ -47510,6 +48329,12 @@
     {
       "source": "project-2025_08_04_debate-en-sec-2-6-img-1",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
+      "weight": 0.8065,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-6-img-1",
       "weight": 0.8065,
       "linkType": "semantic"
     },
@@ -47574,6 +48399,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
+      "weight": 0.8051,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-3",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
       "weight": 0.8051,
@@ -47582,12 +48413,6 @@
     {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-6",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
-      "weight": 0.8051,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
       "weight": 0.8051,
       "linkType": "semantic"
     },
@@ -47618,12 +48443,6 @@
     {
       "source": "gallery-2024_01_06_hehuanshan-zh-TW-file",
       "target": "gallery-2023_10_06_against_giants-zh-TW-sec-0",
-      "weight": 0.8036,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_against_giants-zh-TW-file",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-file",
       "weight": 0.8036,
       "linkType": "semantic"
     },
@@ -47664,6 +48483,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-sec-4",
+      "target": "post-15-rain-zh-TW-sec-5",
+      "weight": 0.8027,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-12-us-trip-en-sec-5",
       "target": "post-12-us-trip-zh-TW-sec-10",
       "weight": 0.8025,
@@ -47685,12 +48510,6 @@
       "source": "gallery-2023_12_30_sky_above-en-file",
       "target": "gallery-2024_01_06_hehuanshan-en-file",
       "weight": 0.8024,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_19_xpro1-en-sec-0-4",
-      "target": "post-2025_12_19_xpro1-en-sec-1",
-      "weight": 0.8023,
       "linkType": "semantic"
     },
     {
@@ -47808,12 +48627,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-3",
-      "target": "post-2025_12_19_xpro1-en-sec-1",
-      "weight": 0.7988,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-12-us-trip-zh-TW-sec-10",
       "target": "post-14-pho-zh-TW-sec-6",
       "weight": 0.7987,
@@ -47821,7 +48634,7 @@
     },
     {
       "source": "post-2025_12_13_sisyphus-en-sec-1",
-      "target": "post-2025_12_19_xpro1-en-sec-1",
+      "target": "post-2025_12_19_xpro1-en-sec-2",
       "weight": 0.7986,
       "linkType": "semantic"
     },
@@ -47880,14 +48693,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-en-sec-0-4-1-img-0",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-3-img-0",
+      "source": "project-2025_10_12_fortress-en-sec-0-4-3-img-0",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-1-img-0",
       "weight": 0.7974,
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_10_12_fortress-en-sec-0-4-3-img-0",
-      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-1-img-0",
+      "source": "project-2025_10_12_fortress-en-sec-0-4-1-img-0",
+      "target": "project-2025_10_12_fortress-zh-TW-sec-0-4-3-img-0",
       "weight": 0.7974,
       "linkType": "semantic"
     },
@@ -47919,6 +48732,12 @@
       "source": "post-11-portfolio-zh-TW-sec-8",
       "target": "project-2025_04_12_portfolio-zh-TW-sec-0",
       "weight": 0.7967,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_12_30_sky_above-en-file",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-sec-0",
+      "weight": 0.7966,
       "linkType": "semantic"
     },
     {
@@ -47976,6 +48795,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
+      "weight": 0.795,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-3",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
       "weight": 0.795,
@@ -47988,9 +48813,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-3",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
-      "weight": 0.795,
+      "source": "post-15-rain-en-sec-5",
+      "target": "post-2025_12_12_blog_launch-en-sec-1",
+      "weight": 0.7949,
       "linkType": "semantic"
     },
     {
@@ -48151,6 +48976,12 @@
     },
     {
       "source": "project-2025_08_04_debate-en-sec-2-2-img-0",
+      "target": "project-2025_08_04_debate-en-sec-2-3-img-1",
+      "weight": 0.7928,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-en-sec-2-2-img-0",
       "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-1",
       "weight": 0.7928,
       "linkType": "semantic"
@@ -48181,12 +49012,6 @@
     },
     {
       "source": "post-9_m11d-en-sec-0-img-0",
-      "target": "post-9_m11d-en-sec-2-img-0",
-      "weight": 0.7921,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-9_m11d-en-sec-0-img-0",
       "target": "post-9_m11d-zh-TW-sec-2-img-0",
       "weight": 0.7921,
       "linkType": "semantic"
@@ -48194,6 +49019,12 @@
     {
       "source": "post-9_m11d-en-sec-2-img-0",
       "target": "post-9_m11d-zh-TW-sec-0-img-0",
+      "weight": 0.7921,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-9_m11d-en-sec-0-img-0",
+      "target": "post-9_m11d-en-sec-2-img-0",
       "weight": 0.7921,
       "linkType": "semantic"
     },
@@ -48223,13 +49054,13 @@
     },
     {
       "source": "project-2025_05_18_patch_dataset-zh-TW-img-cover",
-      "target": "project-2025_10_12_fortress-en-img-cover",
+      "target": "project-2025_10_12_fortress-zh-TW-img-cover",
       "weight": 0.7915,
       "linkType": "semantic"
     },
     {
       "source": "project-2025_05_18_patch_dataset-zh-TW-img-cover",
-      "target": "project-2025_10_12_fortress-zh-TW-img-cover",
+      "target": "project-2025_10_12_fortress-en-img-cover",
       "weight": 0.7915,
       "linkType": "semantic"
     },
@@ -48252,15 +49083,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_12_blog_launch-zh-TW-sec-1",
+      "source": "post-15-rain-en-sec-5",
       "target": "post-2025_12_13_sisyphus-en-sec-1",
-      "weight": 0.7913,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-12-us-trip-zh-TW-sec-10",
-      "target": "post-13-chingshin-en-sec-5",
-      "weight": 0.7913,
+      "weight": 0.7907,
       "linkType": "semantic"
     },
     {
@@ -48276,27 +49101,33 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-2025_12_19_xpro1-en-sec-2",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-7",
+      "weight": 0.7901,
+      "linkType": "semantic"
+    },
+    {
       "source": "locale-updates-zh-TW-0",
       "target": "locale-about-en-0",
       "weight": 0.7897,
       "linkType": "semantic"
     },
     {
+      "source": "post-11-portfolio-en-sec-8",
+      "target": "post-15-rain-en-sec-5",
+      "weight": 0.7896,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_against_giants-zh-TW-file",
+      "target": "gallery-2023_12_30_against_the_unknown-zh-TW-sec-0",
+      "weight": 0.7894,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-2025_12_14_affinity-en-sec-0-3",
       "target": "post-2025_12_14_affinity-zh-TW-sec-1",
       "weight": 0.789,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_against_giants-en-img-gal-1",
-      "target": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
-      "weight": 0.7886,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
-      "target": "gallery-2023_10_06_against_giants-zh-TW-img-gal-1",
-      "weight": 0.7886,
       "linkType": "semantic"
     },
     {
@@ -48312,6 +49143,18 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2023_10_06_against_giants-en-img-gal-1",
+      "target": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
+      "weight": 0.7886,
+      "linkType": "semantic"
+    },
+    {
+      "source": "gallery-2023_10_06_against_giants-zh-TW-img-cover",
+      "target": "gallery-2023_10_06_against_giants-zh-TW-img-gal-1",
+      "weight": 0.7886,
+      "linkType": "semantic"
+    },
+    {
       "source": "post-13-chingshin-en-sec-1",
       "target": "post-13-chingshin-en-sec-5",
       "weight": 0.7883,
@@ -48319,20 +49162,8 @@
     },
     {
       "source": "post-11-portfolio-en-sec-8",
-      "target": "post-2025_12_19_xpro1-en-sec-1",
+      "target": "post-2025_12_19_xpro1-en-sec-2",
       "weight": 0.7883,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_14_affinity-en-sec-0-2-img-1",
-      "target": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-0",
-      "weight": 0.7882,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-0",
-      "target": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-1",
-      "weight": 0.7882,
       "linkType": "semantic"
     },
     {
@@ -48343,6 +49174,18 @@
     },
     {
       "source": "post-2025_12_14_affinity-en-sec-0-2-img-0",
+      "target": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-1",
+      "weight": 0.7882,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_14_affinity-en-sec-0-2-img-1",
+      "target": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-0",
+      "weight": 0.7882,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-0",
       "target": "post-2025_12_14_affinity-zh-TW-sec-0-2-img-1",
       "weight": 0.7882,
       "linkType": "semantic"
@@ -48372,12 +49215,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-13-chingshin-zh-TW-sec-5",
-      "target": "post-14-pho-en-sec-6",
-      "weight": 0.7875,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-11-portfolio-zh-TW-sec-8",
       "target": "project-2025_04_12_portfolio-en-sec-0",
       "weight": 0.7873,
@@ -48387,6 +49224,18 @@
       "source": "post-12-us-trip-en-sec-10",
       "target": "post-2025_12_14_affinity-en-sec-1",
       "weight": 0.7871,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-en-sec-2-1-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
+      "weight": 0.787,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_08_04_debate-zh-TW-sec-2-1-img-1",
+      "target": "project-2025_08_04_debate-zh-TW-sec-2-3-img-0",
+      "weight": 0.787,
       "linkType": "semantic"
     },
     {
@@ -48463,12 +49312,6 @@
     },
     {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-4",
-      "target": "project-2024_08_19_classics_reimagined-en-sec-3-img-6",
-      "weight": 0.7849,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-4",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-6",
       "weight": 0.7849,
       "linkType": "semantic"
@@ -48476,6 +49319,12 @@
     {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-6",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-4",
+      "weight": 0.7849,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-4",
+      "target": "project-2024_08_19_classics_reimagined-en-sec-3-img-6",
       "weight": 0.7849,
       "linkType": "semantic"
     },
@@ -48504,6 +49353,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-4",
+      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
+      "weight": 0.7842,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-4",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
       "weight": 0.7842,
@@ -48512,12 +49367,6 @@
     {
       "source": "project-2024_08_19_classics_reimagined-en-sec-3-img-5",
       "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-4",
-      "weight": 0.7842,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-4",
-      "target": "project-2024_08_19_classics_reimagined-zh-TW-sec-3-img-5",
       "weight": 0.7842,
       "linkType": "semantic"
     },
@@ -48672,12 +49521,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-10-lego-mount-en-sec-1",
-      "target": "post-2025_12_12_blog_launch-en-sec-1",
-      "weight": 0.7807,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2026_02_08_italy_mountain-en-file",
       "target": "gallery-2026-us-trip-en-sec-0",
       "weight": 0.7806,
@@ -48762,8 +49605,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-en-file",
-      "target": "gallery-2023_12_30_against_the_unknown-zh-TW-sec-0",
+      "source": "gallery-2023_12_30_against_the_unknown-zh-TW-file",
+      "target": "gallery-2024_01_06_hehuanshan-en-file",
       "weight": 0.7773,
       "linkType": "semantic"
     },
@@ -48792,9 +49635,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-13-chingshin-zh-TW-sec-5",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-1",
-      "weight": 0.7752,
+      "source": "post-15-rain-zh-TW-sec-5",
+      "target": "post-2025_12_13_sisyphus-zh-TW-sec-1",
+      "weight": 0.7756,
       "linkType": "semantic"
     },
     {
@@ -48813,6 +49656,12 @@
       "source": "gallery-2023_12_30_sky_above-en-file",
       "target": "gallery-2023_10_06_guided_by_the_tides-zh-TW-sec-0",
       "weight": 0.7745,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-13-chingshin-zh-TW-sec-5",
+      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-1",
+      "weight": 0.7744,
       "linkType": "semantic"
     },
     {
@@ -48894,21 +49743,9 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2023_12_30_against_the_unknown-zh-TW-file",
-      "target": "gallery-2024_01_06_hehuanshan-en-sec-0",
-      "weight": 0.7722,
-      "linkType": "semantic"
-    },
-    {
       "source": "post-12-us-trip-en-sec-10",
       "target": "post-12-us-trip-zh-TW-sec-5",
       "weight": 0.7717,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-11-portfolio-en-sec-8",
-      "target": "post-12-us-trip-en-sec-10",
-      "weight": 0.7709,
       "linkType": "semantic"
     },
     {
@@ -48936,6 +49773,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "post-15-rain-zh-TW-sec-5",
+      "target": "post-2026_01_10_plushies-zh-TW-sec-1",
+      "weight": 0.7687,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2025_04_12_portfolio-en-sec-0",
       "target": "locale-about-zh-TW-0",
       "weight": 0.7683,
@@ -48945,12 +49788,6 @@
       "source": "locale-about-zh-TW-0",
       "target": "locale-updates-en-0",
       "weight": 0.7682,
-      "linkType": "semantic"
-    },
-    {
-      "source": "gallery-2023_07_07_splash_of_red-en-file",
-      "target": "gallery-2023_12_30_sky_above-en-file",
-      "weight": 0.7679,
       "linkType": "semantic"
     },
     {
@@ -49020,8 +49857,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-zh-TW-sec-0-1-img-1",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-6-img-0",
+      "source": "post-2025_12_19_xpro1-en-sec-0-6-img-0",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-1-img-1",
       "weight": 0.764,
       "linkType": "semantic"
     },
@@ -49032,8 +49869,8 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-2025_12_19_xpro1-en-sec-0-6-img-0",
-      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-1-img-1",
+      "source": "post-2025_12_19_xpro1-zh-TW-sec-0-1-img-1",
+      "target": "post-2025_12_19_xpro1-zh-TW-sec-0-6-img-0",
       "weight": 0.764,
       "linkType": "semantic"
     },
@@ -49092,18 +49929,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-14-pho-zh-TW-sec-6",
-      "target": "post-2025_12_22_aftersun_paris_texas-zh-TW-sec-1",
-      "weight": 0.7628,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_19_xpro1-zh-TW-sec-1",
-      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-1",
-      "weight": 0.762,
-      "linkType": "semantic"
-    },
-    {
       "source": "gallery-2023_10_05_solitary_glow-en-img-gal-1",
       "target": "gallery-2024_04_06_city_of_tears-en-img-gal-0",
       "weight": 0.7617,
@@ -49125,12 +49950,6 @@
       "source": "gallery-2023_10_05_solitary_glow-zh-TW-img-gal-1",
       "target": "gallery-2024_04_06_city_of_tears-zh-TW-img-gal-0",
       "weight": 0.7617,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-2025_12_13_sisyphus-zh-TW-sec-1",
-      "target": "post-2026_02_10_synecdoche_truman-zh-TW-sec-1",
-      "weight": 0.7616,
       "linkType": "semantic"
     },
     {
@@ -49170,6 +49989,12 @@
       "linkType": "semantic"
     },
     {
+      "source": "gallery-2026_02_08_italy_mountain-zh-TW-file",
+      "target": "gallery-2024_01_06_hehuanshan-en-sec-0",
+      "weight": 0.7601,
+      "linkType": "semantic"
+    },
+    {
       "source": "project-2024_10_09_vrc_2813b_nova-zh-TW-sec-4",
       "target": "project-2025_08_04_debate-en-sec-4",
       "weight": 0.76,
@@ -49206,12 +50031,6 @@
       "linkType": "semantic"
     },
     {
-      "source": "project-2025_01_03_powerplay-zh-TW-sec-3-img-5",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-6",
-      "weight": 0.7587,
-      "linkType": "semantic"
-    },
-    {
       "source": "project-2025_01_03_powerplay-en-sec-3-img-5",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-6",
       "weight": 0.7587,
@@ -49220,6 +50039,12 @@
     {
       "source": "project-2025_01_03_powerplay-en-sec-3-img-6",
       "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-5",
+      "weight": 0.7587,
+      "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-zh-TW-sec-3-img-5",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-6",
       "weight": 0.7587,
       "linkType": "semantic"
     },
@@ -49236,14 +50061,14 @@
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-3",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-cover",
+      "source": "gallery-2024_01_06_hehuanshan-en-img-cover",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-3",
       "weight": 0.7582,
       "linkType": "semantic"
     },
     {
-      "source": "gallery-2024_01_06_hehuanshan-en-img-cover",
-      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-gal-3",
+      "source": "gallery-2024_01_06_hehuanshan-en-img-gal-3",
+      "target": "gallery-2024_01_06_hehuanshan-zh-TW-img-cover",
       "weight": 0.7582,
       "linkType": "semantic"
     },
@@ -49423,25 +50248,25 @@
     },
     {
       "source": "post-11-portfolio-en-img-cover",
-      "target": "post-12-us-trip-en-img-cover",
+      "target": "post-12-us-trip-zh-TW-img-cover",
+      "weight": 0.7536,
+      "linkType": "semantic"
+    },
+    {
+      "source": "post-11-portfolio-zh-TW-img-cover",
+      "target": "post-12-us-trip-zh-TW-img-cover",
       "weight": 0.7536,
       "linkType": "semantic"
     },
     {
       "source": "post-11-portfolio-en-img-cover",
-      "target": "post-12-us-trip-zh-TW-img-cover",
-      "weight": 0.7536,
-      "linkType": "semantic"
-    },
-    {
-      "source": "post-11-portfolio-zh-TW-img-cover",
       "target": "post-12-us-trip-en-img-cover",
       "weight": 0.7536,
       "linkType": "semantic"
     },
     {
       "source": "post-11-portfolio-zh-TW-img-cover",
-      "target": "post-12-us-trip-zh-TW-img-cover",
+      "target": "post-12-us-trip-en-img-cover",
       "weight": 0.7536,
       "linkType": "semantic"
     },
@@ -49650,13 +50475,13 @@
       "linkType": "semantic"
     },
     {
-      "source": "post-12-us-trip-en-img-cover",
+      "source": "post-12-us-trip-zh-TW-img-cover",
       "target": "post-13-chingshin-en-img-cover",
       "weight": 0.7504,
       "linkType": "semantic"
     },
     {
-      "source": "post-12-us-trip-en-img-cover",
+      "source": "post-12-us-trip-zh-TW-img-cover",
       "target": "post-13-chingshin-zh-TW-img-cover",
       "weight": 0.7504,
       "linkType": "semantic"
@@ -49664,12 +50489,6 @@
     {
       "source": "project-2025_01_03_powerplay-en-sec-3-img-2",
       "target": "project-2025_01_03_powerplay-en-sec-3-img-3",
-      "weight": 0.7503,
-      "linkType": "semantic"
-    },
-    {
-      "source": "project-2025_01_03_powerplay-zh-TW-sec-3-img-2",
-      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-3",
       "weight": 0.7503,
       "linkType": "semantic"
     },
@@ -49684,20 +50503,26 @@
       "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-2",
       "weight": 0.7503,
       "linkType": "semantic"
+    },
+    {
+      "source": "project-2025_01_03_powerplay-zh-TW-sec-3-img-2",
+      "target": "project-2025_01_03_powerplay-zh-TW-sec-3-img-3",
+      "weight": 0.7503,
+      "linkType": "semantic"
     }
   ],
   "metadata": {
-    "generatedAt": "2026-08-01T11:28:32Z",
-    "nodeCount": 1321,
-    "edgeCount": 4695,
+    "generatedAt": "2026-08-08T09:50:10Z",
+    "nodeCount": 1339,
+    "edgeCount": 4783,
     "threshold": 0.75,
     "maxEdgesPerNode": 8,
     "model": "google/gemini-embedding-2-preview",
     "nodeTypeCounts": {
       "hub": 24,
-      "file": 94,
-      "section": 593,
-      "image": 565,
+      "file": 96,
+      "section": 607,
+      "image": 567,
       "video": 16,
       "tag": 29
     }
