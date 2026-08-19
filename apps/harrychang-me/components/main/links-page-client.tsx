@@ -67,31 +67,16 @@ export default function LinksPageClient() {
       href: "/",
     },
     {
-      icon: <PenTool className="w-5 h-5" />,
-      label: t("resources.blog"),
-      href: "/blog",
-    },
-    {
-      icon: <FileText className="w-5 h-5" />,
-      label: t("resources.resume"),
-      href: "/cv",
-    },
-    {
       icon: <Github className="w-5 h-5" />,
       label: t("social.github"),
       href: "/github",
       external: true,
     },
     {
-      icon: <Mail className="w-5 h-5" />,
-      label: t("social.gmail"),
-      href: "/email",
+      icon: <Instagram className="w-5 h-5" />,
+      label: t("social.instagram"),
+      href: "/instagram",
       external: true,
-    },
-    {
-      icon: <Share2 className="w-5 h-5" />,
-      label: t("resources.graph"),
-      href: "/graph",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
@@ -106,9 +91,15 @@ export default function LinksPageClient() {
       external: true,
     },
     {
-      icon: <Instagram className="w-5 h-5" />,
-      label: t("social.instagram"),
-      href: "/instagram",
+      icon: <Mail className="w-5 h-5" />,
+      label: t("social.gmail"),
+      href: "/email",
+      external: true,
+    },
+    {
+      icon: <Film className="w-5 h-5" />,
+      label: t("social.letterboxd"),
+      href: "/letterboxd",
       external: true,
     },
     {
@@ -116,6 +107,21 @@ export default function LinksPageClient() {
       label: t("social.discord"),
       href: "/discord",
       external: true,
+    },
+    {
+      icon: <PenTool className="w-5 h-5" />,
+      label: t("resources.blog"),
+      href: "/blog",
+    },
+    {
+      icon: <FileText className="w-5 h-5" />,
+      label: t("resources.resume"),
+      href: "/cv",
+    },
+    {
+      icon: <Share2 className="w-5 h-5" />,
+      label: t("resources.graph"),
+      href: "/graph",
     },
     {
       icon: <Palette className="w-5 h-5" />,
@@ -142,12 +148,6 @@ export default function LinksPageClient() {
       icon: <Music className="w-5 h-5" />,
       label: t("resources.music"),
       href: "/spotify",
-      external: true,
-    },
-    {
-      icon: <Film className="w-5 h-5" />,
-      label: t("social.letterboxd"),
-      href: "/letterboxd",
       external: true,
     },
     {
