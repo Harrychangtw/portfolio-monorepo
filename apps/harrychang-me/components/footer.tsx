@@ -38,7 +38,7 @@ const connectLinks = [
 ];
 
 const exploreLinks = [
-  { id: "icarus", name: "Icarus Lab", href: "/icarus" },
+  { id: "linktree", name: "Links", href: "/linktree" },
   { id: "music", name: "Music Playlists", href: "/spotify" },
   { id: "letterboxd", name: "Letterboxd", href: "/letterboxd" },
   { id: "resume", name: "Resume", href: "/cv" },
@@ -55,7 +55,6 @@ const siteLinks = [
   { id: "gallery", name: "Gallery", href: "/#gallery" },
   { id: "blog", name: "Blog", href: "/blog" },
   { id: "privacy", name: "Privacy", href: "/privacy" },
-  // { id: "linktree", name: "Links", href: "/linktree" },
   { id: "manifesto", name: "Manifesto", href: "/manifesto" },
   { id: "source", name: "Source Code", href: "/readme" },
 ];
@@ -124,20 +123,12 @@ export default function Footer() {
   const isInternalLink = (href: string) => href.startsWith("/");
   const isAnchorLink = (href: string) => href.includes("#");
 
-  const getHref = (href: string, id: string) => {
+  const getHref = (href: string) => {
     if (!isClient) return href;
 
     const protocol = window.location.protocol;
     const hostname = window.location.hostname;
     const port = window.location.port ? `:${window.location.port}` : "";
-
-    if (id === "icarus") {
-      if (hostname.includes("localhost")) {
-        return `${protocol}//lab.localhost${port}`;
-      }
-      const baseDomain = hostname.replace(/^lab\./, "").replace(/^www\./, "");
-      return `${protocol}//lab.${baseDomain}`;
-    }
 
     if (isLab && isInternalLink(href)) {
       let mainDomain = hostname.replace(/^lab\./, "");
@@ -167,11 +158,10 @@ export default function Footer() {
     link: (typeof connectLinks)[0],
     showNowPlaying = false,
   ) => {
-    const href = getHref(link.href, link.id);
+    const href = getHref(link.href);
     const isInternal = isInternalLink(link.href);
-    const linkClassName = `font-ibm-plex text-primary transition-colors flex items-center justify-between w-full group ${
-      link.id === "icarus" ? "icarus-link" : "hover:text-accent"
-    }`;
+    const linkClassName =
+      "font-ibm-plex text-primary transition-colors flex items-center justify-between w-full group hover:text-accent";
 
     const label =
       showNowPlaying && link.id === "music" ? (
@@ -255,7 +245,7 @@ export default function Footer() {
             {/* Column 1: Logo & Motto */}
             <div className="col-span-12 md:col-span-6 md:pr-24 max-w-xl">
               <NavigationLink
-                href={getHref("/", "logo")}
+                href={getHref("/")}
                 className="relative h-12 mb-6 block cursor-pointer group"
                 aria-label="Return to home page"
               >

@@ -261,24 +261,25 @@
     }
   },
   "lab": {
-    "capsule": "Open · Closing September 2026",
+    "capsule": "Closed · Referrals & Email Only",
     "heroLine1": "Narrative Architecture.",
     "heroLine2": "Engineered to be Chosen.",
-    "tagline": "The strategy behind NTU CSIE Rank #1, a TMLR at 17, and IELTS 8.5.",
+    "tagline": "The strategy behind NTU CSIE Rank #1, a TMLR at 17, and IELTS 8.5 — now winding down to a handful of referrals.",
     "heroEmailPlaceholder": "your@email.com",
-    "applyNow": "Apply Now",
-    "formTitle": "Request a Consultation",
-    "formSubtitle": "I take on 1–2 clients at a time. Describe your goals and I'll follow up within 48 hours.",
+    "applyNow": "Get in Touch",
+    "directEmail": "Open applications are closed. This form still reaches me, or write to <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a> directly.",
+    "formTitle": "Get in Touch",
+    "formSubtitle": "Icarus Lab is winding down and no longer takes open applications. If you were referred or have a specific question, describe it here and I'll reply within a week.",
     "firstName": "First Name",
     "lastName": "Last Name",
     "emailRequired": "Email *",
     "whatInterests": "What do you need help with?",
     "preferredTier": "Service type",
     "processing": "Submitting...",
-    "submitApplication": "Submit Application",
+    "submitApplication": "Send Message",
     "privacyNote": "Your info stays private. No spam, ever.",
-    "successTitle": "Application Received",
-    "successMessage": "Thank you. I'll review your details and reach out within 48 hours.",
+    "successTitle": "Message Received",
+    "successMessage": "Thank you. I read every message, though replies may take up to a week while the practice winds down.",
     "errorGeneric": "Something went wrong",
     "errorNetwork": "Connection failed. Try again?",
     "errorDuplicate": "This email has already submitted an application.",
@@ -289,9 +290,9 @@
       "narrative": "Admissions & Narrative Design"
     },
     "tiers": {
-      "quickConsult": "Quick Consult · $800 / 30 min",
-      "deepDive": "Deep Dive · $1,500 / 1 hr",
-      "writtenReview": "Written Review · $1,000 / piece"
+      "quickConsult": "Quick Consult · 30 min",
+      "deepDive": "Deep Dive · 1 hr",
+      "writtenReview": "Written Review · per piece"
     },
     "backgroundLabel": "Your Background",
     "backgroundPlaceholder": "e.g. Grade 11, preparing for special admission to NTU CSIE",
@@ -306,8 +307,8 @@
       "a2": "No. I do not act as a primary investigator or provide foundational technical instruction. I work with students who have a baseline of work or a clear direction but need high-level guidance on execution and presentation.",
       "q3": "Does this framework require an international or privileged educational background?",
       "a3": "Not at all. I am entirely locally educated. The framework focuses on universal communication, structural clarity, and strategic positioning. These principles apply regardless of your starting environment.",
-      "q4": "What is your long-term availability?",
-      "a4": "I take on a strictly limited number of clients to maintain focus. I am fully committed to my current academic timeline in Taiwan and will remain consistently available for the students I choose to work with."
+      "q4": "Are you still taking on new students?",
+      "a4": "No — Icarus Lab is winding down and open applications are closed. I am keeping a small number of existing and referred students, and email stays open at chiwei@harrychang.me for questions, referrals, or anything I can point you toward."
     }
   }
 }

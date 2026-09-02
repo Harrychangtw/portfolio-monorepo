@@ -261,24 +261,25 @@
     }
   },
   "lab": {
-    "capsule": "開放申請中 · 九月前限定",
+    "capsule": "已結束公開申請 · 僅接受來信",
     "heroLine1": "被看見 · 被記住",
     "heroLine2": "被無可爭議地選上",
-    "tagline": "臺大資工特選正取一、17 歲發表 TMLR 論文、雅思 8.5 的底層策略",
+    "tagline": "臺大資工特選正取一、17 歲發表 TMLR 論文、雅思 8.5 的底層策略——目前已縮減至少數推薦名額",
     "heroEmailPlaceholder": "your@email.com",
-    "applyNow": "立即申請",
-    "formTitle": "申請諮詢",
-    "formSubtitle": "同時僅接 1–2 位合作對象。請簡述你的目標，我將於 48 小時內回覆。",
+    "applyNow": "與我聯繫",
+    "directEmail": "公開申請已結束。此表單仍會寄到我手上，也歡迎直接來信 <a href=\"mailto:chiwei@harrychang.me\">chiwei@harrychang.me</a>。",
+    "formTitle": "與我聯繫",
+    "formSubtitle": "Icarus Lab 正在縮編，已不再開放公開申請。若你是經人推薦或有具體問題，請在此簡述，我會在一週內回覆。",
     "firstName": "名字",
     "lastName": "姓氏",
     "emailRequired": "電子郵件 *",
     "whatInterests": "你需要什麼協助？",
     "preferredTier": "服務類型",
     "processing": "提交中...",
-    "submitApplication": "提交申請",
+    "submitApplication": "送出訊息",
     "privacyNote": "絕不濫用你的資料，隱私至上。",
-    "successTitle": "申請已送出",
-    "successMessage": "感謝你的申請。我將在 48 小時內審閱並與你聯繫。",
+    "successTitle": "訊息已送出",
+    "successMessage": "感謝你的來信。每一封我都會讀，但在縮編期間回覆可能需要一週的時間。",
     "errorGeneric": "發生錯誤",
     "errorNetwork": "網路錯誤。請再試一次。",
     "errorDuplicate": "此信箱已提交過申請。",
@@ -289,9 +290,9 @@
       "narrative": "備審敘事與設計"
     },
     "tiers": {
-      "quickConsult": "快速諮詢 · $800 / 30 分鐘",
-      "deepDive": "深度指導 · $1,500 / 1 小時",
-      "writtenReview": "書面建議 · $1,000 / 份"
+      "quickConsult": "快速諮詢 · 30 分鐘",
+      "deepDive": "深度指導 · 1 小時",
+      "writtenReview": "書面建議 · 單篇"
     },
     "backgroundLabel": "你的背景",
     "backgroundPlaceholder": "例：高二，準備臺大資工特殊選才",
@@ -306,8 +307,8 @@
       "a2": "不能。我不取代指導教授的角色，也不提供基礎的技術與程式教學。我協助已經具備初步成果或明確方向，但在執行與包裝上需要高階策略指導的學生。",
       "q3": "這套策略是否只適用於擁有海外或特殊教育背景的學生？",
       "a3": "完全不是。我本身是在地升學體系出身。我們探討的框架著重於普適的溝通邏輯、清晰的結構與精準的定位。這些原則與你的背景出身無關。",
-      "q4": "未來的長期諮詢時間是否穩定？",
-      "a4": "為了確保服務品質，我僅收取極少數的長期學生。我目前的學術重心將留在台灣，因此能為合作的學生提供穩定且持續的指導。"
+      "q4": "現在還收新的學生嗎？",
+      "a4": "不再收了。Icarus Lab 正在縮編，公開申請已經結束。我只保留少數既有與經人推薦的學生，信箱 chiwei@harrychang.me 仍然開放，任何問題、推薦或需要指路的事都歡迎來信。"
     }
   }
 }
