@@ -8,7 +8,7 @@ import AnimatedIcarusIcon from "@/components/lab/animated-icon";
 import FaqSection from "@/components/lab/faq-section";
 
 export default function LabPageClient() {
-  const { t, isLoading } = useLanguage();
+  const { t, tHtml, isLoading } = useLanguage();
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
@@ -146,6 +146,11 @@ export default function LabPageClient() {
                   {t("lab.applyNow", "common")}
                 </button>
               </div>
+
+              {/* Closed notice + direct email fallback */}
+              <p className="mt-4 text-xs md:text-sm text-muted-foreground font-ibm-plex-sans font-light leading-relaxed [&_a]:underline [&_a]:underline-offset-4 [&_a]:text-foreground hover:[&_a]:text-muted-foreground">
+                {tHtml("lab.directEmail", "common")}
+              </p>
             </motion.div>
           </div>
 
