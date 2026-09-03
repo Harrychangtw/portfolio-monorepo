@@ -166,7 +166,10 @@ export function ImageContainer({
             )}
 
             {/* Loading skeleton text overlay */}
-            <ImageLoadingSkeleton visible={!blurComplete} />
+            <ImageLoadingSkeleton
+              visible={!blurComplete}
+              backdropSrc={isVideo ? undefined : thumbnailSrc}
+            />
 
             <div className="absolute inset-0 z-0">
               {(isVisible || priority) && (

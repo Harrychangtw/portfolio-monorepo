@@ -7,7 +7,7 @@
   "sections": {
     "summary": {
       "title": "簡介",
-      "content": "即將入學臺大資工的大型語言模型安全研究者，研究延伸至軟體開發與設計。以第一作者身分發表 FORTRESS（TMLR）與 PATCH 資料集（EACL 2026 SRW），並共同開發獲國科會肯定的 RAG 系統，於 SITCON 2025、2026 擔任講者，並於 AIS3 與 SITCON Camp 2026 授課。現為奧義智慧科技最年輕的研究實習生，研究基於注意力機制的攻擊分類。雅思 8.5；中英文流利。"
+      "content": "臺大資工大一學生，研究大型語言模型安全性，並延伸至軟體開發與設計。以第一作者身分發表 FORTRESS（TMLR）與 PATCH 資料集（ISCSLP 2026），並共同開發獲國科會肯定的 RAG 系統，於 SITCON 2025、2026 擔任講者，並於 AIS3 與 SITCON Camp 2026 授課。現為奧義智慧科技最年輕的研究實習生，研究基於注意力機制的攻擊分類。雅思 8.5；中英文流利。"
     },
     "education": {
       "title": "學歷",
@@ -157,7 +157,7 @@
           "title": "PATCH Dataset: Empowering Traditional Chinese Safety Classifiers for Lightweight LLM",
           "meta": "",
           "date": "February 2026",
-          "description": "Chi-Wei Chang, et al. — EACL 2026 Student Research Workshop (SRW)"
+          "description": "Chi-Wei Chang, et al. — ISCSLP 2026；先前發表於 EACL 2026 SRW"
         }
       ]
     },
@@ -212,7 +212,7 @@
     }
   },
   "footer": {
-    "text": "張祺煒 · 履歷 · July 2026",
+    "text": "張祺煒 · 履歷 · August 2026",
     "downloadPdf": "下載完整 PDF"
   }
 }

@@ -107,7 +107,10 @@ export function CompareSlider({
               />
             )}
 
-            <ImageLoadingSkeleton visible={!bothLoaded} />
+            <ImageLoadingSkeleton
+              visible={!bothLoaded}
+              backdropSrc={leftThumb}
+            />
 
             {/* Blurred thumbnails */}
             {leftThumb && isVisible && (

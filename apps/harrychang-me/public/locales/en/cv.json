@@ -7,7 +7,7 @@
   "sections": {
     "summary": {
       "title": "Summary",
-      "content": "Incoming NTU CSIE student researching LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH dataset (EACL 2026 SRW), built an award-winning RAG system recognized by Taiwan's NSTC, spoke at SITCON (2025, 2026), and taught at AIS3 and SITCON Camp 2026. Currently the youngest research intern at CyCraft Technology, working on attention-based attack taxonomies. IELTS 8.5; fluent Mandarin and English."
+      "content": "NTU CSIE freshman researching LLM safety, with work spanning software and design. First-authored FORTRESS (TMLR) and the PATCH dataset (ISCSLP 2026), built an award-winning RAG system recognized by Taiwan's NSTC, spoke at SITCON (2025, 2026), and taught at AIS3 and SITCON Camp 2026. Currently the youngest research intern at CyCraft Technology, working on attention-based attack taxonomies. IELTS 8.5; fluent Mandarin and English."
     },
     "education": {
       "title": "Education",
@@ -160,7 +160,7 @@
           "title": "PATCH Dataset: Empowering Traditional Chinese Safety Classifiers for Lightweight LLM",
           "meta": "",
           "date": "February 2026",
-          "description": "Chi-Wei Chang, et al. — EACL 2026 Student Research Workshop (SRW)"
+          "description": "Chi-Wei Chang, et al. — ISCSLP 2026; earlier version presented at EACL 2026 SRW"
         }
       ]
     },
@@ -215,7 +215,7 @@
     }
   },
   "footer": {
-    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 July",
+    "text": "Chang Chi-Wei · Curriculum Vitae · 2026 August",
     "downloadPdf": "Download Full PDF"
   }
 }

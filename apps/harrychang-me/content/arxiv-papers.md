@@ -241,6 +241,7 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2411.16508
 2411.17713
 2411.18895
+2412.06464
 2412.12591
 2412.13435
 2412.15035
@@ -332,6 +333,7 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2509.03888
 2509.03985
 2509.09708
+2509.13316
 2509.15202
 2509.25843
 2509.26238
@@ -348,6 +350,7 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2511.05442
 2511.06852
 2511.08379
+2511.08579
 2511.12884
 2511.13653
 2511.15304
@@ -396,4 +399,3 @@ description: "List of ArXiv paper IDs for the paper reading section"
 2604.18519
 2604.19351
 2604.23130
-2412.06464
