@@ -21,6 +21,23 @@ const SOCIAL_REDIRECTS = [
   ['/email', 'mailto:chiwei@harrychang.me'],
 ]
 
+// Marp decks shipped as static bundles under public/slides/<slug>/. Listed
+// here so each one gets a pretty URL (with and without trailing slash) that
+// resolves to its index.html. Asset refs inside a bundle are absolute
+// (`/slides/<slug>/assets/...`, set by its build-web.mjs --base flag), so
+// neither form breaks. Adding a deck = drop the bundle in and add its slug.
+const SLIDE_DECKS = [
+  'sitcon-camp-26-ml-course2',
+  'xingan-26-alumni-talk',
+]
+
+// /talk — one stable URL for whatever I am speaking about right now, handed
+// out on stage and in QR codes. Repoint it at the next deck's slug when the
+// next talk lands; it stays a 307 rather than a 308 precisely because it
+// moves, since a permanent redirect would stick in the browser cache of
+// everyone who opened it during the previous talk.
+const CURRENT_TALK = '/slides/xingan-26-alumni-talk'
+
 let userConfig = undefined
 
 
@@ -133,11 +150,14 @@ const nextConfig = {
     ]
   },
   async redirects() {
-    return SOCIAL_REDIRECTS.map(([source, destination]) => ({
-      source,
-      destination,
-      permanent: true,
-    }))
+    return [
+      ...SOCIAL_REDIRECTS.map(([source, destination]) => ({
+        source,
+        destination,
+        permanent: true,
+      })),
+      { source: '/talk', destination: CURRENT_TALK, permanent: false },
+    ]
   },
   experimental: {
     webpackBuildWorker: true,
@@ -153,17 +173,18 @@ const nextConfig = {
   skipTrailingSlashRedirect: true,
   async rewrites() {
     return [
-      // Marp slide decks: pretty URL -> the static bundle's index.html. Asset
-      // refs inside the bundle are absolute (built with --base), so trailing
-      // slash doesn't matter. See slides/marp in the sitcon-camp-2026-ml repo.
-      {
-        source: '/slides/sitcon-camp-26-ml-course2',
-        destination: '/slides/sitcon-camp-26-ml-course2/index.html',
-      },
-      {
-        source: '/slides/sitcon-camp-26-ml-course2/',
-        destination: '/slides/sitcon-camp-26-ml-course2/index.html',
-      },
+      // Marp slide decks: pretty URL -> the static bundle's index.html. See
+      // SLIDE_DECKS above, and slides/marp in each deck's own repo.
+      ...SLIDE_DECKS.flatMap((slug) => [
+        {
+          source: `/slides/${slug}`,
+          destination: `/slides/${slug}/index.html`,
+        },
+        {
+          source: `/slides/${slug}/`,
+          destination: `/slides/${slug}/index.html`,
+        },
+      ]),
       {
         source: '/ingest/static/:path*',
         destination: 'https://us-assets.i.posthog.com/static/:path*',
