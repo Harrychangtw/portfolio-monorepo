@@ -14,7 +14,8 @@
     "design": "設計系統",
     "cv": "履歷",
     "graph": "網站圖譜",
-    "privacy": "隱私權政策"
+    "privacy": "隱私權政策",
+    "calendar": "行事曆"
   },
   "footer": {
     "guestbook": "匿名留言板",
@@ -160,12 +161,13 @@
     "instagram": "Instagram",
     "letterboxd": "Letterboxd",
     "linkedin": "LinkedIn",
-    "calendar": "預約會議",
+    "calendar": "行事曆",
     "music": "Spotify",
-    "medium": "Medium"
+    "medium": "Medium",
+    "booking": "預約會議"
   },
   "resources": {
-    "calendar": "預約會議",
+    "calendar": "行事曆",
     "resume": "履歷",
     "manifesto": "理念",
     "icarus": "Icarus Lab",
@@ -178,7 +180,8 @@
     "graph": "知識圖譜",
     "linktree": "連結",
     "source": "網站原始碼",
-    "privacy": "隱私權政策"
+    "privacy": "隱私權政策",
+    "booking": "預約會議"
   },
   "links": {
     "hero": "Code. Camera. Curiosity."
@@ -309,6 +312,23 @@
       "a3": "完全不是。我本身是在地升學體系出身。我們探討的框架著重於普適的溝通邏輯、清晰的結構與精準的定位。這些原則與你的背景出身無關。",
       "q4": "現在還收新的學生嗎？",
       "a4": "不再收了。Icarus Lab 正在縮編，公開申請已經結束。我只保留少數既有與經人推薦的學生，信箱 chiwei@harrychang.me 仍然開放，任何問題、推薦或需要指路的事都歡迎來信。"
+    }
+  },
+  "calendar": {
+    "timezone": "時區",
+    "showLocal": "顯示我的時區",
+    "showSource": "顯示台北時間",
+    "busy": "忙碌",
+    "allDay": "全天",
+    "updated": "資料更新於",
+    "unavailable": "目前無法載入行事曆。",
+    "view": {
+      "month": "月",
+      "week": "週"
+    },
+    "cal": {
+      "ntu": "台大課程",
+      "projects": "講座與專案"
     }
   }
 }

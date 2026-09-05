@@ -11,6 +11,7 @@ import {
   Linkedin,
   Instagram,
   Calendar,
+  CalendarPlus,
   FileText,
   Music,
   BookOpen,
@@ -142,6 +143,11 @@ export default function LinksPageClient() {
       icon: <Calendar className="w-5 h-5" />,
       label: t("resources.calendar"),
       href: "/cal",
+    },
+    {
+      icon: <CalendarPlus className="w-5 h-5" />,
+      label: t("resources.booking"),
+      href: "/meet",
       external: true,
     },
     {

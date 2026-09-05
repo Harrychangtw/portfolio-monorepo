@@ -47,3 +47,6 @@ content/workflows
 content/drafts
 content/archive
 cxport_output.xml
+# Calendar snapshot: rebuilt from Google on every deploy (scripts/build-calendar.mjs).
+# Never committed — this repo is public and the snapshot contains schedule data.
+content/generated/calendar.json

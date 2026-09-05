@@ -34,6 +34,7 @@ const SPECIAL_PAGES = [
   { prefix: "/manifesto", key: "manifesto" },
   { prefix: "/uses", key: "uses" },
   { prefix: "/linktree", key: "links" },
+  { prefix: "/cal", key: "calendar" },
   { prefix: "/design", key: "design" },
   { prefix: "/cv", key: "cv" },
   { prefix: "/privacy", key: "privacy" },
@@ -47,12 +48,13 @@ export default function Header() {
     { label: t("social.linkedin"), link: "/linkedin" },
     { label: t("social.github"), link: "/github" },
     { label: t("social.instagram"), link: "/instagram" },
-    { label: t("social.calendar"), link: "/cal" },
+    { label: t("social.booking"), link: "/meet" },
   ];
 
   const exploreItems = [
     { label: t("social.music"), link: "/spotify" },
     { label: t("social.letterboxd"), link: "/letterboxd" },
+    { label: t("resources.calendar"), link: "/cal" },
     { label: t("resources.resume"), link: "/cv" },
     { label: t("resources.design"), link: "/design" },
     { label: t("resources.graph"), link: "/graph" },
