@@ -49,7 +49,8 @@ const exploreLinks = [
   { id: "reading", name: "Paper Reading List", href: "/paper-reading" },
   { id: "design", name: "Design System", href: "/design" },
   { id: "graph", name: "Knowledge Graph", href: "/graph" },
-  // href is swapped to the zh-TW feed at render time; see `exploreLinks` below.
+  // href is swapped to the zh-TW feed at render time; see
+  // `localizedExploreLinks` below.
   { id: "rss", name: "RSS Feed", href: "/feed.xml" },
 ];
 
@@ -62,6 +63,7 @@ const siteLinks = [
   { id: "privacy", name: "Privacy", href: "/privacy" },
   { id: "manifesto", name: "Manifesto", href: "/manifesto" },
   { id: "source", name: "Source Code", href: "/readme" },
+  { id: "issues", name: "Report an Issue", href: "/issues" },
 ];
 
 // Helper to get translation key based on link type

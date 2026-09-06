@@ -10,6 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const SOCIAL_REDIRECTS = [
   ['/github', 'https://github.com/Harrychangtw'],
   ['/readme', 'https://github.com/Harrychangtw/portfolio-monorepo/tree/main/apps/harrychang-me'],
+  ['/issues', 'https://github.com/Harrychangtw/portfolio-monorepo/issues/new/choose'],
   ['/linkedin', 'https://www.linkedin.com/in/chi-wei-chang-928408375/'],
   ['/instagram', 'https://www.instagram.com/pomelo_chang_08/'],
   ['/spotify', 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3'],

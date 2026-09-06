@@ -181,6 +181,7 @@
     "rss": "RSS Feed",
     "linktree": "Links",
     "source": "Source Code",
+    "issues": "Report an Issue",
     "privacy": "Privacy",
     "booking": "Book a Meeting"
   },
@@ -221,6 +222,7 @@
     "graph": "Explore this site as an interactive knowledge graph",
     "rss": "Subscribe in your reader — new posts, no algorithm",
     "source": "View the monorepo source code and README on GitHub",
+    "issues": "Found something broken? Open an issue on GitHub",
     "linktree": "All my links, gathered in one place",
     "privacy": "How this site handles your data"
   },

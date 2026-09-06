@@ -181,6 +181,7 @@
     "rss": "RSS 訂閱",
     "linktree": "連結",
     "source": "網站原始碼",
+    "issues": "回報問題",
     "privacy": "隱私權政策",
     "booking": "預約會議"
   },
@@ -221,6 +222,7 @@
     "graph": "以互動知識圖譜的方式探索本站",
     "rss": "用你的閱讀器訂閱新文章，沒有演算法",
     "source": "在 GitHub 上探索本站的架構",
+    "issues": "發現問題了嗎？到 GitHub 開一張 issue",
     "linktree": "所有連結，集中於此",
     "privacy": "本站如何處理你的資料"
   },
