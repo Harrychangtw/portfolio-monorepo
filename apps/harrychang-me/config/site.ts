@@ -110,3 +110,18 @@ export const siteConfig = {
 };
 
 export type SiteConfig = typeof siteConfig;
+
+/**
+ * RSS autodiscovery, for `Metadata.alternates.types`.
+ *
+ * Next merges metadata per top-level field, so a page that declares its own
+ * `alternates` (for a canonical or hreflang set) replaces the root layout's
+ * entirely — including this. Any such page has to spread `feedAlternates`
+ * back in or it silently drops the `<link rel="alternate">` feed tags.
+ */
+export const feedAlternates = {
+  "application/rss+xml": [
+    { url: "/feed.xml", title: "Harry Chang 張祺煒 — Blog (English)" },
+    { url: "/feed-zh-tw.xml", title: "Harry Chang 張祺煒 — 部落格（中文）" },
+  ],
+};

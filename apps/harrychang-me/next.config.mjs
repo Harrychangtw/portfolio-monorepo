@@ -10,6 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const SOCIAL_REDIRECTS = [
   ['/github', 'https://github.com/Harrychangtw'],
   ['/readme', 'https://github.com/Harrychangtw/portfolio-monorepo/tree/main/apps/harrychang-me'],
+  ['/issues', 'https://github.com/Harrychangtw/portfolio-monorepo/issues/new/choose'],
   ['/linkedin', 'https://www.linkedin.com/in/chi-wei-chang-928408375/'],
   ['/instagram', 'https://www.instagram.com/pomelo_chang_08/'],
   ['/spotify', 'https://open.spotify.com/user/1b7kc6j0zerk49mrv80pwdd96?si=7d5a6e1a4fa34de3'],
@@ -39,6 +40,16 @@ const SLIDE_DECKS = [
 // moves, since a permanent redirect would stick in the browser cache of
 // everyone who opened it during the previous talk.
 const CURRENT_TALK = '/slides/xingan-26-alumni-talk'
+
+// Conventional short paths people try by hand or paste into a reader. The
+// feeds themselves are static files in public/, written by
+// scripts/generate-feeds.mjs.
+const FEED_REDIRECTS = [
+  ['/rss', '/feed.xml'],
+  ['/feed', '/feed.xml'],
+  ['/rss.xml', '/feed.xml'],
+  ['/feed/zh-tw', '/feed-zh-tw.xml'],
+]
 
 let userConfig = undefined
 
@@ -121,6 +132,22 @@ const nextConfig = {
         ],
       },
       {
+        // Static file serving would label these `application/xml`, which some
+        // readers accept grudgingly; name the feed type outright. An hour of
+        // caching also stops pollers from revalidating on every check.
+        source: '/:feed(feed|feed-zh-tw).xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/rss+xml; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
+      {
         // Pre-built optimized images at fixed paths. URL must change if
         // contents change (e.g. rename the file or add a version suffix)
         // since `immutable` tells browsers never to revalidate.
@@ -154,6 +181,11 @@ const nextConfig = {
   async redirects() {
     return [
       ...SOCIAL_REDIRECTS.map(([source, destination]) => ({
+        source,
+        destination,
+        permanent: true,
+      })),
+      ...FEED_REDIRECTS.map(([source, destination]) => ({
         source,
         destination,
         permanent: true,

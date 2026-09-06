@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title><![CDATA[Harry Chang 張祺煒]]></title>
+    <link>https://www.harrychang.me/blog</link>
+    <description><![CDATA[電影隨筆、器材心得，以及那些值得慢慢咀嚼的事。張祺煒關於技術、創作與好奇心的書寫。]]></description>
+    <language>zh-TW</language>
+    <copyright>© 2026 Harry Chang</copyright>
+    <managingEditor>chiwei@harrychang.me (Harry Chang)</managingEditor>
+    <webMaster>chiwei@harrychang.me (Harry Chang)</webMaster>
+    <lastBuildDate>Fri, 07 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <generator>scripts/generate-feeds.mjs</generator>
+    <atom:link href="https://www.harrychang.me/feed-zh-tw.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://www.harrychang.me/images/og-image-blog.webp</url>
+      <title><![CDATA[Harry Chang 張祺煒]]></title>
+      <link>https://www.harrychang.me/blog</link>
+    </image>
+    <item>
+      <title><![CDATA[最長的那條路：關於走進雨中]]></title>
+      <link>https://www.harrychang.me/blog/15-rain_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/15-rain_zh-tw</guid>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Personal</category>
+      <category>Travel</category>
+      <description><![CDATA[五座城市、一場颱風，以及對一個習慣的誠實盤點。關於作為許可證的雜事、讓你堅持而非乾爽的裝備，還有那場你不會想念、卻會記得的風暴。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/15-rain/titlecard.webp" alt="最長的那條路：關於走進雨中" /></p>
+<p>五座城市、一場颱風，以及對一個習慣的誠實盤點。關於作為許可證的雜事、讓你堅持而非乾爽的裝備，還有那場你不會想念、卻會記得的風暴。</p>
+<p><a href="https://www.harrychang.me/blog/15-rain_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[二桌：關於週日及河粉]]></title>
+      <link>https://www.harrychang.me/blog/14-pho_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/14-pho_zh-tw</guid>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Food</category>
+      <category>Personal</category>
+      <description><![CDATA[凌晨兩點，我憑記憶盤點了一家河粉店，錯了兩題。關於週日的儀式、現切的辣椒，以及那些證明你深愛一個地方的小小錯誤。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/14-pho/titlecard.webp" alt="二桌：關於週日及河粉" /></p>
+<p>凌晨兩點，我憑記憶盤點了一家河粉店，錯了兩題。關於週日的儀式、現切的辣椒，以及那些證明你深愛一個地方的小小錯誤。</p>
+<p><a href="https://www.harrychang.me/blog/14-pho_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[往下兩層樓：靜心，2026 五月]]></title>
+      <link>https://www.harrychang.me/blog/13-chingshin_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/13-chingshin_zh-tw</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Memoir</category>
+      <category>Personal</category>
+      <description><![CDATA[一棟建築只是持續做著它該做的事。你只是在幾乎要離開時，才開始聽見不一樣的聲音。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/13-chingshin/titlecard.webp" alt="往下兩層樓：靜心，2026 五月" /></p>
+<p>一棟建築只是持續做著它該做的事。你只是在幾乎要離開時，才開始聽見不一樣的聲音。</p>
+<p><a href="https://www.harrychang.me/blog/13-chingshin_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈]]></title>
+      <link>https://www.harrychang.me/blog/12-us-trip_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/12-us-trip_zh-tw</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Travel</category>
+      <category>Memoir</category>
+      <description><![CDATA[十六天，三座城市，一趟拒絕連貫的旅程。關於排斥他人的多元、不存在的自我，以及為什麼擁抱矛盾或許才是重點。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/12-us-trip/titlecard.webp" alt="滾回紐澤西：矛盾、幽靈，以及那無法閉合的迴圈" /></p>
+<p>十六天，三座城市，一趟拒絕連貫的旅程。關於排斥他人的多元、不存在的自我，以及為什麼擁抱矛盾或許才是重點。</p>
+<p><a href="https://www.harrychang.me/blog/12-us-trip_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[與 harrychang.me 的 365 天：關於心血來潮以及擁有網路的一角]]></title>
+      <link>https://www.harrychang.me/blog/11-portfolio_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/11-portfolio_zh-tw</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Web Development</category>
+      <category>Retrospective</category>
+      <category>Personal</category>
+      <description><![CDATA[365 天前，我錯過了一座山，卻建了一個網站。關於缺席、模仿，以及學會在繞著空缺生長。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/11-portfolio/titlecard.webp" alt="與 harrychang.me 的 365 天：關於心血來潮以及擁有網路的一角" /></p>
+<p>365 天前，我錯過了一座山，卻建了一個網站。關於缺席、模仿，以及學會在繞著空缺生長。</p>
+<p><a href="https://www.harrychang.me/blog/11-portfolio_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[十七格寬：一個樂高風扇架，以及為何不需要「長大」]]></title>
+      <link>https://www.harrychang.me/blog/10-lego-mount_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/10-lego-mount_zh-tw</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Hardware</category>
+      <category>Homelab</category>
+      <category>DIY</category>
+      <description><![CDATA[用童年工具解決家用伺服器的散熱問題。關於樂高那奇異的精準、迭代設計，以及為什麼成長不代表拋下什麼。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/10-lego-mount/titlecard.webp" alt="十七格寬：一個樂高風扇架，以及為何不需要「長大」" /></p>
+<p>用童年工具解決家用伺服器的散熱問題。關於樂高那奇異的精準、迭代設計，以及為什麼成長不代表拋下什麼。</p>
+<p><a href="https://www.harrychang.me/blog/10-lego-mount_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Leica M11-D：關於特權、在場，以及我無法為這筆消費辯護的種種]]></title>
+      <link>https://www.harrychang.me/blog/9_m11d_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/9_m11d_zh-tw</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Photography</category>
+      <category>Hardware</category>
+      <category>Review</category>
+      <description><![CDATA[一台我無法以任何理性指標辯護的相機。一個我會毫不猶豫再做一次相同的決定。關於消費而非投資，關於不存在的螢幕，以及承諾放慢腳步的意義。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/9_m11d/titlecard.webp" alt="Leica M11-D：關於特權、在場，以及我無法為這筆消費辯護的種種" /></p>
+<p>一台我無法以任何理性指標辯護的相機。一個我會毫不猶豫再做一次相同的決定。關於消費而非投資，關於不存在的螢幕，以及承諾放慢腳步的意義。</p>
+<p><a href="https://www.harrychang.me/blog/9_m11d_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[舞台與出口：關於《紐約浮世繪》與《楚門的世界》]]></title>
+      <link>https://www.harrychang.me/blog/2026_02_10_synecdoche_truman_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2026_02_10_synecdoche_truman_zh-tw</guid>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Film</category>
+      <category>Criticism</category>
+      <description><![CDATA[兩部關於建構現實、以及我們在其中扮演的自我的電影。一個逃離了舞台，另一個則化身為舞台。一篇綜合論述。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp" alt="舞台與出口：關於《紐約浮世繪》與《楚門的世界》" /></p>
+<p>兩部關於建構現實、以及我們在其中扮演的自我的電影。一個逃離了舞台，另一個則化身為舞台。一篇綜合論述。</p>
+<p><a href="https://www.harrychang.me/blog/2026_02_10_synecdoche_truman_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[為什麼我喜歡這些長得怪怪的絨毛玩偶？]]></title>
+      <link>https://www.harrychang.me/blog/2026_01_10_plushies_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2026_01_10_plushies_zh-tw</guid>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Collection</category>
+      <category>Essay</category>
+      <description><![CDATA[不是每隻絨毛玩具都得走可愛路線。有些就該一臉「有故事」的樣子。關於我那群長得亂七八糟、卻充滿特色的絨毛夥伴。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2026_01_10_plushies/titlecard.webp" alt="為什麼我喜歡這些長得怪怪的絨毛玩偶？" /></p>
+<p>不是每隻絨毛玩具都得走可愛路線。有些就該一臉「有故事」的樣子。關於我那群長得亂七八糟、卻充滿特色的絨毛夥伴。</p>
+<p><a href="https://www.harrychang.me/blog/2026_01_10_plushies_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[一條非典型的路：115 臺大資工資安組特選正取經驗]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission_zh-tw</guid>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Admission</category>
+      <category>Experience</category>
+      <category>Memoir</category>
+      <description><![CDATA[當網路上的心得屈指可數，當身邊全是 CTF 與資奧電神，這是一趟關於尋找自己賽道、並相信不同的價值的故事。給所有對臺大資工特選感到好奇，或對自己道路感到迷惘的你。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp" alt="一條非典型的路：115 臺大資工資安組特選正取經驗" /></p>
+<p>當網路上的心得屈指可數，當身邊全是 CTF 與資奧電神，這是一趟關於尋找自己賽道、並相信不同的價值的故事。給所有對臺大資工特選感到好奇，或對自己道路感到迷惘的你。</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[因愛，陌生：關於《日麗》與《巴黎，德州》]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas_zh-tw</guid>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Film</category>
+      <category>Criticism</category>
+      <description><![CDATA[兩部關於親子、距離以及「被看見」那無法承受之重的電影。一篇綜合論述。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp" alt="因愛，陌生：關於《日麗》與《巴黎，德州》" /></p>
+<p>兩部關於親子、距離以及「被看見」那無法承受之重的電影。一篇綜合論述。</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[X-Pro1：不完美、緩慢，以及在枷鎖中跳舞]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_19_xpro1_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_19_xpro1_zh-tw</guid>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Photography</category>
+      <category>Hardware</category>
+      <category>Review</category>
+      <description><![CDATA[寫給一台 13 歲相機的情書，它教我的攝影課比任何規格表都多。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_19_xpro1/titlecard.webp" alt="X-Pro1：不完美、緩慢，以及在枷鎖中跳舞" /></p>
+<p>寫給一台 13 歲相機的情書，它教我的攝影課比任何規格表都多。</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_19_xpro1_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Affinity V3 使用 45 天後：免費的軟體，熟悉的恐懼]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_14_affinity_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_14_affinity_zh-tw</guid>
+      <pubDate>Sun, 14 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Design</category>
+      <category>Software</category>
+      <description><![CDATA[反思 Canva 出人意料地讓 Affinity 免費，一次性買斷的終結，以及為何我對不可預測的善意比可預測的邪惡更害怕。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_14_affinity/titlecard.webp" alt="Affinity V3 使用 45 天後：免費的軟體，熟悉的恐懼" /></p>
+<p>反思 Canva 出人意料地讓 Affinity 免費，一次性買斷的終結，以及為何我對不可預測的善意比可預測的邪惡更害怕。</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_14_affinity_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[薛西弗斯的神話：在荒謬與閱讀之間，為什麼我們仍要思考]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_13_sisyphus_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_13_sisyphus_zh-tw</guid>
+      <pubDate>Sat, 13 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Literature</category>
+      <category>Philosophy</category>
+      <category>Review</category>
+      <description><![CDATA[重讀卡繆的哲學散文，回顧荒謬與掙扎，以及閱讀本身就是一種反抗。]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp" alt="薛西弗斯的神話：在荒謬與閱讀之間，為什麼我們仍要思考" /></p>
+<p>重讀卡繆的哲學散文，回顧荒謬與掙扎，以及閱讀本身就是一種反抗。</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_13_sisyphus_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[部落格上線：對於公開思考的承諾]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_12_blog_launch_zh-tw</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_12_blog_launch_zh-tw</guid>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Introduction</category>
+      <category>Writing</category>
+      <category>Meta</category>
+      <description><![CDATA[部落格上線：對於公開思考的承諾]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp" alt="部落格上線：對於公開思考的承諾" /></p>
+<p>部落格上線：對於公開思考的承諾</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_12_blog_launch_zh-tw">閱讀全文 →</a></p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title><![CDATA[Harry Chang 張祺煒]]></title>
+    <link>https://www.harrychang.me/blog</link>
+    <description><![CDATA[Film essays, hardware reflections, and the things worth sitting with. Writing by Harry Chang on technology, creation, and curiosity.]]></description>
+    <language>en</language>
+    <copyright>© 2026 Harry Chang</copyright>
+    <managingEditor>chiwei@harrychang.me (Harry Chang)</managingEditor>
+    <webMaster>chiwei@harrychang.me (Harry Chang)</webMaster>
+    <lastBuildDate>Fri, 07 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <generator>scripts/generate-feeds.mjs</generator>
+    <atom:link href="https://www.harrychang.me/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://www.harrychang.me/images/og-image-blog.webp</url>
+      <title><![CDATA[Harry Chang 張祺煒]]></title>
+      <link>https://www.harrychang.me/blog</link>
+    </image>
+    <item>
+      <title><![CDATA[The Longest Possible Route: On Walking Into the Rain]]></title>
+      <link>https://www.harrychang.me/blog/15-rain</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/15-rain</guid>
+      <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Personal</category>
+      <category>Travel</category>
+      <description><![CDATA[Five cities, one typhoon, and an honest accounting of a habit. On errands as license, gear that keeps you committed instead of dry, and the storm you don't miss but will remember.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/15-rain/titlecard.webp" alt="The Longest Possible Route: On Walking Into the Rain" /></p>
+<p>Five cities, one typhoon, and an honest accounting of a habit. On errands as license, gear that keeps you committed instead of dry, and the storm you don't miss but will remember.</p>
+<p><a href="https://www.harrychang.me/blog/15-rain">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Table 2: Of Sundays and Pho]]></title>
+      <link>https://www.harrychang.me/blog/14-pho</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/14-pho</guid>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Food</category>
+      <category>Personal</category>
+      <description><![CDATA[At 2am I catalogued a pho shop from memory and got two things wrong. On Sunday rituals, freshly cut chilies, and the small errors that prove you love a place.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/14-pho/titlecard.webp" alt="Table 2: Of Sundays and Pho" /></p>
+<p>At 2am I catalogued a pho shop from memory and got two things wrong. On Sunday rituals, freshly cut chilies, and the small errors that prove you love a place.</p>
+<p><a href="https://www.harrychang.me/blog/14-pho">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Two Floors Down: Chingshin, May 2026]]></title>
+      <link>https://www.harrychang.me/blog/13-chingshin</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/13-chingshin</guid>
+      <pubDate>Tue, 05 May 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Memoir</category>
+      <category>Personal</category>
+      <description><![CDATA[A building keeps doing what it does. You just start hearing it differently when you're almost not there anymore.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/13-chingshin/titlecard.webp" alt="Two Floors Down: Chingshin, May 2026" /></p>
+<p>A building keeps doing what it does. You just start hearing it differently when you're almost not there anymore.</p>
+<p><a href="https://www.harrychang.me/blog/13-chingshin">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close]]></title>
+      <link>https://www.harrychang.me/blog/12-us-trip</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/12-us-trip</guid>
+      <pubDate>Tue, 21 Apr 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Travel</category>
+      <category>Memoir</category>
+      <description><![CDATA[16 days, three cities, and a trip that refused to cohere. On diversity that excludes, selves that don't exist, and why holding contradictions might be the point.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/12-us-trip/titlecard.webp" alt="Go Back to New Jersey: Contradictions, Ghosts, and the Loop That Wouldn't Close" /></p>
+<p>16 days, three cities, and a trip that refused to cohere. On diversity that excludes, selves that don't exist, and why holding contradictions might be the point.</p>
+<p><a href="https://www.harrychang.me/blog/12-us-trip">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[365 with harrychang.me: On Whims, Rebellion, and Owning a Corner of the Internet]]></title>
+      <link>https://www.harrychang.me/blog/11-portfolio</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/11-portfolio</guid>
+      <pubDate>Sun, 12 Apr 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Web Development</category>
+      <category>Retrospective</category>
+      <category>Personal</category>
+      <description><![CDATA[365 days ago, I missed a mountain and built a website instead. On absence, imitation, and learning to build around the gaps.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/11-portfolio/titlecard.webp" alt="365 with harrychang.me: On Whims, Rebellion, and Owning a Corner of the Internet" /></p>
+<p>365 days ago, I missed a mountain and built a website instead. On absence, imitation, and learning to build around the gaps.</p>
+<p><a href="https://www.harrychang.me/blog/11-portfolio">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[17 Studs Wide: A LEGO Fan Mount and the Case Against Outgrowing]]></title>
+      <link>https://www.harrychang.me/blog/10-lego-mount</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/10-lego-mount</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Hardware</category>
+      <category>Homelab</category>
+      <category>DIY</category>
+      <description><![CDATA[A homeserver thermal problem solved with childhood tools. On the strange precision of LEGO, iterative design, and why growing up doesn't mean growing out of things.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/10-lego-mount/titlecard.webp" alt="17 Studs Wide: A LEGO Fan Mount and the Case Against Outgrowing" /></p>
+<p>A homeserver thermal problem solved with childhood tools. On the strange precision of LEGO, iterative design, and why growing up doesn't mean growing out of things.</p>
+<p><a href="https://www.harrychang.me/blog/10-lego-mount">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Leica M11-D: On Privilege, Presence, and Why I Can't Defend This Purchase]]></title>
+      <link>https://www.harrychang.me/blog/9_m11d</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/9_m11d</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Photography</category>
+      <category>Hardware</category>
+      <category>Review</category>
+      <description><![CDATA[A camera I can't justify by any rational metric. A decision I'd make again in a heartbeat. On spending instead of investing, screens that aren't there, and what it means to commit to slowing down.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/9_m11d/titlecard.webp" alt="Leica M11-D: On Privilege, Presence, and Why I Can't Defend This Purchase" /></p>
+<p>A camera I can't justify by any rational metric. A decision I'd make again in a heartbeat. On spending instead of investing, screens that aren't there, and what it means to commit to slowing down.</p>
+<p><a href="https://www.harrychang.me/blog/9_m11d">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[The Stage and the Exit: On Synecdoche, New York and The Truman Show]]></title>
+      <link>https://www.harrychang.me/blog/2026_02_10_synecdoche_truman</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2026_02_10_synecdoche_truman</guid>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Film</category>
+      <category>Criticism</category>
+      <description><![CDATA[Two films about constructed realities and the selves we perform within them. One escapes the stage. The other becomes it. A synthesis.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2026_02_10_synecdoche_truman/titlecard.webp" alt="The Stage and the Exit: On Synecdoche, New York and The Truman Show" /></p>
+<p>Two films about constructed realities and the selves we perform within them. One escapes the stage. The other becomes it. A synthesis.</p>
+<p><a href="https://www.harrychang.me/blog/2026_02_10_synecdoche_truman">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[The Case for Unhinged Plushies: A Collection of Chaos]]></title>
+      <link>https://www.harrychang.me/blog/2026_01_10_plushies</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2026_01_10_plushies</guid>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Collection</category>
+      <category>Essay</category>
+      <description><![CDATA[Not every stuffed animal needs to be conventionally cute. Some need to look like they've been through things. A tour through my collection of gloriously goofy plush companions.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2026_01_10_plushies/titlecard.webp" alt="The Case for Unhinged Plushies: A Collection of Chaos" /></p>
+<p>Not every stuffed animal needs to be conventionally cute. Some need to look like they've been through things. A tour through my collection of gloriously goofy plush companions.</p>
+<p><a href="https://www.harrychang.me/blog/2026_01_10_plushies">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[An Unconventional Path: Admitted to NTU CSIE via Special Talent Admission]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission</guid>
+      <pubDate>Wed, 24 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Admission</category>
+      <category>Experience</category>
+      <category>Memoir</category>
+      <description><![CDATA[When online resources are scarce and everyone around you is a CTF or Olympiad prodigy, this is a story about finding your own lane and believing that being different has value. For anyone curious about NTU CSIE's special admission, or lost on their own path.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_24_ntu_cs_special_admission/titlecard.webp" alt="An Unconventional Path: Admitted to NTU CSIE via Special Talent Admission" /></p>
+<p>When online resources are scarce and everyone around you is a CTF or Olympiad prodigy, this is a story about finding your own lane and believing that being different has value. For anyone curious about NTU CSIE's special admission, or lost on their own path.</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_24_ntu_cs_special_admission">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Being a Stranger, in the Name of Love: On Aftersun and Paris, Texas]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas</guid>
+      <pubDate>Mon, 22 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Film</category>
+      <category>Criticism</category>
+      <description><![CDATA[Two films about parenthood, distance, and the unbearable weight of being seen. A synthesis.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_22_aftersun_paris_texas/titlecard.webp" alt="Being a Stranger, in the Name of Love: On Aftersun and Paris, Texas" /></p>
+<p>Two films about parenthood, distance, and the unbearable weight of being seen. A synthesis.</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_22_aftersun_paris_texas">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[The X-Pro1: On Imperfection, Slowness, and Dancing in Shackles]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_19_xpro1</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_19_xpro1</guid>
+      <pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Photography</category>
+      <category>Hardware</category>
+      <category>Review</category>
+      <description><![CDATA[A love letter to a 13-year-old camera that taught me more about photography than any spec sheet ever could.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_19_xpro1/titlecard.webp" alt="The X-Pro1: On Imperfection, Slowness, and Dancing in Shackles" /></p>
+<p>A love letter to a 13-year-old camera that taught me more about photography than any spec sheet ever could.</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_19_xpro1">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Affinity V3 After 45 Days: Free Software, Familiar Fears]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_14_affinity</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_14_affinity</guid>
+      <pubDate>Sun, 14 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Design</category>
+      <category>Software</category>
+      <description><![CDATA[A reflection on Canva's surprise Affinity relaunch, the death of the one-time purchase, and why I'm more scared of unpredictable kindness than predictable evil.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_14_affinity/titlecard.webp" alt="Affinity V3 After 45 Days: Free Software, Familiar Fears" /></p>
+<p>A reflection on Canva's surprise Affinity relaunch, the death of the one-time purchase, and why I'm more scared of unpredictable kindness than predictable evil.</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_14_affinity">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[The Myth of Sisyphus: On Absurdity, Struggle, and Why Reading Still Matters]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_13_sisyphus</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_13_sisyphus</guid>
+      <pubDate>Sat, 13 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Literature</category>
+      <category>Philosophy</category>
+      <category>Review</category>
+      <description><![CDATA[A retrospective review of Camus' philosophical essay after a re-read, and why the act of reading itself is an act of rebellion.]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_13_sisyphus/titlecard.webp" alt="The Myth of Sisyphus: On Absurdity, Struggle, and Why Reading Still Matters" /></p>
+<p>A retrospective review of Camus' philosophical essay after a re-read, and why the act of reading itself is an act of rebellion.</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_13_sisyphus">Read the full post →</a></p>]]></content:encoded>
+    </item>
+    <item>
+      <title><![CDATA[Introducing the Blog: A Commitment to Thinking Out Loud]]></title>
+      <link>https://www.harrychang.me/blog/2025_12_12_blog_launch</link>
+      <guid isPermaLink="true">https://www.harrychang.me/blog/2025_12_12_blog_launch</guid>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 GMT</pubDate>
+      <dc:creator><![CDATA[Harry Chang]]></dc:creator>
+      <category>Introduction</category>
+      <category>Writing</category>
+      <category>Meta</category>
+      <description><![CDATA[Introducing the Blog: A Commitment to Thinking Out Loud]]></description>
+      <content:encoded><![CDATA[<p><img src="https://www.harrychang.me/images/optimized/blogs/2025_12_13_blog_launch/titlecard2.webp" alt="Introducing the Blog: A Commitment to Thinking Out Loud" /></p>
+<p>Introducing the Blog: A Commitment to Thinking Out Loud</p>
+<p><a href="https://www.harrychang.me/blog/2025_12_12_blog_launch">Read the full post →</a></p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -34,7 +34,10 @@ const connectLinks = [
   { id: "telegram", name: "Telegram", href: "/telegram" },
   { id: "instagram", name: "Instagram", href: "/instagram" },
   { id: "medium", name: "Medium", href: "/medium" },
-  { id: "calendar", name: "Schedule a Meeting", href: "/cal" },
+  // Two different things, deliberately adjacent: /cal is the read-only public
+  // schedule, /meet is the booking link that redirects out to Notion Calendar.
+  { id: "calendar", name: "Schedule", href: "/cal" },
+  { id: "booking", name: "Book a Meeting", href: "/meet" },
 ];
 
 const exploreLinks = [
@@ -46,6 +49,9 @@ const exploreLinks = [
   { id: "reading", name: "Paper Reading List", href: "/paper-reading" },
   { id: "design", name: "Design System", href: "/design" },
   { id: "graph", name: "Knowledge Graph", href: "/graph" },
+  // href is swapped to the zh-TW feed at render time; see
+  // `localizedExploreLinks` below.
+  { id: "rss", name: "RSS Feed", href: "/feed.xml" },
 ];
 
 const siteLinks = [
@@ -57,6 +63,7 @@ const siteLinks = [
   { id: "privacy", name: "Privacy", href: "/privacy" },
   { id: "manifesto", name: "Manifesto", href: "/manifesto" },
   { id: "source", name: "Source Code", href: "/readme" },
+  { id: "issues", name: "Report an Issue", href: "/issues" },
 ];
 
 // Helper to get translation key based on link type
@@ -80,7 +87,7 @@ const getTranslationKey = (id: string) => {
 
 export default function Footer() {
   const isMobile = useIsMobile();
-  const { t, tHtml } = useLanguage();
+  const { t, tHtml, language } = useLanguage();
   const pathname = usePathname();
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
@@ -119,6 +126,14 @@ export default function Footer() {
       setActiveTooltipId(null);
     }
   };
+
+  // The blog ships one feed per language; point readers at the one matching
+  // the site language they are already browsing in.
+  const localizedExploreLinks = exploreLinks.map((link) =>
+    link.id === "rss" && language === "zh-TW"
+      ? { ...link, href: "/feed-zh-tw.xml" }
+      : link,
+  );
 
   const isInternalLink = (href: string) => href.startsWith("/");
   const isAnchorLink = (href: string) => href.includes("#");
@@ -297,7 +312,9 @@ export default function Footer() {
                     {t("footer.personalResources")}
                   </h3>
                   <ul className="space-y-3">
-                    {exploreLinks.map((link) => renderLink(link, true))}
+                    {localizedExploreLinks.map((link) =>
+                      renderLink(link, true),
+                    )}
                   </ul>
                 </div>
 

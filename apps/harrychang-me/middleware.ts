@@ -63,6 +63,8 @@ export function middleware(request: NextRequest) {
     "/favicon.ico",
     "/robots.txt", // Allow dynamic robots.txt
     "/sitemap.xml", // Allow dynamic sitemap
+    "/feed.xml", // Blog RSS (en) — static, generated at build
+    "/feed-zh-tw.xml", // Blog RSS (zh-TW)
     "/googleb0d95f7ad2ffc31f.html",
     "/language.svg",
     "/theme_moon.svg",

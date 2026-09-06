@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig } from "@/config/site";
+import { siteConfig, feedAlternates } from "@/config/site";
 import AboutSection from "@/components/main/about-section";
 import UpdatesSection from "@/components/main/updates-section";
 import ProjectsSection from "@portfolio/ui/projects-section";
@@ -45,6 +45,7 @@ export const metadata: Metadata = {
       "x-default": `${siteConfig.url}/`,
       en: `${siteConfig.url}/`,
     },
+    types: feedAlternates,
   },
   openGraph: {
     title: "Harry Chang 張祺煒 | Code. Camera. Curiosity.",
