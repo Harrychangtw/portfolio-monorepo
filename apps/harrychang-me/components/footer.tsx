@@ -34,7 +34,10 @@ const connectLinks = [
   { id: "telegram", name: "Telegram", href: "/telegram" },
   { id: "instagram", name: "Instagram", href: "/instagram" },
   { id: "medium", name: "Medium", href: "/medium" },
-  { id: "calendar", name: "Schedule a Meeting", href: "/cal" },
+  // Two different things, deliberately adjacent: /cal is the read-only public
+  // schedule, /meet is the booking link that redirects out to Notion Calendar.
+  { id: "calendar", name: "Schedule", href: "/cal" },
+  { id: "booking", name: "Book a Meeting", href: "/meet" },
 ];
 
 const exploreLinks = [

@@ -202,7 +202,8 @@
     "gallery": "Moments captured, some planned, most stumbled upon",
     "gmail": "Always happy for a chat!",
     "discord": "Usually around, sometimes responsive, always curious",
-    "calendar": "Book a time, let's chat!",
+    "calendar": "What the next few weeks look like — public events in detail, the rest just busy",
+    "booking": "Book a time, let's chat!",
     "github": "Where I build and break things.",
     "instagram": "Learning to see through a viewfinder, one frame at a time",
     "linkedin": "Let's connect—I try to respond when I can",
@@ -218,6 +219,7 @@
     "medium": "Syndicated stories, another home for my words",
     "telegram": "Encrypted chats welcome — find me @harrychangtw",
     "graph": "Explore this site as an interactive knowledge graph",
+    "rss": "Subscribe in your reader — new posts, no algorithm",
     "source": "View the monorepo source code and README on GitHub",
     "linktree": "All my links, gathered in one place",
     "privacy": "How this site handles your data"
