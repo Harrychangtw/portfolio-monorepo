@@ -14,7 +14,8 @@
     "design": "Design System",
     "cv": "Résumé",
     "graph": "Site Graph",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "calendar": "Schedule"
   },
   "footer": {
     "guestbook": "Guestbook",
@@ -153,7 +154,7 @@
     }
   },
   "social": {
-    "calendar": "Schedules",
+    "calendar": "Schedule",
     "gmail": "Email",
     "discord": "Discord",
     "github": "GitHub",
@@ -162,10 +163,11 @@
     "letterboxd": "Letterboxd",
     "linkedin": "LinkedIn",
     "music": "Spotify",
-    "medium": "Medium"
+    "medium": "Medium",
+    "booking": "Book a Meeting"
   },
   "resources": {
-    "calendar": "Schedules",
+    "calendar": "Schedule",
     "resume": "Résumé",
     "manifesto": "Manifesto",
     "icarus": "Icarus Lab",
@@ -178,7 +180,8 @@
     "graph": "Knowledge Graph",
     "linktree": "Links",
     "source": "Source Code",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "booking": "Book a Meeting"
   },
   "links": {
     "hero": "Code. Camera. Curiosity."
@@ -309,6 +312,23 @@
       "a3": "Not at all. I am entirely locally educated. The framework focuses on universal communication, structural clarity, and strategic positioning. These principles apply regardless of your starting environment.",
       "q4": "Are you still taking on new students?",
       "a4": "No — Icarus Lab is winding down and open applications are closed. I am keeping a small number of existing and referred students, and email stays open at chiwei@harrychang.me for questions, referrals, or anything I can point you toward."
+    }
+  },
+  "calendar": {
+    "timezone": "Times shown in",
+    "showLocal": "Show in my timezone",
+    "showSource": "Show in Taipei time",
+    "busy": "Busy",
+    "allDay": "All day",
+    "updated": "Snapshot taken",
+    "unavailable": "Schedule is unavailable right now.",
+    "view": {
+      "month": "Month",
+      "week": "Week"
+    },
+    "cal": {
+      "ntu": "NTU",
+      "projects": "Talks & projects"
     }
   }
 }

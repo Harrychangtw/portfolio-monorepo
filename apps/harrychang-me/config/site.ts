@@ -61,7 +61,9 @@ export const siteConfig = {
   // External Resources
   external: {
     cv: "https://drive.google.com/file/d/1eJCfe6NA7RqypEj5RqdqUwR3SQbH0pEv/view?usp=sharing",
-    calendar: "https://calendar.notion.so/meet/harry-chang/ybit2gkx",
+    // Booking (Notion Calendar scheduling link), surfaced at /meet.
+    // The public schedule at /cal is served by app/(main)/cal.
+    booking: "https://calendar.notion.so/meet/harry-chang/vklb2nd7",
   },
 
   // API & Service URLs
