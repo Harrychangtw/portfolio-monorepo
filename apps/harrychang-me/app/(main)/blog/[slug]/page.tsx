@@ -8,7 +8,7 @@ import {
 import BlogPostClient from "@portfolio/ui/blog-post-client";
 import GraphNextUp from "@/components/graph/graph-next-up";
 import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
-import { siteConfig } from "@/config/site";
+import { siteConfig, feedAlternates } from "@/config/site";
 
 const baseUrl = siteConfig.url;
 
@@ -61,6 +61,7 @@ export async function generateMetadata({
           ? { "zh-TW": `${baseUrl}/blog/${baseSlug}_zh-tw` }
           : {}),
       },
+      types: feedAlternates,
     },
     openGraph: {
       title: post.title,

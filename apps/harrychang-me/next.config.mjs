@@ -40,6 +40,16 @@ const SLIDE_DECKS = [
 // everyone who opened it during the previous talk.
 const CURRENT_TALK = '/slides/xingan-26-alumni-talk'
 
+// Conventional short paths people try by hand or paste into a reader. The
+// feeds themselves are static files in public/, written by
+// scripts/generate-feeds.mjs.
+const FEED_REDIRECTS = [
+  ['/rss', '/feed.xml'],
+  ['/feed', '/feed.xml'],
+  ['/rss.xml', '/feed.xml'],
+  ['/feed/zh-tw', '/feed-zh-tw.xml'],
+]
+
 let userConfig = undefined
 
 
@@ -121,6 +131,22 @@ const nextConfig = {
         ],
       },
       {
+        // Static file serving would label these `application/xml`, which some
+        // readers accept grudgingly; name the feed type outright. An hour of
+        // caching also stops pollers from revalidating on every check.
+        source: '/:feed(feed|feed-zh-tw).xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/rss+xml; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, must-revalidate',
+          },
+        ],
+      },
+      {
         // Pre-built optimized images at fixed paths. URL must change if
         // contents change (e.g. rename the file or add a version suffix)
         // since `immutable` tells browsers never to revalidate.
@@ -154,6 +180,11 @@ const nextConfig = {
   async redirects() {
     return [
       ...SOCIAL_REDIRECTS.map(([source, destination]) => ({
+        source,
+        destination,
+        permanent: true,
+      })),
+      ...FEED_REDIRECTS.map(([source, destination]) => ({
         source,
         destination,
         permanent: true,

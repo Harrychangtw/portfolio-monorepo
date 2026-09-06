@@ -3,7 +3,7 @@ import type React from "react";
 import type { Metadata, Viewport } from "next"; // Added Viewport type
 import { IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import { siteConfig } from "@/config/site";
+import { siteConfig, feedAlternates } from "@/config/site";
 import RootClientShell from "@/components/root-client-shell";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -106,6 +106,8 @@ export const metadata: Metadata = {
       "x-default": siteConfig.url,
       en: siteConfig.url,
     },
+    // Feed autodiscovery: lets readers subscribe from the site URL alone.
+    types: feedAlternates,
   },
   openGraph: {
     type: "website",

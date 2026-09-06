@@ -46,6 +46,8 @@ const exploreLinks = [
   { id: "reading", name: "Paper Reading List", href: "/paper-reading" },
   { id: "design", name: "Design System", href: "/design" },
   { id: "graph", name: "Knowledge Graph", href: "/graph" },
+  // href is swapped to the zh-TW feed at render time; see `exploreLinks` below.
+  { id: "rss", name: "RSS Feed", href: "/feed.xml" },
 ];
 
 const siteLinks = [
@@ -80,7 +82,7 @@ const getTranslationKey = (id: string) => {
 
 export default function Footer() {
   const isMobile = useIsMobile();
-  const { t, tHtml } = useLanguage();
+  const { t, tHtml, language } = useLanguage();
   const pathname = usePathname();
   const [activeTooltipId, setActiveTooltipId] = useState<string | null>(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
@@ -119,6 +121,14 @@ export default function Footer() {
       setActiveTooltipId(null);
     }
   };
+
+  // The blog ships one feed per language; point readers at the one matching
+  // the site language they are already browsing in.
+  const localizedExploreLinks = exploreLinks.map((link) =>
+    link.id === "rss" && language === "zh-TW"
+      ? { ...link, href: "/feed-zh-tw.xml" }
+      : link,
+  );
 
   const isInternalLink = (href: string) => href.startsWith("/");
   const isAnchorLink = (href: string) => href.includes("#");
@@ -297,7 +307,9 @@ export default function Footer() {
                     {t("footer.personalResources")}
                   </h3>
                   <ul className="space-y-3">
-                    {exploreLinks.map((link) => renderLink(link, true))}
+                    {localizedExploreLinks.map((link) =>
+                      renderLink(link, true),
+                    )}
                   </ul>
                 </div>
 

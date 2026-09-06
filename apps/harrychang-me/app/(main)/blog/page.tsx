@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import BlogSection from "@portfolio/ui/blog-section";
 import { getAllPostsMetadata } from "@portfolio/lib/lib/markdown";
+import { feedAlternates } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
       "x-default": "/blog",
       en: "/blog",
     },
+    types: feedAlternates,
   },
   openGraph: {
     title: "Blog | Harry Chang 張祺煒",
