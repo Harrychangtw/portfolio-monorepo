@@ -132,14 +132,17 @@ const nextConfig = {
         ],
       },
       {
-        // Static file serving would label these `application/xml`, which some
-        // readers accept grudgingly; name the feed type outright. An hour of
-        // caching also stops pollers from revalidating on every check.
+        // `application/rss+xml` is the pedantically correct type, but no
+        // browser can render it, so clicking the footer's RSS link just
+        // downloads the file. `application/xml` displays in the browser and
+        // every reader accepts it — the feed is still valid RSS 2.0, and
+        // readers sniff the root element anyway. An hour of caching also
+        // stops pollers from revalidating on every check.
         source: '/:feed(feed|feed-zh-tw).xml',
         headers: [
           {
             key: 'Content-Type',
-            value: 'application/rss+xml; charset=utf-8',
+            value: 'application/xml; charset=utf-8',
           },
           {
             key: 'Cache-Control',

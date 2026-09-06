@@ -7,6 +7,24 @@ import { forwardRef, type ComponentProps } from "react";
 
 type NavigationLinkProps = ComponentProps<typeof Link>;
 
+/**
+ * Paths that end in a file extension (`/feed.xml`, `/something.pdf`) are static
+ * assets sitting in public/, not app routes. The client router cannot render
+ * them: it falls back to a hard navigation that the browser turns into a
+ * download, the document never unloads, `pathname` never changes, and the
+ * navigation overlay — which only clears on a pathname change — spins forever.
+ * No content slug contains a dot, so an extension is a reliable tell.
+ */
+const STATIC_FILE_PATH = /\.[a-z0-9]{2,5}$/i;
+
+const hrefToString = (href: NavigationLinkProps["href"]) =>
+  typeof href === "string"
+    ? href
+    : `${href?.pathname ?? ""}${href?.search ?? ""}${href?.hash ?? ""}`;
+
+const isStaticFileHref = (href: NavigationLinkProps["href"]) =>
+  STATIC_FILE_PATH.test(hrefToString(href).split(/[?#]/)[0]);
+
 const NavigationLink = forwardRef<HTMLAnchorElement, NavigationLinkProps>(
   ({ onClick, href, target, replace, scroll, ...props }, ref) => {
     const { startNavigation } = useNavigation();
@@ -80,6 +98,30 @@ const NavigationLink = forwardRef<HTMLAnchorElement, NavigationLinkProps>(
         }
       }, 250);
     };
+
+    // Hand static assets straight to the browser: a plain anchor, so neither
+    // next/link nor the overlay gets involved.
+    if (isStaticFileHref(href)) {
+      const {
+        prefetch: _prefetch,
+        shallow: _shallow,
+        passHref: _passHref,
+        legacyBehavior: _legacyBehavior,
+        locale: _locale,
+        as: _as,
+        ...anchorProps
+      } = props;
+
+      return (
+        <a
+          ref={ref}
+          href={hrefToString(href)}
+          target={target}
+          onClick={onClick}
+          {...anchorProps}
+        />
+      );
+    }
 
     return (
       <Link
