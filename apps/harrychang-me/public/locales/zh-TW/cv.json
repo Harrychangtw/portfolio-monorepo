@@ -16,7 +16,7 @@
           "title": "國立臺灣大學 (NTU)",
           "subtitle": "資訊工程學系 學士",
           "meta": "台灣，台北",
-          "date": "預計 September 2026 入學",
+          "date": "預計 June 2030 畢業",
           "bullets": ["特殊選才入學", "正取一 · 總分 91.25 · 面試分數 95"]
         },
         {
@@ -27,8 +27,8 @@
           "bullets": [
             "表現傑出市長獎",
             "榮獲哈佛書卷獎 (Harvard Prize Book)",
-            "GPA: 4.01 / 4.30 (校排 4)",
-            "APCS: 4/4 · 雅思 8.5",
+            "GPA: 4.00 / 4.30 (校排 4)",
+            "APCS: 4/4 · 雅思 8.5 · 多益 965",
             "2025 哈佛大學 Crimson Quiz Bowl (CS): 全球第二名 · 台灣個人冠軍"
           ]
         },
@@ -38,7 +38,7 @@
           "meta": "台灣，台北",
           "date": "June 2023 畢業",
           "bullets": [
-            "2020 Robofest 機器人世界錦標賽 未知任務 — 全球第一名",
+            "2022 Robofest 機器人世界錦標賽 未知任務 — 全球第一名 (VEX IQ)",
             "英語辯論校隊 · 學校合唱團 · 遊戲開發 (Unity)"
           ]
         }
@@ -69,16 +69,16 @@
           ]
         },
         {
-          "title": "獨立 AI 研究員",
-          "subtitle": "LLM 安全性與應用",
+          "title": "AI 研究員",
+          "subtitle": "LLM 安全性與應用，指導教授：蔡宗翰 (中央大學)",
           "meta": "台灣，台北",
           "date": "September 2023 – Present",
           "bullets": [
-            "以第一作者身分發表 FORTRESS (TMLR) 與 PATCH 資料集 (EACL 2026 SRW)",
+            "以第一作者身分發表 FORTRESS (TMLR) 與 PATCH 資料集 (ISCSLP 2026)",
             "製作 LLM 安全性教育影片，入選 AAAI 2025",
             "於 SITCON 2025 與 2026 發表 40 分鐘議程",
             "設計並教授 AIS3 2026「LLM 越獄攻擊與安全防禦實作」課程",
-            "於 SITCON Camp 2026 以自建互動教學網站教授機器學習課程",
+            "於 SITCON Camp 2026 教授機器學習課程，設計瀏覽器端 ONNX 與 GPU 部署 Qwen 的互動關卡",
             "開發 CNN 驗證碼破解器 (100% 準確率) 與 Transformer 交易模型"
           ]
         },
@@ -86,7 +86,7 @@
           "title": "核心成員，AI 研究計畫",
           "subtitle": "靜心高中與數位發展部 AIGO 計畫",
           "meta": "台灣，台北",
-          "date": "September 2022 – September 2024",
+          "date": "September 2022 – December 2025",
           "bullets": [
             "自學進階 AI 知識；每週進行研究簡報",
             "AIGO 計畫：綜合表現獎 (2024) · 傑出表現獎 (2025)",
@@ -170,17 +170,18 @@
           "date": "2025 – Present",
           "bullets": [
             "Next.js 15 / React 19 Turborepo；力導向知識圖譜（D3 + Canvas）、Markdown CMS 與雙語系統",
-            "4,000+ 當日訪客下維持 100 Real Experience Score"
+            "4,000+ 當日訪客下維持 100 Real Experience Score；12 條受測路徑 Lighthouse 93–100"
           ]
         },
         {
           "title": "小一福利社營運現代化",
           "meta": "",
-          "date": "2026 – Present",
+          "date": "April 2026 – Present",
           "bullets": [
-            "為家族電商（11 萬人社群）主導多階段現代化；獨立完成員工訪查、技術提案與後續開發",
-            "六套瀏覽器自動化流程上線：稽核 200 場、自動處理 5,400+ 筆、無人值守 151 小時，估算每月釋放約 446 小時人力",
-            "建置即時遙測看板與 ERP 資料同步管線，涵蓋 41 萬筆以上資料"
+            "獨立承接 11 萬人私密社群團購電商的營運現代化專案",
+            "主導員工訪查與分階段技術提案；六套 Chrome MV3 自動化流程上線",
+            "稽核 789 場、自動處理 22,256 筆資料、無人值守運行 632 小時（2026 年 4–8 月）",
+            "建置 tailnet 遙測看板、租約式工作派送機制，以及同步 50.3 萬筆資料的 ERP 管線"
           ]
         }
       ]
@@ -202,7 +203,7 @@
         },
         {
           "category": "語言",
-          "skills": "中文 (母語) · 英文 (CEFR C2)"
+          "skills": "中文 (母語) · 英文 (雅思 8.5)"
         },
         {
           "category": "其他",
@@ -212,7 +213,7 @@
     }
   },
   "footer": {
-    "text": "張祺煒 · 履歷 · August 2026",
+    "text": "張祺煒 · 履歷 · September 2026",
     "downloadPdf": "下載完整 PDF"
   }
 }
