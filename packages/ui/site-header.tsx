@@ -10,9 +10,18 @@ import NavigationLink from "@portfolio/ui/navigation-link";
 import { useStableHashScroll } from "@portfolio/lib/hooks/use-stable-hash-scroll";
 import { scrollToSection as utilScrollToSection } from "@portfolio/lib/lib/scrolling";
 import { track, events } from "@portfolio/lib/analytics";
-import StaggeredMenu, { type SocialGroup } from "@portfolio/ui/staggered-menu";
+import StaggeredMenu, {
+  type SocialGroup,
+  type SocialItem,
+} from "@portfolio/ui/staggered-menu";
+import { ArrowUpRight, ChevronDown } from "lucide-react";
 
 const SCROLL_ANIMATION_DURATION = 400;
+
+/** Id of the site footer, used as the "More" click target. */
+const FOOTER_ELEMENT_ID = "site-footer";
+/** Grace period so the pointer can cross the gap from trigger to panel. */
+const MORE_CLOSE_DELAY = 120;
 
 const LOADING_STATUSES = [
   "Spelunking",
@@ -90,6 +99,11 @@ export interface SiteHeaderProps {
   specialPages?: SpecialPage[];
   readingProgressMatchers?: RegExp[];
   hideAtPageBottom?: boolean;
+  /**
+   * Desktop-only "More" nav item. Hover or focus opens a panel of the same
+   * groups the mobile staggered menu shows; clicking scrolls to the footer.
+   */
+  showMoreNav?: boolean;
 }
 
 const Underline = () => (
@@ -111,6 +125,60 @@ const Underline = () => (
   />
 );
 
+/**
+ * A single link in the desktop "More" panel.
+ *
+ * Hover styling sits on the anchor rather than on `group-hover:` children:
+ * this repo pins postcss-selector-parser to 6.1.3, which makes Tailwind drop
+ * every `group-*` variant at build time, so those classes never reach the CSS.
+ */
+const MoreLink = ({
+  item,
+  onNavigate,
+}: {
+  item: SocialItem;
+  onNavigate: () => void;
+}) => {
+  // External destinations must not go through NavigationLink, or a redirect
+  // route like /email (→ mailto:) fires the route-loading transition.
+  const isInternal = item.link.startsWith("/") && !item.external;
+  const content = (
+    <>
+      <span className="font-ibm-plex text-[15px] truncate">{item.label}</span>
+      <ArrowUpRight className="w-3.5 h-3.5 opacity-60 shrink-0 ml-2" />
+    </>
+  );
+  const className =
+    "flex items-center justify-between w-full min-w-0 text-primary hover:text-accent focus-visible:text-accent transition-colors duration-200 outline-none";
+
+  return (
+    <li className="w-full">
+      <motion.div whileHover={{ x: 2 }} transition={{ duration: 0.2 }}>
+        {isInternal ? (
+          <NavigationLink
+            href={item.link}
+            className={className}
+            onClick={onNavigate}
+          >
+            {content}
+          </NavigationLink>
+        ) : (
+          <a
+            href={item.link}
+            {...(item.newTab === false
+              ? {}
+              : { target: "_blank", rel: "noopener noreferrer" })}
+            className={className}
+            onClick={onNavigate}
+          >
+            {content}
+          </a>
+        )}
+      </motion.div>
+    </li>
+  );
+};
+
 export default function SiteHeader({
   brandName,
   brandHref = "/",
@@ -125,6 +193,7 @@ export default function SiteHeader({
   specialPages,
   readingProgressMatchers,
   hideAtPageBottom = false,
+  showMoreNav = false,
 }: SiteHeaderProps) {
   const pathname = usePathname();
   const navigationCtx = useNavigation();
@@ -137,6 +206,8 @@ export default function SiteHeader({
   );
   const [isScrolling, setIsScrolling] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [isFooterInView, setIsFooterInView] = useState(false);
   const [isLab, setIsLab] = useState(false);
   const [readingProgress, setReadingProgress] = useState(0);
   const [hideForFooter, setHideForFooter] = useState(false);
@@ -236,7 +307,8 @@ export default function SiteHeader({
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  const isActive = (sectionId: string) => activeSection === sectionId;
+  const isActive = (sectionId: string) =>
+    !isMoreActive && activeSection === sectionId;
 
   const scrollToSection = useCallback(
     (id: string, event?: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -391,6 +463,112 @@ export default function SiteHeader({
     const scroll = !isHomePage;
     return { className, href, onClick, scroll };
   };
+
+  // ── "More" menu (desktop only) ───────────────────────────────────────
+  const moreTriggerRef = useRef<HTMLButtonElement>(null);
+  const morePanelRef = useRef<HTMLDivElement>(null);
+  const moreCloseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
+  // Set when we deliberately return focus to the trigger (Escape), so the
+  // resulting focus event doesn't immediately reopen the panel we just closed.
+  const skipFocusOpenRef = useRef(false);
+
+  const cancelMoreClose = useCallback(() => {
+    if (moreCloseTimeoutRef.current) {
+      clearTimeout(moreCloseTimeoutRef.current);
+      moreCloseTimeoutRef.current = null;
+    }
+  }, []);
+
+  const openMore = useCallback(() => {
+    cancelMoreClose();
+    setIsMoreOpen(true);
+  }, [cancelMoreClose]);
+
+  const closeMore = useCallback(
+    (delay = 0) => {
+      cancelMoreClose();
+      if (delay <= 0) {
+        setIsMoreOpen(false);
+        return;
+      }
+      moreCloseTimeoutRef.current = setTimeout(() => {
+        setIsMoreOpen(false);
+        moreCloseTimeoutRef.current = null;
+      }, delay);
+    },
+    [cancelMoreClose],
+  );
+
+  useEffect(() => cancelMoreClose, [cancelMoreClose]);
+
+  // Close on route change so the panel never outlives the page it opened on.
+  useEffect(() => {
+    setIsMoreOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isMoreOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      cancelMoreClose();
+      setIsMoreOpen(false);
+      skipFocusOpenRef.current = true;
+      moreTriggerRef.current?.focus();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isMoreOpen, cancelMoreClose]);
+
+  const handleMoreFocus = useCallback(() => {
+    if (skipFocusOpenRef.current) {
+      skipFocusOpenRef.current = false;
+      return;
+    }
+    openMore();
+  }, [openMore]);
+
+  const scrollToFooter = useCallback(() => {
+    closeMore();
+    track(events.HEADER_NAV_LINK_CLICK, {
+      section_id: "more",
+      path: `#${FOOTER_ELEMENT_ID}`,
+      is_home_page: isHomePage,
+    });
+    utilScrollToSection(FOOTER_ELEMENT_ID);
+  }, [closeMore, isHomePage]);
+
+  const moreGroups = (staggeredMenu.socialGroups || []).filter(
+    (group) => group.items && group.items.length > 0,
+  );
+  const showMore = showMoreNav && !shouldHideNav && moreGroups.length > 0;
+  // Reaching the footer is what "More" points at, so it owns the underline
+  // there — otherwise the last section stays marked active at the page bottom.
+  const isMoreActive = showMore && isFooterInView;
+
+  const moreStateClasses = isMoreActive
+    ? "text-primary"
+    : "text-secondary hover:text-accent focus-visible:text-accent";
+  const moreTriggerClassName = navLinkClassName
+    ? `${navLinkClassName} ${moreStateClasses}`
+    : `relative font-heading ${moreStateClasses} transition-colors duration-200 outline-none`;
+
+  useEffect(() => {
+    if (!showMore) {
+      setIsFooterInView(false);
+      return;
+    }
+    const footer = document.getElementById(FOOTER_ELEMENT_ID);
+    if (!footer) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsFooterInView(entry.isIntersecting),
+      // Counts only once the footer crosses the middle of the viewport.
+      { rootMargin: "-50% 0px 0px 0px" },
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, [showMore, pathname]);
 
   const showStaggeredMenu = isMobile && !isLab;
 
@@ -608,6 +786,103 @@ export default function SiteHeader({
                     </NavigationLink>
                   </motion.div>
                 ))}
+
+                {showMore && (
+                  <div
+                    className="relative"
+                    onMouseEnter={openMore}
+                    onMouseLeave={() => closeMore(MORE_CLOSE_DELAY)}
+                    onBlur={(e) => {
+                      if (
+                        !e.currentTarget.contains(
+                          e.relatedTarget as Node | null,
+                        )
+                      ) {
+                        closeMore();
+                      }
+                    }}
+                  >
+                    <motion.div
+                      whileHover={{ y: -2 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <button
+                        ref={moreTriggerRef}
+                        type="button"
+                        aria-haspopup="true"
+                        aria-expanded={isMoreOpen}
+                        aria-controls="header-more-panel"
+                        className={`${moreTriggerClassName} flex items-center gap-1`}
+                        onFocus={handleMoreFocus}
+                        onClick={scrollToFooter}
+                        onKeyDown={(e) => {
+                          if (e.key !== "ArrowDown") return;
+                          e.preventDefault();
+                          openMore();
+                          // Panel mounts on the next frame when opening.
+                          requestAnimationFrame(() => {
+                            morePanelRef.current
+                              ?.querySelector<HTMLAnchorElement>("a[href]")
+                              ?.focus();
+                          });
+                        }}
+                      >
+                        {isMoreActive && <Underline />}
+                        {t("header.more") || "More"}
+                        <ChevronDown
+                          aria-hidden="true"
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                            isMoreOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    </motion.div>
+
+                    <AnimatePresence>
+                      {isMoreOpen && (
+                        <motion.div
+                          id="header-more-panel"
+                          ref={morePanelRef}
+                          initial={{ opacity: 0, y: -6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={{ duration: 0.2, ease: "easeOut" }}
+                          /* pt-3 bridges the gap so the pointer never leaves. */
+                          className="absolute right-0 top-full pt-3 z-50"
+                        >
+                          <div className="w-max rounded-xl border border-border bg-card p-6 shadow-lg shadow-primary/5">
+                            <div className="flex gap-10">
+                              {moreGroups.map((group) => (
+                                <div
+                                  key={group.titleKey}
+                                  className="min-w-[9rem]"
+                                >
+                                  <h3 className="font-heading text-sm uppercase tracking-wider text-secondary mb-4">
+                                    {t(group.titleKey) ||
+                                      group.fallbackTitle ||
+                                      group.titleKey}
+                                  </h3>
+                                  <ul
+                                    className="list-none m-0 p-0 flex flex-col gap-3.5"
+                                    role="list"
+                                  >
+                                    {group.items.map((item) => (
+                                      <MoreLink
+                                        key={item.label + item.link}
+                                        item={item}
+                                        onNavigate={() => closeMore()}
+                                      />
+                                    ))}
+                                  </ul>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                )}
               </nav>
             </LayoutGroup>
           )}

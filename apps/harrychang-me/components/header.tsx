@@ -43,17 +43,21 @@ const SPECIAL_PAGES = [
 export default function Header() {
   const { t } = useLanguage();
 
+  // `external` marks redirect routes that leave the app, so they render as
+  // plain anchors instead of firing the client-side route transition.
   const connectItems = [
-    { label: t("social.gmail"), link: "/email" },
-    { label: t("social.linkedin"), link: "/linkedin" },
-    { label: t("social.github"), link: "/github" },
-    { label: t("social.instagram"), link: "/instagram" },
-    { label: t("social.booking"), link: "/meet" },
+    // /email redirects to a mailto:, so a new tab would be left behind empty.
+    { label: t("social.gmail"), link: "/email", external: true, newTab: false },
+    { label: t("social.linkedin"), link: "/linkedin", external: true },
+    { label: t("social.github"), link: "/github", external: true },
+    { label: t("social.instagram"), link: "/instagram", external: true },
+    { label: t("social.discord"), link: "/discord", external: true },
+    { label: t("social.telegram"), link: "/telegram", external: true },
   ];
 
   const exploreItems = [
-    { label: t("social.music"), link: "/spotify" },
-    { label: t("social.letterboxd"), link: "/letterboxd" },
+    { label: t("social.music"), link: "/spotify", external: true },
+    { label: t("social.letterboxd"), link: "/letterboxd", external: true },
     { label: t("resources.calendar"), link: "/cal" },
     { label: t("resources.resume"), link: "/cv" },
     { label: t("resources.design"), link: "/design" },
@@ -70,6 +74,7 @@ export default function Header() {
       enableLabDomain
       labHostnames={LAB_HOSTNAMES}
       specialPages={SPECIAL_PAGES}
+      showMoreNav
       readingProgressMatchers={[/^\/projects\/[^/]+$/, /^\/blog\/[^/]+$/]}
       staggeredMenu={{
         accentColor: "hsl(var(--accent))",

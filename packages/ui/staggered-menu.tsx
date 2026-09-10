@@ -24,6 +24,14 @@ export interface StaggeredMenuItem {
 export interface SocialItem {
   label: string;
   link: string;
+  /**
+   * Destination leaves the app (or is a redirect route that does, such as
+   * /email → mailto:). Rendered as a plain anchor so it never fires the
+   * client-side route transition.
+   */
+  external?: boolean;
+  /** Open in a new tab. Defaults to true for external items. */
+  newTab?: boolean;
 }
 
 export interface SocialGroup {
@@ -458,7 +466,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   );
 
   const renderLinkItem = (item: SocialItem, onClick?: () => void) => {
-    const isInternal = item.link.startsWith("/");
+    const isInternal = item.link.startsWith("/") && !item.external;
     const isIcarus = item.link.includes("lab.") || item.link.includes("icarus");
     const linkClassName = `group flex items-center justify-between w-full min-w-0`;
     const textClassName = `font-ibm-plex text-primary text-[14px] sm:text-[15px] truncate transition-colors duration-200 ease-linear group-hover:text-[var(--sm-accent)] ${isIcarus ? "icarus-link" : ""}`;
@@ -484,8 +492,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           ) : (
             <a
               href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(item.newTab === false
+                ? {}
+                : { target: "_blank", rel: "noopener noreferrer" })}
               className={linkClassName}
               onClick={onClick}
             >
