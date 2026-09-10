@@ -252,6 +252,7 @@ export default function Footer() {
   return (
     <>
       <footer
+        id="site-footer"
         ref={footerRef}
         className="bg-card text-primary py-12 md:py-16 border-t border-border"
       >
