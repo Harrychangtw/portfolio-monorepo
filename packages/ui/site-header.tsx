@@ -514,8 +514,14 @@ export default function SiteHeader({
       if (e.key !== "Escape") return;
       cancelMoreClose();
       setIsMoreOpen(false);
-      skipFocusOpenRef.current = true;
-      moreTriggerRef.current?.focus();
+      // Only arm the skip flag when focus actually moves: if the trigger
+      // already holds focus, no focus event follows to consume the flag and
+      // it would suppress the next genuine tab-in.
+      const trigger = moreTriggerRef.current;
+      if (trigger && document.activeElement !== trigger) {
+        skipFocusOpenRef.current = true;
+        trigger.focus();
+      }
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
