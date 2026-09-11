@@ -74,9 +74,13 @@ const parseHtmlToReact = (
       const href = match[1];
       const linkText = match[2];
       const isExternal = /^https?:\/\//.test(href);
+      // mailto:/tel:/sms: are absolute URIs, not site paths. They used to fall
+      // through to InternalLink, which prefixed a slash (→ /mailto:someone@…)
+      // and fired the route-loading transition on a link that never navigates.
+      const isNonHttpScheme = !isExternal && /^[a-z][a-z0-9+.-]*:/i.test(href);
       const isHash = href.startsWith("#");
 
-      if (isExternal || isHash) {
+      if (isExternal || isNonHttpScheme || isHash) {
         parts.push(
           <a
             key={`link-${key++}`}
