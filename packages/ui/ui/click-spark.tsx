@@ -11,6 +11,13 @@ interface ClickSparkProps {
   easing?: "linear" | "ease-in" | "ease-out" | "ease-in-out";
   extraScale?: number;
   children?: React.ReactNode;
+  /**
+   * When false the wrapper still renders identical DOM but clicks produce no
+   * sparks. Callers must not unmount ClickSpark to disable it: doing so changes
+   * the element tree between the server render and the client, which remounts
+   * every child and reflows the page (a measured 0.35 CLS on gallery pages).
+   */
+  enabled?: boolean;
 }
 
 interface Spark {
@@ -30,6 +37,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   easing = "ease-out",
   extraScale = 1.0,
   children,
+  enabled = true,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sparksRef = useRef<Spark[]>([]);
@@ -90,6 +98,16 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Disabled: drop any pending sparks, clear once, and never schedule a
+    // frame. Mobile keeps this wrapper mounted (unmounting it remounts the
+    // page), so without this the phone would drive an idle rAF loop for the
+    // lifetime of the session.
+    if (!enabled) {
+      sparksRef.current = [];
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
+
     let animationId: number;
 
     const draw = (timestamp: number) => {
@@ -134,7 +152,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     return () => {
       cancelAnimationFrame(animationId);
     };
-  }, [sparkSize, sparkRadius, duration, easeFunc, extraScale]);
+  }, [enabled, sparkSize, sparkRadius, duration, easeFunc, extraScale]);
 
   // Helper to resolve CSS variables into computed string values
   const resolveColor = (color: string, el: HTMLElement) => {
@@ -146,6 +164,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
   };
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>): void => {
+    if (!enabled) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect();

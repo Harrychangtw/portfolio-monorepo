@@ -3,6 +3,8 @@
 import { useNavigation } from "@portfolio/lib/contexts/navigation-context";
 import { usePathname, useSearchParams } from "next/navigation";
 import {
+  Suspense,
+  useCallback,
   useEffect,
   useLayoutEffect,
   useRef,
@@ -22,9 +24,34 @@ import {
  *   out   →  in   (isNavigating becomes false / route key changes)
  *   in    →  idle  (after zoom-in animation settles)
  */
-export default function PageTransition({ children }: { children: ReactNode }) {
+/**
+ * Reports the current route (pathname + query string) whenever it changes.
+ *
+ * `useSearchParams()` opts its nearest Suspense boundary out of static
+ * prerendering. Keeping the call in this leaf — inside its own boundary —
+ * confines that bailout to a component that renders `null`. Calling it
+ * directly in PageTransition put the boundary around `{children}`, i.e. the
+ * whole site, which is why every route used to ship an empty <body> and
+ * paint nothing until the JS bundle had downloaded, hydrated and run.
+ */
+function RouteChangeWatcher({
+  onRouteChange,
+}: {
+  onRouteChange: (routeKey: string) => void;
+}) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const routeKey = `${pathname}?${searchParams.toString()}`;
+
+  // onRouteChange is useCallback-stable, so this fires on route changes only.
+  useLayoutEffect(() => {
+    onRouteChange(routeKey);
+  }, [routeKey, onRouteChange]);
+
+  return null;
+}
+
+export default function PageTransition({ children }: { children: ReactNode }) {
   const { isNavigating } = useNavigation();
 
   const contentRef = useRef<HTMLDivElement>(null);
@@ -37,8 +64,6 @@ export default function PageTransition({ children }: { children: ReactNode }) {
 
   const [phase, setPhase] = useState<"idle" | "out" | "in">("idle");
   const [elapsed, setElapsed] = useState(0);
-
-  const routeKey = `${pathname}?${searchParams.toString()}`;
 
   /* ── helpers ─────────────────────────────────────── */
 
@@ -118,7 +143,7 @@ export default function PageTransition({ children }: { children: ReactNode }) {
 
   /* ── scroll-to-top + entering animation on route change ── */
 
-  useLayoutEffect(() => {
+  const handleRouteChange = useCallback((routeKey: string) => {
     if (prevRouteKey.current === null) {
       prevRouteKey.current = routeKey;
       return;
@@ -151,7 +176,7 @@ export default function PageTransition({ children }: { children: ReactNode }) {
         { once: true },
       );
     }
-  }, [routeKey]);
+  }, []);
 
   /* ── cleanup ── */
 
@@ -174,6 +199,11 @@ export default function PageTransition({ children }: { children: ReactNode }) {
 
   return (
     <div className="page-transition-shell">
+      {/* Isolated so the useSearchParams() bailout can't reach {children} */}
+      <Suspense fallback={null}>
+        <RouteChangeWatcher onRouteChange={handleRouteChange} />
+      </Suspense>
+
       {/* Zoomable content wrapper */}
       <div
         ref={contentRef}

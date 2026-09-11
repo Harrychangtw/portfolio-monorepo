@@ -1,11 +1,28 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export function useStableHashScroll(headerSelector: string = "header") {
+  // Deliberately does NOT call useSearchParams(). This hook runs in the site
+  // header, which sits above every page, and useSearchParams() would opt the
+  // enclosing Suspense boundary out of static prerendering — shipping an empty
+  // <body> for the whole site. It was only ever an effect dependency here (the
+  // effect body reads window.location.hash directly), and query-string changes
+  // that move content are already picked up by the ResizeObserver below.
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+
+  // The effect captures its target element from the fragment, so it has to
+  // re-run when the fragment changes. usePathname() does not report that, and
+  // useSearchParams() never did either — it tracks the query string, so a
+  // same-path #a -> #b navigation was already missed. Listening for hashchange
+  // closes that properly, without pulling the prerender bailout back in.
+  const [hashTick, setHashTick] = useState(0);
+  useEffect(() => {
+    const onHashChange = () => setHashTick((n) => n + 1);
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
 
   useEffect(() => {
     const id =
@@ -94,5 +111,5 @@ export function useStableHashScroll(headerSelector: string = "header") {
     });
 
     return stop;
-  }, [pathname, searchParams]);
+  }, [pathname, hashTick]);
 }
