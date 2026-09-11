@@ -22,18 +22,13 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
+// Only the weights actually used are declared. next/font emits a <link
+// rel="preload"> for every declared weight, so each unused one cost ~38 KB of
+// high-priority bandwidth on the critical path. Weights 100/200/900 had no
+// `font-thin`/`font-extralight`/`font-black` usage anywhere in the app or
+// packages; re-add a weight here if you start using it.
 const artific = localFont({
   src: [
-    {
-      path: "../public/fonts/artific-fonts/Artific-Thin.woff2",
-      weight: "100",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/artific-fonts/Artific-SuperLight.woff2",
-      weight: "200",
-      style: "normal",
-    },
     {
       path: "../public/fonts/artific-fonts/Artific-Light.woff2",
       weight: "300",
@@ -62,11 +57,6 @@ const artific = localFont({
     {
       path: "../public/fonts/artific-fonts/Artific-SuperBold.woff2",
       weight: "800",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/artific-fonts/Artific-Black.woff2",
-      weight: "900",
       style: "normal",
     },
   ],
@@ -229,6 +219,21 @@ export default function RootLayout({
         } as React.CSSProperties
       }
     >
+      <head>
+        {/*
+          Applies the saved theme before the first paint. ThemeProvider used to
+          render nothing until it had mounted, which avoided the flash by
+          withholding the entire page — and cost every route its server-rendered
+          HTML. Doing it here keeps the no-flash guarantee while letting the app
+          prerender. Must stay in sync with the "theme" cookie written by
+          setCookie() in packages/lib/lib/cookies.ts.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var m=document.cookie.match(/(?:^|; )theme=([^;]*)/);if(m&&decodeURIComponent(m[1])==='light'){document.documentElement.classList.add('light')}}catch(e){}`,
+          }}
+        />
+      </head>
       <body
         className={`bg-background text-primary antialiased min-h-screen flex flex-col`}
       >

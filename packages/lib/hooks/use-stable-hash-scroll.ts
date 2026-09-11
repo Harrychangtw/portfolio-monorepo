@@ -1,11 +1,16 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export function useStableHashScroll(headerSelector: string = "header") {
+  // Deliberately does NOT call useSearchParams(). This hook runs in the site
+  // header, which sits above every page, and useSearchParams() would opt the
+  // enclosing Suspense boundary out of static prerendering — shipping an empty
+  // <body> for the whole site. It was only ever an effect dependency here (the
+  // effect body reads window.location.hash directly), and query-string changes
+  // that move content are already picked up by the ResizeObserver below.
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     const id =
@@ -94,5 +99,5 @@ export function useStableHashScroll(headerSelector: string = "header") {
     });
 
     return stop;
-  }, [pathname, searchParams]);
+  }, [pathname]);
 }

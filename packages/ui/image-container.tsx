@@ -77,8 +77,11 @@ export function ImageContainer({
   const maxThickness = isMobile ? 4 : 6;
   const borderThickness = `clamp(${minThickness}px, 0.01 * 100%, ${maxThickness}px)`;
 
-  // Responsive internal padding in pixels
-  const insetPadding = noInsetPadding ? 0 : isMobile ? 4 : 7;
+  // Responsive internal padding. Expressed in CSS rather than branching on
+  // isMobile(), which is false during SSR and true after mount on phones —
+  // every image on the page then changed height, shifting the layout.
+  // clamp() lands on ~4px at phone widths and 7px on desktop, as before.
+  const insetPadding = noInsetPadding ? "0px" : "clamp(4px, 0.55vw, 7px)";
 
   // Derive layout from aspect ratio (no dimension state needed)
   const isPortrait = aspectRatio < 1;
@@ -86,28 +89,26 @@ export function ImageContainer({
   const targetRatio = 1.5;
 
   let containerPadding;
-  let horizontalPadding = "0px";
-  let verticalPadding = "0px";
   let containerClass = "";
 
+  // Desktop-only width cap for portrait images, equivalent to the horizontal
+  // padding this used to apply inline. Rendered as a CSS variable consumed by
+  // a `md:` max-width class, so it costs nothing below the breakpoint.
+  const restrictPortrait = isPortrait && restrictPortraitWidth;
+  const portraitMaxWidth = `${(aspectRatio / targetRatio) * 100}%`;
+
   if (isPortrait) {
-    // On mobile, portrait images should always span full width
-    // On desktop, maintain the target ratio with horizontal padding ONLY if restrictPortraitWidth is true
-    if (isMobile || !restrictPortraitWidth) {
-      // For all vertical images on mobile OR grid cards, use full width
-      containerPadding = `${(1 / aspectRatio) * 100}%`;
-      horizontalPadding = "0px";
-    } else {
-      // For desktop feed views, maintain target ratio with horizontal padding
-      containerPadding = `${(1 / aspectRatio) * 100}%`;
-      const relativeWidth = (aspectRatio / targetRatio) * 100;
-      horizontalPadding = `${(100 - relativeWidth) / 2}%`;
-    }
+    // Portrait images span the full width on mobile and are narrowed to the
+    // target ratio on desktop. That used to branch on isMobile(), which is
+    // false during SSR: because the height below is a percentage of the
+    // element's own width, narrowing it after mount also changed its height
+    // and shifted the page. The restriction is now a max-width applied by a
+    // media query (see portraitMaxWidth), so the server and the client agree
+    // and only CSS decides.
+    containerPadding = `${(1 / aspectRatio) * 100}%`;
     containerClass = `border-t-[${borderThickness}] border-b-[${borderThickness}] border-white`;
   } else if (isCinematic) {
     containerPadding = `${(1 / targetRatio) * 100}%`;
-    const cinematic_height_percentage = (targetRatio / aspectRatio) * 100;
-    verticalPadding = `${(100 - cinematic_height_percentage) / 2}%`;
     containerClass = `border-l-[${borderThickness}] border-r-[${borderThickness}] border-white`;
   } else {
     containerPadding = `${(1 / aspectRatio) * 100}%`;
@@ -118,17 +119,20 @@ export function ImageContainer({
     <figure className="w-full not-prose" ref={containerRef}>
       <div className="w-full">
         <div
-          className={`relative w-full ${noInsetPadding ? "" : "bg-white"}`}
-          style={{
-            paddingTop: `${insetPadding}px`,
-            paddingBottom: `${insetPadding}px`,
-            paddingLeft: isPortrait
-              ? `calc(${horizontalPadding} + ${insetPadding}px)`
-              : `${insetPadding}px`,
-            paddingRight: isPortrait
-              ? `calc(${horizontalPadding} + ${insetPadding}px)`
-              : `${insetPadding}px`,
-          }}
+          className={`relative w-full ${noInsetPadding ? "" : "bg-white"} ${
+            restrictPortrait ? "mx-auto md:max-w-[var(--portrait-max-w)]" : ""
+          }`}
+          style={
+            {
+              paddingTop: insetPadding,
+              paddingBottom: insetPadding,
+              paddingLeft: insetPadding,
+              paddingRight: insetPadding,
+              ...(restrictPortrait
+                ? { "--portrait-max-w": portraitMaxWidth }
+                : {}),
+            } as React.CSSProperties
+          }
         >
           <div
             className="relative w-full overflow-hidden"
@@ -194,8 +198,16 @@ export function ImageContainer({
                       alt={alt}
                       fill
                       priority={priority}
-                      className={`${noInsetPadding ? "object-cover" : "object-contain"} object-center transition-opacity duration-500 ${
-                        blurComplete ? "opacity-100" : "opacity-0"
+                      // Priority images skip the cross-fade. An element at
+                      // opacity 0 is not an LCP candidate, so fading the hero
+                      // in only after its own onLoad pushed LCP out by the
+                      // full decode time — on the very image LCP measures.
+                      className={`${noInsetPadding ? "object-cover" : "object-contain"} object-center ${
+                        priority
+                          ? "opacity-100"
+                          : `transition-opacity duration-500 ${
+                              blurComplete ? "opacity-100" : "opacity-0"
+                            }`
                       } ${imgClassName || ""}`}
                       sizes={sizes}
                       quality={quality}

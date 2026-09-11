@@ -9,7 +9,7 @@ import React, {
 } from "react";
 import { getCookie, setCookie } from "@portfolio/lib/lib/cookies";
 
-type Language = "en" | "zh-TW";
+export type Language = "en" | "zh-TW";
 
 interface LanguageContextType {
   language: Language;
@@ -24,11 +24,21 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined,
 );
 
-interface Translations {
+export interface Translations {
   [namespace: string]: {
     [key: string]: any;
   };
 }
+
+/**
+ * Translation data compiled into the JS bundle rather than fetched at runtime.
+ *
+ * When supplied, the provider has the strings on its very first render, so
+ * pages server-render real text instead of a placeholder and no locale JSON is
+ * requested on load. Omit it and the provider falls back to the original
+ * fetch-then-reveal behaviour.
+ */
+export type BundledTranslations = Partial<Record<Language, Translations>>;
 
 // Helper function to parse HTML strings and convert to React elements
 const parseHtmlToReact = (
@@ -114,11 +124,48 @@ const parseHtmlToReact = (
 
 const DEFAULT_NAMESPACES = ["common", "about", "updates", "uses", "cv"];
 
+/**
+ * The server has no cookies or `navigator` to read, so it always renders
+ * English. The client's first render must produce identical markup or
+ * hydration fails, so it starts here too and adopts the visitor's real
+ * language in a layout effect — which React flushes before the browser
+ * paints, so a zh-TW reader never sees the English frame.
+ */
+const SSR_LANGUAGE: Language = "en";
+
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? React.useLayoutEffect : useEffect;
+
+function detectLanguage(englishOnly: boolean): Language {
+  if (typeof window === "undefined" || englishOnly) {
+    return "en";
+  }
+  // Priority 1: URL query param (?lang=zh-tw)
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("lang")?.toLowerCase() === "zh-tw") {
+    return "zh-TW";
+  }
+
+  // Priority 2: URL path suffix ([slug]_zh-tw)
+  if (window.location.pathname.replace(/\/$/, "").endsWith("_zh-tw")) {
+    return "zh-TW";
+  }
+
+  const saved = getCookie("language") as Language | null;
+  if (saved === "en" || saved === "zh-TW") {
+    return saved;
+  }
+
+  // Fallback to browser language detection
+  return navigator.language?.toLowerCase().startsWith("zh") ? "zh-TW" : "en";
+}
+
 export function LanguageProvider({
   children,
   englishOnly = false,
   namespaces = DEFAULT_NAMESPACES,
   internalLinkComponent,
+  bundledTranslations,
 }: {
   children: React.ReactNode;
   englishOnly?: boolean;
@@ -128,41 +175,44 @@ export function LanguageProvider({
     className?: string;
     children: React.ReactNode;
   }>;
+  bundledTranslations?: BundledTranslations;
 }) {
-  // Initialize language state with a function to read from localStorage synchronously
-  const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window === "undefined" || englishOnly) {
-      return "en";
-    }
-    // Priority 1: URL query param (?lang=zh-tw)
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("lang")?.toLowerCase() === "zh-tw") {
-      return "zh-TW";
-    }
+  const hasBundled = Boolean(bundledTranslations?.[SSR_LANGUAGE]);
 
-    // Priority 2: URL path suffix ([slug]_zh-tw)
-    if (window.location.pathname.replace(/\/$/, "").endsWith("_zh-tw")) {
-      return "zh-TW";
-    }
-    const saved = getCookie("language") as Language | null;
-    if (saved === "en" || saved === "zh-TW") {
-      return saved;
-    }
+  const [language, setLanguageState] = useState<Language>(() =>
+    hasBundled ? SSR_LANGUAGE : detectLanguage(englishOnly),
+  );
 
-    // Fallback to browser language detection
-    const browserLang = navigator.language?.toLowerCase().startsWith("zh")
-      ? "zh-TW"
-      : "en";
-    return browserLang;
-  });
-
-  const [translations, setTranslations] = useState<Translations>({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [translations, setTranslations] = useState<Translations>(
+    () => bundledTranslations?.[SSR_LANGUAGE] ?? {},
+  );
+  const [isLoading, setIsLoading] = useState(!hasBundled);
   // Track if we've completed the first load
-  const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(hasBundled);
+
+  // Adopt the visitor's real language once mounted. Bundled data means this is
+  // a synchronous state change with no network in between.
+  useIsomorphicLayoutEffect(() => {
+    if (!hasBundled) return;
+    const detected = detectLanguage(englishOnly);
+    if (detected !== SSR_LANGUAGE) {
+      setLanguageState(detected);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Load translations for a specific language
   const loadTranslations = async (lang: Language) => {
+    // Already compiled in — no request, no loading state, no gate. Passing the
+    // same object reference back lets React bail out of the re-render.
+    const preloaded = bundledTranslations?.[lang];
+    if (preloaded) {
+      setTranslations(preloaded);
+      setHasLoadedOnce(true);
+      setIsLoading(false);
+      return;
+    }
+
     setIsLoading(true);
     try {
       const translationPromises = namespaces.map(async (namespace) => {

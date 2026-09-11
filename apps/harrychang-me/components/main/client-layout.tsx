@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import ClickSpark from "@portfolio/ui/ui/click-spark";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 import { LanguageProvider } from "@portfolio/lib/contexts/language-context";
+import { bundledTranslations } from "@/lib/bundled-translations";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { ThemeProvider } from "@portfolio/lib/contexts/theme-context";
 import VideoInitializer from "@portfolio/ui/video-initializer";
@@ -25,23 +26,29 @@ export default function ClientLayout({
 
   return (
     <ThemeProvider>
-      <LanguageProvider internalLinkComponent={NavigationLink}>
+      <LanguageProvider
+        internalLinkComponent={NavigationLink}
+        bundledTranslations={bundledTranslations}
+      >
         <PostHogSuperProperties />
         <Header />
-        {isMobile ? (
-          children
-        ) : (
-          <ClickSpark
-            sparkColor="hsl(var(--primary))"
-            sparkSize={8}
-            sparkRadius={15}
-            sparkCount={4}
-            duration={500}
-            extraScale={1}
-          >
-            {children}
-          </ClickSpark>
-        )}
+        {/*
+          Always rendered, disabled rather than unmounted on mobile.
+          useIsMobile() is false during SSR and flips true after mount, so a
+          ternary here swapped the element tree underneath {children} and
+          remounted the entire page on every mobile load.
+        */}
+        <ClickSpark
+          enabled={!isMobile}
+          sparkColor="hsl(var(--primary))"
+          sparkSize={8}
+          sparkRadius={15}
+          sparkCount={4}
+          duration={500}
+          extraScale={1}
+        >
+          {children}
+        </ClickSpark>
         <VideoInitializer />
         <Suspense fallback={null}>
           <NotificationProvider />

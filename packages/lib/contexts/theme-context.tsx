@@ -14,20 +14,21 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  // Matches the server render. The actual class on <html> is set before first
+  // paint by the inline script in the root layout, so this state only needs to
+  // catch up for consumers that read `theme` (the switcher icon, sonner, the
+  // glitch canvas) — it never drives whether anything renders.
   const [theme, setThemeState] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Load theme from cookies on mount
     const savedTheme = getCookie("theme") as Theme | null;
-    if (savedTheme && (savedTheme === "light" || savedTheme === "dark")) {
+    if (savedTheme === "light" || savedTheme === "dark") {
       setThemeState(savedTheme);
       document.documentElement.classList.toggle(
         "light",
         savedTheme === "light",
       );
     }
-    setMounted(true);
   }, []);
 
   const setTheme = (newTheme: Theme) => {
@@ -39,11 +40,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
-
-  // Prevent flash of unstyled content
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, toggleTheme }}>
