@@ -23,13 +23,6 @@ APP_DIR="${1:?usage: vercel-ignore-build.sh <app-dir>}"
 # are repo-relative, so move to the repo root first.
 cd "$(git rev-parse --show-toplevel)" || exit 1
 
-case "${VERCEL_GIT_COMMIT_MESSAGE:-}" in
-  *"[skip ci]"*)
-    echo "skip: CI housekeeping commit ([skip ci])"
-    exit 0
-    ;;
-esac
-
 # SHA of the last *successful* deployment of this project and branch. Vercel
 # only exposes it when an Ignored Build Step is configured, which is how this
 # script runs. Using it (rather than HEAD^) keeps the diff correct when several
@@ -47,8 +40,16 @@ if [ -z "$BASE" ] || ! git cat-file -e "${BASE}^{commit}" 2>/dev/null; then
 fi
 
 # Anything outside these paths cannot change this app's build output.
+#
+# README.md is excluded because the Lighthouse workflows rewrite it every few
+# days (alongside .github/lighthouse-data/, which is not listed here at all) and
+# it is never read at build time. Deciding on the changed files rather than on a
+# "[skip ci]" marker in the message is deliberate: Vercel reads exit 0 as "never
+# build this commit", so trusting the message would let a substantive commit
+# that happens to carry the marker go silently undeployed.
 if git diff --quiet "$BASE" HEAD -- \
   "$APP_DIR" \
+  ":(exclude)$APP_DIR/README.md" \
   packages \
   package.json \
   pnpm-lock.yaml \

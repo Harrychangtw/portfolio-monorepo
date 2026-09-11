@@ -98,6 +98,16 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    // Disabled: drop any pending sparks, clear once, and never schedule a
+    // frame. Mobile keeps this wrapper mounted (unmounting it remounts the
+    // page), so without this the phone would drive an idle rAF loop for the
+    // lifetime of the session.
+    if (!enabled) {
+      sparksRef.current = [];
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
+
     let animationId: number;
 
     const draw = (timestamp: number) => {
@@ -142,7 +152,7 @@ const ClickSpark: React.FC<ClickSparkProps> = ({
     return () => {
       cancelAnimationFrame(animationId);
     };
-  }, [sparkSize, sparkRadius, duration, easeFunc, extraScale]);
+  }, [enabled, sparkSize, sparkRadius, duration, easeFunc, extraScale]);
 
   // Helper to resolve CSS variables into computed string values
   const resolveColor = (color: string, el: HTMLElement) => {
