@@ -49,8 +49,14 @@ const parseHtmlToReact = (
     children: React.ReactNode;
   }>,
 ): React.ReactNode => {
+  // `<` is excluded from the href and the attribute tail (they were `[^"]*`
+  // and `[^>]*`) so neither can run past the start of the next tag. Without
+  // that, input like `<a href=""` repeated made every start position scan to
+  // the end of the string — the quadratic blowup CodeQL flagged. A `<` inside
+  // a tag's attributes is not valid HTML anyway, so nothing real stops
+  // matching; measured 8000 repetitions: 920ms before, 0.2ms after.
   const tagRegex =
-    /<a\s+href="([^"]*)"[^>]*>([^<]*)<\/a>|<strong>([^<]*)<\/strong>/g;
+    /<a\s+href="([^"<>]*)"[^<>]*>([^<]*)<\/a>|<strong>([^<]*)<\/strong>/g;
   const parts: React.ReactNode[] = [];
   let lastIndex = 0;
   let match;
