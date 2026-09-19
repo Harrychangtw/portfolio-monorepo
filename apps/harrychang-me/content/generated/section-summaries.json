@@ -1419,5 +1419,36 @@
       "致謝": "致謝盧梭〈熱帶暴風雨中的老虎〉封面"
     },
     "tldr": "以雜事為許可的淋雨習慣，與一場替營隊除錯的颱風"
+  },
+  "post/16-all-c/en": {
+    "title": "All C: Of Fake Autobiographies and Borrowed Answers",
+    "locale": "en",
+    "sections": {
+      "Thirty Subs": "Borrowed Subway job, invented whole in sixth grade",
+      "The Assignment": "Gifted class writes full lives, birth to death",
+      "The Real Half": "Seven stitches, a 37, and a poisonous mis-stroke",
+      "All C": "Filling every blank with C, then copying the future",
+      "The Other Two": "Friends' documents cast each other; one named NTU CS",
+      "Week Two": "Trees and food right, every letterhead answer wrong",
+      "I'll Tell You Later": "Opening promise left unfinished, and a C programming course",
+      "Acknowledgments": "Credits Thomas Cole's Voyage of Life, Youth cover"
+    },
+    "tldr": "Grading a sixth-grade fake autobiography from the campus it predicted",
+    "shortName": "Fake Autobiography"
+  },
+  "post/16-all-c/zh-TW": {
+    "title": "全畫 C：關於虛擬自傳與借來的答案",
+    "locale": "zh-TW",
+    "sections": {
+      "三十個潛艇堡": "從 YouTube 借來的打工經歷，寫於小學六年級",
+      "作業": "資優班作業：寫完自己的一生，從出生到死亡",
+      "真實的那一半": "七針、三十七分，與老師說的毒字「荼」",
+      "全畫 C": "考卷剩一分鐘全畫 C，未來也照抄同樣的答案",
+      "另外兩個人": "三份檔案互相選角，其中一人一字不差命中科系",
+      "第二週": "打分數：樹蔭與美食全對，公發抬頭的全錯",
+      "我等一下再跟你們說": "開篇那句沒說完的話，與這學期的 C 語言必修",
+      "致謝": "致謝柯爾〈生命之旅：青年〉封面畫作"
+    },
+    "tldr": "從它預言的校園裡，替一份小六虛擬自傳打分數"
   }
 }
