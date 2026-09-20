@@ -553,6 +553,12 @@ export default function SiteHeader({
   // there — otherwise the last section stays marked active at the page bottom.
   const isMoreActive = showMore && isFooterInView;
 
+  // The header title must follow the same rule as the underline: at the
+  // footer it belongs to "More", not to whichever section was last scrolled
+  // past. Kept separate from activeTitleKey so the not-found detection above
+  // still keys off the real section.
+  const displayedTitleKey = isMoreActive ? "more" : activeTitleKey;
+
   const moreStateClasses = isMoreActive
     ? "text-primary"
     : "text-secondary hover:text-accent focus-visible:text-accent";
@@ -743,7 +749,7 @@ export default function SiteHeader({
                   {dots}
                 </motion.span>
               </motion.div>
-            ) : activeTitleKey ? (
+            ) : displayedTitleKey ? (
               <motion.div
                 className="flex items-center min-w-0"
                 initial={{ opacity: 0, y: -5 }}
@@ -756,15 +762,15 @@ export default function SiteHeader({
                 </span>
                 <motion.span
                   className={titleClass}
-                  key={activeTitleKey}
+                  key={displayedTitleKey}
                   initial={{ opacity: 0, y: 5 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -5 }}
                   transition={{ duration: 0.15, ease: "easeOut" }}
                 >
-                  {t(`header.${activeTitleKey}`) ||
-                    activeTitleKey.charAt(0).toUpperCase() +
-                      activeTitleKey.slice(1)}
+                  {t(`header.${displayedTitleKey}`) ||
+                    displayedTitleKey.charAt(0).toUpperCase() +
+                      displayedTitleKey.slice(1)}
                 </motion.span>
               </motion.div>
             ) : null}
