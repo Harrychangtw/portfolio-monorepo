@@ -5,6 +5,10 @@ import { IBM_Plex_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { siteConfig, feedAlternates } from "@/config/site";
 import RootClientShell from "@/components/root-client-shell";
+import {
+  getServerLanguage,
+  htmlLang,
+} from "@portfolio/lib/lib/server-language";
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -144,11 +148,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // `lang` was hardcoded to "en" even while the page displayed Chinese, which
+  // mis-signals the content language to screen readers and search engines.
+  const language = await getServerLanguage();
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -207,7 +215,7 @@ export default function RootLayout({
 
   return (
     <html
-      lang="en"
+      lang={htmlLang(language)}
       // Added suppressHydrationWarning because you are using next-themes or dark mode class manipulation
       suppressHydrationWarning
       className={`dark ${artific.variable} ${ibmPlexSans.variable}`}

@@ -4,7 +4,11 @@ import { useEffect, useLayoutEffect, useState } from "react";
 
 import parse, { Element } from "html-react-parser";
 import dynamic from "next/dynamic";
-import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import {
+  useLanguage,
+  type Language,
+} from "@portfolio/lib/contexts/language-context";
+import TextSkeleton from "@portfolio/ui/text-skeleton";
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
@@ -37,8 +41,22 @@ export default function ProjectPostClient({
   nextProject,
   localGraphSlot,
 }: ProjectPostClientProps) {
-  const { language, t } = useLanguage();
+  const { language, initialLanguage, t } = useLanguage();
   const [project, setProject] = useState(initialProject);
+  // The language the loaded content is the right answer for. The page
+  // server-renders the visitor's language, so on load this already matches
+  // and nothing refetches; it only diverges when they hit the switcher.
+  const [resolvedLanguage, setResolvedLanguage] =
+    useState<Language>(initialLanguage);
+  const baseSlug = project.slug.replace(/_zh-tw$/i, "");
+  const targetSlug = language === "zh-TW" ? `${baseSlug}_zh-tw` : baseSlug;
+  // Derived, so the skeleton appears on the very render the language changes
+  // rather than a frame later via an effect. The slug comparison is the
+  // effect's own fetch condition, so the skeleton shows exactly when there is
+  // a round trip to wait for — switching back to a post that has no
+  // translation, and so never left its base slug, doesn't blink.
+  const isSwitchingLanguage =
+    resolvedLanguage !== language && targetSlug !== project.slug;
   const [nextProjectData, setNextProjectData] = useState(nextProject);
 
   useLayoutEffect(() => {
@@ -107,42 +125,48 @@ export default function ProjectPostClient({
   }, [language, nextProject]); // Depend on language and the initial prop
 
   useEffect(() => {
+    // The server already rendered this language; nothing to do until the
+    // visitor actually switches.
+    if (resolvedLanguage === language) return;
+
+    // A quick en→zh→en toggle can land responses out of order; a superseded
+    // one must not overwrite the language the user settled on.
+    let cancelled = false;
+
     async function fetchLocalizedProject() {
-      const baseSlug = project.slug.replace("_zh-tw", "");
-      let targetSlug = baseSlug;
-
-      if (language === "zh-TW") {
-        targetSlug = `${baseSlug}_zh-tw`;
-      }
-
-      // Only fetch if we need a different version than what we currently have
-      if (targetSlug !== project.slug) {
-        try {
+      try {
+        // Only fetch if we need a different version than what we currently have
+        if (targetSlug !== project.slug) {
           const response = await fetch(`/api/projects/${targetSlug}`);
+          if (cancelled) return;
+
           if (response.ok) {
-            const projectData = await response.json();
-            // Preserve dimension data (imageWidth, imageHeight) from initial load
-            // API returns full dimension data, so this should be available
-            setProject(projectData);
-          } else {
-            // If the target version doesn't exist, fall back to base version
-            if (language === "zh-TW" && targetSlug.includes("_zh-tw")) {
-              const fallbackResponse = await fetch(`/api/projects/${baseSlug}`);
-              if (fallbackResponse.ok) {
-                const fallbackData = await fallbackResponse.json();
-                setProject(fallbackData);
-              }
+            setProject(await response.json());
+          } else if (language === "zh-TW") {
+            // No translation for this one — fall back to the base version.
+            const fallbackResponse = await fetch(`/api/projects/${baseSlug}`);
+            if (cancelled) return;
+            if (fallbackResponse.ok) {
+              setProject(await fallbackResponse.json());
             }
           }
-        } catch (error) {
-          console.error("Error fetching localized version:", error);
-          // Keep the current project on error
         }
+      } catch (error) {
+        console.error("Error fetching localized version:", error);
+        // Keep the current content on error
+      } finally {
+        // Cleared even on failure or when no translation exists, so neither
+        // case leaves the article shimmering forever.
+        if (!cancelled) setResolvedLanguage(language);
       }
     }
 
     fetchLocalizedProject();
-  }, [language, project.slug]);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [language, resolvedLanguage, project.slug, baseSlug, targetSlug]);
 
   return (
     <div className="page-transition-enter">
@@ -186,7 +210,11 @@ export default function ProjectPostClient({
                   </div>
                   <div className="mt-8">
                     <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">
-                      {project.title}
+                      {isSwitchingLanguage ? (
+                        <TextSkeleton paragraphs={1} linesPerParagraph={1} />
+                      ) : (
+                        project.title
+                      )}
                     </h1>
                     <p className="font-body text-secondary uppercase text-sm mb-6 md:mb-12">
                       {project.category}
@@ -210,7 +238,11 @@ export default function ProjectPostClient({
                 {/* Description area */}
                 <div className="mb-16 md:mb-24">
                   <p className="font-body text-lg md:text-xl mb-10 md:mb-16 text-primary">
-                    {project.description}
+                    {isSwitchingLanguage ? (
+                      <TextSkeleton paragraphs={1} linesPerParagraph={2} />
+                    ) : (
+                      project.description
+                    )}
                   </p>
 
                   {/* Additional attributes in a grid */}
@@ -278,58 +310,67 @@ export default function ProjectPostClient({
 
                 {/* Main content */}
                 <div className="prose prose-lg max-w-none dark:prose-invert mb-16 md:mb-24">
-                  {parse(project.contentHtml, {
-                    replace: (domNode) => {
-                      if (
-                        domNode instanceof Element &&
-                        domNode.attribs &&
-                        domNode.attribs.class === "markdown-compare-placeholder"
-                      ) {
-                        const {
-                          "data-left-src": leftSrc,
-                          "data-right-src": rightSrc,
-                          "data-alt": alt,
-                          "data-aspect-ratio": aspectRatio,
-                          "data-framed": framed,
-                        } = domNode.attribs;
-                        return (
-                          <CompareSlider
-                            leftSrc={leftSrc}
-                            rightSrc={rightSrc}
-                            alt={alt || ""}
-                            aspectRatio={
-                              aspectRatio ? parseFloat(aspectRatio) : undefined
-                            }
-                            noInsetPadding={framed !== "true"}
-                            quality={95}
-                          />
-                        );
-                      }
-                      if (
-                        domNode instanceof Element &&
-                        domNode.attribs &&
-                        domNode.attribs.class === "markdown-image-placeholder"
-                      ) {
-                        const {
-                          "data-src": src,
-                          "data-alt": alt,
-                          "data-aspect-ratio": aspectRatio,
-                          "data-framed": framed,
-                        } = domNode.attribs;
-                        return (
-                          <ImageContainer
-                            src={src}
-                            alt={alt || ""}
-                            aspectRatio={
-                              aspectRatio ? parseFloat(aspectRatio) : undefined
-                            }
-                            noInsetPadding={framed !== "true"}
-                            quality={95}
-                          />
-                        );
-                      }
-                    },
-                  })}
+                  {isSwitchingLanguage ? (
+                    <TextSkeleton paragraphs={5} />
+                  ) : (
+                    parse(project.contentHtml, {
+                      replace: (domNode) => {
+                        if (
+                          domNode instanceof Element &&
+                          domNode.attribs &&
+                          domNode.attribs.class ===
+                            "markdown-compare-placeholder"
+                        ) {
+                          const {
+                            "data-left-src": leftSrc,
+                            "data-right-src": rightSrc,
+                            "data-alt": alt,
+                            "data-aspect-ratio": aspectRatio,
+                            "data-framed": framed,
+                          } = domNode.attribs;
+                          return (
+                            <CompareSlider
+                              leftSrc={leftSrc}
+                              rightSrc={rightSrc}
+                              alt={alt || ""}
+                              aspectRatio={
+                                aspectRatio
+                                  ? parseFloat(aspectRatio)
+                                  : undefined
+                              }
+                              noInsetPadding={framed !== "true"}
+                              quality={95}
+                            />
+                          );
+                        }
+                        if (
+                          domNode instanceof Element &&
+                          domNode.attribs &&
+                          domNode.attribs.class === "markdown-image-placeholder"
+                        ) {
+                          const {
+                            "data-src": src,
+                            "data-alt": alt,
+                            "data-aspect-ratio": aspectRatio,
+                            "data-framed": framed,
+                          } = domNode.attribs;
+                          return (
+                            <ImageContainer
+                              src={src}
+                              alt={alt || ""}
+                              aspectRatio={
+                                aspectRatio
+                                  ? parseFloat(aspectRatio)
+                                  : undefined
+                              }
+                              noInsetPadding={framed !== "true"}
+                              quality={95}
+                            />
+                          );
+                        }
+                      },
+                    })
+                  )}
                 </div>
                 {/* Local Graph + Next Up Card (coupled) */}
                 {localGraphSlot}

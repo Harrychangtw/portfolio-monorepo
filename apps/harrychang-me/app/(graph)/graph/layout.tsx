@@ -2,6 +2,7 @@ import "@/styles/lcp-optimize.css";
 import type React from "react";
 import type { Metadata } from "next";
 import GraphClientLayout from "@/components/graph/client-layout";
+import { getServerLanguage } from "@portfolio/lib/lib/server-language";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.harrychang.me"),
@@ -51,10 +52,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GraphLayout({
+export default async function GraphLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <GraphClientLayout>{children}</GraphClientLayout>;
+  const initialLanguage = await getServerLanguage();
+
+  return (
+    <GraphClientLayout initialLanguage={initialLanguage}>
+      {children}
+    </GraphClientLayout>
+  );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ProjectsSection from "@portfolio/ui/projects-section";
 import { getAllProjectsMetadata } from "@portfolio/lib/lib/markdown";
+import { getServerLanguage } from "@portfolio/lib/lib/server-language";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -41,7 +42,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProjectsPage() {
-  const projects = getAllProjectsMetadata("en");
+export default async function ProjectsPage() {
+  // Loaded in the request language so a zh-TW visitor gets Chinese cards in
+  // the server HTML — no English frame, and no locale fetch after hydration.
+  const language = await getServerLanguage();
+  const projects = getAllProjectsMetadata(language);
   return <ProjectsSection initialItems={projects} />;
 }

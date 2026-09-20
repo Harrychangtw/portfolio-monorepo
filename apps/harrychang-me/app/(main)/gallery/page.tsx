@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import GallerySection from "@portfolio/ui/gallery-section";
 import { getAllGalleryMetadata } from "@portfolio/lib/lib/markdown";
+import { getServerLanguage } from "@portfolio/lib/lib/server-language";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -41,7 +42,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GalleryPage() {
-  const galleryItems = getAllGalleryMetadata("en");
+export default async function GalleryPage() {
+  // Loaded in the request language so a zh-TW visitor gets Chinese cards in
+  // the server HTML — no English frame, and no locale fetch after hydration.
+  const language = await getServerLanguage();
+  const galleryItems = getAllGalleryMetadata(language);
   return <GallerySection initialItems={galleryItems} />;
 }

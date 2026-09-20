@@ -13,6 +13,12 @@ export type Language = "en" | "zh-TW";
 
 interface LanguageContextType {
   language: Language;
+  /**
+   * The language the server rendered in. Components that receive
+   * server-loaded markdown as `initialItems` compare against this to know
+   * whether that data matches the language currently on screen.
+   */
+  initialLanguage: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string, namespace?: string) => string;
   tHtml: (key: string, namespace?: string) => React.ReactNode;
@@ -135,13 +141,19 @@ const parseHtmlToReact = (
 const DEFAULT_NAMESPACES = ["common", "about", "updates", "uses", "cv"];
 
 /**
- * The server has no cookies or `navigator` to read, so it always renders
- * English. The client's first render must produce identical markup or
- * hydration fails, so it starts here too and adopts the visitor's real
- * language in a layout effect — which React flushes before the browser
- * paints, so a zh-TW reader never sees the English frame.
+ * The language of the server render, when the caller could not resolve one.
+ *
+ * `initialLanguage` (resolved from the request's cookie / Accept-Language by
+ * getServerLanguage()) is what the app actually passes, so the first byte of
+ * HTML is already in the visitor's language. This is only the fallback for
+ * callers that pass nothing.
+ *
+ * The client's first render must produce identical markup or hydration fails,
+ * so it starts from the same value and adopts anything the server could not
+ * see — a `?lang=` query param or a `_zh-tw` path suffix — in a layout
+ * effect, which React flushes before the browser paints.
  */
-const SSR_LANGUAGE: Language = "en";
+const DEFAULT_SSR_LANGUAGE: Language = "en";
 
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? React.useLayoutEffect : useEffect;
@@ -176,6 +188,7 @@ export function LanguageProvider({
   namespaces = DEFAULT_NAMESPACES,
   internalLinkComponent,
   bundledTranslations,
+  initialLanguage,
 }: {
   children: React.ReactNode;
   englishOnly?: boolean;
@@ -186,26 +199,37 @@ export function LanguageProvider({
     children: React.ReactNode;
   }>;
   bundledTranslations?: BundledTranslations;
+  /**
+   * Language the server rendered in, from getServerLanguage(). Must match what
+   * the page used to load its markdown, or hydration mismatches.
+   */
+  initialLanguage?: Language;
 }) {
-  const hasBundled = Boolean(bundledTranslations?.[SSR_LANGUAGE]);
+  const ssrLanguage: Language = englishOnly
+    ? "en"
+    : (initialLanguage ?? DEFAULT_SSR_LANGUAGE);
+  const hasBundled = Boolean(bundledTranslations?.[ssrLanguage]);
 
   const [language, setLanguageState] = useState<Language>(() =>
-    hasBundled ? SSR_LANGUAGE : detectLanguage(englishOnly),
+    hasBundled ? ssrLanguage : detectLanguage(englishOnly),
   );
 
   const [translations, setTranslations] = useState<Translations>(
-    () => bundledTranslations?.[SSR_LANGUAGE] ?? {},
+    () => bundledTranslations?.[ssrLanguage] ?? {},
   );
   const [isLoading, setIsLoading] = useState(!hasBundled);
   // Track if we've completed the first load
   const [hasLoadedOnce, setHasLoadedOnce] = useState(hasBundled);
 
-  // Adopt the visitor's real language once mounted. Bundled data means this is
-  // a synchronous state change with no network in between.
+  // Adopt anything the server could not see — a `?lang=` query param or a
+  // `_zh-tw` path suffix. The cookie and Accept-Language are already baked
+  // into `ssrLanguage`, so for almost every visitor this is a no-op and the
+  // English frame never appears. Bundled data means the rare real change is a
+  // synchronous state update with no network in between.
   useIsomorphicLayoutEffect(() => {
     if (!hasBundled) return;
     const detected = detectLanguage(englishOnly);
-    if (detected !== SSR_LANGUAGE) {
+    if (detected !== ssrLanguage) {
       setLanguageState(detected);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -336,6 +360,7 @@ export function LanguageProvider({
     <LanguageContext.Provider
       value={{
         language,
+        initialLanguage: ssrLanguage,
         setLanguage,
         t,
         tHtml,
