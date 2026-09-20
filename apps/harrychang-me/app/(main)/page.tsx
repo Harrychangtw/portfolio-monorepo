@@ -10,6 +10,7 @@ import {
   getAllProjectsMetadata,
   getAllPostsMetadata,
 } from "@portfolio/lib/lib/markdown";
+import { getServerLanguage } from "@portfolio/lib/lib/server-language";
 
 export const metadata: Metadata = {
   title: {
@@ -58,11 +59,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // Loaded in the request language so a zh-TW visitor gets Chinese cards in
+  // the server HTML — no English frame, and no locale fetch after hydration.
+  const language = await getServerLanguage();
+
   // Fetch gallery items at build/request time - dimensions available immediately
-  const galleryItems = getAllGalleryMetadata("en");
-  const projectsItems = getAllProjectsMetadata("en");
-  const blogPosts = getAllPostsMetadata("en");
+  const galleryItems = getAllGalleryMetadata(language);
+  const projectsItems = getAllProjectsMetadata(language);
+  const blogPosts = getAllPostsMetadata(language);
 
   const profileSchema = {
     "@context": "https://schema.org",

@@ -6,7 +6,10 @@ import Header from "@/components/header";
 import { Analytics } from "@vercel/analytics/react";
 import ClickSpark from "@portfolio/ui/ui/click-spark";
 import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
-import { LanguageProvider } from "@portfolio/lib/contexts/language-context";
+import {
+  LanguageProvider,
+  type Language,
+} from "@portfolio/lib/contexts/language-context";
 import { bundledTranslations } from "@/lib/bundled-translations";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { ThemeProvider } from "@portfolio/lib/contexts/theme-context";
@@ -17,8 +20,10 @@ import PostHogSuperProperties from "@/components/posthog-super-properties";
 
 export default function ClientLayout({
   children,
+  initialLanguage,
 }: Readonly<{
   children: React.ReactNode;
+  initialLanguage: Language;
 }>) {
   const isMobile = useIsMobile();
 
@@ -29,6 +34,7 @@ export default function ClientLayout({
       <LanguageProvider
         internalLinkComponent={NavigationLink}
         bundledTranslations={bundledTranslations}
+        initialLanguage={initialLanguage}
       >
         <PostHogSuperProperties />
         <Header />

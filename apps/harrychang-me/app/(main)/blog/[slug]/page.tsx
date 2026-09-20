@@ -6,6 +6,10 @@ import {
   getNextPost,
 } from "@portfolio/lib/lib/markdown";
 import BlogPostClient from "@portfolio/ui/blog-post-client";
+import {
+  getServerLanguage,
+  localizedSlug,
+} from "@portfolio/lib/lib/server-language";
 import GraphNextUp from "@/components/graph/graph-next-up";
 import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
 import { siteConfig, feedAlternates } from "@/config/site";
@@ -90,10 +94,15 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams() {
-  const paths = getAllPostSlugs();
-  return paths;
-}
+/**
+ * These pages read the request cookie to serve the visitor's language, which
+ * a static render cannot do — leaving generateStaticParams in place made Next
+ * attempt an SSG render and fail every request with DYNAMIC_SERVER_USAGE.
+ *
+ * If the cookie-aware language render is ever reverted, drop this and restore
+ * `export async function generateStaticParams() { return getAllPostSlugs(); }`.
+ */
+export const dynamic = "force-dynamic";
 
 export default async function BlogPostPage({
   params,
@@ -103,8 +112,14 @@ export default async function BlogPostPage({
   const { slug } = await params;
   if (!slug) notFound();
 
-  const post = await getPostData(slug);
-  const nextPost = await getNextPost(slug);
+  // The URL carries one language's slug; serve the visitor's language from
+  // the server so the post client has nothing left to refetch on load.
+  // generateMetadata deliberately still keys off the URL slug, so canonical
+  // URLs and OG tags never vary by cookie.
+  const language = await getServerLanguage();
+  const targetSlug = localizedSlug(slug, language);
+  const post = (await getPostData(targetSlug)) ?? (await getPostData(slug));
+  const nextPost = await getNextPost(post?.slug ?? slug);
 
   if (!post) {
     notFound();

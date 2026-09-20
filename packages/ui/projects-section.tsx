@@ -4,7 +4,10 @@ import { useEffect, useState, useRef } from "react";
 import ProjectCard from "./project-card";
 import { ProjectMetadata } from "@portfolio/lib/lib/markdown";
 import { useIntersectionObserver } from "@portfolio/lib/hooks/use-intersection-observer";
-import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import {
+  useLanguage,
+  type Language,
+} from "@portfolio/lib/contexts/language-context";
 import { track, events } from "@portfolio/lib/analytics";
 import NavigationLink from "@portfolio/ui/navigation-link";
 import { motion } from "motion/react";
@@ -28,20 +31,25 @@ export default function ProjectsSection({
   limit,
   showSeeAll = false,
 }: ProjectsSectionProps = {}) {
-  const { language, t } = useLanguage();
-  // initialItems is server-rendered English markdown; trust it only when the
-  // client language matches. Non-English renders skeletons until the locale
-  // fetch resolves to avoid an EN→zh-TW title flash.
-  const [projects, setProjects] = useState<ProjectMetadata[]>(
-    language === "en" ? initialItems : [],
-  );
-  const [isLoading, setIsLoading] = useState(
-    language !== "en" || initialItems.length === 0,
-  );
+  const { language, initialLanguage, t } = useLanguage();
+  // initialItems is markdown the server loaded in `initialLanguage` — the
+  // language resolved from the request cookie, not always English. When the
+  // visitor is reading that language there is nothing to fetch and nothing to
+  // skeleton; the cards are already correct in the server HTML.
+  const [fetchedProjects, setFetchedProjects] = useState<ProjectMetadata[]>([]);
+  // Which language `fetchedProjects` holds, or null before any fetch lands.
+  const [fetchedLanguage, setFetchedLanguage] = useState<Language | null>(null);
   const [forceLoad, setForceLoad] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const hasFetchedRef = useRef(false); // Track if we've already fetched
-  const lastLanguageRef = useRef(language); // Track last language to prevent redundant fetches
+
+  const serverItemsUsable =
+    language === initialLanguage && initialItems.length > 0;
+  const projects = serverItemsUsable ? initialItems : fetchedProjects;
+  // Derived rather than stored: the grid shows skeletons on the very render
+  // the language changes, instead of leaving the previous language's cards on
+  // screen until the fetch resolves. Switching back to the server's language
+  // resolves to `false` immediately, so that direction never flashes at all.
+  const isLoading = !serverItemsUsable && fetchedLanguage !== language;
 
   // Load immediately if hash points to gallery or projects
   const shouldLoadImmediately =
@@ -68,21 +76,14 @@ export default function ProjectsSection({
   }, []);
 
   useEffect(() => {
-    // Skip fetch if we have initial data and language matches
-    if (initialItems.length > 0 && language === "en") {
-      if (lastLanguageRef.current !== "en") {
-        setProjects(initialItems);
-        lastLanguageRef.current = "en";
-      }
-      setIsLoading(false);
-      hasFetchedRef.current = true;
+    // Server data already matches, or this language is already fetched.
+    if (serverItemsUsable || fetchedLanguage === language) {
       return;
     }
 
-    // Skip if already fetched and language hasn't actually changed
-    if (hasFetchedRef.current && lastLanguageRef.current === language) {
-      return;
-    }
+    // A quick en→zh→en toggle can land responses out of order; a superseded
+    // one must not overwrite the language the user settled on.
+    let cancelled = false;
 
     async function fetchProjects() {
       try {
@@ -93,28 +94,32 @@ export default function ProjectsSection({
           `/api/projects?locale=${language}${sectionParam}`,
         );
         const data = await response.json();
-        setProjects(data);
-
-        // Mark as fetched and update last language
-        hasFetchedRef.current = true;
-        lastLanguageRef.current = language;
+        if (cancelled) return;
+        setFetchedProjects(data);
       } catch (error) {
         console.error("Failed to fetch projects:", error);
       } finally {
-        setIsLoading(false);
+        // Marked as loaded even on failure, so a dropped locale request
+        // leaves an empty grid rather than a grid shimmering forever.
+        if (!cancelled) setFetchedLanguage(language);
       }
     }
 
     if (shouldLoadImmediately || isVisible || forceLoad) {
       fetchProjects();
     }
+
+    return () => {
+      cancelled = true;
+    };
   }, [
     isVisible,
     language,
     shouldLoadImmediately,
     forceLoad,
     section,
-    initialItems,
+    serverItemsUsable,
+    fetchedLanguage,
   ]);
 
   const displayedProjects = limit ? projects.slice(0, limit) : projects;

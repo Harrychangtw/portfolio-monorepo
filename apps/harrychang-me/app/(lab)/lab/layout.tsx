@@ -3,6 +3,7 @@ import "@/styles/video-embed.css";
 import type React from "react";
 import type { Metadata } from "next";
 import LabClientLayout from "@/components/lab/client-layout";
+import { getServerLanguage } from "@portfolio/lib/lib/server-language";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lab.harrychang.me"),
@@ -75,10 +76,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LabLayout({
+export default async function LabLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <LabClientLayout>{children}</LabClientLayout>;
+  const initialLanguage = await getServerLanguage();
+
+  return (
+    <LabClientLayout initialLanguage={initialLanguage}>
+      {children}
+    </LabClientLayout>
+  );
 }

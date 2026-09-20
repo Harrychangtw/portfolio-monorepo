@@ -3,7 +3,11 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import parse, { Element } from "html-react-parser";
 import dynamic from "next/dynamic";
-import { useLanguage } from "@portfolio/lib/contexts/language-context";
+import {
+  useLanguage,
+  type Language,
+} from "@portfolio/lib/contexts/language-context";
+import TextSkeleton from "@portfolio/ui/text-skeleton";
 
 const LanguageSwitcher = dynamic(
   () => import("@portfolio/ui/language-switcher"),
@@ -37,8 +41,22 @@ export default function BlogPostClient({
   nextPost,
   localGraphSlot,
 }: BlogPostClientProps) {
-  const { language, t } = useLanguage();
+  const { language, initialLanguage, t } = useLanguage();
   const [post, setPost] = useState(initialPost);
+  // The language the loaded content is the right answer for. The page
+  // server-renders the visitor's language, so on load this already matches
+  // and nothing refetches; it only diverges when they hit the switcher.
+  const [resolvedLanguage, setResolvedLanguage] =
+    useState<Language>(initialLanguage);
+  const baseSlug = post.slug.replace(/_zh-tw$/i, "");
+  const targetSlug = language === "zh-TW" ? `${baseSlug}_zh-tw` : baseSlug;
+  // Derived, so the skeleton appears on the very render the language changes
+  // rather than a frame later via an effect. The slug comparison is the
+  // effect's own fetch condition, so the skeleton shows exactly when there is
+  // a round trip to wait for — switching back to a post that has no
+  // translation, and so never left its base slug, doesn't blink.
+  const isSwitchingLanguage =
+    resolvedLanguage !== language && targetSlug !== post.slug;
   const [nextPostData, setNextPostData] = useState(nextPost);
   // Force scroll to top on navigation
   useLayoutEffect(() => {
@@ -104,37 +122,48 @@ export default function BlogPostClient({
   }, [language, nextPost]);
 
   useEffect(() => {
+    // The server already rendered this language; nothing to do until the
+    // visitor actually switches.
+    if (resolvedLanguage === language) return;
+
+    // A quick en→zh→en toggle can land responses out of order; a superseded
+    // one must not overwrite the language the user settled on.
+    let cancelled = false;
+
     async function fetchLocalizedPost() {
-      const baseSlug = post.slug.replace("_zh-tw", "");
-      let targetSlug = baseSlug;
-
-      if (language === "zh-TW") {
-        targetSlug = `${baseSlug}_zh-tw`;
-      }
-
-      if (targetSlug !== post.slug) {
-        try {
+      try {
+        // Only fetch if we need a different version than what we currently have
+        if (targetSlug !== post.slug) {
           const response = await fetch(`/api/posts/${targetSlug}`);
+          if (cancelled) return;
+
           if (response.ok) {
-            const postData = await response.json();
-            setPost(postData);
-          } else {
-            if (language === "zh-TW" && targetSlug.includes("_zh-tw")) {
-              const fallbackResponse = await fetch(`/api/posts/${baseSlug}`);
-              if (fallbackResponse.ok) {
-                const fallbackData = await fallbackResponse.json();
-                setPost(fallbackData);
-              }
+            setPost(await response.json());
+          } else if (language === "zh-TW") {
+            // No translation for this one — fall back to the base version.
+            const fallbackResponse = await fetch(`/api/posts/${baseSlug}`);
+            if (cancelled) return;
+            if (fallbackResponse.ok) {
+              setPost(await fallbackResponse.json());
             }
           }
-        } catch (error) {
-          console.error("Error fetching localized version:", error);
         }
+      } catch (error) {
+        console.error("Error fetching localized version:", error);
+        // Keep the current content on error
+      } finally {
+        // Cleared even on failure or when no translation exists, so neither
+        // case leaves the article shimmering forever.
+        if (!cancelled) setResolvedLanguage(language);
       }
     }
 
     fetchLocalizedPost();
-  }, [language, post.slug]);
+
+    return () => {
+      cancelled = true;
+    };
+  }, [language, resolvedLanguage, post.slug, baseSlug, targetSlug]);
   // Format date
   const formatDate = (dateStr: string) => {
     const d = new Date(dateStr);
@@ -156,8 +185,11 @@ export default function BlogPostClient({
             {/* Title - Spans 2 columns of visual weight (cols 1-8) */}
             <div className="md:col-span-8">
               <h1 className="font-heading text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-primary">
-                {" "}
-                {post.title}
+                {isSwitchingLanguage ? (
+                  <TextSkeleton paragraphs={1} linesPerParagraph={1} />
+                ) : (
+                  post.title
+                )}
               </h1>
             </div>
 
@@ -240,64 +272,72 @@ export default function BlogPostClient({
               {/* Description / Lead Paragraph */}
               {post.description && (
                 <p className="font-body text-lg leading-relaxed text-primary mb-12 italic">
-                  {post.description}
+                  {isSwitchingLanguage ? (
+                    <TextSkeleton paragraphs={1} linesPerParagraph={2} />
+                  ) : (
+                    post.description
+                  )}
                 </p>
               )}
 
               {/* Markdown Content */}
               <div className="prose prose-lg max-w-none dark:prose-invert mb-16 md:mb-24">
-                {parse(post.contentHtml, {
-                  replace: (domNode) => {
-                    if (
-                      domNode instanceof Element &&
-                      domNode.attribs &&
-                      domNode.attribs.class === "markdown-compare-placeholder"
-                    ) {
-                      const {
-                        "data-left-src": leftSrc,
-                        "data-right-src": rightSrc,
-                        "data-alt": alt,
-                        "data-aspect-ratio": aspectRatio,
-                        "data-framed": framed,
-                      } = domNode.attribs;
-                      return (
-                        <CompareSlider
-                          leftSrc={leftSrc}
-                          rightSrc={rightSrc}
-                          alt={alt || ""}
-                          aspectRatio={
-                            aspectRatio ? parseFloat(aspectRatio) : undefined
-                          }
-                          noInsetPadding={framed !== "true"}
-                          quality={95}
-                        />
-                      );
-                    }
-                    if (
-                      domNode instanceof Element &&
-                      domNode.attribs &&
-                      domNode.attribs.class === "markdown-image-placeholder"
-                    ) {
-                      const {
-                        "data-src": src,
-                        "data-alt": alt,
-                        "data-aspect-ratio": aspectRatio,
-                        "data-framed": framed,
-                      } = domNode.attribs;
-                      return (
-                        <ImageContainer
-                          src={src}
-                          alt={alt || ""}
-                          aspectRatio={
-                            aspectRatio ? parseFloat(aspectRatio) : undefined
-                          }
-                          noInsetPadding={framed !== "true"}
-                          quality={95}
-                        />
-                      );
-                    }
-                  },
-                })}
+                {isSwitchingLanguage ? (
+                  <TextSkeleton paragraphs={5} />
+                ) : (
+                  parse(post.contentHtml, {
+                    replace: (domNode) => {
+                      if (
+                        domNode instanceof Element &&
+                        domNode.attribs &&
+                        domNode.attribs.class === "markdown-compare-placeholder"
+                      ) {
+                        const {
+                          "data-left-src": leftSrc,
+                          "data-right-src": rightSrc,
+                          "data-alt": alt,
+                          "data-aspect-ratio": aspectRatio,
+                          "data-framed": framed,
+                        } = domNode.attribs;
+                        return (
+                          <CompareSlider
+                            leftSrc={leftSrc}
+                            rightSrc={rightSrc}
+                            alt={alt || ""}
+                            aspectRatio={
+                              aspectRatio ? parseFloat(aspectRatio) : undefined
+                            }
+                            noInsetPadding={framed !== "true"}
+                            quality={95}
+                          />
+                        );
+                      }
+                      if (
+                        domNode instanceof Element &&
+                        domNode.attribs &&
+                        domNode.attribs.class === "markdown-image-placeholder"
+                      ) {
+                        const {
+                          "data-src": src,
+                          "data-alt": alt,
+                          "data-aspect-ratio": aspectRatio,
+                          "data-framed": framed,
+                        } = domNode.attribs;
+                        return (
+                          <ImageContainer
+                            src={src}
+                            alt={alt || ""}
+                            aspectRatio={
+                              aspectRatio ? parseFloat(aspectRatio) : undefined
+                            }
+                            noInsetPadding={framed !== "true"}
+                            quality={95}
+                          />
+                        );
+                      }
+                    },
+                  })
+                )}
               </div>
 
               {/* Local Graph + Next Up Card (coupled) */}

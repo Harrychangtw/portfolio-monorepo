@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import BlogSection from "@portfolio/ui/blog-section";
 import { getAllPostsMetadata } from "@portfolio/lib/lib/markdown";
+import { getServerLanguage } from "@portfolio/lib/lib/server-language";
 import { feedAlternates } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -44,7 +45,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
-  const blogPosts = getAllPostsMetadata("en");
+export default async function BlogPage() {
+  // Loaded in the request language so a zh-TW visitor gets Chinese cards in
+  // the server HTML — no English frame, and no locale fetch after hydration.
+  const language = await getServerLanguage();
+  const blogPosts = getAllPostsMetadata(language);
   return <BlogSection initialItems={blogPosts} />;
 }

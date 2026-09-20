@@ -1,14 +1,37 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+import {
+  PATHNAME_HEADER,
+  SEARCH_HEADER,
+} from "@portfolio/lib/lib/request-headers";
+
 // Note: outbound social/profile redirects (/github, /linkedin, /instagram,
 // /spotify, /discord, /letterboxd, /medium, /telegram, /cal, /email, /readme)
 // are handled by next.config.mjs `redirects()` so they're served at the CDN
 // edge as 308s without invoking the middleware function.
 
+/**
+ * Request headers carrying the original URL through to Server Components.
+ *
+ * getServerLanguage() resolves the visitor's language server-side so the first
+ * byte of HTML is already in it. Two of the four signals the client checks —
+ * the `?lang=` query param and the `_zh-tw` path suffix — live in the URL,
+ * which a Server Component otherwise cannot see. Forwarding them here keeps
+ * server detection at parity with the client's detectLanguage(), so the
+ * post-hydration language swap never has anything left to correct.
+ */
+function withUrlHeaders(request: NextRequest): Headers {
+  const headers = new Headers(request.headers);
+  headers.set(PATHNAME_HEADER, request.nextUrl.pathname);
+  headers.set(SEARCH_HEADER, request.nextUrl.search);
+  return headers;
+}
+
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
   const hostname = request.headers.get("host") || "";
+  const requestHeaders = withUrlHeaders(request);
 
   // Check if this is a Vercel preview deployment
   const isVercelPreview = hostname.includes(".vercel.app");
@@ -17,7 +40,7 @@ export function middleware(request: NextRequest) {
   // This enables testing lab functionality on preview URLs like:
   // https://your-project-git-branch-username.vercel.app/lab
   if (isVercelPreview) {
-    return NextResponse.next();
+    return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
   // Handle non-www to www redirect for main domain
@@ -50,7 +73,9 @@ export function middleware(request: NextRequest) {
     // For localhost, rewrite to /graph routes without redirect
     if (!url.pathname.startsWith("/graph")) {
       url.pathname = `/graph${url.pathname}`;
-      return NextResponse.rewrite(url);
+      return NextResponse.rewrite(url, {
+        request: { headers: requestHeaders },
+      });
     }
   }
 
@@ -92,7 +117,7 @@ export function middleware(request: NextRequest) {
   if (isLab && !url.pathname.startsWith("/lab") && !isSharedPath) {
     // Rewrite to lab routes (only for page routes)
     url.pathname = `/lab${url.pathname}`;
-    return NextResponse.rewrite(url);
+    return NextResponse.rewrite(url, { request: { headers: requestHeaders } });
   }
 
   // Prevent accessing lab routes from main domain in production
@@ -101,7 +126,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  return NextResponse.next();
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {
