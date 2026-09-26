@@ -1,426 +1,64 @@
 "use client";
-import { useState, useEffect, useRef, useMemo } from "react";
-import LetterGlitch from "@/components/main/letter-glitch";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
-import { useIsMobile } from "@portfolio/lib/hooks/use-mobile";
 
-const manifestoChunksEn = [
-  [
-    "I am the child who dismantled locks",
-    "not to break them, but to hear",
-    "the click of each tumbler falling into place—",
-    "the small sound a secret makes",
-    "when it decides to open.",
-  ],
-  [
-    "I seek no blueprint but the one I draft at dawn,",
-    "no validation but the hum of a thing that works,",
-    "no certainty but this:",
-    "the silence of something unbuilt",
-    "is the only silence I fear.",
-  ],
-  [
-    "I cannot claim indifference to being seen—",
-    "every frame composed is a hand extended outward.",
-    "But deeper than the reach lives the boy",
-    "who pressed his ear to a stamping press in Shanghai,",
-    "cheek warm against steel,",
-    "convinced the rhythm was about to resolve into language.",
-    "He did not know he was building a debt",
-    "I would spend my life repaying.",
-  ],
-  [
-    "I am haunted by the hours between things.",
-    "A speech in the morning. Surgery by afternoon.",
-    "The distance between those two facts",
-    "still measures how I spend my time.",
-    "Yet the boy in the factory yard never counted.",
-    "He only listened. He only stayed.",
-    "Perhaps urgency is not the same as attention.",
-  ],
-  [
-    "I did not raise myself.",
-    "Hands steadier than mine",
-    "saw in dismantled locks not destruction but discovery,",
-    "let the parts scatter across the kitchen table,",
-    "and trusted I would learn",
-    "what goes back where.",
-  ],
-  [
-    "Knowledge is not my crown but my compass—",
-    "each model trained, each frame cut,",
-    "each argument lost and studied afterward,",
-    "returns me to the same question",
-    "the boy asked the machine:",
-    "what are you trying to say?",
-  ],
-  [
-    "I refuse to let fluency become impatience,",
-    "to let my speed become another's measure.",
-    "Yet I confess: I still mistake silence for slowness,",
-    "still forget that the child who read machines",
-    "once stood for an hour",
-    "hearing nothing,",
-    "and called it listening.",
-  ],
-  [
-    "I still build fortresses for my ideas,",
-    "still chase the flawless frame, the airtight argument,",
-    "still perform competence in rooms that do not ask for it.",
-    "I mistake being correct for being true.",
-    "I mistake being published for being understood.",
-    "The boy learned more from a broken lock",
-    "than a finished one.",
-    "I keep forgetting that.",
-  ],
-  [
-    "This path is often quiet.",
-    "My focus, mistaken for distance.",
-    "My silence, mistaken for indifference.",
-    "I must learn to leave the door open—",
-    "not just for the next project,",
-    "but for the hands that might help me build.",
-  ],
-  [
-    "At sixteen, in a room at 3am,",
-    "machines did the breathing I could not.",
-    "I had given a speech that morning.",
-    "By afternoon, my lungs had folded shut.",
-    "No philosophy prepared me for that arithmetic.",
-    "But the hours taught me:",
-    "presence is not guaranteed,",
-    "and so it cannot be deferred.",
-  ],
-  [
-    "I am my own audience, my own critic, my own first draft.",
-    "Part freedom, part fortress—",
-    "the freedom to fail without witnesses,",
-    "the freedom to build without permission,",
-    "and the cost of a gallery",
-    "where I am sometimes the only guest.",
-  ],
-  [
-    "Every line of code I write,",
-    "every frame I cut,",
-    "every sentence I revise past midnight,",
-    "is a conversation with the child",
-    "who never asked, is this useful—",
-    "only, what worlds can this build.",
-  ],
-  [
-    "I pledge to remain unfinished.",
-    "Forever clumsy in some new language,",
-    "forever the slowest hand in an unfamiliar room.",
-    "To grant myself the grace",
-    "I am still learning to give others—",
-    "not because the harder road is better,",
-    "but because this one is mine to cut.",
-  ],
-  [
-    "Yes, I am building a résumé.",
-    "Yet, I am also building a bridge back to the factory yard—",
-    "one I need more than any publication,",
-    "more than any score.",
-    "A bridge someone else might cross",
-    "to find their own machine,",
-    "still humming, still waiting to finish its sentence.",
-  ],
-  [
-    "I am both the question and the quest,",
-    "both the mechanism and the hand that turns it.",
-    "Forever the child with his ear against the steel,",
-    "listening for what the machine almost said—",
-    "hands dirty with building,",
-    "heart still open enough",
-    "to hear it when it does.",
-  ],
+const paragraphsEn = [
+  "The first camera I ever held was my dad's Canon 400D. It was bigger than my head, and it wasn't mine. I didn't know what an aperture was. I pressed the shutter a few hundred times, and almost everything came out blurry. I'm not sure I've been that happy with a camera since.",
+  "At ten, in the Vienna airport, I photographed the light pouring through the terminal windows on my mom's iPhone. It had been bought in Japan, so the shutter sound couldn't be turned off, and the whole terminal heard me work. Afterward I found the editing sliders and dragged every one of them as far as it would go. I showed my mom. She said it was very special. I kept both versions.",
+  "There is a photo of me at seven with my hand in the air. I don't remember the question. I remember that the hand went up first.",
+  "The LEGO never left. It went from a hazard on the floor to a box, and from the box to the space under my server, where it holds up two fans because rubber bands couldn't. Most of what I know I learned this way: the wrong way first, then the parts bin.",
+  "At sixteen, one of my lungs collapsed. It was the first machine I couldn't take apart, and the first problem that didn't care how early I started. Everything else here I began before I was ready. This one I could only wait for. It healed at the speed it healed. I learned what none of my toys had taught me: some things arrive when they arrive, and wanting them sooner is just another way of not being there.",
+  "Later, I bought a camera with no screen.",
+  "Next year I'll help train a language model from nothing. For months it will produce the equivalent of blurry frames: half-words, sentences that don't finish. I'll be one of the people reading them. I hope I'm as patient with it as someone once was with me and the sliders.",
+  "Right now I am the worst person in the room at ping-pong, at calculus, and at parallel parking. The people in those rooms keep handing me the paddle anyway. I'd like to keep a list like that for the rest of my life, with different things on it.",
+  "The 400D is at the bottom of a box somewhere in this house. The battery is almost certainly dead. I never really put it away. I just keep picking up things too big for me, and pressing.",
 ];
 
-const manifestoChunksZhTw = [
-  [
-    "我是那個拆解門鎖的孩子，",
-    "不為破壞，只為傾聽",
-    "鎖簧逐一歸位的清脆",
-    "那是秘密決意綻放時，",
-    "最細微的聲響。",
-  ],
-  [
-    "不求藍圖，只跟循黎明時親手繪就的草稿；",
-    "不求認可，只傾聽齒輪咬合時運轉的低鳴；",
-    "不求確信，只篤信這唯一的真理：",
-    "尚未被造之物的沉默",
-    "是我唯一畏懼的沉默。",
-  ],
-  [
-    "我無法假裝不渴望被看見——",
-    "每一幀構圖，都是一隻向外伸出的手。",
-    "但比渴望更深處，住著那個男孩",
-    "他將耳朵貼在上海的沖壓機上，",
-    "稚嫩的臉頰感受著鋼鐵的餘溫，",
-    "深信那無規律的節奏，即將化作言語。",
-    "他並不知道，自己正築起一筆債，",
-    "讓我用一生來償。",
-  ],
-  [
-    "我時常被事物之間的縫隙縈繞。",
-    "早晨的演說。午後的手術。",
-    "這兩段事之間的距離，",
-    "至今仍丈量著我度過時間的尺度。",
-    "然而，工廠裡的男孩從不計時。",
-    "他只傾聽。他只停留。",
-    "或許急迫，從不等於專注。",
-  ],
-  [
-    "我並非憑空成長。",
-    "是那些比我更沉穩的雙手，",
-    "在散落的鎖件中，看見的不是破壞而是探索；",
-    "由零件散落廚房桌面，",
-    "並深信我終會學懂，",
-    "如何將一切歸位。",
-  ],
-  [
-    "知識不是我的桂冠，而是我的羅盤——",
-    "訓練的每一個模型，剪輯的每一格畫面，",
-    "每一場輸了又反覆推敲的辯論，",
-    "都引我回到同一個問題，",
-    "那個男孩曾問向機器的問題：",
-    "「你，究竟想說什麼？」",
-  ],
-  [
-    "我拒絕讓熟練淪為不耐，",
-    "拒絕讓自己的速度，成為衡量他人的標尺。",
-    "但我承認：我仍會將沉默誤認為遲緩，",
-    "仍會忘記那個試圖聽懂機器的孩子，",
-    "曾獨自站立一整個小時，",
-    "什麼都沒聽見，",
-    "卻稱之為，傾聽。",
-  ],
-  [
-    "我仍會為自己的思緒砌起高牆，",
-    "仍會追逐無瑕的畫面與滴水不漏的論點，",
-    "仍會在不求表現的場合裡，賣弄著精通。",
-    "我錯把「正確」當作「真實」。",
-    "我錯把「發表」當作「理解」。",
-    "那個男孩從損壞的門鎖中學到的，",
-    "遠比完好的更多。",
-    "而我，卻總是一再忘記。",
-  ],
-  [
-    "我所行的這條路，時常悄然無聲。",
-    "我的專注，被誤解為疏離。",
-    "我的沉默，被錯認為冷漠。",
-    "我必須學會為這扇門留一道縫隙——",
-    "不只為了下一個計畫，",
-    "也為了那些願意一同砌築的手。",
-  ],
-  [
-    "十六歲，凌晨三點的病房裡，",
-    "機器替我完成我所無法的呼吸。",
-    "那個早晨，我還在台上演說；",
-    "到了午後，我的肺葉卻已摺疊閉鎖。",
-    "沒有哲學能教我面對這道題目，",
-    "但那些時刻教會了我：",
-    "存在並非理所當然，",
-    "所以不容推遲。",
-  ],
-  [
-    "我是自己的觀眾、自己的樂評、自己的初稿。",
-    "半是自由，半是牢籠——",
-    "是那得以在無人目睹下失敗的自由，",
-    "是那得以在無須許可下建造的自由，",
-    "以及是那座空曠展廳的代價：",
-    "在這裡，我時常是唯一的訪客。",
-  ],
-  [
-    "我寫下的每一行程式碼，",
-    "剪裁的每一格畫面，",
-    "在午夜後反覆修改的每一個句子，",
-    "都是與那個孩子的對話——",
-    "他從不問：這有用嗎？",
-    "他只問：這能建造怎樣的世界？",
-  ],
-  [
-    "我誓願永遠保持未完成的姿態。",
-    "永遠在某種新語言裡無比笨拙，",
-    "永遠是陌生房間裡，最慢的那雙手。",
-    "去給予自己一份寬容，",
-    "一份我仍在學習如何給予他人的寬容——",
-    "不是因為崎嶇的路更為高尚，",
-    "而是因為這條路，由我親手開鑿。",
-  ],
-  [
-    "是的，我在打造履歷。",
-    "但我也在建造一座橋，通回那座工廠——",
-    "比任何發表更需要的橋，",
-    "比任何分數更需要的橋。",
-    "一座他人或許也能走過的橋，",
-    "去找到他們自己的那台機器。",
-    "仍在低鳴，仍在等待，",
-    "說完它未竟的那句話。",
-  ],
-  [
-    "我既是提問，也是追尋；",
-    "既是齒輪的機關，也是轉動它的手。",
-    "永遠是那個耳朵貼著鋼鐵的孩子，",
-    "傾聽著機器幾乎說出的秘密——",
-    "雙手沾滿砌築的塵土，",
-    "而心依然敞開，",
-    "敞開到足以在它終於開口時，聽見",
-  ],
+const paragraphsZhTw = [
+  "我拿過的第一台相機，是爸爸的 Canon 400D。它比我的頭還大，而且不是我的。我不知道光圈是什麼。我按了幾百次快門，幾乎每一張都是糊的。從那之後，我不確定自己還有沒有因為一台相機那麼快樂過。",
+  "十歲那年，在維也納機場，我用媽媽的 iPhone 拍下從航廈窗戶灑進來的光。那支手機是在日本買的，快門聲關不掉，整座航廈都聽得見我在開工。拍完後我摸索到了修圖的拉桿，把每一個數值都拉到了底。我拿給我媽看。她說，很特別。兩個版本我都留了下來。",
+  "有一張我七歲時舉著手的照片。我不記得當時的問題是什麼了。我只記得，那隻手是第一個舉起來的。",
+  "樂高從來沒有離開過。它從地板上的絆腳石變成一個箱子，又從箱子搬到我的伺服器底下，在那裡撐著兩顆風扇，因為橡皮筋撐不住。我會的大多數東西，都是這樣學來的：先用錯的方法，再去翻零件箱。",
+  "十六歲那年，我的一邊肺塌陷了。那是第一台我拆不開的機器，也是第一個不在乎我多早開始的問題。這裡的其他事情，我都是還沒準備好就先開始了。只有這一件，我只能等，而它則按照它自己的速度癒合。我學到了玩具從沒教過我的事：有些東西，該來的時候才會來；想要它早點到，不過是另一種不在場。",
+  "後來，我買了一台沒有螢幕的相機。",
+  "明年，我會參與從零開始訓練一個語言模型。好幾個月裡，它產出的都會是那些模糊照片的等價物：半個字、寫不完的句子。我會是讀那些句子的人之一。我希望自己面對它時，能保有當年某個人看著我和那些拉桿時，同樣的耐心。",
+  "現在的我，在同一個房間裡，是桌球打得最爛、微積分算得最差、路邊停車停得最笨拙的人。但那些房間裡的人，依然一次次把球拍遞到我手裡。我希望這輩子能一直保有這樣一張清單，上頭列著各種不同的事。",
+  "那台 400D 躺在這個家某個箱子的最底層。電池幾乎可以確定已經沒電了。我從來沒有真正把它收起來。我只是不斷拿起那些對我而言太過巨大的事物，然後，按下去",
 ];
+
+// "Later, I bought a camera with no screen." is set apart as a beat rather
+// than a paragraph. Indexed explicitly since zh-TW paragraphs are all short.
+const BEAT_INDEX = 5;
+
+// Margin numerals count only full paragraphs, so the beat doesn't leave a gap.
+const numeral = (i: number) => (i < BEAT_INDEX ? i + 1 : i);
 
 export default function ManifestoPage() {
   const { language } = useLanguage();
-  const isMobile = useIsMobile();
-  const [introComplete, setIntroComplete] = useState(false);
-
-  // Memoize chunks to prevent unnecessary recalculations
-  const manifestoChunks = useMemo(() => {
-    return language === "zh-TW" ? manifestoChunksZhTw : manifestoChunksEn;
-  }, [language]);
-
-  const [activeChunks, setActiveChunks] = useState<boolean[]>(
-    new Array(manifestoChunks.length).fill(false),
-  );
-
-  const chunkRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const handleAnimationComplete = () => {
-    setTimeout(() => setIntroComplete(true), 500);
-  };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile) {
-      setIntroComplete(true); // eslint-disable-line react-hooks/set-state-in-effect
-      document.body.style.overflow = "";
-    } else {
-      document.body.style.overflow = introComplete ? "" : "hidden";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [introComplete, isMobile]);
-
-  // Reset state on language change
-  useEffect(() => {
-    setActiveChunks(new Array(manifestoChunks.length).fill(false)); // eslint-disable-line react-hooks/set-state-in-effect
-  }, [language, manifestoChunks.length]);
-
-  // The Spotlight Logic
-  useEffect(() => {
-    if (!introComplete) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = parseInt(
-            entry.target.getAttribute("data-index") || "0",
-            10,
-          );
-
-          // Toggle active state based on intersection
-          setActiveChunks((prev) => {
-            // Performance optimization: prevent state update if value hasn't changed
-            if (prev[index] === entry.isIntersecting) return prev;
-
-            const newActive = [...prev];
-            newActive[index] = entry.isIntersecting;
-            return newActive;
-          });
-        });
-      },
-      {
-        // Root margin creates the "Spotlight" area.
-        // Negative margins shrink the detection area to the center of the screen.
-        // -30% means top 30% and bottom 30% of screen are "inactive zones".
-        rootMargin: "-30% 0px -30% 0px",
-        threshold: 0,
-      },
-    );
-
-    const currentRefs = chunkRefs.current;
-    currentRefs.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      currentRefs.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-      observer.disconnect();
-    };
-  }, [introComplete, manifestoChunks.length]);
+  const paragraphs = language === "zh-TW" ? paragraphsZhTw : paragraphsEn;
 
   return (
-    <div className="min-h-screen font-heading bg-background text-foreground transition-colors duration-500">
-      {/* Desktop Intro Animation */}
-      {!isMobile && (
-        <div className="hidden md:block h-screen relative">
-          <LetterGlitch onAnimationComplete={handleAnimationComplete} />
-        </div>
-      )}
-
-      <div
-        className={`transition-opacity duration-1000 ${introComplete ? "opacity-100" : "opacity-0"}`}
-      >
-        <div className="container min-h-screen py-24 md:py-32">
-          {/* Mobile Title */}
-          <div className="block md:hidden mb-6 md:mb-8">
-            <h1 className="font-heading text-[clamp(2.25rem,5.5vw,4.5rem)] font-regular tracking-[-0.02em] text-foreground leading-[0.95]">
-              L&apos;enfant que j&apos;étais
-            </h1>
-          </div>
-
-          <article>
-            {manifestoChunks.map((chunk, chunkIndex) => {
-              const isActive = activeChunks[chunkIndex];
-              return (
-                <div
-                  key={chunkIndex}
-                  ref={(el) => {
-                    chunkRefs.current[chunkIndex] = el;
-                  }}
-                  data-index={chunkIndex}
-                  className={`
-                                        grid grid-cols-12 gap-4 md:gap-6 py-10 md:py-14 border-t border-border
-                                        transition-all duration-700 ease-in-out will-change-[opacity,filter]
-                                        ${
-                                          isActive
-                                            ? "opacity-100 translate-y-0 scale-100"
-                                            : "opacity-20 translate-y-2 scale-[0.94]"
-                                        }
-                                    `}
-                >
-                  {/* Stanza number */}
-                  <div className="col-span-1 hidden md:block">
-                    <span className="label-mono">
-                      {String(chunkIndex + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-
-                  {/* Stanza text - Anchored to the center line */}
-                  <div className="col-span-12 md:col-start-7 md:col-span-6 space-y-4">
-                    {chunk.map((line, lineIndex) => (
-                      <p
-                        key={`${chunkIndex}-${lineIndex}`}
-                        className="md:text-xl text-foreground leading-relaxed"
-                      >
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              );
-            })}
-          </article>
-          {/* Extra padding at bottom to allow last item to reach center */}
-          <div className="h-[10vh]" />
-        </div>
-      </div>
+    <div className="container min-h-screen py-24 md:py-40">
+      <article className="mx-auto max-w-[38rem] space-y-7 md:space-y-8">
+        {paragraphs.map((text, i) =>
+          i === BEAT_INDEX ? (
+            <p
+              key={i}
+              className="text-lg md:text-xl leading-[1.7] text-foreground py-4 md:py-6"
+            >
+              {text}
+            </p>
+          ) : (
+            <div key={i} className="relative">
+              <span className="label-mono absolute -left-16 top-[0.45em] hidden md:block">
+                {String(numeral(i)).padStart(2, "0")}
+              </span>
+              <p className="text-lg md:text-xl leading-[1.7] text-foreground [text-wrap:pretty]">
+                {text}
+              </p>
+            </div>
+          ),
+        )}
+      </article>
     </div>
   );
 }
