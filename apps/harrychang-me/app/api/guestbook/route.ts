@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { GUESTBOOK_MAX_LENGTH } from "@/lib/guestbook";
 
 // --- Rate Limiting Configuration ---
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute window
@@ -67,14 +68,14 @@ export async function POST(req: Request) {
 
     // 2. Request Validation
     const body = await req.json();
-    const { message } = body;
+    const { message, host, path, language } = body;
 
     // Check for existence, type, and non-empty content (prevent "   " spam)
     if (!message || typeof message !== "string" || !message.trim()) {
       return NextResponse.json({ error: "Message required" }, { status: 400 });
     }
 
-    if (message.length > 100) {
+    if (message.length > GUESTBOOK_MAX_LENGTH) {
       return NextResponse.json({ error: "Message too long" }, { status: 400 });
     }
 
@@ -91,11 +92,19 @@ export async function POST(req: Request) {
 
     const sanitizedMessage = message.replace(/@/g, "@\u200b"); // Inserts a zero-width space to break the tag
 
+    // Context for attributing feedback — client-supplied, so clamp and strip anything
+    // that could break out of the inline code span
+    const clean = (value: unknown) =>
+      typeof value === "string"
+        ? value.replace(/[`\n\r]/g, "").slice(0, 200)
+        : "";
+    const context = `\`${clean(host) + clean(path) || "unknown"}\` · \`${clean(language) || "unknown"}\``;
+
     await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        content: `**New Guestbook Entry**\n> ${sanitizedMessage}`,
+        content: `**New Guestbook Entry**\n> ${sanitizedMessage}\n-# ${context}`,
         username: "Guestbook Bot",
       }),
     });

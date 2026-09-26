@@ -5,13 +5,17 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ArrowUpRight, Loader2, Check } from "lucide-react";
 import { useLanguage } from "@portfolio/lib/contexts/language-context";
 import { track, events } from "@portfolio/lib/analytics";
+import {
+  GUESTBOOK_MAX_LENGTH,
+  GUESTBOOK_COUNTER_THRESHOLD,
+} from "@/lib/guestbook";
 
 export default function GuestbookWidget({
   className = "",
 }: {
   className?: string;
 }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -52,7 +56,12 @@ export default function GuestbookWidget({
       const res = await fetch("/api/guestbook", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({
+          message,
+          host: window.location.host,
+          path: window.location.pathname + window.location.hash,
+          language,
+        }),
       });
 
       const data = await res.json();
@@ -115,7 +124,7 @@ export default function GuestbookWidget({
             onChange={(e) => setMessage(e.target.value)}
             onFocus={() => setIsFocused(true)}
             onBlur={() => !message && setIsFocused(false)}
-            maxLength={500}
+            maxLength={GUESTBOOK_MAX_LENGTH}
             className="pb-3 w-full bg-transparent text-base text-secondary outline-none placeholder:text-secondary truncate"
             placeholder={isFocused ? t("guestbook.focusedPlaceholder") : ""}
           />
@@ -172,6 +181,26 @@ export default function GuestbookWidget({
             )}
           </AnimatePresence>
         </div>
+
+        {/* Character counter — only once the limit is in sight */}
+        <AnimatePresence>
+          {message.length >=
+            GUESTBOOK_MAX_LENGTH - GUESTBOOK_COUNTER_THRESHOLD && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              aria-live="polite"
+              className={`text-xs mt-2 text-right tabular-nums ${
+                message.length >= GUESTBOOK_MAX_LENGTH
+                  ? "text-red-400"
+                  : "text-secondary"
+              }`}
+            >
+              {message.length}/{GUESTBOOK_MAX_LENGTH}
+            </motion.p>
+          )}
+        </AnimatePresence>
 
         {/* Error Message */}
         <AnimatePresence>
