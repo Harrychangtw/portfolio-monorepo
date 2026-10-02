@@ -72,9 +72,14 @@ function discoverStaticRoutes() {
       if (e.name.startsWith('_')) continue;
       const full = path.join(dir, e.name);
       if (e.isDirectory()) {
-        if (e.name.startsWith('[')) continue; // dynamic — handled separately
+        // `[lang]` is internal: the middleware adds it, public URLs never
+        // carry it, so it maps to no URL segment, like a route group.
+        const isLangSegment = e.name === '[lang]';
+        if (e.name.startsWith('[') && !isLangSegment) continue; // dynamic — handled separately
         const seg =
-          e.name.startsWith('(') && e.name.endsWith(')') ? null : e.name;
+          isLangSegment || (e.name.startsWith('(') && e.name.endsWith(')'))
+            ? null
+            : e.name;
         walk(full, seg == null ? urlSegs : [...urlSegs, seg]);
       } else if (/^(page|route)\.(tsx|ts|jsx|js)$/.test(e.name)) {
         // The `lab` segment is served from a subdomain, but we still allow

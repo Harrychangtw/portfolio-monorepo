@@ -19,7 +19,7 @@ const SOCIAL_REDIRECTS = [
   ['/medium', 'https://medium.com/@chiwei_chang'],
   ['/telegram', 'https://t.me/harrychangtw'],
   // /meet is the booking link (Notion Calendar scheduling).
-  // /cal is NOT here -- it is a real page at app/(main)/cal.
+  // /cal is NOT here -- it is a real page at app/[lang]/(main)/cal.
   ['/meet', 'https://calendar.notion.so/meet/harry-chang/vklb2nd7'],
   ['/email', 'mailto:chiwei@harrychang.me'],
 ]

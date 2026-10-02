@@ -3,7 +3,7 @@
  * Publish-content orchestrator.
  *
  * For new entries in content/{posts,projects,gallery}/ that aren't yet listed in
- * app/not-found.tsx's `destinations` array:
+ * app/[lang]/not-found.tsx's `destinations` array:
  *   1. optimize-images
  *   2. backfill_alt_and_tldr.py  (TL;DRs + LLM-generated shortName per entry)
  *   3. build_graph.py
@@ -62,7 +62,7 @@ function stepDone(n) {
   console.log(`  ${progressBar(n, TOTAL_STEPS)}`)
 }
 const CONTENT_DIR = path.join(APP_DIR, 'content')
-const NOT_FOUND_PATH = path.join(APP_DIR, 'app', 'not-found.tsx')
+const NOT_FOUND_PATH = path.join(APP_DIR, 'app', '[lang]', 'not-found.tsx')
 const SUMMARIES_PATH = path.join(CONTENT_DIR, 'generated', 'section-summaries.json')
 
 const TYPES = [
@@ -236,8 +236,8 @@ async function main() {
   stepDone(4)
 
   console.log(`\n${bold(green('✔'))} ${bold('Pipeline complete')} ${dim(`· ${fmtElapsed(Date.now() - wallStart)}`)}`)
-  console.log(dim(`  Patched app/not-found.tsx (${applied.length} entr${applied.length === 1 ? 'y' : 'ies'})`))
-  console.log(dim('  Review diff: git diff app/not-found.tsx'))
+  console.log(dim(`  Patched app/[lang]/not-found.tsx (${applied.length} entr${applied.length === 1 ? 'y' : 'ies'})`))
+  console.log(dim('  Review diff: git diff 'app/[lang]/not-found.tsx''))
 }
 
 main().catch((err) => {
