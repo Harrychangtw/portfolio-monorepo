@@ -143,9 +143,9 @@ const DEFAULT_NAMESPACES = ["common", "about", "updates", "uses", "cv"];
 /**
  * The language of the server render, when the caller could not resolve one.
  *
- * `initialLanguage` (resolved from the request's cookie / Accept-Language by
- * getServerLanguage()) is what the app actually passes, so the first byte of
- * HTML is already in the visitor's language. This is only the fallback for
+ * `initialLanguage` (the `[lang]` route segment the middleware chose from the
+ * URL, cookie and Accept-Language) is what the app actually passes, so the
+ * first byte of HTML is already in the visitor's language. This is only the fallback for
  * callers that pass nothing.
  *
  * The client's first render must produce identical markup or hydration fails,
@@ -200,7 +200,7 @@ export function LanguageProvider({
   }>;
   bundledTranslations?: BundledTranslations;
   /**
-   * Language the server rendered in, from getServerLanguage(). Must match what
+   * Language the server rendered in, from the `[lang]` segment. Must match what
    * the page used to load its markdown, or hydration mismatches.
    */
   initialLanguage?: Language;

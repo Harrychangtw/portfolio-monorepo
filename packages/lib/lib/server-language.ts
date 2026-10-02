@@ -6,24 +6,42 @@
  * hydrated, which is well after the browser has painted the server's HTML —
  * so every zh-TW visitor watched the page load in English and then swap.
  *
- * This checks the same four signals, in the same order, as the client's
- * detectLanguage(): the `?lang=` query param, a `_zh-tw` path suffix, the
- * saved cookie, then the browser's preferred language. The first two come
- * from headers the middleware forwards, since a Server Component cannot
- * otherwise see the URL. Parity matters — any signal the server misses
- * becomes a visible post-hydration swap.
+ * Resolving it by reading cookies() in the layouts fixed that, but made every
+ * page dynamic: each view became a serverless render instead of a CDN hit,
+ * which tanked TTFB/LCP. So the decision now happens in the middleware, which
+ * rewrites `/blog` to `/<lang>/blog` internally. Every page lives under the
+ * `app/[lang]` segment and is prerendered once per language; the public URL
+ * never shows the prefix.
  *
- * Cost: calling this opts the route subtree out of static rendering.
+ * This module must stay free of `next/headers` and Node APIs — the middleware
+ * runs on the edge runtime and imports it.
  */
-import { cookies, headers } from "next/headers";
-
 import type { Language } from "@portfolio/lib/contexts/language-context";
-import {
-  PATHNAME_HEADER,
-  SEARCH_HEADER,
-} from "@portfolio/lib/lib/request-headers";
+
+export const LANGUAGES: readonly Language[] = ["en", "zh-TW"];
 
 export const LANGUAGE_COOKIE = "language";
+
+export function isLanguage(value: unknown): value is Language {
+  return value === "en" || value === "zh-TW";
+}
+
+/** `generateStaticParams` for the `[lang]` segment. */
+export function languageParams(): { lang: Language }[] {
+  return LANGUAGES.map((lang) => ({ lang }));
+}
+
+/**
+ * The `[lang]` route param as a Language. The root layout sets
+ * `dynamicParams = false`, so anything else has already 404'd; the fallback
+ * only satisfies the type.
+ */
+export async function languageFromParams(
+  params: Promise<{ lang: string }>,
+): Promise<Language> {
+  const { lang } = await params;
+  return isLanguage(lang) ? lang : "en";
+}
 
 /**
  * Mirrors the client's `navigator.language?.toLowerCase().startsWith("zh")`.
@@ -37,34 +55,40 @@ function prefersChinese(acceptLanguage: string | null): boolean {
   return Boolean(first?.startsWith("zh"));
 }
 
-export async function getServerLanguage(): Promise<Language> {
-  // `cookies()` and `headers()` are request-scoped and memoised by Next, so
-  // calling this from several layouts and pages in one render costs one read.
-  const [cookieStore, headerStore] = await Promise.all([cookies(), headers()]);
-
+/**
+ * Checks the same four signals, in the same order, as the client's
+ * detectLanguage(): the `?lang=` query param, a `_zh-tw` path suffix, the
+ * saved cookie, then the browser's preferred language. Parity matters — any
+ * signal missed here becomes a visible post-hydration swap.
+ */
+export function resolveLanguage({
+  search,
+  pathname,
+  cookie,
+  acceptLanguage,
+}: {
+  search: URLSearchParams;
+  pathname: string;
+  cookie: string | undefined;
+  acceptLanguage: string | null;
+}): Language {
   // Priority 1: URL query param (?lang=zh-tw)
-  const search = headerStore.get(SEARCH_HEADER);
-  if (search) {
-    const params = new URLSearchParams(search);
-    if (params.get("lang")?.toLowerCase() === "zh-tw") {
-      return "zh-TW";
-    }
+  if (search.get("lang")?.toLowerCase() === "zh-tw") {
+    return "zh-TW";
   }
 
   // Priority 2: URL path suffix ([slug]_zh-tw)
-  const pathname = headerStore.get(PATHNAME_HEADER);
-  if (pathname && pathname.replace(/\/$/, "").endsWith("_zh-tw")) {
+  if (pathname.replace(/\/$/, "").endsWith("_zh-tw")) {
     return "zh-TW";
   }
 
   // Priority 3: the visitor's saved choice.
-  const saved = cookieStore.get(LANGUAGE_COOKIE)?.value;
-  if (saved === "zh-TW" || saved === "en") {
-    return saved;
+  if (isLanguage(cookie)) {
+    return cookie;
   }
 
   // Priority 4: browser preference, for a first visit with no cookie yet.
-  return prefersChinese(headerStore.get("accept-language")) ? "zh-TW" : "en";
+  return prefersChinese(acceptLanguage) ? "zh-TW" : "en";
 }
 
 /** BCP 47 tag for the `<html lang>` attribute. */
@@ -85,4 +109,20 @@ export function htmlLang(language: Language): string {
 export function localizedSlug(slug: string, language: Language): string {
   const baseSlug = slug.replace(/_zh-tw$/i, "");
   return language === "zh-TW" ? `${baseSlug}_zh-tw` : baseSlug;
+}
+
+/**
+ * Static params for a `[slug]` route under `[lang]`.
+ *
+ * The middleware resolves any `_zh-tw` URL to zh-TW, so English only ever
+ * renders base slugs; Chinese can arrive on either form (a base-slug URL with
+ * a zh-TW cookie). Anything not listed still renders on demand and is cached.
+ */
+export function slugParamsFor(
+  lang: string,
+  slugs: string[],
+): { slug: string }[] {
+  const reachable =
+    lang === "en" ? slugs.filter((slug) => !/_zh-tw$/i.test(slug)) : slugs;
+  return reachable.map((slug) => ({ slug }));
 }

@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 import {
-  PATHNAME_HEADER,
-  SEARCH_HEADER,
-} from "@portfolio/lib/lib/request-headers";
+  LANGUAGE_COOKIE,
+  resolveLanguage,
+} from "@portfolio/lib/lib/server-language";
 
 // Note: outbound social/profile redirects (/github, /linkedin, /instagram,
 // /spotify, /discord, /letterboxd, /medium, /telegram, /cal, /email, /readme)
@@ -12,121 +12,102 @@ import {
 // edge as 308s without invoking the middleware function.
 
 /**
- * Request headers carrying the original URL through to Server Components.
- *
- * getServerLanguage() resolves the visitor's language server-side so the first
- * byte of HTML is already in it. Two of the four signals the client checks —
- * the `?lang=` query param and the `_zh-tw` path suffix — live in the URL,
- * which a Server Component otherwise cannot see. Forwarding them here keeps
- * server detection at parity with the client's detectLanguage(), so the
- * post-hydration language swap never has anything left to correct.
+ * Paths that are not App Router pages and so must not get a language prefix:
+ * API routes, Next internals, the Marp decks next.config rewrites into
+ * public/slides, and anything with a file extension (public/ assets, feeds,
+ * robots.txt, sitemap.xml).
  */
-function withUrlHeaders(request: NextRequest): Headers {
-  const headers = new Headers(request.headers);
-  headers.set(PATHNAME_HEADER, request.nextUrl.pathname);
-  headers.set(SEARCH_HEADER, request.nextUrl.search);
-  return headers;
+function isPagePath(pathname: string): boolean {
+  if (/^\/(api|_next|slides|ingest|locales|images|fonts)(\/|$)/.test(pathname))
+    return false;
+  const lastSegment = pathname.slice(pathname.lastIndexOf("/") + 1);
+  return !lastSegment.includes(".");
 }
 
 export function middleware(request: NextRequest) {
   const url = request.nextUrl;
   const hostname = request.headers.get("host") || "";
-  const requestHeaders = withUrlHeaders(request);
 
-  // Check if this is a Vercel preview deployment
+  // Check if this is a Vercel preview deployment. Previews allow direct access
+  // to /lab routes, e.g. https://your-project-git-branch-username.vercel.app/lab
   const isVercelPreview = hostname.includes(".vercel.app");
-
-  // For Vercel preview deployments, allow direct access to /lab routes
-  // This enables testing lab functionality on preview URLs like:
-  // https://your-project-git-branch-username.vercel.app/lab
-  if (isVercelPreview) {
-    return NextResponse.next({ request: { headers: requestHeaders } });
-  }
 
   // Handle non-www to www redirect for main domain
   // This ensures search engines see consistent metadata and canonical URLs
   // Using 308 (Permanent Redirect) instead of 301 to preserve request method
-  if (hostname === "harrychang.me") {
+  if (!isVercelPreview && hostname === "harrychang.me") {
     const newUrl = new URL(request.url);
     newUrl.host = "www.harrychang.me";
     return NextResponse.redirect(newUrl, 308);
   }
 
-  // Handle lab subdomain (only for production/localhost)
-  const isLab =
-    hostname.includes("lab.harrychang.me") ||
-    hostname.includes("lab.localhost");
+  // Older links used an uppercase `_zh-TW` suffix. Pages are prerendered per
+  // slug, so fold those onto the canonical lowercase URL instead of 404ing.
+  if (/_zh-tw$/i.test(url.pathname) && !url.pathname.endsWith("_zh-tw")) {
+    const newUrl = url.clone();
+    newUrl.pathname = url.pathname.replace(/_zh-tw$/i, "_zh-tw");
+    return NextResponse.redirect(newUrl, 308);
+  }
 
-  // Handle graph subdomain — redirect to main domain /graph
-  const isGraph =
-    hostname.includes("graph.harrychang.me") ||
-    hostname.includes("graph.localhost");
+  const isPage = isPagePath(url.pathname);
+  let pathname = url.pathname;
 
-  if (isGraph) {
-    // In production, redirect to main domain /graph
-    if (hostname.includes("graph.harrychang.me")) {
-      const newUrl = new URL(request.url);
-      newUrl.host = "www.harrychang.me";
-      newUrl.pathname = `/graph${url.pathname === "/" ? "" : url.pathname}`;
-      return NextResponse.redirect(newUrl, 308);
+  if (!isVercelPreview) {
+    // Handle lab subdomain (only for production/localhost)
+    const isLab =
+      hostname.includes("lab.harrychang.me") ||
+      hostname.includes("lab.localhost");
+
+    // Handle graph subdomain — redirect to main domain /graph
+    const isGraph =
+      hostname.includes("graph.harrychang.me") ||
+      hostname.includes("graph.localhost");
+
+    if (isGraph) {
+      // In production, redirect to main domain /graph
+      if (hostname.includes("graph.harrychang.me")) {
+        const newUrl = new URL(request.url);
+        newUrl.host = "www.harrychang.me";
+        newUrl.pathname = `/graph${url.pathname === "/" ? "" : url.pathname}`;
+        return NextResponse.redirect(newUrl, 308);
+      }
+      // For localhost, serve /graph routes without redirect
+      if (isPage && !pathname.startsWith("/graph")) {
+        pathname = `/graph${pathname === "/" ? "" : pathname}`;
+      }
     }
-    // For localhost, rewrite to /graph routes without redirect
-    if (!url.pathname.startsWith("/graph")) {
-      url.pathname = `/graph${url.pathname}`;
-      return NextResponse.rewrite(url, {
-        request: { headers: requestHeaders },
-      });
+
+    if (isLab && isPage && !pathname.startsWith("/lab")) {
+      // Serve lab routes (only for page routes; shared resources pass through)
+      pathname = `/lab${pathname === "/" ? "" : pathname}`;
+    }
+
+    // Prevent accessing lab routes from main domain in production
+    if (!isLab && url.pathname.startsWith("/lab")) {
+      const newUrl = url.clone();
+      newUrl.pathname = "/";
+      return NextResponse.redirect(newUrl);
     }
   }
 
-  // Paths that should NOT be rewritten (shared resources)
-  const sharedPaths = [
-    "/api/", // API routes are shared
-    "/locales/", // Translation files are shared
-    "/images/", // Images are shared
-    "/_next/", // Next.js internals
-    "/favicon.ico",
-    "/robots.txt", // Allow dynamic robots.txt
-    "/sitemap.xml", // Allow dynamic sitemap
-    "/feed.xml", // Blog RSS (en) — static, generated at build
-    "/feed-zh-tw.xml", // Blog RSS (zh-TW)
-    "/googleb0d95f7ad2ffc31f.html",
-    "/language.svg",
-    "/theme_moon.svg",
-    "/theme_sun.svg",
-    "/chinese_name_icon.png",
-    "/placeholder-logo.png",
-    "/images/og-image.webp",
-    "/images/og-image-lab.webp",
-    "/images/og-image-blogs.webp",
-    "/images/og-image-projects.webp",
-    "/images/og-image-gallery.webp",
-    "/images/og-image-graph.webp",
-    "/apple-icon.png",
-    "/safari-pinned-tab.svg",
-    "/favicon-lab.ico",
-    "/apple-icon-lab.png",
-    "/safari-pinned-tab-lab.svg",
-    "/graph-data.json",
-  ];
-
-  const isSharedPath = sharedPaths.some((path) =>
-    url.pathname.startsWith(path),
-  );
-
-  if (isLab && !url.pathname.startsWith("/lab") && !isSharedPath) {
-    // Rewrite to lab routes (only for page routes)
-    url.pathname = `/lab${url.pathname}`;
-    return NextResponse.rewrite(url, { request: { headers: requestHeaders } });
+  if (!isPage) {
+    return NextResponse.next();
   }
 
-  // Prevent accessing lab routes from main domain in production
-  if (!isLab && url.pathname.startsWith("/lab")) {
-    url.pathname = "/";
-    return NextResponse.redirect(url);
-  }
+  // Pages live under app/[lang] and are prerendered once per language, so
+  // picking the visitor's language is just choosing which static copy to
+  // serve. The prefix is internal: the browser URL never changes, and a
+  // direct request for /en/... gets prefixed again and 404s.
+  const language = resolveLanguage({
+    search: url.searchParams,
+    pathname: url.pathname,
+    cookie: request.cookies.get(LANGUAGE_COOKIE)?.value,
+    acceptLanguage: request.headers.get("accept-language"),
+  });
 
-  return NextResponse.next({ request: { headers: requestHeaders } });
+  const rewritten = url.clone();
+  rewritten.pathname = `/${language}${pathname === "/" ? "" : pathname}`;
+  return NextResponse.rewrite(rewritten);
 }
 
 export const config = {

@@ -63,8 +63,8 @@ pnpm --filter harry-chang-portfolio build:analyze # Bundle analysis
 
 The app serves **two distinct applications** from one codebase using subdomain routing in `middleware.ts`:
 
-- **Main domain** (`harrychang.me`) → routes in `app/(main)/`
-- **Lab subdomain** (`lab.harrychang.me`) → routes in `app/(lab)/lab/`
+- **Main domain** (`harrychang.me`) → routes in `app/[lang]/(main)/`
+- **Lab subdomain** (`lab.harrychang.me`) → routes in `app/[lang]/(lab)/lab/`
 
 **Middleware logic:**
 
@@ -79,7 +79,8 @@ The app serves **two distinct applications** from one codebase using subdomain r
 
 ### Custom Client-Side i18n System
 
-- **No server-side i18n.** Entirely client-side via `LanguageContext.tsx`.
+- **Language-prefixed static pages.** Every page lives under the internal `app/[lang]/` segment (`en` | `zh-TW`) and is prerendered once per language. `middleware.ts` picks the visitor's language (`?lang=`, `_zh-tw` slug suffix, `language` cookie, then Accept-Language — see `resolveLanguage()` in `packages/lib/lib/server-language.ts`) and rewrites `/blog` → `/zh-TW/blog`; public URLs never show the prefix. Never read `cookies()`/`headers()` in a page or layout — it makes the route dynamic and costs every view a function invocation. Unmatched URLs render `app/global-not-found.tsx`.
+- Client-side switching via `LanguageContext.tsx`.
 - Uses visibility gating to prevent FOUC.
 - Relies on JSON files in `/public/locales/{lang}/{namespace}.json`.
 

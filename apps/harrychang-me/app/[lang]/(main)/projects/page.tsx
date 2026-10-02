@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ProjectsSection from "@portfolio/ui/projects-section";
 import { getAllProjectsMetadata } from "@portfolio/lib/lib/markdown";
-import { getServerLanguage } from "@portfolio/lib/lib/server-language";
+import { languageFromParams } from "@portfolio/lib/lib/server-language";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -42,10 +42,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ProjectsPage() {
+export default async function ProjectsPage({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
   // Loaded in the request language so a zh-TW visitor gets Chinese cards in
   // the server HTML — no English frame, and no locale fetch after hydration.
-  const language = await getServerLanguage();
+  const language = await languageFromParams(params);
   const projects = getAllProjectsMetadata(language);
   return <ProjectsSection initialItems={projects} />;
 }

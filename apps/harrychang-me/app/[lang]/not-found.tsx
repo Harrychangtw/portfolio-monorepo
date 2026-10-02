@@ -426,8 +426,8 @@ export function NotFoundContent() {
 // Wrap the global 404 in the NavigationProvider to satisfy the context requirement
 export default function NotFound() {
   return (
-    // This file is a Client Component, so it cannot read the request cookie to
-    // resolve the visitor's language the way the route layouts do. The 404
+    // This file is a Client Component and not-found boundaries receive no
+    // route params, so it cannot see the `[lang]` segment the layouts use. The 404
     // therefore keeps the old behaviour — English first, then the provider's
     // layout effect adopts the real language after hydration. It is almost
     // entirely a visual page, so the swap has little text to catch.
