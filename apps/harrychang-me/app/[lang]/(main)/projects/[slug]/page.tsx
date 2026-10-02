@@ -7,8 +7,9 @@ import {
 } from "@portfolio/lib/lib/markdown";
 import ProjectPostClient from "@portfolio/ui/project-post-client";
 import {
-  getServerLanguage,
+  languageFromParams,
   localizedSlug,
+  slugParamsFor,
 } from "@portfolio/lib/lib/server-language";
 import GraphNextUp from "@/components/graph/graph-next-up";
 import HashAnchorPulse from "@/components/graph/hash-anchor-pulse";
@@ -115,20 +116,19 @@ export async function generateMetadata({
   };
 }
 
-/**
- * These pages read the request cookie to serve the visitor's language, which
- * a static render cannot do — leaving generateStaticParams in place made Next
- * attempt an SSG render and fail every request with DYNAMIC_SERVER_USAGE.
- *
- * If the cookie-aware language render is ever reverted, drop this and restore
- * `export async function generateStaticParams() { return getAllProjectSlugs(); }`.
- */
-export const dynamic = "force-dynamic";
+export async function generateStaticParams({
+  params,
+}: {
+  params: { lang: string };
+}) {
+  const slugs = getAllProjectSlugs().map((entry) => entry.params.slug);
+  return slugParamsFor(params.lang, slugs);
+}
 
 export default async function ProjectPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ lang: string; slug: string }>;
 }) {
   const { slug } = await params;
   if (!slug) notFound();
@@ -136,8 +136,8 @@ export default async function ProjectPage({
   // The URL carries one language's slug; serve the visitor's language from
   // the server so the post client has nothing left to refetch on load.
   // generateMetadata deliberately still keys off the URL slug, so canonical
-  // URLs and OG tags never vary by cookie.
-  const language = await getServerLanguage();
+  // URLs and OG tags never vary by language.
+  const language = await languageFromParams(params);
   const targetSlug = localizedSlug(slug, language);
   const project =
     (await getProjectData(targetSlug)) ?? (await getProjectData(slug));

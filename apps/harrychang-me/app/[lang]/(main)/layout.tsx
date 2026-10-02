@@ -6,7 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import ClientLayout from "@/components/main/client-layout";
 import Footer from "@/components/footer";
 import { siteConfig } from "@/config/site";
-import { getServerLanguage } from "@portfolio/lib/lib/server-language";
+import { languageFromParams } from "@portfolio/lib/lib/server-language";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -75,12 +75,14 @@ export const metadata: Metadata = {
 
 export default async function MainLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }>) {
-  // Resolving the language here is what lets the provider server-render in it.
-  // It also makes this route subtree dynamic — see getServerLanguage().
-  const initialLanguage = await getServerLanguage();
+  // The middleware picked this copy for the visitor's language, so the
+  // provider server-renders in it without reading the request.
+  const initialLanguage = await languageFromParams(params);
 
   return (
     <>

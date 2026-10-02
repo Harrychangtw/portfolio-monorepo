@@ -194,6 +194,9 @@ const nextConfig = {
     ]
   },
   experimental: {
+    // Pages live under the app/[lang] root layout, so unmatched URLs need
+    // app/global-not-found.tsx to render a styled page with a 404 status.
+    globalNotFound: true,
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
