@@ -26,6 +26,12 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
+// Render pages next to the audience. Most traffic is from Taiwan, and with no
+// region set Vercel ran every page render in iad1 (Washington DC) — a Pacific
+// round trip on top of each request. Set here rather than in vercel.json so it
+// only covers page renders: the API routes stay co-located with the database.
+export const preferredRegion = "hkg1";
 // Only the weights actually used are declared. next/font emits a <link
 // rel="preload"> for every declared weight, so each unused one cost ~38 KB of
 // high-priority bandwidth on the critical path. Weights 100/200/900 had no
