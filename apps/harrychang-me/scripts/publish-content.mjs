@@ -237,7 +237,7 @@ async function main() {
 
   console.log(`\n${bold(green('✔'))} ${bold('Pipeline complete')} ${dim(`· ${fmtElapsed(Date.now() - wallStart)}`)}`)
   console.log(dim(`  Patched app/[lang]/not-found.tsx (${applied.length} entr${applied.length === 1 ? 'y' : 'ies'})`))
-  console.log(dim('  Review diff: git diff 'app/[lang]/not-found.tsx''))
+  console.log(dim("  Review diff: git diff 'app/[lang]/not-found.tsx'"))
 }
 
 main().catch((err) => {
